@@ -1358,7 +1358,7 @@ Function that is invoked after the element is rendered.</p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="nx">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="k">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">autoselect</span><span class="o">/&gt;</span>
 
 <span class="c">&lt;!--</span> <span class="k">in</span> <span class="nx">a</span> <span class="nx">standard</span> <span class="nx">KO</span> <span class="nx">form</span> <span class="o">--&gt;</span>
@@ -1378,7 +1378,7 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Usage example</strong>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">bindHtml</span><span class="o">=</span><span class="s2">"
-    &lt;div data-bind='text: \'String from the text binding\''&gt;&lt;/div&gt;
+    &lt;div data-bind='text: </span><span class="err">\</span><span class="s2">'String from the text binding</span><span class="err">\</span><span class="s2">''&gt;&lt;/div&gt;
 "</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
 
 <h3 id="collapsible"><code class="highlighter-rouge">collapsible</code></h3>
@@ -1620,7 +1620,7 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Usage example</strong>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span>
-    <span class="kr">class</span><span class="o">=</span><span class="s2">"data-slider"</span>
+    <span class="kd">class</span><span class="o">=</span><span class="s2">"data-slider"</span>
     <span class="nx">range</span><span class="o">=</span><span class="s2">"{
         value: scale,
         min: 1,
@@ -1657,7 +1657,7 @@ Function that is invoked after the element is rendered.</p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="nx">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="k">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">ko</span><span class="o">-</span><span class="nx">scope</span><span class="o">=</span><span class="s2">"'name.of.component'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>
 <span class="c">&lt;!--</span> <span class="k">in</span> <span class="nx">a</span> <span class="nx">standard</span> <span class="nx">KO</span> <span class="nx">form</span> <span class="o">--&gt;</span>

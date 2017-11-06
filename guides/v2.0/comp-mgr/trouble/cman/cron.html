@@ -1034,9 +1034,8 @@
     <li>
       <p>See if the following file exists:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>ls -al &lt;your Magento install dir&gt;/var/.setup_cronjob_status
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al &lt;your Magento install dir&gt;/var/.setup_cronjob_status
+</code></pre></div>      </div>
 
       <p>If the file exists, cron has run successfully in the past. If the file <em>does not</em> exist, either you haven’t yet installed Magento or cron isn’t running. In either case, continue with the next step.</p>
     </li>
@@ -1045,21 +1044,18 @@
 
       <p>As a user with <code class="highlighter-rouge">root</code> privileges, enter the following command:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u &lt;Magento file system owner name&gt; -l
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u &lt;Magento file system owner name&gt; -l
+</code></pre></div>      </div>
 
       <p>For example, on CentOS</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u magento_user -l
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u magento_user -l
+</code></pre></div>      </div>
 
       <p>If no crontab has been set up for the user, the following message displays:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>no crontab for magento_user
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no crontab for magento_user
+</code></pre></div>      </div>
 
       <p>Your crontab tells you the following:</p>
 

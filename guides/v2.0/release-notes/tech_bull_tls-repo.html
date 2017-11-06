@@ -1102,11 +1102,10 @@
   <h4 id="downloading-a-magento-metapackage">Downloading a Magento metapackage</h4>
   <p>The following error displays if you attempt to run <code class="highlighter-rouge">composer create-project</code> to get a Magento metapackage:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>[Composer\Downloader\TransportException]                                           
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Composer\Downloader\TransportException]                                           
 The "https://repo.magento.com/packages.json" file could not be downloaded: Failed to enable crypto                                                                  
 failed to open stream: operation failed  
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h3 id="using-the-web-setup-wizard">Using the Web Setup Wizard</h3>
   <p>Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:</p>
@@ -1127,18 +1126,16 @@ failed to open stream: operation failed
 
   <p>To determine your <code class="highlighter-rouge">libcurl</code> version, enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>curl --version
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl --version
+</code></pre></div>  </div>
 
   <h4 id="solution-centos">CentOS</h4>
   <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code class="highlighter-rouge">libcurl</code></a> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
 
   <p>To determine the version of CentOS your server runs, enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>cat /etc/*release*
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /etc/*release*
+</code></pre></div>  </div>
 
   <p>If you’re already running CentOS 6.8 or later, no action is necessary. According to the <a href="https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8" target="_blank">CentOS 6.8 changelog</a>, “various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages”.</p>
 

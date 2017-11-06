@@ -798,20 +798,20 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decltag">Declarative notation using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
+<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decl_tag">Declarative notation using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
 
 <p>To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code class="highlighter-rouge">&lt;script type="text/x-magento-init"&gt;</code> tag and attribute. The syntax is following:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
 <span class="p">{</span>
     <span class="c1">// components initialized on the element defined by selector</span>
-	<span class="s2">"&lt;element_selector&gt;"</span><span class="err">:</span> <span class="p">{</span>
-		<span class="s2">"&lt;js_component1&gt;"</span><span class="err">:</span> <span class="p">...,</span>
-		<span class="s2">"&lt;js_component2&gt;"</span><span class="err">:</span> <span class="p">...</span>
+	<span class="s2">"&lt;element_selector&gt;"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"&lt;js_component1&gt;"</span><span class="p">:</span> <span class="p">...,</span>
+		<span class="s2">"&lt;js_component2&gt;"</span><span class="p">:</span> <span class="p">...</span>
     <span class="p">},</span>
     <span class="c1">// components initialized without binding to an element</span>
-    <span class="s2">"*"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"&lt;js_component3&gt;"</span><span class="err">:</span> <span class="p">...</span>
+    <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"&lt;js_component3&gt;"</span><span class="p">:</span> <span class="p">...</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
@@ -827,8 +827,8 @@ Such a component does not require either <code>config</code> or <code>element</c
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
 <span class="p">{</span>
-    <span class="s2">"#main-container"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"navigation"</span><span class="err">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s2">"#main-container"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"navigation"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span><span class="p">,</span>
         <span class="s2">"accordion"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationAccordionConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span>
     <span class="p">},</span>
     <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
@@ -847,8 +847,8 @@ Such a component does not require either <code>config</code> or <code>element</c
     <span class="s1">'accordion'</span>  <span class="c1">// the alias for "mage/accordion"</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-role=example]'</span><span class="p">)</span>  <span class="c1">// we expect that page contains the &lt;tag data-role="example"&gt;..&lt;/tag&gt; markup</span>
-            <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use "accordion" as jQuery plugin</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-role=example]'</span><span class="p">)</span>  <span class="c1">// we expect that page contains the </span><span class="o">&lt;</span><span class="nx">tag</span> <span class="nx">data</span><span class="o">-</span><span class="nx">role</span><span class="o">=</span><span class="s2">"example"</span><span class="o">&gt;</span><span class="p">..</span><span class="o">&lt;</span><span class="sr">/tag&gt; marku</span><span class="err">p
+</span>            <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use "accordion" as jQuery plugin</span>
                 <span class="na">header</span><span class="p">:</span>  <span class="s1">'[data-role=header]'</span><span class="p">,</span>
                 <span class="na">content</span><span class="p">:</span> <span class="s1">'[data-role=content]'</span><span class="p">,</span>
                 <span class="na">trigger</span><span class="p">:</span> <span class="s1">'[data-role=trigger]'</span><span class="p">,</span>

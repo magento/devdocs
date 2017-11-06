@@ -610,9 +610,8 @@
 
 <p>In your Magento development environment under the <code class="highlighter-rouge">app/code</code> directory, run the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p MyCompany/ExampleAdminNewPage
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p MyCompany/ExampleAdminNewPage
+</code></pre></div></div>
 
 <p>This command creates the <code class="highlighter-rouge">MyCompany</code> company directory and the <code class="highlighter-rouge">ExampleAdminNewPage</code> module directory. The latter will be the root directory for the module we will create.</p>
 
@@ -625,21 +624,21 @@
 For more information see: <a href="/guides/v2.2/extension-dev-guide/build/composer-integration.html"><code class="highlighter-rouge">composer.json</code></a>.</p>
 
 <div class="collapsible"><b class="collapsible-title">File content for composer.json </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mycompany/sample-module-minimal"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A module that creates a page in the Magento admin area"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mycompany/sample-module-minimal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A module that creates a page in the Magento admin area"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"AFL-3.0"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.6.0|7.0.2|7.0.4|~7.0.6"</span><span class="w">
+      </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.6.0|7.0.2|7.0.4|~7.0.6"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nt">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"MyCompany\\ExampleAdminNewPage\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="s2">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"MyCompany</span><span class="se">\\</span><span class="s2">ExampleAdminNewPage</span><span class="se">\\</span><span class="s2">"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -730,9 +729,8 @@ For more information see: <a href="/guides/v2.2/extension-dev-guide/build/compos
 <h4 class="no_toc" id="controlleradminhtmlhelloworldindexphp"><code class="highlighter-rouge">Controller/Adminhtml/HelloWorld/Index.php</code></h4>
 <p>In the module’s root directory, run the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p Controller/Adminhtml/HelloWorld
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p Controller/Adminhtml/HelloWorld
+</code></pre></div></div>
 
 <p>Inside <code class="highlighter-rouge">Controller/Adminhtml/HelloWorld</code> directory, create the file <code class="highlighter-rouge">Index.php</code>. This file is the class assigned to the default Index action for the <code class="highlighter-rouge">HelloWorld</code> controller. Since the admin area serves this page, the file belongs in the <code class="highlighter-rouge">Adminhtml</code> directory, and the class itself extends <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/App/Action.php" target="_blank"><code class="highlighter-rouge">\Magento\Backend\App\Action</code></a>.</p>
 <div class="collapsible"><b class="collapsible-title">File content for Index.php </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="cp">&lt;?php</span>
@@ -779,14 +777,13 @@ For more information see: <a href="/guides/v2.2/extension-dev-guide/build/compos
 
 <p>Create the necessary directories for the files by running the following commands from the module’s root directory:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -pm view/adminhtml/layout
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -pm view/adminhtml/layout
 mkdir -pm view/adminhtml/templates
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>These files belong in the <code class="highlighter-rouge">view/adminhtml</code> directory because the Magento admin area use these files during page generation.</p>
 
-<h4 class="no_toc" id="viewadminhtmllayoutexampleadminnewpagehelloworldindexxml"><code class="highlighter-rouge">view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml</code></h4>
+<h4 class="no_toc" id="viewadminhtmllayoutexampleadminnewpage_helloworld_indexxml"><code class="highlighter-rouge">view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml</code></h4>
 
 <p>This file defines the <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> and structure of the index page for the HelloWorld controller. It sets the title to “Greetings” and instructs Magento to use the <code class="highlighter-rouge">helloworld.phtml</code> template as the content in a <code class="highlighter-rouge">Magento\Backend\Block\Template</code> block class.</p>
 

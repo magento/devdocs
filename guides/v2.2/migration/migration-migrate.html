@@ -635,15 +635,13 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
@@ -652,9 +650,8 @@
 
       <p>bash shell example for CentOS:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -672,7 +669,7 @@
 
   <p>Below is a typical command example:</p>
 
-  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">bin/magento migrate:&lt;mode&gt; <span class="o">[</span>-r|--reset] <span class="o">{</span>&lt;path to config.xml&gt;<span class="o">}</span></code></pre></figure>
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash">bin/magento migrate:&lt;mode&gt; <span class="o">[</span><span class="nt">-r</span>|--reset] <span class="o">{</span>&lt;path to config.xml&gt;<span class="o">}</span></code></pre></figure>
 
   <p>where:</p>
 
@@ -684,7 +681,7 @@
       <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
     </li>
     <li>
-      <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">&lt;path</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">config.xml&gt;</span><span class="p">}</span></code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required.</p>
+      <p><code class="highlighter-rouge">{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required.</p>
     </li>
   </ol>
 

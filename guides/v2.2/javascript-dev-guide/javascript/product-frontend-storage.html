@@ -780,12 +780,12 @@ This section is responsible for holding all product data that come from the serv
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
 
-<span class="nl">idsStorageHandler</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idsStorage</span><span class="p">){</span>
+<span class="nx">idsStorageHandler</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idsStorage</span><span class="p">){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span> <span class="o">=</span> <span class="nx">storage</span><span class="p">.</span><span class="nx">createStorage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">productStorageConfig</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataCollectionHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
 <span class="p">},</span>
 
-<span class="nx">dataCollectionHandler</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+<span class="nx">dataCollectionHandler</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
     <span class="c1">//Code to handle the data</span>
 <span class="p">},</span>
 
@@ -797,10 +797,10 @@ This section is responsible for holding all product data that come from the serv
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
 
-<span class="nl">idsStorageHandler</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idsStorage</span><span class="p">,</span> <span class="nx">currency</span><span class="p">,</span> <span class="nx">storeId</span><span class="p">){</span>
+<span class="nx">idsStorageHandler</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idsStorage</span><span class="p">,</span> <span class="nx">currency</span><span class="p">,</span> <span class="nx">storeId</span><span class="p">){</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span> <span class="o">=</span> <span class="nx">storage</span><span class="p">.</span><span class="nx">createStorage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">productStorageConfig</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataCollectionHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span><span class="p">.</span><span class="nx">loadDataFromServer</span><span class="p">(</span><span class="nx">currency</span><span class="p">,</span> <span class="nx">storeId</span><span class="p">,</span> <span class="nx">idsStorage</span><span class="p">.</span><span class="nx">get</span><span class="p">());</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span><span class="p">.</span><span class="nx">loadDataFromServer</span><span class="p">(</span><span class="nx">currency</span><span class="p">,</span> <span class="nx">storeId</span><span class="p">,</span> <span class="nx">idsStorage</span><span class="p">.</span><span class="kd">get</span><span class="p">());</span>
 <span class="p">},</span>
 
 <span class="p">...</span></code></pre></figure>
@@ -862,19 +862,19 @@ This section is responsible for holding all product data that come from the serv
 <p>The object structure for this REST response is represented by <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Catalog\Api\Data\ProductRenderInterface</code></a>:</p>
 
 <div class="collapsible"><b class="collapsible-title">Show Object Structure </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">[</span>
-   <span class="nx">item_id</span><span class="err">:</span> <span class="p">{</span>
+   <span class="nx">item_id</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface</span>
-        <span class="s1">'add_to_*_button'</span><span class="err">:</span> <span class="p">{</span> <span class="c1">//Any product button will be represented by this interface </span>
+        <span class="s1">'add_to_*_button'</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//Any product button will be represented by this interface </span>
             <span class="nl">post_data</span><span class="p">:</span> <span class="p">{...},</span>
-            <span class="nx">required_options</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">,</span>
-            <span class="nx">url</span><span class="err">:</span> <span class="nx">string</span>
+            <span class="nx">required_options</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">,</span>
+            <span class="nx">url</span><span class="p">:</span> <span class="nx">string</span>
         <span class="p">},</span>
         <span class="c1">//\Magento\Catalog\Api\Data\ProductRenderExtensionInterface</span>
-        <span class="s1">'extension_attributes'</span><span class="err">:</span> <span class="p">{</span>
-            <span class="s1">'review_html'</span><span class="err">:</span> <span class="s1">'...'</span>
+        <span class="s1">'extension_attributes'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'review_html'</span><span class="p">:</span> <span class="s1">'...'</span>
         <span class="p">},</span>
         <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\ImageInterface[]</span>
-        <span class="s1">'images'</span><span class="err">:</span> <span class="p">[</span>
+        <span class="s1">'images'</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
                 <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
                 <span class="s1">'code'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
@@ -884,29 +884,29 @@ This section is responsible for holding all product data that come from the serv
                 <span class="p">...</span>
             <span class="p">}</span>
         <span class="p">],</span>
-        <span class="s1">'is_salable'</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">,</span>
-        <span class="s1">'name'</span><span class="err">:</span> <span class="s1">'...'</span><span class="p">,</span>
+        <span class="s1">'is_salable'</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">,</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
         <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\PriceInfoInterface</span>
-        <span class="s1">'price_info'</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s1">'price_info'</span><span class="p">:</span> <span class="p">{</span>
             <span class="c1">//@see \Magento\Catalog\Api\Data\ProductRender\FormattedPriceInfoInterface</span>
             <span class="c1">//All prices are kind of html with currency symbol and rounding rules</span>
-            <span class="s1">'formatted_prices'</span><span class="err">:</span> <span class="p">{</span>
-                <span class="s1">'final_price'</span><span class="err">:</span> <span class="p">...,</span>
-                <span class="s1">'max_price'</span><span class="err">:</span> <span class="p">...,</span>
-                <span class="s1">'max_regular_price'</span><span class="err">:</span> <span class="p">...,</span>
-                <span class="s1">'minimal_regular_price'</span><span class="err">:</span> <span class="p">...,</span>
+            <span class="s1">'formatted_prices'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'final_price'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="s1">'max_price'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="s1">'max_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="s1">'minimal_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
                 <span class="p">...</span>
             <span class="p">},</span>
-            <span class="s1">'final_price'</span><span class="err">:</span> <span class="p">...,</span>
-            <span class="s1">'max_price'</span><span class="err">:</span> <span class="p">...,</span>
-            <span class="s1">'max_regular_price'</span><span class="err">:</span> <span class="p">...,</span>
-            <span class="s1">'minimal_regular_price'</span><span class="err">:</span> <span class="p">...,</span>
+            <span class="s1">'final_price'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="s1">'max_price'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="s1">'max_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="s1">'minimal_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
             <span class="p">...</span>
         <span class="p">},</span>
-        <span class="s1">'url'</span><span class="err">:</span> <span class="s1">'...'</span><span class="p">,</span>
-        <span class="s1">'type'</span><span class="err">:</span> <span class="s1">'...'</span><span class="p">,</span> <span class="c1">//enum: configurable, simple, virtual, etc</span>
-        <span class="s1">'currency_code'</span><span class="err">:</span> <span class="s1">'...'</span><span class="p">,</span> <span class="c1">//e.g. USD</span>
-        <span class="s1">'store_id'</span><span class="err">:</span> <span class="p">...</span> <span class="c1">//integer</span>
+        <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
+        <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span> <span class="c1">//enum: configurable, simple, virtual, etc</span>
+        <span class="s1">'currency_code'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span> <span class="c1">//e.g. USD</span>
+        <span class="s1">'store_id'</span><span class="p">:</span> <span class="p">...</span> <span class="c1">//integer</span>
    <span class="p">}</span>  
 <span class="p">]</span></code></pre></figure>
 </div></div>

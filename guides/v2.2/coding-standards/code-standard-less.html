@@ -512,13 +512,12 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     .nav-item {
         ...
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="formatting">Formatting</h3>
 
@@ -528,17 +527,15 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     color: @nav__color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav{color: @nav__color;}
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav{color: @nav__color;}
+</code></pre></div></div>
 
 <h4 id="selector-delimiters">Selector delimiters</h4>
 
@@ -546,20 +543,18 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav,
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav,
 .bar {
     color: @color__base;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav, .bar {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav, .bar {
     color: @color__base;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="quotes">Quotes</h4>
 
@@ -567,19 +562,17 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     content: 'lorem ipsum';
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     content: "lorem ipsum";
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="combinator-indents">Combinator indents</h4>
 
@@ -587,15 +580,14 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav + .bar {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav + .bar {
     color: @bar__color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav+.bar {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav+.bar {
     color: @bar__color;
 }
 
@@ -606,8 +598,7 @@
 .nav+ .bar {
     color: @bar__color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="properties-line-break">Properties line break</h4>
 
@@ -615,20 +606,18 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     background-color: @nav__background-color;
     color: @nav__color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     color: @nav__color; background-color: @nav__background-color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="properties-colon-indents">Properties colon indents</h4>
 
@@ -636,15 +625,14 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     color: @nav__color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     color : @nav__color;
 }
 
@@ -655,8 +643,7 @@
 .item {
     color :@item__color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="end-of-file">End of file</h4>
 
@@ -668,7 +655,7 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>css
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>css
     .nav {
         background-color: @nav__background-color;
     }
@@ -676,20 +663,18 @@
     .bar {
         background-color: @bar__background-color;
     }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>css
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>css
     .nav {
         background-color: @nav__background-color;
     }
     .bar {
         background-color: @bar__background-color;
     }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="end-of-the-property-line">End of the property line</h4>
 
@@ -697,19 +682,17 @@
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     background-color: @nav__background-color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     background-color: @nav__background-color
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="important-property">!important property</h4>
 
@@ -717,19 +700,17 @@
 
 <p><strong>Correct</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.jquery-ui-calendar-item {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.jquery-ui-calendar-item {
     background-color: @nav__background-color !important;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    .jquery-ui-calendar-item {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    .jquery-ui-calendar-item {
         background-color: @nav__background-color!important;
     }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="comments">Comments</h3>
 
@@ -738,7 +719,7 @@ First, second and third level comments should have two spaces after “//”. In
 
 <p><strong>Correct</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//
 //  First level comment
 //  _____________________________________________
 
@@ -760,8 +741,7 @@ First, second and third level comments should have two spaces after “//”. In
     background-color: @nav__background-color; // ToDo UI: todo inline comment
     color: @nav__color; // inline comment
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="selectors">Selectors</h3>
 
@@ -775,7 +755,7 @@ First, second and third level comments should have two spaces after “//”. In
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     ...
 }
 
@@ -786,16 +766,14 @@ First, second and third level comments should have two spaces after “//”. In
 .nav:not(.bar) {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#foo {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#foo {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="classes-naming">Classes Naming</h3>
 
@@ -805,27 +783,24 @@ First, second and third level comments should have two spaces after “//”. In
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav-bar {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav-bar {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.navBar {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.navBar {
    ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>: underscore separation</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav_bar {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav_bar {
    ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="helper-classes">Helper classes</h4>
 
@@ -835,11 +810,10 @@ First, second and third level comments should have two spaces after “//”. In
 
 <p><strong>Example</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>._active {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>._active {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="size">Size</h4>
 
@@ -848,27 +822,24 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav-bar {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav-bar {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>: too long</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.navigation-panel-in-footer {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.navigation-panel-in-footer {
    ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>: too short</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nvpf {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nvpf {
    ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="meaning">Meaning</h4>
 
@@ -876,34 +847,31 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <p><strong>Correct</strong>: specific</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.category {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.category {
     ...
 }
 .category-title {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>: cryptic</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.foo-1901 {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.foo-1901 {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>: presentational</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.button-green {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.button-green {
    ...
 }
 
 .clear {
    ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="selectors-naming">Selectors naming</h3>
 
@@ -915,37 +883,33 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.error {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.error {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>div.error {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>div.error {
    ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Type selectors must be lowercase.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav &gt; li {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav &gt; li {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav &gt; LI {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav &gt; LI {
    ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="formatting-1">Formatting</h4>
 
@@ -953,15 +917,14 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.product-list-item {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.product-list-item {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.product {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.product {
     ...
     &amp;-list {
         ...
@@ -970,8 +933,7 @@ Try to convey what class is about while being as brief as possible.</p>
         }
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="nesting">Nesting</h4>
 
@@ -981,7 +943,7 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.footer {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.footer {
     ...
     .nav {
         ...
@@ -993,12 +955,11 @@ Try to convey what class is about while being as brief as possible.</p>
         }
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.footer {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.footer {
     ...
     .nav {
         ...
@@ -1010,8 +971,7 @@ Try to convey what class is about while being as brief as possible.</p>
         }
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="properties">Properties</h2>
 
@@ -1021,23 +981,21 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     background-color: @nav__background-color;
     color: @nav__color;
     text-align: center;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.nav {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nav {
     color: @nav__color;
     text-align: center;
     background-color: @nav__background-color;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="shorthand">Shorthand</h3>
 
@@ -1047,38 +1005,34 @@ Try to convey what class is about while being as brief as possible.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>border-top: 0;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>border-top: 0;
 padding: 0 1em 2em;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>border-top-style: none;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>border-top-style: none;
 padding-bottom: 2rem;
 padding-left: 1rem;
 padding-right: 1rem;
 padding-top: 0;
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="and-units">0 and units</h3>
+<h3 id="0-and-units">0 and units</h3>
 
 <p>Do not specify units “0” value.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>border-width: 0;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>border-width: 0;
 margin: 0;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>border-width: 0px;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>border-width: 0px;
 margin: 0rem;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="floating-values">Floating values</h3>
 
@@ -1086,15 +1040,13 @@ margin: 0rem;
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> margin-left: .5rem;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> margin-left: .5rem;
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>margin-left: 0.5rem;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>margin-left: 0.5rem;
+</code></pre></div></div>
 
 <h3 id="hexadecimal-notation">Hexadecimal notation</h3>
 
@@ -1106,20 +1058,18 @@ margin: 0rem;
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@nav__color: #fafafa;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@nav__color: #fafafa;
 @nav-item__color: #f00;
 ...
 color: @nav-item__color;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>color: #ff0000;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>color: #ff0000;
 @nav__color: #FAFAFA;
 @nav-item__color: red;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="variables">Variables</h2>
 
@@ -1131,7 +1081,7 @@ color: @nav-item__color;
 
 <p><strong>Example</strong> <code class="highlighter-rouge">_module.less</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>...
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 
 //
 //  Variables
@@ -1142,8 +1092,7 @@ color: @nav-item__color;
 @btn-primary__color: @color-white;
 @btn-secondary__color: @color-white;
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="theme-variables">Theme variables</h4>
 
@@ -1157,25 +1106,22 @@ color: @nav-item__color;
 
 <p>General model is the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span><span class="o">-</span><span class="n">name</span>
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@property</span><span class="o">-</span><span class="n">name</span>
+</code></pre></div></div>
 
 <p><strong>Examples</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@primary__color: @color-phoenix;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@primary__color: @color-phoenix;
 @indent__base: 2rem;
 @border-radius-round: 100%;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="parameter-variables">Parameter variables</h4>
 
 <p>General model is the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@component-element__state__property__modifier
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@component-element__state__property__modifier
+</code></pre></div></div>
 
 <p>Component name must meaningful. It can contain the <code class="highlighter-rouge">primary</code>, <code class="highlighter-rouge">secondary</code>, <code class="highlighter-rouge">tertiary</code> names.</p>
 
@@ -1183,7 +1129,7 @@ color: @nav-item__color;
 
 <p><strong>Examples</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@color-orange: '';
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@color-orange: '';
 
 @link__hover__color: '';
 
@@ -1202,8 +1148,7 @@ color: @nav-item__color;
 @side-nav-el__active-focus__font-size__xl: '';
 
 @text__color__base: '';
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="mixins">Mixins</h2>
 
@@ -1219,15 +1164,14 @@ color: @nav-item__color;
 
 <p><strong>Example</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.extend__clearfix (...) {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.extend__clearfix (...) {
     ...
 }
 
 .vendor-prefix__flex-direction (...) {
     ...
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="extends">Extends</h2>
 
@@ -1246,31 +1190,27 @@ Extends that are used in several files should be specified in the theme’s <cod
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@import 'source/lib/_lib.less';
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import 'source/lib/_lib.less';
 @import (css) 'styles.css';
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@import 'source/lib/_lib';
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import 'source/lib/_lib';
 @import (css) 'styles';
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Use single quotes.</p>
 
 <p><strong>Correct</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@import 'source/lib/_lib.less';
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import 'source/lib/_lib.less';
+</code></pre></div></div>
 
 <p><strong>Incorrect</strong>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@import "source/lib/_lib.less";
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import "source/lib/_lib.less";
+</code></pre></div></div>
 
 		</div>
 		<!-- /.content-wrap -->

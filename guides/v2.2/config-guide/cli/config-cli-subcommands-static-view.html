@@ -2013,9 +2013,8 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy [&lt;languages&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy [&lt;languages&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
+</code></pre></div>  </div>
 
   <p>The following table explains this command’s parameters and values.</p>
 
@@ -2390,13 +2389,12 @@
   <h4 id="excluding-a-theme-and-html-minification">Excluding a theme and HTML minification</h4>
   <p>The following command deploys <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> for the US English (<code class="highlighter-rouge">en_US</code>) language, excludes the Luma <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> provided with Magento, and does not minify <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> files.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
+</code></pre></div>  </div>
 
   <p>Sample output:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Requested languages: en_US
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Requested languages: en_US
 Requested areas: frontend, adminhtml
 Requested themes: Magento/blank, Magento/backend
 === frontend -&gt; Magento/blank -&gt; en_US ===
@@ -2410,19 +2408,17 @@ New version of deployed files: 1466710645
 ............
 Successful: 1993 files; errors: 0
 ---
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h4 id="generating-static-view-files-for-one-theme-and-one-area">Generating static view files for one theme and one area</h4>
   <p>The following command generates static view files for all languages, the <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> area only, the Magento Luma theme only, without generating fonts:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
+</code></pre></div>  </div>
 
   <p>Sample output:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Requested languages: en_US
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Requested languages: en_US
 Requested areas: frontend
 Requested themes: Magento/luma
 === frontend -&gt; Magento/luma -&gt; en_US ===
@@ -2433,8 +2429,7 @@ Successful: 2092 files; errors: 0
 ---
 
 New version of deployed files: 1466711110
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h3 id="deploy_without_db">Deploy static view files without installing Magento</h3>
   <p>You might want to run the deployment process in a separate, non-production, environment, to avoid any build processes on sensitive production machines.</p>
@@ -2452,9 +2447,8 @@ New version of deployed files: 1466711110
 
   <p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>ERROR: You need to install the Magento application before running this utility.
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR: You need to install the Magento application before running this utility.
+</code></pre></div>  </div>
 
   <p><strong>Solution</strong>:</p>
 

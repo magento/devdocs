@@ -891,10 +891,9 @@
   <li>Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="/guides/v2.0/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
 composer install
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br />
@@ -909,17 +908,15 @@ And run from this directory <code>php <span term-uuid="d85e2d0a-221f-4d03-aa43-0
 
 <p>Check whether the <code class="highlighter-rouge">vendor</code> directory exists in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
 ls
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Find the <code class="highlighter-rouge">mtf</code> directory.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd vendor/magento
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd vendor/magento
 ls
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="mtf_install_check_verify">Verify the Functional Testing Framework version</h3>
 

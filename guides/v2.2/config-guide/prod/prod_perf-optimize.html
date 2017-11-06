@@ -1995,32 +1995,29 @@ This process should be followed by technical users responsible for stores runnin
 
 <p>Run the following <a href="https://getcomposer.org/doc/03-cli.md#dump-autoload">composer command</a> to generate an optimized composer class map that supports faster auto-loading.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>composer dump-autoload -o
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer dump-autoload -o
+</code></pre></div></div>
 
 <h3 id="server---php-configuration">Server - PHP Configuration</h3>
 
 <p>We recommend enabling and tuning PHP opcache for maximum performance.
 Edit your <code class="highlighter-rouge">opcache.ini</code> file to include the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>opcache.enable_cli=1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>opcache.enable_cli=1
 opcache.memory_consumption=512
 opcache.max_accelerated_files=100000
 opcache.validate_timestamps=0
 opcache.consistency_checks=0
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>When you fine tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions.
 Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.</p>
 
 <p>If you are on a low memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>opcache.memory_consumption=64
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="server---redis-configuration--tuning">Server - Redis Configuration &amp; Tuning</h3>
 
@@ -2119,9 +2116,8 @@ In this case editing your MySQL configuration file and allocating more memory to
 
 <p>Run the following commands to switch to production mode:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento deploy:mode:set production
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set production
+</code></pre></div></div>
 
 <h3 id="optimizing-asset-performance">Optimizing Asset Performance</h3>
 
@@ -2134,19 +2130,18 @@ This was a default strategy for 2.0.x and 2.1.x.</p>
 
 <p>At the end of the <code class="highlighter-rouge">if</code> statement for PURGE requests in the <code class="highlighter-rouge">vcl_recv</code> subroutine add:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># static files are cacheable. remove SSL flag and cookie
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># static files are cacheable. remove SSL flag and cookie
 if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$") {
   unset req.http.Https;
   unset req.http./*  */;
   unset req.http.Cookie;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In the <code class="highlighter-rouge">vcl_backend_response</code> subroutine, look for the <code class="highlighter-rouge">if</code> statement that unsets the cookie for <code class="highlighter-rouge">GET</code> or <code class="highlighter-rouge">HEAD</code> requests.
 The updated <code class="highlighter-rouge">if</code> block should look like the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># validate if we need to cache it and prevent from setting cookie
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># validate if we need to cache it and prevent from setting cookie
 # images, css and js are cacheable by default so we have to remove cookie also
 if (beresp.ttl &gt; 0s &amp;&amp; (bereq.method == "GET" || bereq.method == "HEAD")) {
   unset beresp.http.set-cookie;
@@ -2156,8 +2151,7 @@ if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg
   set beresp.http.Cache-Control = "no-store, no-cache, must-revalidate, max-age=0";
   }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Restart the Varnish server to flush cached assets whenever you upgrade your site or deploy/update assets.</p>
 

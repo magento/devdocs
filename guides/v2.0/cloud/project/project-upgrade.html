@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1885,16 +1885,14 @@
   <li>
     <p>Enter the following command to make a local backup of the remote database:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud db:dump
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud db:dump
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command to back up code and media:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:backup --code [--media]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:backup --code [--media]
+</code></pre></div>    </div>
 
     <p>You can optionally omit <code class="highlighter-rouge">[--media]</code> if you have a large number of static files that are already in source control.</p>
   </li>
@@ -1907,16 +1905,14 @@
   <li>
     <p>Find the database login information:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Create a database dump:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1928,9 +1924,8 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git status
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div>    </div>
   </li>
   <li>If there are changes you do <em>not</em> want to submit to source control, branch or stash them now.</li>
 </ol>
@@ -1941,26 +1936,23 @@
   <li>
     <p>Change to your Magento base directory and enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>For example, to upgrade to version 2.1.4:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage 2.1.4 --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage 2.1.4 --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Add, commit, and push your changes to initiate a deployment:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
 git commit -m "Upgrade"
 git push origin &lt;branch name&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p><code class="highlighter-rouge">git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code class="highlighter-rouge">composer install</code> and <code class="highlighter-rouge">composer update</code> marshal files from the base package (that is, <code class="highlighter-rouge">magento/magento2-base</code> and <code class="highlighter-rouge">magento/magento2-ee-base</code>) into the package root.</p>
 
@@ -1984,9 +1976,8 @@ git push origin &lt;branch name&gt;
   <li>
     <p>Enter the following command from your Magento root directory to verify the installed version:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento --version
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento --version
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2010,27 +2001,24 @@ git push origin &lt;branch name&gt;
 <h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
 <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>There has been an error processing your request
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: &lt;error number&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="view-error-details-on-the-server">View error details on the server</h3>
 <p>To view the error in your integration system, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
+</code></pre></div></div>
 
 <h3 id="resolve-the-error">Resolve the error</h3>
 <p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
 The following modules are outdated:
 Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To resolve the error:</p>
 
@@ -2042,9 +2030,8 @@ Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
 
     <p>For example, on a local branch, enter the following commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
+</code></pre></div>    </div>
   </li>
 </ol>
 

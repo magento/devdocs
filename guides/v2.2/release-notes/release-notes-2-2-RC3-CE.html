@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.2 Release Candidate 3 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Open Source 2.2.0 Release Candidate 3 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -59,12 +59,12 @@
 
 		<div class="container">
 
-			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			
 <div class="version-switcher dropdown" data-version="2.2">
 	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Magento 2.2 RC
+        Magento 2.2
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
@@ -73,7 +73,7 @@
 	
 		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/release-notes-2-2-RC3-CE.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/release-notes-2-2-RC3-CE.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/release-notes-2-2-RC3-CE.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -81,83 +81,119 @@
 
 
 
-			<!-- Main Navigation -->
-<div class="nav-main">
-  <ul>
-    <li class="first">
-      <a href="#">Setup and Deployment</a>
-        <ul class="menu nav">
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
           <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
           
-          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
           
-          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
-          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
         </ul>
-    </li>
+      </div>
 
-    <li>
-        <a href="#">Development</a>
-        <ul class="menu nav">
-          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
           
-          <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B Developer Guide</a></li>
-          
-          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
-          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-          
-          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
         </ul>
-    </li>
+      </div>
 
-    <li>
-        <a href="#">Frontend</a>
-        <ul class="menu nav">
-          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-          
-          <li class="leaf"><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
-          
-          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
         </ul>
-    </li>
+      </div>
+    </div>
 
-    <li>
-        <a href="#">API</a>
-        <ul class="menu nav">
-          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
-          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
-        </ul>
-    </li>
+  </div>
 
-    <li>
-        <a href="#">Testing</a>
-        <ul class="menu nav">
-          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
-          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
-        </ul>
-    </li>
 
-    <li>
-      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
-    </li>
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Testing</a>
 
-    <li>
-      <a href="/videos/">Videos</a>
-    </li>
-  </ul>
-</div><!-- /.nav-main -->
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        <li><a href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
 
 
 			<div class="search-btn">
@@ -186,470 +222,235 @@
 
 <div class="container">
 
-    
-    <div class="message-banner">
-        <strong>Review our 2.2 release candidate!</strong> This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
-        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
-    </div> 
-    
-
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
 
+
 <h4>Release Information</h4>
-
-
-
-
-
-
-		<ul>
-
-		
-
-		
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-					
-					
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-
-									
-
-										<li class="levela1"><span class="nav-header">2.2.0 Release Candidate</span></li>
-
-									
-
-
-								
-
-									
-
-									<li class="level-2  active "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC3-CE.html">Magento Open Source 2.2 Release Candidate 3 Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC3-EE.html">Magento Commerce 2.2 Release Candidate 3 Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC2-CE.html">Magento Open Source 2.2 Release Candidate 2 Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC2-EE.html">Magento Commerce 2.2 Release Candidate 2 Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-prerelease1-CE.html">Magento CE 2.2 Release Candidate Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html">Magento EE 2.2 Release Candidate Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">Release Candidate QuickStart Guide</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/install.html">Install the Release Candidate</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/submit-issues.html">Submit Comments on the Release Candidate</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/submit-PRs.html">Submit PRs for the Release Candidate</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/testing-environments.html">Release Candidate Testing Environments</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/release-notes/bk-release-notes.html">2.2.x Release Information</a></li>
-									
-								
-
-									
-
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/release-notes/backward-incompatible-changes.html">Magento 2.2 backward incompatible changes</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/changes/ce_changes.html">Magento Open Source changes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/changes/ee_changes.html">Magento Commerce changes</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-
-									
-
-										<li class="levela1"><span class="nav-header">Third-party licenses</span></li>
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/thirdparty_ce.html">Magento Open Source third-party licenses</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-		</ul>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.2/release-notes/bk-release-notes.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="2.2.0-release-notes">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>2.2.0 Release Notes</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-2.2.0-release-notes">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/ReleaseNotes2.2.0CE.html">Magento Open Source 2.2.0 Release Notes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-2.2.0-release-notes">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html">Magento Commerce 2.2.0 Release Notes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-(cloud)-2.2.0-release-notes">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.2.html">Magento Commerce (Cloud) 2.2.0 Release Notes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="component-status">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+    
+    
+
+    
+    
+
+<li class="nav-level1  " id="backward-incompatible-changes">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/release-notes/backward-incompatible-changes.html">Backward incompatible changes</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-changes">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/changes/ce_changes.html">Magento Open Source changes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-changes">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/changes/ee_changes.html">Magento Commerce changes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="third-party-licenses">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Third-party licenses</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/thirdparty_ce.html">Magento Open Source third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/thirdparty_ee.html">Magento Commerce third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-(cloud)-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.2/release-notes/thirdparty-mccloud.html">Magento Commerce (Cloud) third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
 
 	</div>
+
 </aside>
+
+
 <!-- /sidebar -->
 
 
@@ -661,7 +462,7 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
@@ -686,7 +487,7 @@
 
           
 
-          <span property="name">Magento Open Source 2.2 Release Candidate 3 Release Notes</span>
+          <span property="name">Magento Open Source 2.2.0 Release Candidate 3 Release Notes</span>
 
         
 
@@ -709,7 +510,7 @@
 
 	
 
-	<h1 class="page-heading">Magento Open Source 2.2 Release Candidate 3 Release Notes</h1>
+	<h1 class="page-heading">Magento Open Source 2.2.0 Release Candidate 3 Release Notes</h1>
 
   
 
@@ -717,578 +518,7 @@
 </section>
 
 
-			<ul id="markdown-toc">
-  <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
-  <li><a href="#issues-fixed-in-this-release-candidate-rc-2x" id="markdown-toc-issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2x)</a>    <ul>
-      <li><a href="#installation-configuration-and-deployment" id="markdown-toc-installation-configuration-and-deployment">Installation, configuration, and deployment</a></li>
-      <li><a href="#cart" id="markdown-toc-cart">Cart</a></li>
-      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
-      <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
-      <li><a href="#configurable-products" id="markdown-toc-configurable-products">Configurable products</a></li>
-      <li><a href="#email" id="markdown-toc-email">Email</a></li>
-      <li><a href="#import-and-export" id="markdown-toc-import-and-export">Import and Export</a></li>
-      <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
-      <li><a href="#payment-methods" id="markdown-toc-payment-methods">Payment methods</a></li>
-      <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
-      <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
-    </ul>
-  </li>
-  <li><a href="#issues-resolved-in-release-candidate-1x" id="markdown-toc-issues-resolved-in-release-candidate-1x">Issues resolved in Release Candidate 1.x</a>    <ul>
-      <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
-      <li><a href="#catalog-1" id="markdown-toc-catalog-1">Catalog</a></li>
-      <li><a href="#checkout-1" id="markdown-toc-checkout-1">Checkout</a></li>
-      <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
-      <li><a href="#magento-business-intelligence" id="markdown-toc-magento-business-intelligence">Magento Business Intelligence</a></li>
-      <li><a href="#miscellaneous-1" id="markdown-toc-miscellaneous-1">Miscellaneous</a></li>
-      <li><a href="#performance" id="markdown-toc-performance">Performance</a></li>
-      <li><a href="#rest-api" id="markdown-toc-rest-api">REST API</a></li>
-      <li><a href="#search" id="markdown-toc-search">Search</a></li>
-      <li><a href="#shipping-1" id="markdown-toc-shipping-1">Shipping</a></li>
-      <li><a href="#tax-rules" id="markdown-toc-tax-rules">Tax rules</a></li>
-      <li><a href="#url-rewrites-1" id="markdown-toc-url-rewrites-1">URL rewrites</a></li>
-    </ul>
-  </li>
-  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
-  <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
-  <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
-</ul>
-
-<p><em>Release date: September 12, 2017</em></p>
-
-<p><em>Notes updated: September 12, 2017</em></p>
-
-<p>Magento Open Source 2.2.0 Release Candidate 3.x (formerly Community Edition) includes significant new features as well as many bug fixes.</p>
-
-<p>Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">Magento 2.2.0 Release Candidate QuickStart Guide</a> for more information.  This guide provides a handy overview of <a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a>, too.</p>
-
-<h2 id="highlights">Highlights</h2>
-
-<p>Look for the following highlights in this release:</p>
-
-<ul>
-  <li>
-    <p><strong>Significant enhancements in platform security and developer experience</strong>. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.</p>
-  </li>
-  <li>
-    <p><strong>Upgraded technology stack.</strong>  We’ve dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, and Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.</p>
-  </li>
-  <li>
-    <p><strong>Pipeline deployment</strong>, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment <a href="/guides/v2.2/config-guide/deployment/pipeline/">here</a>.</p>
-  </li>
-  <li>
-    <p><strong>Substantial performance gains from improvements in indexing, cart, and cache operations</strong>. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
-buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.</p>
-  </li>
-</ul>
-
-<h2 id="issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2x)</h2>
-<p>The following fixed issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below.</p>
-
-<h3 id="installation-configuration-and-deployment">Installation, configuration, and deployment</h3>
-
-<!--- 70705 -->
-<ul>
-  <li>The installation process no longer stops when loading the Magento_Tax module. <a href="https://github.com/magento/magento2/issues/10138">GitHub-10138</a> (RC2.0)</li>
-</ul>
-
-<!--- 70571 -->
-<ul>
-  <li>You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21)</li>
-</ul>
-
-<!--- 71257 -->
-<ul>
-  <li>The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See <a href="/guides/v2.2/config-guide/config/disable-module-output.html">Disable module output</a> for details. (RC21)</li>
-</ul>
-
-<!--- 70573 -->
-<ul>
-  <li>It is now possible to configure Redis settings for session storage, default cache, and full page cache from the command line. (RC22)</li>
-</ul>
-
-<!--- 64351 -->
-<ul>
-  <li>Magento now correctly generates URL rewrites when you save a product. (RC22)</li>
-</ul>
-
-<!--- 67037 -->
-<ul>
-  <li>The <code class="highlighter-rouge">core_config_data.value</code> of the <code class="highlighter-rouge">core_config_data</code> table is now populated consistently when you upgrade to or freshly install  Magento 2.2. (RC23)</li>
-</ul>
-
-<!--- 67092 -->
-<ul>
-  <li>The <code class="highlighter-rouge">salesrule_product_attribute</code> table is now populated consistently when you upgrade to or freshly install  Magento 2.2. (RC23)</li>
-</ul>
-
-<!--- 71551 -->
-<ul>
-  <li>Inconsistencies in the database tables that contain quote information no longer result when you upgrade from Magento 2.1.8 to 2.2. (RC23)</li>
-</ul>
-
-<!--- 71890 -->
-<ul>
-  <li>Magento no longer throws an exception when the configuration checksum is absent on a new installation. (RC30)</li>
-</ul>
-
-<h3 id="cart">Cart</h3>
-
-<!--- 70806 -->
-<ul>
-  <li>The Persistent Shopping Cart feature now works as expected when enabled. This feature (<strong>Store &gt; Configurations &gt; CUSTOMERS &gt; Persistent Shopping Cart &gt; General Options &gt; Enable Persistence = Yes</strong>) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)</li>
-</ul>
-
-<h3 id="catalog">Catalog</h3>
-
-<!--- 69717 -->
-<ul>
-  <li>Custom option IDs no longer change during import. Previously, custom option ID values were deleted, and new values were added. (RC2.0)</li>
-</ul>
-
-<!--- 70877 -->
-<ul>
-  <li>You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error. (RC2.0)</li>
-</ul>
-
-<!--- 71242 -->
-<ul>
-  <li>We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)</li>
-</ul>
-
-<!--- 69967 -->
-<ul>
-  <li>Magento no longer indexes configurable products multiple times. Previously,  when you enabled break point activation on a configurable product, configurable products were indexed twice. (RC22)</li>
-</ul>
-
-<!--- 70987 -->
-<ul>
-  <li>Magento no longer displays an error when you open a product with a Fixed Product Tax attribute enabled. (RC22)</li>
-</ul>
-
-<!--- 61018 -->
-<ul>
-  <li>You can now use REST to add video to a product. <a href="https://github.com/magento/magento2/issues/7153">GitHub-7153</a> (RC30)</li>
-</ul>
-
-<h3 id="checkout">Checkout</h3>
-
-<!--- 70846 -->
-<ul>
-  <li>Magento now displays white space after the first address field of the customer address field during checkout. (RC21)</li>
-</ul>
-
-<h3 id="configurable-products">Configurable products</h3>
-
-<!--- 70346 -->
-<ul>
-  <li>Magento no longer displays a configurable product on the storefront when its child products are deleted and the <strong>Display Out of Stock Products</strong> setting is set to <strong>No</strong>. (RC30)</li>
-</ul>
-
-<!--- 71656 -->
-<ul>
-  <li>Configurable products no longer show up on category page when all children are set to <strong>enable product = No</strong> and <strong>display out-of-stock products = Off</strong>. (RC30)</li>
-</ul>
-
-<h3 id="email">Email</h3>
-
-<!--- 71349 -->
-<ul>
-  <li>You can now configure an email return-path. (RC21)</li>
-</ul>
-
-<h3 id="import-and-export">Import and Export</h3>
-
-<!--- 60470 -->
-<ul>
-  <li>Magento now successfully saves products with imported options. (RC22)</li>
-</ul>
-
-<!--- 71013 -->
-<ul>
-  <li>The export process now populates values in the  <code class="highlighter-rouge">configurable variations</code> column for configurable products  as expected. Previously, when exporting more than one product, the values for the <code class="highlighter-rouge">configurable variations</code> column for configurable products were not included. (RC23)</li>
-</ul>
-
-<h3 id="miscellaneous">Miscellaneous</h3>
-
-<!--- 64047 -->
-<ul>
-  <li>A null value may now be specified to unset the special_price attribute. (RC2.0)</li>
-</ul>
-
-<!--- 70642 -->
-<ul>
-  <li>You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento displayed an error after you tried to save changes you may have made to this feature. (RC2.0)</li>
-</ul>
-
-<!--- 71180 -->
-<ul>
-  <li>Customers can now place orders as expected when Magento is running a French locale in production mode. Previously, customers could not complete a transaction in a storefront running a French locale, although they could if they switched to the storefront running the English locale. (RC2.0)</li>
-</ul>
-
-<!--- 71173 -->
-<ul>
-  <li>You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento  Admin displayed 404 errors when accessing JavaScript elements. (RC2.0)</li>
-</ul>
-
-<!--- 70816 -->
-<ul>
-  <li>The WSDL listing now lists all available methods at all times without requiring authorization. (RC21)</li>
-</ul>
-
-<!--- 71030 -->
-<ul>
-  <li>Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)</li>
-</ul>
-
-<!--- 71179 -->
-<ul>
-  <li>Customers who subscribe to a newsletter are now subscribed as expected after confirming their account. Previously, Magento unsubscribed customers from the newsletter after confirming their account. (RC22)</li>
-</ul>
-
-<!--- 70540 -->
-<ul>
-  <li>You can now successfully edit bundle product options from the shopping cart. Previously, when you selected a bundle product in the cart, Magento displayed the product edit page, but you could not change the bundle option. (RC23)</li>
-</ul>
-
-<!--- 64085 -->
-<ul>
-  <li>Fixed HTML inline style used when sending emails that implement the upgraded <code class="highlighter-rouge">emorgifier</code> library. <a href="https://github.com/magento/magento2/issues/8241">GitHub-8241</a> (RC23)</li>
-</ul>
-
-<!--- 71415 -->
-<ul>
-  <li>Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time. (RC23)</li>
-</ul>
-
-<!--- 70377 -->
-<ul>
-  <li>Magento now correctly calculates the tier price percentage when displayed prices include tax. <a href="https://github.com/magento/magento2/issues/8833">GitHub-8833</a> (RC30)</li>
-</ul>
-
-<!--- 72112 -->
-<ul>
-  <li>Subcategories no longer show up in the menu when the parent category is disabled or hidden from the menu. <a href="https://github.com/magento/magento2/issues/10664">GitHub-10064</a> (RC30)</li>
-</ul>
-
-<!--- 59810 -->
-<ul>
-  <li>Showing reports on the <strong>Reports &gt; Coupons</strong> page no longer throws an error when the user is in a non-default Admin locale. <a href="https://github.com/magento/magento2/issues/7037">GitHub-7037</a> (RC30)</li>
-</ul>
-
-<h3 id="payment-methods">Payment methods</h3>
-
-<!--- 70500 -->
-<ul>
-  <li>Fixed issue related to incorrect stock quantity calculation for bundle and configurable products during the place order flow with PayPal Express Checkout. (RC22)</li>
-</ul>
-
-<!--- 71307 -->
-<ul>
-  <li>Paypal errors no longer occur when Fixed Product Tax  (FPT) is enabled. Previously,  when a product had an FPT, Paypal Express reported an error when you tried to place the order. (RC22)</li>
-</ul>
-
-<!--- 71371 -->
-<ul>
-  <li>Merchants can now accept payment on a Suspected Fraud order without Magento altering the amount in Total Paid. Previously,  when a merchant accepted payment for an order with a  status  of Suspected Fraud, Magento doubled the payment amount. (RC22)</li>
-</ul>
-
-<!--- 71050 -->
-<ul>
-  <li>Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error <code class="highlighter-rouge">No such entity with customerId = 0</code>. (RC22)</li>
-</ul>
-
-<h3 id="shipping">Shipping</h3>
-
-<!--- 72305 -->
-<ul>
-  <li>We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">here</a>. (RC30)</li>
-</ul>
-
-<!--- 67283 -->
-<ul>
-  <li>When upgrading Magento from 2.1.x to 2.2, the <code class="highlighter-rouge">quote_address.free_shipping</code> column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column. (RC2.0)</li>
-</ul>
-
-<!--- 70861-->
-<ul>
-  <li>Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)</li>
-</ul>
-
-<!--- 71749-->
-<ul>
-  <li>Magento now displays tracking information when selected for the second shipping label created for the DHL shipping method. Previously, when you tried to display a completed DHL  shipping label, Magento displayed an exception. (RC23)</li>
-</ul>
-
-<h3 id="url-rewrites">URL rewrites</h3>
-
-<!--- 70663 -->
-<ul>
-  <li>You can now assign products to a category when <strong>Match Products by rule</strong> is enabled. (RC2.0)</li>
-</ul>
-
-<!--- 70779 -->
-<ul>
-  <li>Magento now saves Category URL rewrites as expected. (RC2.0)</li>
-</ul>
-
-<h2 id="issues-resolved-in-release-candidate-1x">Issues resolved in Release Candidate 1.x</h2>
-
-<p>The following fixed issues have been logged against the Magento 2.2.0 RC1.x release and documented in previously released release notes.</p>
-
-<h3 id="installation-and-configuration">Installation and Configuration</h3>
-
-<!--- 69675 -->
-<ul>
-  <li>We’ve fixed problems with the upgrade process from 2.1.7 EE to 2.2.0 EE. (RC1.6)</li>
-</ul>
-
-<!--- 69854 -->
-<ul>
-  <li>You can now successfully use the <code class="highlighter-rouge">config:set</code> command to set allowed or default currencies.</li>
-</ul>
-
-<!--- 67299, 67315 -->
-<ul>
-  <li>The <code class="highlighter-rouge">catalog_url_rewrite_product_category</code> table is the same whether you’ve freshly installed or updated Magento 2.2.</li>
-</ul>
-
-<!--- 70314 -->
-<ul>
-  <li>The <code class="highlighter-rouge">cron:install</code> command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for <code class="highlighter-rouge">crontab</code> commands contained double quotes that were not escaped, which caused invalid commands to be written to the <code class="highlighter-rouge">crontab</code> file. <a href="https://github.com/magento/magento2/issues/10040">GitHub-10040</a></li>
-</ul>
-
-<!--- 70318 -->
-<ul>
-  <li>You can now generate static content without a database connection. <a href="https://github.com/magento/magento2/issues/10041">GitHub-10041</a> (RC1.5)</li>
-</ul>
-
-<!--- 67020 -->
-<ul>
-  <li>Magento now handles the <code class="highlighter-rouge">catalog_product_entity_media_gallery_value.position</code>  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)</li>
-</ul>
-
-<!--- 70869 -->
-<ul>
-  <li>Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the <code class="highlighter-rouge">styles-l.min.css</code> and <code class="highlighter-rouge">print.min.css</code> files could not be found. (RC1.8)</li>
-</ul>
-
-<!--- 68969 -->
-<ul>
-  <li>The contents of the <code class="highlighter-rouge">sales_sequence_meta</code> table is the same whether you install or upgrade Magento. (RC1.8)</li>
-</ul>
-
-<h3 id="catalog-1">Catalog</h3>
-
-<!--- 70066 -->
-<ul>
-  <li>We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.</li>
-</ul>
-
-<!--- 66480 -->
-<ul>
-  <li>You can now successfully create a product  and assign it to a store without encountering the following error: <code class="highlighter-rouge">Unique constraint violation found</code>. <a href="https://github.com/magento/magento2/issues/6671">GitHub-6671</a></li>
-</ul>
-
-<!--- 62637 -->
-<ul>
-  <li>You can now successfully set the <strong>Enable Product</strong> attribute to <strong>no</strong>.</li>
-</ul>
-
-<!--- 70790 -->
-<ul>
-  <li>You can now remove custom options from simple products. Previously, when you tried to remove a custom option from a product, Magento did not remove the options, and displayed an error message. (RC1.6)</li>
-</ul>
-
-<h3 id="checkout-1">Checkout</h3>
-
-<!--- 70618 -->
-<ul>
-  <li>Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously,  a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC1.6)</li>
-</ul>
-
-<!--- 70646 -->
-<ul>
-  <li>You can now save the settings you enter when creating a shipping label on an existing shipment.  Previously, clicking the Save button resulted in an error, and the shipping label was not saved. (RC1.5)</li>
-</ul>
-
-<h3 id="importexport">Import/export</h3>
-
-<!--- 67240 -->
-<ul>
-  <li>Magento now displays more verbose information about duplicated information with links to action for troubleshooting the import process.  Previously, Magento displayed duplicated or incomplete information on the product page after import. (RC1.5)</li>
-</ul>
-
-<!--- 65667 -->
-<ul>
-  <li>Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option’s ID numbers or the option’s values, Magento returned an error. (RC1.5)</li>
-</ul>
-
-<h3 id="magento-business-intelligence">Magento Business Intelligence</h3>
-
-<!--- 69615 -->
-<ul>
-  <li>Requests for data transfer from Magento to MBI data now complete successfully.</li>
-</ul>
-
-<h3 id="miscellaneous-1">Miscellaneous</h3>
-
-<!--- 69657 -->
-<ul>
-  <li>Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then press “Place Order”. The credit card information fields are emptied and user has to enter the credit card information again to proceed with  the order transaction.</li>
-</ul>
-
-<!--- 56062 -->
-<ul>
-  <li>The Recently Viewed Products block now appears as expected when the full page cache is enabled. <a href="https://github.com/magento/magento2/issues/3890">GitHub-3890</a></li>
-</ul>
-
-<!--- 59514 -->
-<ul>
-  <li>The <code class="highlighter-rouge">tax_region_id</code> value is no longer hard-coded in the <code class="highlighter-rouge">\Magento\Tax\Setup\InstallData</code> file.</li>
-</ul>
-
-<!--- 69964 -->
-<ul>
-  <li>PHPCS can now correctly parse the syntax of PHP 7.x return types.</li>
-</ul>
-
-<!--- 67619 -->
-<ul>
-  <li>The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page.</li>
-</ul>
-
-<!--- 69750 -->
-<ul>
-  <li>Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.</li>
-</ul>
-
-<!--- 69521 -->
-<ul>
-  <li>Magento now shows customer attributes in the Admin panel (as expected)  when the <strong>Show on Storefront</strong> option is set to <strong>No</strong>. Previously, when this setting was set to <strong>No</strong>, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section. (RC1.5)</li>
-</ul>
-
-<!--- 67048 -->
-<ul>
-  <li>You can now add a <code class="highlighter-rouge">translate</code> attribute to any String argument in the <code class="highlighter-rouge">di.xml</code> file for any class. This attribute provides an ability on the level of dependency injection configuration to specify that an argument can be translated. The actual translation of strings is handled by another Magento component. (RC1.6)</li>
-</ul>
-
-<!--- 70642 -->
-<ul>
-  <li>You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento displayed an error after you tried to save changes you may have made to this feature. (RC1.6)</li>
-</ul>
-
-<!--- 70628 -->
-<ul>
-  <li>The Forgot Your Password? email now includes an active link to reset your password. (RC1.6)</li>
-</ul>
-
-<!--- 62405 -->
-<ul>
-  <li>Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule. (RC1.6)</li>
-</ul>
-
-<!--- 64901 -->
-<ul>
-  <li>Magento now supports new top level domains for email addresses. <a href="https://github.com/magento/magento2/issues/4547">GitHub-4547</a> (RC1.6)</li>
-</ul>
-
-<!--- 67296 -->
-<ul>
-  <li>String localizations now works as expected when  phrases include text wrapped with single quotation marks. (RC1.6)</li>
-</ul>
-
-<!--- 70473 -->
-<ul>
-  <li>Magento now displays company information in the Account Information section of the Invoice, CreditMemo and Shipment pages. (RC1.8)</li>
-</ul>
-
-<!--- 70683 -->
-<ul>
-  <li>Magento now displays newly registered customers in the Admin customer list as expected. (RC1.8)</li>
-</ul>
-
-<!--- 70741 -->
-<ul>
-  <li>You can now successfully add a related product to a configurable product. Previously, Magento displayed an error when you tried to edit a configurable product by adding a related, simple product.  (RC1.8)</li>
-</ul>
-
-<h3 id="performance">Performance</h3>
-
-<!--- 70406 -->
-<ul>
-  <li>We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)</li>
-</ul>
-
-<h3 id="rest-api">REST API</h3>
-
-<!--- 70743 -->
-<ul>
-  <li>You can now use a REST request  to retrieve a shopping cart that contained a product with custom options.  Previously,  you could not use a REST request  to retrieve a shopping cart that contained a product with custom options. (RC1.8)</li>
-</ul>
-
-<!--- 57753 -->
-<ul>
-  <li>You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. <a href="https://github.com/magento/magento2/issues/6213">GitHub-6213</a> (RC1.5)</li>
-</ul>
-
-<h3 id="search">Search</h3>
-
-<!--- 63249 -->
-<ul>
-  <li>ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products.</li>
-</ul>
-
-<!--- 59477 -->
-<ul>
-  <li>Attribute weighting now works correctly for the MySQL adapter. <a href="https://github.com/magento/magento2/issues/9020">GitHub-9020</a> (RC1.5)</li>
-</ul>
-
-<!--- 65245 -->
-<ul>
-  <li>Magento now sends the <code class="highlighter-rouge">parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)</li>
-</ul>
-
-<h3 id="shipping-1">Shipping</h3>
-
-<!--- 70844 -->
-<ul>
-  <li>The DHL provider option is now available. (RC1.8)</li>
-</ul>
-
-<h3 id="tax-rules">Tax rules</h3>
-
-<!--- 70641 -->
-<ul>
-  <li>You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error. (RC1.8)</li>
-</ul>
-
-<!--- 59801 -->
-<ul>
-  <li>We’ve improved the performance of the Tax Rules form in installations containing many tax rates.</li>
-</ul>
-
-<h3 id="url-rewrites-1">URL rewrites</h3>
-
-<!--- 70663 -->
-<ul>
-  <li>You can now assign products to a category when  <strong>Match Products by rule</strong> is enabled. (RC1.6)</li>
-</ul>
-
-<!--- 70651 -->
-<ul>
-  <li>URL rewrites now occur as expected when category or products are saved. Previously, URLs rewrites did not occur for all categories. (RC1.6)</li>
-</ul>
-
-<h2 id="system-requirements">System requirements</h2>
-
-<p>Our technology stack is built on PHP and MySQL. For more information, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">System Requirements</a>.</p>
-
-<h2 id="installation">Installation</h2>
-
-<p>Installation instructions for all versions of this Release Candidate are documented <a href="/guides/v2.2/release-notes/release-candidate/install.html">here</a>.</p>
-
-<h2 id="credits">Credits</h2>
-<p>Dear community members, thank you for your suggestions and bug reports.</p>
+			<!-- place holder source file for redirects to work -->
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1299,7 +529,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/release-notes/release-notes-2-2-RC3-CE.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/release-notes/release-notes-2-2-RC3-CE.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

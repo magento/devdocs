@@ -1105,7 +1105,7 @@
 <h4>New installations</h4>
 <p>New users can now complete a full installation of Magento Open Source 2.0.7 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.</p>
 
-<h5 id="bdownload-a-new-installationb"><b>Download a new installation</b></h5>
+<h5 id="download-a-new-installation"><b>Download a new installation</b></h5>
 
 <ol>
   <li>
@@ -1119,7 +1119,7 @@
   </li>
 </ol>
 
-<h5 id="binstall-a-new-installation-with-composerb"><b>Install a new installation with Composer</b></h5>
+<h5 id="install-a-new-installation-with-composer"><b>Install a new installation with Composer</b></h5>
 
 <ol>
   <li>
@@ -1137,10 +1137,10 @@
 
 <p>This section discusses how to upgrade to 2.0.7.</p>
 
-<h5 id="bupgrade-using-the-setup-wizardb"><b>Upgrade using the Setup Wizard</b></h5>
+<h5 id="upgrade-using-the-setup-wizard"><b>Upgrade using the Setup Wizard</b></h5>
 <p>Use the instructions in <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>. When prompted to choose a version, choose 2.0.7.</p>
 
-<h5 id="bupgrade-an-existing-installation-from-the-github-repositoryb"><b>Upgrade an existing installation from the GitHub repository</b></h5>
+<h5 id="upgrade-an-existing-installation-from-the-github-repository"><b>Upgrade an existing installation from the GitHub repository</b></h5>
 <p>Developers who contribute to the Open Source codebase can <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.</p>
 
 <ol>
@@ -1152,7 +1152,7 @@
   </li>
 </ol>
 
-<h5 id="bupgrade-using-the-command-lineb"><b>Upgrade using the command line</b></h5>
+<h5 id="upgrade-using-the-command-line"><b>Upgrade using the command line</b></h5>
 <p>To upgrade to 2.0.7 using the command line:</p>
 
 <ol>
@@ -1165,24 +1165,21 @@
   <li>
     <p>Enter the following command to disable the cache:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:disable
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:disable
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;product&gt; 2.0.7 --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;product&gt; 2.0.7 --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>To upgrade to Magento Open Source 2.0.7, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.7 --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.7 --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>If prompted, enter your <a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a>.</p>
@@ -1190,16 +1187,14 @@ composer update
   <li>
     <p>Update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento setup:upgrade
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command to enable the cache:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:enable
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:enable
+</code></pre></div>    </div>
   </li>
 </ol>
 

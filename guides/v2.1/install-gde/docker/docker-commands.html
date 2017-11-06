@@ -351,23 +351,20 @@
 <h4 id="start-the-magento-cron-job-and-populate-the-cache">Start the Magento cron job and populate the cache</h4>
 <p>Use the following command to both start the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview">Magento cron job</a> and populate the cache and storefront:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --magento-cron-run=1 --no-interaction
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --magento-cron-run=1 --no-interaction
+</code></pre></div></div>
 
 <h4 id="start-the-magento-cron-job-only">Start the Magento cron job only</h4>
 <p>Use the following command on a running system to only start the Magento cron job. This command might save resources and battery life on your laptop.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-cron-run=1 --no-interaction
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-cron-run=1 --no-interaction
+</code></pre></div></div>
 
 <h4 id="populate-the-storefront-and-cache-only">Populate the storefront and cache only</h4>
 <p>Use the following command on a running system to only populate the storefront and cache but <em>not</em> run the Magento cron job.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --no-interaction
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --no-interaction
+</code></pre></div></div>
 </div></div>
 
 <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Configure DevBox to always populate the storefront and cache and run cron </h3><div class="collapsible-content"><p>To populate the storefront and cache, and run cron to run every time Magento starts:</p>
@@ -376,9 +373,8 @@
   <li>
     <p>Stop all running containers.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose stop
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose stop
+</code></pre></div>    </div>
   </li>
   <li>Open <code class="highlighter-rouge">&lt;project root dir&gt;/docker-compose.yml</code> in a text editor.</li>
   <li>
@@ -388,24 +384,21 @@
       <li>
         <p>To enable cron to run only, set the value of the following parameter to <code class="highlighter-rouge">1</code>:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>MAGENTO_CRON_RUN=1
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MAGENTO_CRON_RUN=1
+</code></pre></div>        </div>
       </li>
       <li>
         <p>To only populate the storefront and cache but <em>not</em> run the Magento cron job, set the value of the following parameter to <code class="highlighter-rouge">1</code>:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>MAGENTO_WARM_UP_STOREFRONT=1
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MAGENTO_WARM_UP_STOREFRONT=1
+</code></pre></div>        </div>
       </li>
       <li>
         <p>To both enable the Magento cron job and to always populate the storefront and cache, set the values of both of the following parameters to <code class="highlighter-rouge">1</code>:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>MAGENTO_CRON_RUN=1
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MAGENTO_CRON_RUN=1
 MAGENTO_WARM_UP_STOREFRONT=1
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
@@ -413,9 +406,8 @@ MAGENTO_WARM_UP_STOREFRONT=1
   <li>
     <p>Start all containers.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose start
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose start
+</code></pre></div>    </div>
   </li>
 </ol>
 </div></div>
@@ -428,9 +420,8 @@ MAGENTO_WARM_UP_STOREFRONT=1
 <h3 id="restart-the-containers-after-rebooting">Restart the containers after rebooting</h3>
 <p>After you restart your computer, we recommend you use the following command, which restarts all services and assigns them new ports:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>m2devbox-reset[.bat|sh]
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m2devbox-reset[.bat|sh]
+</code></pre></div></div>
 
 <h3 id="find-currently-used-ports">Find currently used ports</h3>
 <p>If you’re not sure what ports on which DevBox services are running, use the <code class="highlighter-rouge">docker-compose ps</code> command as follows:</p>
@@ -477,17 +468,15 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
   <h3 id="start-stop-restart-services">Start, stop, restart services</h3>
   <p>DevBox uses two service names: <code class="highlighter-rouge">web</code> and <code class="highlighter-rouge">db</code>. To start, stop, or restart them, use the following commands:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose start &lt;service&gt;
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose start &lt;service&gt;
 docker-compose stop &lt;service&gt;
 docker-compose restart &lt;service&gt;
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>For example, to restart the web service:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose restart web
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose restart web
+</code></pre></div>  </div>
 </div>
 </div></div>
 

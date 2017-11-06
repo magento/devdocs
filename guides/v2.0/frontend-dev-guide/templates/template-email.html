@@ -1223,7 +1223,7 @@ Make note of this path because you will need it later when you configure this ne
 </ol>
 
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
-<p>Every frontend email template includes a header and footer template using these two directives: <code class="highlighter-rouge"><span class="p">{</span><span class="err">{template</span><span class="w"> </span><span class="err">config_path=</span><span class="nt">"design/email/header_template"</span><span class="err">}}</span></code> and <code class="highlighter-rouge"><span class="p">{</span><span class="err">{template</span><span class="w"> </span><span class="err">config_path=</span><span class="nt">"design/email/footer_template"</span><span class="err">}}</span></code>. By default, those two directives load contents from these files:</p>
+<p>Every frontend email template includes a header and footer template using these two directives: <code class="highlighter-rouge">{{template config_path="design/email/header_template"}}</code> and <code class="highlighter-rouge">{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
   <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/header.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code></a></li>
@@ -1235,7 +1235,7 @@ Make note of this path because you will need it later when you configure this ne
 <h3 id="customize-content">Customize email content</h3>
 <p>To add the store and sales related information to a template, use system variables.</p>
 
-<p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{var</span><span class="w"> </span><span class="err">store_hours</span><span class="p">}</span><span class="err">}</span></code> variable is replaced by the value set in the <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Emails</strong> section.</p>
+<p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code class="highlighter-rouge">{{var store_hours}}</code> variable is replaced by the value set in the <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Emails</strong> section.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1267,9 +1267,8 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>The <code class="highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file contains an <code class="highlighter-rouge">inlinecss</code> directive:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{inlinecss</span><span class="w"> </span><span class="err">file=</span><span class="nt">"css/email-inline.css"</span><span class="err">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{inlinecss file="css/email-inline.css"}}
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">inlinecss</code> directive tells Magento which files to apply as inline styles on the email template.</p>
 
@@ -1287,20 +1286,19 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>The <code class="highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file contains a <code class="highlighter-rouge">css</code> directive inside of a <code class="highlighter-rouge">&lt;style&gt;</code> tag:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;style type="text/css"&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;style type="text/css"&gt;
     {{var template_styles|raw}}
 
     {{css file="css/email.css"}}
 &lt;/style&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">css</code> directive compiles the contents of the provided file and outputs it.</p>
 
 <p>For example, let’s say an email is being sent from a store configured with the Magento Luma theme. The <code class="highlighter-rouge">css</code> directive first looks for an <code class="highlighter-rouge">email.less</code> file in <code class="highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/web/css</code>. However, because the file doesn’t exist there, it falls back to <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code>. The contents of that file are compiled and its contents output in the <code class="highlighter-rouge">&lt;style&gt;</code> tag.</p>
 
 <h4 id="template-specific-non-inline-styles">Template-specific non-inline styles</h4>
-<p>As mentioned in the preceding section, the <code class="highlighter-rouge">header.html</code> file outputs the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{var</span><span class="w"> </span><span class="err">template_styles|raw</span><span class="p">}</span><span class="err">}</span></code> variable.</p>
+<p>As mentioned in the preceding section, the <code class="highlighter-rouge">header.html</code> file outputs the <code class="highlighter-rouge">{{var template_styles|raw}}</code> variable.</p>
 
 <p>The value of that variable comes from any of the following:</p>
 
@@ -1308,11 +1306,10 @@ Make note of this path because you will need it later when you configure this ne
   <li>
     <p>Any styles you add to any <code class="highlighter-rouge">html</code> email template inside a comment block, like in the following example, are included in the <code class="highlighter-rouge">template_styles</code> variable:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;!--@styles 
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--@styles 
 .example-style { color: green; }
 @--&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>If you customize transactional emails using the Magento Admin, you can add CSS styles to the <strong>Template Styles</strong> field to include those styles in the <code class="highlighter-rouge">template_styles</code> variable.</p>
@@ -1459,19 +1456,18 @@ Make note of this path because you will need it later when you configure this ne
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{if</span><span class="w"> </span><span class="err">logo_width</span><span class="p">}</span><span class="err">}</span><span class="w">
-    </span><span class="err">width=</span><span class="s2">"{{var logo_width}}"</span><span class="w">
-</span><span class="p">{</span><span class="err">{else</span><span class="p">}</span><span class="err">}</span><span class="w">
-    </span><span class="err">width=</span><span class="s2">"200"</span><span class="w">
-</span><span class="p">{</span><span class="err">{/if</span><span class="p">}</span><span class="err">}</span><span class="w">
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{if logo_width}}
+    width="{{var logo_width}}"
+{{else}}
+    width="200"
+{{/if}}
    
-</span><span class="p">{</span><span class="err">{if</span><span class="w"> </span><span class="err">logo_height</span><span class="p">}</span><span class="err">}</span><span class="w">
-    </span><span class="err">height=</span><span class="s2">"{{var logo_height}}"</span><span class="w">
-</span><span class="p">{</span><span class="err">{else</span><span class="p">}</span><span class="err">}</span><span class="w">
-    </span><span class="err">height=</span><span class="s2">"100"</span><span class="w">
-</span><span class="p">{</span><span class="err">{/if</span><span class="p">}</span><span class="err">}</span><span class="w">
-</span></code></pre>
-    </div>
+{{if logo_height}}
+    height="{{var logo_height}}"
+{{else}}
+    height="100"
+{{/if}}
+</code></pre></div>    </div>
 
     <p>You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.</p>
   </li>
@@ -1516,21 +1512,19 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>The sales emails are configured to display all of the above values, if they’re configured in the admin. If you want to add those values to other email templates, you can use the following variables:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{var</span><span class="w"> </span><span class="err">store.getFrontendName()</span><span class="p">}</span><span class="err">}</span><span class="w">
-</span><span class="p">{</span><span class="err">{var</span><span class="w"> </span><span class="err">store_email</span><span class="p">}</span><span class="err">}</span><span class="w">
-</span><span class="p">{</span><span class="err">{var</span><span class="w"> </span><span class="err">store_phone</span><span class="p">}</span><span class="err">}</span><span class="w">
-</span><span class="p">{</span><span class="err">{var</span><span class="w"> </span><span class="err">store_hours</span><span class="p">}</span><span class="err">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{var store.getFrontendName()}}
+{{var store_email}}
+{{var store_phone}}
+{{var store_hours}}
+</code></pre></div></div>
 
 <h2 id="localization">Localization</h2>
 
 <p>In order to support the translation of content, all strings in emails are output using the <code class="highlighter-rouge">trans</code> directive. Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{trans</span><span class="w"> </span><span class="nt">"Thank you for your order from %store_name."</span><span class="w"> </span><span class="err">store_name=$store.getFrontendName()}}</span><span class="w">
-</span><span class="p">{</span><span class="err">{trans</span><span class="w"> </span><span class="nt">"Once your package ships we will send you a tracking number."</span><span class="err">}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+{{trans "Once your package ships we will send you a tracking number."}}
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">trans</code> directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the <code class="highlighter-rouge">fr_FR</code> locale, the emails are translated to French.</p>
 
@@ -1538,15 +1532,13 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>Correct:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{trans</span><span class="w"> </span><span class="nt">"Thank you for your order from %store_name."</span><span class="w"> </span><span class="err">store_name=$store.getFrontendName()}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+</code></pre></div></div>
 
 <p>Incorrect:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">{trans</span><span class="w"> </span><span class="nt">"Thank you for your order from %store_name."</span><span class="w"> </span><span class="err">store_name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">$store.getFrontendName()}}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>
@@ -1600,9 +1592,9 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 <p>The focus of this article is on transactional emails but the same techniques can be used with newsletter templates as well, including:</p>
 
 <ul>
-  <li>Import the header and footer using <code class="highlighter-rouge"><span class="p">{</span><span class="err">{template</span><span class="w"> </span><span class="err">config_path=</span><span class="nt">"design/email/header_template"</span><span class="err">}}</span></code> and <code class="highlighter-rouge"><span class="p">{</span><span class="err">{template</span><span class="w"> </span><span class="err">config_path=</span><span class="nt">"design/email/footer_template"</span><span class="err">}}</span></code></li>
-  <li>Apply inline styles using <code class="highlighter-rouge"><span class="p">{</span><span class="err">{inlinecss</span><span class="w"> </span><span class="err">file=</span><span class="nt">"css/email-inline.css"</span><span class="err">}}</span></code></li>
-  <li>Include non-inline styles using <code class="highlighter-rouge"><span class="p">{</span><span class="err">{css</span><span class="w"> </span><span class="err">file=</span><span class="nt">"css/email.css"</span><span class="err">}}</span></code></li>
+  <li>Import the header and footer using <code class="highlighter-rouge">{{template config_path="design/email/header_template"}}</code> and <code class="highlighter-rouge">{{template config_path="design/email/footer_template"}}</code></li>
+  <li>Apply inline styles using <code class="highlighter-rouge">{{inlinecss file="css/email-inline.css"}}</code></li>
+  <li>Include non-inline styles using <code class="highlighter-rouge">{{css file="css/email.css"}}</code></li>
 </ul>
 
 		</div>

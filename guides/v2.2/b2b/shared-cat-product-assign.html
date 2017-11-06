@@ -712,9 +712,9 @@
 
 <p><strong>REST Endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/assignCategories</span><span class="w">
-</span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/unassignCategories</span><span class="w">
-</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/categories</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">id/assignCategories</span><span class="w">
+</span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">id/unassignCategories</span><span class="w">
+</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">id/categories</span></code></pre></figure>
 
 <p><strong>Category parameters</strong></p>
 
@@ -752,18 +752,18 @@
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -785,13 +785,13 @@
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
     </span><span class="p">},</span><span class="w">
 
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -831,9 +831,9 @@
 
 <p><strong>REST endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/assignProducts</span><span class="w">
-</span><span class="err">POST</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/unassignProducts</span><span class="w">
-</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/products</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">id/assignProducts</span><span class="w">
+</span><span class="err">POST</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">id/unassignProducts</span><span class="w">
+</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">id/products</span></code></pre></figure>
 
 <p><strong>Category parameters</strong></p>
 
@@ -871,24 +871,24 @@
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-	</span><span class="nt">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+	</span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     	</span><span class="p">{</span><span class="w">
-        	</span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
+        	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
     	</span><span class="p">},</span><span class="w">
     	</span><span class="p">{</span><span class="w">
-        	</span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB04"</span><span class="w">
+        	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB04"</span><span class="w">
     	</span><span class="p">},</span><span class="w">
     	</span><span class="p">{</span><span class="w">
-        	</span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG06"</span><span class="w">
+        	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG06"</span><span class="w">
     	</span><span class="p">},</span><span class="w">
     	</span><span class="p">{</span><span class="w">
-        	</span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG07"</span><span class="w">
+        	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG07"</span><span class="w">
     	</span><span class="p">},</span><span class="w">
     	</span><span class="p">{</span><span class="w">
-        	</span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG04"</span><span class="w">
+        	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG04"</span><span class="w">
     	</span><span class="p">},</span><span class="w">
     	</span><span class="p">{</span><span class="w">
-        	</span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG01"</span><span class="w">
+        	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG01"</span><span class="w">
     	</span><span class="p">}</span><span class="w">
 	</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -908,9 +908,9 @@
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   	</span><span class="p">{</span><span class="w">
-  		</span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG01"</span><span class="w">
+  		</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG01"</span><span class="w">
   	</span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>

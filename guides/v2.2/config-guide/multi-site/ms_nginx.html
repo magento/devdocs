@@ -2023,7 +2023,7 @@
   <li>
     <p>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/french.mysite.mg.conf</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
    french.mysite.mg french;
 }
 
@@ -2034,13 +2034,12 @@ server {
    set $MAGE_MODE developer;
    include /var/www/html/magento2/nginx.conf;
 }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Create another file named <code class="highlighter-rouge">german.mysite.mg.conf</code> in the same directory with the following contents:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
    german.mysite.mg german;
 }
 
@@ -2051,34 +2050,30 @@ server {
    set $MAGE_MODE developer;
    include /var/www/html/magento2/nginx.conf;
 }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Save your changes to the files and exit the text editor.</li>
   <li>
     <p>Verify the server configuration:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>nginx -t
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nginx -t
+</code></pre></div>    </div>
   </li>
   <li>
     <p>If successful, the following message displays:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>nginx: configuration file /etc/nginx/nginx.conf test is successful
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nginx: configuration file /etc/nginx/nginx.conf test is successful
+</code></pre></div>    </div>
 
     <p>If errors display, check the syntax of your virtual host configuration files.</p>
   </li>
   <li>
     <p>Create symbolic links in the <code class="highlighter-rouge">/etc/nginx/sites-enabled</code> directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd /etc/nginx/sites-enabled
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /etc/nginx/sites-enabled
 ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
 ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2095,19 +2090,17 @@ ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
     <li>
       <p>Add the static route in the format:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>&lt;ip address&gt; french.mysite.mg
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ip address&gt; french.mysite.mg
 &lt;ip address&gt; german.mysite.mg
-</code></pre>
-      </div>
+</code></pre></div>      </div>
     </li>
     <li>
       <p>Go to one of the following URLs in your browser:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>http://mysite.mg/admin
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://mysite.mg/admin
 http://french.mysite.mg/frenchstoreview
 http://german.mysite.mg/germanstoreview
-</code></pre>
-      </div>
+</code></pre></div>      </div>
     </li>
   </ol>
 

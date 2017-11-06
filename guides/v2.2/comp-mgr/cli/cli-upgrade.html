@@ -1152,21 +1152,18 @@
 
   <p>To set the variable, before the upgrade starts enter the following command as the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span> in a bash shell prompt:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>export DATA_CONVERTER_BATCH_SIZE &lt;value&gt;
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export DATA_CONVERTER_BATCH_SIZE &lt;value&gt;
+</code></pre></div>  </div>
 
   <p>For example,</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>export DATA_CONVERTER_BATCH_SIZE 100000
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export DATA_CONVERTER_BATCH_SIZE 100000
+</code></pre></div>  </div>
 
   <p>After your upgrade completes, you can unset the variable as follows:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>unset DATA_CONVERTER_BATCH_SIZE
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unset DATA_CONVERTER_BATCH_SIZE
+</code></pre></div>  </div>
 
   <div class="bs-callout bs-callout-info">
     <p><code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code> requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.</p>
@@ -1180,17 +1177,15 @@
 
   <p>To verify your cron jobs are set up properly, enter the following command as the Magento file system owner:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -l
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -l
+</code></pre></div>  </div>
 
   <p>Results similar to the following should display:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Another symptom of cron not running is the following error in the Magento Admin:</p>
 
@@ -1211,9 +1206,8 @@
 
   <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2
+</code></pre></div>  </div>
 
   <p>A sample result follows:</p>
 
@@ -1254,9 +1248,8 @@ drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor</code></pre></figu
 
   <p>To get more detailed information, you can optionally enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
+</code></pre></div>  </div>
 
   <p>Because Magento deploys static file assets to subdirectories of <code class="highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
 
@@ -1289,9 +1282,8 @@ drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor</code></pre></figu
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento maintenance:enable
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento maintenance:enable
+</code></pre></div>    </div>
 
     <p>For additional options, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>.</p>
   </li>
@@ -1310,24 +1302,21 @@ drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor</code></pre></figu
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;product&gt; &lt;version&gt; --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;product&gt; &lt;version&gt; --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>For example, to upgrade to Magento Open Source version 2.0.11, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.11 --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.11 --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>To upgrade to Magento EE version 2.0.11, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/product-enterprise-edition 2.0.11 --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/product-enterprise-edition 2.0.11 --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="/guides/v2.2/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
@@ -1337,41 +1326,36 @@ composer update
   <li>
     <p>Manually clear <code class="highlighter-rouge">var</code> subdirectories:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf &lt;Magento install dir&gt;/var/cache/*
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf &lt;Magento install dir&gt;/var/cache/*
 rm -rf &lt;Magento install dir&gt;/var/page_cache/*
 rm -rf &lt;Magento install dir&gt;/generated/code/* 
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Update the database schema and data:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento setup:upgrade
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Put your storefront online (that is, cancel maintenance mode):</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento maintenance:disable
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento maintenance:disable
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart Varnish if you use it for page caching.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>service varnish restart
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service varnish restart
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Access your storefront.</p>
 
     <p>The following error might display:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>We're sorry, an error has occurred while generating this email.
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We're sorry, an error has occurred while generating this email.
+</code></pre></div>    </div>
 
     <p>If so, perform the following tasks:</p>
 
@@ -1380,11 +1364,10 @@ rm -rf &lt;Magento install dir&gt;/generated/code/*
       <li>
         <p>Clear the following directories and try again:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>&lt;your Magento install dir&gt;/var/cache 
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;your Magento install dir&gt;/var/cache 
 &lt;your Magento install dir&gt;/var/page_cache 
 &lt;your Magento install dir&gt;/generated/code
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
     </ol>
   </li>

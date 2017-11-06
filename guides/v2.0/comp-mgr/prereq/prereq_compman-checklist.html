@@ -1017,23 +1017,20 @@
 
   <p>To verify your cron jobs are set up properly, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u &lt;magento file system owner&gt; -l
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u &lt;magento file system owner&gt; -l
+</code></pre></div>  </div>
 
   <p>For example, if your Magento file system owner is named <code class="highlighter-rouge">magento_user</code>, enter:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u magento_user -l
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u magento_user -l
+</code></pre></div>  </div>
 
   <p>Results similar to the following should display:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Another symptom of cron not running is the following error in the Magento Admin:</p>
 
@@ -1054,9 +1051,8 @@
 
   <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2
+</code></pre></div>  </div>
 
   <p>A sample result follows:</p>
 
@@ -1097,9 +1093,8 @@ drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor</code></pre></figu
 
   <p>To get more detailed information, you can optionally enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
+</code></pre></div>  </div>
 
   <p>Because Magento deploys static file assets to subdirectories of <code class="highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
 

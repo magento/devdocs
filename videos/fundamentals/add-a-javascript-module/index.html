@@ -379,21 +379,20 @@ The steps we’ll need to take are:</p>
 
 <p>We will create a new module called Learning_Js:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ mkdir app/code/Learning
 $ mkdir app/code/Learning/Js
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now create two files:</p>
 
 <p><code class="highlighter-rouge">app/code/Learning/Js/registration.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Learning_Js',
-    __DIR__
-);
+<div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+    <span class="s1">'Learning_Js'</span><span class="p">,</span>
+    <span class="nx">__DIR__</span>
+<span class="p">);</span>
   </code></pre></figure>
 </div></div>
 
@@ -413,18 +412,17 @@ $ mkdir app/code/Learning/Js
 
 <p>Next, we’ll create a view folder:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ mkdir app/code/Learning/Js/view
 $ mkdir app/code/Learning/Js/view/fronted
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Add the file <code class="highlighter-rouge">app/code/Learning/Js/view/frontend/requirejs-config.js</code>:</p>
 
 <div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">map</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'*'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nl">hello</span><span class="p">:</span>           <span class="s1">'Learning_Js/js/hello'</span><span class="p">,</span>
+            <span class="na">hello</span><span class="p">:</span>           <span class="s1">'Learning_Js/js/hello'</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -433,10 +431,9 @@ $ mkdir app/code/Learning/Js/view/fronted
 
 <p>Then add the JavaScript module:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir app/code/Learning/Js/view/frontend/web
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir app/code/Learning/Js/view/frontend/web
 $ mkdir app/code/Learning/Js/view/frontend/web/js
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And finally, add the file <code class="highlighter-rouge">app/code/Learning/Js/view/frontend/web/js/hello.js</code>:</p>
 
@@ -456,11 +453,10 @@ $ mkdir app/code/Learning/Js/view/frontend/web/js
 
 <p>First, we need to create the layout folder:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ mkdir app/code/Learning/Js/view/frontend
 $ mkdir app/code/Learning/Js/view/frontend/layout
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And the add the file <code class="highlighter-rouge">catalog_product_view.xml</code>:</p>
 
@@ -480,10 +476,9 @@ $ mkdir app/code/Learning/Js/view/frontend/layout
 
 <p>Now, we’ll create the template that will enable JavaScript.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ mkdir app/code/Learning/Js/view/frontend/templates
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In the templates directory, add the file <code class="highlighter-rouge">app/code/Learning/Js/view/frontend/templates/hello.phtml</code>:</p>
 
@@ -508,10 +503,9 @@ In this case, the JavaScript module should return a function with two parameters
 
 <p>Finally, let’s add our module and test the result.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now we’ll go to any product view page, and we should see the “HELLO WORLD!” message.</p>
 

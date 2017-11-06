@@ -1214,14 +1214,13 @@
 <h3 id="translate_terms">Terms used</h3>
 <p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code class="highlighter-rouge">en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code class="highlighter-rouge">en_US</code>) to German (<code class="highlighter-rouge">de_DE</code>):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"Add to Cart","Zum Warenkorb hinzufügen"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Add to Cart","Zum Warenkorb hinzufügen"
 "Add to Compare","Hinzufügen um zu vergleichen"
 "Add to Wishlist","Zum Wunschzettel hinzufügen"
 "Additional Product Info","Zusätzliche Angaben zum Produkt"
 "Address","Adresse"
 "Address %1 of %2","Adresse %1 von %2"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A <em>language package</em> is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.</p>
 
@@ -1311,10 +1310,9 @@
 
 <p>The Magento application automatically assembles translation dictionaries located in modules’ <code class="highlighter-rouge">i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code class="highlighter-rouge">pt_BR</code>) translation dictionaries might be located in <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and theme directories similar to the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;Magento_Checkout_module_dir&gt;/i18n/pt_BR.csv
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Magento_Checkout_module_dir&gt;/i18n/pt_BR.csv
 &lt;Magento_Checkout_module_dir&gt;/&lt;theme&gt;/i18n/pt_BR.csv
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;</code> stands for the Magento_Checkout module directory. Its actual location in your code base depends on the way Magento was installed. See <a href="/guides/v2.2/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a> for details.</p>
@@ -1332,7 +1330,7 @@
   <li>
     <p>A set of .csv files for modules and themes. These packages files are intended to be deployed in modules. For example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>__/app
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>__/app
  |__/code
  | |__/Magento
  |   |__/Catalog
@@ -1350,8 +1348,7 @@
        |__/&lt;theme&gt;
          |__/i18n
            |-- pt_BR.csv
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Language packages that contain a entire dictionary in one directory.</p>

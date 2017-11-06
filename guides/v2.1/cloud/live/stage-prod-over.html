@@ -267,26 +267,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Overview of staging and production</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -390,10 +370,12 @@
   <h3 id="git-and-ssh-urls">Git and SSH URLs</h3>
   <p>Locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Commerce (Cloud).</p>
 
-  <p>After you know these URLs, you can access those environments without further intervention.
-* Use the URLs to access the store as a customer.
-* Use the URL /admin to access the Admin panel.
-* Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.</p>
+  <p>After you know these URLs, you can access those environments without further intervention.</p>
+  <ul>
+    <li>Use the URLs to access the store as a customer.</li>
+    <li>Use the URL /admin to access the Admin panel.</li>
+    <li>Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.</li>
+  </ul>
 
   <h2 id="read-only-environments">Read-only environments</h2>
   <p>You should always deploy code and data from the <code class="highlighter-rouge">master</code> branch of your Integration environment to Staging, then to Production. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.</p>

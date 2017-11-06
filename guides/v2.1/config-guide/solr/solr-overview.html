@@ -1740,9 +1740,8 @@ It’s easier to run Solr in development by disabling the firewall and SELinux b
 <h4 id="disable-iptables-and-selinux">Disable iptables and SELinux</h4>
 <p>To stop the <code class="highlighter-rouge">iptables</code> (firewall) service, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>service iptables stop
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service iptables stop
+</code></pre></div></div>
 
 <p>To set SELinux for permissive mode:</p>
 
@@ -1750,9 +1749,8 @@ It’s easier to run Solr in development by disabling the firewall and SELinux b
   <li>
     <p>To determine if SELinux is enabled, enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>getenforce
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getenforce
+</code></pre></div>    </div>
 
     <p><code class="highlighter-rouge">Enforcing</code> displays to confirm that SELinux is running.
   (If <code class="highlighter-rouge">Permissive</code> displays, continue with the next section.)</p>
@@ -1760,9 +1758,8 @@ It’s easier to run Solr in development by disabling the firewall and SELinux b
   <li>
     <p>To change to permissive mode, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>setenforce 0
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setenforce 0
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1780,9 +1777,8 @@ It’s easier to run Solr in development by disabling the firewall and SELinux b
 <h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
 <p>To determine if Java is already installed, enter the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>java -version
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
+</code></pre></div></div>
 
 <p>If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section.</p>
 
@@ -1835,15 +1831,14 @@ For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" t
 
     <p>An example follows.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p &lt;empty-directory&lt;&gt;  
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p &lt;empty-directory&lt;&gt;  
 cd &lt;directory&gt;
 wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>Messages similar to the following display to confirm a successful download.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
 --2016-10-01 15:54:37--  http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
 Resolving archive.apache.org... 163.172.17.199
 Connecting to archive.apache.org|163.172.17.199|:80... connected.
@@ -1853,15 +1848,13 @@ Saving to: "solr-4.10.4.tgz"
 
 100%[==========================================================&gt;] 150,059,757 8.99M/s   in 4.5s
 2016-10-01 15:55:23 (3.18 MB/s) - "solr-4.10.4.tgz" saved [150059757/150059757]
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Unpack the Solr installation; an example follows.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>tar -xvf solr-4.10.4.tgz
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -xvf solr-4.10.4.tgz
+</code></pre></div>    </div>
   </li>
 </ol>
 

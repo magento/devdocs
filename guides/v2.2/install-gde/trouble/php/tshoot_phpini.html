@@ -2408,10 +2408,9 @@
 
 <p>During or after installation, a  message similar to the following displays:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message 
 'SQLSTATE[HY000] [2002] No such file or directory 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="solution">Solution</h3>
 
@@ -2424,9 +2423,8 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php -i | grep 'php.ini'
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -i | grep 'php.ini'
+</code></pre></div>    </div>
 
     <p>This determines the settings used by the PHP command-line interface (CLI). Note where <code class="highlighter-rouge">php.ini</code> is located.</p>
   </li>

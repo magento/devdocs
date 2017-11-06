@@ -392,16 +392,15 @@
 <h2 id="create-a-new-module">Create a new module</h2>
 <p>We will create a new module called <code class="highlighter-rouge">Learning_HelloPage</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code
 $ mkdir Learning
 $ mkdir Learning/HelloPage
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now create two files:</p>
 
-<figure class="highlight"><pre><code class="language-console" data-lang="console">Learning/HelloPage/registration.php
-Learning/HelloPage/etc/module.xml</code></pre></figure>
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">Learning/HelloPage/registration.php
+Learning/HelloPage/etc/module.xml</span></code></pre></figure>
 
 <h4 id="registrationphp">registration.php</h4>
 
@@ -454,11 +453,10 @@ When Magento 2 sees a URL like <code class="highlighter-rouge">test/chunk2/chunk
 <h2 id="add-a-controller-action-file">Add a controller (action) file</h2>
 <p>Let’s add the controller now.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code/Learning/HelloPage
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code/Learning/HelloPage
 $ mkdir Controller
 $ mkdir Controller/Page
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Let’s create an action file <code class="highlighter-rouge">Controller/Page/View.php</code>:</p>
 
@@ -499,16 +497,14 @@ $ mkdir Controller/Page
 
 <p>Note we created a JSON-type page. This can be seen in the results factory that we specify in our constructor. In order to activate our module and our page we should run the Magento setup upgrade:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now we need to verify that <code class="highlighter-rouge">Learning_HelloPage</code> is present in the output. If you examine the <code class="highlighter-rouge">/test/page/view</code> page, you should see the message:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Hello world!"</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"message":"Hello world!"}
+</code></pre></div></div>
 
 <p>This is because we returned a <code class="highlighter-rouge">ResultJson</code> object. Magento 2 has different result objects for different cases – ResultPage for a regular page, Forward result, and so on.</p>
 

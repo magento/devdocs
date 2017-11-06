@@ -265,26 +265,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Reuse code across projects with Git submodules</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -310,7 +290,7 @@ Magento Commerce (Cloud) clones the submodules automatically.</p>
 
 <p>Here is an example of a <code class="highlighter-rouge">.gitmodules</code> file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[submodule "app/Oro"]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[submodule "app/Oro"]
 	path = src/Oro
 	url = https://github.com/orocrm/platform.git
 [submodule "src/OroPackages/src/Oro/Bundle/EntitySerializedFieldsBundle"]
@@ -319,22 +299,20 @@ Magento Commerce (Cloud) clones the submodules automatically.</p>
 [submodule "src/OroB2B"]
 	path = src/OroB2B
 	url = https://github.com/orocommerce/orocommerce.git
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>When you run <code class="highlighter-rouge">git push</code>, messages similar to the following display:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Validating submodules.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Validating submodules.
   Updated submodule git://github.com/orocommerce/orocommerce: 4 references updated.
   Updated submodule git://github.com/orocrm/platform: 229 references updated.
   Updated submodule git://github.com/orocrm/OroEntitySerializedFieldsBundle: 11 references updated.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="error-validating-submodules">Error validating submodules</h2>
 <p>The following error displays if you access a Git <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> like <code class="highlighter-rouge">git@github.com:...</code> because no SSH key is present in the repository referenced by the submodule:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Validating submodules.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Validating submodules.
   Found unresolvable links, updating submodules.
 
 E: Error validating submodules in tree:
@@ -342,8 +320,7 @@ E: Error validating submodules in tree:
 
    This might be due to the following errors fetching submodules:
     - git@github.com:orocommerce/orocommerce.git: HangupException: The remote server unexpectedly closed the connection.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To resolve the issue, edit <code class="highlighter-rouge">.gitmodules</code> and replace <code class="highlighter-rouge">git@github.com:...</code> URLs with HTTPS URLs in the format: <code class="highlighter-rouge">https://github.com/...</code>.</p>
 

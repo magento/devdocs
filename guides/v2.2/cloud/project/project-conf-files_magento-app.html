@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1893,30 +1893,27 @@
 
 <p>Supported versions:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type: php:7.1
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: php:7.1
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">build</code> determines what happens by default when building the project. The only value currently supported is <code class="highlighter-rouge">composer</code>.</p>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type: php:7.1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: php:7.1
 build:
     flavor: composer
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-yaml-platform-access"><code class="highlighter-rouge">access</code></h2>
 <p><code class="highlighter-rouge">access</code> defines the user roles who can log in using SSH to the environments to which they have access.</p>
 
 <p>Possible values are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ssh: admin
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh: admin
 ssh: contributor
 ssh: viewer
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-yaml-platform-rel"><code class="highlighter-rouge">relationships</code></h2>
 <p><code class="highlighter-rouge">relationships</code> defines how services are mapped in your application.</p>
@@ -1925,12 +1922,11 @@ ssh: viewer
 
 <p>Example of valid options are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>database: "mysql:mysql"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>database: "mysql:mysql"
 database2: "mysql2:mysql"
 cache: "arediscache:redis"
 search: "searchengine:solr"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>See also <a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code> documentation</a> for a full list of currently supported service types and endpoints.</p>
 
@@ -1959,7 +1955,7 @@ search: "searchengine:solr"
 
 <p>The following displays the default set of web accessible locations associated with an entry in <a href="#cloud-yaml-platform-mounts"><code class="highlighter-rouge">mounts</code></a>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># The configuration of app when it is exposed to the web.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># The configuration of app when it is exposed to the web.
 web:
 locations:
     "/":
@@ -1990,8 +1986,7 @@ locations:
         rules:
             ^/static/version\d+/(?&lt;resource&gt;.*)$:
                   passthru: "/static/$resource"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-yaml-platform-disk"><code class="highlighter-rouge">disk</code></h2>
 <p><code class="highlighter-rouge">disk</code> defines the size of the persistent disk size of the
@@ -2006,20 +2001,18 @@ application in MB.</p>
 
 <p>The following is a default list of mounts configured in <code class="highlighter-rouge">magento.app.yaml</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># The mounts that will be performed when the package is deployed.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># The mounts that will be performed when the package is deployed.
 mounts:
     "var": "shared:files/var"
     "app/etc": "shared:files/etc"
     "pub/media": "shared:files/media"
     "pub/static": "shared:files/static"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The format for adding your mount to this list is as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"/public/sites/default/files": "shared:files/files"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"/public/sites/default/files": "shared:files/files"
+</code></pre></div></div>
 
 <ul>
   <li><code class="highlighter-rouge">shared</code> means that the volume is shared between your applications inside an environment.</li>
@@ -2048,12 +2041,11 @@ languages:</p>
 
 <p>You can specify those dependencies as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby:
    sass: "~3.4"
 nodejs:
    grunt-cli: "~0.3"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-yaml-platform-hooks"><code class="highlighter-rouge">hooks</code></h2>
 <p>The <code class="highlighter-rouge">hooks</code> (also referred to as <code class="highlighter-rouge">deployment hooks</code>) enable you to define shell commands to run during the deployment process.</p>
@@ -2070,12 +2062,12 @@ nodejs:
 <p>To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the <code class="highlighter-rouge">build</code> or
 <code class="highlighter-rouge">deploy</code> sections as follows:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">hooks</span><span class="pi">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">hooks</span><span class="pi">:</span>
     <span class="c1"># We run build hooks before your application has been packaged.</span>
-    <span class="s">build</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
         <span class="no">php ./vendor/bin/m2-ece-build</span>
     <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
-    <span class="s">deploy</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
         <span class="no">php ./vendor/bin/m2-ece-deploy</span></code></pre></figure>
 
 <p>The home directory, where your application is mounted, is <code class="highlighter-rouge">/app</code>, and that is the directory from which hooks will be run unless you <code class="highlighter-rouge">cd</code> somewhere else.</p>
@@ -2120,20 +2112,19 @@ hooks:
 
 <p>A sample Magento cron job follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>crons:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
 cronrun:
     spec: "*/5 * * * *"
     cmd: "php bin/magento cron:run"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For more information, see <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>.</p>
 
 <h2 id="cloud-yaml-platform-php">Configure PHP options</h2>
 <p>You can choose which version of PHP you want to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file.:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">name</span><span class="pi">:</span> <span class="s">myphpapp</span>
-<span class="s">type</span><span class="pi">:</span> <span class="s">php:7.1</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">name</span><span class="pi">:</span> <span class="s">myphpapp</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">php:7.1</span></code></pre></figure>
 
 <p>We support PHP versions 7.1.</p>
 
@@ -2148,19 +2139,18 @@ cronrun:
 <p>You can define additional PHP extensions you want to enable or disable. Example:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># .magento.app.yaml</span>
-<span class="s">runtime</span><span class="pi">:</span>
-    <span class="s">extensions</span><span class="pi">:</span>
+<span class="na">runtime</span><span class="pi">:</span>
+    <span class="na">extensions</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">xdebug</span>
         <span class="pi">-</span> <span class="s">redis</span>
         <span class="pi">-</span> <span class="s">ssh2</span>
-    <span class="s">disabled_extensions</span><span class="pi">:</span>
+    <span class="na">disabled_extensions</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">sqlite3</span></code></pre></figure>
 
 <p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php -m
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -m
+</code></pre></div></div>
 
 <p>Magento requires the following PHP extensions that are enabled by default:</p>
 
@@ -2240,17 +2230,15 @@ cronrun:
 
 <p>For example, if you need to increase the PHP memory limit:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>memory_limit = 756M
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>memory_limit = 756M
+</code></pre></div></div>
 
 <p>For a list of recommended PHP configuration settings, see <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
 <p>After pushing your file, you can check that the custom PHP configuration has been added to your environment by <a href="/guides/v2.2/cloud/env/environments-start.html#env-start-tunn">creating an SSH tunnel</a> to your environment and entering:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cat /etc/php5/fpm/php.ini
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /etc/php5/fpm/php.ini
+</code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

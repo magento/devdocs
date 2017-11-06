@@ -721,7 +721,7 @@
 
 <p>Example of a simple response handler (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php"><code class="highlighter-rouge">app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php</code></a>):</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PayPalDetailsHandler</span> <span class="k">implements</span> <span class="nx">HandlerInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PayPalDetailsHandler</span> <span class="k">implements</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="k">const</span> <span class="no">PAYMENT_ID</span> <span class="o">=</span> <span class="s1">'paymentId'</span><span class="p">;</span>
 
@@ -760,8 +760,7 @@
         <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setAdditionalInformation</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">PAYER_EMAIL</span><span class="p">,</span> <span class="nv">$payPal</span><span class="p">[</span><span class="nx">self</span><span class="o">::</span><span class="na">PAYER_EMAIL</span><span class="p">]);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>(the code sample is from Magento Open Source v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)</p>
 

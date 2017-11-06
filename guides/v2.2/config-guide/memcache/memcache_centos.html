@@ -2001,12 +2001,11 @@
     <li>
       <p>Install memcached and its dependencies:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>yum -y update
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y update
 yum install -y libevent libevent-devel
 yum install -y memcached
 yum install -y php-pecl-memcache
-</code></pre>
-      </div>
+</code></pre></div>      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
@@ -2023,9 +2022,8 @@ yum install -y php-pecl-memcache
 
           <p>For example,</p>
 
-          <div class="highlighter-rouge"><pre class="highlight"><code>CACHESIZE="1GB"
-</code></pre>
-          </div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CACHESIZE="1GB"
+</code></pre></div>          </div>
         </li>
         <li>Locate the value for <code class="highlighter-rouge">OPTIONS</code> and change it to <code class="highlighter-rouge">localhost</code> or <code class="highlighter-rouge">127.0.0.1</code></li>
       </ol>
@@ -2036,9 +2034,8 @@ yum install -y php-pecl-memcache
     <li>
       <p>Restart memcached.</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>service memcached restart
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service memcached restart
+</code></pre></div>      </div>
     </li>
     <li>
       <p>Restart your web server.</p>
@@ -2059,12 +2056,11 @@ yum install -y php-pecl-memcache
     <li>
       <p>Create a <code class="highlighter-rouge">phpinfo.php</code> file in the web server’s docroot:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>&lt;?php
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
 
 // Show all information, defaults to INFO_ALL
 phpinfo();
-</code></pre>
-      </div>
+</code></pre></div>      </div>
     </li>
     <li>
       <p>Go to that page in your web browser.</p>
@@ -2090,59 +2086,56 @@ phpinfo();
 
   <p>Create the MySQL database:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p
+</code></pre></div>  </div>
 
   <p>At the <code class="highlighter-rouge">mysql</code> prompt, enter the following commands:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>create database memcache_test;
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create database memcache_test;
 GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
 use memcache_test;
 create table example (id int, name varchar(30));
 insert into example values (1, "new_data");
 exit
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Create <code class="highlighter-rouge">cache-test.php</code> in your web server’s docroot:</p>
 
-  <figure class="highlight"><pre><code class="language-php" data-lang="php">if (class_exists('Memcache')) {
-    $meminstance = new Memcache();
-} else {
-    $meminstance = new Memcached();
-}
+  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">'Memcache'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcache</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcached</span><span class="p">();</span>
+<span class="p">}</span>
 
-$meminstance-&gt;addServer('<span class="nt">&lt;memcache</span> <span class="na">host</span> <span class="na">name</span> <span class="na">or</span> <span class="na">ip</span><span class="nt">&gt;</span>', <span class="nt">&lt;memcache</span> <span class="na">port</span><span class="nt">&gt;</span>);
+<span class="nv">$meminstance</span><span class="o">-&gt;</span><span class="na">addServer</span><span class="p">(</span><span class="s1">'&lt;memcache host name or ip&gt;'</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">memcache</span> <span class="nx">port</span><span class="o">&gt;</span><span class="p">);</span>
 
-$query = "select id from example where name = 'new_data'";
-$querykey = "KEY" . md5($query);
+<span class="nv">$query</span> <span class="o">=</span> <span class="s2">"select id from example where name = 'new_data'"</span><span class="p">;</span>
+<span class="nv">$querykey</span> <span class="o">=</span> <span class="s2">"KEY"</span> <span class="o">.</span> <span class="nb">md5</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 
-$result = $meminstance-&gt;get($querykey);
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$meminstance</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$querykey</span><span class="p">);</span>
 
-if (!$result) {
-   try {
-        $dbh = new PDO('mysql:host=localhost;dbname=memcache_test','memcache_test','memcache_test');
-        $dbh-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $result = $dbh-&gt;query("select id from example where name = 'new_data'")-&gt;fetch();
-        $meminstance-&gt;set($querykey, $result, 0, 600);
-        print "got result from mysql\n";
-        return 0;
-    } catch (PDOException $e) {
-        die($e-&gt;getMessage());
-    }
-}
-print "got result from memcached\n";
-return 0;</code></pre></figure>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">try</span> <span class="p">{</span>
+        <span class="nv">$dbh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">'mysql:host=localhost;dbname=memcache_test'</span><span class="p">,</span><span class="s1">'memcache_test'</span><span class="p">,</span><span class="s1">'memcache_test'</span><span class="p">);</span>
+        <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">setAttribute</span><span class="p">(</span><span class="nx">PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">);</span>
+        <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$dbh</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">"select id from example where name = 'new_data'"</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">fetch</span><span class="p">();</span>
+        <span class="nv">$meminstance</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$querykey</span><span class="p">,</span> <span class="nv">$result</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+        <span class="k">print</span> <span class="s2">"got result from mysql</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PDOException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">die</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">print</span> <span class="s2">"got result from memcached</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span></code></pre></figure>
 
   <p>where <code class="highlighter-rouge">&lt;memcache host name or ip&gt;</code> is either <code class="highlighter-rouge">localhost</code>, <code class="highlighter-rouge">127.0.0.1</code>, or the memcache host name or IP address. <code class="highlighter-rouge">&lt;memcache port&gt;</code> is its listen port; by default, <code class="highlighter-rouge">11211</code>.</p>
 
   <p>Run the script from the command line.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;web server docroot&gt;
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;web server docroot&gt;
 php cache-test.php
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>The first result is <code class="highlighter-rouge">got result from mysql</code>. This means that the key didn’t exist in memcache but it was retrieved from MySQL.</p>
 
@@ -2150,34 +2143,30 @@ php cache-test.php
 
   <p>Finally, you can view the memcache keys using Telnet:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>telnet localhost &lt;memcache port&gt;
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet localhost &lt;memcache port&gt;
+</code></pre></div>  </div>
 
   <p>At the prompt, enter</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>stats items
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stats items
+</code></pre></div>  </div>
 
   <p>The result is similar to the following:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>STAT items:3:number 1
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STAT items:3:number 1
 STAT items:3:age 1075
 STAT items:3:evicted 0
 STAT items:3:evicted_nonzero 0
 STAT items:3:evicted_time 0
 STAT items:3:outofmemory 0
 STAT items:3:tailrepairs 0
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Flush the memcache storage and quit Telnet:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>flush_all
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flush_all
 quit
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a></p>
 

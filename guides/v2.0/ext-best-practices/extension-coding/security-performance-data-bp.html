@@ -594,11 +594,10 @@
 <p>For a list of discouraged low-level functions, we suggest you look at the <a href="https://github.com/magento/marketplace-eqp/blob/master/MEQP1/Sniffs/Security/DiscouragedFunctionSniff.php" target="_blank">list of discouraged functions</a> for <a href="https://github.com/magento/marketplace-eqp" target="_blank">Magento Extension Quality Program Coding Standard</a>.</p>
 
 <h3 id="use-wrappers-instead-of-superglobal-variables">Use wrappers instead of superglobal variables</h3>
-<p>Make sure that your Magento application does not directly use any PHP superglobals such as:
-  <code class="highlighter-rouge">
-  $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
- </code>
-  . Instead use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\HTTP\PhpEnvironment\Request</code></a> wrapper class to safely access these values.</p>
+<p>Make sure that your Magento application does not directly use any PHP superglobals such as:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
+</code></pre></div></div>
+<p>. Instead use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\HTTP\PhpEnvironment\Request</code></a> wrapper class to safely access these values.</p>
 
 <h3 id="use-the-correct-mysql-data-types">Use the correct MySQL data types</h3>
 <p>MySQL offers a range of numeric, string, and time data types. If you are storing a date, use a DATE or DATETIME field. Using an INTEGER or STRING can make SQL queries more complicated, if not impossible. It is often tempting to invent your own data formats; for example, storing serialized PHP objects in string. Database management may be easier, but MySQL will become a dumb data store and it may lead to problems later.</p>

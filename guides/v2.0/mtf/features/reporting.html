@@ -1005,9 +1005,8 @@
 
 <p>A method that is used to dispatch events is defined in <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/EventManagerInterface.php"><code class="highlighter-rouge">\Magento\Mtf\System\Event\EventManagerInterface</code></a>. The <abbr title="Functional Testing Framework">FTF</abbr> uses its default implementation <code class="highlighter-rouge">\Magento\Mtf\System\Event\EventManager::dispatchEvent()</code>.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'your_event_tag'</span><span class="p">],</span> <span class="p">[</span><span class="nv">$your_input_parameters</span><span class="p">]);</span>
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'your_event_tag'</span><span class="p">],</span> <span class="p">[</span><span class="nv">$your_input_parameters</span><span class="p">]);</span>
+</code></pre></div></div>
 
 <p>It has two arguments:</p>
 
@@ -1219,7 +1218,7 @@
 
 <p>Step 2. <a href="#dispatch-event">Dispatch</a> an event <code class="highlighter-rouge">webapi_failed</code> in the <code class="highlighter-rouge">\Magento\Tax\Test\Handler\TaxRule\WebApi::persist()</code> <a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">handler</a> for failed responses.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$fixture</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// Implementation of the method
@@ -1231,8 +1230,7 @@
      
     <span class="k">return</span> <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Step 3. Add the observer and the tag to the <code class="highlighter-rouge">base</code> preset in <code class="highlighter-rouge">events.xml</code>.</p>
 

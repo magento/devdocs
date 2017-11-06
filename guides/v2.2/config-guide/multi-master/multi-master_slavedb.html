@@ -1984,97 +1984,96 @@
 
 <p>The following is more advanced and is provided for your information only:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">	return array (
-   //...
-  'db' =&gt;
-  array (
-    'connection' =&gt;
-    array (
-      'indexer' =&gt;
-      array (
-        'host' =&gt; 'default-master-host',
-        'dbname' =&gt; 'magento',
-        'username' =&gt; 'magento',
-        'password' =&gt; 'magento',
-        'active' =&gt; '1',
-        'persistent' =&gt; NULL,
-      ),
-      'default' =&gt;
-      array (
-        'host' =&gt; 'default-master-host',
-        'dbname' =&gt; 'magento',
-        'username' =&gt; 'magento',
-        'password' =&gt; 'magento',
-        'active' =&gt; '1',
-      ),
-      'checkout' =&gt;
-      array (
-        'host' =&gt; 'checkout-master-host',
-        'dbname' =&gt; 'checkout',
-        'username' =&gt; 'magento',
-        'password' =&gt; 'magento',
-        'model' =&gt; 'mysql4',
-        'engine' =&gt; 'innodb',
-        'initStatements' =&gt; 'SET NAMES utf8;',
-        'active' =&gt; '1',
-      ),
-      'sales' =&gt;
-      array (
-        'host' =&gt; 'sales-master-host',
-        'dbname' =&gt; 'sales',
-        'username' =&gt; 'magento',
-        'password' =&gt; 'magento',
-        'model' =&gt; 'mysql4',
-        'engine' =&gt; 'innodb',
-        'initStatements' =&gt; 'SET NAMES utf8;',
-        'active' =&gt; '1',
-      ),
-    ),
-    'slave_connection' =&gt;
-    array (
-      'default' =&gt;
-      array (
-        'host' =&gt; 'default-slave-host',
-        'dbname' =&gt; 'magento',
-        'username' =&gt; 'read_only',
-        'password' =&gt; 'password',
-        'active' =&gt; '1',
-      ),
-      'checkout' =&gt;
-      array (
-        'host' =&gt; 'checkout-slave-host',
-        'dbname' =&gt; 'checkout',
-        'username' =&gt; 'read_only',
-        'password' =&gt; 'password',
-        'model' =&gt; 'mysql4',
-        'engine' =&gt; 'innodb',
-        'initStatements' =&gt; 'SET NAMES utf8;',
-        'active' =&gt; '1',
-      ),
-      'sales' =&gt;
-      array (
-        'host' =&gt; 'sales-slave-host',
-        'dbname' =&gt; 'sales',
-        'username' =&gt; 'read_only',
-        'password' =&gt; 'password',
-        'model' =&gt; 'mysql4',
-        'engine' =&gt; 'innodb',
-        'initStatements' =&gt; 'SET NAMES utf8;',
-        'active' =&gt; '1',
-      ),
-    ),
-    'table_prefix' =&gt; '',
-  ),
-//.......</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">	<span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+   <span class="c1">//...
+</span>  <span class="s1">'db'</span> <span class="o">=&gt;</span>
+  <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'connection'</span> <span class="o">=&gt;</span>
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">'indexer'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'default-master-host'</span><span class="p">,</span>
+        <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+        <span class="s1">'persistent'</span> <span class="o">=&gt;</span> <span class="k">NULL</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">'default'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'default-master-host'</span><span class="p">,</span>
+        <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">'checkout'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'checkout-master-host'</span><span class="p">,</span>
+        <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'checkout'</span><span class="p">,</span>
+        <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'model'</span> <span class="o">=&gt;</span> <span class="s1">'mysql4'</span><span class="p">,</span>
+        <span class="s1">'engine'</span> <span class="o">=&gt;</span> <span class="s1">'innodb'</span><span class="p">,</span>
+        <span class="s1">'initStatements'</span> <span class="o">=&gt;</span> <span class="s1">'SET NAMES utf8;'</span><span class="p">,</span>
+        <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">'sales'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'sales-master-host'</span><span class="p">,</span>
+        <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'sales'</span><span class="p">,</span>
+        <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'model'</span> <span class="o">=&gt;</span> <span class="s1">'mysql4'</span><span class="p">,</span>
+        <span class="s1">'engine'</span> <span class="o">=&gt;</span> <span class="s1">'innodb'</span><span class="p">,</span>
+        <span class="s1">'initStatements'</span> <span class="o">=&gt;</span> <span class="s1">'SET NAMES utf8;'</span><span class="p">,</span>
+        <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="p">),</span>
+    <span class="p">),</span>
+    <span class="s1">'slave_connection'</span> <span class="o">=&gt;</span>
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">'default'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'default-slave-host'</span><span class="p">,</span>
+        <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+        <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'read_only'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'password'</span><span class="p">,</span>
+        <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">'checkout'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'checkout-slave-host'</span><span class="p">,</span>
+        <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'checkout'</span><span class="p">,</span>
+        <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'read_only'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'password'</span><span class="p">,</span>
+        <span class="s1">'model'</span> <span class="o">=&gt;</span> <span class="s1">'mysql4'</span><span class="p">,</span>
+        <span class="s1">'engine'</span> <span class="o">=&gt;</span> <span class="s1">'innodb'</span><span class="p">,</span>
+        <span class="s1">'initStatements'</span> <span class="o">=&gt;</span> <span class="s1">'SET NAMES utf8;'</span><span class="p">,</span>
+        <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">'sales'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'sales-slave-host'</span><span class="p">,</span>
+        <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'sales'</span><span class="p">,</span>
+        <span class="s1">'username'</span> <span class="o">=&gt;</span> <span class="s1">'read_only'</span><span class="p">,</span>
+        <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'password'</span><span class="p">,</span>
+        <span class="s1">'model'</span> <span class="o">=&gt;</span> <span class="s1">'mysql4'</span><span class="p">,</span>
+        <span class="s1">'engine'</span> <span class="o">=&gt;</span> <span class="s1">'innodb'</span><span class="p">,</span>
+        <span class="s1">'initStatements'</span> <span class="o">=&gt;</span> <span class="s1">'SET NAMES utf8;'</span><span class="p">,</span>
+        <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="p">),</span>
+    <span class="p">),</span>
+    <span class="s1">'table_prefix'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+  <span class="p">),</span>
+<span class="o">//.......</span></code></pre></figure>
 
 <h2 id="performance-improvement">Performance improvement</h2>
 <p>To improve the performance of master-slave replication, you can filter some tables on slave instances. We recommend filtering all temporary tables with name pattern <code class="highlighter-rouge">search\_tmp\_%</code> that are used for <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> search.</p>
 
 <p>To do this, add the following line to your <code class="highlighter-rouge">my.cnf</code> file on your slave instances:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>replicate-wild-ignore-table=%.search\_tmp\_%
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>replicate-wild-ignore-table=%.search\_tmp\_%
+</code></pre></div></div>
 
 <p>For more information about this setting, see <a href="https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#option_mysqld_replicate-wild-ignore-table" target="_blank">MySQL documentation</a>.</p>
 

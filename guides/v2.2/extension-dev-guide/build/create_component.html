@@ -1489,12 +1489,11 @@
 
 <p>The smallest working module.xml file would look something like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
 		<span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Vendor_ComponentName"</span> <span class="na">setup_version=</span><span class="s">"2.0.0"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>…where <code class="highlighter-rouge">name</code>  is the name of your component, and <code class="highlighter-rouge">setup_version</code> is your module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> version. Both of these attributes are required.</p>
 
@@ -1516,29 +1515,29 @@
 <p>A sample follows:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">	</span><span class="p">{</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-name/module-Acme"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test component for Magento 2"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"magento/module-store"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"magento/module-catalog"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"magento/module-catalog-inventory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"magento/module-ui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self.version"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"magento/magento-composer-installer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-name/module-Acme"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test component for Magento 2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"magento/module-store"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"magento/module-catalog"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"magento/module-catalog-inventory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"magento/module-ui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self.version"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"magento/magento-composer-installer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"suggest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"magento/module-webapi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="w">
+    </span><span class="s2">"suggest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"magento/module-webapi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0-beta"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"AFL-3.0"</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="nt">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"Magento\\CatalogImportExport\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="s2">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"Magento</span><span class="se">\\</span><span class="s2">CatalogImportExport</span><span class="se">\\</span><span class="s2">"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span></code></pre></figure>

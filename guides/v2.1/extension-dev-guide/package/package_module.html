@@ -1433,39 +1433,39 @@
   <p>The following example is a <code class="highlighter-rouge">composer.json</code> for a metapackage:</p>
 
   <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/product-community-edition"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample metapackage"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metapackage"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-stdlib"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-soap"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-crypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-console"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-modulemanager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-mvc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"zendframework/zend-i18n"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-ctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-gd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-spl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-dom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-simplexml"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-mcrypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-curl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-iconv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-intl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-xsl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-mbstring"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ext-openssl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/product-community-edition"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample metapackage"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metapackage"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-stdlib"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-soap"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-crypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-console"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-modulemanager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-mvc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zendframework/zend-i18n"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-ctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-gd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-spl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-dom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-simplexml"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-mcrypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-curl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-iconv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-intl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-xsl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-mbstring"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ext-openssl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"AFL-3.0"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -1475,22 +1475,22 @@
   <p>The following example is a <code class="highlighter-rouge">composer.json</code> file for a module:</p>
 
   <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/sample-module-newpage"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Magento 2 module that creates a new page"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/sample-module-newpage"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Magento 2 module that creates a new page"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"AFL-3.0"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~100.0.4"</span><span class="w">
+  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~100.0.4"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"Magento\\SampleNewPage\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="s2">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"Magento</span><span class="se">\\</span><span class="s2">SampleNewPage</span><span class="se">\\</span><span class="s2">"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -1498,9 +1498,8 @@
   <h2 id="packaging">Package and publish your extension</h2>
   <p>Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
+</code></pre></div>  </div>
 
   <p>Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.</p>
 
@@ -1521,13 +1520,12 @@
     <li>When you have committed and pushed your component to your GitHub repository, you can either:
       <ul>
         <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or</li>
-        <li>Use the following steps to refer to the package through Packagist.
-          <ol>
-            <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
-            <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component’s <code class="highlighter-rouge">composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code class="highlighter-rouge">vendor/module</code> without any additional repository information, because this is required solely using GitHub.</li>
-          </ol>
-        </li>
+        <li>Use the following steps to refer to the package through Packagist.</li>
       </ul>
+      <ol>
+        <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
+        <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component’s <code class="highlighter-rouge">composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code class="highlighter-rouge">vendor/module</code> without any additional repository information, because this is required solely using GitHub.</li>
+      </ol>
     </li>
   </ol>
 
@@ -1547,10 +1545,10 @@ A private repository can be used for development or private code but installatio
   </ol>
 
   <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="nt">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composer"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">repository</span><span class="w"> </span><span class="err">url</span><span class="w"> </span><span class="err">here</span><span class="p">]</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composer"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">repository</span><span class="w"> </span><span class="err">url</span><span class="w"> </span><span class="err">here</span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>

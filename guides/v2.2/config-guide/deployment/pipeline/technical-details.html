@@ -2147,16 +2147,15 @@ We recommend making these changes before switching to Production mode.</p>
 
 <p>After you make the change in the Admin, run <code class="highlighter-rouge">php bin/magento app:config:dump</code> to write the value to <code class="highlighter-rouge">config.php</code>. The value is written to the <code class="highlighter-rouge">general</code> array under <code class="highlighter-rouge">locale</code> as the following snippet from <code class="highlighter-rouge">config.php</code> shows:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>      'general' =&gt;
-      array (
-        'locale' =&gt;
-        array (
-          'code' =&gt; 'en_US',
-          'timezone' =&gt; 'America/Chicago',
-          'weight_unit' =&gt; 'kgs',
-        ),
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="s1">'general'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'locale'</span> <span class="o">=&gt;</span>
+        <span class="k">array</span> <span class="p">(</span>
+          <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'en_US'</span><span class="p">,</span>
+          <span class="s1">'timezone'</span> <span class="o">=&gt;</span> <span class="s1">'America/Chicago'</span><span class="p">,</span>
+          <span class="s1">'weight_unit'</span> <span class="o">=&gt;</span> <span class="s1">'kgs'</span><span class="p">,</span>
+        <span class="p">),</span>
+</code></pre></div></div>
 
 <h3 id="change-several-configuration-settings">Change several configuration settings</h3>
 
@@ -2183,71 +2182,67 @@ We recommend making these changes before switching to Production mode.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show config.php snippets: </b><div class="collapsible-content"><p><code class="highlighter-rouge">websites</code> array:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>      'new' =&gt;
-      array (
-        'website_id' =&gt; '2',
-        'code' =&gt; 'new',
-        'name' =&gt; 'New website',
-        'sort_order' =&gt; '0',
-        'default_group_id' =&gt; '2',
-        'is_default' =&gt; '0',
-      ),
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="s1">'new'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'website_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'new'</span><span class="p">,</span>
+        <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'New website'</span><span class="p">,</span>
+        <span class="s1">'sort_order'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+        <span class="s1">'default_group_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'is_default'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+      <span class="p">),</span>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">groups</code> array:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>      2 =&gt;
-      array (
-        'group_id' =&gt; '2',
-        'website_id' =&gt; '2',
-        'code' =&gt; 'newstore',
-        'name' =&gt; 'New store',
-        'root_category_id' =&gt; '2',
-        'default_store_id' =&gt; '2',
-      ),
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="mi">2</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'group_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'website_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'newstore'</span><span class="p">,</span>
+        <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'New store'</span><span class="p">,</span>
+        <span class="s1">'root_category_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'default_store_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+      <span class="p">),</span>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">stores</code> array:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>     'newview' =&gt;
-      array (
-        'store_id' =&gt; '2',
-        'code' =&gt; 'newview',
-        'website_id' =&gt; '2',
-        'group_id' =&gt; '2',
-        'name' =&gt; 'New store view',
-        'sort_order' =&gt; '0',
-        'is_active' =&gt; '1',
-      ),
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="s1">'newview'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'store_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'newview'</span><span class="p">,</span>
+        <span class="s1">'website_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'group_id'</span> <span class="o">=&gt;</span> <span class="s1">'2'</span><span class="p">,</span>
+        <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'New store view'</span><span class="p">,</span>
+        <span class="s1">'sort_order'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+        <span class="s1">'is_active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="p">),</span>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">payment</code> array:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>      'payment' =&gt;
-      array (
-        'paypal_express' =&gt;
-        array (
-          'active' =&gt; '0',
-          'in_context' =&gt; '0',
-          'title' =&gt; 'PayPal Express Checkout',
-          'sort_order' =&gt; NULL,
-          'payment_action' =&gt; 'Authorization',
-          'visible_on_product' =&gt; '1',
-          'visible_on_cart' =&gt; '1',
-          'allowspecific' =&gt; '0',
-          'verify_peer' =&gt; '1',
-          'line_items_enabled' =&gt; '1',
-          'transfer_shipping_options' =&gt; '0',
-          'solution_type' =&gt; 'Mark',
-          'require_billing_address' =&gt; '0',
-          'allow_ba_signup' =&gt; 'never',
-          'skip_order_review_step' =&gt; '1',
-        ),
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="s1">'payment'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'paypal_express'</span> <span class="o">=&gt;</span>
+        <span class="k">array</span> <span class="p">(</span>
+          <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+          <span class="s1">'in_context'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+          <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'PayPal Express Checkout'</span><span class="p">,</span>
+          <span class="s1">'sort_order'</span> <span class="o">=&gt;</span> <span class="k">NULL</span><span class="p">,</span>
+          <span class="s1">'payment_action'</span> <span class="o">=&gt;</span> <span class="s1">'Authorization'</span><span class="p">,</span>
+          <span class="s1">'visible_on_product'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+          <span class="s1">'visible_on_cart'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+          <span class="s1">'allowspecific'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+          <span class="s1">'verify_peer'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+          <span class="s1">'line_items_enabled'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+          <span class="s1">'transfer_shipping_options'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+          <span class="s1">'solution_type'</span> <span class="o">=&gt;</span> <span class="s1">'Mark'</span><span class="p">,</span>
+          <span class="s1">'require_billing_address'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
+          <span class="s1">'allow_ba_signup'</span> <span class="o">=&gt;</span> <span class="s1">'never'</span><span class="p">,</span>
+          <span class="s1">'skip_order_review_step'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
+        <span class="p">),</span>
+</code></pre></div></div>
 </div></div>
 
 <p><br />
@@ -2257,10 +2252,9 @@ We recommend making these changes before switching to Production mode.</p>
 
 <p>The PayPal settings are written to neither file because the <code class="highlighter-rouge">magento app:config:dump</code> command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento config:sensitive:set paypal/wpp/api_username &lt;username&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento config:sensitive:set paypal/wpp/api_username &lt;username&gt;
 php bin/magento config:sensitive:set paypal/wpp/api_password &lt;password&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="config-deploy-prereq">Prerequisite for your development, build, and production systems</h2>
 

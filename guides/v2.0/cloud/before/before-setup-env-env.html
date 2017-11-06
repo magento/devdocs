@@ -265,26 +265,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Branch an environment</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -330,38 +310,33 @@
       <li>
         <p>To create a new environment, enter the following command:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
+</code></pre></div>        </div>
       </li>
       <li>
         <p>To check out an existing environment, enter the following command:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout
+</code></pre></div>        </div>
       </li>
     </ul>
 
     <p>For example, to create a new branch named <code class="highlighter-rouge">sprint1</code> from master, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    magento-cloud environment:branch sprint1 master
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    magento-cloud environment:branch sprint1 master
+</code></pre></div>    </div>
   </li>
   <li>
     <p>After the command completes, update dependencies:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Create a <a href="/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -390,10 +365,10 @@
 </ol>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">			</span><span class="p">{</span><span class="w">
-			   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			      </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			         </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
-			         </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
+			   </span><span class="s2">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			      </span><span class="s2">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			         </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
+			         </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
 			      </span><span class="p">}</span><span class="w">
 			   </span><span class="p">}</span><span class="w">
 			</span><span class="p">}</span><span class="w">

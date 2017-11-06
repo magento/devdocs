@@ -561,11 +561,10 @@
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /V1/products/special-price
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /V1/products/special-price
 POST /V1/products/special-price-information
 POST /V1/products/special-price-delete
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>SpecialPriceStorageInterface Parameters</strong></p>
 
@@ -633,27 +632,27 @@ POST /V1/products/special-price-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -673,7 +672,7 @@ POST /V1/products/special-price-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB06"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"24-WG080"</span><span class="w">
@@ -684,25 +683,25 @@ POST /V1/products/special-price-delete
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.949999999999999</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.949999999999999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.949999999999999</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.949999999999999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre></figure>
 
@@ -717,27 +716,27 @@ POST /V1/products/special-price-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -785,12 +784,11 @@ POST /V1/products/special-price-delete
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /V1/products/tier-prices
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /V1/products/tier-prices
 PUT /V1/products/tier-prices
 POST /V1/products/tier-prices-information
 POST /V1/products/tier-prices-delete
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>TierPriceStorageInterface Parameters</strong></p>
 
@@ -860,30 +858,30 @@ POST /V1/products/tier-prices-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -905,22 +903,22 @@ POST /V1/products/tier-prices-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">310</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">310</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -940,7 +938,7 @@ POST /V1/products/tier-prices-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"24-UG01"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -950,36 +948,36 @@ POST /V1/products/tier-prices-delete
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"discount"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG01"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"discount"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre></figure>
 
@@ -994,14 +992,14 @@ POST /V1/products/tier-prices-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -1020,10 +1018,9 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /V1/products/base-price
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /V1/products/base-price
 POST /V1/products/base-prices-information
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>BasePriceStorageInterface Parameters</strong></p>
 
@@ -1084,16 +1081,16 @@ POST /V1/products/base-prices-information
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -1113,7 +1110,7 @@ POST /V1/products/base-prices-information
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -1123,14 +1120,14 @@ POST /V1/products/base-prices-information
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre></figure>
 
@@ -1140,11 +1137,10 @@ POST /V1/products/base-prices-information
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /V1/products/cost
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /V1/products/cost
 POST /V1/products/cost-information
 POST /V1/products/cost-delete
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>CostStorageInterface Parameters</strong></p>
 
@@ -1204,16 +1200,16 @@ POST /V1/products/cost-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
+      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
+      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -1233,7 +1229,7 @@ POST /V1/products/cost-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -1243,14 +1239,14 @@ POST /V1/products/cost-delete
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
+    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
+    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre></figure>
 
@@ -1265,7 +1261,7 @@ POST /V1/products/cost-delete
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">]</span><span class="w">

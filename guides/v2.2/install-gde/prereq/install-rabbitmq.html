@@ -2433,9 +2433,8 @@
 
 <p>To install RabbitMQ on Ubuntu 16 enter the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt install -y rabbitmq-server
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install -y rabbitmq-server
+</code></pre></div></div>
 
 <p>This command also installs the required Erlang packages.</p>
 
@@ -2531,23 +2530,23 @@
 
 <p>To configure support for SSL, edit the <code class="highlighter-rouge">ssl</code> and <code class="highlighter-rouge">ssl_options</code> parameters in the <code class="highlighter-rouge">&lt;install_directory&gt;/app/etc/env.php</code> file so that they are similar to the following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">'queue' =&gt;
-  array (
-    'amqp' =&gt;
-    array (
-      'host' =&gt; 'rabbitmq.example.com',
-      'port' =&gt; '11213',
-      'user' =&gt; 'magento',
-      'password' =&gt; 'magento',
-      'virtualhost' =&gt; '/',
-      'ssl' =&gt; true,
-      'ssl_options' =&gt; [
-            'cafile' =&gt;  '/etc/pki/tls/certs/DigiCertCA.crt',
-            'certfile' =&gt; '/path/to/magento/app/etc/ssl/test-rabbit.crt',
-            'keyfile' =&gt; '/path/to/magento/app/etc/ssl/test-rabbit.key'
-       ],
-     ),
-  ),</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'queue'</span> <span class="o">=&gt;</span>
+  <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'amqp'</span> <span class="o">=&gt;</span>
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'rabbitmq.example.com'</span><span class="p">,</span>
+      <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="s1">'11213'</span><span class="p">,</span>
+      <span class="s1">'user'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+      <span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
+      <span class="s1">'virtualhost'</span> <span class="o">=&gt;</span> <span class="s1">'/'</span><span class="p">,</span>
+      <span class="s1">'ssl'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'ssl_options'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'cafile'</span> <span class="o">=&gt;</span>  <span class="s1">'/etc/pki/tls/certs/DigiCertCA.crt'</span><span class="p">,</span>
+            <span class="s1">'certfile'</span> <span class="o">=&gt;</span> <span class="s1">'/path/to/magento/app/etc/ssl/test-rabbit.crt'</span><span class="p">,</span>
+            <span class="s1">'keyfile'</span> <span class="o">=&gt;</span> <span class="s1">'/path/to/magento/app/etc/ssl/test-rabbit.key'</span>
+       <span class="p">],</span>
+     <span class="p">),</span>
+  <span class="p">),</span></code></pre></figure>
 
 <h2 id="start-the-message-queue-consumers">Start the message queue consumers</h2>
 

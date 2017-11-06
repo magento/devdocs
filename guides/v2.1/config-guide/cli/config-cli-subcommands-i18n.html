@@ -1674,9 +1674,8 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:collect-phrases [-o|--output="&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:collect-phrases [-o|--output="&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
+</code></pre></div>  </div>
 
   <p>The following table explains this command’s parameters and values:</p>
 
@@ -1732,19 +1731,17 @@
 
       <p>They are used by the Magento application to insert context values; they are <em>not</em> used for translations. For example:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>Product '%1' has been added to shopping cart.
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Product '%1' has been added to shopping cart.
 -&gt;
 Product 'Multimeter-2000' has been added to shopping cart.
-</code></pre>
-      </div>
+</code></pre></div>      </div>
 
       <p>The resulting phrase must contain at least one of each placeholder. For example, suppose there are placeholders from <code class="highlighter-rouge">%1</code> to <code class="highlighter-rouge">%3</code> in the original phrase. The translation can have as many of these placeholders in any order, but there must be at least one occurrence of <code class="highlighter-rouge">%1</code>, <code class="highlighter-rouge">%2</code>, or <code class="highlighter-rouge">%3</code>. The translation cannot contain placeholder values not present in the original value (for example, <code class="highlighter-rouge">%4</code>, <code class="highlighter-rouge">%5</code>, and so on).</p>
 
       <p>An example of translating a phrase:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
+</code></pre></div>      </div>
     </li>
   </ul>
 
@@ -1767,9 +1764,8 @@ Product 'Multimeter-2000' has been added to shopping cart.
   <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
   <p>Command usage:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;locale&gt;
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;locale&gt;
+</code></pre></div>  </div>
 
   <p>The following table explains this command’s parameters and values:</p>
 
@@ -1856,7 +1852,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 
   <p>To declare a package, specify the following information:</p>
 
-  <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+  <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/Language/package.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
     <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
@@ -1864,8 +1860,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;sort_order&gt;</span>100<span class="nt">&lt;/sort_order&gt;</span>
     <span class="nt">&lt;use</span> <span class="na">vendor=</span><span class="s">"oxford-university"</span> <span class="na">package=</span><span class="s">"en_us"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/language&gt;</span>
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Where:</p>
 
@@ -1884,7 +1879,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 
   <p>If a language package descends from two packages, its <code class="highlighter-rouge">language.xml</code> might look like the following:</p>
 
-  <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/Language/package.xsd"</span><span class="nt">&gt;</span>
+  <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/Language/package.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
     <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
     <span class="nt">&lt;package&gt;</span>language_pack<span class="nt">&lt;/package&gt;</span>
@@ -1892,8 +1887,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;use</span> <span class="na">vendor=</span><span class="s">"parent-package-one"</span> <span class="na">package=</span><span class="s">"language_package_one"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;use</span> <span class="na">vendor=</span> <span class="s">"parent-package-two"</span> <span class="na">package=</span><span class="s">"language_package_two"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/language&gt;</span>
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>In the preceding example:</p>
 
@@ -1935,9 +1929,8 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <li>
       <p>Collect phrases from your module:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+</code></pre></div>      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
         <p>The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
@@ -1954,9 +1947,8 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <li>
       <p>Collect phrases from your module:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
+</code></pre></div>      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
         <p>The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
@@ -1985,30 +1977,29 @@ Product 'Multimeter-2000' has been added to shopping cart.
 
       <p><strong>Sample <code class="highlighter-rouge">composer.json</code>:</strong></p>
 
-      <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"examplecorp/language-xx_yy"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample language"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.2"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"examplecorp/language-xx_yy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample language"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"AFL-3.0"</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.*"</span><span class="w">
+    </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.*"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-language"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-language"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"registration.php"</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-      </div>
+</span></code></pre></div>      </div>
 
       <p><strong>Sample <code class="highlighter-rouge">registration.php</code>:</strong></p>
 
-      <div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
+      <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -2017,12 +2008,11 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="s1">'magento_xx_yy'</span><span class="p">,</span>
     <span class="nx">__DIR__</span>
 <span class="p">);</span>
-</code></pre>
-      </div>
+</code></pre></div>      </div>
 
       <p><strong>Sample <code class="highlighter-rouge">language.xml</code>:</strong></p>
 
-      <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+      <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2034,8 +2024,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;vendor&gt;</span>examplecorp<span class="nt">&lt;/vendor&gt;</span>
     <span class="nt">&lt;package&gt;</span>xx_yy<span class="nt">&lt;/package&gt;</span>
 <span class="nt">&lt;/language&gt;</span>
-</code></pre>
-      </div>
+</code></pre></div>      </div>
     </li>
   </ol>
 

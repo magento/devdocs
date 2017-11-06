@@ -2415,15 +2415,13 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
@@ -2432,9 +2430,8 @@
 
       <p>bash shell example for CentOS:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2467,11 +2464,10 @@
 
   <p>Command usage:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:disable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:status
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>where</p>
 
@@ -2487,22 +2483,19 @@ magento maintenance:status
 
   <p>For example, to enable maintenance mode with no IP address exemptions:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:enable
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento maintenance:enable
+</code></pre></div>  </div>
 
   <p>To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
+</code></pre></div>  </div>
 
   <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
   <p>To maintain the list of exempt IP addresses, you can either use the <code class="highlighter-rouge">[--ip=&lt;ip list&gt;]</code> option in the preceding commands or you can use the following:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
+</code></pre></div>  </div>
 
   <p>where</p>
 

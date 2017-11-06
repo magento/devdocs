@@ -1204,13 +1204,12 @@
 
 <p>For example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>@your__breakpoint: 1280px;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@your__breakpoint: 1280px;
+</code></pre></div></div>
 
 <p>For variables’ naming rules see <a href="http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables">Less coding standards</a>.</p>
 
-<h2 id="override-responsiveless-from-the-library">Override <code class="highlighter-rouge">_responsive.less</code> from the library</h2>
+<h2 id="override-_responsiveless-from-the-library">Override <code class="highlighter-rouge">_responsive.less</code> from the library</h2>
 
 <p>According to the approach, implemented in the Magento UI library, the <code class="highlighter-rouge">.media-width()</code> mixin calls are defined in many places, but invoked in one place, in <code class="highlighter-rouge">lib/web/css/source/lib/_responsive.less</code>.</p>
 
@@ -1230,14 +1229,13 @@
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
 …
     @media all and (min-width: @your__breakpoint) {
         .media-width('min', @your__breakpoint);
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="add-media-width-calls-for-the-new-breakpoint">Add <code class="highlighter-rouge">.media-width()</code> calls for the new breakpoint</h2>
 
@@ -1245,11 +1243,10 @@
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
     //  Customization for @your__breakpoint breakpoint
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="related-reading">Related reading</h2>
 

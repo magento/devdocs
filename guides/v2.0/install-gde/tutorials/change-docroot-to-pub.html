@@ -2439,7 +2439,7 @@
 
   <p>The sample configuration overrides your server’s docroot settings to serve files from Magento’s <code class="highlighter-rouge">pub/</code> directory; assuming you’ve referenced the <code class="highlighter-rouge">nginx.conf.sample</code> in the server block that defines your site. For example, see the last line in the following configuration:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code># /etc/nginx/sites-available/magento
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/nginx/sites-available/magento
 
 upstream fastcgi_backend {
      server  unix:/run/php/php7.0-fpm.sock;
@@ -2452,8 +2452,7 @@ upstream fastcgi_backend {
           set $MAGE_ROOT /var/www/html/magento2ce;
           include /var/www/html/magento2ce/nginx.conf.sample;
 }
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
 </div>
 
@@ -2472,7 +2471,7 @@ upstream fastcgi_backend {
   <p>Refer to <a href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a> and the <a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a> for more information.</p>
 </div>
 
-<h2 id="edit-your-server-configuration">1. Edit your server configuration</h2>
+<h2 id="1-edit-your-server-configuration">1. Edit your server configuration</h2>
 <p>The name and location of your virtual host file depends on which version of Apache you’re running. This example shows the name and location of the virtual host file on Apache v2.4.</p>
 
 <ol>
@@ -2480,14 +2479,13 @@ upstream fastcgi_backend {
   <li>
     <p>Edit your virtual host file:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>vim /etc/apache2/sites-available/000-default.conf
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/apache2/sites-available/000-default.conf
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Add the path to your Magento <code class="highlighter-rouge">pub/</code> directory to the <code class="highlighter-rouge">DocumentRoot</code> directive:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;VirtualHost *:80&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;VirtualHost *:80&gt;
 
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html/magento2ce/pub
@@ -2499,19 +2497,17 @@ upstream fastcgi_backend {
                     AllowOverride all
         &lt;/Directory&gt;
 &lt;/VirtualHost&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart Apache:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>systemctl restart apache2  
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart apache2  
+</code></pre></div>    </div>
   </li>
 </ol>
 
-<h2 id="update-your-base-url">2. Update your base URL</h2>
+<h2 id="2-update-your-base-url">2. Update your base URL</h2>
 <p>If you appended a directory name to your server’s hostname or IP address to create the base URL when you installed Magento (for example <code class="highlighter-rouge">http://192.168.33.10/magento2</code>), you’ll need to remove it.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -2522,27 +2518,24 @@ upstream fastcgi_backend {
   <li>
     <p>Log in to the Magento database:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u &lt;user&gt; -p
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u &lt;user&gt; -p
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Specify the Magento database you created when you installed Magento:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>use &lt;database-name&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>use &lt;database-name&gt;
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Update the base URL:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>UPDATE core_config_data SET value='http://192.168.33.10' WHERE path='web/unsecure/base_url';
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE core_config_data SET value='http://192.168.33.10' WHERE path='web/unsecure/base_url';
+</code></pre></div>    </div>
   </li>
 </ol>
 
-<h2 id="switch-modes">3. Switch modes</h2>
+<h2 id="3-switch-modes">3. Switch modes</h2>
 <p><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Magento modes</a>, which include <code class="highlighter-rouge">production</code> and <code class="highlighter-rouge">developer</code>, are designed to improve security and make development easier. As the names suggest, you should switch to <code class="highlighter-rouge">developer</code> mode when extending or customizing Magento and switch to <code class="highlighter-rouge">production</code> mode when running Magento in a live environment.</p>
 
 <p>Switching between modes is an important step in verifying that your server configuration is working properly. You can switch between modes using the Magento CLI tool:</p>
@@ -2552,24 +2545,22 @@ upstream fastcgi_backend {
   <li>
     <p>Switch to <code class="highlighter-rouge">production</code> mode.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento deploy:mode:set production
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set production
 bin/magento cache:flush
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Refresh your browser and verify that the storefront displays properly.</li>
   <li>
     <p>Switch to <code class="highlighter-rouge">developer</code> mode.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento deploy:mode:set developer
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set developer
 bin/magento cache:flush
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Refresh your browser and verify that the storefront displays properly.</li>
 </ol>
 
-<h2 id="verify-the-storefront">4. Verify the storefront</h2>
+<h2 id="4-verify-the-storefront">4. Verify the storefront</h2>
 <p>Go to the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> in a web browser to verify that everything is working.</p>
 
 <ol>

@@ -666,12 +666,12 @@ You can use the <code class="highlighter-rouge">.mage()</code> <span term-uuid="
     <span class="nl">_create</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_bind</span><span class="p">();</span>
     <span class="p">},</span>
-    <span class="nx">_bind</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">_bind</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_on</span><span class="p">({</span>
             <span class="na">save</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_submit</span>
         <span class="p">})</span>
     <span class="p">},</span>
-    <span class="nx">_submit</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">_submit</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_rollback</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="kc">false</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">_beforeSubmit</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">data</span><span class="p">))</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
@@ -699,21 +699,20 @@ Do not instantiate a widget or call a widget’s methods inside another widget.<
 
     <p>For example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>/pub
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/pub
 /lib
 /magento
   dropdown.js
   validation.js
   dialog.js 
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Place Magento-specific widgets under the <code class="highlighter-rouge">&lt;install dir&gt;/app/code/&lt;namespace&gt;/&lt;module-name&gt;/view/&lt;area-name&gt;/js</code> directory.</p>
 
     <p>For example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>/app
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/app
 /code
   /Mage
     /DesignEditor
@@ -722,8 +721,7 @@ Do not instantiate a widget or call a widget’s methods inside another widget.<
           /js
             vde-block.js
             vde-container.js
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 

@@ -512,11 +512,11 @@
 
 <p><strong>Step 5.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, install all dependencies:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>npm install</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  npm install</code></pre></figure>
 
 <p id="prepare-step6"><strong>Step 6.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, generate static view files in Magento that are going to be tested</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>php bin/magento setup:static-content:deploy -f</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  php bin/magento setup:static-content:deploy <span class="nt">-f</span></code></pre></figure>
 
 <p>Note that normally you don’t have permissions to <code class="highlighter-rouge">&lt;magento_root_dir&gt;/app/code/</code>, in fact the generated static view file is being tested.</p>
 
@@ -535,11 +535,11 @@ install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctcon
 
 <p><code class="highlighter-rouge">Gruntfile.js</code> contains the test run task, so you can run <strong>all tests</strong> using the following command in in the Magento root directory:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>grunt spec:&lt;THEME&gt;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:&lt;THEME&gt;</code></pre></figure>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span>grunt spec:backend</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:backend</code></pre></figure>
 
 <h2 id="write-test">Write a test</h2>
 
@@ -728,8 +728,8 @@ Use --force to continue. Aborted due to warnings.
 
 <p>Run in your terminal:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$   </span><span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
-<span class="gp">$   </span>npm install</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  <span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
+<span class="nv">$ </span>  npm install</code></pre></figure>
 
 <!-- LINK DEFINITIONS -->
 

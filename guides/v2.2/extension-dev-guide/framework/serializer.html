@@ -1511,61 +1511,61 @@ Always use the <code class="highlighter-rouge">SerializerInterface</code> for se
 
 <p>Declare <code class="highlighter-rouge">SerializerInterface</code> as a <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">constructor dependency</a> to get an instance of a serializer class.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">use Magento\Framework\Serialize\SerializerInterface;
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\Serialize\SerializerInterface</span><span class="p">;</span>
 
-...
+<span class="o">...</span>
 
-/**
+<span class="sd">/**
  * @var SerializerInterface
- */
-private $serializer;
+ */</span>
+<span class="k">private</span> <span class="nv">$serializer</span><span class="p">;</span>
 
-...
+<span class="o">...</span>
 
-public function __construct(SerializerInterface $serializer) {
-  $this-&gt;serializer = $serializer;
-}</code></pre></figure>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">SerializerInterface</span> <span class="nv">$serializer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p><br />
 The following example shows how to use a serializer’s <code class="highlighter-rouge">serialize()</code> and <code class="highlighter-rouge">unserialize()</code> functions to store and retrieve array data from a cache:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
 
-/**
+<span class="sd">/**
  * @var string
- */
-private $cacheId = 'mySerializedData';
+ */</span>
+<span class="k">private</span> <span class="nv">$cacheId</span> <span class="o">=</span> <span class="s1">'mySerializedData'</span><span class="p">;</span>
 
-...
+<span class="o">...</span>
 
-/**
+<span class="sd">/**
  * Save data to cache
  * @param array $data
  *
  * @return bool
- */
-public function saveDataToCache($data)
-{
-  return $this-&gt;getCache()-&gt;save($this-&gt;serializer-&gt;serialize($data), $this-&gt;cacheId);
-}
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">saveDataToCache</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheId</span><span class="p">);</span>
+<span class="p">}</span>
 
-...
+<span class="o">...</span>
 
-/**
+<span class="sd">/**
  * Load data from cache
  *
  * @return array
- */
-public function loadDataFromCache()
-{
-  $data = $this-&gt;getCache()-&gt;load($this-&gt;cacheId);
-  if (false !== $data) {
-    $data = $this-&gt;serializer-&gt;unserialize($data);
-  }
-  return $data;
-}
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">loadDataFromCache</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheId</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="kc">false</span> <span class="o">!==</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span><span class="o">-&gt;</span><span class="na">unserialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<span class="p">}</span>
 
-...</code></pre></figure>
+<span class="o">...</span></code></pre></figure>
 
 
 		</div>

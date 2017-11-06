@@ -725,8 +725,8 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'exports'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="s1">'exports'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -758,8 +758,8 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <p>Example of using <code class="highlighter-rouge">imports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'imports'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="s1">'imports'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -787,8 +787,8 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <p>Example of using <code class="highlighter-rouge">links</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'links'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="s1">'links'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -814,8 +814,8 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <p>Example of using <code class="highlighter-rouge">listens</code> in a component’s <code class="highlighter-rouge">.js</code> file :</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'listens'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="s1">'listens'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -870,9 +870,9 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <p>Example of using the <code class="highlighter-rouge">uiClass</code> property in a configuration file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="o">&lt;</span><span class="nx">container</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"some_custom_component"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"config"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"component"</span> <span class="nx">xsi</span><span class="err">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">uiClass</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"config"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"component"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">uiClass</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
 </span>            <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
 </span>        <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="sr">/container&gt;</span></code></pre></figure>

@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1899,9 +1899,8 @@
 
 <p>Next, use a <code class="highlighter-rouge">curl</code> command to verify X-Magento-Tags exist and additional header information. The format for the command is:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl http[s]://&lt;full site URL&gt; -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http[s]://&lt;full site URL&gt; -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
+</code></pre></div></div>
 
 <p>For Starter, enter the full site URL from your environment <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html#starter-urls">Access info</a> in the command to view the headers.</p>
 

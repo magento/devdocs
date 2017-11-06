@@ -1241,9 +1241,8 @@
   <li>Remove the theme record from database. If you are using MySQL, run the following command to do this:</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysql -u &lt;user&gt; -p -e "delete from &lt;dbname&gt;.theme where theme_path ='&lt;Vendor&gt;/&lt;theme&gt;' AND area ='frontend' limit 1"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u &lt;user&gt; -p -e "delete from &lt;dbname&gt;.theme where theme_path ='&lt;Vendor&gt;/&lt;theme&gt;' AND area ='frontend' limit 1"
+</code></pre></div></div>
 <p>Where:</p>
 
 <ul>
@@ -1272,10 +1271,10 @@
 </ol>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">   </span><span class="err">...</span><span class="w">
-   </span><span class="s2">"require"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
-       </span><span class="nt">"&lt;vendor&gt;/&lt;theme-name&gt;"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;version&gt;"</span><span class="w">
-   </span><span class="p">}</span><span class="err">,</span><span class="w">
+       </span><span class="s2">"&lt;vendor&gt;/&lt;theme-name&gt;"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;version&gt;"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
    </span><span class="err">...</span><span class="w">
    </span></code></pre></figure>
 

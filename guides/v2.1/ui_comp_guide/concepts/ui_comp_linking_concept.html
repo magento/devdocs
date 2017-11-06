@@ -1344,8 +1344,8 @@
 <p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'exports'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+  <span class="s1">'exports'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1374,8 +1374,8 @@
 <p>Example of using <code class="highlighter-rouge">imports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'imports'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+  <span class="s1">'imports'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1405,8 +1405,8 @@
 <p>Example of using <code class="highlighter-rouge">links</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'links'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+  <span class="s1">'links'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1435,8 +1435,8 @@
 <p>Example of using <code class="highlighter-rouge">listens</code> in a component’s <code class="highlighter-rouge">.js</code> file :</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'listens'</span><span class="err">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="err">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+  <span class="s1">'listens'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1464,9 +1464,8 @@
 
 <p>As a result, if the component’s property is the variable for the template string, we get notation similar to the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>'${ $.provider }' 
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'${ $.provider }' 
+</code></pre></div></div>
 
 <p>We can also build complex templates strings using this syntax, as follows:</p>
 
@@ -1474,23 +1473,20 @@
   <li>
     <p>Using variables from the other component:</p>
 
-    <p><code class="highlighter-rouge">
-  '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
- </code></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Calling several functions in one string:</p>
 
-    <p><code class="highlighter-rouge">
-  '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
- </code></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Using inline conditions:</p>
 
-    <p><code class="highlighter-rouge">
-  '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
- </code></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
+</code></pre></div>    </div>
   </li>
 </ul>
 

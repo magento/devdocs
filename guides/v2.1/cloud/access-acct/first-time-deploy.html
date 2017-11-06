@@ -1361,12 +1361,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1948,16 +1948,14 @@
 
 <p>Command syntax:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+</code></pre></div></div>
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
 git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="cloud-live-migrate-agent">Set up your SSH agent</h3>
 <p>You can use any SSH client you prefer or see our <a href="/guides/v2.1/cloud/before/before-workspace.html#recommended-tools">Recommended tools</a>. For these examples, we use the OpenSSH client.</p>
@@ -1971,9 +1969,8 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ssh-add -l
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add -l
+</code></pre></div>    </div>
 
     <p>One of the following messages displays:</p>
 
@@ -1993,24 +1990,21 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>To start the SSH agent, enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  eval $(ssh-agent -s)
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  eval $(ssh-agent -s)
+</code></pre></div>    </div>
 
     <p>The agent’s process ID (PID) displays.</p>
   </li>
   <li>
     <p>Add your SSH key to the agent:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  ssh-add ~/.ssh/id_rsa
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ssh-add ~/.ssh/id_rsa
+</code></pre></div>    </div>
 
     <p>A message similar to the following displays:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2030,9 +2024,8 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>Pull the <code class="highlighter-rouge">master</code> branch to the server.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> git pull origin master
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git pull origin master
+</code></pre></div>    </div>
   </li>
 </ol>
 

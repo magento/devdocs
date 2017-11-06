@@ -1225,9 +1225,8 @@
   <li>
     <p>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>npm install -g grunt-cli
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g grunt-cli
+</code></pre></div>    </div>
   </li>
   <li>Rename the following files in your Magento root directory:
     <ul>
@@ -1236,18 +1235,17 @@
       <li><code class="highlighter-rouge">grunt-config.json.sample</code> to <code class="highlighter-rouge">grunt-config.json</code></li>
     </ul>
   </li>
-  <li>Provide path to grunt themes configuration in <code class="highlighter-rouge">grunt-config.json</code>: <br />
- <code class="highlighter-rouge">
- "themes": "dev/tools/grunt/configs/themes"
-</code></li>
+  <li>Provide path to grunt themes configuration in <code class="highlighter-rouge">grunt-config.json</code>:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> "themes": "dev/tools/grunt/configs/themes"
+</code></pre></div>    </div>
+  </li>
   <li>
     <p>Install (or refresh) the <code class="highlighter-rouge">node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd your_Magento_instance_directory
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd your_Magento_instance_directory
 npm install
 npm update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>(Optional) If you want to use Grunt for “watching” changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/">LiveReload extension</a> in your browser.</li>
 </ol>
@@ -1276,11 +1274,10 @@ npm update
     <p>Example:
 If your custom configuration file <code class="highlighter-rouge">themes.js</code> is located in the  custom <code class="highlighter-rouge">&lt;magento_root&gt;/dev/tools/grunt/configs/local-themes/</code> directory, add the following to <code class="highlighter-rouge">grunt-config.json</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"themes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev/tools/grunt/configs/local-themes"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "themes": "dev/tools/grunt/configs/local-themes"
+}
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1292,9 +1289,8 @@ If your custom configuration file <code class="highlighter-rouge">themes.js</cod
   <li>
     <p>In your Grunt related scripts, in the file router set the alias and path to the default configuration file. For example, for the <code class="highlighter-rouge">themes.js</code> configuration file this would look like following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
+</code></pre></div>    </div>
 
     <p>It must be added earlier, than the <code class="highlighter-rouge">get()</code> method with  this alias is called.</p>
   </li>
@@ -1311,18 +1307,16 @@ If your custom configuration file <code class="highlighter-rouge">themes.js</cod
   <li>
     <p>Require file-router:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>var fileRouter = require('/files-router');
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var fileRouter = require('/files-router');
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Call the <code class="highlighter-rouge">get(%file_alias%)</code> method to get the configuration file.</p>
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>var themes = fileRouter.get('themes');
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var themes = fileRouter.get('themes');
+</code></pre></div>    </div>
   </li>
 </ol>
 

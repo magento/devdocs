@@ -1391,7 +1391,7 @@ Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-
 
 <p>Let’s assume the product entity doesn’t have any implementation of extension attributes, so our plugin might looks like this:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductExtensionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductExtensionFactory</span><span class="p">;</span>
@@ -1430,8 +1430,7 @@ Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And now need to bind our plugin to <code class="highlighter-rouge">ProductInterface</code>:</p>
 

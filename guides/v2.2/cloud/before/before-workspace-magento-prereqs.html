@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1930,9 +1930,8 @@
   <li>
     <p>Find your <code class="highlighter-rouge">php.ini</code> file using the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php --ini
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php --ini
+</code></pre></div>    </div>
 
     <p>Use the value of <code class="highlighter-rouge">Loaded Configuration File</code>.</p>
   </li>
@@ -1970,32 +1969,28 @@
   <li>
     <p>Use this command to create the database:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> apt-get install mariadb-server
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> apt-get install mariadb-server
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Secure the database with the following command and completing all prompts:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> mysql_secure_installation
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mysql_secure_installation
+</code></pre></div>    </div>
   </li>
   <li>Access the MariaDB database.</li>
   <li>
     <p>Grant all privileges to the Magento account you created for the local:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> grant all privileges on &lt;database&gt; to '&lt;account&gt;'@'localhost' identified by '&lt;password&gt;';
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> grant all privileges on &lt;database&gt; to '&lt;account&gt;'@'localhost' identified by '&lt;password&gt;';
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Finally create the database:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> create database magento;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> create database magento;
  use magento;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Exit when done.</li>
 </ol>
@@ -2016,9 +2011,8 @@
 
 <p>First, view the current value and verify if it is set to 3:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysqladmin variables -u &lt;root user name&gt; -p | grep 'auto_increment'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqladmin variables -u &lt;root user name&gt; -p | grep 'auto_increment'
+</code></pre></div></div>
 
 <p>If necessary, set <code class="highlighter-rouge">auto_increment_increment</code> to 3:</p>
 
@@ -2033,18 +2027,16 @@
   <li>
     <p>Add or edit the following line in the <code class="highlighter-rouge">[mysqld]</code> section:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>auto_increment_increment=3
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auto_increment_increment=3
+</code></pre></div>    </div>
 
     <p>Magento Commerce (Cloud) supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.</p>
   </li>
   <li>
     <p>Restart MySQL:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>service mysqld restart
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service mysqld restart
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2065,35 +2057,31 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://accounts.magento.cloud/cli/installer | php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sS https://accounts.magento.cloud/cli/installer | php
+</code></pre></div>    </div>
   </li>
   <li>
     <p>After the CLI downloads, an operating system-specific command displays.</p>
 
     <p>For example, on Ubuntu and CentOS, the command is similar to:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>source /home/magento_user/.bashrc
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source /home/magento_user/.bashrc
+</code></pre></div>    </div>
 
     <p>For more information about the user shell profile, see <a href="https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc" target="_blank">.bash_profile vs .bashrc</a></p>
 
     <p>You can also add the <code class="highlighter-rouge">&lt;magento user home dir&gt;/.magento-cloud/bin</code> to the Magento user’s <code class="highlighter-rouge">PATH</code>. 	If the user name is <code class="highlighter-rouge">magento_user</code>, the command is similar to the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/home/magento_user/.magento-cloud/bin
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+</code></pre></div>    </div>
 
     <p>Consult operating system documentation for details.</p>
   </li>
   <li>
     <p>Verify the <code class="highlighter-rouge">magento-cloud</code> command is in your path by entering the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud list
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2107,9 +2095,8 @@
   <li>
     <p>In a terminal, enter the command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>curl -sS https://platform.sh/cli/installer | php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sS https://platform.sh/cli/installer | php
+</code></pre></div>    </div>
   </li>
 </ol>
 

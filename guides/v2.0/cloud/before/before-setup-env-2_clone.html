@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1894,23 +1894,20 @@
   <li>
     <p>Log in to the Magento Cloud CLI:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Clone a project.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre></div>    </div>
 
     <p>When prompted for a directory name, enter <code class="highlighter-rouge">magento2</code>.</p>
   </li>
@@ -1918,9 +1915,8 @@
   <li>
     <p>List environments in the project:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p><code class="highlighter-rouge">magento-cloud environment:list</code> displays environment hierarchies whereas <code class="highlighter-rouge">git branch</code> does not. If you have any nested environments, use <code class="highlighter-rouge">magento-cloud environment:list</code>.</p>
@@ -1929,16 +1925,14 @@
   <li>
     <p>Fetch origin branches:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Pull updated code:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1959,15 +1953,13 @@
 <h3 id="variablelist">List and review variables</h3>
 <p>If you’re not sure whether or not the <code class="highlighter-rouge">master</code> branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. The Project Owner may have already set some or all of the variables during <a href="/guides/v2.0/cloud/before/before-project-owner.html">project creation</a>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:get -e &lt;environment ID&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:get -e &lt;environment ID&gt;
+</code></pre></div></div>
 
 <p>To set Admin variables, you will use this command format:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt; -e &lt;environment ID&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt; -e &lt;environment ID&gt;
+</code></pre></div></div>
 
 <p>You can also <a href="https://accounts.magento.cloud" target="_blank">log into your project</a> in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon <img src="/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the Project name. Click the <strong>Variables</strong> tab and review any configured variables there.</p>
 
@@ -1982,25 +1974,22 @@
   <li>
     <p>To set the administrator’s user name to <code class="highlighter-rouge">admin_A456</code> in the <code class="highlighter-rouge">master</code> environment, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_USERNAME admin_A456 -e master
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:set ADMIN_USERNAME admin_A456 -e master
+</code></pre></div>    </div>
   </li>
   <li>Wait for the project to redeploy.</li>
   <li>
     <p>To set the administrator’s password to <code class="highlighter-rouge">admin_A456</code>, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
+</code></pre></div>    </div>
   </li>
   <li>Wait for the project to redeploy.</li>
   <li>
     <p>To set the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> URI to <code class="highlighter-rouge">magento_A8v10</code>, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
+</code></pre></div>    </div>
   </li>
   <li>Wait for the project to redeploy.</li>
   <li>
@@ -2008,7 +1997,7 @@
 
     <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code class="highlighter-rouge">master</code> branch. The following example uses these values:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;pre class="no-copy"&gt;Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;pre class="no-copy"&gt;Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
 Slug already built for this tree id, skipping.
 
 Re-deploying environment k4wtvm7ogzr5s-master.
@@ -2021,17 +2010,15 @@ Environment configuration:
 
 Environment routes:
     http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`&lt;/pre&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>In the preceding example, go to <code class="highlighter-rouge">http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10</code> and log in using the user name <code class="highlighter-rouge">admin_A456</code> and password <code class="highlighter-rouge">admin_A456</code></p>
   </li>
   <li>
     <p>After the project redeploys, take a snapshot of the master branch:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    magento-cloud snapshot:create -e master
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    magento-cloud snapshot:create -e master
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2081,38 +2068,33 @@ Environment routes:
       <li>
         <p>To create a new environment, enter the following command:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
+</code></pre></div>        </div>
       </li>
       <li>
         <p>To check out an existing environment, enter the following command:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout
+</code></pre></div>        </div>
       </li>
     </ul>
 
     <p>For example, to create a new branch named <code class="highlighter-rouge">sprint1</code> from master, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch sprint1 master
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:branch sprint1 master
+</code></pre></div>    </div>
   </li>
   <li>
     <p>After the command completes, update dependencies:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Create a <a href="/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre></div>    </div>
   </li>
 </ol>
 

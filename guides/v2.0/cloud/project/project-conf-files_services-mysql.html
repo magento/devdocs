@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1871,9 +1871,8 @@ engine (equivalent to MySQL with InnoDB).</p>
 <p>To access the MariaDB database directly, <a href="/guides/v2.0/cloud/env/environments-start.html#env-start-tunn">open an SSH tunnel</a> and use the
 following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysql -h database.internal -u user
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -h database.internal -u user
+</code></pre></div></div>
 
 <h2 id="cloud-appyaml-mysqlusers">Set up multiple database users</h2>
 <p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code class="highlighter-rouge">mysql</code> that has administrator access to all defined databases.</p>
@@ -1898,23 +1897,23 @@ following command:</p>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysqldb</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
-    <span class="s">disk</span><span class="pi">:</span> <span class="s">2048</span>
-    <span class="s">configuration</span><span class="pi">:</span>
-        <span class="s">schemas</span><span class="pi">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">mysqldb</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
+    <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span>
+    <span class="na">configuration</span><span class="pi">:</span>
+        <span class="na">schemas</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s">main</span>
-        <span class="s">endpoints</span><span class="pi">:</span>
-            <span class="s">admin</span><span class="pi">:</span>
-                <span class="s">default_schema</span><span class="pi">:</span> <span class="s">main</span>
-                <span class="s">privileges</span><span class="pi">:</span>
-                    <span class="s">main</span><span class="pi">:</span> <span class="s">admin</span>
-            <span class="s">reporter</span><span class="pi">:</span>
-                <span class="s">privileges</span><span class="pi">:</span>
-                    <span class="s">main</span><span class="pi">:</span> <span class="s">ro</span>
-            <span class="s">importer</span><span class="pi">:</span>
-                <span class="s">privileges</span><span class="pi">:</span>
-                    <span class="s">main</span><span class="pi">:</span> <span class="s">rw</span></code></pre></figure>
+        <span class="na">endpoints</span><span class="pi">:</span>
+            <span class="na">admin</span><span class="pi">:</span>
+                <span class="na">default_schema</span><span class="pi">:</span> <span class="s">main</span>
+                <span class="na">privileges</span><span class="pi">:</span>
+                    <span class="na">main</span><span class="pi">:</span> <span class="s">admin</span>
+            <span class="na">reporter</span><span class="pi">:</span>
+                <span class="na">privileges</span><span class="pi">:</span>
+                    <span class="na">main</span><span class="pi">:</span> <span class="s">ro</span>
+            <span class="na">importer</span><span class="pi">:</span>
+                <span class="na">privileges</span><span class="pi">:</span>
+                    <span class="na">main</span><span class="pi">:</span> <span class="s">rw</span></code></pre></figure>
 
 <p>In the preceding example, the endpoint (that is, user) <code class="highlighter-rouge">reporter</code> has <code class="highlighter-rouge">ro</code> privileges to the <code class="highlighter-rouge">main</code> database and endpoint <code class="highlighter-rouge">importer</code> has <code class="highlighter-rouge">rw</code> access to the <code class="highlighter-rouge">main</code> database. This means that:</p>
 
@@ -1927,14 +1926,14 @@ following command:</p>
 <h2 id="settings">Add MySQL in services.yaml and .magento.app.yaml</h2>
 <p>To enable MySQL, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">mysql</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
-    <span class="s">disk</span><span class="pi">:</span> <span class="s">2048</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">mysql</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
+    <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span></code></pre></figure>
 
 <p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">relationships</span><span class="pi">:</span>
-    <span class="s">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">relationships</span><span class="pi">:</span>
+    <span class="na">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span></code></pre></figure>
 
 <p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
 
@@ -1955,9 +1954,8 @@ following command:</p>
   <li>
     <p>Enter the following command to pretty-print connection information for MySQL:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+</code></pre></div>    </div>
   </li>
 </ol>
 

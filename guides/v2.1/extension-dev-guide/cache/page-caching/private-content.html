@@ -1353,15 +1353,14 @@
 
 <p>Add the following to your component’s <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration (<code class="highlighter-rouge">di.xml</code>):</p>
 
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Customer\CustomerData\SectionPoolInterface"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Customer\CustomerData\SectionPoolInterface"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"sectionSourceMap"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"compare-products"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Catalog\CustomerData\CompareProducts<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="config-cache-priv-how-block">Create a block and template</h2>
 <p>To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>.</p>
@@ -1374,11 +1373,10 @@
 
 <p>Initialize the component as follows:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
-    <span class="p">{</span><span class="s2">"&lt;css-selector&gt;"</span><span class="err">:</span> <span class="p">{</span><span class="s2">"Magento_Ui/js/core/app"</span><span class="err">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getJsLayout</span><span class="p">();?</span><span class="o">&gt;</span><span class="p">}}</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
+    <span class="p">{</span><span class="s2">"&lt;css-selector&gt;"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Magento_Ui/js/core/app"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getJsLayout</span><span class="p">();?</span><span class="o">&gt;</span><span class="p">}}</span>
 <span class="nt">&lt;/script&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48" target="&#95;blank">Example</a></p>
 
@@ -1396,7 +1394,7 @@
 
 <p>The following example adds comments to <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/frontend/sections.xml" target="&#95;blank">app/code/Magento/Catalog/etc/frontend/sections.xml</a> to show you what the code is doing.</p>
 
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -1419,8 +1417,7 @@
         <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"compare-products"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-warning">
   <p>Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don’t expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">RFC-2616 section 13</a> {:target=”_blank”}</p>

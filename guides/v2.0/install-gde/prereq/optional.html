@@ -2426,9 +2426,8 @@
 
 <p>Enter the following command to install NTP:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install ntp
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install ntp
+</code></pre></div></div>
 
 <p>Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a>.</p>
 
@@ -2522,9 +2521,8 @@ phpinfo();</pre>
 
 <p>To view the results, enter the following <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> in your browser’s location or address field:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>http://&lt;web server host or IP&gt;/phpinfo.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://&lt;web server host or IP&gt;/phpinfo.php
+</code></pre></div></div>
 
 <p>If a 404 (Not Found) error displays, check the following:</p>
 
@@ -2557,9 +2555,8 @@ phpinfo();</pre>
   <li>
     <p>Use the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>apt-get install phpmyadmin
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install phpmyadmin
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Follow the prompts on your screen to complete the installation.</p>
@@ -2567,9 +2564,8 @@ phpinfo();</pre>
   <li>
     <p>To use phpmyadmin, enter the following URL in your browser’s address or location field:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>http://&lt;web server host or IP&gt;/phpmyadmin
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://&lt;web server host or IP&gt;/phpmyadmin
+</code></pre></div>    </div>
   </li>
   <li>
     <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s user name and password.</p>
@@ -2583,53 +2579,46 @@ phpinfo();</pre>
   <li>
     <p>Download the epel RPM for the version of CentOS you’re using. A sample follows.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd /tmp
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /tmp
 wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 rpm -ivh epel-release-6-8.noarch.rpm
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Install <code class="highlighter-rouge">phpmyadmin</code> as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>yum -y install phpmyadmin
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install phpmyadmin
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Authorize access to phpmyadmin from your machine’s IP address.</p>
 
     <p>Open the following file for editing:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>vim /etc/httpd/conf.d/phpMyAdmin.conf
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/httpd/conf.d/phpMyAdmin.conf
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Replace the following IP address with your IP address</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Require ip localhost
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Require ip localhost
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Require ip 192.51.100.101
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Require ip 192.51.100.101
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Replace the following IP with your IP address:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Allow from localhost
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Allow from localhost
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Allow from 192.51.100.101
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Allow from 192.51.100.101
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Save your changes to <code class="highlighter-rouge">/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.</p>
@@ -2637,16 +2626,14 @@ rpm -ivh epel-release-6-8.noarch.rpm
   <li>
     <p>Restart Apache.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>service httpd Restart
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service httpd Restart
+</code></pre></div>    </div>
   </li>
   <li>
     <p>To use phpmyadmin, enter the following command in your browser’s address or location field:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>http://&lt;web server host or IP&gt;/phpmyadmin
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://&lt;web server host or IP&gt;/phpmyadmin
+</code></pre></div>    </div>
   </li>
   <li>
     <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s user name and password.</p>

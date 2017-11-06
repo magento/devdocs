@@ -1970,12 +1970,12 @@
 <p>Magento defines the following default health check:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">.probe</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">.url</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nt">"/pub/health_check.php"</span><span class="err">;</span><span class="w">
-    </span><span class="err">.timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">2s;</span><span class="w">
-    </span><span class="err">.interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">5s;</span><span class="w">
-    </span><span class="err">.window</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">10;</span><span class="w">
-    </span><span class="err">.threshold</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">5;</span><span class="w">
-    </span><span class="err">}</span></code></pre></figure>
+    </span><span class="err">.url</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">"/pub/health_check.php"</span><span class="err">;</span><span class="w">
+    </span><span class="err">.timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">2</span><span class="err">s;</span><span class="w">
+    </span><span class="err">.interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">5</span><span class="err">s;</span><span class="w">
+    </span><span class="err">.window</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">10</span><span class="err">;</span><span class="w">
+    </span><span class="err">.threshold</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">5</span><span class="err">;</span><span class="w">
+    </span><span class="p">}</span></code></pre></figure>
 
 <p>Every 5 seconds, this health check calls the <code class="highlighter-rouge">pub/health_check.php</code> script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> is considered unhealthy.</p>
 

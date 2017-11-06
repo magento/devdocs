@@ -1600,7 +1600,7 @@ In a future release, Solr compatibility will be removed.</p>
 
 <p>Create a script named <code>/etc/init.d/solr</code> with options similar to the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 
 <span class="c">#Starts, stops, and restarts Apache Solr.</span>
 <span class="c">#chkconfig: 35 92 08</span>
@@ -1613,14 +1613,14 @@ In a future release, Solr compatibility will be removed.</p>
 
 <span class="k">case</span> <span class="nv">$1</span> <span class="k">in
 </span>start<span class="p">)</span>
-<span class="nb">echo</span> -n <span class="s2">"Starting Solr"</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Starting Solr"</span>
 <span class="nb">cd</span> <span class="nv">$SOLR_DIR</span>
 <span class="nv">$JAVA</span> <span class="nv">$JAVA_OPTIONS</span> 2&gt; <span class="nv">$LOG_FILE</span> &amp;
 <span class="p">;;</span>
 stop<span class="p">)</span>
-<span class="nb">echo</span> -n <span class="s2">"Stopping Solr"</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Stopping Solr"</span>
 <span class="nb">cd</span> <span class="nv">$SOLR_DIR</span>
-<span class="nv">$JAVA</span> <span class="nv">$JAVA_OPTIONS</span> --stops
+<span class="nv">$JAVA</span> <span class="nv">$JAVA_OPTIONS</span> <span class="nt">--stops</span>
 <span class="p">;;</span>
 restart<span class="p">)</span>
 <span class="nv">$0</span> stop
@@ -1628,12 +1628,11 @@ sleep 1
 <span class="nv">$0</span> start
 <span class="p">;;</span>
 <span class="k">*</span><span class="p">)</span>
-<span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart}"</span> &gt;&amp;2
+<span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart}"</span> <span class="o">&gt;</span>&amp;2
 <span class="nb">exit </span>1
 <span class="p">;;</span>
 <span class="k">esac</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>All parameters shown in the following table are required.</p>
 
@@ -1674,7 +1673,7 @@ sleep 1
 
 <p>An example follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 
 <span class="c">#Starts, stops, and restarts Apache Solr.</span>
 <span class="c">#chkconfig: 35 92 08</span>
@@ -1687,14 +1686,14 @@ sleep 1
 
 <span class="k">case</span> <span class="nv">$1</span> <span class="k">in
 </span>start<span class="p">)</span>
-<span class="nb">echo</span> -n <span class="s2">"Starting Solr"</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Starting Solr"</span>
 <span class="nb">cd</span> <span class="nv">$SOLR_DIR</span>
 <span class="nv">$JAVA</span> <span class="nv">$JAVA_OPTIONS</span> 2&gt; <span class="nv">$LOG_FILE</span> &amp;
 <span class="p">;;</span>
 stop<span class="p">)</span>
-<span class="nb">echo</span> -n <span class="s2">"Stopping Solr"</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Stopping Solr"</span>
 <span class="nb">cd</span> <span class="nv">$SOLR_DIR</span>
-<span class="nv">$JAVA</span> <span class="nv">$JAVA_OPTIONS</span> --stop
+<span class="nv">$JAVA</span> <span class="nv">$JAVA_OPTIONS</span> <span class="nt">--stop</span>
 <span class="p">;;</span>
 restart<span class="p">)</span>
 <span class="nv">$0</span> stop
@@ -1702,12 +1701,11 @@ sleep 1
 <span class="nv">$0</span> start
 <span class="p">;;</span>
 <span class="k">*</span><span class="p">)</span>
-<span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart}"</span> &gt;&amp;2
+<span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart}"</span> <span class="o">&gt;</span>&amp;2
 <span class="nb">exit </span>1
 <span class="p">;;</span>
 <span class="k">esac</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To complete the script:</p>
 
@@ -1716,9 +1714,8 @@ sleep 1
   <li>
     <p>Give the script executable permissions as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>chmod +x /etc/init.d/solr
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x /etc/init.d/solr
+</code></pre></div>    </div>
   </li>
   <li>
     <p>You can now start, stop, and restart Solr as follows:</p>

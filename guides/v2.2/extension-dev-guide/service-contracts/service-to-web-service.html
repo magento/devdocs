@@ -1516,16 +1516,14 @@
   <li>
     <p>Parameters must be defined in the doc block as</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* @param type $paramName
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* @param type $paramName
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Return type must be defined in the doc block as</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* @return type
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* @return type
+</code></pre></div>    </div>
   </li>
   <li>Valid scalar types include: <code class="highlighter-rouge">mixed</code> (or <code class="highlighter-rouge">anyType</code>), <code class="highlighter-rouge">bool</code> (or <code class="highlighter-rouge">boolean</code>), <code class="highlighter-rouge">str</code> (or <code class="highlighter-rouge">string</code>), <code class="highlighter-rouge">integer</code> (or <code class="highlighter-rouge">int</code>), <code class="highlighter-rouge">float</code>, and <code class="highlighter-rouge">double</code>.</li>
   <li>Valid object types include a fully qualified class name or a fully qualified interface name.</li>
@@ -1538,32 +1536,28 @@
   <li>
     <p>A parameter $types which can be an array of strings:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* @param string[] $types
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* @param string[] $types
+</code></pre></div>    </div>
   </li>
   <li>
     <p>A parameter $id which can be an integer:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* @param int $id
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* @param int $id
+</code></pre></div>    </div>
   </li>
   <li>
     <p>A parameter $customer which is an object of class <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
+</code></pre></div>    </div>
 
     <p>Note that even if the class <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code> is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.</p>
   </li>
   <li>
     <p>A return which is an array of objects of type <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
+</code></pre></div>    </div>
   </li>
 </ul>
 

@@ -1456,7 +1456,7 @@ A product can have more than one price shown and taxes may or may not apply to a
  * @param {Array} row
  * @return {Array}
  */</span>
-<span class="nl">getPrices</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">getPrices</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">elems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">()</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">()</span> <span class="p">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">getObservable</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'elems'</span><span class="p">),</span>
         <span class="nx">result</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">initPrices</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>    
@@ -1473,7 +1473,7 @@ A product can have more than one price shown and taxes may or may not apply to a
  * @param {Array} row
  * @returns {void}
  */</span>
-<span class="nx">initPrices</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">initPrices</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">prices</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">renders</span><span class="p">.</span><span class="nx">prices</span><span class="p">;</span>
     <span class="nx">_</span><span class="p">.</span><span class="nx">sortBy</span><span class="p">(</span><span class="nx">prices</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_comparePrices</span><span class="p">);</span>
 
@@ -1500,7 +1500,7 @@ A product can have more than one price shown and taxes may or may not apply to a
  * @returns {Number}
  * @private
  */</span>
-<span class="nx">_comparePrices</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">firstPrice</span><span class="p">,</span> <span class="nx">secondPrice</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">_comparePrices</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">firstPrice</span><span class="p">,</span> <span class="nx">secondPrice</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">firstPrice</span><span class="p">.</span><span class="nx">sortOrder</span> <span class="o">&lt;</span> <span class="nx">secondPrice</span><span class="p">.</span><span class="nx">sortOrder</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
@@ -1524,7 +1524,7 @@ This component is defined in the following code sample:</p>
  *
  * @returns {String}
  */</span>
-<span class="nl">getBody</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">getBody</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">bodyTmpl</span><span class="p">;</span>
 <span class="p">},</span>
 
@@ -1534,7 +1534,7 @@ This component is defined in the following code sample:</p>
  * @param {Object} row
  * @return {HTMLElement} special price html
  */</span>
-<span class="nx">hasSpecialPrice</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">hasSpecialPrice</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'regular_price'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'final_price'</span><span class="p">];</span>
 <span class="p">},</span>
 
@@ -1544,7 +1544,7 @@ This component is defined in the following code sample:</p>
  * @param {Object} row
  * @return {HTMLElement} regular price html
  */</span>
-<span class="nx">getRegularPrice</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">getRegularPrice</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'formatted'</span><span class="p">][</span><span class="s1">'regular_price'</span><span class="p">];</span>
 <span class="p">},</span>
 
@@ -1554,7 +1554,7 @@ This component is defined in the following code sample:</p>
  * @param {Object} row
  * @return {HTMLElement} final price html
  */</span>
-<span class="nx">getPrice</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">getPrice</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">row</span><span class="p">[</span><span class="s1">'price_info'</span><span class="p">][</span><span class="s1">'formatted'</span><span class="p">][</span><span class="s1">'final_price'</span><span class="p">];</span>
 <span class="p">},</span>
 
@@ -1563,7 +1563,7 @@ This component is defined in the following code sample:</p>
  *
  * @returns {Object}
  */</span>
-<span class="nx">getAdjustments</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">getAdjustments</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">adjustments</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">elems</span><span class="p">();</span>
 
     <span class="nx">_</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">adjustments</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">adjustment</span><span class="p">)</span> <span class="p">{</span>

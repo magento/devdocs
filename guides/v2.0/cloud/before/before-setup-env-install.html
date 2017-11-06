@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1887,30 +1887,27 @@
   <li>
     <p>Enter the following command in a terminal to log in to your project:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud login
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud login
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Before you begin, list the environment variables.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud variable:get -e &lt;environment ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud variable:get -e &lt;environment ID&gt;
+</code></pre></div>    </div>
   </li>
 </ol>
 
 <p>The following results provides an example of variables:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>+----------------+---------------+-----------+------+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------------+---------------+-----------+------+
 | ID             | Value         | Inherited | JSON |
 +----------------+---------------+-----------+------+
 | ADMIN_PASSWORD | admin_A456    | Yes       | No   |
 | ADMIN_URL      | magento_A8v10 | Yes       | No   |
 | ADMIN_USERNAME | admin_A456    | Yes       | No   |
 +----------------+---------------+-----------+------+
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="keys">Get Magento authentication keys</h3>
 <p>You need Magento authentication keys to install Magento locally for your local environment. These are separate to the authentication keys included in the cloud code repository in <code class="highlighter-rouge">auth.json</code>.</p>
@@ -1943,9 +1940,8 @@
   <li>
     <p>Get the Magento Commerce metapackage using the following compose command.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
+</code></pre></div>    </div>
 
     <p>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
@@ -1961,13 +1957,12 @@
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   	chown -R :&lt;web server group&gt; .
   	chmod u+x bin/magento
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1975,15 +1970,13 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 
   <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+</code></pre></div>  </div>
 
   <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+</code></pre></div>  </div>
 
   <h2 id="install">Install Magento</h2>
   <p>Prior to installing, you should <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-composer-install">Update installation dependencies</a> using Composer commands.</p>
@@ -2042,16 +2035,14 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
     <li>
       <p>Run the compile command:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> php magento setup:di:compile
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php magento setup:di:compile
+</code></pre></div>      </div>
     </li>
     <li>
       <p>When complete, Run the deploy command:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> php magento setup:static:deploy
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php magento setup:static:deploy
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2075,9 +2066,8 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   <h2 id="verify-your-local-workspace">Verify your local workspace</h2>
   <p>To verify the local, access the store using the URL you passed in the install command. For this example, the local Magento store should load using http://magento.local/. The Admin panel should open using http://magento.local/admin. If you change the URI for the Admin panel, use this command to locate it:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento info:adminuri
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento info:adminuri
+</code></pre></div>  </div>
 
   <p>To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.</p>
 

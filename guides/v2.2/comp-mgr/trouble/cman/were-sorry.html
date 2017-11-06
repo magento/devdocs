@@ -1142,40 +1142,36 @@
   <li>
     <p>Back up your existing <code class="highlighter-rouge">composer.json</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cp composer.json composer.json.bak
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp composer.json composer.json.bak
+</code></pre></div>    </div>
   </li>
   <li>Open <code class="highlighter-rouge">composer.json</code> in a text editor.</li>
   <li>
     <p>To the <code class="highlighter-rouge">repositories</code> section, add the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composer"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://repo.magento.com/"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    {
+        "type": "composer",
+        "url": "https://repo.magento.com/"
+    }
+</code></pre></div>    </div>
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>"repositories": [
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"repositories": [
         {
             "type": "composer",
             "url": "https://repo.magento.com/"
         }
     ]
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">composer.json</code> and exit the text editor.</li>
   <li>Change to the <code class="highlighter-rouge">update</code> subdirectory, where the updater is located.</li>
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer install
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
+</code></pre></div>    </div>
   </li>
   <li>After the command completes, try the upgrade again.</li>
 </ol>

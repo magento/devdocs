@@ -265,26 +265,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Step 5, Set up PHP and MySQL</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -315,9 +295,8 @@
   <li>
     <p>Find your <code class="highlighter-rouge">php.ini</code> file using the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php --ini
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php --ini
+</code></pre></div>    </div>
 
     <p>Use the value of <code class="highlighter-rouge">Loaded Configuration File</code>.</p>
   </li>
@@ -352,9 +331,8 @@
 
 <p>First, view the current value:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysqladmin variables -u &lt;root user name&gt; -p | grep 'auto_increment'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqladmin variables -u &lt;root user name&gt; -p | grep 'auto_increment'
+</code></pre></div></div>
 
 <p>If necessary, set <code class="highlighter-rouge">auto_increment_increment</code> to 3:</p>
 
@@ -369,18 +347,16 @@
   <li>
     <p>Add or edit the following line in the <code class="highlighter-rouge">[mysqld]</code> section:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>auto_increment_increment=3
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auto_increment_increment=3
 
 Magento Commerce (Cloud) supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart MySQL:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>service mysqld restart
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service mysqld restart
+</code></pre></div>    </div>
   </li>
 </ol>
 

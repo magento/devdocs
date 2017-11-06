@@ -339,16 +339,14 @@
 
   <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
+</code></pre></div>  </div>
 
   <div class="bs-callout bs-callout-warning">
     <p>If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+</code></pre></div>    </div>
   </div>
 
   <p>You are required to <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.</p>
@@ -356,11 +354,10 @@
   <h2 id="authentication-error">Authentication error</h2>
   <p>The following authentication error might display:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>[Composer\Downloader\TransportException]
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Composer\Downloader\TransportException]
 The 'https://repo.magento.com/packages.json' URL required authentication.
 You must be using the interactive console to authenticate
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>If the error displays, change to your Magento installation directory and run <code class="highlighter-rouge">composer update</code>, which will prompt you for your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
 

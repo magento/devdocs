@@ -715,7 +715,7 @@
 
 <p>Following is an example of a component provider for Admin:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
 <span class="p">{</span>
     <span class="sd">/**
      * @inheritdoc
@@ -739,8 +739,7 @@
         <span class="k">return</span> <span class="nv">$component</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="vault-js-component">Vault JS component</h2>
 
@@ -761,9 +760,9 @@
         <span class="p">},</span>
 
         <span class="na">initObservable</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
-            <span class="nx">self</span><span class="p">.</span><span class="nx">$selector</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#'</span> <span class="o">+</span> <span class="nx">self</span><span class="p">.</span><span class="nx">selector</span><span class="p">);</span>
+            <span class="nb">self</span><span class="p">.</span><span class="nx">$selector</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#'</span> <span class="o">+</span> <span class="nb">self</span><span class="p">.</span><span class="nx">selector</span><span class="p">);</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
 
             <span class="k">this</span><span class="p">.</span><span class="nx">initEventHandlers</span><span class="p">();</span>

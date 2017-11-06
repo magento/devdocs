@@ -1108,7 +1108,7 @@
   <li>A <code class="highlighter-rouge">convertConfigTimeToUtc</code> method is added to the  <code class="highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/Timezone</code>.</li>
 </ul>
 
-<h2 id="magentocatalogrule-module-changes">Magento_CatalogRule module changes</h2>
+<h2 id="magento_catalogrule-module-changes">Magento_CatalogRule module changes</h2>
 
 <h3 id="db-schema-changes">DB schema changes</h3>
 
@@ -1144,7 +1144,7 @@
   <li>The functionality of adding a price rule to the subproduct was deleted.</li>
 </ul>
 
-<h2 id="magentocatalog-module-changes">Magento_Catalog module changes</h2>
+<h2 id="magento_catalog-module-changes">Magento_Catalog module changes</h2>
 
 <h3 id="code-changes">Code changes</h3>
 
@@ -1170,32 +1170,32 @@
   <tr>
     <td>
     
-<figure class="highlight"><pre><code class="language-php" data-lang="php">    [
-        'general' =&gt; [
-            'name' =&gt; 'Category',
-            'is_enabled' =&gt; 1,
-            'layout_update' =&gt; '<span class="nt">&lt;XML</span> <span class="na">CODE</span><span class="nt">&gt;</span>',
-            'enabled' =&gt; 1
-        ],
-        ...
-    ]
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="p">[</span>
+        <span class="s1">'general'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Category'</span><span class="p">,</span>
+            <span class="s1">'is_enabled'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s1">'layout_update'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;XML CODE&gt;'</span><span class="p">,</span>
+            <span class="s1">'enabled'</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="o">...</span>
+    <span class="p">]</span>
     </code></pre></figure>
 
     </td>
     <td>
     
-<figure class="highlight"><pre><code class="language-php" data-lang="php">    [
-        'general' =&gt; [
-            'name' =&gt; 'Category',
-            'is_enabled' =&gt; 1,
-            'parent_id' =&gt; 3
-        ],
-        'custom_layout' =&gt; [
-            'layout_update' =&gt; '<span class="nt">&lt;XML</span> <span class="na">CODE</span><span class="nt">&gt;</span>',
-            'enabled' =&gt; 1
-        ],
-        ...
-    ]
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="p">[</span>
+        <span class="s1">'general'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Category'</span><span class="p">,</span>
+            <span class="s1">'is_enabled'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s1">'parent_id'</span> <span class="o">=&gt;</span> <span class="mi">3</span>
+        <span class="p">],</span>
+        <span class="s1">'custom_layout'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'layout_update'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;XML CODE&gt;'</span><span class="p">,</span>
+            <span class="s1">'enabled'</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="o">...</span>
+    <span class="p">]</span>
     </code></pre></figure>
 
     </td>
@@ -1241,17 +1241,15 @@
   <li>To join <abbr title="&lt;span term-uuid=&quot;a9027f5d-efab-4662-96aa-c2999b5ab259&quot; class=&quot;glossary-term&quot; data-toggle=&quot;popover&quot;&gt;Entity&lt;/span&gt; Attribute Value">EAV</abbr> attributes use <code class="highlighter-rouge">linkField</code>.</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span>
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span>
+</code></pre></div></div>
 
 <ul>
   <li>To set a relation with another entities such as <code class="highlighter-rouge">category_product_entity</code> use <code class="highlighter-rouge">identifierField</code>.</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getIdentifierField</span><span class="p">()</span>
-</code></pre>
-</div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getIdentifierField</span><span class="p">()</span>
+</code></pre></div></div>
 
 <h3 id="form-initialization-changes">Form initialization changes</h3>
 

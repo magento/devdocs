@@ -1306,16 +1306,16 @@
 
 <p>To create a new cache type:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class %Namespace%\%Module%\Model\Cache\Type extends \Magento\Framework\Cache\Frontend\Decorator\TagScope
-{
-  const TYPE_IDENTIFIER = '%cache_type_id%';
-  const CACHE_TAG = '%CACHE_TYPE_TAG%';
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="err">%</span><span class="nc">Namespace</span><span class="o">%</span><span class="err">\</span><span class="o">%</span><span class="nx">Module</span><span class="o">%</span><span class="nx">\Model\Cache\Type</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\Cache\Frontend\Decorator\TagScope</span>
+<span class="p">{</span>
+  <span class="k">const</span> <span class="no">TYPE_IDENTIFIER</span> <span class="o">=</span> <span class="s1">'%cache_type_id%'</span><span class="p">;</span>
+  <span class="k">const</span> <span class="no">CACHE_TAG</span> <span class="o">=</span> <span class="s1">'%CACHE_TYPE_TAG%'</span><span class="p">;</span>
   
-  public function __construct(\Magento\Framework\App\Cache\Type\FrontendPool $cacheFrontendPool)
-  {
-    parent::__construct($cacheFrontendPool-&gt;get(self::TYPE_IDENTIFIER), self::CACHE_TAG);
-  }
-}</code></pre></figure>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Magento\Framework\App\Cache\Type\FrontendPool</span> <span class="nv">$cacheFrontendPool</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$cacheFrontendPool</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">self</span><span class="o">::</span><span class="na">TYPE_IDENTIFIER</span><span class="p">),</span> <span class="nx">self</span><span class="o">::</span><span class="na">CACHE_TAG</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>You must specify the following parameters:</p>
 

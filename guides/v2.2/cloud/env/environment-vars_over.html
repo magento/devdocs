@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1896,23 +1896,20 @@ connect to your database, for example).</li>
   <li>
     <p>List the projects:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+</code></pre></div>    </div>
   </li>
   <li>
     <p>List environments in the selected project:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project id&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project id&gt;
+</code></pre></div>    </div>
   </li>
   <li>
     <p>SSH to the environment:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh -p &lt;project id&gt; -e &lt;environment name&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh -p &lt;project id&gt; -e &lt;environment name&gt;
+</code></pre></div>    </div>
   </li>
   <li>
     <p>After you’re connected, enter <code class="highlighter-rouge">export</code>.</p>
@@ -1922,15 +1919,13 @@ connect to your database, for example).</li>
   <li>
     <p>To decode the value of a variable, enter</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>echo $&lt;variable name&gt; | base64 --decode
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $&lt;variable name&gt; | base64 --decode
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
+</code></pre></div>    </div>
   </li>
 </ol>
 

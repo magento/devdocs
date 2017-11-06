@@ -265,26 +265,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Set up Magento authentication keys</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -341,16 +321,15 @@
   <li>
     <p>In the <strong>Value</strong> field, enter the following, replacing the sample values with your authentication keys.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public key&gt;"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;private key&gt;"</span><span class="w">
-       </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+   "http-basic": {
+      "repo.magento.com": {
+         "username": "&lt;public key&gt;",
+         "password": "&lt;private key&gt;"
+       }
+    }
+}
+</code></pre></div>    </div>
   </li>
   <li>
     <p>For the checkbox options, you should not select JSON value. Depending on your user role or permissions, you may only see one option.</p>

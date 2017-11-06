@@ -517,16 +517,14 @@ cp -r /Users/&lt;name&gt;/Downloads/&lt;Magento folder name&gt; &lt;path&gt;</pr
 
 <p>For example, to copy Magento Open Source 2.1.3 code to a new folder named <code class="highlighter-rouge">/Users/me/Applications/Magento</code>, use the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /Users/me/Applications/Magento
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /Users/me/Applications/Magento
 cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/Applications/Magento
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Double-check to make sure the hidden files were copied:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ls -al /Users/me/Applications/Magento
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /Users/me/Applications/Magento
+</code></pre></div></div>
 
 <p>The first files listed should be:</p>
 
@@ -647,15 +645,13 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 
 <p>In the following example, the user downloaded <code class="highlighter-rouge">build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip</code> to a <code class="highlighter-rouge">C:\magento</code> folder on Windows. Extracting the <code class="highlighter-rouge">.zip</code> created a subfolder.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
+</code></pre></div></div>
 
 <p>An equivalent folder on Mac OS follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/Users/me/Downloads/build-18c4e4d3c5a541f37e9cffd35f1bf74e
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/me/Downloads/build-18c4e4d3c5a541f37e9cffd35f1bf74e
+</code></pre></div></div>
 
 <p>The preceding sample paths are referred to as the <em>DevBox root folder</em>.</p>
 
@@ -707,11 +703,10 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 
     <p>An example follows.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ports:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ports:
    - "12345:80"
    - "54321:22"
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>The preceding example causes the web container to listen on port 12345 and SSH to listen on port 54321.</p>
 

@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1869,9 +1869,8 @@
 <h3 id="symptom">Symptom</h3>
 <p>The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
+</code></pre></div></div>
 
 <p>To see the error log:</p>
 
@@ -1897,23 +1896,20 @@
   <li>
     <p>Log in to your project:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+</code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, clone a project.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Change to a project directory.</p>
@@ -1934,18 +1930,16 @@
   <li>
     <p>Update project dependencies:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Add, commit, and push your changes:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
 git commit -m "&lt;message&gt;"
 git push origin master
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Wait for the project to deploy.</p>

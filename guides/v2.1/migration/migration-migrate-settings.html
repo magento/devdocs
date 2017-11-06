@@ -624,9 +624,8 @@ According to our data migration <a href="/guides/v2.1/migration/migration-migrat
 
 <p>To start migrating settings, run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento migrate:settings [-r|--reset] {&lt;path to config.xml&gt;}
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento migrate:settings [-r|--reset] {&lt;path to config.xml&gt;}
+</code></pre></div></div>
 
 <p>where:</p>
 
@@ -635,7 +634,7 @@ According to our data migration <a href="/guides/v2.1/migration/migration-migrat
     <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">&lt;path</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">config.xml&gt;</span><span class="p">}</span></code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required.</p>
+    <p><code class="highlighter-rouge">{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required.</p>
   </li>
 </ul>
 
@@ -657,24 +656,21 @@ According to our data migration <a href="/guides/v2.1/migration/migration-migrat
   <li>
     <p>Change to the following directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;edition-to-edition&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;edition-to-edition&gt;
+</code></pre></div>    </div>
 
     <p>For example, if Magento 2 is installed in <code class="highlighter-rouge">/var/www/html</code>, you’ll find <code class="highlighter-rouge">settings.xml.dist</code> in one of the following directories:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
 /var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
 /var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>To create a <code class="highlighter-rouge">settings.xml</code> file from the provided sample, run:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cp settings.xml.dist settings.xml
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cp settings.xml.dist settings.xml
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Make your changes in <code class="highlighter-rouge">settings.xml</code>.</p>

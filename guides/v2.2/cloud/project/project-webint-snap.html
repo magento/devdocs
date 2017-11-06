@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1900,16 +1900,14 @@ persistent data from all running services (for example, your MySQL database, Red
   <li>
     <p>Use the following command to create the snapshot:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud snapshot:create
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud snapshot:create
+</code></pre></div>    </div>
 
     <p>The following modifiers further specify how to create the snapshot:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
  -e, --environment=ENVIRONMENT  The environment ID
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>For a full list of options, enter <code class="highlighter-rouge">magento-cloud snapshot:create --help</code>.</p>
   </li>
@@ -1939,25 +1937,22 @@ persistent data from all running services (for example, your MySQL database, Red
   <li>
     <p>List all available snapshots to copy the ID using this command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> magento-cloud snapshot:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud snapshot:list
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Use the following command to restore the snapshot using the ID you copied:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>     magento-cloud snapshot:restore &lt;id&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     magento-cloud snapshot:restore &lt;id&gt;
+</code></pre></div>    </div>
 
     <p>For example: <code class="highlighter-rouge">magento-cloud snapshot:restore 92c9a4b2aa75422efb3d</code></p>
 
     <p>The following modifiers further specify how to restore the snapshot:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
  -e, --environment=ENVIRONMENT  The environment ID
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>For a full list of options, enter <code class="highlighter-rouge">magento-cloud snapshot:restore --help</code>.</p>
   </li>
@@ -1976,18 +1971,16 @@ persistent data from all running services (for example, your MySQL database, Red
       <li>
         <p>To SSH into the <code class="highlighter-rouge">master</code> branch of your Integration environment:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>  magento-cloud environment:ssh
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  magento-cloud environment:ssh
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
   <li>
     <p>Find the database login information:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Create a database dump:</p>
@@ -1996,15 +1989,13 @@ persistent data from all running services (for example, your MySQL database, Red
 
 <p>For Starter environments and Pro Integration environments:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
+</code></pre></div></div>
 
 <p>For Pro Staging and Production environments, the name of the database is in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable (typically the same as the application name and user name):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
+</code></pre></div></div>
 
 <p>If you want to push this data into an environment, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate data and static files</a>.</p>
 

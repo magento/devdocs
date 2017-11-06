@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1906,10 +1906,9 @@
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;Magento installation dir&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento installation dir&gt;
 mkdir .magento
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>One at a time, create the following files in your Magento EE system using the contents of the files in the Magento Commerce (Cloud) GitHub:</p>
@@ -1968,16 +1967,15 @@ mkdir .magento
 
     <p>See the following example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public-key&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;private-key&gt;"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+   "http-basic": {
+      "repo.magento.com": {
+      "username": "&lt;public-key&gt;",
+      "password": "&lt;private-key&gt;"
+    }
+  }
+}
+</code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">auth.json</code> and exit the text editor.</li>
 </ol>
@@ -1995,15 +1993,13 @@ mkdir .magento
   <li>
     <p>Substitute the following value in the <code class="highlighter-rouge">require</code> section:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>"magento/product-enterprise-edition": "&lt;version&gt;",
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"magento/product-enterprise-edition": "&lt;version&gt;",
+</code></pre></div>    </div>
 
     <p>with</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>"magento/magento-cloud-metapackage": "&lt;version&gt;",
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"magento/magento-cloud-metapackage": "&lt;version&gt;",
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p>Both <code class="highlighter-rouge">&lt;version&gt;</code> values <em>must be the same</em>. In other words, if your current EE version is 2.1.3, your <code class="highlighter-rouge">magento-cloud-metapackage</code> version must also be 2.1.3.</p>
@@ -2012,7 +2008,7 @@ mkdir .magento
   <li>
     <p>Update the <code class="highlighter-rouge">"files"</code> directive in the <code class="highlighter-rouge">autoload</code> section to refer to <code class="highlighter-rouge">app/etc/NonComposerComponentRegistration.php</code> as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>"autoload": {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"autoload": {
 "psr-4": {
     "Magento\\Framework\\": "lib/internal/Magento/Framework/",
     "Magento\\Setup\\": "setup/src/Magento/Setup/",
@@ -2024,24 +2020,21 @@ mkdir .magento
 "files": [
     "app/etc/NonComposerComponentRegistration.php"
 ] }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">composer.json</code> and exit the text editor.</li>
   <li>
     <p>Run <code class="highlighter-rouge">composer update</code> to update <code class="highlighter-rouge">composer.lock</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+</code></pre></div>    </div>
   </li>
   <li>Wait while dependencies are updated.</li>
   <li>
     <p>When you’re done, commit the changes to GitHub:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add Cloud files" &amp;&amp; git push origin &lt;branch name&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add Cloud files" &amp;&amp; git push origin &lt;branch name&gt;
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2053,24 +2046,21 @@ mkdir .magento
   <li>
     <p>To back up media files, enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php &lt;Magento EE install dir&gt;/bin/magento setup:backup --media
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;Magento EE install dir&gt;/bin/magento setup:backup --media
+</code></pre></div>    </div>
 
     <p>The backup is stored in the <code class="highlighter-rouge">&lt;Magento EE install dir&gt;/var/backups</code> directory.</p>
   </li>
   <li>
     <p>Transfer the media file to your Magento Commerce (Cloud) system:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;Magento EE install dir&gt;/var/backups/&lt;backup file name&gt; &lt;cloud ssh url&gt;:var/media.tgz
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;Magento EE install dir&gt;/var/backups/&lt;backup file name&gt; &lt;cloud ssh url&gt;:var/media.tgz
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2099,24 +2089,21 @@ mkdir .magento
 
 <p>Command syntax follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt; --single-transaction --no-autocommit --quick | gzip &gt; ~/db.sql.tgz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt; --single-transaction --no-autocommit --quick | gzip &gt; ~/db.sql.tgz
+</code></pre></div></div>
 
 <p>Example if your database is on localhost with the default port (3306), database user name is <code class="highlighter-rouge">magento</code>, and database name is also <code class="highlighter-rouge">magento</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip &gt; ~/db.sql.tgz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip &gt; ~/db.sql.tgz
+</code></pre></div></div>
 
 <h3 id="transfer-the-database-dump-from-magento-ee-to-cloud">Transfer the database dump from Magento EE to Cloud</h3>
 <p>Use the <code class="highlighter-rouge">rsync</code> command as follows to transfer the database dump from your Magento EE system to the Magento Commerce (Cloud) environment.</p>
 
 <p>Now that you have created the dump, move it to the var directory of the application you are importing into:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;db dump file name&gt; &lt;cloud SSH URL&gt;:var/db.sql.gz
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;db dump file name&gt; &lt;cloud SSH URL&gt;:var/db.sql.gz
+</code></pre></div></div>
 
 <p>To find <code class="highlighter-rouge">&lt;cloud SSH URL&gt;</code>, see <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl">Find the information you need for your import</a>.</p>
 

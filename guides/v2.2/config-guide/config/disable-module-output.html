@@ -2011,15 +2011,14 @@
 
 <p>Archive the original <code class="highlighter-rouge">&lt;Magento_install_dir&gt;/app/etc/config.php</code> file. Then add the <code class="highlighter-rouge">advanced</code> and <code class="highlighter-rouge">modules_disable_output</code> sections to the <code class="highlighter-rouge">config.php</code> file (if they don’t already exist), as shown below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>'advanced' =&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'advanced' =&gt;
 array (
   'modules_disable_output' =&gt;
   array (
     'Magento_Newsletter' =&gt; '1',
   ),
 )
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>where the <code class="highlighter-rouge">array</code> beneath <code class="highlighter-rouge">modules_disable_output</code> contains a list of modules. A value of <code class="highlighter-rouge">1</code> disables output for that module.</p>
 

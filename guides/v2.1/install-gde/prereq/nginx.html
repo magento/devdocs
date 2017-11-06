@@ -2430,9 +2430,8 @@
 
 <h3 id="install-nginx">Install nginx</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>apt-get -y install nginx
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get -y install nginx
+</code></pre></div></div>
 
 <p>After completing the following sections and <a href="/guides/v2.1/install-gde/prereq/nginx.html#install-magento2-ubuntu">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.1/install-gde/prereq/nginx.hmtl#configure-nginx-ubuntu">configure nginx</a>.</p>
 
@@ -2445,26 +2444,23 @@
   <li>
     <p>Install <code class="highlighter-rouge">php-fpm</code> and <code class="highlighter-rouge">php-cli</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> apt-get -y install php7.0-fpm php7.0-cli
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> apt-get -y install php7.0-fpm php7.0-cli
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Open the <code class="highlighter-rouge">php.ini</code> files in an editor:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> vim /etc/php/7.0/fpm/php.ini
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vim /etc/php/7.0/fpm/php.ini
  vim /etc/php/7.0/cli/php.ini
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Edit both files to match the following lines:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> memory_limit = 2G
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> memory_limit = 2G
  max_execution_time = 1800
  zlib.output_compression = On
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info">
       <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
@@ -2476,9 +2472,8 @@
   <li>
     <p>Restart the <code class="highlighter-rouge">php-fpm</code> service:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> systemctl restart php7.0-fpm
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> systemctl restart php7.0-fpm
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2506,44 +2501,39 @@
   <li>
     <p>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we’re using the Ubuntu default <code class="highlighter-rouge">/var/www/html</code>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /var/www/html
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Download the Magento archive, extract it, and rename the folder <code class="highlighter-rouge">magento2/</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
  tar -xzvf 2.1.tar.gz
  mv magento2-2.1/ magento2/
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /var/www/html/magento2
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2
  find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
  find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
  chown -R :www-data .
  chmod u+x bin/magento
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Update Magento dependencies:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /var/www/html/magento2
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2
  composer install -v
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>If prompted, enter your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
@@ -2551,10 +2541,9 @@
   <li>
     <p>Install Magento from the <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /var/www/html/magento2/bin
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2/bin
  ./magento setup:install --base-url=http://www.magento-dev.com/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>Replace <code class="highlighter-rouge">http://www.magento-dev.com</code> with your domain name.</p>
 
@@ -2565,10 +2554,9 @@
   <li>
     <p>Switch to developer mode:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /var/www/html/magento2/bin
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2/bin
  ./magento deploy:mode:set developer
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2581,14 +2569,13 @@
   <li>
     <p>Create a new virtual host for your Magento site:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> vim /etc/nginx/sites-available/magento
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vim /etc/nginx/sites-available/magento
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Add the following configuration:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> upstream fastcgi_backend {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> upstream fastcgi_backend {
      server  unix:/run/php/php7.0-fpm.sock;
  }
 
@@ -2599,8 +2586,7 @@
      set $MAGE_ROOT /var/www/html/magento2;
      include /var/www/html/magento2/nginx.conf.sample;
  }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p>The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
@@ -2615,23 +2601,20 @@
   <li>
     <p>Activate the newly created virtual host by creating a symlink to it in the <code class="highlighter-rouge">/etc/nginx/sites-enabled</code> directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> ln -s /etc/nginx/sites-available/magento /etc/nginx/sites-enabled
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ln -s /etc/nginx/sites-available/magento /etc/nginx/sites-enabled
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Verify that the syntax is correct:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> nginx -t
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nginx -t
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart nginx:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> systemctl restart nginx
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> systemctl restart nginx
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2643,17 +2626,15 @@
 
 <h3 id="install-nginx-1">Install nginx</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>yum -y install epel-release
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install epel-release
 yum -y install nginx
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After installation is complete, start nginx and configure it to start at boot time:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>systemctl start nginx
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start nginx
 systemctl enable nginx
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After completing the following sections and <a href="/guides/v2.1/install-gde/prereq/nginx.html#install-and-configure-magento2-centos">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.1/install-gde/prereq/nginx.html#configure-nginx-centos">configure nginx</a>.</p>
 
@@ -2664,9 +2645,8 @@ systemctl enable nginx
   <li>
     <p>Install <code class="highlighter-rouge">php-fpm</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> yum -y install php70w-fpm
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> yum -y install php70w-fpm
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Open the <code class="highlighter-rouge">/etc/php.ini</code> file in an editor.</p>
@@ -2677,11 +2657,10 @@ systemctl enable nginx
   <li>
     <p>Edit the file to match the following lines:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> memory_limit = 2G
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> memory_limit = 2G
  max_execution_time = 1800
  zlib.output_compression = On
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info">
       <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
@@ -2690,9 +2669,8 @@ systemctl enable nginx
   <li>
     <p>Uncomment the session path directory and set the path:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> session.save_path = "/var/lib/php/session"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> session.save_path = "/var/lib/php/session"
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Save and exit the editor.</p>
@@ -2703,25 +2681,23 @@ systemctl enable nginx
   <li>
     <p>Edit the file to match the following lines:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> user = nginx
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> user = nginx
  group = nginx
  listen = /run/php-fpm/php-fpm.sock
  listen.owner = nginx
  listen.group = nginx
  listen.mode = 0660
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Uncomment the environment lines:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> env[HOSTNAME] = $HOSTNAME
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> env[HOSTNAME] = $HOSTNAME
  env[PATH] = /usr/local/bin:/usr/bin:/bin
  env[TMP] = /tmp
  env[TMPDIR] = /tmp
  env[TEMP] = /tmp
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Save and exit the editor.</p>
@@ -2729,33 +2705,29 @@ systemctl enable nginx
   <li>
     <p>Create a new directory for the PHP session path and change the owner to the <code class="highlighter-rouge">apache</code> user and group:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /var/lib/php/session/
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /var/lib/php/session/
 chown -R apache:apache /var/lib/php/
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Create a new directory for the PHP session path and change the owner to the <code class="highlighter-rouge">apache</code> user and group:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /run/php-fpm/
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /run/php-fpm/
 chown -R apache:apache /run/php-fpm/
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Start the <code class="highlighter-rouge">php-fpm</code> service and configure it to start at boot time:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>systemctl start php-fpm
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start php-fpm
 systemctl enable php-fpm
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Verify that the <code class="highlighter-rouge">php-fpm</code> service is running:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>netstat -pl | grep php-fpm.sock
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netstat -pl | grep php-fpm.sock
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2783,44 +2755,39 @@ systemctl enable php-fpm
   <li>
     <p>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we’re using the CentoOS default <code class="highlighter-rouge">/usr/share/nginx/html</code>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /usr/share/nginx/html
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Download the Magento archive, extract it, and rename the folder <code class="highlighter-rouge">magento2/</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
  tar -xzvf 2.1.tar.gz
  mv magento2-2.1/ magento2/
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2
  find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
  find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
  chown -R :apache .
  chmod u+x bin/magento
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Update Magento dependencies:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2
  composer install
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>If prompted, enter your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
@@ -2828,14 +2795,13 @@ systemctl enable php-fpm
   <li>
     <p>Install Magento from the <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2/bin
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2/bin
  ./magento setup:install --base-url=http://www.magento-dev.com/ \
  --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
  --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
  --admin-user=admin --admin-password=admin123 --language=en_US \
  --currency=USD --timezone=America/Chicago --use-rewrites=1
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>Replace <code class="highlighter-rouge">http://www.magento-dev.com</code> with your domain name.</p>
 
@@ -2846,10 +2812,9 @@ systemctl enable php-fpm
   <li>
     <p>Switch Magento to developer mode:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2/bin
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2/bin
  ./magento deploy:mode:set developer
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2862,14 +2827,13 @@ systemctl enable php-fpm
   <li>
     <p>Create a new virtual host for your Magento site:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> vim /etc/nginx/conf.d/magento.conf
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vim /etc/nginx/conf.d/magento.conf
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Add the following configuration:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> upstream fastcgi_backend {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> upstream fastcgi_backend {
      server  unix:/run/php-fpm/php-fpm.sock;
  }
 
@@ -2880,8 +2844,7 @@ systemctl enable php-fpm
      set $MAGE_ROOT /usr/share/nginx/html/magento2;
      include /usr/share/nginx/html/magento2/nginx.conf.sample;
  }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p>The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
@@ -2896,25 +2859,22 @@ systemctl enable php-fpm
   <li>
     <p>Verify that the syntax is correct:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> nginx -t
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nginx -t
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart nginx:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> systemctl restart nginx
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> systemctl restart nginx
+</code></pre></div>    </div>
   </li>
 </ol>
 
 <h3 id="configure-selinux-and-firewalld">Configure SELinux and Firewalld</h3>
 <p>SELinux is enabled by default on CentOS 7. Use the following command to see if it’s running:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sestatus
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sestatus
+</code></pre></div></div>
 
 <p>To configure SELinux and firewalld:</p>
 
@@ -2922,44 +2882,39 @@ systemctl enable php-fpm
   <li>
     <p>Install SELinux management tools:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> yum -y install policycoreutils-python
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> yum -y install policycoreutils-python
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Run the following commands to change the security context for the Magento installation directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/app/etc(/.*)?'
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/app/etc(/.*)?'
  semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/var(/.*)?'
  semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/media(/.*)?'
  semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/static(/.*)?'
  restorecon -Rv '/usr/share/nginx/html/magento2/'
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Install the firewalld package:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> yum -y install firewalld
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> yum -y install firewalld
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Start the firewall service and configure it to start at boot time:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> systemctl start firewalld
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> systemctl start firewalld
  systemctl enable firewalld
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Run the following commands to open ports for HTTP and HTTPS so you can access the Magento base URL from a web browser:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> firewall-cmd --permanent --add-service=http
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> firewall-cmd --permanent --add-service=http
  firewall-cmd --permanent --add-service=https
  firewall-cmd --reload
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 

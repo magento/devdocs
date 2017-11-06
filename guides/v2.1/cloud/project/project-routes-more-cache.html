@@ -1361,12 +1361,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1859,34 +1859,34 @@
 <p>Enable caching in your Magento application’s <code class="highlighter-rouge">.magento/routes.yaml</code> as follows:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
-    <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
-    <span class="s">cache</span><span class="pi">:</span>
-        <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
-        <span class="s">headers</span><span class="pi">:</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">Accept"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Accept-Language"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">X-Language-Locale"</span> <span class="pi">]</span>
-        <span class="s">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span>
-        <span class="s">default_ttl</span><span class="pi">:</span> <span class="s">60</span></code></pre></figure>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="na">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+    <span class="na">cache</span><span class="pi">:</span>
+        <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">headers</span><span class="pi">:</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">Accept"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Accept-Language"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">X-Language-Locale"</span> <span class="pi">]</span>
+        <span class="na">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span>
+        <span class="na">default_ttl</span><span class="pi">:</span> <span class="s">60</span></code></pre></figure>
 
 <h2 id="cloud-cache-route">Route-based caching</h2>
 <p>If you need fine-grained caching, you can set up caching rules for several routes separately as the following example shows:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
-  <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
-  <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
-  <span class="s">cache</span><span class="pi">:</span>
-    <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+  <span class="na">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+  <span class="na">cache</span><span class="pi">:</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
 
 <span class="s">http://{default}/path/</span><span class="pi">:</span>
-  <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
-  <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
-  <span class="s">cache</span><span class="pi">:</span>
-    <span class="s">enabled</span><span class="pi">:</span> <span class="s">false</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+  <span class="na">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+  <span class="na">cache</span><span class="pi">:</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="no">false</span>
 
 <span class="s">http://{default}/path/more/</span><span class="pi">:</span>
-  <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
-  <span class="s">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
-  <span class="s">cache</span><span class="pi">:</span>
-    <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+  <span class="na">upstream</span><span class="pi">:</span> <span class="s">php:php</span>
+  <span class="na">cache</span><span class="pi">:</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span></code></pre></figure>
 
 <p>The preceding example caches the following routes:</p>
 
@@ -1918,10 +1918,10 @@
 
 <p>The default value for these keys follows:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
-  <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
-  <span class="s">headers</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Accept-Language"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Accept"</span><span class="pi">]</span>
-  <span class="s">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">cache</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">headers</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Accept-Language"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Accept"</span><span class="pi">]</span>
+  <span class="na">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">*"</span><span class="pi">]</span></code></pre></figure>
 
 <h2 id="cloud-cache-attrib">Cache attributes</h2>
 <p>We support the following attributes:</p>
@@ -1941,9 +1941,9 @@
 
 <p>For example, if the <code class="highlighter-rouge">headers</code> key is the following:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
-  <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
-  <span class="s">headers</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Accept"</span><span class="pi">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">cache</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">headers</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Accept"</span><span class="pi">]</span></code></pre></figure>
 
 <p>Then Magento Commerce will cache a different response for each value of the <code class="highlighter-rouge">Accept</code> HTTP header.</p>
 
@@ -1952,9 +1952,9 @@
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cache</span><span class="pi">:</span>
-  <span class="s">enabled</span><span class="pi">:</span> <span class="s">true</span>
-  <span class="s">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">value"</span><span class="pi">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">cache</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">value"</span><span class="pi">]</span></code></pre></figure>
 
 <p>The cache key depends on the value of the <code class="highlighter-rouge">value</code> cookie in the request.</p>
 

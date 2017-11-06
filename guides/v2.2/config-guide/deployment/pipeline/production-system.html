@@ -1990,9 +1990,8 @@
 
     <p>Create the directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p ~/.ssh/.composer
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p ~/.ssh/.composer
+</code></pre></div>    </div>
 
     <p>Create <code class="highlighter-rouge">auth.json</code> in that directory.</p>
 
@@ -2000,16 +1999,15 @@
 
     <p>A sample follows:</p>
 
-    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
+</span></code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">auth.json</code>.</li>
   <li>Copy <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/etc/env.php</code> from your development system to your production system.</li>
@@ -2034,21 +2032,18 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento config:sensitive:set {configuration path} {value}
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento config:sensitive:set {configuration path} {value}
+</code></pre></div>    </div>
 
     <p>For example, to set the value of the YouTube API key To to <code class="highlighter-rouge">1234</code>, enter</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento config:sensitive:set catalog/product_video/youtube_api_key 1234
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento config:sensitive:set catalog/product_video/youtube_api_key 1234
+</code></pre></div>    </div>
 
     <p>You can also set one or more values interactively as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento config:sensitive:set -i
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento config:sensitive:set -i
+</code></pre></div>    </div>
 
     <p>When prompted, enter a value for each sensitive setting or press Enter to skip a value and move to the next one.</p>
   </li>

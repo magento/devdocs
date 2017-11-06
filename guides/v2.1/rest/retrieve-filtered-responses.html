@@ -559,9 +559,9 @@
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/products/24-MB01?fields=sku,price,name</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
-  </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Joust Duffle Bag"</span><span class="w">
-  </span><span class="s2">"price"</span><span class="err">:</span><span class="w"> </span><span class="mf">24.99</span><span class="w">
+  </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joust Duffle Bag"</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.99</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 </div></div>
 
@@ -572,24 +572,24 @@
 <p><code class="highlighter-rouge">GET http:/&lt;host&gt;/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-</span><span class="nt">"customer_firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="w">
-</span><span class="s2">"customer_lastname"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
-</span><span class="s2">"billing_address"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nt">"address_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"billing"</span><span class="w">
-  </span><span class="s2">"city"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Calder"</span><span class="w">
-  </span><span class="s2">"country_id"</span><span class="err">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
-  </span><span class="s2">"customer_address_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="s2">"email"</span><span class="err">:</span><span class="w"> </span><span class="s2">"roni_cost@example.com"</span><span class="w">
-  </span><span class="s2">"entity_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
-  </span><span class="s2">"firstname"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="w">
-  </span><span class="s2">"lastname"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
-  </span><span class="s2">"parent_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-  </span><span class="s2">"postcode"</span><span class="err">:</span><span class="w"> </span><span class="s2">"49628-7978"</span><span class="w">
-  </span><span class="s2">"region"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Michigan"</span><span class="w">
-  </span><span class="s2">"region_code"</span><span class="err">:</span><span class="w"> </span><span class="s2">"MI"</span><span class="w">
-  </span><span class="s2">"region_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
-  </span><span class="s2">"street"</span><span class="err">:</span><span class="w"> </span><span class="s2">"6146 Honey Bluff Parkway"</span><span class="w">
-  </span><span class="s2">"telephone"</span><span class="err">:</span><span class="w"> </span><span class="s2">"(555) 229-3326"</span><span class="w">
+</span><span class="s2">"customer_firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="w">
+</span><span class="s2">"customer_lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
+</span><span class="s2">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"address_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"billing"</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calder"</span><span class="w">
+  </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+  </span><span class="s2">"customer_address_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roni_cost@example.com"</span><span class="w">
+  </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+  </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="w">
+  </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
+  </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49628-7978"</span><span class="w">
+  </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Michigan"</span><span class="w">
+  </span><span class="s2">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MI"</span><span class="w">
+  </span><span class="s2">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+  </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6146 Honey Bluff Parkway"</span><span class="w">
+  </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 229-3326"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 </div></div>
@@ -600,12 +600,12 @@
 
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/shipment/2?fields=items[name,qty,sku]</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"items"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
    </span><span class="p">{</span><span class="w">
-     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minerva LumaTech&amp;trade; V-Tee-XS-Blue"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS08-XS-Blue"</span><span class="p">,</span><span class="w">
-   </span><span class="err">}</span><span class="w">
+     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minerva LumaTech&amp;trade; V-Tee-XS-Blue"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS08-XS-Blue"</span><span class="p">,</span><span class="w">
+   </span><span class="p">}</span><span class="w">
  </span><span class="p">]</span><span class="w">
  </span></code></pre></figure>
 </div></div>
@@ -623,16 +623,16 @@
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MT12"</span><span class="w">
-  </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Cassius Sparring Tank"</span><span class="w">
-  </span><span class="s2">"extension_attributes"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"category_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-      </span><span class="s2">"category_id"</span><span class="err">:</span><span class="w"> </span><span class="s2">"18"</span><span class="w">
+  </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MT12"</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cassius Sparring Tank"</span><span class="w">
+  </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"category_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-    </span><span class="s2">"stock_item"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">732</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="s2">"stock_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">732</span><span class="w">
+      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
       </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -645,16 +645,16 @@
 <p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/V1/categories?fields=id,parent_id,name</code></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Category"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Category"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
-</span><span class="s2">"parent_id"</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"New Category"</span><span class="w">
+</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+</span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Category"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 </div></div>
 
@@ -667,42 +667,42 @@
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&amp;searchCriteria[filter_groups][0][filters][0][value]=86&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=finset&amp;fields=items[sku,name]</code></p>
 
 <div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-</span><span class="nt">"items"</span><span class="p">:</span><span class="w">
+</span><span class="s2">"items"</span><span class="p">:</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG04"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Aim Analog Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG04"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aim Analog Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG01"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Endurance Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG01"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Endurance Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG03"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Summit Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG03"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Summit Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG05"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Cruise Dual Analog Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG05"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cruise Dual Analog Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG02"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Dash Digital Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG02"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dash Digital Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG09"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Luma Analog Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG09"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Luma Analog Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG01"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Bolo Sport Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG01"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bolo Sport Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG03"</span><span class="w">
-      </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Clamber Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG03"</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clamber Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG02"</span><span class="w">
-    </span><span class="s2">"name"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Didi Sport Watch"</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG02"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Didi Sport Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 </div></div>

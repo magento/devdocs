@@ -2413,15 +2413,13 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
@@ -2430,9 +2428,8 @@
 
       <p>bash shell example for CentOS:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2463,14 +2460,13 @@
 </p></span></div>
     </li>
   </ul>
-  <p>## Create or edit an administrator {#instgde-cli-admin}
-Use this command to create a new administrator or to edit an existing administrator. If you’re editing an administrator, only the first name, last name, and password can be edited.</p>
+  <h2 id="instgde-cli-admin">Create or edit an administrator</h2>
+  <p>Use this command to create a new administrator or to edit an existing administrator. If you’re editing an administrator, only the first name, last name, and password can be edited.</p>
 
   <p>Command usage:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
+</code></pre></div>  </div>
 
   <p>where the following table defines parameters and values.</p>
 
@@ -2518,30 +2514,26 @@ Use this command to create a new administrator or to edit an existing administra
   <h2 id="instgde-cli-admin-unlock">Unlock an administrator account</h2>
   <p>Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento admin:user:unlock {user name}
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:unlock {user name}
+</code></pre></div>  </div>
 
   <p>You must specify the administrator’s user name. Example:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento admin:user:unlock admin
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:unlock admin
 The user account "admin" has been unlocked
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>If the account is either not unlocked or if there was a problem, the following message displays:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>The user account "admin" was not locked or could not be unlocked
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The user account "admin" was not locked or could not be unlocked
+</code></pre></div>  </div>
 
   <p>Verify the user is an administrator, the user is active, and that the account is currently locked. To view the list of locked users in the Admin, log in as an administrator and click <strong>System</strong> &gt; Permissions &gt; <strong>Locked Users</strong>.</p>
 
   <p>If the account doesn’t exist, the following message displays:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Couldn't find the user account "bob"
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Couldn't find the user account "bob"
+</code></pre></div>  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

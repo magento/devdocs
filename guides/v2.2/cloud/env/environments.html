@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1903,15 +1903,13 @@
 
   <p>You begin by creating active branches and pushing code. You can use the following command to create an active branch from a parent branch:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:branch
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:branch
+</code></pre></div>  </div>
 
   <p>You have unlimited inactive Git branches. These branches do not receive an environment until it is made active. You can use the following command to activate an inactive branch:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:activate
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:activate
+</code></pre></div>  </div>
 
   <p>When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.</p>
 

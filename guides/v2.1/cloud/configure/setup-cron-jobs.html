@@ -1361,12 +1361,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1871,22 +1871,20 @@
 
 <p>You will add the cron job to <code class="highlighter-rouge">.magento.app.yaml</code> in the <code class="highlighter-rouge">crons</code> section. The general format is <code class="highlighter-rouge">spec</code> for scheduling and <code class="highlighter-rouge">cmd</code> for the script. For example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>crons:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
     productcatalog:
         spec: '20 */3 * * *'
         cmd: 'bin/magento indexer:reindex catalog_product_category'
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The following example is the default cron included for Magento Commerce (Cloud).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Default Magento 2 cron jobs
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default Magento 2 cron jobs
 crons:
     cronrun:
         spec: "*/5 * * * *"
         cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We use only this one cron for cloud due to the read-only nature of the environments. This is different from Magento Commerce which has three default cron jobs.</p>
@@ -1919,11 +1917,10 @@ crons:
 
 <p>The following is an example cron job:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>crons:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
     spec: "00 */3 * * *"
     cmd: "/usr/bin/php /app/abc123edf890/bin/magento indexer:reindex catalog_category_product"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>With the settings:</p>
 
@@ -1955,13 +1952,12 @@ crons:
 <h2 id="add-cron">Add cron jobs to .magento.app.yaml</h2>
 <p>You should add all cron jobs to your <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file in the the <code class="highlighter-rouge">crons</code> section. We include a default cron job for Magento in the default file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Default Magento 2 cron jobs
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default Magento 2 cron jobs
 crons:
     cronrun:
         spec: "*/5 * * * *"
         cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li>Edit <code class="highlighter-rouge">.magento.app.yaml</code> in the root directory of the Magento code in the Git branch.</li>
@@ -1970,15 +1966,14 @@ crons:
 
     <p>For example, you could add a reindexer cron job to run every three hours, 20 minutes after the hour (such as 12:20 am, 3:20 am, and so on):</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> crons:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> crons:
      magento:
          spec: '*/5 * * * *'
          cmd: 'php bin/magento cron:run &amp;&amp; php bin/magento cron:run'
      productcatalog:
          spec: '20 */3 * * *'
          cmd: 'bin/magento indexer:reindex catalog_product_category'
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Save the file and push updates to the Git branch.</li>
 </ol>

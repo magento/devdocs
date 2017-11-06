@@ -2424,9 +2424,8 @@
     <li>
       <p>Enter the following command:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cron:install [--force]
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cron:install [--force]
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2441,19 +2440,17 @@
 
   <p>To view the crontab, enter the following command as the Magento file system owner:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -l
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -l
+</code></pre></div>  </div>
 
   <p>A sample follows:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>#~ MAGENTO START
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#~ MAGENTO START
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2&gt;&amp;1 | grep -v Ran jobs by schedule &gt;&gt; /var/www/html/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/update/cron.php &gt;&gt; /var/www/html/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/html/magento2/var/log/setup.cron.log
 #~ MAGENTO END
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>For more information about cron, including how to remove a crontab and run cron from the command line, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>.</p>
 

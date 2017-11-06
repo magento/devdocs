@@ -2420,13 +2420,12 @@
 
   <p>Following is a sample failure message:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>We found conflicting component dependencies. 
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We found conflicting component dependencies. 
 
 You are trying to update package(s) magento/module-sample-data to 1.0.0-beta
 We've detected conflicts with the following packages:
 - magento/sample-data version 0.74.0-beta15. Please try to update it to one of the following package versions: 0.74.0-beta16, 0.74.0-beta14, 0.74.0-beta13, 0.74.0-beta12, 0.74.0-beta11, 0.74.0-beta10, 0.74.0-beta9, 0.74.0-beta8, 0.74.0-beta7
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
   <p>The message you see will likely be different.</p>
@@ -2441,10 +2440,9 @@ We've detected conflicts with the following packages:
   <h3 id="trouble-depend-permission">File system permissions issues</h3>
   <p>If the Magento file system owner doesn’t have permissions to write to directories on the Magento file system, a message similar to the following displays:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
 packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permission denied
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Make sure you set file system permissions as discussed in <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
 

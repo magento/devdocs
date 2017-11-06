@@ -1361,12 +1361,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1867,15 +1867,13 @@
 
 <p>To create the Magento file system owner, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>adduser &lt;username&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adduser &lt;username&gt;
+</code></pre></div></div>
 
 <p>To give the user a password, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>passwd &lt;username&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>passwd &lt;username&gt;
+</code></pre></div></div>
 
 <p>Follow the prompts on your screen to create a password for the user.</p>
 
@@ -1885,10 +1883,9 @@
 
 <p>For example, to create a user named <code class="highlighter-rouge">magento_user</code> and give the user a password, enter:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo adduser magento_user
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo adduser magento_user
 sudo passwd magento_user
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-warning">
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
@@ -1922,21 +1919,18 @@ sudo passwd magento_user
 
 <p>For example, to add the user <code class="highlighter-rouge">magento_user</code> to the <code class="highlighter-rouge">apache</code> primary group on CentOS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>usermod -g apache magento_user
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usermod -g apache magento_user
+</code></pre></div></div>
 
 <p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>groups &lt;user name&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>groups &lt;user name&gt;
+</code></pre></div></div>
 
 <p>A sample result follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento_user : apache
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento_user : apache
+</code></pre></div></div>
 
 <p>To complete the task, restart the web server:</p>
 

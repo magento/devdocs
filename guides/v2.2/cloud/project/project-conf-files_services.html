@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1892,14 +1892,13 @@
 <h2 id="cloud-yaml-services-default">Default and supported services</h2>
 <p>Your Git branch includes the following default <code class="highlighter-rouge">services.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mysql:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql:
    type: mysql:10.0
    disk: 2048
 
 redis:
    type: redis:3.0
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Modify this file to use specific and additional services in your deployment. See the <a href="#cloud-yaml-services-type"><code class="highlighter-rouge">type</code></a> section to see the services we support and deploy for you if you add them to the file.</p>
 

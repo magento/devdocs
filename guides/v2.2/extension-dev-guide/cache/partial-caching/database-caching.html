@@ -1500,15 +1500,14 @@
   <li>
     <p>Enter the following commands to make a copy of <code class="highlighter-rouge">di.xml</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/app/etc
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/app/etc
 cp di.xml di.xml.bak
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Open <code class="highlighter-rouge">di.xml</code> in a text editor and locate the following block:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
    &lt;arguments&gt;
       &lt;argument name="frontendSettings" xsi:type="array"&gt;
           &lt;item name="page_cache" xsi:type="array"&gt;
@@ -1526,8 +1525,7 @@ cp di.xml di.xml.bak
       &lt;/argument&gt;
    &lt;/arguments&gt;
 &lt;/type&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>The <code class="highlighter-rouge">&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;</code> node configures options for the in-memory pool of all frontend cache instances.</p>
 
@@ -1536,7 +1534,7 @@ cp di.xml di.xml.bak
   <li>
     <p>Replace the entire block with the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
 	&lt;arguments&gt;
     	&lt;argument name="frontendSettings" xsi:type="array"&gt;
     	    &lt;item name="page_cache" xsi:type="array"&gt;
@@ -1555,8 +1553,7 @@ cp di.xml di.xml.bak
  	   &lt;/argument&gt;
 	&lt;/arguments&gt;
 &lt;/type&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>where <code class="highlighter-rouge">&lt;your cache id&gt;</code> is your unique cache identifier.</p>
   </li>
@@ -1581,15 +1578,14 @@ cp di.xml di.xml.bak
   <li>
     <p>Enter the following commands to make a copy of <code class="highlighter-rouge">env.php</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/app/etc
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/app/etc
 cp env.php env.php.bak
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Open <code class="highlighter-rouge">env.php</code> in a text editor and add the following anywhere, such as before <code class="highlighter-rouge">'cache_types' =&gt;</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>'cache' =&gt; [
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'cache' =&gt; [
     'frontend' =&gt; [
         '&lt;unique frontend id&gt;' =&gt; [
              &lt;cache options&gt;
@@ -1606,8 +1602,7 @@ cp env.php env.php.bak
         ],
     ],
 ],
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>An example is shown in <a href="#mage-cache-db-config">Configuration examples</a>.</p>
   </li>
@@ -1625,9 +1620,8 @@ cp env.php env.php.bak
   <li>
     <p>Clear the current cache directories:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/var/cache/* &lt;your Magento install dir&gt;/var/page_cache/* &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/var/cache/* &lt;your Magento install dir&gt;/var/page_cache/* &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
+</code></pre></div>    </div>
   </li>
   <li>
     <p>In a web browser, go to any cacheable page (such as the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> front door page).</p>
@@ -1637,10 +1631,9 @@ cp env.php env.php.bak
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ls &lt;your Magento install dir&gt;/var/cache/*
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls &lt;your Magento install dir&gt;/var/cache/*
 ls &lt;your Magento install dir&gt;/var/page_cache/*
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   <span class="glyphicon-class">
@@ -1693,54 +1686,54 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
 <p><code class="highlighter-rouge">env.php</code> snippet that enables all cache types with a custom frontend named <code class="highlighter-rouge">magento_cache</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> 'cache' =&gt; [
-     'frontend' =&gt; [
-        'magento_cache' =&gt; [
-             'backend' =&gt; 'database'
-         ],
-      ],
-      'type' =&gt; [
-         'config' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'layout' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'block_html' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'view_files_fallback' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'view_files_preprocessing' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'collections' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'db_ddl' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'eav' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'full_page' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'translate' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'config_integration' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'config_integration_api' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-         'config_webservice' =&gt; [
-            'frontend' =&gt; 'magento_cache'
-          ],
-      ],
-  ],</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">'cache'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+     <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'magento_cache'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+             <span class="s1">'backend'</span> <span class="o">=&gt;</span> <span class="s1">'database'</span>
+         <span class="p">],</span>
+      <span class="p">],</span>
+      <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+         <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'layout'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'block_html'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'view_files_fallback'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'view_files_preprocessing'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'collections'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'db_ddl'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'eav'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'full_page'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'translate'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'config_integration'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'config_integration_api'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+         <span class="s1">'config_webservice'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="s1">'magento_cache'</span>
+          <span class="p">],</span>
+      <span class="p">],</span>
+  <span class="p">],</span></code></pre></figure>
 
 
 		</div>

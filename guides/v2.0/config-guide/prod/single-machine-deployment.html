@@ -1580,23 +1580,20 @@ Contributing developers should use <a href="/guides/v2.0/install-gde/install/cli
   <li>
     <p>Change directory to the Magento base directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> cd &lt;Magento base directory&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd &lt;Magento base directory&gt;
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enable maintenance mode using the command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento maintenance:enable
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento maintenance:enable
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Apply updates to Magento or its components using the following command pattern:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> composer require &lt;package&gt; &lt;version&gt; --no-update
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer require &lt;package&gt; &lt;version&gt; --no-update
+</code></pre></div>    </div>
 
     <p><strong>package</strong>: The name of the package you want to update.</p>
 
@@ -1612,37 +1609,32 @@ Contributing developers should use <a href="/guides/v2.0/install-gde/install/cli
   <li>
     <p>Update Magento’s components with Composer:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> composer update
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer update
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento setup:upgrade
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Compile the code:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:di:compile
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento setup:di:compile
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Deploy static content:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento setup:static-content:deploy
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento setup:static-content:deploy
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Exit maintenance mode:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> php bin/magento maintenance:disable
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento maintenance:disable
+</code></pre></div>    </div>
   </li>
 </ol>
 

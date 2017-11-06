@@ -1351,7 +1351,7 @@
 
 <p>The following code sends a message to the queue. The <code class="highlighter-rouge">publish</code> method is defined in <code class="highlighter-rouge">PublisherInterface</code></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$publisher-&gt;publish($topic, $message)</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">(</span><span class="nv">$topic</span><span class="p">,</span> <span class="nv">$message</span><span class="p">)</span></code></pre></figure>
 
 <p>In an MySQL adapter environment, when a message is published to multiple queues, create a single record in <code class="highlighter-rouge">queue_message</code> and multiple records in <code class="highlighter-rouge">queue_message_status</code>: one for each queue. (A join on the <code class="highlighter-rouge">queue</code>, <code class="highlighter-rouge">queue_message</code>, and <code class="highlighter-rouge">queue_message_status</code> tables is required).</p>
 
@@ -1362,8 +1362,8 @@
 <h3>RabbitMQ</h3>
 <p>This instantiates a consumer that is defined in a <code class="highlighter-rouge">queue.xml</code> file. The consumer (<code class="highlighter-rouge">customer_created_listener</code>)listens to the queue and receives all new messages. For every message, it invokes <code class="highlighter-rouge">Magento\Some\Class::processMessage($message)</code></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$this-&gt;consumerFactory-&gt;get('customer_created_listener')
-    -&gt;process();</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">consumerFactory</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'customer_created_listener'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">process</span><span class="p">();</span></code></pre></figure>
 
 <h3>MySQL adapter</h3>
 
@@ -1381,13 +1381,13 @@
 <h2>Override topic configuration</h2>
 <p>The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">'queue' =&gt;
-    array(
-     'topics' =&gt; array(
-        'customer.created' =&gt; [publisher="default-rabitmq"],
-        'order.created' =&gt; [publisher="default-rabitmq"],
-    ),
-),</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'queue'</span> <span class="o">=&gt;</span>
+    <span class="k">array</span><span class="p">(</span>
+     <span class="s1">'topics'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'customer.created'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">publisher</span><span class="o">=</span><span class="s2">"default-rabitmq"</span><span class="p">],</span>
+        <span class="s1">'order.created'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">publisher</span><span class="o">=</span><span class="s2">"default-rabitmq"</span><span class="p">],</span>
+    <span class="p">),</span>
+<span class="p">),</span></code></pre></figure>
 
 <h4 id="related-topics">Related Topics</h4>
 

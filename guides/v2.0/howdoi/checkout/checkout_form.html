@@ -837,13 +837,13 @@
          */</span>
         <span class="na">onSubmit</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="c1">// trigger form validation</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'params.invalid'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'params.invalid'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'customCheckoutForm.data.validate'</span><span class="p">);</span>
 
             <span class="c1">// verify that form data is valid</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'params.invalid'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'params.invalid'</span><span class="p">))</span> <span class="p">{</span>
                 <span class="c1">// data is retrieved from data provider by value of the customScope property</span>
-                <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'customCheckoutForm'</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'customCheckoutForm'</span><span class="p">);</span>
                 <span class="c1">// do something with form data</span>
                 <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span>
             <span class="p">}</span>
@@ -1033,21 +1033,21 @@ A plugin can add custom fields definitions to layout at run-time. The format of 
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$textField = [
-    'component' =&gt; 'Magento_Ui/js/form/element/abstract',
-    'config' =&gt; [
-        'customScope' =&gt; 'customCheckoutForm',
-        'template' =&gt; 'ui/form/field',
-        'elementTmpl' =&gt; 'ui/form/element/input',
-    ],
-    'provider' =&gt; 'checkoutProvider',
-    'dataScope' =&gt; 'customCheckoutForm.text_field',
-    'label' =&gt; 'Text Field',
-    'sortOrder' =&gt; 1,
-    'validation' =&gt; [
-        'required-entry' =&gt; true,
-    ],
-];</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$textField</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'component'</span> <span class="o">=&gt;</span> <span class="s1">'Magento_Ui/js/form/element/abstract'</span><span class="p">,</span>
+    <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'customScope'</span> <span class="o">=&gt;</span> <span class="s1">'customCheckoutForm'</span><span class="p">,</span>
+        <span class="s1">'template'</span> <span class="o">=&gt;</span> <span class="s1">'ui/form/field'</span><span class="p">,</span>
+        <span class="s1">'elementTmpl'</span> <span class="o">=&gt;</span> <span class="s1">'ui/form/element/input'</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">'provider'</span> <span class="o">=&gt;</span> <span class="s1">'checkoutProvider'</span><span class="p">,</span>
+    <span class="s1">'dataScope'</span> <span class="o">=&gt;</span> <span class="s1">'customCheckoutForm.text_field'</span><span class="p">,</span>
+    <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="s1">'Text Field'</span><span class="p">,</span>
+    <span class="s1">'sortOrder'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'validation'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'required-entry'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">];</span></code></pre></figure>
 
 <h2 id="illustration">Illustration</h2>
 <p>If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:</p>

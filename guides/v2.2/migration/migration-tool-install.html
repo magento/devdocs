@@ -610,18 +610,16 @@
 
 <p>If you downloaded the Magento software using a <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> metapackage, enter the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento --version
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento --version
+</code></pre></div></div>
 
 <h4 id="github-repository">Github repository</h4>
 
 <p>If you cloned the Magento 2 GitHub repository, enter the following commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento 2 clone directory&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento 2 clone directory&gt;
 git branch
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If you’re currently in the <code class="highlighter-rouge">develop</code> branch, you must change to a <a href="/guides/v2.2/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.</p>
 
@@ -671,19 +669,17 @@ git branch
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer config repositories.magento composer https://repo.magento.com
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer config repositories.magento composer https://repo.magento.com
 composer require magento/data-migration-tool:&lt;version&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>where <code class="highlighter-rouge">&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
 
     <p>For example, for version 2.2, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer config repositories.magento composer https://repo.magento.com
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer config repositories.magento composer https://repo.magento.com
 composer require magento/data-migration-tool:2.2
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.</li>
 </ol>
@@ -698,19 +694,17 @@ composer require magento/data-migration-tool:2.2
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
 composer require magento/data-migration-tool:&lt;version&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>where <code class="highlighter-rouge">&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
 
     <p>For example, for version 2.2, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
 composer require magento/data-migration-tool:2.2
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 

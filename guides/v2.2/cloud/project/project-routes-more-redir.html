@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1874,25 +1874,23 @@ Magento Commerce (Cloud) projects.</p>
 <h2 id="cloud-route-whole">Whole-route redirects</h2>
 <p>Using whole-route redirects, you can define very basic routes in <code class="highlighter-rouge">routes.yaml</code>. For example, you can redirect from a naked domain to a <code class="highlighter-rouge">www</code> subdomain as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>http://{default}/:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://{default}/:
     type: redirect
     to: http://www.{default}/
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-route-partial">Partial redirects</h2>
 <p>In the <a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a> file you can also add partial <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> rules
 to existing routes:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>http://{default}/:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://{default}/:
   # [...]
   redirects:
     expires: 1d
     paths:
       "/from": { "to": "http://example.com/" }
       "/regexp/(.*)/matching": { "to": "http://example.com/$1", regexp: true }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This format is more rich and works with any type of route, including routes served directly by the application.</p>
 
@@ -1932,12 +1930,12 @@ keys:</p>
 <div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>In the following example, a request to <code class="highlighter-rouge">http://example.com/regexp/a/b/c/match</code> redirects to <code class="highlighter-rouge">http://example.com/a/b/c</code>:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
-    <span class="s">redirects</span><span class="pi">:</span>
-       <span class="s">paths</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="na">redirects</span><span class="pi">:</span>
+       <span class="na">paths</span><span class="pi">:</span>
           <span class="s2">"</span><span class="s">/regexp/(.*)/match"</span><span class="pi">:</span>
-          <span class="s">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/$1"</span>
-          <span class="s">regexp</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
+          <span class="na">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/$1"</span>
+          <span class="na">regexp</span><span class="pi">:</span> <span class="no">true</span></code></pre></figure>
 </div></div>
 
 <h3 id="cloud-route-partial-prefix"><code class="highlighter-rouge">prefix</code></h3>
@@ -1946,12 +1944,12 @@ keys:</p>
 <div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
        <span class="s">redirects</span><span class="pi">:</span>
-       <span class="s">paths</span><span class="pi">:</span>
+       <span class="na">paths</span><span class="pi">:</span>
           <span class="s2">"</span><span class="s">/from"</span><span class="pi">:</span>
-          <span class="s">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://{default}/to"</span>
-          <span class="s">partial</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
+          <span class="na">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://{default}/to"</span>
+          <span class="na">partial</span><span class="pi">:</span> <span class="no">true</span></code></pre></figure>
 
 <p>In the preceding example, if <code class="highlighter-rouge">partial</code> is set to <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">/from</code> redirects to <code class="highlighter-rouge">/to</code> and <code class="highlighter-rouge">/from/another/path</code> will redirect to <code class="highlighter-rouge">/to/another/path</code></p>
 
@@ -1964,12 +1962,12 @@ keys:</p>
 <div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
-    <span class="s">redirects</span><span class="pi">:</span>
-       <span class="s">paths</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="na">redirects</span><span class="pi">:</span>
+       <span class="na">paths</span><span class="pi">:</span>
           <span class="s2">"</span><span class="s">/from"</span><span class="pi">:</span>
-          <span class="s">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://{default}/to"</span>
-          <span class="s">append_suffix</span><span class="pi">:</span> <span class="s">false</span></code></pre></figure>
+          <span class="na">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://{default}/to"</span>
+          <span class="na">append_suffix</span><span class="pi">:</span> <span class="no">false</span></code></pre></figure>
 
 <p>The preceding example results in <code class="highlighter-rouge">/from/path/suffix</code> redirecting to just <code class="highlighter-rouge">/to</code>.</p>
 
@@ -1983,10 +1981,10 @@ keys:</p>
 <p>Optional, the duration the redirect will be cached. Defaults to the <code class="highlighter-rouge">expires</code> value defined directly under the <code class="highlighter-rouge">redirects</code> key, but at this level we can fine-tune the expiration of individual partial redirects:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
-    <span class="s">type</span><span class="pi">:</span> <span class="s">upstream</span>
-    <span class="s">redirects</span><span class="pi">:</span>
-       <span class="s">expires</span><span class="pi">:</span> <span class="s">1d</span>
-       <span class="s">paths</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+    <span class="na">redirects</span><span class="pi">:</span>
+       <span class="na">expires</span><span class="pi">:</span> <span class="s">1d</span>
+       <span class="na">paths</span><span class="pi">:</span>
           <span class="s2">"</span><span class="s">/from"</span><span class="pi">:</span> <span class="pi">{</span> <span class="s2">"</span><span class="s">to"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/"</span> <span class="pi">}</span>
           <span class="s2">"</span><span class="s">/here"</span><span class="pi">:</span> <span class="pi">{</span> <span class="s2">"</span><span class="s">to"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/there"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">expires"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2w"</span> <span class="pi">}</span></code></pre></figure>
 

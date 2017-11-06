@@ -1671,9 +1671,8 @@
 <div class="bs-callout bs-callout-tip">
   <p>You can also activate Varnish from the command line–instead of logging in to the Magento Admin–using MySQL statement syntax:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u root -p -D magento -e "INSERT INTO core_config_data ( scope, scope_id, path, value ) VALUES ( 'default', '0', 'system/full_page_cache/caching_application', '2') ON DUPLICATE KEY UPDATE value = 2;"
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p -D magento -e "INSERT INTO core_config_data ( scope, scope_id, path, value ) VALUES ( 'default', '0', 'system/full_page_cache/caching_application', '2') ON DUPLICATE KEY UPDATE value = 2;"
+</code></pre></div>  </div>
 
   <p>Where <code class="highlighter-rouge">magento</code> is the name of your database.</p>
 </div>
@@ -1698,19 +1697,17 @@
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>acl purge {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>acl purge {
    "localhost";
 }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart Varnish and your web server:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>service varnish restart
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service varnish restart
 service httpd restart
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 

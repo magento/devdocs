@@ -1671,9 +1671,8 @@
 
     <p>Command options:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento support:backup:code [--name=&lt;file name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento support:backup:code [--name=&lt;file name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs]
+</code></pre></div>    </div>
 
     <p>Where:</p>
 
@@ -1685,9 +1684,8 @@
 
     <p>For example, to create a code backup named <code class="highlighter-rouge">/var/www/html/magento2/var/log/mycodebackup.tar.gz</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+</code></pre></div>    </div>
 
     <p>After the command completes, provide the code backup to Magento Support.</p>
 
@@ -1700,9 +1698,8 @@
 
     <p>Command options:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
+</code></pre></div>    </div>
 
     <p>Where:</p>
 
@@ -1738,9 +1735,8 @@
       <h2 id="config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</h2>
       <p>We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> or on the command line:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>Utility lsof not found
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Utility lsof not found
+</code></pre></div>      </div>
 
       <p>Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:</p>
 
@@ -1750,14 +1746,13 @@
 
       <p>For example, <code class="highlighter-rouge">cd /var/www/magento2</code></p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" id="info" markdown="1"&gt;   The commands run properly _only_ from your Magento installation directory.
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" id="info" markdown="1"&gt;   The commands run properly _only_ from your Magento installation directory.
 &lt;/div&gt; 2.  `php bin/magento support:utility:paths` creates `&lt;your Magento install dir&gt;/var/support/Paths.php`, which lists the paths to all application used by the utility. 3.  `php bin/magento support:utility:check` displays the file system paths.
-</code></pre>
-      </div>
+</code></pre></div>      </div>
 
       <p>A sample follows:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>gzip =&gt; /bin/gzip
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzip =&gt; /bin/gzip
 lsof =&gt; /usr/sbin/lsof
 mysqldump =&gt; /usr/bin/mysqldump
 nice =&gt; /bin/nice
@@ -1766,8 +1761,7 @@ tar =&gt; /bin/tar
 sed =&gt; /bin/sed
 bash =&gt; /bin/bash
 mysql =&gt; /usr/bin/mysql
-</code></pre>
-      </div>
+</code></pre></div>      </div>
 
       <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code class="highlighter-rouge">$PATH</code> environment variable.</p>
 

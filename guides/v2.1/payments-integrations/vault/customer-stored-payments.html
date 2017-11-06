@@ -714,7 +714,7 @@ has additional method to get card details.</p>
 
 <p>The simple card renderer implementation might be like following:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CardRenderer</span> <span class="k">extends</span> <span class="nx">AbstractCardRenderer</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CardRenderer</span> <span class="k">extends</span> <span class="nx">AbstractCardRenderer</span>
 <span class="p">{</span>
     <span class="sd">/**
      * Can render specified token
@@ -767,8 +767,7 @@ has additional method to get card details.</p>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getIconForType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()[</span><span class="s1">'type'</span><span class="p">])[</span><span class="s1">'width'</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="layout-and-template">Layout and template</h2>
 

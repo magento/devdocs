@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1907,7 +1907,7 @@
 <div class="bs-callout bs-callout-info" id="info">
   <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
 
-  <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
+  <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
 </div>
 
 <dl>
@@ -1930,7 +1930,7 @@
 <h2 id="help">Help for a command</h2>
 <p>You can preface or append any command with <code class="highlighter-rouge">help</code> or <code class="highlighter-rouge">--help</code> to see more information on how to use that command.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ magento-cloud domain:add --help
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ magento-cloud domain:add --help
 Command: domain:add
 Description: Add a new domain to the project
 
@@ -1952,8 +1952,7 @@ Options:
  --yes (-y)            Answer "yes" to all prompts
  --no (-n)             Answer "no" to all prompts
  --shell (-s)          Launch the shell
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-cli-commands">List of Magento CLI commands</h2>
 <p>The following table provides an extensive list of Magento CLI commands for ECE accessed with <code class="highlighter-rouge">magento-cloud</code> To see a full list of commands, enter <code class="highlighter-rouge">magento-cloud list</code>. The listed commands are for Magento Cloud CLI version 1.11.1 and later.</p>

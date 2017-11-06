@@ -267,26 +267,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Service building basics</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -362,14 +342,13 @@
 
     <p>Sample:</p>
 
-    <div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customerAccounts/isEmailAvailable"</span> <span class="na">method=</span><span class="s">"PUT"</span><span class="nt">&gt;</span>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customerAccounts/isEmailAvailable"</span> <span class="na">method=</span><span class="s">"PUT"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Service\V1\CustomerAccountServiceInterface"</span> <span class="na">method=</span><span class="s">"isEmailAvailable"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;resources&gt;</span>
         <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Customer::manage"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/resources&gt;</span>
 <span class="nt">&lt;/route&gt;</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>(<a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)</p>
   </li>

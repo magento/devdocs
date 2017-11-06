@@ -2491,9 +2491,8 @@
   <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
   <p>The format of the install command follows:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
+</code></pre></div>  </div>
 
   <p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
 
@@ -2781,25 +2780,23 @@
       <li>
         <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --use-rewrites=1
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
     </ul>
 
     <p>Messages similar to the following display to indicate a successful installation:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Post installation file permissions check...
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p><strong>Example 2</strong> (with additional options)</p>
 
@@ -2834,27 +2831,25 @@ For security, remove write permissions from these directories: '/var/www/html/ma
       <li>
         <p>Uses server rewrites</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento \
 --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --cleanup-database \
 --sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
     </ul>
 
     <p>Messages similar to the following display to indicate a successful installation:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Post installation file permissions check...
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

@@ -2039,24 +2039,21 @@
     <li>
       <p>Enter the following commands in the order shown:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
 php bin/magento app:config:dump
-</code></pre>
-      </div>
+</code></pre></div>      </div>
 
       <p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/html/magento2
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2
 php bin/magento app:config:dump
-</code></pre>
-      </div>
+</code></pre></div>      </div>
     </li>
     <li>
       <p>If you use Git, enter the following command to confirm that <code class="highlighter-rouge">app/etc/config.php</code> was updated:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>git status
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div>      </div>
 
       <p>You should see output similar to the following:</p>
 
@@ -2077,9 +2074,8 @@ php bin/magento app:config:dump
 
       <p>The Git command follows:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Updated shared configuration" &amp;&amp; git push mconfig m2.2_deploy
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Updated shared configuration" &amp;&amp; git push mconfig m2.2_deploy
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2100,32 +2096,28 @@ php bin/magento app:config:dump
 
         <p>The Git command follows:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>git pull mconfig m2.2_deploy
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull mconfig m2.2_deploy
+</code></pre></div>        </div>
       </li>
       <li>
         <p>Compile code:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:di:compile
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:di:compile
+</code></pre></div>        </div>
       </li>
       <li>
         <p>After code has been compiled, generate static view files:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:static-content:deploy -f
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:static-content:deploy -f
+</code></pre></div>        </div>
       </li>
       <li>
         <p>Check the changes into source control.</p>
 
         <p>The Git command follows:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
+</code></pre></div>        </div>
       </li>
     </ol>
 
@@ -2216,9 +2208,8 @@ php bin/magento app:config:dump
     <h4 id="set-the-variables-using-environment-variables">Set the variables using environment variables</h4>
     <p>You can set the variable values in the Magento <code class="highlighter-rouge">index.php</code> using the following format:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>$_ENV['VARIABLE'] = 'value';
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_ENV['VARIABLE'] = 'value';
+</code></pre></div>    </div>
 
     <p>To set variable values:</p>
 
@@ -2228,10 +2219,9 @@ php bin/magento app:config:dump
       <li>
         <p>Anywhere in <code class="highlighter-rouge">index.php</code>, set values for the variables similar to the following:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
 $_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magento.com';
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>Save your changes to <code class="highlighter-rouge">index.php</code> and exit the text editor.</li>
       <li>Continue with the next section.</li>
@@ -2249,10 +2239,9 @@ $_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magen
         <li>
           <p>Start maintenance mode:</p>
 
-          <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
 php bin/magento maintenance:enable
-</code></pre>
-          </div>
+</code></pre></div>          </div>
 
           <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="highlighter-rouge">magento maintenance:enable</code></a>.</p>
         </li>
@@ -2262,30 +2251,26 @@ php bin/magento maintenance:enable
 
           <p>The Git command follows:</p>
 
-          <div class="highlighter-rouge"><pre class="highlight"><code>git pull mconfig m2.2_deploy
-</code></pre>
-          </div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull mconfig m2.2_deploy
+</code></pre></div>          </div>
         </li>
         <li>
           <p>Update the configuration:</p>
 
-          <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento app:config:import
-</code></pre>
-          </div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento app:config:import
+</code></pre></div>          </div>
         </li>
         <li>
           <p>Clean the cache:</p>
 
-          <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:clean
-</code></pre>
-          </div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:clean
+</code></pre></div>          </div>
         </li>
         <li>
           <p>End maintenance mode:</p>
 
-          <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento maintenance:disable
-</code></pre>
-          </div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento maintenance:disable
+</code></pre></div>          </div>
         </li>
       </ol>
 

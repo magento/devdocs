@@ -1335,16 +1335,16 @@ As an example:
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="err">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="p">:</span> <span class="p">{</span>
 		<span class="nl">myFirstProperty</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-		<span class="nx">mySecondProperty</span><span class="err">:</span> <span class="mi">1</span>
+		<span class="nx">mySecondProperty</span><span class="p">:</span> <span class="mi">1</span>
 	<span class="p">}</span>
 
-	<span class="nx">Before</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="err">:</span>
+	<span class="nx">Before</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="p">:</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
 
-	<span class="nx">After</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="err">:</span>
+	<span class="nx">After</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="p">:</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// 0</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// 1</span></code></pre></figure>
 
@@ -1354,7 +1354,7 @@ As an example:
 
 <p>As an example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 		<span class="o">%</span><span class="nx">yourMethodName</span><span class="o">%</span><span class="p">();</span>
 
 		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
@@ -1365,7 +1365,7 @@ As an example:
 As an example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 		<span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span> <span class="c1">//_super will call parent's `initialize` method here</span>
 
 		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
@@ -1377,11 +1377,11 @@ As an example:</li>
 
 <p>As an example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="err">:</span> <span class="p">{</span>
-		<span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="err">:</span> <span class="s1">''</span><span class="p">,</span>
-		<span class="nx">imports</span><span class="err">:</span> <span class="p">{</span>
-            <span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="err">:</span> <span class="s1">'%anotherComponentLink%'</span><span class="p">,</span>
-            <span class="nx">disabled</span><span class="err">:</span> <span class="s1">'checked'</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="p">:</span> <span class="p">{</span>
+		<span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+		<span class="nx">imports</span><span class="p">:</span> <span class="p">{</span>
+            <span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="p">:</span> <span class="s1">'%anotherComponentLink%'</span><span class="p">,</span>
+            <span class="nx">disabled</span><span class="p">:</span> <span class="s1">'checked'</span>
         <span class="p">},</span>
 	<span class="p">}</span></code></pre></figure>
 

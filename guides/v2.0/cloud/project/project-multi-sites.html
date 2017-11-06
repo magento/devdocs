@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1904,7 +1904,7 @@
   <li>
     <p>Replace its contents with the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
 	type: upstream
 	upstream: "mymagento:php"
 
@@ -1919,8 +1919,7 @@
 "https://*.{default}/":
 	type: upstream
 	upstream: "mymagento:php"
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor.</li>
 </ol>
@@ -1937,49 +1936,43 @@
   <li>
     <p>Log in to your account:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>    </div>
   </li>
   <li>
     <p>List the environments:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Check out your environment:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre></div>    </div>
   </li>
   <li>
     <p>View the environment’s access URLs:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:url
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:url
+</code></pre></div>    </div>
   </li>
   <li>
     <p>View Admin login information:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:list
+</code></pre></div>    </div>
 
     <p>Admin access information displays similar to the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>+----------------+---------------+-----------+------+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------------+---------------+-----------+------+
 | ID             | Value         | Inherited | JSON |
 +----------------+---------------+-----------+------+
 | ADMIN_PASSWORD | admin_A456    | Yes       | No   |
 | ADMIN_URL      | magento_A8v10 | Yes       | No   |
 | ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 +----------------+---------------+-----------+------+
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2019,15 +2012,13 @@
 
     <p>From:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+</code></pre></div>    </div>
 
     <p>To:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>return $_SERVER['HTTP_HOST'] ===  $host;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return $_SERVER['HTTP_HOST'] ===  $host;
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Replace the following values in the <code class="highlighter-rouge">if (isHttpHost("example.com"))</code> block:</p>
@@ -2040,7 +2031,7 @@
 
     <p>An example follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;?php
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
 // enable, adjust and copy this code for each store you run
 // Store #0, default one
 function isHttpHost($host)
@@ -2054,8 +2045,7 @@ if (isHttpHost("french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
 	$_SERVER["MAGE_RUN_CODE"] = "french";
 	$_SERVER["MAGE_RUN_TYPE"] = "website";
 }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">magento-vars.php</code> and exit the text editor.</li>
 </ol>
@@ -2068,10 +2058,9 @@ To deploy and test:</p>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Implement multiple sites"
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Implement multiple sites"
 git push origin &lt;branch name&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>Wait for deployment to complete.</li>
   <li>

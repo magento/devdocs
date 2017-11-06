@@ -1362,7 +1362,7 @@
 
 <p>Names of other registered modules can be added to the <span term-uuid="ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9" class="glossary-term" data-toggle="popover">server side</span> configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the Javascript on the front end. In the following example, the other UI Component’s name will be obtained with a template literal in the <code class="highlighter-rouge">imports</code> object. When this Javascript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (<code class="highlighter-rouge">:</code>), it will go on to find the property that is accessed in the other Javascript class.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">return</span> <span class="nx">Element</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">Element</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">template</span><span class="p">:</span> <span class="s1">'Example_Component/message-list'</span><span class="p">,</span>
         <span class="na">imports</span><span class="p">:</span> <span class="p">{</span>
@@ -1385,21 +1385,19 @@
 
     <span class="c1">// ...</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Notice how the <code class="highlighter-rouge">addHtmlClassesToMessages()</code> method accesses the <code class="highlighter-rouge">messages</code> property of <code class="highlighter-rouge">this</code>. When the class was initialized, the <code class="highlighter-rouge">data.userMessages</code> array was obtained from the <code class="highlighter-rouge">$.messageHandler</code> UI Component and was then assigned to the primary object.</p>
 
 <p>In the template, the messages can be displayed like this:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- File: app/code/Example/Component/view/frontend/web/template/message-list.html --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- File: app/code/Example/Component/view/frontend/web/template/message-list.html --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../Ui/etc/ui_template.xsd"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;ul</span> <span class="na">data-bind=</span><span class="s">"foreach: messages"</span> <span class="na">class=</span><span class="s">"message-list"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;li</span> <span class="na">data-bind=</span><span class="s">"text: content, css: htmlClass"</span><span class="nt">&gt;&lt;/li&gt;</span>
   <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="conclusion">Conclusion</h3>
 

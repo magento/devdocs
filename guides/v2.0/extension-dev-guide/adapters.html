@@ -1340,47 +1340,47 @@ Classes implementing this adapter interface use the third-party class directly t
 
 <p>The code below describes an interface for an adapter that parses <span term-uuid="a5ef9041-976f-4eb3-826e-bf836027d8c3" class="glossary-term" data-toggle="popover">markdown</span>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Interface for markdown library adapters
- */
-namespace MyCompany\MyModule\Markdown\Parser\Adapter;
+ */</span>
+<span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter</span><span class="p">;</span>
 
-interface AdapterInterface
-{
-    /**
+<span class="k">interface</span> <span class="nx">AdapterInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Converts markdown text into another format
      *
      * @param string $text
      * @return string
-     */
-    public function parse($text);
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
 
 <p><br /></p>
 
 <p>The code below is an implementation class of the <code class="highlighter-rouge">AdapterInterface</code> that uses the <a href="https://github.com/michelf/php-markdown" target="_blank">php-markdown</a> library to convert markdown into <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">namespace MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown;
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown</span><span class="p">;</span>
 
-use \Michelf\Markdown;
-use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface;
+<span class="k">use</span> <span class="nx">\Michelf\Markdown</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface</span><span class="p">;</span>
 
-/**
+<span class="sd">/**
  * Adapter for php-markdown library
- */
-class PhpMarkdown implements AdapterInterface
-{
-    /**
+ */</span>
+<span class="k">class</span> <span class="nc">PhpMarkdown</span> <span class="k">implements</span> <span class="nx">AdapterInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Convert markdown into HTML
      *
      * @param string $text
      * @return string
-     */
-    public function parse($text)
-    {
-        return Markdown::defaultTransform($text);
-    }
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">Markdown</span><span class="o">::</span><span class="na">defaultTransform</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p><br /></p>
 
@@ -1393,39 +1393,39 @@ class PhpMarkdown implements AdapterInterface
 <p>The code below is an alternate implementation class of the <code class="highlighter-rouge">AdapterInterface</code> that uses the <a href="https://github.com/kzykhys/Ciconia" target="_blank">Ciconia</a> library to parse markdown into HTML.
 This code differs from the previous implementations in that an instance of the <code class="highlighter-rouge">Ciconia</code> class is a constructor dependency.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">namespace MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia;
-use Ciconia\Ciconia;
-use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface;
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Ciconia\Ciconia</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface</span><span class="p">;</span>
 
-/**
+<span class="sd">/**
  * Adapter for the Ciconia library
- */
-class CiconiaParser implements AdapterInterface
-{
-    /**
+ */</span>
+<span class="k">class</span> <span class="nc">CiconiaParser</span> <span class="k">implements</span> <span class="nx">AdapterInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @var Ciconia
-     */
-     protected $parser;
+     */</span>
+     <span class="k">protected</span> <span class="nv">$parser</span><span class="p">;</span>
 
-    /**
+    <span class="sd">/**
      * @param Ciconia
-     */
-    public function __construct(Ciconia $parser)
-    {
-        $this-&gt;parser = $parser;
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Ciconia</span> <span class="nv">$parser</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parser</span> <span class="o">=</span> <span class="nv">$parser</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * Convert markdown into HTML
      *
      * @param string $text
      * @return string
-     */
-    public function parse($text)
-    {
-        return $this-&gt;parser-&gt;render($text);
-    }
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">$text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p><br /></p>
 

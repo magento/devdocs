@@ -1580,37 +1580,33 @@
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd ~
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~
 git clone git@github.com:magento/magento2-samples.git
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>If the command fails with the error <code class="highlighter-rouge">Permission denied (publickey).</code>, you must <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account" target="_blank">add your SSH public key to github.com</a>.</p>
   </li>
   <li>
     <p>Make a directory to which to copy the sample code:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Copy the sample module code:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cp -r ~/magento2-samples/sample-module-minimal/* /var/www/html/magento2/app/code/Magento/SampleMinimal
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp -r ~/magento2-samples/sample-module-minimal/* /var/www/html/magento2/app/code/Magento/SampleMinimal
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the files copied properly:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ls -al /var/www/html/magento2/app/code/Magento/SampleMinimal
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2/app/code/Magento/SampleMinimal
+</code></pre></div>    </div>
 
     <p>You should see the following result:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>drwxrwsr-x.   4 magento_user apache  4096 Oct 30 13:19 .
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drwxrwsr-x.   4 magento_user apache  4096 Oct 30 13:19 .
 drwxrwsr-x. 121 magento_user apache  4096 Oct 30 13:19 ..
 -rw-rw-r--.   1 magento_user apache   372 Oct 30 13:19 composer.json
 drwxrwsr-x.   2 magento_user apache  4096 Oct 30 13:19 etc
@@ -1619,15 +1615,13 @@ drwxrwsr-x.   2 magento_user apache  4096 Oct 30 13:19 etc
 -rw-rw-r--.   1 magento_user apache  1157 Oct 30 13:19 README.md
 -rw-rw-r--.   1 magento_user apache   270 Oct 30 13:19 registration.php
 drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Update the Magento database and schema:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento setup:upgrade
+</code></pre></div>    </div>
   </li>
 </ol>
 </div></div>
@@ -1655,9 +1649,8 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Create a directory for the class and change to that directory:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron &amp;&amp; cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron &amp;&amp; cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Created a file named <code class="highlighter-rouge">Test.php</code> in that directory with the following contents:</p>
@@ -1714,9 +1707,8 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Run Magento cron jobs:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento cron:run
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento cron:run
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the <code class="highlighter-rouge">magento cron:run</code> command two or three times.</p>
@@ -1734,7 +1726,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 
     <p>The result should be similar to the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>+-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 | schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
 +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 |        3670 | custom_cronjob | success | NULL     | 2016-11-02 09:38:03 | 2016-11-02 09:38:00 | 2016-11-02 09:39:03 | 2016-11-02 09:39:03 |
@@ -1742,28 +1734,24 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 |        3758 | custom_cronjob | success | NULL     | 2016-11-02 10:09:03 | 2016-11-02 10:09:00 | 2016-11-02 10:10:03 | 2016-11-02 10:10:03 |
 |        3797 | custom_cronjob | success | NULL     | 2016-11-02 10:24:03 | 2016-11-02 10:24:00 | 2016-11-02 10:25:03 | 2016-11-02 10:25:03 |
 +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>(Optional) Verify messages are written to Magento’s system log:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cat /var/www/html/magento2/var/log/system.log
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /var/www/html/magento2/var/log/system.log
+</code></pre></div>    </div>
 
     <p>You should see one or more entries like the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>[2016-11-02 22:17:03] main.INFO: Cron Works [] []
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2016-11-02 22:17:03] main.INFO: Cron Works [] []
+</code></pre></div>    </div>
 
     <p>These messages come from the <code class="highlighter-rouge">execute</code> method in <code class="highlighter-rouge">Test.php</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>public function execute() {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public function execute() {
    $this-&gt;logger-&gt;info('Cron Works');
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1802,18 +1790,16 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Run Magento cron jobs for your custom group:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
+</code></pre></div>    </div>
 
     <p>Run the command at least twice.</p>
   </li>
   <li>
     <p>Clean the Magento cache:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento cache:clean
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php /var/www/html/magento2/bin/magento cache:clean
+</code></pre></div>    </div>
   </li>
   <li>Log in to the Magento Admin as an administrator.</li>
   <li>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>.</li>

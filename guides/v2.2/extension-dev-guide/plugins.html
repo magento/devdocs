@@ -1593,20 +1593,20 @@
 
 <p>The following example is a class with an after method for <a href="https://github.com/magento/magento2/blob/2.1/}app/code/Magento/Catalog/Model/Product/Action.php" target="_blank"><code class="highlighter-rouge">\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)</code></a>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class MyPlugin
-{
-    private $logger
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">MyPlugin</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$logger</span>
 
-    public function __construct(\Psr\Log\LoggerInterface $logger)
-    {
-        $this-&gt;logger = $logger;
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Psr\Log\LoggerInterface</span> <span class="nv">$logger</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public function afterUpdateWebsites(\Magento\Catalog\Model\Product\Action $subject, $result, $productIds, $websiteIds)
-    {
-        $this-&gt;logger-&gt;log('Updated websites: ' . implode(', ',  $websiteIds));
-    }
-}</code></pre></figure>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterUpdateWebsites</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product\Action</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">,</span> <span class="nv">$productIds</span><span class="p">,</span> <span class="nv">$websiteIds</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">log</span><span class="p">(</span><span class="s1">'Updated websites: '</span> <span class="o">.</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">', '</span><span class="p">,</span>  <span class="nv">$websiteIds</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>In the example, the <code class="highlighter-rouge">afterUpdateWebsites</code> function uses the variable <code class="highlighter-rouge">$websiteIds</code>, so it declares that variable as an argument. It also declares <code class="highlighter-rouge">$productIds</code> because it comes before <code class="highlighter-rouge">$websiteIds</code> in the parameter signature of the observed method. The after method did not list <code class="highlighter-rouge">$type</code> because it did not use it inside the method nor does it come before <code class="highlighter-rouge">$websiteIds</code>.</p>
 

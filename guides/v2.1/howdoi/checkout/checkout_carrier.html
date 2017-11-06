@@ -849,9 +849,8 @@
 
 <p>For example, the FedEx shipping method requires only two fields of the shipping address to be filled: <strong>Country</strong> and <strong>Zip Code</strong>. This is how the validation rules for FedEx look:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;Magento_Fedex_dir&gt;/view/frontend/web/js/model/shipping-rates-validation-rules.js
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Magento_Fedex_dir&gt;/view/frontend/web/js/model/shipping-rates-validation-rules.js
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
     <span class="p">[],</span>
@@ -893,12 +892,12 @@
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">validationErrors</span><span class="p">:</span> <span class="p">[],</span>
             <span class="na">validate</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">validationErrors</span> <span class="o">=</span> <span class="p">[];</span>
                 <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">validationRules</span><span class="p">.</span><span class="nx">getRules</span><span class="p">(),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">field</span><span class="p">,</span> <span class="nx">rule</span><span class="p">)</span> <span class="p">{</span>
                     <span class="k">if</span> <span class="p">(</span><span class="nx">rule</span><span class="p">.</span><span class="nx">required</span> <span class="o">&amp;&amp;</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">address</span><span class="p">[</span><span class="nx">field</span><span class="p">]))</span> <span class="p">{</span>
                         <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Field '</span><span class="p">)</span> <span class="o">+</span> <span class="nx">field</span> <span class="o">+</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">' is required.'</span><span class="p">);</span>
-                        <span class="nx">self</span><span class="p">.</span><span class="nx">validationErrors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+                        <span class="nb">self</span><span class="p">.</span><span class="nx">validationErrors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
                     <span class="p">}</span>
                 <span class="p">});</span>
                 <span class="k">return</span> <span class="o">!</span><span class="nb">Boolean</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">validationErrors</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>

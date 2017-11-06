@@ -1361,12 +1361,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1962,7 +1962,7 @@
     </ul>
 
     <h3 id="pro-remote">Set up Pro remote Git repositories</h3>
-    <p>For Pro projects created <strong>after October 23, 2017</strong>, you do not need to complete this step. Your Staging and Production environments are branches of <code class="highlighter-rouge">master</code> with configured deployment targets. You can simply merge code to these environments from Integration <code class="highlighter-rouge">master</code>.</p>
+    <p>For Pro projects created <strong>after October 23, 2017</strong>, you do not need to complete this step. Your Staging and Production environments are branches of <code class="highlighter-rouge">master</code> with configured deployment targets. You can simply merge code to these environments from Integration <code class="highlighter-rouge">master</code>. You can also use the Project Web Interface to merge your code without SSH or Git commands.</p>
 
     <p>For Pro projects created <strong>before October 23, 2017</strong>, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.</p>
 
@@ -1972,16 +1972,14 @@
 
     <p>The Git command syntax is:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+</code></pre></div>    </div>
 
     <p>The following commands are examples for setting up remotes on Staging and Production:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
 git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <h2 id="ssh-agent">Set up your SSH agent and add the SSH key</h2>
     <p>You only need to set up your SSH agent on these servers once. SSH agent helps contain is a background program that handles passwords for your SSH private keys.</p>
@@ -1997,9 +1995,8 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
       <li>
         <p>Enter the following command to check if the SSH agent is running and list fingerprints of all identities currently represented by the agent:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>ssh-add -l
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add -l
+</code></pre></div>        </div>
 
         <p>One of the following messages displays:</p>
 
@@ -2019,24 +2016,21 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
       <li>
         <p>To start the SSH agent, enter the following command:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>eval $(ssh-agent -s)
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval $(ssh-agent -s)
+</code></pre></div>        </div>
 
         <p>The agent starts and displays the process ID (PID).</p>
       </li>
       <li>
         <p>Add your public SSH key to the agent to SSH into environments and complete Git commands. This is the same SSH key you provided in a ticket for access to Staging and Production.</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa
+</code></pre></div>        </div>
 
         <p>A message similar to the following displays:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+</code></pre></div>        </div>
       </li>
     </ol>
 

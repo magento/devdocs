@@ -1246,11 +1246,11 @@ defines the template which is used for rearranging the links:</p>
         <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
         <span class="p">{</span>
-            <span class="s2">"*"</span><span class="err">:</span> <span class="p">{</span>
-                <span class="s2">"Magento_Ui/js/core/app"</span><span class="err">:</span> <span class="p">{</span>
-                    <span class="s2">"components"</span><span class="err">:</span> <span class="p">{</span>
-                        <span class="s2">"customer"</span><span class="err">:</span> <span class="p">{</span>
-                            <span class="s2">"component"</span><span class="err">:</span> <span class="s2">"Magento_Customer/js/view/customer"</span>
+            <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"Magento_Ui/js/core/app"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"components"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">"customer"</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s2">"component"</span><span class="p">:</span> <span class="s2">"Magento_Customer/js/view/customer"</span>
                         <span class="p">}</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
@@ -1271,9 +1271,8 @@ defines the template which is used for rearranging the links:</p>
 
 <p>So the following <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>

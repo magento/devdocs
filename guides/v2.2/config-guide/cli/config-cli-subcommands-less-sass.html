@@ -1973,9 +1973,8 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
+</code></pre></div>  </div>
 
   <p>The following table explains this command’s parameters and values.</p>
 
@@ -2021,23 +2020,20 @@
 
   <p>For example, to create LESS files for the frontend theme named <code class="highlighter-rouge">VendorName/themeName</code> in the <code class="highlighter-rouge">en_US</code> locale using a CSS file named <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css</code>, enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
+</code></pre></div>  </div>
 
   <p>The following messages display to confirm success:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Processed Area: frontend, Locale: en_US, Theme: VendorName/themeName, File type: less.
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Processed Area: frontend, Locale: en_US, Theme: VendorName/themeName, File type: less.
 -&gt; css/styles-l.less
 Successfully processed.
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>To create LESS files for the adminhtml, enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
+</code></pre></div>  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

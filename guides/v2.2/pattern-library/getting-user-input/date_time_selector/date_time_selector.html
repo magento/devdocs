@@ -1125,11 +1125,14 @@ Date:</p>
 
 <p><strong>Note:</strong></p>
 
-<p>MM/DD/YYYY can be confused with DD/MM/YYYY, so please assume the following:
-* 	If either MM or DD is above 12, then we can tell which one is the date vs month.</p>
-
+<p>MM/DD/YYYY can be confused with DD/MM/YYYY, so please assume the following:</p>
 <ul>
-  <li>If both slots are below 12, make a guess based on the region. For example, if the user is in the US, guess MM/DD/YYYY format. If the user is in the London, guess DD/MM/YYYY. The more commonly used ones are DD/MM/YYYY.</li>
+  <li>
+    <p>If either MM or DD is above 12, then we can tell which one is the date vs month.</p>
+  </li>
+  <li>
+    <p>If both slots are below 12, make a guess based on the region. For example, if the user is in the US, guess MM/DD/YYYY format. If the user is in the London, guess DD/MM/YYYY. The more commonly used ones are DD/MM/YYYY.</p>
+  </li>
 </ul>
 
 <p>Field selection works the same as a typical text field with</p>

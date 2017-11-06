@@ -682,7 +682,7 @@ configuration from database or payment config file.</p>
 <p>A custom validator should implement the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\ValidatorInterface</code>. In the most cases, it is enough
 to extend the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\AbstractValidator</code> and create an implementation of the <code class="highlighter-rouge">validate</code> method:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CountryValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CountryValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
 <span class="p">{</span>
     <span class="sd">/**
      * @inheritdoc
@@ -706,8 +706,7 @@ to extend the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then, the newly created validator needs to be added to the global pool of validators:</p>
 

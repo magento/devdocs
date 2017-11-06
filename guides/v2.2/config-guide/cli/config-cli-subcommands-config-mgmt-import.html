@@ -1981,9 +1981,8 @@ These settings include configuration paths and values, websites, stores, store v
 
   <p>On your production system, run the following command to import data from the configuration files (<code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code>) to the database:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento app:config:import [-n, --no-interaction]
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento app:config:import [-n, --no-interaction]
+</code></pre></div>  </div>
 
   <p>Use the optional <code class="highlighter-rouge">[-n, --no-interaction]</code> flag to import data without any interaction.</p>
 
@@ -1991,27 +1990,24 @@ These settings include configuration paths and values, websites, stores, store v
 
   <p>For example, if configuration file contains one new <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> and one new store, the following  message is displayed:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>These Websites will be created: New Website
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>These Websites will be created: New Website
 These Groups will be created: New Store
 Do you want to continue [yes/no]?
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>To continue the import, enter <code class="highlighter-rouge">yes</code>.</p>
 
   <p>If deployment configuration files contain some data to import, a message similar to the following is displayed:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Start import:
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start import:
 Some information about importing
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>If deployment configuration files do not contain any data to import, a message similar to the following is displayed:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Start import:
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start import:
 Nothing to import
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h2 id="what-we-import">What we import</h2>
 
@@ -2069,7 +2065,7 @@ You must associate a root category with a store using the Magento <span term-uui
 
   <p>Full example:</p>
 
-  <div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="s1">'frontend/Magento/luma'</span> <span class="o">=&gt;</span>
+  <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'frontend/Magento/luma'</span> <span class="o">=&gt;</span>
    <span class="k">array</span> <span class="p">(</span>
       <span class="s1">'parent_id'</span> <span class="o">=&gt;</span> <span class="s1">'Magento/blank'</span><span class="p">,</span>
       <span class="s1">'theme_path'</span> <span class="o">=&gt;</span> <span class="s1">'Magento/luma'</span><span class="p">,</span>
@@ -2079,8 +2075,7 @@ You must associate a root category with a store using the Magento <span term-uui
       <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
       <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'Magento/luma'</span><span class="p">,</span>
 <span class="p">),</span>
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
     <ul>

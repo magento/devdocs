@@ -1387,19 +1387,17 @@
 
 <p>The <code class="highlighter-rouge">links</code> property is the same as duplicating a value in both <code class="highlighter-rouge">imports</code> and <code class="highlighter-rouge">exports</code>. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the <code class="highlighter-rouge">defaults</code> property like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>imports: {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>imports: {
     totalRecords: '${ $.provider }:data.totalRecords'
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>When the Element class initializes, it will process the link that was declared in <code class="highlighter-rouge">imports</code>. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where <code class="highlighter-rouge">example</code> is the UI Component Name for clarity):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>imports: {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>imports: {
     totalRecords: 'example.example_data_source:data.totalRecords'
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">:</code> is a special separator that is used to divide the component name that it is to link to and the values it should access in the returned value. No <code class="highlighter-rouge">:</code> is necessary, though, and the expression, <code class="highlighter-rouge">$.provider</code> could be any key that was passed into the javascript configuration.</p>
 

@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1930,9 +1930,8 @@
 <h3 id="list">Locate the currently active VCL snippet version</h3>
 <p>To view an entire list of all VCL snippets by version, use the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version -H "Fastly-Key:FASTLY_API_TOKEN"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version -H "Fastly-Key:FASTLY_API_TOKEN"
+</code></pre></div></div>
 
 <p>Look for the <code class="highlighter-rouge">active</code> key from the returned list. This is the version you will clone in the next section.</p>
 
@@ -1941,9 +1940,8 @@
 <h3 id="clone">Clone the active VCL version and all snippets</h3>
 <p>Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version with a new version number. After you clone the version, you can <a href="#create-snippet">add</a> more VCL snippets or <a href="#update">modify</a> current snippets.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Current Active Version #}/clone
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Current Active Version #}/clone
+</code></pre></div></div>
 
 <p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709" target="_blank">clone command</a>.</p>
 
@@ -1975,92 +1973,81 @@ When reviewing a list of VCL snippets, you will also note the snippets have a sp
 
 <p>Use the following command as a template:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "{VCL Name}", "type": "Type", "dynamic": 0, "priority": 100, "content": "{VCL snippet code}"}'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "{VCL Name}", "type": "Type", "dynamic": 0, "priority": 100, "content": "{VCL snippet code}"}'
+</code></pre></div></div>
 
 <p>After you run the <code class="highlighter-rouge">curl</code> command, Fastly returns a JSON response with the data. For example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62Yd1WfiCBPENLloXfXmlO"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Service ID}"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Editable Version #}"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apply_acl"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hit"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((client.ip ~ {ACLNAME}) &amp;&amp; !req.http.Fastly-FF){ error 403; }"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-15T09:37:10+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-15T09:37:10+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "id": "62Yd1WfiCBPENLloXfXmlO",
+  "service_id": "{Service ID}",
+  "version": "{Editable Version #}",
+  "name": "apply_acl",
+  "priority": "100",
+  "dynamic": "1",
+  "type": "hit",
+  "content": "if ((client.ip ~ {ACLNAME}) &amp;&amp; !req.http.Fastly-FF){ error 403; }",
+  "created_at": "2016-08-15T09:37:10+00:00",
+  "updated_at": "2016-08-15T09:37:10+00:00",
+  "deleted_at": null
+}
+</code></pre></div></div>
 
 <h3 id="update">Update an existing VCL snippet</h3>
 <p>Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Cloned version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Cloned version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+</code></pre></div></div>
 
 <p>Copy the data and build a <code class="highlighter-rouge">curl</code> command with the cloned version number, name, and edits. The following is an example template for the update command. You would enter the cloned version number for <code class="highlighter-rouge">Editable Version #</code> and data for the command in <code class="highlighter-rouge">--data</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
+</code></pre></div></div>
 
 <p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults).</p>
 
 <h3 id="validate">Validate and activate snippets for a version</h3>
 <p>When you add the VCL snippet(s) to the version, Fastly creates and assigns it to your service per that version number. Next, you should verify the entered VCL snippet(s) validates with Fastly. Use the following command to validate all snippets for the version:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
+</code></pre></div></div>
 
 <p>Fastly should return: <code class="highlighter-rouge">"status": "ok"</code>. If you received an OK, activate the version for that service.</p>
 
 <p>Assuming no errors (if there are errors, fix them before proceeding), the last step is to activate the version with the following command. All VCL snippets associated with the version activate.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
+</code></pre></div></div>
 
 <p>If your received errors back from Fastly, track down the errors and update the specific snippet with the following command. Make sure to use the same version number you are working to activate.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
+</code></pre></div></div>
 
 <p>For more information on these Fastly APIs, see <a href="https://docs.fastly.com/api/config#version_97f8cf7bfd5dc2e5ea1933d94dc5a9a6" target="_blank">validate</a> and <a href="https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5" target="_blank">activate</a> commands.</p>
 
 <h2 id="manage-vcl">Manage regular VCL snippets with curl</h2>
 <p>To review an individual snippet, enter the following API call in a terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN"
+</code></pre></div></div>
 
 <p>To list all regular VCL snippets attached to a service, enter the following API call in a terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version -H "Fastly-Key:FASTLY_API_TOKEN"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version -H "Fastly-Key:FASTLY_API_TOKEN"
+</code></pre></div></div>
 
 <p>To update a custom VCL snippet using the API, list the snippet then enter a <code class="highlighter-rouge">curl</code> command with the specific snippet version, name, and edits:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
+</code></pre></div></div>
 
 <p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults).</p>
 
 <p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the speicific snippet information to delete. We recommend keeping a copy of the creation command and JSON if you need to recreate it later.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X DELETE -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X DELETE -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN"
+</code></pre></div></div>
 
 <h2 id="edge-dictionary">Create edge dictionary</h2>
 <p>Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of bad referring domains to block from your site. First, you would create the Edge Dictionary, then create a <a href="#bad-refer">custom VCL snippet</a> using it.</p>
@@ -2116,22 +2103,20 @@ When reviewing a list of VCL snippets, you will also note the snippets have a sp
   <li>
     <p>Content:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code># capture host of referer into a header
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># capture host of referer into a header
   set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1");
 # check if referrer host is in blocklist table
   if (table.lookup(referer_blocklist, req.http.Referer-Host)) {
       error 403 "Forbidden";
   }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
 <p>The curl command would look like the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_referers", "type": "recv", "dynamic": 0, "priority": 5, "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"}'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_referers", "type": "recv", "dynamic": 0, "priority": 5, "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"}'
+</code></pre></div></div>
 
 <p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
 
@@ -2147,19 +2132,17 @@ When reviewing a list of VCL snippets, you will also note the snippets have a sp
   <li>
     <p>Content:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>if ( client.ip ~ blocklist) {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ( client.ip ~ blocklist) {
   error 403 "Forbidden";
   }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
 <p>The curl command would look like the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"}'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"}'
+</code></pre></div></div>
 
 <p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
 
@@ -2177,19 +2160,17 @@ When reviewing a list of VCL snippets, you will also note the snippets have a sp
   <li>
     <p>Content:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>      if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) {
           error 403 "Forbidden";
           }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
 <p>The curl command would look like the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) { error 403 "Forbidden"; }"}'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) { error 403 "Forbidden"; }"}'
+</code></pre></div></div>
 
 <p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
 
@@ -2198,23 +2179,21 @@ When reviewing a list of VCL snippets, you will also note the snippets have a sp
 
 <p>To build the new command, we can take the default code and revise it with a new name and lower priority value. The order of priorities will use this value over the default 180 seconds. How did you set the default timeout? When you first uploded your VCL snippets when configuring Fastly, you uploaded a default VCL with a default timeout of 180 seconds (three minutes). The VCL snippet uploaded was from this <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl" target="_blank">Fastly pass.vcl snippet</a>. The important code that sets the timeout is the <code class="highlighter-rouge">first_byte_timeout</code> value:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Deactivate gzip on origin
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Deactivate gzip on origin
 unset bereq.http.Accept-Encoding;
 
 # Increase first byte timeouts for /admin* URLs to 3 minutes
 if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
 	set bereq.first_byte_timeout = 180s;
 	}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For this snippet, modify the <code class="highlighter-rouge">set bereq.first_byte_timeout</code> with a higher value. For example, 300s for five minutes or 600s for ten minutes. Ten minutes is the hard cap for Fastly timeouts.</p>
 
 <p>To create a new snippet, use the following <code class="highlighter-rouge">curl</code> command. This version sets the timeout to 600s (ten minutes).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "pass", "dynamic": 0, "priority": 5, "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }"}'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "pass", "dynamic": 0, "priority": 5, "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }"}'
+</code></pre></div></div>
 
 <p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
 
@@ -2225,7 +2204,7 @@ if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
 
 <p>The following is an example of this VCL code from Fastly:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Extract first part of the path: /mypath/someotherpath extracts mypath.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Extract first part of the path: /mypath/someotherpath extracts mypath.
 # Look up the path in the Wordpress URL lookup table and mark it as needed
 # to be processed by Wordpress.
 if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) {
@@ -2234,20 +2213,17 @@ if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) {
 	 	set req.http.X-WP = "1";
 		}
 	}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For example, the command may look like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "wordpress_backend", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }"}
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "wordpress_backend", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }"}
+</code></pre></div></div>
 
 <p>For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>req.http.X-WP == “1”
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>req.http.X-WP == “1”
+</code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>
 

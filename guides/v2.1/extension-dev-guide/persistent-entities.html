@@ -267,26 +267,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Persistent entities</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -360,14 +340,14 @@
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$customerModel = $this-&gt;customerFactory-&gt;create(['data' =&gt; $customerData]);
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$customerModel</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nv">$customerData</span><span class="p">]);</span>
 
-/** @var $customerResource \Magento\Customer\Model\ResourceModel\Customer */
-$customerResource-&gt;save($customerModel);
+<span class="sd">/** @var $customerResource \Magento\Customer\Model\ResourceModel\Customer */</span>
+<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">);</span>
 
-$customerResource-&gt;load($customerModel, $entityId);
+<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">,</span> <span class="nv">$entityId</span><span class="p">);</span>
 
-$customerResource-&gt;delete($customerModel);</code></pre></figure>
+<span class="nv">$customerResource</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$customerModel</span><span class="p">);</span></code></pre></figure>
 
 <h4 class="no_toc" id="related-topics">Related topics</h4>
 

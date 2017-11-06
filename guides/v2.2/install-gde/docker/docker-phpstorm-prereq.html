@@ -344,9 +344,8 @@
 
 <p>In a command window, find your container identifiers:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker-compose ps
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose ps
+</code></pre></div></div>
 
 <p>The command displays the listen ports. An example follows:</p>
 
@@ -463,26 +462,23 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
     <li>
       <p>Enter the following command:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>docker-compose exec --user=magento2 web /bin/bash
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose exec --user=magento2 web /bin/bash
+</code></pre></div>      </div>
 
       <p>This commands opens an SSH shell.</p>
     </li>
     <li>
       <p>In the shell prompt, enter the following command:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>vim ~/.bash_profile
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.bash_profile
+</code></pre></div>      </div>
     </li>
     <li>Press <code class="highlighter-rouge">i</code> (insert).</li>
     <li>
       <p>Enter the following command in the vim window:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>cd /var/www/magento2
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/magento2
+</code></pre></div>      </div>
     </li>
     <li>Press <code class="highlighter-rouge">:wq</code> to save the file and exit vim.</li>
     <li>Enter <code class="highlighter-rouge">exit</code> to exit the SSH shell and return to your command prompt.</li>

@@ -1166,15 +1166,13 @@
   <li>
     <p>Navigate to your Magento project directory and update your <code class="highlighter-rouge">composer.json</code> file.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require &lt;component-name&gt;:&lt;version&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;component-name&gt;:&lt;version&gt;
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require j2t/module-payplug:2.0.2
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require j2t/module-payplug:2.0.2
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.</p>
@@ -1182,29 +1180,26 @@
   <li>
     <p>Wait for Composer to finish updating your project dependencies and make sure there aren’t any errors:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Updating dependencies (including require-dev)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Updating dependencies (including require-dev)
 Package operations: 1 install, 0 updates, 0 removals
   - Installing j2t/module-payplug (2.0.2): Downloading (100%)
 Writing lock file
 Generating autoload files
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
 <h2 id="verify-the-extension">Verify the extension</h2>
 <p>To verify that the extension installed properly, run the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bin/magento module:status
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:status
+</code></pre></div></div>
 
 <p>By default, the extension is probably disabled:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>List of disabled modules:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List of disabled modules:
 J2t_Payplug
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it’s not the same format as the Composer name. Use this format to enable the extension.</p>
@@ -1217,52 +1212,46 @@ J2t_Payplug
   <li>
     <p>Enable the extension and clear static view files:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento module:enable J2t_Payplug --clear-static-content
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:enable J2t_Payplug --clear-static-content
+</code></pre></div>    </div>
 
     <p>You should see the following output:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>The following modules have been enabled:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The following modules have been enabled:
 - J2t_Payplug
 
 To make sure that the enabled modules are properly registered, run 'setup:upgrade'.
 Cache cleared successfully.
 Generated classes cleared successfully. Please run the 'setup:di:compile' command to generate classes.
 Generated static view files cleared successfully.
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Register the extension:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:upgrade
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Recompile your Magento project:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:di:compile
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Verify that the extension is enabled:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento module:status
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:status
+</code></pre></div>    </div>
 
     <p>You should see output verifying that the extension is no longer disabled:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>List of enabled modules:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List of enabled modules:
 J2t_Payplug
 
 List of disabled modules:
 None
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Configure the extension in Admin as needed.</p>
@@ -1272,9 +1261,8 @@ None
 <div class="bs-callout bs-callout-tip">
   <p>You may need to clear the cache if you encounter errors when loading the storefront in a browser.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento cache:flush
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:flush
+</code></pre></div>  </div>
 </div>
 
 		</div>

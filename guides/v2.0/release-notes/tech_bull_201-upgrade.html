@@ -1110,9 +1110,8 @@
   <li>
     <p>An error related to the updater application and PHP 7:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>PHP Warning: require_once(/public_html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /public_html/magento2/update/app/bootstrap.php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PHP Warning: require_once(/public_html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /public_html/magento2/update/app/bootstrap.php
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -1265,19 +1264,17 @@
   <li>
     <p>Run the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer update magento/magento-composer-installer
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update magento/magento-composer-installer
+</code></pre></div>    </div>
   </li>
   <li>If prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
   <li>Make sure <code class="highlighter-rouge">magento/magento-composer-installer</code> is version 0.1.6</li>
   <li>
     <p>Run the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.2 --no-update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/product-community-edition 2.0.2 --no-update
 composer update
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
@@ -1286,9 +1283,8 @@ composer update
   <li>
     <p>After the commands complete, enter the following command to update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:upgrade
+</code></pre></div>    </div>
   </li>
   <li>Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.
 <!-- 7.	We recommend you <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. --></li>
@@ -1313,34 +1309,30 @@ composer update
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Make sure <code class="highlighter-rouge">magento/magento-composer-installer</code> is version 0.1.6</p>
 
     <p>The following exception might display; it’s expected:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>[ErrorException]
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ErrorException]
 Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration/.gitignore does not exist
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>After the command completes, enter the same command again:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer update
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+</code></pre></div>    </div>
   </li>
   <li>Wait while the command completes.</li>
   <li>
     <p>After the command completes, enter the following command to update the database schema and data:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento setup:upgrade
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:upgrade
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Delete the following files from <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var</code> directory:</p>

@@ -1662,9 +1662,8 @@
   <h2 id="config-cli-cron-group-run">Run cron from the command line</h2>
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento cron:run [--group="&lt;cron group name&gt;"]
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento cron:run [--group="&lt;cron group name&gt;"]
+</code></pre></div>  </div>
 
   <p>Where <code class="highlighter-rouge">--group</code> specifies the cron group to run. Omit this option to run cron for all groups.</p>
 
@@ -1712,29 +1711,25 @@ For more information, see <a href="/guides/v2.1/install-gde/prereq/php-settings.
     <h4 id="find-the-php-binary-and-phpini-path">Find the PHP binary and php.ini path</h4>
     <p>To display the path to your PHP binary, enter</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>which php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>which php
+</code></pre></div>    </div>
 
     <p>A sample result follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>/usr/bin/php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/php
+</code></pre></div>    </div>
 
     <h4 id="create-the-cron-job">Create the cron job</h4>
 
     <p>To create a cron job for the Magento file system owner, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u &lt;Magento file system owner user name&gt; -e
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u &lt;Magento file system owner user name&gt; -e
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>crontab -u magento_user -e
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u magento_user -e
+</code></pre></div>    </div>
 
     <p>A text editor displays. (You might need to choose a text editor first.)</p>
 
@@ -1762,17 +1757,15 @@ For more information, see <a href="/guides/v2.1/install-gde/prereq/php-settings.
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p><strong>Example 2:</strong> Contributing developers only (that is, you cloned the Magento 2 GitHub repository):</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+</code></pre></div>    </div>
 
     <p>The preceding works for contributing developers because if you cloned the GitHub repository you don’t have an <code class="highlighter-rouge">update</code> directory and errors result if you run <code class="highlighter-rouge">magento setup:cron:run</code>. These cron jobs work in the Web Setup Wizard, which contributing developers cannot use for installing or updating the Magento application or components.</p>
 

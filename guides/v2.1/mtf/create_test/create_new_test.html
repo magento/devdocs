@@ -933,10 +933,9 @@
 
 <p>Enter in your terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>See the following explanations.</p>
 
@@ -1144,9 +1143,8 @@ php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --
 
 <p>Then, we must regenerate the fixture to apply changes:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
 
 <p>A new PHP class <code class="highlighter-rouge">Synonym.php</code> is generated in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Search/Test/Fixture</code>.</p>
 
@@ -1396,9 +1394,8 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>To generate <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> classes for these <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> enter and run in your terminal</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
 
 <p><img src="/common/images/ftf/mtf_tutorial_pages_php.png" alt="PHP classes of pages" /></p>
 
@@ -1418,7 +1415,7 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>Fortunately, you already have a <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html">block</a> that contains a method to add a new entity in a grid: <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php"><code class="highlighter-rouge">\Magento\Backend\Test\Block\GridPageActions</code></a>.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="sd">/**
  * Click the "Add New" button
  *
@@ -1429,8 +1426,7 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addNewButton</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> page, to locate the UI block that contains a button, we will use a <code class="highlighter-rouge">.page-main-actions</code> locator. Learn how to <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html#define-a-selector">define a locator</a>.</p>
 
@@ -1543,9 +1539,8 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>To generate PHP classes for these pages, enter the following command from your terminal.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
 
 <p>Now we can define the test flow in a <code class="highlighter-rouge">test()</code> method of the test case (<a href="#create-init-test-case">Step 3</a>).</p>
 
@@ -1555,7 +1550,7 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>An argument for the <code class="highlighter-rouge">test()</code> method is a <a href="#test-object">test object</a> (a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>).</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="sd">/**
  * Create Synonym group test.
  * 
@@ -1567,17 +1562,15 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
     <span class="c1">// Steps
 </span><span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now we can add page classes made in <a href="#create-pages">Step 5</a>:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsIndex</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Search\Test\Page\Adminhtml\SynonymsNew</span><span class="p">;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>All methods are defined in blocks (<a href="#create-blocks">Step 6</a>) that are grouped in pages (<a href="#create-pages">Step 5</a>, <a href="#add-blocks-to-pages">Step 7</a>).</p>
 
@@ -1597,21 +1590,19 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>In the <abbr title="Functional Testing Framework">FTF</abbr>, the process of logging in doesn’t require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an <code class="highlighter-rouge">open()</code> method of the <code class="highlighter-rouge">Magento/Mtf/Page/BackendPage</code> class. There is no need to add this class in <code class="highlighter-rouge">use</code>, because it is inherited from the <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Click the “New Synonym Group” button</strong></p>
 
 <p>To Click the “New Synonym Group” button, we will use the <code class="highlighter-rouge">addNew()</code> method from the <code class="highlighter-rouge">pageActionsBlock</code> block. A <code class="highlighter-rouge">getPageActionsBlock()</code> of the generated <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class receives parameters defined in the <code class="highlighter-rouge">pageActionsBlock</code> block (<code class="highlighter-rouge">class</code>, <code class="highlighter-rouge">locator</code>, <code class="highlighter-rouge">strategy</code>).</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This action opens the New Synonym Group page.</p>
 
@@ -1619,25 +1610,23 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>To enter data in the form, we use the <code class="highlighter-rouge">fill()</code> method from the <code class="highlighter-rouge">synonymForm</code> block of the <code class="highlighter-rouge">synonymsNew</code> page. An argument for this method is a fixture <code class="highlighter-rouge">Synonym</code>. A <code class="highlighter-rouge">getSynonymForm()</code> method of the generated <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> class receives parameters defined in the <code class="highlighter-rouge">synonymForm</code> block.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Click the “Save Synonym Group” button</strong></p>
 
 <p>A <code class="highlighter-rouge">save()</code> method with parameters defined in a <code class="highlighter-rouge">formPageActions</code> block. Parameters are injected using a <code class="highlighter-rouge">getFormPageActions()</code> method from the <code class="highlighter-rouge">synonymsNew</code> page (generated <code class="highlighter-rouge">Magento/Search/Test/Page/Adminhtml/SynonymsNew</code> page class).</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Full <code class="highlighter-rouge">test()</code> definition</strong></p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="sd">/**
  * Create Synonym group test.
  *
@@ -1653,8 +1642,7 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 </span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// `click` on the Save Synonym Group button
 </span><span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="step-9-check-the-test-run">Step 9. Check the test run</h4>
 
@@ -1729,10 +1717,9 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>You can run the test using your <abbr title="Integrated Development Environment">IDE</abbr> or the <abbr title="Command Line Interface">CLI</abbr>. The Selenium Server must be <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">up and running</a>. To run the test using the <abbr title="Command Line Interface">CLI</abbr>, enter in your terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit --filter CreateSynonymEntityTest
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The test will be performed in a browser. Three synonyms groups are created one by-one that corresponds to three variations in a data set.</p>
 
@@ -1856,9 +1843,8 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>3) Launch the generating tool to update the page class:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
 
 <p>And now we can add <code class="highlighter-rouge">&lt;constraint&gt;</code> to each variation of a data set <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml</code>:</p>
 
@@ -1886,10 +1872,9 @@ vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 <p>You can run the test using your <abbr title="Integrated Development Environment">IDE</abbr> or the <abbr title="Command Line Interface">CLI</abbr>. The Selenium Server must be <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">up and running</a>. To run the test using the <abbr title="Command Line Interface">CLI</abbr>, enter in your terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
 vendor/bin/phpunit --filter CreateSynonymEntityTest
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The test now checks after each variation whether a success message is displayed.</p>
 

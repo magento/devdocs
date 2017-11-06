@@ -2422,15 +2422,13 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
@@ -2439,9 +2437,8 @@
 
       <p>bash shell example for CentOS:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2458,9 +2455,8 @@
   <h2 id="instgde-cli-uninst-lgpk-uninst">Uninstall language packages</h2>
   <p>Command usage:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}
+</code></pre></div>  </div>
 
   <p>The language package uninstall command performs the following tasks:</p>
 
@@ -2477,20 +2473,18 @@
 
   <p>For example, if you attempt to uninstall a language package that another language package depends on, the following message displays:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Cannot uninstall vendorname/language-en_us because the following package(s) depend on it:
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cannot uninstall vendorname/language-en_us because the following package(s) depend on it:
     vendorname/language-en_gb
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>One alternative is to uninstall both language packages after backing up the Magento codebase:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
+</code></pre></div>  </div>
 
   <p>Messages similar to the following display:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Code backup is starting...
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Code backup is starting...
 Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
 Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
 [SUCCESS]: Code backup completed successfully.
@@ -2502,8 +2496,7 @@ Removing Magento/LanguageEn_us
 	Removing vendorname/language-en_br (dev-master)
 Writing lock file
 Generating autoload files
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

@@ -754,7 +754,7 @@
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">map</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'*'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nl">categoryForm</span><span class="p">:</span>       <span class="s1">'Magento_Catalog/catalog/category/form'</span><span class="p">,</span>
+            <span class="na">categoryForm</span><span class="p">:</span>       <span class="s1">'Magento_Catalog/catalog/category/form'</span><span class="p">,</span>
             <span class="na">newCategoryDialog</span><span class="p">:</span>  <span class="s1">'Magento_Catalog/js/new-category-dialog'</span><span class="p">,</span>
             <span class="na">categoryTree</span><span class="p">:</span>       <span class="s1">'Magento_Catalog/js/category-tree'</span><span class="p">,</span>
             <span class="na">productGallery</span><span class="p">:</span>     <span class="s1">'Magento_Catalog/js/product-gallery'</span><span class="p">,</span>
@@ -783,9 +783,8 @@
 
 <p>Tip: One more way that you can use <code class="highlighter-rouge">require</code> object is to retrieve a current configuration during runtime. Just type in a browser console:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>require.s.contexts._.config;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require.s.contexts._.config;
+</code></pre></div></div>
 
 		</div>
 		<!-- /.content-wrap -->

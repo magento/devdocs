@@ -1527,18 +1527,16 @@ Do not include this file in source control.</p>
 
 <p>After specifying the sensitive setting, use the following commands to verify it:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cache:clean
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:clean
 php bin/magento app:config:dump
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A message similar to the following is displayed:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
 CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
 Done.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="example-system-specific-settings">Example: System-specific settings</h3>
 

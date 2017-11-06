@@ -265,26 +265,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">How to name configuration variables</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -470,16 +450,14 @@
       <li>
         <p>SSH to the integration environment.</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh
+</code></pre></div>        </div>
       </li>
       <li>
         <p>Find the database login information:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+</code></pre></div>        </div>
 
         <p>Sample output follows:</p>
 
@@ -512,14 +490,13 @@ Array
 
     <p>After you connect to the database, use the following SQL queries to find the relevant values:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>SELECT * FROM STORES;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM STORES;
 SELECT * FROM STORE_WEBSITE;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>A sample follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>MariaDB [main]&gt; SELECT * FROM STORE_WEBSITE;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MariaDB [main]&gt; SELECT * FROM STORE_WEBSITE;
 +------------+-------+--------------+------------+------------------+------------+
 | website_id | code  | name         | sort_order | default_group_id | is_default |
 +------------+-------+--------------+------------+------------------+------------+
@@ -527,16 +504,14 @@ SELECT * FROM STORE_WEBSITE;
 |          1 | base  | Main Website |          0 |                1 |          1 |
 |          2 | test1 | Test Website |          0 |                3 |          0 |
 +------------+-------+--------------+------------+------------------+------------+
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>Use the value from the <code class="highlighter-rouge">code</code> column as the scope name, not the <code class="highlighter-rouge">name</code> value.</p>
 
     <p>For example, to set a configuration variable for Test Website, use the following format:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>CONFIG__WEBSITES__TEST1__&lt;SYSTEM__VARIABLE__NAME&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONFIG__WEBSITES__TEST1__&lt;SYSTEM__VARIABLE__NAME&gt;
+</code></pre></div>    </div>
 
     <p>where <code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code> comes from the next section.</p>
 

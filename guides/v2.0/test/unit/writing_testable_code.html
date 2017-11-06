@@ -577,52 +577,52 @@
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">interface RequestInterface
-{
-    public function getPathInfo();
-    public function getParam($name);
-}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">RequestInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPathInfo</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getParam</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>Let’s also assume there is a concrete implementation <code class="highlighter-rouge">HttpRequest</code> that that also has a public method <code class="highlighter-rouge">getParams()</code> in addition to the two interface methods.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class HttpRequest implements RequestInterface
-{
-    public function getPathInfo() {...}
-    public function getParam($name) {...}
-    public function getParams() {...}
-}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">HttpRequest</span> <span class="k">implements</span> <span class="nx">RequestInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPathInfo</span><span class="p">()</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getParam</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getParams</span><span class="p">()</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>Any code that depends on <code class="highlighter-rouge">RequestInterface</code> should avoid using the <code class="highlighter-rouge">getParams()</code> method, because it is not part of the interface.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class MyClass
-{
-    /**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @var RequestInterface
-     */
-    private $request;
+     */</span>
+    <span class="k">private</span> <span class="nv">$request</span><span class="p">;</span>
 
-    public function __construct(RequestInterface $request)
-    {
-        $this-&gt;request = $request;
-    }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span> <span class="o">=</span> <span class="nv">$request</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public function doSomething()
-    {
-        foreach ($this-&gt;request-&gt;getParams() as $paramName =&gt; $value) {
-            // ... some more code
-        }
-    }
-}</code></pre></figure>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$paramName</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ... some more code
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>This completely defeats the purpose of the interface. A better solution might be the following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">public function doSomething()
-{
-    foreach (['foo', 'bar'] as $paramName) {
-        $value = $this-&gt;request-&gt;getParam($paramName);
-        // ... some more code
-    }
-}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">([</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$paramName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$value</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getParam</span><span class="p">(</span><span class="nv">$paramName</span><span class="p">);</span>
+        <span class="c1">// ... some more code
+</span>    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>The second example method <code class="highlighter-rouge">doSomething()</code> does not call the <code class="highlighter-rouge">getParams()</code> method.</p>
 
@@ -665,21 +665,21 @@
 
 <p>Consider moving the code in that needs the value into a class that has the data available as the following example shows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">function extractMatchingDocuments(Document $searchDoc, array $documents)
-{
-    return array_filter($documents, function (Document $doc) use ($searchDoc){
-        return $doc-&gt;getFieldValue() === $searchDoc-&gt;getFieldValue();
-    });
-}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">extractMatchingDocuments</span><span class="p">(</span><span class="nx">Document</span> <span class="nv">$searchDoc</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$documents</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nb">array_filter</span><span class="p">(</span><span class="nv">$documents</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Document</span> <span class="nv">$doc</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$searchDoc</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nv">$doc</span><span class="o">-&gt;</span><span class="na">getFieldValue</span><span class="p">()</span> <span class="o">===</span> <span class="nv">$searchDoc</span><span class="o">-&gt;</span><span class="na">getFieldValue</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>The following example moves the comparison into a <code class="highlighter-rouge">matches()</code> method on the <code class="highlighter-rouge">Document</code> class instead.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">function extractMatchingDocuments(Document $searchDoc, array $documents)
-{
-    return array_filter($documents, function (Document $doc) use ($searchDoc){
-        return $searchDoc-&gt;matches($doc);
-    });
-}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">extractMatchingDocuments</span><span class="p">(</span><span class="nx">Document</span> <span class="nv">$searchDoc</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$documents</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nb">array_filter</span><span class="p">(</span><span class="nv">$documents</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Document</span> <span class="nv">$doc</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$searchDoc</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nv">$searchDoc</span><span class="o">-&gt;</span><span class="na">matches</span><span class="p">(</span><span class="nv">$doc</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="the-law-of-demeter">The Law of Demeter</h3>
 
@@ -695,11 +695,11 @@
 
 <p>The following example violates the Law of Demeter by calling the method <code class="highlighter-rouge">getByName()</code> on the return value of <code class="highlighter-rouge">getHeaders()</code>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">function isJsonResponse(Response $response)
-{
-    $headers = $response-&gt;getHeaders();
-    return $headers-&gt;getByName('Content-Type') === 'application/json';
-}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">isJsonResponse</span><span class="p">(</span><span class="nx">Response</span> <span class="nv">$response</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$headers</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getHeaders</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nv">$headers</span><span class="o">-&gt;</span><span class="na">getByName</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">)</span> <span class="o">===</span> <span class="s1">'application/json'</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>The solution is to add the method <code class="highlighter-rouge">isJsonResponse()</code> to the response object instead.</p>
 

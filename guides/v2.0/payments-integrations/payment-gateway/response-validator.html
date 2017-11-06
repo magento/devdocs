@@ -474,7 +474,7 @@
 
 <p>In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AcceptValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AcceptValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
 <span class="p">{</span>
     <span class="sd">/**
      * Performs domain-related validation for business object
@@ -518,8 +518,7 @@
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">,</span> <span class="nv">$fails</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now, the newly added validator should be specified for a specific command. Below is an example of specifying a validator for an <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> command:</p>
 

@@ -2032,16 +2032,14 @@
   <li>
     <p>Enter the following command to change to production mode:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento deploy:mode:set production
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento deploy:mode:set production
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>find app/code var vendor pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find app/code var vendor pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2054,13 +2052,12 @@
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>chmod -R u+w .
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod -R u+w .
+</code></pre></div>    </div>
   </li>
 </ol>
 
-<h3 id="optionally-set-magentoumask">Optionally set <code class="highlighter-rouge">magento_umask</code></h3>
+<h3 id="optionally-set-magento_umask">Optionally set <code class="highlighter-rouge">magento_umask</code></h3>
 
 <div>
 
@@ -2167,10 +2164,9 @@
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2198,16 +2194,14 @@ find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} \; &a
   <li>
     <p>As the Magento file system owner, enter the following command to change to production mode:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento deploy:mode:set production
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento deploy:mode:set production
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>find app/code lib pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find app/code lib pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2220,9 +2214,8 @@ find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} \; &a
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
+</code></pre></div>    </div>
   </li>
 </ol>
 </div></div>

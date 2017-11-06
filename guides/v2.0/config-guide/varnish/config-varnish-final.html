@@ -1562,17 +1562,15 @@
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -I -v --location-trusted 'http://192.0.2.55/magento2'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+</code></pre></div></div>
 
 <p>Important headers:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
 Age: 0
 X-Magento-Cache-Debug: MISS
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>This value is also acceptable: <code>X-Magento-Cache-Debug: HIT</code></p>
@@ -1614,9 +1612,8 @@ X-Magento-Cache-Debug: MISS
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/var/page_cache/*
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/var/page_cache/*
+</code></pre></div>    </div>
   </li>
   <li>Access one or more cacheable Magento pages.</li>
   <li>

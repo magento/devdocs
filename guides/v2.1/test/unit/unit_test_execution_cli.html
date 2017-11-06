@@ -504,7 +504,7 @@
 
 <p>To run all tests, navigate to the Magento base directory and execute the following command:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./vendor/bin/phpunit <span class="nt">-c</span> dev/tests/unit/phpunit.xml.dist</code></pre></figure>
 
 <h3 id="running-only-a-subset-of-the-unit-tests">Running only a subset of the unit tests</h3>
 
@@ -512,7 +512,7 @@
 
 <p>The following example tells PHPUnit to look for any file ending with <code class="highlighter-rouge">Test.php</code> within the directory branch <code class="highlighter-rouge">app/code/Example/Module/Test/Unit</code> and try to execute it.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Example/Module/Test/Unit</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./vendor/bin/phpunit <span class="nt">-c</span> dev/tests/unit/phpunit.xml.dist app/code/Example/Module/Test/Unit</code></pre></figure>
 
 <h4 id="explanation">Explanation</h4>
 
@@ -531,7 +531,7 @@
 
 <p>Whatever the reason, if you encounter the <code class="highlighter-rouge">permission denied: vendor/bin/phpunit</code> error, you can prefix the command with the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interpreter, so your system knows what binary to use to run the tests.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>php <span class="nt">-f</span> vendor/bin/phpunit <span class="nt">--</span> <span class="nt">-c</span> dev/tests/unit/phpunit.xml.dist</code></pre></figure>
 
 <h4 id="use-the-correct-php-interpreter">Use the correct PHP interpreter</h4>
 <p>On many development systems, you might have more one PHP version installed. You must know the correct PHP interpreter to use for testing; that is, Buse the same version of PHP to run the unit tests you use to run Magento.</p>
@@ -554,7 +554,7 @@
 
 <p>You can either fix your <code class="highlighter-rouge">$PATH</code> (please refer to your system documentation on how to do that), or specify the full path to the PHP interpreter. For example:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>/usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>/usr/local/Cellar/php56/5.6.19/bin/php <span class="nt">-f</span> vendor/bin/phpunit <span class="nt">--</span> <span class="nt">-c</span> dev/tests/unit/phpunit.xml.dist</code></pre></figure>
 
 <h4 id="memory-limit">Memory Limit</h4>
 <p>If you encounter an error similar to <code class="highlighter-rouge">Fatal error: Allowed memory size of 67108864 bytes exhausted</code>, follow these steps to resolve it.</p>

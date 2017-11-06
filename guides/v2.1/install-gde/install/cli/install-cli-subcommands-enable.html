@@ -2415,15 +2415,13 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
@@ -2432,9 +2430,8 @@
 
       <p>bash shell example for CentOS:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2454,10 +2451,9 @@
   <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
   <p>To enable or disable available modules, use the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
 magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>where</p>
 
@@ -2476,24 +2472,21 @@ magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;modu
 
   <p>Use the following command to list enabled and disabled modules:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:status
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:status
+</code></pre></div>  </div>
 
   <p>For example, to disable the Weee module, enter:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento module:disable Magento_Weee
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:disable Magento_Weee
+</code></pre></div>  </div>
 
   <p>For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p>
 
   <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
   <p>If you enabled one or more modules, run the following command to update the database:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:upgrade
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:upgrade
+</code></pre></div>  </div>
 
   <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
   <p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module that is currently available.</p>

@@ -1353,9 +1353,8 @@ For example, in <code class="highlighter-rouge">bin/magento setup:upgrade</code>
 
 <p>If you have a Magento installation handy, enter the following to display the current list of commands:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento --list
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento --list
+</code></pre></div></div>
 
 <h4 id="format-groupsubjectaction">Format: <code class="highlighter-rouge">group:[subject:]action</code></h4>
 
@@ -1374,7 +1373,7 @@ For example, in <code class="highlighter-rouge">bin/magento setup:upgrade</code>
 <p><code class="highlighter-rouge">action</code> is an action the command does.</p>
 
 <h3 id="examples">Examples</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>// general commands: just a group and an action
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// general commands: just a group and an action
 magento setup:install
 magento module:status
 
@@ -1383,8 +1382,7 @@ magento setup:config:set
 magento setup:config:delete
 magento setup:db-schema:upgrade
 magento setup:db-data:upgrade
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><code>db-schema</code> and <code>db-data</code> are examples of compound words.</p>
@@ -1404,9 +1402,8 @@ magento setup:db-data:upgrade
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento dev:theme:create frontend vendor themename
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:theme:create frontend vendor themename
+</code></pre></div></div>
 
 <p>where:</p>
 
@@ -1441,12 +1438,11 @@ magento setup:db-data:upgrade
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
 magento dev:theme:create -p=Magento/luma frontend vendor themename
 magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 magento module:disable -f Magento_Cms
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Where:</p>
 
@@ -1467,7 +1463,7 @@ magento module:disable -f Magento_Cms
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// correct
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// correct
 magento dev:theme:create --extend-from=Magento/luma frontend Foo bar
 magento module:disable --force Magento_Catalog
 magento module:disable -f Magento_Catalog
@@ -1475,8 +1471,7 @@ magento module:disable -f Magento_Catalog
 //incorrect
 magento module:disable --force=1 Magento_Catalog
 magento module:disable -f=yes Magento_Catalog
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cli-collision">Recommendations to avoid naming collisions</h2>
 <p>To avoid naming your command the same as another command, we recommend:</p>
@@ -1494,10 +1489,9 @@ magento module:disable -f=yes Magento_Catalog
 
     <p>Examples:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>dev:myname:theme:create
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dev:myname:theme:create
 dev:myname:theme:delete
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 

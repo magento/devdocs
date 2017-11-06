@@ -671,19 +671,17 @@
 
 <p>The following example uses the <code class="highlighter-rouge">curl</code> command to request a token for a customer account:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
      -d "{"username":"customer1@example.com", "password":"customer1pw"}"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The following example makes the same request with <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> for a customer account token:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml"  \
      -d "&lt;login&gt;&lt;username&gt;customer1@example.com&lt;/username&gt;&lt;password&gt;customer1pw&lt;/password&gt;&lt;/login&gt;"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For more information about the <code class="highlighter-rouge">curl</code> command, see <a href="/guides/v2.0/get-started/gs-curl.html">Use cURL to run the request</a></p>
 

@@ -1329,10 +1329,10 @@
 <p>The <code class="highlighter-rouge">uiLayout</code> module is a singleton. It returns <code class="highlighter-rouge">function run(nodes, parent, toCache, toMerge)</code>, where arguments are the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">array</span><span class="p">}</span><span class="w"> </span><span class="err">nodes</span></code>: array of configurations of the UI components that we want to initialize</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span><span class="w"> </span><span class="err">parent</span></code>: parent component for that UI components</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">boolean</span><span class="p">}</span><span class="w"> </span><span class="err">toCache</span></code>: defines whether argument <code class="highlighter-rouge">nodes</code> will be cached. The key for cache will be constructed from <code class="highlighter-rouge">nodes</code> object keys</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">boolean</span><span class="p">}</span><span class="w"> </span><span class="err">toMerge</span></code>: defines whether the  argument <code class="highlighter-rouge">nodes</code> should be merged with the same one, that has been cached</li>
+  <li><code class="highlighter-rouge">{array} nodes</code>: array of configurations of the UI components that we want to initialize</li>
+  <li><code class="highlighter-rouge">{string} parent</code>: parent component for that UI components</li>
+  <li><code class="highlighter-rouge">{boolean} toCache</code>: defines whether argument <code class="highlighter-rouge">nodes</code> will be cached. The key for cache will be constructed from <code class="highlighter-rouge">nodes</code> object keys</li>
+  <li><code class="highlighter-rouge">{boolean} toMerge</code>: defines whether the  argument <code class="highlighter-rouge">nodes</code> should be merged with the same one, that has been cached</li>
 </ul>
 
 <p>Arguments <code class="highlighter-rouge">toCache</code> and <code class="highlighter-rouge">toMerge</code> play together when a particular <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> instance need to be updated in runtime.</p>
@@ -1343,30 +1343,28 @@
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span><span class="w"> </span><span class="err">name</span></code>:the component name (short name). Its value is set to the <code class="highlighter-rouge">index</code> property of the UI component instance</p>
+    <p><code class="highlighter-rouge">{string} name</code>:the component name (short name). Its value is set to the <code class="highlighter-rouge">index</code> property of the UI component instance</p>
 
     <p>Note: The full name of the created UI component is formed by concatenating the <code class="highlighter-rouge">parent.name + '.' + name</code>, and then set as the <code class="highlighter-rouge">name</code> property. If an instance with the same full name already exists, <code class="highlighter-rouge">uiLayout</code> will skip its initialization.</p>
   </li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span><span class="w"> </span><span class="err">parent</span></code>: the <code class="highlighter-rouge">name</code> of the component’s parent element (full name). If the parent component is not yet initialized, then <code class="highlighter-rouge">uiLayout</code> waits for it to appear in the <code class="highlighter-rouge">uiRegistry</code>.</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span><span class="w"> </span><span class="err">template</span></code>: a path to <code class="highlighter-rouge">.html</code> template</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span><span class="w"> </span><span class="err">component</span></code>: path to the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> class (function-constructor) of the new component</li>
+  <li><code class="highlighter-rouge">{string} parent</code>: the <code class="highlighter-rouge">name</code> of the component’s parent element (full name). If the parent component is not yet initialized, then <code class="highlighter-rouge">uiLayout</code> waits for it to appear in the <code class="highlighter-rouge">uiRegistry</code>.</li>
+  <li><code class="highlighter-rouge">{string} template</code>: a path to <code class="highlighter-rouge">.html</code> template</li>
+  <li><code class="highlighter-rouge">{string} component</code>: path to the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> class (function-constructor) of the new component</li>
   <li>
-    <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">object</span><span class="p">}</span><span class="w"> </span><span class="err">config</span></code>: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:</p>
+    <p><code class="highlighter-rouge">{object} config</code>: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>var config1 = {name: 'myComp1', config: {myProp: '123123'}}
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var config1 = {name: 'myComp1', config: {myProp: '123123'}}
+</code></pre></div>    </div>
 
     <p>and</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>var config2 = {name: 'myComp1', myProp: '123123'}
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var config2 = {name: 'myComp1', myProp: '123123'}
+</code></pre></div>    </div>
   </li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">array</span><span class="p">}</span><span class="w"> </span><span class="err">children</span></code> - configuration of child elements, if there are any</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">boolean</span><span class="p">}</span><span class="w"> </span><span class="err">isTemplate</span></code> - if the value is set to <code class="highlighter-rouge">true</code>, the component configuration will be stored by <code class="highlighter-rouge">uiLayout</code> in the private <code class="highlighter-rouge">templates</code> variable. Current UI component will be not initialized. New instances can be created dynamically based on this object</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span><span class="w"> </span><span class="err">nodeTemplate</span></code> - a full name of component from <code class="highlighter-rouge">templates</code> private variable. This component’s configuration will be used as a  configuration template for the current one</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">string</span><span class="p">}</span><span class="w"> </span><span class="err">provider</span></code>- the full name of the DataSource UI component. If property is absent, then parent’s <code class="highlighter-rouge">provider</code> will be inherited</li>
+  <li><code class="highlighter-rouge">{array} children</code> - configuration of child elements, if there are any</li>
+  <li><code class="highlighter-rouge">{boolean} isTemplate</code> - if the value is set to <code class="highlighter-rouge">true</code>, the component configuration will be stored by <code class="highlighter-rouge">uiLayout</code> in the private <code class="highlighter-rouge">templates</code> variable. Current UI component will be not initialized. New instances can be created dynamically based on this object</li>
+  <li><code class="highlighter-rouge">{string} nodeTemplate</code> - a full name of component from <code class="highlighter-rouge">templates</code> private variable. This component’s configuration will be used as a  configuration template for the current one</li>
+  <li><code class="highlighter-rouge">{string} provider</code>- the full name of the DataSource UI component. If property is absent, then parent’s <code class="highlighter-rouge">provider</code> will be inherited</li>
 </ul>
 
 <h2 id="example-1">Example 1</h2>

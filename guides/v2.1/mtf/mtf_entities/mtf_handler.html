@@ -893,9 +893,8 @@
 
 <p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code class="highlighter-rouge">config.xml</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cp config.xml.dist config.xml
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp config.xml.dist config.xml
+</code></pre></div></div>
 
 <p>The following nodes influence handlers:</p>
 
@@ -1143,7 +1142,7 @@
 
 <p>Add to the <code class="highlighter-rouge">Curl.php</code> the following code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$curl = new BackendDecorator(new CurlTransport(), new Config());</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">Config</span><span class="p">());</span></code></pre></figure>
 
 <p><code class="highlighter-rouge">Config()</code> takes Admin’s configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.</p>
 
@@ -1155,7 +1154,7 @@
 
 <p>Use the following code in the <code class="highlighter-rouge">Curl.php</code> file:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">$curl = new FrontendDecorator(new CurlTransport(), $this-&gt;customer);</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FrontendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
 

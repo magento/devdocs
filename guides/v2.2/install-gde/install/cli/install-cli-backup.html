@@ -2426,15 +2426,13 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>      </div>
 
       <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
@@ -2443,9 +2441,8 @@
 
       <p>bash shell example for CentOS:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2476,9 +2473,8 @@
 
     <p>Command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ulimit -s 65536
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ulimit -s 65536
+</code></pre></div>    </div>
 
     <p>You can change this to a larger value if needed.</p>
 
@@ -2494,9 +2490,8 @@
       <li>
         <p>Add the following line:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>ulimit -s 65536
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ulimit -s 65536
+</code></pre></div>        </div>
       </li>
       <li>Save your changes to <code class="highlighter-rouge">.bashrc</code> and exit the text editor.</li>
     </ol>
@@ -2508,9 +2503,8 @@
     <h2 id="instgde-cli-uninst-back">Backing up</h2>
     <p>Command usage:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:backup [--code] [--media] [--db]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:backup [--code] [--media] [--db]
+</code></pre></div>    </div>
 
     <p>The command performs the following tasks:</p>
 
@@ -2557,13 +2551,12 @@
 
     <p>For example, to back up the file system and database,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:backup --code --db
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:backup --code --db
+</code></pre></div>    </div>
 
     <p>Messages similar to the following display:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Enabling maintenance mode
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enabling maintenance mode
 Code backup is starting...
 Code backup filename: 1434133011_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
 Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
@@ -2573,39 +2566,34 @@ DB backup filename: 1434133011_db.sql
 DB backup path: /var/www/html/magento2/var/backups/1434133011_db.sql
 [SUCCESS]: DB backup completed successfully.
 Disabling maintenance mode
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <h2 id="instgde-cli-uninst-roll">Roll back</h2>
     <p>This section discusses how to roll back to a backup you made previously. You must know the file name of the backup file to restore.</p>
 
     <p>To find the name of your backups, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento info:backups:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento info:backups:list
+</code></pre></div>    </div>
 
     <p>The first string in the backup file name is the timestamp.</p>
 
     <p>To roll back to a previous backup, enter:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:rollback [-c|--code-file="&lt;name&gt;"] [-m|--media-file="&lt;name&gt;"] [-d|--db-file="&lt;name&gt;"]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:rollback [-c|--code-file="&lt;name&gt;"] [-m|--media-file="&lt;name&gt;"] [-d|--db-file="&lt;name&gt;"]
+</code></pre></div>    </div>
 
     <p>For example, to restore a media backup named <code class="highlighter-rouge">1440611839_filesystem_media.tgz</code>, enter</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:rollback -m 1440611839_filesystem_media.tgz
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:rollback -m 1440611839_filesystem_media.tgz
+</code></pre></div>    </div>
 
     <p>Messages similar to the following display:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>[SUCCESS]: Media rollback completed successfully.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[SUCCESS]: Media rollback completed successfully.
 Please set file permission of bin/magento to executable
 Disabling maintenance mode
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
   <p>If the command results in a <code>Segmentation fault</code> message, see <a href="/guides/v2.2/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>

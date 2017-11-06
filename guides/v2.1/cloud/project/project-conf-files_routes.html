@@ -1361,12 +1361,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1873,18 +1873,17 @@
 <h2 id="cloud-yaml-routes-default">Defaults</h2>
 <p>If you do not have a <code class="highlighter-rouge">routes.yaml</code> file, the following default is used:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
     type: upstream
  	   upstream: "mymagento:php"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-yaml-routes-temp">Route templates</h2>
-<p><code class="highlighter-rouge">routes.yaml</code> is a list of templated routes and their configurations. A route  template can look like this: <code class="highlighter-rouge">http://www.{default}/</code> or <code class="highlighter-rouge">https://{default}/blog</code>, where <code class="highlighter-rouge"><span class="p">{</span><span class="err">default</span><span class="p">}</span></code> is the fully qualified domain name configured for the project.</p>
+<p><code class="highlighter-rouge">routes.yaml</code> is a list of templated routes and their configurations. A route  template can look like this: <code class="highlighter-rouge">http://www.{default}/</code> or <code class="highlighter-rouge">https://{default}/blog</code>, where <code class="highlighter-rouge">{default}</code> is the fully qualified domain name configured for the project.</p>
 
 <p>If the domain is <code class="highlighter-rouge">example.com</code>, these routes resolve: <code class="highlighter-rouge">http://www.example.com/</code> and <code class="highlighter-rouge">https://example.com/blog</code> for the live environment (that is, the Master).</p>
 
-<p>Magento Commerce also generates URLs for every active environment that enable you to test that system. In a test system, <code class="highlighter-rouge"><span class="p">{</span><span class="err">default</span><span class="p">}</span></code> is replaced with <code class="highlighter-rouge">[branch]-[project-id].[region].magentosite.cloud</code>.</p>
+<p>Magento Commerce also generates URLs for every active environment that enable you to test that system. In a test system, <code class="highlighter-rouge">{default}</code> is replaced with <code class="highlighter-rouge">[branch]-[project-id].[region].magentosite.cloud</code>.</p>
 
 <p>For example, if the project ID is <code class="highlighter-rouge">mswy7hzcuhcjw</code> on a branch called <code class="highlighter-rouge">refactorcss</code> hosted in the <code class="highlighter-rouge">na</code> cluster, the domains are: <code class="highlighter-rouge">http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/</code> and <code class="highlighter-rouge">https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog</code></p>
 
@@ -1923,28 +1922,26 @@ another route that will be identified by its template (see the following example
 <h2 id="cloud-yaml-routes-sample-simple">Simple routes</h2>
 <p>Following is a sample <code class="highlighter-rouge">routes.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
   type: upstream
   upstream: "frontend:php"
 "http://www.{default}/":
   type: redirect
   to: "http://{default}/"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The preceding sample routes both the naked domain and the <code class="highlighter-rouge">www</code> subdomain to an application named <code class="highlighter-rouge">frontend</code>. This route does not redirect HTTPS.</p>
 
 <p>The following route does not redirect from the <code class="highlighter-rouge">www</code> to the naked domain; instead, it serves from both:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>"http://{default}/":
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
     type: upstream
     upstream: "php:php"
 
 "http://www.{default}/":
     type: upstream
     upstream: "php:php"
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The difference between the two preceding examples is that for the first one the server responds directly to a request of the form <code class="highlighter-rouge">http://example.com/hello</code>, but it will issue a 301 redirect for <code class="highlighter-rouge">http://www.example.com/mypath</code> (to <code class="highlighter-rouge">http://example.com/mypath</code>).</p>
 
@@ -1972,7 +1969,7 @@ a live master).</p>
 <h2 id="cloud-yaml-routes-sample-redirects">Redirects</h2>
 <p>As discussed in more detail in <a href="/guides/v2.1/cloud/project/project-routes-more-redir.html">redirects</a>, you can set up complex redirection rules including <em>partial redirects</em> like the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>http://www.{default}/:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.{default}/:
   to: https://{default}/
   	type: redirect
 http://{default}/:
@@ -1991,15 +1988,13 @@ https://{default}/:
     enabled: false
   type: upstream
   upstream: php:php
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="cloud-yaml-routes-setup">List routes</h2>
 <p>You can get a list of the configured routes for an environment by using the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:routes
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:routes
+</code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

@@ -590,7 +590,7 @@ most cases it is enough to use the <code class="highlighter-rouge">\Magento\Paym
 
 <p>In the integration with the Braintree payment provider, we use the <code class="highlighter-rouge">\Magento\Braintree\Block\Form</code> class as <code class="highlighter-rouge">formBlockType</code>. It allows displaying only card types available for configured countries:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">Cc</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">Cc</span>
 <span class="p">{</span>
     <span class="sd">/**
      * Get list of available card types of order billing address country
@@ -631,8 +631,7 @@ most cases it is enough to use the <code class="highlighter-rouge">\Magento\Paym
         <span class="k">return</span> <span class="nv">$filtered</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="template">Template</h2>
 

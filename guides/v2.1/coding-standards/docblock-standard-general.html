@@ -535,26 +535,26 @@
 See example below:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  public function getPrice()
-  {
-      $price = 0;
-      $price += $this-&gt;getBasePrice();
-      $price -= $this-&gt;getDiscount();
-      return $price;
-  }
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">public</span> <span class="k">function</span> <span class="nf">getPrice</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nv">$price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nv">$price</span> <span class="o">+=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBasePrice</span><span class="p">();</span>
+      <span class="nv">$price</span> <span class="o">-=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDiscount</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$price</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  private function getBasePrice()
-  {
-      // calculate base price
-  }
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">getBasePrice</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="c1">// calculate base price
+</span>  <span class="p">}</span>
 
-  private function getDiscount()
-  {
-    if (it's discount time) {
-      return 10;
-    }
-    return 0;
-  }
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">getDiscount</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">it</span><span class="err">'</span><span class="nx">s</span> <span class="nx">discount</span> <span class="nb">time</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
   </code></pre></figure>
 
 <h3 id="include-all-the-necessary-details">Include all the necessary details</h3>
@@ -580,14 +580,14 @@ After the short description, there can be a long description.</p>
 
 <p><strong>DocBlock Header in a PHP-file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Short description...
  *
  * Long description
  * Broken down into several lines
  *
  * License notice...
- */</code></pre></figure>
+ */</span></code></pre></figure>
 
 <p><strong>DocBlock Header in an XML-file</strong></p>
 
@@ -663,13 +663,13 @@ For example: namespace, class, interface, function, property, method, and so on.
 
 <p><strong>DocBlock for a Class</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Autoloader with class map capability
  *
  * ...
- */
-class Autoload
-{</code></pre></figure>
+ */</span>
+<span class="k">class</span> <span class="nc">Autoload</span>
+<span class="p">{</span></code></pre></figure>
 
 <p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element.
 So there are two solutions possible:</p>
@@ -681,44 +681,44 @@ So there are two solutions possible:</p>
 
 <p><strong>DocBlock with Included Script File</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Magento integration Magento test framework (MTF) bootstrap
  *
  * ...
- */
+ */</span>
 
-require __DIR__ . '/../bootstrap.php';
+<span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/../bootstrap.php'</span><span class="p">;</span>
 
-namespace Magento\Test;
+<span class="k">namespace</span> <span class="nx">Magento\Test</span><span class="p">;</span>
 
-/**
+<span class="sd">/**
  * Magento integration Magento test framework (MTF) bootstrap
- */
-class Bootstrap
-{</code></pre></figure>
+ */</span>
+<span class="k">class</span> <span class="nc">Bootstrap</span>
+<span class="p">{</span></code></pre></figure>
 
 <p><strong>DocBlock with Included Class File</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">namespace Magento\Framework\Profiler\Adapter;
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Framework\Profiler\Adapter</span><span class="p">;</span>
 
-/**
+<span class="sd">/**
  * Profiler CSV adapter
  *
  * ...
- */
-class Csv extends \Magento\Framework\Profiler\AdapterAbstract
-{
-// ...
-    public function setFile($file)
-    {
-        if (!isValidFile($file)) {
-            throw new \ArgumentException('A valid file name is expected.');
-        }
-        // ...
-    }
-}
+ */</span>
+<span class="k">class</span> <span class="nc">Csv</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\Profiler\AdapterAbstract</span>
+<span class="p">{</span>
+<span class="c1">// ...
+</span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isValidFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\ArgumentException</span><span class="p">(</span><span class="s1">'A valid file name is expected.'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// ...
+</span>    <span class="p">}</span>
+<span class="p">}</span>
 
-require_once __DIR__ . '/../../functions.php';</code></pre></figure>
+<span class="k">require_once</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/../../functions.php'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="classes-interfaces">Classes and interfaces</h3>
 
@@ -747,26 +747,26 @@ The only <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">use Magento\Logger;
-use Magento\Math\Random;
-use Magento\Stdlib\DateTime as StdlibDateTime;
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Logger</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Math\Random</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Stdlib\DateTime</span> <span class="k">as</span> <span class="nx">StdlibDateTime</span><span class="p">;</span>
 
-/**
+<span class="sd">/**
  * @var Logger
- */
-protected $_logger;
+ */</span>
+<span class="k">protected</span> <span class="nv">$_logger</span><span class="p">;</span>
 
-/**
+<span class="sd">/**
  * Description of method here.
  *
  * @param Random         $mathRandom
  * @param StdlibDateTime $dateTime
  * @param int            $number
- */
-protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $number)
-{
+ */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Random</span> <span class="nv">$mathRandom</span><span class="p">,</span> <span class="nx">StdlibDateTime</span> <span class="nv">$dateTime</span><span class="p">,</span> <span class="nv">$number</span><span class="p">)</span>
+<span class="p">{</span>
 
-}</code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="class-attributes">Class attributes</h3>
 
@@ -774,15 +774,15 @@ protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $nu
 
 <p><strong>Example of Class Attribute</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">// ...
-namespace Magento;
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// ...
+</span><span class="k">namespace</span> <span class="nx">Magento</span><span class="p">;</span>
 
-class Profiler
-{
-    /**
+<span class="k">class</span> <span class="nc">Profiler</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @var Profiler
-     */
-    protected static $instance = null;</code></pre></figure>
+     */</span>
+    <span class="k">protected</span> <span class="k">static</span> <span class="nv">$instance</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="functions-methods">Functions and methods</h3>
 
@@ -867,32 +867,32 @@ The algorithm must be self-explanatory and understood by reviewing the code and 
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Merge the config XML files
  *
  * @param  array $configFiles
  * @return void
  * @throws \Magento\Exception if a non-existing or invalid XML file passed
- */
-protected function merge($configFiles)
-{
-    $domConfig = new \Magento\Config\Dom($this-&gt;_getInitialXml(), $this-&gt;_getIdAttributes());
-    foreach ($configFiles as $file) {
-        if (!file_exists($file)) {
-            throw new \Magento\Exception("File does not exist: {$file}");
-        }
-        $domConfig-&gt;merge(file_get_contents($file));
-        if (!$domConfig-&gt;validate($this-&gt;getSchemaFile(), $errors)) {
-            $message = "Invalid XML file: {$file}\n";
-            /** @var libXMLError $error */
-            foreach ($errors as $error) {
-                $message .= "{$error-&gt;message} Line: {$error-&gt;line}\n";
-            }
-            throw new \Magento\Exception($message);
-        }
-    }
-    $this-&gt;_dom = $domConfig-&gt;getDom();
-}</code></pre></figure>
+ */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">merge</span><span class="p">(</span><span class="nv">$configFiles</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$domConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Magento\Config\Dom</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getInitialXml</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getIdAttributes</span><span class="p">());</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$configFiles</span> <span class="k">as</span> <span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="s2">"File does not exist: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="s2">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">merge</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$file</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSchemaFile</span><span class="p">(),</span> <span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="s2">"Invalid XML file: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+            <span class="sd">/** @var libXMLError $error */</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$message</span> <span class="o">.=</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">message</span><span class="si">}</span><span class="s2"> Line: </span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">line</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_dom</span> <span class="o">=</span> <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">getDom</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="throws">Divergence in @throws tag</h4>
 
@@ -900,7 +900,7 @@ protected function merge($configFiles)
 
 <p><strong>Example of Throwing Exception Explicitly</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Set an arbitrary value to specified element
  *
  * @param  string $elementId
@@ -908,22 +908,22 @@ protected function merge($configFiles)
  * @param  mixed  $value
  * @return self
  * @throws \InvalidArgumentException
- */
-public function setAttribute($elementId, $attribute, $value)
-{
-    $this-&gt;_assertElementExists($elementId);
-    switch ($attribute) {
-        case self::PARENT: // break is intentionally omitted
-        case self::CHILDREN:
-        case self::GROUPS:
-            throw new \InvalidArgumentException("Attribute '{$attribute}' is reserved and cannot be set.");
-            break;
-        default:
-            $this-&gt;_elements[$elementId][$attribute] = $value;
-            break;
-    }
-    return $this;
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setAttribute</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">,</span> <span class="nv">$attribute</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_assertElementExists</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nv">$attribute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">PARENT</span><span class="o">:</span> <span class="c1">// break is intentionally omitted
+</span>        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">CHILDREN</span><span class="o">:</span>
+        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">GROUPS</span><span class="o">:</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="s2">"Attribute '</span><span class="si">{</span><span class="nv">$attribute</span><span class="si">}</span><span class="s2">' is reserved and cannot be set."</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_elements</span><span class="p">[</span><span class="nv">$elementId</span><span class="p">][</span><span class="nv">$attribute</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>In this general case, if an exception is thrown in a sub-routine, then <code class="highlighter-rouge">@throws</code> must not be used in the parent method.</p>
 
@@ -932,36 +932,36 @@ For example:</p>
 
 <p><strong>Throwing Exception Implicitly</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Recursively delete directory from storage
  *
  * @param  string $path Target dir
  * @return void
  * @throws Mage_Core_Exception when directories cannot be deleted
- */
-public function deleteDirectory($path)
-{
-    // prevent accidental root directory deleting
-    $rootCmp = rtrim($this-&gt;getHelper()-&gt;getStorageRoot(), DS);
-    $pathCmp = rtrim($path, DS);
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// prevent accidental root directory deleting
+</span>    <span class="nv">$rootCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getHelper</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getStorageRoot</span><span class="p">(),</span> <span class="nx">DS</span><span class="p">);</span>
+    <span class="nv">$pathCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nx">DS</span><span class="p">);</span>
 
-    if ($rootCmp == $pathCmp) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')-&gt;__('Cannot delete root directory %s.', $path));
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$rootCmp</span> <span class="o">==</span> <span class="nv">$pathCmp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Mage</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Cms_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Cannot delete root directory %s.'</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
+    <span class="p">}</span>
 
-    $io = new Varien_Io_File();
+    <span class="nv">$io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Varien_Io_File</span><span class="p">();</span>
 
-    if (Mage::helper('Mage_Core_Helper_File_Storage_Database')-&gt;checkDbUsage()) {
-        Mage::getModel('Mage_Core_Model_File_Storage_Directory_Database')-&gt;deleteDirectory($path);
-    }
-    if (!$io-&gt;rmdir($path, true)) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')-&gt;__('Cannot delete directory %s.', $path));
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Core_Helper_File_Storage_Database'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">checkDbUsage</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">Mage</span><span class="o">::</span><span class="na">getModel</span><span class="p">(</span><span class="s1">'Mage_Core_Model_File_Storage_Directory_Database'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$io</span><span class="o">-&gt;</span><span class="na">rmdir</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="kc">true</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">Mage</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Cms_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Cannot delete directory %s.'</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
+    <span class="p">}</span>
 
-    if (strpos($pathCmp, $rootCmp) === 0) {
-        $io-&gt;rmdir($this-&gt;getThumbnailRoot() . DS . ltrim(substr($pathCmp, strlen($rootCmp)), '\\/'), true);
-    }
-}</code></pre></figure>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nv">$rootCmp</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$io</span><span class="o">-&gt;</span><span class="na">rmdir</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getThumbnailRoot</span><span class="p">()</span> <span class="o">.</span> <span class="nx">DS</span> <span class="o">.</span> <span class="nb">ltrim</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$rootCmp</span><span class="p">)),</span> <span class="s1">'\\/'</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="return">@return tag</h4>
 
@@ -975,18 +975,18 @@ public function deleteDirectory($path)
 
 <p>For example, a global constant:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Directory separator shorthand
- */
-define('DS', DIRECTORY_SEPARATOR);
+ */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DS'</span><span class="p">,</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">);</span>
 
-Or constants in a class:
-class Profiler
-{
-    /**
+<span class="nx">Or</span> <span class="nx">constants</span> <span class="nx">in</span> <span class="nx">a</span> <span class="k">class</span><span class="err">:</span>
+<span class="nc">class</span> <span class="nx">Profiler</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Separator literal to assemble timer identifier from timer names
-     */
-    const NESTING_SEPARATOR = '-&gt;';</code></pre></figure>
+     */</span>
+    <span class="k">const</span> <span class="no">NESTING_SEPARATOR</span> <span class="o">=</span> <span class="s1">'-&gt;'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="DocBlock-templates">DocBlock templates</h3>
 
@@ -1012,58 +1012,58 @@ Documentation is organized with the use of namespaces.</p>
 
 <ul>
   <li>Use <code class="highlighter-rouge">@inheritdoc</code> (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.</li>
-  <li>Use the inline <code class="highlighter-rouge"><span class="p">{</span><span class="err">@inheritdoc</span><span class="p">}</span></code> tag (with braces around) in long descriptions to reuse the parent’s long description. The tagged method MUST have its own short description.</li>
+  <li>Use the inline <code class="highlighter-rouge">{@inheritdoc}</code> tag (with braces around) in long descriptions to reuse the parent’s long description. The tagged method MUST have its own short description.</li>
 </ul>
 
 <p><strong>DocBlock for the Intreface</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Interface for mutable value object for integer values
- */
-interface MutableInterface
-{
-    /**
+ */</span>
+<span class="k">interface</span> <span class="nx">MutableInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * Get value
      *
      * Returns 0, if no value is available
      *
      * @return int
-     */
-    public function getVal();
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">();</span>
 
-    /**
+    <span class="sd">/**
      * Set value
      *
      * Sets 0 in case a non-integer value is passed
      *
      * @param int $value
-     */
-    public function setVal($value);
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
 
 <p><strong>DocBlock for the implementation</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Limited mutable value object for integer values
- */
-class LimitedMutableClass implements MutableInterface
-{
-    /**
+ */</span>
+<span class="k">class</span> <span class="nc">LimitedMutableClass</span> <span class="k">implements</span> <span class="nx">MutableInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @inheritdoc
-     */
-    public function getVal()
-    {
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
 
-    /**
+    <span class="sd">/**
      * Set value
      *
      * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
-     */
-    public function setVal($value)
-    {
-    }
-}</code></pre></figure>
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="api">@api tag</h3>
 
@@ -1087,40 +1087,40 @@ You do not need to annotate each method individually.</p>
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Get some object
  *
  * @deprecated Added to not break backward compatibility of the constructor signature
  *             by injecting the new dependency directly.
  *             The method can be removed in a future major release, when constructor signature can be changed
  * @return SomeObjectInterface
- */
-protected function getSomeObject()
-{
-    ...
-}
+ */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">getSomeObject</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
 
-/**
+<span class="sd">/**
  * Set price
  *
  * @deprecated Non-scoped price is not supported anymore
  * @see setScopedPrice()
  * @return void
- */
-public function setPrice($price)
-{
-    ...
-}
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
 
-/**
+<span class="sd">/**
  * Set price for specified scope
  *
  * @return void
- */
-public function setScopedPrice($price, $scopeType, $scopeId)
-{
-    ...
-}</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setScopedPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">,</span> <span class="nv">$scopeType</span><span class="p">,</span> <span class="nv">$scopeId</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="var">@var inline tag</h3>
 
@@ -1129,16 +1129,16 @@ This tag declares variables that will emerge in next lines of code as follows:</
 
 <p><strong>Inline Type Hinting</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/** @var libXMLError $error */
-foreach ($errors as $error) {</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var libXMLError $error */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></figure>
 
 <p>Some IDEs understand a different notation, where type is specified after variable name.
 This notation is also valid:</p>
 
 <p><strong>Inline Type Hinting Variation</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/** @var $error libXMLError */
-foreach ($errors as $error) {</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var $error libXMLError */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></figure>
 
 <h3 id="see">@see tag</h3>
 
@@ -1146,11 +1146,11 @@ foreach ($errors as $error) {</code></pre></figure>
 
 <p>Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * @var $this ClassOne
  * @see ClassTwo
  * @see FooInterface
- */</code></pre></figure>
+ */</span></code></pre></figure>
 
 <h3 id="other-tags">Other tags</h3>
 
@@ -1162,13 +1162,13 @@ foreach ($errors as $error) {</code></pre></figure>
 
 <p>If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * ...
  *
  * @param  string $argument
  * @return bool
  * @link   http://example.com
- */</code></pre></figure>
+ */</span></code></pre></figure>
 
 <h3 id="format-consistency">Formatting consistency</h3>
 
@@ -1178,7 +1178,7 @@ foreach ($errors as $error) {</code></pre></figure>
 
 <p><strong>Correct – align everything:</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * ...
  *
  * @param  string   $parentId
@@ -1186,11 +1186,11 @@ foreach ($errors as $error) {</code></pre></figure>
  * @param  int|null $position
  * @return int
  * @see    _insertChild() for position explanation
- */</code></pre></figure>
+ */</span></code></pre></figure>
 
 <p><strong>Also correct – don’t align anything:</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * ...
  *
  * @param string   $parentId
@@ -1198,12 +1198,12 @@ foreach ($errors as $error) {</code></pre></figure>
  * @param int|null $position
  * @return int
  * @see _insertChild() for position explanation
- */
-public function reorderChild($parentId, $childId, $position)</code></pre></figure>
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">reorderChild</span><span class="p">(</span><span class="nv">$parentId</span><span class="p">,</span> <span class="nv">$childId</span><span class="p">,</span> <span class="nv">$position</span><span class="p">)</span></code></pre></figure>
 
 <p><strong>Incorrect – align only partially:</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * ...
  *
  * @param  string   $parentId
@@ -1211,7 +1211,7 @@ public function reorderChild($parentId, $childId, $position)</code></pre></figur
  * @param  int|null $position
  * @return int
  * @see _insertChild() for position explanation
- */</code></pre></figure>
+ */</span></code></pre></figure>
 
 
 		</div>

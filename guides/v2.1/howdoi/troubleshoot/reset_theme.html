@@ -821,15 +821,11 @@
 <p>If you need to reset the store theme, but cannot access the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel, you can reset it in the database by doing the following:</p>
 
 <ol>
-  <li>
-    <p>Use a database tool such as <a href="/guides/v2.1//install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or access the DB manually from the command line to execute the following SQL query: 
-<code class="highlighter-rouge">
-UPDATE core_config_data SET value=NULL WHERE path='design/theme/theme_id'
-</code></p>
+  <li>Use a database tool such as <a href="/guides/v2.1//install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or access the DB manually from the command line to execute the following SQL query:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE core_config_data SET value=NULL WHERE path='design/theme/theme_id'
+</code></pre></div>    </div>
   </li>
-  <li>
-    <p>Clear the <code class="highlighter-rouge">pub/static/frontend</code>, <code class="highlighter-rouge">var/view_preprocessing</code>, <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code> directories.</p>
-  </li>
+  <li>Clear the <code class="highlighter-rouge">pub/static/frontend</code>, <code class="highlighter-rouge">var/view_preprocessing</code>, <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code> directories.</li>
 </ol>
 
 <p>This way there will be no <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> set on the <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> level, and when you reload the store front pages, the default Luma theme will be applied.</p>

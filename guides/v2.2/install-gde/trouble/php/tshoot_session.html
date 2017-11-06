@@ -2407,9 +2407,9 @@
 			<p><strong>Symptom</strong>: At the last step of installing Magento 2, the following <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> displays:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"> 
-exception 'Exception' with message 'Warning: SessionHandler::read():
-open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74' 
-in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67</code></pre></figure>
+<span class="nx">exception</span> <span class="s1">'Exception'</span> <span class="nx">with</span> <span class="nx">message</span> <span class="s1">'Warning: SessionHandler::read():
+open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74'</span> 
+<span class="nx">in</span> <span class="o">../</span><span class="nx">magento2</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">internal</span><span class="o">/</span><span class="nx">Magento</span><span class="o">/</span><span class="nx">Framework</span><span class="o">/</span><span class="nx">App</span><span class="o">/</span><span class="nx">ErrorHandler</span><span class="o">.</span><span class="nx">php</span><span class="o">:</span><span class="mi">67</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -2432,9 +2432,8 @@ in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67</code></pr
 <h3 id="locate-phpini">Locate <code class="highlighter-rouge">php.ini</code></h3>
 <p>Locate <code class="highlighter-rouge">php.ini</code> by entering the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php -i | grep "Loaded Configuration File"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -i | grep "Loaded Configuration File"
+</code></pre></div></div>
 
 <p>Typical locations follow:</p>
 
@@ -2454,16 +2453,14 @@ in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67</code></pr
       <li>
         <p>To comment it out:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>;session.save_path = &lt;path&gt;
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;session.save_path = &lt;path&gt;
+</code></pre></div>        </div>
       </li>
       <li>
         <p>To set it to a file system path:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>session.save_handler = files
-</code></pre>
-        </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>session.save_handler = files
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>

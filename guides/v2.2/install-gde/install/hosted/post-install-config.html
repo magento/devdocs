@@ -265,26 +265,6 @@
     
 
 
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="/videos/"><span property="name">Videos</span></a>
-  </li>
-  
-
-  
-  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    
-    <a href="/videos/">
-    
-    <span property="name">Videos</span></a>
-  </li>
-  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-    <span property="name">Configure the Magento application</span>
-  </li>
-  
-
-
-
 
     </ol>
 
@@ -344,27 +324,24 @@ For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.
 
   <p>To create the Magento crontab, use the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento cron:install [--force]
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cron:install [--force]
+</code></pre></div>  </div>
 
   <p>Use <code class="highlighter-rouge">--force</code> to rewrite an existing Magento crontab. (Any existing crontab is not affected.)</p>
 
   <p>To view the crontab, switch to the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>crontab -l
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -l
+</code></pre></div>  </div>
 
   <p>A sample follows:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>#~ MAGENTO START
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#~ MAGENTO START
 * * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento cron:run 2&gt;&amp;1 | grep -v Ran jobs by schedule &gt;&gt; /var/www/html/magento2ce/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2ce/update/cron.php &gt;&gt; /var/www/html/magento2ce/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento setup:cron:run &gt;&gt; /var/www/html/magento2ce/var/log/setup.cron.log
 #~ MAGENTO END
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h4 id="related-topic">Related topic</h4>
   <p>To remove the Magento crontab, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html#config-cron-remove"></a>.</p>

@@ -1335,26 +1335,26 @@ During class creation, the <code class="highlighter-rouge">ObjectManager</code> 
 
 <p>This section explains the two dependency injection types used in Magento using the following example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">namespace Magento\Backend\Model\Menu;
-class Builder
-{
-    /**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Backend\Model\Menu</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Builder</span>
+<span class="p">{</span>
+    <span class="sd">/**
      * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
      * @param \Magento\Backend\Model\Menu $menu
-     */
-    public function __construct(
-        Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
-        Magento\Backend\Model\Menu $menu  // Service dependency
-    ) {
-        $this-&gt;_itemFactory = $menuItemFactory;
-        $this-&gt;_menu = $menu;
-    }
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Magento\Backend\Model\Menu\Item\Factory</span> <span class="nv">$menuItemFactory</span><span class="p">,</span>  <span class="c1">// Service dependency
+</span>        <span class="nx">Magento\Backend\Model\Menu</span> <span class="nv">$menu</span>  <span class="c1">// Service dependency
+</span>    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_itemFactory</span> <span class="o">=</span> <span class="nv">$menuItemFactory</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_menu</span> <span class="o">=</span> <span class="nv">$menu</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public function processCommand(\Magento\Backend\Model\Menu\Builder\CommandAbstract $command) // API param
-    {
-        // processCommand Code
-    }
-}</code></pre></figure>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">processCommand</span><span class="p">(</span><span class="nx">\Magento\Backend\Model\Menu\Builder\CommandAbstract</span> <span class="nv">$command</span><span class="p">)</span> <span class="c1">// API param
+</span>    <span class="p">{</span>
+        <span class="c1">// processCommand Code
+</span>    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="constructor-injection">Constructor injection</h3>
 

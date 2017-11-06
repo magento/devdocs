@@ -1647,9 +1647,8 @@
 <h2 id="implement-x-frame-options">Implement <code class="highlighter-rouge">X-Frame-Options</code></h2>
 <p>Set a value for <code class="highlighter-rouge">X-Frame-Options</code> in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code>. Following is the default value:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  'x-frame-options' =&gt; 'SAMEORIGIN',
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  'x-frame-options' =&gt; 'SAMEORIGIN',
+</code></pre></div></div>
 
 <p>We require you to edit <code class="highlighter-rouge">env.php</code> because it’s more secure than setting a value in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
 
@@ -1660,9 +1659,8 @@
 
 <p>Use the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -I -v --location-trusted '&lt;your Magento storefront URL&gt;'
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -I -v --location-trusted '&lt;your Magento storefront URL&gt;'
+</code></pre></div></div>
 
 <p>Look for the <code class="highlighter-rouge">X-Frame-Options</code> value in the headers.</p>
 

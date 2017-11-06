@@ -1119,9 +1119,8 @@
   <li>
     <p>Change to your Magento installation directory and enter the following command to update your <code class="highlighter-rouge">composer.json</code> file and install the Magento Commerce for B2B extension:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>composer require magento/extension-b2b
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/extension-b2b
+</code></pre></div>    </div>
   </li>
   <li>
     <p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
@@ -1129,13 +1128,12 @@
   <li>
     <p>Run the following commands after Composer finishes updating modules:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento setup:upgrade
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:upgrade
 
 bin/magento setup:di:compile
 
 bin/magento setup:static-content:deploy
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1153,29 +1151,25 @@ bin/magento setup:static-content:deploy
   <li>
     <p>List the available message consumers:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento queue:consumers:list
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento queue:consumers:list
+</code></pre></div>    </div>
 
     <p>You should see the following consumers:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>sharedCatalogUpdatePrice
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sharedCatalogUpdatePrice
 sharedCatalogUpdateCategoryPermissions
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Start each consumer separately:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
+</code></pre></div>    </div>
 
     <p>For example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento queue:consumers:start sharedCatalogUpdatePrice
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento queue:consumers:start sharedCatalogUpdatePrice
+</code></pre></div>    </div>
   </li>
 </ol>
 

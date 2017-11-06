@@ -2057,22 +2057,20 @@
   <li>
     <p>Connect to the Magento database.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mysql -u &lt;magento database user name&gt; -p
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u &lt;magento database user name&gt; -p
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>use &lt;magento database name&gt;;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>use &lt;magento database name&gt;;
 SELECT * FROM store;
 SELECT * FROM store_website;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>A sample result follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>[mysql]&gt; SELECT * FROM store_website;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mysql]&gt; SELECT * FROM store_website;
 +------------+-------+--------------+------------+------------------+------------+
 | website_id | code  | name         | sort_order | default_group_id | is_default |
 +------------+-------+--------------+------------+------------------+------------+
@@ -2080,8 +2078,7 @@ SELECT * FROM store_website;
 |          1 | base  | Main Website |          0 |                1 |          1 |
 |          2 | test1 | Test Website |          0 |                3 |          0 |
 +------------+-------+--------------+------------+------------------+------------+
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>Use the value in the <code class="highlighter-rouge">code</code> column.</p>
   </li>
@@ -2094,9 +2091,8 @@ SELECT * FROM store_website;
   <h2 id="config-cli-config-set">Set configuration values</h2>
   <p>To set system-specific configuration values, use:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
+</code></pre></div>  </div>
 
   <p>where</p>
 
@@ -2117,9 +2113,8 @@ SELECT * FROM store_website;
 
   <p>To set sensitive configuration values, use:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
+</code></pre></div>  </div>
 
   <p>See one of the following sections for more information:</p>
 
@@ -2135,28 +2130,24 @@ SELECT * FROM store_website;
 
   <p>Example to set the base URL for the default scope:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set web/unsecure/base_url http://example.com/
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:set web/unsecure/base_url http://example.com/
+</code></pre></div>  </div>
 
   <p>Example to set the base URL for the <code class="highlighter-rouge">base</code> website:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com/
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com/
+</code></pre></div>  </div>
 
   <p>Example to set the base URL for the <code class="highlighter-rouge">test</code> store view:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
+</code></pre></div>  </div>
 
   <h3 id="config-cli-config-file">Set configuration values that cannot be edited in the Magento Admin</h3>
   <p>If you use the <code class="highlighter-rouge">-l|--lock</code> option as follows, the configuration value is saved in <code class="highlighter-rouge">env.php</code> and the field for editing this value in Admin page is disabled.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:set --lock --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:set --lock --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
+</code></pre></div>  </div>
 
   <p>If you use the <code class="highlighter-rouge">-l|--lock</code> option:</p>
 
@@ -2172,9 +2163,8 @@ SELECT * FROM store_website;
 
   <p>If you enter an incorrect configuration path, this command returns an error</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>The "wrong/config/path" does not exist
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The "wrong/config/path" does not exist
+</code></pre></div>  </div>
 
   <div class="bs-callout bs-callout-info" id="info">
     <p>If you use the <code class="highlighter-rouge">--lock</code> option to set or change a value, you must use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html"><code class="highlighter-rouge">magento app:config:import</code> command</a> to import the setting before you access the Admin or storefront.</p>
@@ -2183,9 +2173,8 @@ SELECT * FROM store_website;
   <h2 id="config-cli-config-show">Display the value of configuration settings</h2>
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento config:show [--scope[="..."]] [--scope-code[="..."]] path
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento config:show [--scope[="..."]] [--scope-code[="..."]] path
+</code></pre></div>  </div>
 
   <p>where</p>
 
@@ -2203,9 +2192,8 @@ SELECT * FROM store_website;
 
   <p><strong>Show all saved configurations</strong>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:show
+</code></pre></div>  </div>
 
   <p>Result:</p>
 
@@ -2217,9 +2205,8 @@ analytics/subscription/enabled - 1</pre>
 
   <p><strong>Show all saved configurations for the <code class="highlighter-rouge">base</code> website</strong>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show --scope=websites --scope-code=base
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:show --scope=websites --scope-code=base
+</code></pre></div>  </div>
 
   <p>Result:</p>
 
@@ -2228,9 +2215,8 @@ general/region/state_required - AT,BR,CA</pre>
 
   <p><strong>Show the base URL for the default scope</strong>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show web/unsecure/base_url
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:show web/unsecure/base_url
+</code></pre></div>  </div>
 
   <p>Result:</p>
 
@@ -2238,9 +2224,8 @@ general/region/state_required - AT,BR,CA</pre>
 
   <p><strong>Show the base URL for the <code class="highlighter-rouge">base</code> website</strong>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
+</code></pre></div>  </div>
 
   <p>Result:</p>
 
@@ -2248,9 +2233,8 @@ general/region/state_required - AT,BR,CA</pre>
 
   <p><strong>Show the base URL for the <code class="highlighter-rouge">default</code> store</strong>:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>bin/magento config:show --scope=stores --scope-code=default web/unsecure/base_url
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:show --scope=stores --scope-code=default web/unsecure/base_url
+</code></pre></div>  </div>
 
   <p>Result:</p>
 

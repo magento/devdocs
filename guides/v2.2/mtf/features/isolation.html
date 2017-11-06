@@ -939,14 +939,13 @@
   <li>Add <code class="highlighter-rouge">* @isolation after</code> to the class annotation, for example:</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
  * ...
  * @isolation after
  */</span>
 <span class="k">class</span> <span class="nc">OnePageCheckoutTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
 <span class="o">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="step-2e">Step 2(e): Locally set isolation script to be run after each test of a test case</h3>
 
@@ -957,14 +956,13 @@
   <li>Add <code class="highlighter-rouge">* @isolation test after</code> to the class annotation, for example:</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
  * ...
  * @isolation test after
  */</span>
 <span class="k">class</span> <span class="nc">OnePageCheckoutTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
 <span class="o">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="step-2f">Step 2(f): Locally set isolation script to be run before test of a test case</h3>
 
@@ -976,15 +974,14 @@ Example test: <code class="highlighter-rouge">test()</code>.</p>
   <li>Add <code class="highlighter-rouge">* @isolation before</code> to the <code class="highlighter-rouge">test()</code> method annotation, for example:</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
     <span class="sd">/**
      * ...
      * @isolation before
      */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
     <span class="o">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="step-2g">Step 2(g): Locally set isolation script to be run before a test case and after a test</h3>
 
@@ -996,7 +993,7 @@ Example test: <code class="highlighter-rouge">test()</code>.</p>
   <li>Add <code class="highlighter-rouge">* @isolation before</code> to the class annotation and <code class="highlighter-rouge">* @isolation after</code> to the <code class="highlighter-rouge">test()</code> method annotation, for example:</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
  * ...
  * @isolation before
  */</span>
@@ -1009,8 +1006,7 @@ Example test: <code class="highlighter-rouge">test()</code>.</p>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
     <span class="o">...</span>
     <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="step-2h">Step 2(h): Locally set isolation script to be excluded for a test case</h3>
 
@@ -1021,14 +1017,13 @@ Example test: <code class="highlighter-rouge">test()</code>.</p>
   <li>Add <code class="highlighter-rouge">* @isolation none</code> to the class annotation, for example:</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
  * ...
  * @isolation none
  */</span>
 <span class="k">class</span> <span class="nc">OnePageCheckoutTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
 <span class="o">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="step-2i">Step 2(i): Locally set isolation script to be excluded for a test</h3>
 
@@ -1040,15 +1035,14 @@ Example test: <code class="highlighter-rouge">test()</code>.</p>
   <li>Add <code class="highlighter-rouge">* @isolation none</code> to the <code class="highlighter-rouge">test()</code> method annotation, for example:</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
     <span class="sd">/**
      * ...
      * @isolation none
      */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
     <span class="o">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <!-- LINK DEFINITIONS -->
 

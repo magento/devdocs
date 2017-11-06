@@ -1340,9 +1340,8 @@ Reference to the repository is placed in the fixture <span term-uuid="8c0645c5-a
 
 <p>To run the generator, enter the following command in your terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
 
 <p>The preceding is an example of repository merging. Using the approach from the example you can merge repositories for any other fixture, not <code class="highlighter-rouge">Config</code> only.</p>
 
@@ -1397,13 +1396,12 @@ Reference to the repository is placed in the fixture <span term-uuid="8c0645c5-a
 
 <p>After the repository generation</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
 
 <p>you have the following code in the Customer repository (<code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php</code>):</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code>  
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_data</span><span class="p">[</span><span class="s1">'default'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s1">'firstname'</span> <span class="o">=&gt;</span> <span class="s1">'John'</span><span class="p">,</span>
   <span class="s1">'lastname'</span> <span class="o">=&gt;</span> <span class="s1">'Doe'</span><span class="p">,</span>
@@ -1413,8 +1411,7 @@ Reference to the repository is placed in the fixture <span term-uuid="8c0645c5-a
   <span class="s1">'password_confirmation'</span> <span class="o">=&gt;</span> <span class="s1">'123123q'</span><span class="p">,</span>
 <span class="p">];</span>
   
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>As you can see, a repository with the name <code class="highlighter-rouge">default</code> contains data from the <code class="highlighter-rouge">customer_new_default</code> repository.</p>
 

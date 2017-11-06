@@ -1655,24 +1655,24 @@
 
 <p>Another way follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">class SomeModel
- {
-     private $logger;
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SomeModel</span>
+ <span class="p">{</span>
+     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
-     public function __construct(\Psr\Log\LoggerInterface $logger)
-     {
-         $this-&gt;logger = $logger;
-     }
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Psr\Log\LoggerInterface</span> <span class="nv">$logger</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     public function doSomething()
-     {
-         try {
-             //do something
-         } catch (\Exception $e) {
-             $this-&gt;logger-&gt;critical('Error message', ['exception' =&gt; $e]);
-         }
-     }
- }</code></pre></figure>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">()</span>
+     <span class="p">{</span>
+         <span class="k">try</span> <span class="p">{</span>
+             <span class="c1">//do something
+</span>         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="s1">'Error message'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'exception'</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="p">]);</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span></code></pre></figure>
 
 <p>The preceding example shows that <code class="highlighter-rouge">SomeModel</code> receives a <code class="highlighter-rouge">\Psr\Log\LoggerInterface</code> object using constructor injection. In a method <code class="highlighter-rouge">doSomething</code>, if some error occurred, it’s logged to a method <code class="highlighter-rouge">critical</code> (<code class="highlighter-rouge">$this-&gt;logger-&gt;critical($e);</code>).</p>
 

@@ -1327,12 +1327,12 @@
 
 <p>Now we have <code class="highlighter-rouge">uiRegistry</code> instance in the <code class="highlighter-rouge">registry</code> variable. We can use it to get an instance of any component.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'%componentName%'</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'%componentName%'</span><span class="p">);</span></code></pre></figure>
 
 <p>For example:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Admin &gt; Products &gt; Catalog &gt; Add Product</span>
-<span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'product_form.product_form.product-details.container_name.name'</span><span class="p">);</span></code></pre></figure>
+<span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'product_form.product_form.product-details.container_name.name'</span><span class="p">);</span></code></pre></figure>
 
 <p>Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.</p>
 

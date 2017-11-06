@@ -805,7 +805,7 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
 
 <p>In the Braintree request builder, to pass the data, we set <code class="highlighter-rouge">storeInVaultOnSuccess</code> in transaction request:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">VaultDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">VaultDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
 <span class="p">{</span>
     <span class="sd">/**
      * Additional options in request to gateway
@@ -830,8 +830,7 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
         <span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The builder must be added to the payment authorize request in the DI configuration. 
 Example from the Braintree <code class="highlighter-rouge">di.xml</code>:</p>

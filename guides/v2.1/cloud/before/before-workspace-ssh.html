@@ -1361,12 +1361,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1891,21 +1891,21 @@
 
   <p>To check for SSH keys, enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>ls ~/.ssh
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls ~/.ssh
+</code></pre></div>  </div>
 
   <p>If you have SSH keys, a directory listing is displayed similar to the following:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>id_rsa  id_rsa.pub  known_hosts
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id_rsa  id_rsa.pub  known_hosts
+</code></pre></div>  </div>
 
   <p>If you don’t have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See <a href="#ssh-create-new-key-pair">Create a new SSH key pair</a>.</p>
 
-  <p>If you already have SSH keys, continue to:
-* <a href="#ssh-add-to-account">Add a public SSH key to your Magento account</a> section
-* <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add your SSH key to your GitHub account</a></p>
+  <p>If you already have SSH keys, continue to:</p>
+  <ul>
+    <li><a href="#ssh-add-to-account">Add a public SSH key to your Magento account</a> section</li>
+    <li><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add your SSH key to your GitHub account</a></li>
+  </ul>
 
   <h2 id="ssh-create-new-key-pair">Create a new SSH key pair</h2>
   <p>Use the <code class="highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
@@ -1916,9 +1916,8 @@
     <li>
       <p>The command syntax follows, entering the email used for your GitHub account:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> ssh-keygen -t rsa
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-keygen -t rsa
+</code></pre></div>      </div>
 
       <p>GitHub also uses the key length <code class="highlighter-rouge">-b 4096</code> in the command.
  Follow the prompts to complete the key.</p>
@@ -1934,35 +1933,31 @@
 
       <p>For Mac or Linux:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
  Host *
      AddKeysToAgent yes
      UseKeychain yes
      IdentityFile ~/.ssh/id_rsa
-</code></pre>
-      </div>
+</code></pre></div>      </div>
 
       <p>For Windows:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> $ eval $(ssh-agent -s)
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ eval $(ssh-agent -s)
+</code></pre></div>      </div>
     </li>
     <li>
       <p>Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace <code class="highlighter-rouge">id_rsa</code> with that file name.</p>
 
       <p>For Mac:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> ssh-add -K ~/.ssh/id_rsa
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-add -K ~/.ssh/id_rsa
+</code></pre></div>      </div>
 
       <p>For Windows or Linux:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> ssh-add ~/.ssh/id_rsa
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-add ~/.ssh/id_rsa
+</code></pre></div>      </div>
     </li>
     <li>
       <p><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add your SSH key to your GitHub account.</a> The instructions include Mac, Windows, and Linux.</p>
@@ -1977,9 +1972,8 @@
     <li>
       <p>In the terminal, enter the following command:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code> ssh -T git@github.com
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -T git@github.com
+</code></pre></div>      </div>
     </li>
     <li>
       <p>You may see a warning that the authenticity of the host can’t be established followed by an RSA fingerprint. Enter <code class="highlighter-rouge">yes</code> to continue.</p>
@@ -2008,16 +2002,14 @@
     <li>
       <p>Log in to your project:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>      </div>
     </li>
     <li>
       <p>Add the key:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+</code></pre></div>      </div>
     </li>
   </ol>
 
@@ -2056,10 +2048,9 @@
 
   <p>To set variables, enter the following commands on every workspace:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>git config --global user.name "&lt;your name&gt;"
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user.name "&lt;your name&gt;"
 git config --global user.email &lt;your e-mail address&gt;
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
 

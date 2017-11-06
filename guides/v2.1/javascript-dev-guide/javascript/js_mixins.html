@@ -764,7 +764,7 @@
 
     <p><code class="highlighter-rouge">Orange/Sample/view/base/web/js/columns-mixin.js</code>:</p>
 
-    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
  <span class="s1">'use strict'</span><span class="p">;</span>
 
  <span class="kd">var</span> <span class="nx">mixin</span> <span class="o">=</span> <span class="p">{</span>
@@ -783,14 +783,13 @@
  <span class="p">};</span>
 <span class="p">});</span>
 
-</code></pre>
-    </div>
+</code></pre></div>    </div>
     <p>This sample mixin introduces a new <code class="highlighter-rouge">blockVisibility</code> property for <a href="http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Grid</a> columns.</p>
   </li>
   <li>
     <p>In the <code class="highlighter-rouge">requirejs-config.js</code> configuration file in your module, declare the AMD module you created as a mixin to the target module. The file must be located in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/%area%</code> directory. Use the following syntax:</p>
 
-    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
  <span class="na">config</span><span class="p">:</span> <span class="p">{</span>
      <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>
          <span class="s1">'%path/to/target/component%'</span><span class="p">:</span> <span class="p">{</span>
@@ -799,8 +798,7 @@
      <span class="p">}</span>
  <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>where:</p>
 
@@ -816,7 +814,7 @@
 
     <p><code class="highlighter-rouge">&lt;Orange_Sample_module_dir&gt;/view/base/web/js/requirejs-config.js</code>:</p>
 
-    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
  <span class="na">config</span><span class="p">:</span> <span class="p">{</span>
      <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>
          <span class="s1">'Magento_Ui/js/grid/controls/columns'</span><span class="p">:</span> <span class="p">{</span>
@@ -825,8 +823,7 @@
      <span class="p">}</span>
  <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 

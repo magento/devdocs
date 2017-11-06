@@ -930,7 +930,7 @@
         <span class="s1">'use strict'</span><span class="p">;</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">getRates</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kd">var</span> <span class="nx">cache</span> <span class="o">=</span> <span class="nx">rateRegistry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">address</span><span class="p">.</span><span class="nx">getKey</span><span class="p">());</span>
+                <span class="kd">var</span> <span class="nx">cache</span> <span class="o">=</span> <span class="nx">rateRegistry</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">address</span><span class="p">.</span><span class="nx">getKey</span><span class="p">());</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nx">cache</span><span class="p">)</span> <span class="p">{</span>
                     <span class="nx">shippingService</span><span class="p">.</span><span class="nx">setShippingRates</span><span class="p">(</span><span class="nx">cache</span><span class="p">);</span>
                 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -943,7 +943,7 @@
                         <span class="kc">false</span>
                     <span class="p">).</span><span class="nx">done</span><span class="p">(</span>
                         <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="nx">rateRegistry</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">address</span><span class="p">.</span><span class="nx">getKey</span><span class="p">(),</span> <span class="nx">result</span><span class="p">);</span>
+                            <span class="nx">rateRegistry</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">address</span><span class="p">.</span><span class="nx">getKey</span><span class="p">(),</span> <span class="nx">result</span><span class="p">);</span>
                             <span class="nx">shippingService</span><span class="p">.</span><span class="nx">setShippingRates</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
                         <span class="p">}</span>
                     <span class="p">).</span><span class="nx">fail</span><span class="p">(</span>

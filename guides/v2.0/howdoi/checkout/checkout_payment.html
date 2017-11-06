@@ -944,7 +944,7 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
 
 <p>A sample <code class="highlighter-rouge">.php</code> class implementing <code class="highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code>:</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
 <span class="p">{</span>
 <span class="o">...</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getConfig</span><span class="p">()</span>
@@ -955,8 +955,7 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
     <span class="p">}</span>
 <span class="o">...</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>A sample DI configuration file of a custom module <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/di.xml</code>:</p>
 

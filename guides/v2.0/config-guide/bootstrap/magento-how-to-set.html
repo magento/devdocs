@@ -1593,17 +1593,15 @@
 
 <p>For example, you can use the <code class="highlighter-rouge">MAGE_PROFILER</code> system environment variable to specify a mode as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>MAGE_PROFILER={firebug|csv|&lt;custom value&gt;}
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MAGE_PROFILER={firebug|csv|&lt;custom value&gt;}
+</code></pre></div></div>
 
 <p>Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
 <p>bash shell example for CentOS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>export MAGE_PROFILER=firebug
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export MAGE_PROFILER=firebug
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -1642,18 +1640,16 @@
 
     <p>For example, to specify a <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>#   SetEnv MAGE_PROFILER firebug
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#   SetEnv MAGE_PROFILER firebug
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Set the value of <code class="highlighter-rouge">MAGE_PROFILER</code> to any of the following:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>firebug
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firebug
 csvfile
 &lt;custom value&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Save your changes to <code class="highlighter-rouge">.htaccess</code>; you don’t need to restart Apache for the change to take effect.</p>
@@ -1691,29 +1687,25 @@ csvfile
   <li>
     <p>Anywhere in the virtual host configuration, add the following line:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "MAGE_PROFILER" "firebug"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SetEnv "MAGE_PROFILER" "firebug"
+</code></pre></div>    </div>
   </li>
   <li>Save your changes and exit the text editor.</li>
   <li>
     <p>Enable your virtual host if you haven’t already done so:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>a2ensite &lt;virtual host config file name&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a2ensite &lt;virtual host config file name&gt;
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>a2ensite my.magento.conf
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a2ensite my.magento.conf
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Restart the web server:</p>
@@ -1737,15 +1729,13 @@ csvfile
   <li>
     <p>Anywhere in the virtual host configuration, add the following line:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SetEnv "&lt;variable name&gt;" "&lt;variable value&gt;"
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>SetEnv "MAGE_PROFILER" "firebug"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SetEnv "MAGE_PROFILER" "firebug"
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Save your changes and exit the text editor.</p>

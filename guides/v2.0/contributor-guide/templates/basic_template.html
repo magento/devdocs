@@ -492,10 +492,9 @@
 
 <p>By indenting your content by at least 4 spaces, you can create a code block.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//This is a code block!
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//This is a code block!
 print "Hello World!";
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For more examples of basic markdown please follow this <a href="https://daringfireball.net/projects/markdown/syntax" target="_self">link</a>.</p>
 
@@ -504,11 +503,10 @@ print "Hello World!";
 
 <p><strong>Bulleted List:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>* List Item 1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* List Item 1
 * List Item 2
 * List Item 3
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
@@ -520,11 +518,10 @@ print "Hello World!";
 
 <p><strong>Ordered List:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>1. First Step
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. First Step
 2. Second Step
 3. Third Step
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
@@ -558,14 +555,13 @@ print "Hello World!";
 
 <p><em>Example:</em></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;!-- Basic Markdown Table Syntax --&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Basic Markdown Table Syntax --&gt;
 | Column Heading | Column Heading | Column Heading |
 |----------------|----------------|----------------|
 | Data 1         | Data 2         | Data 3         |
 | Data 4         | Data 5         |                |
 | Data 6         |                |                |
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
@@ -608,18 +604,17 @@ print "Hello World!";
 
 <p><em>Example:</em></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">highlight</span><span class="w"> </span><span class="err">html</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"container"</span><span class="err">&gt;</span><span class="w">
-  </span><span class="err">&lt;h</span><span class="mi">4</span><span class="w"> </span><span class="err">class=</span><span class="s2">"title"</span><span class="err">&gt;Title&lt;/h</span><span class="mi">4</span><span class="err">&gt;</span><span class="w">
-  </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"content"</span><span class="err">&gt;</span><span class="w">
-    </span><span class="err">&lt;p&gt;Paragraph</span><span class="w"> </span><span class="err">content.&lt;/p&gt;</span><span class="w">
-  </span><span class="err">&lt;/div&gt;</span><span class="w">
-</span><span class="err">&lt;/div&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endhighlight</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% highlight html %}
+&lt;div class="container"&gt;
+  &lt;h4 class="title"&gt;Title&lt;/h4&gt;
+  &lt;div class="content"&gt;
+    &lt;p&gt;Paragraph content.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+{% endhighlight %}
 
-</span></code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
@@ -679,13 +674,12 @@ print "Hello World!";
 
 <p><em>Example:</em></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">collapsible</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">title</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">Markdown</span><span class="w"> </span><span class="err">content</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">area.</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endcollapsible</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% collapsible This is the title %}
+Markdown content goes in this area.
+{% endcollapsible %}
 
-</span></code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 

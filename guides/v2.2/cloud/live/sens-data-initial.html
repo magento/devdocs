@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1956,30 +1956,26 @@ This example shows how you can set and lock configuration values for everything 
   <li>
     <p>On your local system, find the integration server’s SSH URL.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Create <code class="highlighter-rouge">config.php</code> on the integration server.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php vendor/bin/m2-ece-scd-dump"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php vendor/bin/m2-ece-scd-dump"
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+</code></pre></div>    </div>
   </li>
   <li>If you haven’t done so already, change to the project root directory.</li>
   <li>
     <p>Transfer <code class="highlighter-rouge">config.php</code> to your local system.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2023,9 +2019,8 @@ This example shows how you can set and lock configuration values for everything 
 
 <p>The following command adds, commits, and pushes to master:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master
+</code></pre></div></div>
 
 <p>Complete code deployment to Staging and Production. For Starter, you push to <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">master</code> branches. For Production, you will need to SSH into your environments and push. For details on deployment commands, see <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
 
@@ -2092,30 +2087,26 @@ This example shows how you can set and lock configuration values for everything 
   <li>
     <p>On your local system, find the integration server’s SSH URL.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Run the <code class="highlighter-rouge">config.php</code> creation command again on the Integration server.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php vendor/bin/m2-ece-scd-dump"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php vendor/bin/m2-ece-scd-dump"
+</code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+</code></pre></div>    </div>
   </li>
   <li>If you haven’t done so already, change to the project root directory.</li>
   <li>
     <p>Transfer <code class="highlighter-rouge">config.php</code> to your local system.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -2175,9 +2166,8 @@ This example shows how you can set and lock configuration values for everything 
 <h3 id="push-again">Push the changes to Git</h3>
 <p>To push your changes, enter the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration and edit settings" &amp;&amp; git push origin master
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration and edit settings" &amp;&amp; git push origin master
+</code></pre></div></div>
 
 <p>Wait for deployment to complete.</p>
 

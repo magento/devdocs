@@ -1676,9 +1676,9 @@ Setting a value of <code>css_class</code> in the <code><a href="https://github.c
 Using the value of <code>css_class</code> in <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
 
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
-$cssClass = $this-&gt;hasCssClass() ? ' ' . $this-&gt;getCssClass() : '';
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<span class="nv">$cssClass</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasCssClass</span><span class="p">()</span> <span class="o">?</span> <span class="s1">' '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCssClass</span><span class="p">()</span> <span class="o">:</span> <span class="s1">''</span><span class="p">;</span>
+<span class="o">...</span></code></pre></figure>
 
 
 <h3 id="arguments">&lt;arguments&gt;</h3>

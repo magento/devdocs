@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1901,18 +1901,16 @@
 
 <p>However, you can opt out of the protective block by adding the following to <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>preflight:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>preflight:
    enabled: false
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can also explicitly opt-out of some specific check as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>preflight:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>preflight:
    enabled: true
    ignore_rules: [ "drupal:SA-CORE-2014-005" ]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 		</div>
 		<!-- /.content-wrap -->

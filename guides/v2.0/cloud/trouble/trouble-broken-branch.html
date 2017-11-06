@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1871,9 +1871,8 @@
 <h2 id="patches">Issues with installing patches</h2>
 <p>When you push your code, the build and deploy phases begin. Patch and available hotfix installation is part of the process. If you receive errors indicating the patches could not be installed and the build failed, you can run the following command locally to identify any errors:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git apply &lt;path to patch&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply &lt;path to patch&gt;
+</code></pre></div></div>
 
 <p>Make note of the errors. These may help determine what fixes are required. We can also help further with those speified errors.</p>
 
@@ -1889,10 +1888,9 @@
   <li>
     <p>Enter the following CLI commands:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> bin/magento module:enable --all
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento module:enable --all
  bin/magento setup:di:compile
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1920,22 +1918,19 @@
 
     <p>To get a log of commits, you can use the <a href="https://git-scm.com/docs/git-log" target="_blank"><code class="highlighter-rouge">git log</code></a> command for a verbose list of commits to copy an ID:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> git log
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git log
+</code></pre></div>    </div>
 
     <p>Or use the <a href="https://git-scm.com/docs/git-reflog" target="_blank"><code class="highlighter-rouge">git reflog</code></a> command for a list of commit IDs with commit message:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> git reflog
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git reflog
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Force reset your code branch on your local. This will force return the code to the current remote branch.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> git reset --hard &lt;commit ID&gt;
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git reset --hard &lt;commit ID&gt;
+</code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-warning">
       <p>You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.</p>

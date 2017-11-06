@@ -630,7 +630,7 @@
 <span class="nc">.payment-list</span><span class="nd">:first-child</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
 <span class="nc">.caution</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
 <span class="nc">.caution.link</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
-<span class="nt">form</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">password</span><span class="err">"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
+<span class="nt">form</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"password"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
 <span class="nc">.control-text</span><span class="nd">:focus</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
 <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
 <span class="nt">nav</span> <span class="nt">li</span><span class="nc">._active</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span></code></pre></figure>
@@ -638,11 +638,11 @@
 <p><strong>Unacceptable CSS selectors</strong></p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#header</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
-<span class="o">[</span><span class="nt">data-action</span><span class="o">=</span><span class="err">"</span><span class="nt">delete</span><span class="err">"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
-<span class="nt">form</span> <span class="nt">input</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="err">"</span><span class="nt">password</span><span class="err">"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
-<span class="nt">section</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">main</span><span class="err">"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
-<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">menu</span><span class="o">]</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">menuitem</span><span class="err">"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
-<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">menu</span><span class="o">]</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">menuitem</span><span class="err">"</span><span class="o">]</span><span class="nc">.active</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span></code></pre></figure>
+<span class="o">[</span><span class="nt">data-action</span><span class="o">=</span><span class="s1">"delete"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
+<span class="nt">form</span> <span class="nt">input</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="s1">"password"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
+<span class="nt">section</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"main"</span><span class="o">]</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"menu] [role="</span><span class="nt">menuitem</span><span class="s1">"] { ... }
+[role="</span><span class="nt">menu</span><span class="o">]</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"menuitem"</span><span class="o">]</span><span class="nc">.active</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-css-styles-in-javascript-files">You must not hard-code CSS styles in JavaScript files</h3>
 <div class="bs-callout bs-callout-info" id="info">
@@ -657,10 +657,10 @@
 <p><strong>Acceptable <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> file</strong></p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
-   <span class="nl">options</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nx">options</span><span class="p">:</span> <span class="p">{</span>
       <span class="nl">hOffset</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nx">myCustomElement</span><span class="err">:</span> <span class="s1">'[data-container="my-custom-element"]'</span><span class="p">,</span>
- <span class="nx">hiddenClass</span><span class="err">:</span> <span class="s1">'_hidden'</span>
+      <span class="nx">myCustomElement</span><span class="p">:</span> <span class="s1">'[data-container="my-custom-element"]'</span><span class="p">,</span>
+ <span class="nx">hiddenClass</span><span class="p">:</span> <span class="s1">'_hidden'</span>
   <span class="p">}</span>
 <span class="p">...</span>
    <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">hiddenClass</span><span class="p">);</span>
@@ -711,7 +711,7 @@
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">options</span> <span class="p">{</span>
  <span class="nl">deleteAction</span><span class="p">:</span>  <span class="s1">'[data-action="delete"]'</span><span class="p">,</span>
- <span class="nx">tooltip</span><span class="err">:</span> <span class="s1">'[data-role="tooltip]'</span>
+ <span class="nx">tooltip</span><span class="p">:</span> <span class="s1">'[data-role="tooltip]'</span>
 <span class="p">}</span>
 <span class="p">...</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">deleteAction</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span> <span class="p">...</span> <span class="p">);</span>
@@ -777,12 +777,12 @@
 
 <p><strong>Acceptable PHP file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
-public function getSelectorOptions()
-{
-    return $selectorOptions;
-}
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">getSelectorOptions</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$selectorOptions</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Acceptable PHTML template</strong></p>
 
@@ -796,10 +796,10 @@ public function getSelectorOptions()
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">...
 <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"treeSuggest"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span><span class="err">
-{
-    "[data-role='treeSuggest']": {
-        "treeSuggest": </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSelectorOptions</span><span class="p">();</span> <span class="cp">?&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
+<span class="p">{</span>
+    <span class="s2">"[data-role='treeSuggest']"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"treeSuggest"</span><span class="p">:</span> <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSelectorOptions</span><span class="p">();</span> <span class="cp">?&gt;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -807,14 +807,14 @@ public function getSelectorOptions()
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
-public function getAfterElementHtml()
-{
-    return <span class="err">&lt;&lt;</span><span class="nt">&lt;HTML</span>
-<span class="err">&lt;</span><span class="na">script</span><span class="nt">&gt;</span>
-jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-<span class="nt">&lt;/script&gt;</span>
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">getAfterElementHtml</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;&lt;&lt;</span><span class="nx">HTML</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="s1">'#{$htmlId}-suggest'</span><span class="p">)</span><span class="o">.</span><span class="nx">treeSuggest</span><span class="p">({</span><span class="nv">$selectorOptions</span><span class="p">});</span>
+<span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML template</strong></p>
 
@@ -830,25 +830,25 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 <p><strong>Acceptable PHP file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
-$fieldset-&gt;addField('new_category_parent', 'text', array(
-    'label'    =&gt; Mage::helper('Mage_Catalog_Helper_Data')-&gt;__('Parent Category'),
-    'title'    =&gt; Mage::helper('Mage_Catalog_Helper_Data')-&gt;__('Parent Category'),
-    'required' =&gt; true,
-    'class'    =&gt; 'parent category',
-));
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<span class="nv">$fieldset</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s1">'new_category_parent'</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'label'</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Catalog_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Parent Category'</span><span class="p">),</span>
+    <span class="s1">'title'</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Catalog_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Parent Category'</span><span class="p">),</span>
+    <span class="s1">'required'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">'class'</span>    <span class="o">=&gt;</span> <span class="s1">'parent category'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
-$fieldset-&gt;addField('new_category_parent', 'text', array(
-    'label'    =&gt; Mage::helper('Mage_Catalog_Helper_Data')-&gt;__('Parent Category'),
-    'title'    =&gt; Mage::helper('Mage_Catalog_Helper_Data')-&gt;__('Parent Category'),
-    'required' =&gt; true,
-    'style'    =&gt; 'border: 1px solid #ccc;',
-));
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<span class="nv">$fieldset</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s1">'new_category_parent'</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'label'</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Catalog_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Parent Category'</span><span class="p">),</span>
+    <span class="s1">'title'</span>    <span class="o">=&gt;</span> <span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Catalog_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Parent Category'</span><span class="p">),</span>
+    <span class="s1">'required'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">'style'</span>    <span class="o">=&gt;</span> <span class="s1">'border: 1px solid #ccc;'</span><span class="p">,</span>
+<span class="p">));</span>
+<span class="o">...</span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-inline-javascript-in-php-classes-1">You must not hard-code inline JavaScript in PHP classes</h3>
 <ul>
@@ -857,12 +857,12 @@ $fieldset-&gt;addField('new_category_parent', 'text', array(
 
 <p><strong>Acceptable PHP file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
-public function getSelectorOptions()
-{
-    return $selectorOptions;
-}
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">getSelectorOptions</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$selectorOptions</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Acceptable PHTML template</strong></p>
 
@@ -872,14 +872,14 @@ public function getSelectorOptions()
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
-public function getAfterElementHtml()
-{
-    return <span class="err">&lt;&lt;</span><span class="nt">&lt;HTML</span>
-<span class="err">&lt;</span><span class="na">script</span><span class="nt">&gt;</span>
-jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-<span class="nt">&lt;/script&gt;</span>
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">getAfterElementHtml</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;&lt;&lt;</span><span class="nx">HTML</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="s1">'#{$htmlId}-suggest'</span><span class="p">)</span><span class="o">.</span><span class="nx">treeSuggest</span><span class="p">({</span><span class="nv">$selectorOptions</span><span class="p">});</span>
+<span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML template</strong></p>
 
@@ -917,13 +917,13 @@ public function getAttributeId($element)
 
 <p><strong>Unacceptable PHP file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">...
- public function getCheckbox($elementName){
-    $elementNameTag = $this-&gt;getAttributeName($elementName) ? 'name="' . $this-&gt;getAttributeName($elementName) . '"' : NULL;
-    $tpl = "<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">\"checkbox\"</span> <span class="err">{$</span><span class="na">elementNameTag</span><span class="err">}</span> <span class="na">data-mage-init=</span><span class="s">\"{customToggleWidget:</span> <span class="err">[</span><span class="na">elementSelector:</span> <span class="err">\"</span><span class="na">input</span><span class="err">[</span><span class="na">name=</span><span class="s">'someCustomName'</span><span class="err">]\"]}\"</span> <span class="nt">/&gt;</span>";
-    return $tpl;
-}
-...</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="nf">getCheckbox</span><span class="p">(</span><span class="nv">$elementName</span><span class="p">){</span>
+    <span class="nv">$elementNameTag</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttributeName</span><span class="p">(</span><span class="nv">$elementName</span><span class="p">)</span> <span class="o">?</span> <span class="s1">'name="'</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAttributeName</span><span class="p">(</span><span class="nv">$elementName</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'"'</span> <span class="o">:</span> <span class="k">NULL</span><span class="p">;</span>
+    <span class="nv">$tpl</span> <span class="o">=</span> <span class="s2">"&lt;input type=</span><span class="se">\"</span><span class="s2">checkbox</span><span class="se">\"</span><span class="s2"> </span><span class="si">{</span><span class="nv">$elementNameTag</span><span class="si">}</span><span class="s2"> data-mage-init=</span><span class="se">\"</span><span class="s2">{customToggleWidget: [elementSelector: </span><span class="se">\"</span><span class="s2">input[name='someCustomName']</span><span class="se">\"</span><span class="s2">]}</span><span class="se">\"</span><span class="s2"> /&gt;"</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nv">$tpl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">...</span></code></pre></figure>
 
 <p><strong>Unacceptable PHTML template</strong></p>
 

@@ -549,18 +549,18 @@
 
 <p><code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriver.php.dist</code> specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">return array(
-    'server' =&gt; 'http://localhost:9876',
-    'proxy' =&gt; array(array('matcher' =&gt; '/lib/web/*', 'server' =&gt; '%s/test/%s/lib/web/')),
-    'load' =&gt; array(
-        '/lib/web/globalize',
-        '/lib/web/jquery/ui',
-        '/lib/web/mage/localization',
-        '/lib/web/mage/validation',
-        '/lib/web/mage/components'),
-    'test' =&gt; array('/dev/tests/js/testsuite'),
-    'serve' =&gt; array('/lib/web/mage/calendar')
-);</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'server'</span> <span class="o">=&gt;</span> <span class="s1">'http://localhost:9876'</span><span class="p">,</span>
+    <span class="s1">'proxy'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'matcher'</span> <span class="o">=&gt;</span> <span class="s1">'/lib/web/*'</span><span class="p">,</span> <span class="s1">'server'</span> <span class="o">=&gt;</span> <span class="s1">'%s/test/%s/lib/web/'</span><span class="p">)),</span>
+    <span class="s1">'load'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'/lib/web/globalize'</span><span class="p">,</span>
+        <span class="s1">'/lib/web/jquery/ui'</span><span class="p">,</span>
+        <span class="s1">'/lib/web/mage/localization'</span><span class="p">,</span>
+        <span class="s1">'/lib/web/mage/validation'</span><span class="p">,</span>
+        <span class="s1">'/lib/web/mage/components'</span><span class="p">),</span>
+    <span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'/dev/tests/js/testsuite'</span><span class="p">),</span>
+    <span class="s1">'serve'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'/lib/web/mage/calendar'</span><span class="p">)</span>
+<span class="p">);</span></code></pre></figure>
 
 <p>For a description of these configuration parameters, see <a href="https://code.google.com/p/js-test-driver/wiki/ConfigurationFile">Configuration file for test runner</a>.</p>
 
@@ -578,12 +578,12 @@
 
 <p><code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js/jsTestDriverOrder.php</code> specifies the order in which the JsTestDriver loads certain JavaScript files. It contains the following PHP code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">return array(
-    '/lib/web/globalize/globalize.js',
-    '/lib/web/jquery/jquery.js',
-    '/lib/web/jquery/ui/jquery-ui.js',
-    ...
-);</code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'/lib/web/globalize/globalize.js'</span><span class="p">,</span>
+    <span class="s1">'/lib/web/jquery/jquery.js'</span><span class="p">,</span>
+    <span class="s1">'/lib/web/jquery/ui/jquery-ui.js'</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">);</span></code></pre></figure>
 
 <p>The array applies load ordering to the files specified by the <code class="highlighter-rouge">load</code> parameter in the <code class="highlighter-rouge">jsTestDriver.php</code> or <code class="highlighter-rouge">jsTestDriver.php.dist</code> file.</p>
 
@@ -638,9 +638,11 @@ If the parameter is not set in the configuration file, the script uses to the de
   <dt>Browser</dt>
   <dd>Defines the file path to the executable for the browser.
 
-    <p>If you do not set this value, the script uses to the default browser location, as follows:
-* <strong>64-bit Windows</strong>. The location is <code class="highlighter-rouge">C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.
-* <strong>Linux</strong>. The script runs the <code class="highlighter-rouge">which firefox</code> command to determine the location of the Firefox executable in your PATH.</p>
+    <p>If you do not set this value, the script uses to the default browser location, as follows:</p>
+    <ul>
+      <li><strong>64-bit Windows</strong>. The location is <code class="highlighter-rouge">C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</li>
+      <li><strong>Linux</strong>. The script runs the <code class="highlighter-rouge">which firefox</code> command to determine the location of the Firefox executable in your PATH.</li>
+    </ul>
   </dd>
   <dt>JsTestDriver</dt>
   <dd>Required. Defines the file path to the <code class="highlighter-rouge">JsTestDriver.jar</code> file.</dd>
@@ -650,9 +652,8 @@ If the parameter is not set in the configuration file, the script uses to the de
 
 <p>To run the automated JavaScript tests, run the <code class="highlighter-rouge">run_js_tests.php</code> script inside the PHP interpreter from the command line:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/js/run_js_tests.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/js/run_js_tests.php
+</code></pre></div></div>
 
 <p>Find the test results in individual <code class="highlighter-rouge">.xml</code> files in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/js/test-output</code> directory.</p>
 
@@ -660,22 +661,20 @@ If the parameter is not set in the configuration file, the script uses to the de
 
 <p><strong>JsTestDriver output:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ php &lt;magento2_root_dir&gt;dev/tests/js/run_js_tests.php
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ php &lt;magento2_root_dir&gt;dev/tests/js/run_js_tests.php
 java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
 setting runnermode QUIET
 ....................................
 Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
   Firefox 15.0 Windows: Run 36 tests (Passed: 36; Fails: 0; Errors 0) (138.00 ms)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>On Linux, the X Server might generate one or more warning messages in the output:</p>
 
 <p><strong>X Server warning messages on Linux:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
+</code></pre></div></div>
 
 <p>An X Server bug causes these benign messages, which you can ignore.</p>
 
@@ -685,17 +684,17 @@ Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
 
 <p><strong>Generated jsTestDriver.conf file:</strong></p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">server</span><span class="pi">:</span> <span class="s">http://localhost:9876</span>
-<span class="s">proxy</span><span class="pi">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">server</span><span class="pi">:</span> <span class="s">http://localhost:9876</span>
+<span class="na">proxy</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="pi">{</span><span class="nv">matcher</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/lib/web/*"</span><span class="pi">,</span> <span class="nv">server</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://localhost:9876/test/C:/git/magento2/lib/web/"</span><span class="pi">}</span>
   <span class="s">...</span>
-<span class="s">load</span><span class="pi">:</span>
+<span class="na">load</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">../../../lib/web/globalize/globalize.js</span>
   <span class="s">...</span>
-<span class="s">test</span><span class="pi">:</span>
+<span class="na">test</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">../../../dev/tests/js/testsuite/mage/calendar/calendar-test.js</span>
   <span class="s">...</span>
-<span class="s">serve</span><span class="pi">:</span>
+<span class="na">serve</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">../../../lib/web/mage/calendar/calendar.js</span>
   <span class="s">...</span></code></pre></figure>
 

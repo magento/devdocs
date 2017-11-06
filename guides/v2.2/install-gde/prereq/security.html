@@ -2414,12 +2414,11 @@
 <h3 id="suggestion-for-installing-the-magento-software-with-apache">Suggestion for installing the Magento software with Apache</h3>
 <p>If you choose to enable SELinux, you might have issues running the installer unless you change the <em>security context</em> of some directories as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/app/etc
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/app/etc
 chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/var
 chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/media
 chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/static
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don’t guarantee these commands work in all situations. For more information, see:</p>
 
@@ -2437,9 +2436,8 @@ chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/stat
   <li>
     <p>To determine if SELinux is enabled, use the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>getenforce
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getenforce
+</code></pre></div>    </div>
 
     <p><code class="highlighter-rouge">Enforcing</code> displays to confirm that SELinux is running.</p>
   </li>

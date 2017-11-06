@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1909,9 +1909,8 @@
 
 <p>For example, you can add this to custom logging to capture the value. If you are using a custom logging format in your VCL, you can set the call to your format:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>log {"syslog "}req.service_id{" my_logging_endpoint_name :: "}
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log {"syslog "}req.service_id{" my_logging_endpoint_name :: "}
+</code></pre></div></div>
 
 <p>You can then use the same vcl within different services.</p>
 
@@ -1922,9 +1921,8 @@
 
 <p>Check for headers with a <strong>dig command</strong> to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="_blank">Testing before changing DNS</a>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dig http[s]://&lt;your domain&gt;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dig http[s]://&lt;your domain&gt;
+</code></pre></div></div>
 
 <p>Check response headers with <strong>curl command</strong>:</p>
 
@@ -1932,9 +1930,8 @@
   <li>
     <p>In a terminal, enter the following command to test your live site URL:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> curl http://&lt;live URL&gt; -vo /dev/null -HFastly-Debug:1 [--resolve]
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl http://&lt;live URL&gt; -vo /dev/null -HFastly-Debug:1 [--resolve]
+</code></pre></div>    </div>
 
     <p>Use <code class="highlighter-rouge">--resolve</code> only if your live URL isn’t set up with DNS and you don’t have a static route set.
  For example: <code class="highlighter-rouge">curl http://www.mymagento.biz -vo /dev/null -HFastly-Debug:1</code></p>
@@ -1942,10 +1939,9 @@
   <li>
     <p>Verify the <a href="#response-headers">response headers</a> to ensure Fastly is working. The output for this command is similar to curl Staging and Production. For example, you should see the returned unique headers by this command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> &lt; Fastly-Magento-VCL-Uploaded: yes
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt; Fastly-Magento-VCL-Uploaded: yes
  &lt; X-Cache: HIT, MISS
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1976,35 +1972,30 @@
 
 <p><strong>Staging:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
+</code></pre></div></div>
 
 <p><strong>Production:</strong></p>
 
 <p>The load balancer:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
+</code></pre></div></div>
 
 <p>A direct Origin node:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
+</code></pre></div></div>
 
 <p>For example, if you have a public URL <code class="highlighter-rouge">www.mymagento.biz</code>, enter a command similar to the following to test the production site:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
+</code></pre></div></div>
 
 <p>If you do not have DNS set up for a public host name, enter a command similar to the following:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
+</code></pre></div></div>
 
 <h3 id="response-headers">Check response headers</h3>
 <p>For detailed information on hits and misses, see Fastly’s <a href="https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services" target="_blank">Understanding cache HIT and MISS headers with shielded services</a>.</p>
@@ -2025,7 +2016,7 @@
 
 <p>The output for cURL commands can be lengthy. The following is a summary only:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>* STATE: INIT =&gt; CONNECT handle 0x600057800; line 1402 (connection #-5000)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* STATE: INIT =&gt; CONNECT handle 0x600057800; line 1402 (connection #-5000)
 * Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
 * Added connection 0. The cache now contains 1 members
 *   Trying 192.0.2.31...
@@ -2055,8 +2046,7 @@
 * multi_done
   0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
 * Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="vcl-uploaded">Determine if VCL is not uploaded</h2>
 <p>To determine if the default VCL snippets are not uploaded, check the following:</p>
@@ -2088,12 +2078,11 @@
       <li>
         <p>In the “repositories” section, you should have:</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>  "fastly-magento2": {
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "fastly-magento2": {
               "type": "vcs",
               "url": "https://github.com/fastly/fastly-magento2.git"
       }
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
@@ -2152,9 +2141,8 @@
 <h3 id="snippets">Check VCL snippets</h3>
 <p>If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+</code></pre></div></div>
 
 <p>Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">Fastly default VCLs</a>. For editing your custom VCLs, see <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
@@ -2180,9 +2168,8 @@
   <li>
     <p>To activate a deactivated Version, enter the Service ID and Version in the following command:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
+</code></pre></div>    </div>
   </li>
 </ol>
 

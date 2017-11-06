@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1881,10 +1881,10 @@
   <p>Replace the values in the following sample with your Magento Commerce (Cloud) public and private keys. You can get these keys from your account owner (that is, the person who created the Cloud account).</p>
 
   <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-   </span><span class="nt">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
+   </span><span class="s2">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -1904,25 +1904,23 @@
 
   <p>Deploy section:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>deploy: |
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deploy: |
     php ./vendor/magento/magento-cloud-configuration/pre-deploy.php
     php ./bin/magento magento-cloud:deploy
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Crons section:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>crons:
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
         cronrun:
             spec: "*/5 * * * *"
             cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h3 id="composerjson"><code class="highlighter-rouge">composer.json</code></h3>
   <p>Open <code class="highlighter-rouge">composer.json</code> and update the <code class="highlighter-rouge">"files"</code> directive in the <code class="highlighter-rouge">autoload</code> section as follows:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>"autoload": {
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"autoload": {
         "psr-4": {
             "Magento\\Framework\\": "lib/internal/Magento/Framework/",
             "Magento\\Setup\\": "setup/src/Magento/Setup/",
@@ -1935,8 +1933,7 @@
             "app/etc/NonComposerComponentRegistration.php"
         ]
     }
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Move <code class="highlighter-rouge">app/NonComposerComponentRegistration.php</code> to <code class="highlighter-rouge">app/etc/NonComposerComponentRegistration.php</code>. Make sure the relative paths that point to locations in the <code class="highlighter-rouge">app</code> and <code class="highlighter-rouge">lib</code> directories reflect the  new location of the file.</p>
 
@@ -1949,7 +1946,7 @@
 
   <p>In some cases, your <code class="highlighter-rouge">composer.json</code> might already be correct.</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code> },
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> },
     "require": {
         "magento/magento-cloud-metapackage": "2.1.0",
         "composer/composer": "@alpha",
@@ -1957,8 +1954,7 @@
         "colinmollenhour/php-redis-session-abstract": "1.1",
         "fastly/magento2": "^1.0"
     },
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>Run <code class="highlighter-rouge">composer update</code>, and make sure the updated composer.lock and other changed files are
 checked in to git.</p>
@@ -1966,7 +1962,7 @@ checked in to git.</p>
   <h2 id="repository-structure">Repository structure</h2>
   <p>Here are the specific files for this example to work on Magento Commerce:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>.magento/
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.magento/
          /routes.yaml
          /services.yaml
 .magento.app.yaml
@@ -1974,8 +1970,7 @@ auth.json
 composer.json
 magento-vars.php
 php.ini
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p><code class="highlighter-rouge">.magento/routes.yaml</code> redirects <code class="highlighter-rouge">www</code> to the naked domain, and that the application that will be serving HTTP is named <code class="highlighter-rouge">php</code>.</p>
 
@@ -1995,36 +1990,32 @@ php.ini
     <li>
       <p>Enter the following command from your Magento root directory to verify the installed version:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>php bin/magento --version
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento --version
+</code></pre></div>      </div>
     </li>
   </ol>
 
   <h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
   <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>There has been an error processing your request
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: &lt;error number&gt;
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h3 id="view-error-details-on-the-server">View error details on the server</h3>
   <p>To view the error in your integration system, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
+</code></pre></div>  </div>
 
   <h3 id="resolve-the-error">Resolve the error</h3>
   <p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
 The following modules are outdated:
 Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>To resolve the error:</p>
 
@@ -2036,9 +2027,8 @@ Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
 
       <p>For example, on a local branch, enter the following commands:</p>
 
-      <div class="highlighter-rouge"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
-</code></pre>
-      </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
+</code></pre></div>      </div>
     </li>
   </ol>
 

@@ -1371,12 +1371,12 @@
         
         
         
-        <li class="nav-level2  " id="migrate-and-deploy-code,-static-files,-and-data">
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
             
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy code, static files, and data</a>
+            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1880,20 +1880,19 @@
   <li>
     <p>SSH to each of the Cloud environments: Integration, Staging, and Production.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:ssh
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh
+</code></pre></div>    </div>
   </li>
   <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
   <li>Verify the existing value of <code class="highlighter-rouge">key</code> for <code class="highlighter-rouge">crypt</code>. The value should be your <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento Commerce key</a>.</li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">        return array (
-          'crypt' =&gt;
-          array (
-            'key' =&gt; '<span class="nt">&lt;your</span> <span class="na">encryption</span> <span class="na">key</span><span class="nt">&gt;</span>',
-          ),
-        );
+<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s1">'crypt'</span> <span class="o">=&gt;</span>
+          <span class="k">array</span> <span class="p">(</span>
+            <span class="s1">'key'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;your encryption key&gt;'</span><span class="p">,</span>
+          <span class="p">),</span>
+        <span class="p">);</span>
         </code></pre></figure>
 
 <ol>

@@ -1578,15 +1578,13 @@
   <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
   <p>Run the command as follows (there are no options):</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile
+</code></pre></div>  </div>
 
   <p>The following message displays to confirm success:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
+</code></pre></div>  </div>
 
   <div class="bs-callout bs-callout-warning">
     <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you’re preparing to deploy to production, you must use the multi-tenant compiler.</p>
@@ -1608,10 +1606,9 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and
 filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
 
@@ -1657,13 +1654,12 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 
   <p>For example, to run the compiler and specify the <code class="highlighter-rouge">igbinary</code> serializer:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>magento setup:di:compile-multi-tenant --serializer=igbinary
-</code></pre>
-  </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile-multi-tenant --serializer=igbinary
+</code></pre></div>  </div>
 
   <p>Messages similar to the following display:</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>Generated classes:
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated classes:
     Magento\Rss\Controller\Adminhtml\Feed\Interceptor
     Magento\Quote\Model\Quote\Config\Interceptor
     Magento\Checkout\Block\Cart\Shipping\Interceptor
@@ -1683,8 +1679,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
     On \*nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory.
     For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user
     (example command: "chown -R www-data:www-data &lt;MAGENTO_ROOT&gt;/var" where MAGENTO_ROOT is the Magento root directory).
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <h4 id="related-topics">Related topics</h4>
 

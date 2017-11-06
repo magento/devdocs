@@ -1618,22 +1618,20 @@
   <li>
     <p>Possible error installing Magento:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>Error 503 Service Unavailable
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error 503 Service Unavailable
 Service Unavailable
 XID: 303394517
 Varnish cache server
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
     <p>If you experience this error, edit <code class="highlighter-rouge">default.vcl</code> and add a timeout to the <code class="highlighter-rouge">backend</code> stanza as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>backend default {
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>backend default {
   .host = "127.0.0.1";
   .port = "8080";
   .first_byte_timeout = 600s;
 }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
 </ul>
 
