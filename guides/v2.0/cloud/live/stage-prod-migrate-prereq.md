@@ -83,7 +83,7 @@ For Pro projects created **before October 23, 2017**, you would need to access t
 	*	Production: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 
 ### Set up Pro remote Git repositories {#pro-remote}
-For Pro projects created **after October 23, 2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`.
+For Pro projects created **after October 23, 2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`. You can also use the Project Web Interface to merge your code without SSH or Git commands.
 
 For Pro projects created **before October 23, 2017**, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.
 
