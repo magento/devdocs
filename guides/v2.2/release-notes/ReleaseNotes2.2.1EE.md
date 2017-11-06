@@ -10,17 +10,19 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.1EE.md
 ---
-*Release notes updated October 2.* 
+*Patch code and release notes published on November 7, 2017.* 
 
 
 We are pleased to present Magento Commerce 2.2.1. This release includes numerous functional fixes and enhancements.
+
+Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x](http://devdocs.magento.com/guides/v2.0/release-notes/bk-release-notes.html) and [2.1.x](http://devdocs.magento.com/guides/v2.1/release-notes/bk-release-notes.html) Release Information pages.  
 
 
 ## Highlights
 
 Look for the following highlights in this release:
 
-* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection](ttp://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
+* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
 
 * Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
 
@@ -73,11 +75,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 78522 -->*  Magento no longer displays a 404 error when you change category permissions from Product Detail pages when multistore view is enabled. 
 
-<!--- 71554 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category). 
-
 <!--- 75460 -->* `LowestPriceOptionsProvider` now returns products with the `tax_class_id` attribute, which is used for price calculation operations such as  tax adjustment. [GitHub-6729](https://github.com/magento/magento2/issues/6729), [GitHub-6457](https://github.com/magento/magento2/issues/6457), [GitHub-7362](https://github.com/magento/magento2/issues/7362)
 
 <!--- 75453 -->* The grouped product page now  shows the lowest price for a simple product.  [GitHub-9266](https://github.com/magento/magento2/issues/9266)
+
+<!--- 75221 -->*  We’ve fixed an issue with `priceScope` that had resulted in the storefront not displaying product prices that should be displayed. 
 
 
 ### Cart and checkout
@@ -121,14 +123,12 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 
 ### General
-<!--- 80096 -->* We've fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
+<!--- 80096 -->* We've fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
 
 <!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added a new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
 
 <!--- 71980 -->* You can now remove system customer address and customer attributes from specific forms to prevent them from displaying on the frontend. 
 
-
-<!--- 72587 -->* Deleting a customer in Admin Panel no longer causes fatal errors upon storefront login or registration.
 
 <!--- 67296 -->* String localizations now work as expected when phrases include text wrapped with single quotation marks.
 
@@ -147,11 +147,13 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 75456 -->* The Products Ordered report now shows the simple (child) products of configurable products. 
 
-<!--- 80198 -->* Creation of a new product with custom attribute set now works as expected. [GitHub-10565](https://github.com/magento/magento2/issues/10565), [GitHub-10575](https://github.com/magento/magento2/issues/10575)
+<!--- 80198 -->* Creating a new product with a custom attribute set now works as expected. [GitHub-10565](https://github.com/magento/magento2/issues/10565), [GitHub-10575](https://github.com/magento/magento2/issues/10575)
 
 <!--- 80194 -->* Cookie lifetime works as expected when you set the form_key value  to zero (0). [GitHub-10528](https://github.com/magento/magento2/issues/10528)
 
 <!--- 75457 -->* We’ve fixed an issue where Magento did not retrieve relevant data when displaying reviews if `$displayIfNoReviews` was set to false. [GitHub-4530](https://github.com/magento/magento2/issues/4530) 
+
+<!--- 71980 -->* You can now remove the system customer address and customer attributes from specific forms and prevent them from displaying on the frontend. 
 
 
 ### Indexing
