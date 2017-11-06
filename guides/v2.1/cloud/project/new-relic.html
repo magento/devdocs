@@ -1872,6 +1872,13 @@
   <li>Follow Apdex scores to evaluate slow downs and bottlenecks. Create alerts to watch for these slumps to identify and notify you when an issues is occuring. For example, site slow downs due to a flash sale or web event.</li>
 </ul>
 
+<p>You can have New Relic active on up to 3 environments:</p>
+
+<ul>
+  <li>For Pro: Integration <code class="highlighter-rouge">master</code>, Staging, and Production</li>
+  <li>For Starter: Any 3 environments. We recommend <code class="highlighter-rouge">master</code> Production, a Staging environment, and another of your choice.</li>
+</ul>
+
 <h2 id="credentials">New Relic APM credentials</h2>
 <p>When you sign up for a Magento Commerce (Cloud) account, you will receive an email of credentials to your account. The agent software for New Relic is already installed to capture data for review through the service.</p>
 
@@ -1880,36 +1887,49 @@
 <h2 id="configure">Configure New Relic APM</h2>
 <p>You can locate your New Relic APM credentials and key in the <a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Project Web Interface</a>. The Project Owner can <a href="https://accounts.magento.cloud" target="_blank">log in</a> to the interface and review <a href="/guides/v2.1/cloud/before/before-project-owner.html#cloud-owner-creds">project and environment credentials</a>.</p>
 
-<p>For <strong>Pro plan projects</strong>, New Relic is already set up for you in Staging and Production environments. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.</p>
+<p>Important: Magento Commerce (Cloud) plans support up to 3 licenses active across all environments. For details, see <a href="/guides/v2.1/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>.</p>
 
-<p>For <strong>Starter plan projects</strong>, New Relic will provide an email of credentials and access information, possibly also a call.</p>
+<p>For <strong>Pro plan projects</strong>, New Relic is already set up for you in Staging and Production environments. You can only add the third usage to your Integration <code class="highlighter-rouge">master</code> branch. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.</p>
 
-<p>Add a project level variable with your license:</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p><strong>Important for Pro plan usage:</strong></p>
+
+  <ul>
+    <li>If you previously added New Relic to any other Pro Integration environments (besides <code>master</code>), you must remove it.</li>
+    <li>If you branch from Integration <code>master</code>, make sure the environment variable is not replicated in those new environments.</li>
+    <li>If using Magento Cloud CLI, use the command <code>magento-cloud variable:delete</code> to remove the environment variable.</li>
+  </ul>
+</div>
+
+<p>For <strong>Starter plan projects</strong>, New Relic will provide an email of credentials and access information, possibly also a call. You can add New Relic up to 3 branches. We recommend on <code class="highlighter-rouge">master</code> Production, a <code class="highlighter-rouge">staging</code> environment, and another of your choice. You must remove the</p>
+
+<p>To add New Relic to a specific environment (for example, Starter plan Staging environment or Pro Integration <code class="highlighter-rouge">master</code>) you need to add an environment level variable with your license. Remember, you can only have 3 New Relic licenses active across all environments.</p>
 
 <ol>
   <li>Log in to the Project Web Interface.</li>
-  <li>Locate the SSH link for accessing your <code class="highlighter-rouge">master</code> Production and Staging environments</li>
+  <li>Locate the SSH link for accessing your <code class="highlighter-rouge">master</code> Production and Staging environments. For more information on SSH, see <a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH and sFTP</a></li>
   <li>
     <p>In a terminal, SSH log in to each environment (Production and Master) and enter the following command. You will need the license key from New Relic.</p>
 
-    <p>magento-cloud project:variable:set –no-visible-build php:newrelic.license <your-new-relic-license-key></your-new-relic-license-key></p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud variable:set --no-visible-build php:newrelic.license &lt;your-new-relic-license-key&gt;
+</code></pre></div>    </div>
   </li>
 </ol>
 
-<p>We will complete adding New Relic to your Staging and Production environments for you.
-&lt;!– Add New Relic to <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
+<p>For Starter accounts, if you want to move the variable from one active Integration environment to another, you must remove the variable first. Use this command:</p>
 
-<ol>
-  <li>In your development code branch, edit <code class="highlighter-rouge">.magento.app.yaml</code> with a text editor.</li>
-  <li>
-    <p>Add the following information:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:newrelic.license
+</code></pre></div></div>
 
-    <p>runtime:
-   extensions:
-     - newrelic</p>
-  </li>
-  <li>Save and push the changes to deploy across Staging and Production. –&gt;</li>
-</ol>
+<!-- Add New Relic to `.magento.app.yaml`:
+
+1. In your development code branch, edit `.magento.app.yaml` with a text editor.
+2. Add the following information:
+
+    runtime:
+      extensions:
+        - newrelic
+3. Save and push the changes to deploy across Staging and Production. -->
 
 <p>You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic’s <a href="https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent" target="_blank">Agent installation guide</a>. Access both environments via SSH and install the agent.</p>
 
