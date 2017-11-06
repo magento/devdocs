@@ -64,7 +64,7 @@ You don't need to do any coding in this example.
 
 <h2>Step 5: Find getters on Address and Customer</h2>
 <div>
-<p><a href="{{ site.mage2000url }}app/code//Magento/Customer/Api/Data/AddressInterface.php" target="_blank">\Magento\Customer\Api\Data\AddressInterface</a> and <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank">\Magento\Customer\Api\Data\CustomerInterface</a> have several getters, all of which are optional. Each getter has <code>@return</code> that tells you the data type.</p>
+<p><a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/Data/AddressInterface.php" target="_blank">\Magento\Customer\Api\Data\AddressInterface</a> and <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank">\Magento\Customer\Api\Data\CustomerInterface</a> have several getters, all of which are optional. Each getter has <code>@return</code> that tells you the data type.</p>
 <p>Pick a few values to create your customer record; remember to use the same rules in step 3 (that is, remove <code>get</code>, convert everything to lowercase, and separate camel case letters with underscores).</p>
 </div>
 
