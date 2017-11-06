@@ -25,7 +25,7 @@ We support RabbitMQ version 3.5.
 To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
 {% highlight yaml %}
-myrabbitmq:
+rabbitmq:
     type: rabbitmq
     disk: 1024
 {% endhighlight %}
@@ -34,7 +34,7 @@ To configure the relationships for the environment variable, set a relationship 
 
 {% highlight yaml %}
 relationships:
-    mq: "myrabbitmq:rabbitmq"
+    rabbitmq: "rabbitmq:rabbitmq"
 {% endhighlight %}
 
 Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html).
