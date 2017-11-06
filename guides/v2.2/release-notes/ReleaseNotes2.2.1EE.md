@@ -50,7 +50,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler </a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
 
-<!--- 71893 -->* If you do not specify `—base_url` during installation, all URLS now use the host and port of the current request to create URLs. 
+<!--- 71893 -->* If you do not specify `—base_url` during installation, all URLs now use the host and port of the current request to create URLs. 
 
 <!--- 75452 -->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from a unsuccessful commit, and logs an exception. Previously, Magenta threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
 
