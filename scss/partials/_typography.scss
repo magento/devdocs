@@ -6,6 +6,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizelegibility;
+  font-weight: bold;
 }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -18,7 +19,6 @@ h1 {
   font-size: 38px;
   line-height: 1.3;
   margin: 0 0 20px 0;
-  font-weight: normal;
 }
 
 h1.page-subtitle {
@@ -30,7 +30,6 @@ h1.page-subtitle {
 h2 {
   font-size: 1.625em;
   line-height: 1.3;
-  font-weight: normal;
   letter-spacing: 0;
   margin: 1.3em 0 0.5em 0;
   padding: 0
@@ -40,7 +39,6 @@ h2 {
 h3 {
   font-size: 1.375em;
   line-height: 1.3;
-  font-weight: 700;
   letter-spacing: 0;
   margin: 1.5em 0 0.5em 0;
   padding: 0;
@@ -49,7 +47,6 @@ h3 {
 h4 {
   font-size: 1em;
   line-height: 1.3;
-  font-weight: bold;
   margin: 1.5em 0 0.5em 0;
 }
 
@@ -59,7 +56,6 @@ h5,.h5 {
 
 h6 {
   font-size: 14px;
-  font-weight: bold;
   letter-spacing: 0.04em;
   margin: 0;
   text-transform: uppercase;
