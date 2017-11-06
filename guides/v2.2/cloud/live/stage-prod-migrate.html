@@ -1950,28 +1950,26 @@
 
   <ol>
     <li>Open an SSH connection to your Staging or Production environment using the SSH command.</li>
-    <li>Checkout your Staging or Production branch:</li>
-  </ol>
+    <li>
+      <p>Checkout your Staging or Production branch:</p>
 
-  <ul>
-    <li>Staging: <code class="highlighter-rouge">git checkout staging</code></li>
-    <li>Production: <code class="highlighter-rouge">git checkout production</code>
-      <ol>
-        <li>
-          <p>Pull the <code class="highlighter-rouge">master</code> branch from Integration. Remember, a pull performs a fetch and a merge in one step.</p>
-
-          <p>git pull origin master</p>
-        </li>
-      </ol>
+      <ul>
+        <li>Staging: <code class="highlighter-rouge">git checkout staging</code></li>
+        <li>Production: <code class="highlighter-rouge">git checkout production</code></li>
+      </ul>
     </li>
-  </ul>
+    <li>
+      <p>Pull the <code class="highlighter-rouge">master</code> branch from Integration. Remember, a pull performs a fetch and a merge in one step.</p>
 
-  <p>You merge this code as <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">production</code> are branches of <code class="highlighter-rouge">master</code>.</p>
-  <ol>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   git pull origin master
+</code></pre></div>      </div>
+
+      <p>You merge this code as <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">production</code> are branches of <code class="highlighter-rouge">master</code>.</p>
+    </li>
     <li>
       <p>To fully update all code, then perform a push:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git push origin
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   git push origin
 </code></pre></div>      </div>
     </li>
   </ol>
@@ -1983,18 +1981,20 @@
     <li>
       <p>Pull the <code class="highlighter-rouge">master</code> branch to the server.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git pull origin master
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   git pull origin master
 </code></pre></div>      </div>
     </li>
-    <li>Merge changes to Staging or Production:</li>
+    <li>
+      <p>Merge changes to Staging or Production:</p>
+
+      <ul>
+        <li>Staging: <code class="highlighter-rouge">git push staging master:master</code></li>
+        <li>Production: <code class="highlighter-rouge">git push production master:master</code></li>
+      </ul>
+
+      <p>You must force push for these branches as they are separate repositories with a <code class="highlighter-rouge">master</code> branch.</p>
+    </li>
   </ol>
-
-  <ul>
-    <li>Staging: <code class="highlighter-rouge">git push staging master:master</code></li>
-    <li>Production: <code class="highlighter-rouge">git push production master:master</code></li>
-  </ul>
-
-  <p>You must force push for these branches as they are separate repositories with a <code class="highlighter-rouge">master</code> branch.</p>
 
   <h2 id="cloud-live-migrate-static">Migrate static files</h2>
   <p>You will migrate <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> from your <code class="highlighter-rouge">pub/media</code> directory to Staging or Production.</p>
