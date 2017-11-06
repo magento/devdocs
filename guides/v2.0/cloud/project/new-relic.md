@@ -42,9 +42,13 @@ You can locate your New Relic APM credentials and key in the [Project Web Interf
 
 Important: {{site.data.var.ece}} plans support up to 3 licenses active across all environments. For details, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
 
-For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You can also add it to your Integration `master` branch. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
+For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You can only add the third usage to your Integration `master` branch. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
 
-For **Starter plan projects**, New Relic will provide an email of credentials and access information, possibly also a call. You can add New Relic up to 3 branches. We will add New Relic to your `master` Production environment. You can add it to 2 more of your choice.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you previously added New Relic to any other Pro Integration environments (besides <code>master</code>), you must remove it. If using Magento Cloud CLI, use the command <code>magento-cloud variable:delete</code>.
+</div>
+
+For **Starter plan projects**, New Relic will provide an email of credentials and access information, possibly also a call. You can add New Relic up to 3 branches. We recommend on `master` Production, a `staging` environment, and another of your choice. You must remove the
 
 To add New Relic to a specific environment (for example, Starter plan Staging environment or Pro Integration `master`) you need to add an environment level variable with your license. Remember, you can only have 3 New Relic licenses active across all environments.
 
@@ -54,7 +58,10 @@ To add New Relic to a specific environment (for example, Starter plan Staging en
 
     magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
 
-We will complete adding New Relic to your Staging and Production environments for you.
+For Starter accounts, if you want to move the variable from one active Integration environment to another, you must remove the variable first. Use this command:
+
+  magento-cloud variable:delete php:newrelic.license
+  
 <!-- Add New Relic to `.magento.app.yaml`:
 
 1. In your development code branch, edit `.magento.app.yaml` with a text editor.
