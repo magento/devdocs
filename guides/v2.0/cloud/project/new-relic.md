@@ -45,7 +45,7 @@ Important: {{site.data.var.ece}} plans support up to 3 licenses active across al
 For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You can only add the third usage to your Integration `master` branch. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you previously added New Relic to any other Pro Integration environments (besides <code>master</code>), you must remove it. If using Magento Cloud CLI, use the command <code>magento-cloud variable:delete</code>.
+If you previously added New Relic to any other Pro Integration environments (besides <code>master</code>), you must remove it. If you branch from Integration <code>master</code>, make sure the environment variable is not replicated in those new environments. If using Magento Cloud CLI, use the command <code>magento-cloud variable:delete</code> to remove the environment variable.
 </div>
 
 For **Starter plan projects**, New Relic will provide an email of credentials and access information, possibly also a call. You can add New Relic up to 3 branches. We recommend on `master` Production, a `staging` environment, and another of your choice. You must remove the
@@ -61,7 +61,7 @@ To add New Relic to a specific environment (for example, Starter plan Staging en
 For Starter accounts, if you want to move the variable from one active Integration environment to another, you must remove the variable first. Use this command:
 
   magento-cloud variable:delete php:newrelic.license
-  
+
 <!-- Add New Relic to `.magento.app.yaml`:
 
 1. In your development code branch, edit `.magento.app.yaml` with a text editor.
