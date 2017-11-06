@@ -42,6 +42,13 @@ Magento 2.1.10 includes multiple security enhancements. Although this release in
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
+## Known issues
+
+<!--- 82877 -->* 
+
+
+<!--- 82731 -->* 
+
 
 
 ## Fixed issues
