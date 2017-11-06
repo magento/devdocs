@@ -74,30 +74,31 @@ To deploy to Pro projects **created after October 23, 2017** or [updated]({{ pag
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Checkout your Staging or Production branch:
 
-  * Staging: `git checkout staging`
-  * Production: `git checkout production`
+    * Staging: `git checkout staging`
+    * Production: `git checkout production`
 3. Pull the `master` branch from Integration. Remember, a pull performs a fetch and a merge in one step.
 
-        git pull origin master
+          git pull origin master
 
-  You merge this code as `staging` and `production` are branches of `master`.
+    You merge this code as `staging` and `production` are branches of `master`.
+
 4. To fully update all code, then perform a push:
 
-        git push origin
+          git push origin
 
 To deploy to Pro projects **created before October 23, 2017**:
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Pull the `master` branch to the server.
 
-        git pull origin master
+          git pull origin master
 
 3. Merge changes to Staging or Production:
 
-  * Staging: `git push staging master:master`
-  * Production: `git push production master:master`
+    * Staging: `git push staging master:master`
+    * Production: `git push production master:master`
 
-  You must force push for these branches as they are separate repositories with a `master` branch.
+    You must force push for these branches as they are separate repositories with a `master` branch.
 
 ## Migrate static files {#cloud-live-migrate-static}
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
