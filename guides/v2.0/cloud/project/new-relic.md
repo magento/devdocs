@@ -32,6 +32,11 @@ New Relic APM provides the following [key features](https://newrelic.com/php/mag
 * Use the App Map to view all application dependencies within your Magento site, extensions, and external services.
 * Follow Apdex scores to evaluate slow downs and bottlenecks. Create alerts to watch for these slumps to identify and notify you when an issues is occuring. For example, site slow downs due to a flash sale or web event.
 
+You can have New Relic active on up to 3 environments:
+
+* For Pro: Integration `master`, Staging, and Production
+* For Starter: Any 3 environments. We recommend `master` Production, a Staging environment, and another of your choice.
+
 ## New Relic APM credentials {#credentials}
 When you sign up for a {{site.data.var.ece}} account, you will receive an email of credentials to your account. The agent software for New Relic is already installed to capture data for review through the service.
 
@@ -45,7 +50,7 @@ Important: {{site.data.var.ece}} plans support up to 3 licenses active across al
 For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You can only add the third usage to your Integration `master` branch. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-**Important for Pro plan usages:**
+**Important for Pro plan usage:**
 
 * If you previously added New Relic to any other Pro Integration environments (besides <code>master</code>), you must remove it.
 * If you branch from Integration <code>master</code>, make sure the environment variable is not replicated in those new environments.
@@ -60,11 +65,11 @@ To add New Relic to a specific environment (for example, Starter plan Staging en
 2. Locate the SSH link for accessing your `master` Production and Staging environments. For more information on SSH, see [SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
 3. In a terminal, SSH log in to each environment (Production and Master) and enter the following command. You will need the license key from New Relic.
 
-    magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
+        magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
 
 For Starter accounts, if you want to move the variable from one active Integration environment to another, you must remove the variable first. Use this command:
 
-  magento-cloud variable:delete php:newrelic.license
+    magento-cloud variable:delete php:newrelic.license
 
 <!-- Add New Relic to `.magento.app.yaml`:
 
