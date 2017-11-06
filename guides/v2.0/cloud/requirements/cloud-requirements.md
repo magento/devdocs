@@ -79,7 +79,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.0.
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.1.
 * [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
 * [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
 * [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
