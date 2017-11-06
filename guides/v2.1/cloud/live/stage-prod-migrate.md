@@ -76,14 +76,14 @@ To deploy to Pro projects **created after October 23, 2017** or [updated]({{ pag
 
   * Staging: `git checkout staging`
   * Production: `git checkout production`
-3. Pull the `master` branch to the server.
+3. Pull the `master` branch from Integration. Remember, a pull performs a fetch and a merge in one step.
 
         git pull origin master
-4. Merge changes to the branch for Staging or Production:
 
-        git merge origin master
+  You merge this code as `staging` and `production` are branches of `master`.
+4. To fully update all code, then perform a push:
 
-  You must merge this code as `staging` and `production` are branches of `master`.
+        git push origin
 
 To deploy to Pro projects **created before October 23, 2017**:
 
