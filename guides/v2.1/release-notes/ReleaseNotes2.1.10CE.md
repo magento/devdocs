@@ -15,16 +15,16 @@ github_link: release-notes/ReleaseNotes2.1.10CE.md
 {:toc}
 
 
-*Code and release notes released: November 7,  2017*
+*Patch code and release notes were published on November 7,  2017*
 
 
 
-We are pleased to present Magento Open Source (formerly Community Edition) 2.1.10. This release includes important enhancements to your Magento software.
+We are pleased to present Magento Open Source  2.1.10. This release includes important enhancements to your Magento software.
 
 
 ## Highlights
 
-Magento 2.1.10 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.1.10 contains almost 40 security fixes and functional enhancements.  Look for the following highlights in this release:
 
 * Significant reduction in JavaScript-related translation issues. 
 

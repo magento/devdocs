@@ -14,15 +14,15 @@ github_link: release-notes/ReleaseNotes2.1.10EE.md
 *	TOC
 {:toc}
 
-*Code and release notes released: November 7,  2017*
+*Patch code and release notes were published on November 7,  2017*
 
-We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.10. This release includes important enhancements to your Magento software.
+We are pleased to present Magento Commerce  2.1.10. This release includes important enhancements to your Magento software.
 
 
 
 ## Highlights
 
-Magento 2.1.10 contains over 50 security fixes and enhancements. Look for the following highlights in this release:
+Magento 2.1.10 contains over 50 security fixes and functional enhancements. Look for the following highlights in this release:
 
 * Significant reduction in JavaScript-related translation issues. 
 
