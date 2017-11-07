@@ -4,10 +4,13 @@ group: cloud
 subgroup: 120_env
 title: Configuration management
 menu_title: Configuration management
-menu_order:  20
+menu_order: 20
 menu_node:
 version: 2.1
 github_link: cloud/live/sens-data-over.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 Configuration management in {{site.data.var.ece}} provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments to keep consistent settings and reduce downtime.
@@ -132,7 +135,7 @@ The **Pro plan** environment high-level overview of this process:
 ### Step 1: Configure your store
 Complete all configurations for your stores in the Admin console:
 
-1. Log into the Magento Adming for one of the environments:
+1. Log into the Magento Admin for one of the environments:
 
     * Starter: An active development branch
     * Pro: The `master` environment in Integration
@@ -162,7 +165,7 @@ Log into the Magento Admin in those environments to verify the settings. If you 
 
 For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
 
-For Pro, when you push to the Git branch, the Integration `master` environment updates. Push this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
+For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
 ## Update configuations {#update}
 If you need to change any configuration settings `config.local.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.

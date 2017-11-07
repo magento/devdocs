@@ -8,11 +8,13 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/trouble/trouble.md
+functional_areas:
+  - Cloud
 ---
 
 The following topics discuss solutions to common issues with {{site.data.var.ece}}:
 
-* [Add Staging and Production to Pro projects]({{ page.baseurl }}cloud/trouble/pro-env-management.html)
+* [Add Staging and Production to Pro projects UI]({{ page.baseurl }}cloud/trouble/pro-env-management.html)
 *	[Troubleshoot your deployment]({{ page.baseurl }}cloud/access-acct/trouble.html)
 *	[Use logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html)
 *	[Resolve a broken branch]({{ page.baseurl }}cloud/trouble/trouble-broken-branch.html)

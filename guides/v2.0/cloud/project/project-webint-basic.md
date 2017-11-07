@@ -8,6 +8,9 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-basic.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to do the following for all Starter and Pro environments:
@@ -84,6 +87,10 @@ You can set project wide and environment specific variables through the Project 
 For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
 
 To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
+
+For new Pro projects **created after October 23, 2017**, you can add variables for all environments through the Project Web Interface.
+
+{% include cloud/wings-variables.md %}
 
 ### Environment variable {#env}
 To set environment specific variables in the Project Web Interface:

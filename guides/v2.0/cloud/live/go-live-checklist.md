@@ -8,6 +8,9 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/live/go-live-checklist.md
+functional_areas:
+  - Cloud
+  - Testing
 ---
 
 Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment.
@@ -83,7 +86,7 @@ Test and verify Fastly caching is correctly working in Production. For detailed 
 *	Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/develop/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 

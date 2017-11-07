@@ -4,11 +4,15 @@ group: install_trouble
 subgroup: 02_access
 title: Installation dependencies not met
 menu_title: Installation dependencies not met
-menu_node: 
+menu_node:
 menu_order: 10
 version: 2.0
 github_link: install-gde/trouble/tshoot_install_depend.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install_depend.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 

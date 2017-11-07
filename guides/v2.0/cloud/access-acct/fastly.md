@@ -8,6 +8,10 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/access-acct/fastly.md
+functional_areas:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 [Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
@@ -31,7 +35,7 @@ We'll provide you with the following credentials for your Staging and Production
 *	Fastly Service ID
 *	Fastly API token
 
-You can also locate these credentials in your Staging and Production systems in `/mnt/shared/fastly_tokens.txt`. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for [Support]]({{ page.baseurl}}cloud/bk-cloud.html#gethelp) asking to have the file added. We can help provide this credentials file.
+You can also locate these credentials in your Staging and Production systems in `/mnt/shared/fastly_tokens.txt`. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for [Support]({{ page.baseurl}}cloud/bk-cloud.html#gethelp) asking to have the file added. We can help provide this credentials file.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you'll encounter issues with Fastly.
@@ -114,9 +118,11 @@ Configure the following features and enable additional [configuration options](h
 </div>
 
 ## Upload Fastly VCL snippets {#upload-vcl-snippets}
-The installed Fastly module includes the following [VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"} that drive the integration with Fastly. When you click Upload, you push these VCL snippets to Fastly for your extension. These uploaded snippets are prepended with "magentomodule_" with a priority of 50.
+You don't have to create or code VCL snippets. We provide a default set of snippets for Fastly. You only need to click **Upload VCL to Fastly** to finish this step.
 
-You can also create and add [custom VCL snippets](#custom-vcl).
+The installed Fastly module includes the following default [VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"} that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specificl Service ID and extension.
+
+For VCL snippet developers, these default snippets are prepended with `magentomodule_` with a priority of 50. You should not use this prepended name for your own snippets. For full details, see our guide to create and add [custom VCL snippets](#custom-vcl).
 
 To use snippets, you must upload the Fastly VCL using the Magento Admin as follows:
 

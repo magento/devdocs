@@ -12,6 +12,8 @@ version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.9.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.9.html
+functional_areas:
+  - Cloud
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}} version 2.1.9, `magento-cloud-configuration` release 101.9.0.
@@ -22,7 +24,7 @@ In `magento-cloud-configuration` release 101.9.0, we provide the following impro
 
 <!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
-
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
 
 
 ## How to get `magento-cloud-configuration` release 101.9.x

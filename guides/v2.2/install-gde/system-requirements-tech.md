@@ -8,6 +8,10 @@ menu_node:
 menu_order: 2
 version: 2.2
 github_link: install-gde/system-requirements-tech.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Operating systems (Linux x86-64)

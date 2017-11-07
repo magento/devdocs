@@ -1,8 +1,8 @@
 <div markdown="1">
 
-For technical reasons, Magento Commerce staging and production systems don't implement any deployment hooks automatically. These hooks, defined in the `hooks` section of your [`.magento.app.yaml` file]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-hooks), must be manually migrated to staging or production.
+For technical reasons, you need to enter a ticket to have your [`.magento.app.yaml` file]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) file added to Staging and Production systems. This affects all Pro projects created before and after October 23, 2017.
 
-Create a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to let us help you implement any deployment hooks you set up.
+Create a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to let us help you migrate the file and implement any deployment hooks you set up.
 
 Among the settings you can request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.
 

@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 26_CE-EEUpgrade
 title: Upgrade from Open Source to Commerce
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
+functional_areas:
+  - Upgrade
 ---
 
 <h2 id="compman-overview">Overview of {{site.data.var.ce}} to {{site.data.var.ee}} upgrade</h2>

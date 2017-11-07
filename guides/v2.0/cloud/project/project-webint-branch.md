@@ -12,6 +12,9 @@ redirect_from:
   - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html
   - /guides/v2.2/cloud/project/project-priv-repos.html
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see [Git documentation](https://git-scm.com/doc).
@@ -183,6 +186,19 @@ To enter your project's public key as a GitHub deploy key:
 5.	Follow the prompts on your screen to complete the task.
 
 In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user>@<host>:<port>/<path>.git` if using a non-standard port.
+
+### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
+To enter your project's public key as a Bitbucket deploy key:
+
+1.	Log in to your Bitbucket repository as its administrator.
+2.	In the left navigation bar, click **Settings** as the following figure shows.
+
+	![Bitbucket settings]({{ site.baseurl}}common/images/cloud_bb-settings.png)
+3.	Click General > **Deployment Keys** as the following figure shows.
+
+	![Bitbucket deploy key]({{ site.baseurl}}common/images/cloud_bb-deploy-key.png)
+4.	Click **Add Key**.
+5.	Follow the prompts on your screen to complete the task.
 
 #### Related topics
 *	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)

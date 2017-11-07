@@ -8,6 +8,11 @@ menu_node:
 menu_order: 5
 version: 2.2
 github_link: cloud/reference/cloud-composer.md
+redirect_from:
+  - /guides/v2.2/cloud/cloud-composer.html
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Commerce and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
@@ -66,7 +71,7 @@ Patch versions are specified as: `<100 + x>.<y>.*`. For example, {{site.data.var
 
 Code released in `ece-patches` is strictly for updates to {{site.data.var.ece}}. Patches are available in the `vendor/ece-patches` folder.
 
-To check for available patches, you can check in the `vendor/ece-patches` folder. 
+To check for available patches, you can check in the `vendor/ece-patches` folder.
 
 ### magento/ece-tools {#ece-tools}
 This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:

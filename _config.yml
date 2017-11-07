@@ -64,6 +64,9 @@ collections:
     output: true
     permalink: "/videos/:path/"
 
+plugins:
+  - jekyll-redirect-from
+
 
 defaults:
   -
@@ -83,10 +86,6 @@ kramdown:
   toc_levels: 2..3
 
 incremental: false
-
-gems:
-  - jekyll-redirect-from
-
 
 algolia:
   application_id: 'E642SEDTHL'

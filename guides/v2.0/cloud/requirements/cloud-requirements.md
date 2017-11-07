@@ -8,19 +8,28 @@ menu_order: 40
 menu_node: parent
 version: 2.0
 github_link: cloud/cloud-requirements.md
-redirect from:
-  -  /guides/v2.0/cloud/cloud-requirements.html
-  -  /guides/v2.1/cloud/cloud-requirements.html
-  -  /guides/v2.2/cloud/cloud-requirements.html
-  -  /guides/v2.0/cloud/cloud-requirements-license.html
-  -  /guides/v2.1/cloud/cloud-requirements-license.html
-  -  /guides/v2.2/cloud/cloud-requirements-license.html
-  -  /guides/v2.0/cloud/requirements/cloud-requirements-git.html
-  -  /guides/v2.1/cloud/requirements/cloud-requirements-git.html
-  -  /guides/v2.2/cloud/requirements/cloud-requirements-git.html
-  -  /guides/v2.0/cloud/reference/git-integration.html
-  -  /guides/v2.1/cloud/reference/git-integration.html
-  -  /guides/v2.2/cloud/reference/git-integration.html
+redirect_from:
+  - /guides/v2.0/cloud/discover-tools.html
+  - /guides/v2.1/cloud/discover-tools.html
+  - /guides/v2.2/cloud/discover-tools.html
+  - /guides/v2.0/cloud/cloud-requirements.html
+  - /guides/v2.1/cloud/cloud-requirements.html
+  - /guides/v2.2/cloud/cloud-requirements.html
+  - /guides/v2.0/cloud/cloud-requirements-git.html
+  - /guides/v2.1/cloud/cloud-requirements-git.html
+  - /guides/v2.2/cloud/cloud-requirements-git.html
+  - /guides/v2.0/cloud/cloud-requirements-license.html
+  - /guides/v2.1/cloud/cloud-requirements-license.html
+  - /guides/v2.2/cloud/cloud-requirements-license.html
+  - /guides/v2.0/cloud/requirements/cloud-requirements-git.html
+  - /guides/v2.1/cloud/requirements/cloud-requirements-git.html
+  - /guides/v2.2/cloud/requirements/cloud-requirements-git.html
+  - /guides/v2.0/cloud/reference/git-integration.html
+  - /guides/v2.1/cloud/reference/git-integration.html
+  - /guides/v2.2/cloud/reference/git-integration.html
+functional_areas:
+  - Cloud
+  - Install
 ---
 
 The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.ece}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
@@ -70,7 +79,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.0.
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.1.
 * [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
 * [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
 * [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)

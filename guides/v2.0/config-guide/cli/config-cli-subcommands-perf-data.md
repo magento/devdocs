@@ -9,7 +9,13 @@ menu_order: 800
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
+
+{% include config/cli-intro.md %}
 
 ## Overview of performance testing data {#config-cli-perf-overview}
 To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
@@ -21,10 +27,6 @@ The following figure shows how a product displays on the {% glossarytooltip 1a70
 ![Sample storefront with generated data]({{ site.baseurl }}common/images/config_generate-data.png){:width="550px"}
 
 This gives you an idea about what the data looks like.
-
-## First steps {#config-cli-before}
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see [Common arguments]({{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common).
 
 ## About profiles {#config-cli-perf-prof}
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
@@ -144,7 +146,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
     </tbody>
 </table>
 
-### Run the data generator {#config-cli-perf-run}
+## Run the data generator {#config-cli-perf-run}
 <div class="bs-callout bs-callout-warning" markdown="1">
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
 </div>

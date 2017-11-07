@@ -8,9 +8,12 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
-These sections list the environment variables for [general Magento](#application), [build](#build), and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
+These sections list the environment variables for [general Magento](#application) and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 ## Magento application variables {#application}
 
@@ -18,9 +21,9 @@ The following table lists variables that you can override using environment vari
 
 <table>
 <thead><tr>
-<th>Variable name</th>
+<th style="width: 160px;">Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 150px;">Default value</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -58,28 +61,17 @@ The following table lists variables that you can override using environment vari
 <p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p></td>
 <td>production</td>
 </tr>
-<tr><td><code>CLEAN_STATIC_FILES</code></td>
-<td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
-<p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
-<td>enable</td>
-</tr>
-<tr>
-<td><code>UPDATE_URLS</code></td>
-<td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
-<p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production, where the base URLs can't change.</p>
-<p>Available in {{site.data.var.ece}} 2.0.10 and later, and 2.1.2 and later.</p></td>
-<td>enabled</td>
-</tr></tbody>
+</tbody>
 </table>
 
-For additional build and deploy variables, continue to the following sections.
+For additional variables, continue to the following sections.
 
 <!-- <tr><td>RECOMPILE_DI</td>
     <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
     <td>true</td>
     </tr> -->
 
+<!-- none of these are available in 2.0
 ## Magento build variables {#build}
 The following variables are options available during the build process of build and deploy. The variables help prepare the codebase before it is moved to the server and then built.
 
@@ -90,7 +82,7 @@ You can use these options as part of a `build_options.ini` file for customizing 
 <tr>
 <th>Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 200px;">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -132,21 +124,7 @@ This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>v
 </tbody>
 </table>
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
-
-<!-- <tr>
-<td><code>SCD_STRATEGY</code></td>
-<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
-<p>Use these options only if you have more than one locale.</p>
-<ul>
-<li>Use the standard strategy to deploy all static view files for all packages.</li>
-<li>Use the quick strategy to minimize deployment time. This is the default command option if not specified.</li>
-<li>Use the compact strategy to conserve disk space on the server.</li>
-</ul>
-</td>
-<td><code>scd_strategy = standard</code>, <code>scd_strategy = quick</code>, <code>scd_strategy = compact</code></td>
-<td>2.2.X</td>
-</tr> -->
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html). -->
 
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
@@ -156,13 +134,13 @@ The following variables are available during the deploy process of build and dep
 <tr>
 <th>Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 200px;">Default value</th>
 </tr></thead>
 <tbody>
 <tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
-<p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</p></td>
+<p>This is available in versions 2.0.10 and later.</p></td>
 <td>enabled</td>
 </tr>
 <tr>
@@ -247,19 +225,6 @@ The following variables are available during the deploy process of build and dep
 </table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
-
-<!-- <tr><td><code>SCD_STRATEGY</code></td>
-<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
-<p>Use these options only if you have more than one locale.</p>
-<ul>
-<li>Use the standard strategy to deploy all static view files for all packages.</li>
-<li>Use the quick strategy to minimize deployment time. This is the default command option if not specified.</li>
-<li>Use the compact strategy to conserve disk space on the server.</li>
-</ul>
-</td>
-<td><code>standard</code>, <code>quick</code>, <code>compact</code></td>
-<td>2.2.X</td>
-</tr> -->
 
 ## Add environment variables {#addvariables}
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).

@@ -7,8 +7,13 @@ menu_title: Manage your Elasticsearch cluster
 menu_order: 15
 menu_node:
 version: 2.1
-ee_only: true
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-cluster.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
 #### Contents

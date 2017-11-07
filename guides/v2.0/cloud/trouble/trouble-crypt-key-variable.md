@@ -8,6 +8,9 @@ menu_order: 25
 menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble-crypt-key-variable.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 This topic discusses solutions to typical issues you might experience with {{site.data.var.ee}} encryption key in your environments.

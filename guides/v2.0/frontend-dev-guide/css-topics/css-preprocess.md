@@ -8,6 +8,8 @@ menu_title: CSS preprocessing
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
+functional_areas:
+  - Frontend
 ---
 
 The topic describes how stylesheets are preprocessed and compiled to {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} in the Magento application. It provides the theoretical background a {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developer needs to debug stylesheets effectively.
@@ -30,7 +32,7 @@ Description
 <td>
 <p>The <code>.less</code> files from which the <code>.css</code> files <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled.
 
-For example, in one of the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
+For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
 
 <pre>
     &lt;head&gt;

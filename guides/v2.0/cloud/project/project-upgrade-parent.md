@@ -8,6 +8,9 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/project/project-upgrade-parent.md
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 The following information helps you upgrade and patch {{site.data.var.ece}}. All of our upgrades and patches are [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html) driven. We recommend using `composer update` for running updates.

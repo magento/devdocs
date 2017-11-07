@@ -8,11 +8,52 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble_fastly.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 For information setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html).
 
 To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.
+
+## Errors from Fastly {#errors}
+If you receive the following errors with Fastly, check the following:
+
+* **503 error**: When you receive this error, check through logs and the Fastly 503 error page. See [503 timeouts](#timeouts) for details.
+* **Store menu doesn't display or work**: You may be using a link or temp link directly to the origin server instead of through the live site URL or you used `-H "host:URL"` in a [cURL command](#curl). If you bypass Fastly to the origin server, the main menu doesn't work and incorrect headers display that allow caching on a browser side. 
+
+### 503 timeouts {#timeouts}
+If you receive a 503 error, check the following logs and information to better troubleshoot the issue.
+
+First, check your [error log]({{ page.baseurl }}cloud/trouble/environments-logs.html) on your Production or Staging environment: `/var/log/platform/<project_ID>/error.log`.  The log will include possible errors from the application or PHP engine. For example: `memory_limit` or `max_execution_time exceeded`
+
+If the logs do not include errors related to Fastly, check the PHP access log: `/var/log/platform/<project_ID>/php.access.log`. Check the log for an HTTP code 200 for the URL that threw a 503 error. If a 200 is returned for the URL, Magento returned the page without errors. The issue could have occurred after the interval that exceeds `first_byte_timeout` timeout configured by Fastly.
+
+When a 503 error occurs, Fastly returns the reason on the error and maintenance page. If you added code for a custom Error/Maintenance page, you can remove the custom code through the Magento Admin.
+
+1.	Log into the Magento Admin for the Production or Staging Admin.
+2.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+3.	In the right pane, expand **Full Page Cache**.
+4.	In the **Fastly Configuration** section, expand **Error/Maintenance Page** as the following figure shows.
+
+	![Custom Fastly error page]({{ site.baseurl }}common/images/cloud_fastly-503-page.png)
+5.	Click **Set HTML**.
+3.	Remove the custom code. You can save it in a text program to add back later.
+4.	When you're done, click **Upload** to send your updates to Fastly.
+5.	Click **Save Config** at the top of the page.
+6.	Reopen the URL that caused the 503 error. Fastly returns an error page with the reason. The following image is an example.
+
+	![Fastly error]({{ site.baseurl }}common/images/cloud_fastly-503-example.png)
+
+## Locate Service ID {#service-id}
+You can contact us for your Service ID for Staging and Production. For developers and advanced VCL users, you can also make a call using the Fastly variable `req.service_id`. This variable will return the Fastly `service_id`.
+
+For example, you can add this to custom logging to capture the value. If you are using a custom logging format in your VCL, you can set the call to your format:
+
+    log {"syslog "}req.service_id{" my_logging_endpoint_name :: "}
+
+You can then use the same vcl within different services.
 
 ## Test your live site {#curl-live}
 First, check your live site to verify the response headers with `curl`. The command goes through the Fastly extension to receive responses. If you don't receive the correct headers, then you should test the [origin servers directly](#cloud-test-stage). This command returns the values of the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers.
@@ -80,6 +121,8 @@ If you do not have DNS set up for a public host name, enter a command similar to
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
 ### Check response headers {#response-headers}
+For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services){:target="_blank"}.
+
 Check the returned response headers and values:
 
 *	Fastly-Magento-VCL-Uploaded should be present
@@ -126,13 +169,13 @@ The output for cURL commands can be lengthy. The following is a summary only:
 	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
 
 ## Determine if VCL is not uploaded {#vcl-uploaded}
-To determine if the VCL snippets are not uploaded, check the following:
+To determine if the default VCL snippets are not uploaded, check the following:
 
 * **Top level navigation does not work**: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
 * **Pages are not caching**: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it's due to a 3rd party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
 * **Geo-location/GeoIP does not work**: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets).
 
-## Resolve errors found by cURL
+## Resolve errors found by cURL {#curl}
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
 ### Fastly-Module-Enabled is not present {#no-module}
@@ -188,7 +231,7 @@ When you isolate the extension that is resetting Fastly headers, contact the ext
 ## Purges do not process {#purge}
 If you attempt to use a Fastly purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue. You may receive the error: "The purge request was not processed successfully."
 
-### Check Fasty credentials
+### Check Fasty credentials {#creds}
 Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.
 
 1. Log in to your local Magento Admin as an administrator.
@@ -196,12 +239,37 @@ Verify if you have the correct Fastly Service ID and API token in your environme
 3. Expand **Fastly Configuration** and verify the Fastly Service ID and API token for your environment.
 4. If you modify the values, click **Test Credentials**.
 
-### Check VCL snippets
+### Check VCL snippets {#snippets}
 If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 
 Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+
+## Activating a deactivated version {#activate}
+Using `curl` commands and APIs, you can activate, deactivate, and delete a version and service. If you have deactivated a service, you have deactivated the version without leaving any version active.
+
+1. List and find a version you want to activate. For a fully deactivated service, all of the versions will have a flag of `active: false`.
+
+    curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
+
+2. Use the following command to validate all snippets for the version you want to activate:
+
+  	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
+
+  Fastly should return: `"status": "ok"`.
+
+3. To activate a deactivated Version, enter the Service ID and Version in the following command:
+
+	   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
+
+If you want to activate an older version, you need to deactivate the currently active version:
+
+  curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/deactivate
+
+Then activate the version you want active:
+
+  curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
 
 #### Related topics
 * [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)

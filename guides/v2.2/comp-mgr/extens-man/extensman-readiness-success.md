@@ -1,15 +1,17 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 06_UseExtMan
 title: Readiness check success
 menu_title: Readiness check success
-menu_node: 
+menu_node:
 menu_order: 6
 level3_menu_node: level3child
 level3_subgroup: readiness
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-readiness-success.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Readiness check success

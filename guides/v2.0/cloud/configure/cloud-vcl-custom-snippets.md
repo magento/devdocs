@@ -8,6 +8,9 @@ menu_order: 7
 menu_node:
 version: 2.0
 github_link: cloud/configure/cloud-vcl-custom-snippets.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 [Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) and {{site.data.var.ece}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
@@ -18,6 +21,10 @@ You need the following information to create VCL snippets:
 
 * Fastly Service ID for Staging and Production to assign the snippets to a specific service or environment
 * Fastly API key used for the `FASTLY_API_TOKEN` in the commands
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, do not use the `magentomodule_` name. Also consider the priority of your custom snippets if they should override the default snippets.
+</div>
 
 For Fastly resources on creating VCL snippets, see:
 
@@ -57,6 +64,7 @@ What you should know about the `curl` command and JSON values:
 * `content`: The snippet of VCL code to run
 * `priority`: Determines the order VCL snippets call. Lower values run first, from 1 to 100. All Magento module uploaded snippets are 50. If you want an action to occur last or override Magento default VCL snippets, enter a higher number like 100. To have code occur immediately, enter a lower value like 5.
 * `dynamic`: Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"}
+* `active`: Indicates if the snippet or version is activated and currently in use. Returns `true` or `false`.
 
 All default VCL snippets have a priority of 50. Priorities will call VCL snippets starting from 1 to 100. Any VCL snippet at priority 5 will run immediately, best for blacklists, whitelists, and redirects. Priority 100 is best for overriding default VCL snippet code and values, best for extending timeouts. If you do not set a priority with your `curl` command, the default value set is 100.
 
@@ -65,16 +73,17 @@ To view an entire list of all VCL snippets by version, use the following command
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
 
-From the returned list, determine the currently active version. This is the version you will clone in the next section. 
+Look for the `active` key from the returned list. This is the version you will clone in the next section.
 
 For more information on this Fastly API, see this [get version command](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987){:target="_blank"}.
 
-### Clone the active VCL snippet {#clone}
+### Clone the active VCL version and all snippets {#clone}
 Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version with a new version number. After you clone the version, you can [add](#create-snippet) more VCL snippets or [modify](#update) current snippets.
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Current Active Version #}/clone
 
 For more information on this Fastly API, see this [clone command](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709){:target="_blank"}.
+
 <!-- They should clone then edit. Saving this info just in case.
 ### Get a service version number {#version-number}
 When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.
@@ -137,7 +146,7 @@ When you add the VCL snippet(s) to the version, Fastly creates and assigns it to
 
 	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
 
-Fastly should return: `"status": "ok"`. If you received an OK, activate the version for that service:
+Fastly should return: `"status": "ok"`. If you received an OK, activate the version for that service.
 
 Assuming no errors (if there are errors, fix them before proceeding), the last step is to activate the version with the following command. All VCL snippets associated with the version activate.
 

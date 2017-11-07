@@ -8,6 +8,12 @@ menu_node:
 menu_order: 5
 version: 2.0
 github_link: cloud/reference/cloud-composer.md
+redirect_from:
+  - /guides/v2.0/cloud/cloud-composer.html
+  - /guides/v2.1/cloud/cloud-composer.html
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in {{site.data.var.ece}} and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.

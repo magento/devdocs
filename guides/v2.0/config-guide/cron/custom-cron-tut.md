@@ -5,9 +5,13 @@ subgroup: 12_cron
 title: Configure a custom cron job and cron group (tutorial)
 menu_title: Configure a custom cron job and cron group (tutorial)
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/cron/custom-cron-tut.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
