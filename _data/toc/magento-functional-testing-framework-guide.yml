@@ -48,3 +48,7 @@ pages:
   - label: Troubleshooting
     url: magento-functional-testing-framework/troubleshooting.html
     versions: ["2.3"]
+
+  - label: Contribution Guidelines
+    url: magento-functional-testing-framework/contribution-guidelines.html
+    versions: ["2.3"]
