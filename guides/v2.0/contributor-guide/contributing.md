@@ -208,7 +208,7 @@ Refer to the following table for a description of each label. These labels are a
          <td>The Community Engineering Team has created internal ticket.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_needs_update.png" alt="the needs update button"/></td>
          <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</td>
       </tr>
       <tr>
