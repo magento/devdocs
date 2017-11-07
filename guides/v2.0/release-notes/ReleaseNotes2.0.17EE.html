@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2.0 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce 2.0.17 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/release-notes/release-notes.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.17EE.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/release-notes.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.17EE.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/release-notes.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.17EE.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/release-notes.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/ReleaseNotes2.0.17EE.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -256,7 +256,7 @@
     
     
 
-<li class="nav-level1 active " id="magento-2.0-release-notes">
+<li class="nav-level1  " id="magento-2.0-release-notes">
 
     
     <div class="toggle closed">&nbsp;</div>
@@ -1057,7 +1057,7 @@
 
           
 
-          <span property="name">Magento 2.0 Release Notes</span>
+          <span property="name">Magento Commerce 2.0.17 Release Notes</span>
 
         
 
@@ -1080,7 +1080,7 @@
 
 	
 
-	<h1 class="page-heading">Magento 2.0 Release Notes</h1>
+	<h1 class="page-heading">Magento Commerce 2.0.17 Release Notes</h1>
 
   
 
@@ -1088,80 +1088,373 @@
 </section>
 
 
-			<h2 id="magento-open-source-formerly-ce-commerce-formerly-ee-and-commerce-cloud-formally-ece-release-notes">Magento Open Source (formerly CE), Commerce (formerly EE), and Commerce Cloud (formally ECE) Release Notes</h2>
+			<p><em>Patch code and release notes were published on November 7, 2017.</em></p>
+
+<p>We are pleased to present Magento Commerce 2.0.17. This release includes almost 40 security fixes and enhancements to your Magento software.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<p>Magento 2.0.17 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:</p>
+
+<ul>
+  <li>
+    <p>ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues.</p>
+  </li>
+  <li>
+    <p>improvements to how the PayPal Express Checkout payment method processes virtual products.</p>
+  </li>
+  <li>
+    <p>multiple enhancements to product security. See <a href="https://magento.com/security/patches/magento-221-2110-and-2017-security-update">Magento Security Center</a> for more information.</p>
+  </li>
+</ul>
+
+<h2 id="security-enhancements">Security enhancements</h2>
+<p>Magento 2.0.17 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
+
+<p>See <a href="https://magento.com/security/patches/magento-221-2110-and-2017-security-update">Magento Security Center</a> for more information.</p>
+
+<h2 id="known-issue">Known issue</h2>
+
+<!--- 82986 -->
+<ul>
+  <li>Magento continues to display the <strong>Close</strong> button after you open an image in the Product page in fullscreen mode, then close it.</li>
+</ul>
+
+<h2 id="fixed-issues">Fixed issues</h2>
+
+<h3 id="cart">Cart</h3>
+<!--- 61066 -->
+<ul>
+  <li>Magento now permits a customer to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of a shopping cart  when the customer switched between store views on different websites.</li>
+</ul>
+
+<h3 id="catalog">Catalog</h3>
+
+<!--- 57145 -->
+<ul>
+  <li>You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. 
+<a href="https://github.com/magento/magento2/issues/3545">GitHub-3545</a>, <a href="https://github.com/magento/magento2/issues/5485">GitHub-5485</a>, <a href="https://github.com/magento/magento2/issues/4910">GitHub-4910</a></li>
+</ul>
+
+<!--- 59406 -->
+<ul>
+  <li>The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error: “Error 1114: Table is full”.</li>
+</ul>
+
+<!--- 58792 -->
+<ul>
+  <li>The <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained <code class="highlighter-rouge">store_id</code>, and during save operations, Magento resized images for  the default store only. </li>
+</ul>
+
+<!--- 61798 -->
+<ul>
+  <li>When you delete an image in the Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: <code class="highlighter-rouge">Cannot gather stats! Warning!stat(): stat failed for</code>).</li>
+</ul>
+
+<!--- 61143 -->
+<ul>
+  <li>You can now use the WYSIWYG editor to update product descriptions. Previously, when you used the editor to update descriptions, Magento did not apply your changes.</li>
+</ul>
+
+<!--- 63657 -->
+<ul>
+  <li>The product attribute <code class="highlighter-rouge">category_ids</code> can have only <strong>Global</strong> scope. Previously, you could change the scope value of <code class="highlighter-rouge">category_ids</code> to <strong>Store</strong>.</li>
+</ul>
+
+<!--- 66345 -->
+<ul>
+  <li>The <code class="highlighter-rouge">\Magento\CatalogInventory\Model\Stock\Status::getStockId()</code> call now returns the stock ID as expected. Previously, it returned the website ID.</li>
+</ul>
+
+<h3 id="configurable-products">Configurable products</h3>
+<!--- 62593 -->
+<ul>
+  <li>Sorting configurable products by price now works as expected when a simple product has a special price. <a href="https://github.com/magento/magento2/issues/4778">GitHub-4778</a></li>
+</ul>
+
+<!--- 61960 -->
+<ul>
+  <li>Magento now saves and filters configurable products by their specific options.</li>
+</ul>
+
+<!--- 61112 -->
+<ul>
+  <li>Magento now displays all images associated with a selected swatch before it displays other images associated with the configurable product. Previously, Magento did not display all images.   <a href="https://github.com/magento/magento2/issues/6195">GitHub-6195</a>,   <a href="https://github.com/magento/magento2/issues/4101">GitHub-4101</a></li>
+</ul>
+
+<!--- 57165 -->
+<ul>
+  <li>The <strong>Add Products Manually</strong> option now lets you add existing products as well as generate new variations.</li>
+</ul>
+
+<h3 id="framework">Framework</h3>
+<!--- 57816 -->
+<ul>
+  <li>Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. <a href="https://github.com/magento/magento2/issues/4232">GitHub-4232</a></li>
+</ul>
+
+<!--- 60778 -->
+<ul>
+  <li>Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.</li>
+</ul>
+
+<h3 id="general">General</h3>
+<!--- 63651 -->
+<ul>
+  <li>Magento now moves the <code class="highlighter-rouge">sequence_*</code> table to the correct database after implementing a split database.</li>
+</ul>
+
+<!--- 61564 -->
+<ul>
+  <li>When you edit a product list widget on a CMS page, Magento now shows previously set conditions. Previously, when you tried to edit a product list widget, the condition parameter was empty. <a href="https://github.com/magento/magento2/issues/6616">GitHub-6616</a></li>
+</ul>
+
+<!--- 60543 -->
+<ul>
+  <li>The <strong>Print Shipping Label</strong> link now displays on the product front end. Previously, the layout for the Shipping and Tracking block did not work properly.</li>
+</ul>
+
+<!--- 60822 -->
+<ul>
+  <li>Enabling  <strong>Admin &gt; Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; Merge CSS files</strong> no longer degrades product performance. Previously, enabling this setting slowed down both frontend and Admin processes. <a href="https://github.com/magento/magento2/issues/4321">GitHub-4321</a></li>
+</ul>
+
+<!--- 61060 -->
+<ul>
+  <li>Magento no longer generates incorrect URLs in the site map when the <strong>Use Secure URLs in Admin</strong> setting is set to <strong>Yes</strong>. <a href="https://github.com/magento/magento2/issues/8644">GitHub-8644</a> </li>
+</ul>
+
+<!--- 62915 -->
+<ul>
+  <li>Directive values can now be escaped with quotation marks. Previously, all characters after quotation marks were removed after a save, which resulted in the failure to save widget conditions. <a href="https://github.com/magento/magento2/issues/3860">GitHub-3860</a> </li>
+</ul>
+
+<!--- 58089 -->
+<ul>
+  <li>We’ve resolved multiple issues with inline translations in the checkout page.</li>
+</ul>
+
+<!--- 57009 -->
+<ul>
+  <li>Magento now correctly calculates a bundle product’s price even when it contains only one product in a required product option. Previously, if a bundle product contained only one product in an option, Magento did not update the price. <a href="https://github.com/magento/magento2/issues/4446">GitHub-4446</a></li>
+</ul>
+
+<!--- 61270 -->
+<ul>
+  <li>Cron errors no longer occur when reward points are avaiable and the Subscribe for Points Expiration Notifications setting is set.</li>
+</ul>
+
+<!--- 66634 -->
+<ul>
+  <li>We’ve fixed an issue with the PayPal ExpressCheckout functional test.</li>
+</ul>
+
+<!--- 63456 -->
+<ul>
+  <li>Magento no longer uses the wrong address template for shipping, invoice and credit memo emails when second website has a different template.</li>
+</ul>
+
+<!--- 58771 -->
+<ul>
+  <li>Inline translation is now available for button elements.</li>
+</ul>
+
+<!--- 64962 -->
+<ul>
+  <li>Log entries no longer show the <code class="highlighter-rouge">current_password</code> field, which should be hidden.</li>
+</ul>
+
+<!--- 56380 -->
+<ul>
+  <li>Backtrace information no longer appears on the frontend.</li>
+</ul>
+
+<h3 id="gift-card">Gift card</h3>
+<!--- 64676 -->
+<ul>
+  <li>Customers can no longer exceed a gift card balance by using the gift card twice.</li>
+</ul>
+
+<h3 id="gift-message">Gift message</h3>
+<!--- 62627 -->
+<ul>
+  <li>Gift message options are no longer available at the order level when you’ve disabled them in the Admin.</li>
+</ul>
+
+<h3 id="gift-wrap">Gift wrap</h3>
+<!--- 62629 -->
+<ul>
+  <li>Your gift wrapping selection now appears in the shopping cart regardless of whether you’ve selected a shipping method. Previously, Magento did not display your gift wrapping choice until you selected a shipping method.</li>
+</ul>
+
+<!--- 62624 -->
+<ul>
+  <li>Magento no longer displays the gift wrap tax when no gift wrap is selected.</li>
+</ul>
+
+<h3 id="importexport">Import/export</h3>
+<!--- 67343 -->
+<ul>
+  <li>We’ve improved the performance of importing up to 100,000 products from the Admin.</li>
+</ul>
+
+<!--- 63590 -->
+<ul>
+  <li>Magento now maintains super attribute ordering of configurable products with multiple super attributes after export or import. Previously, after import or export, the ordering of super attributes was not maintained. <a href="https://github.com/magento/magento2/issues/6079">GitHub-6079</a></li>
+</ul>
+
+<!--- 63033 -->
+<ul>
+  <li>We’ve fixed an issue where product URL keys (for SKUs) were not auto-generated as expected during import.</li>
+</ul>
+
+<!--- 58392 -->
+<ul>
+  <li>Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: <code class="highlighter-rouge">Invalid data for insert</code>. <a href="https://github.com/magento/magento2/issues/4921">GitHub-4921</a>, <a href="https://github.com/magento/magento2/issues/9469">GitHub-9469</a></li>
+</ul>
+
+<h3 id="order-management">Order management</h3>
+<!--- 63585 -->
+<ul>
+  <li>Magento now uses the address template from store view level of the placed order (similar to how order confirmation email works). Previously, Magento used the wrong address template for order e-mails.</li>
+</ul>
+
+<h3 id="shipping">Shipping</h3>
+<!--- 59249 -->
+<ul>
+  <li>The Free Shipping rule now works correctly with the table shipping method. Previously, Magento displayed an error at checkout (<strong>This shipping method is not available. To use this shipping method, please contact us.</strong>) instead of assigning a $0 shipping rate. <a href="https://github.com/magento/magento2/issues/6346">GitHub-6346</a></li>
+</ul>
+
+<h3 id="targetrule">TargetRule</h3>
+<!--- 63831 -->
+<ul>
+  <li>Magento now saves a new product rule when its SKU attribute is enabled for <strong>Use for Promo Rule Conditions</strong>. Previously, you could not save a new rule under these conditions. </li>
+</ul>
+
+<!--- 63666 -->
+<ul>
+  <li>You can now base a Related Product rule on a product attribute, such as color.</li>
+</ul>
+
+<h3 id="web-api-framework">Web API Framework</h3>
+
+<!--- 44060 -->
+<ul>
+  <li>The SOAP API no longer fails after you run <code class="highlighter-rouge">bin/magento setup:di:compile</code>.</li>
+</ul>
+
+<!--- 61908 -->
+<ul>
+  <li>You can now use REST to successfully update customer information without unintentionally deleting default billing and shipping address information.</li>
+</ul>
+
+<!--- 62587 -->
+<ul>
+  <li>You can now use REST to add a video to a product description. <a href="https://github.com/magento/magento2/issues/7153">GitHub-7153</a></li>
+</ul>
+
+<!---  -->
+
+<!--- INTERNAL ONLY 72053 72010 71171 71153  71116 68825 67201 67018 66634 66604 63297 62467 62152 61236 61228 61227 61226 61225 61222 61221 61215 61210 61206 -->
+
+<!--- NOT NEEDED 58771  -->
+
+<h2 id="system-requirements">System requirements</h2>
+<p>Our technology stack is built on PHP and MySQL. See
+<a href="/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>
 
-  <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Magento Open Source 2.0 Release Notes </h2><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.17CE.html" target="_blank">Version 2.0.17</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.16CE.html" target="_blank">Version 2.0.16</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.15CE.html" target="_blank">Version 2.0.15</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.14CE.html" target="_blank">Version 2.0.14</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.13CE.html" target="_blank">Version 2.0.13</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html" target="_blank">Version 2.0.12</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.11CE.html" target="_blank">Version 2.0.11</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html" target="_blank">Version 2.0.10</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9CE.html" target="_blank">Version 2.0.9</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8CE.html" target="_blank">Version 2.0.8</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html" target="_blank">Version 2.0.7</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6CE.html" target="_blank">Version 2.0.6</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html" target="_blank">Version 2.0.5</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4CE.html" target="_blank">Version 2.0.4</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html" target="_blank">Version 2.0.3</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.2.html" target="_blank">Version 2.0.2</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.1.html" target="_blank">Version 2.0.1</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.html" target="_blank">Version 2.0.0</a></li>
-</ul>
-</div></div>
+  <h2 id="install-the-magento-software">Install the Magento software</h2>
+  <p>See one of the following sections:</p>
 
-  <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Magento Commerce 2.0 Release Notes </h2><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.17EE.html" target="_blank">Version 2.0.17</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.16EE.html" target="_blank">Version 2.0.16</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.15EE.html" target="_blank">Version 2.0.15</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.14EE.html" target="_blank">Version 2.0.14</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.13EE.html" target="_blank">Version 2.0.13</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.12EE.html" target="_blank">Version 2.0.12</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.11EE.html" target="_blank">Version 2.0.11</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10EE.html" target="_blank">Version 2.0.10</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html" target="_blank">Version 2.0.9</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8EE.html" target="_blank">Version 2.0.8</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7EE.html" target="_blank">Version 2.0.7</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6EE.html" target="_blank">Version 2.0.6</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5EE.html" target="_blank">Version 2.0.5</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html" target="_blank">Version 2.0.4</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html" target="_blank">Version 2.0.3</a></li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.2.html" target="_blank">Version 2.0.2</a></li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.1.html" target="_blank">Version 2.0.1</a></li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.html" target="_blank">Version 2.0.0</a></li>
-</ul>
-</div></div>
+  <ul>
+    <li><a href="#install-rc-composer">Get Magento Commerce using Composer</a></li>
+    <li><a href="#get-zip">Get Magento Commerce using a compressed archive</a></li>
+    <li><a href="#install-complete">Complete the installation</a></li>
+  </ul>
 
-  <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Magento Commerce (Cloud) 2.0 Release Notes </h2><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.5.html" target="_blank">Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes</a></li>
-  <li><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html" target="_blank">magento-cloud-configuration release 101.4.x Release Notes</a></li>
-  <li><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud) version 2.1.4 and 2.0.12</a></li>
-  <li><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html" target="_blank">Magento Commerce (Cloud) version 2.1.3 and 2.0.11</a></li>
-  <li><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.2.html" target="_blank">Magento Commerce (Cloud) version 2.1.2 and 2.0.10</a></li>
-</ul>
-</div></div>
+  <h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
 
-  <h2 id="magento-open-source-formerly-ce-and-commerce-formerly-ee-release-notes">Magento Open Source (formerly CE) and Commerce (formerly EE) Release Notes</h2>
+  <p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre></div>  </div>
+
+  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
+
+  <p>For example, to install 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
+</code></pre></div>  </div>
+
+  <h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
 
   <div>
 
-    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Magento Open Source 2.1 Release Candidate Notes </h3><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.html" target="_blank">Open Source 2.1 Release Candidate 3 (RC3)</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2EE.html" target="_blank">Open Source 2.1 RC2)</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1EE.html" target="_blank">Open Source 2.1 RC1</a></li>
-</ul>
-</div></div>
+    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
-    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Magento Commerce 2.1 Release Candidate Notes </h3><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3CE.html" target="_blank">Commerce 2.1 RC3</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2CE.html" target="_blank">Commerce 2.1 RC2</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1CE.html" target="_blank">Commerce 2.1 RC1</a></li>
-</ul>
-</div></div>
+    <ul>
+      <li>Magento Commerce software only</li>
+      <li>Magento Commerce software with sample data (designed to help you learn Magento faster)</li>
+    </ul>
+
+    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+
+    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
+
+    <p>To get the Magento Commerce archive:</p>
+
+    <ol>
+      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
+      <li>Log in with your Magento user name and password.</li>
+      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+      <li>In the right pane, click <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
+      <li>
+        <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
+
+        <ul>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+        </ul>
+      </li>
+      <li>Transfer the installation package to your development system.</li>
+    </ol>
+
+    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
+
+    <p>After you get the Commerce software:</p>
+
+    <ol>
+      <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+      <li>
+        <p>Install the Magento software:</p>
+
+        <ul>
+          <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2 id="upgrade">Upgrade from an earlier version</h2>
+    <p>To upgrade to version 2.0.x from an earlier version:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Web Setup Wizard (System Upgrade)</a></li>
+      <li><a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
+    </ul>
+
+    <h2 id="migration-toolkits">Migration toolkits</h2>
+    <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+    <p>An updated version of this toolkit is typically available several days after the patch release.</p>
+
+    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+    <h2 id="credits">Credits</h2>
+
+    <p>Dear community members, thank you for your suggestions and bug reports.</p>
   </div>
 </div>
 
@@ -1174,14 +1467,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/release-notes.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.17EE.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/release-notes.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.17EE.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
