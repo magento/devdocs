@@ -211,12 +211,12 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>SCD_STRATEGY</code></td>
-<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html). This is available for 2.2.X.</p>
+<td><p>The variable allows you to customize the deployment strategy for static content deployment. The deploy script includes the -s flag with a default setting of `quick` for the static content deployment strategy. For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html). This is available for 2.2.X.</p>
 <p>Use these options only if you have more than one locale.</p>
 <ul>
-<li>Use the <code>standard</code> strategy to deploy all static view files for all packages.</li>
-<li>Use the <code>quick</code> strategy to minimize deployment time. This is the default command option if not specified.</li>
-<li>Use the <code>compact</code> strategy to conserve disk space on the server. If you use <code>compact</code>, the value for <code>STATIC_CONTENT_THREADS</code> is overriden with a value of 1. This strategy does not work with multi-threads.</li>
+<li><code>standard</code>: deploys all static view files for all packages.</li>
+<li><code>quick</code>: minimizes deployment time. This is the default command option if not specified.</li>
+<li><code>compact</code>: conserves disk space on the server. If you use <code>compact</code>, the value for <code>STATIC_CONTENT_THREADS</code> is overriden with a value of 1. This strategy does not work with multi-threads.</li>
 </ul>
 </td>
 <td>not set</td>
