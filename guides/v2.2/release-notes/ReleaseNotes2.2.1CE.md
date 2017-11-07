@@ -24,7 +24,7 @@ Look for the following highlights in this release:
 
 * Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
 
-* Improvements to how payment methods process virtual products. 
+* Improvements to how the PayPal Express Checkout payment method processes virtual products. 
 
 * Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
