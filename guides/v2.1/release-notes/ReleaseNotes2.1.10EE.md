@@ -212,7 +212,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 67402 -->* Scheduled updates now display the correct price for a product. Previously, Magento displayed the “as low as” price for a product in the scheduled update, but the preview option displayed the regular price. 
 
-<!--- 63704 -->* When you set up  Scheduled Update to **new** for a configurable product, Magneto removes all simple variations  from the configurable product as expected once the update takes effect. Previously, scheduled updates removed all simple variations from a configurable product.
+<!--- 63704 -->* When you set up  Scheduled Update to **new** for a configurable product, Magento removes all simple variations  from the configurable product as expected once the update takes effect. Previously, scheduled updates removed all simple variations from a configurable product.
 
 <!--- 64924 -->* The **Set Product as New** checkbox now works as expected. Previously, Magento did not display the product as new on the  frontend,  and the checked box reverted to unchecked when you saved your changes. 
 
