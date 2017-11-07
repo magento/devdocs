@@ -32,9 +32,9 @@ New Relic APM provides the following [key features](https://newrelic.com/php/mag
 * Use the App Map to view all application dependencies within your Magento site, extensions, and external services.
 * Follow Apdex scores to evaluate slow downs and bottlenecks. Create alerts to watch for these slumps to identify and notify you when an issues is occuring. For example, site slow downs due to a flash sale or web event.
 
-You can have New Relic active on up to 3 environments:
+You can have New Relic active on up to 3 instances. These instances (or hosts) include a local system, active Integration environments, Staging, and Production. We recommend the following:
 
-* For Pro: Integration `master`, Staging, and Production
+* For Pro: Integration `master`, Staging, and Production. We add New Relic for you to Staging and Production environments. 
 * For Starter: Any 3 environments. We recommend `master` Production, a Staging environment, and another of your choice.
 
 ## New Relic APM credentials {#credentials}
