@@ -953,7 +953,6 @@
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
       <li><a href="#configurable-products" id="markdown-toc-configurable-products">Configurable products</a></li>
       <li><a href="#general" id="markdown-toc-general">General</a></li>
-      <li><a href="#framework" id="markdown-toc-framework">Framework</a></li>
       <li><a href="#google" id="markdown-toc-google">Google</a></li>
       <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
       <li><a href="#order-management" id="markdown-toc-order-management">Order management</a></li>
@@ -1039,7 +1038,10 @@
   <li>The <code class="highlighter-rouge">collectRates()</code> method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.</li>
 </ul>
 
-<p>68812 You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking <strong>Not me</strong>. Previously, in environments where <strong>Enable Persistence</strong> was set to <strong>Yes</strong>, you could log in as a guest and potentially complete an order that another customer had initiated.</p>
+<!--- 68812 -->
+<ul>
+  <li>You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking <strong>Not me</strong>. Previously, in environments where <strong>Enable Persistence</strong> was set to <strong>Yes</strong>, you could log in as a guest and potentially complete an order that another customer had initiated.</li>
+</ul>
 
 <h3 id="catalog">Catalog</h3>
 
@@ -1100,8 +1102,6 @@
   <li>Magento now displays tier prices of simple or virtual products on the configurable products page. <a href="https://github.com/magento/magento2/issues/3759">GitHub-3759</a></li>
 </ul>
 
-<!--- 71637 -->
-
 <!--- 71136 -->
 <ul>
   <li>You can now save a value for an attribute that is shared between related, upsell, or cross-sell products that have different attribute sets. Previously, when a configurable product had another configurable product with a different attribute set as a related product, cross sell, or upsell and both attribute sets share a multiselect attribute, the value for that multiselect attribute could not be updated for the product.</li>
@@ -1138,10 +1138,6 @@
   <li>Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website.</li>
 </ul>
 
-<!--- 75222 -->
-
-<h3 id="framework">Framework</h3>
-
 <h3 id="google">Google</h3>
 <!--- 70892 -->
 <ul>
@@ -1161,7 +1157,9 @@
 </ul>
 
 <!--- 59125 -->
-<p>You can now receive shipping quotes from either the Admin panel or the storefront.</p>
+<ul>
+  <li>You can now receive shipping quotes from either the Admin panel or the storefront.</li>
+</ul>
 
 <h3 id="payment-methods">Payment methods</h3>
 <!--- 69089 -->
@@ -1471,9 +1469,6 @@
     <td>10231</td>
      <td><a href="https://github.com/mrodespin" target="_blank">Marc Rodriguez</a></td>
   </tr>
-  
-  &lt;/tr&gt;
-
   </table>
 
 <h2 id="system-requirements">System requirements</h2>
