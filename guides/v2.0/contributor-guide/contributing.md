@@ -168,7 +168,7 @@ Refer to the following table for a description of each label. These labels are a
          <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/gitHub_G3_Passed.png" alt="G3 Passed"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_G3_Passed" alt="G3 Passed"/></td>
          <td>The Community Engineering Team has validated and confirmed the issue.</td>
       </tr>
       <tr>
@@ -188,19 +188,19 @@ Refer to the following table for a description of each label. These labels are a
          <td>The Community Engineering Team reproduced the issue on latest 2.3.x release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_20x.png" alt="Fixed in 2.0.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_20x.png" alt="Fixed in 2.0.x"/></td>
          <td>The issues has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with upcoming patch release.</td>
       </tr>      
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_21x.png" alt="Fixed in 2.1.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_21x.png" alt="Fixed in 2.1.x"/></td>
          <td>The issues has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with upcoming patch release.</td>
       </tr>      
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_22x.png" alt="Fixed in 2.2.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_22x.png" alt="Fixed in 2.2.x"/></td>
          <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_23x.png" alt="Fixed in 2.3.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_23x.png" alt="Fixed in 2.3.x"/></td>
          <td>The issues has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
