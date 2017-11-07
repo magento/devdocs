@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.10CE.md
 {:toc}
 
 
-*Patch code and release notes were published on November 7,  2017*
+*Patch code and release notes were published on November 7,  2017.*
 
 
 
@@ -41,14 +41,6 @@ Magento 2.1.10 contains almost 40 security fixes and functional enhancements.  L
 Magento 2.1.10 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
-
-## Known issues
-
-<!--- 82877 -->* 
-
-
-<!--- 82731 -->* 
-
 
 
 ## Fixed issues
@@ -91,6 +83,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 69560 -->* Magento no longer displays a price for out-of-stock configurable products. Previously, Magento displayed a price of zero (0) when a configurable product was out-of-stock.
 
 <!--- 61315 -->* Magento no longer pre-fills the **Set Product as New From Date** field with the date inherited from the **Special Price From** date. [GitHub-4387](https://github.com/magento/magento2/issues/4387)
+
+<!--- 75222 -->*  We've fixed an issue prices weren't saved correctly when  **Catalog Price Scope** was set to **Website**.
+
 
 
 ### Configurable products
@@ -240,7 +235,7 @@ The following table identifies contributions from our community members. This ta
 
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/10164" target="_blank">10164</a></td>
-    <td>GitHub-3872, 1980, 4660, 4876, 8264</td>
+    <td>3872, 1980, 4660, 4876, 8264</td>
      <td><a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a></td>
   </tr>
 

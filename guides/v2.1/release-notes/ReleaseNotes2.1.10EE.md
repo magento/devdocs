@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.10EE.md
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on November 7,  2017*
+*Patch code and release notes were published on November 7,  2017.*
 
 We are pleased to present Magento Commerce  2.1.10. This release includes important enhancements to your Magento software.
 
@@ -40,12 +40,7 @@ Magento 2.1.10 includes multiple security enhancements. Although this release in
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
-## Known issues
 
-<!--- 82877 -->* 
-
-
-<!--- 82731 -->* 
 
 ## Fixed issues
 
@@ -97,7 +92,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 81968 -->*  Magento now displays product alerts on the Product edit page of the Admin. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11448*. [GitHub-10007](https://github.com/magento/magento2/issues/10007)
 
-
+<!--- 75222 -->*  We've fixed an issue prices weren't saved correctly when  **Catalog Price Scope** was set to **Website**.
 
 ### Configurable products
 
@@ -311,7 +306,7 @@ The following table identifies contributions from our community members. This ta
 
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/10164" target="_blank">10164</a></td>
-    <td>GitHub-3872, 1980, 4660, 4876, 8264</td>
+    <td>3872, 1980, 4660, 4876, 8264</td>
      <td><a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a></td>
   </tr>
 
