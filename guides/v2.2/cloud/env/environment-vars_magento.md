@@ -208,7 +208,20 @@ The following variables are available during the deploy process of build and dep
 <td><code>STATIC_CONTENT_SYMLINK</code></td>
 <td>Generates symlinks for static content. By default, symlinks are always generated unless you disable it using this environment variable. This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time. This is available in all versions.</td>
 <td>enabled</td>
-</tr></tbody>
+</tr>
+<tr>
+<td><code>SCD_STRATEGY</code></td>
+<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html). This is available for 2.2.X.</p>
+<p>Use these options only if you have more than one locale.</p>
+<ul>
+<li>Use the <code>standard</code> strategy to deploy all static view files for all packages.</li>
+<li>Use the <code>quick</code> strategy to minimize deployment time. This is the default command option if not specified.</li>
+<li>Use the <code>compact</code> strategy to conserve disk space on the server. If you use <code>compact</code>, the value for <code>STATIC_CONTENT_THREADS</code> is overriden with a value of 1. This strategy does not work with multi-threads.</li>
+</ul>
+</td>
+<td>not set</td>
+</tr>
+</tbody>
 </table>
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
