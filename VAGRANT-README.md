@@ -1,6 +1,6 @@
 # Deploy devdocs locally
 
-You can deploy devdocs site locally using this Vagrant project. Vagrant enables you to run the software needed to build the devdocs project in a self-contained virtual machine (VM). Our Vagrant project clones the devdocs repository in the VM and shares the `devdocs` directory with your system in the root of this project. You can then run Jekyll from the VM in `/vagrant/devdocs` project root.
+You can deploy devdocs site locally using this Vagrant project. Vagrant enables you to run the software needed to build the devdocs project in a self-contained virtual machine (VM). Our Vagrant project clones the devdocs repository in the VM and shares the `devdocs` directory with your system in the root of this project. You can then run Jekyll from the VM in `/vagrant` project root.
 
 ## What is in the project
 
@@ -35,12 +35,7 @@ To enable symlinks to work, Windows users must run both the UNIX shell (for exam
 
 ## Create the VM and environment 
 
-1. Using a terminal, change to `vagrant` on your host (that is, the directory in which this README is located).
- Example: `cd ~/vagrant/`
-2. Enter `vagrant up`
-3. Wait for the project to initialize, clone the repository, and install all gems.
-
-    This command takes some time to complete the first time you run it.
+Enter `vagrant up` and wait for the project to initialize, clone the repository, and install all gems. This command takes some time to complete the first time you run it.
 
 ## Connect to the VM and run Jekyll
 
@@ -48,8 +43,13 @@ Enter `vagrant ssh` to connect to the VM using SSH.
 
 Use the following commands to run Jekyll:
     
-    cd /vagrant/devdocs
-    bin/jekyll serve --host=0.0.0.0
+    cd /vagrant
+    bin/jekyll serve --host=0.0.0.0 --incremental
+
+If you run Vagrant on Windows, add option `--force_polling`:
+
+    bin/jekyll serve --host=0.0.0.0 --incremental --force_polling
+
 
 After Jekyll has started, go to `http://127.0.0.1:4000` in a web browser on your host.
 
@@ -57,7 +57,8 @@ For additional command options, see [Basic Usage](https://jekyllrb.com/docs/usag
 
 ## Regenerate the site
 
-If you made any changes in devdocs project, you can stop Jekyll and run it again to regenerate the `_site` and preview them in HTML. Automatic regeneration doesn't work in the VM. 
+If you run Jekyll with `--incremental` option (and `--force_polling` on Windows) and made any changes in devdocs project, changed files would be regenerated automatically. On Windows it can occur after 5-10 seconds.
+In some cases you shoud stop Jekyll and run it again to regenerate the `_site` and preview them in HTML.
 
 ## Useful CLI scripts and commands
 

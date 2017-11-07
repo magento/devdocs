@@ -27,14 +27,10 @@ gem install $GEMS
 # Clean up
 sudo apt-get autoremove -y
 
-# Clone the 'devdocs' repo from GitHub in a shared directory
-cd /vagrant/
-git clone -c core.symlinks=true https://github.com/magento/devdocs.git
-
 # Note: To avoid entering your user name and password every time you push, you can either use the SSH protocol
 
 # Install gems and dependencies from Gemfile.
-cd /vagrant/devdocs
+cd /vagrant
 bundle install
 
 # Run Jekyll to generate the devdocs site on localhost:40000

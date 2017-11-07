@@ -32,9 +32,9 @@ ignore
 /jk.bat
 *.bat
 *.sh
-!/vagrant/bootstrap.sh
+!/bootstrap.sh
 Rakefile
-/vagrant/.vagrant/
+/.vagrant/
 /vendor/
 /Gemfile.lock
 /node_modules/
