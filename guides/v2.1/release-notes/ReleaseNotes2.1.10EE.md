@@ -173,7 +173,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ### Order management
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
-<!--- 59125 --> You can now receive shipping quotes from either the Admin panel or the storefront. 
+<!--- 59125 -->* You can now receive shipping quotes from either the Admin panel or the storefront. 
 
 
 ### Payment methods
@@ -258,6 +258,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+
 
 <table>
   <tr>
@@ -502,19 +503,11 @@ The following table identifies contributions from our community members. This ta
   <td><a href="https://github.com/magento/magento2/pull/11469" target="_blank">11469</a></td>
     <td>10231</td>
      <td><a href="https://github.com/mrodespin" target="_blank">Marc Rodriguez</a></td>
-  </tr>
-  
-  </tr>
-
-  </table>
-
-
-
+ </tr>
+ </table>
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
-
+Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ee_install_21.md %}
 

@@ -62,7 +62,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 58914 -->* The `collectRates()` method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.
 
-68812 You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated.
+<!--- 68812 -->* You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated.
 
 
 
@@ -98,8 +98,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 57007 -->* Magento now displays tier prices of simple or virtual products on the configurable products page. [GitHub-3759](https://github.com/magento/magento2/issues/3759)
 
-<!--- 71637 -->  
-
 <!--- 71136 -->* You can now save a value for an attribute that is shared between related, upsell, or cross-sell products that have different attribute sets. Previously, when a configurable product had another configurable product with a different attribute set as a related product, cross sell, or upsell and both attribute sets share a multiselect attribute, the value for that multiselect attribute could not be updated for the product.
 
 ### General
@@ -119,10 +117,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website. 
 
-<!--- 75222 -->
-
-
-### Framework
 
 
 
@@ -136,7 +130,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ### Order management
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
-<!--- 59125 --> You can now receive shipping quotes from either the Admin panel or the storefront. 
+<!--- 59125 -->* You can now receive shipping quotes from either the Admin panel or the storefront. 
 
 
 ### Payment methods
@@ -187,6 +181,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+
 
 <table>
   <tr>
@@ -433,9 +428,6 @@ The following table identifies contributions from our community members. This ta
     <td>10231</td>
      <td><a href="https://github.com/mrodespin" target="_blank">Marc Rodriguez</a></td>
   </tr>
-  
-  </tr>
-
   </table>
 
 
