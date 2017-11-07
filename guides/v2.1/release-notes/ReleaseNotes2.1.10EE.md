@@ -30,7 +30,7 @@ Magento 2.1.10 contains over 50 security fixes and functional enhancements. Look
 
 * Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
 
-* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in cacheing for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).  
+* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in caching for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).  
 
 * Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4). 
 
@@ -92,7 +92,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 81968 -->*  Magento now displays product alerts on the Product edit page of the Admin. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11448*. [GitHub-10007](https://github.com/magento/magento2/issues/10007)
 
-<!--- 75222 -->*  We've fixed an issue prices weren't saved correctly when  **Catalog Price Scope** was set to **Website**.
+<!--- 75222 -->*  We've fixed an issue where prices weren't saved correctly when  **Catalog Price Scope** was set to **Website**.
 
 ### Configurable products
 
@@ -120,7 +120,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 58526 -->* You can now successfully reset a customer password when the **Website Restrictions** setting is enabled. Previously, Magento redirected you to `customer/account/login/`, from which you could not change a password. 
 
 
-<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites cannot edit CNS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
+<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites cannot edit CMS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
 
 
 <!--- 71701 -->* In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609) 
