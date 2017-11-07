@@ -22,7 +22,7 @@ Magento 2.0.17 contains almost 40 security fixes and enhancements.  Look for the
 
 * ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
 
-* improvements to how payment methods process virtual products. 
+* improvements to how the PayPal Express Checkout payment method processes virtual products. 
 
 * multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
 
