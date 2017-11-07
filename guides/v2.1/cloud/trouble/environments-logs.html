@@ -1873,8 +1873,12 @@
 <h2 id="build-logs">Build logs</h2>
 <p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
+<p>For 2.1.9 and later and 2.2.X, we include a <code class="highlighter-rouge">/app/var/log/cloud.log</code> file that compiles both build and deploy actions into one file.</p>
+
 <h2 id="log-deploy-log">Deploy logs</h2>
 <p>You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.</p>
+
+<p>For 2.1.9 and later and 2.2.X, we include a <code class="highlighter-rouge">/app/var/log/cloud.log</code> file that compiles both build and deploy actions into one file.</p>
 
 <p>Logs from the deploy hook are located on the server in the following locations:</p>
 
