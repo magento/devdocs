@@ -65,7 +65,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 
 ### Configurable products
-<!--- 72582 -->* Magento now longer displays the inappropriate  product price when a configurable product has two price options. Previously, Magento displayed the  out-of-stock price of a configurable product when both an out-of-stock and in-stock price were configured. 
+<!--- 72582 -->* Magento no longer displays the inappropriate  product price when a configurable product has two price options. Previously, Magento displayed the  out-of-stock price of a configurable product when both an out-of-stock and in-stock price were configured. 
 
 <!--- 72370 -->* Configurable products no longer show up on category page when all children are disabled by a mass action, and the **display out-of-stock products** setting is off.
 
