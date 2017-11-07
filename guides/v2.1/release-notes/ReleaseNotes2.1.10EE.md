@@ -504,7 +504,6 @@ The following table identifies contributions from our community members. This ta
      <td><a href="https://github.com/mrodespin" target="_blank">Marc Rodriguez</a></td>
   </tr>
   
-  </tr>
 
   </table>
 
