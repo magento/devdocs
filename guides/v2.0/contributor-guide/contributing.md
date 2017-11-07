@@ -26,7 +26,7 @@ The following topics are included in the Guide:
 
 * <a href="#report">Report an issue</a>
 
-* <a href="#labels">Labels applied by the Magento team</a>
+* <a href="#labels">Labels applied by the Community Engineering Team</a>
 
 
 <h2 id="contribute">Contribute to Magento 2 code</h2>
@@ -37,9 +37,9 @@ This contribution model has contributors maintaining their own copy of the forke
 Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.
 
 
-The Magento 2 development team reviews all issues and contributions submitted by the community of developers in a first-in, first-out basis. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks, the issue is closed.
+The Community Engineering Team reviews all issues and contributions submitted by the community developers. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks (14 days), the issue is closed.
 
-Often when the Magento 2 team works on reviewing the suggested changes, we will add a label to the issue to indicate to our internal team certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
+Often when the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
@@ -70,21 +70,21 @@ Submit feature requests or enhancement suggestions to the new <a href="https://c
 <h2 id="fork">Fork a repository</h2>
 To fork a repository on Github, do the following:
 
-1. Create or log in to your free account on GitHub. <!-- necessarily free?-->
+1. Create or log in to your account on GitHub.
 2. Navigate to the <a href="https://github.com/magento/magento2" target="_blank">Magento 2 repository</a>.
 3. Click **Fork** at the top right: <br><img src="{{ site.baseurl }}common/images/fork.png" alt="fork a repository">
 
 4. Clone the repo into your development environment and start playing.
 
 ### Update the fork with the latest changes {#sync}
-As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is NUMBER commits behind magento:2.0.` displays, it means your fork must be updated.
+As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is NUMBER commits behind magento:2.2-develop.` displays, it means your fork must be updated.
 
 There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
 
 There is also a possibility to use the GitHub interface to do that. This is referred to as a *reverse pull request*. This method has the downside of inserting unnecessary information into fork commit history. On your fork GitHub page, click **New pull request**. You should see the following message:
 
   There isn’t anything to compare.
-  magento:2.0 is up to date with all commits from <your fork>:2.0. Try switching the base for your comparison.
+  magento:2.2-develop is up to date with all commits from <your fork>:2.2-develop. Try switching the base for your comparison.
 
 Click the base link and then click **Create pull request**. Provide a descriptive name for your pull request in the provided field.
 
@@ -98,11 +98,11 @@ To create a pull request do the following:
 
 1. Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
 2. In your repository, click **Pull requests** on the right, and then click **New pull request**: <br><img src="{{ site.baseurl }}common/images/pr.png" target="_blank">
-3. Ensure that you are creating a PR to the `magento:develop` branch. We accept PRs to this branch only.
+3. Ensure that you are creating a PR to the one of following  branches: `magento:2.3-develop`, `magento:2.2-develop` or `magento:2.1-develop` branch. We accept PRs to these branches only.
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 
-After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with the others. Your PR undergoes automated testing, and if it passes, the core team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
+After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with others. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
 
 <h2 id="report">Report an issue</h2>
 If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
@@ -137,26 +137,6 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
    </thead>
    <tbody>
-      
-      
-     
-      <tr>
-        <th colspan="2">Domains Impacted</th>
-      </tr>
-      
-      
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_DOC.png" alt="the Doc button"/></td>
-         <td>Affects Documentation domain.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_PROD.png" alt="the PROD button"/></td>
-         <td>Affects the Product team (mostly feature requests or business logic change).</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_TECH.png" alt="the Tech button"/></td>
-         <td>Affects Architect Group (mostly to make decisions around technology changes).</td>
-      </tr>
       <tr>
         <th colspan="2">Pull Request Resolution Status</th>
       </tr>
@@ -166,26 +146,78 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_reject.png" alt="the Reject button"/></td>
-         <td>The pull request has been rejected and will not be merged into mainline code.  Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
+         <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
+         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
       </tr>
       <tr>
         <th colspan="2">Issue Resolution Status</th>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_bug.png" height="18" width="77" alt="the bug report button"/></td>
-         <td>The Magento Team has confirmed that this issue contains the minimum required information to reproduce.</td>
+         <td><img src="{{ site.baseurl }}common/images/github_G1_Passed.png" alt="G1 Passed"/></td>
+         <td>Automatic verification of the issue desciprion successfully passed. Minimum required infomation is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
+      </tr>  
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_G1_Failed.png" alt="G1 Failed"/></td>
+         <td>Automatic verification of the issue desciprion failed. Minimum required infomation is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
+      </tr> 
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
+         <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/gitHub_G3_Passed.png" alt="G3 Passed"/></td>
+         <td>The Community Engineering Team has validated and confirmed the issue.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x"/></td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.0.x release.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x"/></td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.1.x release.</td>
+      </tr>      
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_22x.png" alt="Reproduced on 2.2.x"/></td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.2.x release.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_23x.png" alt="Reproduced on 2.3.x"/></td>
+         <td>The Community Engineering Team reproduced the issue on latest 2.3.x release.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_20x.png" alt="Fixed in 2.0.x"/></td>
+         <td>The issues has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with upcoming patch release.</td>
+      </tr>      
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_21x.png" alt="Fixed in 2.1.x"/></td>
+         <td>The issues has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with upcoming patch release.</td>
+      </tr>      
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_22x.png" alt="Fixed in 2.2.x"/></td>
+         <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with upcoming patch release.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_23x.png" alt="Fixed in 2.3.x"/></td>
+         <td>The issues has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the acknowledged button"/></td>
-         <td>The Magento Team has validated the issue and an internal ticket has been created.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_inProgress.png" alt="the in progress button"/></td>
-         <td>The internal ticket is currently in progress, fix is scheduled to be delivered.</td>
+         <td>The Community Engineering Team has created internal ticket.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
-         <td>The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request.</td>
+         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</td>
+      </tr>
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce"/></td>
+         <td>The Community Engineering Team can not reproduced the issue following steps to reproduce.</td>
+      </tr>  
+      <tr>
+         <td><img src="{{ site.baseurl }}common/images/github_non-issue.png" alt="Non Issue"/></td>
+         <td>A described behavior in the issue description is valid and shouldn't be changed in Magento code base.</td>
       </tr>
    </tbody>
 </table>

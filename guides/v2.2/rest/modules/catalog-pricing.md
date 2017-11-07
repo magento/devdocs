@@ -1,16 +1,13 @@
 ---
 layout: default
 group: rest
-subgroup: Modules
 title: Manage prices for multiple products
-menu_title: Manage prices for multiple products
-menu_order: 51
-level3_menu_node: level3child
-level3_subgroup: catalog
 version: 2.2
-github_link: rest/catalog-pricing.md
+github_link: rest/modules/catalog-pricing.md
 functional_areas:
   - Integration
+redirect_from: /guides/v2.2/rest/catalog-pricing.html
+
 ---
 
 Magento provides REST endpoints that allow you to update multiple special prices, tier prices, base prices, or cost values with a single call.
