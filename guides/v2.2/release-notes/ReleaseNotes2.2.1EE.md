@@ -52,7 +52,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 71893 -->* If you do not specify `—base_url` during installation, all URLs now use the host and port of the current request to create URLs. 
 
-<!--- 75452 -->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from a unsuccessful commit, and logs an exception. Previously, Magenta threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
+<!--- 75452 -->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from a unsuccessful commit, and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
 
 <!--- 80201 -->*  We’ve resolved a fatal error in the repository generator. Both `InputException` and `NoSuchEntityException` now require a Phrase object as their first constructor argument.  [GitHub-10601](https://github.com/magento/magento2/issues/10601)
 
