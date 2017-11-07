@@ -502,7 +502,7 @@ The following table identifies contributions from our community members. This ta
   <td><a href="https://github.com/magento/magento2/pull/11469" target="_blank">11469</a></td>
     <td>10231</td>
      <td><a href="https://github.com/mrodespin" target="_blank">Marc Rodriguez</a></td>
-  </tr>
+
   
 
   </table>
