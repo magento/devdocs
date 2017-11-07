@@ -121,10 +121,24 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after build and deploy completes.</p></td>
 <td>GENERATED_CODE_SYMLINK = disabled</td>
 </tr>
+<tr>
+<td><code>SCD_STRATEGY</code></td>
+<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html). This is available for 2.2.X.</p>
+<p>Use these options only if you have more than one locale.</p>
+<ul>
+<li>Use the <code>standard</code> strategy to deploy all static view files for all packages.</li>
+<li>Use the <code>quick</code> strategy to minimize deployment time. This is the default command option if not specified.</li>
+<li>Use the <code>compact</code> strategy to conserve disk space on the server. If you use <code>compact</code>, the value for <code>STATIC_CONTENT_THREADS</code> is overriden with a value of 1. This strategy does not work with multi-threads.</li>
+</ul>
+</td>
+<td>not set<br />
+Examples:<br /><code>scd_strategy = standard</code><br /><code>scd_strategy = quick</code><br /><code>scd_strategy = compact</code></td>
+</tr>
 </tbody>
 </table>
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html). -->
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+
 
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
@@ -169,6 +183,18 @@ The following variables are available during the deploy process of build and dep
 <p>This is available in all versions.</p></td>
 <td>1 for Starter environments and Pro Integration environments<br />
 3 for Pro Staging and Production environments</td>
+</tr>
+<tr>
+<td><code>SCD_STRATEGY</code></td>
+<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html). This is available for 2.2.X.</p>
+<p>Use these options only if you have more than one locale.</p>
+<ul>
+<li>Use the <code>standard</code> strategy to deploy all static view files for all packages.</li>
+<li>Use the <code>quick</code> strategy to minimize deployment time. This is the default command option if not specified.</li>
+<li>Use the <code>compact</code> strategy to conserve disk space on the server. If you use <code>compact</code>, the value for <code>STATIC_CONTENT_THREADS</code> is overriden with a value of 1. This strategy does not work with multi-threads.</li>
+</ul>
+</td>
+<td>not set</td>
 </tr>
 <tr>
 <td><code>DO_DEPLOY_STATIC_CONTENT</code></td>
