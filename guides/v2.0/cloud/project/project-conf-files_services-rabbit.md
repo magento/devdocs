@@ -34,7 +34,7 @@ To configure the relationships for the environment variable, set a relationship 
 
 {% highlight yaml %}
 relationships:
-    mq: "rabbitmq:rabbitmq"
+    rabbitmq: "rabbitmq:rabbitmq"
 {% endhighlight %}
 
 Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html).
