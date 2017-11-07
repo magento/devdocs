@@ -145,7 +145,7 @@ Refer to the following table for a description of each label. These labels are a
          <td>The pull request has been accepted and will be merged into mainline code.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_reject.png" alt="the Reject button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_rejected.png" alt="the Reject button"/></td>
          <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
       </tr>
       <tr>
