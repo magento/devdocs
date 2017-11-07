@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento_BundleStaging module | Magento 2 Developer Documentation</title>
+	<title>Magento_Signifyd module | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/mrg/ee/BundleStaging.html">
+	<link rel="canonical" href="//guides/v2.2/mrg/ce/Signifyd.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/mrg/ee/BundleStaging.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/mrg/ce/Signifyd.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/mrg/ee/BundleStaging.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/mrg/ce/Signifyd.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/mrg/ee/BundleStaging.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/mrg/ce/Signifyd.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -279,7 +279,7 @@
         
         
         
-        <li class="nav-level2  " id="signifyd">
+        <li class="nav-level2 active " id="signifyd">
             
             
         
@@ -314,7 +314,7 @@
         
         
         
-        <li class="nav-level2 active " id="bundlestaging">
+        <li class="nav-level2  " id="bundlestaging">
             
             
         
@@ -1035,7 +1035,7 @@
 
           
 
-          <span property="name">Magento_BundleStaging module</span>
+          <span property="name">Magento_Signifyd module</span>
 
         
 
@@ -1055,12 +1055,10 @@
 
 
 	
-		<span class="ee-only">Magento Commerce only</span>
-	
 
 	
 
-	<h1 class="page-heading">Magento_BundleStaging module</h1>
+	<h1 class="page-heading">Magento_Signifyd module</h1>
 
   
 
@@ -1068,33 +1066,102 @@
 </section>
 
 
-			<p>The Magento_BundleStaging <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is a part of the staging functionality in Magento Commerce. This new functionality enables you to stage a <span term-uuid="fbcfce51-68e2-482f-84d5-f28d84404cff" class="glossary-term" data-toggle="popover">bundle product</span> in the Schedule Update form of the product.</p>
+			<p>The Magento_Signifyd module provides integration with the <a href="https://www.signifyd.com/">Signifyd</a> fraud protection system. The integration is based on the Signifyd API; see the <a href="https://www.signifyd.com/docs/api/#/introduction/">Signifyd API docs</a> for technical details.</p>
 
-<h2 id="implementation-details">Implementation details</h2>
+<p>The module implementation allows you to:</p>
 
-<p>The Magento_BundleStaging module extends the functionality of the Magento_Bundle module. When you schedule an update for a bundle product, all bundle item options for that concrete product are available and can be edited. All the bundle product attributes can be staged.</p>
+<ul>
+  <li>create a <a href="https://www.signifyd.com/docs/api/#/reference/cases">Signifyd case</a> for a placed order</li>
+  <li>automatically receive a <a href="https://www.signifyd.com/docs/api/#/reference/guarantees">Signifyd guarantee</a> for a created case</li>
+  <li>automatically cancel a guarantee when the order is canceled</li>
+</ul>
 
-<h3 id="installation-details">Installation details</h3>
+<h2 id="extensibility">Extensibility</h2>
 
-<p>The Magento_BundleStaging module makes irreversible changes in the database during installation. You cannot uninstall this module.</p>
+<p>The Magento_Signifyd module does not have own Events, Layouts, and UI Components as extension points.</p>
 
-<h2 id="dependencies">Dependencies</h2>
+<h3 id="public-api">Public API</h3>
 
-<p>You can find the list of modules that have dependencies on the Magento_BundleStaging module in the <code class="highlighter-rouge">require</code> section of the <code class="highlighter-rouge">composer.json</code> file. The file is located in the root directory of the module.</p>
+<p>The following interfaces (marked with the <code class="highlighter-rouge">@api</code> annotation) extend the Signifyd module:</p>
 
-<h2 id="extension-points">Extension points</h2>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\Data\CaseInterface</code> (common abstraction for the Signifyd case entity):</p>
 
-<p><span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> points enable extension developers to interact with the Magento_BundleStaging module. You can interact with the Magento_BundleStaging module using the Magento extension mechanism, see <a href="http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html">Magento plug-ins</a>.</p>
+<ul>
+  <li>set or retrieve all case data fields</li>
+</ul>
 
-<p><a href="http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html">The Magento dependency injection mechanism</a> enables you to override the functionality of the Magento_BundleStaging module.</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\CaseManagementInterface</code>:</p>
 
-<h3 id="ui-components">UI components</h3>
+<ul>
+  <li>create a new case entity</li>
+  <li>retrieve the existing case entity for a specified order</li>
+</ul>
 
-<p>You can extend Bundle updates product listing using  the grid <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> located in the <code class="highlighter-rouge">Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml</code>. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html">UI Listing/Grid Component</a>.</p>
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\CaseCreationServiceInterface</code>:</p>
+
+<ul>
+  <li>create a case entity for a specified order</li>
+  <li>send a request through the Signifyd API to create a new case</li>
+</ul>
+
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\CaseRepositoryInterface</code>:</p>
+
+<ul>
+  <li>describe methods to work with a case entity</li>
+</ul>
+
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\GuaranteeCreationServiceInterface</code>:</p>
+
+<ul>
+  <li>send a request through the Signifyd API to create a new case guarantee</li>
+</ul>
+
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\GuaranteeCancelingServiceInterface</code>:</p>
+<ul>
+  <li>send a request through the Signifyd API to cancel the Signifyd case guarantee</li>
+</ul>
+
+<p><code class="highlighter-rouge">Magento\Signifyd\Api\Data\CaseSearchResultsInterface</code>:</p>
+
+<ul>
+  <li>might be used by <code class="highlighter-rouge">Magento\Signifyd\Api\CaseRepositoryInterface</code> to retrieve a list of case entities by specific conditions</li>
+</ul>
+
+<p>For information about a public API in Magento 2, see <a href="http://devdocs.magento.com/guides/v2.1/extension-dev-guide/api-concepts.html">Public interfaces &amp; APIs</a>.</p>
 
 <h2 id="additional-information">Additional information</h2>
 
-<p>You can track <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html">backward incompatible changes made in a Magento Commerce mainline after the Magento 2.0 release</a>.</p>
+<h3 id="webhooks">Webhooks</h3>
+
+<p>To update the entity data for a case or guarantee, the Magento_Signifyd module uses the <a href="https://www.signifyd.com/docs/api/#/reference/webhooks">Signifyd Webhooks</a> mechanism.</p>
+
+<p>The newly created case entities have the <code class="highlighter-rouge">PENDING</code> status for a case and a guarantee. After receiving a Webhook, both statuses are changed to the appropriate Signifyd statuses.</p>
+
+<h3 id="debug-mode">Debug mode</h3>
+
+<p>The Debug Mode may be enabled in the module configuration. This logs the communication data between the Magento_Signifyd module and the Signifyd service in this file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var/log/debug.log
+</code></pre></div></div>
+
+<h3 id="backward-incompatible-changes">Backward incompatible changes</h3>
+
+<p>The Magento_Signifyd module does not introduce backward incompatible changes.</p>
+
+<p>You can track <a href="http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html">backward incompatible changes in patch releases</a>.</p>
+
+<h3 id="processing-supplementary-payment-information">Processing supplementary payment information</h3>
+
+<p>To improve the accuracy of Signifyd’s transaction estimation, you may perform these operations (links lead to the Magento Developer Documentation Portal):</p>
+
+<ul>
+  <li>
+    <p><a href="/guides/v2.2/payments-integrations/signifyd/signifyd.html#provide-avscvv-response-codes">Provide custom AVS/CVV mapping</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/payments-integrations/signifyd/signifyd.html#retrieve-payment-method-for-a-placed-order">Retrieve payment method for a placed order</a></p>
+  </li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1105,14 +1172,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/mrg/ee/BundleStaging.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/mrg/ce/Signifyd.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/mrg/ee/BundleStaging.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/mrg/ce/Signifyd.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
