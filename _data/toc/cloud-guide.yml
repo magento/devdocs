@@ -84,7 +84,7 @@ pages:
             - label: Import Magento Commerce into Magento Commerce (Cloud)
               url: cloud/access-acct/first-time-setup_import-import.html
 
-    - label: Configure Magento Commerce (Cloud)
+    - label: Configure your store
       url: cloud/configure/configuration-overview.html
       children:
         - label: Set up PayPal
