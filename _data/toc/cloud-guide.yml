@@ -72,6 +72,9 @@ pages:
         - label: Optional: Install sample data
           url: cloud/howtos/sample-data.html
 
+        - label: Configure a PHP debugger, Xdebug
+          url: cloud/howtos/debug.html
+
         - label: Import an existing Magento project
           children:
 
@@ -299,12 +302,3 @@ pages:
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
-
-    - label: How To
-      children:
-
-
-
-
-        - label: Run a PHP debugger
-          url: cloud/howtos/debug.html
