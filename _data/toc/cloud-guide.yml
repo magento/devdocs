@@ -69,7 +69,7 @@ pages:
         - label: First time deployment
           url: cloud/access-acct/first-time-deploy.html
 
-        - label: Optional: Install sample data
+        - label: Optional - Install sample data
           url: cloud/howtos/sample-data.html
 
         - label: Configure a PHP debugger, Xdebug
