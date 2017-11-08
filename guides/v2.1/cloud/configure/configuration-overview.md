@@ -6,7 +6,7 @@ title: Configure your store
 menu_title: Configure your store
 menu_order: 1
 menu_node: parent
-version: 2.0
+version: 2.1
 github_link: cloud/configure/configuration-overview.md
 functional_areas:
   - Cloud
@@ -27,7 +27,7 @@ The following options, tools, and features can be set up and configured in your 
 * [Install]({{ page.baseurl }}cloud/howtos/install-components.html) and [upgrade]({{ page.baseurl }}cloud/howtos/update-components.html) extensions
 * [Install a theme]({{ page.baseurl }}cloud/howtos/custom-theme.html) for your site and store
 
-## Configure your deploy: build hooks, services, and routes {#deploy}
+## Configure your deployment: build hooks, services, and routes {#deploy}
 After fully configuring your store, you should configure your deployment. This includes specific files to manage builds, deployments, services, and routes:
 
 * [.magento.app.yaml]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
@@ -51,3 +51,6 @@ We also provide integrations with:
 * [New Relic APM]({{ page.baseurl }}cloud/project/new-relic.html) configuration for application and performance analysis in 3 instances or environments
 * [Fastly]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html) configuration for CDN and caching
 * [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html) for managing your Git branches and code
+
+## Configuration management {#config-mgmt}
+We strongly recommend configuring settings, services, and integrations then using the `magento-cloud:scd-dump` command to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).

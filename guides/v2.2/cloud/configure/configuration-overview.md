@@ -6,7 +6,7 @@ title: Configure your store
 menu_title: Configure your store
 menu_order: 1
 menu_node: parent
-version: 2.0
+version: 2.2
 github_link: cloud/configure/configuration-overview.md
 functional_areas:
   - Cloud
@@ -22,6 +22,7 @@ The following options, tools, and features can be set up and configured in your 
 
 * [Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) for caching and CDN in Staging and Production environments
 * [PayPal On-Boarding tool]({{ page.baseurl }}cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
+* [Magento B2B module](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-b2b.html) for Business to Business features, Pro plan only
 * [cron jobs]({{ page.baseurl }}cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
 * [Multiple websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
 * [Install]({{ page.baseurl }}cloud/howtos/install-components.html) and [upgrade]({{ page.baseurl }}cloud/howtos/update-components.html) extensions
@@ -51,3 +52,6 @@ We also provide integrations with:
 * [New Relic APM]({{ page.baseurl }}cloud/project/new-relic.html) configuration for application and performance analysis in 3 instances or environments
 * [Fastly]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html) configuration for CDN and caching
 * [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html) for managing your Git branches and code
+
+## Configuration management {#config-mgmt}
+We strongly recommend configuring settings, services, and integrations then using the `magento-cloud:scd-dump` command to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).

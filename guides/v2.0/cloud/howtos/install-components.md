@@ -37,7 +37,8 @@ To install a extension, you must:
 3.	[Push](#cloud-howto-comp-push) the changes to your environment.
 4.	[Verify](#cloud-howto-comp-verify) the extension installed properly.
 
-## Create a branch to work in {#getstarted}
+## Create a branch for adding the extension {#getstarted}
+We recommend using a branch for adding, configuring, and testing your extension.
 
 {% include cloud/cli-get-started.md %}
 
