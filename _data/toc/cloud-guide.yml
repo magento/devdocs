@@ -72,7 +72,7 @@ pages:
         - label: Optional - Install sample data
           url: cloud/howtos/sample-data.html
 
-        - label: Configure a PHP debugger, Xdebug
+        - label: Optional - Configure a PHP debugger, Xdebug
           url: cloud/howtos/debug.html
 
         - label: Import an existing Magento project
@@ -130,10 +130,10 @@ pages:
 
     - label: Configure your deployment
       children:
-        - label: .magento.app.yaml
+        - label: Configure .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
 
-        - label: Configure services
+        - label: Configure services - services.yaml
           url: cloud/project/project-conf-files_services.html
 
         - label: Set up MySQL service
@@ -153,7 +153,7 @@ pages:
         - label: Set up RabbitMQ service
           url: cloud/project/project-conf-files_services-rabbit.html
 
-        - label: Configure routes
+        - label: Configure routes - routes.yaml
           url: cloud/project/project-conf-files_routes.html
 
         - label: Caching

@@ -33,17 +33,7 @@ After fully configuring your store, you should configure your deployment. This i
 
 * [.magento.app.yaml]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
 * [routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) configures how Magento processes an incoming URL for your Integration environment
-
-  * [Caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html) configuration options for caches set in routes.yaml
-  * [Redirect]({{ page.baseurl }}cloud/project/project-routes-more-redir.html) configuration and rules for managing redirections set in routes.yaml
-  * [Server side includes]({{ page.baseurl }}cloud/project/project-routes-more-ssi.html) configured set in routes.yaml
 * [services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html) configures the services you use in your stores and sites including name, version, and allocated disk space
-
-  * [MySQL service]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml
-  * [Redis service]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html) configuration for a backend caching solution set in services.yaml
-  * [Solr service]({{ page.baseurl }}cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
-  * [Elasticsearch service]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.ee}} 2.1 and later set in services.yaml
-  * [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html) configuration for a messaging broker set in services.yaml
 
 ## Configure integrations {#integrations}
 We also provide integrations with:
@@ -54,4 +44,4 @@ We also provide integrations with:
 * [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html) for managing your Git branches and code
 
 ## Configuration management {#config-mgmt}
-We strongly recommend configuring settings, services, and integrations then using the `magento-cloud:scd-dump` command to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
+We strongly recommend configuring settings, services, and integrations then using specific commands to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html).
