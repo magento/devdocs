@@ -56,7 +56,7 @@ If you installed EE prior to installing B2B, run the following commands after Co
     bin/magento setup:static-content:deploy
 </div>
 
-After installing Magento, you'll need to [configure the B2B module]({{page.baseurl}}comp-mgr/install-extensions/b2b-installation.html#post-installation).
+After installing Magento, you'll need to [configure the B2B module]({{page.baseurl}}comp-mgr/install-extensions/b2b-installation.html#configure-b2b).
 
 {% include install/file-system-perms-before_22.md %}
 
