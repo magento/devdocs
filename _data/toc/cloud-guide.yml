@@ -126,6 +126,7 @@ pages:
           url: cloud/trouble/trouble_fastly.html
 
     - label: Configure your deployment
+      url: cloud/deploy/configure-deploy.html
       children:
         - label: Configure .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html

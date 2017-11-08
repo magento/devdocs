@@ -68,9 +68,9 @@ To update `composer.json`:
 3.	Wait for project dependencies to update.
 4. Enter the following commands in the order shown to commit your changes, including `composer.lock`:
 
-    git add -A
-    git commit -m "<message>"
-    git push origin <environment ID>
+        git add -A
+        git commit -m "<message>"
+        git push origin <environment ID>
 
 If there are errors, see [extension deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
 
@@ -85,7 +85,7 @@ To verify the extension installed properly, you can check its functionality in t
 1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
 2.	Enter the following command to display a list of enabled modules:
 
-    php bin/magento module:status
+        php bin/magento module:status
 3.	Verify the extension is listed.
 
 The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
