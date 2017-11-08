@@ -107,11 +107,8 @@ pages:
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
 
-        - label: Install extensions
+        - label: Install and update extensions
           url: cloud/howtos/install-components.html
-
-        - label: Update extensions
-          url: cloud/howtos/update-components.html
 
         - label: Install a theme
           url: cloud/howtos/custom-theme.html

@@ -2,52 +2,56 @@
 layout: default
 group: cloud
 subgroup: How To
-title: Install extensions
-menu_title: Install extensions
+title: Install and update extensions
+menu_title: Install and update extensions
 menu_order: 41
 level3_menu_node: level3child
 level3_subgroup: update-extensions
 menu_node:
 version: 2.0
 github_link: cloud/howtos/install-components.md
+redirect_from:
+  - /guides/v2.0/cloud/howtos/update-components.html
+  - /guides/v2.1/cloud/howtos/update-components.html
+  - /guides/v2.2/cloud/howtos/update-components.html
 functional_areas:
   - Cloud
   - Configuration
 ---
 
-This topic discusses how to install *extensions*, which can be any of the following:
+When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, then test in Staging before finally pushing and using in Production.
 
-*	Modules (extend Magento capabilities)
-*	Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
-*	Language packages (localize the storefront and Admin)
+Extensions include the following:
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This topic discusses how to install extensions you purchased from Magento Marketplace. You can use the same procedure to install <em>any</em> extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name. To find it, open the extension's <code>composer.json</code> file and note the values for <code>"name"</code> and <code>"version"</code>.</p>
-</div>
+*	Modules to extend Magento capabilities, with options through Magento Marketplace and directly through company sites
+*	Themes to change the look and feel of your storefronts
+*	Language packages to localize the storefront and Admin
 
-<div class="bs-callout bs-callout-warning">
-    <p>You must check in <code>composer.lock</code> to your environment; otherwise, the extension won't load in {{site.data.var.ece}}. That's because we run <code>composer install</code> (which uses <code>composer.lock</code>) and not <code>composer update</code> when we build and deploy the environment.</p>
-</div>
+[Extension installation](#install) uses the following steps:
 
-To install a extension, you must:
+1.	Purchase an extension or module from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another site.
+2.	[Create a branch](#getstarted) to work with the files.
+1.	[Get the extension's Composer name](#compose) and version from your purchase history.
+2.	In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#update) file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.
+4.	[Verify](#verify) the extension installed properly.
 
-1.	Obtain the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or elsewhere.
-1.	[Get the extension's Composer name](#cloud-howto-comp-composer) and version from your purchase history.
-2.	In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#cloud-howto-comp-json) file with the name and version of the extension.
-3.	[Push](#cloud-howto-comp-push) the changes to your environment.
-4.	[Verify](#cloud-howto-comp-verify) the extension installed properly.
+These instructions walk through extension installation purchased from Magento Marketplace. You can use the same procedure to install any extension with the extension's Composer name. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
-## Create a branch for adding the extension {#getstarted}
-We recommend using a branch for adding, configuring, and testing your extension.
+We also include instructions for [updating extensions](#update).
+
+## Create a branch for adding or updating the extension {#getstarted}
+We recommend using a branch for adding or updating, configuring, and testing your extension.
 
 {% include cloud/cli-get-started.md %}
 
-## Step 1: Get the extension's Composer name and version {#cloud-howto-comp-composer}
+## Install an extension {#install}
+
+### Step 1: Get the extension's Composer name and version {#compose}
 If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
 
 {% include cloud/composer-name.md %}
 
-## Step 2: Update Magento's `composer.json` {#cloud-howto-comp-json}
+### Step 2: Update Magento's `composer.json` {#update}
 
 To update `composer.json`:
 
@@ -64,24 +68,51 @@ To update `composer.json`:
 3.	Wait for project dependencies to update.
 4. Enter the following commands in the order shown to commit your changes, including `composer.lock`:
 
-  	git add -A
-  	git commit -m "<message>"
-  	git push origin <environment ID>
+    git add -A
+    git commit -m "<message>"
+    git push origin <environment ID>
 
 If there are errors, see [extension deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
 
-## Step 4: Verify the extension {#cloud-howto-comp-verify}
+<div class="bs-callout bs-callout-warning">
+When installing and adding the extension the extension, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
+</div>
+
+### Step 3: Verify the extension {#verify}
 
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
 2.	Enter the following command to display a list of enabled modules:
 
-  	php bin/magento module:status
-
+    php bin/magento module:status
 3.	Verify the extension is listed.
 
 The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
+
+## Update an extension {#update}
+You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
+
+*	Know the extension's Composer name and version
+*	Know the extension is compatible with your project and {{site.data.var.ece}} version. In particular, check the required PHP version.
+
+To update an extension:
+
+1.	If you haven't done so already, change to your environment root directory.
+3.	Open `composer.json` in a text editor.
+4.	Locate your extension and update the version.
+6.	Save your changes to `composer.json` and exit the text editor.
+7.	Use the following command to update project dependencies:
+
+		composer update
+8.	Enter the following commands in the order to commit the changes and deploy the project, including `composer.lock`:
+
+		git add -A
+		git commit -m "<message>"
+		git push origin <environment ID>
+9.	Wait for the project to deploy and verify in your environment.
+
+If there are errors, see [Component deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
 
 #### Related topics
 *	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
