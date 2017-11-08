@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Gateway Command | Magento 2 Developer Documentation</title>
+	<title>Add vault to module dependencies | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/payments-integrations/payment-gateway/gateway-command.html">
+	<link rel="canonical" href="//guides/v2.2/payments-integrations/vault/module-configuration.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/payment-gateway/gateway-command.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/vault/module-configuration.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/payment-gateway/gateway-command.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/vault/module-configuration.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/payments-integrations/payment-gateway/gateway-command.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/payments-integrations/vault/module-configuration.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -279,7 +279,7 @@
         
         
         
-        <li class="nav-level2 active " id="gateway-command">
+        <li class="nav-level2  " id="gateway-command">
             
             
         
@@ -503,7 +503,7 @@
         
         
         
-        <li class="nav-level2  " id="add-vault-to-module-dependencies">
+        <li class="nav-level2 active " id="add-vault-to-module-dependencies">
             
             
         
@@ -678,7 +678,7 @@
 
           
 
-          <span property="name">Gateway Command</span>
+          <span property="name">Add vault to module dependencies</span>
 
         
 
@@ -701,7 +701,7 @@
 
 	
 
-	<h1 class="page-heading">Gateway Command</h1>
+	<h1 class="page-heading">Add vault to module dependencies</h1>
 
   
 
@@ -709,54 +709,38 @@
 </section>
 
 
-			<p>Gateway Command is a component of the Magento <span term-uuid="5b963536-8f03-45c4-963b-688021f4eea7" class="glossary-term" data-toggle="popover">payment gateway</span> that takes the <a href="/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.html#terms">payload</a> required for a particular payment provider and sends, receives, and processes the provider’s response. 
-For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added.</p>
+			<p>You need to add dependencies on the Magento_Vault module in the payment method’s <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">module.xml</code> files.</p>
 
-<h2 id="interface">Interface</h2>
-<p>Basic interface for a gateway command is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/CommandInterface.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\CommandInterface</code></a>. It implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html">Command design pattern</a>.</p>
+<h2 id="example-adding-vault-module-dependencies-for-the-braintree-payment-method">Example: adding Vault module dependencies for the Braintree payment method</h2>
 
-<h2 id="basic-implementation">Basic implementation</h2>
+<p><code class="highlighter-rouge">app/code/Magento/Braintree/composer.json</code>:</p>
 
-<p>The <code class="highlighter-rouge">\Magento\Payment\Gateway\Command\GatewayCommand</code> class is the default <code class="highlighter-rouge">CommandInterface</code> implementation. It allows performing most of the operations implemented in the <a href="/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.html#terms">Magento sales management</a>.</p>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/module-braintree"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"magento/module-vault"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1.*"</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<h2 id="adding-gateway-commands">Adding gateway commands</h2>
-<p>For each particular integration with a payment provider, gateway commands are added using virtual types in <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependency injection (DI)</a> configuration.</p>
+<p><code class="highlighter-rouge">app/code/Magento/Braintree/etc/module.xml</code>:</p>
 
-<p>In the following example the <code class="highlighter-rouge">BraintreeAuthorizeCommand</code> gateway command is added. The command implements the “authorize” operation for the Braintree payment provider (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L131"><code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml#131</code></a>):</p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Braintree"</span> <span class="na">setup_version=</span><span class="s">"2.0.0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;sequence&gt;</span>
+            ...
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Vault"</span><span class="nt">/&gt;</span>
+            ...
+        <span class="nt">&lt;/sequence&gt;</span>
+    <span class="nt">&lt;/module&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizeCommand"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\GatewayCommand"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestBuilder"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeAuthorizeRequest<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"transferFactory"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\TransferFactory<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"client"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Http\Client\TransactionSale<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"handler"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>BraintreeAuthorizationHandler<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"validator"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\ResponseValidator<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
+<h2 id="whats-next">What’s next</h2>
 
-<p>(The code sample is from Magento Open Source v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)</p>
-
-<p>A gateway command must be configured with the following arguments:</p>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">requestBuilder</code>: <a href="/guides/v2.2/payments-integrations/payment-gateway/request-builder.html">request builder</a>, builds an array of provider-specific arguments using the order information.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">transferFactory</code>: <a href="/guides/v2.2/payments-integrations/payment-gateway/gateway-client.html#transfer_factory">transfer factory</a>, creates transfer object from request data, which will be used by Gateway Client to process requests. For details see <a href="/guides/v2.2/payments-integrations/payment-gateway/gateway-client.html#transfer_factory">Gateway Client #Transfer Factory</a></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">client</code>: <a href="/guides/v2.2/payments-integrations/payment-gateway/gateway-client.html">gateway client</a>, takes the provider-specific arguments and performs a low-level call to the provider.</p>
-  </li>
-</ul>
-
-<p>Optional arguments :</p>
-
-<ul>
-  <li><code class="highlighter-rouge">handler</code>: <a href="/guides/v2.2/payments-integrations/payment-gateway/response-handler.html">response handler</a>, changes the order and payment status depending on the payment provider response.</li>
-  <li><code class="highlighter-rouge">validator</code>: <a href="/guides/v2.2/payments-integrations/payment-gateway/response-validator.html">response validator</a>, validates the provider response.</li>
-</ul>
-
+<p><a href="/guides/v2.2/payments-integrations/vault/vault-payment-configuration.html">Configure vault general parameters</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -767,14 +751,14 @@ For each operation (authorization, capture and so on) of a certain payment provi
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/payments-integrations/payment-gateway/gateway-command.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/payments-integrations/vault/module-configuration.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/payments-integrations/payment-gateway/gateway-command.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/payments-integrations/vault/module-configuration.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
