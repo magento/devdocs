@@ -32,7 +32,7 @@ Magento 2.1.10 contains almost 40 security fixes and functional enhancements.  L
 
 * Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
 
-* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in cacheing for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).  
+* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in caching for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).  
 
 * Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4). 
 
@@ -58,7 +58,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 69856 -->* Magento now displays the correct error message when you enter an invalid discount code during checkout. [GitHub-7230](https://github.com/magento/magento2/issues/7230)
 
-<!--- 69797 -->* Credit card information now persists as expected after a customer enters a promotion code during checkout. Previously, after a entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
+<!--- 69797 -->* Credit card information now persists as expected after a customer enters a promotion code during checkout. Previously, after a customer entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
 
 <!--- 58914 -->* The `collectRates()` method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.
 
@@ -84,7 +84,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 61315 -->* Magento no longer pre-fills the **Set Product as New From Date** field with the date inherited from the **Special Price From** date. [GitHub-4387](https://github.com/magento/magento2/issues/4387)
 
-<!--- 75222 -->*  We've fixed an issue prices weren't saved correctly when  **Catalog Price Scope** was set to **Website**.
+<!--- 75222 -->*  We've fixed an issue where prices weren't saved correctly when  **Catalog Price Scope** was set to **Website**.
 
 
 
@@ -111,7 +111,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 69574 -->* Vimeo videos now work when HTTPS is enabled. [GitHub-7311](https://github.com/magento/magento2/issues/7311) 
 
 
-<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites can not edit CNS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
+<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites can not edit CMS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
 
 <!--- 60003 -->* You can now use the Admin to create a return after you’ve added a new return attribute. Previously, the new attribute was not visible, and the return could not be submitted. Magento also displayed this error: `Uncaught Error: cannot call methods on modal prior to initialization; attempted to call method openModal`.
 
