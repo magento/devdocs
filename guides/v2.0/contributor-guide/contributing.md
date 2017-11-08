@@ -149,7 +149,7 @@ Refer to the following table for a description of each label. These labels are a
          <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_needs_update.png" alt="the needs update button"/></td>
          <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
       </tr>
       <tr>
@@ -168,7 +168,7 @@ Refer to the following table for a description of each label. These labels are a
          <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_G3_Passed" alt="G3 Passed"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_G3_Passed.png" alt="G3 Passed"/></td>
          <td>The Community Engineering Team has validated and confirmed the issue.</td>
       </tr>
       <tr>
