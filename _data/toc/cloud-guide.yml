@@ -45,7 +45,7 @@ pages:
         - label: Blackfire Profiler
           url: cloud/project/project-integrate-blackfire.html
 
-    - label: First-time local environment setup
+    - label: Local environment setup
       url: cloud/access-acct/first-time-setup.html
       children:
         - label: Prepare for local environment setup
@@ -69,6 +69,12 @@ pages:
         - label: First time deployment
           url: cloud/access-acct/first-time-deploy.html
 
+        - label: Optional - Install sample data
+          url: cloud/howtos/sample-data.html
+
+        - label: Optional - Configure a PHP debugger, Xdebug
+          url: cloud/howtos/debug.html
+
         - label: Import an existing Magento project
           children:
 
@@ -84,7 +90,7 @@ pages:
             - label: Import Magento Commerce into Magento Commerce (Cloud)
               url: cloud/access-acct/first-time-setup_import-import.html
 
-    - label: Configure Magento Commerce (Cloud)
+    - label: Configure your store
       url: cloud/configure/configuration-overview.html
       children:
         - label: Set up PayPal
@@ -101,10 +107,13 @@ pages:
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
 
-        - label: .magento.app.yaml
-          url: cloud/project/project-conf-files_magento-app.html
+        - label: Install and update extensions
+          url: cloud/howtos/install-components.html
 
-    - label: Fastly
+        - label: Install a theme
+          url: cloud/howtos/custom-theme.html
+
+    - label: Configure Fastly
       url: cloud/basic-information/cloud-fastly.html
       children:
         - label: Set up Fastly
@@ -113,9 +122,18 @@ pages:
         - label: Custom Fastly VCL snippets
           url: cloud/configure/cloud-vcl-custom-snippets.html
 
-    - label: Configure services
-      url: cloud/project/project-conf-files_services.html
+        - label: Fastly troubleshooting
+          url: cloud/trouble/trouble_fastly.html
+
+    - label: Configure your deployment
+      url: cloud/deploy/configure-deploy.html
       children:
+        - label: Configure .magento.app.yaml
+          url: cloud/project/project-conf-files_magento-app.html
+
+        - label: Configure services - services.yaml
+          url: cloud/project/project-conf-files_services.html
+
         - label: Set up MySQL service
           url: cloud/project/project-conf-files_services-mysql.html
 
@@ -128,13 +146,14 @@ pages:
 
         - label: Set up Elasticsearch service
           url: cloud/project/project-conf-files_services-elastic.html
+          versions: ["2.1","2.2","2.3"]
 
         - label: Set up RabbitMQ service
           url: cloud/project/project-conf-files_services-rabbit.html
 
-    - label: Configure routes
-      url: cloud/project/project-conf-files_routes.html
-      children:
+        - label: Configure routes - routes.yaml
+          url: cloud/project/project-conf-files_routes.html
+
         - label: Caching
           url: cloud/project/project-routes-more-cache.html
 
@@ -143,6 +162,13 @@ pages:
 
         - label: Server side includes
           url: cloud/project/project-routes-more-ssi.html
+
+    - label: Configuration management for store settings
+      url: cloud/live/sens-data-over.html
+      versions: ["2.1","2.2","2.3"]
+      children:
+        - label: Example of managing system-specific settings
+          url: cloud/live/sens-data-initial.html
 
     - label: Manage your project
       url: cloud/project/projects.html
@@ -173,22 +199,14 @@ pages:
         - label: Magento Cloud CLI
           url: cloud/reference/cli-ref-topic.html
 
-        - label: Configuration management
-          url: cloud/live/sens-data-over.html
+        - label: Overview of environment variables
+          url: cloud/env/environment-vars_over.html
 
-        - label: Example of managing system-specific settings
-          url: cloud/live/sens-data-initial.html
+        - label: Magento application environment variables
+          url: cloud/env/environment-vars_magento.html
 
-        - label: Environment variables
-          children:
-            - label: Overview of environment variables
-              url: cloud/env/environment-vars_over.html
-
-            - label: Magento application environment variables
-              url: cloud/env/environment-vars_magento.html
-
-            - label: Magento Commerce (Cloud) environment variables
-              url: cloud/env/environment-vars_cloud.html
+        - label: Magento Commerce (Cloud) environment variables
+          url: cloud/env/environment-vars_cloud.html
 
         - label: Configuration reference
           children:
@@ -268,9 +286,6 @@ pages:
         - label: Component deployment failure
           url: cloud/trouble/trouble_comp-deploy-fail.html
 
-        - label: Fastly troubleshooting
-          url: cloud/trouble/trouble_fastly.html
-
         - label: Redis troubleshooting
           url: cloud/trouble/redis-troubleshooting.html
 
@@ -285,25 +300,3 @@ pages:
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
-
-    - label: How To
-      children:
-        - label: Install and update extensions
-          children:
-            - label: Install extensions
-              url: cloud/howtos/install-components.html
-
-            - label: Update extensions
-              url: cloud/howtos/update-components.html
-
-        - label: Merge and delete an environment (tutorial)
-          url: cloud/howtos/environment-tutorial-env-merge.html
-
-        - label: Install a theme
-          url: cloud/howtos/custom-theme.html
-
-        - label: Install optional sample data
-          url: cloud/howtos/sample-data.html
-
-        - label: Run a PHP debugger
-          url: cloud/howtos/debug.html
