@@ -37,7 +37,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 After completing the installation, you must follow the [post-installation steps](#post-installation).
 </div>
 
-## Post-installation
+## Post-installation {#configure-b2b}
 After installing the {{site.data.var.b2b}} extension, follow these instructions to launch {{site.data.var.b2b}}.
 
 ### Start message consumers
