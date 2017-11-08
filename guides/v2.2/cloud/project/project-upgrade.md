@@ -227,7 +227,7 @@ We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-
 Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.
 
 ### Additional extension upgrades {#moreextensions}
-We strongly recommend upgrading your Fastly module to v1.2.28 or later for {{site.data.var.ece}} 2.2.
+We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.2.
 
 ## Troubleshoot your upgrade {#upgrade-verify-tshoot}
 In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:
