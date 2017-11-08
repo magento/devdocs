@@ -97,18 +97,16 @@ You can do this using [SSH tunneling]({{page.baseurl}}cloud/env/environments-sta
 2. Login to the Magento Cloud CLI and project:
 
         magento-cloud login
-2.  Use `magento-cloud tunnel:open` to open a tunnel to the app. For information on this command, add `--help`.
-2.  Use the following command to pretty-print your relationships. This lets you see which username and password to use, and you can verify the remote service's port.
+2. Use `magento-cloud tunnel:open` to open a tunnel to the app. For information on this command, add `--help`.
+2. Use the following command to pretty-print your relationships. This lets you see which username and password to use, and you can verify the remote service's port.
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-3.  Use the `ssh -L` command to enable local port forwarding to RabbitMQ as follows:
+3. Use the `ssh -L` command to enable local port forwarding to RabbitMQ as follows:
 
         ssh -L <port number>:mq.internal:<port number> <project ID>-<branch ID>@ssh.na.magentosite.cloud
 
-  For this example:
-
-        ssh -L 5672:mq.internal:5672 <project ID>-<branch ID>@ssh.na.magentosite.cloud
-4.  While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber` using the user name and password you found in the relationship variable. For this example, you would use `localhost:5672`.
+  For this example: `ssh -L 5672:mq.internal:5672 <project ID>-<branch ID>@ssh.na.magentosite.cloud`
+4. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber` using the user name and password you found in the relationship variable. For this example, you would use `localhost:5672`.
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 To connect to RabbitMQ running in an application, you should install a client like [amqp-utils](https://github.com/dougbarth/amqp-utils){:target="_blank"} as a project dependency in your `.magento.app.yaml` file.
