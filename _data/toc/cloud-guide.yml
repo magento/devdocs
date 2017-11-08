@@ -36,9 +36,6 @@ pages:
         - label: GitHub
           url: cloud/project/project-integrate-github.html
 
-        - label: Fastly
-          url: cloud/basic-information/cloud-fastly.html
-
         - label: SSH and sFTP
           url: cloud/env/environments-ssh.html
 
@@ -90,12 +87,6 @@ pages:
     - label: Configure Magento Commerce (Cloud)
       url: cloud/configure/configuration-overview.html
       children:
-        - label: Set up Fastly
-          url: cloud/access-acct/fastly.html
-
-        - label: Custom Fastly VCL snippets
-          url: cloud/configure/cloud-vcl-custom-snippets.html
-
         - label: Set up PayPal
           url: cloud/live/paypal-onboarding.html
           versions: ["2.1","2.2","2.3"]
@@ -113,41 +104,6 @@ pages:
         - label: .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
 
-        - label: Configure routes
-          children:
-            - label: routes.yaml
-              url: cloud/project/project-conf-files_routes.html
-
-            - label: Caching
-              url: cloud/project/project-routes-more-cache.html
-
-            - label: Redirects
-              url: cloud/project/project-routes-more-redir.html
-
-            - label: Server side includes
-              url: cloud/project/project-routes-more-ssi.html
-
-        - label: Configure services
-          children:
-            - label: services.yaml
-              url: cloud/project/project-conf-files_services.html
-
-            - label: Set up MySQL service
-              url: cloud/project/project-conf-files_services-mysql.html
-
-            - label: Set up Redis service
-              url: cloud/project/project-conf-files_services-redis.html
-
-            - label: Set up Solr service
-              url: cloud/project/project-conf-files_services-solr.html
-              versions: ["2.0"]
-
-            - label: Set up Elasticsearch service
-              url: cloud/project/project-conf-files_services-elastic.html
-
-            - label: Set up RabbitMQ service
-              url: cloud/project/project-conf-files_services-rabbit.html
-
     - label: Fastly
       url: cloud/basic-information/cloud-fastly.html
       children:
@@ -156,6 +112,37 @@ pages:
 
         - label: Custom Fastly VCL snippets
           url: cloud/configure/cloud-vcl-custom-snippets.html
+
+    - label: Configure services
+      url: cloud/project/project-conf-files_services.html
+      children:
+        - label: Set up MySQL service
+          url: cloud/project/project-conf-files_services-mysql.html
+
+        - label: Set up Redis service
+          url: cloud/project/project-conf-files_services-redis.html
+
+        - label: Set up Solr service
+          url: cloud/project/project-conf-files_services-solr.html
+          versions: ["2.0"]
+
+        - label: Set up Elasticsearch service
+          url: cloud/project/project-conf-files_services-elastic.html
+
+        - label: Set up RabbitMQ service
+          url: cloud/project/project-conf-files_services-rabbit.html
+
+    - label: Configure routes
+      url: cloud/project/project-conf-files_routes.html
+      children:
+        - label: Caching
+          url: cloud/project/project-routes-more-cache.html
+
+        - label: Redirects
+          url: cloud/project/project-routes-more-redir.html
+
+        - label: Server side includes
+          url: cloud/project/project-routes-more-ssi.html
 
     - label: Manage your project
       url: cloud/project/projects.html
@@ -245,7 +232,7 @@ pages:
         - label: Prepare to deploy to Staging and Production
           url: cloud/live/stage-prod-migrate-prereq.html
 
-        - label: Migrate and deploy code, static files, and data
+        - label: Deploy code and migrate static files and data
           url: cloud/live/stage-prod-migrate.html
 
         - label: Test deployment

@@ -8,6 +8,10 @@ menu_order: 35
 menu_node:
 version: 2.0
 github_link: cloud/welcome/discover-workflow.md
+redirect_from:
+  - /guides/v2.0/cloud/discover-workflow.html
+  - /guides/v2.1/cloud/discover-workflow.html
+  - /guides/v2.2/cloud/discover-workflow.html
 functional_areas:
   - Cloud
 ---

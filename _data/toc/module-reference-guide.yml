@@ -10,6 +10,10 @@ pages:
         - label: Sales
           url: mrg/ce/Sales.html
 
+        - label: Signifyd
+          url: mrg/ce/Signifyd.html
+
+
     - label: Commerce
       url: mrg/ee/ee-intro.html
       versions: ["2.1","2.2", "2.3"]
@@ -83,9 +87,6 @@ pages:
 
         - label: SearchStaging
           url: mrg/ee/SearchStaging.html
-
-        - label: Signifyd
-          url: mrg/ee/Signifyd.html
 
         - label: Staging
           url: mrg/ee/Staging.html
