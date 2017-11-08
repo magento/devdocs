@@ -8,20 +8,27 @@
 
 			<ul>
 				<li class="level-1"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
-				<h4><span class="playlist-name">Playlist</span> {{ page.group }}</h4>
-				{% assign videos = (site.videos | where: 'group', page.group | where: 'layout', 'video' | sort: 'menu_order' ) %}
 
+				{% assign page_path = page.path | split: '/' %}
+				{% assign base_path = page_path[1] %}
+
+				{% assign playlists = site.videos | where: 'layout', 'videos' | where_exp: 'page', 'page.path contains base_path' | sort: 'menu_order' %}
+				{% for playlist in playlists %}
+					<h4><span class="playlist-name">Playlist</span>{{ playlist.title }}</h4>
+				{% endfor %}
+
+				{% assign videos = site.videos | where: 'layout', 'video' | where_exp: 'page', 'page.path contains base_path' | sort: 'menu_order' %}
 				{% for video in videos %}
-                <li class="level-1 {% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}">
-                    {% if site.baseurl == "/" %}
-                    <a href="{{ video.url }}">
-                    {% else %}
-                    <a href="{{ site.baseurl }}{{ video.url }}">
-                    {% endif %}
-                        {{ video.title }} 
-                        <span class="video-duration">{{ video.duration }} </span>
-                    </a>
-                </li>
+					<li class="level-1 {% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}">
+					{% if site.baseurl == "/" %}
+            <a href="{{ video.url }}">
+          {% else %}
+            <a href="{{ site.baseurl }}{{ video.url }}">
+          {% endif %}
+              {{ video.title }}
+              <span class="video-duration">{{ video.duration }} </span>
+            </a>
+          </li>
 				{% endfor %}
 			</ul>
 
@@ -51,7 +58,7 @@
 				<div class="playlist-name">{{page.group}}</div>
 			{% assign prev = current | minus: 2 %}
 			{% if prev >= 0 %}
-				<div class="previous-page"> 
+				<div class="previous-page">
                     {% if site.baseurl == "/" %}
                     <a href="{{ videos[prev].url }}">
                     {% else %}
@@ -65,7 +72,7 @@
 
 			{% assign next = current %}
 			{% if next < videos.size %}
-				<div class="next-page"> 
+				<div class="next-page">
                     {% if site.baseurl == "/" %}
                     <a href="{{ videos[next].url }}">
                     {% else %}
