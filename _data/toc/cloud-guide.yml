@@ -165,7 +165,7 @@ pages:
         - label: Server side includes
           url: cloud/project/project-routes-more-ssi.html
 
-    - label: Configuration management
+    - label: Configuration management for store settings
       url: cloud/live/sens-data-over.html
       versions: ["2.1","2.2","2.3"]
       children:
