@@ -38,7 +38,7 @@ You can have New Relic active on up to 3 instances. These instances (or hosts) i
 * For Starter: Any 3 environments. We recommend `master` Production, a Staging environment, and another of your choice.
 
 ## New Relic APM credentials {#credentials}
-When you sign up for a {{site.data.var.ece}} account, you will receive credentials and information for your . The agent software for New Relic is already installed to capture data for review through the service.
+When you sign up for a {{site.data.var.ece}} account, you will receive credentials and information for your account from Magento and a call with Launch Mangers. The agent software for New Relic is already installed to capture data for review through the service.
 
 You will need these credentials and the license associated to them. You receive this information from Magento. Your license key is also available through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
 
@@ -63,9 +63,6 @@ To add New Relic to a specific environment (for example, Starter plan Staging en
 3. In a terminal, SSH log in to each environment (Production and Master) and enter the following command. You will need the license key from New Relic.
 
         magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
-
-### Agent software and key {#agent}
-You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access environments via SSH and install the agent. After adding the agent, you will need to add the license key to the agent. New Relic provides information on these steps.
 
 ## Remove New Relic from an environment {#remove}
 {{site.data.var.ece}} plans support up to 3 licenses active across all environments. If you have more than 3 active environments with the New Relic license key added as an environment variable, you will be in breach of the contracted 3 licenses. For details, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
