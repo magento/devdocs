@@ -42,7 +42,7 @@ When you sign up for a {{site.data.var.ece}} account, you will receive credentia
 
 You will need these credentials and the license associated to them. You receive this information from Magento. Your license key is also available through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
 
-## Configure New Relic APM {#configure}
+## Add New Relic APM to an environment {#configure}
 You can locate your New Relic APM credentials and key in the [Project Web Interface]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). The Project Owner can [log in](https://accounts.magento.cloud){:target="_blank"} to the interface and review [project and environment credentials]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-creds).
 
 * For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You can only add the third usage to your Integration `master` branch. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
@@ -64,6 +64,9 @@ To add New Relic to a specific environment (for example, Starter plan Staging en
 
         magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
 
+### Agent software and key {#agent}
+You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access environments via SSH and install the agent. After adding the agent, you will need to add the license key to the agent. New Relic provides information on these steps.
+
 ## Remove New Relic from an environment {#remove}
 {{site.data.var.ece}} plans support up to 3 licenses active across all environments. If you have more than 3 active environments with the New Relic license key added as an environment variable, you will be in breach of the contracted 3 licenses. For details, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
 
@@ -79,8 +82,8 @@ To remove the variable:
 4. In a terminal, SSH log in to an environment.
 5. To list all variables, you can use this command:
 
-  * For project variables: `magento-cloud pvget`
-  * For environment variables: `magento-cloud vget`
+    * For project variables: `magento-cloud pvget`
+    * For environment variables: `magento-cloud vget`
 6. To delete an environment variable, enter the following command:
 
         magento-cloud variable:delete php:newrelic.license
@@ -97,9 +100,6 @@ To remove the variable:
       extensions:
         - newrelic
 3. Save and push the changes to deploy across Staging and Production. -->
-
-## Agent software and key {#agent}
-You may also need to install the New Relic APM agent into Production and Staging environments. For instructions on installing the agent, see New Relic's [Agent installation guide](https://docs.newrelic.com/docs/agents/manage-apm-agents/installation/install-agent){:target="_blank"}. Access environments via SSH and install the agent. After adding the agent, you will need to add the license key to the agent. New Relic provides information on these steps.
 
 ## Investigate performance {#investigate}
 New Relic connects and monitors your site using an agent via php. As it collects data, you can [log in](https://login.newrelic.com/login/){:target="_blank"} and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page){:target="_blank"}.
