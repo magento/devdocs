@@ -34,7 +34,7 @@ For Pro plans, you need to enter a Support ticket with your Blackfire credential
 ## Get your Blackfire credentials {#cloud-int-black}
 The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
 
-For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}.
+For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
 
 ## Add collaborator accounts {#collaborators}
 After you have accessed your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}.
