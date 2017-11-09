@@ -8,15 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/env/environment-vars_over.md
-redirect_from:
-  - /guides/v2.0/cloud/env/environments.html
-  - /guides/v2.1/cloud/env/environments.html
-  - /guides/v2.1/cloud/env/environments.html
 functional_areas:
   - Cloud
   - Configuration
 ---
-(add overview information here)
 
 ## Environment variables {#cloud-env-set-vars}
 {{site.data.var.ece}} enables you to create variables in your environment that override configuration options. For example, we strongly recommend you *immediately* change your Magento Admin URI and administrative user's password to prevent someone guessing your login and changing settings without your knowledge.

@@ -11,6 +11,7 @@ github_link: cloud/reference/cloud-composer.md
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
   - /guides/v2.1/cloud/cloud-composer.html
+  - /guides/v2.2/cloud/cloud-composer.html
 functional_areas:
   - Cloud
   - Upgrade

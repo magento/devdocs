@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 120_env
-title: Configuration management
-menu_title: Configuration management
+title: Configuration management for store settings
+menu_title: Configuration management for store settings
 menu_order: 20
 menu_node:
 version: 2.2
@@ -146,7 +146,7 @@ The **Pro plan** environment high-level overview of this process:
 ### Step 1: Configure your store
 Complete all configurations for your stores in the Admin console:
 
-1. Log into the Magento Adming for one of the environments:
+1. Log into the Magento Admin for one of the environments:
 
     * Starter: An active development branch
     * Pro: The `master` environment in Integration
