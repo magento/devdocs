@@ -520,14 +520,78 @@
 
 			<p>This topic provides details about backward incompatible changes related to Magento Commerce 2.2.</p>
 
-<p>All changes are aggregated into two tables:</p>
+<p>All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>To track all changes in Magento Commerce, consider <a href="./ce_changes.html">changes in Magento Open Source</a>.</p>
+</div>
+
+<p>The changes are aggregated into two tables:</p>
 
 <ul>
   <li>that contains backward incompatible changes made to Magento classes</li>
   <li>that contains backward incompatible changes made to the Magento interfaces</li>
 </ul>
 
-<h2 id="changes-220-219">2.1.9 - 2.2.0</h2>
+<h2 id="releases-2_2_0-2_2_1">2.2.0 - 2.2.1</h2>
+
+<h3 id="classes-220-221">Changes in classes</h3>
+<table><tbody>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
+    <tr>
+        <td>Magento\Signifyd\Model\MessageGenerators\GeneratorException</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Block\Fingerprint</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Block\Adminhtml\CaseInfo</td>
+        <td>Class was removed.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interfaces-220-221">Changes in interfaces</h3>
+<table><tbody>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseCreationServiceInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseManagementInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseRepositoryInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\GuaranteeCancelingServiceInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\GuaranteeCreationServiceInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\Data\CaseInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\Data\CaseSearchResultsInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+</tbody></table>
+
+<h2 id="releases-2_1_9-2_2_0">2.1.9 - 2.2.0</h2>
 
 <h3 id="classes-220-219">Changes in classes</h3>
 <table><tbody>
@@ -2604,6 +2668,9 @@
         <td>Interface was added.</td>
     </tr>
 </tbody></table>
+
+<!-- LINK DEFINITIONS -->
+
 
 		</div>
 		<!-- /.content-wrap -->
