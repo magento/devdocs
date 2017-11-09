@@ -16,6 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.10EE.md
 
 *Patch code and release notes were published on November 7,  2017.*
 
+
 We are pleased to present Magento Commerce  2.1.10. This release includes important enhancements to your Magento software.
 
 
@@ -120,7 +121,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 58526 -->* You can now successfully reset a customer password when the **Website Restrictions** setting is enabled. Previously, Magento redirected you to `customer/account/login/`, from which you could not change a password. 
 
 
-<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites cannot edit CNS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
+<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites cannot edit CMS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
 
 
 <!--- 71701 -->* In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609) 
