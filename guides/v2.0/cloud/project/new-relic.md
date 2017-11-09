@@ -15,7 +15,7 @@ functional_areas:
   - Services
 ---
 
-[New Relic](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} Application Performance Monitoring (APM) provides application and performance information for end-user operations completed through your stores. This data helps you analyze and improve application interactions.
+[New Relic](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} Application Performance Monitoring (APM) provides application and performance information for end-user operations completed through your stores. This data helps you analyze and improve application interactions. For a great introduction to New Relic, see the [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="_blank"}. 
 
 You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
 
@@ -34,7 +34,7 @@ New Relic APM provides the following [key features](https://newrelic.com/php/mag
 
 You can have New Relic active on up to 3 instances. These instances (or hosts) include a local system, active Integration environments, Staging, and Production. We recommend the following:
 
-* For Pro: Integration `master`, Staging, and Production. We add New Relic for you to Staging and Production environments. 
+* For Pro: Integration `master`, Staging, and Production. We add New Relic for you to Staging and Production environments.
 * For Starter: Any 3 environments. We recommend `master` Production, a Staging environment, and another of your choice.
 
 ## New Relic APM credentials {#credentials}
