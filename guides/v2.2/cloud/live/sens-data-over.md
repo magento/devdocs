@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 120_env
-title: Configuration management
-menu_title: Configuration management
+title: Configuration management for store settings
+menu_title: Configuration management for store settings
 menu_order: 20
 menu_node:
 version: 2.2

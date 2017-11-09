@@ -36,7 +36,7 @@
 
 			{% assign sorted_videos = site.videos | where: 'layout', 'video' | sort: 'date' | reverse %}
 			{% if page.group != nil %}
-				{% assign sorted_videos = (sorted_videos | where: 'group', page.group | sort: 'menu_order') %}
+				{% assign sorted_videos = sorted_videos | where: 'group', page.group | sort: 'menu_order' %}
 			{% endif %}
 
 			<div class="videos">

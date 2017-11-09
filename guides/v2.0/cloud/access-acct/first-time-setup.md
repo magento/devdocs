@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: First-time local environment setup
-menu_title: First-time local environment setup
+title: Local environment setup
+menu_title: Local environment setup
 menu_order: 1
 menu_node: parent
 version: 2.0
@@ -20,7 +20,7 @@ functional_areas:
   - Setup
 ---
 
-To create an account and start developing Magento, you need a configured local developer workspace, base {{site.data.var.ece}} code, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local.
+All environments for your project are read-only, requiring all work to be completed on your local environment and pushed to cloud environments. To start developing Magento, you need a configured local developer workspace, cloned {{site.data.var.ece}} code from your Git branch, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local system. 
 
 ## Project user account {#account}
 Depending on the [Project Owner]({{ page.baseurl }}cloud/onboarding/onboarding-tasks.html), you may need to be invited by the owner to the project. This account gives you participation to the project and connects your local, credentials, and access to your company's {{site.data.var.ece}} account. The account includes all source code and deployment environments.
