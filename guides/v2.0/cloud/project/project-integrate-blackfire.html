@@ -1753,9 +1753,9 @@
 <p>Blackfire includes the following <a href="https://blackfire.io/docs/reference-guide/environments" target="_blank">environments</a> through their site:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Dev: This is your Integration environments</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Test: This is your Staging environment</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;Project ID&gt;)</code> - Prod: This is your Production environment</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Integration and Development</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Staging</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Production</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1831,7 +1831,14 @@
 </ul>
 
 <h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
-<p>To enable and integrate Blackfire into your code, you will modify the <code class="highlighter-rouge">.magento.app.yaml</code> file. You can push these settings into your remote Git branch, merge, and deploy across all environments including Staging and Production.</p>
+<p>By default, the Blackfire module should be included in the .magento.app.yaml file as part of your Git branch.</p>
+
+<p>The following instructions provide additional instructions if the module is not added to <code class="highlighter-rouge">.magento.app.yaml</code>. To enable and integrate Blackfire into your code, you will modify the <code class="highlighter-rouge">.magento.app.yaml</code> file, push the file into your remote Git branch, merge, and deploy across all environments.</p>
+
+<ul>
+  <li>For Starter, merging your Git branch across all environments adds the module.</li>
+  <li>For Pro, you need to enter a Support ticket to have <code class="highlighter-rouge">.magento.app.yaml</code> updated to Staging and Production.</li>
+</ul>
 
 <p>We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the <code class="highlighter-rouge">.magento.app.yaml</code> file. If you need instructions creating a branch, complete the following:</p>
 
@@ -1882,17 +1889,7 @@
 <ol>
   <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/.magento.app.yaml</code> in your branch.</li>
   <li>
-    <p>Enter the following code in the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime</code>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    - name: blackfire
-      configuration:
-         server_id: "&lt;blackfire Server ID&gt;"
-         server_token: "&lt;blackfire Server token&gt;"
-</code></pre></div>    </div>
-
-    <p>Change <code class="highlighter-rouge">&lt;Blackfire Server ID&gt;</code> and <code class="highlighter-rouge">&lt;Blackfire Server token&gt;</code> to the values from your Blackfire account.</p>
-
-    <p>For example:</p>
+    <p>Enter <code class="highlighter-rouge">- name: blackfire</code> in the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime</code>.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runtime:
   extensions:
@@ -1900,10 +1897,7 @@
     - redis
     - xsl
     - json
-    - name: blackfire
-      configuration:
-         server_id: "12345677890123456789012345678901234567890"
-         server_token: "abcdefghi123456-12345667788-odjfvfuvfjvf-29847r87:19283475y6576"
+    - blackfire
 </code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
