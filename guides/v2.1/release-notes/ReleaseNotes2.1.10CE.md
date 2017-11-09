@@ -111,10 +111,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 69574 -->* Vimeo videos now work when HTTPS is enabled. [GitHub-7311](https://github.com/magento/magento2/issues/7311) 
 
 
-<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites can not edit CNS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
-
-<!--- 60003 -->* You can now use the Admin to create a return after you’ve added a new return attribute. Previously, the new attribute was not visible, and the return could not be submitted. Magento also displayed this error: `Uncaught Error: cannot call methods on modal prior to initialization; attempted to call method openModal`.
-
 <!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website. 
 
 
