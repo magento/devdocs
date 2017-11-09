@@ -2549,6 +2549,9 @@
   <h3 id="mail-server">Mail server</h3>
   <p>Mail Transfer Agent (MTA) or an SMTP server</p>
 
+  <h3 id="rabbitmq-35-only-magento-commerce">RabbitMQ 3.5 (Only Magento Commerce)</h3>
+  <p><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> will be used to publish messages to queue and to define the consumers that receive the messages asynchronously.</p>
+
   <h3 id="magento-can-utilize-the-following-technologies">Magento can utilize the following technologies:</h3>
   <ul>
     <li><a href="/guides/v2.1/config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)</li>
@@ -2572,11 +2575,6 @@
             <li>If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.</li>
             <li>If you get the Elasticsearch software from their <a href="https://github.com/elastic/elasticsearch-php" target="_blank">Elasticsearch-PHP repository</a>, we support the <code class="highlighter-rouge">2.0</code> branch.</li>
           </ul>
-        </li>
-        <li>
-          <p>RabbitMQ 3.5</p>
-
-          <p><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento Commerce only.</p>
         </li>
         <li>
           <p>Three master databases</p>
