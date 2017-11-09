@@ -4,9 +4,6 @@ pages:
     - label: Overview
       url: graphql/graphql.html
 
-    - label: Set up
-      url: graphql/setup.html
-
     - label: Searches and pagination
       url: graphql/search-pagination.html
 

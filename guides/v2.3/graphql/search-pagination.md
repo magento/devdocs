@@ -23,7 +23,7 @@ The following sample query returns a list of products in which the SKU begins wi
              }
         }
         pageSize: 25
-          order: {
+          sort: {
           price: DESC
         }
     )
@@ -107,9 +107,8 @@ Magento GraphQL clause | SQL equivalent
 `gt: "value"`	| <code><i>field</i> > 'value'</code>
 `gteq: "value"`	| <code><i>field</i> >= 'value'</code>
 `lteq: "value"`	| <code><i>field</i> <= 'value'</code>
-`moreq: "value"` |
-`from: "value"` |
-`to: "value"` |
+`moreq: "value"` | <code><i>field</i> >= 'value'</code>
+`from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
 `finset: [1, 2, 3]`	| <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
 **Notes:**
@@ -131,7 +130,7 @@ The following search finds all products that were added after the specified time
              }
         }
         pageSize: 25
-          order: {
+          sort: {
           price: DESC
         }
     )
@@ -166,7 +165,7 @@ The following example searches for all products whose names contain the string `
        	 }
         }
         pageSize: 25
-          order: {
+          sort: {
           price: DESC
         }
     )
@@ -205,7 +204,7 @@ This query searches the `sku`s for women’s shorts (WSH%) or pants (WP%) in siz
        	 }
         }
         pageSize: 25
-          order: {
+          sort: {
           price: DESC
         }
     )
@@ -259,11 +258,11 @@ This query returns items with
         }
         pageSize:100
         currentPage:1
-        order:
-       {
-        price:DESC
-       }
-    )
+        sort:
+          {
+            price:DESC
+          }
+        )
     {
         items
          {
@@ -298,12 +297,12 @@ The `currentPage` attribute specifies which page of results to return. If no val
 
 ## Sorting instructions
 
-The `order` object allows you to specify which field to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
+The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
 
 In the following example, Magento returns a list of items that are sorted in order of increasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
 
 ```
-order: {
+sort: {
   price: ASC
   name:  DESC
 }
