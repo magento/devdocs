@@ -26,7 +26,7 @@ All contributors are required to submit a click-through form to agree to the ter
 ## Contribution requirements
 
 1.	Contributions must adhere to [Magento coding standards].
-2.	*Refer to the Magento development team’s [Definition of Done].*{: style="color: red"}
+2.	Refer to the Magento development team’s [Definition of Done].
 We use these guidelines internally to ensure that we deliver well-tested, well-documented, solid code, and we encourage you to as well!
 3.	Pull requests (PRs) must be accompanied by a meaningful description of their purpose.
 Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
@@ -37,8 +37,8 @@ Comprehensive descriptions increase the chances that a pull request is merged qu
     * Proposed [documentation update]. Documentation contributions can be submitted [here][devdocs mftf].
 7.	For large features or changes, please [open an issue][issue] and discuss first.
 This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
-8.	*To report a bug, please [open an issue][issue], and follow [guidelines about bugfix issues].*{: style="color: red"}
-9.	*All automated tests must pass successfully (all builds on [Travis CI] must be green).*{: style="color: red"}
+8.	To report a bug, please [open an issue][issue], and follow [guidelines about bugfix issues].
+9.	All automated tests must pass successfully (all builds on Travis CI must be green).
 
 ## Fork a repository {#fork}
 
@@ -156,8 +156,7 @@ Label| Description
 [Magento coding standards]: {{page.baseurl}}coding-standards/bk-coding-standards.html
 [Definition of Done]: {{page.baseurl}}contributor-guide/contributing_dod.html
 [documentation update]: {{page.baseurl}}contributor-guide/contributing_docs.html
-[guidelines about bugfix issues]: https://github.com/magento/magento2/wiki/Issue-reporting-guidelines
-[Travis CI]: https://travis-ci.org/magento/magento2
+[guidelines about bugfix issues]: https://github.com/magento/magento2-functional-testing-framework/wiki/Issue-reporting-guidelines
 [MFTF repository]: https://github.com/magento/magento2-functional-testing-framework
 [GitHub documentation]: https://help.github.com/articles/syncing-a-fork
 [existing PRs]: https://github.com/magento/magento2-functional-testing-framework/pulls?q=is%3Aopen+is%3Apr
