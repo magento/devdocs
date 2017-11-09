@@ -1845,16 +1845,14 @@
 
   <p>If you haven’t done so already, upload any <a href="/guides/v2.2/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
 
-  <h3 id="pro-yaml">Migrate your <code class="highlighter-rouge">.magento.app.yaml</code> file (optional)</h3>
+  <h3 id="pro-yaml">Migrate your <code class="highlighter-rouge">.magento.app.yaml</code> file</h3>
   <p><strong>Important:</strong> If you have <strong>not modified</strong> the default deployment hooks or configurations, skip this step and continue with <a href="#pro-urls">Get your Pro access URLs</a>. Only migrate the file if you modified the deployment hooks or added configuration updates.</p>
 
   <div>
 
-    <p>For technical reasons, you need to enter a ticket to have your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code> file</a> file added to Staging and Production systems. This affects all Pro projects created before and after October 23, 2017.</p>
+    <p>For technical reasons, you must enter a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">Support ticket</a> to have your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code> file</a> file added to Staging and Production systems. This affects all Pro projects created before and after October 23, 2017.</p>
 
-    <p>Create a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">support ticket</a> to let us help you migrate the file and implement any deployment hooks you set up.</p>
-
-    <p>Among the settings you can request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.</p>
+    <p>You can request to have us push <code class="highlighter-rouge">.magento.app.yaml</code>, <code class="highlighter-rouge">services.yaml</code>, and <code class="highlighter-rouge">routes.yaml</code>, set up cron jobs, and request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.</p>
 
     <p>If you have your SSH keys added to Staging and Production environments per a ticket, you can also directly SSH into the environment to use Git CLI commands for deployments.</p>
 
