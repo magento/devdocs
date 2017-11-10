@@ -1,14 +1,14 @@
 ---
 layout: default
 group: mftf
-title: Contribution Guidelines to the Magento Functional Testing Framework
+title: Contribution Guidelines for the Magento Functional Testing Framework
 github_link: magento-functional-testing-framework/contribution-guidelines.md
 ---
 
 ## Contribute to MFTF code
 
-Use the [fork] & [pull] model to contribute to the Magento Functional Testing Framework (MFTF) codebase.
-This contribution model has contributors maintaining their own copy of the forked codebase (which can be easily synced with the main copy).
+Use the [fork] & [pull] model to contribute to the Magento Functional Testing Framework (MFTF) code base.
+This contribution model has contributors maintaining their own copy of the forked code base (which can be easily synced with the main copy).
 The forked repository is then used to submit a request to the base repository to pull a set of changes (pull request).
 
 Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.
@@ -38,7 +38,7 @@ Comprehensive descriptions increase the chances that a pull request is merged qu
 7.	For large features or changes, please [open an issue][issue] and discuss first.
 This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 8.	To report a bug, please [open an issue][issue], and follow [guidelines about bugfix issues].
-9.	All automated tests must pass successfully (all builds on Travis CI must be green).
+9.	All automated tests must pass successfully (all builds on [Travis CI] must be green).
 
 ## Fork a repository {#fork}
 
@@ -111,7 +111,7 @@ Before creating an issue, please do the following:
 
 To add an issue:
 
-1.	In the Magento 2 public repository, click the *Issues* link.
+1.	In the Magento 2 public repository, click the *Issues* link
     ![A screenshot with the "New Issue" button location](./img/issue.png)
 2.	Click **New issue**
 3.	Fill in the **Title** and issue description
@@ -121,29 +121,37 @@ To add an issue:
 
 Refer to the tables with descriptions of each label below. These labels are applied by the MFTF development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.
 
-### Domains Impacted
+### Pull Request Status
 
 Label| Description
 ---|---
-![DOC](http://devdocs.magento.com/common/images/github_DOC.png) | Affects Documentation domain. 
-![PROD](http://devdocs.magento.com/common/images/github_PROD.png) | Affects the Product team (mostly feature requests or business logic change). 
-![TECH](http://devdocs.magento.com/common/images/github_TECH.png) | Affects Architect Group (mostly to make decisions around technology changes). 
-
-### Pull Request Resolution Status
-
-Label| Description
----|---
-![accept](http://devdocs.magento.com/common/images/github_accept.png) | The pull request has been accepted and will be merged into mainline code. 
-![reject](http://devdocs.magento.com/common/images/github_reject.png) | The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution. 
+**accept**| The pull request has been accepted and will be merged into mainline code. 
+**reject**| The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.
+**needsUpdate**| The Magento Team needs additional information from the reporter to properly prioritize and process the pull request.
 
 ### Issue Resolution Status
 
 Label| Description
 ---|---
-![bug report](http://devdocs.magento.com/common/images/github_bug.png) | The Magento Team has confirmed that this issue contains the minimum required information to reproduce. 
-![acknowledged](http://devdocs.magento.com/common/images/gitHub_acknowledged.png) | The Magento Team has validated the issue and an internal ticket has been created. 
-![inProgress](http://devdocs.magento.com/common/images/github_inProgress.png) | The internal ticket is currently in progress, fix is scheduled to be delivered. 
-![needsUpdate](http://devdocs.magento.com/common/images/github_needsUpdate.png) | The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request. 
+**acknowledged**| The Magento Team has validated the issue and an internal ticket has been created.
+**needsUpdate**| The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request.
+**cannot reproduce**| The Magento Team has not confirmed that this issue contains the minimum required information to reproduce. 
+**non-issue**| The Magento Team has not recognised any issue according to provided information.
+
+### Domains Impacted
+
+Label| Description
+---|---
+**PROD**| Affects the Product team (mostly feature requests or business logic change).
+**DOC**| Affects Documentation domain.
+**TECH**| Affects Architect Group (mostly to make decisions around technology changes).
+
+### Type
+
+Label| Description
+---|---
+**bugfix**| The issue or pull request relates to bug fixing.
+**enhancement**| The issue or pull request that raises the MFTF to a higher degree (i.e. new features, optimization, refactoring, etc).
 
 
 <!-- LINKS DEFINITIONS -->
@@ -163,6 +171,7 @@ Label| Description
 [issue reporting guidelines]: https://github.com/magento/magento2/wiki/Issue-reporting-guidelines
 [existing issues]: https://github.com/magento/magento2-functional-testing-framework/issues?q=is%3Aopen+is%3Aissue
 [devdocs mftf]: https://github.com/magento/devdocs/tree/develop/guides/v2.3/magento-functional-testing-framework
+[Travis CI]: https://travis-ci.com/magento/magento2-functional-testing-framework/pull_requests
 
 <!-- Abbreviataion -->
 
