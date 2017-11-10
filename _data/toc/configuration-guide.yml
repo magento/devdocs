@@ -181,9 +181,11 @@ pages:
 
             - label: .gitignore reference
               url: config-guide/prod/config-reference-gitignore.html
+              versions: ["2.2", "2.3"]
 
             - label: Use environment variables to override configuration settings
               url: config-guide/prod/config-reference-var-name.html
+              versions: ["2.1", "2.2", "2.3"]
 
             - label: config.php reference
               url: config-guide/prod/config-reference-configphp.html
