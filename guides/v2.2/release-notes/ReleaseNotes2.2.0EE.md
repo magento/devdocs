@@ -13,6 +13,11 @@ redirect_from:
   - /guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html
   - /guides/v2.2/release-notes/release-notes-2-2-RC2-EE.html
   - /guides/v2.2/release-notes/release-notes-2-2-RC3-EE.html
+  - /guides/v2.2/release-notes/release-candidate/install.html
+  - /guides/v2.2/release-notes/release-candidate/quick-start.html
+  - /guides/v2.2/release-notes/release-candidate/submit-PRs.html
+  - /guides/v2.2/release-notes/release-candidate/submit-issues.html
+  - /guides/v2.2/release-notes/release-candidate/testing-environments.html
 ---
 *Release notes updated October 2.*
 
