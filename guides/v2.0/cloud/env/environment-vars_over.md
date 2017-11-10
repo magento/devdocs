@@ -36,6 +36,7 @@ For additional information on Magento variables for v2.1.X and later, see the fo
 * [Sensitive and system-specific]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 * [Sensitive configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 * [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+* [System settings reference]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html)
 
 To use a configuration path as a variable:
 
