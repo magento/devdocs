@@ -8,7 +8,7 @@ menu_order: 5100
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: config-ref
-version: 2.2
+version: 2.1
 github_link: config-guide/prod/config-reference-sens.md
 functional_areas:
   - Configuration
