@@ -10,6 +10,11 @@ version: 2.2
 github_link: config-guide/deployment/single-machine.md
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.
@@ -77,7 +82,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 For deployment strategies developed by the Magento community, see the blog posts listed under the [Install/deploy][11] section in our Community Resources page.
 
-In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including Cloud.
+In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including {{site.data.var.ece}}.
 
 ## Related topics
 

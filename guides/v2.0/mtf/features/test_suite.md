@@ -188,13 +188,13 @@ You can use `group` and `value` parameters in the test case scope. In a test cas
 
 - Any tags that are used in the test case should be added to the beginning of a class definition:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /* tags */
 const TEST_TYPE = '3rd_party_test_deprecated';
 /* end tags */
 
-{% endhighlight %}
+```
 
 - The tag in the rule:
 
@@ -210,7 +210,7 @@ const TEST_TYPE = '3rd_party_test_deprecated';
 
 A test case can contain multiple tag groups, and a group can have multiple values. For example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /* tags */
 const MVP = 'yes';
@@ -218,7 +218,7 @@ const DOMAIN = 'PS';
 const TEST_TYPE = 'extended_acceptance_test, 3rd_party_test_deprecated';
 /* end tags */
 
-{% endhighlight %}
+```
 
 ### `scope = "variation"` {#scope-variation}
 
@@ -275,7 +275,7 @@ A tag has two parameters: `group` and `value`. In a constraint, they are provide
 
 - Any tags that are used in the constraint should be added to the beginning of a class definition:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 class AssertProductView extends AbstractConstraint
 {
@@ -286,7 +286,7 @@ class AssertProductView extends AbstractConstraint
     // ...
 }
 
-{% endhighlight %}
+```
 
 - The rule that allows constraints with this tag only:
 

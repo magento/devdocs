@@ -1,14 +1,16 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Manage your components
 menu_title: Manage your components
-menu_node: 
+menu_node:
 menu_order: 3
 version: 2.0
 github_link: comp-mgr/module-man/compman-main-pg.md
 redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
+functional_areas:
+  - Upgrade
 ---
 
 <h2 id="compman-access">Component Management options</h2>
@@ -62,7 +64,7 @@ To choose whether to upgrade or uninstall components:
 <h2 id="compman-access-new">Install new purchases</h2>
 A *new purchase* can be any of the following:
 
-*	Magento CE or EE sample data if it hasn't been installed yet.
+*	{{site.data.var.ce}} or {{site.data.var.ee}} sample data if it hasn't been installed yet.
 
 	You don't need to go to Magento Marketplace and request sample data; you can install it at any time.
 

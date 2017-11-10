@@ -2,11 +2,13 @@
 layout: default
 group: payments-integrations
 subgroup: C_vault
-title: Enable vault 
-menu_title: Enable vault 
+title: Enable vault
+menu_title: Enable vault
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/vault/enabler.md
+functional_areas:
+  - Integration
 ---
 
 Store customers must have the ability to enable and disable credit cards details storing.
@@ -117,7 +119,7 @@ You can create a new request builder, or update the existing request builder of 
 
 In the Braintree request builder, to pass the data, we set `storeInVaultOnSuccess` in transaction request:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class VaultDataBuilder implements BuilderInterface
 {
     /**
@@ -143,7 +145,7 @@ class VaultDataBuilder implements BuilderInterface
         ];
     }
 }
-{% endhighlight %}
+```
 
 The builder must be added to the payment authorize request in the DI configuration. 
 Example from the Braintree `di.xml`:

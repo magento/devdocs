@@ -487,7 +487,7 @@ After the repository generation
 
 you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
 
-  {%highlight php startinline=1%}
+``` php?start_inline=1
   
 $this->_data['default'] = [
   'firstname' => 'John',
@@ -498,7 +498,7 @@ $this->_data['default'] = [
   'password_confirmation' => '123123q',
 ];
   
-  {%endhighlight%}
+```
 
 As you can see, a repository with the name `default` contains data from the `customer_new_default` repository.
 

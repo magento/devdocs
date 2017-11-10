@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.5 Release Notes
-menu_title: Magento EE 2.1.5 Release Notes
+title: Magento Commerce 2.1.5 Release Notes
+menu_title: Magento Commerce 2.1.5 Release Notes
 menu_order: 264
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
@@ -14,13 +14,13 @@ github_link: release-notes/ReleaseNotes2.1.5EE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.5. 
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.5. 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.
 </div>
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
 
 
 ## System requirements

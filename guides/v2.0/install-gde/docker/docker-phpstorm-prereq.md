@@ -8,7 +8,13 @@ menu_node:
 menu_order: 5
 version: 2.0
 github_link: install-gde/docker/docker-phpstorm-prereq.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
+
+{% include install/docker/deprecated-note.html %}
 
 This topic discusses tasks you must perform before you can use PhpStorm with DevBox.
 

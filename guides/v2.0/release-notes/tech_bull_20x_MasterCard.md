@@ -12,7 +12,7 @@ github_link: release-notes/tech_bull_20x_MasterCard.md
 
 *Technical bulletin published on May 19, 2017.*
 
-These instructions apply to anyone running Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.0.x. 
+These instructions apply to anyone running Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.0.x. 
 
 ### Issue
 

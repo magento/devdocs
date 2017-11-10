@@ -222,7 +222,7 @@ If a variable is assigned more than one value:
 
 the value is processed as an array:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 $price = [
     'data' => [
         'shopping_cart' => [
@@ -235,7 +235,7 @@ $price = [
         ]
     ]
 ]
-{%endhighlight php%}
+```
 
 Also, in similar cases you can use array type in a data set, like:
 
@@ -366,13 +366,13 @@ If you want to extend variation in another module using [merging], you should us
 For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`
 
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
  {%endhighlight xml%}
  
  the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module:
  
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
   {%endhighlight xml%}
 
 <!-- LINK DEFINITIONS -->

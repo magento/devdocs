@@ -32,7 +32,7 @@ A payment provider integration can have multiple response validators, that shoul
 
 In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.  
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class AcceptValidator extends AbstractValidator
 {
     /**
@@ -77,7 +77,7 @@ class AcceptValidator extends AbstractValidator
         return $this->createResult($isValid, $fails);
     }
 }
-{% endhighlight %}
+```
 
 Now, the newly added validator should be specified for a specific command. Below is an example of specifying a validator for an {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} command:
 

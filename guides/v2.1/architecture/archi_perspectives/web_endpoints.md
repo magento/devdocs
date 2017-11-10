@@ -1,1 +1,0 @@
-../../../v2.0/architecture/archi_perspectives/web_endpoints.md

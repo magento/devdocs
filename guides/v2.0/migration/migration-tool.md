@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: C_DMTool
 title: Data Migration Tool
 menu_title: Data Migration Tool
@@ -9,6 +9,8 @@ menu_order: 3
 version: 2.0
 github_link: migration/migration-tool.md
 redirect_from: /guides/v1.0/migration/migration-tool.html
+functional_areas:
+  - Tools
 ---
 
 ## Overview

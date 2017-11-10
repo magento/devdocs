@@ -9,6 +9,10 @@ menu_order: 1
 menu_node: parent
 version: 2.1
 github_link: config-guide/bk-config-guide.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="configuration">Configure the Magento application</h2>
@@ -37,7 +41,7 @@ You can configure the Magento application in any of the following ways:
 	*	[Redis]({{page.baseurl}}config-guide/redis/redis-session.html)
 	*	[How to locate session files]({{page.baseurl}}config-guide/sessions.html)
 
-*	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
+*	{{site.data.var.ee}} only
 
 	*	[Install and configure Elasticsearch]({{ page.baseurl }}config-guide/elasticsearch/es-overview.html)
 	*	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Install and configure Solr</a>

@@ -8,7 +8,13 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/docker/docker-trouble.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
+
+{% include install/docker/deprecated-note.html %}
 
 This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.
 

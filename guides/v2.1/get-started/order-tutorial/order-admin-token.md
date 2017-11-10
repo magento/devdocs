@@ -10,7 +10,10 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-admin-token.md
-ee_only: false
+ee_only: False
+functional_areas:
+  - Integration
+  - Orders
 ---
 
 Each step in this tutorial provides the following information:
@@ -26,7 +29,7 @@ where:
 Element | Description
 --- | ---
 `HTTP verb` | One of `GET`, `POST`, `PUT`, or `DELETE`
-`host` | The host name or IP address (and optionally, port) of the Magento installation. If you are using the DevBox installation, the value of `<host>` is `127.0.0.1:32772`.
+`host` | The host name or IP address (and optionally, port) of the Magento installation.
 `scope` | Specifies which store the call affects. In this tutorial, this value is `default`.
 `endpoint` | The full URI (Uniform Resource Indentifier) to the endpoint. These values always start with `/V1`. For example, `/V1/orders/4`.
 
@@ -48,7 +51,7 @@ Most REST calls to Magento require an {% glossarytooltip 34ecb0ab-b8a3-42d9-a728
 
 By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Configuration > Services > OAuth > Access Token Expiration**.
 
-See [Token-based authentication]({{page.baseurl}}get-started/authentication/gs-authentication-token.md) for more information about authorization tokens.
+See [Token-based authentication]({{page.baseurl}}get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
 
 **Endpoint**
 

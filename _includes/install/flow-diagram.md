@@ -13,11 +13,11 @@ The diagram shows the following:
 
 2.	Get the Magento software.
 
-	*	For simplicity, get a compressed Magento CE or Magento EE [archive]({{ page.baseurl }}install-gde/prereq/zip_install.html), extract it on your Magento server, and start your installation.
+	*	For simplicity, get a compressed {{site.data.var.ce}} or {{site.data.var.ee}} [archive]({{ page.baseurl }}install-gde/prereq/zip_install.html), extract it on your Magento server, and start your installation.
 
-	*	If you are more technical and you are familiar with Composer, get a Magento CE or Magento EE [metapackage]({{ page.baseurl }}install-gde/prereq/integrator_install.html).
+	*	If you are more technical and you are familiar with Composer, get a {{site.data.var.ce}} or {{site.data.var.ee}} [metapackage]({{ page.baseurl }}install-gde/prereq/integrator_install.html).
 
-	*	If you want to contribute to the Magento CE codebase or customize the Magento application, [clone]({{ page.baseurl }}install-gde/prereq/dev_install.html) the Magento 2 GitHub repository. (This method requires familiarity with both GitHub and Composer.)
+	*	If you want to contribute to the {{site.data.var.ce}} codebase or customize the Magento application, [clone]({{ page.baseurl }}install-gde/prereq/dev_install.html) the Magento 2 GitHub repository. (This method requires familiarity with both GitHub and Composer.)
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage.</p>

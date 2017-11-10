@@ -8,12 +8,12 @@
 		<th>Patch location</th>
 	</tr>
 	<tr> 
-	<td>Magento CE</td>
+	<td>{{site.data.var.ce}}</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
 		<p>Follow the instructions on your screen to download the desired patch.</p></td>
 	</tr>
 	<tr> 
-		<td>Magento EE merchant portal</td>
+		<td>{{site.data.var.ee}} merchant portal</td>
 		<td>Use the following steps:
 		<ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
 		<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>

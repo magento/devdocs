@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group: howdoi
 subgroup: Installation and configuration
 title: Magento mode switch
 menu_title: Magento mode switch
@@ -41,6 +41,6 @@ To switch modes:
 		<td><p>Directories: 750 (owner has full control, group has read and execute access, all others have no access)</p>
 			<p>Files: 640 (owner has write access, group has read-only access, all others have no access)</td>
 	</tr>
-	
+
 	</tbody>
 	</table>

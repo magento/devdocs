@@ -4,11 +4,17 @@ group: install-dock
 subgroup: 05_PhpStorm
 title: Run PHPUnit
 menu_title: Run PHPUnit
-menu_node: 
+menu_node:
 menu_order: 10
 version: 2.0
 github_link: install-gde/docker/docker-phpstorm-test.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
+
+{% include install/docker/deprecated-note.html %}
 
 This topic discusses how to run PHPUnit tests from the command line or from PhpStorm.
 For demonstration purposes, this topic discusses how to test Magento modules.

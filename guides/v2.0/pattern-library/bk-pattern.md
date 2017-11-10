@@ -1,24 +1,24 @@
 ---
 layout: default
 group: pattern
-subgroup: 
+subgroup:
 title: Admin Design Pattern Library
 landing-page: Pattern Library
 menu_title: Introduction
-menu_order: 
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: pattern-library/bk-pattern.md
 redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---
 <h3>What is a design pattern?</h3>
- 
+
 Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables and forms - that are standardized to be easily repeated and reused across a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or application.
 
-Patterns include definitions, examples, instructions and specifications that break down spacial relationships and interactions / behaviors. 
- 
+Patterns include definitions, examples, instructions and specifications that break down spatial relationships and interactions / behaviors. 
+
 <h3>Why use patterns?</h3>
- 
+
 Using patterns enhances customer experience through maintaining consistency and ease of use. And, sticking to defined standards simplifies updating patterns across multiple pages when changes are required.
 
 Patterns libraries are designed to evolve over time, never going out of date. Changes should be communicated, as they occur, to the design community.
@@ -66,8 +66,3 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 
 #### General
 <a href="general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a><br>
-
-
-
-
-

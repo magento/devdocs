@@ -7,6 +7,10 @@ menu_title: Magento Optimization Guide
 menu_order: 100
 version: 2.2
 github_link: config-guide/prod/prod_perf-optimize.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic provides instructions for optimizing the performance of your production deployment.
@@ -117,11 +121,7 @@ Switching to production mode improves store front responsiveness and prevents lo
 Run the following commands to switch to production mode:
 
 ~~~
-bin/magento setup:static-content:deploy
-bin/magento setup:di:compile
-bin/magento deploy:mode:set -s production
-bin/magento index:reindex
-bin/magento cache:flush
+bin/magento deploy:mode:set production
 ~~~
 
 ### Optimizing Asset Performance

@@ -7,6 +7,8 @@ menu_title: Payment method facade
 menu_order: 3
 version: 2.1
 github_link: payments-integrations/base-integration/facade-configuration.md
+functional_areas:
+  - Integration
 ---
 
 Payment facade it is an instance of [Payment Adapter]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php) configured with virtual types and allows to
@@ -90,7 +92,7 @@ You can configure the pool of validators, which allows processing various paymen
 A custom validator should implement the `\Magento\Payment\Gateway\Validator\ValidatorInterface`. In the most cases, it is enough
 to extend the `\Magento\Payment\Gateway\Validator\AbstractValidator` and create an implementation of the `validate` method:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class CountryValidator extends AbstractValidator
 {
     /**
@@ -115,7 +117,7 @@ class CountryValidator extends AbstractValidator
         return $this->createResult($isValid);
     }
 }
-{% endhighlight %}
+```
 
 Then, the newly created validator needs to be added to the global pool of validators:
 

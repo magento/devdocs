@@ -3,18 +3,16 @@ layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
-title: Module Reference Guide
+title: Magento_BundleStaging module
 menu_title: BundleStaging
 menu_order: 2
 version: 2.2
-
-
+ee_only: true
 github_link: mrg/ee/BundleStaging.md
 ---
 
-## Overview
 
-The Magento_BundleStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. This new functionality enables you to stage a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} in the Schedule Update form of the product.
+The Magento_BundleStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. This new functionality enables you to stage a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} in the Schedule Update form of the product.
 
 ## Implementation details
 
@@ -40,4 +38,4 @@ You can extend Bundle updates product listing using  the grid {% glossarytooltip
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

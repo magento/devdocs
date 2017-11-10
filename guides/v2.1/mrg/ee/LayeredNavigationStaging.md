@@ -1,19 +1,16 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: Commerce
 title: Magento_LayeredNavigationStaging module
 menu_title: LayeredNavigationStaging
 menu_order: 2
 version: 2.1
+ee_only: true
 github_link: mrg/ee/LayeredNavigationStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
-
-The Magento_LayeredNavigationStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE.
+The Magento_LayeredNavigationStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}.
 It restricts functionality of the Magento_LayeredNavigationStaging module in the staging preview mode.
 
 ## Implementation details
@@ -35,4 +32,4 @@ For more information about layouts, see the [Layout documentation](http://devdoc
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

@@ -4,12 +4,18 @@ group: install-dock
 subgroup: 05_PhpStorm
 title: Debug in PhpStorm and browser
 menu_title: Debug in PhpStorm and browser
-menu_node: 
+menu_node:
 menu_order: 50
 version: 2.0
 github_link: install-gde/docker/docker-phpstorm-debug.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
  
+{% include install/docker/deprecated-note.html %}
+
 This topic discusses how to debug custom code using PhpStorm and the Chrome web browser using Xdebug.
 
 {% include install/docker/docker-phpstorm.md %}

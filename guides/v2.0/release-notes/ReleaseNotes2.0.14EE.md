@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.0.14 Release Notes
-menu_title: Magento EE 2.0.14 Release Notes
+title: Magento Commerce 2.0.14 Release Notes
+menu_title: Magento Commerce 2.0.14 Release Notes
 menu_order: 265
 version: 2.0
 level3_menu_node: level3child
@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.0.14EE.md
 
 *Patch code and release notes were published on May 31, 2017.* 
 
-We are pleased to present Magento Community Edition 2.0.14. This release includes critical enhancements to the security of your Magento software.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.14. This release includes critical enhancements to the security of your Magento software.
  
 
 
@@ -21,7 +21,7 @@ We are pleased to present Magento Community Edition 2.0.14. This release include
  While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
  </div>
  
- Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud) Release Notes</a>?
 
 
 ## Highlights

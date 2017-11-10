@@ -1,12 +1,14 @@
 ---
 layout: default
 group: howdoi
-subgroup: checkout
+subgroup:
 title: Add a custom payment method to checkout
 menu_title: Add a custom payment method to checkout
 menu_order: 3
 version: 2.0
 github_link: howdoi/checkout/checkout_payment.md
+functional_areas:
+  - Checkout
 ---
 
 <h2> What's in this topic </h2>
@@ -30,7 +32,7 @@ All the steps are described further.
 
 ## Create the .js component file {#create}
 
-Your payment method renderer must be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{page.baseurl}}extension-dev-guide/build/composer-integration.html). Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+Your payment method renderer must be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{page.baseurl}}extension-dev-guide/build/composer-integration.html). Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 In you custom module directory create the component's `.js` file (payment method renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<Magento_module_dir>/view/frontend/web/js/view/payment/method-renderer/` directory.
 
@@ -164,7 +166,7 @@ In order to get access to the system configuration, your payment method or a gro
 
 A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
 ...
@@ -176,7 +178,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
     }
 ...
 }
-{% endhighlight %}
+```
 
 A sample DI configuration file of a custom module `<your_module_dir>/etc/di.xml`:
 

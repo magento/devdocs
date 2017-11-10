@@ -1,15 +1,17 @@
 ---
 layout: default
 group: howdoi
-subgroup: checkout
+subgroup:
 title: Add custom fields that influence other Checkout fields
 menu_title: Add custom fields that influence other Checkout fields
 menu_order: 90
 version: 2.0
 github_link: howdoi/checkout/checkout_custom_checkbox.md
+functional_areas:
+  - Checkout
 ---
 
-This topic describes how to add a custom field that influences other fields on the checkout page. 
+This topic describes how to add a custom field that influences other fields on the checkout page.
 
 Let's consider a case where you need to add a check box whose state (selected or cleared) changes the state of other fields: when the check box is selected, the Shipping Address fields get prepopulated with a certain address. To implement such a check box, take the following steps:
 

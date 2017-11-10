@@ -7,7 +7,8 @@ menu_title: Security, performance, and data handling
 menu_order: 3
 version: 2.0
 github_link: ext-best-practices/extension-coding/security-performance-data-bp.md
-
+functional_areas:
+  - Standards
 ---
 
 You should make sure that your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} handles data with care in order to prevent sensitive information from being exposed. Incorrect handling of data requests or class usage can negatively impact your extension and create security vulnerabilities. Consider applying the following best practices to your extension to improve performance and security.

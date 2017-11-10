@@ -4,9 +4,13 @@ group: mrg
 subgroup: 10_Community Edition
 title: Magento_Sales module
 menu_title: Sales
-menu_order: 8
+menu_order: 1
 version: 2.2
 github_link: mrg/ce/Sales.md
+redirect_from:
+    - guides/v2.2/mrg/ce/Sales/description.html
+    - guides/v2.2/mrg/ce/Sales/dependencies.html
+    - guides/v2.2/mrg/ce/Sales/services.html
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in the system.
@@ -138,7 +142,7 @@ The service returns an identifier of the created Invoice.
 
 #### REST declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/invoice" method="POST">
@@ -162,7 +166,7 @@ The service returns an identifier of the created Invoice.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Api/InvoiceOrderInterface.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/InvoiceOrderInterface.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -174,7 +178,7 @@ The service returns an identifier of the created Invoice.
 {% collapsible Click to show/hide included code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Model/InvoiceOrder.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/InvoiceOrder.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -448,7 +452,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
@@ -472,7 +476,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -484,7 +488,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Model/RefundInvoice.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/RefundInvoice.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -727,7 +731,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/refund" method="POST">
@@ -751,7 +755,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -763,7 +767,7 @@ The service returns an identifier of a created Credit Memo.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Model/RefundOrder.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/RefundOrder.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -947,7 +951,7 @@ The service returns the identifier of a created shipment.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/ship" method="POST">
@@ -971,7 +975,7 @@ The service returns the identifier of a created shipment.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Api/ShipOrderInterface.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/ShipOrderInterface.php %}
 {% endhighlight %}
 
 {% endcollapsible %}
@@ -983,7 +987,7 @@ The service returns the identifier of a created shipment.
 {% collapsible Click to show/hide a code %}
 
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/Model/ShipOrder.php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/ShipOrder.php %}
 {% endhighlight %}
 
 {% endcollapsible %}

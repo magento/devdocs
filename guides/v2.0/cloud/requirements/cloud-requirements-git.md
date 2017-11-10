@@ -1,10 +1,10 @@
 ---
 layout: default
-group: cloud
-subgroup: 020_requirements
+group:
+subgroup:
 title: Git requirements
 menu_title: Git requirements
-menu_order: 3
+menu_order: 
 menu_node:
 version: 2.0
 github_link: cloud/requirements/cloud-requirements-git.md

@@ -3,16 +3,15 @@ layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
-title: Module Reference Guide
+title: Magento_CmsStaging module
 menu_title: CmsStaging
 menu_order: 2
 version: 2.2
+ee_only: true
 github_link: mrg/ee/CmsStaging.md
 ---
 
-## Overview
-
-The Magento_CmsStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to add the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Page and the {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %} updates to the existing store campaigns. These updates are shown on the campaign dashboard.
+The Magento_CmsStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Page and the {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %} updates to the existing store campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -71,4 +70,4 @@ For more information about layouts, see the [Layout documentation](http://devdoc
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

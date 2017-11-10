@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: default
 group: fedg
 subgroup: G_Translate
 title: Create a translation dictionary for a theme
@@ -7,6 +7,8 @@ menu_title: Create a translation dictionary for a theme, illustration
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/translations/translate_practice.md
+functional_areas:
+  - Frontend
 ---
 
 <h2>What's in this topic</h2>
@@ -60,6 +62,11 @@ Open the newly generated <code>magento2/app/design/frontend/OrangeCo/orange/i18n
 </li>
 
 </ol>
+
+Now you can run deploy command to get changes of localization,
+<pre>
+php bin/magento setup:static-content:deploy
+</pre>
 
 When the OrangeCo apply the orange theme, the custom strings are used instead default ones. 
 

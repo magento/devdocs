@@ -47,20 +47,20 @@ The basic Transfer Factory interface is [Magento\Payment\Gateway\Http\TransferFa
 
 The similar example of factory might looks like this:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
  public function create(array $request)
  {
     return $this->transferBuilder
         ->setBody($request)
         ->build();
  }
-{% endhighlight %}
+```
 
 In this example transfer factory simply sets request data using Transfer Builder and returns the created object.
 
 Following is an example of a more complicated behavior. Here transfer factory sets all required data to process requests using {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} credentials and all data is sent in JSON format.
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 public function create(array $request)
 {
     return $this->transferBuilder
@@ -72,6 +72,6 @@ public function create(array $request)
         ->setUri($this->getUrl())
         ->build();
 }
-{% endhighlight%}
+```
 
 

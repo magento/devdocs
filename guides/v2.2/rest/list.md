@@ -7,15 +7,17 @@ menu_title: List of REST endpoints by module
 menu_order: 3
 version: 2.2
 github_link: rest/list.md
+functional_areas:
+  - Integration
 ---
 
-## List of REST endpoints for Magento Enterprise Edition {#listee}
+## List of REST endpoints for {{site.data.var.ee}} {#listee}
 
-The REST endpoints for Magento Enterprise Edition (EE) are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
+The REST endpoints for {{site.data.var.ee}} (formerly Enterprise Edition (EE)) are available on {{site.data.var.ee}} installations only. Commerce installations automatically have access to all {{site.data.var.ce}} (formerly Community Edition (CE)) REST APIs.
 
 Additions since 2.1 are marked with asterisks (*).
 
-See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of endpoints provided with B2B.
+See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}.
 
 ### CustomerBalance
 
@@ -72,15 +74,11 @@ See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a
 
     POST   /V1/worldpay-guest-carts/:cartId/payment-information
 
-## List of REST APIs for Magento Community Edition {#list}
+## List of REST APIs for {{site.data.var.ce}} {#list}
 
-The Magento Community Edition (CE) REST APIs are available on all EE and CE installations.
+The {{site.data.var.ce}} REST APIs are available on all {{site.data.var.ee}} and {{site.data.var.ce}} installations.
 
 Additions since 2.1 are marked with asterisks (*).
-
-### Analytics
-
-    *GET    /V1/analytics/link
 
 ### Backend
 
@@ -178,6 +176,7 @@ Additions since 2.1 are marked with asterisks (*).
     POST   /V1/products/:sku/websites
     PUT    /V1/products/:sku/websites
     DELETE /V1/products/:sku/websites/:websiteId
+    *GET   /V1/products-render-info
 
 ### CatalogInventory
 

@@ -8,6 +8,8 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: comp-mgr/marketplace/marketplace.md
+functional_areas:
+  - Upgrade
 ---
 
 This topic provides a simple example of getting free extensions for Magento Community Edition (CE). For more detail, see the [Marketplace quick tour](http://docs.magento.com/marketplace/user_guide/quick-tour/install-extension.html){:target="_blank"}.

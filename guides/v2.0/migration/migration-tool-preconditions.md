@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: C_DMTool
 title: Preconditions
 menu_title: Preconditions
@@ -9,6 +9,8 @@ menu_order: 1
 version: 2.0
 github_link: migration/migration-tool-preconditions.md
 redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
+functional_areas:
+  - Tools
 ---
 
 Before starting migration, make sure the following requirements are met.
@@ -37,7 +39,7 @@ Do not start Magento 2 cron jobs.
 
   If Binary Logging is enabled for your Magento 1 database, set the global [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_log_bin_trust_function_creators){:target="_blank"} MySQL system variable to `1`, or grant the [SUPER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_super){:target="_blank"} to your account.
 
-*	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1 database.
+* We do not recommend creating new entities (products, categories, attributes, etc.) in your Magento 2 store before migration because the Data Migration Tool overwrites such new entities with the old ones from Magento 1.
 
 ## Extensions
 

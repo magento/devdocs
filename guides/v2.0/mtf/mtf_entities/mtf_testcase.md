@@ -31,13 +31,13 @@ The `__prepare()` method can be useful to prepare the unchangeable data that is 
 
 This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function __prepare(Customer $customer)
 {
     $customer->persist();
     return ['customer' => $customer];
 }
-{%endhighlight%}
+```
 
 A returned argument `$customer` is available in the test and in [constraints][].
 
@@ -45,7 +45,7 @@ A returned argument `$customer` is available in the test and in [constraints][].
 
 The `__inject()` method is used to inject data in a test (usually to initialize a page). For an example:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function __inject(
     CatalogProductIndex $productGrid,
     CatalogProductEdit $editProductPage
@@ -53,7 +53,7 @@ public function __inject(
     $this->productGrid = $productGrid;
     $this->editProductPage = $editProductPage;
 }
-{%endhighlight%}
+```
 
  This method is run before each [variation][] test started. Returned arguments from this method are available in [constraints][] and in the test as well.
 
@@ -113,7 +113,7 @@ When [constraints][] of the variation have been performed, you can use the `tear
 
 For example, the following code deletes a sales rule after each variation:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function tearDown()
 {
     $this->promoQuoteIndex->open();
@@ -121,7 +121,7 @@ public function tearDown()
     $this->promoQuoteEdit->getFormPageActions()->delete();
     $this->promoQuoteEdit->getModalBlock()->acceptAlert();
 }
-{%endhighlight%}
+```
 
 ## Test case flow {#flow}
 

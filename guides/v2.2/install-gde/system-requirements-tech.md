@@ -8,6 +8,10 @@ menu_node:
 menu_order: 2
 version: 2.2
 github_link: install-gde/system-requirements-tech.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Operating systems (Linux x86-64)
@@ -40,7 +44,7 @@ Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1,
 The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
 </div>
 
-*	<a href="http://php.net/manual/en/book.bc.php" target="&#95;blank">bc-math</a> <img src="{{ site.baseurl }}common/images/ee-only_small.png">
+*	<a href="http://php.net/manual/en/book.bc.php" target="&#95;blank">bc-math</a> ({{site.data.var.ee}} only)
 * <a href="http://php.net/manual/en/book.ctype.php" target="&#95;blank">ctype</a>
 *	<a href="http://php.net/manual/en/book.curl.php" target="&#95;blank">curl</a>
 * <a href="http://php.net/manual/en/book.dom.php" target="&#95;blank">dom</a>
@@ -89,7 +93,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 *	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
 *	<a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
-*	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
+*	{{site.data.var.ee}} only
 
     *	Elasticsearch version 2.x
 
@@ -98,13 +102,13 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 	*	RabbitMQ 3.5.x (compatible with 2.0 and later)
 
-		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.
+		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for {{site.data.var.ee}} only.
 
 	*	Three master databases
 
 		These <a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).
 
-		Available for Magento EE only.
+		Available for {{site.data.var.ee}} only.
 
 ### Optional but recommended:
 *	<a href="http://xdebug.org/download.php" target="&#95;blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)

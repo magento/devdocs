@@ -7,6 +7,8 @@ menu_title: Payment info rendering in Admin checkout
 menu_order: 4
 version: 2.1
 github_link: payments-integrations/base-integration/formblocktype.md
+functional_areas:
+  - Integration
 ---
 
 The payment information form rendering in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation is defined by the block class, its template and {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. 
@@ -19,7 +21,8 @@ most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payment
 ## Example of custom formBlockType: Braintree payment method implementation
 
 In the integration with the Braintree payment provider, we use the `\Magento\Braintree\Block\Form` class as `formBlockType`. It allows displaying only card types available for configured countries:
-{% highlight php startinline=1 %}
+
+``` php?start_inline=1
 class Form extends Cc
 {
     /**
@@ -61,7 +64,7 @@ class Form extends Cc
         return $filtered;
     }
 }
-{% endhighlight %}
+```
 
 
 ## Template

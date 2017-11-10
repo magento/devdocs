@@ -625,15 +625,15 @@ It contains the `getOptions()` method that:
 
 * Calls the render if there is a render with the name `bundle`
 
-{%highlight php5 startinline=1%}
+``` php?start_inline=1
 $this->callRender($typeId, 'getOptions', ['product' => $product])
-{%endhighlight%}
+```
 
 * Calls a default method if the render is absent
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 $this->getCustomOptionsBlock()->getOptions($product);
-{%endhighlight%}
+```
  
 ### Define a selector/locator {#define-selector}
 

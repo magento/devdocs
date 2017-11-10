@@ -7,6 +7,8 @@ menu_title: Payment Token
 menu_order: 10
 version: 2.1
 github_link: payments-integrations/vault/payment-token.md
+functional_areas:
+  - Integration
 ---
 
 Magento does not store any private credit card details. It only stores the data received from the payment provider: payment processor token and credit card details without sensitive data. 
@@ -19,7 +21,7 @@ To retrieve and store token details, you need to implement a [response handler](
 
 Following sample is an example of the response handler implementation:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class VaultDetailsHandler implements HandlerInterface
 {
     /**
@@ -66,7 +68,7 @@ class VaultDetailsHandler implements HandlerInterface
         return $paymentToken;
     }
 }
-{% endhighlight %}
+```
 
 There are two types of `paymentTokenFactory`: 
 

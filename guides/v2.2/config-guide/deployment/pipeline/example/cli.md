@@ -4,12 +4,17 @@ group: config-guide
 subgroup: 045_pipeline
 title: Using CLI commands
 menu_title: Using CLI commands
-menu_node: 
+menu_node:
 menu_order: 6200
 level3_menu_node: level3child
 level3_subgroup: deployment-examples
 version: 2.2
 github_link: config-guide/deployment/pipeline/example/cli.md
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, `config.php`, and Magento CLI commands.

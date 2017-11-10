@@ -168,7 +168,7 @@ Example of using `links` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-- `listens`: used to track the changes of a component's proporty.
+- `listens`: used to track the changes of a component's property.
   - `key` - name of the internal property which listens to the changes.
   - `value` - name of the property or method which is tracked for changes. Can use string templates.
 

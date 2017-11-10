@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: C_DMTool
 title: Configure migration
 menu_title: Configure migration
@@ -9,20 +9,22 @@ menu_order: 4
 version: 2.0
 github_link: migration/migration-tool-configure.md
 redirect_from: /guides/v1.0/migration/migration-tool-configure.html
+functional_areas:
+  - Tools
 ---
 
 ## Overview of Data Migration Tool configuration {#migration-configure-over}
 
 After you install the data migration tool, the following directory contains mapping and configuration files:
 
-*	Magento CE:
+*	{{site.data.var.ce}}:
 
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
 
-*	Magento EE:
+*	{{site.data.var.ee}}:
 
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
 
 The preceding directories contain subdirectories for each supported version.
 
@@ -126,11 +128,11 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 	<td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
 </tr>
 <tr>
-	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>
+	<td><em>{{site.data.var.ee}} only</em>. customer-attr-document-groups.xml.dist</td>
 	<td>List of tables used in the custom customer attributes step.</td>
 </tr>
 <tr>
-	<td><em>EE only</em>. customer-attr-map.xml.dist</td>
+	<td><em>{{site.data.var.ee}} only</em>. customer-attr-map.xml.dist</td>
 	<td>Map file that is used in Custom Customer Attributes Step.</td>
 </tr>
 <tr>
@@ -158,7 +160,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 	<td>Log mapping file.</td>
 </tr>
 <tr>
-	<td><em>EE only</em>. map-sales.xml.dist</td>
+	<td><em>{{site.data.var.ee}} only</em>. map-sales.xml.dist</td>
 	<td>Map file that is used in SalesOrder step.</td>
 </tr>
 <tr>

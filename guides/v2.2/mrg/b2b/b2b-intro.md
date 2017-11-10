@@ -2,7 +2,7 @@
 layout: default
 group: mrg
 subgroup: 30_B2B
-title: B2B modules
+title: Magento B2B modules
 menu_title: B2B
 menu_order: 1
 version: 2.2

@@ -7,6 +7,8 @@ menu_title: Coding FAQ
 menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/extension-coding/coding-faq.md
+functional_areas:
+  - Standards
 ---
 
 This page is a compilation of frequently asked coding questions by the Magento Community.
@@ -24,8 +26,8 @@ This page is a compilation of frequently asked coding questions by the Magento C
 
 The correct edition can be obtained through `\Magento\Framework\App\ProductMetadataInterface::getEdition`.
 
-In Magento CE that interface maps to the concrete implementation `Magento\Framework\AppInterface\ProductMetadata`.
-However, in Magento EE, the Enterprise {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} will override that mapping and the interface will be implemented by `\Magento\Enterprise\Model\ProductMetadata`.
+In {{site.data.var.ce}} that interface maps to the concrete implementation `Magento\Framework\AppInterface\ProductMetadata`.
+However, in {{site.data.var.ee}}, the Commerce {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} will override that mapping and the interface will be implemented by `\Magento\Enterprise\Model\ProductMetadata`.
 
 Just relying on the interface through {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} will get you the right class, and calling "getEdition" will return the right answer.
 

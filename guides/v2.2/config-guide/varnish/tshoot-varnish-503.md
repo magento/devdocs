@@ -8,6 +8,10 @@ menu_order: 500
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/tshoot-varnish-503.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Backend Fetch Failed errors
@@ -55,6 +59,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
              -p thread_pool_max=${VARNISH_MAX_THREADS} \
              -p http_resp_hdr_len=65536 \
              -p http_resp_size=98304 \
+	     -p workspace_backend=98304 \
              -S ${VARNISH_SECRET_FILE} \
              -s ${VARNISH_STORAGE}"
 

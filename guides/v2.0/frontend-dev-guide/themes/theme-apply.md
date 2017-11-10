@@ -8,6 +8,9 @@ menu_order: 4
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-apply.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-apply.html
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 <h2 id="theme-apply-overview">What's in this topic</h2>
@@ -40,7 +43,7 @@ To add a design exception:
 2. In Admin, go to **Stores** > **Configuration** > **Design**.
 3. In the **Scope** drop-down field, select your {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
-5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
+5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
 6. Click **Save Config**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.

@@ -1,13 +1,15 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Start the Module Manager
 menu_title: Start the Module Manager
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.2
 github_link: comp-mgr/module-man/compman-start.md
+functional_areas:
+  - Upgrade
 ---
 
 <h2 id="compman-access">Start the Module Manager from the Magento Admin</h2>
@@ -15,7 +17,7 @@ To run the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% en
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
-3.	Click **Module Manager** and continue with <a href="{{page.baseurl}}comp-mgr/module-man/compman-main-pg.html">Manage your modules</a>.
+3.	Click **Module Manager**.
 
 	![]({{ site.baseurl }}common/images/modman_select.png){:width="550px"}
 
@@ -61,5 +63,3 @@ To disable a module:
 
 	![Disable a module]({{ site.baseurl }}common/images/modman_disable.png)
 2.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/module-man/compman-readiness.html).
-
-
