@@ -100,7 +100,7 @@ Once the application has been built it is mounted on a **read-only file system**
 
 This means you cannot FTP to the server and add modules. Instead, you must add code to your Git repo and run `git push`, which builds and deploys the environment.
 
-The build checks if the [`config.php` file]({{page.baseurl}}cloud/live/sens-data-over.html) exists in the codebase. If so, static files are deployed during this phase, reducing the downtime in the deployment phase.
+The build checks if the [`config.php` file]({{page.baseurl}}cloud/live/sens-data-over.html) exists in the codebase and has information about scopes. If so, static files are deployed during this phase, reducing the downtime in the deployment phase.
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
 The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service didn't change, we reuse the slug from the archive.
@@ -139,6 +139,8 @@ There are two default deploy hooks. `pre-deploy.php` completes necessary cleanup
 *	Sets the mode to either [`developer`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
 
 	In `production` mode, the script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
+
+* Uses the -s flag with a default setting of `quick` for static content deployment strategy. You can customize the strategy using the environment variable [`SCD_STRATEGY`](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html). For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>

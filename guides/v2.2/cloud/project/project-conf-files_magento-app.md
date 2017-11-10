@@ -270,7 +270,7 @@ name: myphpapp
 type: php:7.0
 {% endhighlight %}
 
-We support PHP versions 7.0. The default is 7.0.
+For PHP versions, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
 
 See one of the following sections for more information:
 

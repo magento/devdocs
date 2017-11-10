@@ -79,14 +79,14 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X we support 7.0.
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
 * [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
 * [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
 * [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
 * [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
 * [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.28 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.32 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 

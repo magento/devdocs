@@ -15,7 +15,7 @@ functional_areas:
 
 Fastly is a CDN based on Varnish caching, basically a cloud varnish service. When working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). [Fastly](https://docs.fastly.com/){:target="_blank"} with [Varnish](https://varnish-cache.org/docs/){:target="_blank"} caches your site pages, assets, CSS, and more in backend datacenters you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster.
 
-When you update products, catalogs, content, and more, Fastly purges that specific cached content to refresh and provide the latest changes.
+For {{site.data.var.ece}}, you receive Fastly CDN and DDoS services. When you update products, catalogs, content, and more, Fastly purges that specific cached content to refresh and provide the latest changes.
 
 We provide Fastly service credentials including a Fastly Service ID and API key pair for your Staging and Production environments. To [set up Fastly](#install-configure), you enter credentials, upload VCL snippets, and configure backends (with Origin shields) in Staging and Production environments, not in Integration.
 
@@ -32,12 +32,12 @@ Fastly provides the following powerful tools for Magento:
 
 We highly recommend enabling and using Fastly for your caching and CDN. The only situation you may not want to enable is for a headless deployment.
 
-We strongly recommend installing Fastly module 1.2.28 or later. 
+We strongly recommend installing Fastly module 1.2.32 or later.
 
 ## Fastly and 503 timeouts {#timeouts}
 When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.
 
-If you receive a 503 error, make the request directly to the origin or review logs
+If you receive a 503 error, make the request directly to the origin or review logs. For details, see [Fastly troubleshooting]({{ page.baseurl}}cloud/trouble/trouble_fastly.html#timeouts).
 
 Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes.
 
