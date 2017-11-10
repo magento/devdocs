@@ -69,6 +69,7 @@ You'll need the SSH and Git access information for your project.
   	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
   	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
 
+#### Deploy to Pro: updated or created after October 23, 2017 {#classic}
 To deploy to Pro projects **created after October 23, 2017** or [updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html):
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
@@ -86,7 +87,8 @@ To deploy to Pro projects **created after October 23, 2017** or [updated]({{ pag
 
           git push origin
 
-To deploy to Pro projects **created before October 23, 2017**:
+#### Deploy to Pro: created before October 23, 2017 {#classic}
+For these environments, you are pushing code from repository to repository: Integration `master` to Staging or Production `master`. Due to these being `master` branches in different repositories, you cannot merge as if branch to branch. You should have completed all [prerequisites]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html) prior to deployment.
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Pull the `master` branch to the server.
