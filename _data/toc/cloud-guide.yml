@@ -33,6 +33,9 @@ pages:
         - label: Composer
           url: cloud/reference/cloud-composer.html
 
+        - label: Magento Cloud CLI
+          url: cloud/reference/cli-ref-topic.html
+
         - label: GitHub
           url: cloud/project/project-integrate-github.html
 
@@ -125,8 +128,8 @@ pages:
         - label: Fastly troubleshooting
           url: cloud/trouble/trouble_fastly.html
 
-    - label: Configure your deployment
-      url: cloud/deploy/configure-deploy.html
+    - label: Configure environments
+      url: cloud/env/environments.html
       children:
         - label: Configure .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
@@ -192,32 +195,15 @@ pages:
         - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
 
-    - label: Manage your environments
-      url: cloud/env/environments.html
+    - label: Manage variables
+      url: cloud/env/environment-vars_over.html
       children:
-
-        - label: Magento Cloud CLI
-          url: cloud/reference/cli-ref-topic.html
-
-        - label: Overview of environment variables
-          url: cloud/env/environment-vars_over.html
 
         - label: Magento application environment variables
           url: cloud/env/environment-vars_magento.html
 
         - label: Magento Commerce (Cloud) environment variables
           url: cloud/env/environment-vars_cloud.html
-
-        - label: Configuration reference
-          children:
-            - label: All configuration paths except payments reference
-              url: cloud/live/config-reference-most.html
-
-            - label: Payment configuration paths reference
-              url: cloud/live/config-reference-payment.html
-
-            - label: Sensitive configuration paths reference
-              url: cloud/live/config-reference-sens.html
 
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html

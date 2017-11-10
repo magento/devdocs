@@ -68,7 +68,7 @@ Sensitive values are _not_ stored in `app/etc/config.php`. Any sensitive configu
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 </div>
 
-For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html).
+For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
 Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
