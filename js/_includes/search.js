@@ -1,5 +1,7 @@
 // Clicking on search icon triggers the search form in header
 
+
+
 $(function() {
 
   var $quickSearchInput = $('.quick-search input');
@@ -57,7 +59,14 @@ $(function() {
     if ( typeof suggestion.url != 'undefined' ) {
       window.location.href = suggestion.url;
     }
-    //console.log(suggestion);
+    console.log(suggestion);
+  }).on('keypress', function (event) {
+    if(event.which == 13) {
+      var value = escapeHTML(event.target.value);
+      if (value) {
+        window.location = $('form.quick-search').attr('action') + '?q=' + value;
+      }
+    }
   });
 
 
@@ -66,3 +75,18 @@ $(function() {
 
 
 });
+
+
+var ESC_MAP = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+};
+
+function escapeHTML(s, forAttribute) {
+    return s.replace(forAttribute ? /[&<>'"]/g : /[&<>]/g, function(c) {
+        return ESC_MAP[c];
+    });
+}

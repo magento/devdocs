@@ -14,17 +14,14 @@ functional_areas:
   - Theme
 ---
 
-This topic discusses how to install a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} either by extracting its code to the Magento file system or using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
+You can install one or multiple themes to use for one or all of your stores and sites in your project. Themes include multiple static files including images, fonts, CSS, JavaScript, PHP, and more to fully design your stores. You can add the theme by either by extracting its code to the Magento file system or using Composer.
 
-### Get started
-
-{% collapsible To get started: %}
+## Get started with a branch {#branch}
+We recommend using a branch for adding, configuring, and testing your theme.
 
 {% include cloud/cli-get-started.md %}
 
-{% endcollapsible %}
-
-### Install a theme manually {#cloud-howto-theme-man}
+## Install a theme manually {#manual}
 To install a theme manually, you must have the theme's code, either in a compressed archive or in a directory structure similar to the following:
 
 {% highlight xml %}
@@ -43,16 +40,14 @@ To install a theme manually, you must have the theme's code, either in a compres
           └── js
 {% endhighlight %}
 
-{% collapsible To install a theme manually: %}
+To install a theme manually:
 
-1.	Copy the theme's code under `<Magento root dir>/app/design/frontend` for a storefront theme or `<Magento root dir>/app/design/adminhtml` for an Admin theme.
+1.	Copy the theme's code under `<Magento root dir>/app/design/frontend` for a storefront theme or `<Magento root dir>/app/design/adminhtml` for an Admin theme. Make sure the top-level directory is `<VendorName>`; otherwise, the theme won't install properly.
 
-    Make sure the top-level directory is `<VendorName>`; otherwise, the theme won't install properly.
-
-    For example
+    For example:
 
         cp -r ExampleTheme <Magento root dir>/app/design/frontend
-3.  Confirm the theme copied to the correct place.
+2.  Confirm the theme copied to the correct place.
 
     *   Storefront theme: `ls <Magento root dir>/app/design/frontend`
     *   Admin theme: `ls <Magento root dir>/app/design/adminhtml`
@@ -60,24 +55,22 @@ To install a theme manually, you must have the theme's code, either in a compres
     A sample follows:
 
         ExampleTheme Magento
-2.	Add and commit files:
+3.	Add and commit files:
 
 		git add -A && git commit -m "Add theme"
-3.	Push the files to your branch:
+4.	Push the files to your branch:
 
 		git push origin <branch name>
-4.	Wait for deployment to complete.
-5.	Log in to the Magento Admin.
-6.	Click **Content** > Design > **Themes**.
+5.	Wait for deployment to complete.
+6.	Log in to the Magento Admin.
+7.	Click **Content** > Design > **Themes**.
 
 	The theme displays in the right pane.
 
-{% endcollapsible %}
-
-### Install a theme using Composer {#cloud-howto-theme-compose}
+## Install a theme using Composer {#composer}
 Installing a theme using Composer is the same as installing any other extension using Composer. See [Install extensions]({{ page.baseurl }}cloud/howtos/install-components.html) for details.
 
-{% collapsible To summarize the procedure: %}
+To summarize the procedure:
 
 1.  Purchase the theme from Magento Marketplace.
 2.  Get the theme's Composer name.
@@ -101,6 +94,3 @@ Installing a theme using Composer is the same as installing any other extension 
 #### Related topics
 *	[Install extensionss]({{page.baseurl}}cloud/howtos/install-components.html)
 *	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
-
-{% endcollapsible %}

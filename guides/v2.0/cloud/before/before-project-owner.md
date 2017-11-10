@@ -146,32 +146,6 @@ To create user accounts:
 
 As you add environments and branches, you can modify user permissions as needed. Added users receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
-## Blackfire and New Relic {#cloud-owner-creds}
-Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
-
-[Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
-
-[New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.ece}}.
-
-### Blackfire credentials
-To get your Blackfire Profiler credentials:
-
-1. As the {{site.data.var.ece}} account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
-2. In the upper right corner, click **&lt;your name>** > **Account Settings** as the following figure shows.
-
-	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png)
-3. On your account page, click **View Details** for your project as the following figure shows.
-
-	![View your project details]({{ site.baseurl }}common/images/cloud_blackfire-edit-details.png){:width="200px"}
-4. On your project details page, expand **Blackfire**.
-
-	Your Blackfire credentials display similar to the following.
-
-	![Your Blackfire credentials]({{ site.baseurl }}common/images/cloud_blackfire-account-info.png){:width="450px"}
-
-### New Relic credentials
-Your New Relic APM credentials are displayed on the same page as Blackfire. You may receive the initial New Relic invitiation through an e-mail. You can create New Relic users and provide that information to your technical resources responsible for administering New Relic.
-
 #### Related topics
 
 *	[{{site.data.var.ece}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
@@ -183,5 +157,6 @@ Your New Relic APM credentials are displayed on the same page as Blackfire. You 
 
 	* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
 	*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
+*	[Manage your project]({{page.baseurl}}cloud/project/projects.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 * [First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
