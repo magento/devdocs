@@ -404,6 +404,20 @@
         
         
         
+        <li class="nav-level2  " id="magento-cloud-cli">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="github">
             
             
@@ -833,14 +847,14 @@
     
     
 
-<li class="nav-level1  " id="configure-your-deployment">
+<li class="nav-level1 active " id="configure-environments">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.0/cloud/deploy/configure-deploy.html">Configure your deployment</a>
+    <a href="/guides/v2.0/cloud/env/environments.html">Configure environments</a>
     
 
     
@@ -1104,46 +1118,18 @@
     
     
 
-<li class="nav-level1 active " id="manage-your-environments">
+<li class="nav-level1  " id="manage-variables">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.0/cloud/env/environments.html">Manage your environments</a>
+    <a href="/guides/v2.0/cloud/env/environment-vars_over.html">Manage variables</a>
     
 
     
     <ul>
-        
-        
-        
-        <li class="nav-level2  " id="magento-cloud-cli">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="overview-of-environment-variables">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/env/environment-vars_over.html">Overview of environment variables</a>
-            
-
-            
-        </li>
-        
         
         
         
@@ -1169,68 +1155,6 @@
             <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
             
 
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="configuration-reference">
-            
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
-            
-            <span>Configuration reference</span>
-            
-
-            
-            <ul>
-                
-
-                
-                
-                <li class="nav-level3  " id="all-configuration-paths-except-payments-reference">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/live/config-reference-most.html">All configuration paths except payments reference</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="payment-configuration-paths-reference">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/live/config-reference-payment.html">Payment configuration paths reference</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="sensitive-configuration-paths-reference">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
-                    
-
-                    
-                </li>
-                
-                
-            </ul>
             
         </li>
         
@@ -1794,7 +1718,7 @@
 
   <p>When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.</p>
 
-  <h2 id="hierarchy">Branch hierarchy</h2>
+  <h2 id="hierarchy">Branch hierarchy, development, and deployment</h2>
   <p>For Starter and Pro plans, the <code class="highlighter-rouge">master</code> environment is ultimately the source or parent for all code in Magento Commerce (Cloud).</p>
 
   <ul>
@@ -1804,67 +1728,62 @@
 
   <p>In your Integration, you have a number of branches and environments available to you per plan. When you branch from <code class="highlighter-rouge">master</code>, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.</p>
 
-  <p>When you merge code from a child branch to its parent, the parent environment is redeployed with the code changes of the child environment. Child environments are typically used for development, staging, and testing.</p>
+  <p>You fully develop on your in these branches. When ready, you push the code to build and deploy to an Integration enviornment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, he parent environment is redeployed with the code changes of the child environment. For Pro, this is the Integration <code class="highlighter-rouge">master</code>. For Starter, it is an environment and branch of your choice.</p>
 
-  <h2 id="workflow">Branches and development workflows</h2>
-  <p>Magento Commerce (Cloud) imposes no rules on how you use branches and environments. You can use any branching methodology or development workflow you like for Starter and Pro plans. We do recommend specific formats</p>
+  <p>For extensive details, see the following:</p>
 
-  <p>For <strong>Starter plan</strong>, the following diagram details the branch and environment relationships:</p>
-
-  <p><img src="/common/images/cloud_arch-starter.png" alt="High-level view of Starter project" /></p>
-
-  <p>For <strong>Pro plan</strong>, the following diagram details the branch and environment relationships:</p>
-
-  <p><img src="/common/images/cloud_pro-branch-architecture.png" alt="High-level view of Pro architecture flow" /></p>
-
-  <h3 id="example">Example development process</h3>
-  <p>For example, your Agile development team creates three branches to work on three stories in a sprint. At the end of the sprint, they merge into a single branch for testing.</p>
-
-  <ol>
+  <ul>
     <li>
-      <p>To start, a Project Admin helps create the branches or gives priviledges to developers:</p>
+      <p>Starter:</p>
 
       <ul>
-        <li>Create the Sprint-X environments and grants contributor privileges to developers to create the story environments.</li>
-        <li>Create all the environments and grants contributor privileges to developers.</li>
+        <li><a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a></li>
+        <li><a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter develop and deploy workflow</a></li>
       </ul>
     </li>
-    <li>When the sprint is finished (or when the story is closed), the Project Admin and developers can review the code and test the work directly in an active environment. When accepted, all branches are merged for testing together.</li>
-    <li>Complete testing of all features and code merged into a single environment.</li>
-    <li>Depending on your plan and environment set up, deploy to Staging for pre-production testing.</li>
-    <li>Deploy to production when complete to go live.</li>
-  </ol>
+    <li>
+      <p>Pro:</p>
 
-  <p>When the code is live, make the branches used to work on the sprint in Integration as inactive. This frees up active environments and branch slots for the next sprint of work.</p>
+      <ul>
+        <li><a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architecture</a></li>
+        <li><a href="/guides/v2.0/cloud/welcome/discover-workflow.html">Pro develop and deploy workflow</a></li>
+      </ul>
+    </li>
+    <li>
+      <p><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></p>
+    </li>
+  </ul>
 
-  <h2 id="commands">Helpful CLI commands</h2>
-  <p>The following table lists the commands used in the preceding example. For a full list of all CLI commands, see <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>
+  <h2 id="configenv">Configure your environments</h2>
+  <p>After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.</p>
 
-  <table>
-	<tbody>
-		<tr>
-			<th>Task</th>
-			<th>Command</th>
-		</tr>
-	<tr>
-		<td>Create environment</td>
-		<td><code>magento-cloud environment:branch Sprint-X</code></td>
-	</tr>
-	<tr>
-		<td>Grant the contributor role to an environment</td>
-		<td><code>magento-cloud user:role &lt;user e-mail&gt; --level environment --environment test --role contributor</code></td>
-	</tr>
-	<tr><td>Merge an environment</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
-	</tr>
-	<tr><td>Sync QA with Sprint-X</td>
-	<td><code>magento-cloud environment:synchronize code data</code></td>
-	</tr>
-	<tr><td>Merge Sprint-X with the master branch</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
-	</tr>
-</tbody>
-</table>
+  <p>For Starter, you can push these files across all environments including Production <code class="highlighter-rouge">master</code>.</p>
+
+  <p>For Pro, you need to enter a ticket to have these files and settings pushed to Staging and Production environments. You can push these files and settings across all Integration environments.</p>
+
+  <ul>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> configures how the Magento application is built and deployed including services, hooks, cron jobs, and more</li>
+    <li>
+      <p><a href="/guides/v2.0/cloud/project/project-conf-files_services.html">services.yaml</a> configures the services you use in your stores and sites including name, version, and allocated disk space</p>
+
+      <ul>
+        <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">MySQL service</a> configuration for the database set in services.yaml</li>
+        <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Redis service</a> configuration for a backend caching solution set in services.yaml</li>
+        <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Solr service</a> configuration for search engines supported for Magento Commerce 2.0 set in services.yaml</li>
+        <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Elasticsearch service</a> configuration for searches supported for Magento Commerce 2.1 and later set in services.yaml</li>
+        <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a> configuration for a messaging broker set in services.yaml</li>
+      </ul>
+    </li>
+    <li>
+      <p><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a> configures how Magento processes an incoming URL for your Integration environment</p>
+
+      <ul>
+        <li><a href="/guides/v2.0/cloud/project/project-routes-more-cache.html">Caching</a> configuration options for caches set in routes.yaml</li>
+        <li><a href="/guides/v2.0/cloud/project/project-routes-more-redir.html">Redirect</a> configuration and rules for managing redirections set in routes.yaml</li>
+        <li><a href="/guides/v2.0/cloud/project/project-routes-more-ssi.html">Server side includes</a> configured set in routes.yaml</li>
+      </ul>
+    </li>
+  </ul>
 
   <h4 id="related-topics">Related topics</h4>
   <ul>

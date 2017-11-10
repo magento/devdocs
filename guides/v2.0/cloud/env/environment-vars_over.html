@@ -404,6 +404,20 @@
         
         
         
+        <li class="nav-level2  " id="magento-cloud-cli">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="github">
             
             
@@ -833,14 +847,14 @@
     
     
 
-<li class="nav-level1  " id="configure-your-deployment">
+<li class="nav-level1  " id="configure-environments">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.0/cloud/deploy/configure-deploy.html">Configure your deployment</a>
+    <a href="/guides/v2.0/cloud/env/environments.html">Configure environments</a>
     
 
     
@@ -1104,46 +1118,18 @@
     
     
 
-<li class="nav-level1  " id="manage-your-environments">
+<li class="nav-level1 active " id="manage-variables">
 
     
     <div class="toggle closed">&nbsp;</div>
     
     
     
-    <a href="/guides/v2.0/cloud/env/environments.html">Manage your environments</a>
+    <a href="/guides/v2.0/cloud/env/environment-vars_over.html">Manage variables</a>
     
 
     
     <ul>
-        
-        
-        
-        <li class="nav-level2  " id="magento-cloud-cli">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2 active " id="overview-of-environment-variables">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/env/environment-vars_over.html">Overview of environment variables</a>
-            
-
-            
-        </li>
-        
         
         
         
@@ -1169,68 +1155,6 @@
             <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
             
 
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="configuration-reference">
-            
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
-            
-            <span>Configuration reference</span>
-            
-
-            
-            <ul>
-                
-
-                
-                
-                <li class="nav-level3  " id="all-configuration-paths-except-payments-reference">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/live/config-reference-most.html">All configuration paths except payments reference</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="payment-configuration-paths-reference">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/live/config-reference-payment.html">Payment configuration paths reference</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="sensitive-configuration-paths-reference">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/live/config-reference-sens.html">Sensitive configuration paths reference</a>
-                    
-
-                    
-                </li>
-                
-                
-            </ul>
             
         </li>
         
@@ -1744,8 +1668,35 @@
 </section>
 
 
-			<h2 id="cloud-env-set-vars">Environment variables</h2>
-<p>Magento Commerce (Cloud) enables you to create variables in your environment that override configuration options. For example, we strongly recommend you <em>immediately</em> change your Magento Admin URI and administrative user’s password to prevent someone guessing your login and changing settings without your knowledge.</p>
+			<p>Magento Commerce (Cloud) supports variables for environments, projects, and applications. These variables affect all aspects of build, deployment, and configuration settings.</p>
+
+<ul>
+  <li><a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+  <li><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
+</ul>
+
+<p>You can create all variables using the Magento Cloud CLI in all Starter environments and Pro Integration environments. You can create environment variables through the Project Web Interface for all Starter and Pro environments (created after October 23, 2017 or <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">updated</a>).</p>
+
+<h2 id="magevar">Additional information</h2>
+<p>For additional information on Magento variables for v2.1.X and later, see the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a></li>
+  <li><a href="/guides/v2.0/config-guide/prod/config-reference-payment.html">Sensitive configuration paths reference</a></li>
+  <li><a href="/guides/v2.0/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
+  <li><a href="/guides/v2.0/config-guide/prod/config-reference-var-name.html">System settings reference</a></li>
+</ul>
+
+<p>To use a configuration path as a variable:</p>
+
+<ul>
+  <li>All text must be ALL CAPS.</li>
+  <li>Prefix the configuration path with the scope (the default scope, <code class="highlighter-rouge">CONFIG__DEFAULT</code>, or a specific scope).</li>
+  <li>Replace <code class="highlighter-rouge">/</code> characters in the configuration path with two underscore characters.</li>
+</ul>
+
+<h2 id="cloud-env-set-vars">Environment variables</h2>
+<p>Magento Commerce (Cloud) enables you to create environment variables that override configuration options. For example, we strongly recommend you <em>immediately</em> change your Magento Admin URI and administrative user’s password to prevent someone guessing your login and changing settings without your knowledge.</p>
 
 <p>We support the following types of variables:</p>
 
@@ -1767,7 +1718,7 @@ connect to your database, for example).</li>
 <p>This enables you to define your development variables only once, and use them on all the child environments.</p>
 </div>
 
-<h2 id="cloud-env-list">List the current environment variables</h2>
+<h2 id="cloud-env-list">CLI: List the current environment variables</h2>
 <p>To list current environment variables using SSH:</p>
 
 <ol>
@@ -1808,7 +1759,7 @@ connect to your database, for example).</li>
   </li>
 </ol>
 
-<h2 id="env-project-branch">List environment variables for a project or branch</h2>
+<h2 id="env-project-branch">CLI: List environment variables for a project or branch</h2>
 <p>To list environment variables using Magento Cloud CLI:</p>
 
 <ol>
@@ -1816,6 +1767,29 @@ connect to your database, for example).</li>
   <li>List all project variables with the command <code class="highlighter-rouge">magento-cloud project:variable:get</code> or <code class="highlighter-rouge">magento-cloud pvget</code>.</li>
   <li>List all project variables with the command <code class="highlighter-rouge">magento-cloud variable:get</code> or <code class="highlighter-rouge">magento-cloud vget</code>.</li>
 </ol>
+
+<h2 id="addvariables">CLI: Add environment variables</h2>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.</p>
+</div>
+
+<p>To create a variable using the command line:</p>
+
+<ol>
+  <li>Login to the Magento Cloud CLI. Enter the command <code class="highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
+  <li>To set a variable for the project, use the command <code class="highlighter-rouge">magento-cloud project:variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="highlighter-rouge">pvset</code>. For example, <code class="highlighter-rouge">magento-cloud pvset example 123</code> creates a variable example with a string value of 123 for the project.</li>
+  <li>After creating these variables, you can list all project variables with the command <code class="highlighter-rouge">magento-cloud project:variable:get</code> or <code class="highlighter-rouge">magento-cloud pvget</code>.</li>
+  <li>To set a variable for the branch, use the command <code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="highlighter-rouge">vset</code>. For example, <code class="highlighter-rouge">magento-cloud vset example2 abc</code> creates a variable example2 with a string value of abc for the branch.</li>
+  <li>After creating these variables, you can list all project variables with the command <code class="highlighter-rouge">magento-cloud variable:get</code> or <code class="highlighter-rouge">magento-cloud vget</code>.</li>
+</ol>
+
+<h2 id="projectweb">Project Web Interface: Add environment variables</h2>
+<p>You can add environment variables for active environments through the Project Web Interface. To create variables through the Project Web Interface, see <a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment variables</a>.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.</p>
+</div>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
