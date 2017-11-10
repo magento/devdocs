@@ -1758,7 +1758,7 @@ Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
 <p>Access an environment fully configured for your site:</p>
 
 <ul>
-  <li>For Starter, access an active development branch</li>
+  <li>For Starter, access an active branch for example <code class="highlighter-rouge">staging</code></li>
   <li>For Pro, access your <code class="highlighter-rouge">master</code> environment in Integration</li>
 </ul>
 
@@ -1775,22 +1775,25 @@ Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
 
 <p>For additional information, see <a href="http://docs.magento.com/m2/ee/user_guide/marketing/sitemap-xml.html" target="_blank">Using a Sitemap</a> and <a href="http://docs.magento.com/m2/ee/user_guide/marketing/search-engine-robots.html" target="_blank">Search Engine Robots</a>.</p>
 
-<h2 id="files">Add files to Git</h2>
-<p>If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use <code class="highlighter-rouge">rsync</code> or  <code class="highlighter-rouge">scd</code> through a terminal. If you completed the commands on your local, move the files to the correct location.</p>
+<h2 id="files">Import files to environment</h2>
+<p>If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use <code class="highlighter-rouge">rsync</code> or  <code class="highlighter-rouge">scd</code> through a terminal. If you completed the commands on your local, move the files to the correct location. The following example uses <code class="highlighter-rouge">rsync</code>.</p>
 
 <p>Move and add the files to your Git branch:</p>
 
 <ol>
-  <li>Move the files into the <code class="highlighter-rouge">/pub/media/</code> directory. This is a writable directory for .</li>
+  <li>SSH into the environment you created the files.</li>
   <li>
-    <p>Add the files to Git. For example:</p>
+    <p>Use <code class="highlighter-rouge">rsync</code> to move the files to your local. The format of the command is <code class="highlighter-rouge">rsync -azvP &lt;source&gt; &lt;destination&gt;</code>.</p>
 
-    <p>git add pub/media/sitemap.xml &amp;&amp; git commit -m “Add sitemap” &amp;&amp; git push origin master</p>
-
-    <p>git add pub/media/robots.txt &amp;&amp; git commit -m “Add robots” &amp;&amp; git push origin master</p>
+    <p>rsync -azvP <source on="" environment="" /> <local machine="" user="" name="">@<local machine="" host="" or="" IP="">:pub/media/</local></local></p>
   </li>
-  <li>Push and merge your changes in development, Staging, and Production environments.</li>
-  <li>Enter a <a href="/guides/v2.0/cloud/bk-cloud.html#gethelp">ticket with Support</a> to have redirects added for <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>.</li>
+  <li>SSH into the environment you want to move the files into.</li>
+  <li>
+    <p>Move the files into the <code class="highlighter-rouge">/pub/media/</code> directory using the rsync command:</p>
+
+    <p>rsync -azvP pub/media/ <environment machine="" user="" name="">@<environment machine="" host="" or="" IP="">:pub/media/</environment></environment></p>
+  </li>
+  <li>Enter a <a href="/guides/v2.0/cloud/bk-cloud.html#gethelp">ticket with Support</a> to have URL rewrite rules added for <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>.</li>
 </ol>
 
 <p>When the redirects are completed, keep these files updated in that file location for your Git branches during deployment.</p>
