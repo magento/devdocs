@@ -1,12 +1,7 @@
 ---
 layout: default
-group: analytics
-subgroup: Advanced Reporting
+group: reporting
 title: Advanced Reporting
-menu_title: Advanced Reporting
-menu_order: 1
-menu_node: parent
-version: 2.2
 github_link: advanced-reporting/index.md
 ---
 
@@ -51,5 +46,5 @@ Though the Analytics module provides API, it is used specifically to interchange
 <!-- LINK DEFINITIONS -->
 
 [Magento Business Intelligence]: https://magento.com/products/business-intelligence
-[modules]: ./modules
-[collection]: ./data-collection
+[modules]: ./modules.html
+[collection]: ./data-collection.html

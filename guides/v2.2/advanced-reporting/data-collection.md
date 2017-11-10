@@ -1,12 +1,7 @@
 ---
 layout: default
-group: analytics
-subgroup: Advanced Reporting
+group: reporting
 title: Data collection for advanced reporting
-menu_title: Data collection
-menu_order: 3
-menu_node:
-version: 2.2
 github_link: advanced-reporting/data-collection/index.md
 ---
 
@@ -208,7 +203,7 @@ A class that provides data for a report file. It cannot contain any parameters.
 
 <!-- LINK DEFINITIONS -->
 
-[modules]: ./data-collection/index.md
+[modules]: ./data-collection.html
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics

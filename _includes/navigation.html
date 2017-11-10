@@ -98,9 +98,12 @@
         {%endif%}
         <li><a href="{{page.baseurl}}howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="{{page.baseurl}}payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
-        {% if page.guide_version == "2.1" %}
+        {% unless page.guide_version == "2.0" %}
           <li><a href="{{page.baseurl}}extension-dev-guide/staging.html">Staging</a></li>
-        {% endif %}
+        {% endunless %}
+        {% if page.guide_version == "2.2" %}
+        <li class="leaf"><a href="{{page.baseurl}}advanced-reporting/overview.html">Advanced Reporting</a></li>
+        {%endif%}
       </ul>
     </div>
 

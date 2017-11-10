@@ -1,13 +1,7 @@
 ---
 layout: default
-group: analytics
-subgroup: Advanced Reporting
+group: reporting
 title: Modules providing advanced reporting
-landing-page: Advanced Reporting
-menu_title: Modules
-menu_order: 2
-menu_node:
-version: 2.2
 github_link: advanced-reporting/modules/index.md
 ---
 
@@ -47,7 +41,7 @@ Advanced reporting functionality is implemented in the following Magento modules
 [SalesAnalytics]: {{page.baseurl}}mrg/ce/SalesAnalytics.html
 [WishlistAnalytics]: {{page.baseurl}}mrg/ce/WishlistAnalytics.html
 
-[report data collection]: ./data-collection
+[report data collection]: ./data-collection.html
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics
