@@ -33,7 +33,7 @@ ignore
 *.bat
 *.sh
 !/vagrant/bootstrap.sh
-Rakefile
+tmp/
 /vagrant/.vagrant/
 /vendor/
 /Gemfile.lock
