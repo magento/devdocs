@@ -205,17 +205,6 @@ pages:
         - label: Magento Commerce (Cloud) environment variables
           url: cloud/env/environment-vars_cloud.html
 
-        - label: Configuration reference
-          children:
-            - label: All configuration paths except payments reference
-              url: cloud/live/config-reference-most.html
-
-            - label: Payment configuration paths reference
-              url: cloud/live/config-reference-payment.html
-
-            - label: Sensitive configuration paths reference
-              url: cloud/live/config-reference-sens.html
-
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
       children:
