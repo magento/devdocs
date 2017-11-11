@@ -37,7 +37,7 @@ Comprehensive descriptions increase the chances that a pull request is merged qu
     * Proposed [documentation update]. Documentation contributions can be submitted [here][devdocs mftf].
 7.	For large features or changes, please [open an issue][issue] and discuss first.
 This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
-8.	To report a bug, please [open an issue][issue], and follow [guidelines about bugfix issues].
+8.	To report a bug, please [open an issue][issue], and follow [guidelines about bugfix issues][issue reporting].
 9.	All automated tests must pass successfully (all builds on [Travis CI] must be green).
 
 ## Fork a repository {#fork}
@@ -104,7 +104,7 @@ If you find a bug in Magento Functional Testing Framework code, you can report i
 <div class="bs-callout bs-callout-info" markdown="1">
 Before creating an issue, please do the following:
 
-1.	Read the [issue reporting guidelines] to learn how to create an issue that can be processed in a timely manner.
+1.	Read the [issue reporting guidelines][issue reporting] to learn how to create an issue that can be processed in a timely manner.
 2.	Check the documentation to make sure the behavior you are reporting is really a bug, not a feature.
 3.	Check the [existing issues] to make sure you are not duplicating somebody’s work.
 </div>
@@ -164,11 +164,10 @@ Label| Description
 [Magento coding standards]: {{page.baseurl}}coding-standards/bk-coding-standards.html
 [Definition of Done]: {{page.baseurl}}contributor-guide/contributing_dod.html
 [documentation update]: {{page.baseurl}}contributor-guide/contributing_docs.html
-[guidelines about bugfix issues]: https://github.com/magento/magento2-functional-testing-framework/wiki/Issue-reporting-guidelines
+[issue reporting]: https://github.com/magento/magento2-functional-testing-framework/wiki/Issue-reporting-guidelines
 [MFTF repository]: https://github.com/magento/magento2-functional-testing-framework
 [GitHub documentation]: https://help.github.com/articles/syncing-a-fork
 [existing PRs]: https://github.com/magento/magento2-functional-testing-framework/pulls?q=is%3Aopen+is%3Apr
-[issue reporting guidelines]: https://github.com/magento/magento2/wiki/Issue-reporting-guidelines
 [existing issues]: https://github.com/magento/magento2-functional-testing-framework/issues?q=is%3Aopen+is%3Aissue
 [devdocs mftf]: https://github.com/magento/devdocs/tree/develop/guides/v2.3/magento-functional-testing-framework
 [Travis CI]: https://travis-ci.com/magento/magento2-functional-testing-framework/pull_requests
