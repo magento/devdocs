@@ -111,7 +111,8 @@ To set up port forwarding on a Mac or in a Unix environment, you will enter a co
 1. Open a terminal.
 2. Enter the following command:
 
-      ssh -R 9000:localhost:9000 <ssh url>
+        ssh -R 9000:localhost:9000 <ssh url>
+
     Add the `-v` option to the ssh command to show in the terminal whenever a socket is connected to the port that is being forwarded.
 
 If an "unable to connect" or "could not listen to port on remote" error is displayed, there could be another active SSH session persisting on the server that is occupying port 9000. If that connection isn't being used, you can terminate it.
@@ -177,15 +178,15 @@ If an "unable to connect" error displays, verify all of the following:
 ## SSH access to Xdebug environments {#ssh}
 For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:
 
-		magento-cloud environment:ssh --pipe -e <environment ID>
+	magento-cloud environment:ssh --pipe -e <environment ID>
 
 To use Xdebug, SSH to the environment as follows:
 
-		ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
+	ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
 
 For example,
 
-		ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+	ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 ## Debug CLI commands {#debugcli}
 This section walks through debugging CLI commands. To debug, you will need the SSH commands for your environments.
@@ -193,8 +194,8 @@ This section walks through debugging CLI commands. To debug, you will need the S
 1. SSH into the server you want to debug using CLI commands.
 2. Create the following environment variables:
 
-      export XDEBUG_CONFIG='PHPSTORM'
-      export PHP_IDE_CONFIG="serverName=<name of the server that is configured in PHPSTORM>"
+        export XDEBUG_CONFIG='PHPSTORM'
+        export PHP_IDE_CONFIG="serverName=<name of the server that is configured in PHPSTORM>"
 
 These variables will be removed when SSH session is over. When adding the variables, you can add runtime options:
 
