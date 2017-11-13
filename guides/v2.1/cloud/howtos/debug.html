@@ -1719,8 +1719,14 @@
   <li><a href="#branch">Work in a branch</a> to push file updates</li>
   <li><a href="#enable">Enable Xdebug for environments</a></li>
   <li>Configure your IDE, like <a href="#phpstorm">PhpStorm</a></li>
-  <li>For Pro, enter a <a href="#pro">ticket for Staging and Production</a></li>
   <li><a href="#port">Set up port forwarding</a></li>
+</ul>
+
+<p>For configuring on Pro plan Staging and Production, you need to complete a few more steps:</p>
+
+<ul>
+  <li>Enter a <a href="#pro">ticket for Staging and Production</a>
+*</li>
 </ul>
 
 <h3 id="branch">Get started with a branch</h3>
@@ -1831,9 +1837,6 @@
   </ol>
 
   <p>When deployed to Starter environments and Pro Integration environments, Xdebug is now available. You should continue configuring your IDE. For PhpStorm, see <a href="#phpstorm">Configure PhpStorm</a>.</p>
-
-  <h3 id="pro">Enter a ticket for Pro Staging and Production</h3>
-  <p>For Pro plans, you must enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> to have Xdebug enabled and configured in Staging and Production environments.</p>
 
   <h3 id="phpstorm">Configure PhpStorm</h3>
   <p>You need to configure <a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> to properly work with Xdebug.</p>
@@ -1990,7 +1993,14 @@ kill &lt;PID&gt;
     <li>You are running Putty on the machine on which your private Magento Commerce (Cloud) SSH keys are located</li>
   </ul>
 
+  <h3 id="pro">Configure Pro Staging and Production</h3>
+  <p>To complete configuration for Pro plan Staging and Production environments, you must enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> to have Xdebug enabled and configured in Staging and Production environments.</p>
+
+  <p>We will enable Xdebug in the environment. Be aware, this will require a redeployment of Staging and Production.</p>
+
   <h2 id="ssh">SSH access to Xdebug environments</h2>
+  <p>For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the <a href="/guides/v2.1/cloud/project/projects.html">Project Web Interface</a> and your project spreadsheet.</p>
+
   <p>For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
@@ -2005,6 +2015,56 @@ kill &lt;PID&gt;
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 </code></pre></div>  </div>
+
+  <h2 id="pro-debug">Debug for Pro Staging and Production</h2>
+  <p>To use Xdebug specifically on Pro plan Staging and Production environment, you create a separate SSH tunnel and web session only you have access to. This usage differs from typical access, only providing access to you and not to all users.</p>
+
+  <p>You will need the following:</p>
+
+  <ul>
+    <li>SSH commands for accessing the environments. You can get this information, through the <a href="/guides/v2.1/cloud/project/projects.html">Project Web Interface</a> and your project spreadsheet.</li>
+    <li>The <code class="highlighter-rouge">xdebug_key</code> value we set when configuring the Staging and Pro environments</li>
+  </ul>
+
+  <p>Set up an SSH tunnel to Staging or Production environment:</p>
+
+  <ol>
+    <li>Open a terminal.</li>
+    <li>
+      <p>Enter the following command to clean up all SSH sessions.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Enter the following command to set up the SSH tunnel for Xdebug:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+  <p>To start debugging, use the following commands with the environment URL:</p>
+
+  <ol>
+    <li>
+      <p>To enable remote debugging, visit the site in the browser with the following added to the URL where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ?XDEBUG_SESSION_START=KEY
+</code></pre></div>      </div>
+
+      <p>This sets the cookie that sends browser requests to trigger Xdebug.</p>
+    </li>
+    <li>Complete your debugging with Xdebug.</li>
+    <li>
+      <p>When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ?XDEBUG_SESSION_STOP=KEY
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+  <p>Please note, <code class="highlighter-rouge">XDEBUG_SESSION_START</code>passed by <code class="highlighter-rouge">POST</code> requersts are not supported at this time.</p>
 
   <h2 id="debugcli">Debug CLI commands</h2>
   <p>This section walks through debugging CLI commands. To debug, you will need the SSH commands for your environments.</p>
@@ -2032,7 +2092,7 @@ kill &lt;PID&gt;
 
   <ol>
     <li>On the Extension menu, click <strong>Debug</strong> to enable.</li>
-    <li>Right click (on what?), and on the options menu set the IDE key to <strong>PHPSTORM</strong>.</li>
+    <li>Right click and on the options menu set the IDE key to <strong>PHPSTORM</strong>.</li>
     <li>Install the Xdebug client on the browser. Configure and enable it.</li>
   </ol>
 
