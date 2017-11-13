@@ -17,7 +17,7 @@ We recommend using Xdebug for your PHP debugging. The following sections detail 
 
 To set up Xdebug, you need to [configure](#configure) a file in your Git repo, configure your IDE PhpStorm, and set up port forwarding. You will configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
 
-Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You will need to pull code to your local development environment to perform debugging.
+Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You will need to pull code to your local development environment to perform debugging. For Pro plan Staging and Production, we include [additional instructions](#pro-debug) for Xdebug on those environments.
 
 ## Requirements {#usexdebug}
 To run and use Xdebug, you will need the environment's SSH URL. You can locate the information through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html) or your spreadsheet.
@@ -30,10 +30,7 @@ To configure Xdebug, you need to do the following:
 * Configure your IDE, like [PhpStorm](#phpstorm)
 * [Set up port forwarding](#port)
 
-For configuring on Pro plan Staging and Production, you need to complete a few more steps:
-
-* Enter a [ticket for Staging and Production](#pro)
-*
+For configuring on Pro plan Staging and Production, you need to enter a [ticket for Staging and Production](#pro).
 
 ### Get started with a branch {#branch}
 To add Xdebug, we recommend creating a branch to work in and add the files.
