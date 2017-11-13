@@ -81,7 +81,7 @@ You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properl
     * On Mac, select **File** > **Preferences**.
     * On Windows/Linux, select **File** > **Settings**.
 3. Expand and locate **Languages & Frameworks** > **PHP** > **Servers** section in settings.
-4. Add a server configuration. Click the + to add a server. Notice at the top, it will show the project name in grey, just for reference. This will create a "server" configuration. This will be used to listen to port 9000 locally, which will be forwarded (see Step 5 for port forwarding for those steps when done info)
+4. Add a server configuration. Click the + to add a server. Notice at the top, it will show the project name in grey, just for reference. This will create a "server" configuration. This will be used to listen to port 9000 locally, which will be [forwarded](#port).
 5. Configure settings for the new server:
 
     * **Name**: enter the same as the hostname. This value ise used in and must match the value for `PHP_IDE_CONFIG` variable in [Debug CLI commands](#debugcli).
@@ -202,11 +202,6 @@ These variables will be removed when SSH session is over. When adding the variab
     php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
 
 If you expect to SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
-
-You can skip the step 1 of "Enable xdebug on the server" if you add the zend_extension argument and put the correct settings in `XDEBUG_CONFIG`:
-
-    export XDEBUG_CONFIG="idekey=PHPSTORM remote_host=127.0.0.1 remote_port=9000 remote_autostart=1 auto_trace=1 remote_enable=1"
-    php -d zend_extension=/usr/lib/php/20151012/xdebug.so /tmp/phpinfo.php
 
 ## For debugging web requests {#webrequests}
 The following steps help you debug web requests.
