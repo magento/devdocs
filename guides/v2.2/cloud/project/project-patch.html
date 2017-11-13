@@ -1743,7 +1743,7 @@
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.</p>
+  <p>Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments. All environments are read-only. You must update locally and push the Git branch to deploy across all environments.</p>
 </div>
 
 <p>Our patches are Composer driven. For more information on Composer, see <a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer in Cloud</a>. When you perform a Magento Commerce (Cloud) upgrade, you automatically upgrade with patches and hotfixes through the <code class="highlighter-rouge">composer update</code> command.</p>
@@ -1804,6 +1804,7 @@
 </ol>
 
 <h2 id="patch">Apply the patch</h2>
+<p>To apply the patch, you run the <code class="highlighter-rouge">composer update</code> command. The command uses <code class="highlighter-rouge">composer.json</code> to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.</p>
 
 <ol>
   <li>
