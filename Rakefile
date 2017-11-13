@@ -20,7 +20,7 @@ end
 desc "Validate links"
 task :check_links do
   # First, generate the site.
-  # Rake::Task['build'].invoke
+  Rake::Task['build'].invoke
   puts 'Checking links with htmlproofer...'
   options = {
     log_level: "debug",
