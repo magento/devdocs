@@ -96,6 +96,9 @@
 {% elsif "testing, jstf, unit-testing, integration-testing" contains page.group %}
     {% assign toc = site.data.toc.testing %}
 
+{% elsif "mftf" contains page.group %}
+        {% assign toc = site.data.toc.magento-functional-testing-framework-guide %}
+
 {% endif %}
 
 <h4>{{ toc.label }}</h4>
