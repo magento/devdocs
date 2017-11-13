@@ -83,6 +83,7 @@ Verify other changes you're going to submit to source control before you start t
 3.  If there are changes you do *not* want to submit to source control, branch or stash them now.
 
 ## Apply the patch {#patch}
+To apply the patch, you run the `composer update` command. The command uses `composer.json` to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.
 
 1.  Change to your Magento base directory and enter the following command:
 
