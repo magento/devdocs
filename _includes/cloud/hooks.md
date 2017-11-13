@@ -1,10 +1,8 @@
 <div markdown="1">
 
-For technical reasons, you need to enter a ticket to have your [`.magento.app.yaml` file]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) file added to Staging and Production systems. This affects all Pro projects created before and after October 23, 2017.
+For technical reasons, you must enter a [Support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to have your [`.magento.app.yaml` file]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) file added to Staging and Production systems. This affects all Pro projects created before and after October 23, 2017.
 
-Create a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to let us help you migrate the file and implement any deployment hooks you set up.
-
-Among the settings you can request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.
+You can request to have us push `.magento.app.yaml`, `services.yaml`, and `routes.yaml`, set up cron jobs, and request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.
 
 If you have your SSH keys added to Staging and Production environments per a ticket, you can also directly SSH into the environment to use Git CLI commands for deployments.
 

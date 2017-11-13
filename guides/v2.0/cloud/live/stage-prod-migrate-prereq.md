@@ -55,7 +55,7 @@ If your project was created before October 23, 2017, you also need to set up [re
 
 If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
-### Migrate your `.magento.app.yaml` file (optional) {#pro-yaml}
+### Migrate your `.magento.app.yaml` file {#pro-yaml}
 **Important:** If you have **not modified** the default deployment hooks or configurations, skip this step and continue with [Get your Pro access URLs](#pro-urls). Only migrate the file if you modified the deployment hooks or added configuration updates.
 
 {% include cloud/hooks.md %}

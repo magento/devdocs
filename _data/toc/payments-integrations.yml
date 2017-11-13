@@ -55,7 +55,7 @@ pages:
           url: payments-integrations/base-integration/admin-integration.html
 
     - label: Adding vault integration
-      versions: ["2.1"]
+      versions: ["2.1", "2.2", "2.3"]
       url: payments-integrations/vault/vault-intro.html
       children:
 

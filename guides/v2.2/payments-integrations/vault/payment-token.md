@@ -1,0 +1,1 @@
+../../../v2.1/payments-integrations/vault/payment-token.md

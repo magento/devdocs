@@ -145,11 +145,11 @@ Refer to the following table for a description of each label. These labels are a
          <td>The pull request has been accepted and will be merged into mainline code.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_reject.png" alt="the Reject button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_rejected.png" alt="the Reject button"/></td>
          <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_needs_update.png" alt="the needs update button"/></td>
          <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
       </tr>
       <tr>
@@ -168,7 +168,7 @@ Refer to the following table for a description of each label. These labels are a
          <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/gitHub_G3_Passed.png" alt="G3 Passed"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_G3_Passed.png" alt="G3 Passed"/></td>
          <td>The Community Engineering Team has validated and confirmed the issue.</td>
       </tr>
       <tr>
@@ -188,19 +188,19 @@ Refer to the following table for a description of each label. These labels are a
          <td>The Community Engineering Team reproduced the issue on latest 2.3.x release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_20x.png" alt="Fixed in 2.0.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_20x.png" alt="Fixed in 2.0.x"/></td>
          <td>The issues has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with upcoming patch release.</td>
       </tr>      
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_21x.png" alt="Fixed in 2.1.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_21x.png" alt="Fixed in 2.1.x"/></td>
          <td>The issues has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with upcoming patch release.</td>
       </tr>      
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_22x.png" alt="Fixed in 2.2.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_22x.png" alt="Fixed in 2.2.x"/></td>
          <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_Fixed_23x.png" alt="Fixed in 2.3.x"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_23x.png" alt="Fixed in 2.3.x"/></td>
          <td>The issues has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
@@ -208,7 +208,7 @@ Refer to the following table for a description of each label. These labels are a
          <td>The Community Engineering Team has created internal ticket.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the needs update button"/></td>
+         <td><img src="{{ site.baseurl }}common/images/github_needs_update.png" alt="the needs update button"/></td>
          <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</td>
       </tr>
       <tr>

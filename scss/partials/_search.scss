@@ -86,6 +86,10 @@ input[type=search] {
     padding: 20px;
   }
 
+  @media ( $small-screen ) {
+    flex-direction: column;
+  }
+
 }
 
 .algolia__result-highlight {
