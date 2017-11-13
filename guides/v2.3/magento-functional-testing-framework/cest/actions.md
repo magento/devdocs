@@ -25,7 +25,7 @@ All actions contain the following attributes that are useful for merging needs:
 
 `mergeKey` value format principles:
 
-* Must be unique within [`<test>`](./structure.html)
+* Must be unique within [`<test>`](../cest.html#test)
 * Naming should be as descriptive as possible
   * Should describe the action performed
   * Should briefly describe the purpose

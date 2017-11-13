@@ -8,7 +8,7 @@ github_link: magento-functional-testing-framework/page/structure.md
 ## Overview
 
 The MFTF employs a modified concept of [PageObjects].
-You define the contents of a page, for reference in a [test], at both a page and [section] level.
+You define the contents of a page, for reference in a [test], at both a page and section level.
 The majority of elements are defined on a section reference. The section here is a reusable section of a page.
 The pageObject itself then serves to list the URL of the page and the sections which it contains.
 In this way, you reuse sections and maintain a reusable single source of truth to define the elements exercisable on a page.
@@ -153,7 +153,6 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 <!-- LINK DEFINITIONS -->
 
 [PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-[section]: ./section.html
 [test]: ./cest.html
 [createData]: ./cest/actions.html#createdata
 
