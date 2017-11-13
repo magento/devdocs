@@ -9,9 +9,9 @@ This topic contains a reference list of available action type tags available in 
 
 ## Overview
 
-Actions in the MFTF allow to automate different scenarios of Magento user's actions.
+Actions in the MFTF allow you to automate different scenarios of Magento user's actions.
 They are mostly XML implementations of [Codeception actions](http://codeception.com/docs/modules/WebDriver#Actions).
-Some actions drive browser elements, when the others use REST API.
+Some actions drive browser elements, while others use REST APIs.
 
 All actions contain the following attributes that are useful for merging needs:
 
@@ -325,7 +325,7 @@ before|string|optional|
 after|string|optional|	
 storeCode|string|optional|
 
-It can contain one or more child elements `required-entity` optionally.
+This action can optionally contain one or more `required-entity` child elements.
 
 #### required-entity
 
@@ -349,7 +349,7 @@ storeCode|string|optional|
 
 ### dontSee
 
-[See dontSee docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSee){:target='_blank'}
+[See the codeception.com documentation for more information about this action.](http://codeception.com/docs/modules/WebDriver#dontSee){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---

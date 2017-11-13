@@ -10,7 +10,9 @@ A dependency for the framework is located in the `magento2ee` repository.<br/>
 This solution is temporary.
 </div>
 
-## PREPARE ENVIRONMENT
+## Prepare environment
+
+Make sure that you've set up the following software: 
 
 * [git]
 * [PHP v7.1.x+][php]
@@ -23,38 +25,44 @@ This solution is temporary.
 
 1. [Download the latest Selenium Server][selenium server].
 
-2. Into the same directory where the Selenium server is located, [download a web driver for your web browser][selenium web driver].
+2. [Download a Selenium web driver for your web browser][selenium web driver] into the same directory where the Selenium server is located.
 
 3. Add the directory with the web driver to PATH.
 
 ### Allure
 
-[Install Allure] that is a tool that generates testing reports in HTML.
+[Install Allure], a tool that generates testing reports in HTML.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 **For Windows users**: use *Manual installation* to be able to run Allure using non-PowerShell terminals.
 </div>
 
-## PREPARE MAGENTO
+## Prepare Magento
+
+Make sure that the following settings in Magento are set as described.
 
 ### WYSIWYG settings
 
-A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}. This option disables the WYSIWYG and enables the web driver to process these fields as simple text areas.
+A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}.
+This option disables the WYSIWYG and enables the web driver to process these fields as simple text areas.
 
 1. Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2. Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
+2. Click **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
 3. Set **Enable WYSIWYG Editor** to **Disabled Completely**.
 4. Click **Save Config**.
 
 ### Security settings
 
-Enable the **Admin Account Sharing** setting to avoid unpredictable logout during testing session. And disable the **Add Secret Key in URLs** setting to open pages using direct URLs.
+Enable the **Admin Account Sharing** setting to avoid unpredictable logout during testing session.
+And disable the **Add Secret Key in URLs** setting to open pages using direct URLs.
 
 1. Follow **Stores &gt; Configuration &gt; Advanced &gt; {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} &gt; Security**.
 2. Set **Admin Account Sharing** to **Yes**.
 3. Set **Add Secret Key to URLs** to **No**.
 
-## SETUP THE MFTF
+## Setup the framework
+
+Follow these steps to set up the MFTF on your system. 
 
 ### Step 1. Clone the magento2 source code repositories into one directory
 
@@ -120,7 +128,7 @@ There is a temporary issue with a directory separators in the `magento2ce/dev/te
 </p>
 <p>Example:</p>
 <p markdown="1">
-WRONG: `$this->_exec('vendor/bin/robo clone:files');`<br/>
+WRONG: `$this->_exec('vendor/bin/robo clone:files');`<br/><br/>
 CORRECT: `$this->_exec('vendor'.DIRECTORY_SEPARATOR.'bin'.DIRECTORY_SEPARATOR.'robo clone:files');`
 </p>
 </div>
@@ -139,7 +147,7 @@ To avoid typing evey time `vendor/bin`, add to *PATH* your `<absolute path to ac
 
 ### Step 6. Edit environment settings
 
-In the `magento2ce/dev/tests/acceptance`, create a configuration file `.env` from `.env.example`:
+In the `magento2ce/dev/tests/acceptance` directory, create a configuration file `.env` from `.env.example`:
 
 ```bash
 $ cp .env.example .env
@@ -171,13 +179,15 @@ Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptanc
 
 ### Step 7. Generate existing tests
 
-In the `magento2ce/dev/tests/acceptance`, run the following command to generate tests as PHP classes from XML files:
+In the `magento2ce/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
 $ vendor/bin/robo generate:tests
 ```
 
-## RUN TESTS
+## Run tests
+
+To run one or more tests, you need running Selenium server and a [`codecept`] or [`robo`] with required parameters. 
 
 ### Run the Selenium server
 
@@ -193,15 +203,23 @@ $ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.ja
 $ vendor/bin/codecept run 
 ```
 
-## GENERATE REPORTS
+## Generate reports
+
+Testing reports are generated in CLI during testing.
+If you want to see the reports in GUI, run:
 
 ```bash
 $ vendor/bin/robo allure2:report
 ```
+[See more Allure commands][allure commands]
 
 [Learn about report structure.][allure reports] 
 
 <!-- LINKS -->
+
+[`codecept`]: ./commands/codeception.html
+[`robo]: ./commands/robo.html
+[allure commands]: ./commands/robo.html#allure-robo-commands
 
 [git]: https://git-scm.com/downloads
 [php]: http://php.net/manual/en/install.php

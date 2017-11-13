@@ -13,7 +13,7 @@ github_link: magento-functional-testing-framework/commands/troubleshooting.md
 
 #### Reason
 
-Chrome v62 is in the process of being rolled out and it causes an error with ChromeDriver v2.32+.
+Chrome v62 is in the process of being rolled out, and it causes an error with ChromeDriver v2.32+.
 
 #### Solution
 
