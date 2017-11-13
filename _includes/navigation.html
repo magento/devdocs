@@ -44,10 +44,10 @@
         <div class="nav-section-title">Frontend</div>
         <ul>
           <li class=""><a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-          {% if page.guide_version == "2.1" %}
-          <li><a href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
-          {% elsif page.guide_version == "2.0" %}
+          {% if page.guide_version == "2.0" %}
           <li><a href="{{page.baseurl}}ui-components/ui-component.html">UI Components</a></li>
+          {% else %}
+          <li><a href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
           {% endif %}
           <li><a href="{{page.baseurl}}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
           <li><a href="{{page.baseurl}}pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
