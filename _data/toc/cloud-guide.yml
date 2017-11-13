@@ -75,7 +75,7 @@ pages:
         - label: Optional - Install sample data
           url: cloud/howtos/sample-data.html
 
-        - label: Optional - Configure a PHP debugger, Xdebug
+        - label: Optional - Configure Xdebug
           url: cloud/howtos/debug.html
 
         - label: Import an existing Magento project
