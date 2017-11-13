@@ -209,22 +209,22 @@ Set up an SSH tunnel to Staging or Production environment:
 1. Open a terminal.
 2. Enter the following command to clean up all SSH sessions.
 
-      ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
+        ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
 3. Enter the following command to set up the SSH tunnel for Xdebug:
 
-      ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+        ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
 
 To start debugging, use the following commands with the environment URL:
 
 1. To enable remote debugging, visit the site in the browser with the following added to the URL where `KEY` is value for `xdebug_key`:
 
-      ?XDEBUG_SESSION_START=KEY
+        ?XDEBUG_SESSION_START=KEY
 
     This sets the cookie that sends browser requests to trigger Xdebug.
 2. Complete your debugging with Xdebug.
 3. When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where `KEY` is value for `xdebug_key`:
 
-    ?XDEBUG_SESSION_STOP=KEY
+        ?XDEBUG_SESSION_STOP=KEY
 
 Please note, `XDEBUG_SESSION_START`passed by `POST` requersts are not supported at this time.
 
