@@ -56,7 +56,7 @@ Your Git branch must have the following files for building and deploying for you
 * [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
 * [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
 
-## Best practices for deployment {#best-practices}
+## Best practices for builds and deployment {#best-practices}
 We highly recommend the following best practices and considerations for your deployment process:
 
 * **Consider using [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html)** to reduce the time to deploy and keeping all configurations the same across all environments

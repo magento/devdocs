@@ -53,7 +53,7 @@ Your Git branch must have the following files for building and deploying for you
 * [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
 * [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
 
-## Best practices for deployment {#best-practices}
+## Best practices for builds and deployment {#best-practices}
 We highly recommend the following best practices and considerations for your deployment process:
 
 * **Always following the deployment process** to ensure your code is THE SAME in Integration, Staging, and Production. This is vital. Pushing code from Integration environments may become important or needed for upgrades, patches, and configurations. This deployment will overwrite Production and any differences in code in that environment.
