@@ -1747,6 +1747,18 @@
   </li>
 </ol>
 
+<h3 id="domains">Apex and subdomains already in Fastly</h3>
+<p>If your apex domain and subdomains are already managed by a Fastly account with an assigned Service ID, you cannot launch until you do the following:</p>
+
+<ul>
+  <li>Remove the apex domain and subdomains from an existing Fastly account, may include removing or changing the CNAME record</li>
+  <li>Complete configurations and CNAME for the Fastly account and Service ID we provide</li>
+</ul>
+
+<p>Fastly only allows one apex domain and all subdomains assigned to a single Fastly service and account. For example, if you have the apex domain of mystore.com with subdomains of shoes.mystore.com and socks.mystore.com managed by an existing Fastly account, you need to remove them from that account before going live with Fastly and Magento Commerce (Cloud).</p>
+
+<p>For details, review your Fastly accounts and <a href="https://docs.fastly.com/">documentation</a> to remove the domains. This may include removing and updating CNAME records and more.</p>
+
 <h2 id="service-id">Locate Service ID</h2>
 <p>You can contact us for your Service ID for Staging and Production. For developers and advanced VCL users, you can also make a call using the Fastly variable <code class="highlighter-rouge">req.service_id</code>. This variable will return the Fastly <code class="highlighter-rouge">service_id</code>.</p>
 

@@ -1685,6 +1685,13 @@
   <li>Advanced configurations including VCL snippets</li>
 </ul>
 
+<h2 id="domain">Multiple Fastly accounts and assigned domains</h2>
+<p>Before launching Magento Commerce (Cloud), you may already have a Fastly account or trial with your apex and subdomains assigned to it. Be advised, you will need to remove any apex domain and subdomains you plan use with Magento Commerce (Cloud) from this existing Fastly account.</p>
+
+<p>Fastly only allows one apex domain and all subdomains assigned to a single Fastly service and account. For example, if you have the apex domain of mystore.com with subdomains of shoes.mystore.com and socks.mystore.com managed by an existing Fastly account, you need to remove them from that account before going live with Fastly and Magento Commerce (Cloud).</p>
+
+<p>For details, review your Fastly accounts and <a href="https://docs.fastly.com/">documentation</a> to remove the domains. This may include removing and updating CNAME records and more.</p>
+
 <h2 id="cloud-fastly-creds">Get your Fastly credentials</h2>
 <p>To get Fastly credentials, open a <a href="/guides/v2.0/cloud/welcome/get-help.html">support ticket</a>. You must provide your fully-qualified domain name.</p>
 
@@ -1774,7 +1781,7 @@
   <div class="bs-callout bs-callout-warning">
     <p>Don’t configure the module in your local before building and deploying. You’ll configure the module in those environments.</p>
 
-    <p>We recommend using the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command for <a href="/guides/v2.0/cloud/live/sens-data-over.html#cloud-config-specific-recomm">Configuration Management</a>. If you use the <code class="highlighter-rouge">app:config:dump</code> command, all configuration options for Fastly will be locked from editing in Staging and Production.</p>
+    <p>We recommend using the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command for Configuration Management(<a href="https://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.1.X</a>, <a href="https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.2.X</a>). If you use the <code class="highlighter-rouge">app:config:dump</code> command, all configuration options for Fastly will be locked from editing in Staging and Production.</p>
   </div>
 
   <p>We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Intergration environments.</p>
