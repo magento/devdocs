@@ -60,6 +60,13 @@ By using the `scd-dump` command, you can configure only the settings you want co
 
 If sensitive data is found in your configurations, it is generated as environment variables to `env.php`. This file remains in the environment and should not be added to your Git environment.
 
+### Switching between commands {#commands}
+Can you switch between using `php bin/magento magento-cloud:scd-dump` and `php bin/magento app:config:dump`? Only in one specific way.
+
+In 2.2 and later, you cannot delete the `config.php` file to regenerate it. You can only edit the file to change or remove a value. This file includes more information than just configuration values.
+
+If you use `php bin/magento magento-cloud:scd-dump` to generate the file, you can switch to `php bin/magento app:config:dump`. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.
+
 ### Configuration data {#data}
 System settings refer to the configurations in the Magento Admin in **Stores** > Settings > **Configuration**. Depending on the command used, all or just modified system configurations save to the file.
 

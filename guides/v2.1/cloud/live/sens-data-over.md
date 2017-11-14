@@ -45,6 +45,11 @@ Any data that exports to the file becomes locked. The corresponding field in the
 
 By using the `scd-dump` command, you can configure only the settings you want copied across all environments. After you merge the code, you can configure additional settings in Staging and Production. For sensitive configurations, you can also add those settings to environment variables. For example, you may want to add different PayPal merchant account credentials for Staging (sandbox) and Production (live).
 
+### Switching between commands {#commands}
+Can you switch between using `php bin/magento magento-cloud:scd-dump` and `php bin/magento app:config:dump`? Yes, you can.
+
+For 2.1.4 and later (not 2.2.X), you can always delete the `config.local.php` file and regenerate it with either command. Remember, `scd-dump` only pulls configured values (not defaults) and `app:config:dump` captures all values (default and modified).
+
 ### Configuration data {#data}
 System settings refer to the configurations in the Magento Admin in **Stores** > Settings > **Configuration**. Depending on the command used, all or just modified system configurations save to the file.
 
