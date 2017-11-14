@@ -150,7 +150,7 @@ To edit `composer.json`:
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
 ### Back up and transfer media files
-This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install/cli/install-cli-backup.html) to back up media files.
+This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install-gde/install/cli/install-cli-backup.html) to back up media files.
 
 1.  Get the  integration system's [SSH URL]({{ page.baseurl}}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl).
 2.  To back up media files, enter the following command:
