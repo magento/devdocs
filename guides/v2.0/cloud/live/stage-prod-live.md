@@ -65,7 +65,13 @@ After you know these URLs, you can access those environments without further int
 For more information, see [SSH and sFTP]({{ page.baseurl }}cloud/env/environments-ss.html).
 
 ## Read-only environments {#read-only}
-You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.
+You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments through the Magento Admin or using environment variables.
+
+Always update your code in a branch on your local environment, push to Git, and complete the full deployment when you need to do the following:
+
+* Add extensions
+* Add 3rd party integrations
+* Fix issues and check errors
 
 ## Next steps
 To learn more, check the following:

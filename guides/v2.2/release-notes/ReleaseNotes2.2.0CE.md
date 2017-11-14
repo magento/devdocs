@@ -211,7 +211,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 67323-->* You can now translate the  FPT label on the checkout page. *Fix submitted by community member <a href="https://github.com/okorshenko" target="_blank">Oleksii Korshenko</a> in pull request <a href="https://github.com/magento/magento2/pull/9204" target="_blank">9204</a>.*
 
-<!--- 69230-->* Magento no longer truncates bill-to names and shio-to names to 20 characters in the Admin.  *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9654" target="_blank">9654</a>.*
+<!--- 69230-->* Magento no longer truncates bill-to names and ship-to names to 20 characters in the Admin.  *Fix submitted by community member <a href="https://github.com/SolsWebdesign" target="_blank">Isolde</a> in pull request <a href="https://github.com/magento/magento2/pull/9654" target="_blank">9654</a>.*
 
 <!--- 69375-->* You can now delete the last item in your cart when the Minimum Order setting is enabled. *Fix submitted by community member <a href="https://github.com/storbahn" target="_blank">storbahn</a> in pull request <a href="https://github.com/magento/magento2/pull/9714" target="_blank">9714</a>.*
 
