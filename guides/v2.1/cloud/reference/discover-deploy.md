@@ -81,7 +81,7 @@ If you have a syntax error in a configuration file, our Git server refuses the p
 This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
-**Helpful Note:** During this phase, the site is not in maintenance and will not be brought down if errors or issues occur.
+**Helpful Note:** During this phase, the site is not in maintenance mode and will not be brought down if errors or issues occur.
 
 We build only what has changed since the last build.
 
@@ -106,6 +106,13 @@ The result of the build phase is a read-only file system we refer to as a *slug*
 * If code was changed, makes an updated slug for the next build to possibly reuse
 * Allows for instantaneous reverting of a deployment if needed
 * Includes static files if the `config.local.php` file exists in the codebase
+
+The slug includes all files and folders excluding the following mounts configured in `magento.app.yaml`:
+
+* `"var": "shared:files/var"`
+* `"app/etc": "shared:files/etc"`
+* `"pub/media": "shared:files/media"`
+* `"pub/static": "shared:files/static"`
 
 ### Phase 4: Deploy slugs and cluster {#cloud-deploy-over-phases-slugclus}
 Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you need:

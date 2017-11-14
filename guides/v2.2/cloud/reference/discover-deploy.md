@@ -84,7 +84,7 @@ If you have a syntax error in a configuration file, our Git server refuses the p
 This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
-**Helpful Note:** During this phase, the site is not in maintenance and will not be brought down if errors or issues occur.
+**Helpful Note:** During this phase, the site is not in maintenance mode and will not be brought down if errors or issues occur.
 
 We build only what has changed since the last build.
 
@@ -93,14 +93,15 @@ This phase builds the codebase and runs hooks in the `build` section of `.magent
 * Applies patches located in `vendor/ece-patches`, as well as optional project-specific patches in `m2-hotfixes`
 *	Enables all extensions. To best build all code for deployment, we enable all extensions, build, then disable extensions you had disabled in your configuration.
 *	Regenerates code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (that is, the Magento `generated/` which includes `generated/code` and `generated/metapackage`) using `bin/magento setup:di:compile`.
+*	Checks if the [`config.php` file]({{page.baseurl}}cloud/live/sens-data-over.html) exists in the codebase and has information about scopes. If so, static files are deployed during this phase, reducing the downtime in the deployment phase.
+
+  When this file is generated and updated, it may include a scopes setting that defines how static files are deployed during the Build phase. Be default, the scope is [`quick`](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). For more information, also see [Phase 5: Deployment hooks](#cloud-deploy-over-phases-hook).
 
 **Important:** At this point the cluster has not been created yet. So you should not try to connect to a database or imagine anything was daemonized.
 
 Once the application has been built it is mounted on a **read-only file system**. You will be able to configure specific mount points that are going to be read/write. For the project structure, see [Local project directory structure]({{ page.baseurl }}cloud/project/project-start.html#cloud-structure-local).
 
 This means you cannot FTP to the server and add modules. Instead, you must add code to your Git repo and run `git push`, which builds and deploys the environment.
-
-The build checks if the [`config.php` file]({{page.baseurl}}cloud/live/sens-data-over.html) exists in the codebase and has information about scopes. If so, static files are deployed during this phase, reducing the downtime in the deployment phase.
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
 The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service didn't change, we reuse the slug from the archive.
@@ -109,6 +110,13 @@ The result of the build phase is a read-only file system we refer to as a *slug*
 * If code was changed, makes an updated slug for the next build to possibly reuse
 * Allows for instantaneous reverting of a deployment if needed
 * Includes static files if the `config.php` file exists in the codebase
+
+The slug includes all files and folders excluding the following mounts configured in `magento.app.yaml`:
+
+* `"var": "shared:files/var"`
+* `"app/etc": "shared:files/etc"`
+* `"pub/media": "shared:files/media"`
+* `"pub/static": "shared:files/static"`
 
 ### Phase 4: Deploy slugs and cluster {#cloud-deploy-over-phases-slugclus}
 Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you need:

@@ -80,11 +80,13 @@ If no value exists in any of those sources, we use either the default value or `
 ## Configuration settings you can change {#cloud-clp-settings}
 The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php bin/magento app:config:dump`, all settings are exported.
 
+The `config.local.php` file includes the following settings and configuration values:
+
 <table>
 <tbody>
 <tr>
 <th style="width:250px;">Description</th>
-<th>Path in Magento Admin (omitting Stores > Configuration)</th>
+<th>Path in Magento Admin: Stores > Configuration > ...</th>
 </tr>
 <tr>
 <td>Store locale</td>
@@ -132,7 +134,7 @@ The **Pro plan** environment high-level overview of this process:
 
 ![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
 
-### Step 1: Configure your store
+### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:
 
 1. Log into the Magento Admin for one of the environments:
@@ -149,7 +151,7 @@ Complete all configurations for your stores in the Admin console:
 
     ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 
-### Step 2: Transfer and add the file to Git
+### Step 2: Transfer and add the file to Git {#transfer-file}
 Push `config.local.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
 
 1. Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
@@ -160,7 +162,7 @@ Push `config.local.php` to Git. To push this file to the `master` Git branch, yo
 
     `git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master`
 
-### Step 3 & 4: Push Git branch to Staging and Production
+### Step 3 & 4: Push Git branch to Staging and Production {#push-git}
 Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
 
 For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
