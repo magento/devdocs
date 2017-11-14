@@ -18,8 +18,7 @@ Configuration management in {{site.data.var.ece}} provides a new way to deploy a
 It provides the following benefits:
 
 *	Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
-<!-- Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only. -->
-*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build process.
+*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from the deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
 
 <div class="bs-callout bs-callout-info" markdown="1">
 These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
@@ -39,7 +38,7 @@ After configuring your environment, generate the file using one of the following
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default settings
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-For {{site.data.var.ece}}, we **do not recommend** app:config:dump as this command pulls and locks all values as read-only. This will affect Fastly and other important modules.
+For {{site.data.var.ece}}, we **do not recommend** `app:config:dump` as this command pulls and locks all values as read-only. This will affect Fastly and other important modules. Specifically, this affects customizing your extensions across environments.
 </div>
 
 Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments.

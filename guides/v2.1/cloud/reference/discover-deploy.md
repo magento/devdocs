@@ -56,6 +56,15 @@ Your Git branch must have the following files for building and deploying for you
 * [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
 * [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
 
+## Best practices for deployment {#best-practices}
+We highly recommend the following best practices and considerations for your deployment process:
+
+* **Consider using [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html)** to reduce the time to deploy and keeping all configurations the same across all environments
+* **Always following the deployment process** to ensure your code is THE SAME in Integration, Staging, and Production. This is vital. Pushing code from Integration environments may become important or needed for upgrades, patches, and configurations. This deployment will overwrite Production and any differences in code in that environment.
+* **Enter the same variables environment-to-environment.** The values for these [variables]({{ page.baseurl }}cloud/env/environment-vars_over.html) may differ across environments, but the variables may be required for your code.
+* **Keep sensitive configuration values and data in environment specific variables.** This includes an env.php file, CLI entered variables, and Project Web Interface entered variables. The values can differ, but having the variables is important.
+* **Test your build and deploy locally and in Staging before deploying to Production.** Many extensions work, custom code, and more work great in development. Some users then push to production only to have failures and issues. Staging gives you an opportunity to fully test your code and implementation in a production environment without extended downtime if something goes wrong in Production.
+
 ## Five phases of Integration build and deployment {#cloud-deploy-over-phases}
 The following phases occur on your local development environment and the Integration environment. The code is not deployed to Staging or Production for Pro plan in these initial phases.
 
