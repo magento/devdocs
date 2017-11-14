@@ -120,7 +120,7 @@ The result of the build phase is a read-only file system we refer to as a *slug*
 * Allows for instantaneous reverting of a deployment if needed
 * Includes static files if the `config.php` file exists in the codebase
 
-The slug includes all files and folders excluding the following mounts configured in `magento.app.yaml`:
+The slug includes all files and folders **excluding the following** mounts configured in `magento.app.yaml`:
 
 * `"var": "shared:files/var"`
 * `"app/etc": "shared:files/etc"`
