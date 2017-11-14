@@ -22,14 +22,14 @@ You can stage the following parameters:
 
 - Enable/Disable CMS Page
 - Page Title
-- Content 
+- Content
     - Content Heading
     - Content (WYSIWYG)
-- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %} 
+- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %}
     - URL Key
     - Meta Keywords
     - Meta Description
-- Design 
+- Design
     - Layout
     - Layout Update XML
     - Theme
@@ -40,7 +40,7 @@ The following parameters can be staged:
 
 - Enable/Disable CMS Block
 - Block Title
-- Identifier 
+- Identifier
 - {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}Store View{% endglossarytooltip %}
 - Content (WYSIWYG)
 
@@ -60,7 +60,7 @@ You can find the list of modules that have dependencies on the Magento_CmsStagin
 
 ### UI components
 
-You can extend product and {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} updates using the UI components located in the `Magento\CmsStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
+You can extend product and {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} updates using the UI components located in the `Magento\CmsStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 
