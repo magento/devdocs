@@ -1963,7 +1963,7 @@ composer require fastly/magento2
   <p>For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></p>
 
   <h2 id="bulkaction">Extend Fastly timeout for the Magento Admin</h2>
-  <p>Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html##admin-timeout">custom VCL snippet</a> to set this to five minutes or ten minutes, (the hard cap).</p>
+  <p>Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html#admin-timeout">custom VCL snippet</a> to set this to five minutes or ten minutes, (the hard cap).</p>
 
   <h2 id="geoip">Configure GeoIP handling</h2>
   <p>The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.</p>
