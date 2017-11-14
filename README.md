@@ -8,9 +8,9 @@ To contribute, please fork the `develop` branch.
 
 You can build this site locally in the following ways:
  
-- [using installed Jekyll](#build-using-jekyll) (Mac, Linux)
-- [in a Docker container](#build-using-docker) (Mac, Linux)
-- [on a virtual machine using Vagrant](#build-using-vagrant) (Mac, Linux, Windows)
+- [Installing the project dependencies locally](#build-using-jekyll) (Mac, Linux)
+- [Using a Docker container](#build-using-docker) (Mac, Linux)
+- [Using a Vagrant virtual machine](#build-using-vagrant) (Mac, Linux, Windows)
 
 ## <a name="build-using-jekyll"> Build using Jekyll
 
