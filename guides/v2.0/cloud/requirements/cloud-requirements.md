@@ -21,6 +21,9 @@ redirect_from:
   - /guides/v2.0/cloud/cloud-requirements-license.html
   - /guides/v2.1/cloud/cloud-requirements-license.html
   - /guides/v2.2/cloud/cloud-requirements-license.html
+  - /guides/v2.0/cloud/requirements/cloud-requirements-license.html
+  - /guides/v2.1/cloud/requirements/cloud-requirements-license.html
+  - /guides/v2.2/cloud/requirements/cloud-requirements-license.html
   - /guides/v2.0/cloud/requirements/cloud-requirements-git.html
   - /guides/v2.1/cloud/requirements/cloud-requirements-git.html
   - /guides/v2.2/cloud/requirements/cloud-requirements-git.html
