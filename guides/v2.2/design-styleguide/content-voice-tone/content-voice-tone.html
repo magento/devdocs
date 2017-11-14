@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Admin Voice and Tone | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/design-styleguide/content-voice-tone/content-voice-tone.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/design-styleguide/content-voice-tone/content-voice-tone.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/design-styleguide/content-voice-tone/content-voice-tone.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/design-styleguide/content-voice-tone/content-voice-tone.html">Magento 2.2</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.2/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Admin Style Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="admin-style-guide">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Admin Style Guide</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="introduction">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Introduction</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="design">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Design</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="color">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/color/color.html">Color</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="iconography">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/iconography/iconography.html">Iconography</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="page-grids">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/pagegrid/pagegrid.html">Page Grids</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="typography">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/typography/typography.html">Typography</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="writing-and-content">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Writing and Content</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2 active " id="voice-and-tone">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/content-voice-tone/content-voice-tone.html">Voice and Tone</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="errors-and-messages-writing">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/errors-and-messages/errors-and-messages.html">Errors and Messages Writing</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="buttons-and-links-usage">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">Buttons and Links Usage</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="capitalization">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/capitalization/capitalization.html">Capitalization</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="headings-and-organization">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/headings-and-organization/headings-and-organization.html">Headings and Organization</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="content-formats">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/content-formats/content-formats.html">Content Formats</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="number-formats">
+            
+            
+        
+            
+            <a href="/guides/v2.2/design-styleguide/number-formats/number-formats.html">Number Formats</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/design-styleguide/bk-styleguide.html">
+            <span property="name">Admin Style Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Admin Voice and Tone</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Admin Voice and Tone</h1>
+
+  
+
+
+</section>
+
+
+			<p>Our priority is to help users perform administrative tasks with ease and manage their stores effectively.</p>
+
+<p>Magento’s voice is:</p>
+
+<ul>
+  <li>
+    <p>Instructional and clear. The content is concise but informational, guiding the user to successfully perform tasks.</p>
+  </li>
+  <li>
+    <p>Casual but professional and direct.</p>
+  </li>
+  <li>
+    <p>Empowering.</p>
+  </li>
+</ul>
+
+<h2 id="guidelines">Guidelines</h2>
+
+<p><strong>Write casual, but professional, content in gender-neutral terms.</strong></p>
+
+<p>Create a consistent tone of communication that sounds like dialogue, as you would hear it. Here’s a useful tip when creating copy:  Imagine describing the product or task face-to-face with a new marketing employee tasked with using Magento Admin.</p>
+
+<p>Write sentences with plain, concise language. Use contractions for verbs. Never use a long word when a shorter word can take its place, and omit unnecessary words.</p>
+
+<p>Content should be gender neutral. To avoid “his” or “her” pronouns, change singular pronouns to plural and use a gender-neutral “their”, instead.</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – "A merchant can update his extensions."</li>
+  <li>Yes – "Merchants can update their extensions."</li>
+</ul>
+<p><br /></p>
+
+<p><strong>Follow accessibility and readability standards.</strong></p>
+
+<p>To ensure that users with special needs – including the use of screen readers – can easily access your content, follow the content and design standards in the Admin Design Pattern Library’s <a href="/guides/v2.2/pattern-library/general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a>.</p>
+
+<p>For more guidance, see this summary of <a href="https://www.w3.org/WAI/WCAG20/glance/">Web Content Accessibility Guidelines (WCAG) 2.0 standards</a>.</p>
+
+<p>Also, test your content’s readability. On the <a href="http://www.readabilityformulas.com/free-readability-formula-tests.php">Flesch-Kincaid Readability Test</a>, Magento Admin content should score above 50, which is approximately high-school level.
+<br /><br /></p>
+
+<p><strong>Use correct terms and content style.</strong></p>
+
+<p>In all contexts, strive for accuracy and consistency to inspire and build confidence in performing tasks.</p>
+
+<p>When uncertain about using a correct term or style, consult the following documents:</p>
+
+<ul>
+  <li>
+    <p>The <a href="https://magento.github.io/glossary/index.html">Magento Glossary</a> and <a href="https://magento.github.io/glossary/word-usage.html">Magento Word Usage Bank</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></p>
+  </li>
+</ul>
+
+<p>For standards not included in those documents, we use the following stylebooks:</p>
+
+<ul>
+  <li>
+    <p><em>First reference:</em> The Associated Press (AP) Stylebook</p>
+  </li>
+  <li>
+    <p><em>Second reference:</em> Microsoft Manual of Style, specifically these chapters:</p>
+
+    <ul>
+      <li>Content for a worldwide audience (Ch. 3)</li>
+      <li>Accessible content (Ch. 4)</li>
+      <li>Procedures and technical content (Ch. 6)
+<br /></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Avoid jargon, slang, and acronyms.</strong></p>
+
+<p>Words like “optimize”, “flexible”, and “scalable” might be big, but they’re not clever, unless they’re used in accurate context for the appropriate audience.</p>
+
+<p>Avoid terms that may not translate internationally, like metaphors, other figurative language, and humor.</p>
+
+<p>When introducing a term that may be unfamiliar to merchants, apply a glossary term from the <a href="https://magento.github.io/glossary/index.html">Magento Glossary</a>, provide further explanation, or add contextual help. To see what acronyms can be used on first reference, check the <a href="https://magento.github.io/glossary/word-usage.html">Magento Word Usage Bank</a> and AP Stylebook. When in doubt, use the full spelling and add the acronym in parenthesis afterword.</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “Magento is the flexible commerce solution.”</li>
+  <li>Yes – “With Magento, almost everything can be customized, from the storefront user interface theme to the site's backend processes.”</li>
+</ul>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “This SaaS feature is only available in Magento Commerce.”</li>
+  <li>Yes – “This <span term-uuid="4fd82444-6f73-436c-9e67-04f9a6b0fa9d" class="glossary-term" data-toggle="popover">software as a service</span> (SaaS) feature is only available in Magento Commerce.”</li>
+</ul>
+<p><br /></p>
+
+<p><strong>Empower the merchant with positive tone and sentence structure.</strong></p>
+
+<p>Avoid negative sentence constructions using words like “no”, “never”, “don’t” to ensure clarity and a positive tone.</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – Don’t use negative sentence construction.</li>
+  <li>Yes – Use positive, instead of negative, sentence construction.</li>
+</ul>
+<p><br /></p>
+
+<p><strong>Use active voice.</strong></p>
+
+<p>Active voice uses the subject-verb-object construction. When describing an action, start the sentence with the actor – usually the user. Active-voice sentences clarify who’s performing an action, making sentences easier to understand than passive-voice sentences.</p>
+
+<p>Passive voice identifies the action’s recipient, not the source, as the subject of the verb. Passive voice is more complicated and less engaging.</p>
+
+<p>Use the “zombie test” – if you can put the words “by zombies” after a subject and verb, you’re using passive voice. <em>Passive-voice example:</em> “Magento is used (by zombies)”</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “The store address is used to calculate ...”</li>
+  <li>Yes – “The system uses the store address to calculate ...”</li>
+</ul>
+<p><br /></p>
+
+<p><strong>Write in present tense.</strong></p>
+
+<p>When a user is reading web content to accomplish a task, these tasks take place in their present, so the present tense is appropriate in most cases.</p>
+
+<p>Additionally, present tense is easier to read than past or future tense.</p>
+
+<p>Use future tense only to emphasize that something, from the user’s perspective, will occur later.</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – A customer will receive an email confirmation after purchase.</li>
+  <li>Yes – A customer receives an email confirmation after purchase.</li>
+</ul>
+<p><br /></p>
+
+<p><strong>Avoid personal pronouns.</strong></p>
+
+<p>Most websites have eliminated personal pronouns because using pronouns like “you” and “I” or “your” and “my” is confusing. Personal pronouns often leave room for doubt or misinterpretation – does a pronoun refer to Magento or to the merchant? Avoid using “my”, “we”, “they”, or “I” when your content refers to either Magento representatives or merchants.</p>
+
+<p><em>Exception:</em> “You” or “your” neutral pronouns may be used in some cases to directly engage merchants in familiar, conversational language.</p>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – Change your My Account preferences.</li>
+  <li>Yes – Change your Account preferences.</li>
+</ul>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – We will send a confirmation, and you will receive it in 2-3 days.</li>
+  <li>Yes – You will receive a confirmation in 2-3 days.</li>
+</ul>
+<p><br /></p>
+
+<p><strong>Use consistent labels in user-interface (UI) content.</strong></p>
+
+<p>The tone in UI content – including navigation, tables, forms, and calls to action – is usually more focused on accuracy and conciseness, but the same standards apply: Use clear, plain language and consult global conventions to ensure content is understood by all.</p>
+
+<p>Consistency is critical. For example, wherever content is displayed in <a href="/guides/v2.2/pattern-library/displaying-data/datatable/datatable.html">Data Tables</a> or <a href="/guides/v2.2/pattern-library/getting-user-input/form_elements/form_elements.html">Form Elements</a>, it should use Magento standard or global conventions.
+<br /></p>
+
+<p><em>Correct example of button-label consistency, in a task flow:</em></p>
+
+<ul style="list-style-type:none">
+  <li>Yes – “Continue” button in “Catalog” pages</li>
+  <li>Yes – “Continue” button in “Reports” pages</li>
+</ul>
+
+<p><em>Incorrect example of button-label consistency, in a task flow:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “Next” button in “Catalog” pages</li>
+  <li>Yes – “Continue” button in “Reports” pages</li>
+</ul>
+
+<p><em>For more details,</em> see <a href="/guides/v2.2/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html">Button and Links Usage standards</a>.
+<br /><br /></p>
+
+<p><strong>Write empowering errors and messages that lead to appropriate next steps.</strong></p>
+
+<p>Take a neutral tone – don’t blame a merchant or in any way indicate that the merchant made a mistake. Use “business casual” and easy-to-understand language. Avoid personal pronouns and technical jargon. Content structure and formatting should follow this order:</p>
+
+<ol>
+  <li>Tell merchants what went wrong, in specific terms.</li>
+  <li>Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.</li>
+</ol>
+
+<p><em>Example:</em></p>
+
+<ul style="list-style-type:none">
+  <li><strong>No</strong> – “You didn’t enter your email address.”</li>
+  <li>Yes – “An email address is required. Enter the email address and click “Continue”.”</li>
+</ul>
+
+<p><em>For more details,</em> see <a href="/guides/v2.2/design-styleguide/errors-and-messages/errors-and-messages.html">Errors and Messages Writing standards</a>.</p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/design-styleguide/content-voice-tone/content-voice-tone.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/design-styleguide/content-voice-tone/content-voice-tone.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
