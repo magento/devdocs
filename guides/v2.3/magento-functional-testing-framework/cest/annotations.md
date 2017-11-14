@@ -253,6 +253,26 @@ Generated PHP code:
 ***
 ***
 
+### useCaseId
+_Implementation of an Allure tag `@UseCaseId`_
+
+Specifies Use Case Id for a test.
+Ignored by Allure configuration at the moment.
+
+#### Example
+
+```xml
+<useCaseId value="#"/>
+```
+Generated PHP code:
+
+``` php?start_inline=1
+@UseCaseId("#")
+```
+
+***
+***
+
 ### title
 
 _Implementation of an Allure tag [`@Title`]_
