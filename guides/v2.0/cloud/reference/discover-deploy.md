@@ -57,6 +57,7 @@ Your Git branch must have the following files for building and deploying for you
 We highly recommend the following best practices and considerations for your deployment process:
 
 * **Always following the deployment process** to ensure your code is THE SAME in Integration, Staging, and Production. This is vital. Pushing code from Integration environments may become important or needed for upgrades, patches, and configurations. This deployment will overwrite Production and any differences in code in that environment.
+* **Always add new extensions, integrations, and code in iterated branches** to then build and deploy using the process. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
 * **Enter the same variables environment-to-environment.** The values for these [variables]({{ page.baseurl }}cloud/env/environment-vars_over.html) may differ across environments, but the variables may be required for your code.
 * **Keep sensitive configuration values and data in environment specific variables.** This includes an env.php file, CLI entered variables, and Project Web Interface entered variables. The values can differ, but having the variables is important.
 * **Test your build and deploy locally and in Staging before deploying to Production.** Many extensions work, custom code, and more work great in development. Some users then push to production only to have failures and issues. Staging gives you an opportunity to fully test your code and implementation in a production environment without extended downtime if something goes wrong in Production.
@@ -127,7 +128,7 @@ Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-
 *	Configures the network so Magento's services can "see" each other (and only each other)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The file system is <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site's security because no process can write to the file system. If you need to make a change, make it in your local Git and push again.</p>
+  <p>Do you need to make more code changes, add another extension, and so on? Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site's security because no process can write to the file system. It also works to ensure your code is identical in Integration, Staging, and Production.</p>
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
