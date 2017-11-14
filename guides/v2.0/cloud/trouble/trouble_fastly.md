@@ -21,7 +21,7 @@ To verify the Fastly extension is working or to debug the Fastly extension, you 
 If you receive the following errors with Fastly, check the following:
 
 * **503 error**: When you receive this error, check through logs and the Fastly 503 error page. See [503 timeouts](#timeouts) for details.
-* **Store menu doesn't display or work**: You may be using a link or temp link directly to the origin server instead of through the live site URL or you used `-H "host:URL"` in a [cURL command](#curl). If you bypass Fastly to the origin server, the main menu doesn't work and incorrect headers display that allow caching on a browser side. 
+* **Store menu doesn't display or work**: You may be using a link or temp link directly to the origin server instead of through the live site URL or you used `-H "host:URL"` in a [cURL command](#curl). If you bypass Fastly to the origin server, the main menu doesn't work and incorrect headers display that allow caching on a browser side.
 
 ### 503 timeouts {#timeouts}
 If you receive a 503 error, check the following logs and information to better troubleshoot the issue.
@@ -45,6 +45,16 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 6.	Reopen the URL that caused the 503 error. Fastly returns an error page with the reason. The following image is an example.
 
 	![Fastly error]({{ site.baseurl }}common/images/cloud_fastly-503-example.png)
+
+### Apex and subdomains already in Fastly {#domains}
+If your apex domain and subdomains are already managed by a Fastly account with an assigned Service ID, you cannot launch until you do the following:
+
+* Remove the apex domain and subdomains from an existing Fastly account, may include removing or changing the CNAME record
+* Complete configurations and CNAME for the Fastly account and Service ID we provide
+
+Fastly only allows one apex domain and all subdomains assigned to a single Fastly service and account. For example, if you have the apex domain of mystore.com with subdomains of shoes.mystore.com and socks.mystore.com managed by an existing Fastly account, you need to remove them from that account before going live with Fastly and {{site.data.var.ece}}.
+
+For details, review your Fastly accounts and [documentation](https://docs.fastly.com/) to remove the domains. This may include removing and updating CNAME records and more.
 
 ## Locate Service ID {#service-id}
 You can contact us for your Service ID for Staging and Production. For developers and advanced VCL users, you can also make a call using the Fastly variable `req.service_id`. This variable will return the Fastly `service_id`.
