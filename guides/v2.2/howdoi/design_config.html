@@ -124,6 +124,8 @@
         <ul>
           <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
           
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
           <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
           <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
           <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
@@ -837,7 +839,7 @@
 
 <p><img src="/common/images/design_conf1.png" /></p>
 
-<p>When you click <strong>Edit</strong> in any of the scope records, the page with available design options is displayed. 
+<p>When you click <strong>Edit</strong> in any of the scope records, the page with available design options is displayed.
 For example, the default set of design options for the <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> level is the following:</p>
 
 <p><img src="/common/images/design_conf2.png" alt="Design Configuration page" /></p>
@@ -852,7 +854,7 @@ For example, the default set of design options for the <span term-uuid="ca5a9ff1
 
 <h2 id="customize_grid">Customize the grid</h2>
 
-<p>The grid containing the configuration scopes is implemented using the <a href="/guides/v2.2/ui-components/ui-listing-grid.html">grid UI component</a>.</p>
+<p>The grid containing the configuration scopes is implemented using the <a href="/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html">grid UI component</a>.</p>
 
 <p>To customize the grid view, take the following steps:</p>
 
@@ -916,7 +918,7 @@ For example, the default set of design options for the <span term-uuid="ca5a9ff1
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>%order for displaying%<span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/item&gt;</span>
          <span class="nt">&lt;/argument&gt;</span>
-        <span class="c">&lt;!--Field sets can be nested --&gt;</span> 
+        <span class="c">&lt;!--Field sets can be nested --&gt;</span>
         <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"%nested_fieldset_name%"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -925,7 +927,7 @@ For example, the default set of design options for the <span term-uuid="ca5a9ff1
                     <span class="c">&lt;!-- Nesting level, the value should correspond to the actual nesting level in the config xml file. For the top field set level = 0 --&gt;</span>
                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"level"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>%level of nesting%<span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>  
+            <span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"%field_name%"</span><span class="nt">&gt;</span>
     			<span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span>
@@ -966,7 +968,7 @@ For example, the default set of design options for the <span term-uuid="ca5a9ff1
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"disabled"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/fieldset&gt;</span> 
+    <span class="nt">&lt;/fieldset&gt;</span>
 ...</code></pre></figure>
 
 <p>For reference, view the form configuration files of Magento modules:</p>
@@ -1004,7 +1006,7 @@ For example, the default set of design options for the <span term-uuid="ca5a9ff1
                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scope_info"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;&lt;/item&gt;</span>
                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;&lt;/item&gt;</span>
                     <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;/item&gt;</span>      
+                <span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span>
