@@ -19,7 +19,7 @@ After your company purchases a subscription plan for {{site.data.var.ece}}, the 
 To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps:
+If you joined us with a 30-day free trial {{site.data.var.ece}} account, we took care of the following first steps:
 
 * Created your Cloud account and project
 * Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
