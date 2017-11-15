@@ -8,6 +8,11 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/env/environments.md
+redirect_from:
+  - /guides/v2.0/cloud/deploy/configure-deploy.html
+  - /guides/v2.1/cloud/deploy/configure-deploy.html
+  - /guides/v2.2/cloud/deploy/configure-deploy.html
+  - /guides/v2.3/cloud/deploy/configure-deploy.html
 functional_areas:
   - Cloud
 ---
@@ -49,7 +54,7 @@ You have unlimited inactive Git branches. These branches do not receive an envir
 
 When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.
 
-## Branch hierarchy {#hierarchy}
+## Branch hierarchy, development, and deployment {#hierarchy}
 For Starter and Pro plans, the `master` environment is ultimately the source or parent for all code in {{site.data.var.ece}}.
 
 * For Starter, `master` is your Production environment and branch. You create branches from `master` as your Integration environment.
@@ -57,61 +62,40 @@ For Starter and Pro plans, the `master` environment is ultimately the source or 
 
 In your Integration, you have a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
 
-When you merge code from a child branch to its parent, the parent environment is redeployed with the code changes of the child environment. Child environments are typically used for development, staging, and testing.
+You fully develop on your in these branches. When ready, you push the code to build and deploy to an Integration enviornment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, he parent environment is redeployed with the code changes of the child environment. For Pro, this is the Integration `master`. For Starter, it is an environment and branch of your choice.
 
-## Branches and development workflows {#workflow}
-{{site.data.var.ece}} imposes no rules on how you use branches and environments. You can use any branching methodology or development workflow you like for Starter and Pro plans. We do recommend specific formats
+For extensive details, see the following:
 
-For **Starter plan**, the following diagram details the branch and environment relationships:
+*	Starter:
 
-![High-level view of Starter project]({{ site.baseurl }}common/images/cloud_arch-starter.png)
+	* [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
+	*	[Starter develop and deploy workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
+*	Pro:
 
-For **Pro plan**, the following diagram details the branch and environment relationships:
+	* [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 
-![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
+## Configure your environments {#configenv}
+After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.
 
-### Example development process {#example}
-For example, your Agile development team creates three branches to work on three stories in a sprint. At the end of the sprint, they merge into a single branch for testing.
+For Starter, you can push these files across all environments including Production `master`.
 
-1.	To start, a Project Admin helps create the branches or gives priviledges to developers:
+For Pro, you need to enter a ticket to have these files and settings pushed to Staging and Production environments. You can push these files and settings across all Integration environments.
 
-	*	Create the Sprint-X environments and grants contributor privileges to developers to create the story environments.
-	*	Create all the environments and grants contributor privileges to developers.
-2.	When the sprint is finished (or when the story is closed), the Project Admin and developers can review the code and test the work directly in an active environment. When accepted, all branches are merged for testing together.
-3.	Complete testing of all features and code merged into a single environment.
-4.	Depending on your plan and environment set up, deploy to Staging for pre-production testing.
-5.	Deploy to production when complete to go live.
+* [.magento.app.yaml]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
+* [services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html) configures the services you use in your stores and sites including name, version, and allocated disk space
 
-When the code is live, make the branches used to work on the sprint in Integration as inactive. This frees up active environments and branch slots for the next sprint of work.
+  * [MySQL service]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml
+  * [Redis service]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html) configuration for a backend caching solution set in services.yaml
+  * [Solr service]({{ page.baseurl }}cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
+  * [Elasticsearch service]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.ee}} 2.1 and later set in services.yaml
+  * [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html) configuration for a messaging broker set in services.yaml
+* [routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) configures how Magento processes an incoming URL for your Integration environment
 
-## Helpful CLI commands {#commands}
-The following table lists the commands used in the preceding example. For a full list of all CLI commands, see [Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html).
-
-<table>
-	<tbody>
-		<tr>
-			<th>Task</th>
-			<th>Command</th>
-		</tr>
-	<tr>
-		<td>Create environment</td>
-		<td><code>magento-cloud environment:branch Sprint-X</code></td>
-	</tr>
-	<tr>
-		<td>Grant the contributor role to an environment</td>
-		<td><code>magento-cloud user:role &lt;user e-mail> --level environment --environment test --role contributor</code></td>
-	</tr>
-	<tr><td>Merge an environment</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
-	</tr>
-	<tr><td>Sync QA with Sprint-X</td>
-	<td><code>magento-cloud environment:synchronize code data</code></td>
-	</tr>
-	<tr><td>Merge Sprint-X with the master branch</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
-	</tr>
-</tbody>
-</table>
+  * [Caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html) configuration options for caches set in routes.yaml
+  * [Redirect]({{ page.baseurl }}cloud/project/project-routes-more-redir.html) configuration and rules for managing redirections set in routes.yaml
+  * [Server side includes]({{ page.baseurl }}cloud/project/project-routes-more-ssi.html) configured set in routes.yaml
 
 #### Related topics
 *	[Manage your project]({{page.baseurl}}cloud/project/projects.html)

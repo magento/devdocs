@@ -160,32 +160,40 @@ pages:
           url: config-guide/config/disable-module-output.html
 
         - label: Configuration reference
-          versions: ["2.2", "2.3"]
+          versions: ["2.1", "2.2", "2.3"]
           children:
 
             - label: Sensitive and system-specific
               url: config-guide/prod/config-reference-sens.html
+              versions: ["2.1", "2.2", "2.3"]
 
             - label: Payment configuration paths reference
               url: config-guide/prod/config-reference-payment.html
+              versions: ["2.1", "2.2", "2.3"]
 
             - label: Other configuration paths reference
               url: config-guide/prod/config-reference-most.html
+              versions: ["2.1", "2.2", "2.3"]
 
             - label: Magento Commerce for B2B Extension configuration paths reference
               url: config-guide/prod/config-reference-b2b.html
+              versions: ["2.2", "2.3"]
 
             - label: .gitignore reference
               url: config-guide/prod/config-reference-gitignore.html
+              versions: ["2.2", "2.3"]
 
             - label: Use environment variables to override configuration settings
               url: config-guide/prod/config-reference-var-name.html
+              versions: ["2.1", "2.2", "2.3"]
 
             - label: config.php reference
               url: config-guide/prod/config-reference-configphp.html
+              versions: ["2.2", "2.3"]
 
             - label: env.php reference
               url: config-guide/prod/config-reference-envphp.html
+              versions: ["2.2", "2.3"]
 
     - label: Configure caching
       url: config-guide/cache.html
