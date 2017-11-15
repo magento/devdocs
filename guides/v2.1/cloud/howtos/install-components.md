@@ -1,1 +1,0 @@
-../../../v2.0/cloud/howtos/install-components.md

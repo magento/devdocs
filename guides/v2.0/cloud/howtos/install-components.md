@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: How To
-title: Install and update extensions
-menu_title: Install and update extensions
+title: Install, manage, and upgrade extensions
+menu_title: Install, manage, and upgrade extensions
 menu_order: 41
 level3_menu_node: level3child
 level3_subgroup: update-extensions
@@ -19,21 +19,15 @@ functional_areas:
   - Configuration
 ---
 
-When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, then test in Staging before finally pushing and using in Production.
+This information includes information for adding extensions to {{site.data.var.ece}}, managing enabled and disabled extensions, and upgrading extension code. We highly recommend understanding
+
+When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
 
 Extensions include the following:
 
 *	Modules to extend Magento capabilities, with options through Magento Marketplace and directly through company sites
 *	Themes to change the look and feel of your storefronts
 *	Language packages to localize the storefront and Admin
-
-[Extension installation](#install) uses the following steps:
-
-1.	Purchase an extension or module from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another site.
-2.	[Create a branch](#getstarted) to work with the files.
-1.	[Get the extension's Composer name](#compose) and version from your purchase history.
-2.	In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#update) file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.
-4.	[Verify](#verify) the extension installed properly.
 
 These instructions walk through extension installation purchased from Magento Marketplace. You can use the same procedure to install any extension with the extension's Composer name. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
@@ -45,6 +39,13 @@ We recommend using a branch for adding or updating, configuring, and testing you
 {% include cloud/cli-get-started.md %}
 
 ## Install an extension {#install}
+[Extension installation](#install) uses the following steps:
+
+1.	Purchase an extension or module from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another site.
+2.	[Create a branch](#getstarted) to work with the files.
+1.	[Get the extension's Composer name](#compose) and version from your purchase history.
+2.	In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#update) file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.
+4.	[Verify](#verify) the extension installed properly.
 
 ### Step 1: Get the extension's Composer name and version {#compose}
 If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
@@ -90,7 +91,15 @@ To verify the extension installed properly, you can check its functionality in t
 
 The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
 
-## Update an extension {#update}
+## Manage extensions {#manage}
+To manage your extensions, you can enable and disable or change settings per environment.
+
+### Enable and disable extensions {#enable-disable}
+
+### Modify configurations {#configure}
+
+
+## Upgrade an extension {#update}
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
 
 *	Know the extension's Composer name and version

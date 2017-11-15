@@ -13,7 +13,7 @@ functional_areas:
   - Configuration
 ---
 
-For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more.
+For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with addtional content to post over time and across versions.
 
 ## Understanding marketing campaigns and promotions {#campaigns}
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
@@ -31,7 +31,7 @@ The following are tips to help create, update, and manage promotions and campaig
 * A campaign has a start and end date, not a promotion. The Scheduler that appears when you create a promotion does not configure the start and end dates for the promotion. It allows you so schedule your campaign this promotion is associated with while you are on the promotion’s configuration page.
 * You cannot directly edit in Staged Content. If you need to edit settings and options in the campaign, you will need to edit the original or a replica and push to overwrite in Staged Content. For example, if you don't an end date for a campaign, you must edit the original and push to update.
 
-## Advanced Pricing and Staged content {#adv-pricing}
+## Advanced Pricing and Staged Content {#adv-pricing}
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
 Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_guide/catalog/settings-advanced-advanced-pricing.html){:target="_blank"} for products through the Products > Catalogs area of the Magento Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
@@ -48,3 +48,6 @@ To edit Advanced Pricing and update Content Staging:
 7. You can Preview to review the special price, promotion name, regular price, and the scheduled date range for the campaign.
 
 For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html){:target="_blank"}. Click **Next** to walk through the steps.
+
+## Understanding websites, stores, and store views {#sites}
+Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{page.baseurl}}cloud/project/project-multi-sites.html)
