@@ -151,7 +151,7 @@ Label| Description
 Label| Description
 ---|---
 **bugfix**| The issue or pull request relates to bug fixing.
-**enhancement**| The issue or pull request that raises the MFTF to a higher degree (i.e. new features, optimization, refactoring, etc).
+**enhancement**| The issue or pull request that raises the MFTF to a higher degree (for example new features, optimization, refactoring, etc).
 
 
 <!-- LINKS DEFINITIONS -->

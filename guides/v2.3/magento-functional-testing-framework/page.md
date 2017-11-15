@@ -8,7 +8,7 @@ github_link: magento-functional-testing-framework/page/structure.md
 ## Overview
 
 The MFTF employs a modified concept of [PageObjects].
-You define the contents of a page, for reference in a [test], at both a page and [section] level.
+You define the contents of a page, for reference in a [test], at both a page and section level.
 The majority of elements are defined on a section reference. The section here is a reusable section of a page.
 The pageObject itself then serves to list the URL of the page and the sections which it contains.
 In this way, you reuse sections and maintain a reusable single source of truth to define the elements exercisable on a page.
@@ -16,8 +16,8 @@ Avoiding hardcoded location selectors from tests increases the maintainability a
 
 Two types of pages are available:
  
- * page with `url` declared as a constant string or [explicit page]. It is called in test like {%raw%}```{{NameOfPage.url}}``` {%endraw%}, where `NameOfPage` is a value of `name` in corresponding page declaration _*.xml_ file.
- * page with `url` declared as a string with one or more variable or [parameterized page]. It is called in test like {%raw%}```{{NameOfPage.url(var1, var2, ...)}}```{%endraw%}, where `var1, var2, ...` are parameters that will be substituted in `url` of corresponding `<page>` declaration.  
+ * page with `url` declared as a constant string or [explicit page]. It is called in a test in a format like {%raw%}```{{NameOfPage.url}}``` {%endraw%}, where `NameOfPage` is a value of `name` in corresponding page declaration _*.xml_ file.
+ * page with `url` declared as a string with one or more variables or [parameterized page]. It is called in a test using a format like {%raw%}```{{NameOfPage.url(var1, var2, ...)}}```{%endraw%}, where `var1, var2, ...` are parameters that will be substituted in `url` of the corresponding `<page>` declaration.  
 
 The following diagram demonstrates XML structure of a page in the MFTF:
 
@@ -153,7 +153,6 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 <!-- LINK DEFINITIONS -->
 
 [PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-[section]: ./section.html
 [test]: ./cest.html
 [createData]: ./cest/actions.html#createdata
 

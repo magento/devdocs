@@ -21,7 +21,7 @@ The following table lists variables that you can override using environment vari
 
 <table>
 <thead><tr>
-<th style="width: 160px;">Variable name</th>
+<th style="width: 165px;">Variable name</th>
 <th>Description</th>
 <th style="width: 150px;">Default value</th>
 </tr></thead>
@@ -211,7 +211,7 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>SCD_STRATEGY</code></td>
-<td><p>The variable allows you to customize the deployment strategy for static content deployment. The deploy script includes the -s flag with a default setting of `quick` for the static content deployment strategy. For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the -s flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html). This is available for 2.2.X.</p>
+<td><p>The variable allows you to customize the deployment strategy for static content deployment. The deploy script includes the -s flag with a default setting of `quick` for the static content deployment strategy. For details on these options and features, see <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">Static files deployment strategies</a> and the -s flag for <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>. This is available for 2.2.X.</p>
 <p>Use these options only if you have more than one locale.</p>
 <ul>
 <li><code>standard</code>: deploys all static view files for all packages.</li>
