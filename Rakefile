@@ -24,7 +24,7 @@ end
 desc "Validate links"
 task :check_links => :build do
 
-  # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406). Wrapping task in a begin-rescue block prevents rake from aborting.
+  # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406). Wrapping task in a begin-rescue block prevents rake from aborting. Seems to prevent printing an error count though.
   begin
 
   puts 'Checking links with htmlproofer...'
@@ -50,7 +50,7 @@ task :check_links => :build do
   }
   HTMLProofer.check_directory("./_site", options).run
 
-  # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406). Wrapping task in a begin-rescue block prevents rake from aborting.
+  # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406). Wrapping task in a begin-rescue block prevents rake from aborting. Seems to prevent printing an error count though.
   rescue StandardError => e
     #lifeboats
   end
@@ -93,6 +93,35 @@ task :transform do
   Launchy.open( uri ) do |exception|
     puts "Attempted to open #{uri} and failed because #{exception}"
   end
+
+  # Open the report and append CSS. When I try prepending it using the r+ mode (https://stackoverflow.com/a/3682374), which is where CSS content should go, it trucates part of the top error. This is good enough for now.
+  File.open('./tmp/.htmlproofer/bad-links.html', 'a') { |file| file.write('<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+
+  /* Lists
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+  ul {
+    list-style: disc;
+    font-family: \'Roboto\', sans-serif;
+    color: red; }
+  ol {
+    list-style: decimal inside; }
+  ol, ul {
+    padding-left: 0;
+    margin-top: 0; }
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin: 1.5rem 0 1.5rem 3rem;
+    font-size: 90%;
+    color: black;}
+  li {
+    margin-bottom: 1rem;
+    font-weight: bold;}
+
+  </style>') }
 
 end
 
