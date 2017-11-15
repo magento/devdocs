@@ -106,8 +106,9 @@ If you would like to learn more about Magento 2, see the following resources:
 *	[All documentation home page](https://magento.com/help/documentation){:target="_blank"}
 *	User guides (how to use options in the Magento Admin)
 
-	*	[Magento 2.0.x](http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112){:target="_blank"}
-	*	[Magento 2.1.x](http://docs.magento.com/m2/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112){:target="_blank"}
+	*	[Magento 2.0.x](http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html){:target="_blank"}
+	*	[Magento 2.1.x](http://docs.magento.com/m2/2.1/ee/user_guide/getting-started.html){:target="_blank"}
+  *	[Magento 2.2.x](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}
 *	Developer documentation
 
 	*	[Magento 2 Architecture guide]({{page.baseurl}}architecture/bk-architecture.html){:target="_blank"}
