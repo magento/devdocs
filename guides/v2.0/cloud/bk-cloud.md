@@ -77,9 +77,16 @@ See [Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-req
 ## Where do I get started? {#getstarted}
 If you have experience with {{site.data.var.ee}} 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.
 
-If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as s base template. To start, see [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) and [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html). For new non-trial projects, see [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
+If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as a base template.
 
-We recommend the following starting points:
+To get started, see:
+
+* [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) of first things to do right after signing up.
+* [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for new trials to get started.
+* Sign up for [status updates]({{page.baseurl}}cloud/onboarding/onboarding-portal.html#status) for components and services.
+* For new non-trial projects, see [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
+
+To better understand {{site.data.var.ee}}, your plan, architecture, and workflows, see the following starting points:
 
 *	[Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 *	Starter information:
@@ -93,10 +100,10 @@ We recommend the following starting points:
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 * [Local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 
-## Magento 2 resources {#magento2}
+## Learn more about Magento 2 {#magento2}
 If you would like to learn more about Magento 2, see the following resources:
 
-*	[Documentation home page](https://magento.com/help/documentation){:target="_blank"}
+*	[All documentation home page](https://magento.com/help/documentation){:target="_blank"}
 *	User guides (how to use options in the Magento Admin)
 
 	*	[Magento 2.0.x](http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112){:target="_blank"}
