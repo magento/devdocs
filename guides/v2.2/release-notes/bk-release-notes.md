@@ -23,7 +23,7 @@ github_link: release-notes/bk-release-notes.md
 * [{{site.data.var.ee}} 2.2.0 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.0EE.html)
 
 
-* [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.2.1.html)
+* [{{site.data.var.ece}} 2.2.1 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.2.1.html)
 
 * [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.2.html)
 
