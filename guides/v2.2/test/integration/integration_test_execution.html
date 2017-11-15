@@ -509,7 +509,7 @@ Once the system is prepared, the tests can be executed using either the command 
 
 <h3 id="setting-up-the-integration-test-framework">Setting up the integration test framework</h3>
 
-<p>In order to run the integration tests, a test database has to be created and configured.<br />
+<p>In order to run the integration tests, a test database has to be created and configured.
 Besides this, you might also want to adjust the PHPUnit configuration, depending on your requirements.</p>
 
 <p>Please refer to <a href="#setup">Preparing Integration Test Execution</a> for further information on setting up the test environment.</p>
@@ -530,7 +530,7 @@ Besides this, you might also want to adjust the PHPUnit configuration, depending
 
 <h2 id="setup">Preparing Integration Test Execution</h2>
 
-<p>Before the Magento integration test framework can be used, the test environment has to be prepared.<br />
+<p>Before the Magento integration test framework can be used, the test environment has to be prepared.
 The following prerequisites are required:</p>
 
 <ul>
@@ -544,11 +544,11 @@ The following prerequisites are required:</p>
 <p>By default, for every integration test run, the test framework installs a fresh Magento test database.</p>
 
 <div class="bs-callout bs-callout-warning">
-    <p>Do not use the same database as the real Magento instance.  
+    <p>Do not use the same database as the real Magento instance.
     Any data (products, customers, orders and everything else) will be lost!</p>
 </div>
 
-<p>For safety reasons it is recommended to use a dedicated database user for running the tests. That db user should not have access to any other databases.<br />
+<p>For safety reasons it is recommended to use a dedicated database user for running the tests. That db user should not have access to any other databases.
 Here are example SQL commands to create a test database and a dedicated test user account.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">magento_integration_tests</span><span class="p">;</span>
@@ -559,11 +559,11 @@ Here are example SQL commands to create a test database and a dedicated test use
 
 <h3 id="configuring-the-framework-to-use-the-test-database">Configuring the framework to use the test database</h3>
 
-<p>The Magento 2 integration test framework comes with a configuration file template located at<br />
+<p>The Magento 2 integration test framework comes with a configuration file template located at
 <code class="highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist</code>.</p>
 
-<p>Copy this file to<br />
-<code class="highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php</code><br />
+<p>Copy this file to
+<code class="highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php</code>
 (without the <code class="highlighter-rouge">.dist</code> suffix) and add your test database access credentials.</p>
 
 <p>The contents will look something like the following. Use the DB access credentials for your test database instead of the example values below.</p>
@@ -597,8 +597,8 @@ Here are example SQL commands to create a test database and a dedicated test use
 
 <p>When making adjustments to the configuration, copy the default file to <code class="highlighter-rouge">dev/tests/integration/phpunit.xml</code> (again, without the <code class="highlighter-rouge">.dist</code> suffix) and make your changes there. That way your changes will not be overwritten during Magento upgrades.</p>
 
-<p>There are many settings in the file.<br />
-This guide will only describes three common adjustments.<br />
+<p>There are many settings in the file.
+This guide will only describes three common adjustments.
 Please refer to the <a href="https://phpunit.de/manual/4.1/en/appendixes.configuration.html">PHPUnit documentation</a> and the comments in the default file for more information on the available configuration settings.</p>
 
 <h4 id="the-tests_cleanup-constant">The TESTS_CLEANUP Constant</h4>
@@ -608,18 +608,18 @@ Please refer to the <a href="https://phpunit.de/manual/4.1/en/appendixes.configu
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;const</span> <span class="na">name=</span><span class="s">"TESTS_CLEANUP"</span> <span class="na">value=</span><span class="s">"enabled"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>If this constant is set to <code class="highlighter-rouge">enabled</code>, the integration test framework will clean the test database and re-install Magento on every test run.<br />
-That way any new modules will be automatically picked up, and any cruft that might have been left over from previous test runs will be removed.<br />
+<p>If this constant is set to <code class="highlighter-rouge">enabled</code>, the integration test framework will clean the test database and re-install Magento on every test run.
+That way any new modules will be automatically picked up, and any cruft that might have been left over from previous test runs will be removed.
 It also causes the test framework to flush the test Magento configuration, the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and the code generation before executing any tests.</p>
 
 <p>The downside of setting <code class="highlighter-rouge">TEST_CLEANUP</code> to <code class="highlighter-rouge">enabled</code> is that the re-installation of Magento takes time (the exact time depends on the host you are using to run the integration tests and the Magento version.)</p>
 
 <p>During the development of new integration tests, where only a subset of the tests is executed repeatedly, that overhead of setting up a fresh execution environment for each run quickly becomes a burden.</p>
 
-<p>In that case the <code class="highlighter-rouge">TEST_CLEANUP</code> constant can be set to <code class="highlighter-rouge">disabled</code>.<br />
+<p>In that case the <code class="highlighter-rouge">TEST_CLEANUP</code> constant can be set to <code class="highlighter-rouge">disabled</code>.
 The test execution will start much quicker, but as a consequence the developer has to flush the cache and the database when needed manually.</p>
 
-<p>The integration test framework creates the temporary test files beneath the directory<br />
+<p>The integration test framework creates the temporary test files beneath the directory
 <code class="highlighter-rouge">dev/tests/integration/tmp/sandbox-*</code> (followed by a long hash ID).</p>
 
 <p>To force the test framework to regenerate the cache and the other files, it is enough to remove the directory.</p>
@@ -629,8 +629,8 @@ The test execution will start much quicker, but as a consequence the developer h
 
 <h4 id="the-php-memory_limit">The PHP memory_limit</h4>
 
-<p>The default <code class="highlighter-rouge">phpunit.xml.dist</code> file does not contain any PHP <code class="highlighter-rouge">memory_limit</code> settings.<br />
-However, sometimes the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> configuration restricts the amount of memory PHP may consume.<br />
+<p>The default <code class="highlighter-rouge">phpunit.xml.dist</code> file does not contain any PHP <code class="highlighter-rouge">memory_limit</code> settings.
+However, sometimes the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> configuration restricts the amount of memory PHP may consume.
 This can make it impossible to run the integration tests.</p>
 
 <p>The PHP memory limit can be turned off by adding the following configuration to the <code class="highlighter-rouge">&lt;php&gt;</code> section of the integration test <code class="highlighter-rouge">phpunit.xml</code> file:</p>
@@ -640,15 +640,15 @@ This can make it impossible to run the integration tests.</p>
 
 <h4 id="executing-third-party-integration-tests">Executing third party integration tests</h4>
 
-<p>The Magento code integration tests reside in the directory <code class="highlighter-rouge">dev/tests/integration/testsuite</code>.<br />
+<p>The Magento code integration tests reside in the directory <code class="highlighter-rouge">dev/tests/integration/testsuite</code>.
 For core tests it makes sense that the integration tests do not reside within individual modules, because most integration test execute code from many different modules.</p>
 
 <p>Shop implementation specific integration tests could also be placed within a different subdirectory of <code class="highlighter-rouge">dev/tests/integration/testsuite</code> and then would be executed together with the core tests.</p>
 
-<p>However, third party Magento extensions are contained within a single directory, and might supply custom integration tests, too.<br />
+<p>However, third party Magento extensions are contained within a single directory, and might supply custom integration tests, too.
 These tests usually are placed in the subdirectory <code class="highlighter-rouge">Test/Integration/</code> within the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> folder.</p>
 
-<p>These third party integration tests are not picked up by the default integration test configuration.<br />
+<p>These third party integration tests are not picked up by the default integration test configuration.
 A testsuite configuration like the following can be added to the <code class="highlighter-rouge">&lt;testsuites&gt;</code> section of the <code class="highlighter-rouge">phpunit.xml</code> file so they are included during test execution.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;testsuite</span> <span class="na">name=</span><span class="s">"Third Party Integration Tests"</span><span class="nt">&gt;</span>
@@ -670,7 +670,7 @@ A testsuite configuration like the following can be added to the <code class="hi
 
 <p>Please ensure you have <a href="#setup">prepared the integration test environment</a> before starting.</p>
 
-<p>The integration tests have to be executed with the current working directory being <code class="highlighter-rouge">dev/tests/integration</code>.<br />
+<p>The integration tests have to be executed with the current working directory being <code class="highlighter-rouge">dev/tests/integration</code>.
 The test configuration resides in that directory and will be picked up by <code class="highlighter-rouge">phpunit</code> automatically, without the need to specify it as a command line option.</p>
 
 <h3 id="running-all-integration-tests">Running all integration tests</h3>
@@ -690,7 +690,7 @@ Configuration <span class="nb">read </span>from /var/www/magento2/dev/tests/inte
 
 <h3 id="running-only-a-custom-testsuite">Running only a custom testsuite</h3>
 
-<p>PHPUnit offers several ways to only execute a subset of tests.<br />
+<p>PHPUnit offers several ways to only execute a subset of tests.
 For example, it is common to only execute a single testsuite from the <code class="highlighter-rouge">phpunit.xml</code> configuration.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
@@ -707,7 +707,7 @@ For example, it is common to only execute a single testsuite from the <code clas
 
 <h3 id="running-a-single-test-class">Running a single test class</h3>
 
-<p>When developing a new integration test class, it is common to run only that single test many times.<br />
+<p>When developing a new integration test class, it is common to run only that single test many times.
 Pass the path to the file containing the test class as an argument to <code class="highlighter-rouge">phpunit</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
@@ -730,13 +730,13 @@ Pass the path to the file containing the test class as an argument to <code clas
 
 <h4 id="could-not-read-devtestsintegrationphpunitxml">Could not read “dev/tests/integration/phpunit.xml”</h4>
 
-<p>This error happens if the integration tests are executed from a different directory then <code class="highlighter-rouge">dev/tests/integration</code>.<br />
+<p>This error happens if the integration tests are executed from a different directory then <code class="highlighter-rouge">dev/tests/integration</code>.
 To fix the issue, change into the directory <code class="highlighter-rouge">dev/tests/integration</code> and run the tests from there with any relative paths adjusted accordingly.</p>
 
 <h4 id="unable-to-connect-to-mysql">Unable to connect to MySQL</h4>
 
-<p>The <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interpreter has to be able to connect to the test database. By default this means the tests have to run on the same host as the MySQL server.<br />
-This problem most commonly crops up during development with vagrant or docker, where the Magento DB is running on a virtual machine.<br />
+<p>The <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interpreter has to be able to connect to the test database. By default this means the tests have to run on the same host as the MySQL server.
+This problem most commonly crops up during development with vagrant or docker, where the Magento DB is running on a virtual machine.
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.</p>
 
 <p>The error usually looks something like this.</p>
@@ -756,7 +756,7 @@ exception <span class="s1">'PDOException'</span> with message <span class="s1">'
 
 <p>Setting up a run configuration for integration tests is very similar to creating a run configuration for unit tests.</p>
 
-<p>Please refer to <a href="#phpstorm-run">Running Unit Tests in PHPStorm</a> for instructions on how to create a basic run configuration.<br />
+<p>Please refer to <a href="#phpstorm-run">Running Unit Tests in PHPStorm</a> for instructions on how to create a basic run configuration.
 Then configure the integration test configuration file to be used.</p>
 
 <h4 id="using-the-integration-test-configuration-file">Using the integration test configuration file</h4>
@@ -783,7 +783,7 @@ Then configure the integration test configuration file to be used.</p>
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/test/integration/integration_test_execution.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/test/integration/integration_test_execution.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
