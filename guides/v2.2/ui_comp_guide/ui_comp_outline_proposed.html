@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>LinkColumn component | Magento 2 Developer Documentation</title>
+	<title>UI Components Guide outline (proposed) | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/ui_comp_guide/components/ui-linkcolumn.html">
+	<link rel="canonical" href="//guides/v2.2/ui_comp_guide/ui_comp_outline_proposed.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ui_comp_guide/components/ui-linkcolumn.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ui_comp_guide/ui_comp_outline_proposed.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ui_comp_guide/components/ui-linkcolumn.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ui_comp_guide/ui_comp_outline_proposed.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ui_comp_guide/components/ui-linkcolumn.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ui_comp_guide/ui_comp_outline_proposed.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -271,7 +271,7 @@
     
     
 
-<li class="nav-level1  " id="ui-components-guide-outline-(proposed)">
+<li class="nav-level1 active " id="ui-components-guide-outline-(proposed)">
 
     
     
@@ -1288,7 +1288,7 @@
 
           
 
-          <span property="name">LinkColumn component</span>
+          <span property="name">UI Components Guide outline (proposed)</span>
 
         
 
@@ -1311,7 +1311,7 @@
 
 	
 
-	<h1 class="page-heading">LinkColumn component</h1>
+	<h1 class="page-heading">UI Components Guide outline (proposed)</h1>
 
   
 
@@ -1319,32 +1319,204 @@
 </section>
 
 
-			<h2 id="overview">Overview</h2>
+			<p>Below is the proposed structure of the new UI Components Guide. The <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">Frontend</span> development and the DevDocs teams are writing as quickly as we can (linked topics are done!), but as you can see we still have a lot of topics to write.
+If you would like to help us by writing any of the topics that we have not yet gotten do, we welcome your contributions!</p>
 
-<p>The LinkColumn component implements a column that can display the anchor elements instead of plain text.</p>
+<div class="bs-callout bs-callout-info" id="info">
+<p>These are not the exact titles for the sections but rather the content.</p>
+</div>
 
-<p>Constructor: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/link.js">app/code/Magento/Ui/view/base/web/js/grid/columns/link.js</a></p>
-
-<h2 id="linkcolumn-configuration">LinkColumn configuration</h2>
-
-<p>Extends all <a href="/guides/v2.2/ui_comp_guide/components/ui-column.html">Column</a> configuration.</p>
-
-<p>LinkColumn-specific configuration:</p>
-
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>link</code></td>
-    <td>The key in a field's record object that contains the link value.</td>
-    <td>String</td>
-    <td><code>link</code></td>
-  </tr>
-</table>
+<ul>
+  <li>Overview</li>
+  <li>What are UI components
+    <ul>
+      <li>What is a UI component</li>
+      <li><a href="/guides/v2.2//ui_comp_guide/concepts/ui_comp_architecture_concept.html">The architectural structure of a UI component</a></li>
+      <li>Application workflow description</li>
+      <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration flow: the configuration pieces and their part in workflow</a>
+        <ul>
+          <li>Declaration in <code class="highlighter-rouge">definition.xml</code></li>
+          <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">UI component’s XML declaration (the instance)</a></li>
+          <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">PHP modifiers</a></li>
+          <li>Configuration inside the JS class</li>
+        </ul>
+      </li>
+      <li>Data sources</li>
+      <li>Javascript in UI components
+        <ul>
+          <li>Basic JS components
+            <ul>
+              <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiclass_concept.html"><code class="highlighter-rouge">uiClass</code> as a core of OOP in components (initialize, initConfig, extend, _super, defaults)</a></li>
+              <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code class="highlighter-rouge">uiElement</code> as genaral component class</a></li>
+              <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code class="highlighter-rouge">uiCollection</code> as general component for collections</a></li>
+              <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uilayout_concept.html"><code class="highlighter-rouge">uiLayout</code>  as a built-in initializer</a></li>
+              <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiregistry.html"><code class="highlighter-rouge">uiRegistry</code>  as a in memory storage</a></li>
+              <li>Linking properties of UI components</li>
+            </ul>
+          </li>
+          <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">Require JS with UI components</a></li>
+        </ul>
+      </li>
+      <li>Templates customization rules &amp; techniques (using Knockout.js)
+        <ul>
+          <li>Overview of Knockout templates (explain custom bindings, whatever else is important)</li>
+          <li>Templates syntax
+            <ul>
+              <li>UI components implement the MVVM pattern (the UI component instance is a ViewModel)</li>
+              <li>New tags and their meaning</li>
+            </ul>
+          </li>
+          <li>Custom bindings
+            <ul>
+              <li><code class="highlighter-rouge">afterRender</code> – allows you to call a method (piece of code that exist in context) after the  rendering of the current DOM node finished</li>
+              <li><code class="highlighter-rouge">autoselect</code> – when applied to <code class="highlighter-rouge">&lt;input&gt;</code> does text selection when <code class="highlighter-rouge">&lt;input&gt;</code> gets focus. (E.g.: via click)</li>
+              <li><code class="highlighter-rouge">bindHtml</code> – similar to <em>html</em> binding, but also applies bindings and process <a href="/guides/v2.2//javascript-dev-guide/javascript/js_init.html#data_mage_init">data-mage-init</a> declarations.</li>
+              <li><code class="highlighter-rouge">collapsible</code> – allows you to build collapsible panels</li>
+              <li><code class="highlighter-rouge">datepicker</code> – only for inputs. Adds datepicker control via calendar.js widget.</li>
+              <li><code class="highlighter-rouge">fadeVisible</code> – show/hide an element via jQuery fadeIn/fadeout functions</li>
+              <li><code class="highlighter-rouge">i18n</code> – analogue to <em>text</em> binding. Has two features: replace text with translation lib, correctly handle behavior of InlineTranslate module.</li>
+              <li><code class="highlighter-rouge">keyboard</code> - attaches keypress handlers to element</li>
+              <li><code class="highlighter-rouge">mageInit</code> – has same format as <a href="/guides/v2.2//javascript-dev-guide/javascript/js_init.html#data_mage_init">data-mage-init</a> attribute. In opposite to attribute binding handles situation with appear/removal of an element</li>
+              <li><code class="highlighter-rouge">optgroup</code> – same as building “option” binding. But allows you to render hierarchy options with the &lt;optgroup&gt; tag.</li>
+              <li><code class="highlighter-rouge">outerClick</code> – similar to “click” binding. Handles situation when a click is done outside of an element.</li>
+              <li><code class="highlighter-rouge">range</code> – allows you to use the jQuery UI Slider widget.</li>
+              <li><code class="highlighter-rouge">resizable</code> – adds the jQuery UI Resizable widget.</li>
+              <li><code class="highlighter-rouge">scope</code> – allows you to bind an object from uiRegistry as the scope to particular element. Used in Ui components.</li>
+              <li><code class="highlighter-rouge">simpleChecked</code></li>
+              <li><code class="highlighter-rouge">staticChecked</code> - Implements same functionality as a standard ‘checked’ binding, but with a difference that it wont’ change values array if value of DOM element changes.</li>
+              <li><code class="highlighter-rouge">tooltip</code> – allows to create tooltip within inner content</li>
+              <li><code class="highlighter-rouge">template</code>(render) – inner content will be replaced with the external template. Builtin “template” binding expects that the templates are on the page already. Magento’s one expects to load template from separate external files.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Provide simple table of all of UI сomponents</li>
+    </ul>
+  </li>
+  <li>UI components usage: common use cases, advantages, links to the scenario-based topics</li>
+  <li>What changed since 2.0
+    <ul>
+      <li>Magento 2.0 vs Magento 2.1: changes in the UI component (XML changes)
+        <ul>
+          <li>Grid</li>
+          <li>Form</li>
+        </ul>
+      </li>
+      <li>The syntax of UI Components templates has changed</li>
+      <li>New UI Components
+        <ul>
+          <li>Insert</li>
+          <li>Modal</li>
+          <li>File Uploader</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Best practices for UI components
+    <ul>
+      <li>Don’t rely on DOM instead rely on data structure.</li>
+    </ul>
+  </li>
+  <li>Troubleshooting and debugging UI components
+    <ul>
+      <li>Checklist/workflow for debugging UI components</li>
+      <li>PHP app checkpoints</li>
+      <li>Validate XML:
+        <ul>
+          <li>PHP Storm</li>
+          <li>Using developer mode (running in dev mode automatically validates XML)</li>
+        </ul>
+      </li>
+      <li><a href="/guides/v2.2/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html">Debug UI components JS</a>
+        <ul>
+          <li>Common break-points for diagnostic
+            <ul>
+              <li>Loading files (Require.js)</li>
+              <li>uiLayout</li>
+              <li>uiRegistry</li>
+              <li>uiElement/uiCLass</li>
+              <li>template engine</li>
+            </ul>
+          </li>
+          <li>Using OoB Unit tests as a debug tool</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Tutorials, Workflow, Process
+    <ul>
+      <li>List of general use cases.</li>
+      <li>Tutorial: customize the existing instances (ex.: customize product creation form)</li>
+      <li>Implement an existing UI Comp type with zero behavior customization or changes</li>
+      <li>Implement an existing, out of the box UI component, but with some behavior customization</li>
+      <li>Create a custom instance of the custom type (limitations: custom UI component types are not reusable, you need to copy-paste all config each time you want to use it)</li>
+    </ul>
+  </li>
+  <li>Common How Tos
+    <ul>
+      <li>How to create category attribute programmatically</li>
+      <li>How to add a custom attribute for CMS page (best practice to use Service Layer. Should be added to the CMS form and CMS grid)</li>
+      <li>How to add a form, where fields have options in drop-down (Select field Backend form)</li>
+      <li>How to create multi-select with source model in UI component</li>
+      <li>How to create category attribute thumbnail and upload image using File Uploader Component</li>
+      <li>How to test if something goes wrong (including php part)</li>
+      <li>How to get data into the UI components</li>
+      <li>How to add image attribute to a category</li>
+      <li>How to add custom field to a form dynamically using application.</li>
+      <li>How to integrate an jQuery widget?</li>
+      <li>How implement filter (or sorting order) in existing listing without filed in DB</li>
+    </ul>
+  </li>
+  <li>Real-Life Scenarios</li>
+  <li>Specific UI сomponents (Reference material)
+    <ul>
+      <li>A list of Magento UI components</li>
+      <li><a href="/guides/v2.2/ui_comp_guide/components/ui-form.html">Form</a></li>
+      <li><a href="/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html">Listing</a></li>
+      <li>Fieldset</li>
+      <li>Field</li>
+      <li>Group</li>
+      <li>Tab</li>
+      <li>Nav</li>
+      <li>Insert</li>
+      <li>Insert Form</li>
+      <li>Insert Listing</li>
+      <li><a href="/guides/v2.2/ui_comp_guide/components/ui-modal.html">Modal</a></li>
+      <li>Button adapter</li>
+      <li>Form provider</li>
+      <li>Paging</li>
+      <li>Filters</li>
+      <li>FilterSearch</li>
+      <li>FilterSelect</li>
+      <li>FilterRange</li>
+      <li>FilterInput</li>
+      <li>FilterDate</li>
+      <li>ContainerMassAction</li>
+      <li>Actions</li>
+      <li>Action</li>
+      <li>ActionDelete</li>
+      <li>Column</li>
+      <li>Columns</li>
+      <li>ActionsColumn</li>
+      <li>SelectionsColumn</li>
+      <li>Component</li>
+      <li>Container</li>
+      <li>Fieldset</li>
+      <li>Field</li>
+      <li>Bookmark</li>
+      <li>InsertForm</li>
+      <li>InsertListing</li>
+      <li>ExportButton</li>
+      <li>ColumnsControls</li>
+      <li>ListingToolbar</li>
+      <li>DynamicRows</li>
+      <li>HtmlContent</li>
+      <li>Button</li>
+      <li>DataSource</li>
+    </ul>
+  </li>
+  <li>Glossary and Standard Terms</li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1355,14 +1527,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/ui_comp_guide/components/ui-linkcolumn.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/ui_comp_outline_proposed.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/ui_comp_guide/components/ui-linkcolumn.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/ui_comp_guide/ui_comp_outline_proposed.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
