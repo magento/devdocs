@@ -22,7 +22,7 @@ end
 # Run htmlproofer to check for broken linkss
 
 desc "Validate links"
-task :check_links do
+task :check_links => :build do
 
   # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406). Wrapping task in a begin-rescue block prevents rake from aborting.
   begin
