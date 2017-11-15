@@ -37,7 +37,7 @@ Visit http://localhost:4000 in your favorite browser!
 
 ## <a name="build-using-vagrant"> Build using Vagrant
 
-You can deploy the devdocs site locally using [this Vagrant project](https://github.com/dshevtsov/magento-devdocs-vagrant).
+You can deploy the devdocs site locally using [this Vagrant project](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
 
 ***
 
