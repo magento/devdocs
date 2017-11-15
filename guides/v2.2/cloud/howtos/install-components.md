@@ -11,7 +11,7 @@ menu_node:
 version: 2.0
 github_link: cloud/howtos/install-components.md
 redirect_from:
-  - /guides/v2.0/cloud/howtos/update-components.html
+  - /guides/v2.2/cloud/howtos/update-components.html
 functional_areas:
   - Cloud
   - Configuration
@@ -93,26 +93,9 @@ The extension name is in the format `<VendorName>_<ComponentName>`. It will not 
 To manage your extensions, you can enable and disable or change settings per environment.
 
 ### Enable and disable extensions {#enable-disable}
-We recommend enabling and disabling your extensions across all environments to best match testing per environment. If you encounter issues, you may need to update permissions for the files and folders.
-
-Trying to enable and disable extensions not following this method can lead to permissions and other issues.
-
-2. In a terminal, SSH into your environments: Integration, Staging, and Production.
-3. You need a specific name of the extension or module. Use the following command to locate the name:
-
-        php bin/magento module:status
-4. To enable, use the following command.
-
-        php bin/magento module:enable <module name>
-5. To disable, use the following command.
-
-        php bin/magento module:enable <module name>
-6. Use the following command to verify the changed status of the module:
-
-        php bin/magento module:status
 
 ### Modify configurations {#configure}
-To change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
+
 
 ## Upgrade an extension {#update}
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:

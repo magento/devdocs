@@ -8,10 +8,10 @@ menu_order: 41
 level3_menu_node: level3child
 level3_subgroup: update-extensions
 menu_node:
-version: 2.0
+version: 2.1
 github_link: cloud/howtos/install-components.md
 redirect_from:
-  - /guides/v2.0/cloud/howtos/update-components.html
+  - /guides/v2.1/cloud/howtos/update-components.html
 functional_areas:
   - Cloud
   - Configuration
@@ -112,7 +112,9 @@ Trying to enable and disable extensions not following this method can lead to pe
         php bin/magento module:status
 
 ### Modify configurations {#configure}
-To change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
+For projects using {{site.data.var.ece}} **before 2.1.4**, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
+
+For projects **2.1.4 and later**, you will update configurations according to [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#update) for `config.local.php`.
 
 ## Upgrade an extension {#update}
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
