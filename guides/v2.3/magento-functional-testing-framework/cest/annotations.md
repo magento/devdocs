@@ -19,7 +19,7 @@ Within an XML test file, annotations are contained within their own node.
 * Each tag within corresponds to a supported annotation type
 * There is no distinction made in XML between Codeception annotations and Allure annotations
 * Each annotation tag contains only one value.
-If multiple annotation values are supported and required (see `<env>` above) each value requires a separate tag.
+If multiple annotation values are supported and required each value requires a separate tag.
 
 ## Example
 

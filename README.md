@@ -6,40 +6,40 @@ To contribute, please fork the `develop` branch.
 
 # Building this site
 
-You can build this site locally using Jekyll
+You can build this site locally in the following ways:
+ 
+- [Installing the project dependencies locally](#build-using-jekyll) (Mac, Linux)
+- [Using a Docker container](#build-using-docker) (Mac, Linux)
+- [Using a Vagrant virtual machine](#build-using-vagrant) (Mac, Linux, Windows)
 
-*	Windows users _must_ build the site in a Vagrant container running on Virtual Box as discussed in more detail in the [Vagrant README](vagrant/README.md).
-
-	We use symbolic links (symlinks) in the `guides/v2.1` directory to link to topics that haven't changed since the 2.0.x release. Because symlinks aren't supported by Windows, you _cannot_ use the Windows environment; you must use a Linux environment.
-
-*	Mac and Linux users can build this site locally using Jekyll or you can use Vagrant. 
-
-	Vagrant might be easier because the software runs in a container that isn't dependent on, and cannot conflict with, any other software installed on your computer.
-
-## Build using Vagrant
-
-To build the site locally using Vagrant you need only the files in the `vagrant/` directory.
-For more information, see the [Vagrant README](vagrant/README.md).
-
-## Requirements
+## <a name="build-using-jekyll"> Build using Jekyll
 
 Currently, building this site requires:
 
-*	Ruby Version: >= 2.0.0
+*	[Ruby v.2.4.x+](https://www.ruby-lang.org)
+*   [bundler v.1.16.x+](http://bundler.io/)
 
-Use [bundler](http://bundler.io/) to get compatible versions of other dependencies.
-
-## Build locally in Mac or Linux
-
-To build this site locally:
+To build this site locally, clone this repository and run in the _devdocs_ directory:
 
 ```bash
 # Install dependencies
 $ bundle install
 
-# Visit http://localhost:4000 in your favorite browser!
+# Run Jekyll server to generate local website
 $ bin/jekyll serve --incremental
 ```
+
+Visit http://localhost:4000 in your favorite browser!
+
+## <a name="build-using-docker"> Build using Docker
+
+[This Docker container](https://github.com/jcalcaben/docker-for-devdocs) contains everything necessary to run Jekyll3 for working with Magento DevDocs.
+
+## <a name="build-using-vagrant"> Build using Vagrant
+
+You can deploy the devdocs site locally using [this Vagrant project](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
+
+***
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
@@ -47,4 +47,4 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 *	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
 
-*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built on GitHub using [Jekyll](http://jekyllrb.com/).
+*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
