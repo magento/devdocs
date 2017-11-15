@@ -7,7 +7,7 @@ title: Magento Commerce modules
 menu_title: Commerce
 menu_order: 1
 menu_node: parent
-version: 2.2
+version: 2.1
 
 
 github_link: mrg/ee/ee-intro.md
