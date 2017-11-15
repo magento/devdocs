@@ -108,7 +108,7 @@ Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution_without_bm
 
 
 ### Payments Pro Hosted Solution (United Kingdom)
-These options are available only if you chose the United Kingdom as the [merchant country](#vars-merch-country).
+These options are available only if you chose the United Kingdom as the merchant country.
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|
