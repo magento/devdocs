@@ -17,7 +17,7 @@ functional_areas:
   - Configuration
 ---
 
-This information includes information for adding extensions to {{site.data.var.ece}}, managing enabled and disabled extensions, and upgrading extension code. We highly recommend understanding
+This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update). 
 
 When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
 

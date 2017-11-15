@@ -17,7 +17,7 @@ functional_areas:
   - Configuration
 ---
 
-This information includes information for adding extensions to {{site.data.var.ece}}, managing enabled and disabled extensions, and upgrading extension code. We highly recommend understanding
+This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update). 
 
 When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
 
@@ -93,9 +93,29 @@ The extension name is in the format `<VendorName>_<ComponentName>`. It will not 
 To manage your extensions, you can enable and disable or change settings per environment.
 
 ### Enable and disable extensions {#enable-disable}
+To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have `config.php` in your Git branch and implementation. If you do not use [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) or `config.php`, we strongly recommend you do.
+
+Trying to enable and disable extensions not following this method can lead to permissions and other issues.
+
+1. [Work in a branch](#getstarted) to update `config.php`.
+2. In a terminal, access your local development environment.
+3. You need a specific name of the extension or module. Use the following command to locate the name:
+
+        php bin/magento module:status
+4. To enable, use the following command. It updates `config.php` with the enabled status of the module.
+
+        php bin/magento module:enable <module name>
+5. To disable, use the following command. It updates `config.php` with the disable status of the module.
+
+        php bin/magento module:enable <module name>
+6. Use the following command to verify the changed status of the module:
+
+        php bin/magento module:status
+7. Push your updates to the Git branch.
+8. [Complete deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
-
+You will update configurations according to [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#update) for `config.php`.
 
 ## Upgrade an extension {#update}
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
