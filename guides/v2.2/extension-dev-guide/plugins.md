@@ -132,7 +132,7 @@ class AuthPlugin
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{site.mage2100url}}}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{site.mage2100url}}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 {% highlight PHP %}
 
 class MyPlugin
