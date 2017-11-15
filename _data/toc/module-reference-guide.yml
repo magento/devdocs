@@ -17,7 +17,7 @@ pages:
 
         - label: Signifyd
           url: mrg/ce/Signifyd.html
-          versions: [2.2"]
+          versions: ["2.2"]
 
 
     - label: Commerce
