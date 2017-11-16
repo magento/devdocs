@@ -17,8 +17,8 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you're using:
 
-*   [Ubuntu 16]({{page.baseurl}}install-gde/prereq/nginx.hmtl/#ubuntu-16)
-*   [CentOS 7]({{page.baseurl}}install-gde/prereq/nginx.hmtl/#centos-7)
+*   [Ubuntu 16]({{page.baseurl}}install-gde/prereq/nginx.html#ubuntu-16)
+*   [CentOS 7]({{page.baseurl}}install-gde/prereq/nginx.html#centos-7)
 
 ## Help if you're just starting out {#apache-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:
@@ -35,7 +35,7 @@ The following section describes how to install Magento 2.x on Ubuntu 16 using ng
 
 	apt-get -y install nginx
 
-After completing the following sections and [installing Magento]({{page.baseurl}}install-gde/prereq/nginx.html#install-magento2-ubuntu), we'll use a sample configuration file to [configure nginx]({{page.baseurl}}install-gde/prereq/nginx.hmtl#configure-nginx-ubuntu).
+After completing the following sections and [installing Magento]({{page.baseurl}}install-gde/prereq/nginx.html#install-magento2-ubuntu), we'll use a sample configuration file to [configure nginx]({{page.baseurl}}install-gde/prereq/nginx.html#configure-nginx-ubuntu).
 
 ### Install and configure php-fpm
 Magento requires several [PHP extensions]({{page.baseurl}}install-gde/prereq/php-ubuntu.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.

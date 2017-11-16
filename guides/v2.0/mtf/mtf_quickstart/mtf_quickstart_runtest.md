@@ -1,13 +1,9 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 30_Quickstart
 title: Quick start. Test run
-menu_title: Test run
-menu_order: 3
 version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---
 
 All tests classified by categories in corresponding directories in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento`.

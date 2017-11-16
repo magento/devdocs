@@ -5,7 +5,7 @@ subgroup: components
 title: SelectColumn component
 menu_title: SelectColumn component
 version: 2.1
-github_link: ui_comp_guide/components/ui-selectсolumn.md
+github_link: ui_comp_guide/components/ui-selectcolumn.md
 ---
 
 ## Overview

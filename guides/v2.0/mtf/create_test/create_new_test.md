@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 40_Approach
 title: Create a test in the Functional Testing Framework
-menu_title: New functional test. Practice
-menu_order: 3
 version: 2.0
 github_link: mtf/create_test/create_new_test.md
 ---

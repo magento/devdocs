@@ -1,11 +1,7 @@
 ---
 layout: default
 group: jstf
-subgroup: Jasmine
 title: JavaScript unit testing with Jasmine
-menu_title: Jasmine
-menu_node: parent
-menu_order:
 version: 2.2
 github_link: test/js/jasmine.md
 ---

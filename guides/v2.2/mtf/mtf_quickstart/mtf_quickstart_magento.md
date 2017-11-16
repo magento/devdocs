@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 30_Quickstart
 title: Quick start. Prepare Magento application
-menu_title: Prepare Magento application
-menu_order: 1
 version: 2.2
 github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 ---

@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Page
-menu_title: Page
-menu_order: 6
 version: 2.0
 github_link: mtf/mtf_entities/mtf_page.md
 ---
