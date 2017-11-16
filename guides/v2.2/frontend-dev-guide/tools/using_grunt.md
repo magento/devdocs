@@ -50,7 +50,7 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
 If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. For example, the default configuration file for working with themes is `dev/tools/grunt/configs/themes.js`.
 
-The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. Ability t use custom configuration files is implemented by the file router mechanism added by Magento.
+The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. The ability to use custom configuration files is implemented by the file router mechanism added by Magento.
 
 ## Using custom Grunt configuration files
 
