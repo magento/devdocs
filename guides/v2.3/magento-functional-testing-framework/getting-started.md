@@ -217,9 +217,9 @@ $ vendor/bin/robo allure2:report
 
 <!-- LINKS -->
 
-[`codecept`]: ./commands/codeception.html
-[`robo]: ./commands/robo.html
-[allure commands]: ./commands/robo.html#allure-robo-commands
+[`codecept`]: commands/codeception.html
+[`robo]: commands/robo.html
+[allure commands]: commands/robo.html#allure-robo-commands
 
 [git]: https://git-scm.com/downloads
 [php]: http://php.net/manual/en/install.php
