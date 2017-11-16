@@ -21,14 +21,13 @@ Example: `selector="#element .{{var1}} .{{var2}}"`.
 
 ### Substitutable values
 
-Sustainable values in the test can be of the followoing formats:
+Sustainable values in the test can be of the following formats:
 
 * String Literals: `stringLiteral`
-* XML Data: `entityName.Field`
+* Reference to data entity (XML data from the corresponding _.../Data/*.xml_): `entityName.Field`
 * Persisted Data
     * `$persistedCreateDataKey.field$` for data created in scope of a [test] using [createData] action with `mergeKey="persistedCreateDataKey"`
     * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `mergeKey="persistedCreateDataKey"`
-
 
 The following diagram demonstrates XML structure of a section in the MFTF:
 

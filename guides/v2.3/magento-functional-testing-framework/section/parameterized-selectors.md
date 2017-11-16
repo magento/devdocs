@@ -81,8 +81,8 @@ Add the 2nd/3rd parameters that you'd like to pass to the selector separated by 
 
 Here,
 
-* `_defaultCategory.is_active` is XML Data:
-* `stringLiteral` is a literal: 
+* `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in _Data_
+* `stringLiteral` is a literal
 * `$createDataKey.id$` is a reference to persisted data created in the `SampleTest` using action with `mergeKey="createDataKey"`
 
 {%endraw%}
