@@ -159,8 +159,8 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 <!-- LINK DEFINITIONS -->
 
 [PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-[test]: ./cest.html
-[createData]: ./cest/actions.html#createdata
+[test]: cest.html
+[createData]: cest/actions.html#createdata
 
 [explicit page]: #explicit-page
 [parameterized page]: #parameterized-page

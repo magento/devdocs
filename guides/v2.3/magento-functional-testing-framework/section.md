@@ -18,7 +18,17 @@ You are able to define:
 Example: `selector="#add_root_category_button"`
 - parameterized element that contains substitutable values in selector.
 Example: `selector="#element .{{var1}} .{{var2}}"`.
-You can use string literals, XML data, and persisted data.
+
+### Substitutable values
+
+Sustainable values in the test can be of the followoing formats:
+
+* String Literals: `stringLiteral`
+* XML Data: `entityName.Field`
+* Persisted Data
+    * `$persistedCreateDataKey.field$` for data created in scope of a [test] using [createData] action with `mergeKey="persistedCreateDataKey"`
+    * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `mergeKey="persistedCreateDataKey"`
+
 
 The following diagram demonstrates XML structure of a section in the MFTF:
 

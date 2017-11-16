@@ -75,12 +75,15 @@ Inside of the `()`, add the first parameter that you'd like to pass to the selec
 
 ![Add the first parameter]
 
-You can pass in String Lierals, XML Data and Persisted Data.
-Inside of the `()` add a `,` after the fist parameter, add the 2nd/3rd parameters that you'd like to pass to the Selector.
+Add the 2nd/3rd parameters that you'd like to pass to the selector separated by `, `
 
 ![Add other parameters]
 
-You can use string literals, XML data, and persisted data.
+Here,
+
+* `_defaultCategory.is_active` is XML Data:
+* `stringLiteral` is a literal: 
+* `$createDataKey.id$` is a reference to persisted data created in the `SampleTest` using action with `mergeKey="createDataKey"`
 
 {%endraw%}
 
