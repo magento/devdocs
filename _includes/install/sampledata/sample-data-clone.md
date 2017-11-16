@@ -23,7 +23,7 @@ See the following sections:
 ## Clone the sample data repository {#clone-sample-repo}
 This section discusses how to install Magento sample data by cloning the sample data repository. You can clone the sample data repository in any of the following ways:
 
-*   Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a>
+*   Clone with the <a href="#clone-sample-repo-ssh">SSH protocol</a>
 *   Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a>
 
 ### Clone with SSH {#clone-sample-repo-ssh}
