@@ -1,12 +1,8 @@
 ---
 layout: default
 group: mrg
-subgroup: 20_Enterprise Edition
 ee_only: true
 title: Magento Commerce modules
-menu_title: Commerce
-menu_order: 1
-menu_node: parent
 version: 2.1
 
 
