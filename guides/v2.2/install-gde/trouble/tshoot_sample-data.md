@@ -38,7 +38,7 @@ Error in the console log during sample data installation using the Setup Wizard:
 These exceptions result from file system permissions settings.
 
 #### Solution
-<a href="{{page.baseurl}}install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
+<a href="{{page.baseurl}}install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}
 If you're currently set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command:
@@ -57,7 +57,7 @@ Enter the following commands in the order shown as the [Magento file system owne
 
 ### Symptom (security) {#trouble-samp-secy}
 
-During installation of optional sample data, a  message similar to the following displays: 
+During installation of optional sample data, a  message similar to the following displays:
 
 	PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
 

@@ -25,6 +25,13 @@ github_link: release-notes/bk-release-notes.md
 
 * [{{site.data.var.ce}} 2.2.0 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.0CE.html)
 * [{{site.data.var.ee}} 2.2.0 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.0EE.html)
+<<<<<<< HEAD
+=======
+
+
+* [{{site.data.var.ece}} 2.2.1 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.2.1.html)
+
+>>>>>>> 7e2120b9db8db03835ad76352abcc95bef2a4a32
 * [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.2.html)
 
 Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x](http://devdocs.magento.com/guides/v2.0/release-notes/bk-release-notes.html) and [2.1.x](http://devdocs.magento.com/guides/v2.1/release-notes/bk-release-notes.html) Release Information pages.  

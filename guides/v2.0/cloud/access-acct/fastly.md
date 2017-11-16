@@ -56,7 +56,7 @@ To create a branch:
 {% include cloud/cli-get-started.md %}
 
 ## Install Fastly in an Integration branch and deploy {#cloud-fastly-setup}
-You should install the Fastly module on your local, pushing the code to Integration and deploying across to your Staging and Production environments. For {{site.data.var.ece}} 2.2, install Fastly module 1.2.32 or later for all updated settings and full VCL snippet uploading support.
+You should install the Fastly module on your local, pushing the code to Integration and deploying across to your Staging and Production environments. For {{site.data.var.ece}} 2.2, install Fastly module 1.2.33 or later for all updated settings and full VCL snippet uploading support.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Don't configure the module in your local before building and deploying. You'll configure the module in those environments.
@@ -121,7 +121,7 @@ Configure the following features and enable additional [configuration options](h
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 *	Ignore the link to create a free Fastly account. We'll provide your Fastly credentials (Service ID and API token).
-*	With Fastly version 1.2.0 and later (we recommend 1.2.32 or later), use the **Upload VCL to Fastly** button to upload your default [VCL snippets](#custom-vcl).
+*	With Fastly version 1.2.0 and later (we recommend 1.2.33 or later), use the **Upload VCL to Fastly** button to upload your default [VCL snippets](#custom-vcl).
 </div>
 
 ## Upload Fastly VCL snippets {#upload-vcl-snippets}
@@ -138,7 +138,7 @@ To use snippets, you must upload the Fastly VCL using the Magento Admin as follo
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.32 or later. For details, see [Update extensions]({{ page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
+  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. For details, see [Update extensions]({{ page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
 	</div>
 
 2.	Once the upload completes, the modal automatically closes with a success message.
@@ -233,6 +233,15 @@ For details, see [Go live checklist]({{ page.baseurl}}cloud/live/go-live-checkli
 If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly's TXT record file for your account. You can then send this record to your DNS provider.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
+
+## Upgrade Fastly {#upgrade}
+Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check [Magento Marketplace](https://marketplace.magento.com/fastly-magento2.html){:target="_blank"} and their [GitHub](https://github.com/fastly/fastly-magento2/releases){:target="_blank"} for updates on the latest releases.
+
+When you upgrade, your default VCL snippets you uploaded should not be affected or require any additional steps.
+
+For information on upgrading modules, see [Install, manage, and upgrade modules]({{ page.baseurl}}cloud/howtos/install-components.html).
+
+If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 
 #### Related topics
 

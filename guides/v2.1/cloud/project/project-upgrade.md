@@ -116,7 +116,7 @@ We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-
 Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.
 
 ### Additional extension upgrades {#moreextensions}
-We strongly recommend upgrading your Fastly module to v1.2.32 or later for {{site.data.var.ece}} 2.1.X.
+We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.1.X.
 
 ## Troubleshoot your upgrade {#upgrade-verify-tshoot}
 In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:
@@ -149,6 +149,6 @@ To resolve the error:
 
 #### Related topic
 * [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-* [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
+* [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
 * [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
 * [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
