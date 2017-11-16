@@ -254,10 +254,11 @@ Generated PHP code:
 ***
 
 ### useCaseId
-_Implementation of an Allure tag `@UseCaseId`_
+_Implementation of a tag `@UseCaseId`_
 
 Specifies Use Case Id for a test.
-Ignored by Allure configuration at the moment.
+
+Ignored by Allure configuration at the moment, as Allure implementation is not complete.
 
 #### Example
 
