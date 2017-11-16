@@ -260,15 +260,19 @@ Specifies Use Case Id for a test.
 
 Ignored by Allure configuration at the moment, as Allure implementation is not complete.
 
+Attribute|Type|Use
+---|---|--
+value|string|required
+
 #### Example
 
 ```xml
-<useCaseId value="#"/>
+<useCaseId value="USECASE-1"/>
 ```
 Generated PHP code:
 
 ``` php?start_inline=1
-@UseCaseId("#")
+@UseCaseId("USECASE-1")
 ```
 
 ***
