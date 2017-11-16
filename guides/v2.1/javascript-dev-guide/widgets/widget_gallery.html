@@ -848,7 +848,7 @@
 <p>Set the caption for a specific image in the <code class="highlighter-rouge">data</code> field.
 Example of the runtime initialization with the <code class="highlighter-rouge">caption</code> option specified:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">galleryInstance</span><span class="p">({</span> 
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">galleryInstance</span><span class="p">({</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="na">img</span><span class="p">:</span> <span class="s1">'preview_number_one.jpg'</span><span class="p">,</span>
@@ -1160,21 +1160,21 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 <p>The general gallery options are set as follows:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
 ...
 <span class="nt">&lt;/var&gt;</span></code></pre></figure>
 
 <p>The fullscreen and breakpoints options are set in a similar way:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"fullscreen"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
 ...
 <span class="nt">&lt;/var&gt;</span>
 <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"breakpoints"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span> 
-    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span> 
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
 ...
 <span class="nt">&lt;/var&gt;</span></code></pre></figure>
 
@@ -1185,9 +1185,9 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 <p>Gallery methods are placed in data storage of the <code class="highlighter-rouge">gallery</code> object. To initialize the API, on the gallery object, call the <code class="highlighter-rouge">data</code> method with <code class="highlighter-rouge">gallery</code> as argument. The illustration follows:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span><span class="o">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span>
- 
+
 <span class="c1">//or
-</span> 
+</span>
 <span class="k">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="s1">'[data-gallery-role="gallery"]'</span><span class="p">)</span><span class="o">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span></code></pre></figure>
 
 <p>This method returns JS object that contains <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> functions.</p>
@@ -1240,7 +1240,7 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 
 <p>Displays the previous preview image.</p>
 
-<p>If the first image ID is passed, the behavior depends on whether <a href="##gallery_loop">loop</a> is enabled:</p>
+<p>If the first image ID is passed, the behavior depends on whether <a href="#gallery_loop">loop</a> is enabled:</p>
 
 <ul>
   <li>if loop is enbled, the last image is displayed.</li>

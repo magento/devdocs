@@ -763,7 +763,7 @@
 
 <h5 id="init_process">How <code class="highlighter-rouge">data-mage-init</code> is processed</h5>
 
-<p>On DOM ready, the <code class="highlighter-rouge">data-mage-init</code> attribute is parsed to extract components’ names and configuration to be applied to the element. 
+<p>On DOM ready, the <code class="highlighter-rouge">data-mage-init</code> attribute is parsed to extract components’ names and configuration to be applied to the element.
 Depending on the type of the inserted JS component, processing is performed as follows:</p>
 <ul>
 
@@ -776,7 +776,7 @@ return {
 };
 </pre>
 </li>
-<li>If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. 
+<li>If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function.
 
 For example:
 
@@ -785,7 +785,7 @@ return function(config, element) { ... };
 </pre>
 
 </li>
-<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
+<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>.
 
 For example:
 <pre>
@@ -794,11 +794,11 @@ return;
 </pre>
 </li>
 
-<li>If none of the previous cases is true, the component is executed with no further processing. 
+<li>If none of the previous cases is true, the component is executed with no further processing.
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decl_tag">Declarative notation using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
+<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decl_tag">Declarative notation using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init /&gt;</code> tag {decl_tag}</h4>
 
 <p>To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code class="highlighter-rouge">&lt;script type="text/x-magento-init"&gt;</code> tag and attribute. The syntax is following:</p>
 
@@ -820,7 +820,7 @@ Such a component does not require either <code>config</code> or <code>element</c
 <ul>
 <li><code>&lt;element_selector&gt;</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
-<li><code>&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li> 
+<li><code>&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li>
 </ul>
 
 <p>The following is a working code sample of a widget call using <code class="highlighter-rouge">&lt;script&gt;</code>. Here the <code class="highlighter-rouge">accordion</code> and <code class="highlighter-rouge">navigation</code> widgets are added to the element with the <code class="highlighter-rouge">#main-container</code> selector, and the <code class="highlighter-rouge">pageCache</code> script is inserted with no binding to any element.</p>
@@ -894,7 +894,7 @@ Such a component does not require either <code>config</code> or <code>element</c
                         <span class="na">img</span><span class="p">:</span> <span class="s1">'https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg'</span>
                     <span class="p">}],</span>
                     <span class="na">fullscreen</span><span class="p">:</span> <span class="p">{}</span>
-                <span class="p">},</span> <span class="nx">element</span><span class="p">);</span>  <span class="c1">// 'element' is simgle DOM node. </span>
+                <span class="p">},</span> <span class="nx">element</span><span class="p">);</span>  <span class="c1">// 'element' is simgle DOM node.</span>
             <span class="p">});</span>
     <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
