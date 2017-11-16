@@ -102,7 +102,7 @@ Trying to enable and disable modules not following this method can lead to permi
         php bin/magento module:enable <module name>
 5. To disable, use the following command.
 
-        php bin/magento module:enable <module name>
+        php bin/magento module:disable <module name>
 6. Use the following command to verify the changed status of the module:
 
         php bin/magento module:status
