@@ -33,7 +33,7 @@ Visit http://localhost:4000 in your favorite browser!
 
 ## <a name="build-using-docker"> Build using Docker
 
-[This Docker container](https://github.com/jcalcaben/docker-for-devdocs) contains everything necessary to run Jekyll3 for working with Magento DevDocs.
+[This Docker container](https://github.com/magento-devdocs/docker-for-devdocs) contains everything necessary to run Jekyll3 for working with Magento DevDocs.
 
 ## <a name="build-using-vagrant"> Build using Vagrant
 
