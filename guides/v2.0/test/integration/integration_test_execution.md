@@ -2,7 +2,6 @@
 layout: default
 group: integration-testing
 title: Running Integration Tests
-menu_title: Running Integration Tests
 version: 2.0
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/

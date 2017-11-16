@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Typified element
-menu_title: Typified element
-menu_order: 5
 version: 2.2
 github_link: mtf/mtf_entities/mtf_typified-element.md
 ---

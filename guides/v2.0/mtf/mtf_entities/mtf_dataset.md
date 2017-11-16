@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Data set
-menu_title: Data set
-menu_order: 8
 version: 2.0
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
