@@ -101,7 +101,6 @@ We build only what has changed since the last build.
 This phase builds the codebase and runs hooks in the `build` section of `.magento.app.yaml`. The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
 
 * Applies patches located in `vendor/ece-patches`, as well as optional project-specific patches in `m2-hotfixes`
-*	Enables all extensions. To best build all code for deployment, we enable all extensions, build, then disable extensions you had disabled in your configuration.
 *	Regenerates code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (that is, the Magento `generated/` which includes `generated/code` and `generated/metapackage`) using `bin/magento setup:di:compile`.
 *	Checks if the [`config.php` file]({{page.baseurl}}cloud/live/sens-data-over.html) exists in the codebase and has information about scopes. If so, static files are deployed during this phase, reducing the downtime in the deployment phase.
 

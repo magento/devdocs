@@ -99,6 +99,8 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * Modified and updated available build and deploy variables. For a full list, see [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html). For 2.2, we have removed `skip_di_compilation` and `skip_di_clearing` from `build-options.ini`. These cannot be run for 2.2 in the build phase.
 
+* For 2.2.X, we no longer enable all of your extensions are part of the build process. We will provide a new mechanism in a later release.
+
 ## Community contributions {#community}
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
