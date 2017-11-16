@@ -149,6 +149,7 @@ Create a whitelist.vcl file with the following JSON:
           error 403 "Forbidden";
         }
 
+QUESTION: how to set up the priority?
 
 
 
