@@ -83,7 +83,7 @@ You can also use the other way to declare a custom config file:
 
    It must be added earlier, than the `get()` method with  this alias is called.
 
-2. In the `dev/tools/grunt/configs/` directory, create a copy of the default configuration file. Change it name by adding the ".loc" suffix. For example, your copy of `themes.js` will be `themes.loc.js`.
+2. In the `dev/tools/grunt/configs/` directory, create a copy of the default configuration file. Change its name by adding the ".loc" suffix. For example, your copy of `themes.js` will be `themes.loc.js`.
 
 
 ### How to use custom configuration file
