@@ -720,6 +720,20 @@
         
         
         
+        <li class="nav-level2  " id="best-practices-for-store-configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         
         
         
@@ -752,12 +766,12 @@
         
         
         
-        <li class="nav-level2  " id="install-and-update-extensions">
+        <li class="nav-level2  " id="install,-manage,-and-upgrade-modules">
             
             
         
             
-            <a href="/guides/v2.0/cloud/howtos/install-components.html">Install and update extensions</a>
+            <a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
             
 
             
@@ -1670,8 +1684,7 @@
 </section>
 
 
-			<h2 id="set-up-multiple-stores">Set up multiple stores</h2>
-<p>This topic discusses how to set up Magento Commerce to have multiple websites or stores; for example, you might have an English store, a French store, and a German store.</p>
+			<p>This topic discusses how to set up Magento Commerce to have multiple websites or stores. For example, you might have an English store, a French store, and a German store. For more information on websites, stores, and store views, see <a href="/guides/v2.0/cloud/configure/configure-best-practices.html#sites">Understanding websites, stores, and store views</a>.</p>
 
 <p>To set up multiple stores, you must:</p>
 
@@ -1882,7 +1895,10 @@ git push origin &lt;branch name&gt;
 
 <p>When complete, merge the code to the <code class="highlighter-rouge">master</code> Git branch for further deployment.</p>
 
-<h2 id="deploy-staging-prod">Deploy to Staging and Production</h2>
+<h3 id="deploy-staging-prod">Deploy to Staging and Production</h3>
+<p>Follow the deployment process for <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">deploying to Staging and Production</a>. For Starter and Pro environments, you use the Project Web Interface to push code across environments. For Pro accounts created before October 23, 2017 and not updated, you can use <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html#classic">SSH and CLI commands</a>.</p>
+
+<p>We recommend fully testing in Staging prior to pushing to Production. If you need to make changes, you should complete those in Integration and beging the process to deploy across environments again.</p>
 
 		</div>
 		<!-- /.content-wrap -->

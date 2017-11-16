@@ -724,6 +724,20 @@
         
         
         
+        <li class="nav-level2  " id="best-practices-for-store-configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="set-up-paypal">
             
             
@@ -780,12 +794,12 @@
         
         
         
-        <li class="nav-level2  " id="install-and-update-extensions">
+        <li class="nav-level2  " id="install,-manage,-and-upgrade-modules">
             
             
         
             
-            <a href="/guides/v2.2/cloud/howtos/install-components.html">Install and update extensions</a>
+            <a href="/guides/v2.2/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
             
 
             
@@ -2048,6 +2062,15 @@ composer require fastly/magento2
   <p>If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly’s TXT record file for your account. You can then send this record to your DNS provider.</p>
 
   <p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="_blank">DNS TXT record validation</a>.</p>
+
+  <h2 id="upgrade">Upgrade Fastly</h2>
+  <p>Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check <a href="https://marketplace.magento.com/fastly-magento2.html" target="_blank">Magento Marketplace</a> and their <a href="https://github.com/fastly/fastly-magento2/releases" target="_blank">GitHub</a> for updates on the latest releases.</p>
+
+  <p>When you upgrade, your default VCL snippets you uploaded should not be affected or require any additional steps.</p>
+
+  <p>For information on upgrading modules, see <a href="/guides/v2.2/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>.</p>
+
+  <p>If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see <a href="/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
   <h4 id="related-topics">Related topics</h4>
 

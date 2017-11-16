@@ -724,6 +724,20 @@
         
         
         
+        <li class="nav-level2  " id="best-practices-for-store-configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="set-up-paypal">
             
             
@@ -780,12 +794,12 @@
         
         
         
-        <li class="nav-level2  " id="install-and-update-extensions">
+        <li class="nav-level2  " id="install,-manage,-and-upgrade-modules">
             
             
         
             
-            <a href="/guides/v2.2/cloud/howtos/install-components.html">Install and update extensions</a>
+            <a href="/guides/v2.2/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
             
 
             
@@ -1780,9 +1794,18 @@
 <h2 id="getstarted">Where do I get started?</h2>
 <p>If you have experience with Magento Commerce 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between Magento Commerce and Magento Commerce (Cloud). If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.</p>
 
-<p>If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of Magento Commerce as s base template. To start, see <a href="/guides/v2.2/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a> and <a href="/guides/v2.2/cloud/onboarding/onboarding-portal.html">Onboarding Portal management</a>. For new non-trial projects, see <a href="/guides/v2.2/cloud/before/before-project-owner.html">prepare your project environments</a> to give your technical staff and solution experts access, create your project, and get started.</p>
+<p>If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of Magento Commerce as a base template.</p>
 
-<p>We recommend the following starting points:</p>
+<p>To get started, see:</p>
+
+<ul>
+  <li><a href="/guides/v2.2/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a> of first things to do right after signing up.</li>
+  <li><a href="/guides/v2.2/cloud/onboarding/onboarding-portal.html">Onboarding Portal management</a> for new trials to get started.</li>
+  <li>Sign up for <a href="/guides/v2.2/cloud/onboarding/onboarding-portal.html#status">status updates</a> for components and services.</li>
+  <li>For new non-trial projects, see <a href="/guides/v2.2/cloud/before/before-project-owner.html">prepare your project environments</a> to give your technical staff and solution experts access, create your project, and get started.</li>
+</ul>
+
+<p>To better understand Magento Commerce, your plan, architecture, and workflows, see the following starting points:</p>
 
 <ul>
   <li><a href="/guides/v2.2/cloud/requirements/cloud-requirements.html">Technologies and requirements</a></li>
@@ -1806,19 +1829,20 @@
   <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">Local environment setup</a></li>
 </ul>
 
-<h2 id="magento2">Magento 2 resources</h2>
+<h2 id="magento2">Learn more about Magento 2</h2>
 <p>If you would like to learn more about Magento 2, see the following resources:</p>
 
 <ul>
-  <li><a href="https://magento.com/help/documentation" target="_blank">Documentation home page</a></li>
+  <li><a href="https://magento.com/help/documentation" target="_blank">All documentation home page</a></li>
   <li>
     <p>User guides (how to use options in the Magento Admin)</p>
 
     <ul>
-      <li><a href="http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112" target="_blank">Magento 2.0.x</a></li>
-      <li><a href="http://docs.magento.com/m2/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112" target="_blank">Magento 2.1.x</a></li>
+      <li><a href="http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html" target="_blank">Magento 2.0.x</a></li>
+      <li><a href="http://docs.magento.com/m2/2.1/ee/user_guide/getting-started.html" target="_blank">Magento 2.1.x</a></li>
     </ul>
   </li>
+  <li><a href="http://docs.magento.com/m2/ee/user_guide/getting-started.html" target="_blank">Magento 2.2.x</a></li>
   <li>
     <p>Developer documentation</p>
 
@@ -1845,7 +1869,8 @@
   <li><strong>Inactive Environment</strong>: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don’t need to use for Magento Commerce. As long as you don’t add those environments to the Cloud Git repo, they don’t count against your total of eight active environments.</li>
   <li><strong>Branch</strong>: Magento Commerce is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.</li>
   <li><strong>Local</strong>: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to <a href="/guides/v2.2/cloud/before/before-workspace.html">set up your local for Magento development</a>.</li>
-  <li><strong>Onboarding Portal</strong>: A <a href="/guides/v2.2/cloud/onboarding/onboarding-portal.html">web interface</a> for the Project Owner to get started with a free-30 day trial Starter or Pro account.</li>
+  <li><strong>Module or Extension</strong>: Custom code and features developed as a module to install and integrate into your Magento implementation. You can purchase these modules from <a href="https://marketplace.magento.com/" target="_blank">Magento Marketplace</a>, directly from developers, or create your own. We recommend <a href="/guides/v2.2/mrg/intro.html">developing custom code as a module</a> to extend Magento functionality.</li>
+  <li><strong>Onboarding Portal</strong>: A <a href="/guides/v2.2/cloud/onboarding/onboarding-portal.html">web interface</a> for the Project Owner to get started with a free 30-day trial Starter or Pro account.</li>
   <li>
     <p><strong>Project Web Interface</strong>: The Web Interface is a <a href="https://accounts.magento.cloud" target="_blank">console for accessing your project</a>, user accounts, and your project environments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for <a href="/guides/v2.2/cloud/project/projects.html">managing your project</a>. The following environments are available through this interface:</p>
 

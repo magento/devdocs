@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install and update extensions | Magento 2 Developer Documentation</title>
+	<title>Install, manage, and upgrade modules | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -720,6 +720,20 @@
         
         
         
+        <li class="nav-level2  " id="best-practices-for-store-configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         
         
         
@@ -752,12 +766,12 @@
         
         
         
-        <li class="nav-level2 active " id="install-and-update-extensions">
+        <li class="nav-level2 active " id="install,-manage,-and-upgrade-modules">
             
             
         
             
-            <a href="/guides/v2.0/cloud/howtos/install-components.html">Install and update extensions</a>
+            <a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
             
 
             
@@ -1639,7 +1653,7 @@
 
           
 
-          <span property="name">Install and update extensions</span>
+          <span property="name">Install, manage, and upgrade modules</span>
 
         
 
@@ -1662,7 +1676,7 @@
 
 	
 
-	<h1 class="page-heading">Install and update extensions</h1>
+	<h1 class="page-heading">Install, manage, and upgrade modules</h1>
 
   
 
@@ -1670,9 +1684,11 @@
 </section>
 
 
-			<p>When adding extensions to Magento Commerce (Cloud), you should add the code to a Git branch, test in Integration, then test in Staging before finally pushing and using in Production.</p>
+			<p>This information includes information for <a href="#install">adding modules</a> to Magento Commerce (Cloud), <a href="#manage">managing</a> enabled and disabled modules, and <a href="#update">upgrading module code</a>.</p>
 
-<p>Extensions include the following:</p>
+<p>When adding modules (or extensions) to Magento Commerce (Cloud), you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.</p>
+
+<p>Modules include the following:</p>
 
 <ul>
   <li>Modules to extend Magento capabilities, with options through Magento Marketplace and directly through company sites</li>
@@ -1680,22 +1696,10 @@
   <li>Language packages to localize the storefront and Admin</li>
 </ul>
 
-<p><a href="#install">Extension installation</a> uses the following steps:</p>
+<p>These instructions walk through module installation purchased from Magento Marketplace. You can use the same procedure to install any module with the module’s Composer name. To find it, open the module’s <code class="highlighter-rouge">composer.json</code> file and note the values for <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
-<ol>
-  <li>Purchase an extension or module from <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> or another site.</li>
-  <li><a href="#getstarted">Create a branch</a> to work with the files.</li>
-  <li><a href="#compose">Get the extension’s Composer name</a> and version from your purchase history.</li>
-  <li>In your local Magento Commerce (Cloud) project, <a href="#update">update the Magento <code class="highlighter-rouge">composer.json</code></a> file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.</li>
-  <li><a href="#verify">Verify</a> the extension installed properly.</li>
-</ol>
-
-<p>These instructions walk through extension installation purchased from Magento Marketplace. You can use the same procedure to install any extension with the extension’s Composer name. To find it, open the extension’s <code class="highlighter-rouge">composer.json</code> file and note the values for <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
-
-<p>We also include instructions for <a href="#update">updating extensions</a>.</p>
-
-<h2 id="getstarted">Create a branch for adding or updating the extension</h2>
-<p>We recommend using a branch for adding or updating, configuring, and testing your extension.</p>
+<h2 id="getstarted">Create a branch for adding or updating the module</h2>
+<p>We recommend using a branch for adding or updating, configuring, and testing your module.</p>
 
 <div>
 
@@ -1759,16 +1763,25 @@
     </li>
   </ol>
 
-  <h2 id="install">Install an extension</h2>
+  <h2 id="install">Install an module</h2>
+  <p><a href="#install">Module installation</a> uses the following steps:</p>
 
-  <h3 id="compose">Step 1: Get the extension’s Composer name and version</h3>
-  <p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#cloud-howto-comp-json">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
+  <ol>
+    <li>Purchase an module or module from <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> or another site.</li>
+    <li><a href="#getstarted">Create a branch</a> to work with the files.</li>
+    <li><a href="#compose">Get the module’s Composer name</a> and version from your purchase history.</li>
+    <li>In your local Magento Commerce (Cloud) project, <a href="#update">update the Magento <code class="highlighter-rouge">composer.json</code></a> file with the name and version of the module and add the code to Git. The code builds, deploys, and is available through the environment.</li>
+    <li><a href="#verify">Verify</a> the module installed properly.</li>
+  </ol>
+
+  <h3 id="compose">Step 1: Get the module’s Composer name and version</h3>
+  <p>If you already know the module’s Composer name and version, skip this step and continue with <a href="#cloud-howto-comp-json">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
 
   <div>
 
-    <p>This section discusses how to get a extension’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> extension (whether or not you purchased it on Marketplace) in the extension’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+    <p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
-    <p>To get the extension’s Composer name from Magento Marketplace:</p>
+    <p>To get the module’s Composer name from Magento Marketplace:</p>
 
     <ol>
       <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the user name and password you used to purchase the component.</li>
@@ -1783,13 +1796,13 @@
         <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
       </li>
       <li>
-        <p>On the My Purchases page, click <strong>Technical Details</strong> for the extension you purchased as the following figure shows.</p>
+        <p>On the My Purchases page, click <strong>Technical Details</strong> for the module you purchased as the following figure shows.</p>
 
-        <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
+        <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the module's Composer name" width="200px" /></p>
       </li>
       <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
       <li>Open a text editor.</li>
-      <li>Paste the extension name in the text editor.</li>
+      <li>Paste the module name in the text editor.</li>
       <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
       <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
       <li>
@@ -1832,43 +1845,82 @@ composer update
       </li>
     </ol>
 
-    <p>If there are errors, see <a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">extension deployment failure</a>.</p>
+    <p>If there are errors, see <a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">module deployment failure</a>.</p>
 
     <div class="bs-callout bs-callout-warning">
-When installing and adding the extension the extension, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in Magento Commerce (Cloud). This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
+When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the module is not in the file, the module won't load in Magento Commerce (Cloud). This ensures when the `composer install` command is used, the module properly loads. This command uses the `composer.lock` file.
 </div>
 
-    <h3 id="verify">Step 3: Verify the extension</h3>
+    <h3 id="verify">Step 3: Verify the module</h3>
 
-    <p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
+    <p>To verify the module installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
 
     <ol>
-      <li><a href="/guides/v2.0/cloud/env/environments-start.html#env-start-ssh">SSH to the environment</a> on which the extension is installed.</li>
+      <li><a href="/guides/v2.0/cloud/env/environments-start.html#env-start-ssh">SSH to the environment</a> on which the module is installed.</li>
       <li>
         <p>Enter the following command to display a list of enabled modules:</p>
 
         <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:status
 </code></pre></div>        </div>
       </li>
-      <li>Verify the extension is listed.</li>
+      <li>Verify the module is listed.</li>
     </ol>
 
-    <p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>. It will not be in the same format as the Composer name.</p>
+    <p>The module name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>. It will not be in the same format as the Composer name.</p>
 
-    <h2 id="update">Update an extension</h2>
-    <p>You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:</p>
+    <h2 id="manage">Manage modules</h2>
+    <p>To manage your modules, you can enable and disable or change settings per environment.</p>
+
+    <h3 id="enable-disable">Enable and disable modules</h3>
+    <p>We recommend enabling and disabling your modules across all environments to best match testing per environment. If you encounter issues, you may need to update permissions for the files and folders.</p>
+
+    <p>Trying to enable and disable modules not following this method can lead to permissions and other issues.</p>
+
+    <ol>
+      <li>In a terminal, SSH into your environments: Integration, Staging, and Production.</li>
+      <li>
+        <p>You need a specific name of the module or module. Use the following command to locate the name:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:status
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>To enable, use the following command.</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:enable &lt;module name&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>To disable, use the following command.</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:disable &lt;module name&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Use the following command to verify the changed status of the module:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:status
+</code></pre></div>        </div>
+      </li>
+    </ol>
+
+    <h3 id="configure">Modify configurations</h3>
+    <p>To change settings for your modules and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an module or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.</p>
+
+    <h2 id="update">Upgrade an module</h2>
+    <p>You should have a branch to work in when updating your module. These instructions use composer to update the files. Before you continue, you must:</p>
 
     <ul>
-      <li>Know the extension’s Composer name and version</li>
-      <li>Know the extension is compatible with your project and Magento Commerce (Cloud) version. In particular, check the required PHP version.</li>
+      <li>Know the module’s Composer name and version</li>
+      <li>Know the module is compatible with your project and Magento Commerce (Cloud) version. In particular, check the required PHP version.</li>
     </ul>
 
-    <p>To update an extension:</p>
+    <p>To update an module:</p>
 
     <ol>
       <li>If you haven’t done so already, change to your environment root directory.</li>
       <li>Open <code class="highlighter-rouge">composer.json</code> in a text editor.</li>
-      <li>Locate your extension and update the version.</li>
+      <li>Locate your module and update the version.</li>
       <li>Save your changes to <code class="highlighter-rouge">composer.json</code> and exit the text editor.</li>
       <li>
         <p>Use the following command to update project dependencies:</p>
