@@ -234,6 +234,15 @@ If you use TLS with Fastly enabled in your environment, you will also need a TXT
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
 
+## Upgrade Fastly {#upgrade}
+Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check [Magento Marketplace](https://marketplace.magento.com/fastly-magento2.html){:target="_blank"} and their [GitHub](https://github.com/fastly/fastly-magento2/releases){:target="_blank"} for updates on the latest releases.
+
+When you upgrade, your default VCL snippets you uploaded should not be affected or require any additional steps.
+
+For information on upgrading modules, see [Install, manage, and upgrade modules]({{ page.baseurl}}cloud/howtos/install-components.html).
+
+If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+
 #### Related topics
 
 * [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)

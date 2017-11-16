@@ -149,6 +149,6 @@ To resolve the error:
 
 #### Related topic
 * [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-* [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
+* [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
 * [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
 * [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)

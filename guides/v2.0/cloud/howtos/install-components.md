@@ -2,11 +2,9 @@
 layout: default
 group: cloud
 subgroup: How To
-title: Install, manage, and upgrade extensions
-menu_title: Install, manage, and upgrade extensions
+title: Install, manage, and upgrade modules
+menu_title: Install, manage, and upgrade modules
 menu_order: 41
-level3_menu_node: level3child
-level3_subgroup: update-extensions
 menu_node:
 version: 2.0
 github_link: cloud/howtos/install-components.md
@@ -17,36 +15,34 @@ functional_areas:
   - Configuration
 ---
 
-This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update). 
+This information includes information for [adding modules](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled modules, and [upgrading module code](#update).
 
-When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
+When adding modules (or extensions) to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
 
-Extensions include the following:
+Modules include the following:
 
 *	Modules to extend Magento capabilities, with options through Magento Marketplace and directly through company sites
 *	Themes to change the look and feel of your storefronts
 *	Language packages to localize the storefront and Admin
 
-These instructions walk through extension installation purchased from Magento Marketplace. You can use the same procedure to install any extension with the extension's Composer name. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
+These instructions walk through module installation purchased from Magento Marketplace. You can use the same procedure to install any module with the module's Composer name. To find it, open the module's `composer.json` file and note the values for `"name"` and `"version"`.
 
-We also include instructions for [updating extensions](#update).
-
-## Create a branch for adding or updating the extension {#getstarted}
-We recommend using a branch for adding or updating, configuring, and testing your extension.
+## Create a branch for adding or updating the module {#getstarted}
+We recommend using a branch for adding or updating, configuring, and testing your module.
 
 {% include cloud/cli-get-started.md %}
 
-## Install an extension {#install}
-[Extension installation](#install) uses the following steps:
+## Install an module {#install}
+[Module installation](#install) uses the following steps:
 
-1.	Purchase an extension or module from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another site.
+1.	Purchase an module or module from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another site.
 2.	[Create a branch](#getstarted) to work with the files.
-1.	[Get the extension's Composer name](#compose) and version from your purchase history.
-2.	In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#update) file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.
-4.	[Verify](#verify) the extension installed properly.
+1.	[Get the module's Composer name](#compose) and version from your purchase history.
+2.	In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#update) file with the name and version of the module and add the code to Git. The code builds, deploys, and is available through the environment.
+4.	[Verify](#verify) the module installed properly.
 
-### Step 1: Get the extension's Composer name and version {#compose}
-If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
+### Step 1: Get the module's Composer name and version {#compose}
+If you already know the module's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
 
 {% include cloud/composer-name.md %}
 
@@ -71,34 +67,34 @@ To update `composer.json`:
         git commit -m "<message>"
         git push origin <environment ID>
 
-If there are errors, see [extension deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
+If there are errors, see [module deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
 
 <div class="bs-callout bs-callout-warning">
-When installing and adding the extension the extension, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
+When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the module is not in the file, the module won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the module properly loads. This command uses the `composer.lock` file.
 </div>
 
-### Step 3: Verify the extension {#verify}
+### Step 3: Verify the module {#verify}
 
-To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
+To verify the module installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
-1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
+1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the module is installed.
 2.	Enter the following command to display a list of enabled modules:
 
         php bin/magento module:status
-3.	Verify the extension is listed.
+3.	Verify the module is listed.
 
-The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
+The module name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
 
-## Manage extensions {#manage}
-To manage your extensions, you can enable and disable or change settings per environment.
+## Manage modules {#manage}
+To manage your modules, you can enable and disable or change settings per environment.
 
-### Enable and disable extensions {#enable-disable}
-We recommend enabling and disabling your extensions across all environments to best match testing per environment. If you encounter issues, you may need to update permissions for the files and folders.
+### Enable and disable modules {#enable-disable}
+We recommend enabling and disabling your modules across all environments to best match testing per environment. If you encounter issues, you may need to update permissions for the files and folders.
 
-Trying to enable and disable extensions not following this method can lead to permissions and other issues.
+Trying to enable and disable modules not following this method can lead to permissions and other issues.
 
 2. In a terminal, SSH into your environments: Integration, Staging, and Production.
-3. You need a specific name of the extension or module. Use the following command to locate the name:
+3. You need a specific name of the module or module. Use the following command to locate the name:
 
         php bin/magento module:status
 4. To enable, use the following command.
@@ -112,19 +108,19 @@ Trying to enable and disable extensions not following this method can lead to pe
         php bin/magento module:status
 
 ### Modify configurations {#configure}
-To change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
+To change settings for your modules and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an module or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
 
-## Upgrade an extension {#update}
-You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
+## Upgrade an module {#update}
+You should have a branch to work in when updating your module. These instructions use composer to update the files. Before you continue, you must:
 
-*	Know the extension's Composer name and version
-*	Know the extension is compatible with your project and {{site.data.var.ece}} version. In particular, check the required PHP version.
+*	Know the module's Composer name and version
+*	Know the module is compatible with your project and {{site.data.var.ece}} version. In particular, check the required PHP version.
 
-To update an extension:
+To update an module:
 
 1.	If you haven't done so already, change to your environment root directory.
 3.	Open `composer.json` in a text editor.
-4.	Locate your extension and update the version.
+4.	Locate your module and update the version.
 6.	Save your changes to `composer.json` and exit the text editor.
 7.	Use the following command to update project dependencies:
 
