@@ -26,6 +26,7 @@
 <p>These Release Notes contain the following information:</p>
 <ul><li><a href="#upgrade">Important Upgrade Information</a></li>
 
+	<li><a href="#ee114-11436">Magento Commerce 1.14.3.7 Release Notes</a></li>
 	<li><a href="#ee114-11436">Magento Commerce 1.14.3.6 Release Notes</a></li>
 	<li><a href="#ee114-11435">Magento Commerce 1.14.3.5 Release Notes</a></li>
 	<li><a href="#ee114-11434">Magento Commerce 1.14.3.4 Release Notes</a></li>
@@ -47,6 +48,29 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Commerce 1.14.3.0 or later for <em>all new Magento Commerce installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+<h2 id="ee114-11436">Magento Commerce 1.14.3.7 Release Notes</h2>
+<p>This patch (SUPEE-10415) provides resolution of multiple critical security issues and two functional fixes. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10415" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<h3>Fixed issues</h3>
+
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9843" target="_blank">MPERF-9843</a>.-->* We’ve fixed a typo in the patch header information. (<code>autocomplete="new-pawwsord”</code> is now <code>autocomplete="new-password”</code>.)
+</li>
+
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9685" target="_blank">MPERF-9685</a>.-->* The one-page checkout page now displays the following message when a customer checks out an order for which no amount is due: <b>No payment information required</b>. Magento versions prior to 1.14.3.3 included this message, but it was missing from v1.14.3.3.</li>
+
+
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9685" target="_blank">MPERF-9685</a>.-->* You can now successfully check out an order that contains gift card options. Previously, Magento froze at the payment step when you enabled <b>add gift options</b> while checking out. </li>
+</ul>
+
+<h3>Notes</h3>
+
+<ul><li> We no longer support custom file extensions for <code>Mage::log()</code>. Supported file extensions include <code>.log</code>, <code>.txt</code>, <code>.html</code>, <code>.csv</code>. For more information, navigate to <b>Developers > Log Settings</b> from the Admin. Magento displays this comment: <b>Logging from Mage::log(). File is located in {{base_dir}}/var/log. Allowed file extensions: log, txt, html, csv”.</b> </li>
+
+<li>Passwords for new users are now limited to  256 characters. If a new user enters a password that exceeds 256 characters, Magento displays this message: <b>Please enter a password with at most 256 characters</b>. </li>
+</ul>
+
+
 
 <h2 id="ee114-11436">Magento Commerce 1.14.3.6 Release Notes</h2>
 <p>This patch (SUPEE-10266) provides resolution of multiple critical security issues and several functional fixes. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10266" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
