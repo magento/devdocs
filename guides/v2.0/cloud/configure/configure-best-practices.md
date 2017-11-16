@@ -49,16 +49,35 @@ To edit Advanced Pricing and update Content Staging:
 
 For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html){:target="_blank"}. Click **Next** to walk through the steps.
 
+## Example Price Rules {#price-rules}
+Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on on orders over $100 dollars, and so on.
+
+To create a Price Rule, see our [Magento 2 User Guide](http://docs.magento.com/m2/ee/user_guide/Search.html#search-price%20rules){:target="_blank"}.
+
+The following provides an example of creating a Price Rule for a First Order Only discount. For this discount, you would want to:
+
+* Create a price rule with a [customer segment](http://docs.magento.com/m2/ee/user_guide/marketing/customer-segment-price-rule.html){:target="_blank"} with a condition: Total Number of Orders less than 1
+* Add this customer segment as a condition to the cart rule
+* Optional - Add conditions and rules to apply the discounts to specific SKUs or categories of products for focused purchases
+
+This ensures net-new customers or existing customers who have not made a purchase receive the discount only on their very first order. You could create banners and send email promotions for the first time purchase discount.
+
 ## Understanding websites, stores, and store views {#sites}
 Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{page.baseurl}}cloud/project/project-multi-sites.html).
 
-You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple websites. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.
+You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.
 
-Each website can include one or more stores with different categories and articles, with shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
+Each website can include one or more _stores_ with different categories and articles, with shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
 
-You can further create store views for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
+You can further create _store views_ for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
 * Single website with one store and two views for Engligh and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
+
+  ![Store example 1]({{ site.baseurl }}common/images/cloud_example-store1.png)
 * Single website with Store A for women's clothing with two views for English and Spanish, and Store B for children's clothing with a single store view in English. All article data, customers, checkout, and shopping cart are shared. The stores may have different domains and themes.
+
+  ![Store example 1]({{ site.baseurl }}common/images/cloud_example-store1.png)
 * Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
+
+  ![Store example 1]({{ site.baseurl }}common/images/cloud_example-store1.png)
