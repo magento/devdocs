@@ -88,7 +88,7 @@ You can also use the other way to declare a custom config file:
 
 ### How to use custom configuration file
 
-To tell Grunt to use a custom configuration file, instead the default one, add the following in your script:
+To tell Grunt to use a custom configuration file, instead of the default one, add the following in your script:
 
 1. Require file-router:
 
