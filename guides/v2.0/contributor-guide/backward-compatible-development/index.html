@@ -574,7 +574,7 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
 
 <p>Add a new optional parameter to the constructor at the end of the arguments list instead of modifying the constructor.</p>
 
-<p>In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is <code class="highlighter-rouge">null</code>), fetch the dependency using <code class="highlighter-rouge">Magento\Framework\App\ObjectionManager::getInstance()</code>.</p>
+<p>In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is <code class="highlighter-rouge">null</code>), fetch the dependency using <code class="highlighter-rouge">Magento\Framework\App\ObjectManager::getInstance()</code>.</p>
 
 <div class="collapsible"><b class="collapsible-title">Example Code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">ExistingClass</span>
 <span class="p">{</span>

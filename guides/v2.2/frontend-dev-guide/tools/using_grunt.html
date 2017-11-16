@@ -1260,7 +1260,7 @@ npm update
 
 <p>If installed as described above, Grunt will use the default configuration files located in the <code class="highlighter-rouge">dev/tools/grunt/configs/</code> directory. For example, the default configuration file for working with themes is <code class="highlighter-rouge">dev/tools/grunt/configs/themes.js</code>.</p>
 
-<p>The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. Ability t use custom configuration files is implemented by the file router mechanism added by Magento.</p>
+<p>The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. The ability to use custom configuration files is implemented by the file router mechanism added by Magento.</p>
 
 <h2 id="using-custom-grunt-configuration-files">Using custom Grunt configuration files</h2>
 
@@ -1301,13 +1301,13 @@ If your custom configuration file <code class="highlighter-rouge">themes.js</cod
     <p>It must be added earlier, than the <code class="highlighter-rouge">get()</code> method with  this alias is called.</p>
   </li>
   <li>
-    <p>In the <code class="highlighter-rouge">dev/tools/grunt/configs/</code> directory, create a copy of the default configuration file. Change it name by adding the “.loc” suffix. For example, your copy of <code class="highlighter-rouge">themes.js</code> will be <code class="highlighter-rouge">themes.loc.js</code>.</p>
+    <p>In the <code class="highlighter-rouge">dev/tools/grunt/configs/</code> directory, create a copy of the default configuration file. Change its name by adding the “.loc” suffix. For example, your copy of <code class="highlighter-rouge">themes.js</code> will be <code class="highlighter-rouge">themes.loc.js</code>.</p>
   </li>
 </ol>
 
 <h3 id="how-to-use-custom-configuration-file">How to use custom configuration file</h3>
 
-<p>To tell Grunt to use a custom configuration file, instead the default one, add the following in your script:</p>
+<p>To tell Grunt to use a custom configuration file, instead of the default one, add the following in your script:</p>
 
 <ol>
   <li>
