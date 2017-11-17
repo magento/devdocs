@@ -2,7 +2,8 @@
 layout: default
 group: mftf
 title: Getting started with the Magento Functional Testing Framework
-github_link: magento-functional-testing-framework/running-tests.md
+version: 2.3
+github_link: magento-functional-testing-framework/getting-started.md
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">
@@ -217,9 +218,9 @@ $ vendor/bin/robo allure2:report
 
 <!-- LINKS -->
 
-[`codecept`]: ./commands/codeception.html
-[`robo]: ./commands/robo.html
-[allure commands]: ./commands/robo.html#allure-robo-commands
+[`codecept`]: commands/codeception.html
+[`robo`]: commands/robo.html
+[allure commands]: commands/robo.html#allure-robo-commands
 
 [git]: https://git-scm.com/downloads
 [php]: http://php.net/manual/en/install.php

@@ -510,7 +510,7 @@ class OauthClient extends AbstractService
 
 ## Related topics
 
-[Create an integration]( {{page.baseurl}}/get-started/integration.html )
+[Create an integration]( {{page.baseurl}}/get-started/create-integration.html )
 
 [OAuth error codes]( {{page.baseurl}}/get-started/authentication/oauth-errors.html )
 

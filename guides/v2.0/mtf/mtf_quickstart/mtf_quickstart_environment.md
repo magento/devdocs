@@ -1,13 +1,9 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 30_Quickstart
 title: Quick start. Prepare environment for test run
-menu_title: Prepare environment for test run
-menu_order: 2
 version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_environment.html
 ---
 
 ## Run the Selenium Server on default browser {#mtf_quickstart_env_selenium}

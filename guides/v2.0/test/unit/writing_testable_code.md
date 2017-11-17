@@ -1,10 +1,7 @@
 ---
 layout: default
 group: unit-testing
-subgroup: 40_Running_Unit_Tests
 title: Writing Testable Code
-menu_title: Writing Testable Code
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0

@@ -2,9 +2,9 @@
 layout: default
 group: mftf
 title: Cest structure in the Magento Functional Testing Framework
+version: 2.3
 github_link: magento-functional-testing-framework/cest/structure.md
 ---
-
 
 ## Overview
 
@@ -183,10 +183,10 @@ value|string|optional
 
 <!-- LINKS DEFINITIONS -->
 
-[action]: ./actions.html
+[action]: cest/actions.html
 [action group]: #actiongroup
 [after]: #after
-[annotations]: ./annotations.html
+[annotations]: cest/annotations.html
 [argument]: #argument
 [before]: #before
 [cest]: #cest

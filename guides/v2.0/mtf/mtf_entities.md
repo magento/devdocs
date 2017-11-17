@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Functional Testing Framework Entities
-menu_title: ENTITIES
-menu_node: parent
 version: 2.0
 github_link: mtf/mtf_entities.md
 ---

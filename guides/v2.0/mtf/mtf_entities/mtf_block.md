@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Block
-menu_title: Block
-menu_order: 4
 version: 2.0
 github_link: mtf/mtf_entities/mtf_block.md
 ---
