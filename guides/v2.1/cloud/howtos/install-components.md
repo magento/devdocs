@@ -17,7 +17,7 @@ functional_areas:
   - Configuration
 ---
 
-This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update). 
+This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update).
 
 When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
 
@@ -106,7 +106,7 @@ Trying to enable and disable extensions not following this method can lead to pe
         php bin/magento module:enable <module name>
 5. To disable, use the following command.
 
-        php bin/magento module:enable <module name>
+        php bin/magento module:disable <module name>
 6. Use the following command to verify the changed status of the module:
 
         php bin/magento module:status
