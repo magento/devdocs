@@ -14,12 +14,6 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-You must install and configure [RabbitMQ](http://rabbitmq.com){:target="&#95;blank"} _after_ installing {{site.data.var.ce}} or _before_ installing {{site.data.var.ee}}.
-</div>
-
-## RabbitMQ Overview {#overview}
-
 RabbitMQ is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
