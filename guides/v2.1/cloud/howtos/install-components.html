@@ -1854,6 +1854,7 @@
     </ol>
 
     <h3 id="update">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
+    <p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.1/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from <code class="highlighter-rouge">config.local.php</code> used by <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a>.</p>
 
     <p>To update <code class="highlighter-rouge">composer.json</code>:</p>
 
@@ -1890,7 +1891,6 @@ When installing and adding the extension the extension, you must add the `compos
 </div>
 
     <h3 id="verify">Step 3: Verify the extension</h3>
-
     <p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
 
     <ol>
@@ -1910,12 +1910,10 @@ When installing and adding the extension the extension, you must add the `compos
     <p>To manage your extensions, you can enable and disable or change settings per environment.</p>
 
     <h3 id="enable-disable">Enable and disable extensions</h3>
-    <p>We recommend enabling and disabling your extensions across all environments to best match testing per environment. If you encounter issues, you may need to update permissions for the files and folders.</p>
-
-    <p>Trying to enable and disable extensions not following this method can lead to permissions and other issues.</p>
+    <p>You can use CLI commands or directly edit <code class="highlighter-rouge">app/etc/config.php</code> to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.</p>
 
     <ol>
-      <li>In a terminal, SSH into your environments: Integration, Staging, and Production.</li>
+      <li>In a terminal, access your local development environment.</li>
       <li>
         <p>You need a specific name of the extension or module. Use the following command to locate the name:</p>
 
@@ -1939,6 +1937,40 @@ When installing and adding the extension the extension, you must add the `compos
 
         <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:status
 </code></pre></div>        </div>
+      </li>
+    </ol>
+
+    <p>You can also navigate to and edit the <code class="highlighter-rouge">app/etc/config.php</code> file to verify the module is disabled.</p>
+
+    <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'modules'</span> <span class="o">=&gt;</span>
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">'Magento_Core'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Store'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Theme'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Authorization'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Directory'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Backend'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Backup'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Eav'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">'Magento_Customer'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="o">...</span>
+    <span class="p">),</span>
+  <span class="p">);</span>
+  </code></pre></figure>
+
+    <p>The value <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">0</code> indicates whether a module is enabled or disabled.</p>
+    <ol>
+      <li>
+        <p>Push your updates to the Git branch:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git add -A
+ git commit -m "&lt;message&gt;"
+ git push origin &lt;environment ID&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p><a href="/guides/v2.1/cloud/live/stage-prod-live.html">Complete deployment</a> to Integration for testing, then Staging for testing, and finally Production.</p>
       </li>
     </ol>
 
