@@ -3,7 +3,7 @@ layout: default
 group: mftf
 title: Annotations in the Magento Functional Testing Framework cests
 version: 2.3
-github_link: magento-functional-testing-framework/annotations.md
+github_link: magento-functional-testing-framework/cest/annotations.md
 ---
 
 This topic contains a reference list of available annotations in the MFTF cests.
