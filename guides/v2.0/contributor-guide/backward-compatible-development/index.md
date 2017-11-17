@@ -119,7 +119,7 @@ Do not modify the types of thrown exceptions unless a new {% glossarytooltip 53d
 
 Add a new optional parameter to the constructor at the end of the arguments list instead of modifying the constructor.
 
-In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is `null`), fetch the dependency using `Magento\Framework\App\ObjectionManager::getInstance()`.
+In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is `null`), fetch the dependency using `Magento\Framework\App\ObjectManager::getInstance()`.
 
 {% collapsible Example Code %}
 {% highlight php startinline %}

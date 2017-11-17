@@ -1,11 +1,8 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 7_Staging
 title: Staging (Magento Commerce only)
-menu_title: Staging (Magento Commerce only)
 version: 2.1
-menu_node: parent
 ee_only: true
 github_link: extension-dev-guide/staging.md
 ---

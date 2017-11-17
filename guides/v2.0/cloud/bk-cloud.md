@@ -91,7 +91,7 @@ We recommend the following starting points:
 	* [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-* [First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+* [Local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 
 ## Magento 2 resources {#magento2}
 If you would like to learn more about Magento 2, see the following resources:

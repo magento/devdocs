@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Commerce
 title: Magento_SearchStaging module
-menu_title: SearchStaging
-menu_order: 2
 version: 2.1
 ee_only: true
 github_link: mrg/ee/SearchStaging.md

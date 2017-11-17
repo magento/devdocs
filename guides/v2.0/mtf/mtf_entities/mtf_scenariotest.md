@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Scenario test
-menu_title: Scenario test
-menu_order: 10
 version: 2.0
 github_link: mtf/mtf_entities/mtf_scenariotest.md
 ---
