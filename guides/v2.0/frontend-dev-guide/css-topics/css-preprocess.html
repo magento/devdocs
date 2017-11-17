@@ -1318,7 +1318,7 @@ According to the <code class="highlighter-rouge">@import</code> syntax, specifyi
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="s2">'source/lib/_lib.less'</span><span class="p">;</span>
 <span class="k">@import</span> <span class="p">(</span><span class="n">css</span><span class="p">)</span> <span class="s2">'styles.less'</span><span class="p">;</span></code></pre></figure>
 
-<p>As a result, the processed files are different from the source files. So in the <a href="#client-side">client-side compilation mode</a> or when using <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.md">grunt commands</a>, Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the <code class="highlighter-rouge">pub/static</code> directory. In case of importing CSS resources, this also results in not finding and not importing the required files.</p>
+<p>As a result, the processed files are different from the source files. So in the <a href="#client-side">client-side compilation mode</a> or when using <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html">grunt commands</a>, Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the <code class="highlighter-rouge">pub/static</code> directory. In case of importing CSS resources, this also results in not finding and not importing the required files.</p>
 
 <h3 id="importing-remote-css-files">Importing remote CSS files</h3>
 

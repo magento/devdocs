@@ -917,7 +917,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
       <td><code class="highlighter-rouge">Adminhtml</code>. The page class will be generated in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml</code>.</td>
     </tr>
     <tr>
-      <td><code id="mca" class="highlighter-rouge">mca</code></td>
+      <td><code class="highlighter-rouge">mca</code></td>
       <td>Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.</td>
       <td><code class="highlighter-rouge">admin/widget_instance/index</code>. Considering that <code class="highlighter-rouge">area="Adminhtml"</code>, the Magento page under test is <code class="highlighter-rouge">http://example.com/admin/admin/widget_instance/index</code></td>
     </tr>
@@ -997,19 +997,19 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 
 <p>Admin page has attribute <code class="highlighter-rouge">area="Adminhtml"</code> in <code class="highlighter-rouge">&lt;page&gt;</code> node of the page XML file. Generated page extends  <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
 
-<p>The page will be opened as a concatenation of <code class="highlighter-rouge">app_backend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
+<p>The page will be opened as a concatenation of <code class="highlighter-rouge">app_backend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="highlighter-rouge">mca</code> link.</p>
 
 <h3 id="mtf_page_storefront">Storefront page</h3>
 
 <p>Storefront page is recognizable by <code class="highlighter-rouge">area</code> assigned any value except <code class="highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="highlighter-rouge">mca</code> doesn’t have <code class="highlighter-rouge">http</code>. This type of page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a>.</p>
 
-<p>Page will be opened as concatenation of <code class="highlighter-rouge">app_frontend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
+<p>Page will be opened as concatenation of <code class="highlighter-rouge">app_frontend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="highlighter-rouge">mca</code> link.</p>
 
 <h3 id="mtf_page_extern">External page</h3>
 
 <p>External page has <code class="highlighter-rouge">area</code> assigned any value except <code class="highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="highlighter-rouge">mca</code> containing <code class="highlighter-rouge">http</code>. Generated page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a>.</p>
 
-<p>The page will be opened using <a href="#mca">mca</a> link.</p>
+<p>The page will be opened using <code class="highlighter-rouge">mca</code> link.</p>
 
 <h2 id="mtf_page_merge">Merge pages</h2>
 

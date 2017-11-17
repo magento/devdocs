@@ -774,15 +774,15 @@
 define([
   'jquery',
   'jquery/ui',
-  'mage/gallery' 
+  'mage/gallery'
 ], function($){
- 
+
   $.widget('orange.gallery', $.mage.gallery, {
     _create: function() { // special method of jQuery UI Widgets
       this._setOption('controls', {'notice': {}});
     }
   });
- 
+
   return $.orange.gallery;
 });
 </pre>
@@ -813,16 +813,16 @@ The high level steps for this task are the following:</p>
 
 <p>Let’s look at each step in more detail.</p>
 <h3>Step 1: Define what is the default implementation</h3>
-<p>Using the approach <a href="#define_sript">described in the previous section</a>, OrangeCo defines that the product images are displayed by <code class="highlighter-rouge">gallery.js</code>, and the configuration path for it is <code class="highlighter-rouge">mage/gallery</code>.</p>
+<p>Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <code class="highlighter-rouge">gallery.js</code>, and the configuration path for it is <code class="highlighter-rouge">mage/gallery</code>.</p>
 
 <h3>Step 2: Add the custom script to the file system</h3>
 
-<p>For the jCarousel widget to be able to use the configuration passed to the gallery widget, 
+<p>For the jCarousel widget to be able to use the configuration passed to the gallery widget,
 OrangeCo needs to add a “wrapper” script.</p>
 
 <p>To do this, OrangeCo adds the following files in the <code class="highlighter-rouge">app/design/OrangeCo/orange/web/js</code> directory:</p>
 
-<ul> 
+<ul>
 <li>The jCarousel widget source file: <code>jquery.jcarousel.js</code></li>
 <li>A "wrapper" <code>orange-carousel.js</code> with the following content:
 <pre>
@@ -830,7 +830,7 @@ define([
   'jquery',
   'js/jquery.jcarousel'
 ], function($){
- 
+
   return function (config, element) {
    var jCarouselConfig = {
      list: '.items.thumbs',
