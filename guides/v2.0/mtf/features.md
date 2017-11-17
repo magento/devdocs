@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Functional Testing Framework Features
-menu_title: FEATURES
-menu_node: parent
 version: 2.0
 github_link: mtf/features.md
 ---

@@ -97,8 +97,8 @@ Before you can use your existing Magento EE code in {{site.data.var.ece}}, you m
 
 To import the Magento database in {{site.data.var.ece}}, you must know:
 
-*   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl)
-*   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-cloudb)
+*   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl)
+*   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-cloudb)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.

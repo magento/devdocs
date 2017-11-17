@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Constraint
-menu_title: Constraint
-menu_order: 7
 version: 2.0
 github_link: mtf/mtf_entities/mtf_constraint.md
 ---

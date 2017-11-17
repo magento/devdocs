@@ -75,7 +75,7 @@ pages:
         - label: Optional - Install sample data
           url: cloud/howtos/sample-data.html
 
-        - label: Optional - Configure a PHP debugger, Xdebug
+        - label: Optional - Configure Xdebug
           url: cloud/howtos/debug.html
 
         - label: Import an existing Magento project
@@ -96,6 +96,9 @@ pages:
     - label: Configure your store
       url: cloud/configure/configuration-overview.html
       children:
+        - label: Best practices for store configuration
+          url: cloud/configure/configure-best-practices.html
+
         - label: Set up PayPal
           url: cloud/live/paypal-onboarding.html
           versions: ["2.1","2.2","2.3"]
@@ -110,7 +113,7 @@ pages:
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
 
-        - label: Install and update extensions
+        - label: Install, manage, and upgrade modules
           url: cloud/howtos/install-components.html
 
         - label: Install a theme

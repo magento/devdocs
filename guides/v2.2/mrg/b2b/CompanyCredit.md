@@ -53,7 +53,7 @@ The following directories contain extensible UI components:
 
 * `Magento\CompanyCredit\view\frontend\ui_component` - balance history listing
 
-For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui-components/ui-listing-grid.html) and [UI Form Component]({{page.baseurl}}ui_comp_guide/components/ui-form.html)
+For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html) and [UI Form Component]({{page.baseurl}}ui_comp_guide/components/ui-form.html)
 
 ## Additional information
 

@@ -96,4 +96,4 @@ algolia:
     - guides/m1x
     - swagger
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea' ]
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]
