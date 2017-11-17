@@ -1,6 +1,7 @@
 ---
 layout: default
 group: release-notes
+version: 2.2
 title: Magento Commerce Backward Incompatible Changes
 github_link: release-notes/changes/ee_changes.md
 ---

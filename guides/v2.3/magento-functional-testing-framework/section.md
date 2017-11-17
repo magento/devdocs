@@ -2,13 +2,13 @@
 layout: default
 group: mftf
 title: Section structure in the Magento Functional Testing Framework
+version: 2.3
 github_link: magento-functional-testing-framework/section/structure.md
 ---
 
-{%raw%}
-
 ## Overview
 
+{%raw%}
 A section is a reusable part of a [page].
 It is the standard file for defining UI elements on a page used under test.
 
@@ -18,19 +18,19 @@ You are able to define:
 Example: `selector="#add_root_category_button"`
 - parameterized element that contains substitutable values in selector.
 Example: `selector="#element .{{var1}} .{{var2}}"`.
-
+{% endraw %}
 ### Substitutable values
 
-Sustainable values in the test can be of the followoing formats:
+Sustainable values in the test can be of the following formats:
 
 * String Literals: `stringLiteral`
-* XML Data: `entityName.Field`
+* Reference to data entity (XML data from the corresponding _.../Data/*.xml_): `entityName.Field`
 * Persisted Data
     * `$persistedCreateDataKey.field$` for data created in scope of a [test] using [createData] action with `mergeKey="persistedCreateDataKey"`
     * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `mergeKey="persistedCreateDataKey"`
 
-
 The following diagram demonstrates XML structure of a section in the MFTF:
+
 
 {%include_relative img/section-dia.svg%}
 
@@ -82,12 +82,11 @@ The section declares two buttons:
 * `AddSubcategoryButton` is a button with a locator `#add_subcategory_button` on the parent web page. 
 
 Example of a call in test:
-
+{%raw%}
 ```xml
 <!-- Click on the button with locator "#add_subcategory_button" on the web page-->
 <click selector="{{AdminCategorySidebarActionSection.AddSubcategoryButton}}" mergeKey="clickOnAddSubCategory"/>
 ```
-
 ## Available elements
 
 ### section {#section-ref}
@@ -120,3 +119,7 @@ remove|boolean|optional|Default: `false`. Set to `true` to remove this element d
 [page]: page.html
 [CSS]: https://www.w3schools.com/cssref/css_selectors.asp
 [XPath]: https://www.w3schools.com/xml/xpath_nodes.asp
+[cest]: cest.html
+[test]: cest.html#test
+[createData]: cest/actions.html#createdata
+[before]: cest.html#before

@@ -2,7 +2,8 @@
 layout: default
 group: mftf
 title: Create and use parameterized selectors in the Magento Functional Testing Framework
-github_link: magento-functional-testing-framework/section/structure/parameterized-selectors.md
+version: 2.3
+github_link: magento-functional-testing-framework/section/parameterized-selectors.md
 ---
 
 {%raw%}
@@ -81,15 +82,14 @@ Add the 2nd/3rd parameters that you'd like to pass to the selector separated by 
 
 Here,
 
-* `_defaultCategory.is_active` is XML Data:
-* `stringLiteral` is a literal: 
-* `$createDataKey.id$` is a reference to persisted data created in the `SampleTest` using action with `mergeKey="createDataKey"`
+* `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in the corresponding _.../Data/*.xml_
+* `stringLiteral` is a literal
+* `$createDataKey.id$` is a reference to persisted data created in the `SampleCest1` within action with `mergeKey="createDataKey"`
 
 {%endraw%}
 
 
 <!-- LINK DEFINITIONS -->
-
 
 <!-- Internal -->
 

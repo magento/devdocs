@@ -2,6 +2,7 @@
 layout: default
 group: mftf
 title: Codeception commands in the Magento Functional Testing Framework
+version: 2.3
 github_link: magento-functional-testing-framework/commands/codeception.md
 ---
 
@@ -372,7 +373,7 @@ Use custom path for config
 [env]: http://codeception.com/docs/07-AdvancedUsage#Environments
 [examples]: http://codeception.com/docs/reference/Commands#Run
 
-[--env]: #env
+[--env]: #--env
 [robo]: robo.html
 
 <!-- Abbreviations -->

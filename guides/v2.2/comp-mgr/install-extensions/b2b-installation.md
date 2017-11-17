@@ -34,7 +34,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-After completing the installation, you must follow the [post-installation steps](#post-installation).
+After completing the installation, you must follow the [post-installation steps](#configure-b2b).
 </div>
 
 ## Post-installation {#configure-b2b}

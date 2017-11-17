@@ -2,10 +2,9 @@
 layout: default
 group: mftf
 title: Page structure in the Magento Functional Testing Framework
-github_link: magento-functional-testing-framework/page/structure.md
+version: 2.3
+github_link: magento-functional-testing-framework/page/structure.m
 ---
-
-{%raw%}
 
 ## Overview
 
@@ -17,10 +16,10 @@ In this way, you reuse sections and maintain a reusable single source of truth t
 Avoiding hardcoded location selectors from tests increases the maintainability and readability of tests, and test execution output/logging.
 
 Two types of pages are available:
- 
+ {%raw%}
  * page with `url` declared as a constant string or [explicit page]. It is called in a test in a format like `{{NameOfPage.url}}` , where `NameOfPage` is a value of `name` in corresponding page declaration _*.xml_ file.
  * page with `url` declared as a string with one or more variables or [parameterized page]. It is called in a test using a format like `{{NameOfPage.url(var1, var2, ...)}}`, where `var1, var2, ...` are parameters that will be substituted in `url` of the corresponding `<page>` declaration.  
-
+{%endraw%}
 The following diagram demonstrates XML structure of a page in the MFTF:
 
 {% include_relative img/page-dia.svg %}
@@ -83,19 +82,16 @@ The `AdminCategoryPage` declares four [sections][section]:
  * `AdminCategorySEOSection` that is located in _Catalog/Section/AdminCategorySEOSection.xml_
 
 Example of a call in test:
- 
+{%raw%}
 ```xml
-
 <amOnPage url="{{AdminCategoryPage.url}}" mergeKey="navigateToAdminCategory"/>
-
 ```
 
 ### Parameterized page
 
 _Catalog/Page/StorefrontCategoryPage.xml_ is provided as an example::
 
-```xml
- 
+```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -104,7 +100,6 @@ _Catalog/Page/StorefrontCategoryPage.xml_ is provided as an example::
         <section name="StorefrontCategoryMainSection"/>
     </page>
 </config>
-
 ```
 
 This example shows page with name `StorefrontCategoryPage`.
@@ -113,9 +108,7 @@ It will be merged with other `StorefrontCategoryPage` pages from other modules.
 Example of a call in test:
 
 ```xml
-
 <amOnPage url="{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}" mergeKey="navigateToCategoryPage"/>
-
 ```
 
 The `StorefrontCategoryPage` page is declared as parameterized, where `url` contains a `{{var1}}` parameter.
@@ -161,6 +154,6 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 [PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 [test]: cest.html
 [createData]: cest/actions.html#createdata
-
+[section]: section.html
 [explicit page]: #explicit-page
 [parameterized page]: #parameterized-page

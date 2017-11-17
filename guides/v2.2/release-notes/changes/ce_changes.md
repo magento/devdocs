@@ -1,6 +1,7 @@
 ---
 layout: default
 group: release-notes
+version: 2.2
 title: Magento Open Source Backward Incompatible Changes
 github_link: release-notes/changes/ce_changes.md
 ---
