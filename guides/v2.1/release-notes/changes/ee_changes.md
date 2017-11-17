@@ -63,10 +63,6 @@ where each change is displayed in a separate row in the table, with the followin
 
 {% include changes/ee/2.1.0-2.1.1.html %}
 
-## 2.0.7 - 2.1.0 {#releases-2_0_7-2_1_0}
-
-{% include changes/ee/2.0.7-2.1.0.html %}
-
 <!-- LINK DEFINITIONS -->
 
 [changes in {{site.data.var.ce}}]: ./ce_changes.html
