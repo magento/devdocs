@@ -19,7 +19,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 - Overview
 - What are UI components
 	- What is a UI component
-	- [The architectural structure of a UI component]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_architecture_concept.html)
+	- [The architectural structure of a UI component]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_architecture_concept.html)
 	- Application workflow description
 	- [Configuration flow: the configuration pieces and their part in workflow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html)
 		- Declaration in `definition.xml`
