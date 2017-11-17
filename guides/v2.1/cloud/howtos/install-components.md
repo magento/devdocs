@@ -51,6 +51,7 @@ If you already know the extension's Composer name and version, skip this step an
 {% include cloud/composer-name.md %}
 
 ### Step 2: Update Magento's `composer.json` {#update}
+When adding the module to `composer.json`, the file [`app/etc/config.php`]({{page.baseurl}}config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from `config.local.php` used by [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html).
 
 To update `composer.json`:
 
@@ -78,7 +79,6 @@ When installing and adding the extension the extension, you must add the `compos
 </div>
 
 ### Step 3: Verify the extension {#verify}
-
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
@@ -93,23 +93,50 @@ The extension name is in the format `<VendorName>_<ComponentName>`. It will not 
 To manage your extensions, you can enable and disable or change settings per environment.
 
 ### Enable and disable extensions {#enable-disable}
-We recommend enabling and disabling your extensions across all environments to best match testing per environment. If you encounter issues, you may need to update permissions for the files and folders.
+You can use CLI commands or directly edit `app/etc/config.php` to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.
 
-Trying to enable and disable extensions not following this method can lead to permissions and other issues.
-
-2. In a terminal, SSH into your environments: Integration, Staging, and Production.
-3. You need a specific name of the extension or module. Use the following command to locate the name:
+1. In a terminal, access your local development environment.
+2. You need a specific name of the extension or module. Use the following command to locate the name:
 
         php bin/magento module:status
-4. To enable, use the following command.
+3. To enable, use the following command.
 
         php bin/magento module:enable <module name>
-5. To disable, use the following command.
+4. To disable, use the following command.
 
         php bin/magento module:disable <module name>
-6. Use the following command to verify the changed status of the module:
+5. Use the following command to verify the changed status of the module:
 
         php bin/magento module:status
+
+  You can also navigate to and edit the `app/etc/config.php` file to verify the module is disabled.
+
+  {% highlight php startinline=true %}
+  return array (
+    'modules' =>
+    array (
+      'Magento_Core' => 1,
+      'Magento_Store' => 1,
+      'Magento_Theme' => 1,
+      'Magento_Authorization' => 1,
+      'Magento_Directory' => 1,
+      'Magento_Backend' => 1,
+      'Magento_Backup' => 1,
+      'Magento_Eav' => 1,
+      'Magento_Customer' => 1,
+  ...
+    ),
+  );
+  {% endhighlight %}
+
+  The value `1` or `0` indicates whether a module is enabled or disabled.
+6. Push your updates to the Git branch:
+
+        git add -A
+        git commit -m "<message>"
+        git push origin <environment ID>
+
+7. [Complete deployment]({{page.baseurl}}cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
 For projects using {{site.data.var.ece}} **before 2.1.4**, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
