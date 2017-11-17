@@ -26,7 +26,7 @@ functional_areas:
 
 {% include config/es-webserver-overview.md %}
 
-## Set up a proxy {#es-nginx-prox}
+## Set up a proxy {#es-nginx-proxy}
 This section discusses how to configure nginx as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
 
 <div class="bs-callout bs-callout-info" id="info">
