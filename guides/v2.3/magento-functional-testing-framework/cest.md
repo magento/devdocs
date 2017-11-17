@@ -45,7 +45,7 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
             <!-- ACTION GROUPS -->
             <actionGroup ref="" mergeKey="">
                 <argument name="" value=""/>
-            </actionGroup> 
+            </actionGroup>
         </after>
         <test name="">
             <annotations>
@@ -62,7 +62,7 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
             </actionGroup>
         </test>
     </cest>
-</config> 
+</config>
 ```
 
 ## Principles
@@ -112,13 +112,13 @@ name|string|optional|
 remove|boolean|optional|false
 
 It MAY contain the following child elements:
- 
+
  * any [action]
  * [`<actionGroup>`][action group]
 
 ***
 ***
- 
+
 ### after
 
 Specifies actions to perform after all [tests][test] in a [cest].
@@ -129,13 +129,13 @@ name|string|optional|
 remove|boolean|optional|false
 
 It MAY contain:
- 
+
  * any [action]
  * [`<actionGroup>`][action group]
- 
+
 ***
 ***
- 
+
 ### test
 
 A set of actions with an assertion.
@@ -146,11 +146,11 @@ name|string|optional|
 remove|boolean|optional|false
 
 It MAY contain:
- 
+
  * any [action]
  * [`<annotations>`][annotations]
  * [`<actionGroup>`][action group]
- 
+
 ***
 ***
 
@@ -160,10 +160,10 @@ Calls a corresponding action group.
 
 Attribute|Type|Use|Default
 ---|---|---|---
-ref|string|required|	
-mergeKey|string|required|	
+ref|string|required|
+mergeKey|string|required|
 remove|boolean|optional|false
-before|string|optional|	
+before|string|optional|
 after|string|optional|
 
 It MAY contain [`<argument>`][argument]
@@ -178,16 +178,16 @@ Sets an argument that is used in parent [action group].
 
 Attribute|Type|Use
 ---|---|---
-name|string|optional	
+name|string|optional
 value|string|optional
 
 
 <!-- LINKS DEFINITIONS -->
 
-[action]: ./actions.html
+[action]: cest/actions.html
 [action group]: #actiongroup
 [after]: #after
-[annotations]: ./annotations.html
+[annotations]: cest/annotations.html
 [argument]: #argument
 [before]: #before
 [cest]: #cest
@@ -198,4 +198,4 @@ value|string|optional
 
 <!-- Abbreviations -->
 
-*[MFTF]: Magento Functional Testing Framework 
+*[MFTF]: Magento Functional Testing Framework
