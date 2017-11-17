@@ -118,7 +118,7 @@ To add an issue:
 2. Fill in the Title and issue description.
 3. Click **Submit new issue**.
 
-<h2 id="report">Edit metadata</h2>  
+<h2 id="edit">Edit metadata</h2>  
 The .md (Markdown) file's {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.
 
 ### Example:
