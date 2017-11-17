@@ -180,6 +180,8 @@ GEM
       html-pipeline (~> 2.2)
       jekyll (>= 3.0)
     kramdown (1.14.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     liquid (4.0.0)
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
@@ -228,6 +230,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages (= 167)
   html-proofer
+  launchy
 
 BUNDLED WITH
    1.15.4
