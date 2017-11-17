@@ -13,27 +13,16 @@ functional_areas:
   - Setup
 ---
 
-Order of steps:
-locate active version
-clone
-build bash script using the cloned version
-run the bash which builds and runs the curl command for you
-validate and activate
-
-For this one:
-also need to create the whitelist acl
-
 This example creates an ACL list for whitelisted IPs. You will then create a bash script with information for the custom VCL.
 
 We provide another solution than entering `curl` commands to create VCL snippets using `.vcl` files and a bash script to upload all snippets found in a directory. You will create .vcl files of just VCL code. The bash script runs using values from environment variables to generate and run `curl` commands.
 
-To create VCL snippets this way:
+To add the whitelist IP VCL, you do the following:
 
-* Add environment variables to your Staging and Production environments
+* Set up your bash script
 * Create VCL (`.vcl`) files with code snippets in a single directory
 * Save the bash script in the same directory with the `.vcl` files
 * Run the bash script to upload the VCL snippets to each environment
-
 
 ## Create edge ACL {#edge-acl}
 Edge ACLs create IP lists for managing access for your VCL snippet. For this example, create an ACL of IPs to whitelist access to your site. Then create custom VCL snippets to manage access by providing normal access, redirecting to a specific location, or [displaying a 403 Forbidden message](#block-ip).
@@ -126,43 +115,44 @@ When modifying the bash scripts, make sure to carefully enter the correct Servic
 </div>
 
 ## Create whitelist.vcl {#whitelist-vcl}
-The following is an example of this VCL code from Fastly:
+A VCL snippet file (`.vcl`) should include the following values:
 
-* Type: `recv`, puts the code in the subroutine vcl_recv
-* Priority: 5
-* Content:
+* `name`: Name for the VCL snippet
+* `priority`: Determines the order VCL snippets call. Lower values run first, from 1 to 100. All Magento module uploaded snippets are 50. If you want an action to occur last or override Magento default VCL snippets, enter a higher number like 100. To have code occur immediately, enter a lower value like 5.
+* `type`: Specifies the location to place the generated snippet such as `init` (above subroutines) and within subroutines like `recv`. See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"} for information on these values.
+* `content`: The snippet of VCL code to run
 
-			if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) {
-				error 403 "Forbidden";
-				}
+Create a whitelist.vcl file with the following JSON content:
 
-The curl command would look like the following:
-
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }"}'
-
-
-Create a whitelist.vcl file with the following JSON:
-
-    if
-      ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF)
-        {
-          error 403 "Forbidden";
-        }
-
-QUESTION: how to set up the priority?
-
-
+{% highlight json %}
+{
+  "name": "whitelist-ip",
+  "priority": "5",
+  "type": "recv",
+  "content": "if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }",
+}
+{% end highlight %}
 
 ## Run the bash script {#run-script}
-To create and push your customer VCLs to Fastly, you will run the bash script per Staging and Production.
-
-When the script runs, it cycles through all .vcl files in the same directory. As the commands complete, those VCL snippets are generated with Fastly according to the Service ID. All VCLs generated for `production_snippets.sh` are associated for Production.
+To create and push your customer VCLs to Fastly, you will run the bash script per Staging and Production. When the script runs, it cycles through all .vcl files in the same directory. As the commands complete, those VCL snippets are generated with Fastly according to the Service ID.
 
 To run the script and verify scripts:
 
-1. In a terminal, move to the directory with the VCL snippets and bash script files.
-2. Run the bash script by entering the file name. For example, enter `upload_snippets`.
+1. In a terminal, move to the directory with the VCL snippets and bash script files. For example, change to the production VCL snippet folder.
+2. Run the bash script by entering the file name. For example, enter `production_snippets`.
 3. As the script runs, VCL snippets should be generating and uploading to Fastly.
-4. To list all all regular VCL snippets attached to a service, enter the following API call with the appropriate information:
+
+## Validate and activate the VCL snippet
+With the VCL snippet added to Fastly, you need to validate then activate the snippet.
+
+1. In the terminal, enter the following command to validate all snippets for the version:
+
+	   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
+
+  Fastly should return: `"status": "ok"`. If you received an OK, activate the version for that service.
+2. Activate the VCL version with the following command. All VCL snippets associated with the version activate.
+
+	   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
+3. To list all all regular VCL snippets attached to a service, enter the following API call with the appropriate information:
 
 	   curl -X  GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"

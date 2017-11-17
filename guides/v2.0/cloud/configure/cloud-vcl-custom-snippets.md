@@ -41,7 +41,8 @@ Fastly supports two types of snippets. We recommend and document how to create a
 ## The VCL snippet process {#process}
 How do you create and add snippets? Here's the process:
 
-1. Get the [list](#list) of all VCL snippet versions and look for active version
+1. Set up the VCL bash script. You only need to do this once. 
+1. Get the [list](#list) of all VCL snippet versions and look for the `active` version
 2. [Clone](#clone) the currently active VCL snippet version. When you clone, a new version is generated.
 3. [Modify](#update) snippets in the cloned version or [add VCL snippets](#create-snippet)
 3. [Validate](#validate) all VCL snippets for the version number
@@ -116,19 +117,21 @@ Use the following command as a template:
 
 After you run the `curl` command, Fastly returns a JSON response with the data. For example:
 
-	{
-	  "id": "62Yd1WfiCBPENLloXfXmlO",
-	  "service_id": "{Service ID}",
-	  "version": "{Editable Version #}",
-	  "name": "apply_acl",
-	  "priority": "100",
-	  "dynamic": "1",
-	  "type": "hit",
-	  "content": "if ((client.ip ~ {ACLNAME}) && !req.http.Fastly-FF){ error 403; }",
-	  "created_at": "2016-08-15T09:37:10+00:00",
-	  "updated_at": "2016-08-15T09:37:10+00:00",
-	  "deleted_at": null
-	}
+{% highlight json %}
+{
+  "id": "62Yd1WfiCBPENLloXfXmlO",
+  "service_id": "{Service ID}",
+  "version": "{Editable Version #}",
+  "name": "apply_acl",
+  "priority": "100",
+  "dynamic": "1",
+  "type": "hit",
+  "content": "if ((client.ip ~ {ACLNAME}) && !req.http.Fastly-FF){ error 403; }",
+  "created_at": "2016-08-15T09:37:10+00:00",
+  "updated_at": "2016-08-15T09:37:10+00:00",
+  "deleted_at": null
+}
+{% end highlight %}
 
 ### Update an existing VCL snippet {#update}
 Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:
