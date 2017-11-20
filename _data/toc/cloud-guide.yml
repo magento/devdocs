@@ -78,20 +78,17 @@ pages:
         - label: Optional - Configure Xdebug
           url: cloud/howtos/debug.html
 
-        - label: Import an existing Magento project
-          children:
-
-            - label: First steps for importing Magento Commerce
+    - label: Import existing code into a project
               url: cloud/access-acct/first-time-setup_import-first-steps.html
 
-            - label: Find the information you need for your import
-              url: cloud/access-acct/first-time-setup_import-prereq.html
+        - label: Find the information you need for your import
+          url: cloud/access-acct/first-time-setup_import-prereq.html
 
-            - label: Prepare your existing Magento Commerce system
-              url: cloud/access-acct/first-time-setup_import-prepare.html
+        - label: Prepare your existing Magento Commerce system
+          url: cloud/access-acct/first-time-setup_import-prepare.html
 
-            - label: Import Magento Commerce into Magento Commerce (Cloud)
-              url: cloud/access-acct/first-time-setup_import-import.html
+        - label: Import Magento Commerce into Magento Commerce (Cloud)
+          url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure your store
       url: cloud/configure/configuration-overview.html

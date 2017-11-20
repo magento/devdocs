@@ -15,11 +15,12 @@ functional_areas:
   - Setup
 ---
 
+QUESTION: Do we really want to support a full overwrite? 
 
-This topic discusses how to import code from your existing Magento EE project to your {{site.data.var.ece}}'s Git repository `master` branch.
+The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code. When importing, you are force pushing your existing code in a Git repository over the {{site.data.var.ece}}'s Git `master` branch.
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-The procedure discussed in this topic replaces your new {{site.data.var.ece}} project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
+Warning: When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master`. Any data, websites, stores, and so on will be lost.
 
 Before you continue, make sure there is nothing in your {{site.data.var.ece}} project you want to keep.
 </div>

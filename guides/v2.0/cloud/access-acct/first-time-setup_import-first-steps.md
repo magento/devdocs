@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: First steps for importing Magento Commerce
-menu_title: First steps for importing Magento Commerce
+title: Import existing code into a project
+menu_title: Import existing code into a project
 menu_order: 151
 menu_node:
 level3_menu_node: level3child
@@ -15,18 +15,23 @@ functional_areas:
   - Setup
 ---
 
-This topic discusses the workflow and initial tasks to perform before importing your existing Magento Enterprise Edition (EE) system into {{site.data.var.ece}} project.
+When first creating your {{site.data.var.ece}} project, you may have a choice of a blank template or importing existing code. We highly recommend always starting with a blank template to receive the {{site.data.var.ece}} codebase to build on. You can start adding custom code, extensions and modules, themes, and more in branches from this codebase.
 
-## Prerequisites
+For trial Starter and Pro projects, we automatically provision your project with the latest version of {{site.data.var.ece}}. You do not have an option of creating a project by importing. Not to worry, if you still want to fully import your existing codebase and overwrite the Git `master` branch for your project, these instructions will walk through the process.
+
+All
+
+QUESTION: Should we still document importing an existing if trials and will autoprovision will always put them into the blank template?
+
+
+If you prefer fully importing your current codebase instead of building on the blank template, you must start with
+
+## Prerequisites for importing code {#prereqs}
 Before you continue, make sure you have done all of the following:
 
-*   Your existing {{site.data.var.ee}} code must be in Git.
+Your existing {{site.data.var.ee}} code must be in Git. You need to have a Git account with a repository and your code added to it. If you do not have this set up, we recommend using [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html). You must have a Git branch with your code pushed to it before continuing with these instructions.
 
-    If not, you must add it to Git before continuing.
-*   Complete all of the tasks in your {{site.data.var.ee}} system:
-
-    1.  [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
-    2.  [Set up SSH]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+You should have a fully installed and configured local development environment. For details, follow the instructions for [Local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).
 
 ## Recommended workflow
 Following is our recommended workflow:
