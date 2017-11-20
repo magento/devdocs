@@ -21,7 +21,7 @@ Example: `selector="#element .{{var1}} .{{var2}}"`.
 {% endraw %}
 ### Substitutable values
 
-Sustainable values in the test can be of the following formats:
+Substitutable values in the test can be of the following formats:
 
 * String Literals: `stringLiteral`
 * Reference to data entity (XML data from the corresponding _.../Data/*.xml_): `entityName.Field`
@@ -30,7 +30,6 @@ Sustainable values in the test can be of the following formats:
     * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `mergeKey="persistedCreateDataKey"`
 
 The following diagram demonstrates XML structure of a section in the MFTF:
-
 
 {%include_relative img/section-dia.svg%}
 
@@ -54,7 +53,7 @@ The following diagram demonstrates XML structure of a section in the MFTF:
 * `<section>` name is the same as the file name
 * `*Section.xml` is stored in the _Section_ directory of a module
 * a name format is `{Admin|Storefront}{SectionDescription}Section.xml`
-* Elements in sections are given camel case first letter lower case name.
+* Elements in sections are given camel case with first letter lowercase name.
   They describe the function of the element rather than attempting to describe the selector used.
 
 ## Example
@@ -67,8 +66,8 @@ _.../Catalog/Section/AdminCategorySidebarActionSection.xml_:
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
     <section name="AdminCategorySidebarActionSection">
-        <element name="AddRootCategoryButton" type="button" selector="#add_root_category_button" timeout="30"/>
-        <element name="AddSubcategoryButton" type="button" selector="#add_subcategory_button" timeout="30"/>
+        <element name="addRootCategoryButton" type="button" selector="#add_root_category_button" timeout="30"/>
+        <element name="addSubcategoryButton" type="button" selector="#add_subcategory_button" timeout="30"/>
     </section>
 </config>
 ```
@@ -78,14 +77,14 @@ All sections with same name will be merged during tests generation.
 
 The section declares two buttons:
 
-* `AddRootCategoryButton` is a button with a locator `#add_root_category_button` on the parent web page. 
-* `AddSubcategoryButton` is a button with a locator `#add_subcategory_button` on the parent web page. 
+* `addRootCategoryButton` is a button with a locator `#add_root_category_button` on the parent web page. 
+* `addSubcategoryButton` is a button with a locator `#add_subcategory_button` on the parent web page. 
 
 Example of a call in test:
 {%raw%}
 ```xml
 <!-- Click on the button with locator "#add_subcategory_button" on the web page-->
-<click selector="{{AdminCategorySidebarActionSection.AddSubcategoryButton}}" mergeKey="clickOnAddSubCategory"/>
+<click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" mergeKey="clickOnAddSubCategory"/>
 ```
 ## Available elements
 
