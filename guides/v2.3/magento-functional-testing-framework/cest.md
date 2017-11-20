@@ -6,7 +6,6 @@ version: 2.3
 github_link: magento-functional-testing-framework/cest/structure.md
 ---
 
-
 ## Overview
 
 Test cases in the MFTF are defined in XML as [cests][cest].
