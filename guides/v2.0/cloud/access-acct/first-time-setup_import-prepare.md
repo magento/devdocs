@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Prepare your existing Magento EE system
-menu_title: Prepare your existing Magento EE system
+title: Prepare your existing Magento Commerce install
+menu_title: Prepare your existing Magento Commerce install
 menu_order: 153
 menu_node:
 level3_menu_node: level3child
@@ -15,64 +15,63 @@ functional_areas:
   - Setup
 ---
 
-This topic discusses tasks you must perform in your existing Magento EE installation to prepare it to be imported into a {{site.data.var.ece}} project.
+This topic discusses tasks you must perform in your existing {{site.data.var.ee}} installation to prepare it to be imported into a {{site.data.var.ece}} project.
 
 Before you continue, push all pending changes to Git.
 
 You must do the following:
 
-*   Add Cloud-specific files and directories to Magento EE. Without these files and directories, your Magento EE code can't be imported to Cloud.
+*   Add Cloud-specific files and directories to {{site.data.var.ee}}. Without these files and directories, your {{site.data.var.ee}} code can't be imported to Cloud.
 *   Modify your existing `composer.json` to specify Cloud-specific dependencies.
 *   Add `composer.lock` to Git because Cloud reads it, and not `composer.json`, during the build and deploy process.
 *   Transfer media files to Cloud.
-*   Add your Magento EE authentication credentials to `auth.json` if you haven't done so already.
-*   Dump your Magento EE database.
+*   Add your {{site.data.var.ee}} authentication credentials to `auth.json` if you haven't done so already.
+*   Dump your {{site.data.var.ee}} database.
 
-## Prepare Magento EE files {#cloud-import-prepare-files}
-For your Magento EE code to import to a {{site.data.var.ece}} project, you must have a directory and some files required by Cloud. Following is the list of those files:
+## Prepare Magento Commerce files {#cloud-import-prepare-files}
+For your {{site.data.var.ee}} code to import to a {{site.data.var.ece}} project, you must have a directory and some files required by {{site.data.var.ece}}. Following is the list of those files:
 
-*  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
-*  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
-*  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
-*  `magento-vars.php`
+*  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) manages applications, service relationships, mounts for writable directories, and cron jobs
+*  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
+*  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) for handling routes including redirections, caching, and server-side includes
+*  [`magento-vars.php`]({{ page.baseurl }}cloud/project/project-multi-sites.html#cloud-multi-stores-magento-vars) for multiple websites and stores
 
 ### Add required configuration files {#cloud-import-prepare-files-config}
-To add required files to your Magento EE code:
+To add required files to your {{site.data.var.ee}} code:
 
 1.  Go to the [{{site.data.var.ece}} GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
-2.  Select the branch corresponding to the Magento EE version you currently have.
+2.  Select the branch corresponding to the {{site.data.var.ee}} version you currently have.
 
     The following figure shows an example of selecting the `2.1.4` branch.
 
     ![Switch to your current EE branch]({{ site.baseurl }}common/images/cloud_cloud-git-214.png){:width="600px"}
 
-    In the procedure that follows, you'll copy the contents of some of these files to your Magento EE system.
-3.  Log in to your Magento EE system as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+    In the procedure that follows, you'll copy the contents of some of these files to your {{site.data.var.ee}} system.
+3.  Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 4.  Enter the following commands in the order shown:
 
         cd <Magento installation dir>
         mkdir .magento
-5.  One at a time, create the following files in your Magento EE system using the contents of the files in the {{site.data.var.ece}} GitHub:
+5.  One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} GitHub:
 
-    *   `<Magento EE install dir>/.magento.app.yaml`
-    *   `<Magento EE install dir>/magento-vars.php`
-    *   `<Magento EE install dir>/.magento/services.yaml`
-    *   `<Magento EE install dir>/.magento/routes.yaml`
+    *   `<Magento Commerce install dir>/.magento.app.yaml`
+    *   `<Magento Commerce install dir>/magento-vars.php`
+    *   `<Magento Commerce install dir>/.magento/services.yaml`
+    *   `<Magento Commerce install dir>/.magento/routes.yaml`
 
-    For example, to create `<Magento EE install dir>/.magento.app.yaml` from the 2.1.4 branch:
+    For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.1.4 branch:
 
     1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="_blank"}.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
         ![View the raw version of the file]({{ site.baseurl }}common/images/cloud_cloud-git_raw.png){:width="600px"}
-    3.  In your Magento EE project, open a text editor in the Magento EE installation directory (for example, `/var/www/html/magento2`).
+    3.  In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
     4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
     5.  Make sure the file is named `.magento.app.yaml` when you save the file.
     6.  Repeat these tasks for the other files.
 
-        Make sure to create `magento-vars.php` in the Magento root directory.
-
-        Make sure to create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
+        * Make sure to create `magento-vars.php` in the Magento root directory.
+        * Make sure to create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 
 Modify these files as necessary as discussed in the following topics:
 
@@ -81,7 +80,7 @@ Modify these files as necessary as discussed in the following topics:
 *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
 
 ### Add or update `auth.json` {#cloud-import-authjson}
-To enable you to install and update {{site.data.var.ece}}, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for {{site.data.var.ece}}.
+To enable you to install and update {{site.data.var.ece}}, you must have an `auth.json` file in your project's root directory. `auth.json` contains your {{site.data.var.ee}} [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for {{site.data.var.ece}}.
 
 In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one. It's located in your Magento root directory.
 
@@ -90,7 +89,7 @@ In some cases, you might already have `auth.json` so check to see if it exists a
 To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} you don't have one:
 
 1.  Use a text editor to create a file named `auth.json` in your Magento root directory.
-3.  Replace `<public-key>` and `<private-key>` with your Magento EE authentication credentials.
+3.  Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
 
     See the following example:
 
@@ -152,15 +151,15 @@ To edit `composer.json`:
 ### Back up and transfer media files
 This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install-gde/install/cli/install-cli-backup.html) to back up media files.
 
-1.  Get the  integration system's [SSH URL]({{ page.baseurl}}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl).
+1.  Get the  integration system's [SSH URL]({{ page.baseurl}}cloud/access-acct/first-time-setup_import-first-steps.html#ssh).
 2.  To back up media files, enter the following command:
 
-        php <Magento EE install dir>/bin/magento setup:backup --media
+        php <Magento Commerce install dir>/bin/magento setup:backup --media
 
-    The backup is stored in the `<Magento EE install dir>/var/backups` directory.
+    The backup is stored in the `<Magento Commerce install dir>/var/backups` directory.
 2.  Transfer the media file to your {{site.data.var.ece}} system:
 
-        rsync <Magento EE install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
+        rsync <Magento Commerce install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
 
     For example,
 
@@ -175,7 +174,7 @@ To be able to decrypt encrypted data from your imported database, copy your encr
 
     You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a later step.
 
-## Prepare the Magento EE database  {#cloud-import-prepare-db}
+## Prepare the {{site.data.var.ee}} database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump.
 
 ### Create a database dump
@@ -193,14 +192,14 @@ Example if your database is on localhost with the default port (3306), database 
 
     mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 
-### Transfer the database dump from Magento EE to Cloud
-Use the `rsync` command as follows to transfer the database dump from your Magento EE system to the {{site.data.var.ece}} environment.
+### Transfer the database dump from {{site.data.var.ee}} to Cloud
+Use the `rsync` command as follows to transfer the database dump from your {{site.data.var.ee}} system to the {{site.data.var.ece}} environment.
 
 Now that you have created the dump, move it to the var directory of the application you are importing into:
 
     rsync <db dump file name> <cloud SSH URL>:var/db.sql.gz
 
-To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl).
+To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html#db-creds).
 
 #### Next step
-[Import Magento EE into {{site.data.var.ece}}]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html)
+[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html)

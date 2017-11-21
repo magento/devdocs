@@ -15,7 +15,7 @@ functional_areas:
   - Setup
 ---
 
-QUESTION: Do we really want to support a full overwrite? 
+QUESTION: Do we really want to support a full overwrite?
 
 The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code. When importing, you are force pushing your existing code in a Git repository over the {{site.data.var.ece}}'s Git `master` branch.
 
@@ -98,11 +98,11 @@ Before you can use your existing Magento EE code in {{site.data.var.ece}}, you m
 
 To import the Magento database in {{site.data.var.ece}}, you must know:
 
-*   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl)
-*   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-cloudb)
+*   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html#ssh)
+*   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html#db-creds)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.
+This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments. 
 </div>
 
 ### Drop and re-create the Cloud database

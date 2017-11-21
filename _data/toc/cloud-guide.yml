@@ -79,11 +79,7 @@ pages:
           url: cloud/howtos/debug.html
 
     - label: Import existing code into a project
-              url: cloud/access-acct/first-time-setup_import-first-steps.html
-
-        - label: Find the information you need for your import
-          url: cloud/access-acct/first-time-setup_import-prereq.html
-
+      url: cloud/access-acct/first-time-setup_import-first-steps.html
         - label: Prepare your existing Magento Commerce system
           url: cloud/access-acct/first-time-setup_import-prepare.html
 
