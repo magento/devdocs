@@ -255,7 +255,8 @@ Generated PHP code:
 ***
 
 ### useCaseId
-_Implementation of a tag `@UseCaseId`_
+
+_Implementation of a custom tag `@UseCaseId`_
 
 Specifies Use Case Id for a test.
 
