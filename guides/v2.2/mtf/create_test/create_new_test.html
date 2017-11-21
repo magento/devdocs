@@ -1552,12 +1552,12 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
 
 <p>Here we should recall <a href="#create-init-test-case">Step 3</a>, where the initial test case was created.</p>
 
-<p>An argument for the <code class="highlighter-rouge">test()</code> method is a <a href="#test-object">test object</a> (a <a href="/guides/v2.2/mtf/mtf_entities/mtf_fixture.html">fixture</a>).</p>
+<p>An argument for the <code class="highlighter-rouge">test()</code> method is a <a href="#test-creation">test object</a> (a <a href="/guides/v2.2/mtf/mtf_entities/mtf_fixture.html">fixture</a>).</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="sd">/**
  * Create Synonym group test.
- * 
+ *
  * @param Synonym $synonym
  * @return void
  */</span>
@@ -1642,7 +1642,7 @@ In this example it is named <code class="highlighter-rouge">CreateSynonymEntityT
     <span class="c1">// Steps
 </span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span> <span class="c1">// logs in to Admin, opens Search Synonyms page
 </span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">getPageActionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addNew</span><span class="p">();</span> <span class="c1">// receiving of the page action block with '_rootElement' containing locator which is indicated in the page class for PageActionBlock from the page, makes 'click' action on it
-</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span> <span class="c1">// enters data from variation in the New Synonym Group fields 
+</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getSynonymForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$synonym</span><span class="p">);</span> <span class="c1">// enters data from variation in the New Synonym Group fields
 </span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsNew</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// `click` on the Save Synonym Group button
 </span><span class="p">}</span>
 
