@@ -105,7 +105,8 @@ Attributes|Type|Use|Description
 ---|---|---|---
 name|string|required|Element name
 type|string|required|The type of the element. Possible values: `text`, `textarea`, `input`, `button`, `checkbox`, `radio`, `checkboxset`, `radioset`, `date`, `file`, `select`, `multiselect`, `wysiwyg`, `iframe`.
-selector|string|required|[XPath] or [CSS] selector of the element.
+selector|string|optional|[XPath] or [CSS] selector of the element.
+locatorFunction|string|optional|[Locator Function] declaration to be used in lieu of a selector.
 timeout|string|optional|Default: `-`. Optional timeout value in seconds to wait for the operation on the element.
 parameterized|boolean|optional|Include and set to `true` if the `selector` for this element has parameters that need to be replaced for proper use.
 remove|boolean|optional|Default: `false`. Set to `true` to remove this element during parsing.
@@ -118,6 +119,7 @@ remove|boolean|optional|Default: `false`. Set to `true` to remove this element d
 [page]: page.html
 [CSS]: https://www.w3schools.com/cssref/css_selectors.asp
 [XPath]: https://www.w3schools.com/xml/xpath_nodes.asp
+[Locator Function]: section/locator-functions.html
 [cest]: cest.html
 [test]: cest.html#test
 [createData]: cest/actions.html#createdata
