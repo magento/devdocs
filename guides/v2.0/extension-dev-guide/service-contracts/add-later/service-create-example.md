@@ -14,7 +14,7 @@ title: Create a service - example
          </div>
          <div class="col-xs-9" role="main">
             <div class="bs-docs-section">
-               <p><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-create-example.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+               <p><a href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/service-contracts/service-create-example.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
                <p>Create a service - example.</p>
                              <h3 id="related-topics">Related topics</h3>
                <ul>
@@ -29,8 +29,3 @@ title: Create a service - example
       </div>
    </div>
 </div>
-
-
-
-
-

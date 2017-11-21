@@ -26,8 +26,8 @@ You can configure the Magento application in any of the following ways:
 
 *	Caching
 
-	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Set up Varnish</a>
-	*  	<a href="{{page.baseurl}}config-guide/cache/caching.html">Set up caching</a>
+	*	[Set up Varnish]({{page.baseurl}}config-guide/varnish/config-varnish.html)
+	* [Set up caching]({{page.baseurl}}config-guide/cache.html)
 	*	[Set up database caching]({{ page.baseurl }}config-guide/cache/caching-database.html)
 	*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Set up Redis</a>
 
@@ -51,7 +51,3 @@ You can configure the Magento application in any of the following ways:
 	*	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Install and configure Solr</a>
 	*	<a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">Split databases</a>
 	*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queues</a>
-
-
-
-

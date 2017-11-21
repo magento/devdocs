@@ -49,7 +49,6 @@ Your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endgloss
 
 #### Related Topics:
 
-*	<a href="{{page.baseurl}}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
+*	<a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Authorizing Web API Requests</a>
 *	<a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 *	<a href="{{page.baseurl}}get-started/gs-web-api-request.html">Step 2. Construct a request</a>
-
