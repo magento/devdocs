@@ -23,7 +23,7 @@ See the following sections:
 ## Clone the sample data repository {#clone-sample-repo}
 This section discusses how to install Magento sample data by cloning the sample data repository. You can clone the sample data repository in any of the following ways:
 
-*   Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a>
+*   Clone with the <a href="#clone-sample-repo-ssh">SSH protocol</a>
 *   Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a>
 
 ### Clone with SSH {#clone-sample-repo-ssh}
@@ -56,11 +56,11 @@ fatal: The remote end hung up unexpectedly</pre>
     </div>
 7.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
-        
+
         php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php -- --ce-source="<path_to_your_magento_instance>"
 9.  Wait for the command to complete.
 
-10. See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.
+10. See <a href="#samp-data-perms">Set file system permissions and ownership</a>.
 
 ### Clone with HTTPS {#instgde-prereq-compose-clone-https}
 To clone the Magento sample data GitHub repository using the HTTPS protocol:
@@ -78,7 +78,7 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 3.  Enter `git clone` and paste the value you obtained from step 1.
 
     An example follows:
-        
+
         git clone https://github.com/magento/magento2-sample-data.git
 4.  Wait for the repository to clone on your server.
 5.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
@@ -122,7 +122,7 @@ To set file system permissions and ownership on the sample data repository:
 
         cd <your {{site.data.var.ce}} install dir>/var
         rm -rf cache/* page_cache/* generation/*
- 
+
 <!-- ABBREVIATIONS -->
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase

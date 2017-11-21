@@ -2,6 +2,7 @@
 layout: default
 group: mftf
 title: Update the Magento Functional Testing Framework and pull new tests
+version: 2.3
 github_link: magento-functional-testing-framework/update.md
 ---
 
@@ -44,8 +45,8 @@ $ vendor/bin/robo generate:tests
 <!-- LINK DEFINITIONS -->
 
 [`develop`]: https://github.com/magento/magento2-functional-testing-framework
-[WYSIWYG settings]: ./getting-started.html#wysiwyg-settings
-[Security settings]: ./getting-started.html#security-settings
+[WYSIWYG settings]: getting-started.html#wysiwyg-settings
+[Security settings]: getting-started.html#security-settings
 
 <!-- Abbreviations -->
 

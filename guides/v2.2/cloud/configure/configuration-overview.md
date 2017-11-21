@@ -25,7 +25,7 @@ The following options, tools, and features can be set up and configured in your 
 * [Magento B2B module](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-b2b.html) for Business to Business features, Pro plan only
 * [cron jobs]({{ page.baseurl }}cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
 * [Multiple websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
-* [Install]({{ page.baseurl }}cloud/howtos/install-components.html) and [upgrade]({{ page.baseurl }}cloud/howtos/update-components.html) extensions
+* [Install, manage, and upgrade modules]({{ page.baseurl }}cloud/howtos/install-components.html) 
 * [Install a theme]({{ page.baseurl }}cloud/howtos/custom-theme.html) for your site and store
 
 ## Configure your deploy: build hooks, services, and routes {#deploy}

@@ -2,6 +2,7 @@
 layout: default
 group: mftf
 title: Contribution Guidelines for the Magento Functional Testing Framework
+version: 2.3
 github_link: magento-functional-testing-framework/contribution-guidelines.md
 ---
 
@@ -49,7 +50,9 @@ To fork a repository on Github, do the following:
 3.	Click **Fork** at the top right:
 4.	Clone the repo into your development environment and start playing.
 
+{%collapsible Show how fork the repo%}
 ![MFTF forking](./img/mftf-fork.gif)
+{%endcollapsible%}
 
 ### Update the fork with the latest changes
 

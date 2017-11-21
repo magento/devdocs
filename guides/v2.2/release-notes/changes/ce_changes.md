@@ -17,7 +17,3 @@ The changes are aggregated into two tables:
 ## 2.2.0 - 2.2.1 {#releases-2_2_0-2_2_1}
 
 {% include changes/ce/2.2.0-2.2.1.html %}
-
-## 2.1.9 - 2.2.0 {#releases-2_1_9-2_2_0}
-
-{% include changes/ce/2.1.9-2.2.0.html %}

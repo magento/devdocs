@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/migration/migration-tool-install.html
 
 ## Prerequisite: Versions of Magento and Data Migration Tool must match {#data-migrate-prereq}
 
-Make sure you are using *the same released version* of both Magento 2 and the Data Migration Tool. For example, for Magento version 2.2, you must also use the Data Migration Tool version 2.2.
+Make sure you are using *the same released version* of both Magento 2 and the Data Migration Tool. For example, for Magento version 2.2.0, you must also use the Data Migration Tool version 2.2.0.
 
 ### Check your Magento 2 version {#magento-version}
 
@@ -76,10 +76,10 @@ To install the Data Migration Tool, you must update `composer.json` in the Magen
 
 	where `<version>` must match the version of the Magento 2 codebase.
 
-	For example, for version 2.2, enter:
+	For example, for version 2.2.0, enter:
 
 		composer config repositories.magento composer https://repo.magento.com
-		composer require magento/data-migration-tool:2.2
+		composer require magento/data-migration-tool:2.2.0
 
 4.  When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 
@@ -96,10 +96,10 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 
 	where `<version>` must match the version of the Magento 2 codebase.
 
-	For example, for version 2.2, enter:
+	For example, for version 2.2.0, enter:
 
 		composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-		composer require magento/data-migration-tool:2.2
+		composer require magento/data-migration-tool:2.2.0
 
 ### Check version of installed Data Migration Tool {#migration-tool-install-version}
 

@@ -23,10 +23,6 @@ The changes are aggregated into two tables:
 
 {% include changes/ee/2.2.0-2.2.1.html %}
 
-## 2.1.9 - 2.2.0 {#releases-2_1_9-2_2_0}
-
-{% include changes/ee/2.1.9-2.2.0.html %}
-
 <!-- LINK DEFINITIONS -->
 
 [changes in {{site.data.var.ce}}]: ./ce_changes.html

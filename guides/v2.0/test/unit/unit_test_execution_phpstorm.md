@@ -1,10 +1,7 @@
 ---
 layout: default
 group: unit-testing
-subgroup: 30_Running_Unit_Tests
 title: Running Unit Tests in PHPStorm
-menu_title: Running Unit Tests in PHPStorm
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0

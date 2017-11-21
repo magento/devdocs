@@ -108,7 +108,7 @@ Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution_without_bm
 
 
 ### Payments Pro Hosted Solution (United Kingdom)
-These options are available only if you chose the United Kingdom as the [merchant country](#vars-merch-country).
+These options are available only if you chose the United Kingdom as the merchant country.
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|
@@ -356,7 +356,7 @@ Sort Order | `payment/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/ima
 ### International paths {#vars-intl-list}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The available paths are determined by your choice of [Merchant country](#vars-merch-country).
+The available paths are determined by your choice of [Merchant country]({{page.baseurl}}config/config-reference_sensitive.html#vars-merch-country).
 </div>
 
 Name  | Config path | EE only? | Encrypted? |

@@ -20,8 +20,7 @@ Current topics:
 
 *	Install components, upgrade, update
 
-	*	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
-	*	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
+	*	[Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
 	*	[Test a Magento patch before deploying it]({{ page.baseurl }}cloud/howtos/upgrade-magento.html)
 
 *	Environments
