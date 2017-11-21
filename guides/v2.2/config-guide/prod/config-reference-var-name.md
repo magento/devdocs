@@ -59,7 +59,7 @@ The general format of system settings variable names follows:
 
 	For more information about scopes, see:
 
-	*	[Step 1: Find the website or store view scope value](#cloud-system-vars-scopes)
+	*	[Step 1: Find the website or store view scope value](#deploy-system-vars-scopes)
 	*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
 	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
 
@@ -163,7 +163,7 @@ This section discusses how to set system variables.
 
 *	To set values for the global scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`.
 
-*	To set a value for a particular store view or website, start the variable name as discussed in [Step 1: Find the scope value](#cloud-system-vars-scopes):
+*	To set a value for a particular store view or website, start the variable name as discussed in [Step 1: Find the scope value](#deploy-system-vars-scopes):
 
 	*	`CONFIG__WEBSITES`
 	*	`CONFIG__STORES`
@@ -199,7 +199,7 @@ To find the variable name for the shipping country origin:
 
 1.	Determine the scope.
 
-	Find the scope in the [database](#cloud-system-vars-scopes) as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
+	Find the scope in the [database](#deploy-system-vars-scopes) as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
 
 	For example, the scope might be `CONFIG__WEBSITE__DEFAULT`.
 2.	The rest of the variable name is `SHIPPING__ORIGIN__COUNTRY_ID`.
