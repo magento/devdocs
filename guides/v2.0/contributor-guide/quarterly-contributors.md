@@ -7,7 +7,7 @@ menu_title: Quarterly Contributors
 menu_order: 1000
 version: 2.0
 github_link: contributor-guide/quarterly-contributors.md
-redirect_from: howdoi/howdoi_bios.html
+redirect_from: /guides/v2.0/howdoi/howdoi_bios.html
 ---
 
 Thanks to the following community members, partners, and Magento fans who helped provide content to the DevDocs site this quarter.
@@ -17,7 +17,7 @@ We appreciate all the typo fixes, code corrections, comments in issues, and clar
 {% include home/contributors.html %}
 
 <br/>
-  
+
 The following table lists the community members who created pull requests and issues for this quarter.
 
 | PR Contributors                                                             | Issue Contributors                                                      |

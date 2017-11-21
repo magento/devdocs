@@ -158,7 +158,7 @@ But in process of resolving the file path, Magento adds the `.less` extension fo
 @import (css) 'styles.less';
 {%endhighlight%}
 
-As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files.
+As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files.
 
 ### Importing remote CSS files
 
