@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Commerce
 title: Magento_BundleStaging module
-menu_title: BundleStaging
-menu_order: 2
 version: 2.1
 ee_only: true
 github_link: mrg/ee/BundleStaging.md

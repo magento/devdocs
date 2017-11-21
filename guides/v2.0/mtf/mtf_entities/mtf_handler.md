@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Handler
-menu_title: Handler
-menu_order: 3
 version: 2.0
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
@@ -180,7 +177,7 @@ The following code includes detailed comments for better understanding.
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
- 
+
 namespace Magento\Widget\Test\Handler\Widget;
 
 use Magento\Mtf\Fixture\FixtureInterface;
@@ -208,7 +205,7 @@ class Curl extends AbstractCurl
             'Sidebar Main' => 'sidebar.main',
         ]
     ];
-    
+
     /**
      * Post request for creating widget instance.
      *
@@ -242,7 +239,7 @@ class Curl extends AbstractCurl
         }
         return ['id' => $id];
     }
-    
+
     /**
      * Prepare data to create widget.
      *
@@ -272,7 +269,7 @@ class Curl extends AbstractCurl
 
 ### cURL authentication classes {#mtf_handler_decor}
 
-In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the `BackendDecorator` class. 
+In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the `BackendDecorator` class.
 
 The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
@@ -280,7 +277,7 @@ The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages a
 
 `BackendDecorator` manages authentication in Admin and saves the Admin's session.
 
-Full class name is `Mtf\Util\Protocol\CurlTransport\BackendDecorator`. 
+Full class name is `Mtf\Util\Protocol\CurlTransport\BackendDecorator`.
 
 Add to the `Curl.php` the following code:
 
@@ -290,7 +287,7 @@ $curl = new BackendDecorator(new CurlTransport(), new Config());
 
 `Config()` takes Admin's configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.
 
-#### FrontendDecorator class {#mtf_handler_cirl_frontdecor}
+#### FrontendDecorator class {#mtf_handler_curl_frontdecor}
 
 `FrontendDecorator` helps to authorize the customer and saves his session.
 
@@ -342,7 +339,7 @@ The code has detailed comments for better understanding.
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
- 
+
 namespace Magento\Widget\Test\Handler\Widget;
 
 use Magento\Mtf\Fixture\FixtureInterface;
@@ -370,7 +367,7 @@ class Curl extends AbstractCurl
             'Sidebar Main' => 'sidebar.main',
         ]
     ];
-    
+
     /**
      * Post request for creating widget instance.
      *
@@ -404,7 +401,7 @@ class Curl extends AbstractCurl
         }
         return ['id' => $id];
     }
-    
+
     /**
      * Prepare data to create widget.
      *
@@ -471,7 +468,7 @@ interface WidgetInterface extends HandlerInterface
 }
 
 {% endhighlight %}
-* Create `Webapi.php` in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data. 
+* Create `Webapi.php` in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data.
 
 {% highlight php %}
 
@@ -480,7 +477,7 @@ interface WidgetInterface extends HandlerInterface
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
- 
+
 namespace Magento\Widget\Test\Handler\Widget;
 
 use Magento\Mtf\Fixture\FixtureInterface;
@@ -508,7 +505,7 @@ class Curl extends AbstractCurl
             'Sidebar Main' => 'sidebar.main',
         ]
     ];
-    
+
     /**
      * Post request for creating widget instance.
      *
@@ -542,7 +539,7 @@ class Curl extends AbstractCurl
         }
         return ['id' => $id];
     }
-    
+
     /**
      * Prepare data to create widget.
      *

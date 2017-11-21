@@ -58,10 +58,6 @@ where each change is displayed in a separate row in the table, with the followin
 
 {% include changes/ce/2.1.0-2.1.1.html %}
 
-## 2.0.7 - 2.1.0 {#releases-2.1.0-2.0.7}
-
-{% include changes/ce/2.0.7-2.1.0.html %}
-
 <!-- LINK DEFINITIONS -->
 
 [mainline]: https://github.com/magento/magento2

@@ -267,6 +267,11 @@ pages:
         - label: Magento Commerce changes
           url: release-notes/changes/ee_changes.html
 
+        - label: Magento Commerce for B2B changes
+          url: release-notes/changes/b2b_changes.html
+          versions: ["2.2"]
+
+
     - label: Third-party licenses
       children:
 

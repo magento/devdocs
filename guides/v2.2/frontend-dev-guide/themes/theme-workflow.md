@@ -82,7 +82,7 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 
 * [Setup Grunt]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html)
 * [Add the theme to Grunt configuration]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#add_theme)
-* [Track changes]({{page.baseurl}}{{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_commands)
+* [Track changes]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_commands)
 
 </div>
 <div class="flow-nav top-bottom"></div>

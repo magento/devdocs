@@ -43,6 +43,5 @@ To install sample data:
 You can start testing your development with live data!
 
 #### Related topics
-*	[Install components]({{page.baseurl}}cloud/howtos/install-components.html)
-*	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
+*	[Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
 *	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
