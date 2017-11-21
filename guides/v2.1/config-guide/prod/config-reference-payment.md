@@ -356,7 +356,7 @@ Sort Order | `payment/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/ima
 ### International paths {#vars-intl-list}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The available paths are determined by your choice of [Merchant country]({{page.baseurl}}config/config-reference_sensitive.html#vars-merch-country).
+The available paths are determined by your choice of [Merchant country]({{page.baseurl}}config-guide/prod/config-reference-sens.html#vars-merch-country).
 </div>
 
 Name  | Config path | EE only? | Encrypted? |
