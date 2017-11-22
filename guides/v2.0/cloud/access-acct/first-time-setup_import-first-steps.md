@@ -20,7 +20,7 @@ functional_areas:
   - Setup
 ---
 
-When first creating your {{site.data.var.ece}} project, you may have a choice of a blank template or importing existing code. We highly recommend always starting with a blank template to receive the {{site.data.var.ece}} codebase to build on. You can start adding custom code, extensions and modules, themes, and more in branches from this codebase.
+When first creating your {{site.data.var.ece}} project, you may have a choice of a blank template or importing existing code. We highly recommend always starting with a blank template to receive the {{site.data.var.ece}} codebase to build on. You can start adding your existing Magento custom code, extensions and modules, themes, and more to development branches created from .
 
 For trial Starter and Pro projects, we automatically provision your project with the latest version of {{site.data.var.ece}}. You do not have an option of creating a project by importing. Not to worry, if you still want to fully import your existing codebase and overwrite the Git `master` branch for your project, these instructions will walk through the process.
 
