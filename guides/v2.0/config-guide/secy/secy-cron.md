@@ -40,7 +40,7 @@ You don't need to do anything if you use the [`magento cron:run`]({{page.baseurl
 This section discusses how to secure cron using [HTTP Basic authentication](http://tools.ietf.org/html/rfc2617"){:target="&#95;blank"} with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:
 
 -   [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html){:target="&#95;blank"}
--   [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html"){:target="&#95;blank"}
+-   [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="&#95;blank"}
 
 ### Create a password file
 For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we're storing the password file in a new directory.

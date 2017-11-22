@@ -120,7 +120,7 @@ Columns-specific options:
       Object
     </td>
     <td>
-      Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/ui-inlineediting.html">
+      Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/ui-insertlisting.html">
       InlineEditing component configuration</a>.
     </td>
   </tr>

@@ -46,7 +46,7 @@ We recommend using a branch for adding or updating, configuring, and testing you
 4.	[Verify](#verify) the extension installed properly.
 
 ### Step 1: Get the extension's Composer name and version {#compose}
-If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
+If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#update).
 
 {% include cloud/composer-name.md %}
 

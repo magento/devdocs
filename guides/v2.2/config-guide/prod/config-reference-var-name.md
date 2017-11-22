@@ -29,7 +29,7 @@ You can use variables for any of the following:
 
 	*	Environment variables
 	*	The [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command
-	*	The Magento Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html)
+	*	The Magento Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}install/cli/install-cli-subcommands-deployment.html)
 
 Configuration paths can be found in:
 
