@@ -24,23 +24,6 @@ We are pleased to present Magento Open Source  2.1.11. This release includes imp
 
 ## Highlights
 
-Magento 2.1.10 contains almost 40 security fixes and functional enhancements.  Look for the following highlights in this release:
-
-* Significant reduction in JavaScript-related translation issues. 
-
-* Improvements to how the PayPal Express Checkout payment method processes virtual products. 
-
-* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
-
-* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in cacheing for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).  
-
-* Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4). 
-
-## Security enhancements
-
-Magento 2.1.10 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
-
-See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
 
 ## Fixed issues

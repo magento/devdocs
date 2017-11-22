@@ -23,7 +23,7 @@ We are pleased to present Magento Commerce  2.1.11. This release includes import
 
 ## Highlights
 
-Magento 2.1.10 contains over 50 security fixes and functional enhancements. Look for the following highlights in this release:
+Magento 2.1.11 contains over . Look for the following highlights in this release:
 
 
 
