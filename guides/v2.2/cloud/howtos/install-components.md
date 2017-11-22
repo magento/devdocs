@@ -17,7 +17,7 @@ functional_areas:
   - Configuration
 ---
 
-This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update). 
+This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update).
 
 When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
 
@@ -51,6 +51,7 @@ If you already know the extension's Composer name and version, skip this step an
 {% include cloud/composer-name.md %}
 
 ### Step 2: Update Magento's `composer.json` {#update}
+When adding the module to `composer.json`, the file [`app/etc/config.php`]({{page.baseurl}}config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) (Pipeline Deployment) values too.
 
 To update `composer.json`:
 
@@ -78,7 +79,6 @@ When installing and adding the extension the extension, you must add the `compos
 </div>
 
 ### Step 3: Verify the extension {#verify}
-
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
@@ -107,12 +107,12 @@ Trying to enable and disable extensions not following this method can lead to pe
         php bin/magento module:enable <module name>
 5. To disable, use the following command. It updates `config.php` with the disable status of the module.
 
-        php bin/magento module:enable <module name>
+        php bin/magento module:disable <module name>
 6. Use the following command to verify the changed status of the module:
 
         php bin/magento module:status
 7. Push your updates to the Git branch.
-8. [Complete deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
+8. [Complete deployment]({{page.baseurl}}cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
 You will update configurations according to [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#update) for `config.php`.

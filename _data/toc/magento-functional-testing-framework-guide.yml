@@ -19,6 +19,16 @@ pages:
   - label: Page
     url: magento-functional-testing-framework/page.html
     versions: ["2.3"]
+  - label: Section
+    url: magento-functional-testing-framework/section.html
+    versions: ["2.3"]
+    children:
+
+      - label: Parameterized selectors
+        url: magento-functional-testing-framework/section/parameterized-selectors.html
+
+      - label: Locator Functions
+        url: magento-functional-testing-framework/section/locator-functions.html
 
   - label: CLI Commands
     versions: ["2.3"]

@@ -199,7 +199,7 @@ serve:
   ...
 {% endhighlight %}
 
-## Step 4. Use PhpStorm to run unit tests
+## Step 4. Use PhpStorm to run unit tests {#phpstorm}
 
 After the PHP interpreter runs for the first time, you can [run the JavaScript unit tests from the PhpStorm IDE][PhpStorm].
 
