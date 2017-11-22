@@ -8,7 +8,7 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: custom-preprocess
 version: 2.0
-github_link: frontend-dev-guide/css-topics/gulp_sass.md
+github_link: frontend-dev-guide/css-topics/gulp-sass.md
 functional_areas:
   - Frontend
   - Tools
@@ -55,9 +55,9 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
 
 ## Create a theme and add Sass styles
 
-1. Create a theme as described in [Create a new storefront theme]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html). 
+1. Create a theme as described in [Create a new storefront theme]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html).
 
-4. Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). You can use the following code sample (no changes needed, create an empty `app/code/frontend/<Vendor>/<theme>/gulp.js` and copy-paste this code): 
+4. Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). You can use the following code sample (no changes needed, create an empty `app/code/frontend/<Vendor>/<theme>/gulp.js` and copy-paste this code):
  `package.json`:
 
    ```js
@@ -93,11 +93,11 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
 
     	return stream
     	    .pipe(gulp.dest('./web/css/'));
-	}); 
+	});
    ```
    This task uses `styles.scss` stored in `app/design/frontend/<Vendor>/<theme>/web/css/` as source of SASS. And it stores the generated CSS in `styles.css` in the `app/code/frontend/<Vendor>/<theme>` directory.
 
-5. Put the source `styles.scss` file to the `app/design/frontend/<Vendor>/<theme>/web/css/` directory. 
+5. Put the source `styles.scss` file to the `app/design/frontend/<Vendor>/<theme>/web/css/` directory.
 
 5. For your theme to start using the generated CSS, declare the resulting CSS file in the `default_head_blocks.xml` in the `app/design/frontend/<Vendor>/<theme/Magento_Theme/layout/` directory. You can create an empty `default_head_blocks.xml` file and copy the following code:
 
@@ -116,5 +116,3 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
 In the source .`scss` files you can use the `@import` directive, to import other `.scss` files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main `.scss` file. For example, if you create a `_catalogstls.scss` file for styles of the `Magento_Catalog` module and put it in `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/styles `, you can import it using the following notation:
 
     @import '../Magento_Theme/styles/module
-
-

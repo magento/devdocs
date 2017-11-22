@@ -167,7 +167,7 @@ The following list contains commands and options available in __Robo 1.1.3__.
   
 #### build
  
-[`build:project`](#build:project)     |Clone the Example configuration files Build the Codeception project
+[`build:project`](#buildproject)     |Clone the Example configuration files Build the Codeception project
 
 #### clone
   
@@ -179,7 +179,7 @@ The following list contains commands and options available in __Robo 1.1.3__.
   
 #### self
 
-[`self:update`](#self:update) or `update`       |Updates the `robo.phar` to the latest version. Only works when running the `phar` version of Robo.
+[`self:update`](#selfupdate) or `update`       |Updates the `robo.phar` to the latest version. Only works when running the `phar` version of Robo.
 
 ***
 ***

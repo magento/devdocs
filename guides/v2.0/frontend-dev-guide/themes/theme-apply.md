@@ -15,12 +15,12 @@ functional_areas:
 
 <h2 id="theme-apply-overview">What's in this topic</h2>
 
-The topic describes how to apply a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for your store. This is a required step if you want a theme to be used on a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. 
+The topic describes how to apply a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for your store. This is a required step if you want a theme to be used on a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 Also, it gives information how to add a theme independent logo for your store.
 
-## Prerequisites 
+## Prerequisites
 
-Make sure that you [set](#{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
 
 
 ## Apply a theme {#theme-apply-apply}
@@ -32,7 +32,7 @@ To apply a theme:
 3. In the **Store View** drop-down field, select the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} where you want to apply the theme.
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save Config**.
-6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
+6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
 6. To see your changes applied, reload the store front pages.
 
 
@@ -45,7 +45,7 @@ To add a design exception:
 4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
 5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
 6. Click **Save Config**.
-7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
+7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
 6. To see your changes applied, reload the store front pages.
 
 
@@ -59,7 +59,7 @@ To add a permanent theme-independent logo:
 4. In the **Logo Image** field browse to the logo file saved in your file system.
 6. Upload the file.
 7. Click **Save Config**.
-7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
+7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
 8. To see your changes applied, reload the store front pages.
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
@@ -82,4 +82,4 @@ If the changes you configure in the Admin are not applied after you clear the ca
 
 - Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
 
-- In your Magento database, in the `theme` table, check if the `type` value for your custom theme is "0". If it is "1" or "2", change it to "0". You can use a database tool such as [phpMyAdmin]({{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpmyadmin) or do it manually from the command line. 
+- In your Magento database, in the `theme` table, check if the `type` value for your custom theme is "0". If it is "1" or "2", change it to "0". You can use a database tool such as [phpMyAdmin]({{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpmyadmin) or do it manually from the command line.

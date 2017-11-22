@@ -3,7 +3,7 @@ layout: default
 group: mftf
 title: Actions in the Magento Functional Testing Framework cests
 version: 2.3
-github_link: magento-functional-testing-framework/actions.md
+github_link: magento-functional-testing-framework/cest/actions.md
 ---
 
 This topic contains a reference list of available action type tags available in the MFTF cests.
@@ -23,7 +23,6 @@ All actions contain the following attributes that are useful for merging needs:
 
 ## Principles
 
-
 `mergeKey` value format principles:
 
 * Must be unique within [`<test>`](../cest.html#test)
@@ -35,7 +34,7 @@ All actions contain the following attributes that are useful for merging needs:
 * Should be the last attribute of an element
 
 ## Example
-
+{%raw%}
 The following example contains four actions:
 
 1. [Open the Sign In page for a Customer](#example-step1)
@@ -44,20 +43,16 @@ The following example contains four actions:
 4. [Click the Sign In button](#example-step4)
 
 ```xml
-{%raw%}
 <amOnPage mergeKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage}}"/>
 <fillField  mergeKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
 <fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
 <click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
-{%endraw%}
 ```
 
-#### 1. Open the Sign In page for a Customer {#example-step2}
+#### 1. Open the Sign In page for a Customer {#example-step1}
 
 ```xml
-{%raw%}
 <amOnPage mergeKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage.url}}"/>
-{%endraw%}
 ```
 
 The Customer Sign In page is declared in the _.../Customer/Page/StorefrontCustomerSignInPage.xml_.
@@ -66,7 +61,6 @@ The given relative URI is declared in `StorefrontCustomerSignInPage.url`
 The _StorefrontCustomerSignInPage.xml_ source code:
 
 ```xml
-
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
     <page name="StorefrontCustomerSignInPage" url="/customer/account/login/" module="Magento_Customer">
@@ -82,14 +76,12 @@ Here, `url` contains a pointer to a `url` attribute of the `StorefrontCustomerSi
 #### 2. Enter customer's e-mail  {#example-step2}
 
 ```xml
-{%raw%}
 <fillField  mergeKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
-{%endraw%}
 ```
 
 [fillField](#fillfield) fills a text field with the given string.
 
-The customer's e-mail is stored in the `email` parameter of the `customer` entity created somewhere earlier it the test using a tag [createData](#createData).
+The customer's e-mail is stored in the `email` parameter of the `customer` entity created somewhere earlier it the test using a tag [createData](#createdata).
 `userInput` points to that data.
 
 `selector` points to the field where to enter the data.
@@ -112,9 +104,7 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 #### 3. Enter customer's password  {#example-step3}
 
 ```xml
-{%raw%}
 <fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
-{%endraw%}
 ```
 
 The action here is very similar to the action in a previous step.
@@ -124,14 +114,12 @@ The only difference is that different data assigned to the attributes which set 
 #### 4. Click the Sign In button {#example-step4}
 
 ```xml
-{%raw%}
 <click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
-{%endraw%}
 ```
 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
 See the _StorefrontCustomerSignInPage.xml_ code in [step 2](#section-code)
-
+{%endraw%}
 ## Available actions
 
 The following list contains reference documentation about all action elements available in the MFTF.

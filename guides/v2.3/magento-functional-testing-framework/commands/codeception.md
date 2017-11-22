@@ -373,8 +373,8 @@ Use custom path for config
 [env]: http://codeception.com/docs/07-AdvancedUsage#Environments
 [examples]: http://codeception.com/docs/reference/Commands#Run
 
-[--env]: #env
-[robo]: ./robo.html
+[--env]: #--env
+[robo]: robo.html
 
 <!-- Abbreviations -->
 

@@ -9,7 +9,7 @@ menu_order: 0
 level3_menu_node:
 level3_subgroup: sample-tutorial
 version: 2.0
-github_link: contributor-guide/tutorial-template-first.md
+github_link: contributor-guide/templates/tutorial-template-first.md
 ---
 
 A tutorial provides procedurial information spread across multiple pages. It contains several design elements that differ from standard topics:
