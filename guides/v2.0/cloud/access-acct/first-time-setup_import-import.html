@@ -621,78 +621,51 @@
         </li>
         
         
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="import-existing-code-into-a-project">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html">Import existing code into a project</a>
+    
+
+    
+    <ul>
         
         
-        <li class="nav-level2  " id="import-an-existing-magento-project">
+        
+        <li class="nav-level2  " id="prepare-your-existing-magento-commerce-system">
             
-            
-            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <span>Import an existing Magento project</span>
+            <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
             
 
             
-            <ul>
-                
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="import-magento-commerce-into-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
+            
 
-                
-                
-                <li class="nav-level3  " id="first-steps-for-importing-magento-commerce">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento Commerce</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="find-the-information-you-need-for-your-import">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html">Find the information you need for your import</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="prepare-your-existing-magento-commerce-system">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3 active " id="import-magento-commerce-into-magento-commerce-(cloud)">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
-                    
-
-                    
-                </li>
-                
-                
-            </ul>
             
         </li>
         
@@ -1684,21 +1657,23 @@
 </section>
 
 
-			<p>This topic discusses how to import code from your existing Magento EE project to your Magento Commerce (Cloud)’s Git repository <code class="highlighter-rouge">master</code> branch.</p>
+			<p>QUESTION: Do we really want to support a full overwrite?</p>
+
+<p>The following instructions walk-through importing your Magento Commerce code into your current project code. When importing, you are force pushing your existing code in a Git repository over the Magento Commerce (Cloud)’s Git <code class="highlighter-rouge">master</code> branch.</p>
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>The procedure discussed in this topic replaces your new Magento Commerce (Cloud) project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.</p>
+  <p>Warning: When you force push code from an existing Git branch to your Magento Commerce (Cloud) project, you overwrite the project code in <code class="highlighter-rouge">master</code>. Any data, websites, stores, and so on will be lost.</p>
 
   <p>Before you continue, make sure there is nothing in your Magento Commerce (Cloud) project you want to keep.</p>
 </div>
 
 <h2 id="required-information">Required information</h2>
-<p>Before you continue, make sure you have the <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">encryption key</a> from your Magento EE system.</p>
+<p>Before you continue, make sure you have the <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">encryption key</a> from your Magento Commerce system.</p>
 
 <h2 id="cloud-import-ref">Create a remote Git reference</h2>
-<p>This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.</p>
+<p>This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento Commerce installation is located.</p>
 
-<p>Before you continue, make sure you know the SSH or HTTPS <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> for your Magento EE installation Git repository.</p>
+<p>Before you continue, make sure you know the SSH or HTTPS <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> for your Magento Commerce installation Git repository.</p>
 
 <p>To create a remote Git reference:</p>
 
@@ -1717,7 +1692,7 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Add a remote upstream for your existing Magento EE installation:</p>
+    <p>Add a remote upstream for your existing Magento Commerce installation:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add prev-project &lt;git url&gt;
 </code></pre></div>    </div>
@@ -1752,26 +1727,26 @@ git branch -u cloud-project/master
   </li>
 </ol>
 
-<h2 id="cloud-import-imp">Import your Magento EE code to your Cloud project</h2>
+<h2 id="cloud-import-imp">Import your Magento Commerce code to your Cloud project</h2>
 <p>Before you continue, make sure you’ve completed all tasks discussed in the preceding section.</p>
 
-<p>To import your Magento EE code to Cloud:</p>
+<p>To import your Magento Commerce code to Cloud:</p>
 
 <ol>
   <li>
-    <p>Fetch the Magento EE branch.</p>
+    <p>Fetch the Magento Commerce branch.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch prev-project
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Reset your Cloud <code class="highlighter-rouge">master</code> branch to contain the code and the commit history of your Magento EE branch:</p>
+    <p>Reset your Cloud <code class="highlighter-rouge">master</code> branch to contain the code and the commit history of your Magento Commerce branch:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset --hard prev-project/&lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Push code from your Magento EE project to your Magento Commerce (Cloud) project, overwriting the previous contents and commit history with that of your project:</p>
+    <p>Push code from your Magento Commerce project to your Magento Commerce (Cloud) project, overwriting the previous contents and commit history with that of your project:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push -f cloud-project master
 </code></pre></div>    </div>
@@ -1793,27 +1768,26 @@ Environment routes:
 </code></pre></div></div>
 
 <h2 id="cloud-import-db">Import the Magento database</h2>
-<p>Before you can use your existing Magento EE code in Magento Commerce (Cloud), you must import the database.</p>
+<p>Before you can use your existing Magento Commerce code in Magento Commerce (Cloud), you must import the database.</p>
 
 <p>To import the Magento database in Magento Commerce (Cloud), you must know:</p>
 
 <ul>
-  <li>The Magento Commerce (Cloud) environment’s <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl">SSH URL</a></li>
-  <li>The database name, user name, and password of the <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-cloudb">Cloud database</a></li>
+  <li>The Magento Commerce (Cloud) environment’s <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html#ssh">SSH URL</a></li>
+  <li>The database name, user name, and password of the <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds">Cloud database</a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This topic discusses how to import the <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-int">integration system</a> database. The database connection information is different for <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> and <a href="/guides/v2.0/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> systems. You’ll need the assistance of Magento Support before you can migrate your integration system database to staging or production.</p>
+  <p>This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.</p>
 </div>
 
-<h3 id="drop-and-re-create-the-cloud-database">Drop and re-create the Cloud database</h3>
-<p>SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that’s been done in the Cloud environment, then make a backup of that first.</p>
+<p>When importing data, you will need to drop and create a new database. If you have done any data you want to keep, <a href="/guides/v2.0/cloud/project/project-webint-snap.html">create a backup</a> of the database.</p>
 
 <p>To drop and re-create the Cloud database:</p>
 
 <ol>
   <li>
-    <p>SSH to the integration system.</p>
+    <p>SSH to the Integration environment.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh
 </code></pre></div>    </div>
@@ -1850,7 +1824,7 @@ Environment routes:
   </li>
 </ol>
 
-<h3 id="update-base-urls">Update base URLs</h3>
+<h3 id="baseurl">Update base URLs</h3>
 <p>Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the <code class="highlighter-rouge">core_config_data</code> table.</p>
 
 <p>The following example shows how to change <em>only</em> the insecure URL but you can use the same procedure to change secure URLs as well.</p>
@@ -1902,10 +1876,12 @@ Environment routes:
   <p>For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.</p>
 </div>
 
-<h2 id="cloud-import-key">Copy the encryption key</h2>
-<p>The Magento EE encryption key is required as an environment variable in <code class="highlighter-rouge">env.php</code> for Integration, Staging, and Production. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
+<h2 id="encryption-key">Add the Magento encryption key</h2>
+<p>The Magento Commerce encryption key is required as an environment variable in <code class="highlighter-rouge">env.php</code> for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
 
-<p>To copy your Magento EE encryption key:</p>
+<p>You copied the key in a <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">previous step</a>.</p>
+
+<p>To add your Magento Commerce encryption key:</p>
 
 <ol>
   <li>
@@ -1915,7 +1891,7 @@ Environment routes:
 </code></pre></div>    </div>
   </li>
   <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
-  <li>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento EE key</a>.</li>
+  <li>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento Commerce key</a>.</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
@@ -1931,17 +1907,17 @@ Environment routes:
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Don’t forget to add this encryption key variable to <code class="highlighter-rouge">env.php</code> for all environments: Integration, Staging, and Production.</p>
+  <p>Make sure to add this key to the <code class="highlighter-rouge">env.php</code> file for all environments: Integration, Staging, and Production.</p>
 </div>
 
-<h2 id="cloud-import-media">Import media</h2>
+<h2 id="media">Import media</h2>
 <p>To import media files into your Cloud environment:</p>
 
 <ol>
   <li>
     <p>If you haven’t done so already, SSH to the Cloud environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
@@ -1958,7 +1934,7 @@ Environment routes:
   </li>
 </ol>
 
-<h2 id="clear-the-cache">Clear the cache</h2>
+<h2 id="cache">Clear the cache</h2>
 <p>On the Cloud environment, enter the following commands in the order shown:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:upgrade
@@ -1968,7 +1944,7 @@ bin/magento cache:clean
 
 <p>After the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> flushes, enter <code class="highlighter-rouge">exit</code> to close the SSH tunnel.</p>
 
-<h2 id="verify-the-import">Verify the import</h2>
+<h2 id="verify">Verify the import</h2>
 <p>To verify everything imported properly, perform the following tasks in your local Cloud development environment:</p>
 
 <ol>
@@ -1978,8 +1954,8 @@ bin/magento cache:clean
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:url
 </code></pre></div>    </div>
   </li>
-  <li>Log in to the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> using the user name and password of your Magento EE system.</li>
-  <li>Make sure settings in the Admin are the same as your Magento EE system.</li>
+  <li>Log in to the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> using the user name and password of your Magento Commerce system.</li>
+  <li>Make sure settings in the Admin are the same as your Magento Commerce system.</li>
   <li>Access the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</li>
   <li>Make sure categories, products, and so on display as you expect.</li>
   <li>Test everything thoroughly.</li>

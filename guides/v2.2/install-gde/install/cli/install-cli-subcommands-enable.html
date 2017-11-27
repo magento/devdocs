@@ -177,6 +177,8 @@
         <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
         
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
       </ul>
     </div>
 
@@ -2455,8 +2457,8 @@
   <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
   <p>To enable or disable available modules, use the following command:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
-magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt;
+magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt;
 </code></pre></div>  </div>
 
   <p>where</p>
@@ -2470,7 +2472,7 @@ magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;modu
 
       <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don’t clear all of them.</p>
 
-      <p>In other words, because of <a href="/guides/v2.2/architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code class="highlighter-rouge">logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+      <p>In other words, because of <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code class="highlighter-rouge">logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
     </li>
   </ul>
 

@@ -177,6 +177,8 @@
         <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
         
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
       </ul>
     </div>
 
@@ -1415,7 +1417,7 @@
 
 <p>The <code class="highlighter-rouge">name</code> attribute value must be a unique among the other components on the same hierarchical level of the same parent node. Look at the <code class="highlighter-rouge">&lt;argument&gt;</code> node which <code class="highlighter-rouge">name</code> attribute has <code class="highlighter-rouge">data</code> value. The child nodes of this node are the arguments that will be passed in to the component.</p>
 
-<p>All other child nodes are declared as items. <code class="highlighter-rouge">&lt;item name="config"&gt; ...&lt;/item&gt;</code> contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use <code class="highlighter-rouge">&lt;item name="component"&gt;...&lt;/item&gt;</code> to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_requirejs_concept.html#config"><code class="highlighter-rouge">require.js</code> configuration</a>.</p>
+<p>All other child nodes are declared as items. <code class="highlighter-rouge">&lt;item name="config"&gt; ...&lt;/item&gt;</code> contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use <code class="highlighter-rouge">&lt;item name="component"&gt;...&lt;/item&gt;</code> to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in <a href="/guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html"><code class="highlighter-rouge">require.js</code> configuration</a>.</p>
 
 <p>In our example, the <code class="highlighter-rouge">&lt;item name="component"&gt;...&lt;/item&gt;</code> node within <code class="highlighter-rouge">&lt;fieldset&gt;</code> is omitted, because this property of the Fieldset UI component is already defined in <code class="highlighter-rouge">definition.xml</code>.</p>
 

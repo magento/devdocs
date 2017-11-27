@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/frontend-dev-guide/css-topics/gulp_sass.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/frontend-dev-guide/css-topics/gulp-sass.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/frontend-dev-guide/css-topics/gulp_sass.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/frontend-dev-guide/css-topics/gulp-sass.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/frontend-dev-guide/css-topics/gulp_sass.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/frontend-dev-guide/css-topics/gulp-sass.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -176,6 +176,8 @@
         
         <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
         
       </ul>
     </div>
@@ -1265,7 +1267,7 @@
     <p>Create a theme as described in <a href="/guides/v2.2/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a>.</p>
   </li>
   <li>
-    <p>Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (<code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code>). You can use the following code sample (no changes needed, create an empty <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;/gulp.js</code> and copy-paste this code): 
+    <p>Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (<code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code>). You can use the following code sample (no changes needed, create an empty <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;/gulp.js</code> and copy-paste this code):
  <code class="highlighter-rouge">package.json</code>:</p>
 
     <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1300,7 +1302,7 @@
 
  	<span class="k">return</span> <span class="nx">stream</span>
  	    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./web/css/'</span><span class="p">));</span>
- <span class="p">});</span> 
+ <span class="p">});</span>
 </code></pre></div>    </div>
     <p>This task uses <code class="highlighter-rouge">styles.scss</code> stored in <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/</code> as source of SASS. And it stores the generated CSS in <code class="highlighter-rouge">styles.css</code> in the <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory.</p>
   </li>
@@ -1330,7 +1332,6 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import '../Magento_Theme/styles/module
 </code></pre></div></div>
 
-
 		</div>
 		<!-- /.content-wrap -->
 
@@ -1340,7 +1341,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/css-topics/gulp_sass.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/css-topics/gulp-sass.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

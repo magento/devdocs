@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ext-best-practices/tutorials/data-upgrade-script.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ext-best-practices/tutorials/data-upgrade-script.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ext-best-practices/tutorials/data-upgrade-script.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -176,6 +176,8 @@
         
         <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
         
       </ul>
     </div>
@@ -664,31 +666,31 @@ Create the <code class="highlighter-rouge">UpgradeData.php</code> file in the <c
 <p>The following is an example of the content for your upgrade script.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show upgrade script content</b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\CustomModule\Setup</span><span class="p">;</span>
- 
+
 <span class="k">class</span> <span class="nc">UpgradeData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UpgradeDataInterface</span>
 <span class="p">{</span>
     <span class="sd">/**
      * @var \Magento\Framework\DB\FieldDataConverterFactory
      */</span>
     <span class="k">private</span> <span class="nv">$fieldDataConverterFactory</span><span class="p">;</span>
-   
+
     <span class="sd">/**
      * @var \Magento\Framework\DB\Select\QueryModifierFactory
      */</span>
     <span class="k">private</span> <span class="nv">$queryModifierFactory</span><span class="p">;</span>
-   
+
     <span class="sd">/**
      * @var \Magento\Framework\DB\Query\Generator
      */</span>
     <span class="k">private</span> <span class="nv">$queryGenerator</span><span class="p">;</span>
-   
+
     <span class="sd">/**
      * Constructor
      *
      * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
      * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
      * @param \Magento\Framework\DB\Query\Generator $queryGenerator
-     */</span> 
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
         <span class="nx">\Magento\Framework\DB\FieldDataConverterFactory</span> <span class="nv">$fieldDataConverterFactory</span><span class="p">,</span>
         <span class="nx">\Magento\Framework\DB\Select\QueryModifierFactory</span> <span class="nv">$queryModifierFactory</span><span class="p">,</span>
@@ -698,7 +700,7 @@ Create the <code class="highlighter-rouge">UpgradeData.php</code> file in the <c
           <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryModifierFactory</span> <span class="o">=</span> <span class="nv">$queryModifierFactory</span><span class="p">;</span>
           <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryGenerator</span> <span class="o">=</span> <span class="nv">$queryGenerator</span><span class="p">;</span>
     <span class="p">}</span>
-   
+
     <span class="sd">/**
      * {@inheritdoc}
      */</span>
@@ -710,14 +712,14 @@ Create the <code class="highlighter-rouge">UpgradeData.php</code> file in the <c
               <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">convertSerializedDataToJson</span><span class="p">(</span><span class="nv">$setup</span><span class="p">);</span>
           <span class="p">}</span>
     <span class="p">}</span>
-   
+
     <span class="sd">/**
      * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
      * from serialized to JSON format
      *
      * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
      * @return void
-     */</span> 
+     */</span>
     <span class="k">private</span> <span class="k">function</span> <span class="nf">convertSerializedDataToJson</span><span class="p">(</span><span class="nx">\Magento\Framework\Setup\ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// Upgrade logic here
@@ -752,7 +754,7 @@ If your extension stores data in the tables of another module or it serializes/u
 <p>You can convert data for a column in a table using the code below.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$fieldDataConverter</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fieldDataConverterFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">SerializedToJson</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
-    
+
 <span class="nv">$fieldDataConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span>
     <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(),</span>
     <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'my_table'</span><span class="p">),</span>
@@ -797,7 +799,7 @@ If your extension stores data in the tables of another module or it serializes/u
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$fieldDataConverter</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fieldDataConverterFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
     <span class="nx">\Magento\Framework\DB\DataConverter\SerializedToJson</span><span class="o">::</span><span class="na">class</span>
 <span class="p">);</span>
-     
+
 <span class="c1">// Convert data for the option with static name in quote_item_option.value
 </span><span class="nv">$queryModifier</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryModifierFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
     <span class="s1">'in'</span><span class="p">,</span>
@@ -921,7 +923,7 @@ If your extension stores data in the tables of another module or it serializes/u
         <span class="s1">'option_id'</span><span class="p">,</span>
         <span class="s1">'value'</span><span class="p">,</span>
         <span class="nv">$queryModifier</span>
-    <span class="p">);</span> 
+    <span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
@@ -935,10 +937,10 @@ This field contains nested serialized data that needs conversion.</p>
 <p>Since you cannot assume the format of the data when initially converted, the following example also checks the format and uses the appropriate methods to unserialize and serialize the data using the original format.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\CustomModule\Setup</span><span class="p">;</span>
- 
+
 <span class="k">use</span> <span class="nx">Magento\Framework\Serialize\Serializer\Serialize</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Framework\Serialize\Serializer\Json</span><span class="p">;</span>
- 
+
 <span class="sd">/**
  * Serializer used to convert data in product_options field
  */</span>
@@ -946,14 +948,14 @@ This field contains nested serialized data that needs conversion.</p>
 <span class="p">{</span>
     <span class="sd">/**
      * @var Serialize
-     */</span> 
+     */</span>
     <span class="k">private</span> <span class="nv">$serialize</span><span class="p">;</span>
-     
+
     <span class="sd">/**
      * @var Json
      */</span>
     <span class="k">private</span> <span class="nv">$json</span><span class="p">;</span>
-     
+
     <span class="sd">/**
      * Constructor
      *
@@ -967,7 +969,7 @@ This field contains nested serialized data that needs conversion.</p>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serialize</span> <span class="o">=</span> <span class="nv">$serialize</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">json</span> <span class="o">=</span> <span class="nv">$json</span><span class="p">;</span>
     <span class="p">}</span>
-     
+
     <span class="sd">/**
      * Convert from serialized to JSON format
      *
@@ -1002,7 +1004,7 @@ This field contains nested serialized data that needs conversion.</p>
           <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$unserialized</span><span class="p">)</span>
           <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">json</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$unserialized</span><span class="p">);</span>
     <span class="p">}</span>
-     
+
     <span class="sd">/**
      * Check if value is serialized string
      *
@@ -1038,7 +1040,7 @@ Use the specific connections for each of these modules to update your extensionâ
 <p>The following code sample gets the Sales module connection and uses it during data update.</p>
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */</span>
 <span class="nv">$salesSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">salesSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
- 
+
 <span class="nv">$fieldDataConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span>
     <span class="nv">$salesSetup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(),</span>
     <span class="nv">$salesSetup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'sales_order_item'</span><span class="p">),</span>
@@ -1054,7 +1056,7 @@ The following code sample updates two fields in different tables taking into acc
 It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter::convert()</code> must be made.</p>
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */</span>
 <span class="nv">$salesSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">salesSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
- 
+
 <span class="nv">$fieldsToUpdate</span> <span class="o">=</span> <span class="p">[</span>
     <span class="k">new</span> <span class="nx">FieldToConvert</span><span class="p">(</span>
         <span class="nx">SerializedToJson</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
@@ -1091,7 +1093,7 @@ It is possible to aggregate fields for the same connection only. If it is necess
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/ext-best-practices/tutorials/data-upgrade-script.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

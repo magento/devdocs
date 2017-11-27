@@ -621,78 +621,51 @@
         </li>
         
         
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="import-existing-code-into-a-project">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html">Import existing code into a project</a>
+    
+
+    
+    <ul>
         
         
-        <li class="nav-level2  " id="import-an-existing-magento-project">
+        
+        <li class="nav-level2  " id="prepare-your-existing-magento-commerce-system">
             
-            
-            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <span>Import an existing Magento project</span>
+            <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
             
 
             
-            <ul>
-                
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="import-magento-commerce-into-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
+            
 
-                
-                
-                <li class="nav-level3  " id="first-steps-for-importing-magento-commerce">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento Commerce</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="find-the-information-you-need-for-your-import">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html">Find the information you need for your import</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="prepare-your-existing-magento-commerce-system">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="import-magento-commerce-into-magento-commerce-(cloud)">
-                    
-
-                    
-                    <a  href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
-                    
-
-                    
-                </li>
-                
-                
-            </ul>
             
         </li>
         
@@ -1720,7 +1693,7 @@
   <li>
     <p>Click <strong>Access Keys</strong> in the Marketplace tab.</p>
 
-    <p><img src="/common/images/cloud_access-key.png" alt="Click Access Keys" /></p>
+    <p><img src="/guides/v2.0/common/images/cloud_access-key.png" alt="Click Access Keys" /></p>
   </li>
   <li>Click <strong>Create A New Access Key</strong>. Enter a specific name for the keys, for example CloudProductOwner or the name of the developer receiving the keys.</li>
   <li>The keys generate a Public and Private key you can click to copy. Save this information or keep the page open when creating your project.</li>
@@ -1742,16 +1715,16 @@
 <ol>
   <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
   <li>
-    <p>Click the Configure environment gear icon <img src="/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the Project name. If you are asked to create the project, click Continue Later.</p>
+    <p>Click the Configure environment gear icon <img src="/guides/v2.0/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the Project name. If you are asked to create the project, click Continue Later.</p>
 
-    <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
+    <p><img src="/guides/v2.0/common/images/cloud_project_empty.png" alt="Project without code" /></p>
   </li>
   <li>Select the <strong>Variables</strong> tab.</li>
   <li>Click <strong>Add Variable</strong>.</li>
   <li>
     <p>For the <strong>Name</strong>, enter <code class="highlighter-rouge">ADMIN_EMAIL</code>. For the <strong>Value</strong>, enter your Project Owner email address or another accessible email for resetting the password for the default admin account.</p>
 
-    <p><img src="/common/images/cloud_project_variable.png" alt="Project variable" /></p>
+    <p><img src="/guides/v2.0/common/images/cloud_project_variable.png" alt="Project variable" /></p>
   </li>
   <li>Click <strong>Add variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</li>
 </ol>
@@ -1777,110 +1750,113 @@
 
 <p>If you are concerned with creating the Project, you can create a <a href="#cloud-owner-admins">Technical Admin</a> and have them create the project. These instructions are for an account with one project. If you are a Magento Solution Partner,</p>
 
-<ol>
-  <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
-  <li>
-    <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
+<div>
 
-    <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
-  </li>
-  <li>
-    <p>Enter a name for the project.</p>
+  <ol>
+    <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
+    <li>
+      <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
 
-    <p><img src="/common/images/cloud_project_name.png" alt="Project name" /></p>
-  </li>
-  <li>
-    <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_empty.png" alt="Project without code" /></p>
+    </li>
+    <li>
+      <p>Enter a name for the project.</p>
 
-    <p><img src="/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
-  </li>
-  <li>
-    <p>When prompted, enter your Magento Commerce <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Magento authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click <strong>Finish</strong>.</p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_name.png" alt="Project name" /></p>
+    </li>
+    <li>
+      <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
 
-    <p><img src="/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
+    </li>
+    <li>
+      <p>When prompted, enter your Magento Commerce <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Magento authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click <strong>Finish</strong>.</p>
 
-    <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
-  </li>
-  <li>
-    <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
+      <p><img src="/guides/v2.0/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
 
-    <p><img src="/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
-  </li>
-  <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
-</ol>
+      <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
+    </li>
+    <li>
+      <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
 
-<h2 id="cloud-owner-admins">Step 4: Create project admins and user accounts</h2>
-<p>You can now create user accounts to this project for a Technical Admin (super user), developers, administrators, and consultants that need access to the code. As discussed in more detail in <a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a>, Magento Commerce (Cloud) has a number of user roles and permissions available project-wide or per environment.</p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
+    </li>
+    <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
+  </ol>
 
-<p>Typically, the only user the Project Owner must create is the Technical Admin. This user should have the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments.</p>
+  <h2 id="cloud-owner-admins">Step 4: Create project admins and user accounts</h2>
+  <p>You can now create user accounts to this project for a Technical Admin (super user), developers, administrators, and consultants that need access to the code. As discussed in more detail in <a href="/guides/v2.0/cloud/project/user-admin.html">Manage users</a>, Magento Commerce (Cloud) has a number of user roles and permissions available project-wide or per environment.</p>
 
-<p>Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with Magento Commerce (Cloud) and receive access based on the role. You can add and manage users at any time.</p>
+  <p>Typically, the only user the Project Owner must create is the Technical Admin. This user should have the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments.</p>
 
-<p>To create user accounts:</p>
+  <p>Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with Magento Commerce (Cloud) and receive access based on the role. You can add and manage users at any time.</p>
 
-<ol>
-  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
-  <li>
-    <p>Click the configure project button next to project name in the top navigation bar.</p>
+  <p>To create user accounts:</p>
 
-    <p><img src="/common/images/cloud_project_gear.png" alt="Configure the project" width="184px" /></p>
-  </li>
-  <li>
-    <p>In the right pane, click <strong>Add Users</strong>.</p>
+  <ol>
+    <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+    <li>
+      <p>Click the configure project button next to project name in the top navigation bar.</p>
 
-    <p><img src="/common/images/cloud_project-config.png" alt="Start creating users" width="500px" /></p>
-  </li>
-  <li>
-    <p>Click <strong>Add User</strong>.</p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_gear.png" alt="Configure the project" width="184px" /></p>
+    </li>
+    <li>
+      <p>In the right pane, click <strong>Add Users</strong>.</p>
 
-    <p><img src="/common/images/cloud_project-add-superuser.png" alt="Create the account" width="500px" /></p>
-  </li>
-  <li>Enter the user’s e-mail address.</li>
-  <li>
-    <p>Select the access for the account:</p>
+      <p><img src="/guides/v2.0/common/images/cloud_project-config.png" alt="Start creating users" width="500px" /></p>
+    </li>
+    <li>
+      <p>Click <strong>Add User</strong>.</p>
 
-    <ul>
-      <li>For a project administrator account, select the <strong>Super User</strong> check box. This provides Admin rights for all settings and environments, including creating the project. If not selected, the account has only view options for all environments on a project and requires branch specific permissions.</li>
-      <li>
-        <p>Select permissions per specific environment (or branch):</p>
+      <p><img src="/guides/v2.0/common/images/cloud_project-add-superuser.png" alt="Create the account" width="500px" /></p>
+    </li>
+    <li>Enter the user’s e-mail address.</li>
+    <li>
+      <p>Select the access for the account:</p>
 
-        <ul>
-          <li>No access</li>
-          <li>Admin (change settings, execute action, merge code)</li>
-          <li>Contributor (push code), or Reader (view only)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Click <strong>Add User</strong>.</li>
-</ol>
+      <ul>
+        <li>For a project administrator account, select the <strong>Super User</strong> check box. This provides Admin rights for all settings and environments, including creating the project. If not selected, the account has only view options for all environments on a project and requires branch specific permissions.</li>
+        <li>
+          <p>Select permissions per specific environment (or branch):</p>
 
-<p>As you add environments and branches, you can modify user permissions as needed. Added users receive an e-mail inviting them to join the Magento Commerce (Cloud) project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.</p>
+          <ul>
+            <li>No access</li>
+            <li>Admin (change settings, execute action, merge code)</li>
+            <li>Contributor (push code), or Reader (view only)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Click <strong>Add User</strong>.</li>
+  </ol>
 
-<h4 id="related-topics">Related topics</h4>
+  <p>As you add environments and branches, you can modify user permissions as needed. Added users receive an e-mail inviting them to join the Magento Commerce (Cloud) project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.</p>
 
-<ul>
-  <li><a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Magento Commerce (Cloud) requirements</a></li>
-  <li>
-    <p>Pro information:</p>
+  <h4 id="related-topics">Related topics</h4>
 
-    <ul>
-      <li><a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro Architecture</a></li>
-      <li><a href="/guides/v2.0/cloud/welcome/discover-workflow.html">Pro Develop and Deploy Workflow</a></li>
-    </ul>
-  </li>
-  <li>
-    <p>Starter information:</p>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Magento Commerce (Cloud) requirements</a></li>
+    <li>
+      <p>Pro information:</p>
 
-    <ul>
-      <li><a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter Architecture</a></li>
-      <li><a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter Develop and Deploy Workflow</a></li>
-    </ul>
-  </li>
-  <li><a href="/guides/v2.0/cloud/project/projects.html">Manage your project</a></li>
-  <li><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-  <li><a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local environment setup</a></li>
-</ul>
+      <ul>
+        <li><a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro Architecture</a></li>
+        <li><a href="/guides/v2.0/cloud/welcome/discover-workflow.html">Pro Develop and Deploy Workflow</a></li>
+      </ul>
+    </li>
+    <li>
+      <p>Starter information:</p>
+
+      <ul>
+        <li><a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter Architecture</a></li>
+        <li><a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter Develop and Deploy Workflow</a></li>
+      </ul>
+    </li>
+    <li><a href="/guides/v2.0/cloud/project/projects.html">Manage your project</a></li>
+    <li><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
+    <li><a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local environment setup</a></li>
+  </ul>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

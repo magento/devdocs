@@ -1209,7 +1209,7 @@
 
 <ul>
   <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento" target="_blank">Checklist of modules</a></li>
-  <li><a href="/guides/v2.0/architecture/view/static-process.html" target="_blank">Static view files processing</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Static view files processing</a></li>
 </ul>
 
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
@@ -1365,7 +1365,7 @@ It is likely that your theme will also contain module-specific files, which are 
 <span class="glyphicon-class">
 <p>
 
-During theme development, when you change any files stored here, you need to clear <code>pub/static</code> (preserving the `.htaccess` file in place) and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront. 
+During theme development, when you change any files stored here, you need to clear <code>pub/static</code> (preserving the `.htaccess` file in place) and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront.
 
 </p></span>
 </div>
@@ -1421,7 +1421,7 @@ Your theme does not have a parent theme:
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"logo"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
                 <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_file"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>images/my_logo.png<span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_img_width"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>300<span class="nt">&lt;/argument&gt;</span> 
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_img_width"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>300<span class="nt">&lt;/argument&gt;</span>
                 <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_img_height"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>300<span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/referenceBlock&gt;</span>

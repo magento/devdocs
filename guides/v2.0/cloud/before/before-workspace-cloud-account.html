@@ -305,44 +305,36 @@
 
 <div>
 
-  <p>To access your project for the first time:</p>
-
   <ol>
-    <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+    <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
     <li>
-      <p>Click the <strong>Projects</strong> tab as the following figure shows.</p>
+      <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
 
-      <p><img src="/common/images/cloud_account_project.png" alt="Click the projects tab to access your Cloud project" width="550px" /></p>
-    </li>
-    <li>Click the name of your project (initially, it’s named <strong>[Untitled Project]</strong>).</li>
-    <li>
-      <p>When prompted, enter a name for your project and click <strong>Next</strong>.</p>
-
-      <p><img src="/common/images/cloud_project_name.png" alt="Enter a name for your project" width="550px" /></p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_empty.png" alt="Project without code" /></p>
     </li>
     <li>
-      <p>Click <strong>Create a blank site from a template</strong> as the following figure shows.</p>
+      <p>Enter a name for the project.</p>
 
-      <p><img src="/common/images/cloud_project_template.png" alt="Import a sample Magento project" width="650px" /></p>
-    </li>
-    <li>Click <strong>Continue</strong>.</li>
-    <li>When prompted, enter your Magento Commerce <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a> in the provided fields and click <strong>Finish</strong>.</li>
-    <li>
-      <p>Wait a few minutes while the project deploys.</p>
-
-      <p>During this time, the Web Interface displays messages similar to the following:</p>
-
-      <p><img src="/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_name.png" alt="Project name" /></p>
     </li>
     <li>
-      <p>After the project deploys, <strong>Success</strong> displays next to the name of your project.</p>
+      <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
 
-      <p>The following figure shows an example.</p>
-
-      <p><img src="/common/images/cloud_project-options.png" alt="You can now visit your site or configure your project" width="650px" /></p>
-
-      <p>You can now visit your site or configure your project.</p>
+      <p><img src="/guides/v2.0/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
     </li>
+    <li>
+      <p>When prompted, enter your Magento Commerce <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Magento authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click <strong>Finish</strong>.</p>
+
+      <p><img src="/guides/v2.0/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
+
+      <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
+    </li>
+    <li>
+      <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
+
+      <p><img src="/guides/v2.0/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
+    </li>
+    <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
   </ol>
 
   <h4 id="next-step">Next step</h4>

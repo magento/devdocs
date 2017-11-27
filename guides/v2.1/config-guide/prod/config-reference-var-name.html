@@ -1728,14 +1728,14 @@
 <p>You can use variables for any of the following:</p>
 
 <ul>
-  <li><a href="/guides/v2.1/config-guide/prod/config-reference-sens.html">Sensitive values</a> must be set using either environment variables or the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-config.html"><code class="highlighter-rouge">magento config:sensitive:set</code></a> command.</li>
+  <li><a href="/guides/v2.1/config-guide/prod/config-reference-sens.html">Sensitive values</a> must be set using either environment variables or the <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:sensitive:set</code></a> command.</li>
   <li>
     <p>System-specific values must be set using:</p>
 
     <ul>
       <li>Environment variables</li>
-      <li>The <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-config.html"><code class="highlighter-rouge">magento config:set</code></a> command</li>
-      <li>The Magento Admin followed by the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-config-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a></li>
+      <li>The <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code></a> command</li>
+      <li>The Magento Admin followed by the <a href="/guides/v2.1/install/cli/install-cli-subcommands-deployment.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a></li>
     </ul>
   </li>
 </ul>
@@ -1745,7 +1745,7 @@
 <ul>
   <li><a href="/guides/v2.1/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
   <li><a href="/guides/v2.1/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
-  <li><a href="/guides/v2.1/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
+  <li><a href="http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
   <li><a href="/guides/v2.1/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
 </ul>
 
@@ -1795,7 +1795,7 @@
 <ul>
   <li><a href="/guides/v2.1/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
   <li><a href="/guides/v2.1/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
-  <li><a href="/guides/v2.1/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
+  <li><a href="http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
   <li><a href="/guides/v2.1/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
 </ul>
 
@@ -2030,7 +2030,7 @@ SELECT * FROM STORE_WEBSITE;
 $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '1234';
 </code></pre></div></div>
 
-<p>A step-by-step example is shown in <a href="/guides/v2.1/config-guide/deployment/pipeline/example/environment-variables.html">Set configuration values using environment variables</a>.</p>
+<p>A step-by-step example is shown in <a href="http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html">Set configuration values using environment variables</a>.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>To use values you set in the <code class="highlighter-rouge">$_ENV</code> array, you must set <code class="highlighter-rouge">variables_order = "EGPCS"</code> in your <code class="highlighter-rouge">php.ini</code> file. For details, see <a href="http://us.php.net/manual/en/ini.core.php#ini.variables-order" target="_blank">PHP documentation</a>.</p>

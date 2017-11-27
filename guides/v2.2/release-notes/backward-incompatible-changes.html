@@ -177,6 +177,8 @@
         <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
         
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
       </ul>
     </div>
 
@@ -611,7 +613,7 @@
 
 <h3 id="messagequeue-module-api">MessageQueue Module API</h3>
 
-<p>The <code class="highlighter-rouge">Magento\Framework\MessageQueue\ConfigInterface</code> has been deprecated. 
+<p>The <code class="highlighter-rouge">Magento\Framework\MessageQueue\ConfigInterface</code> has been deprecated.
 The following table lists the deprecated methods and their replacements.</p>
 
 <table>
@@ -774,8 +776,8 @@ The following table lists the deprecated methods and their replacements.</p>
 
 <p>In Magento 2.2 the signature of the method getList was unified across the code base.</p>
 
-<p><code class="highlighter-rouge">public function getList(\Magento\Framework\Api\SearchCriteria $searchCriteria);</code> 
-was changed to 
+<p><code class="highlighter-rouge">public function getList(\Magento\Framework\Api\SearchCriteria $searchCriteria);</code>
+was changed to
 <code class="highlighter-rouge">public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);</code></p>
 
 <p>These changes won’t affect the clients that use these interfaces, but this will affect the extensions that implemented these interfaces.
@@ -1358,7 +1360,7 @@ It can be used to upgrade data in upgrade scripts.</p>
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/release-notes/backward-incompatible-changes.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/release-notes/backward-incompatible-changes.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

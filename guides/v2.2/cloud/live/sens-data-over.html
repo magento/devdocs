@@ -177,6 +177,8 @@
         <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
         
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
       </ul>
     </div>
 
@@ -625,78 +627,51 @@
         </li>
         
         
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="import-existing-code-into-a-project">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html">Import existing code into a project</a>
+    
+
+    
+    <ul>
         
         
-        <li class="nav-level2  " id="import-an-existing-magento-project">
+        
+        <li class="nav-level2  " id="prepare-your-existing-magento-commerce-system">
             
-            
-            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <span>Import an existing Magento project</span>
+            <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
             
 
             
-            <ul>
-                
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="import-magento-commerce-into-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
+            
 
-                
-                
-                <li class="nav-level3  " id="first-steps-for-importing-magento-commerce">
-                    
-
-                    
-                    <a  href="/guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento Commerce</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="find-the-information-you-need-for-your-import">
-                    
-
-                    
-                    <a  href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prereq.html">Find the information you need for your import</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="prepare-your-existing-magento-commerce-system">
-                    
-
-                    
-                    <a  href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="import-magento-commerce-into-magento-commerce-(cloud)">
-                    
-
-                    
-                    <a  href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
-                    
-
-                    
-                </li>
-                
-                
-            </ul>
             
         </li>
         
@@ -1786,11 +1761,11 @@
 <p>If sensitive data is found in your configurations, it is generated as environment variables to <code class="highlighter-rouge">env.php</code>. This file remains in the environment and should not be added to your Git environment.</p>
 
 <h3 id="commands">Switching between commands</h3>
-<p>Can you switch between using <code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code> and <code class="highlighter-rouge">php bin/magento app:config:dump</code>? Only in one specific way.</p>
+<p>Can you switch between using <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> and <code class="highlighter-rouge">php bin/magento app:config:dump</code>? Only in one specific way.</p>
 
 <p>In 2.2 and later, you cannot delete the <code class="highlighter-rouge">config.php</code> file to regenerate it. You can only edit the file to change or remove a value. This file includes more information than just configuration values.</p>
 
-<p>If you use <code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code> to generate the file, you can switch to <code class="highlighter-rouge">php bin/magento app:config:dump</code>. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.</p>
+<p>If you use <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> to generate the file, you can switch to <code class="highlighter-rouge">php bin/magento app:config:dump</code>. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.</p>
 
 <h3 id="data">Configuration data</h3>
 <p>System settings refer to the configurations in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong>. Depending on the command used, all or just modified system configurations save to the file.</p>
