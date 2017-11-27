@@ -24,12 +24,12 @@ A environment variable name consists of its scope followed by its configuration 
 
 You can use variables for any of the following:
 
-*	[Sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) must be set using either environment variables or the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command.
+*	[Sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) must be set using either environment variables or the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command.
 *	System-specific values must be set using:
 
 	*	Environment variables
-	*	The [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command
-	*	The Magento Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}install/cli/install-cli-subcommands-deployment.html)
+	*	The [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command
+	*	The Magento Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
 
 Configuration paths can be found in:
 
@@ -48,7 +48,7 @@ The general format of system settings variable names follows:
 *	Global scope (that is, the global setting for _all_ scopes)
 
 	Global scope variables have the following format:
-
+``
 	<pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE__NAME></pre>
 
 *	A specific scope (that is, the setting affects only a specified store view or website)
