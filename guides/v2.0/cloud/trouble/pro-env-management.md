@@ -68,7 +68,7 @@ After the conversion, the three repositories are merged into a single repository
 <tr>
 <td>(no branch)</td>
 <td>Global Master</td>
-<td>This "branch" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master.
+<td>This "branch" captures global project changes including adding user accounts and variables. <b>Important:</b> Do not create branches from or merge to Global Master.
 </td>
 </tr>
 <tr>
