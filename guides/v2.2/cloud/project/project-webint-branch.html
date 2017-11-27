@@ -1604,6 +1604,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="theme-troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1942,6 +1956,35 @@ We highly recommend adding and merging this code to your project Git repositorie
     <li>Click <strong>Add Key</strong>.</li>
     <li>Follow the prompts on your screen to complete the task.</li>
   </ol>
+
+  <h2 id="security">Secure your environments and branches</h2>
+  <p>You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.</p>
+
+  <p>To secure your Starter environments and Pro Integration environments:</p>
+
+  <ol>
+    <li>Log into your <a href="https://accounts.magento.cloud">Project Web Interface</a>.</li>
+    <li>Select an environment / branch.</li>
+    <li>Click Configure Environment.</li>
+    <li>On the <strong>Settings</strong> tab, click <strong>ON</strong> for <strong>HTTP access control</strong> to enable secure access. You can choose between credentials or IP addresses to filter for access.</li>
+    <li>To filter by credentials, click <strong>Add Login</strong>, enter a username and password, and click again <strong>Add Login</strong> to add.</li>
+    <li>
+      <p>To filter by IP address, enter the IP addresses in a list with <code class="highlighter-rouge">deny</code> or <code class="highlighter-rouge">allow</code>. For example:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 123.456.789.111/29 allow
+ 123.456.789.112/29 allow
+ 234.123.567.111/29 allow
+ 0.0.0.0/0 deny
+</code></pre></div>      </div>
+    </li>
+    <li>Click <strong>Save</strong>.</li>
+  </ol>
+
+  <p>The branch redeploys to update the environment security and settings.</p>
+
+  <p>To secure Pro plan Staging environment, enter a <a href="/guides/v2.2/cloud/bkcloud.html#gethelp">Support ticket</a>. Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.</p>
+
+  <p>We recommend testing your environments after completing security settings.</p>
 
   <h4 id="related-topics">Related topics</h4>
   <ul>

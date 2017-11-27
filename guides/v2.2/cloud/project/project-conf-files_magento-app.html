@@ -1604,6 +1604,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="theme-troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1945,22 +1959,30 @@ hooks:
 <h2 id="cloud-yaml-platform-cron"><code class="highlighter-rouge">crons</code></h2>
 <p><code class="highlighter-rouge">crons</code> describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do not run cron as <code class="highlighter-rouge">root</code>. We also recommend against running cron as the web server user.</p>
 
-<p>More information about crons:</p>
-
-<p><code class="highlighter-rouge">crons</code> supports the following:</p>
+<p><code class="highlighter-rouge">crons</code> support the following:</p>
 
 <ul>
   <li><code class="highlighter-rouge">spec</code>: The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per 5 minutes. You will need to complete <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html#admin">additional configurations</a> for crons in those environments.</li>
   <li><code class="highlighter-rouge">cmd</code>: The command to execute.</li>
 </ul>
 
+<p>A Cron job is well suited for the following tasks:</p>
+
+<ul>
+  <li>They need to happen on a fixed schedule, not continually.</li>
+  <li>The task itself is not especially long, as a running cron job will block a new deployment.</li>
+  <li>Or it is long, but can be easily divided into many small queued tasks.</li>
+  <li>A delay between when a task is registered and when it actually happens is acceptable.</li>
+</ul>
+
 <p>A sample Magento cron job follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
-cronrun:
-    spec: "*/5 * * * *"
-    cmd: "php bin/magento cron:run"
-</code></pre></div></div>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="err">	</span><span class="na">crons</span><span class="pi">:</span>
+    <span class="na">cronrun</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span></code></pre></figure>
+
+<p>For Magento Commerce (Cloud) 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#cloud-yaml-platform-cron">cron jobs</a>. For Magento Commerce (Cloud) 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.</p>
 
 <p>For more information, see <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>.</p>
 
@@ -2083,6 +2105,34 @@ cronrun:
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /etc/php5/fpm/php.ini
 </code></pre></div></div>
+
+<h2 id="workers">Workers</h2>
+<p>You can define zero or multiple work instances for each application. A worker instance runas as its own container, independently of the web instance and has no Nginx instance running. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.</p>
+
+<p>A worker instance is the exact same code and compilation output as a web instance. The container image is built once and deployed multiple times if needed using the same <code class="highlighter-rouge">build</code> hook and <code class="highlighter-rouge">dependencies</code>. You can customize the container and allocated resources.</p>
+
+<p>Use worker instances for background tasks including:</p>
+
+<ul>
+  <li>Tasks like queue workers or updating indexes.</li>
+  <li>Tasks to run periodic reporting that are too long for a cron job.</li>
+  <li>Tasks should happen “now”, but not block a web request.</li>
+  <li>Tasks are large enough that they risk blocking a deploy, even if they are subdivided.</li>
+  <li>The task in question is a continually running process rather than a stream of discrete units of work.</li>
+</ul>
+
+<p>A basic, common worker configuration could look like this:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">workers</span><span class="pi">:</span>
+    <span class="na">queue</span><span class="pi">:</span>
+        <span class="na">size</span><span class="pi">:</span> <span class="s">S</span>
+        <span class="na">commands</span><span class="pi">:</span>
+            <span class="na">start</span><span class="pi">:</span> <span class="pi">|</span>
+                <span class="no">php worker.php</span></code></pre></figure>
+
+<p>This example defines a single worker named queue, with a “small” container, and runs the command <code class="highlighter-rouge">php worker.php</code> on startup. If <code class="highlighter-rouge">worker.php</code> exits, it is automatically restarted.</p>
+
+<p>For Magento Commerce (Cloud) 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#cloud-yaml-platform-cron">cron jobs</a>. For Magento Commerce (Cloud) 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

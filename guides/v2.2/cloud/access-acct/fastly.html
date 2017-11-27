@@ -1604,6 +1604,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="theme-troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1938,7 +1952,7 @@ composer require fastly/magento2
 
   <p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.</p>
 
-  <p>You can add multiple backends.</p>
+  <p>You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for <a href="/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html#dif-backend">Wordpress</a> to handle your blog.</p>
 
   <ol>
     <li>Access and expand <strong>Fastly Configuration</strong>.</li>
@@ -1947,7 +1961,15 @@ composer require fastly/magento2
 
       <p><img src="/common/images/cloud_fastly-backend.png" alt="Modify the backend" width="600px" /></p>
     </li>
-    <li>Select a <strong>Shield</strong> location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States, you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services.</li>
+    <li>
+      <p>Select a <strong>Shield</strong> location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States (US - Oregon), you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services. For example, we have cloud hosting in the following AWS locations:</p>
+
+      <ul>
+        <li>US - Oregon</li>
+        <li>EU - Dublin</li>
+        <li>APAC - Sydney</li>
+      </ul>
+    </li>
     <li>Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.</li>
     <li>Optionally, select to Activate the backend and Shield after editing or saving.</li>
     <li>Click <strong>Upload</strong> to save. The settings are commiunicated to Fastly.</li>
