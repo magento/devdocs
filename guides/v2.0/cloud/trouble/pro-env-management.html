@@ -1659,7 +1659,7 @@
 
 			<p>For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the <a href="/guides/v2.0/cloud/project/project-webint-basic.html">Project Web Interface</a> to directly manage these environments without SSH for specific options.</p>
 
-<p>To add these environments to the Project Web Interface, review this entire document to complete a few preparation steps and enter a ticket.</p>
+<p>To add these environments to the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a>, review this entire document to complete a few preparation steps and enter a ticket.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Please be aware, your ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.</p>
@@ -1696,9 +1696,9 @@
 <p>You will need to enter support tickets to update and modify the following in Staging and Production:</p>
 
 <ul>
-  <li>Configurations for .magento.app.yaml and services.yaml</li>
+  <li>Configurations for <code class="highlighter-rouge">.magento.app.yaml</code> and <code class="highlighter-rouge">services.yaml</code></li>
   <li>Cron jobs</li>
-  <li>Redirects from routes.yaml</li>
+  <li>Redirects from <code class="highlighter-rouge">routes.yaml</code></li>
 </ul>
 
 <p>You will continue to use SSH for:</p>
@@ -1723,7 +1723,7 @@
 <tr>
 <td>(no branch)</td>
 <td>Global Master</td>
-<td>This "branch" captures global project changes including adding user accounts and variables.
+<td>This "branch" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master.
 </td>
 </tr>
 <tr>
@@ -1768,9 +1768,19 @@
   <p>To prepare, ensure you have all settings and environment variables set correctly.</p>
 
   <ul>
+    <li><a href="#matchcode">Verify Git code matches across environments</a></li>
     <li><a href="#prep-user">Verify user account access</a></li>
     <li><a href="#prep-variables">Prepare variables</a></li>
   </ul>
+
+  <h3 id="matchcode">Verify Git code matches across environments</h3>
+  <p>We strongly recommend working in your local development environment then deploying to Integration, Staging, and finally Production. All Git code should match 100% across each of these environments. If you have additional code (for example new extensions) on Production without following this workflow, any deployments from Integration or Staging will overwrite your Production code.</p>
+
+  <p>Before entering a ticket, make sure your Git code matches and is synced.</p>
+
+  <div class="bs-callout bs-callout-warning">
+    <p>The process will create a new Git branch of code for Staging and Production environments. When we create this code, it will push and overwrite on Production. Do not skip this step.</p>
+  </div>
 
   <h3 id="prep-user">Verify user account access</h3>
   <p>We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.</p>

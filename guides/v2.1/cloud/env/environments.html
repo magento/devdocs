@@ -1779,6 +1779,27 @@
     </li>
   </ul>
 
+  <h2 id="services">Environment services</h2>
+  <p>Your cloud environments for Starter and Pro configure the available and used database, web server, caching, and services per the settings entered for a series of YAML files. When you push Git code from your local, these services and more configure automatically in the environments hosted in the cloud (PaaS). For Pro Staging and Production environments (IaaS), you need to enter a ticket for those files to be migrated to configure those environment services and more. For details, see <a href="#configenv">Configure your enviornments</a>.</p>
+
+  <p>Additional services and drivers are automatically included in your enviornments, including the following.</p>
+
+  <h3 id="sqldriver">SQL Server extension driver</h3>
+  <p>We include updated <a href="https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server">Microsoft PHP drivers</a> for MS SQL Server extension to enable connecting between Magento Commerce (Cloud) and off cloud SQL servers. No additional installation is necessary. These drivers are included in all Starter environments and Pro Integration enviornments.</p>
+
+  <p>To enable in Pro plan Staging and Production environments, please enter a <a href="/guides/v2.1/cloud/bkcloud.html#gethelp">Support ticket</a>.</p>
+
+  <p>To configure, you must provide the following in a <a href="/guides/v2.1/cloud/bkcloud.html#gethelp">Support ticket</a>:</p>
+
+  <ul>
+    <li>SSL certificate: The connection between the cloud cluster and the remote SQL server must be SSL secured. Provide an SSL certificate that we will add to the MS SQL server. We may require additional IP information for whitelisting.</li>
+    <li>An MS SQL server for testing: Please include a Microsoft SQL server for us to test the connection.</li>
+  </ul>
+
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>The drivers and supported service only includes configuration and updates in Magento Commerce (Cloud) environments. We cannot provide support for client MS SQL Servers or applications utilizing these external systems and services outside of the cloud hosting enviornments.</p>
+  </div>
+
   <h2 id="configenv">Configure your environments</h2>
   <p>After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.</p>
 
