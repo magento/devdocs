@@ -268,6 +268,8 @@ A sample Magento cron job follows:
         cmd: "php bin/magento cron:run"
 {% endhighlight %}
 
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#cloud-yaml-platform-cron). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+
 For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/setup-cron-jobs.html).
 
 ## Configure PHP options {#cloud-yaml-platform-php}
@@ -405,7 +407,7 @@ workers:
 
 This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
 
-For {{site.data.var.ece}} 2.1.X, you can use only workers and cron jobs. For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#cloud-yaml-platform-cron). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
 
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
