@@ -22,12 +22,12 @@ github_link: cloud/basic-information/cloud-plans.md
         <th>Pro</th>
     </tr>
     <tr><td>Core features</td>
-    <td><li>All Magento 2 core features</li>
+    <td><ul><li>All Magento 2 core features</li>
     <li>PayPal Onboarding Tool</li></td>
     <td><li>All Magento 2 core features</li>
     <li>PayPal Onboarding Tool</li>
     <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
-    <li><a href="https://magento.com/products/business-intelligence/essentials">BI Essentials</a></li>
+    <li><a href="https://magento.com/products/business-intelligence/essentials">BI Essentials</a></li></ul>
     </td>
     </tr>
     <tr><td>Infrastructure and deployment</td>
