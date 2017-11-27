@@ -81,14 +81,16 @@ Your cloud environments for Starter and Pro configure the available and used dat
 Additional services and drivers are automatically included in your enviornments, including the following.
 
 ### SQL Server extension driver {#sqldriver}
-We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud SQL servers. No additional installation is necessary. These drivers are included in all Starter environments and Pro Integration enviornments.
+We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud MS SQL Servers. No additional installation is necessary to use these drivers. You will need to complete a couple configurations before using the connection and external SQL.
 
-To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp).
+These drivers are included in all Starter environments and Pro Integration enviornments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp) with the request.
 
-To configure, you must provide the following in a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp):
+To configure, you need to configure and provide the following:
 
-* SSL certificate: The connection between the cloud cluster and the remote SQL server must be SSL secured. Provide an SSL certificate that we will add to the MS SQL server. We may require additional IP information for whitelisting.
-* An MS SQL server for testing: Please include a Microsoft SQL server for us to test the connection.
+* SSL certificate on the MS SQL Server: The connection between the cloud cluster and the remote SQL server must be SSL secured.  Customers must provide an SSL-enabled connection to their MS SQL server in order to connect to their project.
+* An MS SQL Server for testing: Please include a Microsoft SQL server for us to test the connection. Include this information in a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp).
+
+If you have questions or issues regarding connectivity or configuration for MS SQL Server, enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The drivers and supported service only includes configuration and updates in {{site.data.var.ece}} environments. We cannot provide support for client MS SQL Servers or applications utilizing these external systems and services outside of the cloud hosting enviornments.
