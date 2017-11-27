@@ -215,6 +215,9 @@ However, if an extension similar to the following has been defined, the interfac
 </extension_attributes>
 {% endhighlight %}
 
+### Troubleshoot EAV attributes {#troubleshooting}
+If you have issues when using `setup:upgrade` to your store environment, verify `__construct` uses the method `EavSetupFactory` not `EavSetup`. Check through your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy. 
+
 
 <h2 id="related">Related topics</h2>
 <ul>
