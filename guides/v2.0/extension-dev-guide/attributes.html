@@ -1506,6 +1506,9 @@
     <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"attributeName"</span> <span class="na">type=</span><span class="s">"Magento\Some\Type[]"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/extension_attributes&gt;</span></code></pre></figure>
 
+<h3 id="troubleshooting">Troubleshoot EAV attributes</h3>
+<p>If you have issues when using <code class="highlighter-rouge">setup:upgrade</code> to your store environment, verify <code class="highlighter-rouge">__construct</code> uses the method <code class="highlighter-rouge">EavSetupFactory</code> not <code class="highlighter-rouge">EavSetup</code>. You should not directly inject <code class="highlighter-rouge">EavSetup</code> in extension code. Check through your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.</p>
+
 <h2 id="related">Related topics</h2>
 <ul>
     <li><a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Web API authentication overview</a></li>
