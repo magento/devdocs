@@ -283,3 +283,6 @@ pages:
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
+
+        - label: Theme troubleshooting
+          url: cloud/trouble/theme-troubleshooting.html
