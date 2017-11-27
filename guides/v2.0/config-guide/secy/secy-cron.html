@@ -1567,18 +1567,18 @@
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Refer to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-conf">Configure and run cron</a> for more information about cron groups.</p>
+  <p>Refer to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run">Configure and run cron</a> for more information about cron groups.</p>
 </div>
 
 <p>You can run a Magento cron job in the following ways:</p>
 
 <ul>
-  <li>Using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group"><code class="highlighter-rouge">magento cron:run</code></a> command either from the command line or in a crontab</li>
+  <li>Using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run"><code class="highlighter-rouge">magento cron:run</code></a> command either from the command line or in a crontab</li>
   <li>Accessing <code class="highlighter-rouge">pub/cron.php?[group=&lt;name&gt;]</code> in a web browser</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You don’t need to do anything if you use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group"><code class="highlighter-rouge">magento cron:run</code></a> command to run cron because it uses a different process that is already secure.</p>
+  <p>You don’t need to do anything if you use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run"><code class="highlighter-rouge">magento cron:run</code></a> command to run cron because it uses a different process that is already secure.</p>
 </div>
 
 <h2 id="secure-cron-with-apache">Secure cron with Apache</h2>
@@ -1857,7 +1857,7 @@ mysql&gt; SELECT <span class="k">*</span> from cron_schedule<span class="p">;</s
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-conf">Configure and run cron</a> for more information about cron groups.</p>
+  <p>You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run">Configure and run cron</a> for more information about cron groups.</p>
 </div>
 
 		</div>

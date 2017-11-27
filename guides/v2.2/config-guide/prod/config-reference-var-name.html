@@ -1977,14 +1977,14 @@
 <p>You can use variables for any of the following:</p>
 
 <ul>
-  <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive values</a> must be set using either environment variables or the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code class="highlighter-rouge">magento config:sensitive:set</code></a> command.</li>
+  <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive values</a> must be set using either environment variables or the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:sensitive:set</code></a> command.</li>
   <li>
     <p>System-specific values must be set using:</p>
 
     <ul>
       <li>Environment variables</li>
-      <li>The <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code class="highlighter-rouge">magento config:set</code></a> command</li>
-      <li>The Magento Admin followed by the <a href="/guides/v2.2/install/cli/install-cli-subcommands-deployment.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a></li>
+      <li>The <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code></a> command</li>
+      <li>The Magento Admin followed by the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a></li>
     </ul>
   </li>
 </ul>
@@ -2009,8 +2009,8 @@
   <li>
     <p>Global scope (that is, the global setting for <em>all</em> scopes)</p>
 
-    <p>Global scope variables have the following format:</p>
-
+    <p>Global scope variables have the following format:
+``</p>
     <pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE__NAME&gt;</pre>
   </li>
   <li>
