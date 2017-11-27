@@ -1973,30 +1973,63 @@
 <h2 id="process-management">Process management</h2>
 <p>Cron jobs are the default mechanism to restart consumers. Processes started by <code class="highlighter-rouge">cron</code> consume the specified number of messages and then terminate. Re-running <code class="highlighter-rouge">cron</code> restarts the consumer.</p>
 
-<p>A magic method, whose name is the same as the consumer name, is used as a callback when declaring new <code class="highlighter-rouge">consumer run</code> job in <code class="highlighter-rouge">crontab.xml</code>. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and requires extra configuration).</p>
+<p>The following shows a <code class="highlighter-rouge">crontab</code> configuration for running consumers in our implementation, it is the example for understanding how it works:</p>
 
-<p>The following shows a <code class="highlighter-rouge">crontab</code> group entry:</p>
+<p><em>/app/code/Magento/MessageQueue/etc/crontab.xml</em></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"default"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"consumerCustomerCreatedListener"</span> <span class="na">instance=</span><span class="s">"Magento\MessageQueue\Model\ConsumerRunner"</span> <span class="na">method=</span><span class="s">"customerCreatedListener"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;schedule&gt;</span>0 0 * * *<span class="nt">&lt;/schedule&gt;</span>
-    <span class="nt">&lt;/job&gt;</span>
-<span class="nt">&lt;/group&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"consumers_runner"</span> <span class="na">instance=</span><span class="s">"Magento\MessageQueue\Model\Cron\ConsumersRunner"</span> <span class="na">method=</span><span class="s">"run"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
+<span class="nt">&lt;/job&gt;</span>
+...</code></pre></figure>
 
 <div class="bs-callout bs-callout-tip" id="info">
   <p>How often you check message queues depends on your business logic and available system resources. In general, you’ll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define <code class="highlighter-rouge">cron</code> schedules according to your business needs.</p>
+
+  <p>It can be configured in Admin Panel <strong>Stores &gt; Configurtion &gt; Advanced &gt; System &gt; Cron configuration options for group: consumers</strong></p>
 
   <p>See <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using <code class="highlighter-rouge">cron</code> with Magento.</p>
 </div>
 
 <p>You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the command line to restart the processes as needed.</p>
 
+<h3 id="configuration">Configuration</h3>
+
+<h4 id="behaviour-by-default">Behaviour by default</h4>
+
+<ul>
+  <li>Cron job <code class="highlighter-rouge">consumers_runner</code> is enabled</li>
+  <li>Cron job <code class="highlighter-rouge">consumers_runner</code> runs all defined consumers</li>
+  <li>Each consumer process 10000 messages and then terminate</li>
+</ul>
+
+<h4 id="specific-configuration">Specific configuration</h4>
+
+<p>Edit <em>/app/etc/env.php</em> file for configure cron job <code class="highlighter-rouge">consumers_runner</code></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+    <span class="s1">'cron_consumers_runner'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'cron_run'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s1">'max_messages'</span> <span class="o">=&gt;</span> <span class="mi">20000</span><span class="p">,</span>
+        <span class="s1">'consumers'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">'consumer1'</span><span class="p">,</span>
+            <span class="s1">'consumer2'</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">),</span>
+<span class="o">...</span></code></pre></figure>
+
+<ul>
+  <li><code class="highlighter-rouge">cron_run</code> - the option for enabling/disabling cron job <code class="highlighter-rouge">consumers_runner</code>, by default is true.</li>
+  <li><code class="highlighter-rouge">max_messages</code> - the maximum number of messages for each consumer that must be processed before consumer terminate, by default is 1000. If it is 0, then the consumer never stops working.</li>
+  <li><code class="highlighter-rouge">consumers</code> - the list of consumers which will be run, by default is empty array (all consumers are allowed to be run).</li>
+</ul>
+
 <h2 id="command-line-interface">Command line interface</h2>
 
 <h3 id="start-consumers">Start consumers</h3>
 <p>Use the <code class="highlighter-rouge">magento</code> command to start message queue consumers. You can start multiple consumers simultaneously.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/magento queue:consumers:start [--max-messages=&lt;value&gt;] [--batch-size=&lt;value&gt;] &lt;consumer_name&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/magento queue:consumers:start [--max-messages=&lt;value&gt;] [--batch-size=&lt;value&gt;] [--pid-file-path=&lt;value&gt;] &lt;consumer_name&gt;
 </code></pre></div></div>
 
 <p>Where:</p>
@@ -2010,6 +2043,9 @@
   </li>
   <li>
     <p><code class="highlighter-rouge">--batch-size=&lt;value&gt;</code> specifies the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of <code class="highlighter-rouge">&lt;value&gt;</code> each. This option is applicable for the batch consumer only. If <code class="highlighter-rouge">--batch-size</code> is not defined, the batch consumer receives all available messages in a queue.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">--pid-file-path=&lt;value&gt;</code> the file path for saving PID of consumer process.</p>
   </li>
 </ul>
 
