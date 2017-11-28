@@ -25,5 +25,5 @@ The following technical bulletins are available for the Magento 2.1 release:
 
 	*	[Upgrade to Magento Open Source or Commerce version 2.1 *without* sample data]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html#tb-upgr-nosamp)
 	*	[Upgrade to Magento Open Source or Commerce version 2.1 with sample data]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html#tb-upgr-samp)
-	*	[Enterprise Edition only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data]({{page.baseurl}}http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html#tb-upgr-samp-wiz)
+	*	[Enterprise Edition only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html#tb-upgr-samp-wiz)
 *	[Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)

@@ -80,6 +80,7 @@ pages:
 
     - label: Import existing code into a project
       url: cloud/access-acct/first-time-setup_import-first-steps.html
+      children:
         - label: Prepare your existing Magento Commerce system
           url: cloud/access-acct/first-time-setup_import-prepare.html
 
@@ -282,3 +283,6 @@ pages:
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
+
+        - label: Theme troubleshooting
+          url: cloud/trouble/theme-troubleshooting.html

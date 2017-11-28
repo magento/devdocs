@@ -16,7 +16,7 @@ This is useful for deployment strategies such as [pipeline deployment]({{ page.b
 
 Magento uses configuration importers to import configuration data from the shared configuration file, `config.php`, to the appropriate storage, such as a database.
 
-Use the [`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-import.html) to import the configuration from the command line.
+Use the [`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the configuration from the command line.
 
 Currently Magento has the following importers:
 
