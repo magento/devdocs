@@ -2063,34 +2063,7 @@
 <div>
 
   <h3 id="firewall-selinux">Firewall and SELinux</h3>
-  <p>By default, UNIX systems generally enable a firewall with restrictive rules and also enable SELinux, which imposes other types of security on the operating system. It’s easier to run the search engine server in development by disabling the firewall and SELinux but that choice is up to you.</p>
-
-  <p>If you choose to enable your firewall and SELinux, you must set up rules to allow TCP traffic between Magento and your search engine’s listen port.</p>
-
-  <h4 id="disable-iptables-and-selinux">Disable iptables and SELinux</h4>
-  <p>To stop the <code class="highlighter-rouge">iptables</code> (firewall) service, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service iptables stop
-</code></pre></div>  </div>
-
-  <p>To set SELinux for permissive mode:</p>
-
-  <ol>
-    <li>
-      <p>To determine if SELinux is enabled, enter the following command:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getenforce
-</code></pre></div>      </div>
-
-      <p><code class="highlighter-rouge">Enforcing</code> displays to confirm that SELinux is running. (If <code class="highlighter-rouge">Permissive</code> displays, continue with the next section.)</p>
-    </li>
-    <li>
-      <p>To change to permissive mode, enter:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setenforce 0
-</code></pre></div>      </div>
-    </li>
-  </ol>
+  <p>Please take into account that security-related software (iptables, SELinux, AppArmor etc.) may be configured by default to block communication between subsystems. It may be a good idea to check them in case of problems.</p>
 
   <h4 id="set-up-rules-for-iptables-and-selinux">Set up rules for iptables and SELinux</h4>
   <p>To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:</p>
