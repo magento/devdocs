@@ -31,402 +31,362 @@ Looking for more information on these new features as well as many others? Check
 
 
 ## Fixed issues
+<!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler </a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
 
-MAGETWO-83552 GitHub-11669
 
+<!--- MAGETWO-83552 -->* GitHub-11669
 
+<!--- MAGETWO-83540 -->* GitHub-9768
 
-MAGETWO-83540 GitHub-9768
+<!--- MAGETWO-83498 -->* GitHub-6238
 
-MAGETWO-83498 GitHub-6238
+<!--- MAGETWO-83495 -->* GitHub-10834
 
+<!--- MAGETWO-83494 -->* GitHub-9851
 
-MAGETWO-83495 GitHub-10834
+<!--- MAGETWO-83489 -->* GitHub-11880
 
+<!--- MAGETWO-83477 -->* GitHub-10628
 
-MAGETWO-83494 GitHub-9851
+<!--- MAGETWO-83476 -->* GitHub-12079
 
-MAGETWO-83489 GitHub-11880
 
-MAGETWO-83477 GitHub-10628
+<!--- MAGETWO-83373 -->* GitHub-9633
 
-MAGETWO-83476 GitHub-12079
+<!--- MAGETWO-83329 -->* GitHub-8003
 
 
-MAGETWO-83373 GitHub-9633
+<!--- MAGETWO-83322 -->* GitHub-10920
 
-MAGETWO-83329 GitHub-8003
 
+<!--- MAGETWO-83312 -->* GitHub-7903
 
-MAGETWO-83322 GitHub-10920
+<!--- MAGETWO-83290 -->* GitHub-10707, GitHub-10737, GitHub-11032, GitHub-9410
 
 
-MAGETWO-83312 GitHub-7903
+<!--- MAGETWO-83286 -->* GitHub-10014
 
-MAGETWO-83290 GitHub-10707, GitHub-10737, GitHub-11032, GitHub-9410
+<!--- MAGETWO-83283 -->* GitHub-6123
 
+<!--- MAGETWO-83281 -->* GitHub-6661
 
-MAGETWO-83286 GitHub-10014
+<!--- MAGETWO-83279 -->* GitHub-12017
 
-MAGETWO-83283 GitHub-6123
+<!--- MAGETWO-83278 -->* GitHub-7995
 
-MAGETWO-83281 GitHub-6661
+<!--- MAGETWO-83277 -->* GitHub-11996
 
-MAGETWO-83279 GitHub-12017
+<!--- MAGETWO-83272 -->* GitHub-11197
 
+<!--- MAGETWO-83271 -->* GitHub-10195
 
-MAGETWO-83278 GitHub-7995
+<!--- MAGETWO-83270 -->* GitHub-11700
 
-MAGETWO-83277 GitHub-11996
+<!--- MAGETWO-83257 -->* GitHub-4004
 
-MAGETWO-83272 GitHub-11197
+<!--- MAGETWO-83252 -->* GitHub-6460
 
-MAGETWO-83271 GitHub-10195
+<!--- MAGETWO-83197 -->* GitHub-11793
 
-MAGETWO-83270 GitHub-11700
+<!--- MAGETWO-83194 -->* GitHub-11898
 
-MAGETWO-83257 GitHub-4004
+<!--- MAGETWO-83174 -->* GitHub-11868
 
-MAGETWO-83252 GitHub-6460
+<!--- MAGETWO-83169 -->* The \Magento\Quote\Model\ResourceModel\Quote\Item\Collection now returns items which have only existing relations in catalog_product_entity table. It protects us to load quote items with non existing products.
 
-MAGETWO-83197 GitHub-11793
 
-MAGETWO-83194 GitHub-11898
+<!--- MAGETWO-83152 -->* Varnish configuration was updated
 
-MAGETWO-83174 GitHub-11868
+<!--- MAGETWO-83147 -->* GitHub-5574
 
-MAGETWO-83169 The \Magento\Quote\Model\ResourceModel\Quote\Item\Collection now returns items which have only existing relations in catalog_product_entity table. It protects us to load quote items with non existing products.
+<!--- MAGETWO-83145 -->* Sitemap.xml: lastmod timestamp can contain invalid dates GitHub-9151
 
+<!--- MAGETWO-83143 -->* GitHub-9002
 
-MAGETWO-83152 Varnish configuration was updated
+<!--- MAGETWO-83120 -->* GitHub-5188
 
+<!--- MAGETWO-83113 -->* GitHub-9433
 
-MAGETWO-83147 GitHub-5574
+<!--- MAGETWO-83095 -->* Added webapi to reset customer password  Web API Framework
 
-MAGETWO-83145 Sitemap.xml: lastmod timestamp can contain invalid dates GitHub-9151
+<!--- MAGETWO-83494 -->* GitHub-9851
 
-MAGETWO-83143 GitHub-9002
+<!--- MAGETWO-83489 -->* GitHub-11880
 
+<!--- MAGETWO-83477 -->* GitHub-10628
 
-MAGETWO-83120 GitHub-5188
+<!--- MAGETWO-83476 -->* GitHub-12079
 
-MAGETWO-83113 GitHub-9433
+<!--- MAGETWO-83413 -->* GitHub-9219
 
+<!--- MAGETWO-83373 -->* GitHub-9633
 
+<!--- MAGETWO-83329 -->* GitHub-8003
 
-MAGETWO-83095  Added webapi to reset customer password  Web API Framework
+<!--- MAGETWO-83322 -->* GitHub-10920
 
+<!--- MAGETWO-83312 -->* GitHub-7903
 
-MAGETWO-83494 GitHub-9851
+<!--- MAGETWO-83290 -->* GitHub-10707 GitHub-10737 GitHub-11032 GitHub-9410
 
+<!--- MAGETWO-83287 -->* GitHub-11825 GitHub-11908
 
+<!--- MAGETWO-83286 -->* GitHub-10014
 
-MAGETWO-83489 GitHub-11880
+<!--- MAGETWO-83283 -->* GitHub-6123
 
+<!--- MAGETWO-83281 -->* GitHub-6661
 
-MAGETWO-83477 GitHub-10628
+<!--- MAGETWO-83279 -->* GitHub-12017
 
+<!--- MAGETWO-83278 -->* GitHub-7995
 
-MAGETWO-83476 GitHub-12079
+<!--- MAGETWO-83277 -->* GitHub-11996
 
-MAGETWO-83413 GitHub-9219
+<!--- MAGETWO-83272 -->* GitHub-11197
 
+<!--- MAGETWO-83271 -->* GitHub-10195
 
-MAGETWO-83373 GitHub-9633
+<!--- MAGETWO-83270 -->* GitHub-11700
 
-MAGETWO-83329 GitHub-8003
+<!--- MAGETWO-83257 -->* GitHub-4004
 
-MAGETWO-83322 GitHub-10920
+<!--- MAGETWO-83252 -->* GitHub-6460
 
-MAGETWO-83312 GitHub-7903
+<!--- MAGETWO-83197 -->* GitHub-11793
 
+<!--- MAGETWO-83194 -->* GitHub-11898 
 
-MAGETWO-83290 GitHub-10707 GitHub-10737 GitHub-11032 GitHub-9410
+<!--- MAGETWO-83174 -->* GitHub-11868
 
-MAGETWO-83287 GitHub-11825 GitHub-11908
+<!--- MAGETWO-83174 -->* The \Magento\Quote\Model\ResourceModel\Quote\Item\Collection now returns items which have only existing relations in catalog_product_entity table. It protects us to load quote items with non existing products. CATALOG
 
-MAGETWO-83286 GitHub-10014
+<!--- MAGETWO-83152 -->* Varnish configuration was updated
 
+<!--- MAGETWO-83147 -->* GitHub-5574
 
-MAGETWO-83283 GitHub-6123
+<!--- MAGETWO-83145 -->* GitHub-9151
 
-MAGETWO-83281 GitHub-6661
+<!--- MAGETWO-83143 -->* GitHub-9002
 
-MAGETWO-83279 GitHub-12017
+<!--- MAGETWO-83120 -->* GitHub-5188
 
-MAGETWO-83278 GitHub-7995
+<!--- MAGETWO-83113 -->* GitHub-9433
 
-MAGETWO-83277 GitHub-11996
+<!--- MAGETWO-83085 -->* GitHub-8846
 
-MAGETWO-83272 GitHub-11197
+<!--- MAGETWO-83084 -->* GitHub-10185
 
-MAGETWO-83271 GitHub-10195
+<!--- MAGETWO-83066 -->* GitHub-8799
 
-MAGETWO-83270 GitHub-11700
+<!--- MAGETWO-83036 -->* GitHub-4808
 
-MAGETWO-83257 GitHub-4004
+<!--- MAGETWO-83033 -->* GitHub-11497
 
-MAGETWO-83252 GitHub-6460
+<!--- MAGETWO-83030 -->* GitHub-7127
 
+<!--- MAGETWO-83024 -->* GitHub-10682
 
-MAGETWO-83197 GitHub-11793
+<!--- MAGETWO-83023 -->* GitHub-8954
 
-MAGETWO-83194 GitHub-11898 
 
+<!--- MAGETWO-82999 -->* GitHub-11697
 
-MAGETWO-83174 GitHub-11868
+<!--- MAGETWO-82972 -->* GitHub-8970
 
-MAGETWO-83169  The \Magento\Quote\Model\ResourceModel\Quote\Item\Collection now returns items which have only existing relations in catalog_product_entity table. It protects us to load quote items with non existing products. CATALOG
+<!--- MAGETWO-82957 -->* GitHub-9851
 
-MAGETWO-83152 Varnish configuration was updated
+<!--- MAGETWO-82956 -->* GitHub-5015
 
+<!--- MAGETWO-82955 -->* GitHub-11534
 
+<!--- MAGETWO-82953 -->* GitHub-11581
 
-MAGETWO-83147 GitHub-5574
+<!--- MAGETWO-82950 -->* GitHub-10834
 
-MAGETWO-83145 GitHub-9151
+<!--- MAGETWO-82949 -->* GitHub-11484
 
-MAGETWO-83143 GitHub-9002
+<!--- MAGETWO-82946 -->* GitHub-7225
 
+<!--- MAGETWO-82904 -->* GitHub-6802
 
+<!--- MAGETWO-82889 -->* GitHub-8236
 
+<!--- MAGETWO-82887 -->* GitHub-7640
 
-MAGETWO-83120 GitHub-5188
+<!--- MAGETWO-82886 -->* GitHub-4711
 
-MAGETWO-83113 GitHub-9433
+<!--- MAGETWO-82883 -->* Order status doesn't change in order grid  GitHub-11032 GitHub-9410
 
-MAGETWO-83095 Added webapi to reset customer password
+<!--- MAGETWO-82874  -->* 
 
+<!--- MAGETWO-82856 -->* GitHub-10168
 
-MAGETWO-83085 GitHub-8846
+<!--- MAGETWO-82851 -->* GitHub-11729
 
-MAGETWO-83084 GitHub-10185
+<!--- MAGETWO-82818 -->* GitHub-7689
 
-MAGETWO-83066 GitHub-8799
+<!--- MAGETWO-82810 -->* GitHub-711727 GitHub-77099
 
+<!--- MAGETWO-82809 -->* GitHub-11636 GitHub-9869
 
-MAGETWO-83036 GitHub-4808
+<!--- MAGETWO-82787 -->* GitHub-11347 
 
-MAGETWO-83033 GitHub-11497
+<!--- MAGETWO-82761 -->* 
 
-MAGETWO-83030 GitHub-7127
+<!--- MAGETWO-82758 -->* GitHub-10168
 
+<!--- MAGETWO-82755 -->* GitHub-6891
 
+<!--- MAGETWO-82753 -->* GitHub-11365
 
-MAGETWO-83024 GitHub-10682
+<!--- MAGETWO-82747 -->* GitHub-11322
 
-MAGETWO-83023 GitHub-8954
+<!--- MAGETWO-82732 -->* Magento PayPal integration now supports the Indian Rupee currency (INR)
 
+<!--- MAGETWO-82724 -->* GitHub-9763
 
+<!--- MAGETWO-82710 -->* GitHub-10032
 
+<!--- MAGETWO-82668 -->* GitHub-10764
 
-MAGETWO-83005 GitHub-1838
+<!--- MAGETWO-82666 -->* GitHub-9036
 
-MAGETWO-82999 GitHub-11697
+<!--- MAGETWO-82658 -->* GitHub-7591
 
+<!--- MAGETWO-82652 -->* GitHub-7915
 
+<!--- MAGETWO-82651 -->* GitHub-7767
 
+<!--- MAGETWO-82645 -->* Moved Customer Groups Menu Item from Other settings to Customers
 
-MAGETWO-82972 GitHub-8970
+<!--- MAGETWO-82637 -->* GitHub-10650
 
-MAGETWO-82957 GitHub-9851
+<!--- MAGETWO-82635 -->* GitHub-7241
 
-MAGETWO-82956 GitHub-5015
+<!--- MAGETWO-82464 -->* GitHub-6770
 
-MAGETWO-82955 GitHub-11534
+<!--- MAGETWO-82635 -->* GitHub-7241
 
+<!--- MAGETWO-82634 -->* GitHub-10811
 
+<!--- MAGETWO-82595 -->* GitHub-11095
 
-MAGETWO-82953 GitHub-11581
+<!--- MAGETWO-82562 -->* GitHub-10168
 
+<!--- MAGETWO-82537 -->* GitHub-9944
 
-MAGETWO-82950 GitHub-10834
+<!--- MAGETWO-82536 -->* GitHub-9851
 
+<!--- MAGETWO-82504 -->* Search by attribute is not working with Elasticsearch 
 
-MAGETWO-82949 GitHub-11484
+<!--- MAGETWO-82486 -->* GitHub-11574
 
-MAGETWO-82946 GitHub-7225
+<!--- MAGETWO-82464 -->* GitHub-6770
 
-MAGETWO-82904 GitHub-6802
+<!--- MAGETWO-82463 -->* GitHub-11586
 
+<!--- MAGETWO-82436 -->* Investigate "payment action = order" implementation
 
-MAGETWO-82889 GitHub-8236
+<!--- MAGETWO-82431 -->* GitHub-11540
 
-MAGETWO-82887 GitHub-7640
+<!--- MAGETWO-82426 -->* GitHub-9919
 
-MAGETWO-82886 GitHub-4711
+<!--- MAGETWO-82426 -->* GitHub-11453
 
+<!--- MAGETWO-82426 -->* GitHub-9919
 
-MAGETWO-82883 Order status doesn't change in order grid
+<!--- MAGETWO-82394 -->* GitHub-11453
 
-GitHub-82874 GitHub-11032 GitHub-9410
+<!--- MAGETWO-82388 -->* Values of Visual Swatch Attribute drop down is not work correct #11534
 
+<!--- MAGETWO-82385 -->* Cancel an order [configurable product] #5313
 
+<!--- MAGETWO-82338 -->* Store switching is not working every time #11558
 
-MAGETWO-82856 GitHub-10168
+<!--- MAGETWO-82314 -->* GitHub-10583
 
+<!--- MAGETWO-82313 -->* GitHub-11324
 
-MAGETWO-82851 GitHub-11729
+<!--- MAGETWO-82308 -->* GitHub-11343 GitHub-11478
 
+<!--- MAGETWO-82306 -->* GitHub-10704
 
-MAGETWO-82818 GitHub-7689
+<!--- MAGETWO-82292 -->* GitHub-10810
 
+<!--- MAGETWO-82273 -->* GitHub-11092 GitHub-10824
 
-MAGETWO-82810 GitHub-711727 GitHub-77099
+<!--- MAGETWO-82536 -->* MAGETWO-82236 GitHub-11328
 
-MAGETWO-82809 GitHub-11636 GitHub-9869
+<!--- MAGETWO-82536 -->* MAGETWO-82179 GitHub-10301
 
-MAGETWO-82787 GitHub-11347 
+<!--- MAGETWO-82536 -->* MAGETWO-82177 GitHub-10301
 
-MAGETWO-82758 GitHub-10168
+<!--- MAGETWO-82536 -->* MAGETWO-82119 As a Magento developer, I want to investigate a splash screen can be created in magento, so that new features information in a release and advanced reporting splash screen can be embedded in this splash screen.
 
+<!--- MAGETWO-82057 -->* Improved cache control headers were set to cover the edge case, when the user-specific content like the content of cart may have been cached.
 
-MAGETWO-82755 GitHub-6891
+<!--- MAGETWO-82006 -->* GitHub-4848
 
+<!--- MAGETWO-82004 -->* GitHub-7678
 
-MAGETWO-82753 GitHub-11365
+<!--- MAGETWO-82001 -->* GitHub-10996
 
-MAGETWO-82747 GitHub-11322
+<!--- MAGETWO-81995 -->* GitHub-11140
 
-MAGETWO-82732 Magento PayPal integration now supports the Indian Rupee currency (INR)
+<!--- MAGETWO-81994 -->* GitHub-2991
 
-MAGETWO-82724 GitHub-9763
+<!--- MAGETWO-81993 -->* GitHub-9783
 
-MAGETWO-82710 GitHub-10032
+<!--- MAGETWO-81989 -->* GitHub-11428
 
-MAGETWO-82668 GitHub-10764
+<!--- MAGETWO-81989 -->* GitHub-10941
 
-MAGETWO-82666 GitHub-9036
+<!--- MAGETWO-81977 -->* GitHub-11469 GitHub-11471
 
-MAGETWO-82658 GitHub-7591
+<!--- MAGETWO-81973 -->* GitHub-9028
 
-MAGETWO-82652 GitHub-7915
+<!--- MAGETWO-81971 -->* GitHub-11350 GitHub-11356
 
-MAGETWO-82651 GitHub-7767
+<!--- MAGETWO-81970 -->* GitHub-5956
 
-MAGETWO-82645 Moved Customer Groups Menu Item from Other settings to Customers
+<!--- MAGETWO-81967 -->* GitHub-10007
 
-MAGETWO-82637 GitHub-10650
+<!--- MAGETWO-81959 -->* GitHub-10765
 
-MAGETWO-82635 GitHub-7241
+<!--- MAGETWO-81942 -->* GitHub-11139
 
-MAGETWO-82464 GitHub-6770
+<!--- MAGETWO-81904 -->* GitHub-11022
 
-MAGETWO-82635 GitHub-7241
+<!--- MAGETWO-80350 -->* As a Magento developer, I want to investigate a splash screen can be created in magento, so that new features information in a release and advanced reporting splash screen can be embedded in this splash screen.
 
-MAGETWO-82634 GitHub-10811
+<!--- MAGETWO-80209 -->* Static versioning and minification do not break email font styles anymore
 
-MAGETWO-82595 GitHub-11095
+<!--- MAGETWO-80207 -->* GitHub-10562
 
+<!--- MAGETWO-80205 -->* Fixed cron expressions against localized time
 
+<!--- MAGETWO-80203 -->* Eliminated Asymmetric Transaction Error with ElasticSearch.
 
-MAGETWO-82562 GitHub-10168
+<!--- MAGETWO-80191 -->* Correct base_shipping_discount_tax_compensation_amnt field.
 
-MAGETWO-82537 GitHub-9944
+<!--- MAGETWO-80188 -->* Prevent change log entry when nothing has changed #4893
 
-MAGETWO-82536 GitHub-9851
+<!--- MAGETWO-81841 -->* 
 
+<!--- MAGETWO-80311 -->* 
 
+<!--- MAGETWO-80199 -->* 
 
-MAGETWO-82504 Search by attribute is not working with Elasticsearch 
+<!--- MAGETWO-72865 -->* Full Page Cache is no longer invalidated after you save a predictor category. Previously, all product-related cache data was invalidated, when only a narrow subset of cache tags associated with the `product_id` should have been. 
 
-MAGETWO-82486 GitHub-11574
+<!--- MAGETWO-72809 -->* User can now switch between store views more than once
 
-MAGETWO-82464 GitHub-6770
+<!--- MAGETWO-72352 -->* You can now implement translations from themes (in contrast to translations from modules).
 
-MAGETWO-82463 GitHub-11586
+<!--- MAGETWO-72301 -->* Contents of js-translation.json files are correct when deploying static content with multiple locales
 
-
-MAGETWO-82436 Investigate "payment action = order" implementation
-
-MAGETWO-82431 GitHub-11540
-
-MAGETWO-82426 GitHub-9919
-
-MAGETWO-82426 GitHub-11453
-
-MAGETWO-82426 GitHub-9919
-
-MAGETWO-82394 GitHub-11453
-
-MAGETWO-82388 Values of Visual Swatch Attribute drop down is not work correct #11534
-
-MAGETWO-82385 Cancel an order [configurable product] #5313
-
-MAGETWO-82338 Store switching is not working every time #11558
-
-MAGETWO-82314 GitHub-10583
-
-MAGETWO-82313 GitHub-11324
-
-MAGETWO-82308 GitHub-11343 GitHub-11478
-
-MAGETWO-82306 GitHub-10704
-
-
-
-MAGETWO-82292 GitHub-10810
-
-MAGETWO-82273 GitHub-11092 GitHub-10824
-
-MAGETWO-82236 GitHub-11328
-
-MAGETWO-82179 GitHub-10301
-MAGETWO-82177 GitHub-10301
-MAGETWO-82119 As a Magento developer, I want to investigate a splash screen can be created in magento, so that new features information in a release and advanced reporting splash screen can be embedded in this splash screen.
-
-
-
-
-MAGETWO-82057 Improved cache control headers were set to cover the edge case, when the user-specific content like the content of cart may have been cached.
-
-MAGETWO-82006 GitHub-4848
-MAGETWO-82004 GitHub-7678
-
-MAGETWO-82001 GitHub-10996
-MAGETWO-81995 GitHub-11140
-MAGETWO-81994 GitHub-2991
-MAGETWO-81993 GitHub-9783
-
-MAGETWO-81989 GitHub-11428
-MAGETWO-81986 GitHub-10941
-MAGETWO-81977 GitHub-11469 GitHub-11471
-MAGETWO-81973 GitHub-9028
-MAGETWO-81971 GitHub-11350 GitHub-11356
-MAGETWO-81970 GitHub-5956
-MAGETWO-81967 GitHub-10007
-MAGETWO-81959 GitHub-10765
-MAGETWO-81942 GitHub-11139
-
-MAGETWO-81904 GitHub-11022
-
-
-
-
-
-MAGETWO-80350 As a Magento developer, I want to investigate a splash screen can be created in magento, so that new features information in a release and advanced reporting splash screen can be embedded in this splash screen.
-
-MAGETWO-80209 Static versioning and minification do not break email font styles anymore
-
-MAGETWO-80207 GitHub-10562
-
-MAGETWO-80205 Fixed cron expressions against localized time
-
-MAGETWO-80203 Eliminated Asymmetric Transaction Error with ElasticSearch.
-
-MAGETWO-80191 Correct base_shipping_discount_tax_compensation_amnt field.
-
-MAGETWO-80188 Prevent change log entry when nothing has changed #4893
-
-MAGETWO-72865 Full Page Cache is no longer invalidated after you save a predictor category. Previously, all product-related cache data was invalidated, when only a narrow subset of cache tags associated with the `product_id` should have been. 
-
-MAGETWO-72809 User can now switch between store views more than once
-
-MAGETWO-72352 You can now implement translations from themes (in contrast to translations from modules).
-
-MAGETWO-72301 Contents of js-translation.json files are correct when deploying static content with multiple locales
-
-MAGETWO-71966 Now, Braintree payment method can be used for different merchant accounts per different website from Admin Panel. When using two Braintree accounts for two separate websites, refund processing in Admin Panel does not process correctly and gives the following error on the frontend:
+<!--- MAGETWO-71966 -->* Now, Braintree payment method can be used for different merchant accounts per different website from Admin Panel. When using two Braintree accounts for two separate websites, refund processing in Admin Panel does not process correctly and gives the following error on the frontend:
 "Sorry, but something went wrong"
 The error above is shown when you try and process a refund for an order that is not from the website currently set to default in stores>all stores
 Example: website A is set to default and you try to refund the order made on website B
@@ -434,51 +394,56 @@ A different error is given when trying to refund an order that was made on the w
 Example: website A is set to default and you try to refund the order made on website A
 "Transaction has been declined. Please try again later."
 
-
-MAGETWO-71459 As a Magento Administrator, I want to be able to see a concise description of the new features available after a Magento new installation or upgrade so that I can quickly and easily access new features.
+<!--- MAGETWO-71459 -->* As a Magento Administrator, I want to be able to see a concise description of the new features available after a Magento new installation or upgrade so that I can quickly and easily access new features.
 AC:
 
+<!--- MAGETWO-71458 -->* As Magento Advanced Reporting service provider, I want Advanced Reporting service to be subscribed to by default for all Magento installation, so that user can start using Advanced Reporting service as soon as possible EE ONLY
 
+<!--- MAGETWO-70323 -->* GitHub-8969
 
-MAGETWO-71458 As Magento Advanced Reporting service provider, I want Advanced Reporting service to be subscribed to by default for all Magento installation, so that user can start using Advanced Reporting service as soon as possible EE ONLY
+<!--- MAGETWO-70131 -->* Catalog price rules now apply to customer group prices when they're defined
 
-MAGETWO-70323 GitHub-8969
+<!--- MAGETWO-69634 -->* Product with a special price must be showed with this price in the wishlist
 
-MAGETWO-70131 Catalog price rules now apply to customer group prices when they're defined
+<!--- MAGETWO-83627 -->* GitHub-11532
 
-MAGETWO-69634 Product with a special price must be showed with this price in the wishlist
+<!--- MAGETWO-83668 -->* GitHub-8022 
 
-MAGETWO-83627 GitHub-11532
+<!--- MAGETWO-83670 -->* GitHub-12073
 
-MAGETWO-83668 GitHub-8022 
+<!--- MAGETWO-83686 -->* GitHub-12081
 
-MAGETWO-83670 GitHub-12073
+<!--- MAGETWO-83688 -->* GitHub-8172 GitHub-8089 GitHub-10507
 
-MAGETWO-83686 GitHub-12081
+<!--- MAGETWO-83726 -->* GitHub-8255
 
-MAGETWO-83688 GitHub-8172 GitHub-8089 GitHub-10507
+<!--- MAGETWO-83745 -->* GitHub-11832
 
-MAGETWO-83726 GitHub-8255
+<!--- MAGETWO-83780 -->* GitHub-7691
 
+<!--- MAGETWO-83784 -->* GitHub-12218
 
-MAGETWO-83745 GitHub-11832
+<!--- MAGETWO-83844 -->* GitHub-12188
 
-MAGETWO-83780 GitHub-7691
+<!--- MAGETWO-81  -->* GitHub-9277
 
-MAGETWO-83784 GitHub-12218
+<!--- MAGETWO-84106 -->* 
 
-MAGETWO-83844 GitHub-12188
+<!--- MAGETWO-83869 -->* 
 
-MAGETWO-81841 GitHub-9277
+<!--- MAGETWO-83868 -->* 
 
+<!--- MAGETWO-83867 -->* 
 
+<!--- MAGETWO-83866 -->*
 
+<!--- MAGETWO-83865 -->*
 
+<!--- MAGETWO-83851 -->* 
 
+<!--- MAGETWO-83741 -->* 
 
-
-
-
+<!--- MAGETWO-83522 -->*  
 
 
 
@@ -577,18 +542,18 @@ MAGETWO-81841 GitHub-9277
 
 <!--- NOT NEEDED  MAGETWO-83834 MAGETWO-83815 MAGETWO-83783 MAGETWO-83755 MAGETWO-83740 MAGETWO-83682 MAGETWO-83672 MAGETWO-83632 MAGETWO-83621 MAGETWO-83600 MAGETWO-83572 MAGETWO-52974 MAGETWO-62981 MAGETWO-69497 MAGETWO-70725 MAGETWO-76052 MAGETWO-72138 MAGETWO-81987 MAGETWO-81901 MAGETWO-81886 MAGETWO-81830 MAGETWO-81307 MAGETWO-82003 MAGETWO-82117
 
-MAGETWO-82754 MAGETWO-82814 MAGETWO-82854 MAGETWO-82367 MAGETWO-82444 MAGETWO-82535 MAGETWO-82577 MAGETWO-81990 MAGETWO-82001 MAGETWO-82058 MAGETWO-82109 MAGETWO-82177 MAGETWO-82192 MAGETWO-82300 MAGETWO-80738 MAGETWO-80908 MAGETWO-81445 MAGETWO-81306 MAGETWO-81113 MAGETWO-80781 MAGETWO-80342 MAGETWO-82288 MAGETWO-82283 MAGETWO-82234 MAGETWO-82102 MAGETWO-82069 MAGETWO-82003 MAGETWO-82552 MAGETWO-82707 MAGETWO-82675 MAGETWO-82665 MAGETWO-82577 MAGETWO-82535 MAGETWO-82444 MAGETWO-82367 MAGETWO-82339 MAGETWO-82300 MAGETWO-80188 MAGETWO-82109
+MAGETWO-82754 MAGETWO-82814 MAGETWO-82854 MAGETWO-82367 MAGETWO-82444 MAGETWO-82535 MAGETWO-82577 MAGETWO-81990 MAGETWO-82001 MAGETWO-82058 MAGETWO-82109 MAGETWO-82300 MAGETWO-80738 MAGETWO-80908 MAGETWO-81445 MAGETWO-81306 MAGETWO-81113 MAGETWO-80781 MAGETWO-80342 MAGETWO-82288 MAGETWO-82283 MAGETWO-82234 MAGETWO-82102 MAGETWO-82069 MAGETWO-82003 MAGETWO-82552 MAGETWO-82707 MAGETWO-82675 MAGETWO-82665 MAGETWO-82577 MAGETWO-82535 MAGETWO-82444 MAGETWO-82367 MAGETWO-82339 MAGETWO-82300 MAGETWO-80188 
 
 MAGETWO-82748 MAGETWO-82707 MAGETWO-83013 MAGETWO-82991 MAGETWO-82979 MAGETWO-82978 MAGETWO-82976 MAGETWO-82952 MAGETWO-82943 MAGETWO-83261 MAGETWO-83247 MAGETWO-83171 MAGETWO-83135 MAGETWO-83132 MAGETWO-83130 MAGETWO-83129 MAGETWO-83128 MAGETWO-83035 MAGETWO-83026 MAGETWO-83490 MAGETWO-83461 MAGETWO-83428 MAGETWO-83310 MAGETWO-83285 MAGETWO-83563
-MAGETWO-83551 MAGETWO-83547 MAGETWO-83529 MAGETWO-83537 MAGETWO-83503 MAGETWO-83479 MAGETWO-83532 MAGETWO-83130 MAGETWO-83310 MAGETWO-83247 MAGETWO-83130 MAGETWO-83026 MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954 MAGETWO-82945 MAGETWO-82944 MAGETWO-82941 MAGETWO-82865 MAGETWO-82854 MAGETWO-82814 MAGETWO-82754 MAGETWO-82748 MAGETWO-82733 MAGETWO-83783 MAGETWO-83815 MAGETWO-83815 MAGETWO-83785 MAGETWO-83783 MAGETWO-83600 MAGETWO-70726 MAGETWO-80517 MAGETWO-80738 MAGETWO-80908 MAGETWO-81916 MAGETWO-81990 MAGETWO-82058
-
-
+MAGETWO-83551 MAGETWO-83547 MAGETWO-83529 MAGETWO-83537 MAGETWO-83503 MAGETWO-83479 MAGETWO-83532 MAGETWO-83130 MAGETWO-83310 MAGETWO-83247 MAGETWO-83130 MAGETWO-83026 MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954 MAGETWO-82945 MAGETWO-82944 MAGETWO-82941 MAGETWO-82865 MAGETWO-82854 MAGETWO-82814 MAGETWO-82754 MAGETWO-82748 MAGETWO-82733 MAGETWO-83783 MAGETWO-83815 MAGETWO-83815 MAGETWO-83785 MAGETWO-83783 MAGETWO-83600 MAGETWO-70726 MAGETWO-80517 MAGETWO-80738 MAGETWO-80908 MAGETWO-81916 MAGETWO-81990 MAGETWO-82058 MAGETWO-84344 MAGETWO-84531
+MAGETWO-84321 MAGETWO-84091 MAGETWO-84051 MAGETWO-84000 MAGETWO-83914 MAGETWO-83898 MAGETWO-83870 MAGETWO-83184 MAGETWO-83004 MAGETWO-82596
+MAGETWO-82420 MAGETWO-80736 MAGETWO-72441
 
 
 
 -->*  
 
-<!--- WON'T FIX  MAGETWO-69032 MAGETWO-83275 MAGETWO-69032--> 
+<!--- WON'T FIX  MAGETWO-69032 MAGETWO-83275 MAGETWO-69032 MAGETWO-83005--> 
 
 <!--- DUPLICATE  MAGETWO-82655 MAGETWO-82082
 --> 
