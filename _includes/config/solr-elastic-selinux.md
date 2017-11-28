@@ -1,25 +1,7 @@
 <div markdown="1">
 
 ### Firewall and SELinux {#firewall-selinux}
-By default, UNIX systems generally enable a firewall with restrictive rules and also enable SELinux, which imposes other types of security on the operating system. It's easier to run the search engine server in development by disabling the firewall and SELinux but that choice is up to you.
-
-If you choose to enable your firewall and SELinux, you must set up rules to allow TCP traffic between Magento and your search engine's listen port.
-
-#### Disable iptables and SELinux
-To stop the `iptables` (firewall) service, enter the following command as a user with `root` privileges:
-
-	service iptables stop
-
-To set SELinux for permissive mode:
-
-1.	To determine if SELinux is enabled, enter the following command:
-
-		getenforce
-
-	`Enforcing` displays to confirm that SELinux is running. (If `Permissive` displays, continue with the next section.)
-2.	To change to permissive mode, enter:
-
-		setenforce 0
+Please take into account that security-related software (iptables, SELinux, AppArmor etc.) may be configured by default to block communication between subsystems. It may be a good idea to check them in case of problems.
 
 #### Set up rules for iptables and SELinux
 To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:
