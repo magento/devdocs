@@ -42,7 +42,7 @@ We recommend using a branch for adding or updating, configuring, and testing you
 4.	[Verify](#verify) the module installed properly.
 
 ### Step 1: Get the module's Composer name and version {#compose}
-If you already know the module's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#cloud-howto-comp-json).
+If you already know the module's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#update).
 
 {% include cloud/composer-name.md %}
 

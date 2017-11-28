@@ -38,7 +38,7 @@ The language we use in our documentation is [Markdown](http://daringfireball.net
 
 We also have a [list of suggested topics]({{page.baseurl}}contributor-guide/contributing_docs_suggested.html), if you want to peruse and pick one that appeals to you.
 
-If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
+If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}contributor-guide/quarterly-contributors.html">ring of honor</a> as one of our featured contributors.
 
 Use the <a href="#fork">fork</a> and <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
 This contribution model means that contributors maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).

@@ -200,6 +200,30 @@ To enter your project's public key as a Bitbucket deploy key:
 4.	Click **Add Key**.
 5.	Follow the prompts on your screen to complete the task.
 
+## Secure your environments and branches {#security}
+You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
+
+To secure your Starter environments and Pro Integration environments:
+
+1. Log into your [Project Web Interface](https://accounts.magento.cloud).
+2. Select an environment / branch.
+3. Click Configure Environment.
+4. On the **Settings** tab, click **ON** for **HTTP access control** to enable secure access. You can choose between credentials or IP addresses to filter for access.
+5. To filter by credentials, click **Add Login**, enter a username and password, and click again **Add Login** to add.
+6. To filter by IP address, enter the IP addresses in a list with `deny` or `allow`. For example:
+
+        123.456.789.111/29 allow
+        123.456.789.112/29 allow
+        234.123.567.111/29 allow
+        0.0.0.0/0 deny
+7. Click **Save**.
+
+The branch redeploys to update the environment security and settings.
+
+To secure Pro plan Staging environment, enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp). Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.
+
+We recommend testing your environments after completing security settings.
+
 #### Related topics
 *	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
 *	[Project backup and restore (snapshot)]({{page.baseurl}}cloud/project/project-webint-snap.html)

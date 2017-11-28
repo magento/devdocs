@@ -7,7 +7,7 @@ menu_title: Technical Details
 menu_node:
 menu_order: 1200
 version: 2.2
-github_link: config-guide/deployment/pipeline/technical-details.html
+github_link: config-guide/deployment/pipeline/technical-details.md
 functional_areas:
   - Configuration
   - Deploy

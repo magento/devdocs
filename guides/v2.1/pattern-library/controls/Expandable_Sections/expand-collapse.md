@@ -5,7 +5,7 @@ subgroup: Controls
 title: Admin Design Pattern Library
 menu_title: Expandable Sections
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.1
 github_link: pattern-library/controls/Expandable_Sections/expand-collapse.md
 redirect_from: /guides/v1.0/pattern-library/controls/Expandable_Sections/expand-collapse.html
@@ -32,11 +32,11 @@ Expandable Sections are expandable content areas which are useful in cases where
 
 
 <h3 id="behavior">Appearance and Behavior</h3>
-Required fields should not be located within a collapsed section as this increases the chance of error for the user. If a field within a collapsed section is _made a required field_ based on a User interaction, that section should be automatically expanded to reveal this requirement to the user. As a best practice, the first Expandable Section should be expanded by default. For pages with several Expandable Sections it is recommended to locate all required fields in a Section that cannot be collapsed above the expandable sections. 
+Required fields should not be located within a collapsed section as this increases the chance of error for the user. If a field within a collapsed section is _made a required field_ based on a User interaction, that section should be automatically expanded to reveal this requirement to the user. As a best practice, the first Expandable Section should be expanded by default. For pages with several Expandable Sections it is recommended to locate all required fields in a Section that cannot be collapsed above the expandable sections.
 
 **Position and Dimensions**
-* Expandable Sections can exist with or without a left side bar. 
-* Level 1 expandable section has 24px top padding and 30px bottom padding of the section title. 
+* Expandable Sections can exist with or without a left side bar.
+* Level 1 expandable section has 24px top padding and 30px bottom padding of the section title.
 * Level 2, 3 and 4 has 18px top and bottom padding of the section title. Each expandable sub-section is indented by 40px.<sup>_*_</sup>
 <img src="img/specs.png">
 
@@ -57,12 +57,12 @@ _<sup>*</sup> The current design proposal accommodates 4 levels of nested expand
 <h3 id="function">Functional Behavior</h3>
 * Expandable Sections should expand to become visible when the heading or toggle arrow is clicked/tapped.
 * Several expandable sections can be kept open at the same time.
-* When a page contains several expandable sections, all sections remain collapsed by default. 
+* When a page contains several expandable sections, all sections remain collapsed by default.
 ..* Once the user expands / collapsed few panels, the system remembers the panels states and on a return visit the same states are displayed.
 * For Nested Panels:
 ..* If a section is collapsed, all "nested" expandabed sections within that section should be collapsed as well.
 
-<h3>Variations</h3>
+<h3 id="variations">Variations</h3>
 1."Simple" – a section that contains a single level of expansion in a section (no nested expandable sub-sections).
 <img src="img/simple_exp.png">
 2."Nested" – a section that contains one or more expandable sub-sections.
@@ -76,4 +76,3 @@ _<sup>*</sup> The current design proposal accommodates 4 levels of nested expand
 Please reach out to the Magento UX Design team if you need anything else.
 
 <a href="src/Magento_expandable_section.zip">Download Expandable Section ZIP file</a>
-

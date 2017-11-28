@@ -41,7 +41,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 <h2 id="theme-gen-read">Recommended reading</h2>
 
 * <a href="{{ site.mage2000url }}app/code/Magento" target="_blank">Checklist of modules</a>
-* <a href="{{page.baseurl}}architecture/view/static-process.html" target="_blank">Static view files processing</a>
+* <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Static view files processing</a>
 
 
 
