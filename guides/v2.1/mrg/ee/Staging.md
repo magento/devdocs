@@ -274,8 +274,6 @@ cron group configuration is set in `etc/crontab.xml`.
 
 When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data is loaded for the open page only.
 
-[Learn more about indexing in Magento.](http://devdocs.magento.com/guides/v2.1/mrg/indexing.html)
-
 ### Data migration
 
 The Magento_Staging module uses the `\Magento\Staging\Setup\BasicSetup` class during installation. This class changes {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and migrates data.

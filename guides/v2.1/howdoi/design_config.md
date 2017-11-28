@@ -37,7 +37,7 @@ View the following sections for details.
 
 ## Customize the grid {#customize_grid}
 
-The grid containing the configuration scopes is implemented using the [grid UI component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html). 
+The grid containing the configuration scopes is implemented using the [grid UI component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
 
 To customize the grid view, take the following steps:
 
@@ -75,7 +75,7 @@ If you add a certain field as additional grid column, you also need to set the f
 ## Customize the design options {#customize_options}
 
 ### Customize the form configuration
-Design configuration form is implemented using the [form UI component]({{page.baseurl}}ui-components/ui-form.html).
+Design configuration form is implemented using the [form UI component]({{page.baseurl}}ui-components/components/ui-form.html).
 
 To customize the form view, take the following steps:
 

@@ -13,7 +13,7 @@ Terminology frequently used in this guide:
 
 *	Module: The PHP code that defines your application's business logic. The module code must be in subdirectories of `<your Magento install dir>/app/code/<ModuleName>`.
 *	Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or extension) must agree to allow the integration to access those resources.
-*	Extension: A tested module that is marketed to other merchants on Magento Marketplace. 
+*	Extension: A tested module that is marketed to other merchants on Magento Marketplace.
 
 One {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} can contain multiple modules.
 
@@ -85,9 +85,9 @@ General rules for implementing a service data object:
 *	The service data object class must reside in the `[module namespace]\Service\Data\V[xx]` namespace.
 *	A service data object must have getters that clearly describe all data that the data object can contain.
 *	Annotations in the code must clearly describe the parameters and outputs of all methods.
-*	Getters should rely on the `_get` method provided for convenience in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObject`</a> class.
-*	A service data object should extend <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> or any of its children.
-*	Setters should rely on the `_set` method provided for convenience in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> class.
+*	Getters should rely on the `_get` method provided for convenience in the `{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObject.php` class.
+*	A service data object should extend `{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php` or any of its children.
+*	Setters should rely on the `_set` method provided for convenience in the `{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php` class.
 
 ### Sample Service Data Object
 

@@ -6,7 +6,7 @@ title: Codebase changes
 menu_title: Codebase changes
 menu_order: 1300
 version: 2.0
-github_link: extension-dev-guide/versioning/compatibility.md
+github_link: extension-dev-guide/versioning/codebase-changes.md
 redirect_from:
   - /guides/v2.0/architecture/back-compatibility.html
   - /guides/v2.1/architecture/back-compatibility.html
@@ -166,4 +166,3 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | Index added/changed                                                                                  | PATCH          |
 |                                                             | Foreign key added                                                                                    | MAJOR          |
 |                                                             | Temporary tables added/removed/changed                                                               | PATCH          |
-

@@ -5,7 +5,7 @@ subgroup: Controls
 title: Magento Admin Pattern Library
 menu_title: View Controller
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.1
 github_link: pattern-library/controls/viewcontroller/viewcontroller.md
 ---
@@ -68,8 +68,8 @@ The view control should always be placed as the most right item on the same row 
 
 The controller should be accessible by keyboard and have a voice over for screen readers. Accessibility guideline follow buttons' guideline.
 
-PC: <a href="http://support.microsoft.com/kb/126449" target="blank">http://support.microsoft.com/kb/126449</a><br>
-OS: <a href="http://support.apple.com/en-us/HT201236" target="blank">http://support.apple.com/en-us/HT201236</a><br>
+PC: <a href="http://support.microsoft.com/kb/126449" target="\_blank">http://support.microsoft.com/kb/126449</a><br>
+OS: <a href="http://support.apple.com/en-us/HT201236" target="\_blank">http://support.apple.com/en-us/HT201236</a><br>
 (Keyboard shortcut same as checkbox)<br>
 
 <h3 id="assets">Assets</h3>
@@ -77,4 +77,3 @@ OS: <a href="http://support.apple.com/en-us/HT201236" target="blank">http://supp
 Please reach out to the Magento UX Design team if you need anything else.
 
 <a href="src/magento-viewcontrol.psd">Download View Controller PSD source</a>
-

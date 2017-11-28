@@ -83,7 +83,7 @@ The following table lists the community members who created pull requests and is
 | [helloitsluke ](https://github.com/helloitsluke ){:target="_blank"}         |                                                                         |
 | [lenaorobei ](https://github.com/lenaorobei ){:target="_blank"}             |                                                                         |
 | [ihor-sviziev ](https://github.com/ihor-sviziev ){:target="_blank"}         |                                                                         |
-| [chamalC](https://github.com/chamalC){:target="_blank"}                     |                                                                         |
+| [chamalC](https://github.com/cchamikara){:target="_blank"}                     |                                                                         |
 
 Follow the easy instructions on [how to contribute to DevDocs][0] to join these contributors!
 

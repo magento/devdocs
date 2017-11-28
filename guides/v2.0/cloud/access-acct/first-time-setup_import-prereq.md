@@ -18,7 +18,7 @@ functional_areas:
 This topic discusses how to find the information necessary to import Magento EE into {{site.data.var.ece}}.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must enter all {{site.data.var.ece}} commands on the machine on which your Cloud SSH keys are stored. For more information, see [Step 4, Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html).
+You must enter all {{site.data.var.ece}} commands on the machine on which your Cloud SSH keys are stored. For more information, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) and [SSH and sFTP]({{ page.baseurl }}cloud/env/environments-ssh.html).
 </div>
 
 ## Cloud SSH URL {#cloud-import-pre-sshurl}
