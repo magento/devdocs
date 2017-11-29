@@ -2109,13 +2109,13 @@ For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.
 
     <ul>
       <li>
-        <p>All exceptions from cron jobs are logged in <code class="highlighter-rouge">\Magento\Cron\Observer\ProcessCronQueueObserver::execute</code>.</p>
+        <p>All exceptions from cron jobs are logged by <code class="highlighter-rouge">\Magento\Cron\Observer\ProcessCronQueueObserver::execute</code>.</p>
       </li>
       <li>
         <p>Failed jobs with <code class="highlighter-rouge">ERROR</code> and <code class="highlighter-rouge">MISSED</code> statuses are logged to the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log</code> directory.</p>
       </li>
       <li>
-        <p>Jobs with an <code class="highlighter-rouge">ERROR</code> status are always logged as <code class="highlighter-rouge">CRITICAL</code> in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log/exception.log</code> directory.</p>
+        <p>Jobs with an <code class="highlighter-rouge">ERROR</code> status are always logged as <code class="highlighter-rouge">CRITICAL</code> in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log/exception.log</code>.</p>
       </li>
       <li>
         <p>Jobs with a <code class="highlighter-rouge">MISSED</code> status are logged as <code class="highlighter-rouge">INFO</code> in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log</code> directory (developer mode only).</p>
