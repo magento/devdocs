@@ -159,11 +159,13 @@ To create custom VCLs, you should have the bash script prepared and saved to a d
 4. [Run the bash scripts](#run-bash) to add and update VCL snippets to Fastly. The bash script runs through all of the `.vcl` files, generating and running the CURL commands for you.
 5. [Validate and activate](#validate) the version number and all associated VCL snippets.
 
-We provide more information on [Edge Dictionaries](#edge-dictionary), [Edge ACLs](#edge-acl), and [custom VCL snippets](#examples) to get you started.
+The following are **best practices and recommendations**:
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a higher priority value of 100. You should not try overwriting default VCLs.
-</div>
+* This process allows you to create and update multiple VCL snippets by running the bash script. It generates and runs the `cURL` command for you using all VCL JSON snippet files (`.vcl`) in the directory.
+* If you want different values and settings or different VCLs per Staging and Production, create two directories: one for each environment. Save the specific bash script and VCL files to each one. Then move to those directories when done and run those scripts during step 4. If you keep everything in the same directory and run both bash scripts, the VCLs are added to both Staging and Production.
+* If you decide to delete a VCL, save the VCL file to another archive folder. If you want to add it back, you can move the file back into the folder with the bash script and perform the steps again for updating your custom snippets.
+* Don't forget to always locate the active version, clone, and edit the bash script with the new version! Version is not part of your VCL snippet files.
+* If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a higher priority value of 100. You should not try overwriting default VCLs. We provide an example for [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html).
 
 ## Locate the currently active VCL snippet version {#list}
 To view an entire list of all VCL snippets by version, use the following command:
