@@ -49,6 +49,7 @@ To upgrade from **2.1.X**:
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
 * [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Complete Fastly migration steps](#fastly): Fastly requires a different JSON format in 2.2 and later
 
 After completing your upgrade, you may also want to [Verify and upgrade your extensions](#extensions).
 
