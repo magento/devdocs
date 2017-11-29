@@ -32,7 +32,7 @@ PR contributors|Issue contributors
 [ihor-sviziev](https://github.com/ihor-sviziev){:target="\_blank"}|[s3rj1k](https://github.com/s3rj1k){:target="\_blank"}
 [rogyar](https://github.com/rogyar){:target="\_blank"}|[divivu](https://github.com/divivu){:target="\_blank"}
 [rafaelstz](https://github.com/rafaelstz){:target="\_blank"}|[dufferman87](https://github.com/dufferman87){:target="\_blank"}
- |[Orstio](https://github.com/Orstio){:target="\_blank"}
+[roman204](https://github.com/roman204){:target="\_blank"}  |[Orstio](https://github.com/Orstio){:target="\_blank"}
  |[jsutariya](https://github.com/jsutariya){:target="\_blank"}
  |[vishwasahan](https://github.com/vishwasahan){:target="\_blank"}
  |[magentounit2](https://github.com/magentounit2){:target="\_blank"}
