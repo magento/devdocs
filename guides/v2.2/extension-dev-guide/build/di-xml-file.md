@@ -351,7 +351,7 @@ See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/con
 ### Information related to pipeline deployment
 
 *   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 ## Related topics

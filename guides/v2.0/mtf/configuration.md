@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 55_Config
 title: Functional Testing Framework Configuration
-menu_title: Configuration
-menu_node: parent
 version: 2.0
 github_link: mtf/configuration.md
 ---

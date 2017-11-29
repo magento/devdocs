@@ -78,24 +78,21 @@ pages:
         - label: Optional - Configure Xdebug
           url: cloud/howtos/debug.html
 
-        - label: Import an existing Magento project
-          children:
+    - label: Import existing code into a project
+      url: cloud/access-acct/first-time-setup_import-first-steps.html
+      children:
+        - label: Prepare your existing Magento Commerce system
+          url: cloud/access-acct/first-time-setup_import-prepare.html
 
-            - label: First steps for importing Magento Commerce
-              url: cloud/access-acct/first-time-setup_import-first-steps.html
-
-            - label: Find the information you need for your import
-              url: cloud/access-acct/first-time-setup_import-prereq.html
-
-            - label: Prepare your existing Magento Commerce system
-              url: cloud/access-acct/first-time-setup_import-prepare.html
-
-            - label: Import Magento Commerce into Magento Commerce (Cloud)
-              url: cloud/access-acct/first-time-setup_import-import.html
+        - label: Import Magento Commerce into Magento Commerce (Cloud)
+          url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure your store
       url: cloud/configure/configuration-overview.html
       children:
+        - label: Best practices for store configuration
+          url: cloud/configure/configure-best-practices.html
+
         - label: Set up PayPal
           url: cloud/live/paypal-onboarding.html
           versions: ["2.1","2.2","2.3"]
@@ -110,7 +107,7 @@ pages:
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
 
-        - label: Install and update extensions
+        - label: Install, manage, and upgrade modules
           url: cloud/howtos/install-components.html
 
         - label: Install a theme
@@ -301,3 +298,6 @@ pages:
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
+
+        - label: Theme troubleshooting
+          url: cloud/trouble/theme-troubleshooting.html

@@ -28,9 +28,7 @@ The purpose of each module is to provide specific product features by implementi
 
 ## Module components
 
-A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_themes.html">themes</a>, <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_libraries.html">libraries</a>, and <a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_translations.html">language packages</a>.
-
-See <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_anatomy.html">Module anatomy</a> for an overview of module structure.
+A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-overview.html">themes</a>, <a href="{{page.baseurl}}architecture/archi_perspectives/third-party-libs.html">libraries</a>, and <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">language packages</a>.
 
 ## Where do modules live?
 
@@ -38,7 +36,7 @@ Modules typically live in the `vendor` directory of a Magento installation, in a
  - **`module`** - for modules (`module-customer-import-export`)
  - **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
  - **`language`** - for language packs (`language-de_de`)
- 
+
 For example, the Customer Import/Export module of Magento can be found at `vendor/magento/module-customer-import-export`.
 
 But if you are creating a new module for distribution, you can just create the `app/code/<vendor>/<type>-<module-name>` directory and the required directories within it.

@@ -10,8 +10,6 @@ version: 2.0
 github_link: cloud/reference/discover-deploy.md
 redirect_from:
   - /guides/v2.0/cloud/discover-deploy.html
-  - /guides/v2.1/cloud/discover-deploy.html
-  - /guides/v2.2/cloud/discover-deploy.html
 functional_areas:
   - Cloud
 ---
@@ -45,17 +43,22 @@ If you intend to make changes, modify the YAML files in your Git branch of code.
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) defines how an incoming URL is processed by {{site.data.var.ee}}.
 *	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html) defines the services Magento uses by name and version. For example, this file may include versions of MySQL, some PHP extensions, and Elasticsearch. These are referred to as *services*.
 
-We also recommend configuring your [system-specific settings]({{page.baseurl}}cloud/live/sens-data-over.html) into a `config.local.php` file. This file captures your configuration settings. You add and push this file into your Git branch, deploying it across all environments. If the file is found in the deployed code, all static file deployment occurs during the Build phase, not Deploy. Static file deployment takes a long time to complete, reducing deployment and site downtime if done in the Build phase.
-
 ## Required files for your Git branch {#requiredfiles}
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
-* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}cloud/access-acct/trouble.html).
-* `config.local.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
-* `config.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
+* `auth.json` in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of [autoprovisioning]({{ page.baseurl }}cloud/basic-information/cloud-plans.html#autoprovisioning) or a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}cloud/access-acct/trouble.html).
 * [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
 * [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
 * [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+
+## Best practices for builds and deployment {#best-practices}
+We highly recommend the following best practices and considerations for your deployment process:
+
+* **Always following the deployment process** to ensure your code is THE SAME in Integration, Staging, and Production. This is vital. Pushing code from Integration environments may become important or needed for upgrades, patches, and configurations. This deployment will overwrite Production and any differences in code in that environment.
+* **Always add new extensions, integrations, and code in iterated branches** to then build and deploy using the process. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
+* **Enter the same variables environment-to-environment.** The values for these [variables]({{ page.baseurl }}cloud/env/environment-vars_over.html) may differ across environments, but the variables may be required for your code.
+* **Keep sensitive configuration values and data in environment specific variables.** This includes an env.php file, CLI entered variables, and Project Web Interface entered variables. The values can differ, but having the variables is important.
+* **Test your build and deploy locally and in Staging before deploying to Production.** Many extensions work, custom code, and more work great in development. Some users then push to production only to have failures and issues. Staging gives you an opportunity to fully test your code and implementation in a production environment without extended downtime if something goes wrong in Production.
 
 ## Five phases of Integration build and deployment {#cloud-deploy-over-phases}
 The following phases occur on your local development environment and the Integration environment. The code is not deployed to Staging or Production for Pro plan in these initial phases.
@@ -82,7 +85,7 @@ If you have a syntax error in a configuration file, our Git server refuses the p
 This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
-**Helpful Note:** During this phase, the site is not in maintenance and will not be brought down if errors or issues occur.
+**Helpful Note:** During this phase, the site is not in maintenance mode and will not be brought down if errors or issues occur.
 
 We build only what has changed since the last build.
 
@@ -108,6 +111,13 @@ The result of the build phase is a read-only file system we refer to as a *slug*
 * Allows for instantaneous reverting of a deployment if needed
 * Includes static files if the `config.local.php` file exists in the codebase
 
+The slug includes all files and folders **excluding the following** mounts configured in `magento.app.yaml`:
+
+* `"var": "shared:files/var"`
+* `"app/etc": "shared:files/etc"`
+* `"pub/media": "shared:files/media"`
+* `"pub/static": "shared:files/static"`
+
 ### Phase 4: Deploy slugs and cluster {#cloud-deploy-over-phases-slugclus}
 Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you need:
 
@@ -116,7 +126,7 @@ Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-
 *	Configures the network so Magento's services can "see" each other (and only each other)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The file system is <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site's security because no process can write to the file system. If you need to make a change, make it in your local Git and push again.</p>
+  <p>Do you need to make more code changes, add another extension, and so on? Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site's security because no process can write to the file system. It also works to ensure your code is identical in Integration, Staging, and Production.</p>
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}

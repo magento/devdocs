@@ -5,7 +5,7 @@ subgroup: components
 title: LinkColumn component
 menu_title: LinkColumn component
 version: 2.2
-github_link: ui_comp_guide/components/ui-linkсolumn.md
+github_link: ui_comp_guide/components/ui-linkcolumn.md
 ---
 
 ## Overview

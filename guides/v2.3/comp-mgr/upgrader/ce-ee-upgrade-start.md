@@ -1,1 +1,0 @@
-../../../v2.2/comp-mgr/upgrader/ce-ee-upgrade-start.md

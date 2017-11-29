@@ -58,7 +58,7 @@ Many other providers also offer workarounds to accomplish this goal. The most co
 For the format, we support `www.domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`. We don't support a domain without www: `domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`.
 
 ### Configure DNS for Fastly {#fastly-dns}
-We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership. 
+We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership.
 
 ### TLS and Fastly {#fastly-tls}
 If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly's TXT record file for your account. You can then send this record to your DNS provider.
@@ -86,7 +86,7 @@ Test and verify Fastly caching is correctly working in Production. For detailed 
 *	Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit]({{site.mage2000url}}setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 

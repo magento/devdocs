@@ -2,7 +2,8 @@
 layout: default
 group: mftf
 title: Annotations in the Magento Functional Testing Framework cests
-github_link: magento-functional-testing-framework/annotations.md
+version: 2.3
+github_link: magento-functional-testing-framework/cest/annotations.md
 ---
 
 This topic contains a reference list of available annotations in the MFTF cests.
@@ -248,6 +249,32 @@ Generated PHP code:
 
 ``` php?start_inline=1
 @TestCaseId("#")
+```
+
+***
+***
+
+### useCaseId
+
+_Implementation of a custom tag `@UseCaseId`_
+
+Specifies Use Case Id for a test.
+
+Ignored by Allure configuration at the moment, as Allure implementation is not complete.
+
+Attribute|Type|Use
+---|---|--
+value|string|required
+
+#### Example
+
+```xml
+<useCaseId value="USECASE-1"/>
+```
+Generated PHP code:
+
+``` php?start_inline=1
+@UseCaseId("USECASE-1")
 ```
 
 ***
