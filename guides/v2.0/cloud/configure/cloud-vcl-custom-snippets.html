@@ -816,6 +816,76 @@
         
         
         
+        <li class="nav-level2  " id="custom-whitelist-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-blacklist-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-extend-admin-timeout-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/fastly-vcl-extendtimeout.html">Custom extend Admin timeout VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-redirect-to-wordpress-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-block-bad-referer-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="fastly-troubleshooting">
             
             
@@ -1682,60 +1752,184 @@
   <li>Fastly API key used for the <code class="highlighter-rouge">FASTLY_API_TOKEN</code> in the commands</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, do not use the <code class="highlighter-rouge">magentomodule_</code> name. Also consider the priority of your custom snippets if they should override the default snippets.</p>
-</div>
-
-<p>For Fastly resources on creating VCL snippets, see:</p>
+<p>To get started, review the following sections:</p>
 
 <ul>
-  <li><a href="https://docs.fastly.com/guides/vcl/" target="_blank">All Fastly VCL content</a></li>
-  <li><a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="_blank">Fastly VCL guide</a></li>
-  <li><a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a></li>
-  <li><a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a></li>
+  <li><a href="#vcl-curl">Understand VCL snippet values</a>: Provides an overview of values for Fastly VCL JSON.</li>
+  <li><a href="#prepare">Prepare to create VCL snippets</a>: You only need to do this once!</li>
+  <li><a href="#process">The custom VCL snippet process</a>: Walks you through the entire process, including links to custom VCL snippets you can create with ease.</li>
 </ul>
 
-<p>Fastly supports two types of snippets. We recommend and document how to create and use regular snippets.</p>
+<h2 id="vcl-curl">Understand VCL snippet values</h2>
+<p>Your VCL snippets include the following values. You can use these key/value pairs in JSON snippets in <code class="highlighter-rouge">.vcl</code> files and in <code class="highlighter-rouge">cURL</code> commands.</p>
 
-<ul>
-  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets" target="_blank">Regular snippets</a> are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.</li>
-  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets" target="_blank">Dynamic snippets</a> are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.</li>
-</ul>
+<table>
+<tr>
+    <th style="width: 150px;">Value</th>
+    <th>Description</th>
+</tr>
+<tr>
+<td>service_id</td>
+<td>The ID indicates the specific Staging or Production service/environment. We provide this value. You will use this value when setting up your bash script for custom VCL snippets for <code>SERVICE_ID</code>.</td>
+</tr>
+<tr>
+<td>API_KEY</td>
+<td>The API Key for your Fastly account. We provide this value. You will add this value to your bash script.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>The version of the service you add snippets to for validating and activating. Fastly uses <code>Editable Version #</code> in their example values. In the bash script, we use <code>SERVICE_ID_VERSION</code> for this value.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Specifies the location to place the generated snippet such as <code>init</code> (above subroutines) and within subroutines like <code>recv</code>. See <a href="https://docs.fastly.com/api/config#snippet">Fastly VCL snippet object values</a> for information on these values.</td>
+</tr>
+<tr>
+<td>content</td>
+<td>The snippet of VCL code to run. We recommend keeing this code all in one line. The VCL snippet code, cURL commands, and bash script require the content code in one line.</td>
+</tr>
+<tr>
+<td>priority</td>
+<td><p>Determines the order VCL snippets call. Lower values run first, from 1 to 100. All Magento module uploaded snippets are 50. If you want an action to occur last or override Magento default VCL snippets, enter a higher number like 100. To have code occur immediately, enter a lower value like 5.</p>
+<p>Any VCL snippet at priority 5 will run immediately, best for blacklists, whitelists, and redirects. Priority 100 is best for overriding default VCL snippet code and values, best for extending timeouts. If you do not set a priority with your cURL command, the default value set is 100.</p></td>
+</tr>
+<tr>
+<td>dynamic</td>
+<td>Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets">dynamic snippet</a> or <a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets">regular snippet</a>.</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Indicates if the snippet or version is activated and currently in use. Returns <code>true</code> or <code>false</code>. Make note of the version number for an active snippet. You will use this to clone the version. </td>
+</tr>
+</table>
 
-<h2 id="process">The VCL snippet process</h2>
-<p>How do you create and add snippets? Here’s the process:</p>
+<p>The following is an example of a returned JSON for a customer VCL snippet:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62Yd1WfiCBPENLloXfXmlO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Service ID}"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Editable Version #}"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apply_acl"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((client.ip ~ {ACLNAME}) &amp;&amp; !req.http.Fastly-FF){ error 403; }"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-15T09:37:10+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-15T09:37:10+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h2 id="prepare">Prepare to create VCL snippets</h2>
+<p>Before creating custom VCL snippets, you need to set up and save two bash script files, one for each Staging and Production. Each file will include the specific Fastly Service ID per environment. When creating VCL snippets, you will create a series of VCL snippet files (<code class="highlighter-rouge">.vcl</code>) with JSON code. The bash scripts run through all <code class="highlighter-rouge">.vcl</code> files, creating and running CURL commands, to push custom VCL snippets to Staging or Production for a cloned version.</p>
+
+<p>Anytime you want to add or edit existing VCLs, you will need to edit the files and change the version number to match the new cloned version.</p>
+
+<p>To create the bash script files:</p>
 
 <ol>
-  <li>Get the <a href="#list">list</a> of all VCL snippet versions and look for active version</li>
-  <li><a href="#clone">Clone</a> the currently active VCL snippet version. When you clone, a new version is generated.</li>
-  <li><a href="#update">Modify</a> snippets in the cloned version or <a href="#create-snippet">add VCL snippets</a></li>
-  <li><a href="#validate">Validate</a> all VCL snippets for the version number</li>
-  <li><a href="#validate">Activate</a> all VCL snippets for the version number</li>
+  <li>
+    <p>Copy the following bash script.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c">#!/bin/bash</span>
+   <span class="c">#############################################################################</span>
+   <span class="c"># Upload snippets from the current directory</span>
+   <span class="c">#</span>
+   <span class="c"># Requires you to specify following environment variables</span>
+   <span class="c">#  VERSION - The new cloned version of the VCL</span>
+   <span class="c">#  SERVICE_ID - Service ID for Staging or Production</span>
+   <span class="c">#  API_KEY - Fastly API Key for your account</span>
+   <span class="c">#############################################################################</span>
+   <span class="k">if</span> <span class="o">[</span> <span class="s2">"x</span><span class="nv">$VERSION</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"x"</span> <span class="nt">-o</span>  <span class="s2">"x</span><span class="nv">$SERVICE_ID</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"x"</span> <span class="nt">-o</span> <span class="s2">"x</span><span class="nv">$API_KEY</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"x"</span> <span class="nt">-o</span> <span class="s2">"xSNIPPET_NAME_PREFIX"</span> <span class="o">==</span> <span class="s2">"x"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+   </span><span class="nb">cat</span> <span class="o">&lt;&lt;</span><span class="no">ENDOF</span><span class="sh">
+   This script upload snippets from the local directory to their appropriate snippet type e.g. recv.vcl
+   to recv type, fetch.vcl to fetch type etc.
+   You need to define these variables
+        export VERSION=&lt;SERVICE_ID_VERSION&gt;
+        export SERVICE_ID=&lt;SERVICE_ID&gt;
+        export API_KEY=&lt;API_KEY&gt;
+        export SNIPPET_NAME_PREFIX=&lt;SNIPPET_NAME_PREFIX_NO_SPACES&gt;
+</span><span class="no">   ENDOF
+</span>   <span class="nb">exit </span>1
+   <span class="k">fi
+   </span>rawurlencode<span class="o">()</span> <span class="o">{</span>
+   <span class="k">while </span><span class="nv">IFS</span><span class="o">=</span><span class="s2">""</span> <span class="nb">read</span> <span class="nt">-r</span> string<span class="p">;</span> <span class="k">do
+       </span><span class="nb">local </span><span class="nv">strlen</span><span class="o">=</span><span class="k">${#</span><span class="nv">string</span><span class="k">}</span>
+       <span class="nb">local </span><span class="nv">encoded</span><span class="o">=</span><span class="s2">""</span>
+       <span class="nb">local </span>pos c o
+       <span class="k">for</span> <span class="o">((</span> <span class="nv">pos</span><span class="o">=</span>0 <span class="p">;</span> pos&lt;strlen <span class="p">;</span> pos++ <span class="o">))</span><span class="p">;</span> <span class="k">do
+            </span><span class="nv">c</span><span class="o">=</span><span class="k">${</span><span class="nv">string</span>:<span class="nv">$pos</span>:1<span class="k">}</span>
+            <span class="k">case</span> <span class="s2">"</span><span class="nv">$c</span><span class="s2">"</span> <span class="k">in</span>
+                   <span class="o">[</span><span class="nt">-_</span>.~a-zA-Z0-9] <span class="p">)</span> <span class="nv">o</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">c</span><span class="k">}</span><span class="s2">"</span> <span class="p">;;</span>
+                   <span class="k">*</span> <span class="p">)</span>               <span class="nb">printf</span> <span class="nt">-v</span> o <span class="s1">'%%%02x'</span> <span class="s2">"'</span><span class="nv">$c</span><span class="s2">"</span>
+            <span class="k">esac
+            </span>encoded+<span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">o</span><span class="k">}</span><span class="s2">"</span>
+       <span class="k">done
+       </span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"</span><span class="k">${</span><span class="nv">encoded</span><span class="k">}</span><span class="s2">"</span>
+       <span class="nb">echo</span> <span class="nt">-n</span> %0A
+   <span class="k">done</span>
+   <span class="o">}</span>
+   <span class="c"># Find all VCLs in this directory</span>
+   <span class="k">for </span>vcl <span class="k">in</span> <span class="k">*</span>.vcl
+   <span class="k">do
+   </span><span class="nv">TYPE</span><span class="o">=</span><span class="k">${</span><span class="nv">vcl</span><span class="p">%.vcl</span><span class="k">}</span>
+   curl <span class="nt">-X</span> POST <span class="nt">-s</span> https://app.fastly.com/service/<span class="k">${</span><span class="nv">SERVICE_ID</span><span class="k">}</span>/version/<span class="k">${</span><span class="nv">VERSION</span><span class="k">}</span>/snippet <span class="se">\</span>
+   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+   <span class="nt">-H</span> <span class="s2">"Fastly-Key:</span><span class="nv">$API_KEY</span><span class="s2">"</span> <span class="se">\</span>
+   <span class="nt">--data</span> <span class="s2">"name=</span><span class="k">${</span><span class="nv">SNIPPET_NAME_PREFIX</span><span class="k">}</span><span class="s2">_</span><span class="k">${</span><span class="nv">TYPE</span><span class="k">}</span><span class="s2">&amp;type=</span><span class="nv">$TYPE</span><span class="s2">&amp;dynamic=0&amp;content=</span><span class="k">$(</span><span class="nb">cat</span> <span class="nv">$vcl</span> | rawurlencode<span class="k">)</span><span class="s2">"</span><span class="p">;</span>
+   <span class="k">done</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Save two versions of the file: <code class="highlighter-rouge">staging_snippets.sh</code> and <code class="highlighter-rouge">production_snippets.sh</code>.</li>
+  <li>
+    <p>In <code class="highlighter-rouge">staging_snippets.sh</code>, edit the following values and save:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">SERVICE_ID</code>: Replace <code class="highlighter-rouge">&lt;SERVICE_ID&gt;</code> with the Service ID for your Staging environment.</li>
+      <li><code class="highlighter-rouge">API_KEY</code>: Replace <code class="highlighter-rouge">&lt;API_KEY&gt;</code> with your Fastly API Key.</li>
+      <li><code class="highlighter-rouge">SNIPPET_NAME_PREFIX</code>: Replace <code class="highlighter-rouge">&lt;SNIPPET_NAME_PREFIX_NO_SPACES&gt;</code> with a value of your choice. Do not use <code class="highlighter-rouge">magentocloud</code> as the prefix.</li>
+    </ul>
+  </li>
+  <li>
+    <p>In <code class="highlighter-rouge">production_snippets.sh</code>, edit the following values and save:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">SERVICE_ID</code>: Replace <code class="highlighter-rouge">&lt;SERVICE_ID&gt;</code> with the Service ID for your Staging environment.</li>
+      <li><code class="highlighter-rouge">API_KEY</code>: Replace <code class="highlighter-rouge">&lt;API_KEY&gt;</code> with your Fastly API Key.</li>
+      <li><code class="highlighter-rouge">SNIPPET_NAME_PREFIX</code>: Replace <code class="highlighter-rouge">&lt;SNIPPET_NAME_PREFIX_NO_SPACES&gt;</code> with a value of your choice. Do not use <code class="highlighter-rouge">magentocloud</code> as the prefix.</li>
+    </ul>
+  </li>
+  <li>Optional, save the files to their own directories.</li>
 </ol>
 
-<p>We provide more information on <a href="#edge-dictionary">Edge Dictionaries</a>, <a href="#edge-acl">Edge ACLs</a>, and <a href="#examples">custom VCL snippets</a> to get you started.</p>
+<p>For example if you want different custom VCL snippets for Staging then Production, you can save the <code class="highlighter-rouge">staging_snippets.sh</code> bash script and Staging <code class="highlighter-rouge">.vcl</code> files into the same directory. When you run that bash script, only those custom VCLs generate to Staging.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of 100.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>When modifying the bash scripts, make sure to carefully enter the correct Service ID. Fastly assigns different Service IDs per Staging and Production environments.</p>
 </div>
 
-<h3 id="vcl-curl">VCL snippet values</h3>
-<p>What you should know about the <code class="highlighter-rouge">curl</code> command and JSON values:</p>
+<h2 id="process">The custom VCL snippet process</h2>
+<p>To create custom VCLs, you should have the bash script prepared and saved to a directory. You can then continue with the following:</p>
+
+<ol>
+  <li><a href="#list">Locate the active version</a> for VCL snippets. You will use this version to clone.</li>
+  <li><a href="#clone">Clone the active VCL snippet version</a> to generate a new version. All changes will save to this new version. Save this version number!</li>
+  <li><a href="#create-snippet">Modify or add VCL snippets</a> in <code class="highlighter-rouge">.vcl</code> files. We provide a number of examples to get you started.</li>
+  <li><a href="#run-bash">Run the bash scripts</a> to add and update VCL snippets to Fastly. The bash script runs through all of the <code class="highlighter-rouge">.vcl</code> files, generating and running the CURL commands for you.</li>
+  <li><a href="#validate">Validate and activate</a> the version number and all associated VCL snippets.</li>
+</ol>
+
+<p>The following are <strong>best practices and recommendations</strong>:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Service ID</code>: The ID indicates the specific Staging or Production service/environment. We provide this value.</li>
-  <li><code class="highlighter-rouge">FASTLY_API_TOKEN</code>: The API Key for your Fastly account. We provide this value.</li>
-  <li><code class="highlighter-rouge">Editable Version #</code>: The version of the service you add snippets to for validating and activating. We also use the description of <code class="highlighter-rouge">Cloned Version #</code> in the examples.</li>
-  <li><code class="highlighter-rouge">type</code>: Specifies the location to place the generated snippet such as <code class="highlighter-rouge">init</code> (above subroutines) and within subroutines like <code class="highlighter-rouge">recv</code>. See <a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a> for information on these values.</li>
-  <li><code class="highlighter-rouge">content</code>: The snippet of VCL code to run</li>
-  <li><code class="highlighter-rouge">priority</code>: Determines the order VCL snippets call. Lower values run first, from 1 to 100. All Magento module uploaded snippets are 50. If you want an action to occur last or override Magento default VCL snippets, enter a higher number like 100. To have code occur immediately, enter a lower value like 5.</li>
-  <li><code class="highlighter-rouge">dynamic</code>: Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets" target="_blank">dynamic snippet</a></li>
-  <li><code class="highlighter-rouge">active</code>: Indicates if the snippet or version is activated and currently in use. Returns <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>.</li>
+  <li>The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</li>
+  <li>This process allows you to create and update multiple VCL snippets by running the bash script. It generates and runs the <code class="highlighter-rouge">cURL</code> command for you using all VCL JSON snippet files (<code class="highlighter-rouge">.vcl</code>) in the directory.</li>
+  <li>If you want different values and settings or different VCLs per Staging and Production, create two directories: one for each environment. Save the specific bash script and VCL files to each one. Then move to those directories when done and run those scripts during step 4. If you keep everything in the same directory and run both bash scripts, the VCLs are added to both Staging and Production.</li>
+  <li>If you decide to delete a VCL, save the VCL file to another archive folder. If you want to add it back, you can move the file back into the folder with the bash script and perform the steps again for updating your custom snippets.</li>
+  <li>Don’t forget to always locate the active version, clone, and edit the bash script with the new version! Version is not part of your VCL snippet files.</li>
+  <li>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of 100. You should not try overwriting default VCLs. We provide an example for <a href="/guides/v2.0/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>.</li>
 </ul>
 
-<p>All default VCL snippets have a priority of 50. Priorities will call VCL snippets starting from 1 to 100. Any VCL snippet at priority 5 will run immediately, best for blacklists, whitelists, and redirects. Priority 100 is best for overriding default VCL snippet code and values, best for extending timeouts. If you do not set a priority with your <code class="highlighter-rouge">curl</code> command, the default value set is 100.</p>
-
-<h3 id="list">Locate the currently active VCL snippet version</h3>
+<h2 id="list">Locate the currently active VCL snippet version</h2>
 <p>To view an entire list of all VCL snippets by version, use the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version -H "Fastly-Key:FASTLY_API_TOKEN"
@@ -1745,8 +1939,8 @@
 
 <p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987" target="_blank">get version command</a>.</p>
 
-<h3 id="clone">Clone the active VCL version and all snippets</h3>
-<p>Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version with a new version number. After you clone the version, you can <a href="#create-snippet">add</a> more VCL snippets or <a href="#update">modify</a> current snippets.</p>
+<h2 id="clone">Clone the active VCL version and all snippets</h2>
+<p>Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version with a new version number. After you clone the version, you can <a href="#create-snippet">modify and add</a> VCL snippets. Save the new version number as you will need it for the bash script.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Current Active Version #}/clone
 </code></pre></div></div>
@@ -1772,57 +1966,87 @@ Fastly returns the editable version number and Service ID. You use the version n
 
 When reviewing a list of VCL snippets, you will also note the snippets have a specific version number in the JSON output. -->
 
-<h3 id="create-snippet">Add new regular VCL snippets for the cloned version</h3>
-<p>Create one or more VCL snippets for the cloned version using <code class="highlighter-rouge">curl</code> commands.</p>
+<h3 id="create-snippet">Create custom VCL snippets</h3>
+<p>We recommend the following process for creating and modifying snippets. The process allows you to push code for one or more snippets, save the code used, and formats the CURL commands just by running the bash scripts you prepared.</p>
 
-<p>We recommend typing out your <code class="highlighter-rouge">curl</code> command in a text editor to make sure everything is correct before entering it in a terminal. You can always copy and paste the command when ready to enter it.</p>
+<p>Create a VCL snippet as a <code class="highlighter-rouge">.vcl</code> file with the following JSON content and format:</p>
 
-<p>When you assign VCL snippets to the version, you can then <a href="#validate">validate and activate</a> all snippets for that version. When activated, all snippets for that new version are active.</p>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;name&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;type&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;code all in one line&gt;"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<p>Use the following command as a template:</p>
+<p>The values include:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "{VCL Name}", "type": "Type", "dynamic": 0, "priority": 100, "content": "{VCL snippet code}"}'
-</code></pre></div></div>
+<ul>
+  <li><code class="highlighter-rouge">name</code>: Name for the VCL snippet</li>
+  <li><code class="highlighter-rouge">priority</code>: Determines the order VCL snippets call. Lower values run first, from 1 to 100. All Magento module uploaded snippets are 50. If you want an action to occur last or override Magento default VCL snippets, enter a higher number like 100. To have code occur immediately, enter a lower value like 5.</li>
+  <li><code class="highlighter-rouge">type</code>: Specifies the location to place the generated snippet such as <code class="highlighter-rouge">init</code> (above subroutines) and within subroutines like <code class="highlighter-rouge">recv</code>. See <a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a> for information on these values.</li>
+  <li><code class="highlighter-rouge">content</code>: The snippet of VCL code to run in one line, without line breaks.</li>
+</ul>
 
-<p>After you run the <code class="highlighter-rouge">curl</code> command, Fastly returns a JSON response with the data. For example:</p>
+<p>For detailed examples and custom code, see the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "id": "62Yd1WfiCBPENLloXfXmlO",
-  "service_id": "{Service ID}",
-  "version": "{Editable Version #}",
-  "name": "apply_acl",
-  "priority": "100",
-  "dynamic": "1",
-  "type": "hit",
-  "content": "if ((client.ip ~ {ACLNAME}) &amp;&amp; !req.http.Fastly-FF){ error 403; }",
-  "created_at": "2016-08-15T09:37:10+00:00",
-  "updated_at": "2016-08-15T09:37:10+00:00",
-  "deleted_at": null
-}
-</code></pre></div></div>
+<ul>
+  <li><a href="/guides/v2.0/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a></li>
+  <li><a href="/guides/v2.0/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a></li>
+  <li><a href="/guides/v2.0/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a></li>
+  <li><a href="/guides/v2.0/cloud/configure/fastly-vcl-backend.html">Custom redirect to Wordpress VCL</a></li>
+  <li><a href="/guides/v2.0/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a></li>
+</ul>
 
-<h3 id="update">Update an existing VCL snippet</h3>
-<p>Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:</p>
+<!-- ### Update an existing VCL snippet {#update}
+Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Cloned version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
-</code></pre></div></div>
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Cloned version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 
-<p>Copy the data and build a <code class="highlighter-rouge">curl</code> command with the cloned version number, name, and edits. The following is an example template for the update command. You would enter the cloned version number for <code class="highlighter-rouge">Editable Version #</code> and data for the command in <code class="highlighter-rouge">--data</code>.</p>
+Copy the data and build a `curl` command with the cloned version number, name, and edits. The following is an example template for the update command. You would enter the cloned version number for `Editable Version #` and data for the command in `--data`.
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
-</code></pre></div></div>
+	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
 
-<p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults).</p>
+If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults). -->
 
-<h3 id="validate">Validate and activate snippets for a version</h3>
-<p>When you add the VCL snippet(s) to the version, Fastly creates and assigns it to your service per that version number. Next, you should verify the entered VCL snippet(s) validates with Fastly. Use the following command to validate all snippets for the version:</p>
+<h2 id="run-bash">Update and run the bash scripts</h2>
+<p>To add the VCL snippets to Fastly, you need to modify the bash scripts with the cloned version number and run the scripts.</p>
+
+<p>Before running the bash scripts, make sure the <code class="highlighter-rouge">.vcl</code> files in the directory should be added to that environment. If you plan on having all of the same VCL settings for Staging and Production, you can keep all files in the same directory.</p>
+
+<p>If you want different VCLs for Staging and Production, do the following:</p>
+
+<ul>
+  <li>Create a Staging directory with <code class="highlighter-rouge">staging_snippets.sh</code> and those <code class="highlighter-rouge">.vcl</code> files</li>
+  <li>Create a Production directory with <code class="highlighter-rouge">production_snippets.sh</code> and those <code class="highlighter-rouge">.vcl</code> files</li>
+</ul>
+
+<p>To add custom snippets:</p>
+
+<ol>
+  <li>Edit the bash scripts <code class="highlighter-rouge">staging_snippets.sh</code> and <code class="highlighter-rouge">production_snippets.sh</code>.</li>
+  <li>Change the value for <code class="highlighter-rouge">&lt;SERVICE_ID_VERSION&gt;</code> with the cloned version number in the line: <code class="highlighter-rouge">export VERSION=&lt;SERVICE_ID_VERSION&gt;</code></li>
+  <li>Save the files.</li>
+  <li>Run the bash script by entering the file name. The command generates and runs a CURL command for every <code class="highlighter-rouge">.vcl</code> file in the directory.</li>
+</ol>
+
+<ul>
+  <li>Enter <code class="highlighter-rouge">production_snippets</code> to run that file and generate VCL snippets to Fastly for your Production environment.</li>
+  <li>Enter <code class="highlighter-rouge">staging_snippets</code> to run that file and generate VCL snippets to Fastly for your Staging environment.
+    <ol>
+      <li>As the script runs, VCL snippets should be generating and uploading to Fastly.</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="validate">Validate and activate snippets for a version</h2>
+<p>When you add the VCL snippet(s) to the version, Fastly creates and assigns it to your service per that version number. Next, you should validate the entered VCL snippets with Fastly. Use the following command to validate all snippets for the version:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
 </code></pre></div></div>
 
 <p>Fastly should return: <code class="highlighter-rouge">"status": "ok"</code>. If you received an OK, activate the version for that service.</p>
 
-<p>Assuming no errors (if there are errors, fix them before proceeding), the last step is to activate the version with the following command. All VCL snippets associated with the version activate.</p>
+<p>Assuming no errors (if there are errors, fix them before proceeding), the last step is to activate the version with the following command. All VCL snippets associated with the version activate and the previous version snippets deactivate.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
 </code></pre></div></div>
@@ -1845,193 +2069,29 @@ When reviewing a list of VCL snippets, you will also note the snippets have a sp
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version -H "Fastly-Key:FASTLY_API_TOKEN"
 </code></pre></div></div>
 
-<p>To update a custom VCL snippet using the API, list the snippet then enter a <code class="highlighter-rouge">curl</code> command with the specific snippet version, name, and edits:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X PUT -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
-</code></pre></div></div>
-
 <p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults).</p>
 
-<p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the speicific snippet information to delete. We recommend keeping a copy of the creation command and JSON if you need to recreate it later.</p>
+<p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the speicific snippet information to delete. We recommend keeping a copy of the <code class="highlighter-rouge">.vcl</code> file in an archive directory if you need to recreate it later.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X DELETE -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/&lt;Snippet Name e.g my_regular_snippet&gt; -H "Fastly-Key:FASTLY_API_TOKEN"
 </code></pre></div></div>
 
-<h2 id="edge-dictionary">Create edge dictionary</h2>
-<p>Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of bad referring domains to block from your site. First, you would create the Edge Dictionary, then create a <a href="#bad-refer">custom VCL snippet</a> using it.</p>
-
-<ol>
-  <li>Log in to the Magento Admin.</li>
-  <li>Navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Fastly Configuration</strong>.</li>
-  <li>Expand the <strong>Edge dictionaries</strong> section.</li>
-  <li>Click <strong>Add container</strong>. You need to create a container to hold up to 1,000 key-value pairs.</li>
-  <li>On the container, enter a Dictionary name. For this example, use the name for referers.</li>
-  <li>Select the checkbox for <strong>Activate after the change</strong> if you want to the dictionary after creating or editing the container.</li>
-  <li>Add key-value pairs in the new dictionary. For this example, enter the domains for bad refering websites you want to block from your site. Enter a value of 1.</li>
-</ol>
-
-<p>You can use the Edge Dictionary by name in your VCL snippet code.</p>
-
-<p>For more information on using Edge Dictionaries with your VCL snippets, see Fastly’s <a href="https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries" target="_blank">Creating and using Edge Dictionaries</a> and their example <a href="https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples" target="_blank">custom VCL snippets</a>.</p>
-
-<h2 id="edge-acl">Create edge ACL</h2>
-<p>Edge ACLs create IP lists for managing access for your VCL snippet. For example, you may want to create ACLs of IPs to whitelist or blacklist for access to your site. You can create an Edge ACL for whitelist IPs and another for blacklist IPs. Then create custom VCL snippets to manage access by providing normal access, redirecting to a specific location, or <a href="#block-ip">displaying a 403 Forbidden message</a>.</p>
-
-<ol>
-  <li>Log in to the Magento Admin.</li>
-  <li>Navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Fastly Configuration</strong>.</li>
-  <li>Expand the <strong>Edge ACL</strong> section.</li>
-  <li>Click <strong>Add ACL</strong> to create a list.</li>
-  <li>Enter IP values in the list. Optionally, select the Negated checkbox if needed.</li>
-</ol>
-
-<p>You can use the Edge ACL by name in your VCL snippet code.</p>
-
-<p>While we walk through the process of creating ACLs through the module for your VCL snippets, you can also manually manage the ACL along with the VCL in code. For more information on using manually added ACLs with your VCL snippets, see Fastly’s <a href="https://docs.fastly.com/guides/access-control-lists/manually-creating-access-control-lists" target="_blank">Manually creating access control lists</a>.</p>
-
-<h2 id="examples">Example VCL snippets</h2>
-<p>The following are example regular VCL snippets using Edge Dictionaries and Edge ACLs. When creating your custom VCL snippet code, you may want to review the following references:</p>
+<h4 id="fastly-resources">Fastly resources</h4>
+<p>For Fastly resources on creating VCL snippets, you can review their docs:</p>
 
 <ul>
-  <li><a href="https://docs.fastly.com/guides/vcl/vcl-regular-expression-cheat-sheet" target="_blank">Fastly’s VCL regular expression cheat sheet</a></li>
-  <li><a href="https://docs.fastly.com/guides/vcl/guide-to-vcl#fastlys-vcl-extensions" target="_blank">Fastly’s VCL extensions</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/" target="_blank">All Fastly VCL content</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="_blank">Fastly VCL guide</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a></li>
+  <li><a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a></li>
 </ul>
 
-<h3 id="bad-refer">Create a block bad referers VCL</h3>
-<p>You may want to create a VCL snippet that runs before all other modules to block bad referring websites from accessing your site. To block these sites with a 403 Forbidden error through Fastly, create a VCL snippet to use with an Edge Dictionary of domains to block.</p>
-
-<p>Of note for this snippet, you want to set the priority to 5 to immediate run and block the bad referers. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge Dictionary is also <code class="highlighter-rouge">referer_blocklist</code>. If the domain matches the dictionary, it is blocked from access.</p>
-
-<p>The following is an example of this VCL code from Fastly:</p>
+<p>Fastly supports two types of snippets. We recommend and document how to create and use regular snippets.</p>
 
 <ul>
-  <li>Name: <code class="highlighter-rouge">block_bad_referers</code></li>
-  <li>Type: <code class="highlighter-rouge">recv</code>, puts the code in the subroutine vcl_recv</li>
-  <li>Priority: 5</li>
-  <li>
-    <p>Content:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># capture host of referer into a header
-  set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1");
-# check if referrer host is in blocklist table
-  if (table.lookup(referer_blocklist, req.http.Referer-Host)) {
-      error 403 "Forbidden";
-  }
-</code></pre></div>    </div>
-  </li>
+  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets" target="_blank">Regular snippets</a> are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.</li>
+  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets" target="_blank">Dynamic snippets</a> are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.</li>
 </ul>
-
-<p>The curl command would look like the following:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_referers", "type": "recv", "dynamic": 0, "priority": 5, "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"}'
-</code></pre></div></div>
-
-<p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
-
-<h3 id="block-ip">Create a block blacklisted IPs VCL</h3>
-<p>You may want to create a blacklist of IPs to block from accessing your site. You can create an Edge ACL list of the blacklisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is blocked with a 403 Forbidden error.</p>
-
-<p>Of note for this snippet, you want to set the priority to 5 to immediately run and block those blacklisted IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also <code class="highlighter-rouge">blocklist</code>. If the domain matches the dictionary, it is blocked from access.</p>
-
-<ul>
-  <li>Name: <code class="highlighter-rouge">block_bad_ips</code></li>
-  <li>Type: <code class="highlighter-rouge">recv</code>, puts the code in the subroutine vcl_recv</li>
-  <li>Priority: 5</li>
-  <li>
-    <p>Content:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ( client.ip ~ blocklist) {
-  error 403 "Forbidden";
-  }
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>The curl command would look like the following:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"}'
-</code></pre></div></div>
-
-<p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
-
-<h3 id="whitelist-ip">Create a whitelist VCL</h3>
-<p>You may want to create a whitelist of IPs to allow accessing your Magento Admin console. You can create an Edge ACL list of the whitelisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is allowed access. All other IPs receive a 403 Forbidden error.</p>
-
-<p>Of note for this snippet, you want to set the priority to 5 to immediately run and check for whitelisted IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50. The name for the Edge ACL is also <code class="highlighter-rouge">whitelist</code>. If the domain matches the dictionary, it is allowed access to a path of <code class="highlighter-rouge">/admin</code>. If you changed your Magento Admin path, use that value in this code example.</p>
-
-<p>In the code sample, the condition <code class="highlighter-rouge">!req.http.Fastly-FF</code> is important when using Origin Shielding.</p>
-
-<ul>
-  <li>Name: <code class="highlighter-rouge">whitelist_admin</code></li>
-  <li>Type: <code class="highlighter-rouge">recv</code>, puts the code in the subroutine vcl_recv</li>
-  <li>Priority: 5</li>
-  <li>
-    <p>Content:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) {
-          error 403 "Forbidden";
-          }
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>The curl command would look like the following:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ((req.url ~ "^/admin") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) { error 403 "Forbidden"; }"}'
-</code></pre></div></div>
-
-<p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
-
-<h3 id="admin-timeout">Extend Magento Admin timeout on Fastly</h3>
-<p>Fastly has a strict timeout for the Magento Admin of three minutes. This may not be enough time for some extended actions. To extend the default timeout for the Magento Admin, you will create a new VCL snippet with a priority of 100 and a longer timeout value. This VCL snippet value will run last and override the default value in <code class="highlighter-rouge">pass.vcl</code> with a priority of 50 (already uploaded to your service).</p>
-
-<p>To build the new command, we can take the default code and revise it with a new name and lower priority value. The order of priorities will use this value over the default 180 seconds. How did you set the default timeout? When you first uploded your VCL snippets when configuring Fastly, you uploaded a default VCL with a default timeout of 180 seconds (three minutes). The VCL snippet uploaded was from this <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/vcl_snippets/pass.vcl" target="_blank">Fastly pass.vcl snippet</a>. The important code that sets the timeout is the <code class="highlighter-rouge">first_byte_timeout</code> value:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Deactivate gzip on origin
-unset bereq.http.Accept-Encoding;
-
-# Increase first byte timeouts for /admin* URLs to 3 minutes
-if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) {
-	set bereq.first_byte_timeout = 180s;
-	}
-</code></pre></div></div>
-
-<p>For this snippet, modify the <code class="highlighter-rouge">set bereq.first_byte_timeout</code> with a higher value. For example, 300s for five minutes or 600s for ten minutes. Ten minutes is the hard cap for Fastly timeouts.</p>
-
-<p>To create a new snippet, use the following <code class="highlighter-rouge">curl</code> command. This version sets the timeout to 600s (ten minutes).</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "block_bad_ips", "type": "pass", "dynamic": 0, "priority": 5, "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }"}'
-</code></pre></div></div>
-
-<p><a href="#validate">Validate and activate</a> the version to activate the snippet.</p>
-
-<h3 id="dif-backend">Choose a different backend VCL</h3>
-<p>You may have a separate Wordpress blog for all of your store’s blog entries, kept separate from your store. For this example, you are trying to check the first part of the incoming path and redirect the visitor to your Wordpress backend. You would create an Edge Dictionary called <code class="highlighter-rouge">wordpress_urls</code> with a list of paths.</p>
-
-<p>This VCL snippet locates and extracts the first part of the path. For example, it extracts <code class="highlighter-rouge">mypath</code> from the <code class="highlighter-rouge">/mypath/someotherpath</code>. It then compares that path against the Edge Dictionary. If a match is found, the visitor is redirected to the Wordpress backend. For this snippet, you may want to use priority 5 to have the check runn immediately and redirect those visitors to the other backend.</p>
-
-<p>The following is an example of this VCL code from Fastly:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Extract first part of the path: /mypath/someotherpath extracts mypath.
-# Look up the path in the Wordpress URL lookup table and mark it as needed
-# to be processed by Wordpress.
-if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) {
- # check if first part of the url is in the wordpress urls table
- if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) {
-	 	set req.http.X-WP = "1";
-		}
-	}
-</code></pre></div></div>
-
-<p>For example, the command may look like this:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/snippet -d '{"name": "wordpress_backend", "type": "recv", "dynamic": 0, "priority": 5, "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }"}
-</code></pre></div></div>
-
-<p>For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>req.http.X-WP == “1”
-</code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>
 
