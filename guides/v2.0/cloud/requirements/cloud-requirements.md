@@ -27,9 +27,6 @@ redirect_from:
   - /guides/v2.0/cloud/requirements/cloud-requirements-git.html
   - /guides/v2.1/cloud/requirements/cloud-requirements-git.html
   - /guides/v2.2/cloud/requirements/cloud-requirements-git.html
-  - /guides/v2.0/cloud/reference/git-integration.html
-  - /guides/v2.1/cloud/reference/git-integration.html
-  - /guides/v2.2/cloud/reference/git-integration.html
 functional_areas:
   - Cloud
   - Install
@@ -41,17 +38,17 @@ The following information detail technologiess, knowledges, accounts, and steps 
 The following technologies are requirements for developing and deploying your store code:
 
 *	[Git](#git)
-*	[Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)
-*	[Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
-*	[Continuous Integration]({{ page.baseurl }}cloud/deploy/continuous-deployment.html)
-*	Architectures including [Starter]({{ page.baseurl }}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}cloud/reference/discover-arch.html) architecture
+*	[Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
+*	[Magento 2]({{page.baseurl}}cloud/bk-cloud.html#magento2)
+*	[Continuous Integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html)
+*	Architectures including [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture
 
 Here are some advanced technologies we recommend getting familiar with:
 
-* [Fastly]({{ page.baseurl }}cloud/basic-information/cloud-fastly.html) for CDN and caching (based on Varnish)
-* [Blackfire Profiler]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) for performance testing
-* [New Relic APM]({{ page.baseurl }}cloud/project/new-relic.html) for performance testing
-* [GitHub]({{ page.baseurl }}cloud/project/project-integrate-github.html) if you need a Git repo
+* [Fastly]({{page.baseurl}}cloud/basic-information/cloud-fastly.html) for CDN and caching (based on Varnish)
+* [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html) for performance testing
+* [New Relic APM]({{page.baseurl}}cloud/project/new-relic.html) for performance testing
+* [GitHub]({{page.baseurl}}cloud/project/project-integrate-github.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 
@@ -100,24 +97,24 @@ For detailed information on supported versions and extensions, see the following
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
-*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html) plan.
-*	Get [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
-*	Get a [project invite]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
-*	Get [Magento authentication keys]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
+*	Set up a [local development environment]({{page.baseurl}}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{page.baseurl}}cloud/welcome/discover-workflow.html) plan.
+*	Get [`repo.magento.com` credentials]({{page.baseurl}}install-gde/prereq/connect-auth.html) in your account
+*	Get a [project invite]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
+*	Get [Magento authentication keys]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
 
 We walk you through everything you need to do and know.
 
 ## Magento configurations {#cloud-req-test}
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
-*	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#database)
-*	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
+*	For Pro, set the database [`auto_increment_increment` to 3]({{page.baseurl}}cloud/before/before-workspace-magento-prereqs.html#database)
+*	Test with the correct file permissions in [PRODUCTION mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
-*	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}config-guide/redis/config-redis.html)
-*	Install and configure [Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html)
-*	Test using [Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+*	Test with [Redis enabled for page cache and session cache]({{page.baseurl}}config-guide/redis/config-redis.html)
+*	Install and configure [Fastly]({{page.baseurl}}cloud/access-acct/fastly.html)
+*	Test using [Varnish]({{page.baseurl}}config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 
 ## Development and testing {#cloud-req-devtest}
 For development and testing, we recommend the following:
@@ -125,10 +122,10 @@ For development and testing, we recommend the following:
 *	Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
 
 	You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.
-*	Verify [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Verify [`magento setup:install`]({{page.baseurl}}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
 
     You can set an environment variable or enter a CLI command for this specific mode.
-*	Fully [test your site]({{ page.baseurl }}cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment
+*	Fully [test your site]({{page.baseurl}}cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment
 *	Verify the Fastly VCL is uploaded to Fastly
 *	Send a ticket with all storefront domains when going live (to be added to the shared SSL (HTTPS) certificate)
 *	For custom deploy hooks in Integration, open a Support ticket to have them added to the Staging and Production deployment process
@@ -139,8 +136,8 @@ The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) crea
 
 To work with and deploy stores, you need the following:
 
-*	[Magento Commerce (Cloud) account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
-*	[Project invitiation]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct##cloud-owner-admins) for contributing developers from the Account Owner or a super user
+*	[Magento Commerce (Cloud) account]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
+*	[Project invitiation]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-first-acct##cloud-owner-admins) for contributing developers from the Account Owner or a super user
 *	Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:
@@ -151,7 +148,7 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *	Create your own Cloud account
 
 #### Related topics
-*	[Cloud Architexture]({{ page.baseurl }}cloud/reference/discover-arch.html)
+*	[Cloud Architexture]({{page.baseurl}}cloud/reference/discover-arch.html)
 *	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
-*	[Develop and Deploy Workflow]({{ page.baseurl }}cloud/welcome/discover-workflow.html)
-*	[Go live and launch]({{ page.baseurl }}cloud/live/live.html)
+*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	[Go live and launch]({{page.baseurl}}cloud/live/live.html)

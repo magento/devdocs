@@ -82,7 +82,6 @@ We provide Fastly services only for your Staging and Production environments. Yo
 	* In the "repositories" section, you should have:
 
 		"fastly-magento2": {
-					"type": "vcs",
 					"url": "https://github.com/fastly/fastly-magento2.git"
 		}
 3.	Add, commit, and push the changes to your code repository with the following command:
