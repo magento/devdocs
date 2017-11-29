@@ -59,6 +59,10 @@ Review the following values for the code to determine if you need to make change
 * `type`: For this VCL, we use `recv`, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.
 * `content`: The snippet of VCL code to run, which verifies the client IP. If the IP is in the Edge ACL, it is blocked from access with a 403 Forbidden error for the entire website. All other client IPs are allowed access.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
+</div>
+
 ## Finish adding the VCL {#complete}
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 

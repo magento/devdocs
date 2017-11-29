@@ -28,16 +28,12 @@ To get started, review the following sections:
 * [Prepare to create VCL snippets](#prepare): You only need to do this once!
 * [The custom VCL snippet process](#process): Walks you through the entire process, including links to custom VCL snippets you can create with ease.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
-</div>
-
 ## Understand VCL snippet values {#vcl-curl}
 Your VCL snippets include the following values. You can use these key/value pairs in JSON snippets in `.vcl` files and in `cURL` commands.
 
 <table>
 <tr>
-    <th style="width: 200px;">Value</th>
+    <th style="width: 150px;">Value</th>
     <th>Description</th>
 </tr>
 <tr>
@@ -179,6 +175,7 @@ To create custom VCLs, you should have the bash script prepared and saved to a d
 
 The following are **best practices and recommendations**:
 
+* The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
 * This process allows you to create and update multiple VCL snippets by running the bash script. It generates and runs the `cURL` command for you using all VCL JSON snippet files (`.vcl`) in the directory.
 * If you want different values and settings or different VCLs per Staging and Production, create two directories: one for each environment. Save the specific bash script and VCL files to each one. Then move to those directories when done and run those scripts during step 4. If you keep everything in the same directory and run both bash scripts, the VCLs are added to both Staging and Production.
 * If you decide to delete a VCL, save the VCL file to another archive folder. If you want to add it back, you can move the file back into the folder with the bash script and perform the steps again for updating your custom snippets.

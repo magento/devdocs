@@ -58,6 +58,10 @@ Review the following values for the code to determine if you need to make change
 * `type`: For this VCL, we use `recv`, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.
 * `content`: The code that runs. The code captures the host of a referer website into a header. It then checks if the referrer host is in the Edge Dictionary `referer_blocklist`.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
+</div>
+
 ## Finish adding the VCL {#complete}
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 

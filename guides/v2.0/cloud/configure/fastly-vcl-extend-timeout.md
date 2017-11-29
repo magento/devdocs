@@ -44,6 +44,10 @@ Review the following values for the code to determine if you need to make change
 * `type`: For this VCL, we use `pass`.
 * `content`: The code that runs. For this snippet, we change the `set bereq.first_byte_timeout` with a higher value. For example, 300s for five minutes or 600s for ten minutes. Ten minutes is the hard cap for Fastly timeouts.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
+</div>
+
 ## Finish adding the VCL {#complete}
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 
