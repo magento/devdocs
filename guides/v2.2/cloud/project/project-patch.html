@@ -426,6 +426,20 @@
         
         
         
+        <li class="nav-level2  " id="git">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/reference/git-integration.html">Git</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="github">
             
             
@@ -1883,6 +1897,8 @@
 
 <h2 id="patch">Apply the patch</h2>
 <p>To apply the patch, you run the <code class="highlighter-rouge">composer update</code> command. The command uses <code class="highlighter-rouge">composer.json</code> to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.</p>
+
+<p>If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.</p>
 
 <ol>
   <li>

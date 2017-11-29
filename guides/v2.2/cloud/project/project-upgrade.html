@@ -426,6 +426,20 @@
         
         
         
+        <li class="nav-level2  " id="git">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/reference/git-integration.html">Git</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="github">
             
             
@@ -1826,6 +1840,7 @@
   <li><a href="#php">Upgrade your PHP version</a>: v2.2 supports PHP 7.0 and later</li>
   <li><a href="#magento-app-yaml">.magento.app.yaml</a>: Update the file with new settings and required changes for hooks and environment variables</li>
   <li><a href="variable">Verify or set the ADMIN_EMAIL variable</a>: This variable is required for upgrades and patch to 2.2 and later</li>
+  <li><a href="#fastly">Upgrade Fastly</a>: Make sure you are upgraded to the latest supported version of Fastly</li>
 </ul>
 
 <p>To upgrade from <strong>2.1.X</strong>:</p>
@@ -1835,6 +1850,8 @@
   <li><a href="#config">Configuration Management</a>: Create a new <code class="highlighter-rouge">config.php</code> using the <code class="highlighter-rouge">config.local.php</code> to properly upgrade</li>
   <li><a href="#magento-app-yaml">.magento.app.yaml</a>: Update the file with new settings and required changes for hooks and environment variables</li>
   <li><a href="variable">Verify or set the ADMIN_EMAIL variable</a>: This variable is required for upgrades and patch to 2.2 and later</li>
+  <li><a href="#fastly">Upgrade Fastly</a>: Make sure you are upgraded to the latest supported version of Fastly</li>
+  <li><a href="#gitignore">Update .gitignore for new generated directory</a>: With 2.2 and later, changes in generated folder require additions to <code class="highlighter-rouge">.gitignore</code></li>
 </ul>
 
 <p>After completing your upgrade, you may also want to <a href="#extensions">Verify and upgrade your extensions</a>.</p>
@@ -1909,6 +1926,18 @@
 
 <h3 id="variable">Verify or set the ADMIN_EMAIL variable</h3>
 <p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce (Cloud). To set, see <a href="/guides/v2.2/cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</p>
+
+<h3 id="fastly">Upgrade Fastly</h3>
+<p>If you have not upgraded to the latest supported version of Fastly, you should do so. Check <a href="/guides/v2.2/cloud/requirements/cloud-requirements.html#cloud-arch-software">Supported software versions</a> for the latest version of Fastly we recommend. For instructions, see <a href="/guides/v2.2/cloud/access-acct/fastly.html#upgrade">Upgrade Fastly</a>.</p>
+
+<p>If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see <a href="https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md" target="_blank">Fastly upgrade documentation</a>.</p>
+
+<h3 id="gitignore">Update .gitignore for new generated directory</h3>
+<p>With Magento Commerce (Cloud) 2.2.X, the generated folders <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> have been moved to a <code class="highlighter-rouge">generated/</code> read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/generated/*
+!/generated/.htaccess
+</code></pre></div></div>
 
 <h2 id="backup-db">Back up the database</h2>
 <p>We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.</p>

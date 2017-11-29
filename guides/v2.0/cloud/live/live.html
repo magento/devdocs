@@ -420,6 +420,20 @@
         
         
         
+        <li class="nav-level2  " id="git">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/reference/git-integration.html">Git</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="github">
             
             
@@ -1762,12 +1776,44 @@
 <ul>
   <li>Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a <strong>warning before it occurs in Production</strong>.</li>
   <li>Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and front end, sometimes clashing and causing errors.</li>
-  <li>Extensions typically are heavily tested in [Developer mode](/guides/v2.0/config-guide/bootstrap/magento-modes.html, not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.</li>
+  <li>Extensions typically are heavily tested in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Developer mode</a>, not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.</li>
   <li>Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local doesn’t confirm it works perfectly in production.</li>
   <li>Integration environments don’t have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.</li>
   <li><a href="/guides/v2.0/cloud/live/stage-prod-test.html#loadtest">Fully test</a> your site with a variety of tools in Staging for load, stress, performance, and site assets</li>
   <li>Integration environments may only have databases populated with test data, not matching a production-like environment</li>
 </ul>
+
+<h2 id="security-scan">Set up Magento Security Scan Tool</h2>
+<p>The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for security risks, malware, and unauthorized access. This is a free service available for all implementations and versions of Magento Commerce (Cloud). You access the tool through your <a href="https://account.magento.com/customer/account/login" target="_blank">Magento Marketplace account</a>.</p>
+
+<ul>
+  <li>Monitor your sites security status</li>
+  <li>Increase your security monitoring with an optional SSH scan</li>
+  <li>Receive security updates and site specific notifications</li>
+</ul>
+
+<p>For detailed instructions to set up and perform scans, see the <a href="http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html" target="_blank">Magento User Guide</a>. Typically, you want to start using this tool as you enter UAT testing.</p>
+
+<p>Each site to be scanned must be registered through Magento Security Scan tab. This registration process includes acceptance of Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is completed. Scans can be scheduled for either a specific, recurring date and time or on-demand as required.</p>
+
+<p>To scan your site:</p>
+
+<ol>
+  <li>Access your <a href="https://account.magento.com/customer/account/login" target="_blank">Magento Marketplace account</a>.</li>
+  <li>Click the Security Scan tab and select <strong>Go to Security Scan</strong>.</li>
+  <li>In the <strong>Actions</strong> column for the site, select Run Scan. A notification status displays the scheduled scan.</li>
+</ol>
+
+<p>To review the report:</p>
+
+<ol>
+  <li>When the report completes, a notification displays.</li>
+  <li>In the site row, select the report you want to view from the <strong>Reports</strong> column. The order is latest to oldest.</li>
+</ol>
+
+<p>The report lists issues including Failed Scans, Unidentified Results, and Successful Scans. Each entry provides detailed information for the scan, any issues to investigate, and actions to take. Some of these actions may require downloading and installing security patches. Make sure to add those via branches and Git pushes through your local.</p>
+
+<p>Scan results include a general label that describes whether a site passed or failed plus detailed information about the checks performed. Failed indicates that the website contains a serious vulnerability, while unidentified suggests that a deeper review is required by your team or hosting provider to determine if further action is required. We also provide suggested remediation steps for each failed security test. Security scan results are protected and viewable only by the registered user, and notifications of scan completion are restricted to the users designated in the site registration process.</p>
 
 <h2 id="ready">Ready to go live</h2>
 <p>You are ready to start go live steps:</p>

@@ -426,6 +426,20 @@
         
         
         
+        <li class="nav-level2  " id="git">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/reference/git-integration.html">Git</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="github">
             
             
@@ -1791,47 +1805,51 @@
 </section>
 
 
-			<p>We use <a href="https://getcomposer.org/doc" target="_blank">Composer</a> to manage dependencies and upgrades in Magento Commerce and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
+			<p>We use <a href="https://getcomposer.org/doc" target="_blank">Composer</a> to manage dependencies and upgrades in Magento Commerce (Cloud) and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
 
-<p>The following sections detail the specifics of Magento Commerce composer packages, how they work, and what they do within the code base.</p>
+<p>Composer is a dependency manager for PHP. Composer manages the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place. For Magento Commerce (Cloud), we use <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> to manage your modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more. Magento extension and module developers use <code class="highlighter-rouge">composer.json</code> to also manage their product installations and upgrades. For details, see <a href="#files">Your project’s Composer files</a>.</p>
+
+<p>The following sections detail the specifics of Magento Commerce (Cloud) composer packages, how they work, and what they do within the code base.</p>
+
+<p>For information on what files should and shouldn’t be in source control, see <a href="/guides/v2.2/cloud/project/project-start.html">Project structure</a>. We provide a <code class="highlighter-rouge">.gitignore</code> file to aid.</p>
 
 <p>For Magento Commerce (Cloud) 2.2, the <code class="highlighter-rouge">magento/magento-cloud-configuration (MCC)</code> has been replaced by <code class="highlighter-rouge">magento/ece-patches</code> and <code class="highlighter-rouge">magento/ece-tools</code>. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.</p>
 
-<h2 id="your-projects-composer-files">Your project’s Composer files</h2>
+<h2 id="files">Your project’s Composer files</h2>
 <p>Your project root directory contains <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code>.</p>
 
-<p>You edit <code class="highlighter-rouge">composer.json</code> to specify dependencies for your Magento Commerce project. For example, when you install an extension, you update <code class="highlighter-rouge">composer.json</code> to add the extension to the list. you can either edit it manually or the <a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Component Manager</a> can do it for you.</p>
+<p>You edit <code class="highlighter-rouge">composer.json</code> to specify dependencies for your Magento Commerce (Cloud) project. For example, when you <a href="/guides/v2.2/cloud/howtos/install-components.html">install an extension or module</a>, you update <code class="highlighter-rouge">composer.json</code> to add the extension to the list. You can either edit it manually or the <a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Component Manager</a> can do it for you.</p>
 
-<p><code class="highlighter-rouge">composer.lock</code> stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.</p>
+<p>The file <code class="highlighter-rouge">composer.lock</code> stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.</p>
 
 <p>The following commands determine what’s in <code class="highlighter-rouge">composer.lock</code>:</p>
 
 <ul>
-  <li>
-    <p><code class="highlighter-rouge">composer update</code>, which you must run every time you add or remove dependencies in <code class="highlighter-rouge">composer.json</code>.</p>
-
-    <p><code class="highlighter-rouge">composer update</code> updates <code class="highlighter-rouge">composer.lock</code>.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">composer install</code> reads <code class="highlighter-rouge">composer.lock</code>, not <code class="highlighter-rouge">composer.json</code>, to download dependencies.</p>
-
-    <p>You must keep an up-to-date copy of <code class="highlighter-rouge">composer.lock</code> in your Cloud Git repository.</p>
-  </li>
+  <li><code class="highlighter-rouge">composer update</code>, which you must run every time you add or remove dependencies in <code class="highlighter-rouge">composer.json</code>.	<code class="highlighter-rouge">composer update</code> updates <code class="highlighter-rouge">composer.lock</code>.</li>
+  <li><code class="highlighter-rouge">composer install</code> reads <code class="highlighter-rouge">composer.lock</code>, not <code class="highlighter-rouge">composer.json</code>, to download dependencies. You must keep an up-to-date copy of <code class="highlighter-rouge">composer.lock</code> in your Cloud Git repository.</li>
 </ul>
 
 <p>The workflow is as follows:</p>
 
 <ol>
-  <li>Make a change to <code class="highlighter-rouge">composer.json</code>. For example, edit this file when installing an extension.</li>
-  <li>Run <code class="highlighter-rouge">composer update</code></li>
+  <li>Make a change to <code class="highlighter-rouge">composer.json</code>. For example, edit this file when installing an extension or module.</li>
+  <li>Run <code class="highlighter-rouge">composer update</code>.</li>
   <li>Add <code class="highlighter-rouge">composer.lock</code> to or update it in your Cloud Git repository.</li>
   <li>Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.</li>
 </ol>
 
 <p>During the <a href="/guides/v2.2/cloud/reference/discover-deploy.html">build phase</a>, the Cloud environment runs <code class="highlighter-rouge">composer install</code> on a fresh clone of your Git branch to retrieve the latest dependencies.</p>
 
+<h2 id="commands">Magento composer commands</h2>
+<p>We use the following commands for Magento:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">composer install</code>: Use this command if you know extension and base code is updated. This command uses <code class="highlighter-rouge">composer.lock</code>, not <code class="highlighter-rouge">composer.json</code>. The command reads the lock file and checks the versions installed and listed in the file. If new lines are included or the file has a later version, the code is installed. After initial install, using the command only installs new code if you add new extensions or versions to <code class="highlighter-rouge">composer.lock</code>.</li>
+  <li><code class="highlighter-rouge">composer update</code>: Use this command when you need to perform complete updates of all extensions and base code. This command uses <code class="highlighter-rouge">composer.json</code>, not <code class="highlighter-rouge">composer.lock</code>.</li>
+</ul>
+
 <h2 id="magento-commerce-cloud-packages">Magento Commerce (Cloud) packages</h2>
-<p>The following sections discuss the <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> packages used by Magento Commerce:</p>
+<p>The following sections discuss the Composer packages used by Magento Commerce (Cloud):</p>
 
 <ul>
   <li><a href="#cloud-composer-cloudmeta"><code class="highlighter-rouge">magento/magento-cloud-metapackage</code></a></li>
@@ -1867,19 +1885,19 @@
   <li><code class="highlighter-rouge">bin/magento magento-cloud:build</code></li>
 </ul>
 
-<p>For Magento Commerce, versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>. The versioning for <code class="highlighter-rouge">ece-tools</code> will then be <code class="highlighter-rouge">&lt;200 + x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with 202.0.0.</p>
+<p>For Magento Commerce, versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>. The versioning for <code class="highlighter-rouge">ece-tools</code> will then be <code class="highlighter-rouge">&lt;2000 + x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with 2002.0.0.</p>
 
 <p>We release updated <code class="highlighter-rouge">ece-tools</code> code strictly includes improvements for tools, including the build and deploy hooks. These tools are updated as needed through patching and product upgrades, managed by the <code class="highlighter-rouge">magento-cloud-metapackage</code>.</p>
 
 <h3 id="cloud-composer-prodee">magento/product-enterprise-edition</h3>
 <p>This <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span> requires Magento application components, including modules, frameworks, themes, and so on.</p>
 
-<h2 id="base-packages-and-file-marshaling">Base packages and file marshaling</h2>
+<h2 id="base-packages-and-file-marshalling">Base packages and file marshalling</h2>
 <p>Magento contains two base packages, <code class="highlighter-rouge">magento/magento2-base</code> and <code class="highlighter-rouge">magento/magento2-ee-base</code>. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> entry points, and so on.</p>
 
 <p>These files are location-dependent, and cannot reside in the <code class="highlighter-rouge">vendor</code> directory. They are distributed as part of the base packages, and they rely on hooks located in the <code class="highlighter-rouge">magento/magento-composer-installer</code> package, which marshals them to the appropriate locations.</p>
 
-<p>One way in which Magento Commerce deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment specifically, the marshaling functionality of <code class="highlighter-rouge">magento/magento-composer-installer</code> is disabled.</p>
+<p>One way in which Magento Commerce (Cloud) deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment specifically, the marshalling functionality of <code class="highlighter-rouge">magento/magento-composer-installer</code> is disabled.</p>
 
 <p>Therefore, when upgrading to a new Cloud version or adding, removing, or changing any packages that rely on file marshaling, you must:</p>
 
@@ -1887,9 +1905,9 @@
   <li>
     <p>Run <code class="highlighter-rouge">composer update</code> locally.</p>
 
-    <p>The new version of the base packages are marshaled out into the Cloud project root directory, which means files are added, removed, and changed.</p>
+    <p>The new version of the base packages are marshalled out into the Cloud project root directory, which means files are added, removed, and changed.</p>
 
-    <p>File marshaling works on your local system but <em>not</em> on the Cloud server.</p>
+    <p>File marshalling works on your local system but <em>not</em> on the Cloud server.</p>
   </li>
   <li>Add and commit these updated files to your Cloud Git repository.</li>
   <li>Push the changes to your Cloud Integration environment.</li>
