@@ -10,8 +10,6 @@ version: 2.0
 github_link: cloud/project/project-upgrade.md
 redirect_from:
   - /guides/v2.0/cloud/howtos/upgrade-magento.html
-  - /guides/v2.1/cloud/howtos/upgrade-magento.html
-  - /guides/v2.1/cloud/howtos/upgrade-magento.html
 functional_areas:
   - Cloud
   - Upgrade
