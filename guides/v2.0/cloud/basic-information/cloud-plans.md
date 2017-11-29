@@ -77,7 +77,7 @@ See the [Trial signup](https://magento.com/trial){:target="_blank"} for full det
 
 ![Onboarding Portal getting started]({{ site.baseurl }}common/images/cloud_portal-trial.png)
 
-### What is autoprovisioning? {#autoprovisioning}
+### What is auto provisioning? {#autoprovisioning}
 When you create an account with a Trial, your {{site.data.var.ece}} project is created automatically. As part of the process, we generate a code branch and environment with the latest Magento code for you.
 
 We complete the following steps for you to make the entire process easier to get started:
