@@ -42,6 +42,7 @@ To upgrade from **2.0.X**:
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
 * [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 
 To upgrade from **2.1.X**:
 
@@ -49,7 +50,8 @@ To upgrade from **2.1.X**:
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
 * [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
-* [Complete Fastly migration steps](#fastly): Fastly requires a different JSON format in 2.2 and later
+* [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
+* [Update .gitignore for new generated directory](#gitignore): With 2.2 and later, changes in generated folder require additions to `.gitignore`
 
 After completing your upgrade, you may also want to [Verify and upgrade your extensions](#extensions).
 
@@ -112,20 +114,16 @@ If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your 
 ### Verify or set the ADMIN_EMAIL variable {#variable}
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
 
-### Complete Fastly migration steps {#fastly}
-When upgrading from {{site.data.var.ece}} v2.1.X to 2.2.X, you need to complete additional steps for Fastly. You may need to run these commands on Staging and Production environments via SSH access.
+### Upgrade Fastly {#fastly}
+If you have not upgraded to the latest supported version of Fastly, you should do so. Check [Supported software versions]({{page.baseurl}}cloud/requirements/cloud-requirements.html#cloud-arch-software) for the latest version of Fastly we recommend. For instructions, see [Upgrade Fastly]({{page.baseurl}}cloud/access-acct/fastly.html#upgrade).
 
-For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="_blank"}.
+If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="_blank"}.
 
-Due to backward incompatible changes in configuration saving format for Magento versions 2.2.X, you must enter the following command through a terminal as part of your upgrade process:
+### Update .gitignore for new generated directory {#gitignore}
+With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.
 
-    bin/magento fastly:format:serializetojson"
-
-This command converts your Fastly configuration data to a JSON format supported in Magento 2.2.X.
-
-If you need to revert these JSON format changes, run the following command:
-
-    bin/magento fastly:format:jsontoserialize"
+    /generated/*
+    !/generated/.htaccess
 
 ## Back up the database {#backup-db}
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.

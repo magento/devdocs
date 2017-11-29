@@ -80,7 +80,7 @@ This package contains the following scripts and `magento` commands that automati
  * `bin/magento magento-cloud:deploy`
  * `bin/magento magento-cloud:build`
 
-For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`. The versioning for `ece-tools` will then be `<200 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with 202.0.0.
+For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`. The versioning for `ece-tools` will then be `<2000 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with 2002.0.0.
 
 We release updated `ece-tools` code strictly includes improvements for tools, including the build and deploy hooks. These tools are updated as needed through patching and product upgrades, managed by the `magento-cloud-metapackage`.
 
