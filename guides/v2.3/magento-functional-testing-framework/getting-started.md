@@ -169,6 +169,23 @@ Example: `MAGENTO_ADMIN_USERNAME=admin`
 * `MAGENTO_ADMIN_PASSWORD` must contain a user password required for authorization in the Admin area. 
 Example: `MAGENTO_ADMIN_PASSWORD=123123q`
 
+ENV FILE CHANGED:
+ - New values:
+      These Values have default variables (included), and should be changed if the user is not running Selenium Locally.
+      They are self explanatory to users that would need to change it, and should be noted to not be changed
+      unless the user knows they need to do so.
+      They come together to form the path to where Selenium Server is running from like:
+            http://127.0.0.1:4444/wd/hub
+      
+      SELENIUM_HOST=127.0.0.1            
+      SELENIUM_PORT=4444
+      SELENIUM_PROTOCOL=http
+      SELENIUM_PATH=/wd/hub
+
+
+
+
+
 * `TESTS_BP` must contain a base path to a directory that contains this configuration file. 
 Example: `TESTS_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance`
 
