@@ -27,9 +27,6 @@ redirect_from:
   - /guides/v2.0/cloud/requirements/cloud-requirements-git.html
   - /guides/v2.1/cloud/requirements/cloud-requirements-git.html
   - /guides/v2.2/cloud/requirements/cloud-requirements-git.html
-  - /guides/v2.0/cloud/reference/git-integration.html
-  - /guides/v2.1/cloud/reference/git-integration.html
-  - /guides/v2.2/cloud/reference/git-integration.html
 functional_areas:
   - Cloud
   - Install
