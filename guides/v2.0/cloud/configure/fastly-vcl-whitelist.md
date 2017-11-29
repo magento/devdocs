@@ -49,7 +49,7 @@ Create an `allowlist.vcl` file with the following JSON content:
   "type": "recv",
   "content": "if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }",
 }
-{% end highlight %}
+{% endhighlight %}
 
 Review the following values for the code to determine if you need to make changes:
 

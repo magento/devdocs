@@ -47,7 +47,7 @@ Create an `wordpress.vcl` file with the following JSON content:
   "type": "recv",
   "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }",
 }
-{% end highlight %}
+{% endhighlight %}
 
 Review the following values for the code to determine if you need to make changes:
 

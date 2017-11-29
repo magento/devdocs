@@ -47,7 +47,7 @@ Create an `badreferer.vcl` file with the following JSON content:
   "type": "recv",
   "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }",
 }
-{% end highlight %}
+{% endhighlight %}
 
 Review the following values for the code to determine if you need to make changes:
 

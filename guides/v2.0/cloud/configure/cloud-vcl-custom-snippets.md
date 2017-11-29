@@ -139,7 +139,7 @@ To create the bash script files:
           -H "Fastly-Key:$API_KEY" \
           --data "name=${SNIPPET_NAME_PREFIX}_${TYPE}&type=$TYPE&dynamic=0&content=$(cat $vcl | rawurlencode)";
           done
-          {% end highlight %}
+          {% endhighlight %}
 
 2. Save two versions of the file: `staging_snippets.sh` and `production_snippets.sh`.
 3. In `staging_snippets.sh`, edit the following values and save:
@@ -223,7 +223,7 @@ Create a VCL snippet as a `.vcl` file with the following JSON content and format
   "type": "<type>",
   "content": "<code all in one line>",
 }
-{% end highlight %}
+{% endhighlight %}
 
 The values include:
 

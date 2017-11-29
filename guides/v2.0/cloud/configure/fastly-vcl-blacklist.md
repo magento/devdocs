@@ -48,7 +48,7 @@ Create an `blocklist.vcl` file with the following JSON content:
   "type": "recv",
   "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }",
 }
-{% end highlight %}
+{% endhighlight %}
 
 Review the following values for the code to determine if you need to make changes:
 
