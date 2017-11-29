@@ -45,7 +45,7 @@ The Magento Security Scan Tool enables you to regularly monitor your store websi
 
 For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html){:target="_blank"}. Typically, you want to start using this tool as you enter UAT testing.
 
-Each site to be scanned must be registered through Magento Security Scan tab. This registration process includes acceptance of Magento’s disclaimer prior to scanning.
+Each site to be scanned must be registered through Magento Security Scan tab. This registration process includes acceptance of Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is completed. Scans can be scheduled for either a specific, recurring date and time or on-demand as required.
 
 To scan your site:
 
@@ -59,6 +59,8 @@ To review the report:
 2. In the site row, select the report you want to view from the **Reports** column. The order is latest to oldest.
 
 The report lists issues including Failed Scans, Unidentified Results, and Successful Scans. Each entry provides detailed information for the scan, any issues to investigate, and actions to take. Some of these actions may require downloading and installing security patches. Make sure to add those via branches and Git pushes through your local.
+
+Scan results include a general label that describes whether a site passed or failed plus detailed information about the checks performed. Failed indicates that the website contains a serious vulnerability, while unidentified suggests that a deeper review is required by your team or hosting provider to determine if further action is required. We also provide suggested remediation steps for each failed security test. Security scan results are protected and viewable only by the registered user, and notifications of scan completion are restricted to the users designated in the site registration process.
 
 ## Ready to go live {#ready}
 You are ready to start go live steps:
