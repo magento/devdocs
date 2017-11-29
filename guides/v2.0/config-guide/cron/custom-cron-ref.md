@@ -109,7 +109,7 @@ where:
 |---|---|
 |`schedule_generate_every`|Frequency (in minutes) that schedules are written to the `cron_schedule` table.|
 |`schedule_ahead_for`|Time (in minutes) in advance that schedules are written to the `cron_schedule` table.|
-|`schedule_lifetime`|Schedule lifetime in minutes.|
+|`schedule_lifetime`|Window of time (in minutes) that cron job must start or will be considered missed ("too late" to run).|
 |`history_cleanup_every`|Time (in minutes) that cron history is kept in the database.|
 |`history_success_lifetime`|Time (in minutes) that the record of successfully completed cron jobs are kept in the database.|
 |`history_failure_lifetime`|Time (in minutes) that the record of failed cron jobs are kept in the database.|
