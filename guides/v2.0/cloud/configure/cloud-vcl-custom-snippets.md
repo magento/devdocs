@@ -189,25 +189,6 @@ Clone the version using the active version number. This creates a copy of all ex
 
 For more information on this Fastly API, see this [clone command](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709){:target="_blank"}.
 
-<!-- They should clone then edit. Saving this info just in case.
-### Get a service version number {#version-number}
-When creating a new regular VCL snippet, or updating a current one, you need a new version number. This version is a new service configuration version number for your Fastly service. When adding VCL snippets, you add them all to a specific version of the service. You may have noticed the versioning when you upload VCLs during Fastly configuration through the Fastly module.
-
-When you validate and activate your snippets, you actually activate a version. All snippets assigned to the version activate.
-
-To generate the version, use the following command with your Service ID and API key in the command:
-
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version
-
-Fastly returns the editable version number and Service ID. You use the version number when creating, calling, and managing VCL snippets. For example:
-
-	{
-		"number":1,
-		"service_id": "SU1Z0isxPaozGVKXdv0eY"
-	}
-
-When reviewing a list of VCL snippets, you will also note the snippets have a specific version number in the JSON output. -->
-
 ### Create custom VCL snippets {#create-snippet}
 We recommend the following process for creating and modifying snippets. The process allows you to push code for one or more snippets, save the code used, and formats the CURL commands just by running the bash scripts you prepared.
 
@@ -236,17 +217,6 @@ For detailed examples and custom code, see the following:
 * [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
 * [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-backend.html)
 * [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
-
-<!-- ### Update an existing VCL snippet {#update}
-Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:
-
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Cloned version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
-
-Copy the data and build a `curl` command with the cloned version number, name, and edits. The following is an example template for the update command. You would enter the cloned version number for `Editable Version #` and data for the command in `--data`.
-
-	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
-
-If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults). -->
 
 ## Update and run the bash scripts {#run-bash}
 To add the VCL snippets to Fastly, you need to modify the bash scripts with the cloned version number and run the scripts.
