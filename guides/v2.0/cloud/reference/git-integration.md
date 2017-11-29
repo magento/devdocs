@@ -39,7 +39,7 @@ For specifics on creating Git branches, see the following topics:
 * [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
 * [Manage branches with the CLI]({{page.baseurl}}cloud/env/environments-start.html)
 
-## .gitignore file {gitignore}
+## .gitignore file {#gitignore}
 Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
 
 We include a base `.gitignore` file with the project repository. For a review of the {{site.data.var.ece}} file, see [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="_blank"}. You can review the recommended files for your file in the [`.gitignore` reference]({{page.baseurl}}config-guide/prod/config-reference-gitignore.html).
