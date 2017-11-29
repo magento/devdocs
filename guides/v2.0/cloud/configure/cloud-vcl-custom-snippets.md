@@ -37,20 +37,20 @@ Your VCL snippets include the following values. You can use these key/value pair
 
 <table>
 <tr>
-    <th style="width: 150px;">Value</th>
+    <th style="width: 200px;">Value</th>
     <th>Description</th>
 </tr>
 <tr>
-<td>Service ID</td>
-<td>The ID indicates the specific Staging or Production service/environment. We provide this value. You will use this value when setting up your bash script for custom VCL snippets.</td>
+<td>service_id</td>
+<td>The ID indicates the specific Staging or Production service/environment. We provide this value. You will use this value when setting up your bash script for custom VCL snippets for <code>SERVICE_ID</code>.</td>
 </tr>
 <tr>
-<td>FASTLY_API_TOKEN</td>
+<td>API_KEY</td>
 <td>The API Key for your Fastly account. We provide this value. You will add this value to your bash script.</td>
 </tr>
 <tr>
 <td>version</td>
-<td>The version of the service you add snippets to for validating and activating. Fastly uses <code>Editable Version #</code> in their example values. We also use the description of <code>Cloned Version #</code> in the examples.</td>
+<td>The version of the service you add snippets to for validating and activating. Fastly uses <code>Editable Version #</code> in their example values. In the bash script, we use <code>SERVICE_ID_VERSION</code> for this value.</td>
 </tr>
 <tr>
 <td>type</td>
@@ -74,6 +74,24 @@ Your VCL snippets include the following values. You can use these key/value pair
 <td>Indicates if the snippet or version is activated and currently in use. Returns <code>true</code> or <code>false</code>. Make note of the version number for an active snippet. You will use this to clone the version. </td>
 </tr>
 </table>
+
+The following is an example of a returned JSON for a customer VCL snippet:
+
+{% highlight json %}
+{
+  "id": "62Yd1WfiCBPENLloXfXmlO",
+  "service_id": "{Service ID}",
+  "version": "{Editable Version #}",
+  "name": "apply_acl",
+  "priority": "100",
+  "dynamic": "1",
+  "type": "hit",
+  "content": "if ((client.ip ~ {ACLNAME}) && !req.http.Fastly-FF){ error 403; }",
+  "created_at": "2016-08-15T09:37:10+00:00",
+  "updated_at": "2016-08-15T09:37:10+00:00",
+  "deleted_at": null
+}
+{% endhighlight %}
 
 ## Prepare to create VCL snippets {#prepare}
 Before creating custom VCL snippets, you need to set up and save two bash script files, one for each Staging and Production. Each file will include the specific Fastly Service ID per environment. When creating VCL snippets, you will create a series of VCL snippet files (`.vcl`) with JSON code. The bash scripts run through all `.vcl` files, creating and running CURL commands, to push custom VCL snippets to Staging or Production for a cloned version.
@@ -136,12 +154,12 @@ To create the bash script files:
 
     * `SERVICE_ID`: Replace `<SERVICE_ID>` with the Service ID for your Staging environment.
     * `API_KEY`: Replace `<API_KEY>` with your Fastly API Key.
-    * `SNIPPET_NAME_PREFIX`: Replace `<SNIPPET_NAME_PREFIX_NO_SPACES>` with ...???  (QUESTION: do they need this? magentocloud should not be used as a prefix)
+    * `SNIPPET_NAME_PREFIX`: Replace `<SNIPPET_NAME_PREFIX_NO_SPACES>` with a value of your choice. Do not use `magentocloud` as the prefix.
 4. In `production_snippets.sh`, edit the following values and save:
 
     * `SERVICE_ID`: Replace `<SERVICE_ID>` with the Service ID for your Staging environment.
     * `API_KEY`: Replace `<API_KEY>` with your Fastly API Key.
-    * `SNIPPET_NAME_PREFIX`: Replace `<SNIPPET_NAME_PREFIX_NO_SPACES>` with ...???  (QUESTION: do they need this? magentocloud should not be used as a prefix)
+    * `SNIPPET_NAME_PREFIX`: Replace `<SNIPPET_NAME_PREFIX_NO_SPACES>` with a value of your choice. Do not use `magentocloud` as the prefix.
 5. Optional, save the files to their own directories.
 
   For example if you want different custom VCL snippets for Staging then Production, you can save the `staging_snippets.sh` bash script and Staging `.vcl` files into the same directory. When you run that bash script, only those custom VCLs generate to Staging.
