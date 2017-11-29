@@ -14,7 +14,7 @@ This information details how to upgrade {{site.data.var.ece}} to 2.2.X from any 
 
 When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
-Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{page.baseurl}}cloud/reference/cloud-composer.html).
 
 When upgrading from 2.0.X or 2.1.X to 2.2.X, please see [Upgrade from 2.0.X or 2.1.X](#old-version). For additional information on the release, see the [{{site.data.var.ece}} 2.2 Release Notes].
 
@@ -42,7 +42,6 @@ To upgrade from **2.0.X**:
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
 * [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
-
 
 To upgrade from **2.1.X**:
 
@@ -112,6 +111,21 @@ If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your 
 ### Verify or set the ADMIN_EMAIL variable {#variable}
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
 
+### Complete Fastly migration steps {#fastly}
+When upgrading from {{site.data.var.ece}} v2.1.X to 2.2.X, you need to complete additional steps for Fastly. You may need to run these commands on Staging and Production environments via SSH access.
+
+For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="_blank"}.
+
+Due to backward incompatible changes in configuration saving format for Magento versions 2.2.X, you must enter the following command through a terminal as part of your upgrade process:
+
+    bin/magento fastly:format:serializetojson"
+
+This command converts your Fastly configuration data to a JSON format supported in Magento 2.2.X.
+
+If you need to revert these JSON format changes, run the following command:
+
+    bin/magento fastly:format:jsontoserialize"
+
 ## Back up the database {#backup-db}
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
@@ -128,7 +142,7 @@ Back up your Integration environment database and code:
 
 Back up your staging or production system database:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
@@ -177,7 +191,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
@@ -210,7 +224,7 @@ Important: For an upgrade, you will delete `config.php`. Once this file is added
 ## Verify and upgrade your extensions {#extensions}
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
-We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
+We recommend [backing up your database]({{page.baseurl}}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
 
 1. Create a new branch on your local.
 2. Disable your extensions as needed.
@@ -233,7 +247,7 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
-To view the error in your integration system, [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html) and enter the following command:
+To view the error in your integration system, [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
@@ -246,8 +260,8 @@ One possible error occurs when the deployment hook failed, and therefore the dat
 
 To resolve the error:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
-2.  [Examine the logs]({{ page.baseurl }}cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{page.baseurl}}cloud/trouble/environments-logs.html) to determine the source of the issue.
 3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
     For example, on a local branch, enter the following commands:
