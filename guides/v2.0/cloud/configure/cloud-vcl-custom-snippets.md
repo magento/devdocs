@@ -231,10 +231,11 @@ The values include:
 
 For detailed examples and custom code, see the following:
 
-* Whitelist or allowlist VCL
-* Blacklist VCL
-* Extend Magento Admin timeout
-* Choose different backend VCL
+* [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
+* [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
+* [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
+* [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-backend.html)
+* [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
 
 <!-- ### Update an existing VCL snippet {#update}
 Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:

@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-This example details how to redirect to another backend using an Edge Dictionary and VCL. You may have a separate Wordpress blog for all of your store's blog entries, kept separate from your store. For this example, you are trying to check the first part of the incoming path and redirect the visitor to your Wordpress backend. You would create an Edge Dictionary called `wordpress_urls` with a list of paths to redirect traffic.
+You may want to create a VCL snippet that runs before all other modules to block bad referring websites from accessing your site. To block these sites with a 403 Forbidden error through Fastly, create a VCL snippet to use with an Edge Dictionary of domains to block.
 
 You must have the following information to complete this VCL code snippet:
 
@@ -29,38 +29,32 @@ Edge Dictionaries create key-value pairs for running against your VCL snippet. F
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
 3. Expand the **Edge dictionaries** section.
 4. Click **Add container**. You need to create a container to hold up to 1,000 key-value pairs.
-5. On the container, enter a Dictionary name. For this example, use the name `wordpress_urls`.
+5. On the container, enter a Dictionary name. For this example, use the name `referer_blocklist`.
 6. Select the checkbox for **Activate after the change** if you want to the dictionary after creating or editing the container.
 7. Add key-value pairs in the new dictionary. For this example, enter the URLs for your blog that should be redirected to your Wordpress backend. Enter a value of 1.
 
 For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries){:target="_blank"} and their example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples){:target="_blank"}.
 
-## Create wordpress.vcl {#vcl}
+## Create badreferer.vcl {#vcl}
 For this example, you may only want to run it against the Production server. You can also add it to Staging for testing.
 
-Create an `wordpress.vcl` file with the following JSON content:
+Create an `badreferer.vcl` file with the following JSON content:
 
 {% highlight json %}
 {
-  "name": "wordpress",
+  "name": "badreferer",
   "priority": "5",
   "type": "recv",
-  "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }",
+  "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }",
 }
 {% end highlight %}
 
 Review the following values for the code to determine if you need to make changes:
 
-* `name`: Name for the VCL snippet. For this example, we used the name `wordpress`.
-* `priority`: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and check for URLs that should be redirected. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.
+* `name`: Name for the VCL snippet. For this example, we used the name `badreferer`.
+* `priority`: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and block bad referring websites. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.
 * `type`: For this VCL, we use `recv`, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.
-* `content`: The code that runs. The code extracts the first part `mypath` of the path `/mypath/someotherpath`.  It then compares that path against the Edge Dictionary `wordpress_urls`. If a match is found, the visitor is redirected to the Wordpress backend.
-
-## Configure Wordpress {#wordpress}
-For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request:
-
-	req.http.X-WP == “1”
-
+* `content`: The code that runs. The code captures the host of a referer website into a header. It then checks if the referrer host is in the Edge Dictionary `referer_blocklist`.
 
 ## Finish adding the VCL {#complete}
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
