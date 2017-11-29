@@ -230,6 +230,12 @@ For details on this TXT record, see Fastly's [DNS TXT record validation](https:/
 #### Related topics
 
 * [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
+
+  * [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
+  * [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
+  * [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
+  * [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-backend.html)
+  * [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
 * [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
 *	[Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
 *	[Fastly documentation](https://docs.fastly.com/guides){:target="_blank"}

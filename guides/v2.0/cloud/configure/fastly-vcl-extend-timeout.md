@@ -19,7 +19,9 @@ To build the new command, we took the default code and revised it with a new nam
 
 The important code that sets the timeout is the `first_byte_timeout` value of 100. For this snippet, you can extend this time to 300s for five minutes or 600s for ten minutes. Ten minutes is the hard cap for Fastly timeouts. In this code example, we extend the timeout to ten minutes.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+</div>
 
 ## Create extendtimeout.vcl {#vcl}
 To extend the timeout for the Magento Admin to Staging and Production environments, you can use the same VCL snippet file without edits.

@@ -20,7 +20,9 @@ You must have the following information to complete this VCL code snippet:
 * Create an Edge Dictionary in your environments
 * Account access and URL to the Magento Admin for the Staging or Production environment
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+</div>
 
 ## Create Wordpress Edge Dictionary {#edge-dictionary}
 Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of URLs to redirect to a Wordpress backend. You may only want to create the edge dictionary in your Production environment. You can also create it in Staging for testing if needed.

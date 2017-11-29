@@ -21,7 +21,9 @@ You must have the following information to complete this VCL code snippet:
 * Account access and URL to the Magento Admin for the Staging or Production environment
 * URL for the Magento Admin. If you changed this URL from `/admin`, you will need to modify the code in this example.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+</div>
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
 Edge ACLs create IP lists for managing access for your VCL snippet. For this example, create an Edge ACL of IPs to whitelist and enable access to your site. Then create a custom VCL snippet to manage access.
