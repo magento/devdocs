@@ -11,7 +11,7 @@ github_link: cloud/project/project-start.md
 redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
-  - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
+  - /guides/v2.2/cloud/access-acct/first-time-setup_dir-structure.html
 functional_areas:
   - Cloud
   - Configuration

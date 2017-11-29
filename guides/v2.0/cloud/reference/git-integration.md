@@ -33,6 +33,12 @@ In addition to Git's requirements for [valid branch names](https://www.kernel.or
 * The `/` character isn't allowed in a branch name.
 * Branch names must be case-insensitively unique. In other words, the names must be entirely unique regardless of the case you use. For example, if you have a branch named `Sprint`, you cannot create another branch named `sprint`. A branch name of `Sprint2` and `sprint2` are just fine.
 
+## Git branching {#branching}
+For specifics on creating Git branches, see the following topics:
+
+* [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
+* [Manage branches with the CLI]({{page.baseurl}}cloud/env/environments-start.html)
+
 ## .gitignore file {gitignore}
 Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
 
