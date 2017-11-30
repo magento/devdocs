@@ -147,13 +147,13 @@ For Pro plan Staging and Production environments, please [enter a ticket to Supp
 Having trouble with cron jobs? The information in this section may help.
 
 ### Reset cron jobs
-Sometimes, Magento cron jobs don't finish executing, which prevents other Magento cron jobs from running.
+Sometimes, Magento cron jobs just don't finish executing and get stuck, which prevents other Magento cron jobs from running. These jobs can become stuck and require unlocking to allow additional crons to continue and to free resources.
 
 #### Symptom
-Magento cron jobs fail to execute on schedule, which causes adverse impacts on your store. For example,
+Magento cron jobs may become stuck causing other cron jobs to fail to execute on schedule, which causes adverse impacts on your store. These crons become stuck for a number of reasons, including network issues, application crashes, redeployment issues, and so on. To resolve, you need to unlock the stuck cron job.
 
 #### Solution
-You must manually unlock Magento cron jobs in the database using a CLI command.
+To unlock a stuck cron job, you must manually SSH into the affected environment and isue a CLI command. This command changes the status of the cron job in the database, ending the cron forcefully to allow other scheduled crons to continue.
 
 1.  Open a terminal application.
 2.  [SSH]({{page.baseurl}}cloud/env/environments-ssh.html#ssh) into the environment experiencing the issue.
