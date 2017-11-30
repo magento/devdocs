@@ -273,6 +273,8 @@ after|string|optional|
 
 ### closeAdminNotification
 
+Remove from the DOM all elements with the CSS classes `.modal-popup` or `.modals-overlay`
+
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|string|required|
@@ -293,6 +295,8 @@ after|string|optional|
 
 ### conditionalClick
 
+Click on `selector` if and only if `dependentSelector` has visibility of the `visible` flag.
+
 Attribute|Type|Use|Default
 ---|---|---|---
 selector|string|optional|
@@ -304,6 +308,8 @@ before|string|optional|
 after|string|optional|
 
 ### createData
+
+[See the Data topic for more information.](../data.html)
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -318,6 +324,8 @@ This action can optionally contain one or more `required-entity` child elements.
 
 #### required-entity
 
+[See the Data topic for more information.](../data.html)
+
 Attribute|Type|Use|Default
 ---|---|---|---
 createDataKey|string|required|	
@@ -326,6 +334,8 @@ before|string|optional|
 after|string|optional|
 
 ### deleteData
+
+[See the Data topic for more information.](../data.html)
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -511,6 +521,8 @@ after|string|optional|
 
 ### dontSeeJsError
 
+Assert that there are no Javascript errors.
+
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|string|required|
@@ -611,6 +623,8 @@ before|string|optional|
 after|string|optional|
 
 ### formatMoney
+
+[See PHP docs](http://php.net/manual/en/function.money-format.php){:target='_blank'}
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -736,6 +750,9 @@ after|string|optional|
 
 ### loginAsAdmin
 
+A convenient helper that will go to the Magento admin page, fill in the username and password, click login, and finally
+calls [closeAdminNotification](#closeAdminNotification)
+
 Attribute|Type|Use|Default
 ---|---|---|---
 username|string|optional|
@@ -839,6 +856,8 @@ before|string|optional|
 after|string|optional|
 
 ### parseFloat
+
+Parse float number with thousands seperator.
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -956,6 +975,8 @@ after|string|optional|
 
 ### scrollToTopOfPage
 
+A convenience function that executes `window.scrollTo(0,0)` as Javascript thus returning to the top of the page.
+
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|string|required|
@@ -964,6 +985,9 @@ before|string|optional|
 after|string|optional|
 
 ### searchAndMultiSelectOption
+
+Search for and select options from a Magento multi-select drop down menu.
+e.g. The drop down menu you use to assign Products to Categories.
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -1354,6 +1378,8 @@ after|string|optional|
 
 ### waitForAjaxLoad
 
+Wait for all AJAX calls to finish.
+
 Attribute|Type|Use|Default
 ---|---|---|---
 time|string|optional|
@@ -1430,6 +1456,19 @@ after|string|optional|
 
 ### waitForLoadingMaskToDisappear
 
+Wait for all Magento loading overlays to go away. Note: The CSS class for loading masks is not used consistently throughout Magento. Therefore, this convenience function tries to wait for various specific selectors.
+
+```
+# Wait for these classes to not be visible
+
+//div[contains(@class, "loading-mask")]
+//div[contains(@class, "admin_data-grid-loading-mask")]
+//div[contains(@class, "admin__data-grid-loading-mask")]
+//div[contains(@class, "admin__form-loading-mask")]
+//div[@data-role="spinner"]
+```
+ 
+
 Attribute|Type|Use|Default
 ---|---|---|---
 mergeKey|string|required|
@@ -1438,6 +1477,8 @@ before|string|optional|
 after|string|optional|
 
 ### waitForPageLoad
+
+Wait for AJAX, Magento loading overlays, and `document.readyState == "complete"`
 
 Attribute|Type|Use|Default
 ---|---|---|---
