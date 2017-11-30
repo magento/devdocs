@@ -5,14 +5,14 @@ subgroup: Controls
 title: Admin Design Pattern Library
 menu_title: Buttons
 menu_order: 1
-menu_node: 
+menu_node:
 version: 2.0
 github_link: pattern-library/controls/buttons/buttons.md
 redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---
 
-## Buttons 
-Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento. 
+## Buttons
+Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento.
 
 For solutions not described in this topic, please refer to other related patterns or contact the Magento UX Design team.
 
@@ -25,9 +25,9 @@ used when deciding when to use a button vs. a hyperlink, icon, or another call t
 <h3 id="when-not-to-use">When Not to Use</h3>
 * Do not use buttons to indicate actions that are better suited as hyperlinks such     
   as "Cancel". Some exceptions may apply.
-* Do not use more than one primary page level action on a single page for 
+* Do not use more than one primary page level action on a single page for
   different actions. Some exceptions may apply.
-* Do not use buttons to indicate a link to more information or to a task not related 
+* Do not use buttons to indicate a link to more information or to a task not related
   to primary flow.
 
 <h3 id="variations">Variations</h3>
@@ -92,7 +92,7 @@ defined style.
 
 <h2 id="style_behavior">Styles and Behavior</h2>
 
-#### 1. Page Level Button 
+#### 1. Page Level Button
 
 <img src="img/Button_grid01_primary.png">
 
@@ -278,8 +278,8 @@ Left/Right margin spacing should not be less than 10px<br>
 
 <h3 id="accessibility">Accessibility</h3>
 
-PC: <a href="http://support.microsoft.com/kb/126449" target="blank">http://support.microsoft.com/kb/126449</a><br>
-OS: <a href="http://support.apple.com/en-us/HT201236" target="blank">http://support.apple.com/en-us/HT201236</a><br>
+PC: <a href="http://support.microsoft.com/kb/126449" target="\_blank">http://support.microsoft.com/kb/126449</a><br>
+OS: <a href="http://support.apple.com/en-us/HT201236" target="\_blank">http://support.apple.com/en-us/HT201236</a><br>
 (Keyboard shortcut same as checkbox)<br>
 
 <h3 id="assets">Assets</h3>
@@ -287,4 +287,3 @@ OS: <a href="http://support.apple.com/en-us/HT201236" target="blank">http://supp
 Please reach out to the Magento UX Design team if you need anything else.
 
 <a href="src/magento-buttons.psd">Download Button PSD source</a>
-

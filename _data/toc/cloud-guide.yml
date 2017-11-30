@@ -36,6 +36,9 @@ pages:
         - label: Magento Cloud CLI
           url: cloud/reference/cli-ref-topic.html
 
+        - label: Git
+          url: cloud/reference/git-integration.html
+
         - label: GitHub
           url: cloud/project/project-integrate-github.html
 
@@ -78,20 +81,14 @@ pages:
         - label: Optional - Configure Xdebug
           url: cloud/howtos/debug.html
 
-        - label: Import an existing Magento project
-          children:
+    - label: Import existing code into a project
+      url: cloud/access-acct/first-time-setup_import-first-steps.html
+      children:
+        - label: Prepare your existing Magento Commerce system
+          url: cloud/access-acct/first-time-setup_import-prepare.html
 
-            - label: First steps for importing Magento Commerce
-              url: cloud/access-acct/first-time-setup_import-first-steps.html
-
-            - label: Find the information you need for your import
-              url: cloud/access-acct/first-time-setup_import-prereq.html
-
-            - label: Prepare your existing Magento Commerce system
-              url: cloud/access-acct/first-time-setup_import-prepare.html
-
-            - label: Import Magento Commerce into Magento Commerce (Cloud)
-              url: cloud/access-acct/first-time-setup_import-import.html
+        - label: Import Magento Commerce into Magento Commerce (Cloud)
+          url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure your store
       url: cloud/configure/configuration-overview.html
@@ -127,6 +124,21 @@ pages:
 
         - label: Custom Fastly VCL snippets
           url: cloud/configure/cloud-vcl-custom-snippets.html
+
+        - label: Custom whitelist VCL
+          url: cloud/configure/fastly-vcl-whitelist.html
+
+        - label: Custom blacklist VCL
+          url: cloud/configure/fastly-vcl-blacklist.html
+
+        - label: Custom extend Admin timeout VCL
+          url: cloud/configure/fastly-vcl-extendtimeout.html
+
+        - label: Custom redirect to Wordpress VCL
+          url: cloud/configure/fastly-vcl-wordpress.html
+
+        - label: Custom block bad referer VCL
+          url: cloud/configure/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
           url: cloud/trouble/trouble_fastly.html
@@ -289,3 +301,6 @@ pages:
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
+
+        - label: Theme troubleshooting
+          url: cloud/trouble/theme-troubleshooting.html

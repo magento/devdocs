@@ -40,7 +40,7 @@ task :check_links => :build do
     checks_to_ignore: ["ScriptCheck", "ImageCheck"],
     allow_hash_ref: true,
     alt_ignore: [/.*/],
-    file_ignore: [/videos/, /swagger/, /search.html/, /404.html/, /codelinks/, /magento-third-party.html/, /magento-techbull.html/, /magento-release-notes.html/, /magento-release-information.html/, /index.html/, /template.html/, /magento-devdocs-whatsnew.html/],
+    file_ignore: [/videos/, /swagger/, /guides\/m1x/, /search.html/, /404.html/, /codelinks/, /magento-third-party.html/, /magento-techbull.html/, /magento-release-notes.html/, /magento-release-information.html/, /index.html/, /template.html/, /magento-devdocs-whatsnew.html/],
     url_ignore: [/guides\/v2.3/],
     error_sort: :desc, # Sort by invalid link instead of affected file path (default). This makes it easier to see how many files the bad link affects.
     parallel: { :in_processes => 3 },
