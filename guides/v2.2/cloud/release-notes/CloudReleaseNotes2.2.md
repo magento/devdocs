@@ -64,6 +64,8 @@ For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 
 ## Fixed issues {#fixed}
 This release contains numerous fixes and enhancements. This section includes only fixes for {{site.data.var.ece}}. For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
 
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get this update.
+
 <!-- 57167 -->* You can now generate sitemap.xml and robots.txt normally through the Magento Admin panel, without needing to move the file and have a redirect entered. If you are upgrading to 2.2, please enter a [Support ticket] to have any redirects removed for sitemap and robots.txt.
 
 <!-- MAGECLOUD-894 -->* Newly provisioned {{site.data.var.ece}} receive an email to change the Magento Admin password. For enhanced security, we generate a random password for the username "admin" and send an email to the Project Owner to properly set up Admin access for Starter `master` Production environment and the Pro Integration `master` environment.
