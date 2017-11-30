@@ -145,7 +145,7 @@ This is only required when we release [magento/ece-tools](http://devdocs.magento
     ```
 3.  Push your changes to the remote server:
     ```
-    git add -A && git commit -m "Apply patch"
+    git add composer.lock && git commit -m "Update magento/ece-tools"
     git push origin <branch name>
     ```
 
