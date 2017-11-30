@@ -40,7 +40,6 @@ We recommend using GitHub for maintaining your code branches.
 
 You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{page.baseurl}}cloud/reference/cli-ref-topic.html) commands.
 
-
 ## Active and inactive branches {#active-inactive}
 You have access to a limited number of _active_ Git branches per plan. When you push this branch, an active environment is provisioned as a container, updating when you push per the configurations of .magento.app.yaml, services.yaml, and routes.yaml.
 
@@ -75,6 +74,27 @@ For extensive details, see the following:
 	* [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
+
+## Environment services {#services}
+Your cloud environments for Starter and Pro configure the available and used database, web server, caching, and services per the settings entered for a series of YAML files. When you push Git code from your local, these services and more configure automatically in the environments hosted in the cloud (PaaS). For Pro Staging and Production environments (IaaS), you need to enter a ticket for those files to be migrated to configure those environment services and more. For details, see [Configure your enviornments](#configenv).
+
+Additional services and drivers are automatically included in your enviornments, including the following.
+
+### SQL Server extension driver {#sqldriver}
+We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud MS SQL Servers. No additional installation is necessary to use these drivers. You will need to complete a couple configurations before using the connection and external SQL.
+
+These drivers are included in all Starter environments and Pro Integration enviornments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp) with the request.
+
+To configure, you need to configure and provide the following:
+
+* SSL certificate on the MS SQL Server: The connection between the cloud cluster and the remote SQL server must be SSL secured.  Customers must provide an SSL-enabled connection to their MS SQL server in order to connect to their project.
+* An MS SQL Server for testing: Please include a Microsoft SQL server for us to test the connection. Include this information in a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp).
+
+If you have questions or issues regarding connectivity or configuration for MS SQL Server, enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp).
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The drivers and supported service only includes configuration and updates in {{site.data.var.ece}} environments. We cannot provide support for client MS SQL Servers or applications utilizing these external systems and services outside of the cloud hosting enviornments.
+</div>
 
 ## Configure your environments {#configenv}
 After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.
