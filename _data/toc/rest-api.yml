@@ -41,6 +41,29 @@ pages:
         - label: REST usage notes
           url: rest/notes.html
 
+    - label: Create configurable products Tutorial
+      url: rest/tutorials/configurable-product/config-product-intro.html
+      versions: ["2.3"]
+      children:
+
+        - label: Initial Tasks
+          url: rest/tutorials/configurable-product/config-product-intro.html
+
+        - label: Plan the product
+          url: rest/tutorials/configurable-product/plan-product.html
+
+        - label: Create the configurable product
+          url: rest/tutorials/configurable-product/create-configurable-product.html
+
+        - label: Create the simple products
+          url: rest/tutorials/configurable-product/create-simple-products.html
+
+        - label: Define configurable product options
+          url: rest/tutorials/configurable-product/define-config-product-options.html
+
+        - label: Create the personalization option
+          url: rest/tutorials/configurable-product/create-personalization-option.html
+
     - label: Modules
       children:
 
