@@ -1817,25 +1817,23 @@
 </ul>
 
 <h2 id="build">Build a cron job</h2>
-<p>A cron job includes the specification for scheduling and timing and the command to run at that time. For example, the general format is:</p>
-
-<p><code class="highlighter-rouge">* * * * * &lt;command&gt;</code></p>
+<p>A cron job includes the specification for scheduling and timing and the command to run at that time. For example, the general format is: <code class="highlighter-rouge">* * * * * &lt;command&gt;</code></p>
 
 <p>You will add the cron job to <code class="highlighter-rouge">.magento.app.yaml</code> in the <code class="highlighter-rouge">crons</code> section. The general format is <code class="highlighter-rouge">spec</code> for scheduling and <code class="highlighter-rouge">cmd</code> for the script. For example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
-    productcatalog:
-        spec: '20 */3 * * *'
-        cmd: 'bin/magento indexer:reindex catalog_product_category'
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">crons</span><span class="pi">:</span>
+    <span class="na">productcatalog</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">20</span><span class="nv"> </span><span class="s">*/3</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s1">'</span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">indexer:reindex</span><span class="nv"> </span><span class="s">catalog_product_category'</span>
 </code></pre></div></div>
 
 <p>The following example is the default cron included for Magento Commerce (Cloud).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default Magento 2 cron jobs
-crons:
-    cronrun:
-        spec: "*/5 * * * *"
-        cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Default Magento 2 cron jobs</span>
+<span class="na">crons</span><span class="pi">:</span>
+    <span class="na">cronrun</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1861,7 +1859,7 @@ crons:
   <li><code class="highlighter-rouge">00 * * * 1</code> runs once a week on Monday at midnight</li>
 </ul>
 
-<p>When determining the scheduling of your cron jobs based on the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may want to change the scheduled timing.</p>
+<p>When determining the scheduling of your cron jobs, consider the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may want to change the scheduled timing.</p>
 
 <p>For the command script, the format includes:</p>
 
@@ -1869,9 +1867,9 @@ crons:
 
 <p>The following is an example cron job:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
-    spec: "00 */3 * * *"
-    cmd: "/usr/bin/php /app/abc123edf890/bin/magento indexer:reindex catalog_category_product"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">crons</span><span class="pi">:</span>
+    <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">00</span><span class="nv"> </span><span class="s">*/3</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+    <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/usr/bin/php</span><span class="nv"> </span><span class="s">/app/abc123edf890/bin/magento</span><span class="nv"> </span><span class="s">indexer:reindex</span><span class="nv"> </span><span class="s">catalog_category_product"</span>
 </code></pre></div></div>
 
 <p>With the settings:</p>
@@ -1904,11 +1902,11 @@ crons:
 <h2 id="add-cron">Add cron jobs to .magento.app.yaml</h2>
 <p>You should add all cron jobs to your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file in the the <code class="highlighter-rouge">crons</code> section. We include a default cron job for Magento in the default file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default Magento 2 cron jobs
-crons:
-    cronrun:
-        spec: "*/5 * * * *"
-        cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Default Magento 2 cron jobs</span>
+<span class="na">crons</span><span class="pi">:</span>
+    <span class="na">cronrun</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
 </code></pre></div></div>
 
 <ol>
@@ -1918,13 +1916,13 @@ crons:
 
     <p>For example, you could add a reindexer cron job to run every three hours, 20 minutes after the hour (such as 12:20 am, 3:20 am, and so on):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> crons:
-     magento:
-         spec: '*/5 * * * *'
-         cmd: 'php bin/magento cron:run &amp;&amp; php bin/magento cron:run'
-     productcatalog:
-         spec: '20 */3 * * *'
-         cmd: 'bin/magento indexer:reindex catalog_product_category'
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">crons</span><span class="pi">:</span>
+    <span class="na">magento</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s1">'</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run'</span>
+    <span class="na">productcatalog</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">20</span><span class="nv"> </span><span class="s">*/3</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s1">'</span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">indexer:reindex</span><span class="nv"> </span><span class="s">catalog_product_category'</span>
 </code></pre></div>    </div>
   </li>
   <li>Save the file and push updates to the Git branch.</li>
@@ -1947,6 +1945,50 @@ crons:
 
 <p>For Pro plan Staging and Production environments, please <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>
 
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Having trouble with cron jobs? The information in this section may help.</p>
+
+<h3 id="reset-cron-jobs">Reset cron jobs</h3>
+<p>Sometimes, Magento cron jobs just don’t finish executing and get stuck, which prevents other Magento cron jobs from running. These jobs can become stuck and require unlocking to allow additional crons to continue and to free resources.</p>
+
+<h4 id="symptom">Symptom</h4>
+<p>Magento cron jobs may become stuck causing other cron jobs to fail to execute on schedule, which causes adverse impacts on your store. These crons become stuck for a number of reasons, including network issues, application crashes, redeployment issues, and so on. To resolve, you need to unlock the stuck cron job.</p>
+
+<p>Symptoms of stuck cron jobs include:</p>
+
+<ul>
+  <li>Large quantity of jobs appearing in the <code class="highlighter-rouge">cron_schedule</code> queue</li>
+  <li>Degraded performance</li>
+  <li>Some jobs fail to execute on schedule</li>
+  <li>Jobs aren’t executing according to schedule</li>
+</ul>
+
+<h4 id="solution">Solution</h4>
+
+<div class="bs-callout bs-callout-warning">
+  <ul>
+    <li>
+      <p>This solution resets <em>all</em> cron jobs, including those currently running, so we recommend using it only in exceptional cases. For example, when you’ve verified that cron jobs are stuck and causing issues. Re-deployment runs this command by default to reset cron jobs, so they appropriately recover after the environment is back up.</p>
+    </li>
+    <li>
+      <p>Avoid using this solution when indexers are running.</p>
+    </li>
+  </ul>
+</div>
+
+<p>To unlock a stuck cron job, you must manually SSH into the affected environment and isue a CLI command. This command changes the status of the cron job in the database, ending the cron forcefully to allow other scheduled crons to continue.</p>
+
+<ol>
+  <li>Open a terminal application.</li>
+  <li><a href="/guides/v2.2/cloud/env/environments-ssh.html#ssh">SSH</a> into the environment experiencing the issue.</li>
+  <li>
+    <p>Enter the following command to reset Magento cron jobs:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./vendor/bin/ece-tools cron:unlock
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 		</div>
 		<!-- /.content-wrap -->
 
@@ -1956,7 +1998,7 @@ crons:
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/configure/setup-cron-jobs.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/configure/setup-cron-jobs.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

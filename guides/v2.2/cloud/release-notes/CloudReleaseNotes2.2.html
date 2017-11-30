@@ -604,6 +604,11 @@
 <h2 id="fixed">Fixed issues</h2>
 <p>This release contains numerous fixes and enhancements. This section includes only fixes for Magento Commerce (Cloud). For all known Magento Commerce 2.2.0 GA issues, see <a href="http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html">Magento Commerce 2.2.0 Release Notes</a>.</p>
 
+<!-- MAGECLOUD-1355 -->
+<ul>
+  <li>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get this update.</li>
+</ul>
+
 <!-- 57167 -->
 <ul>
   <li>You can now generate sitemap.xml and robots.txt normally through the Magento Admin panel, without needing to move the file and have a redirect entered. If you are upgrading to 2.2, please enter a [Support ticket] to have any redirects removed for sitemap and robots.txt.</li>

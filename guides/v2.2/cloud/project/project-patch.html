@@ -2032,6 +2032,24 @@ git push origin &lt;branch name&gt;
     </li>
   </ol>
 
+  <h3 id="patch-magentoece-tools">Patch magento/ece-tools</h3>
+  <p>This is only required when we release <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools">magento/ece-tools</a> updates.</p>
+
+  <ol>
+    <li>Open a terminal and <a href="#gen-getstarted">create a branch</a> in your local environment.</li>
+    <li>
+      <p>Enter the following command to patch <code class="highlighter-rouge">magento/ece-tools</code>:</p>
+
+      <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update magento/ece-tools
+</code></pre></div>      </div>
+    </li>
+    <li>Push your changes to the remote server:
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Apply patch"
+git push origin &lt;branch name&gt;
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
   <h3 id="gen-pushpatch">Push a general patch to Staging or Production environments</h3>
   <p>After you’ve successfully tested a patch locally and on your Integration environment, you can push the patch to Staging or Production environment:</p>
 
