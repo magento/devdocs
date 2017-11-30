@@ -134,6 +134,21 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
 
+### Patch magento/ece-tools
+This is only required when we release [magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools) updates.
+
+1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
+2.  Enter the following command to patch `magento/ece-tools`:
+
+    ```shell
+    composer update magento/ece-tools
+    ```
+3.  Push your changes to the remote server:
+    ```
+    git add -A && git commit -m "Apply patch"
+    git push origin <branch name>
+    ```
+
 ### Push a general patch to Staging or Production environments {#gen-pushpatch}
 After you've successfully tested a patch locally and on your Integration environment, you can push the patch to Staging or Production environment:
 
