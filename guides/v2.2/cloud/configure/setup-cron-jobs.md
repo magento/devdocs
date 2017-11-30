@@ -160,5 +160,5 @@ You must manually unlock Magento cron jobs in the database using a CLI command.
 3.  Enter the following command to reset Magento cron jobs:
 
     ```shell
-    php bin/magento <command-placeholder>
+    ./vendor/bin/ece-tools cron:unlock
     ```
