@@ -20,7 +20,7 @@ functional_areas:
 You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You receive New Relic APM with your {{site.data.var.ece}} subscription. You do not need to purchase or install install the New Relic extension (different than the APM service).
+You receive New Relic APM with your {{site.data.var.ece}} subscription. You do not need to purchase or install the New Relic extension (different than the APM service).
 </div>
 
 ## Key features {#features}
