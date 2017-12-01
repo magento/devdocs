@@ -41,7 +41,7 @@ You can run the commands in any of the following ways:
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Before you run any of these commands, you must either [install the Magento application]({{page.baseurl}}install-gde/install/install-cli.html) or [enable some modules]({{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html).
+Before you run any of these commands, you must either [install the Magento application]({{page.baseurl}}install-gde/install/cli/install-cli.html) or [enable some modules]({{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html).
 </div>
 
 <table>

@@ -16,7 +16,7 @@ functional_areas:
 Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <div class="bs-callout bs-callout-warning">
-   	<p>If you're upgrading to version 2.1, see <a href="{{ page.baseurl }}release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
+   	<p>If you're upgrading to version 2.1, see <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
 </div>
 
 ## Optional custom maintenance page
@@ -66,4 +66,3 @@ The System Upgrade utility installs sample data for you but doesn't display it, 
 
 *	Used the [`magento sampledata:deploy`]({{page.baseurl}}install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
 *	You chose to update components at the same time as the Magento system software
-

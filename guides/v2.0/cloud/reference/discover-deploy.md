@@ -10,8 +10,6 @@ version: 2.0
 github_link: cloud/reference/discover-deploy.md
 redirect_from:
   - /guides/v2.0/cloud/discover-deploy.html
-  - /guides/v2.1/cloud/discover-deploy.html
-  - /guides/v2.2/cloud/discover-deploy.html
 functional_areas:
   - Cloud
 ---

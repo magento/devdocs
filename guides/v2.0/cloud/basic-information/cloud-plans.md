@@ -31,20 +31,20 @@ github_link: cloud/basic-information/cloud-plans.md
     </td>
     </tr>
     <tr><td>Infrastructure and deployment</td>
-    <td><ul>
+    <td>
     <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for Magento</li>
     <li>Continuous cloud integration tools with unlimited users</li>
     <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
     <li><a href="{{page.baseurl}}cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice</li>
-    <li><a href="{{page.baseurl}}cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)</li></ul>
+    <li><a href="{{page.baseurl}}cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)</li>
 </td>
-    <td><ul>
+    <td>
     <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for Magento</li>
     <li>Infrastructure-as-a-Service (IaaS) dedicated for Production and Staging</li>
     <li>Continuous cloud integration tools with unlimited users</li>
     <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
     <li><a href="{{page.baseurl}}cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production</li>
-    <li><a href="{{page.baseurl}}cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)</li></ul>
+    <li><a href="{{page.baseurl}}cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)</li>
     </td>
     </tr>
     <tr><td>24x7 email support</td>
@@ -77,7 +77,7 @@ See the [Trial signup](https://magento.com/trial){:target="_blank"} for full det
 
 ![Onboarding Portal getting started]({{ site.baseurl }}common/images/cloud_portal-trial.png)
 
-### What is autoprovisioning? {#autoprovisioning}
+### What is auto provisioning? {#autoprovisioning}
 When you create an account with a Trial, your {{site.data.var.ece}} project is created automatically. As part of the process, we generate a code branch and environment with the latest Magento code for you.
 
 We complete the following steps for you to make the entire process easier to get started:
