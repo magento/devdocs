@@ -20,7 +20,7 @@ Magento web nodes serve all requests that were not cached or can’t be cached t
 
 1. I don't understand the "N"s in the following equation. Can they deleted? If no, please provide more information about what they represent.
 
-`N(Cores) = N(Expected Requests) / 2 + N (Expected Cron Processes)`
+  `N(Cores) = N(Expected Requests) / 2 + N (Expected Cron Processes)`
 
 2. Is right side of the equation
 
