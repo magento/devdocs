@@ -27,124 +27,150 @@ We are pleased to present Magento Open Source  2.1.11. This release includes imp
 
 
 ## Fixed issues
-### Installation, setup, and deployment
-
-
 ### Cache
-<!--- 72798 -->*
+<!--- MAGETWO-72798 -->* We’ve resolved an issue where store websites do not work when Redis cache is installed and the PhpRedis extension is enabled.
 
 
 ### Cart and checkout
-<!--- 80324 -->*
-
-
+<!--- MAGETWO-80324 -->* Magento now sends email as expected about failed transactions. Previously, Magento logged the error to `support.log` but did not generate a payment failed email when you selected **Admin > Stores > Configuration > General > Store Email Addresses > Custom Email 1 > Sender Email = <your email>**. 
 
 
 
 ### Catalog
-<!--- 83631 -->*
-<!--- 72312 -->*
-<!--- 71576 -->*
-<!--- 70373 -->*
-<!--- 69845 -->*
+<!--- MAGETWO-83631 -->*  `\Magento\Quote\Model\ResourceModel\Quote\Item\Collection` now returns only items that have  existing relations in `catalog_product_entity` table. Previously, this service loaded all quote items (including those with removed products) during initialization.
 
+<!--- MAGETWO-72312 -->* Layered navigation now works correctly when filtering categories that contain configurable products with no available options. 
+
+<!--- MAGETWO-66481 -->*  You can now successfully create a product and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
+
+
+<!--- MAGETWO-84432 -->* You can now successfully save a category that contains product images. Previously, saving categories that contain product images triggered an exception. [GitHub-8069](https://github.com/magento/magento2/issues/8069)
+
+<!--- MAGETWO-69845 -->* You can now unselect the 'Use Default Value' setting in the store view level without unselecting other attributes. 
 
 ### Configurable products
-<!--- 83313 -->*
-<!--- 76185 -->*
-<!--- 71185 -->*
 
+<!--- MAGETWO-61133 -->* Magento now displays the correct drop-down option labels for configurable products when you create attributes for products with a custom source. 
+
+<!--- MAGETWO-71515 -->*  When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations,) the configurable product without any selected options now indicates that the price could be "As low as" = <the lowest price>. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
+
+
+<!--- MAGETWO-83193 -->* You can now successfully assign `configurable_variations` to configurable products through import. 
+
+<!--- MAGETWO-83313 -->* Out-of-stock options for configurable products no longer show up in search and layered navigation when Elasticsearch is enabled.
+
+
+<!--- MAGETWO-76185 -->* Magento now displays a descriptive error message when you try to upload an unsupported file format. Previously, Magento displayed this unrelated error message: "You need to choose options for your item."
 
 
 
 ### General
-<!--- 83646 -->* [GitHub-8591](https://github.com/magento/magento2/issues/8591)
-<!--- 82539 -->*
-<!--- 82242 -->*
-<!--- 75526 -->*
-<!--- 72376 -->*
-<!--- 72206 -->*
-<!--- 71021 -->*
-<!--- 70322 -->* [GitHub-9453](https://github.com/magento/magento2/issues/9453)
+
+<!--- MAGETWO-70468 -->*  Magento no longer displays an empty container at the top of the active page when you disable a CMS block on the page. 
+
+<!--- MAGETWO-83760 -->* The  **Stores > Configuration > General > Design** page now displays as expected. GitHub-5256](https://github.com/magento/magento2/issues/5256)
+
+<!--- MAGETWO-72206 -->* After confirming a customer’s account, the Magento welcome message now displays the customer's first and last name.
+
+<!--- MAGETWO-70322 -->* Products in the cart with a price of $0.00 no longer cause an extra cent to be applied to the discount amount. [GitHub-9453](https://github.com/magento/magento2/issues/9453)
+
+<!--- MAGETWO-69496 -->* You can now specify a Bundle option title on a store-view level with changes to more than one store view. Previously, after making a change to the store view title of a second store view, the previous store view would show the default title for the store view title.
 
 
 ### Framework
-<!--- 80426 -->*
-<!--- 70157 -->*
+<!--- MAGETWO-80426 -->* Calling the `getCustomAttributes()` method on a product instance before it is saved, internal data property structure is changed and extracted incorrectly before saved
 
+<!--- MAGETWO-83646 -->* Magento now successfully decrypts scope-based configuration values in installations running PHP 7.0.x. [GitHub-8591](https://github.com/magento/magento2/issues/8591)
 
 
 ### Import/export
-<!--- 82554 -->*
-<!--- 69857 -->*
-<!--- 69718 -->*
+
+<!--- MAGETWO-69857 -->*  Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option's ID numbers or the option's values, Magento returned an error.
+
+<!--- MAGETWO-69718 -->* Magento no longer changes custom options IDs each time the product is imported or saved. 
+
+
+### Index
+<!--- MAGETWO-84444 -->* We've fixed an issue that lead to wrong products being indexed. Previously, the `mview.xml` configuration used `row_id`  instead of `entity_id` when collecting information from changelogs.
+
 
 
 ### Order management
-<!--- 77969 -->*
-<!--- 69512 -->*
+
+<!--- MAGETWO-84108 -->* You can now successfully alter the transport variable in the `email_invoice_set_template_vars_before`. Previously, email generated from this template did not reflect the new or changed variables you set in `email_invoice_set_template_vars_before`.  [GitHub-10210](https://github.com/magento/magento2/issues/10210)
+
+
 
 
 ### Payment methods
-<!--- 83149 -->*
-<!--- 82982 -->*
-<!--- 82224 -->*
-<!--- 72534 -->* [GitHub-10767](https://github.com/magento/magento2/issues/10767)
-<!--- 71625 -->*
-<!--- 71522 -->*
-<!--- 71185 -->*
+<!--- MAGETWO-83149 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
 
-### Shipping
+<!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: "Sorry, but something went wrong".
+s
+<!--- MAGETWO-83956 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
+
+
+### Performance
+<!--- MAGETWO-59155 -->*  We've improved the speed of reindexing after importing many customers (more than 140,000). Previously, Magento threw a PHP error due to memory limits.  
+
+
+### SalesRule
+<!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule. 
+
 
 ### Search
-<!--- 72246 -->*
+<!--- MAGETWO-72246 -->* We've improved the speed of full-text indexing. 
 
-
-#### Elasticsearch
+### Sitemap
+<!--- MAGETWO-57166 -->*  Magento no longer generates the sitemap in the wrong folder when `vhost` is connected to `/pub`. Previously, magento generated the sitemap in the root folder instead of the pub folder. [GitHub-2802](https://github.com/magento/magento2/issues/2802)
 
 
 
 ### Staging
-<!--- 71669* -->*
-
+<!--- MAGETWO-71669 -->* Arabic language locale now displays the correct date format (day/month/year). Previously, when using the Javascript calendar and the Arabic (Kuwait) locale, Magento displayed dates incorrectly on the product page. (Date format was shown as 182017/05 instead of 18/05/2017.)
 
 ### Tax
-<!--- 72280 -->* [GitHub-8833](https://github.com/magento/magento2/issues/8833)
-<!--- 69716 -->* [GitHub-9669](https://github.com/magento/magento2/issues/9669), [GitHub-8870](https://github.com/magento/magento2/issues/8870), [GitHub-9552](https://github.com/magento/magento2/issues/9552), [GitHub-10029](https://github.com/magento/magento2/issues/10029)
+<!--- MAGETWO-72280 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
+
+
+
+<!--- MAGETWO-69716 -->* You can now successfully save default Magento attributes from **Stores > Attributes > Product**. [GitHub-9669](https://github.com/magento/magento2/issues/9669), [GitHub-8870](https://github.com/magento/magento2/issues/8870), [GitHub-9552](https://github.com/magento/magento2/issues/9552), [GitHub-10029](https://github.com/magento/magento2/issues/10029)
 
 
 ### Translations
-<!--- 71591 -->*
+<!--- MAGETWO-71591 -->* You can now implement translations from themes (in contrast to translations from modules). 
 
-
-
-### URL rewrites
 
 ### Varnish
-<!--- 83460 -->*
-<!--- 71701 -->* 6609
+<!--- MAGETWO-83460 -->*  Magento can now cache and return cached carts and other, similar sensitive data. 
 
+<!--- MAGETWO-71701 -->* In environments running Varnish, Magento now handles the menu item of the active category page as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609)
+
+
+### Visual Merchandiser 
+<!--- MAGETWO-70287 -->*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 ### Web API framework
-<!--- 70498* -->*
+<!--- MAGETWO-70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
 
 
 ### Wishlist
-<!--- 70611 -->*
+<!--- MAGETWO-70611 -->* A product that is assigned a special price now displays this price in the wishlist. Previously, products with special prices displayed only regular prices in the wishlist. 
+
+<!--- MAGETWO-84476 -->* When generating the output of **Reports > Marketing > Products in Cart**, Magento no longer calls the data of products that have been deleted from the cart.
+
+<!--- MAGETWO-84238 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
 
 
-<!--- INTERNAL ONLY  83263 -->
+<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185 MAGETWO-71021 MAGETWO-84545 MAGETWO-72376 MAGETWO-70373 MAGETWO-70157 MAGETWO-69577 MAGETWO-69512 MAGETWO-69344 MAGETWO-69213 MAGETWO-69107 MAGETWO-69036 MAGETWO-68871 MAGETWO-67681 MAGETWO-67402 MAGETWO-66565 MAGETWO-66446 MAGETWO-65467 MAGETWO-65466 MAGETWO-65049 MAGETWO-64742 MAGETWO-64743 MAGETWO-64729 MAGETWO-64429 MAGETWO-64459 MAGETWO-64146 MAGETWO-64126 MAGETWO-63226 MAGETWO-62621 MAGETWO-62040 MAGETWO-61164 MAGETWO-60755 MAGETWO-58503 MAGETWO-77969 MAGETWO-82224 MAGETWO-84325 MAGETWO-84298 MAGETWO-84266 MAGETWO-84011 MAGETWO-71576 MAGETWO-82539 MAGETWO-82242 MAGETWO-82554 MAGETWO-71522-->
 
-<!--- NOT NEEDED  83760  
- -->
+<!--- CANCELED MAGETWO-72400 -->
 
-<!--- DUPLICATE -->
+<!--- WON'T FIX MAGETWO-82982 MAGETWO-75622 MAGETWO-72534 -->
 
-<!--- CANCELED 72400 -->
+<!--- CANNOT REPRODUCE MAGETWO-75121 MAGETWO-58460 -->
 
-
-<!--- CANNOT REPRODUCE  83193 75121 -->
-
+<!--- DUPLICATION MAGETWO-69343 MAGETWO-58515--> 
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
