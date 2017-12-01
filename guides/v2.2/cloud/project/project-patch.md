@@ -82,6 +82,8 @@ Verify other changes you're going to submit to source control before you start t
 ## Apply the patch {#patch}
 To apply the patch, you run the `composer update` command. The command uses `composer.json` to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.
 
+If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.
+
 1.  Change to your Magento base directory and enter the following command:
 
         composer update
@@ -131,6 +133,21 @@ To test a general patch on your local system, you create a branch from the Pro I
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
+
+### Patch magento/ece-tools
+This is only required when we release [magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools) updates.
+
+1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
+2.  Enter the following command to patch `magento/ece-tools`:
+
+    ```shell
+    composer update magento/ece-tools
+    ```
+3.  Push your changes to the remote server:
+    ```
+    git add composer.lock && git commit -m "Update magento/ece-tools"
+    git push origin <branch name>
+    ```
 
 ### Push a general patch to Staging or Production environments {#gen-pushpatch}
 After you've successfully tested a patch locally and on your Integration environment, you can push the patch to Staging or Production environment:

@@ -9,8 +9,6 @@ menu_node:
 version: 2.1
 github_link: cloud/project/project-upgrade.md
 redirect_from:
-  - /guides/v2.0/cloud/howtos/upgrade-magento.html
-  - /guides/v2.1/cloud/howtos/upgrade-magento.html
   - /guides/v2.1/cloud/howtos/upgrade-magento.html
 functional_areas:
   - Cloud
@@ -21,7 +19,7 @@ This information details how to upgrade {{site.data.var.ece}} from any version t
 
 When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
-Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{page.baseurl}}cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
@@ -46,7 +44,7 @@ Back up your integration system database and code:
 
 Back up your staging or production system database:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
@@ -95,7 +93,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
@@ -103,7 +101,7 @@ To verify the upgrade in your integration, staging, or production system:
 ## Verify and upgrade your extensions {#extensions}
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
-We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
+We recommend [backing up your database]({{page.baseurl}}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
 
 1. Create a new branch on your local.
 2. Disable your extensions as needed.
@@ -126,7 +124,7 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
-To view the error in your integration system, [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html) and enter the following command:
+To view the error in your integration system, [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
@@ -139,8 +137,8 @@ One possible error occurs when the deployment hook failed, and therefore the dat
 
 To resolve the error:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
-2.  [Examine the logs]({{ page.baseurl }}cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{page.baseurl}}cloud/trouble/environments-logs.html) to determine the source of the issue.
 3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
     For example, on a local branch, enter the following commands:

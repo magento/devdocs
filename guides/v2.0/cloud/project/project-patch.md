@@ -85,6 +85,8 @@ Verify other changes you're going to submit to source control before you start t
 ## Apply the patch {#patch}
 To apply the patch, you run the `composer update` command. The command uses `composer.json` to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.
 
+If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.
+
 1.  Change to your Magento base directory and enter the following command:
 
         composer update
