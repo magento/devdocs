@@ -40,7 +40,7 @@ Generate your `sitemap.xml` and `robots.txt`:
 For additional information, see [Using a Sitemap](http://docs.magento.com/m2/ee/user_guide/marketing/sitemap-xml.html){:target="_blank"} and [Search Engine Robots](http://docs.magento.com/m2/ee/user_guide/marketing/search-engine-robots.html){:target="_blank"}.
 
 ## Import files to environment {#files}
-If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use `rsync` or  `scd` through a terminal. If you completed the commands on your local, move the files to the correct location. The following example uses `rsync`.
+If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use `rsync` or  `scp` through a terminal. If you completed the commands on your local, move the files to the correct location. The following example uses `rsync`.
 
 Move and add the files to your Git branch:
 
