@@ -15,7 +15,7 @@ The Magento confirmation widget implements a modal pop-up window with the cancel
 
 The confirmation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/confirm.js</a>
 
-The widget can be used for implementing confirmation windows for both, Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
+The widget can be used for implementing confirmation windows for both, Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a>
 
 <h2 id="confirm_initialize">Initialize the confirmation widget</h2>
 
@@ -40,7 +40,7 @@ $('#confirm_init').confirm({
 require([
     'Magento_Ui/js/modal/confirm'
 ], function(confirmation) { // Variable that represents the `confirm` widget
-  
+
     confirmation({
         title: 'Some title',
         content: 'Some content',
@@ -50,7 +50,7 @@ require([
             always: function(){}
         }
     });
-  
+
 });
 {% endhighlight %}
 
@@ -73,7 +73,7 @@ Widget callbacks.
 
 **Type**: Object
 
-**Default value**: 
+**Default value**:
 {% highlight js %}
 actions: {
     confirm: function(){},
@@ -85,14 +85,14 @@ actions: {
 <h3 id="confirm_autoopen">autoOpen</h3>
 Automatically open the confirmation window when the widget is initialized.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `false`
 
 <h3 id="confirm_clickableOverlay">clickableOverlay</h3>
 Close the confirmation window when a user clicks on the overlay.
 
-**Type**: Boolean 
+**Type**: Boolean
 
 **Default value**: `true`
 
@@ -111,7 +111,7 @@ If `focus` is not specified or set to empty string, the focus is on close button
 
 **Default value**: `''`
 
-<h3 id="alert_content"><code>title</code></h3>
+<h3 id="confirm_title"><code>title</code></h3>
 The title of the confirmation window.
 
 

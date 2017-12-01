@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Commerce
 title: Magento_BundleStaging module
-menu_title: BundleStaging
-menu_order: 2
 version: 2.1
 ee_only: true
 github_link: mrg/ee/BundleStaging.md
@@ -32,7 +29,7 @@ You can find the list of modules that have dependencies on the Magento_BundleSta
 
 ### UI components
 
-You can extend Bundle updates product listing using  the grid {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} located in the `Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml`. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
+You can extend Bundle updates product listing using  the grid {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} located in the `Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml`. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html).
 
 ## Additional information
 

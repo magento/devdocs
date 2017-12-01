@@ -8,17 +8,13 @@ menu_order: 10
 menu_node:
 version: 2.2
 github_link: cloud/project/project-upgrade.md
-redirect_from:
-  -  /guides/v2.0/cloud/howtos/upgrade-magento.html
-  -  /guides/v2.1/cloud/howtos/upgrade-magento.html
-  -  /guides/v2.1/cloud/howtos/upgrade-magento.html
 ---
 
 This information details how to upgrade {{site.data.var.ece}} to 2.2.X from any version, and upgrading to new 2.2.X versions.
 
 When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
-Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{page.baseurl}}cloud/reference/cloud-composer.html).
 
 When upgrading from 2.0.X or 2.1.X to 2.2.X, please see [Upgrade from 2.0.X or 2.1.X](#old-version). For additional information on the release, see the [{{site.data.var.ece}} 2.2 Release Notes].
 
@@ -46,7 +42,7 @@ To upgrade from **2.0.X**:
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
 * [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
-
+* [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 
 To upgrade from **2.1.X**:
 
@@ -54,6 +50,8 @@ To upgrade from **2.1.X**:
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
 * [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
+* [Update .gitignore for new generated directory](#gitignore): With 2.2 and later, changes in generated folder require additions to `.gitignore`
 
 After completing your upgrade, you may also want to [Verify and upgrade your extensions](#extensions).
 
@@ -116,6 +114,17 @@ If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your 
 ### Verify or set the ADMIN_EMAIL variable {#variable}
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
 
+### Upgrade Fastly {#fastly}
+If you have not upgraded to the latest supported version of Fastly, you should do so. Check [Supported software versions]({{page.baseurl}}cloud/requirements/cloud-requirements.html#cloud-arch-software) for the latest version of Fastly we recommend. For instructions, see [Upgrade Fastly]({{page.baseurl}}cloud/access-acct/fastly.html#upgrade).
+
+If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="_blank"}.
+
+### Update .gitignore for new generated directory {#gitignore}
+With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.
+
+    /generated/*
+    !/generated/.htaccess
+
 ## Back up the database {#backup-db}
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
@@ -132,7 +141,7 @@ Back up your Integration environment database and code:
 
 Back up your staging or production system database:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
@@ -181,7 +190,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
@@ -214,7 +223,7 @@ Important: For an upgrade, you will delete `config.php`. Once this file is added
 ## Verify and upgrade your extensions {#extensions}
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
-We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
+We recommend [backing up your database]({{page.baseurl}}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
 
 1. Create a new branch on your local.
 2. Disable your extensions as needed.
@@ -227,7 +236,7 @@ We recommend [backing up your database]({{ page.baseurl }}cloud/project/project-
 Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.
 
 ### Additional extension upgrades {#moreextensions}
-We strongly recommend upgrading your Fastly module to v1.2.28 or later for {{site.data.var.ece}} 2.2.
+We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.2.
 
 ## Troubleshoot your upgrade {#upgrade-verify-tshoot}
 In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:
@@ -237,7 +246,7 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
-To view the error in your integration system, [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html) and enter the following command:
+To view the error in your integration system, [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
@@ -250,8 +259,8 @@ One possible error occurs when the deployment hook failed, and therefore the dat
 
 To resolve the error:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
-2.  [Examine the logs]({{ page.baseurl }}cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{page.baseurl}}cloud/trouble/environments-logs.html) to determine the source of the issue.
 3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
     For example, on a local branch, enter the following commands:
@@ -263,6 +272,6 @@ If you encounter a deployment error to Pro Staging and Production environments, 
 
 #### Related topic
 * [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-* [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
+* [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
 * [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
 * [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)

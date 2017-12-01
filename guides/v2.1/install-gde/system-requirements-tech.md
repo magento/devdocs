@@ -90,6 +90,9 @@ For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
 
+### RabbitMQ 3.5 (Only {{site.data.var.ee}})
+<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> will be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
+
 ### Magento can utilize the following technologies:
 *	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)
 *	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 3.5 or latest stable 4.x version for page caching
@@ -105,10 +108,6 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 		*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
 		*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
-
-	*	RabbitMQ 3.5
-
-		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for {{site.data.var.ee}} only.
 
 	*	Three master databases
 

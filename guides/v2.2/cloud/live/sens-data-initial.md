@@ -29,7 +29,7 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}clou
 	* Commit and push to Git.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
 </div> -->
 For example, you may want to set the following settings:
 
@@ -188,7 +188,7 @@ To add additional configuration values in the Integration environment Magento Ad
 8.	Log out of the Magento Admin.
 
 ### Run the config.php command {#regenerate}
-By running the command again for `magento-cloud:scd-dump`, the new configuration is appended to the file.
+By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new configuration is appended to the file.
 
 1.	On your local system, find the integration server's SSH URL.
 

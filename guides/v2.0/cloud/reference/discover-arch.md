@@ -30,6 +30,48 @@ If you do not request this update, you must use CLI commands or tickets to modif
 
 ![High-level view of Pro architecture flow]({{ site.baseurl }}common/images/cloud_pro-branch-architecture.png)
 
+## Project Web Interface and branches {#branches}
+For new or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html) projects, you may see the following branches in the Project Web Interface.
+
+![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
+
+These branches associate to cloud environments.
+
+<table>
+<thead>
+<tr>
+<th style="width: 125px;">Branch</th>
+<th style="width: 100px;">Environment</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>(no branch)</td>
+<td>Global Master</td>
+<td>This "branch" captures global project changes including adding user accounts and variables. <b>Important:</b> Do not create branches from or merge to Global Master.
+</td>
+</tr>
+<tr>
+<td><code>production</code></td>
+<td>Production</td>
+<td><p>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</p>
+<p>When you convert, the Integration <code>master</code> is branched into a <code>production</code> branch with the users access and environment variables.</p></td>
+</tr>
+<tr>
+<td><code>staging</code></td>
+<td>Staging</td>
+<td><p>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to test in a pre-production environment.</p>
+<p>When you convert, the Integration <code>master</code> is branched into a <code>staging</code> branch with the users access and environment variables.</p></td>
+</tr>
+<tr>
+<td><code>master</code></td>
+<td>Integration</td>
+<td><p>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code.</p>
+<p>When you convert, all active and inactive branches continue as children to the <code>master</code> branch.</p></td>
+</tr>
+</tbody>
+</table>
+
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a Platform-as-a-Servie (PaaS) providing up to eight active environments on a grid for eight active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
 
@@ -49,7 +91,7 @@ Additional sections in this guide provide instructions and walk-throughs for set
 The Staging environment provides a near-Production environment to test your site. This environment includes all services used in Production including Fastly, New Relic, Blackfire, and search. All code in Staging is read-only, requiring deploys of Git repositories. This environment shares the same dedicated server with Production.
 
 * For projects created **before October 23, 2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
-* For projects created **after October 23, 2017**, this environment has a `staging` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
+* For projects created **after October 23, 2017** or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html), this environment has a `staging` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.
 
@@ -61,7 +103,7 @@ We highly recommend fully testing every merchant and customer interaction in Sta
 The Production environment runs your public-facing Magento single and multisite storefronts. This environment include triple-redundant High Availability nodes for continuous access and failover protection for your customers. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.
 
 * For projects created **before October 23, 2017**, this environment has a `master` branch in a Staging repository. You push code from the Integration `master` to this branch.
-* For projects created **after October 23, 2017**, this environment has a `production` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
+* For projects created **after October 23, 2017** or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html), this environment has a `production` branch. This is a child of the `master` branch with a deployment target. You merge code from `master` this this branch.
 
 We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Go Live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
 
@@ -169,7 +211,7 @@ This software is *not* upgradable but versions for the following software is con
 * [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
 * [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 

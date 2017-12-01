@@ -9,7 +9,7 @@ menu_order: 1
 level3_menu_node:
 level3_subgroup: sample-tutorial
 version: 2.0
-github_link: contributor-guide/tutorial-template-middle.md
+github_link: contributor-guide/templates/tutorial-template-middle.md
 ---
 
 The `title` and `subtitle` parmaters provide the top-level headings on this page. Add the content as you see fit.

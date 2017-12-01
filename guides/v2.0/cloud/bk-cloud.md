@@ -77,9 +77,16 @@ See [Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-req
 ## Where do I get started? {#getstarted}
 If you have experience with {{site.data.var.ee}} 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.
 
-If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as s base template. To start, see [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) and [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html). For new non-trial projects, see [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
+If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as a base template.
 
-We recommend the following starting points:
+To get started, see:
+
+* [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) of first things to do right after signing up.
+* [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for new trials to get started.
+* Sign up for [status updates]({{page.baseurl}}cloud/onboarding/onboarding-portal.html#status) for components and services.
+* For new non-trial projects, see [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
+
+To better understand {{site.data.var.ee}}, your plan, architecture, and workflows, see the following starting points:
 
 *	[Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 *	Starter information:
@@ -91,16 +98,17 @@ We recommend the following starting points:
 	* [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-* [First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+* [Local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 
-## Magento 2 resources {#magento2}
+## Learn more about Magento 2 {#magento2}
 If you would like to learn more about Magento 2, see the following resources:
 
-*	[Documentation home page](https://magento.com/help/documentation){:target="_blank"}
+*	[All documentation home page](https://magento.com/help/documentation){:target="_blank"}
 *	User guides (how to use options in the Magento Admin)
 
-	*	[Magento 2.0.x](http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112){:target="_blank"}
-	*	[Magento 2.1.x](http://docs.magento.com/m2/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112){:target="_blank"}
+	*	[Magento 2.0.x](http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html){:target="_blank"}
+	*	[Magento 2.1.x](http://docs.magento.com/m2/2.1/ee/user_guide/getting-started.html){:target="_blank"}
+  *	[Magento 2.2.x](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}
 *	Developer documentation
 
 	*	[Magento 2 Architecture guide]({{page.baseurl}}architecture/bk-architecture.html){:target="_blank"}
@@ -118,7 +126,8 @@ If you would like to learn more about Magento 2, see the following resources:
 * **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for {{site.data.var.ee}}. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
 * **Branch**: {{site.data.var.ee}} is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
 * **Local**: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to [set up your local for Magento development]({{ page.baseurl }}cloud/before/before-workspace.html).
-* **Onboarding Portal**: A [web interface]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for the Project Owner to get started with a free-30 day trial Starter or Pro account.
+* **Module or Extension**: Custom code and features developed as a module to install and integrate into your Magento implementation. You can purchase these modules from [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}, directly from developers, or create your own. We recommend [developing custom code as a module]({{ page.baseurl }}mrg/intro.html) to extend Magento functionality. 
+* **Onboarding Portal**: A [web interface]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for the Project Owner to get started with a free 30-day trial Starter or Pro account.
 * **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your project environments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for [managing your project]({{ page.baseurl }}cloud/project/projects.html). The following environments are available through this interface:
 
   * Starter: Master and all environments branched from it

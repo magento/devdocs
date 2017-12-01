@@ -6,7 +6,7 @@ title: Magento Commerce 2.1.10 Release Notes
 menu_title: Magento Commerce 2.1.10 Release Notes
 menu_order: 254
 level3_menu_node: level3child
-level3_subgroup: ee21-relnotes 
+level3_subgroup: ee21-relnotes
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.10EE.md
 ---
@@ -16,6 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.10EE.md
 
 *Patch code and release notes were published on November 7,  2017.*
 
+
 We are pleased to present Magento Commerce  2.1.10. This release includes important enhancements to your Magento software.
 
 
@@ -24,15 +25,15 @@ We are pleased to present Magento Commerce  2.1.10. This release includes import
 
 Magento 2.1.10 contains over 50 security fixes and functional enhancements. Look for the following highlights in this release:
 
-* Significant reduction in JavaScript-related translation issues. 
+* Significant reduction in JavaScript-related translation issues.
 
-* Improvements to how the PayPal Express Checkout payment method processes virtual products. 
+* Improvements to how the PayPal Express Checkout payment method processes virtual products.
 
-* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
+* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
-* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in cacheing for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).  
+* Forty-four community-submitted bug fixes and multiple pull requests. These pull requests feature improvements in cacheing for configurable products (pull request [9809](https://github.com/magento/magento2/pull/11469)) and enhancements to the URL rewrite mechanism (pull request [10164](https://github.com/magento/magento2/pull/10164)).
 
-* Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4). 
+* Support for management of multiple instances in the same crontab. These two new CLI commands (`cron:install` and `cron:remove`) were submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4).
 
 ## Security enhancements
 
@@ -57,11 +58,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ### Cart and checkout
 
-<!--- 68812 -->* You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated. 
+<!--- 68812 -->* You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated.
 
 <!--- 57683 -->* Magento now displays the checkout agreement validation for Terms and Condition acknowledgment after a customer has changed his or her payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
 
-<!--- 71985 -->* Magento now provides a **Login** button so that you can resume your checkout process if you return to the check out page after leaving it mid-order.  
+<!--- 71985 -->* Magento now provides a **Login** button so that you can resume your checkout process if you return to the check out page after leaving it mid-order.
 
 <!--- 69856 -->* Magento now displays the correct error message when a customer enters an invalid discount code during checkout. [GitHub-7230](https://github.com/magento/magento2/issues/7230)
 
@@ -73,14 +74,14 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ### Catalog
 
-<!--- 69080 -->* The quantity field for a product on the checkout page is now properly updated after you change the product quantity. 
+<!--- 69080 -->* The quantity field for a product on the checkout page is now properly updated after you change the product quantity.
 
-<!--- 70062 -->* Magento now includes disabled products when filtering product by price in the Admin. Previously, when you filtered products by price in the Admin, the total number of products was less than the unfiltered list of products. 
+<!--- 70062 -->* Magento now includes disabled products when filtering product by price in the Admin. Previously, when you filtered products by price in the Admin, the total number of products was less than the unfiltered list of products.
 
 
-<!--- 69621 -->* You can now sort the attribute table in the Add Attribute section of the Admin’s Product edit panel while you are adding an attribute to a product. 
+<!--- 69621 -->* You can now sort the attribute table in the Add Attribute section of the Admin’s Product edit panel while you are adding an attribute to a product.
 
-<!--- 70521 -->* You can now save content that you’ve entered using the WYSIWYG editor when the **Enable WYSIWYG Editor** setting is set to **Disabled by Default**. Previously, a JavaScript error occurred. 
+<!--- 70521 -->* You can now save content that you’ve entered using the WYSIWYG editor when the **Enable WYSIWYG Editor** setting is set to **Disabled by Default**. Previously, a JavaScript error occurred.
 
 <!--- 57153 -->* Magento now correctly displays custom options at the store-view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612) 
 
@@ -99,31 +100,31 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 58515, 70606 -->* Simple product videos now display the embedded video player instead of the thumbnail image. [GitHub-6360](https://github.com/magento/magento2/issues/6360), [GitHub-8882](https://github.com/magento/magento2/issues/8882) 
 
 
-<!--- 58395 -->* You can now save a configurable product for which you’ve set the **Weight** value to **this item has no weight**.  Previously, Magento displayed this error, `Notice: Undefined index: weight in \magento2ce\app\code\Magento\ConfigurableProduct\Model\Product\VariationHandler.php on line 154`. 
+<!--- 58395 -->* You can now save a configurable product for which you’ve set the **Weight** value to **this item has no weight**.  Previously, Magento displayed this error, `Notice: Undefined index: weight in \magento2ce\app\code\Magento\ConfigurableProduct\Model\Product\VariationHandler.php on line 154`.
 
 <!--- 57007 -->* Magento now displays tier prices of simple or virtual products on the configurable products page. [GitHub-3759](https://github.com/magento/magento2/issues/3759)
 
-<!--- 71637, 72251  -->* Fixed an issue with the PHP `getPrice()` method that resulted in various frontend errors, including a fatal error when you try to view a shopping cart that contains an out-of-stock product. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10750*. [GitHub-10206](https://github.com/magento/magento2/issues/ 10206), [GitHub-5519](https://github.com/magento/magento2/issues/5519)
+<!--- 71637, 72251  -->* Fixed an issue with the PHP `getPrice()` method that resulted in various frontend errors, including a fatal error when you try to view a shopping cart that contains an out-of-stock product. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10750*. [GitHub-10206](https://github.com/magento/magento2/issues/10206), [GitHub-5519](https://github.com/magento/magento2/issues/5519)
 
 <!--- 71136 -->* You can now save a value for an attribute that is shared between related, upsell, or cross-sell products that have different attribute sets. Previously, when a configurable product had another configurable product with a different attribute set as a related product, cross sell, or upsell, and both attribute sets share a multiselect attribute, the value for that multiselect attribute could not be updated for the product.
 
-  
+
 <!--- 69587 -->* We've fixed the behavior of the configurable attributes cache. Previously, when Magento loaded configurable attributes, it then stored results in the cache. If Magento subsequently tried to load results from the cache, the `hasCacheData` method always returned false. *Fix submitted by [Teun Lassche](https://github.com/thlassche) in pull request 9809*. [GitHub-6999](https://github.com/magento/magento2/issues/6999)
 
-<!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website. 
+<!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website.
 
 
 ### General
-<!--- 63816 -->* We’ve fixed an issue with session behavior that resulted in different customer sessions being shared between different customers on two websites. 
+<!--- 63816 -->* We’ve fixed an issue with session behavior that resulted in different customer sessions being shared between different customers on two websites.
 
 
-<!--- 58526 -->* You can now successfully reset a customer password when the **Website Restrictions** setting is enabled. Previously, Magento redirected you to `customer/account/login/`, from which you could not change a password. 
+<!--- 58526 -->* You can now successfully reset a customer password when the **Website Restrictions** setting is enabled. Previously, Magento redirected you to `customer/account/login/`, from which you could not change a password.
 
 
-<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites cannot edit CNS pages. Previously, under these circumstances, Magento directed the Admin to an error page. 
+<!--- 70148 -->* Additional Admin users with roles scoped to only one of multiple websites cannot edit CMS pages. Previously, under these circumstances, Magento directed the Admin to an error page.
 
 
-<!--- 71701 -->* In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609) 
+<!--- 71701 -->* In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609)
 
 <!--- 70218 -->* Magento no longer displays an empty minicart when you disable full page cache after login. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 10050*. [GitHub-5377](https://github.com/magento/magento2/issues/5377), [GitHub-4170](https://github.com/magento/magento2/issues/4170), [GitHub-6882](https://github.com/magento/magento2/issues/6882)
 
@@ -131,7 +132,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 72249 -->* The `validate-email` error string can now be translated.  *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10745*.  [GitHub-6622](https://github.com/magento/magento2/issues/6622)
 
-<!--- 72250 -->* We've fixed a range of JavaScript translation issues, in particular issues related to interactions between general locale translations and theme CSV files. [GitHub-4883](https://github.com/magento/magento2/issues/4883), [GitHub-5883](https://github.com/magento/magento2/issues/5883), [GitHub-5861](https://github.com/magento/magento2/issues/5861), [GitHub-5820](https://github.com/magento/magento2/issues/5820), [GitHub-5509](https://github.com/magento/magento2/issues/5509), [GitHub-6022](https://github.com/magento/magento2/issues/6022), [GitHub-5995](https://github.com/magento/magento2/issues/5995), [GitHub-7525](https://github.com/magento/magento2/issues/7525), [GitHub-9967](https://github.com/magento/magento2/issues/9967) 
+<!--- 72250 -->* We've fixed a range of JavaScript translation issues, in particular issues related to interactions between general locale translations and theme CSV files. [GitHub-4883](https://github.com/magento/magento2/issues/4883), [GitHub-5883](https://github.com/magento/magento2/issues/5883), [GitHub-5861](https://github.com/magento/magento2/issues/5861), [GitHub-5820](https://github.com/magento/magento2/issues/5820), [GitHub-5509](https://github.com/magento/magento2/issues/5509), [GitHub-6022](https://github.com/magento/magento2/issues/6022), [GitHub-5995](https://github.com/magento/magento2/issues/5995), [GitHub-7525](https://github.com/magento/magento2/issues/7525), [GitHub-9967](https://github.com/magento/magento2/issues/9967)
 
 <!--- 72278, 69574 -->* Vimeo videos in product gallery now work over HTTPS. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 10748*. [GitHub-7311](https://github.com/magento/magento2/issues/7311), [GitHub-8574](https://github.com/magento/magento2/issues/8574)
 
@@ -143,7 +144,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 60003 -->* You can now use the Admin to create a return after you’ve added a new return attribute. Previously, the new attribute was not visible, and the return could not be submitted. Magento also displayed this error: `Uncaught Error: cannot call methods on modal prior to initialization; attempted to call method openModal`.
 
-<!--- 72181 -->* You can now remove custom customer and customer address attributes from the Use in Forms list.  
+<!--- 72181 -->* You can now remove custom customer and customer address attributes from the Use in Forms list.
 
 <!--- 75222 -->
 
@@ -159,11 +160,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 
 ### Google
-<!--- 70892 -->* We’ve fixed an Ajax issue that prevented Add to Cart and Remove from Cart events from firing in Google Tag Manager as expected. 
+<!--- 70892 -->* We’ve fixed an Ajax issue that prevented Add to Cart and Remove from Cart events from firing in Google Tag Manager as expected.
 
 ### Import/export
 
-<!--- 71983 -->* Magento no longer fails if the CSV file being imported does not contain the `bundle_values` column during an import process that includes bundle products. 
+<!--- 71983 -->* Magento no longer fails if the CSV file being imported does not contain the `bundle_values` column during an import process that includes bundle products.
 
 <!--- 59720 -->* Magento now allows you to import multiple alternative images with multiple labels that include commas in the description.
 
@@ -173,13 +174,13 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ### Order management
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
-<!--- 59125 -->* You can now receive shipping quotes from either the Admin panel or the storefront. 
+<!--- 59125 -->* You can now receive shipping quotes from either the Admin panel or the storefront.
 
 
 ### Payment methods
-<!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not place the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address. 
+<!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not place the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address.
 
-<!--- 72466 -->* We’ve fixed a `PayPal.js` error that occurred when you tried to check out an order that contained a downloadable product. 
+<!--- 72466 -->* We’ve fixed a `PayPal.js` error that occurred when you tried to check out an order that contained a downloadable product.
 
 <!--- 71821 -->* PayPal Express checkout now handles virtual products as expected. Previously,  the checkout page redirected you to the review order page, and Magento displayed the  **Can't place order** message.  Note: This is not associated with PayPal's strategic decision to stop supporting sales of digital goods through PayPal Express Checkout as of January 2017. [GitHub-10615](https://github.com/magento/magento2/issues/10615)
 
@@ -187,39 +188,39 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 
 ### Shipping
-<!--- 69898 -->* Magento now handles tracking for FedEx shipments with valid tracking numbers as expected. Previously, Magento displayed an error when you clicked **Track this Shipment**, even when the tracking number was valid. 
+<!--- 69898 -->* Magento now handles tracking for FedEx shipments with valid tracking numbers as expected. Previously, Magento displayed an error when you clicked **Track this Shipment**, even when the tracking number was valid.
 
 <!--- 81975 -->* Shipping method radios have duplicate IDs on cart page. *Fix submitted by @peterjaap in pull request 11456*. [GitHub-10795](https://github.com/magento/magento2/issues/10795)
 
 <!--- 81716 -->* Shipment API won't append comment to email. *Fix submitted by @JeroenVanLeusden in pull request 11386*. [GitHub-11207](https://github.com/magento/magento2/issues/11207)
 
 ### Search
-<!--- 72106 -->* Search synonyms in a group now can declare several words as synonyms. For example, "Elon Musk,tesla" is a valid synonym group, and a search on the phrase "Elon Musk" will also show results for the "tesla" keyword. Previously, you could declare synonyms for each word (for example, "Elon,Musk,Tesla"), but these words didn't work as a phrase. Synonyms are also now case-insensitive. 
+<!--- 72106 -->* Search synonyms in a group now can declare several words as synonyms. For example, "Elon Musk,tesla" is a valid synonym group, and a search on the phrase "Elon Musk" will also show results for the "tesla" keyword. Previously, you could declare synonyms for each word (for example, "Elon,Musk,Tesla"), but these words didn't work as a phrase. Synonyms are also now case-insensitive.
 
 #### Elasticsearch
 
-<!--- 72246 -->* We’ve enhanced the performance of the Elasticsearch catalog searches. 
+<!--- 72246 -->* We’ve enhanced the performance of the Elasticsearch catalog searches.
 
 
-<!--- 71667 -->* You can now use QuickSearch to search multiselect text values. 
- 
-<!--- 71569 -->* Search by attribute now works as expected with Elasticsearch. 
+<!--- 71667 -->* You can now use QuickSearch to search multiselect text values.
+
+<!--- 71569 -->* Search by attribute now works as expected with Elasticsearch.
 
 ### Staging
 <!--- 64924 -->* The **Set Product as New** checkbox now works as expected.
 
-<!--- 64521 -->* Magento now saves scheduled updates for products with custom options as expected. 
+<!--- 64521 -->* Magento now saves scheduled updates for products with custom options as expected.
 
-<!--- 67402 -->* Scheduled updates now display the correct price for a product. Previously, Magento displayed the “as low as” price for a product in the scheduled update, but the preview option displayed the regular price. 
+<!--- 67402 -->* Scheduled updates now display the correct price for a product. Previously, Magento displayed the “as low as” price for a product in the scheduled update, but the preview option displayed the regular price.
 
 <!--- 63704 -->* When you set up  Scheduled Update to **new** for a configurable product, Magento removes all simple variations  from the configurable product as expected once the update takes effect. Previously, scheduled updates removed all simple variations from a configurable product.
 
-<!--- 64924 -->* The **Set Product as New** checkbox now works as expected. Previously, Magento did not display the product as new on the  frontend,  and the checked box reverted to unchecked when you saved your changes. 
+<!--- 64924 -->* The **Set Product as New** checkbox now works as expected. Previously, Magento did not display the product as new on the  frontend,  and the checked box reverted to unchecked when you saved your changes.
 
 
 ### Translations
 
-<!--- 69935 -->* You can now save scheduled changes when running a store with a Japanese locale. Previously, Magento displayed this error, `error: : Future Update Start Time cannot be earlier than current time`. 
+<!--- 69935 -->* You can now save scheduled changes when running a store with a Japanese locale. Previously, Magento displayed this error, `error: : Future Update Start Time cannot be earlier than current time`.
 
 <!--- 70543 -->* Product attributes' labels are not translated on product edit page. *Fix submitted by [Fernando Fauth](https://github.com/fernandofauth) in pull request 10184*. [GitHub-1980](https://github.com/magento/magento2/issues/1980)
 
@@ -228,22 +229,22 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!---  82312-->* Custom URL Rewrite Not working. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11469* [GitHub-10231](https://github.com/magento/magento2/issues/10231)
 
-### Visual Merchandiser 
-<!--- 57613 -->* Visual Merchandiser now retains page view options and position after you remove a product. Previously, when you removed a product from a category, and you weren't on the first page, Magento returned you to the first page. 
+### Visual Merchandiser
+<!--- 57613 -->* Visual Merchandiser now retains page view options and position after you remove a product. Previously, when you removed a product from a category, and you weren't on the first page, Magento returned you to the first page.
 
 <!--- 70287 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 
 ### Wishlist
-<!--- 70991 -->* Unconfigured bundle products that are included on a wishlist can now be edited or added to a cart. Previously, Magento displayed a 503  error when you either tried to edit or add to the cart any bundle products that were on a wishlist. 
+<!--- 70991 -->* Unconfigured bundle products that are included on a wishlist can now be edited or added to a cart. Previously, Magento displayed a 503  error when you either tried to edit or add to the cart any bundle products that were on a wishlist.
 
-<!--- 63698 -->* The wishlist now displays the correct price for bundle products. 
+<!--- 63698 -->* The wishlist now displays the correct price for bundle products.
 
 
 
 <!--- INTERNAL ONLY 66707 66706 64245 64115 75625 75621 75619 75612 67019 71527 -->
 
-<!--- NOT NEEDED  65066 63704 63698 63576 63162 62309 61905 61315 61139 59720 59125 58914 75222 72181 72078 72054 72011 67019 69560 57616 64296 7158771576 71398 71378 71170 71151 71117 
+<!--- NOT NEEDED  65066 63704 63698 63576 63162 62309 61905 61315 61139 59720 59125 58914 75222 72181 72078 72054 72011 67019 69560 57616 64296 7158771576 71398 71378 71170 71151 71117
  -->
 
 <!--- DUPLICATE 66197-->
@@ -521,6 +522,4 @@ An updated version of this toolkit is typically available several days after the
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
-Dear community members, thank you for your suggestions and bug reports. 
-
-
+Dear community members, thank you for your suggestions and bug reports.

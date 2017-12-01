@@ -33,7 +33,7 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
-* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.28 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries](http://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html) have been upgraded to the latest stable version.
+* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries](http://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html) have been upgraded to the latest stable version.
 
 * **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{page.baseurl}}config-guide/deployment/pipeline/).
 
@@ -63,6 +63,8 @@ For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 
 
 ## Fixed issues {#fixed}
 This release contains numerous fixes and enhancements. This section includes only fixes for {{site.data.var.ece}}. For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
+
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get this update.
 
 <!-- 57167 -->* You can now generate sitemap.xml and robots.txt normally through the Magento Admin panel, without needing to move the file and have a redirect entered. If you are upgrading to 2.2, please enter a [Support ticket] to have any redirects removed for sitemap and robots.txt.
 
@@ -98,6 +100,8 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 * With the removal of `GENERATED_CODE_SYMLINK`, you cannot execute `setup:di:compile` directly on a server.
 
 * Modified and updated available build and deploy variables. For a full list, see [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html). For 2.2, we have removed `skip_di_compilation` and `skip_di_clearing` from `build-options.ini`. These cannot be run for 2.2 in the build phase.
+
+* For 2.2.X, we no longer enable all of your extensions are part of the build process. We will provide a new mechanism in a later release.
 
 ## Community contributions {#community}
 

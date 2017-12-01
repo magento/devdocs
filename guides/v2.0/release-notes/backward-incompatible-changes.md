@@ -3,7 +3,8 @@ layout: default
 group: release-notes
 title: Magento 2.0 Backward Incompatible Changes
 github_link: release-notes/backward-incompatible-changes.md
-redirect_from: release-notes/changes_2.0.html
+version: 2.0
+redirect_from: guides/v2.0/release-notes/changes_2.0.html
 ---
 
 This topic discusses the most important backward incompatible changes made after Magento 2.0.0 release in scope of 2.0 version.

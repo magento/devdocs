@@ -25,7 +25,7 @@ For {{site.data.var.ece}} 2.2, you do not need to move the files or have a redir
 ## Generate sitemap and robots {#generate}
 Access an environment fully configured for your site:
 
-* For Starter, access an active development branch
+* For Starter, access an active branch for example `staging`
 * For Pro, access your `master` environment in Integration
 
 Generate your `sitemap.xml` and `robots.txt`:
@@ -39,18 +39,19 @@ Generate your `sitemap.xml` and `robots.txt`:
 
 For additional information, see [Using a Sitemap](http://docs.magento.com/m2/ee/user_guide/marketing/sitemap-xml.html){:target="_blank"} and [Search Engine Robots](http://docs.magento.com/m2/ee/user_guide/marketing/search-engine-robots.html){:target="_blank"}.
 
-## Add files to Git {#files}
-If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use `rsync` or  `scp` through a terminal. If you completed the commands on your local, move the files to the correct location.
+## Import files to environment {#files}
+If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use `rsync` or  `scp` through a terminal. If you completed the commands on your local, move the files to the correct location. The following example uses `rsync`.
 
 Move and add the files to your Git branch:
 
-1. Move the files into the `/pub/media/` directory. This is a writable directory for .
-2. Add the files to Git. For example:
+1. SSH into the environment you created the files.
+2. Use `rsync` to move the files to your local. The format of the command is `rsync -azvP <source> <destination>`.
 
-    git add pub/media/sitemap.xml && git commit -m "Add sitemap" && git push origin master
+    rsync -azvP <source on environment> <local machine user name>@<local machine host or IP>:pub/media/
+3. SSH into the environment you want to move the files into.
+4. Move the files into the `/pub/media/` directory using the rsync command:
 
-    git add pub/media/robots.txt && git commit -m "Add robots" && git push origin master
-3. Push and merge your changes in development, Staging, and Production environments.
-4. Enter a [ticket with Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to have redirects added for `sitemap.xml` and `robots.txt`.
+    rsync -azvP pub/media/ <environment machine user name>@<environment machine host or IP>:pub/media/
+5. Enter a [ticket with Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to have URL rewrite rules added for `sitemap.xml` and `robots.txt`.
 
 When the redirects are completed, keep these files updated in that file location for your Git branches during deployment.

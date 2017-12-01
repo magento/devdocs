@@ -28,6 +28,6 @@ The following discussion focuses on how these topics apply directly to Magento:
 
 <a href="{{page.baseurl}}architecture/tech-stack.html" target="_blank">Technology stack</a>
 
-<a href="{{page.baseurl}}architecture/stack-basics.html" target="_blank">Stack basics</a>
+<a href="{{page.baseurl}}architecture/tech-stack.html" target="_blank">Stack basics</a>
 
 <a href="{{page.baseurl}}architecture/versioning.html" target="_blank">Versioning</a>

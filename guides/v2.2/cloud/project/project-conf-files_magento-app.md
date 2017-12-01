@@ -45,13 +45,13 @@ The `type`  and `build` properties are used to build and run the project. The on
 
 Supported versions:
 
-    type: php:7.1
+    type: php:7.0
 
 The `build` determines what happens by default when building the project. The only value currently supported is `composer`.
 
 Example:
 
-    type: php:7.1
+    type: php:7.0
     build:
         flavor: composer
 
@@ -246,19 +246,29 @@ variables:
 ## `crons` {#cloud-yaml-platform-cron}
 `crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
 
-More information about crons:
-
-`crons` supports the following:
+`crons` support the following:
 
 *	`spec`: The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per 5 minutes. You will need to complete [additional configurations]({{page.baseurl}}cloud/configure/setup-cron-jobs.html#admin) for crons in those environments.
 *	`cmd`: The command to execute.
 
+A Cron job is well suited for the following tasks:
+
+* They need to happen on a fixed schedule, not continually.
+* The task itself is not especially long, as a running cron job will block a new deployment.
+* Or it is long, but can be easily divided into many small queued tasks.
+* A delay between when a task is registered and when it actually happens is acceptable.
+
+
 A sample Magento cron job follows:
 
+{% highlight yaml %}
 	crons:
     cronrun:
         spec: "*/5 * * * *"
         cmd: "php bin/magento cron:run"
+{% endhighlight %}
+
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#cloud-yaml-platform-cron). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
 
 For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/setup-cron-jobs.html).
 
@@ -267,10 +277,10 @@ You can choose which version of PHP you want to run in your `.magento.app.yaml` 
 
 {% highlight yaml %}
 name: myphpapp
-type: php:7.1
+type: php:7.0
 {% endhighlight %}
 
-We support PHP versions 7.1.
+For PHP versions, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
 
 See one of the following sections for more information:
 
@@ -370,6 +380,34 @@ For a list of recommended PHP configuration settings, see [Required PHP settings
 After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
+
+## Workers {#workers}
+You can define zero or multiple work instances for each application. A worker instance runas as its own container, independently of the web instance and has no Nginx instance running. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
+
+A worker instance is the exact same code and compilation output as a web instance. The container image is built once and deployed multiple times if needed using the same `build` hook and `dependencies`. You can customize the container and allocated resources.
+
+Use worker instances for background tasks including:
+
+* Tasks like queue workers or updating indexes.
+* Tasks to run periodic reporting that are too long for a cron job.
+* Tasks should happen "now", but not block a web request.
+* Tasks are large enough that they risk blocking a deploy, even if they are subdivided.
+* The task in question is a continually running process rather than a stream of discrete units of work.
+
+A basic, common worker configuration could look like this:
+
+{% highlight yaml %}
+workers:
+    queue:
+        size: S
+        commands:
+            start: |
+                php worker.php
+{% endhighlight %}
+
+This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
+
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#cloud-yaml-platform-cron). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
 
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)

@@ -19,7 +19,7 @@ After your company purchases a subscription plan for {{site.data.var.ece}}, the 
 To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps:
+If you joined us with a 30-day free trial {{site.data.var.ece}} account, we took care of the following first steps:
 
 * Created your Cloud account and project
 * Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
@@ -61,6 +61,15 @@ For non-Trial projects, the Project Owner needs to [Prepare project environments
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}common/images/cloud_project-access.png)
+
+## Sign up for Magento status {#status}
+We provide an {{site.data.var.ece}} environment and service status site. Anyone working on your site and project can subscribe on the site for email notifications and updates. We recommend subscribing and adding a bookmark to check the page daily or as needed.
+
+The site location is [https://status.magento.cloud/](https://status.magento.cloud/){:target="_blank"}. Scroll to the bottom and click [Subscribe](http://status.magento.cloud/subscribe){:target="_blank"} at the bottom of the page. Complete the prompts with your email address and types of notifications you want to receive.
+
+The page lists all component and service status. Any issues, updates, and notices are displayed below these status tables by date. For example, any slow issues, outages, or upgraded services are listed with important information and any updates as available.
+
+![All status on the page]({{ site.baseurl }}common/images/cloud_status.png)
 
 ## Access your Magento Admin panel {#admin}
 When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. To initially access the Magento Admin, you have a couple of options.

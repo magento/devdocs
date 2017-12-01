@@ -2,57 +2,73 @@
 layout: default
 group: release-notes
 title: Magento Commerce Backward Incompatible Changes
+version: 2.1
 github_link: release-notes/changes/ee_changes.md
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ee}} 2.1.
 
-All changes are aggregated into two tables:
+All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
+</div>
+
+The changes are aggregated into two tables:
 
 - that contains backward incompatible changes made to Magento classes
 - that contains backward incompatible changes made to the Magento interfaces
 
-where each change is displayed in a separate row in the table, with the following columns:
+<div class="bs-callout bs-callout-warning" markdown="1">
+**Temporary issue**: Added docblock tags like [@api] or [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.  
+</div>
 
-- **Class** or **Interface** with the name of an affected class or interface
-- **What changed** with the description of a backward incompatible change
+## 2.1.9 - 2.1.10    {#releases-2_1_9-2_1_10}
 
-## 2.1.8 - 2.1.9    {#delta-219-218}
+{% include changes/ee/2.1.9-2.1.10.html %}
 
-{% include changes/ee/219-218.html %}
+## 2.1.8 - 2.1.9    {#releases-2_1_8-2_1_9}
 
-## 2.1.7 - 2.1.8 {#delta-218-217}
+{% include changes/ee/2.1.8-2.1.9.html %}
 
-{% include changes/ee/218-217.html %}
+## 2.1.7 - 2.1.8 {#releases-2_1_7-2_1_8}
 
-## 2.1.6 - 2.1.7 {#delta-217-216}
+{% include changes/ee/2.1.7-2.1.8.html %}
 
-{% include changes/ee/216-217.html %}
+## 2.1.6 - 2.1.7 {#releases-2_1_6-2_1_7}
 
-## 2.1.5 - 2.1.6 {#delta-216-215}
+{% include changes/ee/2.1.6-2.1.7.html %}
 
-{% include changes/ee/215-216.html %}
+## 2.1.5 - 2.1.6 {#releases-2_1_5-2_1_6}
 
-## 2.1.4 - 2.1.5 {#delta-215-214}
+{% include changes/ee/2.1.5-2.1.6.html %}
 
-{% include changes/ee/214-215.html %}
+## 2.1.4 - 2.1.5 {#releases-2_1_4-2_1_5}
 
-## 2.1.3 - 2.1.4 {#delta-214-213}
+{% include changes/ee/2.1.4-2.1.5.html %}
 
-{% include changes/ee/213-214.html %}
+## 2.1.3 - 2.1.4 {#releases-2_1_3-2_1_4}
 
-## 2.1.2 - 2.1.3 {#delta-213-212}
+{% include changes/ee/2.1.3-2.1.4.html %}
 
-{% include changes/ee/212-213.html %}
+## 2.1.2 - 2.1.3 {#releases-2_1_2-2_1_3}
 
-## 2.1.1 - 2.1.2 {#delta-212-211}
+{% include changes/ee/2.1.2-2.1.3.html %}
 
-{% include changes/ee/211-212.html %}
+## 2.1.1 - 2.1.2 {#releases-2_1_1-2_1_2}
 
-## 2.1.0 - 2.1.1 {#delta-211-210}
+{% include changes/ee/2.1.1-2.1.2.html %}
 
-{% include changes/ee/210-211.html %}
+## 2.1.0 - 2.1.1 {#releases-2_1_0-2_1_1}
 
-## 2.0.7 - 2.1.0 {#delta-210-207}
+{% include changes/ee/2.1.0-2.1.1.html %}
 
-{% include changes/ee/207-210.html %}
+## 2.0.0 - 2.1.0 {#releases-2_0_0-2_1_0}
+
+{% include changes/ee/2.0.0-2.1.0.html %}
+
+<!-- LINK DEFINITIONS -->
+
+[changes in {{site.data.var.ce}}]: ./ce_changes.html
+[@api]: {{page.baseurl}}coding-standards/docblock-standard-general.html#api
+[@deprecated]: {{page.baseurl}}coding-standards/docblock-standard-general.html#deprecated
