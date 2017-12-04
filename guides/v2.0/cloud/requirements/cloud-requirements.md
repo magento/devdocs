@@ -79,12 +79,12 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
-* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html): 5.6 and 5.7
-* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html): 4.10
-* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html): 2.8 and 3.0
-* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html): 3.5
-* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html): 1.4, 1.7, and 2.4
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) -  For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
+* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html) 5.6 and 5.7
+* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html) 4.10
+* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
+* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html) 3.5
+* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, and 2.4
 
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
