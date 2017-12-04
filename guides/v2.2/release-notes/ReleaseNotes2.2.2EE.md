@@ -20,9 +20,44 @@ We are pleased to present Magento Commerce 2.2.2. This release includes numerous
 
 Look for the following highlights in this release:
 
+* Significant new features that
 
+* Numerous fixes and enhancements to core features, including 
 
 * Twenty-two community-submitted bug fixes and multiple pull requests.
+
+
+### New Features
+
+* **Streamlined Instant Purchase checkout**. Our new streamlined Instant Purchase option uses previously-stored payment credentials and shipping information to bypass steps in the checkout process. 
+
+
+* **Integrated dotmailer marketing automation software**. Magento is the first ecommerce solution to include dotmailer marketing automation with their core product. See http://docs.magento.com/m2/ce/user_guide/marketing/dotmailer.html 
+
+
+* **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://docs.magento.com.guides/v2.2/advanced-reporting/overview.html) for more information. 
+
+* **Magento Shipping** integrated advanced multi-carrier shipping and fulfillment. 
+
+
+
+## Fixes and enhancements
+
+* **Significant enhancements for payment methods**. We've added support for the Indian Rupee (INR) added to PayPal Express Checkout, and a fix for an issue where some Braintree refunds did not work. 
+
+* **Improvements to multi-storeview sites**. Switching store views multiple times no longer results in an error on the storefront. 
+
+
+* **New functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command and Added ability to handle CLI setup interactively (with prompts).
+
+
+
+
+* You can now search admin grids with Enter/Return and not only a mouse click
+
+* 
+* Magento no longer creates duplicate shipments when merchants create shipments with bundled products using the API. 
+
 
 
 
@@ -30,339 +65,1499 @@ Looking for more information on these new features as well as many others? Check
 
 
 
+
+
+
+<!--- MAGETWO-80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler </a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
+
+
+
+
 ## Fixed issues
-<!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler </a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
 
 
-<!--- MAGETWO-83552 -->* GitHub-11669
+<!--- MAGETWO-83540 -->* Admin dashboard Most Viewed Products Tab only gives default attribute set's products
 
-<!--- MAGETWO-83540 -->* GitHub-9768
-
-<!--- MAGETWO-83498 -->* GitHub-6238
-
-<!--- MAGETWO-83495 -->* GitHub-10834
-
-<!--- MAGETWO-83494 -->* GitHub-9851
-
-<!--- MAGETWO-83489 -->* GitHub-11880
-
-<!--- MAGETWO-83477 -->* GitHub-10628
-
-<!--- MAGETWO-83476 -->* GitHub-12079
+Admin dashboard Most Viewed Products Tab only gives default attribute set's products. In magento admin dashboard no products are showing in most viewed product grid if all product are in different attribute sets (not in default attribute set), even with magento sample data this grid is always displaying "We couldn't find any records.". [GitHub-9768](https://github.com/magento/magento2/issues/9768)
 
 
-<!--- MAGETWO-83373 -->* GitHub-9633
+<!--- MAGETWO-83498 -->* When you save an input field in the Admin or Frontend area with a value greater then 255 characters the actual saved data in the database is 255 characters. 
 
-<!--- MAGETWO-83329 -->* GitHub-8003
+Expected result
+
+Meta description automatically cuts off the characters if character limit is exceeded before save.
+Actual result
+
+Meta description allows the number of characters to exceed the limit and only cuts off the extra characters on save. CATALOG
+
+[GitHub-6238](https://github.com/magento/magento2/issues/6238)
 
 
-<!--- MAGETWO-83322 -->* GitHub-10920
+<!--- MAGETWO-83495 -->* After logging in customer is now not redirecting to Customer Dashboard by default 
+Expected result
+
+after signing in, user should redirected to checkout page, as he want this before signing in
+
+Actual result
+
+will be returned to homepage
+
+[GitHub-10834](https://github.com/magento/magento2/issues/10834)
 
 
-<!--- MAGETWO-83312 -->* GitHub-7903
-
-<!--- MAGETWO-83290 -->* GitHub-10707, GitHub-10737, GitHub-11032, GitHub-9410
 
 
-<!--- MAGETWO-83286 -->* GitHub-10014
 
-<!--- MAGETWO-83283 -->* GitHub-6123
+<!--- MAGETWO-83489 -->* Configurable::getUsedProducts returns a different array after product collections is cached 
 
-<!--- MAGETWO-83281 -->* GitHub-6661
+Magento\ConfigurableProduct\Model\Product\Type\Configurable:::loadUsedProducts is now ignoring array keys returned by collection.
 
-<!--- MAGETWO-83279 -->* GitHub-12017
+Expected result
 
-<!--- MAGETWO-83278 -->* GitHub-7995
+The array $usedProducts should contain the same indexes->values where indexes are the product children ids.
+Actual result
 
-<!--- MAGETWO-83277 -->* GitHub-11996
+Before cleaning the collections cache, the returned array is a simple array indexes->values where indexes are incremental.
+After cleaning the collections cache, the returned array is an associative array where the indexes are the product children ids.
 
-<!--- MAGETWO-83272 -->* GitHub-11197
+[GitHub-11880](https://github.com/magento/magento2/issues/11880)
 
-<!--- MAGETWO-83271 -->* GitHub-10195
 
-<!--- MAGETWO-83270 -->* GitHub-11700
 
-<!--- MAGETWO-83257 -->* GitHub-4004
 
-<!--- MAGETWO-83252 -->* GitHub-6460
+<!--- MAGETWO-83477 -->* Color attribute swatches are not rendered correctly for the search result page if sorting for color attribute is enabled.
 
-<!--- MAGETWO-83197 -->* GitHub-11793
+Color attribute swatches are not visible if sorting is enabled 
+If we added attribute to Used for Sorting in Product Listing it tried to cache it while making custom query. So the attribute don't has all needed parameters. Now we cache such attributes with all additional data.
 
-<!--- MAGETWO-83194 -->* GitHub-11898
+[GitHub-10628](https://github.com/magento/magento2/issues/10628)
 
-<!--- MAGETWO-83174 -->* GitHub-11868
+
+
+
+
+<!--- MAGETWO-83476 -->* Changed inner join with left join for prices because bundle and grouped products don't have prices and report generates error if we have them in cart.
+
+When viewing the report 'Products in cart' the report gives error if we have a bundle or a grouped product in cart.
+
+Add a grouped or a bundle product to cart. Go to admin->Reports->Marketing->Products in cart and loop through pages or export to csv/excel.
+
+Expected result
+
+Should see the Products in cart report or download csv/xml
+
+Actual result
+
+Exception #0 (Exception): Notice: Undefined offset: [productId] in vendor/magento/module-reports/Model/ResourceModel/Quote/Item/Collection.php on line 222
+
+
+[GitHub-12079](https://github.com/magento/magento2/issues/12079)
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83322 -->* Replace fetchOne() in loop with getting product ids from protected property oldSku, which has all necessary information when attributes begin to save, in Magento/CatalogImportExport/Model/Import/Product::saveProductAttributes() to increase efficiency during product import.
+
+Product import is not fetching relation between products sku and entity_id efficiently when inserting attributes data.
+
+Expected result
+
+All relations are loaded using one query per bunch
+Actual result
+
+Relations are loaded one by one (multiple times for multiple attributes types)
+
+[GitHub-10920](https://github.com/magento/magento2/issues/10920)
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83290 -->* Adapt \Magento\Swatches\Model\Plugin\EavAttribute::setProperOptionsArray to make possible that the plugins afterSave in the same module doesn't delete data if they don't found this data with all the options data, as sent via adminhtml form.
+
+Prevent loosing data and default value if data is not populated via adminhtml 
+
+
+
+
+
+GitHub-10707, GitHub-10737, GitHub-11032, GitHub-9410
+
+
+<!--- MAGETWO-83286 -->* Fix newsletter subscriptions between stores
+
+When user have different accounts in two or more stores newsletter table save the subscription status, store_id and customer_id.
+The problem is that when we try to update this information the query result don't keep in mind the store of the user.
+
+Extra info
+
+When looking in the newsletter_subscriber table, instead of there being one record for each customer per store, there's one global record. When customer 1 in store A updates, the store_id in newsletter subscriber is updated to store A's ID. When customer 2 in store B updates, the store_id in newsletter_subscriber is updated to store B's ID.
+
+[GitHub-10014](https://github.com/magento/magento2/issues/10014)
+
+
+
+<!--- MAGETWO-83281 -->* XHTML templates Don't Use Schema URNs
+
+[GitHub-6661](https://github.com/magento/magento2/issues/6661)
+
+
+
+<!--- MAGETWO-83279 -->* Magento 2.2.0 Solution for Cross-sell product placeholder image size. Cross-sell product placeholder image size
+
+In a cart page cross-sell product placeholder image size is too much small. Its size should be displayed same like Product listing page placeholder image.
+
+[GitHub-12017](https://github.com/magento/magento2/issues/12017)
+
+
+
+<!--- MAGETWO-83278 -->* Shipping address lines dissapear when street_lines on customer configuration is set to 0.
+Fixed
+
+If you leave as default, shipping lines disappear
+
+
+[GitHub-7995](https://github.com/magento/magento2/issues/7995)
+
+
+
+
+
+<!--- MAGETWO-83277 -->* Magento 2 Store Code validation regex: doesn't support uppercase letters in store code. 
+Magento 2 Store Code validation regex: doesn't support uppercase letters in store code
+
+Expected result
+
+It should work, or give an error message
+Actual result
+
+You get an error message back saying
+[GitHub-11996](https://github.com/magento/magento2/issues/11996)
+
+STORE
+
+
+<!--- MAGETWO-83272 -->* 
+
+Blank page at the checkout 'shipping' step
+[GitHub-11197](https://github.com/magento/magento2/issues/11197)
+
+
+Steps to reproduce
+
+Add any product to the cart as a guest user
+Proceed to the checkout
+Fill address and customer data
+Proceed to the payment step
+Click 'Shipping' in the progress bar to return to the shipping step
+Click next and proceed again to the payment step
+Click 'back' button in the browser
+Expected result
+
+The customer is redirected to shipping step and is able to change address data.
+Actual result
+
+The shipping step (page) is blank.
+
+CHECKOUT
+
+
+
+
+<!--- MAGETWO-83271 -->* Order relation child is not set during edit operation
+[GitHub-10195](https://github.com/magento/magento2/issues/10195)
+
+
+
+ORDER MANAGEMENT
+
+
+
+<!--- MAGETWO-83270 -->* "Something Went Wrong" error for limited access admin user
+
+When user has access to Dashboard and don't has access to notification, error "something went wrong" appears, because ajax request try to get notifications, but magento try to redirect to "noroute".
+
+Steps to reproduce
+
+Login as an admin user with limited access
+Something went wrong error pops up after every page load
+Server Logs and Magento Logs don't record any errors
+Expected result
+
+Logs should point to the error.
+
+If it is ajax request don't redirect anyway, simple return nothing.
+
+[GitHub-11700](https://github.com/magento/magento2/issues/11700)
+
+
+
+
+
+<!--- MAGETWO-83257 -->* Newsletter Subscriber create-date not set, and change_status_at broken
+
+Newsletter Subscriber create-date not set, and change_status_at broken
+
+adds new method beforeSave for Subscriber abstract model if data has changed for `subsriber_status`
+
+Register new subscriber from footer
+Go to Admin -> Marketing -> Newsletter Subscribers -> select customer and choose "Unsubscribe" action
+2. Registered customer
+login as existing customer
+go to Account Dashboard -> Newsletters -> "check" or "uncheck" checkbox
+save
+
+
+Register new subscriber from footer
+Go to Admin -> Marketing -> Newsletter Subscribers -> select customer and choose "Unsubscribe" action
+2. Registered customer
+login as existing customer
+go to Account Dashboard -> Newsletters -> "check" or "uncheck" checkbox
+save
+
+[GitHub-4004](https://github.com/magento/magento2/issues/4004)
+
+
+
+<!--- MAGETWO-83197 -->* 
+
+Magento2.1.5 admin shipping report shows wrong currency code. 
+Create a single website with multi-store views (2 stores).
+2. Go to Stores-Configuration->General->Currency Setup->Currency Options and set it up to show USD currency for the 1 store, and EUR currency (as an example) for the second store.
+3. Create 2 orders for each store (go to Sales->Orders), invoices and shippings for them.
+4. Go to Admin->Reports->Sales->Shipping and set up the filters so you can see shipments for that orders you created earlier.
+5. Currency must change depends on store.
+
+admin shipping report shows wrong currency code
+
+admin->Reports->Sales->Shipping
+
+if i have switch to another store it is showing default currency only. the actual result should show the switched store currency only.
+
+
+
+[GitHub-11793](https://github.com/magento/magento2/issues/11793)
+
+
+<!--- MAGETWO-83194 -->* 
+
+Zip code Netherlands should allow zipcode without space
+
+
+
+[GitHub-11898](https://github.com/magento/magento2/issues/11898)
+
+
+<!--- MAGETWO-83174 -->* 
+
+"Add Products" button has been duplicated after the customer group was changed. 
+
+
+ "Add Products" button has been duplicated after the customer group was changed
+
+ Steps to reproduce
+
+Login to admin panel
+Go to: Sales - Orders - Create New Order
+Select existing customer or create new
+Change customer group
+Expected result
+
+Button "Add products" ("Add Products", "Add Products By SKU" on EE) should not duplicated.
+Actual result
+
+Button "Add products" ("Add Products", "Add Products By SKU" on EE) has been duplicated.
+Order Management
+
+[GitHub-11868](https://github.com/magento/magento2/issues/11868)
+
 
 <!--- MAGETWO-83169 -->* The \Magento\Quote\Model\ResourceModel\Quote\Item\Collection now returns items which have only existing relations in catalog_product_entity table. It protects us to load quote items with non existing products.
 
 
 <!--- MAGETWO-83152 -->* Varnish configuration was updated
 
-<!--- MAGETWO-83147 -->* GitHub-5574
 
-<!--- MAGETWO-83145 -->* Sitemap.xml: lastmod timestamp can contain invalid dates GitHub-9151
+<!--- MAGETWO-83145 -->* Sitemap.xml: lastmod timestamp can contain invalid dates 
+[GitHub-9151](https://github.com/magento/magento2/issues/9151)
 
-<!--- MAGETWO-83143 -->* GitHub-9002
 
-<!--- MAGETWO-83120 -->* GitHub-5188
-
-<!--- MAGETWO-83113 -->* GitHub-9433
 
 <!--- MAGETWO-83095 -->* Added webapi to reset customer password  Web API Framework
 
-<!--- MAGETWO-83494 -->* GitHub-9851
 
-<!--- MAGETWO-83489 -->* GitHub-11880
+<!--- MAGETWO-83489 -->* 
+Configurable::getUsedProducts returns a different array after product collections is cached
 
-<!--- MAGETWO-83477 -->* GitHub-10628
+Magento\ConfigurableProduct\Model\Product\Type\Configurable:::loadUsedProducts is now ignoring array keys returned by collection.
 
-<!--- MAGETWO-83476 -->* GitHub-12079
+Steps to reproduce
 
-<!--- MAGETWO-83413 -->* GitHub-9219
+Load a configurable product
+Observe the returned array $usedProducts
+clean the collections cache (bin/magento cache:clean collections)
+Reload the same configurable product
+Observer again the returned array $usedProducts
+Expected result
 
-<!--- MAGETWO-83373 -->* GitHub-9633
+The array $usedProducts should contain the same indexes->values where indexes are the product children ids.
+Actual result
 
-<!--- MAGETWO-83329 -->* GitHub-8003
+Before cleaning the collections cache, the returned array is a simple array indexes->values where indexes are incremental.
+After cleaning the collections cache, the returned array is an associative array where the indexes are the product children ids.
 
-<!--- MAGETWO-83322 -->* GitHub-10920
+ConfigurableProduct
 
-<!--- MAGETWO-83312 -->* GitHub-7903
 
-<!--- MAGETWO-83290 -->* GitHub-10707 GitHub-10737 GitHub-11032 GitHub-9410
+[GitHub-11880](https://github.com/magento/magento2/issues/11880)
 
-<!--- MAGETWO-83287 -->* GitHub-11825 GitHub-11908
 
-<!--- MAGETWO-83286 -->* GitHub-10014
 
-<!--- MAGETWO-83283 -->* GitHub-6123
+<!--- MAGETWO-83477 -->* 
+[GitHub-10628](https://github.com/magento/magento2/issues/10628)
 
-<!--- MAGETWO-83281 -->* GitHub-6661
+If we added attribute to Used for Sorting in Product Listing it tried to cache it while making custom query. So the attribute don't has all needed parameters. Now we cache such attributes with all additional data.
 
-<!--- MAGETWO-83279 -->* GitHub-12017
+Color attribute swatches are not rendered correctly for the search result page if sorting for color attribute is enabled.
 
-<!--- MAGETWO-83278 -->* GitHub-7995
+Expected result
 
-<!--- MAGETWO-83277 -->* GitHub-11996
+List of results is shown
+Color attribute is presented for configurable attributes
+Actual result
 
-<!--- MAGETWO-83272 -->* GitHub-11197
+List of results is shown
+Color options are missing
 
-<!--- MAGETWO-83271 -->* GitHub-10195
 
-<!--- MAGETWO-83270 -->* GitHub-11700
 
-<!--- MAGETWO-83257 -->* GitHub-4004
+Catalog
 
-<!--- MAGETWO-83252 -->* GitHub-6460
 
-<!--- MAGETWO-83197 -->* GitHub-11793
 
-<!--- MAGETWO-83194 -->* GitHub-11898 
 
-<!--- MAGETWO-83174 -->* GitHub-11868
+
+
+<!--- MAGETWO-83476 -->* 
+
+Products in cart report error when we have grouped or bundle product
+
+Changed inner join with left join for prices because bundle and grouped products don't have prices and report generates error if we have them in cart.
+
+Steps to reproduce
+
+Add a grouped or a bundle product to cart. Go to admin->Reports->Marketing->Products in cart and loop through pages or export to csv/excel.
+
+Expected result
+
+Should see the Products in cart report or download csv/xml
+
+Actual result
+
+Exception #0 (Exception): Notice: Undefined offset: [productId] in vendor/magento/module-reports/Model/ResourceModel/Quote/Item/Collection.php on line 222
+
+Reports
+
+[GitHub-12079](https://github.com/magento/magento2/issues/12079)
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83322 -->* 
+
+Sku => Entity_id relations are fetched inefficiently when inserting attributes values during product import.
+
+Replace fetchOne() in loop with getting product ids from protected property oldSku, which has all necessary information when attributes begin to save, in Magento/CatalogImportExport/Model/Import/Product::saveProductAttributes() to increase efficiency during product import.
+
+Steps to reproduce
+
+Run import of products from sample csv
+Expected result
+
+All relations are loaded using one query per bunch
+Actual result
+
+Relations are loaded one by one (multiple times for multiple attributes types)
+
+[GitHub-10920](https://github.com/magento/magento2/issues/10920)
+
+ImportExport
+
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83290 -->* 
+Add swatch option: Prevent loosing data and default value if data is not populated via adminhtml 
+
+Adapt \Magento\Swatches\Model\Plugin\EavAttribute::setProperOptionsArray to make possible that the plugins afterSave in the same module doesn't delete data if they don't found this data with all the options data, as sent via adminhtml form.
+
+Impossible to add swatch options via Service Contracts if there is no existing swatch option for attribute
+
+
+
+
+[GitHub-10707](https://github.com/magento/magento2/issues/10707)
+[GitHub-10737](https://github.com/magento/magento2/issues/10737)
+[GitHub-11032](https://github.com/magento/magento2/issues/11032)
+[GitHub-9410](https://github.com/magento/magento2/issues/9410)
+
+Swatches
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83286 -->* 
+
+When a customer with the same email address has an account on different multi stores in the same Magento installation, changes to the newsletter subscription in one account affect the other.
+
+
+Steps to reproduce
+
+Login with customer 1 in store A, go to My Account -> Newsletter Subscriptions, and make sure he's subscribed to the general newsletter
+Login with customer 2 in store B, go to My Account -> Newsletter Subscriptions, and make sure he's subscribed to the general newsletter
+Unsubscribe customer 1 from the newsletter
+Refresh the page for customer 2
+Expected result
+
+Customer 1 is unsubscribed
+Customer 2 is subscribed
+Actual Result
+
+Customer 1 is unsubscribed
+Customer 2 is unsubscribed
+
+[GitHub-10014](https://github.com/magento/magento2/issues/10014)
+
+When user have different accounts in two or more stores newsletter table save the subscription status, store_id and customer_id.
+The problem is that when we try to update this information the query result don't keep in mind the store of the user.
+
+
+Newsletter
+
+
+
+<!--- MAGETWO-83281 -->* 
+
+Improve urn in xhtml 
+
+Improve the urn of xhtml templates
+
+
+
+[GitHub-6661](https://github.com/magento/magento2/issues/6661)
+
+
+GENERAL
+
+
+
+
+
+
+<!--- MAGETWO-83279 -->* 
+
+Solution for Cross-sell product placeholder image size 
+
+
+
+
+
+[GitHub-12017](https://github.com/magento/magento2/issues/12017)
+
+Theme
+
+
+
+
+
+<!--- MAGETWO-83278 -->* 
+
+Add validation for number of street lines
+
+Shipping address lines dissapear when street_lines on customer configuration is set to 0.
+
+Steps to reproduce
+
+1.Go into Customer Screen to change the number of address lines required at checkout. Leave it blank for default of 2.
+2. Save
+3. Clear Cache
+
+Expected result
+
+there should be the default of 2 lines
+Actual result
+
+At checkout there are no lines for street address.
+
+[GitHub-7995](https://github.com/magento/magento2/issues/7995)
+GENERAL
+
+
+
+
+
+
+
+<!--- MAGETWO-83277 -->* 
+Magento 2 Store Code validation regex: doesn't support uppercase letters in store code
+Magento 2 Store Code validation regex: doesn't support uppercase letters in store code
+
+Steps to reproduce
+
+Go to stores > all stores
+Create Store View
+Attempt to create a store code with uppercase letters
+Expected result
+
+It should work, or give an error message
+Actual result
+
+You get an error message back saying
+
+GENERAL
+
+
+[GitHub-11996](https://github.com/magento/magento2/issues/11996)
+
+
+
+
+<!--- MAGETWO-83272 -->* 
+Blank page at the checkout 'shipping' step
+Blank page at the checkout 'shipping' step
+
+Steps to reproduce
+
+Add any product to the cart as a guest user
+Proceed to the checkout
+Fill address and customer data
+Proceed to the payment step
+Click 'Shipping' in the progress bar to return to the shipping step
+Click next and proceed again to the payment step
+Click 'back' button in the browser
+Expected result
+
+The customer is redirected to shipping step and is able to change address data.
+Actual result
+
+The shipping step (page) is blank.
+
+
+[GitHub-11197](https://github.com/magento/magento2/issues/11197)
+
+Checkout
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83271 -->* 
+Order relation child is not set during edit operation
+
+Steps to reproduce
+
+Create an order
+Edit the order through admin panel
+Check relation_child_idand relation_child_real_id fields of the old order.
+Expected result
+
+relation_child_idand relation_child_real_id fields are set to the IDs of the new order.
+Link to the new order is displayed on old order's admin page
+Actual result
+
+Fields are null in the database
+Link to the new order is not displayed on old order's admin page
+
+
+[GitHub-10195](https://github.com/magento/magento2/issues/10195)
+
+Order Management
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83270 -->* 
+
+"Something Went Wrong" error for limited access admin use
+
+Steps to reproduce
+
+Login as an admin user with limited access
+Something went wrong error pops up after every page load
+Server Logs and Magento Logs don't record any errors
+Expected result
+
+Logs should point to the error.
+
+
+[GitHub-11700](https://github.com/magento/magento2/issues/11700)
+
+
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83257 -->* 
+
+Newsletter Subscriber create-date not set, and change_status_at broken
+
+Newsletter Subscriber create-date not set, and change_status_at broken
+
+
+This PR adds new method beforeSave for Subscriber abstract model if data has changed for `subsriber_status`
+
+
+Expected result
+
+After creation set change_status_at to creation date (confirmation of email if enabled, or just registration time if no confirmation email is sent).
+change_status_at is set to when user is subscribed.
+Expect change_status_at to contain the date of the status change.
+Actual result
+
+I want to sync new newsletter subscribers, so I expect a datetime to filter on, to get new newsletter subscribers. This is not set.
+change_status_at is null. It would be nice if this were initialized to the registration date.
+User is unsubscribed, status 3, but change_status_at remains null. Integration can't detect user is unsubscribed now.
+
+[GitHub-4004](https://github.com/magento/magento2/issues/4004)
+
+
+Newsletter
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83197 -->* 
+
+Magento2.1.5 admin shipping report shows wrong currency code
+admin shipping report shows wrong currency code
+
+[GitHub-11793](https://github.com/magento/magento2/issues/11793)
+
+Reports
+
+
+
+
+
+
+<!--- MAGETWO-83194 -->* 
+
+Change NL PostCode Pattern  
+[GitHub-11898](https://github.com/magento/magento2/issues/11898)
+
+Checkout
+
+
+
+
+
+
+<!--- MAGETWO-83174 -->* "Add Products" button has been duplicated after the customer group was changed. 
+
+"Add Products" button has been duplicated after the customer group was changed
+
+Steps to reproduce
+
+Login to admin panel
+Go to: Sales - Orders - Create New Order
+Select existing customer or create new
+Change customer group
+Expected result
+
+Button "Add products" ("Add Products", "Add Products By SKU" on EE) should not duplicated.
+Actual result
+
+Button "Add products" ("Add Products", "Add Products By SKU" on EE) has been duplicated.
+[GitHub-11868](https://github.com/magento/magento2/issues/11868)
+
+
+Order Management
+
+
 
 <!--- MAGETWO-83174 -->* The \Magento\Quote\Model\ResourceModel\Quote\Item\Collection now returns items which have only existing relations in catalog_product_entity table. It protects us to load quote items with non existing products. CATALOG
 
+
+
+
+
 <!--- MAGETWO-83152 -->* Varnish configuration was updated
 
-<!--- MAGETWO-83147 -->* GitHub-5574
-
-<!--- MAGETWO-83145 -->* GitHub-9151
-
-<!--- MAGETWO-83143 -->* GitHub-9002
-
-<!--- MAGETWO-83120 -->* GitHub-5188
-
-<!--- MAGETWO-83113 -->* GitHub-9433
-
-<!--- MAGETWO-83085 -->* GitHub-8846
-
-<!--- MAGETWO-83084 -->* GitHub-10185
-
-<!--- MAGETWO-83066 -->* GitHub-8799
-
-<!--- MAGETWO-83036 -->* GitHub-4808
-
-<!--- MAGETWO-83033 -->* GitHub-11497
-
-<!--- MAGETWO-83030 -->* GitHub-7127
-
-<!--- MAGETWO-83024 -->* GitHub-10682
-
-<!--- MAGETWO-83023 -->* GitHub-8954
 
 
-<!--- MAGETWO-82999 -->* GitHub-11697
 
-<!--- MAGETWO-82972 -->* GitHub-8970
 
-<!--- MAGETWO-82957 -->* GitHub-9851
+<!--- MAGETWO-83145 -->* 
 
-<!--- MAGETWO-82956 -->* GitHub-5015
+Sitemap.xml: lastmod timestamp can contain invalid dates 
 
-<!--- MAGETWO-82955 -->* GitHub-11534
+Expected result
 
-<!--- MAGETWO-82953 -->* GitHub-11581
+The lastmod value in the xml should contain the created_at timestamp
+Actual result
 
-<!--- MAGETWO-82950 -->* GitHub-10834
+The lastmod value in the xml looks like this:
+[GitHub-9151](https://github.com/magento/magento2/issues/9151)
 
-<!--- MAGETWO-82949 -->* GitHub-11484
+Sitemap
 
-<!--- MAGETWO-82946 -->* GitHub-7225
 
-<!--- MAGETWO-82904 -->* GitHub-6802
 
-<!--- MAGETWO-82889 -->* GitHub-8236
 
-<!--- MAGETWO-82887 -->* GitHub-7640
+<!--- MAGETWO-83085 -->*
 
-<!--- MAGETWO-82886 -->* GitHub-4711
+avoid duplicated attribute option values
+[GitHub-8846](https://github.com/magento/magento2/issues/8846)
 
-<!--- MAGETWO-82883 -->* Order status doesn't change in order grid  GitHub-11032 GitHub-9410
+Catalog
 
-<!--- MAGETWO-82874  -->* 
 
-<!--- MAGETWO-82856 -->* GitHub-10168
 
-<!--- MAGETWO-82851 -->* GitHub-11729
 
-<!--- MAGETWO-82818 -->* GitHub-7689
 
-<!--- MAGETWO-82810 -->* GitHub-711727 GitHub-77099
+<!--- MAGETWO-83084 -->* 
 
-<!--- MAGETWO-82809 -->* GitHub-11636 GitHub-9869
+Order grid - Sort by Purchase Date Desc by default
+New Orders are not in Order grid after data migration from M 1.7.0.2 to M 2.1.7
+As a customer I expect to see new orders at the top of the grid, however during migration from M1 to M2 - order number length changed, as result new orders are NOT located at the top of grid.
 
-<!--- MAGETWO-82787 -->* GitHub-11347 
+Order Management
+
+
+
+[GitHub-10185](https://github.com/magento/magento2/issues/10185)
+
+
+
+
+
+<!--- MAGETWO-83066 -->* 
+
+Save background color correctly in images.
+Steps to reproduce
+
+Edit view.xml file
+ex: theme-frontend-luma/etc/view.xml
+Add background color attribute to an image
+<image id="related_products_list" type="small_image">
+     <width>152</width>
+     <height>230</height>
+     <background>[250,247,247]</background>
+</image>
+Clear cache and reload images.
+Expected result
+
+Image with background
+Actual result
+
+Product image always has a black background
+
+[GitHub-8799](https://github.com/magento/magento2/issues/8799)
+
+Catalog
+
+
+
+
+<!--- MAGETWO-83036 -->* 
+Save the price 0 as price in custom options
+
+Possibility to save the price in custom options with value 0 or empty
+
+Steps to reproduce
+
+Add an product custom option (Select Type)
+Add new row and set price greater than 0.
+Save product.
+Change the row price to 0 or empty.
+Save product.
+Expected result
+
+The row price becomes 0.
+Actual result
+
+The row price doesn't becomes 0.
+
+[GitHub-4808](https://github.com/magento/magento2/issues/4808)
+Catalog
+
+
+
+
+
+
+
+<!--- MAGETWO-83033 -->* 
+
+Fix missing discount label in checkout
+Expected result
+
+rule label= "May Promo 3% discount -$58.35"
+Actual result
+
+i see "discount -$58.35" instead of rule label
+
+
+[GitHub-11497](https://github.com/magento/magento2/issues/11497)
+
+SalesRule
+
+
+
+
+
+<!--- MAGETWO-83024 -->* 
+
+Meta description and keywords transform to html entities
+
+Meta description and keywords transform to html entities for non latin/cyrilic characters in category and product pages
+
+
+Steps to reproduce
+
+Choose and enable a non latin language pack, ie Greek
+
+setup the meta keywords and description for a category and a product
+view page source
+Expected result
+
+All keywords appear as they should and category pages are "read" by google
+
+Actual result
+
+All non latin words are html entities
+
+
+
+[GitHub-10682](https://github.com/magento/magento2/issues/10682)
+
+
+App Framework
+
+
+
+
+
+
+
+
+
+<!--- MAGETWO-83023 -->* 
+
+Resolve Error While Trying To Load Quote Item Collection Using Magent
+
+
+
+[GitHub-8954](https://github.com/magento/magento2/issues/8954)
+
+
+
+
+
+
+<!--- MAGETWO-82999 -->* 
+Theme: Added html node to page xml root, cause validation error
+
+
+[GitHub-11697](https://github.com/magento/magento2/issues/11697)
+
+
+
+
+
+
+
+
+<!--- MAGETWO-82972 -->* 
+
+Cannot assign products to categories not under tree root
+
+
+[GitHub-8970](https://github.com/magento/magento2/issues/8970)
+
+
+Catalog
+
+
+
+<!--- MAGETWO-82956 -->* 
+
+Report error csv doesn't work when trying to import a csv file with semicolon delimiter.
+
+Expected result
+
+Import is stopped and all errors are printed.
+We can download the report error csv file.
+Actual result
+
+Import is stopped but only General system exception happened is printed.
+We cannot download the report error csv file because the link doesn't appear.
+
+[GitHub-5015](https://github.com/magento/magento2/issues/5015)
+
+ImportExport
+
+
+
+<!--- MAGETWO-82955 -->* 
+
+FIX show visual swatches in admin - product attribute
+
+Steps to reproduce
+
+Go to Admin
+Open Stores > Attributes > Product
+Add New Attribute with Catalog Input Type for Store Owner: Visual Swatch
+In Tab Manage Swatch (Values of Your Attribute) click Add Swatch button
+Press to chose color or file
+Expected result
+
+Drop down menu is show all items
+
+
+[GitHub-11534](https://github.com/magento/magento2/issues/11534)
+
+Swatches
+
+
+
+
+<!--- MAGETWO-82953 -->* 
+
+Reference to wrong / non-existing class
+
+Steps to reproduce
+
+In the method Magento\Sales\Model\Order\Pdf\Invoice::getPdf comment out the call to $this->insertOrder(
+Go to the backend and print an invoice
+Expected result
+
+I should see the invoice without the order details
+Actual result
+
+I get a fatal error because the class Zend_Pdf_Color_RGB is not found in the drawHeader method.
+
+
+[GitHub-11581](https://github.com/magento/magento2/issues/11581)
+
+Order Management
+
+
+
+<!--- MAGETWO-82946 -->* 
+
+Remove hardcoding of apply_to when saving attributes
+
+Programmatically creating an empty dropdown attribute, "apply_to" is set to NULL (from "simple") after adding options through store admin
+
+Expected result
+
+The "price_unit" attribute is shown on simple product create or edit page (an empty dropdown), and is hidden on other products create or edit page.
+The content of "apply_to" field of the current attribute in database table of "catalog_eav_attribute" is also "simple".
+Actual result
+
+The "price_unit" attribute is shown on all products create or edit page.
+The content of "apply_to" field of the current attribute in database table of "catalog_eav_attribute" is "null".
+
+
+[GitHub-7225](https://github.com/magento/magento2/issues/7225)
+
+Catalog
+
+
+
+
+
+<!--- MAGETWO-82904 -->* 
+
+ Magento\Search\Helper\getSuggestUrl() not used in search template.
+
+ Expected result
+
+the custom URL should be used
+Actual result
+
+the default "search/ajax/suggest" URL is used
+
+
+[GitHub-6802](https://github.com/magento/magento2/issues/6802)
+
+Search
+
+
+
+
+
+<!--- MAGETWO-82889 -->* 
+
+[GitHub-8236](https://github.com/magento/magento2/issues/8236)
+
+
+
+
+
+
+<!--- MAGETWO-82887 -->* 
+
+X-Magento-Tags header containing whitespaces causes exception
+
+
+[GitHub-7640](https://github.com/magento/magento2/issues/7640)
+
+
+Configuration Framework
+
+
+
+<!--- MAGETWO-82886 -->* 
+
+When importing products using the System -> Import Products feature, if there problems importing the images, Magento just fails 
+
+
+[GitHub-4711](https://github.com/magento/magento2/issues/4711)
+
+
+
+CatalogImportExport
+
+
+
+
+
+
+<!--- MAGETWO-82883 -->* Order status doesn't change in order grid  
+
+
+[GitHub-11032](https://github.com/magento/magento2/issues/11032)
+[GitHub-9410](https://github.com/magento/magento2/issues/9410)
+
+
+
+
+
+
+
+<!--- MAGETWO-82851 -->* 
+
+negative value in excel export
+
+Added correction of dataType for negative numbers
+
+Steps to reproduce
+
+Generate some XML export with negative value (eg. quantity)
+Try to open it with Office XML handler
+Expected result
+
+Open export file
+Actual result
+
+File do not open correctly and Office's error log is created containing information about incorrect value eg.
+
+
+[GitHub-11729](https://github.com/magento/magento2/issues/11729)
+
+App Framework
+
+
+
+
+
+<!--- MAGETWO-82810 -->* 
+
+Fix label to avoid wrapping poorly,now break by word
+
+Some long labels break by letter, that was a UX problem to some users and confusiing. I've edited a styless-old.less to fix it.
+
+
+[GitHub-711727](https://github.com/magento/magento2/issues/711727)
+
+[GitHub-77099](https://github.com/magento/magento2/issues/77099)
+
+
+
+
+
+
+
+
+
+
+<!--- MAGETWO-82809 -->* 
+Fix datetime type product that show current date when is empty in grids 
+
+Fix datetime type product that show current date when is empty in grids #11636
+In the product grid, when a date attribute is listed and the value was empty, the current date was displayed. This was very confusing because I did not know if the value was assigned or not. Now you can see empty cells when is unassigned
+
+
+
+[GitHub-11636](https://github.com/magento/magento2/issues/11636)
+[GitHub-9869](https://github.com/magento/magento2/issues/9869)
+
+
+
+
+
+
 
 <!--- MAGETWO-82761 -->* 
 
-<!--- MAGETWO-82758 -->* GitHub-10168
+Dashboard Fix Y Axis for range
 
-<!--- MAGETWO-82755 -->* GitHub-6891
+Y-axis on dashboard graph always shows range 0 to 100 in steps of 10. That means quantity and amounts do not match actual value in graph.
 
-<!--- MAGETWO-82753 -->* GitHub-11365
+Steps to reproduce
 
-<!--- MAGETWO-82747 -->* GitHub-11322
+Make few orders and look at the graph in admin dashboard
+Expected result
+
+Values shown should be matched with y-axis value
+Actual result
+
+It always show range 10 to 100 in steps of 10 and values (qty and amounts) doesn't make sense with that values
+
+
+
+
+<!--- MAGETWO-82755 -->* 
+
+Add-to-cart checkbox still visible when = false
+
+Expected result
+
+The add-to-cart checkboxes in Related Products should not be visible.
+Actual result
+
+The add-to-cart checkboxes in Related Products are still visible:
+
+[GitHub-6891](https://github.com/magento/magento2/issues/6891)
+
+Catalog
+
+
+
+
+
+
+<!--- MAGETWO-82753 -->* 
+
+"Ignore this notification" isn't working 
+
+Steps to reproduce
+
+Set-up wrong tax settings
+Message similar "To apply the discount on prices including tax and ..." will be display as system message.
+Click on "ignore this notification"
+Expected result
+
+System message (ignoreTaxNotification) shouldn't be displayed in future because it's supposed to be ignored
+Actual result
+
+Message is displayed regardless of being on ignore list.
+
+[GitHub-11365](https://github.com/magento/magento2/issues/11365)
+
+Tax
+
+
+
+
+
+
+<!--- MAGETWO-82747 -->* 
+
+Updated user.ini according to Magento DevDocs
+
+The Magento DevDocs recommend to set the memory_limit to 1G or at least 2G for debugging.
+
+[GitHub-11322](https://github.com/magento/magento2/issues/11322)
+
+SETUP
+
+
+
 
 <!--- MAGETWO-82732 -->* Magento PayPal integration now supports the Indian Rupee currency (INR)
 
-<!--- MAGETWO-82724 -->* GitHub-9763
+PAYPAL
 
-<!--- MAGETWO-82710 -->* GitHub-10032
 
-<!--- MAGETWO-82668 -->* GitHub-10764
 
-<!--- MAGETWO-82666 -->* GitHub-9036
 
-<!--- MAGETWO-82658 -->* GitHub-7591
+<!--- MAGETWO-82724 -->* 
 
-<!--- MAGETWO-82652 -->* GitHub-7915
+Allow coupon code with special charater to be applied to order in checkout
 
-<!--- MAGETWO-82651 -->* GitHub-7767
+
+[GitHub-9763](https://github.com/magento/magento2/issues/9763)
+
+
+
+
+
+
+<!--- MAGETWO-82710 -->* 
+
+Download back-up .tgz always takes the latest that's created
+
+Steps to reproduce
+
+Create several back-ups
+Click on a backup (.tgz), different then the latest to download
+Expected result
+
+I would expect the backup I clicked.
+
+[GitHub-10032](https://github.com/magento/magento2/issues/10032)
+
+
+Backup
+
+
+
+
+
+<!--- MAGETWO-82658 -->* internal only
+
+Removed Typo in Paypal TestCase didgit => digit
+
+
+[GitHub-7591](https://github.com/magento/magento2/issues/7591)
+
+FUNCTIONAL TESTS
+
+
+
+
+
+
+<!--- MAGETWO-82652 -->* 
+
+customer objects are equal to eachother after observing event customer_save_after_data_object
+Steps to reproduce
+
+Log in with existing user in frontend.
+Change first name of customer to 'test35'.
+Observe the event 'customer_save_after_data_object'. Two objects are given called : 'orig_customer_data_object' & 'customer_data_object'.
+Those two objects are identical to each other. First name in both objects is equal to 'test35'
+Expected result
+
+'customer_data_object' firstname should not be equal to 'orig_customer_data_object'
+Actual result
+
+orig_customer_data_object and customer_data_object are equal to each other
+Screenshot here: http://imgur.com/a/IDV1t
+This also happens with last name and email. 
+
+[GitHub-7915](https://github.com/magento/magento2/issues/7915)
+
+
+
+
+
+
+<!--- MAGETWO-82651 -->* 
+
+<![CDATA[]]>in system.xml translate phrase not work, if comment starts from new line.
+
+[GitHub-7767](https://github.com/magento/magento2/issues/7767)
+
+
+Translation
+
+
 
 <!--- MAGETWO-82645 -->* Moved Customer Groups Menu Item from Other settings to Customers
 
-<!--- MAGETWO-82637 -->* GitHub-10650
 
-<!--- MAGETWO-82635 -->* GitHub-7241
 
-<!--- MAGETWO-82464 -->* GitHub-6770
 
-<!--- MAGETWO-82635 -->* GitHub-7241
 
-<!--- MAGETWO-82634 -->* GitHub-10811
 
-<!--- MAGETWO-82595 -->* GitHub-11095
 
-<!--- MAGETWO-82562 -->* GitHub-10168
+<!--- MAGETWO-82634 -->* 
 
-<!--- MAGETWO-82537 -->* GitHub-9944
+Update .htaccess.sample to replace FollowSymLin…
 
-<!--- MAGETWO-82536 -->* GitHub-9851
 
-<!--- MAGETWO-82504 -->* Search by attribute is not working with Elasticsearch 
+[GitHub-10811](https://github.com/magento/magento2/issues/10811)
 
-<!--- MAGETWO-82486 -->* GitHub-11574
+Web Server Configuration
 
-<!--- MAGETWO-82464 -->* GitHub-6770
 
-<!--- MAGETWO-82463 -->* GitHub-11586
 
-<!--- MAGETWO-82436 -->* Investigate "payment action = order" implementation
 
-<!--- MAGETWO-82431 -->* GitHub-11540
 
-<!--- MAGETWO-82426 -->* GitHub-9919
+<!--- MAGETWO-82595 -->* 
 
-<!--- MAGETWO-82426 -->* GitHub-11453
 
-<!--- MAGETWO-82426 -->* GitHub-9919
+Solved error while upgrading from 2.1 to 2.2 
 
-<!--- MAGETWO-82394 -->* GitHub-11453
 
-<!--- MAGETWO-82388 -->* Values of Visual Swatch Attribute drop down is not work correct #11534
+[GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
-<!--- MAGETWO-82385 -->* Cancel an order [configurable product] #5313
+Tax
 
-<!--- MAGETWO-82338 -->* Store switching is not working every time #11558
 
-<!--- MAGETWO-82314 -->* GitHub-10583
 
-<!--- MAGETWO-82313 -->* GitHub-11324
 
-<!--- MAGETWO-82308 -->* GitHub-11343 GitHub-11478
 
-<!--- MAGETWO-82306 -->* GitHub-10704
 
-<!--- MAGETWO-82292 -->* GitHub-10810
+<!--- MAGETWO-82562 -->* 
+[GitHub-10168](https://github.com/magento/magento2/issues/10168)
 
-<!--- MAGETWO-82273 -->* GitHub-11092 GitHub-10824
 
-<!--- MAGETWO-82536 -->* MAGETWO-82236 GitHub-11328
+<!--- MAGETWO-82537 -->* 
+[GitHub-9944](https://github.com/magento/magento2/issues/9944)
 
-<!--- MAGETWO-82536 -->* MAGETWO-82179 GitHub-10301
 
-<!--- MAGETWO-82536 -->* MAGETWO-82177 GitHub-10301
+<!--- MAGETWO-82463 -->* 
+[GitHub-11586](https://github.com/magento/magento2/issues/11586)
 
-<!--- MAGETWO-82536 -->* MAGETWO-82119 As a Magento developer, I want to investigate a splash screen can be created in magento, so that new features information in a release and advanced reporting splash screen can be embedded in this splash screen.
+<!--- MAGETWO-82431 -->* 
+[GitHub-11540](https://github.com/magento/magento2/issues/11540)
+
+
+<!--- MAGETWO-82426 -->* 
+
+[GitHub-9919](https://github.com/magento/magento2/issues/9919)
+
+
+<!--- MAGETWO-82426 -->* 
+[GitHub-11453](https://github.com/magento/magento2/issues/11453)
+
+
+<!--- MAGETWO-82426 -->* 
+[GitHub-9919](https://github.com/magento/magento2/issues/9919)
+
+
+<!--- MAGETWO-82338 -->* Store switching is not working every time 
+
+
+#11558
+
+<!--- MAGETWO-82314 -->* 
+[GitHub-10583](https://github.com/magento/magento2/issues/10583)
+
+
+<!--- MAGETWO-82292 -->* 
+[GitHub-10810](https://github.com/magento/magento2/issues/10810)
+
+
+<!--- MAGETWO-82273 -->* 
+[GitHub-11092](https://github.com/magento/magento2/issues/11092)
+
+[GitHub-10824](https://github.com/magento/magento2/issues/10824)
+
+
+
+<!--- MAGETWO-82179 -->* 
+[GitHub-10301](https://github.com/magento/magento2/issues/10301)
+
+<!--- MAGETWO-82177 -->* 
+
+[GitHub-10301](https://github.com/magento/magento2/issues/10301)
+
 
 <!--- MAGETWO-82057 -->* Improved cache control headers were set to cover the edge case, when the user-specific content like the content of cart may have been cached.
 
-<!--- MAGETWO-82006 -->* GitHub-4848
 
-<!--- MAGETWO-82004 -->* GitHub-7678
+<!--- MAGETWO-82004 -->* 
+[GitHub-7678](https://github.com/magento/magento2/issues/7678)
 
-<!--- MAGETWO-82001 -->* GitHub-10996
 
-<!--- MAGETWO-81995 -->* GitHub-11140
+<!--- MAGETWO-82001 -->* 
+[GitHub-10996](https://github.com/magento/magento2/issues/10996)
 
-<!--- MAGETWO-81994 -->* GitHub-2991
 
-<!--- MAGETWO-81993 -->* GitHub-9783
+<!--- MAGETWO-81995 -->* 
 
-<!--- MAGETWO-81989 -->* GitHub-11428
+[GitHub-11140](https://github.com/magento/magento2/issues/11140)
 
-<!--- MAGETWO-81989 -->* GitHub-10941
+<!--- MAGETWO-81994 -->* 
+[GitHub-2991](https://github.com/magento/magento2/issues/2991)
 
-<!--- MAGETWO-81977 -->* GitHub-11469 GitHub-11471
 
-<!--- MAGETWO-81973 -->* GitHub-9028
+<!--- MAGETWO-81993 -->* 
+[GitHub-9783](https://github.com/magento/magento2/issues/9783)
 
-<!--- MAGETWO-81971 -->* GitHub-11350 GitHub-11356
 
-<!--- MAGETWO-81970 -->* GitHub-5956
 
-<!--- MAGETWO-81967 -->* GitHub-10007
 
-<!--- MAGETWO-81959 -->* GitHub-10765
+<!--- MAGETWO-81977 -->* 
+[GitHub-11469](https://github.com/magento/magento2/issues/11469)
 
-<!--- MAGETWO-81942 -->* GitHub-11139
+[GitHub-11471](https://github.com/magento/magento2/issues/11471)
 
-<!--- MAGETWO-81904 -->* GitHub-11022
+
+
+<!--- MAGETWO-81973 -->* 
+[GitHub-9028](https://github.com/magento/magento2/issues/9028)
+
+
+
+<!--- MAGETWO-81970 -->* 
+[GitHub-5956](https://github.com/magento/magento2/issues/5956)
+
+
+<!--- MAGETWO-81967 -->* 
+[GitHub-10007](https://github.com/magento/magento2/issues/10007)
+
+
+<!--- MAGETWO-81959 -->* 
+[GitHub-10765](https://github.com/magento/magento2/issues/10765)
+
+
+<!--- MAGETWO-81942 -->* 
+[GitHub-11139](https://github.com/magento/magento2/issues/11139)
+
+<!--- MAGETWO-81904 -->* 
+
+[GitHub-11022](https://github.com/magento/magento2/issues/11022)
+
 
 <!--- MAGETWO-80350 -->* As a Magento developer, I want to investigate a splash screen can be created in magento, so that new features information in a release and advanced reporting splash screen can be embedded in this splash screen.
 
 <!--- MAGETWO-80209 -->* Static versioning and minification do not break email font styles anymore
 
-<!--- MAGETWO-80207 -->* GitHub-10562
+<!--- MAGETWO-80207 -->* 
+[GitHub-10562](https://github.com/magento/magento2/issues/10562)
+
 
 <!--- MAGETWO-80205 -->* Fixed cron expressions against localized time
 
@@ -370,17 +1565,14 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80191 -->* Correct base_shipping_discount_tax_compensation_amnt field.
 
-<!--- MAGETWO-80188 -->* Prevent change log entry when nothing has changed #4893
+<!--- MAGETWO-80188 -->* Prevent change log entry when nothing has changed 
+
+[GitHub-4893](https://github.com/magento/magento2/issues/4893)
+
 
 <!--- MAGETWO-81841 -->* 
 
 <!--- MAGETWO-80311 -->* 
-
-<!--- MAGETWO-80199 -->* 
-
-<!--- MAGETWO-72865 -->* Full Page Cache is no longer invalidated after you save a predictor category. Previously, all product-related cache data was invalidated, when only a narrow subset of cache tags associated with the `product_id` should have been. 
-
-<!--- MAGETWO-72809 -->* User can now switch between store views more than once
 
 <!--- MAGETWO-72352 -->* You can now implement translations from themes (in contrast to translations from modules).
 
@@ -399,51 +1591,196 @@ AC:
 
 <!--- MAGETWO-71458 -->* As Magento Advanced Reporting service provider, I want Advanced Reporting service to be subscribed to by default for all Magento installation, so that user can start using Advanced Reporting service as soon as possible EE ONLY
 
-<!--- MAGETWO-70323 -->* GitHub-8969
 
-<!--- MAGETWO-70131 -->* Catalog price rules now apply to customer group prices when they're defined
 
-<!--- MAGETWO-69634 -->* Product with a special price must be showed with this price in the wishlist
 
-<!--- MAGETWO-83627 -->* GitHub-11532
 
-<!--- MAGETWO-83668 -->* GitHub-8022 
+<!--- MAGETWO-70323 -->* 
 
-<!--- MAGETWO-83670 -->* GitHub-12073
+Bundle product with a zero-price simple product as option no longer causes error on storefront when added to cart.
 
-<!--- MAGETWO-83686 -->* GitHub-12081
 
-<!--- MAGETWO-83688 -->* GitHub-8172 GitHub-8089 GitHub-10507
+[GitHub-8969](https://github.com/magento/magento2/issues/8969)
 
-<!--- MAGETWO-83726 -->* GitHub-8255
+SalesRule
 
-<!--- MAGETWO-83745 -->* GitHub-11832
 
-<!--- MAGETWO-83780 -->* GitHub-7691
 
-<!--- MAGETWO-83784 -->* GitHub-12218
-
-<!--- MAGETWO-83844 -->* GitHub-12188
-
-<!--- MAGETWO-81  -->* GitHub-9277
-
-<!--- MAGETWO-84106 -->* 
-
-<!--- MAGETWO-83869 -->* 
-
-<!--- MAGETWO-83868 -->* 
-
-<!--- MAGETWO-83867 -->* 
-
-<!--- MAGETWO-83866 -->*
-
-<!--- MAGETWO-83865 -->*
-
-<!--- MAGETWO-83851 -->* 
 
 <!--- MAGETWO-83741 -->* 
 
-<!--- MAGETWO-83522 -->*  
+Sending emails from Admin in Multi-Store Environment defaults to Primary Store
+
+Sending emails from Admin in Multi-Store Environment defaults to Primary Store
+
+Expected result
+
+Should send email using FROM EMAIL and FROM NAME of store XYZ.com
+Actual result
+
+Magneto sends correct email content, but FROM EMAIL and FROM NAME are both from the primary store ABC.com instead of the store the customer used, XYZ.com. Creates confusion for customer as the FROM information is not the store from which they placed the order. Happens on any email resent from admin--confirmation, shipping, credit, etc.
+
+
+Email
+
+
+
+
+
+
+<!--- MAGETWO-84106 -->* 
+
+Implementation (fix) of session locking mechanism in php-redis-session-abstract leads to 30 sec timeout
+
+Removed 30 sec timeout on customer logout when Redis used as session storage
+
+Session Framework
+
+
+
+
+<!--- MAGETWO-83627 -->* 
+
+Duplicate Simple Product Throws Error: Undefined offset: 0 in SaveHandler.php on line 122
+
+Steps to reproduce
+
+Click on an existing simple product in the catalog manager
+Click the "Save & Duplicate" option
+Expected result
+
+The product saves and creates a duplicate item
+Actual result
+
+Saves the product but doesn't duplicate it. Throws the following error:
+Notice: Undefined offset: 0 in /home/store/public_html/vendor/magento/module-catalog/Model/Category/Link/SaveHandler.php on line 122
+
+
+[GitHub-11532](https://github.com/magento/magento2/issues/11532)
+
+Catalog
+
+
+
+
+
+
+<!--- MAGETWO-83668 -->* 
+
+Uncaught Error: Call to a member function addItem() on array in app/code/Magento/Sales/Model/Order/Shipment.php(backport to 2.2)
+
+
+[GitHub-8022](https://github.com/magento/magento2/issues/8022)
+
+
+Order Management
+
+
+<!--- MAGETWO-83745 -->* 
+
+Create order (on Customer edit page) - not working from admin environment
+
+
+[GitHub-11832](https://github.com/magento/magento2/issues/11832)
+
+Order Management
+
+
+
+
+
+<!--- MAGETWO-83780 -->* 
+
+address with saveInAddressBook 0 are still being added to the address book for new customers(backport to 2.2)
+
+If you place an order as a guest and set the save_in_address_book for an address on 0, that address will still be copied to the customer address book when registering as a new customer on the checkout success page.
+
+
+[GitHub-7691](https://github.com/magento/magento2/issues/7691)
+
+
+
+Checkout
+
+
+<!--- MAGETWO-81  -->* 
+
+Create new CLI command: enable/disable Magento Profiler
+[GitHub-9277](https://github.com/magento/magento2/issues/9277)
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- MAGETWO-81989 -->* GitHub-11428 UNRESOLVED
+
+<!--- MAGETWO-82464 -->* GitHub-6770 UNRESOLVED
+
+<!--- MAGETWO-82635 -->* GitHub-7241 UNRESOLVED
+
+<!--- MAGETWO-83494 -->* GitHub-9851 UNRESOLVED
+
+<!--- MAGETWO-83147 -->* GitHub-5574 UNRESOLVED
+
+<!--- MAGETWO-83143 -->* GitHub-9002 UNRESOLVED
+
+<!--- MAGETWO-83252 -->* GitHub-6460 UNRESOLVED
+
+<!--- MAGETWO-83252 -->* GitHub-6460 UNRESOLVED
+
+<!--- MAGETWO-83494 -->* GitHub-9851 UNRESOLVED
+
+<!--- MAGETWO-83147 -->* GitHub-5574 UNRESOLVED
+
+<!--- MAGETWO-83143 -->* GitHub-9002 UNRESOLVED
+
+<!--- MAGETWO-83030 -->* GitHub-7127 UNRESOLVED
+
+<!--- MAGETWO-82957 -->* GitHub-9851 UNRESOLVED
+
+<!--- MAGETWO-82950 -->* GitHub-10834 UNRESOLVED
+
+<!--- MAGETWO-82856 -->* GitHub-10168 UNRESOLVED
+
+<!--- MAGETWO-82818 -->* GitHub-7689 UNRESOLVED
+
+<!--- MAGETWO-82787 -->* GitHub-11347 UNRESOLVED
+
+<!--- MAGETWO-82758 -->* GitHub-10168 UNRESOLVED
+<!--- MAGETWO-82635 -->* GitHub-7241 UNRESOLVED
+
+<!--- MAGETWO-82536 -->* GitHub-9851 UNRESOLVED
+
+<!--- MAGETWO-82536 -->* MAGETWO-82119 As a Magento developer, I want to investigate a splash screen can be created in magento, so that new features information in a release and advanced reporting splash screen can be embedded in this splash screen. UNRESOLVED
+
+<!--- MAGETWO-82536 -->* MAGETWO-82236 GitHub-11328 UNRESOLVED
+
+<!--- MAGETWO-82006 -->* GitHub-4848 UNRESOLVED
+
+<!--- MAGETWO-81989 -->* GitHub-10941 UNRESOLVED
+
+
+<!--- MAGETWO-81971 -->* GitHub-11350 GitHub-11356 UNRESOLVED
+
+<!--- MAGETWO-83686 -->* GitHub-12081 UNRESOLVED
+
+<!--- MAGETWO-83688 -->* GitHub-8172 GitHub-8089 GitHub-10507 UNRESOLVED
+
+<!--- MAGETWO-83844 -->* GitHub-12188 UNRESOLVED
+
+<!--- MAGETWO-83868 -->* UNRESOLVED
+
+<!--- MAGETWO-83867 -->* UNRESOLVED
+
+<!--- MAGETWO-83865 -->* UNRESOLVED
 
 
 
