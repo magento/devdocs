@@ -43,7 +43,7 @@ pages:
 
     - label: Create configurable products Tutorial
       url: rest/tutorials/configurable-product/config-product-intro.html
-      versions: ["2.3"]
+      versions: ["2.2", "2.3"]
       children:
 
         - label: Initial Tasks
