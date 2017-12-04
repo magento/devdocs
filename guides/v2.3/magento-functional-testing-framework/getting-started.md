@@ -105,11 +105,6 @@ Replace `<personal access token>` with your [personal access token]. The token m
 
 ### Step 4. Install dependencies
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-There is a temporary issue with the `"allure-framework/allure-codeception"` dependency. To fix it, find the dependency in `magento2ee/dev/tests/acceptance/composer.json` and replace with
-`"allure-framework/allure-codeception": "dev-master#af40af5ae2b717618a42fe3e137d75878508c75d"`
-</div>
-
 ```bash
 $ cd magento2ce/dev/tests/acceptance
 $ composer install
@@ -121,18 +116,6 @@ If you see an error like `404 Not Found`, [update your Composer] and try again.<
 </div>
 
 ### Step 5. Install Robo
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-**For Windows users**
-<p markdown="1">
-There is a temporary issue with a directory separators in the `magento2ce/dev/tests/acceptance/RoboFile.php` file. To fix it, open the file, replace a character `/` with a PHP constant `DIRECTORY_SEPARATOR` for all string values that contain path.
-</p>
-<p>Example:</p>
-<p markdown="1">
-WRONG: `$this->_exec('vendor/bin/robo clone:files');`<br/><br/>
-CORRECT: `$this->_exec('vendor'.DIRECTORY_SEPARATOR.'bin'.DIRECTORY_SEPARATOR.'robo clone:files');`
-</p>
-</div>
 
 In `magento2ce/dev/tests/acceptance`, run the following command:
 
