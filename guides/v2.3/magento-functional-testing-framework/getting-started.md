@@ -161,6 +161,22 @@ Example: `FW_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/vendor/mag
 * `TESTS_MODULE_PATH` must contain a base path to functional tests. 
 Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
+The following self-descriptive variables have default values (included).
+**Do not change the values if you're running Selenium locally.**
+
+```config
+SELENIUM_HOST=127.0.0.1            
+SELENIUM_PORT=4444
+SELENIUM_PROTOCOL=http
+SELENIUM_PATH=/wd/hub
+```
+
+They come together to form the path to where Selenium Server is running from like:
+
+``` 
+http://127.0.0.1:4444/wd/hub
+```
+
 ### Step 7. Generate existing tests
 
 In the `magento2ce/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
