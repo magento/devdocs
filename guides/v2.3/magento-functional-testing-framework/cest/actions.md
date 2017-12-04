@@ -295,7 +295,13 @@ after|string|optional|
 
 ### conditionalClick
 
-Click on `selector` if and only if `dependentSelector` has visibility of the `visible` flag.
+Conditionally click on an element if and only if another element is visible or not.
+
+For example, to click on `#foo` if `#bar` is visible:
+
+```
+<conditionalClick selector="#foo" dependentSelector="#bar" visible="true" mergeKey="click1"/>
+```
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -309,33 +315,68 @@ after|string|optional|
 
 ### createData
 
-[See the Data topic for more information.](../data.html)
+Create an entity (e.g. a category or product). In other words, make a POST request
+to the Magento API according to the data and metadata of the entity to be created.
+
+For example, to create the entity with the name "SampleProduct":
+
+
+```
+<createData entity="SampleProduct" mergeKey="createSampleProduct"/>
+```
 
 Attribute|Type|Use|Default
 ---|---|---|---
-entity|string|required|	
-mergeKey|string|required	
+entity|string|required| 
+mergeKey|string|required    
 remove| boolean|optional|false
-before|string|optional|	
-after|string|optional|	
+before|string|optional| 
+after|string|optional|  
 storeCode|string|optional|
 
 This action can optionally contain one or more `required-entity` child elements.
 
 #### required-entity
 
-[See the Data topic for more information.](../data.html)
+Specify relationships amongst data to be created. For example, a complex Product
+object may contain within it a pointer (an ID) to a complex Category object.
+
+For example, first we create a category then we create a product in that category
+by indicating the relationship.
+
+```
+<createData entity="SampleCategory" mergeKey="createCategory"/>
+
+<createData entity="SampleProduct" mergeKey="createProduct">
+    <required-entity createDataKey="createCategory"/>
+</createData>
+```
 
 Attribute|Type|Use|Default
 ---|---|---|---
-createDataKey|string|required|	
+createDataKey|string|required|  
 remove|boolean|optional|false
 before|string|optional|
 after|string|optional|
 
 ### deleteData
 
-[See the Data topic for more information.](../data.html)
+Delete an entity that was previously created.
+
+It's important to note that this action is only able to delete entities that were
+previously created via createData in the scope of the Cest or Test.
+
+Assuming we created SampleCategory via:
+
+```
+<createData entity="SampleCategory" mergeKey="createCategory"/>
+```
+
+We can delete SampleCategory via:
+
+```
+<deleteData createDataKey="createCategory" mergeKey="deleteCategory"/>
+```
 
 Attribute|Type|Use|Default
 ---|---|---|---
@@ -616,20 +657,6 @@ Attribute|Type|Use|Default
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
-variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
-
-### formatMoney
-
-[See PHP docs](http://php.net/manual/en/function.money-format.php){:target='_blank'}
-
-Attribute|Type|Use|Default
----|---|---|---
-userInput|string|optional|
-locale|string|optional|
 variable|string|optional|
 mergeKey|string|required|
 remove|boolean|optional|false
