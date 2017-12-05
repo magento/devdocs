@@ -18,8 +18,8 @@ All actions contain the following attributes that are useful for merging needs:
 
 * `mergeKey` is a required attribute that stores a unique identifier of the action. Example: `"conditionalClickStep1"`.
 * `remove` is an optional attribute that removes the action when merging same test in different modules
-* `before` is an optional attribute that stores `mergeKey` of an action that will be executed one step before the current one
-* `after` is an optional attribute that stores `mergeKey` of an action that will be executed next
+* `before` is an optional attribute that Set `mergeKey` of an action that must be executed one step before the current one.
+* `after` is an optional attribute that Set `mergeKey` of an action that must be executed next.
 
 ## Principles
 
@@ -129,1338 +129,1409 @@ If description of an element does not includes a link to Codeception analogue, i
 
 [See acceptPopup docs on codeception.com](http://codeception.com/docs/modules/WebDriver#acceptPopup){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action. 
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### amOnPage
 
 [See amOnPage docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnPage){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### amOnSubdomain
 
 [See amOnSubdomain docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnSubdomain){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### amOnUrl
 
 [See amOnUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnUrl){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### appendField
 
 [See appendField docs on codeception.com](http://codeception.com/docs/modules/WebDriver#appendField){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### attachFile
 
 [See attachFile docs on codeception.com](http://codeception.com/docs/modules/WebDriver#attachFile){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### cancelPopup
 
 [See cancelPopup docs on codeception.com](http://codeception.com/docs/modules/WebDriver#cancelPopup){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### checkOption
 
 [See checkOption docs on codeception.com](http://codeception.com/docs/modules/WebDriver#checkOption){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### click
 
 [See click docs on codeception.com](http://codeception.com/docs/modules/WebDriver#click){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### clickWithLeftButton
 
 [See clickWithLeftButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithLeftButton){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### clickWithRightButton
 
 [See clickWithRightButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithRightButton){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### closeAdminNotification
 
-Attribute|Type|Use|Default
+Remove from the DOM all elements with the CSS classes `.modal-popup` or `.modals-overlay`
+
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### closeTab
 
 [See closeTab docs on codeception.com](http://codeception.com/docs/modules/WebDriver#closeTab){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### conditionalClick
 
-Attribute|Type|Use|Default
+Conditionally click on an element if and only if another element is visible or not.
+
+For example, to click on `#foo` if `#bar` is visible:
+
+```xml
+<conditionalClick selector="#foo" dependentSelector="#bar" visible="true" mergeKey="click1"/>
+```
+
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 dependentSelector|string|optional|
 visible|boolean|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### createData
 
-Attribute|Type|Use|Default
+Create an entity (e.g. a category or product). In other words, make a POST request
+to the Magento API according to the data and metadata of the entity to be created.
+
+For example, you can create the entity with the name "SampleProduct":
+
+```xml
+<createData entity="SampleProduct" mergeKey="createSampleProduct"/>
+```
+
+Attribute|Type|Use|Description
 ---|---|---|---
-entity|string|required|	
-mergeKey|string|required	
+entity|string|required| 
+mergeKey|string|required    
 remove| boolean|optional|false
-before|string|optional|	
-after|string|optional|	
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one. 
+after|string|optional| Set `mergeKey` of an action that must be executed next.  
 storeCode|string|optional|
 
 This action can optionally contain one or more `required-entity` child elements.
 
 #### required-entity
 
-Attribute|Type|Use|Default
+Specify relationships amongst data to be created. For example, a complex Product
+object may contain within it a pointer (an ID) to a complex Category object.
+
+For example, first we create a category, then we create a product in that category
+by indicating the relationship.
+
+```xml
+<createData entity="SampleCategory" mergeKey="createCategory"/>
+
+<createData entity="SampleProduct" mergeKey="createProduct">
+    <required-entity createDataKey="createCategory"/>
+</createData>
+```
+
+Attribute|Type|Use|Description
 ---|---|---|---
-createDataKey|string|required|	
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+createDataKey|string|required|  
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### deleteData
 
-Attribute|Type|Use|Default
+Delete an entity that was previously created.
+
+It's important to note that this action is only able to delete entities that were
+previously created using [createData](#createdata) in the scope of the [Cest](../cest.html#cest-element) or [Test](../cest.html#test).
+
+Assuming we created _SampleCategory_ like:
+
+```xml
+<createData entity="SampleCategory" mergeKey="createCategory"/>
+```
+
+We can delete _SampleCategory_ like:
+
+```
+<deleteData createDataKey="createCategory" mergeKey="deleteCategory"/>
+```
+
+Attribute|Type|Use|Description
 ---|---|---|---
 createDataKey|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 storeCode|string|optional|
 
 ### dontSee
 
 [See the codeception.com documentation for more information about this action.](http://codeception.com/docs/modules/WebDriver#dontSee){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeCheckboxIsChecked
 
 [See dontSeeCheckboxIsChecked docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCheckboxIsChecked){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeCookie
 
 [See dontSeeCookie docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCookie){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeCurrentUrlEquals
 
 [See dontSeeCurrentUrlEquals docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlEquals){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeCurrentUrlMatches
 
 [See dontSeeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlMatches){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeElement
 
 [See dontSeeElement docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeElement){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeElementInDOM
 
 [See dontSeeElementInDOM docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeElementInDOM){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
 attributeArray|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeInCurrentUrl
 
 [See dontSeeInCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInCurrentUrl){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeInField
 
 [See dontSeeInField docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInField){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeInFormFields
 
 [See dontSeeInFormFields docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInFormFields){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeInPageSource
 
 [See dontSeeInPageSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInPageSource){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeInSource
 
 [See dontSeeInSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInSource){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeInTitle
 
 [See dontSeeInTitle docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInTitle){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeJsError
 
-Attribute|Type|Use|Default
+Assert that there are no Javascript errors.
+
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeLink
 
 [See dontSeeLink docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeLink){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dontSeeOptionIsSelected
 
 [See dontSeeOptionIsSelected docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeOptionIsSelected){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### doubleClick
 
 [See doubleClick docs on codeception.com](http://codeception.com/docs/modules/WebDriver#doubleClick){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### dragAndDrop
 
 [See dragAndDrop docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dragAndDrop){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector1|string|optional|
 selector2|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### executeInSelenium
 
 [See executeInSelenium docs on codeception.com](http://codeception.com/docs/modules/WebDriver#executeInSelenium){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### executeJS
 
 [See executeJS docs on codeception.com](http://codeception.com/docs/modules/WebDriver#executeJS){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### fillField
 
 [See fillField docs on codeception.com](http://codeception.com/docs/modules/WebDriver#fillField){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
-
-### formatMoney
-
-Attribute|Type|Use|Default
----|---|---|---
-userInput|string|optional|
-locale|string|optional|
-variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### grabAttributeFrom
 
 [See grabAttributeFrom docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabAttributeFrom){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### grabCookie
 
 [See grabCookie docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabCookie){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### grabFromCurrentUrl
 
 [See grabFromCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### grabMultiple
 
 [See grabMultiple docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabMultiple){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### grabPageSource
 
 [See grabPageSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabPageSource){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 returnVariable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### grabTextFrom
 
 [See grabTextFrom docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabTextFrom){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 returnVariable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### grabValueFrom
 
 [See grabValueFrom docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabValueFrom){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 returnVariable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### loadSessionSnapshot
 
 [See loadSessionSnapshot docs on codeception.com](http://codeception.com/docs/modules/WebDriver#loadSessionSnapshot){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### loginAsAdmin
 
-Attribute|Type|Use|Default
+A convenient helper that will go to the Magento admin page, fill in the username and password, click login, and finally
+calls [closeAdminNotification](#closeAdminNotification)
+
+Attribute|Type|Use|Description
 ---|---|---|---
 username|string|optional|
 password|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### makeScreenshot
 
 [See makeScreenshot docs on codeception.com](http://codeception.com/docs/modules/WebDriver#makeScreenshot){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### maximizeWindow
 
 [See maximizeWindow docs on codeception.com](http://codeception.com/docs/modules/WebDriver#maximizeWindow){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### moveBack
 
 [See moveBack docs on codeception.com](http://codeception.com/docs/modules/WebDriver#moveBack){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### moveForward
 
 [See moveForward docs on codeception.com](http://codeception.com/docs/modules/WebDriver#moveForward){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### moveMouseOver
 
 [See moveMouseOver docs on codeception.com](http://codeception.com/docs/modules/WebDriver#moveMouseOver){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### mSetLocale
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 locale|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### mResetLocale
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### openNewTab
 
 [See openNewTab docs on codeception.com](http://codeception.com/docs/modules/WebDriver#openNewTab){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### parseFloat
 
-Attribute|Type|Use|Default
+Parse float number with thousands seperator.
+
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### pauseExecution
 
 [See pauseExecution docs on codeception.com](http://codeception.com/docs/modules/WebDriver#pauseExecution){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### performOn
 
 [See performOn docs on codeception.com](http://codeception.com/docs/modules/WebDriver#performOn){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 function|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### pressKey
 
 [See pressKey docs on codeception.com](http://codeception.com/docs/modules/WebDriver#pressKey){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### reloadPage
 
 [See reloadPage docs on codeception.com](http://codeception.com/docs/modules/WebDriver#reloadPage){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### resetCookie
 
 [See resetCookie docs on codeception.com](http://codeception.com/docs/modules/WebDriver#resetCookie){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### resizeWindow
 
 [See resizeWindow docs on codeception.com](http://codeception.com/docs/modules/WebDriver#resizeWindow){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 width|string|optional|
 height|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### saveSessionSnapshot
 
 [See saveSessionSnapshot docs on codeception.com](http://codeception.com/docs/modules/WebDriver#saveSessionSnapshot){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### scrollTo
 
 [See scrollTo docs on codeception.com](http://codeception.com/docs/modules/WebDriver#scrollTo){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### scrollToTopOfPage
 
-Attribute|Type|Use|Default
+A convenience function that executes `window.scrollTo(0,0)` as JavaScript thus returning to the top of the page.
+
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### searchAndMultiSelectOption
 
-Attribute|Type|Use|Default
+Search for and select options from a Magento multi-select drop down menu.
+For example, the drop down menu you use to assign Products to Categories.
+
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 requiredAction|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### see
 
 [See see docs on codeception.com](http://codeception.com/docs/modules/WebDriver#see){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeCheckboxIsChecked
 
 [See seeCheckboxIsChecked docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCheckboxIsChecked){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeCookie
 
 [See seeCookie docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCookie){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeCurrentUrlEquals
 
 [See seeCurrentUrlEquals docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCurrentUrlEquals){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeCurrentUrlMatches
 
 [See seeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeElement
 
 [See seeElement docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeElement){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeElementInDOM
 
 [See seeElementInDOM docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeElementInDOM){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeInCurrentUrl
 
 [See seeInCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInCurrentUrl){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeInField
 
 [See seeInField docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInField){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeInFormFields
 
 [See seeInFormFields docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInFormFields){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeInPageSource
 
 [See seeInPageSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInPageSource){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeInPopup
 
 [See seeInPopup docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInPopup){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeInSource
 
 [See seeInSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInSource){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeInTitle
 
 [See seeInTitle docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInTitle){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeLink
 
 [See seeLink docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeLink){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeNumberOfElements
 
 [See seeNumberOfElements docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeNumberOfElements){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### seeOptionIsSelected
 
 [See seeOptionIsSelected docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeOptionIsSelected){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### selectOption
 
 [See selectOption docs on codeception.com](http://codeception.com/docs/modules/WebDriver#selectOption){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### setCookie
 
 [See setCookie docs on codeception.com](http://codeception.com/docs/modules/WebDriver#setCookie){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
 value|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### submitForm
 
 [See submitForm docs on codeception.com](http://codeception.com/docs/modules/WebDriver#submitForm){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
 button|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### switchToIFrame
 
 [See switchToIFrame docs on codeception.com](http://codeception.com/docs/modules/WebDriver#switchToIFrame){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### switchToNextTab
 
 [See switchToNextTab docs on codeception.com](http://codeception.com/docs/modules/WebDriver#switchToNextTab){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### switchToPreviousTab
 
 [See switchToPreviousTab docs on codeception.com](http://codeception.com/docs/modules/WebDriver#switchToPreviousTab){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### switchToWindow
 
 [See switchToWindow docs on codeception.com](http://codeception.com/docs/modules/WebDriver#switchToWindow){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### typeInPopup
 
 [See typeInPopup docs on codeception.com](http://codeception.com/docs/modules/WebDriver#typeInPopup){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### uncheckOption
 
 [See uncheckOption docs on codeception.com](http://codeception.com/docs/modules/WebDriver#uncheckOption){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### unselectOption
 
 [See unselectOption docs on codeception.com](http://codeception.com/docs/modules/WebDriver#unselectOption){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### wait
 
 [See wait docs on codeception.com](http://codeception.com/docs/modules/WebDriver#wait){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForAjaxLoad
 
-Attribute|Type|Use|Default
+Wait for all AJAX calls to finish.
+
+Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForElementChange
 
 [See waitForElementChange docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForElementChange){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 function|string|optional|
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForElement
 
 [See waitForElement docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForElement){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForElementNotVisible
 
 [See waitForElementNotVisible docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForElementNotVisible){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForElementVisible
 
 [See waitForElementVisible docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForElementVisible){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForJS
 
 [See waitForJS docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForJS){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForLoadingMaskToDisappear
 
-Attribute|Type|Use|Default
+Wait for all Magento loading overlays to go away.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+The CSS class for loading masks is not used consistently throughout Magento. Therefore, this convenience function tries to wait for various specific selectors.
+</div>
+
+```config
+# Wait for these classes to not be visible
+
+//div[contains(@class, "loading-mask")]
+//div[contains(@class, "admin_data-grid-loading-mask")]
+//div[contains(@class, "admin__data-grid-loading-mask")]
+//div[contains(@class, "admin__form-loading-mask")]
+//div[@data-role="spinner"]
+```
+ 
+
+Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForPageLoad
 
-Attribute|Type|Use|Default
+Wait for AJAX, Magento loading overlays, and `document.readyState == "complete"`.
+
+Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 ### waitForText
 
 [See waitForText docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForText){:target='_blank'}
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 time|string|optional|
 selector|string|optional|
 variable|string|optional|
-mergeKey|string|required|
-remove|boolean|optional|false
-before|string|optional|
-after|string|optional|
+mergeKey|string|required|A unique identifier of the action.
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 
 <!-- Abbreviations -->
