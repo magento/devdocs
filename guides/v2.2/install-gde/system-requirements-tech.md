@@ -35,6 +35,10 @@ MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
+</div>
+
 ### PHP
 {% include install/php_2.2.md %}
 

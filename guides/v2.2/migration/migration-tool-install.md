@@ -79,7 +79,7 @@ To install the Data Migration Tool, you must update `composer.json` in the Magen
 	For example, for version 2.2.0, enter:
 
 		composer config repositories.magento composer https://repo.magento.com
-		composer require magento/data-migration-tool:2.2.o
+		composer require magento/data-migration-tool:2.2.0
 
 4.  When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 

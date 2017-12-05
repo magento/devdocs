@@ -67,7 +67,7 @@ You must manually re-create all:
 
 <div class="bs-callout bs-callout-info" id="info">
     <p>
-        You may adjust the time zone for a database entity using the <code>\Migration\Handler\Timezone</code> handler. See the <a href="{{page.baseurl}}migration/migration-migrate-additional.html">Additional info</a> section for more details.
+        You may adjust the time zone for a database entity using the <code>\Migration\Handler\Timezone</code> handler. See the <a href="{{page.baseurl}}migration/migration-migrate-follow-up.html">Follow-up</a> section for more details.
     </p>
 </div>
 
