@@ -1,0 +1,14 @@
+label: GraphQL Developer Guide
+pages:
+
+    - label: Overview
+      url: graphql/graphql.html
+
+    - label: Searches and pagination
+      url: graphql/search-pagination.html
+
+    - label: Object Reference
+      children:
+
+        - label: Product
+          url: graphql/product.html
