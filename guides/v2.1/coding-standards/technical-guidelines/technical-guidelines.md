@@ -56,7 +56,7 @@ like this:
 1.3. Type hints for scalar arguments SHOULD be used
 <span style="color: orange">[2.2]</span>.
 
-1.3.1. All new or updated PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled.
 <span style="color: orange">[2.2]</span>.
 
 ## 2. Class design
