@@ -668,9 +668,9 @@ According to our data migration <a href="/guides/v2.2/migration/migration-migrat
 
     <p>For example, if Magento 2 is installed in <code class="highlighter-rouge">/var/www/html</code>, you’ll find <code class="highlighter-rouge">settings.xml.dist</code> in one of the following directories:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
-/var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
-/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-commerce
+/var/www/html/vendor/magento/data-migration-tool/etc/commerce-to-commerce
+/var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-opensource
 </code></pre></div>    </div>
   </li>
   <li>
@@ -683,7 +683,7 @@ According to our data migration <a href="/guides/v2.2/migration/migration-migrat
     <p>Make your changes in <code class="highlighter-rouge">settings.xml</code>.</p>
   </li>
   <li>
-    <p>Specify the new name of the settings file for mapping. To do that, change the <code class="highlighter-rouge">&lt;settings_map_file&gt;</code> tag in the <code class="highlighter-rouge">&lt;ce or ee version&gt;/config.xml</code> file.</p>
+    <p>Specify the new name of the settings file for mapping. To do that, change the <code class="highlighter-rouge">&lt;settings_map_file&gt;</code> tag in the <code class="highlighter-rouge">path/to/config.xml</code> file.</p>
   </li>
 </ol>
 
