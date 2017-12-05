@@ -328,7 +328,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 entity|string|required| 
 mergeKey|string|required    
-remove| boolean|optional|false
+remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one. 
 after|string|optional| Set `mergeKey` of an action that must be executed next.  
 storeCode|string|optional|
