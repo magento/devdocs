@@ -188,7 +188,7 @@ To add additional configuration values in the Integration environment Magento Ad
 8.	Log out of the Magento Admin.
 
 ### Run the config.php command {#regenerate}
-By running the command again for `magento-cloud:scd-dump`, the new configuration is appended to the file.
+By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new configuration is appended to the file.
 
 1.	On your local system, find the integration server's SSH URL.
 
