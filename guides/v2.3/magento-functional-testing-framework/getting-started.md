@@ -162,7 +162,6 @@ Example: `FW_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/vendor/mag
 Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
 The following self-descriptive variables have default values (included).
-**Do not change the values if you're running Selenium locally.**
 
 ```config
 SELENIUM_HOST=127.0.0.1            
@@ -170,6 +169,10 @@ SELENIUM_PORT=4444
 SELENIUM_PROTOCOL=http
 SELENIUM_PATH=/wd/hub
 ```
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
+</div>
 
 They come together to form the path to where Selenium Server is running from like:
 
