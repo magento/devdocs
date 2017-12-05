@@ -105,10 +105,10 @@ Read about annotations in a separate topic [Annotations][annotations].
 
 Specifies actions to perform before all [tests][test] in a [cest].
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 name|string|optional|
-remove|boolean|optional|false
+remove|boolean|optional|
 
 It MAY contain the following child elements:
 
@@ -122,10 +122,10 @@ It MAY contain the following child elements:
 
 Specifies actions to perform after all [tests][test] in a [cest].
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 name|string|optional|
-remove|boolean|optional|false
+remove|boolean|optional|
 
 It MAY contain:
 
@@ -139,10 +139,10 @@ It MAY contain:
 
 A set of actions with an assertion.
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 name|string|optional|
-remove|boolean|optional|false
+remove|boolean|optional|
 
 It MAY contain:
 
@@ -157,11 +157,11 @@ It MAY contain:
 
 Calls a corresponding action group.
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 ref|string|required|
 mergeKey|string|required|
-remove|boolean|optional|false
+remove|boolean|optional|
 before|string|optional|
 after|string|optional|
 
