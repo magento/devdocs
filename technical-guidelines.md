@@ -1,12 +1,13 @@
 ---
 layout: default
 group: coding-standards
-subgroup: 02_Technical guidelines
 title: Technical guidelines
-menu_title: Technical guidelines
-menu_node: parent
-version: 2.1
-github_link: coding-standards/technical-guidelines/technical-guidelines.md
+github_link: technical-guidelines.md
+redirect_from:
+    - /guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html
+    - /guides/v2.1/coding-standards/technical-guidelines/technical-guidelines.html
+functional_areas:
+    - Standards
 ---
 
 ## About this document
