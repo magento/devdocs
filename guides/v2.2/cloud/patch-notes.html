@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage branches with the Project Web Interface | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce (Cloud) package updates | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/project/project-webint-branch.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/patch-notes.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/project/project-webint-branch.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/patch-notes.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/project/project-webint-branch.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/patch-notes.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/project/project-webint-branch.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/patch-notes.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -1220,7 +1220,7 @@
         
         
         
-        <li class="nav-level2 active " id="manage-branches-with-the-interface">
+        <li class="nav-level2  " id="manage-branches-with-the-interface">
             
             
         
@@ -1536,7 +1536,7 @@
     
     
 
-<li class="nav-level1  " id="composer-package-updates">
+<li class="nav-level1 active " id="composer-package-updates">
 
     
     
@@ -1804,7 +1804,7 @@
 
           
 
-          <span property="name">Manage branches with the Project Web Interface</span>
+          <span property="name">Magento Commerce (Cloud) package updates</span>
 
         
 
@@ -1827,7 +1827,7 @@
 
 	
 
-	<h1 class="page-heading">Manage branches with the Project Web Interface</h1>
+	<h1 class="page-heading">Magento Commerce (Cloud) package updates</h1>
 
   
 
@@ -1835,278 +1835,86 @@
 </section>
 
 
-			<p>Every Magento Commerce (Cloud) <em>environment</em> has an associated active Git <em>branch</em>. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see <a href="https://git-scm.com/doc">Git documentation</a>.</p>
+			<p>The release information on this page relates to <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages">Composer packages</a> used by Magento Commerce (Cloud) only. For general release information, refer to the main Magento <a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a> page.</p>
 
-<p>For more information about managing environments using the CLI, see <a href="/guides/v2.2/cloud/env/environments-start.html">Manage branches with the CLI</a>.</p>
+<h2 id="magentoece-tools-v200205"><code class="highlighter-rouge">magento/ece-tools</code> v2002.0.5</h2>
+<p>This package contains the following scripts and magento commands that automatically perform build and deploy actions of the codebase in your environments:</p>
 
-<p>This topic discusses how to use the Project Web Interface to:</p>
+<p>pre-deploy.php
+  bin/magento magento-cloud:deploy
+  bin/magento magento-cloud:build</p>
 
+<p>For Magento Commerce (Cloud), versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>. The versioning for <code class="highlighter-rouge">magento/ece-tools</code> will then be  <code class="highlighter-rouge">&lt;2000 + &lt;x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with 2002.0.0.</p>
+
+<p><code class="highlighter-rouge">magento/ece-tools</code> patches strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the magento-cloud-metapackage.</p>
+
+<h3 id="new-features">New features</h3>
+<!-- begin magento/ece-tools 2002.0.5 features -->
 <ul>
-  <li>Add or delete an environment. You cannot add or delete the <code class="highlighter-rouge">master</code> branch for Pro plan Staging and Production. You can branch from Start plan Master.</li>
-  <li>Sync (<code class="highlighter-rouge">git pull</code>) from the environment’s parent</li>
-  <li>Merge (<code class="highlighter-rouge">git push</code>) to the environment’s parent</li>
+  <li>
+    <p><strong>Build/deploy notifications</strong>. We added a new configuration file that you can use to <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html">set up Slack and/or email notifications</a> for build/deploy actions in all your environments.</p>
+  </li>
+  <li>
+    <p><strong>Static content compression</strong>. We now compress static content using <a href="https://www.gnu.org/software/gzip/" target="\_blank">gzip</a> during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build">build option</a> or <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy">deploy variable</a>. See the following topics for more information:</p>
+
+    <ul>
+      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over">Static content deployment performance</a></li>
+      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Configuration management</strong>. We now auto-generate an <code class="highlighter-rouge">app/etc/config.php</code> file in your git repository during the build phase if it doesn’t already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> at a later time, the commands update the file without requiring additional steps. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Database dumps</strong>. We added a new <code class="highlighter-rouge">magento/ece-tools</code> CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshots and backup management</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Cron interval limitations lifted</strong>. All Starter environments and Pro Integration environments now support 1-minute intervals for cron jobs (previously minimum 5 minutes). The default cron interval is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting. To modify your existing cron jobs, edit your settings in .magento.app.yaml. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a> for more information.</p>
+  </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot create branches from Pro plan Staging and Production <code class="highlighter-rouge">master</code>. These environments include <code class="highlighter-rouge">master</code> branches that you deploy updated Git code to from Integration <code class="highlighter-rouge">master</code>.</p>
-</div>
-
-<div>
-
-  <div class="bs-callout bs-callout-info" id="info">
-    <p><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
-
-    <p>We can update Pro projects created before October 23, 2017. All new Pro projects include these features. Your ticket will be queued for update, which may take time to complete. We will keep you updated through the process.</p>
-
-    <p>If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
-  </div>
-
-  <h2 id="project-branch-add">Add or delete an environment</h2>
-  <p>Complete development of code and added extensions in a branch and, when complete, merge (<code class="highlighter-rouge">git push</code>) the branch with its parent or master.</p>
-
-  <ul>
-    <li>For Starter, we recommend you create a <code class="highlighter-rouge">staging</code> branch from Master, then branch from <code class="highlighter-rouge">staging</code> for development.</li>
-    <li>For Pro, you want to branch from Development (Integration <code class="highlighter-rouge">master</code>).</li>
-  </ul>
-
-  <p>For branching strategies, review <a href="/guides/v2.2/cloud/basic-information/starter-architecture.html">Starter</a> and <a href="/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html">Pro</a> architecture overviews.</p>
-
-  <p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can <a href="/guides/v2.2/cloudenv/environments-start.html#env-delete">delete it entirely</a> using the CLI.</p>
-
-  <p>If you need additional environments for development, enter a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">Support ticket</a> for more information.</p>
-
-  <h2 id="add">Add a branch</h2>
-  <p>To add a branch:</p>
-
-  <ol>
-    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
-    <li>
-      <p>In the left navigation bar, click the name of the parent environment.</p>
-
-      <p>Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you’re about to create.</p>
-    </li>
-    <li>Click <img src="/common/images/cloud_branch-icon.png" alt="Create a branch" width="30px" />.</li>
-    <li>
-      <p>In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.</p>
-
-      <div class="bs-callout bs-callout-info" id="info">
-   		<p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
-   		<p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code>{ }</code>), parentheses, asterisk (<code>*</code>), angle brackets (<code>&lt; &gt;</code>), ampersand (<code>&amp;</code>), percent (<code>%</code>), and other characters.</p>
- 	</div>
-    </li>
-    <li>Click <strong>Branch</strong>.</li>
-    <li>
-      <p>Wait while the environment deploys.</p>
-
-      <p>During deployment, its status is <strong>In process</strong>, as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_branch-deploy.png" alt="Branch is deploying" /></p>
-
-      <p>After a successful deployment, the status changes to <strong>Success</strong>:</p>
-
-      <p><img src="/common/images/cloud_branch-success.png" alt="Branch is deploying" /></p>
-    </li>
-    <li>
-      <p>Continue with one of the following:</p>
-
-      <ul>
-        <li><a href="/guides/v2.2/cloud/env/environments-start.html">Get started with an environment</a></li>
-        <li><a href="/guides/v2.2/cloud/howtos/how-to.html">How tos and tutorials</a></li>
-      </ul>
-    </li>
-  </ol>
-
-  <h2 id="inactive">Delete to make a branch inactive</h2>
-  <p>To delete an environment and make it inactive:</p>
-
-  <ol>
-    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
-    <li>In the left pane, click the name of the branch to delete.</li>
-    <li>
-      <p>Click <strong>Configure environment</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_project-env.png" alt="Configure environment" /></p>
-    </li>
-    <li>Click the <strong>Settings</strong> tab.</li>
-    <li>
-      <p>Click <strong>Delete</strong> next to the environment’s status, as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_env-delete.png" alt="Delete an environment" /></p>
-
-      <p>A deleted (that is, inactive) environment displays with its name stricken out as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_environment-deleted.png" alt="Delete an environment" /></p>
-    </li>
-  </ol>
-
-  <h2 id="project-branch-sync">Sync from the environment’s parent</h2>
-  <p>Syncing an environment (or branch) is the same as <code class="highlighter-rouge">git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.</p>
-
-  <p>For Pro plan, you can also sync from Staging and Production to your Integration <code class="highlighter-rouge">master</code> branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment’s database. For more information, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
-
-  <p>To sync an environment with its parent:</p>
-
-  <ol>
-    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
-    <li>In the left pane, click the name of the branch you want to sync.</li>
-    <li>
-      <p>Click <img src="/common/images/cloud_environment-sync.png" alt="Sync an environment" width="30px" /> (sync).</p>
-
-      <p>The following prompt displays:</p>
-
-      <p><img src="/common/images/cloud_environment-sync2.png" alt="Choose what to sync" /></p>
-    </li>
-    <li>Select the check box next to each item to sync and click <strong>Sync</strong>.</li>
-  </ol>
-
-  <h2 id="project-branch-merge">Merge with the environment’s parent</h2>
-  <p>Merging an environment is the same as <code class="highlighter-rouge">git push origin</code>. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to <code class="highlighter-rouge">master</code>. You can also deploy to Staging and Production using the merge command.</p>
-
-  <p>To merge an environment with its parent:</p>
-
-  <ol>
-    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
-    <li>In the left pane, click the name of the branch you want to merge.</li>
-    <li>Click <img src="/common/images/cloud_environment-merge.png" alt="Merge an environment" width="30px" /> (merge).</li>
-    <li>Click <strong>Merge</strong> to confirm the action.</li>
-  </ol>
-
-  <h2 id="logs">View logs</h2>
-  <p>Through the Project Web Interface, you can review various logs for environments including build, deploy, and deployment history.</p>
-
-  <p>For <strong>Starter</strong> environments, you can review build and deploy logs and the deployment history. These environments include Master (Production) and all branches created from it.</p>
-
-  <p>For <strong>Pro</strong> environments, you can review the following logs per environment:</p>
-
-  <ul>
-    <li>Integration: Build and deploy and deployment history</li>
-    <li>Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
-    <li>Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
-  </ul>
-
-  <p>If you do not see your Pro plan Staging and Production environments in the Project Web Interface, you need to <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">enter a ticket for updating</a> your project interface.</p>
-
-  <ol>
-    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
-    <li>In the left pane, click an environment to review logs for.</li>
-    <li>The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.</li>
-    <li>To view the build log, select the Success or Failure link per deployment record on the account.</li>
-  </ol>
-
-  <h2 id="private">Pull code from a private Git repository</h2>
-  <p>Your Magento Commerce (Cloud) project can include code located in a private Git repository. For example, a you may have code for a custom module or theme in a private repo. To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code class="highlighter-rouge">composer.json</code>.</p>
-
-  <p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository. GitHub allows you to use a deploy key for one repository only.</p>
-
-  <p>If your project needs to access multiple repositories, you can choose to
-attach an SSH key to an automated user account. Because this account won’t
-be used by a human, it’s referred to as a <a href="https://developer.github.com/guides/managing-deploy-keys/" target="_blank"><em>machine user</em></a>. You can then add the
-machine account as collaborator or add the machine user to a team with
-access to the repositories it needs to manipulate.</p>
-
-  <div class="bs-callout bs-callout-info" id="info">
-We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.
-</div>
-
-  <h3 id="ssh">Find your deploy key</h3>
-  <p>To find your project SSH public key (also referred to as a <em>deploy key</em>):</p>
-
-  <ol>
-    <li>Log in to your project using the Web Interface.</li>
-    <li>Click <strong>Configure Project</strong>.</li>
-    <li>
-      <p>Click <strong>Deploy Key</strong>.</p>
-
-      <p>The following figure shows an example.</p>
-
-      <p><img src="/common/images/cloud_deploy-key.png" alt="Deploy Key" width="500px" /></p>
-    </li>
-    <li>Copy the deploy key to the clipboard.</li>
-    <li>See <a href="#cloud-deploykey-github">Enter your GitHub deploy key</a>.</li>
-  </ol>
-
-  <h3 id="cloud-deploykey-github">Enter your GitHub deploy key</h3>
-  <p>On GitHub, deploy keys are read-only by default. Your Magento project won’t push code to the private repository.</p>
-
-  <p>To enter your project’s public key as a GitHub deploy key:</p>
-
-  <ol>
-    <li>Log in to your GitHub repository as its administrator.</li>
-    <li>
-      <p>Click <strong>Settings</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_gh-settings.png" alt="GitHub settings" width="650px" /></p>
-
-      <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
-</div>
-    </li>
-    <li>
-      <p>On the Settings page, in the left navigation bar, click <strong>Deploy Keys</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_gh-deploy-key.png" alt="GitHub deploy key" width="200px" /></p>
-    </li>
-    <li>Click <strong>Add deploy key</strong>.</li>
-    <li>Follow the prompts on your screen to complete the task.</li>
-  </ol>
-
-  <p>In <code class="highlighter-rouge">composer.json</code>, use the <code class="highlighter-rouge">&lt;user&gt;@&lt;host&gt;:&lt;.git&lt;/code&gt;</code> format, or <code class="highlighter-rouge">ssh://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;.git</code> if using a non-standard port.</p>
-
-  <h3 id="cloud-deploykey-bb">Enter your Bitbucket deployment key</h3>
-  <p>To enter your project’s public key as a Bitbucket deploy key:</p>
-
-  <ol>
-    <li>Log in to your Bitbucket repository as its administrator.</li>
-    <li>
-      <p>In the left navigation bar, click <strong>Settings</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_bb-settings.png" alt="Bitbucket settings" /></p>
-    </li>
-    <li>
-      <p>Click General &gt; <strong>Deployment Keys</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/cloud_bb-deploy-key.png" alt="Bitbucket deploy key" /></p>
-    </li>
-    <li>Click <strong>Add Key</strong>.</li>
-    <li>Follow the prompts on your screen to complete the task.</li>
-  </ol>
-
-  <h2 id="security">Secure your environments and branches</h2>
-  <p>You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.</p>
-
-  <p>To secure your Starter environments and Pro Integration environments:</p>
-
-  <ol>
-    <li>Log into your <a href="https://accounts.magento.cloud">Project Web Interface</a>.</li>
-    <li>Select an environment / branch.</li>
-    <li>Click Configure Environment.</li>
-    <li>On the <strong>Settings</strong> tab, click <strong>ON</strong> for <strong>HTTP access control</strong> to enable secure access. You can choose between credentials or IP addresses to filter for access.</li>
-    <li>To filter by credentials, click <strong>Add Login</strong>, enter a username and password, and click again <strong>Add Login</strong> to add.</li>
-    <li>
-      <p>To filter by IP address, enter the IP addresses in a list with <code class="highlighter-rouge">deny</code> or <code class="highlighter-rouge">allow</code>. For example:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 123.456.789.111/29 allow
- 123.456.789.112/29 allow
- 234.123.567.111/29 allow
- 0.0.0.0/0 deny
-</code></pre></div>      </div>
-    </li>
-    <li>Click <strong>Save</strong>.</li>
-  </ol>
-
-  <p>The branch redeploys to update the environment security and settings.</p>
-
-  <p>To secure Pro plan Staging environment, enter a <a href="/guides/v2.2/cloud/bkcloud.html#gethelp">Support ticket</a>. Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.</p>
-
-  <p>We recommend testing your environments after completing security settings.</p>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a></li>
-    <li><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a></li>
-    <li><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-  </ul>
-</div>
+<!-- end magento/ece-tools 2002.0.5 features -->
+
+<h3 id="fixed-issues">Fixed issues</h3>
+<!-- begin magento/ece-tools 2002.0.5 bug fixes -->
+
+<!-- MAGECLOUD-1322 -->
+<ul>
+  <li>We fixed an issue causing errors during the static content generation step of deployment on Production environments.</li>
+</ul>
+
+<!-- MAGECLOUD-1264 -->
+<ul>
+  <li>We fixed an issue preventing some <code class="highlighter-rouge">magento/ece-tools</code> commands from logging output to <code class="highlighter-rouge">stderr</code>.</li>
+</ul>
+
+<!-- MAGECLOUD-1242 -->
+<ul>
+  <li>We fixed an issue preventing base URL values in <code class="highlighter-rouge">env.php</code> from being updated in forked branches.</li>
+</ul>
+
+<!-- MAGECLOUD-1171 -->
+<ul>
+  <li>We fixed an issue causing the <code class="highlighter-rouge">magento setup:install</code> command to add an unsecure prefix (<code class="highlighter-rouge">http://</code>) to secure base URLs.</li>
+</ul>
+
+<!-- MAGECLOUD-1170 -->
+<ul>
+  <li>We fixed an issue preventing patch errors from causing deployment failures.</li>
+</ul>
+
+<!-- MAGECLOUD-1152 -->
+<ul>
+  <li>We fixed an issue preventing <code class="highlighter-rouge">ece-tools</code> from halting execution and throwing an exception if no patches can be applied.</li>
+</ul>
+
+<!-- MAGECLOUD-1138 -->
+<ul>
+  <li>We fixed and issue causing errors when loading the storefront after enabling HTML minification in the Magento Admin.</li>
+</ul>
+
+<!-- end magento/ece-tools 2002.0.5 bug fixes -->
 
 		</div>
 		<!-- /.content-wrap -->
@@ -2117,14 +1925,14 @@ We highly recommend adding and merging this code to your project Git repositorie
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-webint-branch.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/patch-notes.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/project/project-webint-branch.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/patch-notes.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

@@ -1052,6 +1052,20 @@
         
         
         
+        <li class="nav-level2  " id="set-up-notifications">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/env/setup-notifications.html">Set up notifications</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configure-routes---routes.yaml">
             
             
@@ -1522,6 +1536,21 @@
     
     
 
+<li class="nav-level1  " id="composer-package-updates">
+
+    
+    
+    
+    <a href="/guides/v2.2/cloud/patch-notes.html">Composer package updates</a>
+    
+
+    
+</li>
+
+
+    
+    
+
 <li class="nav-level1  " id="troubleshooting">
 
     
@@ -1845,259 +1874,100 @@
 <p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce (Cloud). To set, see <a href="/guides/v2.2/cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</p>
 
 <h2 id="backup-db">Back up the database</h2>
-<p>Back up your Integration environment database and code:</p>
-
-<ol>
-  <li>
-    <p>Enter the following command to make a local backup of the remote database:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud db:dump
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Enter the following command to back up code and media:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:backup --code [--media]
-</code></pre></div>    </div>
-
-    <p>You can optionally omit <code class="highlighter-rouge">[--media]</code> if you have a large number of static files that are already in source control.</p>
-  </li>
-</ol>
-
-<p>Back up your Staging or Production environment database before deploying to those environments:</p>
-
-<ol>
-  <li><a href="/guides/v2.2/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
-  <li>
-    <p>Find the database login information:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Create a database dump:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h2 id="verify-changes">Verify other changes</h2>
-<p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
-
-<ol>
-  <li>If you haven’t done so already, change to your project root directory.</li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
-</code></pre></div>    </div>
-  </li>
-  <li>If there are changes you do <em>not</em> want to submit to source control, branch or stash them now.</li>
-</ol>
-
-<h2 id="patch">Apply the patch</h2>
-<p>To apply the patch, you run the <code class="highlighter-rouge">composer update</code> command. The command uses <code class="highlighter-rouge">composer.json</code> to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.</p>
-
-<p>If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.</p>
-
-<ol>
-  <li>
-    <p>Change to your Magento base directory and enter the following command:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
-</code></pre></div>    </div>
-
-    <p>This command automatically upgrades for patches associated to the installed Magento Commerce version.</p>
-  </li>
-  <li>
-    <p>Add, commit, and push your changes to initiate a deployment:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
-git commit -m "Upgrade patch"
-git push origin &lt;branch name&gt;
-</code></pre></div>    </div>
-
-    <p><code class="highlighter-rouge">git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages.</p>
-
-    <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.</p>
-  </li>
-  <li>
-    <p>Wait for deployment to complete.</p>
-  </li>
-</ol>
-
-<h2 id="cloud-patch-gen">Test general patches</h2>
-<p><em>General patches</em> are provided for all Magento Commerce customers in a repository referenced in your <code class="highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.</p>
-
-<h3 id="gen-getstarted">Get started</h3>
-<p>We recommend testing patches in an active branch, prior to deploying to Staging and Production environment.</p>
 
 <div>
+  <p>We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.</p>
+
+  <p>Back up your Integration environment database and code:</p>
 
   <ol>
-    <li>Log in to your local development system, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-    <li>Change to a directory to which the Magento file system owner has write access.</li>
     <li>
-      <p>Enter the following command in a terminal to log in to your project:</p>
+      <p>Enter the following command to make a local backup of the remote database:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud db:dump
 </code></pre></div>      </div>
     </li>
     <li>
-      <p>List your projects. With the project ID, you can complete additional commands.</p>
+      <p>Enter the following command to back up code and media:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
-    <li>
-      <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:backup --code [--media]
 </code></pre></div>      </div>
 
-      <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
-</div>
+      <p>You can optionally omit <code class="highlighter-rouge">[--media]</code> if you have a large number of static files that are already in source control.</p>
+    </li>
+  </ol>
+
+  <p>Back up your Staging or Production environment database before deploying to those environments:</p>
+
+  <ol>
+    <li>
+      <p><a href="/guides/v2.2/cloud/env/environments-ssh.html">SSH to the server</a>.</p>
     </li>
     <li>
-      <p>Fetch origin branches to get the latest code:</p>
+      <p>Enter the following command to create a database dump:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre></div>      </div>
-
-      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
-    </li>
-    <li>
-      <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/ece-tools db-dump
 </code></pre></div>      </div>
     </li>
   </ol>
 
-  <h3 id="gen-testlocal">Test a general patch on your local system</h3>
+  <div class="bs-callout bs-callout-info">
+    <ul>
+      <li>We recommend putting the application in maintenance mode before doing a database dump in Production environments.</li>
+      <li>The command creates an archive in your local project directory called  <code class="highlighter-rouge">dump-&lt;timestamp&gt;.sql.gz</code>. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshot and backup management</a> for more information.</li>
+    </ul>
+  </div>
 
-  <p>To test a general patch on your local system, you create a branch from the Pro Integration <code class="highlighter-rouge">master</code> branch or Starter plan <code class="highlighter-rouge">staging</code> branch. The commands used in the instructions are for Pro plan using the <code class="highlighter-rouge">master</code> branch.</p>
+  <h2 id="verify-changes">Verify other changes</h2>
+  <p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
+
+  <ol>
+    <li>If you haven’t done so already, change to your project root directory.</li>
+    <li>
+      <p>Enter the following command:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div>      </div>
+    </li>
+    <li>If there are changes you do <em>not</em> want to submit to source control, branch or stash them now.</li>
+  </ol>
+
+  <h2 id="patch">Apply the patch</h2>
+  <p>To apply the patch, you run the <code class="highlighter-rouge">composer update</code> command. The command uses <code class="highlighter-rouge">composer.json</code> to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.</p>
+
+  <p>If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.</p>
 
   <ol>
     <li>
-      <p>On your local system, enter the following commands as the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>:</p>
+      <p>Change to your Magento base directory and enter the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;project root dir&gt;
-magento-cloud environment:checkout master
-git pull origin master
-composer update
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Apply the patch locally:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Clean the Magento cache:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;Magento project root dir&gt;/bin/magento cache:clean
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
 </code></pre></div>      </div>
 
-      <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
+      <p>This command automatically upgrades for patches associated to the installed Magento Commerce version.</p>
     </li>
-    <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
     <li>
-      <p>After testing the patch, push it to the remote server and deploy it:</p>
+      <p>Add, commit, and push your changes to initiate a deployment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Apply patch"
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
+git commit -m "Upgrade patch"
 git push origin &lt;branch name&gt;
 </code></pre></div>      </div>
+
+      <p><code class="highlighter-rouge">git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages.</p>
+
+      <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.</p>
+    </li>
+    <li>
+      <p>Wait for deployment to complete.</p>
     </li>
   </ol>
 
-  <h3 id="patch-magentoece-tools">Patch magento/ece-tools</h3>
-  <p>This is only required when we release <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools">magento/ece-tools</a> updates.</p>
+  <h2 id="cloud-patch-gen">Test general patches</h2>
+  <p><em>General patches</em> are provided for all Magento Commerce customers in a repository referenced in your <code class="highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.</p>
 
-  <ol>
-    <li>Open a terminal and <a href="#gen-getstarted">create a branch</a> in your local environment.</li>
-    <li>
-      <p>Enter the following command to patch <code class="highlighter-rouge">magento/ece-tools</code>:</p>
-
-      <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update magento/ece-tools
-</code></pre></div>      </div>
-    </li>
-    <li>Push your changes to the remote server:
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add composer.lock &amp;&amp; git commit -m "Update magento/ece-tools"
-git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <h3 id="gen-pushpatch">Push a general patch to Staging or Production environments</h3>
-  <p>After you’ve successfully tested a patch locally and on your Integration environment, you can push the patch to Staging or Production environment:</p>
-
-  <ol>
-    <li>
-      <p>Open an SSH connection to your Staging or Production environment. For Starter, see the Project Web Interface for the SSH links. Your Production environment is the Master. For Pro, the SSH access is one of the following:</p>
-
-      <ul>
-        <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>Enter the following commands:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Magento project root dir&gt;/composer update
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Apply the patch locally:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Clean the Magento cache:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;Magento project root dir&gt;/bin/magento cache:clean
-</code></pre></div>      </div>
-
-      <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
-    </li>
-    <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
-    <li>
-      <p>After testing the patch, push it to the remote server and deploy it:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Apply patch"
-git push origin master
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <h2 id="cloud-patch-custom">Test custom patches</h2>
-  <p><em>Custom patches</em> are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.</p>
-
-  <h3 id="custom-getstarted">Get started</h3>
-  <p>We recommend you test a patch locally in an active branch. After completing testing, you can push the branch to Staging and Production.</p>
+  <h3 id="gen-getstarted">Get started</h3>
+  <p>We recommend testing patches in an active branch, prior to deploying to Staging and Production environment.</p>
 
   <div>
 
@@ -2161,25 +2031,24 @@ git push origin master
       </li>
     </ol>
 
-    <h3 id="custom-testlocal">Test a custom patch on your local system</h3>
+    <h3 id="gen-testlocal">Test a general patch on your local system</h3>
 
-    <p>To test a custom patch on your local system:</p>
+    <p>To test a general patch on your local system, you create a branch from the Pro Integration <code class="highlighter-rouge">master</code> branch or Starter plan <code class="highlighter-rouge">staging</code> branch. The commands used in the instructions are for Pro plan using the <code class="highlighter-rouge">master</code> branch.</p>
 
     <ol>
       <li>
-        <p>On your local system, enter the following command as the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> if you haven’t done so already:</p>
+        <p>On your local system, enter the following commands as the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir &lt;Magento project root dir&gt;/m2-hotfixes
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;project root dir&gt;
+magento-cloud environment:checkout master
+git pull origin master
+composer update
 </code></pre></div>        </div>
       </li>
-      <li>Copy the patch file to that directory.</li>
       <li>
         <p>Apply the patch locally:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento project root dir&gt;
-magento-cloud environment:checkout master
-git pull origin master
-git apply &lt;Magento project root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
 </code></pre></div>        </div>
       </li>
       <li>
@@ -2190,6 +2059,7 @@ git apply &lt;Magento project root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
 
         <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
       </li>
+      <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
       <li>
         <p>After testing the patch, push it to the remote server and deploy it:</p>
 
@@ -2199,9 +2069,26 @@ git push origin &lt;branch name&gt;
       </li>
     </ol>
 
-    <h3 id="custom-pushpatch">Push a custom patch to Staging or Production environments</h3>
+    <h3 id="patch-magentoece-tools">Patch magento/ece-tools</h3>
+    <p>This is only required when we release <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools">magento/ece-tools</a> updates.</p>
 
-    <p>After you’ve successfully tested a custom patch locally and on your Integration environment, you can push the patch to Staging or Production for Starter and Pro.</p>
+    <ol>
+      <li>Open a terminal and <a href="#gen-getstarted">create a branch</a> in your local environment.</li>
+      <li>
+        <p>Enter the following command to patch <code class="highlighter-rouge">magento/ece-tools</code>:</p>
+
+        <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update magento/ece-tools
+</code></pre></div>        </div>
+      </li>
+      <li>Push your changes to the remote server:
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add composer.lock &amp;&amp; git commit -m "Update magento/ece-tools"
+git push origin &lt;branch name&gt;
+</code></pre></div>        </div>
+      </li>
+    </ol>
+
+    <h3 id="gen-pushpatch">Push a general patch to Staging or Production environments</h3>
+    <p>After you’ve successfully tested a patch locally and on your Integration environment, you can push the patch to Staging or Production environment:</p>
 
     <ol>
       <li>
@@ -2213,35 +2100,15 @@ git push origin &lt;branch name&gt;
         </ul>
       </li>
       <li>
-        <p>On your staging or production system, enter the following command if you haven’t done so already:</p>
+        <p>Enter the following commands:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir &lt;Magento project root dir&gt;/m2-hotfixes
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Magento project root dir&gt;/composer update
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>Copy the patch file to that directory.</p>
+        <p>Apply the patch locally:</p>
 
-        <p>We suggest using the following command:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -azvP &lt;source&gt; &lt;destination&gt;
-</code></pre></div>        </div>
-
-        <p>Options:</p>
-
-        <p><code class="highlighter-rouge">a</code> archive</p>
-
-        <p><code class="highlighter-rouge">z</code> compress</p>
-
-        <p><code class="highlighter-rouge">v</code> verbose</p>
-
-        <p><code class="highlighter-rouge">P</code> partial progress</p>
-
-        <p>For additional options, see the <a href="http://linux.die.net/man/1/rsync" target="_blank">rsync man page</a>.</p>
-      </li>
-      <li>
-        <p>Apply the patch:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply &lt;Magento project root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
 </code></pre></div>        </div>
       </li>
       <li>
@@ -2252,19 +2119,189 @@ git push origin &lt;branch name&gt;
 
         <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
       </li>
+      <li>Thoroughly test your local system to make sure the patch doesn’t have unexpected side-affects.</li>
       <li>
         <p>After testing the patch, push it to the remote server and deploy it:</p>
 
         <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Apply patch"
-git push origin &lt;branch name&gt;
+git push origin master
 </code></pre></div>        </div>
       </li>
     </ol>
 
-    <h4 id="related-topic">Related topic</h4>
-    <ul>
-      <li><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a></li>
-    </ul>
+    <h2 id="cloud-patch-custom">Test custom patches</h2>
+    <p><em>Custom patches</em> are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.</p>
+
+    <h3 id="custom-getstarted">Get started</h3>
+    <p>We recommend you test a patch locally in an active branch. After completing testing, you can push the branch to Staging and Production.</p>
+
+    <div>
+
+      <ol>
+        <li>Log in to your local development system, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+        <li>Change to a directory to which the Magento file system owner has write access.</li>
+        <li>
+          <p>Enter the following command in a terminal to log in to your project:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>List your projects. With the project ID, you can complete additional commands.</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre></div>          </div>
+        </li>
+        <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+        <li>
+          <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+</code></pre></div>          </div>
+
+          <div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
+</div>
+        </li>
+        <li>
+          <p>Fetch origin branches to get the latest code:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre></div>          </div>
+
+          <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+        </li>
+        <li>
+          <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre></div>          </div>
+        </li>
+      </ol>
+
+      <h3 id="custom-testlocal">Test a custom patch on your local system</h3>
+
+      <p>To test a custom patch on your local system:</p>
+
+      <ol>
+        <li>
+          <p>On your local system, enter the following command as the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> if you haven’t done so already:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir &lt;Magento project root dir&gt;/m2-hotfixes
+</code></pre></div>          </div>
+        </li>
+        <li>Copy the patch file to that directory.</li>
+        <li>
+          <p>Apply the patch locally:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento project root dir&gt;
+magento-cloud environment:checkout master
+git pull origin master
+git apply &lt;Magento project root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>Clean the Magento cache:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;Magento project root dir&gt;/bin/magento cache:clean
+</code></pre></div>          </div>
+
+          <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
+        </li>
+        <li>
+          <p>After testing the patch, push it to the remote server and deploy it:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Apply patch"
+git push origin &lt;branch name&gt;
+</code></pre></div>          </div>
+        </li>
+      </ol>
+
+      <h3 id="custom-pushpatch">Push a custom patch to Staging or Production environments</h3>
+
+      <p>After you’ve successfully tested a custom patch locally and on your Integration environment, you can push the patch to Staging or Production for Starter and Pro.</p>
+
+      <ol>
+        <li>
+          <p>Open an SSH connection to your Staging or Production environment. For Starter, see the Project Web Interface for the SSH links. Your Production environment is the Master. For Pro, the SSH access is one of the following:</p>
+
+          <ul>
+            <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+            <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+          </ul>
+        </li>
+        <li>
+          <p>On your staging or production system, enter the following command if you haven’t done so already:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir &lt;Magento project root dir&gt;/m2-hotfixes
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>Copy the patch file to that directory.</p>
+
+          <p>We suggest using the following command:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -azvP &lt;source&gt; &lt;destination&gt;
+</code></pre></div>          </div>
+
+          <p>Options:</p>
+
+          <p><code class="highlighter-rouge">a</code> archive</p>
+
+          <p><code class="highlighter-rouge">z</code> compress</p>
+
+          <p><code class="highlighter-rouge">v</code> verbose</p>
+
+          <p><code class="highlighter-rouge">P</code> partial progress</p>
+
+          <p>For additional options, see the <a href="http://linux.die.net/man/1/rsync" target="_blank">rsync man page</a>.</p>
+        </li>
+        <li>
+          <p>Apply the patch:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply &lt;Magento project root dir&gt;/m2-hotfixes/&lt;patch file name&gt;
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>Clean the Magento cache:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;Magento project root dir&gt;/bin/magento cache:clean
+</code></pre></div>          </div>
+
+          <p>You can also clean the cache using the <a href="http://docs.magento.com/m2/ee/user_guide/system/cache-management.html" target="_blank">Magento Admin</a>.</p>
+        </li>
+        <li>
+          <p>After testing the patch, push it to the remote server and deploy it:</p>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Apply patch"
+git push origin &lt;branch name&gt;
+</code></pre></div>          </div>
+        </li>
+      </ol>
+
+      <h4 id="related-topic">Related topic</h4>
+      <ul>
+        <li><a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 

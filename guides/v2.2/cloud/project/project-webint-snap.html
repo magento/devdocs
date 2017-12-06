@@ -1052,6 +1052,20 @@
         
         
         
+        <li class="nav-level2  " id="set-up-notifications">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/env/setup-notifications.html">Set up notifications</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configure-routes---routes.yaml">
             
             
@@ -1522,6 +1536,21 @@
     
     
 
+<li class="nav-level1  " id="composer-package-updates">
+
+    
+    
+    
+    <a href="/guides/v2.2/cloud/patch-notes.html">Composer package updates</a>
+    
+
+    
+</li>
+
+
+    
+    
+
 <li class="nav-level1  " id="troubleshooting">
 
     
@@ -1902,45 +1931,45 @@ persistent data from all running services (for example, your MySQL database, Red
 </ol>
 
 <h2 id="db-dump">Dump your database</h2>
-<p>To create a copy of your database, you dump the data from the database to a file on your local.</p>
+<p>You can create a copy of your database using <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools"><code class="highlighter-rouge">magento/ece-tools</code></a>.</p>
+
+<p>To create a database dump:</p>
 
 <ol>
   <li>
-    <p>SSH into the environment you want to create a database dump from:</p>
+    <p><a href="/guides/v2.2/cloud/env/environments-ssh.html">SSH into the environment</a> that contains the database you want to copy:</p>
 
     <ul>
-      <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li><strong>Staging:</strong> <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li><strong>Production:</strong> <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
       <li>
         <p>To SSH into the <code class="highlighter-rouge">master</code> branch of your Integration environment:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  magento-cloud environment:ssh
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh
 </code></pre></div>        </div>
       </li>
     </ul>
   </li>
   <li>
-    <p>Find the database login information:</p>
+    <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/ece-tools db-dump
 </code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Create a database dump:</p>
   </li>
 </ol>
 
-<p>For Starter environments and Pro Integration environments:</p>
+<div class="bs-callout bs-callout-info">
+  <ul>
+    <li>We recommend putting the application in maintenance mode before doing a database dump in Production environments.</li>
+    <li>The command creates an archive in your local project directory called  <code class="highlighter-rouge">dump-&lt;timestamp&gt;.sql.gz</code>.</li>
+    <li>If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (<code class="highlighter-rouge">/var/log/cloud.log</code>).</li>
+    <li>For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a <code class="highlighter-rouge">var/dbdump.lock</code> file to prevent running the command on more than one node.</li>
+  </ul>
+</div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
-</code></pre></div></div>
-
-<p>For Pro Staging and Production environments, the name of the database is in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable (typically the same as the application name and user name):</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
-</code></pre></div></div>
-
-<p>If you want to push this data into an environment, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate data and static files</a>.</p>
+<div class="bs-callout bs-callout-tip">
+  <p>If you want to push this data into an environment, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate data and static files</a>.</p>
+</div>
 
 <h2 id="rollback-code">Rollbacks to remove code</h2>
 <p>We recommend creating a snapshot of the environment and a backup of the database prior to deployments.</p>
@@ -1965,7 +1994,7 @@ persistent data from all running services (for example, your MySQL database, Red
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-webint-snap.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/project/project-webint-snap.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
