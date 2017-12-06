@@ -32,4 +32,4 @@ pages:
           url: coding-standards/code-standard-html.html
 
     - label: Technical guidelines
-      url: technical-guidelines.html
+      url: coding-standards/technical-guidelines.html
