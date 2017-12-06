@@ -48,7 +48,7 @@ If you need additional environments for development, enter a [Support ticket]({{
 ## Add a branch {#add}
 To add a branch:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	In the left navigation bar, click the name of the parent environment.
 
 	Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
@@ -77,7 +77,7 @@ To add a branch:
 ## Delete to make a branch inactive {#inactive}
 To delete an environment and make it inactive:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click the name of the branch to delete.
 3.	Click **Configure environment** as the following figure shows.
 
@@ -98,7 +98,7 @@ For Pro plan, you can also sync from Staging and Production to your Integration 
 
 To sync an environment with its parent:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click the name of the branch you want to sync.
 3.	Click ![Sync an environment]({{ site.baseurl }}common/images/cloud_environment-sync.png){:width="30px"} (sync).
 
@@ -112,7 +112,7 @@ Merging an environment is the same as `git push origin`. You merge to push updat
 
 To merge an environment with its parent:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click the name of the branch you want to merge.
 3.	Click ![Merge an environment]({{ site.baseurl }}common/images/cloud_environment-merge.png){:width="30px"} (merge).
 4.	Click **Merge** to confirm the action.
@@ -130,7 +130,7 @@ For **Pro** environments, you can review the following logs per environment:
 
 If you do not see your Pro plan Staging and Production environments in the Project Web Interface, you need to [enter a ticket for updating]({{page.baseurl}}cloud/trouble/pro-env-management.html) your project interface.
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click an environment to review logs for.
 3.	The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.
 4.	To view the build log, select the Success or Failure link per deployment record on the account.

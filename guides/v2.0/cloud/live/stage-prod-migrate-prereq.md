@@ -19,7 +19,7 @@ functional_areas:
 
 When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
 
-This information is broken down into prerequisite steps for [Starter](#starter) and [Pro](pro) projects.
+This information is broken down into prerequisite steps for [Starter](#starter) and [Pro](#pro) projects.
 
 ## Starter plan projects {#starter}
 For Starter, make sure all of your code is merged into a single development branch to test prior to deployment to Production. Due to all of your branches and environments being on a PaaS infrastructure, you only need access information for Master Production and other environments as needed. This access information includes your store URLs and SSH link.
