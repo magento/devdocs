@@ -252,7 +252,7 @@ This section discusses how to use Xdebug in Chrome using the Xdebug Helper exten
 
 To use Xdebug Helper with Chrome:
 
-1.	Create an [SSH tunnel](#devbox-xdebug-tunnel) to the Cloud server.
+1.	Create an [SSH tunnel](#ssh) to the Cloud server.
 2.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en){:target="_blank"} from the Chrome store.
 3.	Enable the extension in Chrome as shown in the following figure.
 
