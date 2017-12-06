@@ -32,17 +32,17 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
         </annotations>
         <before>
             <!-- LIST OF ACTIONS -->
-            <click selector="" mergeKey=""/>
+            <click selector="" stepKey=""/>
             <!-- ACTION GROUPS -->
-            <actionGroup ref="" mergeKey="">
+            <actionGroup ref="" stepKey="">
                 <argument name="" value=""/>
             </actionGroup>       
         </before>
         <after>
             <!-- LIST OF ACTIONS -->
-            <click selector="" mergeKey=""/>
+            <click selector="" stepKey=""/>
             <!-- ACTION GROUPS -->
-            <actionGroup ref="" mergeKey="">
+            <actionGroup ref="" stepKey="">
                 <argument name="" value=""/>
             </actionGroup>
         </after>
@@ -54,9 +54,9 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
                 <testCaseId value=""/>
             </annotations>
             <!-- LIST OF ACTIONS -->
-            <click selector="" mergeKey=""/>
+            <click selector="" stepKey=""/>
             <!-- ACTION GROUPS -->
-            <actionGroup ref="" mergeKey="">
+            <actionGroup ref="" stepKey="">
                 <argument name="" value=""/>
             </actionGroup>
         </test>
@@ -160,7 +160,7 @@ Calls a corresponding action group.
 Attribute|Type|Use|Description
 ---|---|---|---
 ref|string|required|
-mergeKey|string|required|
+stepKey|string|required|
 remove|boolean|optional|
 before|string|optional|
 after|string|optional|
