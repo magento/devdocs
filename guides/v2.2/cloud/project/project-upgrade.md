@@ -126,29 +126,8 @@ With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `va
     !/generated/.htaccess
 
 ## Back up the database {#backup-db}
-We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
-Back up your Integration environment database and code:
-
-1.  Enter the following command to make a local backup of the remote database:
-
-        magento-cloud db:dump
-2.  Enter the following command to back up code and media:
-
-        php bin/magento setup:backup --code [--media]
-
-    You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
-
-Back up your staging or production system database:
-
-1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
-2.  Find the database login information:
-
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-
-3.  Create a database dump:
-
-        mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+{% include cloud/backup-db.md %}
 
 ## Verify other changes {#verify-changes}
 Verify other changes you're going to submit to source control before you start the upgrade:

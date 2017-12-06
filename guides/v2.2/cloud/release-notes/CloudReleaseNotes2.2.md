@@ -55,7 +55,7 @@ Magento 2.2.0 includes multiple security enhancements. Although this release inc
 
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
 
-[Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
+[Contact us](https://magento.com/company/contact-us){:target="\_blank"} for more information.
 
 
 ## Known issues {#known}
@@ -116,7 +116,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 ## System requirements {#requirements}
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="\_blank"}.
 
 ## Installation and upgrade instructions {#install-upgrade}
 If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).

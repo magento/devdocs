@@ -169,6 +169,10 @@ pages:
         - label: Set up RabbitMQ service
           url: cloud/project/project-conf-files_services-rabbit.html
 
+        - label: Set up notifications
+          url: cloud/env/setup-notifications.html
+          versions: ["2.2", "2.3"]
+
         - label: Configure routes - routes.yaml
           url: cloud/project/project-conf-files_routes.html
 
@@ -265,6 +269,10 @@ pages:
 
         - label: Launch steps
           url: cloud/live/launch-steps.html
+
+    - label: Composer package updates
+      url: cloud/patch-notes.html
+      versions: ["2.2","2.3"]
 
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
