@@ -28,5 +28,4 @@ The Tool operates in three modes:
 3. **Delta**: transfers incremental data updates, added to Magento 1 {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Panel while running previous migration modes
 
 ## Steps
-
-Each mode consists of several steps that perform specific steps (for example: {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrite, EAV, settings, etc.). Each step initially checks data integrity between Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer. Then the Tool runs the data verification tests again.
+Each mode consists of several steps that perform tasks specific to the mode (for example: URL rewrite, EAV, settings, etc.). Each step initially checks for data and structure integrity between Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer. The Tool then checks the volume of transferred data.
