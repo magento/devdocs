@@ -60,12 +60,10 @@ Magento 2.1.11 contains over . Look for the following highlights in this release
 
 
 ### Framework
-
 <!--- MAGETWO-83646 -->* Magento now successfully decrypts scope-based configuration values in installations running PHP 7.0.x. [GitHub-8591](https://github.com/magento/magento2/issues/8591)
 
 
 ### Import/export
-
 <!--- MAGETWO-69857 -->*  Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option's ID numbers or the option's values, Magento returned an error.
 
 <!--- MAGETWO-69718 -->* Magento no longer changes custom options IDs each time the product is imported or saved. 
@@ -75,46 +73,30 @@ Magento 2.1.11 contains over . Look for the following highlights in this release
 <!--- MAGETWO-84444 -->* We've fixed an issue that lead to wrong products being indexed. Previously, the `mview.xml` configuration used `row_id`  instead of `entity_id` when collecting information from changelogs.
 
 
-
 ### Order management
-
 <!--- MAGETWO-84108 -->* You can now successfully alter the transport variable in the `email_invoice_set_template_vars_before`. Previously, email generated from this template did not reflect the new or changed variables you set in `email_invoice_set_template_vars_before`.  [GitHub-10210](https://github.com/magento/magento2/issues/10210)
-
-
 
 
 ### Payment methods
 <!--- MAGETWO-83149 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
 
 <!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: "Sorry, but something went wrong".
-s
+
 <!--- MAGETWO-83956 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
-
-
-### Performance
 
 
 ### SalesRule
 <!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule. 
 
 
-### Search
-
 ### Sitemap
 <!--- MAGETWO-57166 -->*  Magento no longer generates the sitemap in the wrong folder when `vhost` is connected to `/pub`. Previously, magento generated the sitemap in the root folder instead of the pub folder. [GitHub-2802](https://github.com/magento/magento2/issues/2802)
-
-
-
-### Staging
 
 ### Tax
 <!--- MAGETWO-72280 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
 
-
-
 ### Translations
 <!--- MAGETWO-71591 -->* You can now implement translations from themes (in contrast to translations from modules). 
-
 
 ### Varnish
 <!--- MAGETWO-71701 -->* In environments running Varnish, Magento now handles the menu item of the active category page as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609)
