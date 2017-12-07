@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: tutorial
 group: rest
-title: Plan the product
-menu_title: Plan the product
-menu_order: 1
+title: Step 1. Plan the product
+menu_title: Step 1. Plan the product
+menu_order: 10
+level3_subgroup: configurable-product-tutorial
 version: 2.2
 github_link: rest/tutorials/configurable-product/plan-product.md
 functional_areas:

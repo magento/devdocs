@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: tutorial
 group: rest
-title: Create the personalization option
-menu_title: Create the personalization option
-menu_order: 1
+title: Step 5. Create the personalization option
+menu_title: Step 5. Create the personalization option
+menu_order: 50
+level3_subgroup: configurable-product-tutorial
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-personalization-option.md
 functional_areas:
@@ -38,7 +39,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
 **Response**
 
-```json
+``` json
 {
     "product_sku": "MS-Champ",
     "option_id": 7,
@@ -63,4 +64,13 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ![Search results]({{page.baseurl}}rest/images/add-your-name.png)
 
-  Note: If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
+  <div class="bs-callout bs-callout-info" id="info" markdown="1">
+  If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
+  </div>
+
+  ## Congratulations! You've finished.
+  {:.no_toc}
+
+  ## Related topics
+
+  * [Order Processing with REST APIs Tutorial]({{page.baseurl}}get-started/order-tutorial/order-intro.html)

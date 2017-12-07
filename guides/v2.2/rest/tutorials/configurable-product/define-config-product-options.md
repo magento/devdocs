@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: tutorial
 group: rest
-title: Define configurable product options
-menu_title: Define configurable product options
-menu_order: 1
+title: Step 4. Define configurable product options
+menu_title: Step 4. Define configurable product options
+menu_order: 40
+level3_subgroup: configurable-product-tutorial
 version: 2.2
 github_link: rest/tutorials/configurable-product/define-config-product-options.md
 functional_areas:

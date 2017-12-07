@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: tutorial
 group: rest
-title: Create the configurable product
-menu_title: Create the configurable product
-menu_order: 2
+title: Step 2. Create the configurable product
+menu_title: Step 2. Create the configurable product
+menu_order: 20
+level3_subgroup: configurable-product-tutorial
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-configurable-product.md
 functional_areas:
