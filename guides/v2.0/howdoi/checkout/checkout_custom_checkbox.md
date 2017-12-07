@@ -23,8 +23,7 @@ Let's consider a case where you need to add a check box whose state (selected or
 
 In your custom module directory, create the following new file: `<your_module_dir>/Block/Checkout/SomeProcessor.php`. In this file, add the following code sample. This is a plugin that adds a check box, makes the street labels trackable, and assigns dependencies to the check box.
 
-{%highlight php%}
-<?php
+{%highlight php inline=true%}
 namespace Magento\Checkout\Block\Checkout;
 
 class SomeProcessor
@@ -126,7 +125,6 @@ class SomeProcessor
         return $addressFieldset;
     }
 }
-?>
 {%endhighlight%}
 
 ## Declare plugin in di.xml
