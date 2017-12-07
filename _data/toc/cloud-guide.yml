@@ -273,6 +273,9 @@ pages:
     - label: Composer package updates
       url: cloud/patch-notes.html
       versions: ["2.2","2.3"]
+      children:
+        - label: magento/ece-tools
+          url: cloud/composer-packages/ece-tools.html
 
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
