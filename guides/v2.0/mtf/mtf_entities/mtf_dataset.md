@@ -252,8 +252,7 @@ Also, in similar cases you can use array type in a data set, like:
 
 For example, if a [test case] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with the `$price` argument.
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate($price)
 {
     //
@@ -270,8 +269,7 @@ To assign it with `10` in one of the variations, add the following field to a va
 
 In your test you often need to use injectable [fixture] instances. For example:
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate(\Magento\Catalog\Test\Fixture\CatalogProductSimple $product)
 {
     //

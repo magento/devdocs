@@ -60,9 +60,7 @@ You can use before methods to change the arguments of an observed method by retu
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -81,8 +79,7 @@ You can use these methods to change the result of an observed method by modifyin
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
-{% highlight PHP %}
-<?php
+{% highlight PHP inline=true %}
 
 namespace My\Module\Plugin;
 
@@ -99,9 +96,7 @@ After methods have access to all the arguments of their observed methods. When t
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{site.mage2100url}}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class AuthPlugin
@@ -167,9 +162,7 @@ Before the list of the original method's arguments, around methods receive a `ca
 
 Below is an example of an around method adding behavior before and after an observed method:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -190,9 +183,7 @@ When you wrap a method which accepts arguments, your plugin must also accept tho
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Model;
 
 class MyUtility
@@ -206,9 +197,7 @@ class MyUtility
 
 If you wrapped this method with a plugin like below:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -224,9 +213,7 @@ Note the missing <code>= null</code>. Now, if Magento calls the original method 
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin

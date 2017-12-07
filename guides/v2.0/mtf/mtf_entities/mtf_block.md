@@ -24,9 +24,7 @@ This topic shows how to create a new block and explore its structure. It discuss
 A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
 
 {% collapsible Show/hide the code %}
-{% highlight php %}
-
-<?php
+{% highlight php inline=true %}
 /**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
