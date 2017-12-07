@@ -51,7 +51,7 @@ We use only this one cron for cloud due to the read-only nature of the environme
 
 Magento uses a five value specification for a cron job. The numbers per each `* * * * *` is as follows:
 
-*   Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your [Magento Admin](#admin).
+*   Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your Magento Admin.
 *   Hour (0-23)
 *   Day of month (1 - 31)
 *   Month (1 - 12)
@@ -85,7 +85,7 @@ With the settings:
 *   `bin/magento indexer:reindex catalog_category_product` is the script actions
 
 ## Add cron jobs to .magento.app.yaml {#add-cron}
-You should add all cron jobs to your [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) file in the the `crons` section. 
+You should add all cron jobs to your [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) file in the the `crons` section.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The default minimum frequency for cron jobs is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting in `.magento-app-yaml`.

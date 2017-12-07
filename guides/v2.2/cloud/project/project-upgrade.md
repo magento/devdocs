@@ -41,7 +41,7 @@ To upgrade from **2.0.X**:
 
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
-* [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Verify or set the ADMIN_EMAIL variable](#variable): This variable is required for upgrades and patch to 2.2 and later
 * [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 
 To upgrade from **2.1.X**:
@@ -49,7 +49,7 @@ To upgrade from **2.1.X**:
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
-* [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Verify or set the ADMIN_EMAIL variable](#variable): This variable is required for upgrades and patch to 2.2 and later
 * [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 * [Update .gitignore for new generated directory](#gitignore): With 2.2 and later, changes in generated folder require additions to `.gitignore`
 

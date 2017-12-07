@@ -1,19 +1,16 @@
 ---
 layout: default
 group: cloud
-title: Magento Commerce (Cloud) package updates
+title: magento/ece-tools
 version: 2.2
-github_link: cloud/patch-notes.md
+github_link: cloud/composer-packages/ece-tools.md
 functional_areas:
   - Cloud
   - Setup
   - Configuration
 ---
 
-The release information on this page relates to [Composer packages](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) used by {{site.data.var.ece}} only. For general release information, refer to the main Magento [Release Notes]({{page.baseurl}}release-notes/bk-release-notes.html) page.
-
-## `magento/ece-tools` v2002.0.5
-This package contains the following scripts and magento commands that automatically perform build and deploy actions of the codebase in your environments:
+This package contains the following scripts and {{site.data.var.ece}} commands that automatically perform build and deploy actions of the codebase in your environments:
 
   pre-deploy.php
   bin/magento magento-cloud:deploy
@@ -23,8 +20,13 @@ For {{site.data.var.ece}}, versions are specified as `2.<x>.<y>`. The versioning
 
 `magento/ece-tools` patches strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the magento-cloud-metapackage.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get these updates.
+</div>
+
+## v2002.0.5
+
 ### New features
-<!-- begin magento/ece-tools 2002.0.5 features -->
 * **Build/deploy notifications**. We added a new configuration file that you can use to [set up Slack and/or email notifications](http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html) for build/deploy actions in all your environments.
 
 * **Static content compression**. We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="\_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build) or [deploy variable](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy). See the following topics for more information:
@@ -39,11 +41,7 @@ For {{site.data.var.ece}}, versions are specified as `2.<x>.<y>`. The versioning
 
 * **Cron interval limitations lifted**. All Starter environments and Pro Integration environments now support 1-minute intervals for cron jobs (previously minimum 5 minutes). The default cron interval is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting. To modify your existing cron jobs, edit your settings in .magento.app.yaml. Refer to [Set up cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html) for more information.
 
-<!-- end magento/ece-tools 2002.0.5 features -->
-
 ### Fixed issues
-<!-- begin magento/ece-tools 2002.0.5 bug fixes -->
-
 <!-- MAGECLOUD-1322 -->* We fixed an issue causing errors during the static content generation step of deployment on Production environments.
 
 <!-- MAGECLOUD-1264 -->* We fixed an issue preventing some `magento/ece-tools` commands from logging output to `stderr`.
@@ -58,4 +56,7 @@ For {{site.data.var.ece}}, versions are specified as `2.<x>.<y>`. The versioning
 
 <!-- MAGECLOUD-1138 -->* We fixed and issue causing errors when loading the storefront after enabling HTML minification in the Magento Admin.
 
-<!-- end magento/ece-tools 2002.0.5 bug fixes -->
+## v2002.0.4
+
+### Fixed issues
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.

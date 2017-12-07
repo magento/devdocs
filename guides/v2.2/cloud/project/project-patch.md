@@ -108,7 +108,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
 4.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 5.	After testing the patch, push it to the remote server and deploy it:
 
@@ -116,7 +116,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git push origin <branch name>
 
 ### Patch magento/ece-tools
-This is only required when we release [magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools) updates.
+This is only required when we release [magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html).
 
 1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
 2.  Enter the following command to patch `magento/ece-tools`:

@@ -243,7 +243,7 @@ For detailed examples and custom code, see the following:
 * [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
 * [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
 * [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
-* [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-backend.html)
+* [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
 * [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
 
 <!-- ### Update an existing VCL snippet {#update}

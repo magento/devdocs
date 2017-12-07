@@ -18,7 +18,7 @@ functional_areas:
 
 We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in {{site.data.var.ece}} and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
-Composer is a dependency manager for PHP. Composer manages the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place. For {{site.data.var.ece}}, we use `composer.json` and `composer.lock` to manage your modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more. Magento extension and module developers use `composer.json` to also manage their product installations and upgrades. For details, see [Your project's Composer files](#files).
+Composer is a dependency manager for PHP. Composer manages the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place. For {{site.data.var.ece}}, we use `composer.json` and `composer.lock` to manage your modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more. Magento extension and module developers use `composer.json` to also manage their product installations and upgrades. For details, see [Your project's Composer files](#your-projects-composer-files).
 
 The following sections detail the specifics of {{site.data.var.ece}} composer packages, how they work, and what they do within the code base.
 

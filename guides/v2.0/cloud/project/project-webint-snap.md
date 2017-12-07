@@ -36,7 +36,7 @@ We provide two methods for creating and managing snapshots:
 ## Create a snapshot {#create-snapshot}
 To create an environment snapshot using the Magento Web Interface:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click the name of the environment to back up.
 3.	In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}common/images/cloud_snapshots.png){:width="30px"} (snapshots).
 4.	You are required to confirm the action.
@@ -59,7 +59,7 @@ To create an environment snapshot using the Magento CLI:
 ## Restore a snapshot {#restore-snapshot}
 To restore an environment's snapshot using the Magento Web Interface:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click the name of the environment to restore.
 3.	In the environment's history, click the **restore** link next to the snapshot to restore.
 
