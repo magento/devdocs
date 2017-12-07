@@ -1091,12 +1091,10 @@ The following data types are available:
 
 <p>For example, if a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> or constraint has an argument <code class="highlighter-rouge">$price</code>, then the test case takes from the data set all the <code class="highlighter-rouge">&lt;data&gt;</code> nodes with a name <code class="highlighter-rouge">price</code>. Assume a method with the <code class="highlighter-rouge">$price</code> argument.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+</span><span class="p">}</span></code></pre></figure>
 
 <p>To assign it with <code class="highlighter-rouge">10</code> in one of the variations, add the following field to a variation of the corresponding data set:</p>
 
@@ -1106,12 +1104,10 @@ The following data types are available:
 
 <p>In your test you often need to use injectable <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a> instances. For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nx">\Magento\Catalog\Test\Fixture\CatalogProductSimple</span> <span class="nv">$product</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nx">\Magento\Catalog\Test\Fixture\CatalogProductSimple</span> <span class="nv">$product</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+</span><span class="p">}</span></code></pre></figure>
 
 <p>In this case, the ObjectManager sends data to the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> constructor. It declares that your data can be passed to the fixture in <code class="highlighter-rouge">$data</code> variable as an array. For example, to assign the existing fixture field <code class="highlighter-rouge">weight</code> with <code class="highlighter-rouge">50</code> you can use the following notation:</p>
 

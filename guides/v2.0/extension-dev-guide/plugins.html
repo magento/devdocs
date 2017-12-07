@@ -1304,7 +1304,7 @@
 
 
 			<h3 id="overview">Overview</h3>
-<p>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to <em>substitute</em> or <em>extend</em> the behavior of original, public methods for any class or <em>interface</em>.</p>
+<p>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to <em>substitute</em> or <em>extend</em> the behavior of original, public methods for any <em>class</em> or <em>interface</em>.</p>
 
 <p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code class="highlighter-rouge">Plugin</code> class which are referred to as plugins.</p>
 
@@ -1367,9 +1367,7 @@
 
 <p>Below is an example of a before method modifying the <code class="highlighter-rouge">$name</code> argument before passing it on to the observed <code class="highlighter-rouge">setName</code> method.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
@@ -1377,8 +1375,7 @@
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span><span class="s1">'('</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">')'</span><span class="p">];</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="after-methods">After methods</h4>
 <p>After methods run following the completion of the observed method. These methods must have the same name as the observed method with ‘after’ as the prefix.</p>
@@ -1387,9 +1384,7 @@
 
 <p>Below is an example of an after method modifying the return value <code class="highlighter-rouge">$result</code> of an observed methods call.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
@@ -1397,8 +1392,7 @@
     <span class="p">{</span>
         <span class="k">return</span> <span class="s1">'|'</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">'|'</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <h4 id="around-methods">Around methods</h4>
 <p>Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with ‘around’ as the prefix.</p>
@@ -1411,9 +1405,7 @@
 
 <p>Below is an example of an around method adding behavior before and after an observed method:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
@@ -1426,16 +1418,13 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <p>When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints.</p>
 
 <p>For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Model</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Model</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">MyUtility</span>
 <span class="p">{</span>
@@ -1447,9 +1436,7 @@
 
 <p>If you wrapped this method with a plugin like below:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
 <span class="p">{</span>
@@ -1463,9 +1450,7 @@
 
 <p>It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
 <span class="p">{</span>

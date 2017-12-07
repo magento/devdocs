@@ -868,8 +868,7 @@
 
 <p>A block <code class="highlighter-rouge">Magento\Ui\Test\Block\Messages</code> extends a basic block <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php"><code class="highlighter-rouge">Magento\Mtf\Block\Block</code></a> and implements methods to interact with messages.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show/hide the code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<div class="collapsible"><b class="collapsible-title">Show/hide the code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -1056,8 +1055,7 @@
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">addLayoutUpdates</span><span class="p">()</span>
 <span class="p">{</span>
    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addLayoutUpdates</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <p>This code uses <code class="highlighter-rouge">_rootElement</code> to search the button element by the <code class="highlighter-rouge">$this-&gt;addLayoutUpdates</code> selector. The advantage of the <code class="highlighter-rouge">_rootElement</code> is that it enables search in the context of the block to which the element belongs.</p>
 
@@ -1289,8 +1287,7 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
         <span class="k">return</span> <span class="s1">''</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplateFile</span><span class="p">());</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>Change the code to the following</li>
@@ -1308,8 +1305,7 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
     <span class="k">return</span> <span class="s2">"&lt;!-- BEGIN </span><span class="nv">$name</span><span class="s2"> using </span><span class="nv">$template</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nv">$class</span> <span class="o">.</span> <span class="s2">"--&gt;"</span>
         <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$template</span><span class="p">)</span>
         <span class="o">.</span> <span class="s2">"&lt;!-- END </span><span class="nv">$name</span><span class="s2"> using </span><span class="nv">$template</span><span class="s2"> --&gt;"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>Save the file</li>
@@ -1402,8 +1398,7 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
         <span class="s1">'Magento\Backend\Test\Block\Template'</span><span class="p">,</span>
         <span class="p">[</span><span class="s1">'element'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">templateBlock</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">)]</span>
     <span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <p>In this code we are creating the <code class="highlighter-rouge">Magento\Backend\Test\Block\Template</code> block with the selector <code class="highlighter-rouge">$this-&gt;templateBlock</code>.</p>
 
@@ -1493,8 +1488,7 @@ For example, you develop a functional test for the <span term-uuid="fbcfce51-68e
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">)</span>
         <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">'getOptions'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'product'</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
         <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <p>It contains the <code class="highlighter-rouge">getOptions()</code> method that:</p>
 
