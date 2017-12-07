@@ -258,7 +258,6 @@ public function testCreate($price)
 {
     //
 }
-?>
 {%endhighlight php%}
 
 To assign it with `10` in one of the variations, add the following field to a variation of the corresponding data set:
@@ -277,7 +276,6 @@ public function testCreate(\Magento\Catalog\Test\Fixture\CatalogProductSimple $p
 {
     //
 }
-?>
 {%endhighlight php%}
 
 In this case, the ObjectManager sends data to the [InjectableFixture] constructor. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign the existing fixture field `weight` with `50` you can use the following notation:
