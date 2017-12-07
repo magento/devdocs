@@ -65,45 +65,13 @@ And disable the **Add Secret Key in URLs** setting to open pages using direct UR
 
 Follow these steps to set up the MFTF on your system. 
 
-### Step 1. Clone the magento2 source code repositories into one directory
+### Step 1. Clone the magento2ce source code repository
 
 ```bash
-$ mkdir mftf
-$ cd mftf
 $ git clone git@github.com:magento/magento2ce.git
-$ git clone git@github.com:magento/magento2ee.git
 ```
 
-### Step 2. Link the repositories to make `magento2ee` work properly
-
-```bash
-$ cd magento2ee
-$ php -f dev/tools/build-ee.php -- --command=link --exclude=true
-$ cd ..
-```
-
-### Step 3. Setup your authorization file in the `magento2ce` repository
-
-This step enables you to configure [HTTP basic authentication] for Composer.
-
-Create the `auth.json` file:
-
-```bash
-$ touch magento2ce/dev/tests/acceptance/auth.json
-```
-
-In the `auth.json`, add the `github-oauth` entry:
-
-```json
-{  "github-oauth": {
-      "github.com": "<personal access token>"
-   }
-}
-```
-
-Replace `<personal access token>` with your [personal access token]. The token must have a scope `repo`.
-
-### Step 4. Install dependencies
+### Step 2. Install dependencies
 
 ```bash
 $ cd magento2ce/dev/tests/acceptance
@@ -115,7 +83,7 @@ If you see an error like `404 Not Found`, [update your Composer] and try again.<
 `$ composer selfupdate`
 </div>
 
-### Step 5. Install Robo
+### Step 3. Build project
 
 In `magento2ce/dev/tests/acceptance`, run the following command:
 
@@ -126,18 +94,13 @@ $ vendor/bin/robo build:project
 [Learn more about Robo][robo]
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-To avoid typing evey time `vendor/bin`, add to *PATH* your `<absolute path to acceptance dir>/vendor/bin` value. When added, you should be able to run commands: `robo`, `codecept`, and `phpunit`. 
+To avoid typing `vendor/bin` every time, add to *PATH* your `<absolute path to acceptance dir>/vendor/bin` value. When added, you should be able to run commands: `robo`, `codecept`, and `phpunit`. 
 </div>
 
-### Step 6. Edit environment settings
+### Step 4. Edit environment settings
 
-In the `magento2ce/dev/tests/acceptance` directory, create a configuration file `.env` from `.env.example`:
+In the `magento2ce/dev/tests/acceptance` directory, edit the `.env` file to match your system.
 
-```bash
-$ cp .env.example .env
-```
-
-Open `.env` and add values that correspond to your system.
 The following list describes parameters, required to launch tests.
 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
@@ -151,15 +114,6 @@ Example: `MAGENTO_ADMIN_USERNAME=admin`
 
 * `MAGENTO_ADMIN_PASSWORD` must contain a user password required for authorization in the Admin area. 
 Example: `MAGENTO_ADMIN_PASSWORD=123123q`
-
-* `TESTS_BP` must contain a base path to a directory that contains this configuration file. 
-Example: `TESTS_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance`
-
-* `FW_BP` must contain a base path to a directory with the MFTF framework. 
-Example: `FW_BP=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework`
-
-* `TESTS_MODULE_PATH` must contain a base path to functional tests. 
-Example: `TESTS_MODULE_PATH=/Users/dshevtsov/mftf/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
 The following self-descriptive variables have default values (included).
 
