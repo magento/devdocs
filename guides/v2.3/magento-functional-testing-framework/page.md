@@ -84,7 +84,7 @@ The `AdminCategoryPage` declares four [sections][section]:
 Example of a call in test:
 {%raw%}
 ```xml
-<amOnPage url="{{AdminCategoryPage.url}}" mergeKey="navigateToAdminCategory"/>
+<amOnPage url="{{AdminCategoryPage.url}}" stepKey="navigateToAdminCategory"/>
 ```
 
 ### Parameterized page
@@ -108,7 +108,7 @@ It will be merged with other `StorefrontCategoryPage` pages from other modules.
 Example of a call in test:
 
 ```xml
-<amOnPage url="{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}" mergeKey="navigateToCategoryPage"/>
+<amOnPage url="{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}" stepKey="navigateToCategoryPage"/>
 ```
 
 The `StorefrontCategoryPage` page is declared as parameterized, where `url` contains a `{{var1}}` parameter.

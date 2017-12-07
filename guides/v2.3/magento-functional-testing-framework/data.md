@@ -128,7 +128,7 @@ Both entities are of type `category`.
 Example of use in test:
 
 ```xml
-<fillField selector="{{AdminCategoryBasicFieldSection.categoryNameInput}}" userInput="{{_defaultCategory.name}}" mergeKey="enterCategoryName"/>
+<fillField selector="{{AdminCategoryBasicFieldSection.categoryNameInput}}" userInput="{{_defaultCategory.name}}" stepKey="enterCategoryName"/>
 ```
 
 This action inputs data from `name` of the `_defaultCategory` entity (for example, `simpleCategory598742365`) into the field with locator defined in the selector of the `categoryNameInput` element of the `AdminCategoryBasicFieldSection`.

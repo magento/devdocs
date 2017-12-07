@@ -26,8 +26,8 @@ Substitutable values in the test can be of the following formats:
 * String Literals: `stringLiteral`
 * Reference to data entity (XML data from the corresponding _.../Data/*.xml_): `entityName.Field`
 * Persisted Data
-    * `$persistedCreateDataKey.field$` for data created in scope of a [test] using [createData] action with `mergeKey="persistedCreateDataKey"`
-    * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `mergeKey="persistedCreateDataKey"`
+    * `$persistedCreateDataKey.field$` for data created in scope of a [test] using [createData] action with `stepKey="persistedCreateDataKey"`
+    * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `stepKey="persistedCreateDataKey"`
 
 The following diagram demonstrates XML structure of a section in the MFTF:
 
@@ -84,7 +84,7 @@ Example of a call in test:
 {%raw%}
 ```xml
 <!-- Click on the button with locator "#add_subcategory_button" on the web page-->
-<click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" mergeKey="clickOnAddSubCategory"/>
+<click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
 ```
 ## Available elements
 
