@@ -23,15 +23,14 @@ We are pleased to present Magento Commerce  2.1.11. This release includes import
 
 ## Highlights
 
-Magento 2.1.11 contains over . Look for the following highlights in this release:
+Magento 2.1.11 contains both exciting new features and many improvements. Look for the following highlights in this release.
 
 
 ### New features
 
- * **Support for the Indian Rupee (INR) in PayPal Express Checkout**
+* **Support for the Indian Rupee (INR) in PayPal Express Checkout**
 
-* **New commands and functionality for the command-line interface**. We've added  interactivity to the `admin:user:create` command, and added ability to handle CLI setup interactively (with prompts). For more information, see XXX.
-
+* **New commands and functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command, and added ability to handle CLI setup interactively (with prompts). 
 
 
 ## Fixes and enhancements (highlights)
@@ -44,7 +43,7 @@ Magento 2.1.11 contains over . Look for the following highlights in this release
 
 <!--- MAGETWO-71515 -->* Magento now displays the correct price for a simple child product that has a price that is lower than other options (and for which no options on the configurable product have been selected). Previously under these circumstances, Magento displayed the lowest possible price, not the correct price, for the product.
 
-<!--- MAGETWO-58503 -->* You can now add a configurable product to your cart from the Category page. Previously, you had to review the product on the Product page before adding it to your cart. GitHub-2574 GitHub-5850 GitHub-5882 GitHub-6572 GitHub-5558 GitHub-8470
+<!--- MAGETWO-58503 -->* You can now add a configurable product to your cart from the Category page. Previously, you had to review the product on the Product page before adding it to your cart. [GitHub-2574](https://github.com/magento/magento2/issues/2574), [GitHub-5850](https://github.com/magento/magento2/issues/5850), [GitHub-5882](https://github.com/magento/magento2/issues/5882), [GitHub-6572](https://github.com/magento/magento2/issues/6572, [GitHub-5558](https://github.com/magento/magento2/issues/5558), [GitHub-8470](https://github.com/magento/magento2/issues/8470)
 
 
 ## Fixed issues
