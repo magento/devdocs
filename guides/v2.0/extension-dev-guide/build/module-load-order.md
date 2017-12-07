@@ -28,13 +28,14 @@ If you know that your component's logic depends on something in another componen
 
 Assume you have a component that needs a configuration file from another component:
 
-__Component A__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock` from __component B__. In this case, layout files from __component A__ should be loaded before __component B__, so you should specify that in __component B's__ `<sequence>` entry in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml. That is to say:
+__Component A__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock` from __component B__. In this case, layout files from __component A__ should be loaded before __component B__, so you should specify that in __component B's__ `<sequence>` entry in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml. In other words, __component B__ is dependent on __component A__. That is to say:
 
 {% highlight XML %}
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Vendor_ComponentB" setup_version="0.0.1">
         <sequence>
+	    <!-- Vendor_ComponentB is dependent on Vendor_ComponentA: -->
             <module name="Vendor_ComponentA" />
         </sequence>
     </module>
