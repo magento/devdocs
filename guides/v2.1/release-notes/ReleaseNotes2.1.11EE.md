@@ -33,7 +33,7 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 * **New commands and functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command, and added ability to handle CLI setup interactively (with prompts). 
 
 
-## Fixes and enhancements (highlights)
+### Fixes and enhancements (highlights)
 
 * **Significant enhancements for payment methods**. We've fixed an issue where some Braintree refunds did not work. Braintree online refunds now work when you are using two Braintree accounts on two separate websites.
 
