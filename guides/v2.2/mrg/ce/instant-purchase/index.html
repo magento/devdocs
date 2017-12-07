@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento_CmsStaging module | Magento 2 Developer Documentation</title>
+	<title>Instant Purchase module | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/mrg/ee/CmsStaging.html">
+	<link rel="canonical" href="//guides/v2.2/mrg/ce/instant-purchase/">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/mrg/ee/CmsStaging.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/mrg/ce/instant-purchase/index.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/mrg/ee/CmsStaging.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/mrg/ce/instant-purchase/index.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/mrg/ee/CmsStaging.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/mrg/ce/instant-purchase/index.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -305,7 +305,7 @@
         
         
         
-        <li class="nav-level2  " id="instant-purchase">
+        <li class="nav-level2 active " id="instant-purchase">
             
             
         
@@ -438,7 +438,7 @@
         
         
         
-        <li class="nav-level2 active " id="cmsstaging">
+        <li class="nav-level2  " id="cmsstaging">
             
             
         
@@ -1061,7 +1061,7 @@
 
           
 
-          <span property="name">Magento_CmsStaging module</span>
+          <span property="name">Instant Purchase module</span>
 
         
 
@@ -1081,12 +1081,10 @@
 
 
 	
-		<span class="ee-only">Magento Commerce only</span>
-	
 
 	
 
-	<h1 class="page-heading">Magento_CmsStaging module</h1>
+	<h1 class="page-heading">Instant Purchase module</h1>
 
   
 
@@ -1094,79 +1092,310 @@
 </section>
 
 
-			<p>The Magento_CmsStaging <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is a part of the staging functionality in Magento Commerce. It enables you to add the <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> Page and the <span term-uuid="edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9" class="glossary-term" data-toggle="popover">CMS Block</span> updates to the existing store campaigns. These updates are shown on the campaign dashboard.</p>
+			<p>The <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> allows customers to place orders in seconds without going through full checkout process.</p>
+
+<p>This feature takes the form of a button on product pages.
+When customers click this button, the system places their order using the default shipping, billing address, and stored payment method.
+When the order is placed, a confirmation message appears in the notification area.</p>
+
+<p>This article explains how the module works and ways to customize it using its extension points.
+For merchant instructions, see <a href="http://docs.magento.com/m2/ce/user_guide/sales/checkout-instant-purchase.html">Instant Purchase</a> in the user guide.</p>
 
 <h2 id="implementation-details">Implementation details</h2>
 
-<p>The Magento_CmsStaging module changes the CMS Pages and CMS Blocks creation pages to make them compatible with the Magento Staging Framework. This module depends on the Magento_Cms module and extends its functionality. It changes the database structure of the Magento_Cms module and the way in which CMS Pages/Blocks are managed.</p>
-
-<h3 id="cms-pages">CMS Pages</h3>
-
-<p>You can stage the following parameters:</p>
+<p>The logic found in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> is divided in two parts:</p>
 
 <ul>
-  <li>Enable/Disable CMS Page</li>
-  <li>Page Title</li>
-  <li>Content
-    <ul>
-      <li>Content Heading</li>
-      <li>Content (WYSIWYG)</li>
-    </ul>
+  <li><a href="#instant-purchase-capability">Instant Purchase capability</a></li>
+  <li><a href="#order-placement">Order placement</a></li>
+</ul>
+
+<h3 id="instant-purchase-capability">Instant Purchase capability</h3>
+
+<p>The Instant Purchase module allows any type of product to be added to an instant purchase order.</p>
+
+<p>The module creates an additional section in the <a href="/guides/v2.2/extension-dev-guide/cache/page-caching/private-content.html">Customer Data cache</a> and allows the client side to cache Instant Purchase data.
+This data is updated when relevant customer data changes, such as adding or removing a stored payment method or the default shipping address.</p>
+
+<h4 id="important-interfaces">Important interfaces</h4>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseInterface.php"><code class="highlighter-rouge">InstantPurchaseInterface</code></a></p>
+
+    <p>The implementation for this interface defines Instant Purchase calculations.
+The default implementation uses several interfaces to choose the appropriate payment method, billing and shipping addresses, and shipping method.</p>
   </li>
-  <li><span term-uuid="ae8f7f2b-ddfb-41ed-bec3-bed191406fdd" class="glossary-term" data-toggle="popover">Search Engine Optimization</span>
-    <ul>
-      <li>URL Key</li>
-      <li>Meta Keywords</li>
-      <li>Meta Description</li>
-    </ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/PaymentMethodChoose/PaymentTokenChooserInterface.php"><code class="highlighter-rouge">PaymentTokenChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the stored payment method.
+The default value is the last created and saved payment method used.</p>
+
+    <p>Instant Purchase will not use payment methods that were used but not saved.</p>
   </li>
-  <li>Design
-    <ul>
-      <li>Layout</li>
-      <li>Layout Update XML</li>
-      <li>Theme</li>
-    </ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/ShippingAddressChoose/ShippingAddressChooserInterface.php"><code class="highlighter-rouge">ShippingAddressChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the shipping address.
+The default implementation chooses the default shipping address set by the customer.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/BillingAddressChoose/BillingAddressChooserInterface.php"><code class="highlighter-rouge">BillingAddressChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the billing address.
+The default implementation chooses the default billing address set by the customer.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php"><code class="highlighter-rouge">ShippingMethodChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the shipping method.
+The default implementation chooses the cheapest shipping method.</p>
+
+    <p>Since the final price of the shipment is calculated after product and quantity are specified in the final confirmation, “Cheapest price” is displayed in the confirmation pop-up for the customer.</p>
   </li>
 </ul>
 
-<h3 id="cms-blocks">CMS Blocks</h3>
+<div class="bs-callout bs-callout-tip">
+  <p>The Instant Purchase capability logic is the most customizable part of the module.
+For more customization details, see the <a href="#customization-points">Customization Points</a> section.</p>
+</div>
 
-<p>The following parameters can be staged:</p>
+<h3 id="order-placement">Order placement</h3>
+
+<p>The logic for the order placement process in the Instant Purchase module is found in the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/PlaceOrder.php"><code class="highlighter-rouge">PlaceOrder</code></a> class.</p>
+
+<p>The whole process is divided into several steps with each step implemented by a corresponding class in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase/Model/QuoteManagement"><code class="highlighter-rouge">Magento\InstantPurchase\Model\QuoteManagement</code></a> namespace.</p>
+
+<p>Since order placement requires specific steps to be followed, this part of the module does not declare separate interfaces.
+To customize the behavior of the order placement process, use <a href="/guides/v2.2/extension-dev-guide/plugins.html">plugins</a>.</p>
+
+<h2 id="customization-points">Customization Points</h2>
+
+<p>Almost all aspects of the Instant Purchase module behavior may be changed by overriding preferences for interfaces marked with the <code class="highlighter-rouge">@api</code> annotation.</p>
+
+<h3 id="instant-purchase-calculation">Instant Purchase calculation</h3>
+
+<p>Custom implementations of the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseInterface.php"><code class="highlighter-rouge">InstantPurchaseInterface</code></a> should return an <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseOption.php"><code class="highlighter-rouge">InstantPurchaseOption</code></a> object.</p>
+
+<p>The <code class="highlighter-rouge">InstantPurchaseOption</code> object is a data container that holds the stored payment method, shipping and billing addresses, and shipping method used by the Instant Purchase module.
+The logic of how this data is retrieved is the responsibility of the <code class="highlighter-rouge">InstantPurchaseInterface</code> implementation.</p>
+
+<p>To create an <code class="highlighter-rouge">InstantPurchaseOption</code> object from the gathered data, use the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseOptionFactory.php"><code class="highlighter-rouge">InstantPurchaseOptionFactory</code></a>.</p>
+
+<p>The customization points for stored payment, shipping address, billing address, and shipping method are used in the default <code class="highlighter-rouge">InstantPurchaseInterface</code> implementation (<a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseChooser.php"><code class="highlighter-rouge">InstantPurchaseChooser</code></a>).
+They become invalid if a different implementation is used.</p>
+
+<p>The <code class="highlighter-rouge">choose()</code> method for custom implementations of the following interfaces must return an instance of the correct class or <code class="highlighter-rouge">null</code> if nothing can be chosen.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customization Point</th>
+      <th>Interface</th>
+      <th>Return Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Stored Payment</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/PaymentMethodChoose/PaymentTokenChooserInterface.php"><code class="highlighter-rouge">PaymentTokenChooserInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a></td>
+    </tr>
+    <tr>
+      <td>Shipping Address</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/ShippingAddressChoose/ShippingAddressChooserInterface.php"><code class="highlighter-rouge">ShippingAddressChooserInterface</code></a></td>
+      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
+    </tr>
+    <tr>
+      <td>Billing Address</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/BillingAddressChoose/BillingAddressChooserInterface.php"><code class="highlighter-rouge">BillingAddressChooserInterface</code></a></td>
+      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
+    </tr>
+    <tr>
+      <td>Shipping Method</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php"><code class="highlighter-rouge">ShippingMethodChooserInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Quote/Api/Data/ShippingMethodInterface.php"><code class="highlighter-rouge">ShippingMethodInterface</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="deferred-shipping-method">Deferred Shipping Method</h4>
+
+<p>Choosing the shipping method based on a customer’s address is difficult without all the information on the shipping subject because it is hard to estimate the cost and effort.
+To address this issue, the Instant Purchase module allows you to postpone the final decision on which shipping method to use until the exact product and quantity is known.</p>
+
+<p>Use the following steps to help you implement a custom deferred shipping method:</p>
+
+<ol>
+  <li>Create an implementation of the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php"><code class="highlighter-rouge">ShippingMethodChooserInterface</code></a> with a <code class="highlighter-rouge">choose()</code> method that returns a <code class="highlighter-rouge">ShippingMethodInterface</code> with the following properties:
+    <ul>
+      <li>Returns <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/DeferredShippingMethodChooserInterface.php#L20"><code class="highlighter-rouge">DeferredShippingMethodChooserInterface::CARRIER</code></a> when <code class="highlighter-rouge">getCarrierCode()</code> is called.</li>
+      <li>
+        <p>Returns a unique string when <code class="highlighter-rouge">getMethodCode()</code> is called.</p>
+
+        <p>This string is used as a key to determine the corresponding logic during order placement.</p>
+      </li>
+      <li>
+        <p>Returns a translated phrase when <code class="highlighter-rouge">getCarrierTitle()</code> is called.</p>
+
+        <p>This phrase is shown as the shipping method description in the Instant Purchase confirmation pop-up.</p>
+      </li>
+      <li>Returns <code class="highlighter-rouge">true</code> when <code class="highlighter-rouge">getAvailable()</code> is called.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Create an implementation of the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/DeferredShippingMethodChooserInterface.php"><code class="highlighter-rouge">DeferredShippingMethodChooserInterface</code></a>.
+Unlike the <code class="highlighter-rouge">ShippingMethodChooserInterface</code>, this interface retrieves the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Quote/Model/Quote/Address.php"><code class="highlighter-rouge">Quote\Address</code></a> instead of the customer’s address, so it has access to the necessary data.</p>
+
+    <p>This method must return a string that identifies the shipping method using the format <code class="highlighter-rouge">&lt;carrier code&gt;_&lt;method code&gt;</code> or <code class="highlighter-rouge">null</code> if nothing can be chosen.</p>
+  </li>
+  <li>Add an entry in the <a href="/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file that specifies your defined method code and custom implementation:</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\InstantPurchase\Model\ShippingMethodChoose\DeferredShippingMethodChooserPool"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"choosers"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- item name attribute is method code defined in ShippingMethodChooserInterface implementation--&gt;</span>
+            <span class="c">&lt;!-- item value is class name of DeferredShippingMethodChooserInterface implementation--&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"cheapest"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\InstantPurchase\Model\ShippingMethodChoose\CheapestMethodDeferredChooser<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<h3 id="order-placement-1">Order placement</h3>
+
+<p>You can customize order placement using <a href="/guides/v2.2/extension-dev-guide/plugins.html">plugins</a>.
+Before and after plugins can be created to add custom behaviors in the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/PlaceOrder.php"><code class="highlighter-rouge">PlaceOrder</code></a> class and any class in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase/Model/QuoteManagement"><code class="highlighter-rouge">Magento\InstantPurchase\Model\QuoteManagement</code></a> namespace.</p>
+
+<p>Customizing payment handling is a special case for the order placement process.
+See <a href="#payment-method-integration">Payment Method Integration</a> for more details.</p>
+
+<h3 id="confirmation-pop-up">Confirmation pop-up</h3>
+
+<p>You can customize the strings on the Instant Purchase confirmation pop-up by using <a href="/guides/v2.2/extension-dev-guide/plugins.html">plugins</a> on classes in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase/Model/Ui"><code class="highlighter-rouge">Magento\InstantPurchase\Model\Ui</code></a> namespace.
+The format of the payment method can also be customized for <a href="#payment-token-formatter">specific payments</a>.</p>
+
+<h2 id="payment-method-integration">Payment method integration</h2>
+
+<p>A payment method implementation can be integrated with Instant Purchase if it meets the following requirements:</p>
 
 <ul>
-  <li>Enable/Disable CMS Block</li>
-  <li>Block Title</li>
-  <li>Identifier</li>
-  <li><span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">Store View</span></li>
-  <li>Content (WYSIWYG)</li>
+  <li>It implements the <a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">payment provider gateway</a> mechanism.</li>
+  <li>It implements <a href="/guides/v2.2/payments-integrations/vault/vault-intro.html">vault integration</a>.</li>
+  <li>The payment along with the stored payment token is processed on the server side</li>
 </ul>
 
-<h3 id="installation-details">Installation details</h3>
+<p>The framework for payment method integration is provided in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration"><code class="highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration</code></a> namespace.</p>
 
-<p>The Magento_CmsStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.</p>
+<p>Integration is not enabled by default and requires developer action to make sure everything works as expected and avoid unpredictable bugs on production sites.</p>
 
-<h2 id="dependencies">Dependencies</h2>
+<p>If the payment method meets all the requirements listed, you can enable Instant Purchase integration by adding several lines in the <code class="highlighter-rouge">config.xml</code> file.</p>
 
-<p>You can find the list of modules that have dependencies on the Magento_CmsStaging module in the <code class="highlighter-rouge">require</code> section of the <code class="highlighter-rouge">composer.json</code> file. The file is located in the root directory of the module.</p>
+<p>The minimal configuration for Instant Purchase integration development is as follows:</p>
 
-<h2 id="extension-points">Extension points</h2>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+    <span class="nt">&lt;payment&gt;</span>
+      <span class="nt">&lt;vault_payment_method_code&gt;</span><span class="c">&lt;!-- replace this value with your vault payment method code --&gt;</span>
+        <span class="nt">&lt;instant_purchase&gt;</span>
+            <span class="nt">&lt;supported&gt;</span>1<span class="nt">&lt;/supported&gt;</span>
+        <span class="nt">&lt;/instant_purchase&gt;</span>
+      <span class="nt">&lt;/vault_payment_method_code&gt;</span>
+    <span class="nt">&lt;/payment&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+<span class="nt">&lt;/config&gt;</span>  
+</code></pre></div></div>
 
-<p><span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> points enable extension developers to interact with the Magento_CmsStaging module. For more information about the Magento extension mechanism, see <a href="http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html">Magento plug-ins</a>.</p>
+<p>The minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.
+The following is an example of a full configuration meant for production:</p>
 
-<p><a href="http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html">The Magento dependency injection mechanism</a> enables you to override the functionality of the Magento_CmsStaging module.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+    <span class="nt">&lt;payment&gt;</span>
+      <span class="nt">&lt;vault_payment_method_code&gt;</span><span class="c">&lt;!-- replace this value with your vault payment method code --&gt;</span>
+        <span class="nt">&lt;instant_purchase&gt;</span>
+            <span class="nt">&lt;available&gt;</span>Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\AvailabilityCheckerInterface<span class="nt">&lt;/available&gt;</span>
+            <span class="nt">&lt;tokenFormat&gt;</span>Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentTokenFormatterInterface<span class="nt">&lt;/tokenFormat&gt;</span>
+            <span class="nt">&lt;additionalInformation&gt;</span>Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentAdditionalInformationProviderInterface<span class="nt">&lt;/additionalInformation&gt;</span>
+        <span class="nt">&lt;/instant_purchase&gt;</span>
+      <span class="nt">&lt;/vault_payment_method_code&gt;</span>
+    <span class="nt">&lt;/payment&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+<span class="nt">&lt;/config&gt;</span>  
+</code></pre></div></div>
 
-<h3 id="ui-components">UI components</h3>
+<p>All elements of the integration configuration are optional and have default implementations.
+If some integration options are provided, then explicit usage of <code class="highlighter-rouge">&lt;supported&gt;1&lt;/supported&gt;</code> is not required.
+However, adding <code class="highlighter-rouge">&lt;supported&gt;0&lt;/supported&gt;</code> will disable integration regardless of all other settings.</p>
 
-<p>You can extend product and <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> updates using the UI components located in the <code class="highlighter-rouge">Magento\CmsStaging\view\adminhtml\ui_component</code> directory. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html">UI Listing/Grid Component</a>.</p>
+<h3 id="integration-availability-checker">Integration availability checker</h3>
 
-<h3 id="layouts">Layouts</h3>
+<p>The integration availability checker allows you to specify if your payment integration is available based on the current Magento configuration specification or other data.
+For example, Magento Open Source provides Braintree Stored Credit Cards which supports Instant Purchase unless 3D Secure is enabled.</p>
 
-<p>You can extend and override layouts in the <code class="highlighter-rouge">Magento\CmsStaging\view\adminhtml\layout</code> directory.
-For more information about layouts, see the <a href="http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Layout documentation</a>.</p>
+<p>The default implementation for the availability checker always returns <code class="highlighter-rouge">true</code>.</p>
 
-<h2 id="additional-information">Additional information</h2>
+<p>Custom availability checkers need to implement the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/AvailabilityCheckerInterface.php"><code class="highlighter-rouge">AvailabilityCheckerInterface</code></a> and can be applied to a payment method by specifying the class name (or virtual type name) in the <code class="highlighter-rouge">default/payment/&lt;vault payment method code&gt;/instant_purchase/available</code> configuration option.</p>
 
-<p>You can track <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html">backward incompatible changes made in a Magento Commerce mainline after the Magento 2.0 release</a>.</p>
+<h3 id="payment-token-formatter">Payment Token Formatter</h3>
+
+<p>The Magento <a href="https://github.com/magento/magento2/tree/2.2/app/code/Magento/Vault">Vault module</a> provides an interface to persist and manage stored payment methods.</p>
+
+<p>The properties defined in the interface is necessary to use the payment method.</p>
+
+<p>Almost all the information used to provide the description for stored payment methods are stored as additional data and are not standardized.
+This is why the default token formatter returns the payment method title as the token description.</p>
+
+<p>We recommend you provide a custom token formatter for your Instant Purchase integration to provide the correct information for your payment token</p>
+
+<p>A custom payment token formatter should implement the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentTokenFormatterInterface.php"><code class="highlighter-rouge">PaymentTokenFormatterInterface</code></a> and return a human-readable string that describes the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a>.</p>
+
+<p>The Instant Purchase module guarantees that the correct token associated with corresponding payment method is passed to the formatter.
+To configure the formatter, use the <code class="highlighter-rouge">default/payment/&lt;vault payment method code&gt;/instant_purchase/tokenFormat</code> configuration path.</p>
+
+<h3 id="additional-payment-information-provider">Additional Payment Information Provider</h3>
+
+<p>Some payment methods require the collection of additional information during the checkout process for order placement.</p>
+
+<p>By default, the Instant Purchase module specifies the following properties as additional payment information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">customer_id</code></td>
+      <td>Holds the Customer identifier</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">public_hash</code></td>
+      <td>The public hash for the stored payment method</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">is_active_payment_token_enabler</code></td>
+      <td>Required by Vault framework</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To change the default behavior or add specific fields, implement the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentAdditionalInformationProviderInterface.php"><code class="highlighter-rouge">PaymentAdditionalInformationProviderInterface</code></a> and specify it as the value for the <code class="highlighter-rouge">default/payment/&lt;vault payment method code&gt;/instant_purchase/additionalInformation</code> configuration option.
+The default implementation returns an empty array.</p>
+
+<h3 id="instant-purchase-payment-marker">Instant Purchase Payment Marker</h3>
+
+<p>In most cases, developers should use interfaces for custom implementations and not rely on internal code.</p>
+
+<p>However, sometimes conditional logic for payment processing needs to be implemented to handle payments initiated from different entry points.</p>
+
+<p>For these cases, the payment object’s <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Payment/Model/InfoInterface.php"><code class="highlighter-rouge">InfoInterface</code></a> holds an <code class="highlighter-rouge">additional_information</code> property, accessible via the <code class="highlighter-rouge">getAdditionalInformation()</code> method, which can return the <code class="highlighter-rouge">instant-purchase</code> marker.
+Use this marker if no other options are available to implement specific payment logic for the Instant Purchase module.</p>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1177,14 +1406,14 @@ For more information about layouts, see the <a href="http://devdocs.magento.com/
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/mrg/ee/CmsStaging.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/mrg/ce/instant-purchase/index.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/mrg/ee/CmsStaging.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/mrg/ce/instant-purchase/" target="_blank">Give us feedback</a>
   </div>
 
 </div>
