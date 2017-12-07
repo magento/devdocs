@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Image Resize Issue with Magento version 2.1.6 | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce (Cloud) 2.1.6 through 2.1.11 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/release-notes/tech_bull_216-imageresize.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/tech_bull_216-imageresize.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/tech_bull_216-imageresize.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/tech_bull_216-imageresize.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -695,7 +695,7 @@
 
                 
                 
-                <li class="nav-level3  " id="magento-commerce-(cloud)-versions-2.1.6-through-2.1.11-release-notes">
+                <li class="nav-level3 active " id="magento-commerce-(cloud)-versions-2.1.6-through-2.1.11-release-notes">
                     
 
                     
@@ -934,7 +934,7 @@
 
           
 
-          <span property="name">Image Resize Issue with Magento version 2.1.6</span>
+          <span property="name">Magento Commerce (Cloud) 2.1.6 through 2.1.11 Release Notes</span>
 
         
 
@@ -957,7 +957,7 @@
 
 	
 
-	<h1 class="page-heading">Image Resize Issue with Magento version 2.1.6</h1>
+	<h1 class="page-heading">Magento Commerce (Cloud) 2.1.6 through 2.1.11 Release Notes</h1>
 
   
 
@@ -965,65 +965,29 @@
 </section>
 
 
-			<p><em>Technical bulletin updated on May 17, 2017.</em></p>
+			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) for versions 2.1.6 through 2.1.11.</p>
 
-<p>These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6.</p>
+<h2 id="fixes-in-this-release">Fixes in this release</h2>
 
-<h3 id="who-needs-this-information">Who needs this information?</h3>
-<p>You need to read this bulletin if you’ve upgraded to Magento 2.1.6 (Open Source or Commerce) and are experiencing any of the following issues:</p>
-
+<!--MAGECLOUD-1246-->
 <ul>
-  <li>
-    <p>all images on the product front end appear reduced in size, including the base image</p>
-  </li>
-  <li>
-    <p>images do not have uniform sizes – some are greatly reduced, while others appear as expected. (This particular anomaly occurs after you’ve run the <code class="highlighter-rouge">bin/magento catalog:images:resize</code> command.)</p>
-  </li>
+  <li>The RabbitMQ configuration process now obtains all required parameters automatically.</li>
 </ul>
 
-<p>You cannot change the size of the base image within the gallery by editing <code class="highlighter-rouge">etc &gt; view.xml</code>. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.</p>
+<!--MAGECLOUD-912-->
+<ul>
+  <li>AMQP settings in the <code class="highlighter-rouge">app/etc/env.php</code> file are no longer empty after enabling the RabbitMQ service.</li>
+</ul>
 
-<h3 id="background">Background</h3>
+<!--MAGECLOUD-1317-->
+<ul>
+  <li>We fixed an issue with Elasticsearch configuration settings on deployment.</li>
+</ul>
 
-<p>Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The <code class="highlighter-rouge">frame</code> element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is <strong>true</strong>.</p>
-
-<p>If your custom theme doesn’t include the <code class="highlighter-rouge">frame</code> element, or a value has not been assigned to it, then Magento will rely upon the <code class="highlighter-rouge">product_image_white_borders</code> option in the Catalog module for the value of the <code class="highlighter-rouge">frame</code> option. The <code class="highlighter-rouge">product_image_white_borders</code> setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes.</p>
-
-<h3 id="action">Action</h3>
-<p>We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only.</p>
-
-<h4 id="magento-21x-ce">Magento 2.1.x CE</h4>
-<p>You can fix this issue with image resizing by downloading  and installing the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
-
-<p>To download this patch,</p>
-
-<p>1) On <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>, choose <strong>Downloads &gt; Magento Community Edition Patches &gt; 2.x</strong>.</p>
-
-<p>2) Select the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix.</p>
-
-<h4 id="magento-21x-ee">Magento 2.1.x EE</h4>
-<p>You can fix this issue with image resizing by downloading and installing the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
-
-<p>To download this patch,</p>
-
-<p>1) Log in to your EE client account by selecting <strong>My Account</strong> on <a href="https://magentocommerce.com" target="_blank">magentocommerce.com</a>.</p>
-
-<p>2) After logging in, navigate to MAGETWO-67805 on the Support Patches page (<strong>Downloads &gt; Magento Enterprise Edition 2.X &gt; Magento Enterprise Edition 2.x Release &gt; Support Patches &gt; MAGETWO-67805</strong>).</p>
-
-<p>3) Select and install the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix.</p>
-
-<h4 id="magento-commerce-cloud">Magento Commerce (Cloud)</h4>
-<p>General Magento Commerce (Cloud) patches are provided for all Magento Commerce (Cloud) customers in a repository referenced in your <code class="highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. <code class="highlighter-rouge">magento-cloud-configuration 101.6.2</code> contains the hot fix for this image resize issue.</p>
-
-<p>See <a href="http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html" target="_blank">Update extensions</a> for more information on running <code class="highlighter-rouge">composer update</code> to upgrade your Cloud extension.</p>
-
-<h3 id="more-information">More information</h3>
-
-<p>For further discussion of this issue, see <a href="https://github.com/magento/magento2/issues/9385" target="_blank">GITHUB-9385</a> and <a href="https://github.com/magento/magento2/issues/9395" target="_blank">GITHUB-9395</a></p>
-
-<h2 id="credits">Credits</h2>
-<p>Dear community members, thank you for your prompt identification of this issue.</p>
-
+<!--MAGECLOUD-1281-->
+<ul>
+  <li>We fixed an issue causing errors during the static content generation step of deployment on Production environments.</li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1034,14 +998,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/tech_bull_216-imageresize.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/tech_bull_216-imageresize.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

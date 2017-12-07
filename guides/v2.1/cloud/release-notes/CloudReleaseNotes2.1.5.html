@@ -695,6 +695,20 @@
 
                 
                 
+                <li class="nav-level3  " id="magento-commerce-(cloud)-versions-2.1.6-through-2.1.11-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html">Magento Commerce (Cloud) versions 2.1.6 through 2.1.11 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
                 <li class="nav-level3 active " id="magento-commerce-(cloud)-version-2.1.5-and-2.0.13-release-notes">
                     
 
@@ -958,6 +972,23 @@
 <ul>
   <li>This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.</li>
   <li>Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
+</ul>
+
+<h2 id="fixes-in-this-release">Fixes in this release</h2>
+
+<!--MAGECLOUD-1246-->
+<ul>
+  <li>The RabbitMQ configuration process now obtains all required parameters automatically in 2.1.5.</li>
+</ul>
+
+<!--MAGECLOUD-912-->
+<ul>
+  <li>AMQP settings in the <code class="highlighter-rouge">app/etc/env.php</code> file are no longer empty after enabling the RabbitMQ service in 2.1.5.</li>
+</ul>
+
+<!--MAGECLOUD-1317-->
+<ul>
+  <li>We fixed an issue with Elasticsearch configuration settings on deployment in 2.1.5.</li>
 </ul>
 
 <h3 id="magento-commerce-release-notes">Magento Commerce Release Notes</h3>
