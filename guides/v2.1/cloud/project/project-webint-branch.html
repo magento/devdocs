@@ -880,7 +880,7 @@
             
         
             
-            <a href="/guides/v2.1/cloud/configure/fastly-vcl-extendtimeout.html">Custom extend Admin timeout VCL</a>
+            <a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
             
 
             
@@ -1833,7 +1833,7 @@
 
   <p>For branching strategies, review <a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter</a> and <a href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">Pro</a> architecture overviews.</p>
 
-  <p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can <a href="/guides/v2.1/cloudenv/environments-start.html#env-delete">delete it entirely</a> using the CLI.</p>
+  <p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can <a href="/guides/v2.1/cloud/env/environments-start.html#env-delete">delete it entirely</a> using the CLI.</p>
 
   <p>If you need additional environments for development, enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a> for more information.</p>
 
@@ -1841,7 +1841,7 @@
   <p>To add a branch:</p>
 
   <ol>
-    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
+    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
     <li>
       <p>In the left navigation bar, click the name of the parent environment.</p>
 
@@ -1882,7 +1882,7 @@
   <p>To delete an environment and make it inactive:</p>
 
   <ol>
-    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
+    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
     <li>In the left pane, click the name of the branch to delete.</li>
     <li>
       <p>Click <strong>Configure environment</strong> as the following figure shows.</p>
@@ -1909,7 +1909,7 @@
   <p>To sync an environment with its parent:</p>
 
   <ol>
-    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
+    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
     <li>In the left pane, click the name of the branch you want to sync.</li>
     <li>
       <p>Click <img src="/common/images/cloud_environment-sync.png" alt="Sync an environment" width="30px" /> (sync).</p>
@@ -1927,7 +1927,7 @@
   <p>To merge an environment with its parent:</p>
 
   <ol>
-    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
+    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
     <li>In the left pane, click the name of the branch you want to merge.</li>
     <li>Click <img src="/common/images/cloud_environment-merge.png" alt="Merge an environment" width="30px" /> (merge).</li>
     <li>Click <strong>Merge</strong> to confirm the action.</li>
@@ -1949,7 +1949,7 @@
   <p>If you do not see your Pro plan Staging and Production environments in the Project Web Interface, you need to <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">enter a ticket for updating</a> your project interface.</p>
 
   <ol>
-    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
+    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
     <li>In the left pane, click an environment to review logs for.</li>
     <li>The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.</li>
     <li>To view the build log, select the Success or Failure link per deployment record on the account.</li>
@@ -2058,7 +2058,7 @@ We highly recommend adding and merging this code to your project Git repositorie
 
   <p>The branch redeploys to update the environment security and settings.</p>
 
-  <p>To secure Pro plan Staging environment, enter a <a href="/guides/v2.1/cloud/bkcloud.html#gethelp">Support ticket</a>. Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.</p>
+  <p>To secure Pro plan Staging environment, enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a>. Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.</p>
 
   <p>We recommend testing your environments after completing security settings.</p>
 

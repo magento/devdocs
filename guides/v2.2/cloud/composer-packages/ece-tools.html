@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Custom block bad referer VCL | Magento 2 Developer Documentation</title>
+	<title>magento/ece-tools | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/configure/fastly-vcl-badreferer.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/composer-packages/ece-tools.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/configure/fastly-vcl-badreferer.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/composer-packages/ece-tools.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/configure/fastly-vcl-badreferer.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/composer-packages/ece-tools.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/configure/fastly-vcl-badreferer.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/composer-packages/ece-tools.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -917,7 +917,7 @@
         
         
         
-        <li class="nav-level2 active " id="custom-block-bad-referer-vcl">
+        <li class="nav-level2  " id="custom-block-bad-referer-vcl">
             
             
         
@@ -1551,7 +1551,7 @@
         
         
         
-        <li class="nav-level2  " id="magento/ece-tools">
+        <li class="nav-level2 active " id="magento/ece-tools">
             
             
         
@@ -1824,7 +1824,7 @@
 
           
 
-          <span property="name">Custom block bad referer VCL</span>
+          <span property="name">magento/ece-tools</span>
 
         
 
@@ -1847,7 +1847,7 @@
 
 	
 
-	<h1 class="page-heading">Custom block bad referer VCL</h1>
+	<h1 class="page-heading">magento/ece-tools</h1>
 
   
 
@@ -1855,78 +1855,89 @@
 </section>
 
 
-			<p>You may want to create a VCL snippet that runs before all other modules to block bad referring websites from accessing your site. To block these sites with a 403 Forbidden error through Fastly, create a VCL snippet to use with an Edge Dictionary of domains to block.</p>
+			<p>This package contains the following scripts and Magento Commerce (Cloud) commands that automatically perform build and deploy actions of the codebase in your environments:</p>
 
-<p>You must have the following information to complete this VCL code snippet:</p>
+<p>pre-deploy.php
+  bin/magento magento-cloud:deploy
+  bin/magento magento-cloud:build</p>
 
-<ul>
-  <li>Create an Edge Dictionary in your environments</li>
-  <li>Account access and URL to the Magento Admin for the Staging or Production environment</li>
-</ul>
+<p>For Magento Commerce (Cloud), versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>. The versioning for <code class="highlighter-rouge">magento/ece-tools</code> will then be  <code class="highlighter-rouge">&lt;2000 + &lt;x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with 2002.0.0.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This information is just the code portion for setting up your VCL. Use this information with <a href="/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
-</div>
-
-<h2 id="edge-dictionary">Create an Edge Dictionary</h2>
-<p>Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of URLs to redirect to a Wordpress backend. You may only want to create the edge dictionary in your Production environment. You can also create it in Staging for testing if needed.</p>
-
-<ol>
-  <li>Log in to the Magento Admin.</li>
-  <li>Navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Fastly Configuration</strong>.</li>
-  <li>Expand the <strong>Edge dictionaries</strong> section.</li>
-  <li>Click <strong>Add container</strong>. You need to create a container to hold up to 1,000 key-value pairs.</li>
-  <li>On the container, enter a Dictionary name. For this example, use the name <code class="highlighter-rouge">referer_blocklist</code>.</li>
-  <li>Select the checkbox for <strong>Activate after the change</strong> if you want to the dictionary after creating or editing the container.</li>
-  <li>Add key-value pairs in the new dictionary. For this example, enter the URLs for your blog that should be redirected to your Wordpress backend. Enter a value of 1.</li>
-</ol>
-
-<p>For more information on using Edge Dictionaries with your VCL snippets, see Fastly’s <a href="https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries" target="_blank">Creating and using Edge Dictionaries</a> and their example <a href="https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples" target="_blank">custom VCL snippets</a>.</p>
-
-<h2 id="vcl">Create badreferer.vcl</h2>
-<p>For this example, you may only want to run it against the Production server. You can also add it to Staging for testing.</p>
-
-<p>Create an <code class="highlighter-rouge">badreferer.vcl</code> file with the following JSON content:</p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"badreferer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"set req.http.Referer-Host = regsub(req.http.Referer, "</span><span class="err">^https?</span><span class="p">:</span><span class="err">//?(</span><span class="p">[</span><span class="err">^</span><span class="p">:</span><span class="err">/\s</span><span class="p">]</span><span class="err">+).*$</span><span class="s2">", "</span><span class="err">\</span><span class="mi">1</span><span class="s2">"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "</span><span class="err">Forbidden</span><span class="s2">"; }"</span><span class="p">,</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-<p>Review the following values for the code to determine if you need to make changes:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">name</code>: Name for the VCL snippet. For this example, we used the name <code class="highlighter-rouge">badreferer</code>.</li>
-  <li><code class="highlighter-rouge">priority</code>: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and block bad referring websites. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.</li>
-  <li><code class="highlighter-rouge">type</code>: For this VCL, we use <code class="highlighter-rouge">recv</code>, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.</li>
-  <li><code class="highlighter-rouge">content</code>: The code that runs. The code captures the host of a referer website into a header. It then checks if the referrer host is in the Edge Dictionary <code class="highlighter-rouge">referer_blocklist</code>.</li>
-</ul>
+<p><code class="highlighter-rouge">magento/ece-tools</code> patches strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the magento-cloud-metapackage.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</p>
+  <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get these updates.</p>
 </div>
 
-<h2 id="complete">Finish adding the VCL</h2>
-<p>When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see <a href="/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+<h2 id="v200205">v2002.0.5</h2>
 
-<h4 id="related-vcl-snippet-examples">Related VCL snippet examples</h4>
-
+<h3 id="new-features">New features</h3>
 <ul>
-  <li><a href="/guides/v2.2/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a></li>
-  <li><a href="/guides/v2.2/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a></li>
-  <li><a href="/guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a></li>
-  <li><a href="/guides/v2.2/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a></li>
+  <li>
+    <p><strong>Build/deploy notifications</strong>. We added a new configuration file that you can use to <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html">set up Slack and/or email notifications</a> for build/deploy actions in all your environments.</p>
+  </li>
+  <li>
+    <p><strong>Static content compression</strong>. We now compress static content using <a href="https://www.gnu.org/software/gzip/" target="\_blank">gzip</a> during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build">build option</a> or <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy">deploy variable</a>. See the following topics for more information:</p>
+
+    <ul>
+      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over">Static content deployment performance</a></li>
+      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Configuration management</strong>. We now auto-generate an <code class="highlighter-rouge">app/etc/config.php</code> file in your git repository during the build phase if it doesn’t already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> at a later time, the commands update the file without requiring additional steps. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Database dumps</strong>. We added a new <code class="highlighter-rouge">magento/ece-tools</code> CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshots and backup management</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Cron interval limitations lifted</strong>. All Starter environments and Pro Integration environments now support 1-minute intervals for cron jobs (previously minimum 5 minutes). The default cron interval is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting. To modify your existing cron jobs, edit your settings in .magento.app.yaml. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a> for more information.</p>
+  </li>
 </ul>
 
-<h4 id="related-topics">Related topics</h4>
-
+<h3 id="fixed-issues">Fixed issues</h3>
+<!-- MAGECLOUD-1322 -->
 <ul>
-  <li><a href="/guides/v2.2/cloud/basic-information/cloud-fastly.html">Fastly in Cloud</a></li>
-  <li><a href="/guides/v2.2/cloud/access-acct/fastly.html">Set up Fastly</a></li>
-  <li><a href="/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></li>
-  <li><a href="/guides/v2.2/cloud/trouble/trouble_fastly.html">Troubleshoot Fastly</a></li>
+  <li>We fixed an issue causing errors during the static content generation step of deployment on Production environments.</li>
+</ul>
+
+<!-- MAGECLOUD-1264 -->
+<ul>
+  <li>We fixed an issue preventing some <code class="highlighter-rouge">magento/ece-tools</code> commands from logging output to <code class="highlighter-rouge">stderr</code>.</li>
+</ul>
+
+<!-- MAGECLOUD-1242 -->
+<ul>
+  <li>We fixed an issue preventing base URL values in <code class="highlighter-rouge">env.php</code> from being updated in forked branches.</li>
+</ul>
+
+<!-- MAGECLOUD-1171 -->
+<ul>
+  <li>We fixed an issue causing the <code class="highlighter-rouge">magento setup:install</code> command to add an unsecure prefix (<code class="highlighter-rouge">http://</code>) to secure base URLs.</li>
+</ul>
+
+<!-- MAGECLOUD-1170 -->
+<ul>
+  <li>We fixed an issue preventing patch errors from causing deployment failures.</li>
+</ul>
+
+<!-- MAGECLOUD-1152 -->
+<ul>
+  <li>We fixed an issue preventing <code class="highlighter-rouge">ece-tools</code> from halting execution and throwing an exception if no patches can be applied.</li>
+</ul>
+
+<!-- MAGECLOUD-1138 -->
+<ul>
+  <li>We fixed and issue causing errors when loading the storefront after enabling HTML minification in the Magento Admin.</li>
+</ul>
+
+<h2 id="v200204">v2002.0.4</h2>
+
+<h3 id="fixed-issues-1">Fixed issues</h3>
+<!-- MAGECLOUD-1355 -->
+<ul>
+  <li>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.</li>
 </ul>
 
 		</div>
@@ -1938,14 +1949,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/configure/fastly-vcl-badreferer.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/composer-packages/ece-tools.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/configure/fastly-vcl-badreferer.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/composer-packages/ece-tools.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

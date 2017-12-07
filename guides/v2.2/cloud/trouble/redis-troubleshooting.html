@@ -894,7 +894,7 @@
             
         
             
-            <a href="/guides/v2.2/cloud/configure/fastly-vcl-extendtimeout.html">Custom extend Admin timeout VCL</a>
+            <a href="/guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
             
 
             
@@ -1539,11 +1539,31 @@
 <li class="nav-level1  " id="composer-package-updates">
 
     
+    <div class="toggle closed">&nbsp;</div>
+    
     
     
     <a href="/guides/v2.2/cloud/patch-notes.html">Composer package updates</a>
     
 
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento/ece-tools">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">magento/ece-tools</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
     
 </li>
 
@@ -1889,7 +1909,7 @@
 
 <ol>
   <li>Remove all static content first from <code class="highlighter-rouge">pub/static/frontend/*</code> and also from <code class="highlighter-rouge">var/view_preprocessed</code>.</li>
-  <li>Enable and use the recommended <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm"><code class="highlighter-rouge">scd-dump</code> command</a> for Configuration Management (Pipeline Deployment). Remember, you will need to add and push the file generated to Git: <code class="highlighter-rouge">config.local.php</code> for 2.1.X or <code class="highlighter-rouge">config.php</code> for 2.2.X.</li>
+  <li>Enable and use the recommended <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm"><code class="highlighter-rouge">scd-dump</code> command</a> for Configuration Management (Pipeline Deployment). Remember, you will need to add and push the file generated to Git: <code class="highlighter-rouge">config.local.php</code> for 2.1.X or <code class="highlighter-rouge">config.php</code> for 2.2.X.</li>
 </ol>
 
 <p>If you continue to encounter these issues after using this method of deployment, you can attempt the following work-around. However, this method will dramatically increase the static content deployment time as it reduces deployment to a single thread.</p>
