@@ -34,8 +34,8 @@ No special reference is required, as you are still just referring to an `element
 
 ```xml
 <test name="LocatorFuctionTest">
-    <click mergeKey="SimpleLocator" selector="{{LocatorFunctionSection.simpleLocator}}"/>
-    <click mergeKey="TwoParamLiteral" selector="{{LocatorFunctionSection.simpleLocatorTwoParam('string1', 'string2')}}"/>    
+    <click stepKey="SimpleLocator" selector="{{LocatorFunctionSection.simpleLocator}}"/>
+    <click stepKey="TwoParamLiteral" selector="{{LocatorFunctionSection.simpleLocatorTwoParam('string1', 'string2')}}"/>
 </test>
 ```
 
