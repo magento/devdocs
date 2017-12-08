@@ -15,7 +15,7 @@ When talking about testing in Magento 2, we have to distinguish between differen
   For more information, see the [Functional Testing Framework Guide]({{page.baseurl}}mtf/mtf_introduction.html){:target="_blank"}.
 
   <div class="bs-callout bs-callout-info" markdown="1">
-  We've released the new Magento Functional Testing Framework (MFTF) recently. [Check it out]({{page.baseurl}}guides/v2.2/magento-functional-testing-framework/introduction.html){:target="_blank"}.
+  We've released the new Magento Functional Testing Framework (MFTF) recently. [Check it out]({{page.baseurl}}magento-functional-testing-framework/introduction.html){:target="_blank"}.
   </div>
 
 ## API Functional 
