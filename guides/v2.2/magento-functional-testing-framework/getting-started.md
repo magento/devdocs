@@ -133,7 +133,7 @@ $ vendor/bin/robo generate:tests
 
 To run one or more tests, you need running Selenium server and a [`codecept`] or [`robo`] with required parameters. 
 
-### Run the Selenium server {#selenium-server}
+#### Run the Selenium server {#selenium-server}
 
 1. [Download the latest Selenium Server][selenium server].
 
@@ -152,6 +152,8 @@ $ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.ja
 ```bash
 $ vendor/bin/codecept run 
 ```
+
+See more commands in [`robo`] and [`codecept`].
 
 ### Step 7. Generate reports {#allure}
 
@@ -174,16 +176,10 @@ $ vendor/bin/robo allure2:report
 [`robo`]: commands/robo.html
 [allure commands]: commands/robo.html#allure-robo-commands
 
-[git]: https://git-scm.com/downloads
 [php]: http://php.net/manual/en/install.php
 [composer]: https://getcomposer.org/download/
 [java]: https://www.java.com/en/download/
 
-[HTTP basic authentication]: https://getcomposer.org/doc/articles/http-basic-authentication.md#http-basic-authentication
-[magento-pangolin]: https://github.com/magento-pangolin/
-[personal access token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token
-[robo]: http://robo.li/
-[update your Composer]: https://getcomposer.org/doc/03-cli.md#self-update-selfupdate-
 [selenium server]: http://www.seleniumhq.org/download/
 [selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
 [Install Allure]: https://docs.qameta.io/allure/latest/
