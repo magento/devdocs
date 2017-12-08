@@ -222,7 +222,7 @@ Following are some examples of various types and what they would look like in th
 </table>
 <h2 id="sample-webapi">Sample webapi.xml file</h2>
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
-<script src="https://gist.github.com/keharper/507f485712a496ad079a.js"></script>
+<script src="https://gist.github.com/roman-snitko-vaimo/f4a47bf52e1c315a3bf3179a43737e8b.js"></script>
 <p>In this <code>webapi.xml</code> example:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
