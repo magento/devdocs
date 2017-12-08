@@ -248,7 +248,7 @@ variables:
 
 `crons` support the following:
 
-*	`spec`: The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per 5 minutes. You will need to complete [additional configurations]({{page.baseurl}}cloud/configure/setup-cron-jobs.html#admin) for crons in those environments.
+*	`spec`: The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per 5 minutes and once per one minute in Pro Staging and Production environments. You will need to complete [additional configurations]({{page.baseurl}}cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 *	`cmd`: The command to execute.
 
 A Cron job is well suited for the following tasks:
