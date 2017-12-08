@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Actions in the Magento Functional Testing Framework cests
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/cest/actions.md
+functional_areas:
+ - Testing
 ---
 
 This topic contains a reference list of available action type tags available in the MFTF cests.

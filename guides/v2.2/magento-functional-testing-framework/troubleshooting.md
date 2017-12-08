@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Troubleshooting in the Magento Functional Testing Framework
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/troubleshooting.md
+functional_areas:
+ - Testing
 ---
 
 ## WebDriver issues
@@ -24,3 +26,7 @@ Download the latest versions of ChromeDriver and Selenium Server Standalone. You
 
 [ChromeDriver v2.33+]: https://chromedriver.storage.googleapis.com/index.html?path=2.33/
 [Selenium Server Standalone v3.6.0+]: http://www.seleniumhq.org/download/
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework

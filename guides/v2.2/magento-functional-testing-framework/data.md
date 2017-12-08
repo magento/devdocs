@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Input testing data in the Magento Functional Testing Framework
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/data.md
+functional_areas:
+ - Testing
 ---
 
 ## Overview
@@ -172,7 +174,7 @@ entityKey|string|optional|Key attribute of the referenced entity from which to g
 Element that specifies the parent/child relationship between complex types. For example, a customer may have an address.
 Specifying that relationship looks like:
 
-```
+```xml
 <entity name="CustomerEntity" type="customer">
     ...
     <required-entity type="address">AddressEntity</required-entity>
@@ -188,7 +190,7 @@ type|string|optional|Type attribute of required entity.
 
 Element that contains a reference to an array of values. For example:
 
-```
+```xml
 <entity name="AddressEntity" type="address">
     ...
     <array key="street">
@@ -228,3 +230,7 @@ Individual piece of data to be passed in as part of the parent array type.
 <!-- External -->
 
 [Creating Categories]: http://docs.magento.com/m2/ce/user_guide/catalog/category-create.html
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
