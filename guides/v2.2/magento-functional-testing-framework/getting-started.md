@@ -1,0 +1,168 @@
+---
+layout: default
+group: mftf
+title: Getting started with the Magento Functional Testing Framework
+version: 2.3
+github_link: magento-functional-testing-framework/getting-started.md
+---
+
+## Prepare environment
+
+Make sure that you've set up the following software: 
+
+* [PHP v7.1.x+][php]
+* [Composer v1.3.x+][composer]
+* [Java v1.8.x+][java]
+* [Selenium Server Standalone v3.6.0+](#selenium-server)
+* [ChromeDriver v2.33+][chromedriver]
+* [Allure CLI v2.3.x+](#allure)
+
+### Recommendations
+* We recommend using [PHPStorm 2017](https://www.jetbrains.com/phpstorm/) for your IDE. They recently added support for [Codeception Test execution](https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/) which is helpful when debugging.
+
+<div class="bs-callout bs-callout-tip" markdown="1">
+To avoid typing `vendor/bin` every time, add to *PATH* your `<absolute path to acceptance dir>/vendor/bin` value. When added, you should be able to run commands: `robo`, `codecept`, and `phpunit`. 
+</div>
+
+# Setup the framework
+
+Follow these steps to set up the MFTF on your system. 
+
+## Step 1. Clone the magento2ce source code repository
+
+```bash
+$ git clone https://github.com/magento/magento2ce.git
+```
+
+or
+
+```bash
+$ git clone git@github.com:magento/magento2ce.git
+```
+
+## Step 2. Install dependencies
+
+```bash
+$ cd magento2ce/dev/tests/acceptance
+$ composer install
+```
+
+<div class="bs-callout bs-callout-tip" markdown="1">
+If you see an error like `404 Not Found`, [update your Composer] and try again.<br/>
+`$ composer selfupdate`
+</div>
+
+## Step 3. Build project
+
+In `magento2ce/dev/tests/acceptance`, run the following command:
+
+```bash
+$ vendor/bin/robo build:project
+```
+
+## Step 4. Edit environment settings
+
+In the `magento2ce/dev/tests/acceptance` directory, edit the `.env` file to match your system.
+
+The following list describes parameters, required to launch tests.
+
+* `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
+Example: `MAGENTO_BASE_URL=http://magento.test`
+
+* `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
+Example: `MAGENTO_BACKEND_NAME=admin`
+
+* `MAGENTO_ADMIN_USERNAME` must contain a user name required for authorization in the Admin area.
+Example: `MAGENTO_ADMIN_USERNAME=admin`
+
+* `MAGENTO_ADMIN_PASSWORD` must contain a user password required for authorization in the Admin area. 
+Example: `MAGENTO_ADMIN_PASSWORD=123123q`
+
+The following self-descriptive variables have default values (included).
+
+```config
+SELENIUM_HOST=127.0.0.1            
+SELENIUM_PORT=4444
+SELENIUM_PROTOCOL=http
+SELENIUM_PATH=/wd/hub
+```
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
+</div>
+
+They come together to form the path to where Selenium Server is running from like:
+
+``` 
+http://127.0.0.1:4444/wd/hub
+```
+
+## Step 5. Generate existing tests
+
+In the `magento2ce/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
+
+```bash
+$ vendor/bin/robo generate:tests
+```
+
+## Step 6. Run tests
+
+To run one or more tests, you need running Selenium server and a [`codecept`] or [`robo`] with required parameters. 
+
+### Run the Selenium server
+
+1. [Download the latest Selenium Server][selenium server].
+
+2. [Download a Selenium web driver for your web browser][selenium web driver] into the same directory where the Selenium server is located.
+
+3. Add the directory with the web driver to PATH.
+
+4. Run the Selenium server in the terminal:
+
+```bash
+$ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
+```
+
+### Run all tests
+
+```bash
+$ vendor/bin/codecept run 
+```
+
+## Step 7. Generate reports
+
+[Install Allure], a tool that generates testing reports in HTML. Testing reports are generated in CLI during testing.
+If you want to see the reports in GUI, run:
+
+```bash
+$ vendor/bin/robo allure2:report
+```
+[See more Allure commands][allure commands]
+
+[Learn about report structure.][allure reports] 
+
+<!-- LINKS -->
+
+[`codecept`]: commands/codeception.html
+[`robo`]: commands/robo.html
+[allure commands]: commands/robo.html#allure-robo-commands
+
+[git]: https://git-scm.com/downloads
+[php]: http://php.net/manual/en/install.php
+[composer]: https://getcomposer.org/download/
+[java]: https://www.java.com/en/download/
+
+[HTTP basic authentication]: https://getcomposer.org/doc/articles/http-basic-authentication.md#http-basic-authentication
+[magento-pangolin]: https://github.com/magento-pangolin/
+[personal access token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token
+[robo]: http://robo.li/
+[update your Composer]: https://getcomposer.org/doc/03-cli.md#self-update-selfupdate-
+[selenium server]: http://www.seleniumhq.org/download/
+[selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
+[Install Allure]: https://docs.qameta.io/allure/latest/
+[allure reports]: https://docs.qameta.io/allure/latest/#_report_structure
+[chromedriver]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework

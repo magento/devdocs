@@ -84,7 +84,7 @@ Here,
 
 * `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in the corresponding _.../Data/*.xml_
 * `stringLiteral` is a literal
-* `$createDataKey.id$` is a reference to persisted data created in the `SampleCest1` within action with `mergeKey="createDataKey"`
+* `$createDataKey.id$` is a reference to persisted data created in the `SampleCest1` within action with `stepKey="createDataKey"`
 
 {%endraw%}
 
