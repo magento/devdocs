@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Cest structure in the Magento Functional Testing Framework
-version: 2.3
-github_link: magento-functional-testing-framework/cest/structure.md
+version: 2.2
+github_link: magento-functional-testing-framework/cest.md
+functional_areas:
+ - Testing
 ---
 
 ## Overview
@@ -32,17 +34,17 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
         </annotations>
         <before>
             <!-- LIST OF ACTIONS -->
-            <click selector="" mergeKey=""/>
+            <click selector="" stepKey=""/>
             <!-- ACTION GROUPS -->
-            <actionGroup ref="" mergeKey="">
+            <actionGroup ref="" stepKey="">
                 <argument name="" value=""/>
             </actionGroup>       
         </before>
         <after>
             <!-- LIST OF ACTIONS -->
-            <click selector="" mergeKey=""/>
+            <click selector="" stepKey=""/>
             <!-- ACTION GROUPS -->
-            <actionGroup ref="" mergeKey="">
+            <actionGroup ref="" stepKey="">
                 <argument name="" value=""/>
             </actionGroup>
         </after>
@@ -54,9 +56,9 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
                 <testCaseId value=""/>
             </annotations>
             <!-- LIST OF ACTIONS -->
-            <click selector="" mergeKey=""/>
+            <click selector="" stepKey=""/>
             <!-- ACTION GROUPS -->
-            <actionGroup ref="" mergeKey="">
+            <actionGroup ref="" stepKey="">
                 <argument name="" value=""/>
             </actionGroup>
         </test>
@@ -105,10 +107,10 @@ Read about annotations in a separate topic [Annotations][annotations].
 
 Specifies actions to perform before all [tests][test] in a [cest].
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 name|string|optional|
-remove|boolean|optional|false
+remove|boolean|optional|
 
 It MAY contain the following child elements:
 
@@ -122,10 +124,10 @@ It MAY contain the following child elements:
 
 Specifies actions to perform after all [tests][test] in a [cest].
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 name|string|optional|
-remove|boolean|optional|false
+remove|boolean|optional|
 
 It MAY contain:
 
@@ -139,10 +141,10 @@ It MAY contain:
 
 A set of actions with an assertion.
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 name|string|optional|
-remove|boolean|optional|false
+remove|boolean|optional|
 
 It MAY contain:
 
@@ -157,11 +159,11 @@ It MAY contain:
 
 Calls a corresponding action group.
 
-Attribute|Type|Use|Default
+Attribute|Type|Use|Description
 ---|---|---|---
 ref|string|required|
-mergeKey|string|required|
-remove|boolean|optional|false
+stepKey|string|required|
+remove|boolean|optional|
 before|string|optional|
 after|string|optional|
 

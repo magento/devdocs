@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Section structure in the Magento Functional Testing Framework
-version: 2.3
-github_link: magento-functional-testing-framework/section/structure.md
+version: 2.2
+github_link: magento-functional-testing-framework/section.md
+functional_areas:
+ - Testing
 ---
 
 ## Overview
@@ -26,8 +28,8 @@ Substitutable values in the test can be of the following formats:
 * String Literals: `stringLiteral`
 * Reference to data entity (XML data from the corresponding _.../Data/*.xml_): `entityName.Field`
 * Persisted Data
-    * `$persistedCreateDataKey.field$` for data created in scope of a [test] using [createData] action with `mergeKey="persistedCreateDataKey"`
-    * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `mergeKey="persistedCreateDataKey"`
+    * `$persistedCreateDataKey.field$` for data created in scope of a [test] using [createData] action with `stepKey="persistedCreateDataKey"`
+    * `$$persistedCreateDataKey.field$$` or data created in [before] and that is why used in scope of a [cest] using [createData] action with `stepKey="persistedCreateDataKey"`
 
 The following diagram demonstrates XML structure of a section in the MFTF:
 
@@ -84,7 +86,7 @@ Example of a call in test:
 {%raw%}
 ```xml
 <!-- Click on the button with locator "#add_subcategory_button" on the web page-->
-<click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" mergeKey="clickOnAddSubCategory"/>
+<click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
 ```
 ## Available elements
 
@@ -124,3 +126,7 @@ remove|boolean|optional|Default: `false`. Set to `true` to remove this element d
 [test]: cest.html#test
 [createData]: cest/actions.html#createdata
 [before]: cest.html#before
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
