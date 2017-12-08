@@ -32,9 +32,9 @@ functional_areas:
   - Install
 ---
 
-The following information detail technologiess, knowledges, accounts, and steps to complete when working with your {{site.data.var.ece}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
+This topic describes technologies, knowledge, accounts, and steps to complete when working with your {{site.data.var.ece}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
 
-## Technologies and knowledges {#cloud-req-pre}
+## Technologies {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
 *	[Git](#git)
@@ -57,11 +57,11 @@ Git is the heart of all your code in repositories. It acts as a version control 
 
 We hope you have a good working knowledge of Git. Need some help? Don't worry, we have you covered with some of our favorite links and information. We'll also include a Git guide to branching and developing soon.
 
-*	[Git documentation](https://git-scm.com/documentation){:target="_blank"} and [videos](https://git-scm.com/videos){:target="_blank"} from the makers of Git
-*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="_blank"} from Roger Dudler
-*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="_blank"} with DevForge to understand how people use the repo and commands with a fun story
+*	[Git documentation](https://git-scm.com/documentation){:target="\_blank"} and [videos](https://git-scm.com/videos){:target="\_blank"} from the makers of Git
+*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="\_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="\_blank"} from Roger Dudler
+*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="\_blank"} with DevForge to understand how people use the repo and commands with a fun story
 
-To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local.
+To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="\_blank"} on your local.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.ee}} adds two additional requirements:</p>
@@ -79,12 +79,12 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) - For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
-* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
-* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
-* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
-* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
-* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) -  For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
+* [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html) 5.6 and 5.7
+* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html) 4.10
+* [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
+* [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html) 3.5
+* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, and 2.4
 
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
@@ -137,7 +137,7 @@ The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) crea
 To work with and deploy stores, you need the following:
 
 *	[Magento Commerce (Cloud) account]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
-*	[Project invitiation]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-first-acct##cloud-owner-admins) for contributing developers from the Account Owner or a super user
+*	[Project invitiation]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-first-acct#cloud-owner-admins) for contributing developers from the Account Owner or a super user
 *	Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:

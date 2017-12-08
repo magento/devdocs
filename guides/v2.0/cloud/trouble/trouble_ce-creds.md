@@ -23,7 +23,7 @@ The most common symptom of incorrect credentials is a deployment failure with an
 
 To see the error log:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	Click **Failure** to view the log as the following figure shows.
 
 	![View the log for a failed deployment]({{ site.baseurl }}common/images/cloud_deploy-failure-creds.png){:width="600px"}

@@ -27,7 +27,7 @@ These import preparation steps include the following:
 * [Modify your existing `composer.json`](#composer-json) to specify Cloud-specific dependencies. Make sure to include all modules. Cloud uses this file for `composer install` commands. Add `composer.lock` to Git. Cloud uses this file for `composer update` commands and during the build and deploy process.
 * [Transfer media files to Cloud.](#media)
 * [Add your {{site.data.var.ee}} authentication credentials](#encryption-key) to `auth.json` if you haven't done so already.
-* [Migrate your {{site.data.var.ee}} data.](#migrate-data)
+* [Migrate your {{site.data.var.ee}} data.](#migrate-db)
 
 ## Prepare and add required files {#required-files}
 To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you need to add a directory and the following files to your existing code.
