@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Input testing data in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/magento-functional-testing-framework/data.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/data.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/data.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/data.html">Magento 2.2</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/getting-started.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.2/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Magento Functional Testing Framework Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/introduction.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="getting-started">
+
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/getting-started.html">Getting Started</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="cest">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/cest.html">Cest</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="annotations">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/cest/annotations.html">Annotations</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="actions">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/cest/actions.html">Actions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="page">
+
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/page.html">Page</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="section">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/section.html">Section</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="parameterized-selectors">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/section/parameterized-selectors.html">Parameterized selectors</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="locator-functions">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/section/locator-functions.html">Locator Functions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1 active " id="data">
+
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/data.html">Data</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="cli-commands">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>CLI Commands</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="robo">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/commands/robo.html">robo</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="codecept">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/commands/codeception.html">codecept</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="update">
+
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/update.html">Update</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="troubleshooting">
+
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/troubleshooting.html">Troubleshooting</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="contribution-guidelines">
+
+    
+    
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/contribution-guidelines.html">Contribution Guidelines</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Input testing data in the Magento Functional Testing Framework</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Input testing data in the Magento Functional Testing Framework</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="overview">Overview</h2>
+
+<p>For the correct functioning of tests, they require data to operate on.</p>
+
+<p>This framework allows you to specify and use data entities defined in XML.
+Default data entities are provided for use and as templates for entity creation/manipulation.</p>
+
+<p>To this end, there are three methods in which data can be supplied to a test.</p>
+
+<p>The following diagram demonstrates XML structure of a data object in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>:</p>
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="496" height="218" version="1.1" id="svg176" sodipodi:docname="data-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata id="metadata182">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs180" />
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1920" inkscape:window-height="1017" id="namedview178" showgrid="false" inkscape:zoom="1.6195026" inkscape:cx="-100.29417" inkscape:cy="97.15766" inkscape:window-x="3278" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg176" />
+  <text x="338" y="57" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text8">0..∞</text>
+  <a id="a3925" xlink:href="#data-ref" xlink:title="zero or more &lt;data&gt; elements">
+    <g id="g195">
+      <rect x="307" y="28" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect2" />
+      <rect x="304" y="25" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect4" />
+      <text x="326" y="36" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text6">data</text>
+      <line x1="306" y1="27" x2="314" y2="27" style="stroke:rgb(0,0,0);stroke-width:1" id="line10" />
+      <line x1="306" y1="29" x2="312" y2="29" style="stroke:rgb(0,0,0);stroke-width:1" id="line12" />
+      <line x1="306" y1="31" x2="312" y2="31" style="stroke:rgb(0,0,0);stroke-width:1" id="line14" />
+      <line x1="306" y1="33" x2="312" y2="33" style="stroke:rgb(0,0,0);stroke-width:1" id="line16" />
+    </g>
+  </a>
+  <text x="332" y="109" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text24">0..∞</text>
+  <a id="a3935" xlink:href="#var" xlink:title="zero or more &lt;var&gt; elements">
+    <g id="g204">
+      <rect x="307" y="80" width="38" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect18" />
+      <rect x="304" y="77" width="38" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect20" />
+      <text x="323" y="88" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text22">var</text>
+      <line x1="306" y1="79" x2="314" y2="79" style="stroke:rgb(0,0,0);stroke-width:1" id="line26" />
+      <line x1="306" y1="81" x2="312" y2="81" style="stroke:rgb(0,0,0);stroke-width:1" id="line28" />
+      <line x1="306" y1="83" x2="312" y2="83" style="stroke:rgb(0,0,0);stroke-width:1" id="line30" />
+      <line x1="306" y1="85" x2="312" y2="85" style="stroke:rgb(0,0,0);stroke-width:1" id="line32" />
+    </g>
+  </a>
+  <text x="389" y="161" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text40">0..∞</text>
+  <a id="a3945" xlink:href="#required-entity" xlink:title="zero or more &lt;required-entity&gt; elements">
+    <g id="g213">
+      <rect x="307" y="132" width="95" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect34" />
+      <rect x="304" y="129" width="95" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect36" />
+      <text x="351.5" y="140" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text38">required-entity</text>
+      <line x1="306" y1="131" x2="314" y2="131" style="stroke:rgb(0,0,0);stroke-width:1" id="line42" />
+      <line x1="306" y1="133" x2="312" y2="133" style="stroke:rgb(0,0,0);stroke-width:1" id="line44" />
+      <line x1="306" y1="135" x2="312" y2="135" style="stroke:rgb(0,0,0);stroke-width:1" id="line46" />
+      <line x1="306" y1="137" x2="312" y2="137" style="stroke:rgb(0,0,0);stroke-width:1" id="line48" />
+    </g>
+  </a>
+  <text x="476" y="213" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text56">0..∞</text>
+  <a id="a3963" xlink:href="#item" xlink:title="zero or more &lt;item&gt; elements">
+    <g id="g229">
+      <rect x="445" y="184" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect50" />
+      <rect x="442" y="181" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect52" />
+      <text x="464" y="192" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text54">item</text>
+      <line x1="444" y1="183" x2="452" y2="183" style="stroke:rgb(0,0,0);stroke-width:1" id="line58" />
+      <line x1="444" y1="185" x2="450" y2="185" style="stroke:rgb(0,0,0);stroke-width:1" id="line60" />
+      <line x1="444" y1="187" x2="450" y2="187" style="stroke:rgb(0,0,0);stroke-width:1" id="line62" />
+      <line x1="444" y1="189" x2="450" y2="189" style="stroke:rgb(0,0,0);stroke-width:1" id="line64" />
+    </g>
+  </a>
+  <line x1="417.84494" y1="192" x2="442" y2="192" style="stroke:#000000;stroke-width:1.09897804;stroke-linecap:round" id="line66" />
+  <a id="a3968" xlink:title="a sequence of the following elements">
+    <g id="g3966">
+      <path inkscape:connector-curvature="0" d="m 388,182 h 23 l 6,6 v 8 l -6,6 h -23 l -6,-6 v -8 z" style="fill:#ffffff;stroke:#000000;stroke-width:1" id="path68" />
+      <line x1="385" y1="192" x2="414" y2="192" style="stroke:#000000;stroke-width:1" id="line70" />
+      <circle r="2" cx="394" cy="192" id="ellipse72" />
+      <circle r="2" cx="399" cy="192" id="ellipse74" />
+      <circle r="2" cx="404" cy="192" id="ellipse76" />
+    </g>
+  </a>
+  <line x1="360.46375" y1="192" x2="382" y2="192" style="stroke:#000000;stroke-width:1.03769612;stroke-linecap:round" id="line82" />
+  <text x="352" y="213" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text90">0..∞</text>
+  <a id="a99" xlink:href="#array" xlink:title="zero or more &lt;array&gt; elements">
+    <g id="g3864">
+      <rect x="307" y="184" width="53" height="22" style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-dasharray:4, 1" id="rect84" />
+      <rect x="304" y="181" width="53" height="22" style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-dasharray:4, 1" id="rect86" />
+      <text x="330.5" y="192" style="font-weight:bold;font-size:10.66666698px;font-family:Arial;dominant-baseline:central;text-anchor:middle;fill:#000000" id="text88">array</text>
+    </g>
+  </a>
+  <line x1="294" y1="36" x2="304" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line96" />
+  <line x1="294" y1="88" x2="304" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line98" />
+  <line x1="294" y1="140" x2="304" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line100" />
+  <line x1="294" y1="192" x2="304" y2="192" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line102" />
+  <line x1="294" y1="36" x2="294" y2="192" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line104" />
+  <line x1="282.8219" y1="114" x2="294" y2="114" style="stroke:#000000;stroke-width:1.05726469;stroke-linecap:round" id="line106" />
+  <a id="a3984" xlink:title="one or more of the following elements in any order">
+    <g id="g3959">
+      <g id="g3922">
+        <path inkscape:connector-curvature="0" id="path110" style="fill:#ffffff;stroke:#000000;stroke-width:1" d="m 250,104 h 23 l 6,6 v 8 l -6,6 h -23 l -6,-6 v -8 z" />
+        <path id="path108" style="fill:#ffffff;stroke:#000000;stroke-width:1" d="m 253,107 h 23 l 6,6 v 8 l -6,6 h -23 l -6,-6 v -8 z" inkscape:connector-curvature="0" />
+        <line id="line112" style="stroke:#000000;stroke-width:1" y2="114" x2="253" y1="114" x1="249" />
+        <line id="line114" style="stroke:#000000;stroke-width:1" y2="110" x2="257" y1="114" x1="253" />
+        <line id="line116" style="stroke:#000000;stroke-width:1" y2="110" x2="269" y1="110" x1="265" />
+        <line id="line118" style="stroke:#000000;stroke-width:1" y2="114" x2="273" y1="114" x1="265" />
+        <line id="line120" style="stroke:#000000;stroke-width:1" y2="118" x2="269" y1="118" x1="265" />
+        <line id="line122" style="stroke:#000000;stroke-width:1" y2="118" x2="269" y1="110" x1="269" />
+        <circle id="ellipse124" cy="110" cx="261" r="2" />
+        <circle id="ellipse126" cy="114" cx="261" r="2" />
+        <circle id="ellipse128" cy="118" cx="261" r="2" />
+        <text id="text130" style="font-size:9.59999943px;font-family:Arial;dominant-baseline:central;text-anchor:end;fill:#000000" y="134" x="274">1..∞</text>
+      </g>
+    </g>
+  </a>
+  <line x1="222.68196" y1="114" x2="244" y2="114" style="stroke:#000000;stroke-width:1.03242517;stroke-linecap:round" id="line136" />
+  <rect x="167" y="106" width="55" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect138" />
+  <a id="a231" xlink:href="#entity" xlink:title="zero or more &lt;entity&gt; elements">
+    <g id="g186">
+      <rect x="164" y="103" width="55" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect140" />
+      <text x="191.5" y="114" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text142">entity</text>
+    </g>
+  </a>
+  <text x="214" y="135" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text144">0..∞</text>
+  <line x1="136" y1="114" x2="164" y2="114" style="stroke:#000000;stroke-width:1.18321598;stroke-linecap:round" id="line150" />
+  <a id="a3976" xlink:title="a sequence of the following elements">
+    <g id="g3944">
+      <path d="m 110,104 h 23 l 6,6 v 8 l -6,6 h -23 l -6,-6 v -8 z" style="fill:#ffffff;stroke:#000000;stroke-width:1" id="path152" inkscape:connector-curvature="0" />
+      <line x1="107" y1="114" x2="136" y2="114" style="stroke:#000000;stroke-width:1" id="line154" />
+      <circle cx="116" cy="114" id="ellipse156" r="2" />
+      <circle cx="121" cy="114" id="ellipse158" r="2" />
+      <circle cx="126" cy="114" id="ellipse160" r="2" />
+    </g>
+  </a>
+  <line x1="79.899483" y1="114" x2="104" y2="114" style="stroke:#000000;stroke-width:1.09773672;stroke-linecap:round" id="line166" />
+  <rect x="20" y="103" width="59" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect168" />
+  <text x="49.5" y="114" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text170">config</text>
+</svg>
+
+<h3 id="supplying-data-to-test-by-reference-to-a-data-entity">Supplying data to test by reference to a data entity</h3>
+
+<p>Test steps requiring data input in an action (e.g. Fill field with string) may reference an attribute from a data entity.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="{{SimpleSubCategory.name}}"
+</code></pre></div></div>
+
+<p>Here,</p>
+
+<ul>
+  <li><code class="highlighter-rouge">SimpleSubCategory</code> is an entity name</li>
+  <li><code class="highlighter-rouge">name</code> is a data key of the entity. The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}
+</code></pre></div></div>
+
+<p>Here,</p>
+
+<ul>
+  <li><code class="highlighter-rouge">_ENV</code> is a reference to the <code class="highlighter-rouge">dev/tests/acceptance/.env</code> file, where basic environmental variables are set</li>
+  <li><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> is a name of an environmental variable. The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+</ul>
+
+<h3 id="persisting-a-data-entity-as-a-prerequisite-of-a-test">Persisting a data entity as a prerequisite of a test</h3>
+
+<p>A test can specify an entity which should be persisted (created in the database) so that the test actions can operate on known existing data.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="$$customer.email$$"
+</code></pre></div></div>
+
+<p>Here,</p>
+
+<ul>
+  <li><code class="highlighter-rouge">customer</code> is a stepKey of the corresponding action, where an entity is created</li>
+  <li><code class="highlighter-rouge">email</code> is a data key of the entity. The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+</ul>
+
+<h3 id="hard-coded-data-input">Hard-coded data input</h3>
+
+<p>The data to operate against can be included as literals in a test. Hard-coded data input can be useful in assertions (<a href="cest/actions.html#see">see</a> actions).</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="We'll email you an order confirmation with details and tracking info."
+</code></pre></div></div>
+
+<h2 id="format">Format</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/DataGenerator/etc/dataProfileSchema.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">""</span><span class="nt">&gt;&lt;/data&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">""</span> <span class="na">unique=</span><span class="s">""</span><span class="nt">&gt;&lt;/data&gt;</span>
+        <span class="nt">&lt;var</span> <span class="na">key=</span><span class="s">""</span> <span class="na">entityType=</span><span class="s">""</span> <span class="na">entityKey=</span><span class="s">""</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h2 id="principles">Principles</h2>
+
+<ul>
+  <li>A data file may contain multiple data entities</li>
+  <li>File name is given camel case with first letter upper case name.  The name represents data type. For example, file with Customer data is <em>CustomerData.xml</em>, for Simple Product it should be <code class="highlighter-rouge">SimpleProductData.xml</code>.</li>
+  <li>entity name is given camel case with first letter upper case name.</li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p><em>…/Catalog/Data/CategoryData.xml</em>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/DataGenerator/etc/dataProfileSchema.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultCategory"</span> <span class="na">type=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>simpleCategory<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name_lwr"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>simplecategory<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"is_active"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"SimpleSubCategory"</span> <span class="na">type=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>SimpleSubCategory<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name_lwr"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>simplesubcategory<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"is_active"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"include_in_menu"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<p>This example declares two data entities: <code class="highlighter-rouge">_defaultCategory</code> and <code class="highlighter-rouge">SimpleSubCategory</code>. They set data required for category creation (see <a href="http://docs.magento.com/m2/ce/user_guide/catalog/category-create.html">Creating Categories</a>).
+All entities that have same names will be merged during test generation.
+Both entities are of type <code class="highlighter-rouge">category</code>.</p>
+
+<p><code class="highlighter-rouge">_defaultCategory</code> sets three data fields:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">name</code> that defines Category Name to <code class="highlighter-rouge">simpleCategory</code> with unique suffix. It will look like <code class="highlighter-rouge">simpleCategory598742365</code>.</li>
+  <li><code class="highlighter-rouge">name_lwr</code> that defines Category Name in lower case format with unique suffix. It will look like <code class="highlighter-rouge">simplecategory697543215</code>.</li>
+  <li><code class="highlighter-rouge">is_active</code> that sets Enable Category to true.</li>
+</ul>
+
+<p><code class="highlighter-rouge">SimpleSubCategory</code> sets four data fields:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">name</code> that defines Category Name with unique suffix. It will look like <code class="highlighter-rouge">SimpleSubCategory458712365</code>.</li>
+  <li><code class="highlighter-rouge">name_lwr</code> that defines Category Name in lower case format with unique suffix. It will look like <code class="highlighter-rouge">simplesubcategory753698741</code>.</li>
+  <li><code class="highlighter-rouge">is_active</code> that sets Enable Category to <code class="highlighter-rouge">true</code>.</li>
+  <li><code class="highlighter-rouge">include_in_menu</code> that sets Include in Menu to <code class="highlighter-rouge">true</code>.</li>
+</ul>
+
+<p>Example of use in test:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryBasicFieldSection.categoryNameInput}}"</span> <span class="na">userInput=</span><span class="s">"{{_defaultCategory.name}}"</span> <span class="na">stepKey=</span><span class="s">"enterCategoryName"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>This action inputs data from <code class="highlighter-rouge">name</code> of the <code class="highlighter-rouge">_defaultCategory</code> entity (for example, <code class="highlighter-rouge">simpleCategory598742365</code>) into the field with locator defined in the selector of the <code class="highlighter-rouge">categoryNameInput</code> element of the <code class="highlighter-rouge">AdminCategoryBasicFieldSection</code>.</p>
+
+<h2 id="available-elements">Available elements</h2>
+
+<h3 id="entity">entity</h3>
+
+<p>An element that contains configuration array containing all Entity elements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Name of the Entity.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Node containing the exact name of Entity type. Used later to find specific Persistence Layer Model class. <code class="highlighter-rouge">type</code> in data can be whatever the user wants; there are no constraints. It becomes important when persisting data, as depending on the <code class="highlighter-rouge">type</code> given, it will try to match a metadata definition with the operation being done. For example, given an entity <code class="highlighter-rouge">myCustomer</code> with a <code class="highlighter-rouge">type="customer"</code>, if you call <code class="highlighter-rouge">&lt;createData entity="myCustomer"/&gt;</code>, it will try to find a metadata entry with the following attributes: <code class="highlighter-rouge">&lt;operation dataType="customer" type="create"&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="highlighter-rouge">&lt;entity&gt;</code> may contain one or more <a href="#data-ref"><code class="highlighter-rouge">&lt;data</code></a>, <a href="#var"><code class="highlighter-rouge">&lt;var&gt;</code></a>, <a href="#required-entities"><code class="highlighter-rouge">&lt;required-entities&gt;</code></a>, <a href="#array"><code class="highlighter-rouge">&lt;array&gt;</code></a> elements in any sequence.</p>
+
+<h3 id="data-ref">data</h3>
+
+<p>Element containing Data/Value pair.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Key attribute of data/value pair.</td>
+    </tr>
+    <tr>
+      <td>unique</td>
+      <td>enum: <code class="highlighter-rouge">"prefix"</code>, <code class="highlighter-rouge">"suffix"</code></td>
+      <td>optional</td>
+      <td>Add suite or test wide unique sequence as “prefix” or “suffix” to the data value if specified.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="var">var</h3>
+
+<p>Element that can be used to grab a key value from another entity. For example, when creating a customer with the
+<code class="highlighter-rouge">&lt;createData&gt;</code> action, the server responds with the autoincremented ID of that customer. To access that ID and use it
+in another data entity, you can use this.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Key attribute of this entity to assign a value to.</td>
+    </tr>
+    <tr>
+      <td>entityType</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Type attribute of referenced entity.</td>
+    </tr>
+    <tr>
+      <td>entityKey</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Key attribute of the referenced entity from which to get a value.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="required-entity">required-entity</h3>
+
+<p>Element that specifies the parent/child relationship between complex types. For example, a customer may have an address.
+Specifying that relationship looks like:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"CustomerEntity"</span> <span class="na">type=</span><span class="s">"customer"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;required-entity</span> <span class="na">type=</span><span class="s">"address"</span><span class="nt">&gt;</span>AddressEntity<span class="nt">&lt;/required-entity&gt;</span>
+    ...
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Type attribute of required entity.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="array">array</h3>
+
+<p>Element that contains a reference to an array of values. For example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"AddressEntity"</span> <span class="na">type=</span><span class="s">"address"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;array</span> <span class="na">key=</span><span class="s">"street"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item&gt;</span>7700 W Parmer Ln<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item&gt;</span>Bld D<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/array&gt;</span>
+    ...
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>required</td>
+      <td>Key attribute of this entity to assign a value to.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="highlighter-rouge">&lt;array&gt;</code> may contain <a href="#item"><code class="highlighter-rouge">&lt;item&gt;</code></a> elements.</p>
+
+<h3 id="item">item</h3>
+
+<p>Individual piece of data to be passed in as part of the parent array type.</p>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- Anchors -->
+
+<!-- Internal -->
+
+<!-- External -->
+
+<!-- Abbreviations -->
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/data.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/magento-functional-testing-framework/data.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
