@@ -184,111 +184,6 @@ The following list contains commands and options available in __Robo 1.1.3__.
 ***
 ***
 
-### `chrome`
-
-Run all Acceptance tests using the Chrome environment
-
-#### Usage
-
-* `chrome`
-
-Run all Acceptance tests using the Chrome environment
-
-#### Options
-
-##### `--help|-h`
-
-Display this help message
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--quiet|-q`
-
-Do not output any message
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--verbose|-v|-vv|-vvv`
-
-Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--version|-V`
-
-Display this application version
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--ansi`
-
-Force ANSI output
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--no-ansi`
-
-Disable ANSI output
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--no-interaction|-n`
-
-Do not ask any interactive question
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--simulate`
-
-Run in simulated mode (show what would have happened).
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--progress-delay`
-
-Number of seconds before progress bar is displayed in long-running task collections. Default: 2s.
-
-* Accept value: yes
-* Is value required: yes
-* Is multiple: no
-* Default: `2`
-
-##### `--define|-D`
-
-Define a configuration item value.
-
-* Accept value: yes
-* Is value required: yes
-* Is multiple: yes
-* Default: `array ()`
-
-***
-***
-
 ### `example`
 
 Run all Tests marked with the @group tag 'example', using the Chrome environment
@@ -394,114 +289,9 @@ Define a configuration item value.
 ***
 ***
 
-### `firefox`
-
-Run all Acceptance tests using the FireFox environment
-
-#### Usage
-
-* `firefox`
-
-Run all Acceptance tests using the FireFox environment
-
-#### Options
-
-##### `--help|-h`
-
-Display this help message
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--quiet|-q`
-
-Do not output any message
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--verbose|-v|-vv|-vvv`
-
-Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--version|-V`
-
-Display this application version
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--ansi`
-
-Force ANSI output
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--no-ansi`
-
-Disable ANSI output
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--no-interaction|-n`
-
-Do not ask any interactive question
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--simulate`
-
-Run in simulated mode (show what would have happened).
-
-* Accept value: no
-* Is value required: no
-* Is multiple: no
-* Default: `false`
-
-##### `--progress-delay`
-
-Number of seconds before progress bar is displayed in long-running task collections. Default: 2s.
-
-* Accept value: yes
-* Is value required: yes
-* Is multiple: no
-* Default: `2`
-
-##### `--define|-D`
-
-Define a configuration item value.
-
-* Accept value: yes
-* Is value required: yes
-* Is multiple: yes
-* Default: `array ()`
-
-***
-***
-
 ### `folder`
 
-Run all Acceptance tests located under the Directory Path provided using the Chrome environment
+Run all Acceptance tests located under the Directory Path provided
 
 #### Usage
 
@@ -614,13 +404,13 @@ Define a configuration item value.
 
 ### `group`
 
-Run all Tests with the specified @group tag, excluding @group 'skip', using the Chrome environment
+Run all Tests with the specified @group tag, excluding @group 'skip'
 
 #### Usage
 
 * `group [<args>]`
 
-Run all Tests with the specified @group tag, excluding @group 'skip', using the Chrome environment
+Run all Tests with the specified @group tag, excluding @group 'skip'
 
 #### Arguments
 
@@ -935,15 +725,15 @@ The output format (txt, xml, json, or md)
 ***
 ***
 
-### `phantomjs`
+### `functional`
 
-Run all Acceptance tests using the PhantomJS environment
+Run all functional tests
 
 #### Usage
 
-* `phantomjs`
+* `functional`
 
-Run all Acceptance tests using the PhantomJS environment
+Run all functional tests using the provided environment configuration
 
 #### Options
 
