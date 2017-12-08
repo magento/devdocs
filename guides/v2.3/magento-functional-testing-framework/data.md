@@ -39,7 +39,7 @@ userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}
 Here,
 
 * `_ENV` is a reference to the `dev/tests/acceptance/.env` file, where basic environmental variables are set
-* `MAGENTO_ADMIN_USERNAME` is a name of environmental variable. The corresponding value will be assigned to `userInput` as a result.
+* `MAGENTO_ADMIN_USERNAME` is a name of an environmental variable. The corresponding value will be assigned to `userInput` as a result.
 
 ### Persisting a data entity as a prerequisite of a test
 
@@ -51,7 +51,7 @@ userInput="$$customer.email$$"
 
 Here,
 
-* `customer` is a merging key of the corresponding action, where an entity is created
+* `customer` is a stepKey of the corresponding action, where an entity is created
 * `email` is a data key of the entity. The corresponding value will be assigned to `userInput` as a result.
 
 ### Hard-coded data input
@@ -157,18 +157,28 @@ unique|enum: `"prefix"`, `"suffix"`|optional|Add suite or test wide unique seque
 
 ### var
 
-Element containing Data/Value pair.
+Element that can be used to grab a key value from another entity. For example, when creating a customer with the
+`<createData>` action, the server responds with the autoincremented ID of that customer. To access that ID and use it
+in another data entity, you can use this.
 
 Attributes|Type|Use|Description
 ---|---|---|---
-key|string|optional|Key attribute of data/value pair.
-unique|enum: `"prefix"`, `"suffix"`|optional|Add suite or test wide unique sequence as "prefix" or "suffix" to the data value if specified.
-entityType|string|optional|	
-entityKey|string|optional|
+key|string|optional|Key attribute of this entity to assign a value to. 
+entityType|string|optional|Type attribute of referenced entity.
+entityKey|string|optional|Key attribute of the referenced entity from which to get a value.
 
 ### required-entity
 
-Element containing required entity to this parent entity.
+Element that specifies the parent/child relationship between complex types. For example, a customer may have an address.
+Specifying that relationship looks like:
+
+```
+<entity name="CustomerEntity" type="customer">
+    ...
+    <required-entity type="address">AddressEntity</required-entity>
+    ...
+</entity>
+```
 
 Attributes|Type|Use|Description
 ---|---|---|---
@@ -176,11 +186,22 @@ type|string|optional|Type attribute of required entity.
 
 ### array
 
-Element that contains a reference to non singular data/values.
+Element that contains a reference to an array of values. For example:
+
+```
+<entity name="AddressEntity" type="address">
+    ...
+    <array key="street">
+        <item>7700 W Parmer Ln</item>
+        <item>Bld D</item>
+    </array>
+    ...
+</entity>
+```
 
 Attributes|Type|Use|Description
 ---|---|---|---
-key|string|required|
+key|string|required|Key attribute of this entity to assign a value to.
 
 `<array>` may contain [`<item>`] elements.
 
