@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Page structure in the Magento Functional Testing Framework
-version: 2.3
-github_link: magento-functional-testing-framework/page/structure.m
+version: 2.2
+github_link: magento-functional-testing-framework/page.md
+functional_areas:
+ - Testing
 ---
 
 ## Overview
@@ -156,4 +158,9 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 [createData]: cest/actions.html#createdata
 [section]: section.html
 [explicit page]: #explicit-page
-[parameterized page]: #parameterized-page
+[parameterized page]: #parameterized-page.
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
+*[UI]: User Interface

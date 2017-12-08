@@ -1,6 +1,10 @@
 label: Magento Functional Testing Framework Guide
 pages:
 
+  - label: Introduction
+    url: magento-functional-testing-framework/introduction.html
+    versions: ["2.2"]
+
   - label: Getting Started
     url: magento-functional-testing-framework/getting-started.html
     versions: ["2.2"]

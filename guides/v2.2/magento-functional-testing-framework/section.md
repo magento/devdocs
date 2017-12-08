@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Section structure in the Magento Functional Testing Framework
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/section.md
+functional_areas:
+ - Testing
 ---
 
 ## Overview
@@ -124,3 +126,7 @@ remove|boolean|optional|Default: `false`. Set to `true` to remove this element d
 [test]: cest.html#test
 [createData]: cest/actions.html#createdata
 [before]: cest.html#before
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
