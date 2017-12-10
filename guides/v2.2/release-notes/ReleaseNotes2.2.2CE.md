@@ -18,7 +18,7 @@ We are pleased to present Magento Open Source 2.2.2. This release includes new t
 
 ## Highlights
 
-LLook for the following highlights in this release:
+Look for the following highlights in this release:
 
 * Significant new features that streamline the customer experience and provide merchamts with greater insight into their online business.
 
