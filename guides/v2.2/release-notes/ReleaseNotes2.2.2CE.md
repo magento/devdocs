@@ -154,7 +154,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-81904 -->* Magento now includes the Filter Groups and the Sort Order of the `$searchCriteria` parameter in the `searchCriteria` Object that is provided for the EAV set repository.  *Fix submitted by [David Verholen](https://github.com/davidverholen) in pull request 11421*. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
-<!--- MAGETWO-81994 -->* Magento no longer sets the product price to zero when you use REST to add a product to an empty cart. Previously, Magento displayed an error when you used REST to populate an empty cart. *Fix submitted by [Peter Jaap Blaakmeer](https://github.com/peterjaap) in pull request 11458*. [GitHub-2991](https://github.com/magento/magento2/issues/2991) [GitHub-2991](https://github.com/magento/magento2/issues/2991)
+<!--- MAGETWO-81994 -->* Magento no longer sets the product price to zero when you use REST to add a product to an empty cart. Previously, Magento displayed an error when you used REST to populate an empty cart. *Fix submitted by [Peter Jaap Blaakmeer](https://github.com/peterjaap) in pull request 11458*. [GitHub-2991](https://github.com/magento/magento2/issues/2991), [GitHub-2991](https://github.com/magento/magento2/issues/2991)
 
 <!--- MAGETWO-81987 -->* You can now translate the placeholder text for the checkout password field.  *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11493*. 
 
@@ -172,7 +172,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83024 -->* Magento now correctly handles all meta keywords and description in categories and in every product in locales that use non-Latin characters. [GitHub-10682](https://github.com/magento/magento2/issues/10682)
 
-<!--- MAGETWO-82851 -->* You can now include negative values in an XML export file and open the file with Office XML handler. Previously, the export files did not open correctly, and an Office XML handler error log was created.  *Fix submitted by [HausO](https://github.com/hauso) in pull request 11757*. [GitHub-11729](https://github.com/magento/magento2/issues/11729) [GitHub-11729](https://github.com/magento/magento2/issues/11729)
+<!--- MAGETWO-82851 -->* You can now include negative values in an XML export file and open the file with Office XML handler. Previously, the export files did not open correctly, and an Office XML handler error log was created.  *Fix submitted by [HausO](https://github.com/hauso) in pull request 11757*. [GitHub-11729](https://github.com/magento/magento2/issues/11729), [GitHub-11729](https://github.com/magento/magento2/issues/11729)
 
 <!--- MAGETWO-81977 -->* The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11470*. [GitHub-10231](https://github.com/magento/magento2/issues/10231),[GitHub-11469](https://github.com/magento/magento2/issues/11469), [GitHub-11471](https://github.com/magento/magento2/issues/11471)
 
@@ -189,7 +189,7 @@ Looking for more information on these new features as well as many others? Check
 
 
 #### Configuration framework
-<!--- MAGETWO-82887 -->* The X-Magento-Tags header can now contain containing white space. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11767*. [GitHub-7640](https://github.com/magento/magento2/issues/7640) [GitHub-7640](https://github.com/magento/magento2/issues/7640)
+<!--- MAGETWO-82887 -->* The X-Magento-Tags header can now contain containing white space. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11767*. [GitHub-7640](https://github.com/magento/magento2/issues/7640), [GitHub-7640](https://github.com/magento/magento2/issues/7640)
 
 <!--- MAGETWO-82535 -->* The config array can now read  all settings from `config`. Previously, the config array was hardcoded to read three settings only. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 11643*. 
 
@@ -232,7 +232,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-81993 -->* `widget.xml` files can now contain multiple `depends` parameters.  *Fix submitted by [Raul E Watson](https://github.com/diazwatson) in pull request 11495*. [GitHub-9783](https://github.com/magento/magento2/issues/9783)
 
-<!--- MAGETWO-81995 -->* You can now use an `adminhtml` URL that differs from `admin` and set **Add Store Code to Urls** to **Yes**. *Fix submitted by [Sylvain Rayé](https://github.com/diglin) in pull request 11460*. [GitHub-11140](https://github.com/magento/magento2/issues/11140) [GitHub-11140](https://github.com/magento/magento2/issues/11140)
+<!--- MAGETWO-81995 -->* You can now use an `adminhtml` URL that differs from `admin` and set **Add Store Code to Urls** to **Yes**. *Fix submitted by [Sylvain Rayé](https://github.com/diglin) in pull request 11460*. [GitHub-11140](https://github.com/magento/magento2/issues/11140), [GitHub-11140](https://github.com/magento/magento2/issues/11140)
 
 
 <!--- MAGETWO-82999 -->* You can now add an HTML node to the page XML root of a theme without causing a validation error. [GitHub-11697](https://github.com/magento/magento2/issues/11697)
@@ -335,7 +335,7 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Payment methods
-<!--- MAGETWO-82732 -->* Magento PayPal integration now supports the Indian Rupee currency (INR)
+<!--- MAGETWO-82732 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
 
 <!--- MAGETWO-71966 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: “Sorry, but something went wrong”.
 
