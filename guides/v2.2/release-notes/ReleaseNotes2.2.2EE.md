@@ -39,7 +39,7 @@ Look for the following highlights in this release:
 
 * **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment. 
 
-* **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MTFT) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing.See [Introduction to Magento Functional Testing Framework](http://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/introduction.html)
+* **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MTFT) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework](http://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/introduction.html).
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
 
@@ -182,7 +182,7 @@ s
 
 <!--- MAGETWO-82710 -->* Magento now downloads the backup `.tgz` file that you select for downloading. Previously, no matter which backup you selected, Magento dwnloaded the most recent backup. [GitHub-10032](https://github.com/magento/magento2/issues/10032)
 
-<!--- MAGETWO-82809 -->* Magento now leaves a product's date attribute's current date field blank if you do not enter a value. [GitHub-11636](https://github.com/magento/magento2/issues/11636), [GitHub-9869](https://github.com/magento/magento2/issues/9869), [GitHub-6661](https://github.com/magento/magento2/issues/6661
+<!--- MAGETWO-82809 -->* Magento now leaves a product's date attribute's current date field blank if you do not enter a value. [GitHub-11636](https://github.com/magento/magento2/issues/11636), [GitHub-9869](https://github.com/magento/magento2/issues/9869), [GitHub-6661](https://github.com/magento/magento2/issues/6661)
 
 <!--- MAGETWO-83277 -->* The Magento store code validation `regex` now supports uppercase letters in store code. [GitHub-11996](https://github.com/magento/magento2/issues/11996)
 
@@ -211,7 +211,7 @@ s
 
 <!--- MAGETWO-82645 -->* Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**.
 
-<!--- MAGETWO-82810 -->* Magento now wraps long label text by word instead of letter. [GitHub-711727](https://github.com/magento/magento2/issues/711727), GitHub-77099](https://github.com/magento/magento2/issues/77099)
+<!--- MAGETWO-82810 -->* Magento now wraps long label text by word instead of letter. [GitHub-711727](https://github.com/magento/magento2/issues/711727), [GitHub-77099](https://github.com/magento/magento2/issues/77099)
 
 
 
@@ -228,7 +228,7 @@ s
 
 
 ### Infrastructure
-<!--- MAGETWO-82273 -->* We've added static block tests that now detect blocks without a name attribute. We've also added a missing block name to allow block customisation, and added a name for the order items grid default renderer block. [GitHub-11092](https://github.com/magento/magento2/issues/11092), GitHub-10824](https://github.com/magento/magento2/issues/10824)
+<!--- MAGETWO-82273 -->* We've added static block tests that now detect blocks without a name attribute. We've also added a missing block name to allow block customisation, and added a name for the order items grid default renderer block. [GitHub-11092](https://github.com/magento/magento2/issues/11092), [GitHub-10824](https://github.com/magento/magento2/issues/10824)
 
   
 ### Newsletters
@@ -351,8 +351,6 @@ We’ve identified the following unresolved issues with this version of Magento 
 The following conditions are either not working or lack full functionality: 
 * `Ordered at` 
 * `Quoting Rules` is missing multiple conditions. Only `Destination country` and `Destination postal code` are currently functional.
-
-
 
 
 
