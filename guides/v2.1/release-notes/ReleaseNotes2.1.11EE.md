@@ -49,7 +49,7 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 
 ### Setup
-<!--- MAGETWO-82780 -->*  The `.user.ini` files at `/.user.ini` and `/pub/.user.ini` now specify a `memory_limit` value of at least 1G to 2G for debugging purposes. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11761*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
+<!--- MAGETWO-82780 -->*  The  `/.user.ini` and `/pub/.user.ini` files now specify a `memory_limit` value of at least 1G to 2G for debugging purposes. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11761*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
 
 <!--- MAGETWO-83020 -->*  Magento now downloads the backup `.tgz` file that you select for downloading. Previously, no matter which backup you selected, Magento downloaded the most recent backup. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11596*. [GitHub-10032](https://github.com/magento/magento2/issues/10032)
 
@@ -72,6 +72,9 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 <!--- MAGETWO-82948 -->* Magento now checks the uniqueness of attribute option values when you use REST to create the option. *Fix submitted by [gonzalopelon](https://github.com/gomencal) in pull request 11786*. [GitHub-8846](https://github.com/magento/magento2/issues/8846)
 
+<!--- MAGETWO-82487 -->* `GET v1/products/attribute-sets/sets/list` now returns a full list of attribute sets. *Fix submitted by [David Verholen](https://github.com/davidverholen) in pull request 11432*. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
+
+<!--- MAGETWO-70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
 
 
 ### Cart and checkout
@@ -102,11 +105,10 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 <!--- MAGETWO-82983 -->*  Magento no longer throws an exception when the X-Magento-Tags header contains whitespace. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11848*. [GitHub-7640](https://github.com/magento/magento2/issues/7640)
 
-<!--- MAGETWO-83155 -->* New orders now appear as expected in the Order table after you migrate data  from M 1.7.0.2 to M 2.1.7. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11932*. [GitHub-10185](https://github.com/magento/magento2/issues/10185)
+<!--- MAGETWO-83155 -->* New orders now appear as expected in the Order table after you migrate data  from Magento 1.7.0.2 to Magento 2.1.7. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11932*. [GitHub-10185](https://github.com/magento/magento2/issues/10185)
 
 <!--- MAGETWO-83096 -->* We've added an extra API call to the interface for managing customer accounts, and it permits you to implement the full reset password process. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11920*. 
 
-<!--- MAGETWO-82487 -->* `GET v1/products/attribute-sets/sets/list` now returns a full list of attribute sets. *Fix submitted by [David Verholen](https://github.com/davidverholen) in pull request 11432*. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
 <!--- MAGETWO-83052 -->* We no longer hard-code the array index of `Magento_Backend::admin` in the resources ACL tree. *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request 11739*.
 
@@ -148,6 +150,11 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 <!--- MAGETWO-83475 -->* We've simplified the `update button.phtml` translation. *Fix submitted by [@ChuckyK](https://github.com/ChuckyK) in pull request 12106*. 
 
+<!--- MAGETWO-57166 -->*  Magento no longer generates the sitemap in the wrong folder when `vhost` is connected to `/pub`. Previously, Magento generated the sitemap in the root folder instead of the pub folder. [GitHub-2802](https://github.com/magento/magento2/issues/2802)
+
+<!--- MAGETWO-82947 -->* Magento now throws a PHP 500 Error when `$optionsArray['delete'][$optionId]` is not set. *Fix submitted by [@angelo983](https://github.com/angelo983) in pull request 11728*. 
+
+
 
 ### Import/export
 
@@ -156,6 +163,8 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 <!--- MAGETWO-69857 -->*  Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option's ID numbers or the option's values, Magento returned an error.
 
 <!--- MAGETWO-69718 -->* Magento no longer changes custom options IDs each time the product is imported or saved. 
+
+<!--- MAGETWO-83956 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
 
 
 ### Index
@@ -175,7 +184,6 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 <!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: "Sorry, but something went wrong".
 
-<!--- MAGETWO-83956 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
 
 <!--- MAGETWO-83742 -->*  We've fixed the race condition that previously caused duplicate orders with a user double-clicked on the Braintree **Pay** button. *Fix submitted by [Daniel Doyle](https://github.com/tr33m4n) in pull request 11901*. [GitHub-10767](https://github.com/magento/magento2/issues/10767)
 
@@ -183,7 +191,6 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 
 ### Reports
-
 
 <!--- MAGETWO-82178 -->* You can now successfully search reports for a particular customer (**Reports > By Customers**). *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11523*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
@@ -193,18 +200,11 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 <!--- MAGETWO-82242 -->* Products in the cart with a price of $0.00 no longer cause an extra cent to be applied to the discount amount.
 
-
-### Shipping
-<!--- MAGETWO-83429 -->* Magento no longer throws an error (`Undefined variable: responseAjax`) when you try to save a shipment package. *Fix submitted by [Joe Constant](https://github.com/lazyguru) in pull request 12092*. 
-
 <!--- MAGETWO-83689 -->* We've fixed a range of issues that affect shipping when SalesRules and CartRules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11919*. [GitHub-8172](https://github.com/magento/magento2/issues/8172), [GitHub-8089](https://github.com/magento/magento2/issues/8089), [GitHub-10507](https://github.com/magento/magento2/issues/10507)
 
 
-### Sitemap
-<!--- MAGETWO-57166 -->*  Magento no longer generates the sitemap in the wrong folder when `vhost` is connected to `/pub`. Previously, Magento generated the sitemap in the root folder instead of the pub folder. [GitHub-2802](https://github.com/magento/magento2/issues/2802)
-
-### Swatches
-!--- MAGETWO-82947 -->*   Magento now throws a PHP 500 Error when `$optionsArray['delete'][$optionId]` is not set. *Fix submitted by [@angelo983](https://github.com/angelo983) in pull request 11728*. 
+### Shipping
+<!--- MAGETWO-83429 -->* Magento no longer throws an error (`Undefined variable: responseAjax`) when you try to save a shipment package. *Fix submitted by [Joe Constant](https://github.com/lazyguru) in pull request 12092*. 
 
 
 ### Tax
@@ -223,11 +223,6 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 ### Visual Merchandiser 
 <!--- MAGETWO-70287 -->*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
-
-### Web API framework
-<!--- MAGETWO-70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
-
-
 ### Wishlist
 <!--- MAGETWO-84238 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
 
@@ -236,7 +231,7 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 ## Known issue
 <!--- MAGETWO-85164 -->**Issue**:In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
 
-**Workaround**: Use the static Swagger site at http://devdocs.magento.com/swagger/index_21.html to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
+**Workaround**: Use the Devdocs [static Swagger site] at http://devdocs.magento.com/swagger/index_21.html to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
 
 
 <!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185 MAGETWO-71021 MAGETWO-84545 MAGETWO-72376 MAGETWO-70157 MAGETWO-69577 MAGETWO-69512 MAGETWO-69344 MAGETWO-69213 MAGETWO-69107 MAGETWO-69036 MAGETWO-68871 MAGETWO-67681 MAGETWO-67402 MAGETWO-66565  MAGETWO-65467 MAGETWO-65466 MAGETWO-65049 MAGETWO-64742 MAGETWO-64743 MAGETWO-64729 MAGETWO-64429 MAGETWO-64459 MAGETWO-64146 MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164 MAGETWO-60755 MAGETWO-77969 MAGETWO-82224 MAGETWO-84325 MAGETWO-84298 MAGETWO-84266 MAGETWO-84011 MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522-->
