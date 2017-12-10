@@ -70,17 +70,29 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
-<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  "postcode is a required field" error message, and `setup:upgrade` failed. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
+<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  "postcode is a required field" error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
 <!--- MAGETWO-82634 -->* We've replaced `FollowSymLinks` with `SymLinksIfOwnerMatch` in the `htaccess` templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811)
 
-<!--- MAGETWO-82292 -->* We've added support for `apache2.4` commands to the `htaccess` template. [GitHub-10810](https://github.com/magento/magento2/issues/10810)
+<!--- MAGETWO-82292 -->* We've added support for `apache2.4` commands to the `htaccess` template. *Fix submitted by [Jonas Hünig](https://github.com/jonashrem) in pull request 11459*. [GitHub-10810](https://github.com/magento/magento2/issues/10810) [GitHub-10810](https://github.com/magento/magento2/issues/10810)
 
-<!--- MAGETWO-82001 -->* `configVariables` now contains a variable for VAT numbers. [GitHub-10996](https://github.com/magento/magento2/issues/10996)
+<!--- MAGETWO-82001 -->* `configVariables` now contains a variable for VAT numbers. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11486*.  [GitHub-10996](https://github.com/magento/magento2/issues/10996)
 
 <!--- MAGETWO-82177 -->* You can now use the Web Setup Wizard to upgrade from Magento Commerce 2.2.0 to 2.2.1 supporting B2B. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
-<!--- MAGETWO-82463 -->* We've fixed an issue with using the command line to install or remove `crontab`. Previously, installing or removing `crontab` via the command lines added `2>&1` repeatedly, even for `crontab` entries not related to Magento. [GitHub-11586](https://github.com/magento/magento2/issues/11586)
+<!--- MAGETWO-82463 -->* We've fixed an issue with using the command line to install or remove `crontab`. Previously, installing or removing `crontab` via the command lines added `2>&1` repeatedly, even for `crontab` entries not related to Magento. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11591*. [GitHub-11586](https://github.com/magento/magento2/issues/11586)
+
+<!--- MAGETWO-81577 -->* You can now install and uninstall `cron` via the `bin/magento cron:install` command. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11359*. 
+
+<!--- MAGETWO-81645 -->* The `admin:user:create` command now recognizes the configured table prefix. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11199*. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
+
+<!--- MAGETWO-82102 -->* Release note text. *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request 11505*. 
+
+<!--- MAGETWO-82234 -->* The `admin:user:create` command now asks for the input value if a required option is not passed. *Fix submitted by [Christian Münch](https://github.com/cmuench) in pull request 11510*. 
+
+<!--- MAGETWO-82747 -->* The `.user.ini` files at `/.user.ini` and `/pub/.user.ini` now specify a `memory_limit` value of at least 1G to 2G for debugging purposes. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11734*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
+
+<!--- MAGETWO-82754 -->* We've added an `i-` interactive flag to the `setup:install` command. It validates parameters. *Fix submitted by [Denis Ristic](https://github.com/denisristic) in pull request 11425*. 
 
 
 
@@ -99,7 +111,7 @@ Looking for more information on these new features as well as many others? Check
 ### Catalog 
 <!--- MAGETWO-83498 -->* You can now enter strings that exceed 255 characters in Admin or frontend input fields. Previously, Magento  saved only the first 255 characters of a long input string. [GitHub-6238](https://github.com/magento/magento2/issues/6238)
 
-<!--- MAGETWO-83477 -->* Magento now renders color attribute swatches correctly for the search result page if sorting for color attribute is enabled. [GitHub-10628](https://github.com/magento/magento2/issues/10628)
+<!--- MAGETWO-83477 -->* Magento now renders color attribute swatches correctly for the search result page if sorting for color attribute is enabled.  *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12077*. [GitHub-10628](https://github.com/magento/magento2/issues/10628) 
 
 <!--- MAGETWO-83174, 83169 -->* The `\Magento\Quote\Model\ResourceModel\Quote\Item\Collection` now returns items that have only existing relations in the `catalog_product_entity` table. Previously, Magento loaded quote items with non-existing products. 
 
@@ -107,35 +119,44 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83066 -->* Magento now saves the correct background color for images. Previously, product images always had a black background when using the Luma theme. [GitHub-8799](https://github.com/magento/magento2/issues/8799)
 
-<!--- MAGETWO-83036 -->* You can now save a product custom option price with a value of 0 (zero) by simply not entering a price. [GitHub-4808](https://github.com/magento/magento2/issues/4808)
+<!--- MAGETWO-83036 -->* You can now save a product custom option price with a value of 0 (zero) by simply not entering a price. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11843*. [GitHub-4808](https://github.com/magento/magento2/issues/4808) [GitHub-4808](https://github.com/magento/magento2/issues/4808)
 
 <!--- MAGETWO-82972 -->* You can now assign products to categories if those products are already assigned to the category tree. [GitHub-8970](https://github.com/magento/magento2/issues/8970)
 
 <!--- MAGETWO-82946 -->* The `apply_to` setting for attributes is no longer hard-coded. [GitHub-7225](https://github.com/magento/magento2/issues/7225)
-<!--- MAGETWO-82755 -->* The add-to-cart checkboxes in Related Products are no longer visible on the storefront when **$canItemsAddToCart** is set to **false**. [GitHub-6891](https://github.com/magento/magento2/issues/6891)
+<!--- MAGETWO-82755 -->* The add-to-cart checkboxes in Related Products are no longer visible on the storefront when **$canItemsAddToCart** is set to **false**.  *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11610*. [GitHub-6891](https://github.com/magento/magento2/issues/6891)
 
-<!--- MAGETWO-83627 -->* You can now successfully save and duplicate a simple product. Previously, when you clicked the **Save and Duplicate** option for an existing simple product in the Catalog Manager, Magento did not duplicate the product, but threw an error. [GitHub-11532](https://github.com/magento/magento2/issues/11532)
+<!--- MAGETWO-83627 -->* You can now successfully save and duplicate a simple product. Previously, when you clicked the **Save and Duplicate** option for an existing simple product in the Catalog Manager, Magento did not duplicate the product, but threw an error. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12001*. [GitHub-11532](https://github.com/magento/magento2/issues/11532) 
 
-<!--- MAGETWO-81967 -->* The Magento Admin Product Edit page now displays product alerts as expected. [GitHub-10007](https://github.com/magento/magento2/issues/10007)
+<!--- MAGETWO-81967 -->* The Magento Admin Product Edit page now displays product alerts as expected.  *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11445*. [GitHub-10007](https://github.com/magento/magento2/issues/10007) 
 
-<!--- MAGETWO-82004 -->* The `StockItemCriteriaInterface` method `setProductsFilter` now accepts an array of IDs. Previously, this method accepted either a single integer or an array, but returned only one item. [GitHub-7678](https://github.com/magento/magento2/issues/7678)
-s
+<!--- MAGETWO-82004 -->* The `StockItemCriteriaInterface` method `setProductsFilter` now accepts an array of IDs. Previously, this method accepted either a single integer or an array, but returned only one item. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request 11500*. [GitHub-7678](https://github.com/magento/magento2/issues/7678)
+
+<!--- MAGETWO-81456 -->* We've added the `$sortByPostion` flag to the `getChildren()` method. *Fix submitted by [Denis Ristic](https://github.com/denisristic) in pull request 11342*. [GitHub-11310](https://github.com/magento/magento2/issues/11310)
+
+<!--- MAGETWO-82283 -->* `ProductRepository` SKU cache is no longer corrupted when `cacheLimit` is reached . *Fix submitted by [Thomas](https://github.com/heldchen) in pull request 11553*. 
+
+<!--- MAGETWO-82943 -->* Magento no longer displays the perpetual spinner when you  switch custom options types in the Product Edit page. *Fix submitted by [Paul Briscoe](https://github.com/briscoda) in pull request 11824*. [GitHub-10291](https://github.com/magento/magento2/issues/10291)
+
+
 
 ### Cart and checkout
 <!--- MAGETWO-83476 -->* You can now view the **Products in cart** report if the cart contains a bundle or a grouped product. Previously, when you viewed the Products in Cart report, Magento threw an exception under these conditions. [GitHub-12079](https://github.com/magento/magento2/issues/12079)
 
 <!--- MAGETWO-83194 -->* Magento now recognizes zip codes without spaces for addresses located in the Netherlands. [GitHub-11898](https://github.com/magento/magento2/issues/11898)
 
-<!--- MAGETWO-82724 -->* Magento now accepts coupon codes with special characters during checkout. [GitHub-9763](https://github.com/magento/magento2/issues/9763)
+<!--- MAGETWO-82724 -->* Magento now accepts coupon codes with special characters during checkout. *Fix submitted by [Gabriel Queiroz Silva](https://github.com/gabrielqs-redstage) in pull request 11710*. [GitHub-9763](https://github.com/magento/magento2/issues/9763)
 
 <!--- MAGETWO-82057 -->* We've improved cache control headers.
 
 <!--- MAGETWO-82314 -->* Magento no longer throws an exception when you place an order using a new address. Previously, Magento displayed this error, "An error occurred on the server. Please try to place the order again.". [GitHub-10583](https://github.com/magento/magento2/issues/10583)
 
 
-<!--- MAGETWO-81904 -->* Magento now includes the Filter Groups and the Sort Order of the `$searchCriteria` parameter in the `searchCriteria` Object that is provided for the EAV set repository. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
+<!--- MAGETWO-81904 -->* Magento now includes the Filter Groups and the Sort Order of the `$searchCriteria` parameter in the `searchCriteria` Object that is provided for the EAV set repository.  *Fix submitted by [David Verholen](https://github.com/davidverholen) in pull request 11421*. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
-<!--- MAGETWO-81994 -->* Magneto no longer sets the product price to zero when you use REST to add a product to an empty cart. Previously, Magento displayed an error when you used REST to populate an empty cart. [GitHub-2991](https://github.com/magento/magento2/issues/2991)
+<!--- MAGETWO-81994 -->* Magento no longer sets the product price to zero when you use REST to add a product to an empty cart. Previously, Magento displayed an error when you used REST to populate an empty cart. *Fix submitted by [Peter Jaap Blaakmeer](https://github.com/peterjaap) in pull request 11458*. [GitHub-2991](https://github.com/magento/magento2/issues/2991) [GitHub-2991](https://github.com/magento/magento2/issues/2991)
+
+<!--- MAGETWO-81987 -->* You can now translate the placeholder text for the checkout password field.  *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11493*. 
 
 
 ### Configurable products
@@ -143,27 +164,42 @@ s
 
 
 ### Frameworks
+<!--- MAGETWO-82675 -->* We've added a health check to the NGINX configuration sample. *Fix submitted by [Andrew Howden](https://github.com/andrewhowdencom) in pull request 11690*. [GitHub-11157](https://github.com/magento/magento2/issues/11157)
 
+<!--- MAGETWO-82814 -->* Magento now allows underscore characters in module names and also permits their use when modules add a block to the layout via XML. Previously,  Magento did not support underscore characters in module names to be added to the layout via XML. *Fix submitted by [Ben Tideswell](https://github.com/bentideswell) in pull request 11765*. 
 
 #### App framework
 
 <!--- MAGETWO-83024 -->* Magento now correctly handles all meta keywords and description in categories and in every product in locales that use non-Latin characters. [GitHub-10682](https://github.com/magento/magento2/issues/10682)
 
-<!--- MAGETWO-82851 -->* You can now include negative values in an XML export file and open the file with Office XML handler. Previously, the export files did not open correctly, and an Office XML handler error log was created.  [GitHub-11729](https://github.com/magento/magento2/issues/11729)
+<!--- MAGETWO-82851 -->* You can now include negative values in an XML export file and open the file with Office XML handler. Previously, the export files did not open correctly, and an Office XML handler error log was created.  *Fix submitted by [HausO](https://github.com/hauso) in pull request 11757*. [GitHub-11729](https://github.com/magento/magento2/issues/11729) [GitHub-11729](https://github.com/magento/magento2/issues/11729)
 
-<!--- MAGETWO-81977 -->* The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. [GitHub-11469](https://github.com/magento/magento2/issues/11469), [GitHub-11471](https://github.com/magento/magento2/issues/11471)
+<!--- MAGETWO-81977 -->* The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11470*. [GitHub-10231](https://github.com/magento/magento2/issues/10231),[GitHub-11469](https://github.com/magento/magento2/issues/11469), [GitHub-11471](https://github.com/magento/magento2/issues/11471)
 
 <!--- MAGETWO-81973 -->* Magento now supports the setting of HTTP response status code in redirected responses. [GitHub-9028](https://github.com/magento/magento2/issues/9028)
 
+<!--- MAGETWO-81990 -->* Magento now throws a meaningful exception when a virtual theme does not have a physical parent theme. *Fix submitted by [David Fecke](https://github.com/leptoquark1) in pull request 11240*. 
+
+<!--- MAGETWO-82236 -->* `app:config:dump` no longer adds an extra space to multiline array values. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11439*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
+
+<!--- MAGETWO-82665 -->* The TRAVIS_BRANCH variable is now surrounded by double-quotes instead of single-quotes . *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11704*. 
+
+
+<!--- MAGETWO-83035 -->* The doc block of `setValue` in FilterBuilder now reflects that the `setValue` method will accept an array. *Fix submitted by [bytecreation](https://github.com/ByteCreation) in pull request 11854*. 
+
 
 #### Configuration framework
-<!--- MAGETWO-82887 -->* The X-Magento-Tags header can now contain containing white space. [GitHub-7640](https://github.com/magento/magento2/issues/7640)
+<!--- MAGETWO-82887 -->* The X-Magento-Tags header can now contain containing white space. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11767*. [GitHub-7640](https://github.com/magento/magento2/issues/7640) [GitHub-7640](https://github.com/magento/magento2/issues/7640)
+
+<!--- MAGETWO-82535 -->* The config array can now read  all settings from `config`. Previously, the config array was hardcoded to read three settings only. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 11643*. 
+
 
 #### JaveScript framework
-<!--- MAGETWO-80207 -->* We've fixed problems that were resulting from  too much or incorrect encoding of UTF-8 files when JavaScript Bundling was enabled. Previously, this issue resulted in poor character encoding on the storefront. [GitHub-10562](https://github.com/magento/magento2/issues/10562), [GitHub-6733](https://github.com/magento/magento2/issues/6733)
+!--- MAGETWO-80207 -->* We've fixed problems that were resulting from  too much or incorrect encoding of UTF-8 files when JavaScript Bundling was enabled. Previously, this issue resulted in poor character encoding on the storefront. [GitHub-10562](https://github.com/magento/magento2/issues/10562), [GitHub-6733](https://github.com/magento/magento2/issues/6733)
 
-<!--- MAGETWO-81959 -->* Magento now exports the Confirmed email and Account Lock values when you export customer data. Previously, this information was missing from the exported CSV. [GitHub-10765](https://github.com/magento/magento2/issues/10765)
+<!--- MAGETWO-81959 -->* Magento now exports the Confirmed email and Account Lock values when you export customer data. Previously, this information was missing from the exported CSV. *Fix submitted by [Luke Rodgers](https://github.com/convenient) in pull request 11437*. [GitHub-10765](https://github.com/magento/magento2/issues/10765), [GitHub-10765](https://github.com/magento/magento2/issues/10765)
 
+<!--- MAGETWO-81146 -->* You can now submit the search form from the keyboard. *Fix submitted by [Romain Ruaud](https://github.com/romainruaud) in pull request 11250*. [GitHub-10275](https://github.com/magento/magento2/issues/10275)
 
 #### Session framework
 <!--- MAGETWO-84106 -->* We've removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.
@@ -173,44 +209,67 @@ s
 
 
 ### General
-<!--- MAGETWO-83495 -->* Magento now redirects a user to the checkout page if he logs in after selecting the **Checkout** button. Previously,  a user was redirected to the store home page. [GitHub-10834](https://github.com/magento/magento2/issues/10834)
+<!--- MAGETWO-83495 -->* Magento now redirects a user to the checkout page if he logs in after selecting the **Checkout** button. Previously,  a user was redirected to the store home page. *Fix submitted by [@p-bystritsky](https://github.com/p-bystritsky) in pull request 11876*. [GitHub-10834](https://github.com/magento/magento2/issues/10834)
 
 <!--- MAGETWO-83281 -->* XHTML templates now use schema URNs. [GitHub-6661](https://github.com/magento/magento2/issues/6661)
 
 <!--- MAGETWO-83279 -->* The image size used as a cross-sell product placeholder now equals the size of the image used in product listing placeholder images. Previosuly, the cross-sell product placeholder image was too small. [GitHub-12017](https://github.com/magento/magento2/issues/12017)
 
-<!--- MAGETWO-82710 -->* Magento now downloads the backup `.tgz` file that you select for downloading. Previously, no matter which backup you selected, Magento dwnloaded the most recent backup. [GitHub-10032](https://github.com/magento/magento2/issues/10032)
+<!--- MAGETWO-82710 -->* Magento now downloads the backup `.tgz` file that you select for downloading. Previously, no matter which backup you selected, Magento dwnloaded the most recent backup. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11595*. [GitHub-10032](https://github.com/magento/magento2/issues/10032)
 
-<!--- MAGETWO-82809 -->* Magento now leaves a product's date attribute's current date field blank if you do not enter a value. [GitHub-11636](https://github.com/magento/magento2/issues/11636), [GitHub-9869](https://github.com/magento/magento2/issues/9869), [GitHub-6661](https://github.com/magento/magento2/issues/6661)
+<!--- MAGETWO-82809 -->* Magento now leaves a product's date attribute's current date field blank if you do not enter a value. *Fix submitted by [@enriquei4](https://github.com/enriquei4) in pull request 11749*. [GitHub-9869](https://github.com/magento/magento2/issues/9869), [GitHub-11636](https://github.com/magento/magento2/issues/11636), [GitHub-6661](https://github.com/magento/magento2/issues/6661)
 
 <!--- MAGETWO-83277 -->* The Magento store code validation `regex` now supports uppercase letters in store code. [GitHub-11996](https://github.com/magento/magento2/issues/11996)
 
-<!--- MAGETWO-82426 -->* When you use a UI component-based form and add a custom regular expression pattern validation to an input field, the supplied pattern is now properly converted from a string to a JavaScript RegEx object. [GitHub-11453](https://github.com/magento/magento2/issues/11453)
+<!--- MAGETWO-82426 -->* When you use a UI component-based form and add a custom regular expression pattern validation to an input field, the supplied pattern is now properly converted from a string to a JavaScript RegEx object. *Fix submitted by [Brett](https://github.com/bap14) in pull request 11565*. [GitHub-9919](https://github.com/magento/magento2/issues/9919)
 
-<!--- MAGETWO-82431 -->* Magento now sets ISO-valid language code in the HTML header. [GitHub-11540](https://github.com/magento/magento2/issues/11540)
+<!--- MAGETWO-82431 -->* Magento now sets ISO-valid language code in the HTML header. *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 11561*. [GitHub-11540](https://github.com/magento/magento2/issues/11540)
 
-<!--- MAGETWO-82889 -->* Magento now validates CMS blocks before creating one. [GitHub-8236](https://github.com/magento/magento2/issues/8236), [GitHub-4831](https://github.com/magento/magento2/issues/4831)
+<!--- MAGETWO-82889 -->* Magento now validates CMS blocks before creating one.  *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11802*. [GitHub-8236](https://github.com/magento/magento2/issues/8236), [GitHub-4831](https://github.com/magento/magento2/issues/4831)
 
-<!--- MAGETWO-82537 -->* We've fixed an issue with the UI form element `abstract.js` that resulted in a cutom frield's name attribute remaining empty during form creation. [GitHub-9944](https://github.com/magento/magento2/issues/9944)
 
-<!--- MAGETWO-81993 -->* `widget.xml` files can now contain multiple `depends` parameters. [GitHub-9783](https://github.com/magento/magento2/issues/9783)
+<!--- MAGETWO-82537 -->* We've fixed an issue with the UI form element `abstract.js` that resulted in a custom field's name attribute remaining empty during form creation.  *Fix submitted by [Paul Briscoe](https://github.com/briscoda) in pull request 11637*. [GitHub-9944](https://github.com/magento/magento2/issues/9944)
 
-<!--- MAGETWO-81995 -->* You can now use an `adminhtml` URL that differs from `admin` and set **Add Store Code to Urls** to **Yes**. [GitHub-11140](https://github.com/magento/magento2/issues/11140)
+<!--- MAGETWO-81993 -->* `widget.xml` files can now contain multiple `depends` parameters.  *Fix submitted by [Raul E Watson](https://github.com/diazwatson) in pull request 11495*. [GitHub-9783](https://github.com/magento/magento2/issues/9783)
+
+<!--- MAGETWO-81995 -->* You can now use an `adminhtml` URL that differs from `admin` and set **Add Store Code to Urls** to **Yes**. *Fix submitted by [Sylvain Rayé](https://github.com/diglin) in pull request 11460*. [GitHub-11140](https://github.com/magento/magento2/issues/11140) [GitHub-11140](https://github.com/magento/magento2/issues/11140)
 
 
 <!--- MAGETWO-82999 -->* You can now add an HTML node to the page XML root of a theme without causing a validation error. [GitHub-11697](https://github.com/magento/magento2/issues/11697)
 
-<!--- MAGETWO-82652 -->* The `customer_data_object` firstname is no longer equal to `orig_customer_data_object` after you save an existing user account with a new name or address. [GitHub-7915](https://github.com/magento/magento2/issues/7915)
+<!--- MAGETWO-82652 -->* The `customer_data_object` firstname is no longer equal to `orig_customer_data_object` after you save an existing user account with a new name or address. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11676*. [GitHub-7915](https://github.com/magento/magento2/issues/7915)
 
 <!--- MAGETWO-82658 -->* We removed a typo in the Paypal Module. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
-<!--- MAGETWO-82761 -->* We’ve fixed the dashboard graph’s y-axis range.
+<!--- MAGETWO-82761 -->* We’ve fixed the dashboard graph’s y-axis range. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11751*. [GitHub-7927](https://github.com/magento/magento2/issues/7927)
 
 <!--- MAGETWO-83023 -->* Magento no longer throws an error when you try to load a quote item collection. [GitHub-8954](https://github.com/magento/magento2/issues/8954)
 
-<!--- MAGETWO-82645 -->* Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**.
+<!--- MAGETWO-82645 -->* Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11677*. 
 
-<!--- MAGETWO-82810 -->* Magento now wraps long label text by word instead of letter. [GitHub-711727](https://github.com/magento/magento2/issues/711727), [GitHub-77099](https://github.com/magento/magento2/issues/77099)
+<!--- MAGETWO-82810 -->* Magento now wraps long label text by word instead of letter. *Fix submitted by [@enriquei4](https://github.com/enriquei4) in pull request 11745*. [GitHub-7099](https://github.com/magento/magento2/issues/7099), [GitHub-711727](https://github.com/magento/magento2/issues/711727)
+
+<!--- MAGETWO-81580 -->* Magento now displays and expects the format of birth years to match `yyyy` instead of `yy`. *Fix submitted by [Manu Gonzalez Rodriguez](https://github.com/manuelson) in pull request 11351*. [GitHub-11332](https://github.com/magento/magento2/issues/11332)
+
+
+<!--- MAGETWO-81675 -->* Magento now displays the State/Province field after you edit the billing address on sales orders.  *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11381*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
+
+
+<!--- MAGETWO-81680 -->* You can now successfully sync billing and shipping addresses on Admin Reorder and Admin Customer Create Order page for selected, exisiting addresses. *Fix submitted by [Ievgen Sentiabov](https://github.com/joni-jones) in pull request 11385*. [GitHub-10856](https://github.com/magento/magento2/issues/10856)
+
+
+<!--- MAGETWO-82854 -->* We've fixed an error in the `FixAccountManagementTest` unit test that caused it to fail. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11607*. 
+
+<!--- MAGETWO-82954 -->* You can now submit a form by pressing **Enter**. *Fix submitted by [Raul Encinas](https://github.com/bohemiorulo) in pull request 11827*. [GitHub-4696](https://github.com/magento/magento2/issues/4696)
+
+<!--- MAGETWO-81422 -->* The Store View switcher now works as expected. *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11337*. [GitHub-10908](https://github.com/magento/magento2/issues/10908), [GitHub-11211](https://github.com/magento/magento2/issues/11211)
+
+<!--- MAGETWO-83490 -->*  We've removed object manager references as well as deprecated calls to `$messageManager`. *Fix submitted by [Atish Goswami](https://github.com/atishgoswami) in pull request 12061*. 
+
+<!--- MAGETWO-83672 -->* Magento now prepares street data to guarantee that the street array will be converted to the string. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 12130*. 
+
+<!--- MAGETWO-83682 -->* We've fixed two issues that affected disabling and enabling the  WYSIWYG editor with `ui/form/element/helper/service` checkbox. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 12141*. 
+
 
 
 
@@ -221,20 +280,36 @@ s
 
 <!--- MAGETWO-82956 -->* Magento now provides better error reporting when an error occurs during the import of a CSV file with a semicolon delimiter. Previously, Magento stopped import, but did not provide a link to the error report CSV file. [GitHub-5015](https://github.com/magento/magento2/issues/5015)
 
+<!--- MAGETWO-81594 -->*  Exception message was passed as a exception description argument instead of exception message.. *Fix submitted by [Tim Bezhashvyly](https://github.com/tim-bezhashvyly) in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
+
+<!--- MAGETWO-82886 -->* Release note text. *Fix submitted by [@p-bystritsky](https://github.com/p-bystritsky) in pull request 11779*. [GitHub-4711](https://github.com/magento/magento2/issues/4711)
+
+<!--- MAGETWO-83310 -->* Importing a import file to update customer data no loner results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 11968*. 
+
 
 ### Indexing
 <!--- MAGETWO-80188 -->* Magento no longer re-indexes entities if they are unchanged, which improves the performance of the refresh index cron job without any loss of functionality. [GitHub-4893](https://github.com/magento/magento2/issues/4893)
 
 
 ### Infrastructure
-<!--- MAGETWO-82273 -->* We've added static block tests that now detect blocks without a name attribute. We've also added a missing block name to allow block customisation, and added a name for the order items grid default renderer block. [GitHub-11092](https://github.com/magento/magento2/issues/11092), [GitHub-10824](https://github.com/magento/magento2/issues/10824)
+<!--- MAGETWO-82273 -->* We've added static block tests that now detect blocks without a name attribute. We've also added a missing block name to allow block customisation, and added a name for the order items grid default renderer block. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11235*. [GitHub-10824](https://github.com/magento/magento2/issues/10824)
+
+<!--- MAGETWO-82300 -->* We've ported a fix for the Travis CI builds for the  `2.2-develop` branch to the  `2.3-develop` branch. *Fix submitted by [Ievgen Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 11555*. 
+
+<!--- MAGETWO-82003 -->*  Integration tests now reset the integration test database when `TESTS_CLEANUP` is set to enabled. *Fix submitted by [Joshua Warren](https://github.com/joshuaswarren) in pull request 11499*. [GitHub-10025](https://github.com/magento/magento2/issues/10025)
+
+<!--- MAGETWO-82658 -->*  We fixed a typo in the `Paypal/Test/TestCase/OnePageCheckoutTest.xml`. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
+
+<!--- MAGETWO-83572 -->*  Release note text. *Fix submitted by [WEXO team](https://github.com/wexo-team) in pull request 12144*. [GitHub-11230](https://github.com/magento/magento2/issues/11230)
+
 
   
 ### Newsletters
 <!--- MAGETWO-83257 -->* Newsletter subscriptions now work as expected. Previously, Magento did not set the `create-date` field, and the `change_status_at` was broken. [GitHub-4004](https://github.com/magento/magento2/issues/4004)
 
-<!--- MAGETWO-83286 -->* When a customer with the same email address has an account on different stores in the same Magento installation, changes to the newsletter subscription in one account no longer affects the other subscription. [GitHub-10014](https://github.com/magento/magento2/issues/10014)
+<!--- MAGETWO-83286 -->* When a customer with the same email address has an account on different stores in the same Magento installation, changes to the newsletter subscription in one account no longer affects the other subscription. *Fix submitted by [Sergio Baixauli](https://github.com/sbaixauli) in pull request 12035*. [GitHub-10014](https://github.com/magento/magento2/issues/10014)
 
+<!--- MAGETWO-81326 -->* Magento now sends email confirmation of newsletter subscription to a user only when the user is newly subscribed. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11317*. [GitHub-5439](https://github.com/magento/magento2/issues/5439)
 
 ### Orders
 
@@ -244,15 +319,19 @@ s
 
 <!--- MAGETWO-83084 -->* New orders now appear as expected in the Order table after you migrate data from Magento 1.7.0.2 to Magento 2.1.7. [GitHub-10185](https://github.com/magento/magento2/issues/10185)
 
-<!--- MAGETWO-83745 -->* You can now create an order from the Customer Edit page when working from the Admin. [GitHub-11832](https://github.com/magento/magento2/issues/11832)
+<!--- MAGETWO-83745 -->* You can now create an order from the Customer Edit page when working from the Admin. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11952*. [GitHub-11832](https://github.com/magento/magento2/issues/11832)
 
-<!--- MAGETWO-83668 -->* We've improved the expected behavior of the `getTracksCollection()` method. Previously, this method returned either  collections or arrays. It now returns collection objects. [GitHub-8022](https://github.com/magento/magento2/issues/8022)
+<!--- MAGETWO-83668 -->* We've improved the expected behavior of the `getTracksCollection()` method. Previously, this method returned either  collections or arrays. It now returns collection objects. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12173*. [GitHub-8022](https://github.com/magento/magento2/issues/8022)
 
-<!--- MAGETWO-82953 -->* We've corrected references to `Zend_Pdf_Color_RGB` to the correct camel-case class name (`Zend_Pdf_Color_Rgb`). Previously, the former class name resulted in references to wrong or nonexistent classes. [GitHub-11581](https://github.com/magento/magento2/issues/11581)
+<!--- MAGETWO-82953 -->* We've corrected references to `Zend_Pdf_Color_RGB` to the correct camel-case class name (`Zend_Pdf_Color_Rgb`). Previously, the former class name resulted in references to wrong or nonexistent classes. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 11830*. [GitHub-11581](https://github.com/magento/magento2/issues/11581)
 
 <!--- MAGETWO-82883 -->* The Order table now accurately reflects changes in order status. 
 
-<!--- MAGETWO-82562 -->* Invoices now display coupon code information. [GitHub-10168](https://github.com/magento/magento2/issues/10168)
+<!--- MAGETWO-82562 -->* Invoices now display coupon code information. *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 11635*. [GitHub-10168](https://github.com/magento/magento2/issues/10168)
+
+<!--- MAGETWO-81428 -->* Magento no longer lets you cancel an invoice more than once.  *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11261*. [GitHub-9968](https://github.com/magento/magento2/issues/9968)
+
+<!--- MAGETWO-81647 -->* We've updated `guest.php` to resolve issues with breadcrumb performance. *Fix submitted by [Juliano Vargas](https://github.com/lano-vargas) in pull request 11299*. [GitHub-11275](https://github.com/magento/magento2/issues/11275)
 
 
 ### Payment methods
@@ -262,9 +341,15 @@ s
 
 <!--- MAGETWO-83270 -->* Administrators with limited privileges can now log in without errors. Previously, Magento threw an error, but did not log errors in either the server or Magento logs. [GitHub-11700](https://github.com/magento/magento2/issues/11700)
 
+<!--- MAGETWO-82367 -->* Release note text. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 11569*. 
+
 
 ### Reports
 <!--- MAGETWO-82179 -->* The Review by Customer report filter now works as expected. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+
+<!--- MAGETWO-82179 -->* The search for the Customer Review report now works as expected. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11522*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+
+<!--- MAGETWO-83600 -->* Magento now reports handled exceptions to New Relic. Previously, Magento displayed only fatal errors. *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request 11944*. 
 
 
 ### SalesRule
@@ -272,6 +357,7 @@ s
 
 <!--- MAGETWO-70323 -->* You can now add a bundle product that includes a simple product with a price of 0 (zero) to your cart. Previously, Magento threw an error. [GitHub-8969](https://github.com/magento/magento2/issues/8969)
 
+<!--- MAGETWO-81161 -->* We've fixed an issue that resulted in Cart Price rules not being applied to products if dropdown attributes were present. Previously, Magento checked only the items that were visible in the cart against the specified conditions. *Fix submitted by [Marina Gociu](https://github.com/marinagociu) in pull request 11274*. [GitHub-10477](https://github.com/magento/magento2/issues/10477)
 
 
 ### Search
@@ -290,26 +376,40 @@ s
 
 <!--- MAGETWO-80191 -->* An invoice's `grand_total` and `base_grand_total` now match as expected. Previously, these values differed, leading to a rounding error when calculating the `base_grand_total`. 
 
+<!--- MAGETWO-81673 -->* Magento now adds a customer note to a shipment invoice when the shipment is created by API and `appendComment` is set to **true**. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11383*. [GitHub-11207](https://github.com/magento/magento2/issues/11207)
+
+<!--- MAGETWO-81830 -->* Shipping method radio buttons no longer have duplicate element IDs on the cart page. Previously, these radio buttons had duplicate IDs,  which made it impossible to select the second method. *Fix submitted by [Peter Jaap Blaakmeer](https://github.com/peterjaap) in pull request 11406*. [GitHub-10795](https://github.com/magento/magento2/issues/10795)
+
+<!--- MAGETWO-81986 -->* The **Shop By** button is now rendered as expected on Android platforms. Previously, the **Shop By** button  and other contents were positioned incorrectly. *Fix submitted by [Lorenzo Stramaccia](https://github.com/slackerzz) in pull request 11430*. [GitHub-10941](https://github.com/magento/magento2/issues/10941)
+
+<!--- MAGETWO-82748 -->* The `freePackageValue` value is now required to be defined. Previously, this value could be undefined, but in some cases was still accessed. *Fix submitted by [Alexander Menk](https://github.com/amenk) in pull request 11720*. 
+
+
 ### Sitemap
 <!--- MAGETWO-83145 -->* The `sitemap.xml` `last mod` time stamp now contains the correct date. [GitHub-9151](https://github.com/magento/magento2/issues/9151)
 
 ### Swatches
-<!--- MAGETWO-82955 -->* The Visual Swatch Attribute drop-down menu (accessible from Manage Swatch tab) now works as expected. Previously, when you clicked the **Add Swatch** button from this tab, the drop-down menu was not displayed. [GitHub-11534](https://github.com/magento/magento2/issues/11534)
+<!--- MAGETWO-82955 -->* The Visual Swatch Attribute drop-down menu (accessible from Manage Swatch tab) now works as expected. Previously, when you clicked the **Add Swatch** button from this tab, the drop-down menu was not displayed. *Fix submitted by [@enriquei4](https://github.com/enriquei4) in pull request 11747*. [GitHub-11534](https://github.com/magento/magento2/issues/11534)
 
 ### Taxes
-<!--- MAGETWO-82753 -->* We've fixed a problem with the **Ignore this notification** setting. [GitHub-11365](https://github.com/magento/magento2/issues/11365)
+<!--- MAGETWO-82753 -->* We've fixed a problem with the **Ignore this notification** setting. *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 11410*. [GitHub-11365](https://github.com/magento/magento2/issues/11365)
 
 
 ### Translations
 <!--- MAGETWO-72352 -->* You can now implement translations from themes (in contrast to translations from modules).
 
-<!--- MAGETWO-81970 -->* We've added previously missing translation strings to the UI module. [GitHub-5956](https://github.com/magento/magento2/issues/5956)
+<!--- MAGETWO-81970 -->* We've added previously missing translation strings to the UI module. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11440*. [GitHub-5956](https://github.com/magento/magento2/issues/5956)
 
-<!--- MAGETWO-82651 -->* We've fixed an issue with the `<![CDATA[]]>` translate phrase in the `system.xml` file. [GitHub-7767](https://github.com/magento/magento2/issues/7767)
+<!--- MAGETWO-82651 -->* We've fixed an issue with the `<![CDATA[]]>` translate phrase in the `system.xml` file. [*Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11675*. [GitHub-7767](https://github.com/magento/magento2/issues/7767)
+
+
+<!--- MAGETWO-83547 -->* We’ve simplified the update `button.phtml` translation. *Fix submitted by [Karla Saaremäe](https://github.com/ChuckyK) in pull request 12136*. 
 
 
 ### Varnish 
 <!--- MAGETWO-83152 -->* Cache headers for documents now factor in the cookie for the store code as expected. 
+
+
 
 ## Known issues
 
