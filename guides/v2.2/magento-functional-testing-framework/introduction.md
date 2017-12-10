@@ -48,7 +48,7 @@ But you can find them for your experiments in the corresponding [`magento` repos
 - Java
 - Codeception (downloaded via composer during installation)
 - Robo (downloaded via composer during installation)
-- Allure (downloaded via composer during installatio)
+- Allure (downloaded via composer during installation)
 - Selenium Standalone Server
 - Allure CLI
 
