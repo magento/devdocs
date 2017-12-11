@@ -20,7 +20,7 @@ We are pleased to present Magento Commerce 2.2.2. This release includes new tool
 
 Look for the following highlights in this release:
 
-* Significant new features that streamline the customer experience and provide merchamts with greater insight into their online business.
+* Significant new features that streamline the customer experience and provide merchants with greater insight into their online business.
 
 * Numerous fixes and enhancements to core features, including significant improvements to the payment process. 
 
