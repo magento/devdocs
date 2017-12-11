@@ -263,7 +263,7 @@ Additions since 2.1 are marked with asterisks (*). Additions since 2.2 are marke
     PUT    /V1/customers/me/password
     GET    /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken
     PUT    /V1/customers/password
-    #POST /V1/customers/resetPassword
+    #POST  /V1/customers/resetPassword
     GET    /V1/customers/:customerId/confirm
     POST   /V1/customers/confirm
     PUT    /V1/customers/validate
