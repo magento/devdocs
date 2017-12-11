@@ -11,8 +11,9 @@ functional_areas:
 
 1.  Clone your project
 2.  Add BB remote
-3.  Delete "cloud" remote
-3.  Push files
+3.  Delete "cloud" remote?
+3.  Push files to BB
 4.  Verify
-5.  Proceed with BB integration
-6.  Verify
+5.  Proceed with BB integration per MAGECLOUD-718
+6.  Push a change to your BB repo
+7.  Verify Magento cloud syncs
