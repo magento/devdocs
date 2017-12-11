@@ -16,13 +16,10 @@ github_link: release-notes/ReleaseNotes2.1.11EE.md
 
 *Patch code and release notes were published on December 12, 2017.*
 
-We are pleased to present Magento Commerce  2.1.11. This release includes important enhancements to your Magento software.
-
-
+We are pleased to present Magento Open Source  2.1.11. This release includes both new features and many improvements. Check out the many community-contributed fixes!
 
 ## Highlights
-
-Magento 2.1.11 contains both exciting new features and many improvements. Look for the following highlights in this release:
+Look for the following highlights in this release:
 
 
 ### New features
@@ -154,6 +151,9 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 
 <!--- MAGETWO-82947 -->* Magento now throws a PHP 500 Error when `$optionsArray['delete'][$optionId]` is not set. *Fix submitted by [@angelo983](https://github.com/angelo983) in pull request 11728*. 
 
+Magento now displays the State/Province field after you edit the billing address on sales orders.  *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11381*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
+
+
 
 
 ### Import/export
@@ -223,6 +223,7 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 ### Visual Merchandiser 
 <!--- MAGETWO-70287 -->*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
+
 ### Wishlist
 <!--- MAGETWO-84238 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
 
@@ -234,7 +235,7 @@ Magento 2.1.11 contains both exciting new features and many improvements. Look f
 **Workaround**: Use the Devdocs [static Swagger site] at http://devdocs.magento.com/swagger/index_21.html to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
 
 
-<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185 MAGETWO-71021 MAGETWO-84545 MAGETWO-72376 MAGETWO-70157 MAGETWO-69577 MAGETWO-69512 MAGETWO-69344 MAGETWO-69213 MAGETWO-69107 MAGETWO-69036 MAGETWO-68871 MAGETWO-67681 MAGETWO-67402 MAGETWO-66565  MAGETWO-65467 MAGETWO-65466 MAGETWO-65049 MAGETWO-64742 MAGETWO-64743 MAGETWO-64729 MAGETWO-64429 MAGETWO-64459 MAGETWO-64146 MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164 MAGETWO-60755 MAGETWO-77969 MAGETWO-82224 MAGETWO-84325 MAGETWO-84298 MAGETWO-84266 MAGETWO-84011 MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522-->
+<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185 MAGETWO-71021 MAGETWO-84545 MAGETWO-72376 MAGETWO-70157 MAGETWO-69577 MAGETWO-69512 MAGETWO-69344 MAGETWO-69213 MAGETWO-69107 MAGETWO-69036 MAGETWO-68871 MAGETWO-67681 MAGETWO-67402 MAGETWO-66565  MAGETWO-65467 MAGETWO-65466 MAGETWO-65049 MAGETWO-64742 MAGETWO-64743 MAGETWO-64729 MAGETWO-64429 MAGETWO-64459 MAGETWO-64146 MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164 MAGETWO-60755 MAGETWO-77969 MAGETWO-82224 MAGETWO-84325 MAGETWO-84298 MAGETWO-84266 MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522-->
 
 <!--- CANCELED MAGETWO-72400 -->
 
