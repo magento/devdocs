@@ -39,6 +39,9 @@ pages:
         - label: Git
           url: cloud/reference/git-integration.html
 
+        - label: Bitbucket
+          url: cloud/project/bitbucket-integration.html
+
         - label: GitHub
           url: cloud/project/project-integrate-github.html
 
