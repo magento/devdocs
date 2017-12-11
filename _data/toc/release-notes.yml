@@ -10,8 +10,7 @@ pages:
         - label: Magento Open Source 2.2.2 Release Notes
           url: release-notes/ReleaseNotes2.2.2CE.html
 
-
-          - label: Magento Open Source 2.2.1 Release Notes
+        - label: Magento Open Source 2.2.1 Release Notes
           url: release-notes/ReleaseNotes2.2.1CE.html
 
         - label: Magento Commerce 2.2.1 Release Notes
@@ -38,13 +37,11 @@ pages:
           children:
 
 
-            - label: Magento Open Source 2.1.11 Release Notes
+           - label: Magento Open Source 2.1.11 Release Notes
               url: release-notes/ReleaseNotes2.1.11CE.html
 
-
-            - label: Magento Open Source 2.1.10 Release Notes
+           - label: Magento Open Source 2.1.10 Release Notes
               url: release-notes/ReleaseNotes2.1.10CE.html
-
 
             - label: Magento Open Source 2.1.9 Release Notes
               url: release-notes/ReleaseNotes2.1.9CE.html
