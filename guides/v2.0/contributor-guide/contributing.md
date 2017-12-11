@@ -157,11 +157,11 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G1_Passed.png" alt="G1 Passed"/></td>
-         <td>Automatic verification of the issue desciprion successfully passed. Minimum required infomation is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
+         <td>Automatic verification of the issue desciprion successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
       </tr>  
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G1_Failed.png" alt="G1 Failed"/></td>
-         <td>Automatic verification of the issue desciprion failed. Minimum required infomation is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
+         <td>Automatic verification of the issue desciprion failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
       </tr> 
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
