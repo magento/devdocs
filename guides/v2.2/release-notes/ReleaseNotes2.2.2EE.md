@@ -450,10 +450,6 @@ We’ve identified the following unresolved issues with this version of Magento 
 * Rule 2: Show ‘Free Shipping’ for Country is not Canada and Cost is greater than $100
 
 
-**Issue**: Certain conditions are not working <!--- BUNDLE-409-->
-The following conditions are either not working or lack full functionality: 
-* `Ordered at` 
-* `Quoting Rules` is missing multiple conditions. Only `Destination country` and `Destination postal code` are currently functional.
 
 
 
