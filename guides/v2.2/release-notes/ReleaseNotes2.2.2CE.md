@@ -29,7 +29,7 @@ Look for the following highlights in this release:
 
 ### New Features
 
-* **Streamlined Instant Purchase checkout**. Our new streamlined Instant Purchase option uses previously-stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
+* **Streamlined Instant Purchase checkout**. Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
 
 * **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).  
@@ -41,7 +41,7 @@ Look for the following highlights in this release:
 
 * **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MTFT) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework](http://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/introduction.html).
 
-Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
+Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
 
 ## Fixes and enhancements
