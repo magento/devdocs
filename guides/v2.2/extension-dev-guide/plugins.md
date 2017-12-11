@@ -12,7 +12,7 @@ redirect_from:
 ---
 
 ### Overview
-A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any class or *interface*.
+A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any *class* or *interface*.
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class.
 
@@ -60,9 +60,7 @@ You can use before methods to change the arguments of an observed method by retu
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -72,7 +70,6 @@ class ProductPlugin
         return ['(' . $name . ')'];
     }
 }
-?>
 {% endhighlight %}
 
 #### After methods
@@ -82,8 +79,7 @@ You can use these methods to change the result of an observed method by modifyin
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
-{% highlight PHP %}
-<?php
+{% highlight PHP inline=true %}
 
 namespace My\Module\Plugin;
 
@@ -94,16 +90,13 @@ class ProductPlugin
         return '|' . $result . '|';
     }
 }
-?>
 {% endhighlight %}
 
 After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{site.mage2100url}}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class AuthPlugin
@@ -127,7 +120,6 @@ class AuthPlugin
         $this->logger->debug('User ' . $username . ' signed in.');
     }
 }
-?>
 {% endhighlight %}
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
@@ -170,9 +162,7 @@ Before the list of the original method's arguments, around methods receive a `ca
 
 Below is an example of an around method adding behavior before and after an observed method:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -187,16 +177,13 @@ class ProductPlugin
         return $returnValue;
     }
 }
-?>
 {% endhighlight %}
 
 When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Model;
 
 class MyUtility
@@ -210,9 +197,7 @@ class MyUtility
 
 If you wrapped this method with a plugin like below:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -228,9 +213,7 @@ Note the missing <code>= null</code>. Now, if Magento calls the original method 
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin

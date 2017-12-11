@@ -19,6 +19,9 @@ pages:
           url: mrg/ce/Signifyd.html
           versions: ["2.2"]
 
+        - label: Instant Purchase
+          url: mrg/ce/instant-purchase/
+          versions: ["2.2","2.3"]
 
     - label: Commerce
       url: mrg/ee/ee-intro.html

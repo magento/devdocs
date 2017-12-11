@@ -41,7 +41,7 @@ To upgrade from **2.0.X**:
 
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
-* [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Verify or set the ADMIN_EMAIL variable](#variable): This variable is required for upgrades and patch to 2.2 and later
 * [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 
 To upgrade from **2.1.X**:
@@ -49,7 +49,7 @@ To upgrade from **2.1.X**:
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
-* [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Verify or set the ADMIN_EMAIL variable](#variable): This variable is required for upgrades and patch to 2.2 and later
 * [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 * [Update .gitignore for new generated directory](#gitignore): With 2.2 and later, changes in generated folder require additions to `.gitignore`
 
@@ -126,29 +126,8 @@ With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `va
     !/generated/.htaccess
 
 ## Back up the database {#backup-db}
-We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
-Back up your Integration environment database and code:
-
-1.  Enter the following command to make a local backup of the remote database:
-
-        magento-cloud db:dump
-2.  Enter the following command to back up code and media:
-
-        php bin/magento setup:backup --code [--media]
-
-    You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
-
-Back up your staging or production system database:
-
-1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
-2.  Find the database login information:
-
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-
-3.  Create a database dump:
-
-        mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+{% include cloud/backup-db.md %}
 
 ## Verify other changes {#verify-changes}
 Verify other changes you're going to submit to source control before you start the upgrade:

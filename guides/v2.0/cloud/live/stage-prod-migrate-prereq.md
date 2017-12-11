@@ -19,7 +19,7 @@ functional_areas:
 
 When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
 
-This information is broken down into prerequisite steps for [Starter](#starter) and [Pro](pro) projects.
+This information is broken down into prerequisite steps for [Starter](#starter) and [Pro](#pro) projects.
 
 ## Starter plan projects {#starter}
 For Starter, make sure all of your code is merged into a single development branch to test prior to deployment to Production. Due to all of your branches and environments being on a PaaS infrastructure, you only need access information for Master Production and other environments as needed. This access information includes your store URLs and SSH link.
@@ -51,7 +51,7 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 2.	Get your [access URLs and SSH](#pro-urls) for Staging and Production.
 4.	Set up your [SSH agent](#ssh-agent) for Staging and Production.
 
-If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#cloud-live-migrate-git) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
+If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#pro-remote) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
 
 If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 

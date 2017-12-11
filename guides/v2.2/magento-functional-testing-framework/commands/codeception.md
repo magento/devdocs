@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Codeception commands in the Magento Functional Testing Framework
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/commands/codeception.md
+functional_areas:
+ - Testing
 ---
 
 <div class="bs-callout bs-callout-warning" markdown="1">

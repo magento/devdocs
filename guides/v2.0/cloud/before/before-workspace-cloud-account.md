@@ -19,7 +19,7 @@ You should receive an e-mail invitation to verify and access the account. If you
 
 When logged in, you should see a project named and ready to access.
 
-If the project name is **[UntitledProject]**, a Super User admin or the account owner needs to create the project. Only one of these users can create the project. For instructions, the project administrator or account owner should see [Create the Project]({{ page.baseurl }}cloud/before/cloud/before/before-project-owner.html#create-project)
+If the project name is **[UntitledProject]**, a Super User admin or the account owner needs to create the project. Only one of these users can create the project. For instructions, the project administrator or account owner should see [Create the Project]({{ page.baseurl }}cloud/before/before-project-owner.html#create-project)
 
 Use this procedure whether you're starting a new project from scratch or if you're importing an existing Magento installation to Enterprise Cloud Edition. When you initially set up a project from a template, we retrieve the code from the [`magento-cloud-configuration` repository](https://github.com/magento/magento-cloud-configuration){:target="_blank"}.
 
