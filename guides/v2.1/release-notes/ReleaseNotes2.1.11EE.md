@@ -59,9 +59,6 @@ Look for the following highlights in this release:
 ### Catalog
 <!--- MAGETWO-70373 -->* A user who does not have permission to view a category (based on category permissions) can no longer view it in the menu even if it were cached.
 
-<!--- MAGETWO-62040 -->* You can now place orders when the **Use deferred Stock update setting** is set to **Yes**.
-
-<!--- MAGETWO-59540-->* The **Add to cart** checkbox is no longer visible when `$canItemsAddToCart` is set to false. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11611*. [GitHub-6891](https://github.com/magento/magento2/issues/6891)
 
 <!--- MAGETWO-83037 -->* You can now save a price of 0 (zero) for a custom option. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11844*. [GitHub-4808](https://github.com/magento/magento2/issues/4808)
 
@@ -76,7 +73,6 @@ Look for the following highlights in this release:
 
 ### Cart and checkout
 
-<!--- MAGETWO-66466 -->* A user can now check out if a session expires while the persistent shopping cart is enabled.
 
 <!--- MAGETWO-66447 -->* Magento no longer applies free shipping  when you remove a free shipping coupon code from the checkout page.
 
@@ -102,7 +98,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-82983 -->*  Magento no longer throws an exception when the X-Magento-Tags header contains whitespace. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11848*. [GitHub-7640](https://github.com/magento/magento2/issues/7640)
 
-<!--- MAGETWO-83155 -->* New orders now appear as expected in the Order table after you migrate data  from Magento 1.7.0.2 to Magento 2.1.7. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11932*. [GitHub-10185](https://github.com/magento/magento2/issues/10185)
+<!--- MAGETWO-83155 -->* New orders now appear as expected in the Order table after you migrate data. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11932*. [GitHub-10185](https://github.com/magento/magento2/issues/10185)
 
 <!--- MAGETWO-83096 -->* We've added an extra API call to the interface for managing customer accounts, and it permits you to implement the full reset password process. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11920*. 
 
@@ -135,7 +131,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83284 -->* Shipping address lines no longer disappear when `street_lines` in customer configuration is set to 0 (zero). *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 12022*. [GitHub-7995](https://github.com/magento/magento2/issues/7995)
 
-<!--- MAGETWO-81328 -->* Magento now sends email confirming a nwsletter subscription  only when the subscriber is subscribing for the first time. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11316*. [GitHub-5439](https://github.com/magento/magento2/issues/5439)
+<!--- MAGETWO-81328 -->* Magento now sends email confirming a newsletter subscription  only when the subscriber is subscribing for the first time. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11316*. [GitHub-5439](https://github.com/magento/magento2/issues/5439)
 
 <!--- MAGETWO-83319 -->* The Magento store code validation `regex` now supports uppercase letters in store code. *Fix submitted by [Manu Gonzalez Rodriguez](https://github.com/manuelson) in pull request 12040*. [GitHub-11996](https://github.com/magento/magento2/issues/11996)
 
@@ -173,7 +169,6 @@ Magento now displays the State/Province field after you edit the billing address
 
 
 ### Order management
-<!--- MAGETWO-84108 -->* You can now successfully alter the transport variable in the `email_invoice_set_template_vars_before`. Previously, email generated from this template did not reflect the new or changed variables you set in `email_invoice_set_template_vars_before`.  [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
 <!--- MAGETWO-82759 -->* We've corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As result, you cannot see the order item's information upon the order printing. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request 11631*. [GitHub-9830](https://github.com/magento/magento2/issues/9830), [GitHub-10530](https://github.com/magento/magento2/issues/10530)
 
@@ -216,34 +211,25 @@ Magento now displays the State/Province field after you edit the billing address
 <!--- MAGETWO-71591 -->* You can now implement translations from themes (in contrast to translations from modules). 
 
 
-### Varnish
-<!--- MAGETWO-71701 -->* In environments running Varnish, Magento now handles the menu item of the active category page as the active class as expected. Previously, activating the cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609)
 
 
 ### Visual Merchandiser 
 <!--- MAGETWO-70287 -->*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 
-### Wishlist
-<!--- MAGETWO-84238 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
-
 
 
 ## Known issue
 <!--- MAGETWO-85164 -->**Issue**:In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
 
-**Workaround**: Use the Devdocs [static Swagger site] at http://devdocs.magento.com/swagger/index_21.html to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
+**Workaround**: Use the Devdocs [static Swagger site](http://devdocs.magento.com/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
 
 
-<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185 MAGETWO-71021 MAGETWO-84545 MAGETWO-72376 MAGETWO-70157 MAGETWO-69577 MAGETWO-69512 MAGETWO-69344 MAGETWO-69213 MAGETWO-69107 MAGETWO-69036 MAGETWO-68871 MAGETWO-67681 MAGETWO-67402 MAGETWO-66565  MAGETWO-65467 MAGETWO-65466 MAGETWO-65049 MAGETWO-64742 MAGETWO-64743 MAGETWO-64729 MAGETWO-64429 MAGETWO-64459 MAGETWO-64146 MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164 MAGETWO-60755 MAGETWO-77969 MAGETWO-82224 MAGETWO-84325 MAGETWO-84298 MAGETWO-84266 MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522-->
+<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545 MAGETWO-72376   MAGETWO-69512 MAGETWO-69344  MAGETWO-69107   MAGETWO-67681    MAGETWO-65466 MAGETWO-65049    MAGETWO-64429 MAGETWO-64459  MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-77969    MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522-->
 
-<!--- CANCELED MAGETWO-72400 -->
 
-<!--- WON'T FIX MAGETWO-82982 MAGETWO-75622 MAGETWO-72534 -->
+<!--- WON'T FIX MAGETWO-82982   -->
 
-<!--- CANNOT REPRODUCE MAGETWO-75121 MAGETWO-58460 -->
-
-<!--- DUPLICATION MAGETWO-69343 MAGETWO-58515--> 
 
 
 
