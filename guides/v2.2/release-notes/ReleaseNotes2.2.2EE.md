@@ -31,9 +31,9 @@ Look for the following highlights in this release:
 
 * **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://docs.magento.com.guides/v2.2/advanced-reporting/overview.html) for more information. 
 
-* **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment (powered by Temando).
+* **Magento Shipping** (powered by Temando). This new feature provides integrated advanced multi-carrier shipping and fulfillment.
 
-* **Streamlined Instant Purchase checkout**. Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
+* **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
 * **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).  
 
