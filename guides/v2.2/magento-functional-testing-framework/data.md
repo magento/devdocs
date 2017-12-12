@@ -56,6 +56,28 @@ Here,
 * `customer` is a stepKey of the corresponding action, where an entity is created
 * `email` is a data key of the entity. The corresponding value will be assigned to `userInput` as a result.
 
+### Using data returned by test-actions
+
+A test can also reference data that was returned as a result of test actions, like the action `<grabValueFrom stepKey="grabStepKey>`.
+
+Given the above use of `grabValueFrom`, the returned value can be used by using the `grab` action's `stepKey` like so:
+
+```xml
+<grabValueFrom selector="someSelector" stepKey="grabStepKey"/>
+<fillField selector=".functionalTestSelector" userInput="{$grabStepKey}" stepKey="fillFieldKey1"/>
+```
+<!-- DIMA: The following list of test actions return a variable, I'm not sure how you would like to display/store this list in documentation,
+ but I feel they'd be useful to display somewhere. Here they are:
+         grabAttributeFrom
+         grabCookie
+         grabFromCurrentUrl
+         grabMultiple
+         grabPageSource
+         grabTextFrom
+         grabValueFrom
+         loadSessionSnapshot
+ -->
+
 ### Hard-coded data input
 
 The data to operate against can be included as literals in a test. Hard-coded data input can be useful in assertions ([see] actions).

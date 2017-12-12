@@ -143,7 +143,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -155,7 +154,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -167,7 +165,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -180,7 +177,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -193,7 +189,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -228,7 +223,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -379,7 +373,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -403,7 +396,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -415,7 +407,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -427,7 +418,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -464,7 +454,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -478,7 +467,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -502,7 +490,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -525,7 +512,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -548,7 +534,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -561,7 +546,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -620,7 +604,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -633,8 +616,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
-returnVariable|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -647,8 +628,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
-returnVariable|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -660,8 +639,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-returnVariable|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -674,8 +651,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
-returnVariable|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -686,7 +661,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-returnVariable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -698,7 +672,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-returnVariable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -711,7 +684,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 selectorArray|string|optional|
-returnVariable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -723,8 +695,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-returnVariable|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -749,7 +719,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -804,7 +773,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 locale|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -834,7 +802,6 @@ Parse float number with thousands seperator.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -870,7 +837,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -893,7 +859,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -917,7 +882,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -970,7 +934,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -994,7 +957,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 parameterArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1006,7 +968,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1018,7 +979,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1055,7 +1015,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1069,7 +1028,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1104,7 +1062,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1127,7 +1084,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1140,7 +1096,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 url|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1154,7 +1109,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1167,7 +1121,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1181,7 +1134,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1220,7 +1172,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1232,7 +1183,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1244,7 +1194,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1256,7 +1205,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1268,7 +1216,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1293,7 +1240,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -1426,7 +1372,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 time|string|optional|
 selector|string|optional|
-variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
