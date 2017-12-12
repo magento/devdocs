@@ -3,8 +3,13 @@ pages:
     - label: INTRODUCTION
       url: mrg/intro.html
 
+    - label: Sales
+      url: mrg/ce/Sales.html
+      versions: ["2.0"]
+
     - label: Open Source
       url: mrg/ce/ce-intro.html
+      versions: ["2.1","2.2"]
       children:
 
         - label: Sales
@@ -12,11 +17,15 @@ pages:
 
         - label: Signifyd
           url: mrg/ce/Signifyd.html
+          versions: ["2.2"]
 
+        - label: Instant Purchase
+          url: mrg/ce/instant-purchase/
+          versions: ["2.2","2.3"]
 
     - label: Commerce
       url: mrg/ee/ee-intro.html
-      versions: ["2.1","2.2", "2.3"]
+      versions: ["2.1","2.2"]
       children:
 
         - label: BundleStaging
@@ -96,7 +105,7 @@ pages:
 
     - label: B2B
       url: mrg/b2b/b2b-intro.html
-      versions: ["2.2", "2.3"]
+      versions: ["2.2"]
       children:
 
         - label: B2b

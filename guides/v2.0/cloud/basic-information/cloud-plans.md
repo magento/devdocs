@@ -77,7 +77,7 @@ See the [Trial signup](https://magento.com/trial){:target="_blank"} for full det
 
 ![Onboarding Portal getting started]({{ site.baseurl }}common/images/cloud_portal-trial.png)
 
-### What is autoprovisioning? {#autoprovisioning}
+### What is auto provisioning? {#autoprovisioning}
 When you create an account with a Trial, your {{site.data.var.ece}} project is created automatically. As part of the process, we generate a code branch and environment with the latest Magento code for you.
 
 We complete the following steps for you to make the entire process easier to get started:
@@ -89,6 +89,19 @@ We complete the following steps for you to make the entire process easier to get
 * We send an email to the Project Owner to change the Magento admin password for the deployed store.
 
 When done, you can access the links from those emails, add a Technical Admin, and get started developing your stores and sites.
+
+## Additional options {#extras}
+To further customize your {{site.data.var.ece}} project and account, you can purchase additional options.
+
+### Domain-Validated SSL (HTTP) certificate {#ssl}
+If you don't want to use the shared SSL certificate, you can purchase this option as part of your subscription. The cost of the service includes adding and deploying the Domain-Validated SSL certificate to all Fastly servers and services.
+
+This service is an additional cost for your contract.
+
+### AWS Managed VPN Connection Service access {#vpn}
+If you need access to your own Virtual Private Network (VPN) to access your {{site.data.var.ee}} environment, you can purchase this option to gain access to the AWS Managed VPN Connection Service. We will provide information required for configurations including the required IPs and modes.
+
+This service is an additional cost for your contract. VPN configurations require technical resources and requirements for configuring. For information on the AWS service, see their [AWS Managed VPN Connections](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html){:target="_blank"} and  [VPN Connections](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpn-connections.html){:target="_blank"}.
 
 ## Get started! {#getstarted}
 If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as s base template. If you didn't start with a trial, we have information to help set up your project.

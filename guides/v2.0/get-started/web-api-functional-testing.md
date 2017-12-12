@@ -39,8 +39,7 @@ To keep your test environment clean, clear all entities created in fixture files
 
 All Web API functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\WebapiAbstract`. It defines the `_webApiCall()` method, which should be used to perform Web API calls from tests. Clients of `_webApiCall()` are unaware of which adapter will be used to perform remote call.
 
-{% highlight php %}
-<?php
+{% highlight php inline=true %}
 namespace Magento\Webapi\Routing;
 
 class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
@@ -62,14 +61,12 @@ class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
         $item = $this->_webApiCall($serviceInfo, $requestData);
         $this->assertEquals('testProduct1', $item['name'], "Item was retrieved unsuccessfully");
     }
-} ?>
+}
 {% endhighlight %}
 
 The test above should is able to test SOAP and REST depending on what adapter is currently used by testing framework. $serviceInfo format is defined by Web API client adapter interface:
 
-{% highlight php %}
-<?php
-
+{% highlight php inline=true %}
 namespace Magento\TestFramework\TestCase\Webapi;
 
 interface AdapterInterface
@@ -99,7 +96,6 @@ interface AdapterInterface
      */
     public function call($serviceInfo, $arguments = [], $storeCode = null, $integration = null);
 }
- ?>
 {% endhighlight %}
 
 <h2 id="howto">How to Run the Tests</h2>

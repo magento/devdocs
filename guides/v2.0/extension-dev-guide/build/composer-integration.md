@@ -195,7 +195,7 @@ Where:
 [1]: {{page.baseurl}}comp-mgr/compman-start.html
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
-[4]: http://www.iso.org/iso/home/standards/language_codes.html
+[4]: https://www.iso.org/iso-639-language-codes.html
 [5]: http://docs.magento.com/marketplace/user_guide/account/profile-company.html
 [6]: https://marketplace.magento.com/
 [7]: https://marketplace.magento.com

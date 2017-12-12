@@ -1,9 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Reporting with the Functional Testing Framework
-menu_title: Reporting
 version: 2.0
 github_link: mtf/features/reporting.md
 ---

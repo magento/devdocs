@@ -1,6 +1,6 @@
 <!-- sidebar -->
 <aside class="sidebar">
-	<a href="#" class="toc-toggler">Table of Contents</a>
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
 {% if page.group == "ext-best-practices" %}
@@ -93,11 +93,20 @@
 {% elsif page.group == "b2b" %}
     {% assign toc = site.data.toc.b2b-developer-guide %}
 
+{% elsif page.group == "graphql" %}
+		{% assign toc = site.data.toc.graphql %}
+
+{% elsif page.group == "modules" %}
+    {% assign toc = site.data.toc.modules %}
+
 {% elsif "testing, jstf, unit-testing, integration-testing" contains page.group %}
     {% assign toc = site.data.toc.testing %}
 
 {% elsif "reporting" contains page.group %}
     {% assign toc = site.data.toc.advanced-reporting %}
+
+{% elsif "mftf" contains page.group %}
+        {% assign toc = site.data.toc.magento-functional-testing-framework-guide %}
 
 {% endif %}
 

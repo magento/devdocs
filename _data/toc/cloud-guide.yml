@@ -33,6 +33,12 @@ pages:
         - label: Composer
           url: cloud/reference/cloud-composer.html
 
+        - label: Magento Cloud CLI
+          url: cloud/reference/cli-ref-topic.html
+
+        - label: Git
+          url: cloud/reference/git-integration.html
+
         - label: GitHub
           url: cloud/project/project-integrate-github.html
 
@@ -72,27 +78,24 @@ pages:
         - label: Optional - Install sample data
           url: cloud/howtos/sample-data.html
 
-        - label: Optional - Configure a PHP debugger, Xdebug
+        - label: Optional - Configure Xdebug
           url: cloud/howtos/debug.html
 
-        - label: Import an existing Magento project
-          children:
+    - label: Import existing code into a project
+      url: cloud/access-acct/first-time-setup_import-first-steps.html
+      children:
+        - label: Prepare your existing Magento Commerce system
+          url: cloud/access-acct/first-time-setup_import-prepare.html
 
-            - label: First steps for importing Magento Commerce
-              url: cloud/access-acct/first-time-setup_import-first-steps.html
-
-            - label: Find the information you need for your import
-              url: cloud/access-acct/first-time-setup_import-prereq.html
-
-            - label: Prepare your existing Magento Commerce system
-              url: cloud/access-acct/first-time-setup_import-prepare.html
-
-            - label: Import Magento Commerce into Magento Commerce (Cloud)
-              url: cloud/access-acct/first-time-setup_import-import.html
+        - label: Import Magento Commerce into Magento Commerce (Cloud)
+          url: cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure your store
       url: cloud/configure/configuration-overview.html
       children:
+        - label: Best practices for store configuration
+          url: cloud/configure/configure-best-practices.html
+
         - label: Set up PayPal
           url: cloud/live/paypal-onboarding.html
           versions: ["2.1","2.2","2.3"]
@@ -107,7 +110,7 @@ pages:
         - label: Set up multiple Cloud websites or stores
           url: cloud/project/project-multi-sites.html
 
-        - label: Install and update extensions
+        - label: Install, manage, and upgrade modules
           url: cloud/howtos/install-components.html
 
         - label: Install a theme
@@ -122,11 +125,26 @@ pages:
         - label: Custom Fastly VCL snippets
           url: cloud/configure/cloud-vcl-custom-snippets.html
 
+        - label: Custom whitelist VCL
+          url: cloud/configure/fastly-vcl-whitelist.html
+
+        - label: Custom blacklist VCL
+          url: cloud/configure/fastly-vcl-blacklist.html
+
+        - label: Custom extend Admin timeout VCL
+          url: cloud/configure/fastly-vcl-extend-timeout.html
+
+        - label: Custom redirect to Wordpress VCL
+          url: cloud/configure/fastly-vcl-wordpress.html
+
+        - label: Custom block bad referer VCL
+          url: cloud/configure/fastly-vcl-badreferer.html
+
         - label: Fastly troubleshooting
           url: cloud/trouble/trouble_fastly.html
 
-    - label: Configure your deployment
-      url: cloud/deploy/configure-deploy.html
+    - label: Configure environments
+      url: cloud/env/environments.html
       children:
         - label: Configure .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
@@ -150,6 +168,10 @@ pages:
 
         - label: Set up RabbitMQ service
           url: cloud/project/project-conf-files_services-rabbit.html
+
+        - label: Set up notifications
+          url: cloud/env/setup-notifications.html
+          versions: ["2.2", "2.3"]
 
         - label: Configure routes - routes.yaml
           url: cloud/project/project-conf-files_routes.html
@@ -192,32 +214,15 @@ pages:
         - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
 
-    - label: Manage your environments
-      url: cloud/env/environments.html
+    - label: Manage variables
+      url: cloud/env/environment-vars_over.html
       children:
-
-        - label: Magento Cloud CLI
-          url: cloud/reference/cli-ref-topic.html
-
-        - label: Overview of environment variables
-          url: cloud/env/environment-vars_over.html
 
         - label: Magento application environment variables
           url: cloud/env/environment-vars_magento.html
 
         - label: Magento Commerce (Cloud) environment variables
           url: cloud/env/environment-vars_cloud.html
-
-        - label: Configuration reference
-          children:
-            - label: All configuration paths except payments reference
-              url: cloud/live/config-reference-most.html
-
-            - label: Payment configuration paths reference
-              url: cloud/live/config-reference-payment.html
-
-            - label: Sensitive configuration paths reference
-              url: cloud/live/config-reference-sens.html
 
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
@@ -265,6 +270,13 @@ pages:
         - label: Launch steps
           url: cloud/live/launch-steps.html
 
+    - label: Composer package updates
+      url: cloud/patch-notes.html
+      versions: ["2.2","2.3"]
+      children:
+        - label: magento/ece-tools
+          url: cloud/composer-packages/ece-tools.html
+
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
       children:
@@ -300,3 +312,6 @@ pages:
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
+
+        - label: Theme troubleshooting
+          url: cloud/trouble/theme-troubleshooting.html

@@ -10,6 +10,9 @@ version: 2.0
 github_link: cloud/project/projects.md
 functional_areas:
   - Cloud
+redirect_from:
+  - /guides/v2.0/cloud/admin/administer.html
+  - /guides/v2.1/cloud/admin/administer.html
 ---
 
 The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
@@ -48,14 +51,14 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 ![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
 
 ## Blackfire and New Relic credentials {#integrations}
-Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/new-relic.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+Your project includes [Blackfire]({{page.baseurl}}cloud/project/project-integrate-blackfire.html) and [New Relic]({{page.baseurl}}cloud/project/new-relic.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 * [New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.ece}}.
 
 To review your integration tokens, IDs, and more:
 
-1. As the {{site.data.var.ece}} Account Owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Commerce project.
+1. As the {{site.data.var.ece}} Account Owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-access) to your Magento Commerce project.
 2. In the upper right corner, click **&lt;your name>** > **Account Settings**.
 
 	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png)
@@ -92,7 +95,7 @@ The following table details the branches for Pro:
 <tr>
 <td>(no branch)</td>
 <td>Global Master</td>
-<td>This "branch" captures global project changes including adding user accounts and variables.
+<td>This "branch" captures global project changes including adding user accounts and variables. <b>Important:</b> Do not create branches from or merge to Global Master.
 </td>
 </tr>
 <tr>

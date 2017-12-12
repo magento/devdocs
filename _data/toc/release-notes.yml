@@ -111,6 +111,9 @@ pages:
             - label: magento-cloud-configuration release 101.4.x Release Notes
               url: cloud/release-notes/CloudReleaseNotes101.4.html
 
+            - label: Magento Commerce (Cloud) versions 2.1.6 through 2.1.11 Release Notes
+              url: cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html
+
             - label: Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes
               url: cloud/release-notes/CloudReleaseNotes2.1.5.html
 
@@ -266,6 +269,11 @@ pages:
 
         - label: Magento Commerce changes
           url: release-notes/changes/ee_changes.html
+
+        - label: Magento Commerce for B2B changes
+          url: release-notes/changes/b2b_changes.html
+          versions: ["2.2"]
+
 
     - label: Third-party licenses
       children:

@@ -19,7 +19,7 @@ Before you think about writing your own service, you should look at an existing 
 
 *	Interfaces
 
-	Clients interact with services using methods on their interfaces, as discussed in [Service contracts]({{page.baseurl}}service-contracts.html). Customer service interfaces have more than 20 public methods, including public function `createCustomer()` in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.
+	Clients interact with services using methods on their interfaces, as discussed in [Service contracts]({{page.baseurl}}extension-dev-guide/service-contracts/add-later/service-create-customer.html). Customer service interfaces have more than 20 public methods, including public function `createCustomer()` in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.
 
 *	Service data objects
 
@@ -27,7 +27,7 @@ Before you think about writing your own service, you should look at an existing 
 
 *	Service data object builders
 
-	Builders have the setters you can use to set data values in the service data object before sending them to the service to be consumed. For example, <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> has a `setFirstname` method you can use to set a customer's first name. You can get the first name using the `getFirstname` method in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer data object</a>.
+	Builders have the setters you can use to set data values in the service data object before sending them to the service to be consumed. For example, `{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php` has a `setFirstname` method you can use to set a customer's first name. You can get the first name using the `getFirstname` method in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer data object</a>.
 
 ## Creating the Customer Record
 
@@ -54,8 +54,8 @@ Create a customer record as follows:
 <p>Constructor {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} uses a constructor to declare the dependencies. In dependencies in the preceding example are named:</p>
 
 <ul><li><tt>$customerAccountService</tt>, a dependency on <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</li>
-	<li><tt>$customerBuilder</tt>, a dependency on the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/customerBuilder.php" target="_blank">customerBuilder</a> service data object builder.</li>
-	<li><tt>$customerBuilder</tt>, a dependency on the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> service data object builder.</li></ul>
+	<li><tt>$customerBuilder</tt>, a dependency on the `{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/customerBuilder.php` service data object builder.</li>
+	<li><tt>$customerBuilder</tt>, a dependency on the `{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php` service data object builder.</li></ul>
 </div>
 <h3>Step 3: Create the customer record</h3>
 <div><p>In your client code, create the customer record.</p>

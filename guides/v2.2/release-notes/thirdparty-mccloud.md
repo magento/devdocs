@@ -14,7 +14,7 @@ This page contains links to license agreements of the third party components use
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
 github |||[Source](https://github.com)|[Terms of Service](https://help.github.com/articles/github-terms-of-service/)
-fastly |1.2.32||[Source](https://github.com/fastly/fastly-magento2)|[License](https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt)
+fastly |1.2.33||[Source](https://github.com/fastly/fastly-magento2)|[License](https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt)
 new relic apm || MIT/Apache|[Source](https://docs.newrelic.com/apm)|[License](https://rpm.newrelic.com/licenses)
 blackfire profiler |||[Source](https://blackfire.io)|[Terms of Use](https://blackfire.io/terms-of-use)
 glusterfs || GPLV2/LGPLV3+|[Source](https://github.com/gluster/glusterfs)|[License](https://github.com/gluster/glusterfs#license)
@@ -50,7 +50,7 @@ symfony/polyfill-mbstring|1.3.0|MIT|[Source](https://github.com/symfony/polyfill
 symfony/polyfill-php54 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php54)|[License](https://github.com/symfony/polyfill-php54/blob/master/LICENSE)
 symfony/polyfill-php55 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php55)|[License](https://github.com/symfony/polyfill-php55/blob/master/LICENSE)
 symfony/polyfill-php70 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php70)|[License](https://github.com/symfony/polyfill-php70/blob/master/LICENSE)
-symfony/polyfill-xml |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php72)|[License](https://github.com/symfony/polyfill-72/blob/master/LICENSE)
+symfony/polyfill-xml |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php72)|[License](https://github.com/symfony/polyfill-php72/blob/master/LICENSE)
 symfony/process |2.8.20| MIT|[Source](https://github.com/symfony/process)|[License](https://github.com/symfony/process/blob/master/LICENSE)
 symfony/stopwatch |3.3.2| MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml |2.8.20| MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
@@ -67,7 +67,7 @@ lusitanian/oauth |0.8.10| MIT|[Source](https://github.com/Lusitanian/PHPoAuthLib
 sebastian/phpcpd|2.0.4|BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpcpd)|[License](https://github.com/sebastianbergmann/phpcpd/blob/master/LICENSE)
 trentrichardson/jquery-timepicker-addon|1.4.3|MIT|[Source](https://github.com/trentrichardson/jQuery-Timepicker-Addon)|[License](https://github.com/trentrichardson/jQuery-Timepicker-Addon/blob/master/LICENSE-MIT)
 jquery|1.11.0 |MIT|[Source](https://jquery.com/)|[License](https://jquery.org/license/)
-blueimp/jquery-file-upload|5.6.14|MIT|[Source](https://github.com/blueimp/jQuery-File-Upload)|[License](https://github.com/blueimp/jQuery-File-Upload/blob/master/LICENSE)
+blueimp/jquery-file-upload|5.6.14|MIT|[Source](https://github.com/blueimp/jQuery-File-Upload)|[License](https://github.com/blueimp/jQuery-File-Upload/blob/master/LICENSE.txt)
 jqueryui|1.10.4|MIT|[Source](https://github.com/jquery/jqueryui.com)|[License](https://github.com/jquery/jqueryui.com/blob/master/LICENSE.txt)
 bootstrap|3.1.0 |MIT|[Source](http://getbootstrap.com)|[License](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 tiny_mce |3.4.7|GNU LGPL 2.1|[Source](https://www.tinymce.com)|[License](https://github.com/tinymce/tinymce/blob/master/LICENSE.TXT)

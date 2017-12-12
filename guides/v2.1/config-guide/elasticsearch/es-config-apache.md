@@ -22,7 +22,7 @@ functional_areas:
 *	[Set up a proxy](#es-apache-proxy)
 *	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
 *	[Secure communication with Apache](#es-ws-secure-apache)
-*	[Verify communication is secure](#es-ws-secure-verify-apache)
+*	[Verify communication is secure](#es-ws-secure-verify)
 
 {% include config/es-webserver-overview.md %}
 
