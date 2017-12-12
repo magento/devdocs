@@ -553,7 +553,7 @@
 
 <p>The REST endpoints for Magento Commerce (formerly Enterprise Edition (EE)) are available on Magento Commerce installations only. Commerce installations automatically have access to all Magento Open Source (formerly Community Edition (CE)) REST APIs.</p>
 
-<p>Additions since 2.1 are marked with asterisks (*).</p>
+<p>Additions since 2.1 are marked with a single asterisk (*).</p>
 
 <p>See <a href="/guides/v2.2/b2b/integrations.html">Integrate with B2B using REST</a> for a list of endpoints provided with Magento Commerce for B2B.</p>
 
@@ -623,7 +623,12 @@ GET    /V1/returns/:id/labels
 
 <p>The Magento Open Source REST APIs are available on all Magento Commerce and Magento Open Source installations.</p>
 
-<p>Additions since 2.1 are marked with asterisks (*).</p>
+<p>Additions since 2.1 are marked with asterisks (*). Additions since 2.2 are marked with hash characters (#).</p>
+
+<h3 id="analytics">Analytics</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#GET    /V1/analytics/link
+</code></pre></div></div>
 
 <h3 id="backend">Backend</h3>
 
@@ -803,7 +808,7 @@ GET    /V1/attributeMetadata/customerAddress
 GET    /V1/attributeMetadata/customerAddress/custom
 GET    /V1/customers/:customerId
 POST   /V1/customers
-PUT    /V1/customers/:id
+PUT    /V1/customers/:customerId
 PUT    /V1/customers/me
 GET    /V1/customers/me
 PUT    /V1/customers/me/activate
@@ -812,6 +817,7 @@ PUT    /V1/customers/:email/activate
 PUT    /V1/customers/me/password
 GET    /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken
 PUT    /V1/customers/password
+#POST  /V1/customers/resetPassword
 GET    /V1/customers/:customerId/confirm
 POST   /V1/customers/confirm
 PUT    /V1/customers/validate

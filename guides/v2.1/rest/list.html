@@ -606,7 +606,7 @@ GET    /V1/returns/:id/labels
 
 <p>The Magento Open Source REST APIs are available on all installations.</p>
 
-<p>Additions since 2.0 are marked with asterisks (*).</p>
+<p>Additions since 2.0 are marked with asterisks (*). Additions since 2.2 are marked with hash characters (#).</p>
 
 <h3 id="backend">Backend</h3>
 
@@ -780,6 +780,7 @@ PUT    /V1/customers/:email/activate
 PUT    /V1/customers/me/password
 GET    /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken
 PUT    /V1/customers/password
+#POST  /V1/customers/resetPassword
 GET    /V1/customers/:customerId/confirm
 POST   /V1/customers/confirm
 PUT    /V1/customers/validate
