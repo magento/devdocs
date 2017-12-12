@@ -31,7 +31,8 @@ Look for the following highlights in this release:
 
 * **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://docs.magento.com.guides/v2.2/advanced-reporting/overview.html) for more information. 
 
-* **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment. 
+* **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment (contributed by Temando).
+
 * **Streamlined Instant Purchase checkout**. Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
 * **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).  
@@ -75,15 +76,13 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82001 -->* `configVariables` now contains a variable for VAT numbers. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11486*.  [GitHub-10996](https://github.com/magento/magento2/issues/10996)
 
-<!--- MAGETWO-82177 -->* You can now use the Web Setup Wizard to upgrade from Magento Commerce 2.2.0 to 2.2.1 supporting B2B. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
-
 <!--- MAGETWO-82463 -->* We've fixed an issue with using the command line to install or remove `crontab`. Previously, installing or removing `crontab` via the command line appended `2>&1` to entries, even those not related to Magento. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11591*. [GitHub-11586](https://github.com/magento/magento2/issues/11586)
 
 <!--- MAGETWO-81577 -->* You can now install and uninstall `cron` via the `bin/magento cron:install` command. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11359*. 
 
 <!--- MAGETWO-81645 -->* The `admin:user:create` command now recognizes the configured table prefix. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11199*. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
 
-<!--- MAGETWO-82102 -->* Release note text. *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request 11505*. 
+<!--- MAGETWO-82102 -->* The default cron success or failure history is now seven days. *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request 11505*. 
 
 <!--- MAGETWO-82234 -->* The `admin:user:create` command now asks for the input value if a required option is not passed. *Fix submitted by [Christian Münch](https://github.com/cmuench) in pull request 11510*. 
 
@@ -91,6 +90,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82754 -->* The `setup:install` command now has an `-i` flag. It validates parameters interactively. *Fix submitted by [Denis Ristic](https://github.com/denisristic) in pull request 11425*. 
 
+<!--- MAGETWO-84646 -->* Magento now restarts cron jobs as needed after a cron job was terminated during execution. 
 
 
 ### Catalog 
@@ -260,8 +260,6 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82955 -->* The Visual Swatch Attribute drop-down menu (accessible from Manage Swatch tab) now works as expected. Previously, when you clicked the **Add Swatch** button from this tab, the drop-down menu was not displayed. *Fix submitted by [@enriquei4](https://github.com/enriquei4) in pull request 11747*. [GitHub-11534](https://github.com/magento/magento2/issues/11534)
 
-<!--- MAGETWO-71459 -->* We've added a What's New screen that appears after a Magento installation or upgrade and introduces new features. 
-
 <!--- MAGETWO-71458 -->* Users are now subscribed by default to the Advanced Reporting service.
 
 
@@ -274,8 +272,6 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-82956 -->* Magento now provides better error reporting when an error occurs during the import of a CSV file with a semicolon delimiter. Previously, Magento stopped import, but did not provide a link to the error report CSV file. [GitHub-5015](https://github.com/magento/magento2/issues/5015)
 
 <!--- MAGETWO-81594 -->*  Exception message was passed as a exception description argument instead of exception message.. *Fix submitted by [Tim Bezhashvyly](https://github.com/tim-bezhashvyly) in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
-
-<!--- MAGETWO-82886 -->* Release note text. *Fix submitted by [@p-bystritsky](https://github.com/p-bystritsky) in pull request 11779*. [GitHub-4711](https://github.com/magento/magento2/issues/4711)
 
 <!--- MAGETWO-83310 -->* Importing an import file to update customer data no loner results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 11968*. 
 
@@ -293,7 +289,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82658 -->*  We fixed a typo in the `Paypal/Test/TestCase/OnePageCheckoutTest.xml`. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
-<!--- MAGETWO-83572 -->*  Release note text. *Fix submitted by [WEXO team](https://github.com/wexo-team) in pull request 12144*. [GitHub-11230](https://github.com/magento/magento2/issues/11230)
+<!--- MAGETWO-83572 -->*  `FileClassScannerTest` no  longer has a dependency upon  `Magento_Catalog`. *Fix submitted by [WEXO team](https://github.com/wexo-team) in pull request 12144*. [GitHub-11230](https://github.com/magento/magento2/issues/11230)
 
 
   
@@ -334,7 +330,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83270 -->* Administrators with limited privileges can now log in without errors. Previously, Magento threw an error, but did not log errors in either the server or Magento logs. [GitHub-11700](https://github.com/magento/magento2/issues/11700)
 
-<!--- MAGETWO-82367 -->* Release note text. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 11569*. 
+<!--- MAGETWO-82367 -->* Corrected a typo in a translatable string. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 11569*. 
 
 
 ### Reports
@@ -345,7 +341,6 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### SalesRule
-<!--- MAGETWO-83033 -->* Magento now displays the rule label text during checkout as expected. Previously, Magento omitted the discount label text. [GitHub-11497](https://github.com/magento/magento2/issues/11497)
 
 <!--- MAGETWO-70323 -->* You can now add a bundle product that includes a simple product with a price of 0 (zero) to your cart. Previously, Magento threw an error. [GitHub-8969](https://github.com/magento/magento2/issues/8969)
 
@@ -432,22 +427,22 @@ We’ve identified the following unresolved issues with this version of Magento 
 
 
 
-<!--- NOT NEEDED  MAGETWO-83834 MAGETWO-83815 MAGETWO-83783 MAGETWO-83755 MAGETWO-83740 MAGETWO-83682 MAGETWO-83672 MAGETWO-83632 MAGETWO-83621 MAGETWO-83600 MAGETWO-83572 MAGETWO-52974 MAGETWO-62981 MAGETWO-69497 MAGETWO-70725 MAGETWO-76052 MAGETWO-72138 MAGETWO-81987 MAGETWO-81901 MAGETWO-81886 MAGETWO-81830 MAGETWO-81307 MAGETWO-82003 MAGETWO-82117
+<!--- NOT NEEDED  MAGETWO-83834  MAGETWO-83755 MAGETWO-83740 MAGETWO-83682 MAGETWO-83672 MAGETWO-83632 MAGETWO-83600 MAGETWO-83572 MAGETWO-52974 MAGETWO-62981 MAGETWO-72138 MAGETWO-81987 MAGETWO-81886 MAGETWO-81830 MAGETWO-82003 MAGETWO-82117 MAGETWO-83184 MAGETWO-82126 MAGETWO-82125 MAGETWO-80479 MAGETWO-80480 MAGETWO-80481 MAGETWO-81786
+MAGETWO-80484 MAGETWO-80488 MAGETWO-80568
 
-MAGETWO-82754 MAGETWO-82814 MAGETWO-82854 MAGETWO-82367 MAGETWO-82444 MAGETWO-82535 MAGETWO-82577 MAGETWO-81990 MAGETWO-82001 MAGETWO-82058 MAGETWO-82109 MAGETWO-82300 MAGETWO-80738 MAGETWO-80908 MAGETWO-81445 MAGETWO-81306 MAGETWO-81113 MAGETWO-80781 MAGETWO-80342 MAGETWO-82288 MAGETWO-82283 MAGETWO-82234 MAGETWO-82102 MAGETWO-82069 MAGETWO-82003 MAGETWO-82552 MAGETWO-82707 MAGETWO-82675 MAGETWO-82665 MAGETWO-82577 MAGETWO-82535 MAGETWO-82444 MAGETWO-82367 MAGETWO-82339 MAGETWO-82300 
 
-MAGETWO-82748 MAGETWO-82707 MAGETWO-83013 MAGETWO-82991 MAGETWO-82979 MAGETWO-82978 MAGETWO-82976 MAGETWO-82952 MAGETWO-82943 MAGETWO-83261 MAGETWO-83247 MAGETWO-83171 MAGETWO-83135 MAGETWO-83132 MAGETWO-83130 MAGETWO-83129 MAGETWO-83128 MAGETWO-83035 MAGETWO-83026 MAGETWO-83490 MAGETWO-83461 MAGETWO-83428 MAGETWO-83310 MAGETWO-83285 MAGETWO-83563
-MAGETWO-83551 MAGETWO-83547 MAGETWO-83529 MAGETWO-83537 MAGETWO-83503 MAGETWO-83479 MAGETWO-83532 MAGETWO-83130 MAGETWO-83310 MAGETWO-83247 MAGETWO-83130 MAGETWO-83026 MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954 MAGETWO-82945 MAGETWO-82944 MAGETWO-82941 MAGETWO-82865 MAGETWO-82854 MAGETWO-82814 MAGETWO-82754 MAGETWO-82748 MAGETWO-82733 MAGETWO-83783 MAGETWO-83815 MAGETWO-83815 MAGETWO-83785 MAGETWO-83783 MAGETWO-83600 MAGETWO-70726 MAGETWO-80517 MAGETWO-80738 MAGETWO-80908 MAGETWO-81916 MAGETWO-81990 MAGETWO-82058 MAGETWO-84344 MAGETWO-84531
+
+MAGETWO-82754 MAGETWO-82814 MAGETWO-82854 MAGETWO-82367 MAGETWO-82535 MAGETWO-81990 MAGETWO-82001  MAGETWO-82300   MAGETWO-81306 MAGETWO-82283 MAGETWO-82234 MAGETWO-82102 MAGETWO-82003 MAGETWO-82675 MAGETWO-82665  MAGETWO-82535  MAGETWO-82367 MAGETWO-82339 MAGETWO-82300 MAGETWO-80114 MAGETWO-80474 MAGETWO-80475
+
+MAGETWO-82748  MAGETWO-83013 MAGETWO-82991 MAGETWO-82978 MAGETWO-82976 MAGETWO-82952 MAGETWO-82943  MAGETWO-83171 MAGETWO-83135 MAGETWO-83132  MAGETWO-83128 MAGETWO-83035  MAGETWO-83490 MAGETWO-83428 MAGETWO-83310  MAGETWO-83563
+ MAGETWO-83547 MAGETWO-83529 MAGETWO-83537 MAGETWO-83532  MAGETWO-83310  MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954  MAGETWO-82854 MAGETWO-82814 MAGETWO-82754 MAGETWO-82748 MAGETWO-83815  MAGETWO-83600 MAGETWO-70726 MAGETWO-80517   MAGETWO-81990 MAGETWO-82058 MAGETWO-84344 MAGETWO-84531
 MAGETWO-84321 MAGETWO-84091 MAGETWO-84051 MAGETWO-84000 MAGETWO-83914 MAGETWO-83898 MAGETWO-83870 MAGETWO-83184 MAGETWO-83004 MAGETWO-82596
 MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 -->*  
 
-<!--- WON'T FIX  MAGETWO-69032 MAGETWO-83275 MAGETWO-69032 MAGETWO-83005--> 
+<!--- WON'T FIX  MAGETWO-69032--> 
 
-<!--- DUPLICATE  MAGETWO-82655 MAGETWO-82082--> 
+<!--- CANNOT REPRODUCE  MAGETWO-82192--> 
 
-<!--- CANNOT REPRODUCE  MAGETWO-82309 MAGETWO-82192--> 
-
-<!--- CANCELED  MAGETWO-80190 MAGETWO-80189--> 
 
 ## Community contributions
 
