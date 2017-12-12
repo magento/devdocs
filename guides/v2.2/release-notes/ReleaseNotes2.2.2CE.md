@@ -263,7 +263,7 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Import/export
-<!--- MAGETWO-83322 -->* To improve performance, Magento now loads all relations  using one query per bunch. Previously, Magneto loaded relations one by one (multiple times for multiple attributes types). [GitHub-10920](https://github.com/magento/magento2/issues/10920)
+<!--- MAGETWO-83322 -->* To improve performance, Magento now loads all relations  using one query per bunch. Previously, Magento loaded relations one by one (multiple times for multiple attributes types). [GitHub-10920](https://github.com/magento/magento2/issues/10920)
 
 <!--- MAGETWO-82886 -->* Magento now provides more helpful error messages if problems occur during the import of products and images using  **System > Import Products**. [GitHub-4711](https://github.com/magento/magento2/issues/4711)
 
