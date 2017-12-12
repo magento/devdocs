@@ -408,6 +408,9 @@ Looking for more information on these new features as well as many others? Check
 ### Magento Shipping issues
 We’ve identified the following unresolved issues with this version of Magento Shipping: 
 
+**Issue**: Merchants should not use Magento Shipping to connect with FedEx at this time. This option will be removed by Friday, December 15, and any existing shipping options tied to FedEx will no longer work at that time. We will be re-enabling FedEx integration through Magento Shipping at a future date.
+
+
 **Issue**: Currency conversion problem for shipping methods during checkout when store supports multiple currencies. <!--- BUNDLE-507--> 
 
 **Workaround**: Ensure that the experience currency,  base currency, and display currency are the same. Additionally, incorporate these best practices into your shipping method configuration by ensuring that: 
