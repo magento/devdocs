@@ -62,8 +62,6 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-72301 -->* The contents of the `js-translation.json` files are now correct when you deploy static content with multiple locales.
 
-<!--- MAGETWO-81  -->* We've added new CLI commands to enable and disable the Magento Profiler: `dev:profiler:enable` and `dev:profiler:disable`. [GitHub-9277](https://github.com/magento/magento2/issues/9277)
-
 <!--- MAGETWO-80205 -->* All cron dates are now  saved in a single format and displayed according to user preference or needs. [GitHub-4237](https://github.com/magento/magento2/issues/4237)
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
