@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Page structure in the Magento Functional Testing Framework
-version: 2.3
-github_link: magento-functional-testing-framework/page/structure.m
+version: 2.2
+github_link: magento-functional-testing-framework/page.md
+functional_areas:
+ - Testing
 ---
 
 ## Overview
@@ -84,7 +86,7 @@ The `AdminCategoryPage` declares four [sections][section]:
 Example of a call in test:
 {%raw%}
 ```xml
-<amOnPage url="{{AdminCategoryPage.url}}" mergeKey="navigateToAdminCategory"/>
+<amOnPage url="{{AdminCategoryPage.url}}" stepKey="navigateToAdminCategory"/>
 ```
 
 ### Parameterized page
@@ -108,7 +110,7 @@ It will be merged with other `StorefrontCategoryPage` pages from other modules.
 Example of a call in test:
 
 ```xml
-<amOnPage url="{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}" mergeKey="navigateToCategoryPage"/>
+<amOnPage url="{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}" stepKey="navigateToCategoryPage"/>
 ```
 
 The `StorefrontCategoryPage` page is declared as parameterized, where `url` contains a `{{var1}}` parameter.
@@ -156,4 +158,9 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 [createData]: cest/actions.html#createdata
 [section]: section.html
 [explicit page]: #explicit-page
-[parameterized page]: #parameterized-page
+[parameterized page]: #parameterized-page.
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
+*[UI]: User Interface
