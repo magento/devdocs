@@ -29,7 +29,7 @@ Look for the following highlights in this release:
 
 ### New Features
 
-* **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://docs.magento.com.guides/v2.2/advanced-reporting/overview.html) for more information. 
+* **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html) for more information. 
 
 * **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment (powered by Temando).
 
