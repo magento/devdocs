@@ -2,7 +2,8 @@
 layout: default
 group: reporting
 title: Modules providing advanced reporting
-github_link: advanced-reporting/modules/index.md
+version: 2.2
+github_link: advanced-reporting/modules.md
 ---
 
 Advanced reporting functionality is implemented in the following Magento modules.

@@ -2,31 +2,30 @@
 layout: default
 group: reporting
 title: Data collection for advanced reporting
-github_link: advanced-reporting/data-collection/index.md
+version: 2.2
+github_link: advanced-reporting/data-collection.md
 ---
 
-A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to the MBI. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
+A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports.
+All the data are stored in an encrypted archive file which is securely transferred to the MBI.
+Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
 
 - which report files must be included into the archive file
 - which provider classes must collect data for each report file
 - which report data configuration must be applied to collected data
 
 <div class="bs-callout bs-callout-warning" markdown="1" >
-This topic serves to provide better understanding of how data collection works. Any changes in configuraton files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version. 
+This topic serves to provide better understanding of how data collection works.
+Any changes in configuraton files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
 </div>
 
 ## Example
 
-An example of the `/etc/analytics.xml` file:
+An example of the `etc/analytics.xml` file:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Analytics:etc/analytics.xsd">
     <file name="modules">
         <providers>
@@ -53,14 +52,17 @@ An example of the `/etc/analytics.xml` file:
         </providers>
     </file>
 </config>
-{% endhighlight %}
+```
 
 The example configuration file declares the following:
 
 *   The `modules.csv`, `store_config.csv`, `stores.csv` report files must be included into the archive file prepared for the MBI service.
-*   `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class. Provided data must be configured according to the `modules` report declarations defined in the `/etc/reports.xml` file.
+*   `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
+ Provided data must be configured according to the `modules` report declarations defined in the `etc/reports.xml` file.
 *   `store_config.csv` must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
-*   `stores.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class. Provided data are configured according to the `store_config` report declarations defined in the `/etc/reports.xml` file. Also, the report file must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
+*   `stores.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
+ Provided data are configured according to the `store_config` report declarations defined in the `etc/reports.xml` file.
+ Also, the report file must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
 
 ## Extensibility
 
@@ -68,11 +70,9 @@ Configuration of data collection can be extended or changed in any module adding
 
 ## Structure
 
-In accordance with the `app/code/Magento/Analytics/etc/analytics.xsd` schema
+The `etc/analytics.xsd` schema declares structure of the `etc/analytics.xml` file .
 
-![analytics.xsd schema](./images/analytics_xsd.png)
-
-the `/etc/analytics.xml` file can contain the following nodes.
+{% include_relative img/analytics_xsd.svg %}
 
 ### `<config>`
 
@@ -93,7 +93,7 @@ The `\Magento\Analytics\Model\ReportWriter` class is responsible for a decision 
 |`name`|A filename with no extension|`"modules"`|Required|
 |`prefix`|Reserved for future use.|--|--|
 
-{% highlight xml %}
+```xml
 <config ...>
 
     <!-- Adds a report file `module.csv` to the archive file -->
@@ -107,13 +107,13 @@ The `\Magento\Analytics\Model\ReportWriter` class is responsible for a decision 
     </file>
     
 </config>
-{% endhighlight %}
+```
 
 ### `<providers>`
 
 The node must contain a `<reportProvider>` node, or a `<customProvider>` node, or both.
 
-{% highlight xml %}
+```xml
 ...
     <file ...>    
         <!-- A report provider adds data to the report file  -->
@@ -137,11 +137,12 @@ The node must contain a `<reportProvider>` node, or a `<customProvider>` node, o
         </providers>
     </file>
 ...
-{% endhighlight %}
+```
 
 ### `<reportProvider>`
 
-A class that provides data for a report file. It can contain parameters.
+A class that provides data for a report file.
+It can contain parameters.
 
 |Attribute|Description|Example value|Use|
 |---|---|---|---|
@@ -150,7 +151,7 @@ A class that provides data for a report file. It can contain parameters.
 
 Currently there is only one report provider is available that is `Magento\Analytics\ReportXml\ReportProvider`.
 
-{% highlight xml %}
+```xml
 ...
     <providers>
         <!-- A report provider `stores` uses the `Magento\Analytics\ReportXml\ReportProvider` class to collect report data -->
@@ -159,13 +160,14 @@ Currently there is only one report provider is available that is `Magento\Analyt
         </reportProvider>
     </providers>
 ...
-{% endhighlight %}
+```
 
 ### `<parameters>`
 
-Parameters used by `<reportProvider>`. Currently there is only one parameter is available. It is declared in `<name>`.
+Parameters used by `<reportProvider>`.
+Currently there is only one parameter is available. It is declared in `<name>`.
 
-{% highlight xml %}
+```xml
 ...
     <reportProvider name="stores" class="Magento\Analytics\ReportXml\ReportProvider">
         <!-- The report provider `stores` uses a configuration of a report with name `store_report` declared in `etc/reports.xml` -->
@@ -174,27 +176,28 @@ Parameters used by `<reportProvider>`. Currently there is only one parameter is 
         </parameters>
     </reportProvider>            
 ...
-{% endhighlight %}
+```
 
 If `reportProvider class="Magento\Analytics\ReportXml\ReportProvider"`, then `<name>` references to the `<report name />` in `reports.xml`.
 
 ### `<customProvider>`
 
-A class that provides data for a report file. It cannot contain any parameters.
+A class that provides data for a report file.
+It cannot contain any parameters.
 
 |Attribute|Description|Example value|Use|
 |---|---|---|---|
 |`name`|A provider name|"store_config"|Required|
 |`class`|Full name of a class that provides data|`"Magento\Analytics\Model\StoreConfigurationProvider"`|Required|
 
-{% highlight xml %}
+```xml
 ...
     <providers>
         <!-- A report provider `store_config` uses the `Magento\Analytics\Model\StoreConfigurationProvider` class to collect report data -->
         <customProvider name="store_config" class="Magento\Analytics\Model\StoreConfigurationProvider"/>
     </providers>
 ...
-{% endhighlight %}
+```
 
 ## Related topics
 
@@ -203,7 +206,7 @@ A class that provides data for a report file. It cannot contain any parameters.
 
 <!-- LINK DEFINITIONS -->
 
-[modules]: ./data-collection.html
+[modules]: data-collection.html
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics

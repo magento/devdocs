@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="841"
+   height="426"
+   version="1.1"
+   id="svg358"
+   sodipodi:docname="reports-xsd.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata364">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs362" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview360"
+     showgrid="false"
+     inkscape:zoom="0.95514067"
+     inkscape:cx="565.35139"
+     inkscape:cy="210.70555"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg358" />
+  <g
+     id="g399">
+    <rect
+       id="rect2"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="64"
+       y="28"
+       x="457" />
+    <rect
+       id="rect4"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="64"
+       y="25"
+       x="454" />
+    <text
+       id="text6"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="36"
+       x="486">attribute</text>
+    <text
+       id="text8"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="57"
+       x="508">1..∞</text>
+  </g>
+  <g
+     id="g423">
+    <rect
+       id="rect10"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="64"
+       y="80"
+       x="625" />
+    <rect
+       id="rect12"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="64"
+       y="77"
+       x="622" />
+    <text
+       id="text14"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="88"
+       x="654">attribute</text>
+    <text
+       id="text16"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="109"
+       x="676">0..∞</text>
+  </g>
+  <text
+     x="802"
+     y="161"
+     style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+     id="text24">0..∞</text>
+  <g
+     id="g439">
+    <rect
+       id="rect18"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="50"
+       y="132"
+       x="760" />
+    <rect
+       id="rect20"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="50"
+       y="129"
+       x="757" />
+    <text
+       id="text22"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="140"
+       x="782">filter</text>
+    <rect
+       id="rect26"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="135"
+       x="802" />
+    <line
+       id="line28"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="140"
+       x2="810"
+       y1="140"
+       x1="804" />
+    <line
+       id="line30"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="143"
+       x2="807"
+       y1="137"
+       x1="807" />
+  </g>
+  <g
+     id="g445">
+    <rect
+       id="rect32"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="69"
+       y="184"
+       x="760" />
+    <rect
+       id="rect34"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="69"
+       y="181"
+       x="757" />
+    <text
+       id="text36"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="192"
+       x="791.5">condition</text>
+    <text
+       id="text38"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="213"
+       x="816">1..∞</text>
+  </g>
+  <line
+     x1="747"
+     y1="140"
+     x2="757"
+     y2="140"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line48" />
+  <line
+     x1="747"
+     y1="192"
+     x2="757"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line50" />
+  <line
+     x1="747"
+     y1="140"
+     x2="747"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line52" />
+  <line
+     x1="737"
+     y1="166"
+     x2="747"
+     y2="166"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line54" />
+  <path
+     d="M706 159 L729 159 L735 165 L735 173 L729 179 L706 179 L700 173 L700 165 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path56" />
+  <path
+     d="M703 156 L726 156 L732 162 L732 170 L726 176 L703 176 L697 170 L697 162 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path58" />
+  <line
+     x1="702"
+     y1="166"
+     x2="706"
+     y2="166"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line60" />
+  <line
+     x1="706"
+     y1="166"
+     x2="710"
+     y2="162"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line62" />
+  <line
+     x1="718"
+     y1="162"
+     x2="722"
+     y2="162"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line64" />
+  <line
+     x1="718"
+     y1="166"
+     x2="726"
+     y2="166"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line66" />
+  <line
+     x1="718"
+     y1="170"
+     x2="722"
+     y2="170"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line68" />
+  <line
+     x1="722"
+     y1="162"
+     x2="722"
+     y2="170"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line70" />
+  <ellipse
+     cx="714"
+     cy="162"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse72" />
+  <ellipse
+     cx="714"
+     cy="166"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse74" />
+  <ellipse
+     cx="714"
+     cy="170"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse76" />
+  <text
+     x="727"
+     y="186"
+     style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+     id="text78">1..∞</text>
+  <rect
+     x="727"
+     y="161"
+     width="10"
+     height="10"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="rect80" />
+  <line
+     x1="729"
+     y1="166"
+     x2="735"
+     y2="166"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line82" />
+  <line
+     x1="677"
+     y1="166"
+     x2="697"
+     y2="166"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line84" />
+  <rect
+     x="625"
+     y="158"
+     width="50"
+     height="22"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+     id="rect86" />
+  <rect
+     x="622"
+     y="155"
+     width="50"
+     height="22"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+     id="rect88" />
+  <text
+     x="647"
+     y="166"
+     style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+     id="text90">filter</text>
+  <text
+     x="667"
+     y="187"
+     style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+     id="text92">0..∞</text>
+  <rect
+     x="667"
+     y="161"
+     width="10"
+     height="10"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="rect94" />
+  <line
+     x1="669"
+     y1="166"
+     x2="675"
+     y2="166"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line96" />
+  <g
+     id="g454">
+    <rect
+       id="rect98"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="50"
+       y="236"
+       x="765" />
+    <rect
+       id="rect100"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="50"
+       y="233"
+       x="762" />
+    <text
+       id="text102"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="244"
+       x="787">filter</text>
+    <text
+       id="text104"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="265"
+       x="807">0..∞</text>
+    <rect
+       id="rect106"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="239"
+       x="807" />
+    <line
+       id="line108"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="244"
+       x2="815"
+       y1="244"
+       x1="809" />
+    <line
+       id="line110"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="247"
+       x2="812"
+       y1="241"
+       x1="812" />
+  </g>
+  <g
+     id="g460">
+    <rect
+       id="rect112"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="69"
+       y="288"
+       x="765" />
+    <rect
+       id="rect114"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="69"
+       y="285"
+       x="762" />
+    <text
+       id="text116"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="296"
+       x="796.5">condition</text>
+    <text
+       id="text118"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="317"
+       x="821">1..∞</text>
+  </g>
+  <line
+     x1="752"
+     y1="244"
+     x2="762"
+     y2="244"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line128" />
+  <line
+     x1="752"
+     y1="296"
+     x2="762"
+     y2="296"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line130" />
+  <line
+     x1="752"
+     y1="244"
+     x2="752"
+     y2="296"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line132" />
+  <line
+     x1="742"
+     y1="270"
+     x2="752"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line134" />
+  <path
+     d="M711 263 L734 263 L740 269 L740 277 L734 283 L711 283 L705 277 L705 269 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path136" />
+  <path
+     d="M708 260 L731 260 L737 266 L737 274 L731 280 L708 280 L702 274 L702 266 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path138" />
+  <line
+     x1="707"
+     y1="270"
+     x2="711"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line140" />
+  <line
+     x1="711"
+     y1="270"
+     x2="715"
+     y2="266"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line142" />
+  <line
+     x1="723"
+     y1="266"
+     x2="727"
+     y2="266"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line144" />
+  <line
+     x1="723"
+     y1="270"
+     x2="731"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line146" />
+  <line
+     x1="723"
+     y1="274"
+     x2="727"
+     y2="274"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line148" />
+  <line
+     x1="727"
+     y1="266"
+     x2="727"
+     y2="274"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line150" />
+  <ellipse
+     cx="719"
+     cy="266"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse152" />
+  <ellipse
+     cx="719"
+     cy="270"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse154" />
+  <ellipse
+     cx="719"
+     cy="274"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse156" />
+  <text
+     x="732"
+     y="290"
+     style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+     id="text158">1..∞</text>
+  <rect
+     x="732"
+     y="265"
+     width="10"
+     height="10"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="rect160" />
+  <line
+     x1="734"
+     y1="270"
+     x2="740"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line162" />
+  <line
+     x1="682"
+     y1="270"
+     x2="702"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line164" />
+  <g
+     id="g431">
+    <rect
+       id="rect166"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="55"
+       y="262"
+       x="625" />
+    <rect
+       id="rect168"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="55"
+       y="259"
+       x="622" />
+    <text
+       id="text170"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="270"
+       x="649.5">using</text>
+    <text
+       id="text172"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="291"
+       x="672">1..∞</text>
+    <rect
+       id="rect174"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="265"
+       x="672" />
+    <line
+       id="line176"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="270"
+       x2="680"
+       y1="270"
+       x1="674" />
+  </g>
+  <line
+     x1="612"
+     y1="88"
+     x2="622"
+     y2="88"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line178" />
+  <line
+     x1="612"
+     y1="166"
+     x2="622"
+     y2="166"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line180" />
+  <line
+     x1="612"
+     y1="270"
+     x2="622"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line182" />
+  <line
+     x1="612"
+     y1="88"
+     x2="612"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line184" />
+  <line
+     x1="602"
+     y1="192"
+     x2="612"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line186" />
+  <path
+     d="M571 185 L594 185 L600 191 L600 199 L594 205 L571 205 L565 199 L565 191 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path188" />
+  <path
+     d="M568 182 L591 182 L597 188 L597 196 L591 202 L568 202 L562 196 L562 188 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path190" />
+  <line
+     x1="567"
+     y1="192"
+     x2="571"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line192" />
+  <line
+     x1="571"
+     y1="192"
+     x2="575"
+     y2="188"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line194" />
+  <line
+     x1="583"
+     y1="188"
+     x2="587"
+     y2="188"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line196" />
+  <line
+     x1="583"
+     y1="192"
+     x2="591"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line198" />
+  <line
+     x1="583"
+     y1="196"
+     x2="587"
+     y2="196"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line200" />
+  <line
+     x1="587"
+     y1="188"
+     x2="587"
+     y2="196"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line202" />
+  <ellipse
+     cx="579"
+     cy="188"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse204" />
+  <ellipse
+     cx="579"
+     cy="192"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse206" />
+  <ellipse
+     cx="579"
+     cy="196"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse208" />
+  <text
+     x="592"
+     y="212"
+     style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+     id="text210">1..∞</text>
+  <rect
+     x="592"
+     y="187"
+     width="10"
+     height="10"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="rect212" />
+  <line
+     x1="594"
+     y1="192"
+     x2="600"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line214" />
+  <line
+     x1="542"
+     y1="192"
+     x2="562"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line216" />
+  <g
+     id="g407">
+    <rect
+       id="rect218"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="83"
+       y="184"
+       x="457" />
+    <rect
+       id="rect220"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="83"
+       y="181"
+       x="454" />
+    <text
+       id="text222"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="192"
+       x="495.5">link-source</text>
+    <text
+       id="text224"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="213"
+       x="532">0..61</text>
+    <rect
+       id="rect226"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="187"
+       x="532" />
+    <line
+       id="line228"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="192"
+       x2="540"
+       y1="192"
+       x1="534" />
+  </g>
+  <line
+     x1="444"
+     y1="36"
+     x2="454"
+     y2="36"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line244" />
+  <line
+     x1="444"
+     y1="192"
+     x2="454"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line246" />
+  <g
+     id="g417">
+    <rect
+       id="rect230"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="50"
+       y="340"
+       x="457" />
+    <rect
+       id="rect232"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="50"
+       y="337"
+       x="454" />
+    <text
+       id="text234"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="348"
+       x="479">filter</text>
+    <text
+       id="text236"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="369"
+       x="499">0..∞</text>
+    <rect
+       id="rect238"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="343"
+       x="499" />
+    <line
+       id="line240"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="348"
+       x2="507"
+       y1="348"
+       x1="501" />
+    <line
+       id="line242"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="351"
+       x2="504"
+       y1="345"
+       x1="504" />
+    <line
+       id="line248"
+       style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+       y2="348"
+       x2="454"
+       y1="348"
+       x1="444" />
+  </g>
+  <line
+     x1="444"
+     y1="36"
+     x2="444"
+     y2="348"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line250" />
+  <line
+     x1="434"
+     y1="192"
+     x2="444"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line252" />
+  <path
+     d="M403 185 L426 185 L432 191 L432 199 L426 205 L403 205 L397 199 L397 191 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path254" />
+  <path
+     d="M400 182 L423 182 L429 188 L429 196 L423 202 L400 202 L394 196 L394 188 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path256" />
+  <line
+     x1="399"
+     y1="192"
+     x2="403"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line258" />
+  <line
+     x1="403"
+     y1="192"
+     x2="407"
+     y2="188"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line260" />
+  <line
+     x1="415"
+     y1="188"
+     x2="419"
+     y2="188"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line262" />
+  <line
+     x1="415"
+     y1="192"
+     x2="423"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line264" />
+  <line
+     x1="415"
+     y1="196"
+     x2="419"
+     y2="196"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line266" />
+  <line
+     x1="419"
+     y1="188"
+     x2="419"
+     y2="196"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line268" />
+  <ellipse
+     cx="411"
+     cy="188"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse270" />
+  <ellipse
+     cx="411"
+     cy="192"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse272" />
+  <ellipse
+     cx="411"
+     cy="196"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse274" />
+  <text
+     x="424"
+     y="212"
+     style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+     id="text276">1..∞</text>
+  <rect
+     x="424"
+     y="187"
+     width="10"
+     height="10"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="rect278" />
+  <line
+     x1="426"
+     y1="192"
+     x2="432"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line280" />
+  <line
+     x1="374"
+     y1="192"
+     x2="394"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line282" />
+  <g
+     id="g393">
+    <rect
+       id="rect284"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="62"
+       y="181"
+       x="307" />
+    <text
+       id="text286"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="192"
+       x="338">source</text>
+    <rect
+       id="rect288"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="187"
+       x="364" />
+    <line
+       id="line290"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="192"
+       x2="372"
+       y1="192"
+       x1="366" />
+  </g>
+  <path
+     d="M313 389 L377 389 L383 395 L383 405 L377 411 L313 411 L307 405 L307 395 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+     id="path292" />
+  <text
+     x="345"
+     y="400"
+     style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+     id="text294">any  ##any</text>
+  <line
+     x1="297"
+     y1="192"
+     x2="307"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line296" />
+  <line
+     x1="297"
+     y1="400"
+     x2="307"
+     y2="400"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line298" />
+  <line
+     x1="297"
+     y1="192"
+     x2="297"
+     y2="400"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line300" />
+  <line
+     x1="287"
+     y1="218"
+     x2="297"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line302" />
+  <path
+     d="M253 208 L276 208 L282 214 L282 222 L276 228 L253 228 L247 222 L247 214 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path304" />
+  <line
+     x1="250"
+     y1="218"
+     x2="279"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line306" />
+  <ellipse
+     cx="259"
+     cy="218"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse308" />
+  <ellipse
+     cx="264"
+     cy="218"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse310" />
+  <ellipse
+     cx="269"
+     cy="218"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse312" />
+  <rect
+     x="277"
+     y="213"
+     width="10"
+     height="10"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="rect314" />
+  <line
+     x1="279"
+     y1="218"
+     x2="285"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line316" />
+  <line
+     x1="227"
+     y1="218"
+     x2="247"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line318" />
+  <g
+     id="g378">
+    <rect
+       id="rect320"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="58"
+       y="210"
+       x="167" />
+    <rect
+       id="rect322"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+       height="22"
+       width="58"
+       y="207"
+       x="164" />
+    <text
+       id="text324"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="218"
+       x="193">report</text>
+    <text
+       id="text326"
+       style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+       y="239"
+       x="217">0..∞</text>
+    <rect
+       id="rect328"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="213"
+       x="217" />
+    <line
+       id="line330"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="218"
+       x2="225"
+       y1="218"
+       x1="219" />
+  </g>
+  <line
+     x1="144"
+     y1="218"
+     x2="164"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line332" />
+  <path
+     d="M110 208 L133 208 L139 214 L139 222 L133 228 L110 228 L104 222 L104 214 Z"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="path334" />
+  <line
+     x1="107"
+     y1="218"
+     x2="136"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line336" />
+  <ellipse
+     cx="116"
+     cy="218"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse338" />
+  <ellipse
+     cx="121"
+     cy="218"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse340" />
+  <ellipse
+     cx="126"
+     cy="218"
+     rx="2"
+     ry="2"
+     style="rgb(0,0,0)"
+     id="ellipse342" />
+  <rect
+     x="134"
+     y="213"
+     width="10"
+     height="10"
+     style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+     id="rect344" />
+  <line
+     x1="136"
+     y1="218"
+     x2="142"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1"
+     id="line346" />
+  <line
+     x1="84"
+     y1="218"
+     x2="104"
+     y2="218"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line348" />
+  <g
+     id="g370">
+    <rect
+       id="rect350"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="22"
+       width="59"
+       y="207"
+       x="20" />
+    <text
+       id="text352"
+       style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+       y="218"
+       x="49.5">config</text>
+    <rect
+       id="rect354"
+       style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+       height="10"
+       width="10"
+       y="213"
+       x="74" />
+    <line
+       id="line356"
+       style="stroke:rgb(0,0,0);stroke-width:1"
+       y2="218"
+       x2="82"
+       y1="218"
+       x1="76" />
+  </g>
+</svg>
