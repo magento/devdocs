@@ -67,7 +67,7 @@ Given the above use of `grabValueFrom`, the returned value can be used by using 
 <fillField selector=".functionalTestSelector" userInput="{$grabStepKey}" stepKey="fillFieldKey1"/>
 ```
 <!-- DIMA: The following list of test actions return a variable, I'm not sure how you would like to display/store this list in documentation,
- but I feel they'd be useful to display somewhere. Here they are:
+ but I feel they'd be useful to display somewhere. Here they are (all are grab preffixed):
          grabAttributeFrom
          grabCookie
          grabFromCurrentUrl
@@ -75,7 +75,6 @@ Given the above use of `grabValueFrom`, the returned value can be used by using 
          grabPageSource
          grabTextFrom
          grabValueFrom
-         loadSessionSnapshot
  -->
 
 ### Hard-coded data input
