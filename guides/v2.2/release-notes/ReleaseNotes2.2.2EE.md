@@ -31,7 +31,7 @@ Look for the following highlights in this release:
 
 * **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://docs.magento.com.guides/v2.2/advanced-reporting/overview.html) for more information. 
 
-* **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment (contributed by Temando).
+* **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment (powered by Temando).
 
 * **Streamlined Instant Purchase checkout**. Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
@@ -413,7 +413,7 @@ Looking for more information on these new features as well as many others? Check
 
 **Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure.
 
-**Workaround**: Use the static Swagger site at http://devdocs.magento.com/swagger to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
+**Workaround**: Use the [static Swagger site](http://devdocs.magento.com/swagger) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
 
 
 ### Magento Shipping issues

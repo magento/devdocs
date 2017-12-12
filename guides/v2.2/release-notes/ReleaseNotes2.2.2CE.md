@@ -31,7 +31,7 @@ Look for the following highlights in this release:
 
 * **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://docs.magento.com.guides/v2.2/advanced-reporting/overview.html) for more information. 
 
-* **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment (contributed by Temando).
+* **Magento Shipping**. This new feature provides integrated advanced multi-carrier shipping and fulfillment (powered by Temando).
 
 * **Streamlined Instant Purchase checkout**. Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
