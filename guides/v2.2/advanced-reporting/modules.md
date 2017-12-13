@@ -4,6 +4,8 @@ group: reporting
 title: Modules providing advanced reporting
 version: 2.2
 github_link: advanced-reporting/modules.md
+functional_areas:
+    - Reports
 ---
 
 Advanced reporting functionality is implemented in the following Magento modules.

@@ -4,6 +4,8 @@ group: reporting
 title: Data collection for advanced reporting
 version: 2.2
 github_link: advanced-reporting/data-collection.md
+functional_areas:
+    - Reports
 ---
 
 A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports.

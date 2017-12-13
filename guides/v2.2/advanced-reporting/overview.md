@@ -4,6 +4,8 @@ group: reporting
 title: Advanced Reporting
 version: 2.2
 github_link: advanced-reporting/overview.md
+functional_areas:
+    - Reports
 ---
 
 Advanced reporting functionality is provided through integration of a Magento instance with the [Magento Business Intelligence] (MBI).
