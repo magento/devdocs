@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source Backward Incompatible Changes | Magento 2 Developer Documentation</title>
+	<title>Backward incompatible changes in Magento Open Source | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -962,7 +962,7 @@
 
           
 
-          <span property="name">Magento Open Source Backward Incompatible Changes</span>
+          <span property="name">Backward incompatible changes in Magento Open Source</span>
 
         
 
@@ -985,7 +985,7 @@
 
 	
 
-	<h1 class="page-heading">Magento Open Source Backward Incompatible Changes</h1>
+	<h1 class="page-heading">Backward incompatible changes in Magento Open Source</h1>
 
   
 
@@ -998,14 +998,56 @@
 <p>All changes are generated automatically using the codebase of corresponding releases in <a href="https://github.com/magento/magento2">magento/magento2</a> repository.
 The changes are aggregated into two tables:</p>
 
-<ul>
-  <li>that contains backward incompatible changes made to Magento classes</li>
-  <li>that contains backward incompatible changes made to the Magento interfaces</li>
-</ul>
+<ol>
+  <li><strong>Changes in classes</strong> that contains backward incompatible changes made to the Magento classes</li>
+  <li><strong>Changes in interfaces</strong> that contains backward incompatible changes made to the Magento interfaces</li>
+</ol>
 
 <div class="bs-callout bs-callout-warning">
-  <p><strong>Temporary issue</strong>: Added docblock tags like <a href="/guides/v2.1/coding-standards/docblock-standard-general.html#api">@api</a> or <a href="/guides/v2.1/coding-standards/docblock-standard-general.html#deprecated">@deprecated</a> are defined in <strong>How Changed</strong> as <em>Class was added</em> or <em>Method has been added</em>.</p>
+  <p><strong>Temporary issue</strong>: Added docblock tags like <a href="/guides/v2.1/coding-standards/docblock-standard-general.html#deprecated">@deprecated</a> are defined in <strong>How Changed</strong> as <em>Class was added</em> or <em>Method has been added</em>.</p>
 </div>
+
+<h2 id="releases-2_1_10-2_1_11">2.1.10 - 2.1.11</h2>
+
+<h3 id="classes-2110-2111">Changes in classes</h3>
+<table><tbody>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Type\AbstractType::isPossibleBuyFromList</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Block\Robots</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Robots\Model\Config\Value</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Robots\Block\Data</td>
+        <td>Class was added.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interfaces-2110-2111">Changes in interfaces</h3>
+<table><tbody>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime\TimezoneInterface::date</td>
+        <td>[public] Method parameter name changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\AttributeOptionProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+</tbody></table>
 
 <h2 id="releases-2_1_9-2_1_10">2.1.9 - 2.1.10</h2>
 
