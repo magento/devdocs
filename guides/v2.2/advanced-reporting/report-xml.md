@@ -4,6 +4,8 @@ group: reporting
 title: Report XML
 version: 2.2
 github_link: advanced-reporting/report-xml.md
+functional_areas:
+    - Reports
 ---
 
 **Report XML** is a markup language created to build analytical reports.
