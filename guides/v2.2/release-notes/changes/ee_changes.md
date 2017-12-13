@@ -33,7 +33,7 @@ The changes are aggregated into two tables:
 
 ## 2.1.0 - 2.2.0 {#releases-2_1_0-2_2_0}
 
-{% include changes/ce/2.1.0-2.2.0.html %}
+{% include changes/ee/2.1.0-2.2.0.html %}
 
 <!-- LINK DEFINITIONS -->
 

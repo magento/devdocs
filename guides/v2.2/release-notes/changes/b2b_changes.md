@@ -26,11 +26,11 @@ The changes are aggregated into two tables:
 
 ## 1.0.1 - 1.0.2 {#releases-1_0_1-1_0_2}
 
-{% include changes/ce/1.0.1-1.0.2.html %}
+{% include changes/b2b/1.0.1-1.0.2.html %}
 
 ## 1.0.0 - 1.0.1 {#releases-1_0_0-1_0_1}
 
-{% include changes/ce/1.0.0-1.0.1.html %}
+{% include changes/b2b/1.0.0-1.0.1.html %}
 
 <!-- LINK DEFINITIONS -->
 
