@@ -14,6 +14,10 @@ redirect_from:
   - /guides/v2.1/install-gde/continue.html
   - /guides/v1.0/install-gde/bk-install-guide.html
   - /guides/v2.0/install-gde/install/install-merchbeta.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ## Magento software installation
@@ -26,7 +30,7 @@ It’s what we do.
 
 ## How to get the Magento software {#install-get-software}
 
-Consult the following table for how to get started installing Magento Community Edition (CE) or Magento Enterprise Edition (EE).
+Consult the following table for how to get started installing {{site.data.var.ce}} or {{site.data.var.ee}}.
 
 <table>
 	<tbody>
@@ -50,7 +54,7 @@ Consult the following table for how to get started installing Magento Community 
 	</tr>
 	<tr>
 		<td><p>Integrator, packager</p></td>
-		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage Magento CE with other components.</p>
+		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage {{site.data.var.ce}} with other components.</p>
 		<p>Enables you to install the Magento software and extensions using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</p>
 		<p>You can also upgrade the Magento application and extensions using the <a href="{{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html">Web Setup Wizard</a> or <a href="{{ page.baseurl }}comp-mgr/cli/cli-upgrade.html">command line</a>.</p></td>
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>

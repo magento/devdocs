@@ -1,19 +1,13 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
 title: Magento_Staging module
-menu_title: Staging
-menu_order: 2
 version: 2.1
+ee_only: true
 github_link: mrg/ee/Staging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
-
-The Magento_Staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} enables you to work with the future [campaigns](#campaign) in Magento EE.
+The Magento_Staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} enables you to work with the future [campaigns](#campaign) in {{site.data.var.ee}}.
 
 With the Magento_Staging module you can:
 
@@ -84,7 +78,7 @@ You can customize a grid using the standard grid settings located above the grid
 
 #### Timeline/Grid view UI components
 
-You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a [simple grid](devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html) with the following custom settings:
+You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a [simple grid](devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html) with the following custom settings:
 
 - in `listingToolbar`
     - `template` declares a legend for a timeline, which is an overloading template that provides a grid/timeline view switcher.
@@ -262,7 +256,7 @@ You can extend and override layouts in the `view/adminhtml/layout` directory. Fo
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
 
 ### cron options
 
@@ -279,8 +273,6 @@ cron group configuration is set in `etc/crontab.xml`.
 ### Indexes and indexing modes
 
 When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data is loaded for the open page only.
-
-[Learn more about indexing in Magento.](http://devdocs.magento.com/guides/v2.1/mrg/indexing.html)
 
 ### Data migration
 

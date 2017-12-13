@@ -1,19 +1,13 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
 title: Magento_CmsStaging module
-menu_title: CmsStaging
-menu_order: 2
 version: 2.1
+ee_only: true
 github_link: mrg/ee/CmsStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
-
-The Magento_CmsStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to add the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Page and the {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %} updates to the existing store campaigns. These updates are shown on the campaign dashboard.
+The Magento_CmsStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Page and the {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %} updates to the existing store campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -25,14 +19,14 @@ You can stage the following parameters:
 
 - Enable/Disable CMS Page
 - Page Title
-- Content 
+- Content
     - Content Heading
     - Content (WYSIWYG)
-- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %} 
+- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %}
     - URL Key
     - Meta Keywords
     - Meta Description
-- Design 
+- Design
     - Layout
     - Layout Update XML
     - Theme
@@ -43,7 +37,7 @@ The following parameters can be staged:
 
 - Enable/Disable CMS Block
 - Block Title
-- Identifier 
+- Identifier
 - {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}Store View{% endglossarytooltip %}
 - Content (WYSIWYG)
 
@@ -63,7 +57,7 @@ You can find the list of modules that have dependencies on the Magento_CmsStagin
 
 ### UI components
 
-You can extend product and {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} updates using the UI components located in the `Magento\CmsStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
+You can extend product and {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} updates using the UI components located in the `Magento\CmsStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 
@@ -72,4 +66,4 @@ For more information about layouts, see the [Layout documentation](http://devdoc
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

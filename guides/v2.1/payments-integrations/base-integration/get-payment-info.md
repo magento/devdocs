@@ -2,11 +2,13 @@
 layout: default
 group: payments-integrations
 subgroup: B_integration
-title: Get payment information from frontend to backend 
+title: Get payment information from frontend to backend
 menu_title: Get payment information from frontend to backend
 menu_order: 6
 version: 2.1
 github_link: payments-integrations/base-integration/get-payment-info.md
+functional_areas:
+  - Integration
 ---
 
 To implement transaction {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} our payment should receive some payment details from payment form, like credit card details,
@@ -24,7 +26,7 @@ The Braintree payment provider requires the [payment method nonce](https://devel
 to process transactions, and our builder should send it for each authorization transaction. 
 Here is how the Braintree payment builder looks:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class PaymentDataBuilder implements BuilderInterface
 {
     /**
@@ -50,7 +52,7 @@ class PaymentDataBuilder implements BuilderInterface
         return $result;
     }
 }
-{% endhighlight %}
+```
 
 As you can see, we get the payment nonce from payment additional information. And so any specific data (like credit card information) can be retrieved.
 
@@ -119,7 +121,7 @@ in the payment additional information. In most cases it will be enough to extend
 
 That's how observer might looks:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class DataAssignObserver extends AbstractDataAssignObserver
 {
     const PAYMENT_METHOD_NONCE = 'payment_method_nonce';
@@ -156,7 +158,7 @@ class DataAssignObserver extends AbstractDataAssignObserver
         }
     }
 }
-{% endhighlight %}
+```
 
 And this observer should be added to list of events (`Module_Name/etc/events.xml`):
 
@@ -170,7 +172,7 @@ And this observer should be added to list of events (`Module_Name/etc/events.xml
 
 This {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} will be triggered in [Adapter::assignData()]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 public function assignData(\Magento\Framework\DataObject $data)
 {
     $this->eventManager->dispatch(
@@ -193,7 +195,7 @@ public function assignData(\Magento\Framework\DataObject $data)
 
     return $this;
 }
-{% endhighlight %}
+```
 
 There are two events:
 

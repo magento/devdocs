@@ -3,18 +3,19 @@ layout: default
 group: config-guide
 subgroup: 14_Elastic
 title: Install and configure Elasticsearch
-menu_title: Install and configure Elasticsearch (Enterprise Edition only)
+menu_title: Install and configure Elasticsearch (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.2
+ee_only: True
 github_link: config-guide/elasticsearch/es-overview.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
-
-*	[Overview of Elasticsearch](#overview){:target="_blank"}
-*	[Install prerequisites and Elasticsearch](#es-prereq){:target="_blank"}
-*	[Additional resources](#es-resources){:target="_blank"}
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
 *	[Configure Elasticsearch stopwords]({{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html)
@@ -31,14 +32,14 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers
 
 *	Accurate, performant, scalable
-*	Works well out of the box 
+*	Works well out of the box
 *	Easy to horizontally scale
 *	Supports real-time data and analysis
 *	Can be used as a document-oriented data store
 *	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
 
 ### Supported versions {#es-spt-versions}
-Magento Enterprise Edition (EE) version 2.1.x supports the following Elasticsearch versions:
+{{site.data.var.ee}} version 2.1.x supports the following Elasticsearch versions:
 
 *	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
 *	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
@@ -87,7 +88,7 @@ The tasks discussed in this section require the following:
 {% include config/install-java.md %}
 
 ### Install Elasticsearch {#es-install-es}
-This section discusses how to install the latest 2.x version of Elasticsearch from their repository. 
+This section discusses how to install the latest 2.x version of Elasticsearch from their repository.
 
 To install older versions, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/index.html){:target="_blank"} (for example, the [2.0 reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html){:target="_blank"}).
 

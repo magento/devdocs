@@ -3,8 +3,8 @@ layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
-title: Enterprise Edition modules
-menu_title: Enterprise Edition
+title: Magento Commerce modules
+menu_title: Commerce
 menu_order: 1
 menu_node: parent
 version: 2.2
@@ -38,6 +38,5 @@ The following modules are described in detail:
 * RmaStaging
 * SalesRuleStaging
 * SearchStaging
-* Signifyd
 * Staging
 * WeeeStaging

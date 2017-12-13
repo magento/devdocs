@@ -20,7 +20,7 @@ In response, we’ve issued a set of patches for the Magento 1.x versions that d
 
 ### Who is affected by this issue?
 
-Magento Enterprise Edition versions 1.14.3.0 and later and Magento Community Edition versions 1.9.3.0 and later fully support the new MasterCard numbers. Similarly, Magento Community and Enterprise Editions 2.1.3 and later versions fully support this MasterCard BIN range update.
+Magento Commerce (formerly Enterprise Edition) versions 1.14.3.0 and later and Magento Open Source (formerly Community Edition) versions 1.9.3.0 and later fully support the new MasterCard numbers. Similarly, Magento Open Source and Commerce 2.1.3 and later versions fully support this MasterCard BIN range update.
 
 However, if you are using an older version of Magento, you must upgrade by June 30 to avoid fines and ensure the correct processing of payments made with these new BINs. 
 
@@ -98,15 +98,15 @@ Consult the following tables for guidelines for Magento 1.x EE and CE fixes.
 
 #### Access Magento 1.x patches
 
-To get patches for Magento 1.x EE or CE
+To get patches for Magento 1.x Commerce or Open Source
 
 1.	Log in to [www.magento.com](http://magentocommerce.com){:target="_blank"}
 
 2.	In the left pane, click Downloads.
 
-3.	In the right pane, click either Magento Enterprise Edition or Magento Community Edition.
+3.	In the right pane, click either Magento Commerce or Magento Open Source.
 
-4.	Follow the prompts on your screen to download the Mastercard 2 Series BIN: Bank Identification Numbers Range Update patch for your version of EE or CE.
+4.	Follow the prompts on your screen to download the Mastercard 2 Series BIN: Bank Identification Numbers Range Update patch for your version of Magento Commerce or Open Source.
 
 5.	Apply the patch as discussed in [How to Apply and Revert Magento Patches](http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html){:target="_blank"}.
 

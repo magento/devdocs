@@ -1,14 +1,14 @@
 ---
 layout: default
 group: unit-testing
-subgroup: 10_Running_Unit_Tests
 title: Running Unit Tests
-menu_title: Running Unit Tests
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/unit_test_execution.md
+functional_areas:
+  - Testing
+  - test
 ---
 
 Executing the Magento 2 unit tests is straight forward.

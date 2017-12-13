@@ -2,11 +2,12 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1.6 Release Notes
-menu_title: Magento CE 2.1.6 Release Notes
+title: Magento Open Source 2.1.6 Release Notes
+menu_title: Magento Open Source 2.1.6 Release Notes
 menu_order: 164
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
+version: 2.1
 github_link: release-notes/ReleaseNotes2.1.6CE.md
 ---
 
@@ -19,7 +20,7 @@ github_link: release-notes/ReleaseNotes2.1.6CE.md
 Upgrading to this release can cause problems with image resizing. Please see [Image Resize Issue with Magento 2.1.6](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_216-imageresize.html){:target="_blank"} for an overview of these post-upgrade issues and our suggested workaround.
 </div>
 
-We are pleased to present Magento Community Edition 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page as well as image resizing. 
+We are pleased to present Magento Open Source (formerly Community Edition) 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page as well as image resizing. 
 
 Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 

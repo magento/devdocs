@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1.4 Release Notes
-menu_title: Magento CE 2.1.4 Release Notes
+title: Magento Open Source 2.1.4 Release Notes
+menu_title: Magento Open Source 2.1.4 Release Notes
 menu_order: 168
 version: 2.1
 level3_menu_node: level3child
@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.4CE.md
 {:toc}
 
 
-We are pleased to present Magento Community Edition 2.1.4. This release includes many functional enhancements and fixes.
+We are pleased to present Magento Open Source (formerly Community Edition) 2.1.4. This release includes many functional enhancements and fixes.
 
 
 

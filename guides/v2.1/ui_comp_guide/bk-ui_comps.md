@@ -8,9 +8,9 @@ menu_title: Overview of UI components
 menu_order: 1
 version: 2.1
 github_link: ui_comp_guide/bk-ui_comps.md
-redirect_from: 
+redirect_from:
   - /guides/v2.1/ui-components/ui-component.html
-  - /guides/v2.1/ui-components/ui-component.html
+  - /guides/v2.2/ui-components/ui-component.html
   - /guides/v2.1/ui-components/ui-definition.html
   - /guides/v2.1/ui-components/ui-secondary.html
   - /guides/v2.1/ui-components/ui_components_js.html
@@ -26,7 +26,7 @@ This document started as a [week-long doc sprint in Kyiv](http://bhmarks.com/blo
 In the meantime, until we have completed this new book, you can also still [access the former (v2.0) UI Components docs](http://devdocs.magento.com/guides/v2.0/ui-components/ui-component.html).
 
 ## Overview of UI components
-*Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others*. 
+*Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others*.
 
 They are designed for simple and flexible user interface (UI) rendering. Components are responsible for rendering result page fragments and providing/supporting further interactions of {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components and server.
 
@@ -48,7 +48,7 @@ Basic components are:
 
 * [Form component]({{page.baseurl}}ui_comp_guide/components/ui-form.html)
 
-All other UI components are secondary. 
+All other UI components are secondary.
 
 Basic components are declared in the [page layout files]({{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page); secondary components are declared in the top-level components’ instances configuration files.
 
@@ -70,7 +70,7 @@ With Magento, you may apply different approaches to implementing a UI element, a
 
 * Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}
 
-We recommend using UI components as much as possible and tend to do the same in Magento core. 
+We recommend using UI components as much as possible and tend to do the same in Magento core.
 
 UI components work well together: they communicate with each other via the [uiRegistry service]({{page.baseurl}}ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry) that tracks their asynchronous initialization. Therefore, if we need to extend something that has already been implemented as a hierarchy of UI components or add a new feature that should interact with other UI components, it's easier and more effective to use a UI component.
 

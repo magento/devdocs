@@ -2,7 +2,7 @@
 layout: default
 group: UI_Components_guide
 subgroup: concepts
-title: UI components XML configuration structure 
+title: UI components XML configuration structure
 menu_title: UI components XML configuration structure  
 menu_order: 15
 version: 2.2
@@ -69,7 +69,7 @@ This topic describes the basic elements used in XML configuration files for decl
     </td>
     <td>
       Mandatory root element, the name of the <a href=
-      "{{page.baseulr}}ui_comp_guide/bk-ui_comps.html#general-structure">
+      "{{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure">
       basic UI component</a>: <code>&lt;form&gt;</code>,
       <code>&lt;listing&gt;</code> or custom basic component.
     </td>
@@ -164,7 +164,7 @@ This topic describes the basic elements used in XML configuration files for decl
   </tr>
 </table>
 
-## Example of the basic UI components configuration structure 
+## Example of the basic UI components configuration structure
 
 {%highlight xml%}
 

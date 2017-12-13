@@ -1,16 +1,9 @@
 ---
 layout: default
 group: mrg
-subgroup: Community Edition
 title: Magento_Sales module
-menu_title: Sales
-menu_order: 1
 version: 2.0
 github_link: mrg/ce/Sales.md
-redirect_from:
-    - guides/v2.0/mrg/ce/Sales/description.html
-    - guides/v2.0/mrg/ce/Sales/dependencies.html
-    - guides/v2.0/mrg/ce/Sales/services.html
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in system.
@@ -230,7 +223,7 @@ With this service you can:
    * add details about refunded items to an Order
    * change status and state of an Order according to performed actions
    * notify a customer about performed refund operation
-   
+
 ### Service parameters
 
 <table>
@@ -880,7 +873,7 @@ With the ShipOrder service you can:
         interface.</td>
       <td>
       {% highlight json %}
-      {   
+      {
           "comment": "The first Invoice",
           "is_visible_on_front": true
       }
@@ -1044,4 +1037,3 @@ The service contains extension points marked with `@api` annotation. Extension d
 [`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php
 [`\Magento\Sales\Model\Order\PaymentAdapterInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php
 [`\Magento\Sales\Model\Order\RefundAdapterInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php
-

@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.0.9 Release Notes
-menu_title: Magento EE 2.0.9 Release Notes
+title: Magento Commerce 2.0.9 Release Notes
+menu_title: Magento Commerce 2.0.9 Release Notes
 menu_order: 279
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
@@ -11,7 +11,7 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.0.9EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.0.9. This release includes several functional fixes.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.9. This release includes several functional fixes.
 
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.

@@ -2,9 +2,12 @@
 //= include _vendor/affix.js
 //= include _vendor/scrollspy.js
 //= include _vendor/clipboard.min.js
+//= include _vendor/autocomplete.jquery.js
 
 // This is what happens on document.ready
 $(function() {
+
+  $('html').removeClass('no-js');
 
   //= include _includes/analytics.js
   //= include _includes/toc.js
@@ -17,6 +20,7 @@ $(function() {
   //= include _includes/search.js
   //= include _includes/tutorial.js
   //= include _includes/videos.js
+  //= include _includes/left-navigation.js
 
 });
 // END document ready
@@ -28,11 +32,6 @@ $(window).on('load', function(){
   }
 });
 
-// Fix anchor jumps hiding headers
-/*
-$(window).on('hashchange',function(){
-	$(document).scrollTop($(document).scrollTop() - 60);
-});*/
 
 //Allows for sticky menu
 $(document).on('scroll', function(){

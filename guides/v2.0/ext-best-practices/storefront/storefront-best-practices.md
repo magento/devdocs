@@ -11,6 +11,10 @@ tabgroup: best-practices
 tablabel: Storefront
 tabweight: 40
 github_link: ext-best-practices/storefront/storefront-best-practices.md
+functional_areas:
+  - Frontend
+  - Theme
+  - Standards
 ---
 
 The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{page.baseurl}}frontend-dev-guide/themes/theme-general.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.

@@ -1,17 +1,20 @@
 ---
 layout: default
-group: 
+group:
 subgroup: 14_Elastic
 title: Manage your Elasticsearch cluster
 menu_title: Manage your Elasticsearch cluster
 menu_order: 15
-menu_node: 
+menu_node:
 version: 2.1
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-cluster.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
-
 
 #### Contents
 

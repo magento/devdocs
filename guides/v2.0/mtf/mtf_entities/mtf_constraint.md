@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Constraint
-menu_title: Constraint
-menu_order: 7
 version: 2.0
 github_link: mtf/mtf_entities/mtf_constraint.md
 ---
@@ -137,7 +134,7 @@ To assign severity tags do the following:
 For example, `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`:
 
 {%highlight xml%}
-{%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml %}
+{%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml %}
 {%endhighlight%}
 
 ## How to create constraint {#mtf_constraint_create}

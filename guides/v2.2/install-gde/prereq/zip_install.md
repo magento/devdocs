@@ -8,6 +8,10 @@ menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: install-gde/prereq/zip_install.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="integrator-aud">Intended audience</h2>
@@ -19,6 +23,8 @@ The audience for this topic is anyone who downloaded a compressed Magento softwa
 
 ## Get the Magento software
 
+{% include install/archives-php-issue.md %}
+
 {% include install/get-software_zip.md %}
 
 <h2 id="zip-transfer">Transfer the Magento archive to your server</h2>
@@ -28,14 +34,14 @@ To transfer the Magento software archive to your server:
 
 	There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.
 
-	*	Windows: <a href="https://winscp.net/eng/download.php" target="_blank">WinSCP</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a>
-	*	Mac OS: <a href="https://cyberduck.io/?l=en" target="_blank">CyberDuck</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a>
+	*	Windows: <a href="https://winscp.net/eng/download.php" target="\_blank">WinSCP</a> or <a href="https://filezilla-project.org/download.php" target="\_blank">Filezilla</a>
+	*	Mac OS: <a href="https://cyberduck.io/?l=en" target="\_blank">CyberDuck</a> or <a href="https://filezilla-project.org/download.php" target="\_blank">Filezilla</a>
 
 2.	Create a connection to your Magento server.
 
 	Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-3.	After you log in to your server, browse to locate the Magento CE or EE archive on your local system.
+3.	After you log in to your server, browse to locate the {{site.data.var.ce}} or {{site.data.var.ee}} archive on your local system.
 
 	On the remote system, browse to locate the web server docroot directory.
 
@@ -75,19 +81,19 @@ Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}ins
 
 <table>
 <tbody>
-<tr> 
+<tr>
 	<th>File format</th>
 	<th>Command to extract</th>
 </tr>
-<tr> 
+<tr>
 	<td>.tar.gz</td>
 	<td><code>tar zxf &lt;filename></code></td>
 </tr>
-<tr> 
+<tr>
 	<td>.zip</td>
 	<td><code>unzip &lt;filename></code></td>
 </tr>
-<tr> 
+<tr>
 	<td>.tar.bz2</td>
 	<td><code>tar jxf &lt;filename></code></td>
 </tr>

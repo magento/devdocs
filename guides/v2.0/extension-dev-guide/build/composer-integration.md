@@ -36,7 +36,7 @@ Keep this in mind while customizing, updating, or troubleshooting composer while
 ## Project vs product
 
 In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
-The [installation instructions for system integrators][10] use the Magento CE and EE project packages to set up the Magento directory structure.
+The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
 
 A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
 
@@ -179,7 +179,7 @@ Where:
   * `module-` for module extensions
   * `theme-` for theme extensions
   * `language-` for language extensions
-  * `product-` for [metapackages][8] such as Magento CE or Magento EE
+  * `product-` for [metapackages][8] such as {{site.data.var.ce}} or {{site.data.var.ee}}
 
 : `suffix` is a unique identifier for extensions of that type.
 
@@ -195,7 +195,7 @@ Where:
 [1]: {{page.baseurl}}comp-mgr/compman-start.html
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
-[4]: http://www.iso.org/iso/home/standards/language_codes.html
+[4]: https://www.iso.org/iso-639-language-codes.html
 [5]: http://docs.magento.com/marketplace/user_guide/account/profile-company.html
 [6]: https://marketplace.magento.com/
 [7]: https://marketplace.magento.com

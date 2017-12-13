@@ -8,6 +8,10 @@ menu_order: 10
 menu_node:
 version: 2.2
 github_link: config-guide/redis/redis-session.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
@@ -26,7 +30,7 @@ where
 
 `--session-save=redis` enables Redis session storage. If this feature has already been enabled, omit this parameter.
 
-`-session-save-redis-<parameter_name>=<parameter_value>` refers to any number of the following parameters that can be used to configure session storage:
+`--session-save-redis-<parameter_name>=<parameter_value>` is a list of parameter/value pairs that configure session storage:
 
 <table>
 <tbody>
@@ -78,7 +82,7 @@ where
 <td>database</td>
 <td>
 <p>Unique Redis database number, which is recommended to protect against data loss.</p>
-<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, page cache and session cache), the database numbers must be different.</p>
+<p><strong>Important</strong>: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2. </p>
 </td>
 <td>0</td>
 </tr>
@@ -192,9 +196,9 @@ where
 
 ### Example command
 
-The following example sets Redis as the session data store, sets the host to `redis.example.com` and sets the log level to 3. All other parameters are set to the default value.
+The following example sets Redis as the session data store, sets the host to `redis.example.com`, sets the log level to 3, and sets the datbase number to 2. All other parameters are set to the default value.
 
-`bin/magento setup:config:set --session-save=redis --session-save-redis-host=redis.example.com --session-save-redis-log-level=3`
+`bin/magento setup:config:set --session-save=redis --session-save-redis-host=redis.example.com --session-save-redis-log-level=3 --session-save-redis-db=2`
 
 ### Result
 
@@ -210,7 +214,7 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
         'password' => '',
         'timeout' => '2.5',
         'persistent_identifier' => '',
-        'database' => '0',
+        'database' => '2',
         'compression_threshold' => '2048',
         'compression_library' => 'gzip',
         'log_level' => '3',

@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /guides/v2.2/
+Disallow: /guides/v2.3/

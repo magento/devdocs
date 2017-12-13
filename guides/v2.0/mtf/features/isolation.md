@@ -1,9 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Isolation management
-menu_title: Isolation management
 version: 2.0
 github_link: mtf/features/isolation.md
 ---
@@ -100,14 +98,14 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation after` to the class annotation, for example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 /**
  * ...
  * @isolation after
  */
 class OnePageCheckoutTest extends Scenario
 ...
-{%endhighlight%}
+```
 
 ### Step 2(e): Locally set isolation script to be run after each test of a test case {#step-2e}
 
@@ -116,14 +114,14 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation test after` to the class annotation, for example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 /**
  * ...
  * @isolation test after
  */
 class OnePageCheckoutTest extends Scenario
 ...
-{% endhighlight %}
+```
 
 ### Step 2(f): Locally set isolation script to be run before test of a test case {#step-2f}
 
@@ -133,7 +131,7 @@ Example test: `test()`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`
 - Add `* @isolation before` to the `test()` method annotation, for example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
     /**
      * ...
@@ -141,7 +139,7 @@ Example test: `test()`.
      */
     public function test()
     ...
-{% endhighlight %}
+```
 
 ### Step 2(g): Locally set isolation script to be run before a test case and after a test {#step-2g}
 
@@ -151,7 +149,7 @@ Example test: `test()`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation before` to the class annotation and `* @isolation after` to the `test()` method annotation, for example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 /**
  * ...
  * @isolation before
@@ -165,7 +163,7 @@ class OnePageCheckoutTest extends Scenario
     public function test()
     ...
     }
-{% endhighlight %}
+```
 
 ### Step 2(h): Locally set isolation script to be excluded for a test case {#step-2h}
 
@@ -174,14 +172,14 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation none` to the class annotation, for example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 /**
  * ...
  * @isolation none
  */
 class OnePageCheckoutTest extends Scenario
 ...
-{% endhighlight %}
+```
 
 ### Step 2(i): Locally set isolation script to be excluded for a test {#step-2i}
 
@@ -191,7 +189,7 @@ Example test: `test()`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation none` to the `test()` method annotation, for example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
     /**
      * ...
@@ -199,7 +197,7 @@ Example test: `test()`.
      */
     public function test()
     ...
-{% endhighlight %}
+```
 
 
 <!-- LINK DEFINITIONS -->

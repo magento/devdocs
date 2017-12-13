@@ -1,13 +1,9 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 30_Quickstart
 title: Quick start with the Functional Testing Framework
-menu_title: QUICK START
-menu_node: parent
 version: 2.0
 github_link: mtf/mtf_quickstart.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart.html
 ---
 
 In this chapter you will learn how to:

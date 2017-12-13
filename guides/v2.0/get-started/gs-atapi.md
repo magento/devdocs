@@ -1,4 +1,3 @@
-<!--
 ---
 layout: default
 group: get-started
@@ -10,6 +9,8 @@ menu_node: parent
 version: 2.0
 github_link: get-started/gs-curl.md
 redirect_from: /guides/v1.0/get-started/gs-curl.html
+functional_areas:
+  - Integration
 ---
 
 -->

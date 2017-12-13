@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: F_troubleshooting
 title: Troubleshooting
 menu_title: Troubleshooting
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 6
 version: 2.0
 github_link: migration/migration-troubleshooting.md
+functional_areas:
+  - Tools
 ---
 
 ## Common error messages
@@ -34,7 +36,7 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
+* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"&#95;blank"}
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 

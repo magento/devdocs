@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.0.14 Release Notes
-menu_title: Magento CE 2.0.14 Release Notes
+title: Magento Open Source 2.0.14 Release Notes
+menu_title: Magento Open Source 2.0.14 Release Notes
 menu_order: 165
 version: 2.0
 level3_menu_node: level3child
@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.0.14CE.md
 *Patch code and release notes were published on May 31, 2017.* 
 
 
-We are pleased to present Magento Community Edition 2.0.14. This release includes critical enhancements to the security of your Magento software.
+We are pleased to present Magento Open Source (formerly Community Edition) 2.0.14. This release includes critical enhancements to the security of your Magento software.
 
 
 <div class="bs-callout bs-callout-warning" markdown="1">

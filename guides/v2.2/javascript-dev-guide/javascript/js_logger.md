@@ -99,7 +99,7 @@ Returns all available log entries. It can additionally filter out the entries th
 ## `LogEntry`
 `LogEntry` is a class that holds the data of log operations, like `error`, `warn`,  `info` and so on.
 
-**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/entry.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js) 
+**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/entry.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js)
 
 ### new LogEntry(message, level, [data])
 
@@ -187,7 +187,7 @@ The following log levels are available (sorted by priority in the descending ord
  - `DEBUG`
  - `ALL` (allows to display all log entries, unless any other display criteria is present)
 
-**Path:** `Magento_Ui_module_dir>/view/base/web/js/lib/logger/levels-pool.js` ([See on Github]({{site.mage2200url}}{{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js))
+**Path:** `Magento_Ui_module_dir>/view/base/web/js/lib/logger/levels-pool.js` ([See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js))
 
 ### `getLevels()`
 Returns a list of available log levels.

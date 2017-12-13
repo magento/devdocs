@@ -27,9 +27,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 
 <h2 id="dialog_options">Options</h2>
  
-Magento customized Dialog widget has default <a href="http://api.j
-
-ui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> options, plus several custom options:
+Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> options, plus several custom options:
 <ul>
 <li><a href="#d_autoPosition">autoPosition</a></li>
 <li><a href="#d_autoSize">autoSize</a></li>

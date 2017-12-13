@@ -2,11 +2,12 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1.7 Release Notes
-menu_title: Magento CE 2.1.7 Release Notes
+title: Magento Open Source 2.1.7 Release Notes
+menu_title: Magento Open Source 2.1.7 Release Notes
 menu_order: 162
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
+version: 2.1
 github_link: release-notes/ReleaseNotes2.1.7CE.md
 ---
 
@@ -19,7 +20,7 @@ github_link: release-notes/ReleaseNotes2.1.7CE.md
 *Page updated: June 1, 2017*
 
 
-We are pleased to present Magento Community Edition 2.1.7. This release includes critical enhancements to the security of your Magento software.
+We are pleased to present Magento Open Source (formerly Community Edition) 2.1.7. This release includes critical enhancements to the security of your Magento software.
 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -27,7 +28,7 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 </div>
 
 
-Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud) Release Notes</a>?
 
 
 ## Highlights

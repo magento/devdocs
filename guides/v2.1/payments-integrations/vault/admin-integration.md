@@ -7,6 +7,8 @@ menu_title: Vault implementation for Admin
 menu_order: 25
 version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
+functional_areas:
+  - Integration
 ---
 
 To be able to use vault in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation, you need to take at least the following steps:
@@ -24,7 +26,7 @@ There are more details about these steps in the following sections.
 
 Following is an example of a component provider for Admin:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 {
     /**
@@ -49,7 +51,7 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
         return $component;
     }
 }
-{% endhighlight %}
+```
 
 ## Vault JS component
 

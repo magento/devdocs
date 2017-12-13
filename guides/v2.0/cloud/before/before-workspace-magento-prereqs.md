@@ -15,10 +15,14 @@ redirect_from:
   - /guides/v2.0/cloud/before/before-workspace-cli.html
   - /guides/v2.1/cloud/before/before-workspace-cli.html
   - /guides/v2.2/cloud/before/before-workspace-cli.html
+functional_areas:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 #### Previous step:
-[Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
+[Prepare for local environment setup]({{ page.baseurl }}cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
@@ -41,10 +45,13 @@ For your VM, we recommend installing one of the following:
 When using Vagrant, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager){:target="_blank"} and using [VirtualBox](https://www.virtualbox.org/wiki/Documentation){:target="_blank"} to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 ## Development tools {#devtools}
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.<ee>}} and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.ee}} and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
 	For more information, see [How Cloud uses Git]({{ page.baseurl }}cloud/reference/git-integration.html).
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
 	For more information, see [How Cloud uses Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+
+## Web server (local) {#webserver}
+We strongly recommend installing [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}install-gde/prereq/apache.html), {{site.data.var.ece}} uses nginx. To have your local as close to cloud installations as possible, install and configure nginx.
 
 ## PHP (local) {#php}
 Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
@@ -65,11 +72,11 @@ The following packages may also be helpful for your PHP installation:
 * [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 
 ### Set up PHP memory limit {#cloud-first-php}
-When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.<ee>}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
 
 To set `memory_limit`:
 
-Before working with your {{site.data.var.<ece>}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+Before working with your {{site.data.var.ece}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
 1.	Find your `php.ini` file using the following command:
 
@@ -86,14 +93,14 @@ Before working with your {{site.data.var.<ece>}} project, make sure you set the 
 		*	Ubuntu: `service apache2 restart`
 	*	nginx: `service nginx restart`
 
-## Web server (local) {#webserver}
-We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server.
-
 ## Database (local) {#database}
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.<ee>}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
+
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment.
+
+Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
+For **Pro plans**, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 </div>
 
 These example instructions detail how to install and create a MariaDB database for Magento on your local:
@@ -105,24 +112,24 @@ These example instructions detail how to install and create a MariaDB database f
 
 		mysql_secure_installation
 3. Access the MariaDB database.
-4. Grant all priviledges to the Magento account you created for the local:
+4. Grant all privileges to the Magento account you created for the local:
 
-		grant all priviledges on <database> to '<account>'@'localhost' identified by '<password>';
+		grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
 5. Finally create the database:
 
 		create database magento;
 		use magento;
 6. Exit when done.
 
-### Set up the auto-increment for MariaDB {#cloud-mysql}
+### Pro: Set up the auto-increment for MariaDB {#cloud-mysql}
 You need to set an auto-increment value for the MariaDB installation.
 
 1.	As a user with `root` privileges, open `/etc/mysql/mariadb.conf.d/50-server.cnf` in a text editor.
 2.	In the Basic Settings section, add `auto_increment_increment = 3`.
 3.	Restart the service: `service mysql restart`.
 
-### Set up the auto-increment for MySQL {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
+### Pro: Set up the auto-increment for MySQL {#cloud-mysql}
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.ee}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
@@ -142,14 +149,14 @@ If necessary, set `auto_increment_increment` to 3:
 
 		auto_increment_increment=3
 
-	{{site.data.var.<ee>}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
+	{{site.data.var.ece}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
 		service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
-The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.<ece>}}. This tool has different commands than the CLI for {{site.data.var.<ece>}}. For a list of available commands, see [Common Magento Cloud CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.
 
@@ -167,9 +174,9 @@ To install the Magento Cloud CLI:
 
 	For example, on Ubuntu and CentOS, the command is similar to:
 
-		<pre class="no-copy">source /home/magento_user/.bashrc</pre>
+		source /home/magento_user/.bashrc
 
-	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
+	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc){:target="_blank"}
 
 	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
 
@@ -180,6 +187,24 @@ To install the Magento Cloud CLI:
 5.	Verify the `magento-cloud` command is in your path by entering the following command:
 
 		magento-cloud list
+
+<!-- ## Platform.sh CLI (local) {#platformcli}
+All {{site.data.var.ece}} project environments are hosted by [Platform.sh](https://platform.sh/){:target="_blank"} on AWS instances. For additional environment management features, you can optionally install the Platform.sh CLI on your local. This CLI is entirely optional, but does include helpful commands for your environment management.
+
+All features available in the [Project Web Interface]({{ page.baseurl }}cloud/project/projects.html) and additional options including [Health Notifications](https://docs.platform.sh/administration/integrations/notifications.html#health-notifications){:target="_blank"}. You can use these commands for PaaS environments, including Pro Integration environments and all Starter environments.
+
+1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.	In a terminal, enter the command:
+
+		curl -sS https://platform.sh/cli/installer | php
+
+For full installation and usage information, see Platform.sh [CLI (Command Line Interface)](https://docs.platform.sh/gettingstarted/cli.html){:target="_blank"} and their [GitHub content](https://github.com/platformsh/platformsh-cli/blob/master/README.md#installation){:target="_blank"}. -->
+
+## Additional requirements for Magento Commerce {#commerce}
+The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
+
+* [{{site.data.var.ee}} requirements]({{ page.baseurl }}install-gde/system-requirements2.html)
+* [(Integrator) Integrator installation]({{ page.baseurl }}install-gde/prereq/integrator_install.html)
 
 ## Additional options
 You can also install additional [optional software]({{ page.baseurl }}install-gde/prereq/optional.html). These packages should be installed on the local VM.

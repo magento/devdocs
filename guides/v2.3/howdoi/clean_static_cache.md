@@ -1,0 +1,1 @@
+../../v2.2/howdoi/clean_static_cache.md
