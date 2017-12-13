@@ -186,6 +186,49 @@ class Config
 {:start="2.4"}
 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.
 
+{% collapsible Examples: %}
+<table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+{% highlight php %}
+interface SessionAdapterInterface
+{}
+
+RedisSessionAdapter implements SessionAdapterInterface
+{}
+
+class SessionManager
+{
+    public function __construct(RedisSessionAdapter $sessionAdapter)
+    {}
+}
+
+// Breaks polymorphism principle, restricts what types can be passed at the runtime.
+{% endhighlight %}
+        </td>
+        <td>
+{% highlight php %}
+interface SessionAdapterInterface
+{}
+
+RedisSessionAdapter implements SessionAdapterInterface
+{}
+
+class SessionManager
+{
+    public function __construct(SessionAdapterInterface $sessionAdapter)
+    {}
+}
+{% endhighlight %}
+        </td>
+    </tr>
+</table>
+{% endcollapsible %}
+
 2.5. Proxies and interceptors MUST NEVER be explicitly requested in constructors.
 
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
