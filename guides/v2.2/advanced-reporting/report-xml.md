@@ -25,29 +25,6 @@ Columns are added using the `<attribute>` node.
 
 Additional columns can be added using a custom iterator declaration (see the [Creating a new report](#creating-a-new-report) section above).
 
-## Example
-
-The following is an example of `report.xml`:
-
-```xml
-<?xml version="1.0"?>
-   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Analytics:etc/reports.xsd">
-       <report name="modules" connection="default" iterator="Magento\Analytics\Model\ReportXml\ModuleIterator">
-           <source name="setup_module">
-               <attribute name="module" alias="module_name"/>
-               <attribute name="schema_version"/>
-               <attribute name="data_version"/>
-           </source>
-       </report>
-       <report name="config_data" connection="default">
-           <source name="core_config_data">
-               <attribute name="path"/>
-               <attribute name="value"/>
-           </source>
-       </report>
-   </config>
-```
-
 ## Syntax and structure
 
 All report files must be located in the `etc` directory of a module:
@@ -60,7 +37,7 @@ The following is a visualized XML Schema for `reports.xml`:
  
 {% include_relative img/reports_xsd.svg %}
 
-Report files can be located in any module that depends on the `Analytics` module (e.g. the `SalesAnalytics` module created for the reports related *Sales*).
+Report files can be located in any module that depends on the `Analytics` module (e.g. the `SalesAnalytics` module created for the reports related to *Sales*).
 Each report is declared in the `<report>` node.
 
 A `report` node is rendered into an SQL query.
@@ -98,32 +75,6 @@ After rendering, it is represented in an SQL query as the `FROM` statement .
 
 A report can be filtered using `<filter>` declared inside the `<source>` node.
 
-#### Example
-
-The following is an example of orders' data source
-
-```xml
-<report name="orders" connection="sales">
-    <source name="sales_order" alias="sales">
-        <attribute name="entity_id"/>
-        <attribute name="base_grand_total"/>
-        <attribute name="base_tax_amount"/>
-        <attribute name="base_shipping_amount"/>
-        <attribute name="coupon_code"/>
-        <attribute name="created_at"/>
-        <attribute name="store_id"/>
-        <attribute name="email"/>
-        <link-source name="sales_order_address" alias="billing" link-type="left">
-            <attribute name="email"/>
-            <using glue="and">
-                <condition attribute="parent_id" operator="eq" type="identifier">entity_id</condition>
-                <condition attribute="address_type" operator="eq" type="value">billing</condition>
-            </using>
-        </link-source>
-    </source>
-</report>
-```
-
 ### `<link-source>`
 
 In the `source` node, you can also add a data source with the `<link-source>` tag.
@@ -147,10 +98,13 @@ After rendering it is represented as the `ON` statement in an SQL query.
 
 ### `<attribute>`
 
-|Attribute|Description|Use|
-|--- |--- |--- |
-|`name`|Column name in database.|Required|
-|`alias`|Column alias. It can be used in the same way as the column alias in SQL.|Optional|
+|Attribute|Description|Use
+|--- |--- |---
+|`name`|Column name in database.|Required
+|`alias`|Column alias. It can be used in the same way as the column alias in SQL.|Optional
+|`function`|Available values: count, lower, date, sum, max, avg, min, sha1|Optional
+|`group`|boolean|Optional
+|`distinct`|boolean|Optional
 
 ### `<filter>`
 
@@ -164,13 +118,13 @@ Filters use an attribute `glue` that helps to filter records that are based on m
 
 #### Example
 
-**Example of a nested condition in SQL**
+Example of a nested condition in SQL:
 
 ```sql
 WHERE ((billing.entity_id IS NULL AND ((billing.entity_id < '200' AND billing.entity_id != '42') AND (billing.entity_id > '200' OR billing.entity_id != '201'))))
 ```
 
-**Example of a nested condition in Report XML**
+Example of a nested condition in Report XML:
 
 ```xml
 <filter glue="and">
