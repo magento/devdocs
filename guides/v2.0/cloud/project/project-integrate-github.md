@@ -2,7 +2,7 @@
 layout: default
 group: cloud
 subgroup: 020_tech
-title: GitHub
+title: GitHub integration
 menu_title: GitHub
 menu_order: 10
 menu_node:

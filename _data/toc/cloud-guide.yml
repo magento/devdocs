@@ -39,10 +39,10 @@ pages:
         - label: Git
           url: cloud/reference/git-integration.html
 
-        - label: Bitbucket
+        - label: Bitbucket integration
           url: cloud/project/bitbucket-integration.html
 
-        - label: GitHub
+        - label: GitHub integration
           url: cloud/project/project-integrate-github.html
 
         - label: SSH and sFTP
