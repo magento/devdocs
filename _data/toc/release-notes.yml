@@ -3,12 +3,15 @@ pages:
     - label: Introduction
       url: release-notes/bk-release-notes.html
 
-    - label: 2.2.0 Release Notes
+    - label: 2.2 Release Notes
       versions: ["2.2"]
       children:
 
         - label: Magento Open Source 2.2.2 Release Notes
           url: release-notes/ReleaseNotes2.2.2CE.html
+
+        - label: Magento Commerce 2.2.2 Release Notes
+          url: release-notes/ReleaseNotes2.2.2EE.html
 
         - label: Magento Open Source 2.2.1 Release Notes
           url: release-notes/ReleaseNotes2.2.1CE.html
