@@ -19,11 +19,6 @@ The changes are aggregated into two tables:
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-**Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.
-</div>
-
-
 ## 1.0.1 - 1.0.2 {#releases-1_0_1-1_0_2}
 
 {% include changes/b2b/1.0.1-1.0.2.html %}
