@@ -25,11 +25,9 @@ All columns must be declared:
 
 Columns are added using the `<attribute>` node.
 
-Additional columns can be added using a custom iterator declaration (see the [Creating a new report](#creating-a-new-report) section above).
-
 ## Syntax and structure
 
-All report files must be located in the `etc` directory of a module:
+All report files are located in the `etc` directory of a module:
 
 ```
 <module_dir>/etc/reports.xml
@@ -65,7 +63,7 @@ All data of the `reports.xml` file from the `<report>` node that has the same at
 
 ### `<source>`
 
-The data sources that must correspond to table names in a database.
+The data sources that correspond to table names in a database.
 
 |Attribute|Description|Use|
 |--- |--- |--- |
