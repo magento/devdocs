@@ -1860,7 +1860,7 @@
 </section>
 
 
-			<p>The Magento Commerce (Cloud) <a href="https://accounts.magento.cloud" target="_blank">Project Web Interface</a> enables you to do the following for all Starter and Pro environments:</p>
+			<p>The Magento Commerce (Cloud) <a href="https://accounts.magento.cloud" target="\_blank">Project Web Interface</a> enables you to do the following for all Starter and Pro environments:</p>
 
 <ul>
   <li><a href="#project-access">Access projects</a></li>
@@ -1977,6 +1977,11 @@
       <li>As needed, select options for <strong>JSON value</strong>, <strong>Visible during build</strong>, and <strong>Visible during runtime</strong>. If you do not have Super User access, you may only see the JSON value option.</li>
       <li>Click <strong>Add Variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</li>
     </ol>
+
+    <div class="bs-callout bs-callout-warning">
+      <p>If you’re attempting to <a href="http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html">override Magento configuration settings</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code>. For example:
+<img src="/common/images/cloud_env_var_example.png" alt="Environment variable example" /></p>
+    </div>
 
     <h3 id="project">Project variable</h3>
     <p>To set project variables in the Project Web Interface:</p>
