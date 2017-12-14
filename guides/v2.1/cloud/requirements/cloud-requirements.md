@@ -7,7 +7,7 @@ menu_title: Technologies and requirements
 menu_order: 40
 menu_node: parent
 version: 2.1
-github_link: cloud/cloud-requirements.md
+github_link: cloud/requirements/cloud-requirements.md
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
   - /guides/v2.1/cloud/discover-tools.html
