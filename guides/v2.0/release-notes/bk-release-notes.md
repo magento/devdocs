@@ -69,6 +69,15 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 * [{{site.data.var.ee}} 2.0.0 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.0EE.html)
 
 
+## Backward-incompatible changes
+
+* Overview of backward-incompatible changes made after Magento 2.0.0 release in scope of 2.0 version: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html)
+
+## Third-party license agreements
+
+* [Magento Open Source third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
+* [Magento Commerce third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
+* [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html)
 
 
 
