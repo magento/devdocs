@@ -77,7 +77,7 @@ pages:
         - label: Magento Commerce 2.1.x Release Notes
           children:
 
-           - label: Magento Commerce 2.1.11 Release Notes
+            - label: Magento Commerce 2.1.11 Release Notes
               url: release-notes/ReleaseNotes2.1.11EE.html
 
             - label: Magento Commerce 2.1.10 Release Notes
