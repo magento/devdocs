@@ -227,6 +227,15 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
+### clearField
+
+Attribute|Type|Use|Description
+---|---|---|---
+selector|xs:string|required|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
+
 ### click
 
 [See click docs on codeception.com](http://codeception.com/docs/modules/WebDriver#click){:target='_blank'}
@@ -287,6 +296,15 @@ Attribute|Type|Use|Description
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+### comment
+
+Attribute|Type|Use|Description
+---|---|---|---
+userInput|xs:string|required|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
 
 ### conditionalClick
 
@@ -621,6 +639,32 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
+### formatMoney
+
+
+Attribute|Type|Use|Description
+---|---|---|---
+userInput|xs:string|optional|
+locale|xs:string|optional|
+variable|xs:string|optional|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
+
+### getData
+
+
+Attribute|Type|Use|Description
+---|---|---|---
+storeCode|string|optional|
+stepKey|string|required|
+index|integer|optional|
+entity|string|required|
+before|string|optional|
+after|string|optional|
+
+This action can optionally contain one or more [required-entity](#required-entity) child elements.
+
 ### grabAttributeFrom
 
 [See grabAttributeFrom docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabAttributeFrom){:target='_blank'}
@@ -863,6 +907,14 @@ Attribute|Type|Use|Description
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+### remove
+
+Removes action by its `stepKey`.
+
+Attribute|Type|Use|Description
+---|---|---|---
+keyForRemoval|xs:string|required|Set `stepKey` of the action you want to remove.
 
 ### resetCookie
 
@@ -1256,6 +1308,20 @@ parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+
+### updateData
+
+Attribute|Type|Use|Description
+---|---|---|---
+storeCode|string|optional|
+stepKey|string|required|
+entity|string|required|
+createDataKey|string|required|
+before|string|optional|
+after|string|optional|
+
+This action can optionally contain one or more [required-entity](#required-entity) child elements.
 
 ### wait
 
