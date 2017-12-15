@@ -32,7 +32,6 @@ pages:
           url: release-notes/release-candidate/component-status.html
 
     - label: Magento 2.1 Release Notes
-      url: release-notes/release-notes.html
       versions: ["2.1"]
       children:
 
@@ -145,7 +144,6 @@ pages:
               url: cloud/release-notes/CloudReleaseNotes2.1.2.html
 
     - label: Magento 2.0 Release Notes
-      url: release-notes/release-notes.html
       versions: ["2.0"]
       children:
 
