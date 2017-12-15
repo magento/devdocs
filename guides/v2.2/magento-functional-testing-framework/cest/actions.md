@@ -2,8 +2,10 @@
 layout: default
 group: mftf
 title: Actions in the Magento Functional Testing Framework cests
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/cest/actions.md
+functional_areas:
+ - Testing
 ---
 
 This topic contains a reference list of available action type tags available in the MFTF cests.
@@ -16,14 +18,14 @@ Some actions drive browser elements, while others use REST APIs.
 
 All actions contain the following attributes that are useful for merging needs:
 
-* `mergeKey` is a required attribute that stores a unique identifier of the action. Example: `"conditionalClickStep1"`.
+* `stepKey` is a required attribute that stores a unique identifier of the action. Example: `"conditionalClickStep1"`.
 * `remove` is an optional attribute that removes the action when merging same test in different modules
-* `before` is an optional attribute that Set `mergeKey` of an action that must be executed one step before the current one.
-* `after` is an optional attribute that Set `mergeKey` of an action that must be executed next.
+* `before` is an optional attribute that Set `stepKey` of an action that must be executed one step before the current one.
+* `after` is an optional attribute that Set `stepKey` of an action that must be executed next.
 
 ## Principles
 
-`mergeKey` value format principles:
+`stepKey` value format principles:
 
 * Must be unique within [`<test>`](../cest.html#test)
 * Naming should be as descriptive as possible
@@ -43,16 +45,16 @@ The following example contains four actions:
 4. [Click the Sign In button](#example-step4)
 
 ```xml
-<amOnPage mergeKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage}}"/>
-<fillField  mergeKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
-<fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
-<click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+<amOnPage stepKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage}}"/>
+<fillField  stepKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
+<fillField  stepKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
+<click stepKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
 ```
 
 #### 1. Open the Sign In page for a Customer {#example-step1}
 
 ```xml
-<amOnPage mergeKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage.url}}"/>
+<amOnPage stepKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage.url}}"/>
 ```
 
 The Customer Sign In page is declared in the _.../Customer/Page/StorefrontCustomerSignInPage.xml_.
@@ -76,7 +78,7 @@ Here, `url` contains a pointer to a `url` attribute of the `StorefrontCustomerSi
 #### 2. Enter customer's e-mail  {#example-step2}
 
 ```xml
-<fillField  mergeKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
+<fillField  stepKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
 ```
 
 [fillField](#fillfield) fills a text field with the given string.
@@ -104,7 +106,7 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 #### 3. Enter customer's password  {#example-step3}
 
 ```xml
-<fillField  mergeKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
+<fillField  stepKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
 ```
 
 The action here is very similar to the action in a previous step.
@@ -114,7 +116,7 @@ The only difference is that different data assigned to the attributes which set 
 #### 4. Click the Sign In button {#example-step4}
 
 ```xml
-<click mergeKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+<click stepKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
 ```
 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
@@ -131,10 +133,10 @@ If description of an element does not includes a link to Codeception analogue, i
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action. 
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### amOnPage
 
@@ -144,10 +146,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### amOnSubdomain
 
@@ -157,10 +159,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### amOnUrl
 
@@ -170,10 +172,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### appendField
 
@@ -184,10 +186,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### attachFile
 
@@ -198,10 +200,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### cancelPopup
 
@@ -209,10 +211,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### checkOption
 
@@ -221,10 +223,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### click
 
@@ -236,10 +238,10 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### clickWithLeftButton
 
@@ -251,10 +253,10 @@ selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### clickWithRightButton
 
@@ -266,10 +268,10 @@ selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### closeAdminNotification
 
@@ -277,10 +279,10 @@ Remove from the DOM all elements with the CSS classes `.modal-popup` or `.modals
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### closeTab
 
@@ -288,10 +290,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### conditionalClick
 
@@ -300,7 +302,7 @@ Conditionally click on an element if and only if another element is visible or n
 For example, to click on `#foo` if `#bar` is visible:
 
 ```xml
-<conditionalClick selector="#foo" dependentSelector="#bar" visible="true" mergeKey="click1"/>
+<conditionalClick selector="#foo" dependentSelector="#bar" visible="true" stepKey="click1"/>
 ```
 
 Attribute|Type|Use|Description
@@ -308,10 +310,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 dependentSelector|string|optional|
 visible|boolean|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### createData
 
@@ -321,16 +323,16 @@ to the Magento API according to the data and metadata of the entity to be create
 For example, you can create the entity with the name "SampleProduct":
 
 ```xml
-<createData entity="SampleProduct" mergeKey="createSampleProduct"/>
+<createData entity="SampleProduct" stepKey="createSampleProduct"/>
 ```
 
 Attribute|Type|Use|Description
 ---|---|---|---
 entity|string|required| 
-mergeKey|string|required    
+stepKey|string|required
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one. 
-after|string|optional| Set `mergeKey` of an action that must be executed next.  
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 storeCode|string|optional|
 
 This action can optionally contain one or more `required-entity` child elements.
@@ -344,9 +346,9 @@ For example, first we create a category, then we create a product in that catego
 by indicating the relationship.
 
 ```xml
-<createData entity="SampleCategory" mergeKey="createCategory"/>
+<createData entity="SampleCategory" stepKey="createCategory"/>
 
-<createData entity="SampleProduct" mergeKey="createProduct">
+<createData entity="SampleProduct" stepKey="createProduct">
     <required-entity createDataKey="createCategory"/>
 </createData>
 ```
@@ -355,8 +357,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 createDataKey|string|required|  
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### deleteData
 
@@ -368,22 +370,22 @@ previously created using [createData](#createdata) in the scope of the [Cest](..
 Assuming we created _SampleCategory_ like:
 
 ```xml
-<createData entity="SampleCategory" mergeKey="createCategory"/>
+<createData entity="SampleCategory" stepKey="createCategory"/>
 ```
 
 We can delete _SampleCategory_ like:
 
 ```
-<deleteData createDataKey="createCategory" mergeKey="deleteCategory"/>
+<deleteData createDataKey="createCategory" stepKey="deleteCategory"/>
 ```
 
 Attribute|Type|Use|Description
 ---|---|---|---
 createDataKey|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 storeCode|string|optional|
 
 ### dontSee
@@ -396,10 +398,10 @@ userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeCheckboxIsChecked
 
@@ -408,10 +410,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeCookie
 
@@ -422,10 +424,10 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeCurrentUrlEquals
 
@@ -435,10 +437,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeCurrentUrlMatches
 
@@ -448,10 +450,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeElement
 
@@ -461,10 +463,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeElementInDOM
 
@@ -475,10 +477,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 attributeArray|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeInCurrentUrl
 
@@ -488,10 +490,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeInField
 
@@ -503,10 +505,10 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeInFormFields
 
@@ -516,10 +518,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeInPageSource
 
@@ -529,10 +531,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeInSource
 
@@ -541,10 +543,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeInTitle
 
@@ -554,10 +556,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeJsError
 
@@ -565,10 +567,10 @@ Assert that there are no Javascript errors.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeLink
 
@@ -579,10 +581,10 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dontSeeOptionIsSelected
 
@@ -593,10 +595,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### doubleClick
 
@@ -605,10 +607,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### dragAndDrop
 
@@ -618,10 +620,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector1|string|optional|
 selector2|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### executeInSelenium
 
@@ -630,10 +632,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### executeJS
 
@@ -642,10 +644,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### fillField
 
@@ -657,10 +659,10 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### grabAttributeFrom
 
@@ -672,10 +674,10 @@ selector|string|optional|
 userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### grabCookie
 
@@ -687,10 +689,10 @@ userInput|string|optional|
 parameterArray|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### grabFromCurrentUrl
 
@@ -701,10 +703,10 @@ Attribute|Type|Use|Description
 url|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### grabMultiple
 
@@ -716,10 +718,10 @@ selector|string|optional|
 userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### grabPageSource
 
@@ -728,10 +730,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 returnVariable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### grabTextFrom
 
@@ -741,10 +743,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 returnVariable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### grabValueFrom
 
@@ -755,10 +757,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 selectorArray|string|optional|
 returnVariable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### loadSessionSnapshot
 
@@ -769,10 +771,10 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### loginAsAdmin
 
@@ -783,10 +785,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 username|string|optional|
 password|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### makeScreenshot
 
@@ -796,10 +798,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### maximizeWindow
 
@@ -807,10 +809,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### moveBack
 
@@ -818,10 +820,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### moveForward
 
@@ -829,10 +831,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### moveMouseOver
 
@@ -844,10 +846,10 @@ selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### mSetLocale
 
@@ -856,19 +858,19 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 locale|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### mResetLocale
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### openNewTab
 
@@ -876,10 +878,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### parseFloat
 
@@ -889,10 +891,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### pauseExecution
 
@@ -900,10 +902,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### performOn
 
@@ -913,10 +915,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 function|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### pressKey
 
@@ -928,10 +930,10 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### reloadPage
 
@@ -939,10 +941,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### resetCookie
 
@@ -953,10 +955,10 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### resizeWindow
 
@@ -966,10 +968,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 width|string|optional|
 height|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### saveSessionSnapshot
 
@@ -979,10 +981,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### scrollTo
 
@@ -994,10 +996,10 @@ selector|string|optional|
 selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### scrollToTopOfPage
 
@@ -1005,10 +1007,10 @@ A convenience function that executes `window.scrollTo(0,0)` as JavaScript thus r
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### searchAndMultiSelectOption
 
@@ -1021,10 +1023,10 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 requiredAction|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### see
 
@@ -1036,10 +1038,10 @@ userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeCheckboxIsChecked
 
@@ -1048,10 +1050,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeCookie
 
@@ -1062,10 +1064,10 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeCurrentUrlEquals
 
@@ -1075,10 +1077,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeCurrentUrlMatches
 
@@ -1088,10 +1090,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeElement
 
@@ -1102,10 +1104,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 selectorArray|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeElementInDOM
 
@@ -1115,10 +1117,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeInCurrentUrl
 
@@ -1128,10 +1130,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeInField
 
@@ -1143,10 +1145,10 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeInFormFields
 
@@ -1156,10 +1158,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 parameterArray|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeInPageSource
 
@@ -1168,10 +1170,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeInPopup
 
@@ -1181,10 +1183,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeInSource
 
@@ -1193,10 +1195,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeInTitle
 
@@ -1206,10 +1208,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeLink
 
@@ -1220,10 +1222,10 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 url|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeNumberOfElements
 
@@ -1235,10 +1237,10 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### seeOptionIsSelected
 
@@ -1249,10 +1251,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### selectOption
 
@@ -1264,10 +1266,10 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### setCookie
 
@@ -1278,10 +1280,10 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 value|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### submitForm
 
@@ -1292,10 +1294,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 button|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### switchToIFrame
 
@@ -1306,10 +1308,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### switchToNextTab
 
@@ -1319,10 +1321,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### switchToPreviousTab
 
@@ -1332,10 +1334,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### switchToWindow
 
@@ -1345,10 +1347,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### typeInPopup
 
@@ -1358,10 +1360,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### uncheckOption
 
@@ -1370,10 +1372,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### unselectOption
 
@@ -1385,10 +1387,10 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### wait
 
@@ -1397,10 +1399,10 @@ after|string|optional| Set `mergeKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForAjaxLoad
 
@@ -1409,10 +1411,10 @@ Wait for all AJAX calls to finish.
 Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForElementChange
 
@@ -1423,10 +1425,10 @@ Attribute|Type|Use|Description
 selector|string|optional|
 function|string|optional|
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForElement
 
@@ -1436,10 +1438,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForElementNotVisible
 
@@ -1449,10 +1451,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForElementVisible
 
@@ -1462,10 +1464,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForJS
 
@@ -1475,10 +1477,10 @@ Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForLoadingMaskToDisappear
 
@@ -1501,10 +1503,10 @@ The CSS class for loading masks is not used consistently throughout Magento. The
 
 Attribute|Type|Use|Description
 ---|---|---|---
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForPageLoad
 
@@ -1513,10 +1515,10 @@ Wait for AJAX, Magento loading overlays, and `document.readyState == "complete"`
 Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### waitForText
 
@@ -1528,10 +1530,10 @@ userInput|string|optional|
 time|string|optional|
 selector|string|optional|
 variable|string|optional|
-mergeKey|string|required|A unique identifier of the action.
+stepKey|string|required|A unique identifier of the action.
 remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
-before|string|optional| Set `mergeKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `mergeKey` of an action that must be executed next.
+before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
+after|string|optional| Set `stepKey` of an action that must be executed next.
 
 
 <!-- Abbreviations -->
