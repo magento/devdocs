@@ -82,7 +82,7 @@ Add the 2nd/3rd parameters that you'd like to pass to the selector separated by 
 
 ![Add other parameters]
 
-Any data that can be entered in test actions can be used in parameterized elements like so:
+Any data can be used in parameterized elements as well as entered in test actions like so:
 
 * `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in the corresponding _.../Data/*.xml_
 * `stringLiteral` is a literal

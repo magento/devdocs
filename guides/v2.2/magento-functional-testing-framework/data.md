@@ -58,24 +58,15 @@ Here,
 
 ### Using data returned by test-actions
 
-A test can also reference data that was returned as a result of test actions, like the action `<grabValueFrom stepKey="grabStepKey>`.
+A test can also reference data that was returned as a result of [test actions], like the action `<grabValueFrom selector="someSelector" stepKey="grabStepKey>`.
+Further in the test, the data grabbed by selector `someSelector` can be referenced using the `stepKey` value. In this case, it is `grabStepKey`.
 
-Given the above use of `grabValueFrom`, the returned value can be used by using the `grab` action's `stepKey` like so:
+The following example demonstrates the usage of `grabValueFrom` in test, where the returned value is used by action's `stepKey`:
 
 ```xml
 <grabValueFrom selector="someSelector" stepKey="grabStepKey"/>
 <fillField selector=".functionalTestSelector" userInput="{$grabStepKey}" stepKey="fillFieldKey1"/>
 ```
-<!-- DIMA: The following list of test actions return a variable, I'm not sure how you would like to display/store this list in documentation,
- but I feel they'd be useful to display somewhere. Here they are (all are grab preffixed):
-         grabAttributeFrom
-         grabCookie
-         grabFromCurrentUrl
-         grabMultiple
-         grabPageSource
-         grabTextFrom
-         grabValueFrom
- -->
 
 ### Hard-coded data input
 
@@ -247,6 +238,7 @@ Individual piece of data to be passed in as part of the parent array type.
 <!-- Internal -->
 
 [see]: cest/actions.html#see
+[test actions]: cest/actions.html#actions-returning-a-variable
 
 <!-- External -->
 

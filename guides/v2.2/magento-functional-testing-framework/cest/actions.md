@@ -121,6 +121,19 @@ The only difference is that different data assigned to the attributes which set 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
 See the _StorefrontCustomerSignInPage.xml_ code in [step 2](#section-code)
 {%endraw%}
+
+## Actions returning a variable
+
+The following test actions return a variable:
+
+*  [grabAttributeFrom](#grabattributefrom)
+*  [grabCookie](#grabcookie)
+*  [grabFromCurrentUrl](#grabfromcurrenturl)
+*  [grabMultiple](#grabmultiple)
+*  [grabPageSource](#grabpagesource)
+*  [grabTextFrom](#grabtextfrom)
+*  [grabValueFrom](#grabValueFrom)
+
 ## Available actions
 
 The following list contains reference documentation about all action elements available in the MFTF.
