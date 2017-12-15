@@ -80,7 +80,7 @@ In such migration testing, follow these steps:
 
 Sometimes you may want to have your Magento 2 store with different catalog structure, sales rules, CMS pages, etc. after migration.
 
-You need to be careful because after such changes the next migration step (Incremental data update) might not work properly.
+It is is important to practice caution while working through manual data changes. Mistakes will create errors in the incremental data migration step that follows.
 
 For example, a product deleted from Magento 2: the one that has been bought on your live Magento 1 store and which is not available anymore in your Magento 2 store. Transferring data about such purchase might cause an error while running the Data Migration Tool in Delta mode.
 
