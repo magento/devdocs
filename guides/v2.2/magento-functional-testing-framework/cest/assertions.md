@@ -12,7 +12,7 @@ This topic contains general information about assertions in the MFTF and a refer
 
 ## Overview
 
-Assertions serve to check whether a test returned expected values.
+Assertions serve to pass or fail the test if a condition is not met. These assertions will look familiar to you if you've used any other framework like PHPUnit.
 
 All assertions contain the following attributes (same as actions):
 
@@ -24,13 +24,49 @@ Most assertions contain attribute `message` that specifies text of an informatio
 
 ## Principles
 
+`stepKey` value format principles:
+
+* Must be unique within [`<test>`](../cest.html#test)
+* Naming should be as descriptive as possible
+  * Should describe the action performed
+  * Should briefly describe the purpose
+  * May describe which data is in use
+* Should be in camelCase with lowercase first letter
+* Should be the last attribute of an element
+
+`expectedType` and `actualType` can be:
+
+* int
+* float
+* bool
+* string
+* variable
+* array
+* const
+
+If `variable` is used, then the corresponding value reference uses PHP language style like `{$nameOfStepKey}`. See example.
+
 ## Example
 
+In this very common test writing example we are grabbing text from a page and then asserting that it matches what we expect to see. If it does not, then the test will fail at the assert step.
 
+```xml
+<!-- Grab a value from the page using any grab action -->
+<grabTextFrom selector="#elementId" stepKey="stepKeyOfGrab"/>
+
+<!-- Ensure that the value we grabbed matches our expectation -->
+<assertEquals expected="Some String" expectedType="string" actual="{$stepKeyOfGrab}" actualType="variable" message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1"/>
+```
 
 ## Available assertions
 
 ### assertElementContainsAttribute
+
+Example:
+
+```xml
+<assertElementContainsAttribute selector=".admin__menu-overlay" attribute="style" expectedValue="color: #333;" stepKey="assertElementContainsAttribute"/>
+```
 
 Attribute|Type|Use|Description
 ---|---|---|---
