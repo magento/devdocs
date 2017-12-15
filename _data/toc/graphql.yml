@@ -10,5 +10,8 @@ pages:
     - label: Object Reference
       children:
 
-        - label: Product
-          url: graphql/product.html
+        - label: Customer
+          url: graphql/customer.html
+
+        - label: Products
+          url: graphql/products.html
