@@ -40,7 +40,7 @@ To add Xdebug, we recommend creating a branch to work in and add the files.
 ### Enable Xdebug in your environment {#enable}
 Enable Xdebug by adding it to the extensions section of magento.app.yaml. When you push this update to Git and deploy to environments, the debugger is available.
 
-You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{page.baseurl}}cloud/bkcloud.html#gethelp) to have it enabled. We will get Xdebug enabled onto those environments for you.
+You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) to have it enabled. We will get Xdebug enabled onto those environments for you.
 
 <!-- You may need to run PHP with a separate config file to enable xdebug on the CLI, such as "php -c /etc/platform/<project_id>/php.ini ... " -->
 
@@ -252,7 +252,7 @@ This section discusses how to use Xdebug in Chrome using the Xdebug Helper exten
 
 To use Xdebug Helper with Chrome:
 
-1.	Create an [SSH tunnel](#devbox-xdebug-tunnel) to the Cloud server.
+1.	Create an [SSH tunnel](#ssh) to the Cloud server.
 2.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en){:target="_blank"} from the Chrome store.
 3.	Enable the extension in Chrome as shown in the following figure.
 

@@ -33,6 +33,9 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
 ## {{site.data.var.ce}} Web APIs Services per Module {#celist}
 
   The {{site.data.var.ce}} Web APIs are available on all installations.
+  
+### Analytics
+    analyticsLinkProviderV1
 
 ### Backend
     backendModuleServiceV1

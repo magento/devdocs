@@ -389,9 +389,9 @@ These backward incompatible changes do not need manual documentation:
 * Adding/removing a class/interface constant
 * Adding removing a class property
 
-Auto-generated [CE changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ce/216-develop.html)
+Auto-generated [{{site.data.var.ce}} changes]({{page.baseurl}}release-notes/changes/ce_changes.html)
 
-Auto-generated [EE changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ee/216-develop.html)
+Auto-generated [{{site.data.var.ee}} changes]({{page.baseurl}}release-notes/changes/ee_changes.html)
 
 ### Where to document
 
