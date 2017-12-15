@@ -15,7 +15,7 @@ functional_areas:
   - Upgrade
 ---
 
-We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in {{site.data.var.ece}} and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage dependencies and upgrades in {{site.data.var.ece}} and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 Composer is a dependency manager for PHP. Composer manages the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place. For {{site.data.var.ece}}, we use `composer.json` and `composer.lock` to manage your modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more. Magento extension and module developers use `composer.json` to also manage their product installations and upgrades. For details, see [Your project's Composer files](#files).
 
@@ -60,8 +60,12 @@ The following sections discuss the Composer packages used by {{site.data.var.ece
 *	[`magento/ece-tools`](#ece-tools)
 *	[`magento/product-enterprise-edition`](#cloud-composer-prodee)
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Refer to [Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html) for release information.
+</div>
+
 ### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
-`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
+`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="\_blank"} and does not contain any code.
 
 The metapackage depends on the appropriate versions of [`magento/ece-patches`](#ece-patches), [`magento/ece-tools`](#ece-tools), and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
 

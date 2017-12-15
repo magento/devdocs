@@ -85,6 +85,10 @@ Depending on the size of your store, you may have a large amount of static conte
 
 If you generate `config.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
+<div class="bs-callout bs-callout-info" markdown="1">
+Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
+</div>
+
 ## How we set configurations {#cloud-config-specific-over}
 All system settings are set according to the following override scheme.
 
