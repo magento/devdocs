@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Catalog module | Magento 2 Developer Documentation</title>
+	<title>Step 5. Create the personalization option | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/rest/modules/catalog.html">
+	<link rel="canonical" href="//guides/v2.2/rest/tutorials/configurable-product/create-personalization-option.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/rest/modules/catalog.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/rest/tutorials/configurable-product/create-personalization-option.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/rest/modules/catalog.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/rest/tutorials/configurable-product/create-personalization-option.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/rest/modules/catalog.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/rest/tutorials/configurable-product/create-personalization-option.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -236,250 +236,52 @@
 
 <div class="container">
 
-	<!-- sidebar -->
-<aside class="sidebar">
-	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
-	<div class="sidebar-wrapper">
+  <aside class="sidebar">
+  	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+  	<div class="sidebar-wrapper">
 
+      
+      <div class="back-link">
+        <a href="/guides/v2.2/rest/bk-rest.html">
+          <i class="back-link-arrow"></i>
+          <span class="back-link-subtitle">Return to</span>
+          <span class="back-link-title">Overview</span>
+        </a>
+      </div>
 
-
-<h4>REST API Reference</h4>
-<div class="left-navigation">
-    <ul>
-    
-    
-
-<li class="nav-level1  " id="overview">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/rest/bk-rest.html">Overview</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        
-        
-        
-        
-        <li class="nav-level2  " id="rest-apis-(swagger)">
-            
-            
-        
-            
-            <a href="http://devdocs.magento.com/swagger/index_22.html">REST APIs (Swagger)</a>
-            
-
-            
+      
+      
+      <ul>
+      
+        <li class="level1">
+          <a href="/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html">Initial tasks</a>
         </li>
-        
-        
-        
-        
-        
-        
-        <li class="nav-level2  " id="list-of-rest-endpoints-by-module">
-            
-            
-        
-            
-            <a href="/guides/v2.2/rest/list.html">List of REST endpoints by module</a>
-            
-
-            
+      
+        <li class="level1">
+          <a href="/guides/v2.2/rest/tutorials/configurable-product/plan-product.html">Step 1. Plan the product</a>
         </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="list-of-service-names-per-module">
-            
-            
-        
-            
-            <a href="/guides/v2.2/rest/rest_endpoints.html">List of service names per module</a>
-            
-
-            
+      
+        <li class="level1">
+          <a href="/guides/v2.2/rest/tutorials/configurable-product/create-configurable-product.html">Step 2. Create the configurable product</a>
         </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="generate-a-local-api-reference">
-            
-            
-        
-            
-            <a href="/guides/v2.2/rest/generate-local.html">Generate a local API reference</a>
-            
-
-            
+      
+        <li class="level1">
+          <a href="/guides/v2.2/rest/tutorials/configurable-product/create-simple-products.html">Step 3. Create the simple products</a>
         </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="search-using-rest">
-            
-            
-        
-            
-            <a href="/guides/v2.2/rest/performing-searches.html">Search using REST</a>
-            
-
-            
+      
+        <li class="level1">
+          <a href="/guides/v2.2/rest/tutorials/configurable-product/define-config-product-options.html">Step 4. Define configurable product options</a>
         </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="retrieve-filtered-search-responses">
-            
-            
-        
-            
-            <a href="/guides/v2.2/rest/retrieve-filtered-responses.html">Retrieve filtered search responses</a>
-            
-
-            
+      
+        <li class="level1  active">
+          <a href="/guides/v2.2/rest/tutorials/configurable-product/create-personalization-option.html">Step 5. Create the personalization option</a>
         </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="restricting-access-to-anonymous-web-apis">
-            
-            
-        
-            
-            <a href="/guides/v2.2/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a>
-            
+      
+      </ul>
 
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="rest-usage-notes">
-            
-            
-        
-            
-            <a href="/guides/v2.2/rest/notes.html">REST usage notes</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  tutorial" id="create-configurable-products-tutorial">
-
-    
-    
-    
-    <a href="/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html">Create configurable products Tutorial</a>
-    
-
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="modules">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <span>Modules</span>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="catalog">
-            
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
-            
-            <span>Catalog</span>
-            
-
-            
-            <ul>
-                
-
-                
-                
-                <li class="nav-level3 active " id="general-notes">
-                    
-
-                    
-                    <a  href="/guides/v2.2/rest/modules/catalog.html">General notes</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="manage-prices-for-multiple-products">
-                    
-
-                    
-                    <a  href="/guides/v2.2/rest/modules/catalog-pricing.html">Manage prices for multiple products</a>
-                    
-
-                    
-                </li>
-                
-                
-            </ul>
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    </ul>
-</div>
-
-	</div>
-
-</aside>
-
-
-<!-- /sidebar -->
-
+    </div>
+  </aside>
+  <!-- /.sidebar -->
 
 	<section class="content">
 		<div class="content-wrap">
@@ -535,8 +337,10 @@
         
 
           
+            <a href="/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html">Create a configurable product Tutorial</a>
+          
 
-          <span property="name">Catalog module</span>
+          <span property="name">Step 5. Create the personalization option</span>
 
         
 
@@ -559,82 +363,94 @@
 
 	
 
-	<h1 class="page-heading">Catalog module</h1>
+	<h1 class="page-heading">Step 5. Create the personalization option</h1>
 
   
 
 
 </section>
 
+			<p>Let’s add a text box to the product page that allows the customer to add his name (up to 15 characters) to the back of shirt.</p>
 
-			<p>The <code class="highlighter-rouge">Catalog</code> module provides functionality for creating and maintaining products and categories.</p>
+<p>The <code class="highlighter-rouge">product_sku</code> is the <code class="highlighter-rouge">sku</code> of the configurable product. The <code class="highlighter-rouge">sku</code> specified in the payload is a string that is appended to the <code class="highlighter-rouge">product_sku</code> when a customer decides to purchase this option. Likewise, the <code class="highlighter-rouge">price</code> supplied in the payload is added to the configurable product price.</p>
 
-<h2 id="categories">Categories</h2>
+<p><strong>Endpoint</strong></p>
 
-<p>When you create a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> from Admin, you have the option to configure display and <span term-uuid="ae8f7f2b-ddfb-41ed-bec3-bed191406fdd" class="glossary-term" data-toggle="popover">search engine optimization</span> settings. To configure these settings using <code class="highlighter-rouge">POST V1/categories</code>, you can specify the following parameters as <code class="highlighter-rouge">attribute_code</code> values:</p>
+<p><code class="highlighter-rouge">POST V1/products/options</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>all_children
-children
-children_count
-custom_apply_to_products
-custom_design
-custom_design_from
-custom_design_to
-custom_layout_update
-custom_use_parent_settings
-default_sort_by
-description
-display_mode
-filter_price_range
-image
-is_anchor
-landing_page
-meta_description
-meta_keywords
-meta_title
-page_layout
-path
-path_in_store
-url_key
-url_path
-</code></pre></div></div>
+<p><strong>Payload</strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS-Champ"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add Your Name (Max 15 Characters)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sort_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_require"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personalized"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_characters"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<p>Third-party modules may define other custom attributes.</p>
+</span></code></pre></div></div>
 
-<p>The following example uses the <code class="highlighter-rouge">POST V1/categories</code> call to assign four custom attributes to the “My New Category” category.</p>
+<p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-</span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My New Category"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"custom_attributes"</span><span class="p">:[</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="s2">"description"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"Women category description"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_title"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"Women meta title"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_keywords"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"Women meta keywords"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="s2">"meta_description"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"Women meta description"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"women-test-key"</span><span class="w">
-         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS-Champ"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add Your Name (Max 15 Characters)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sort_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_require"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personalized"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_characters"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
+<h2 id="verify-this-step">Verify this step</h2>
+
+<ul>
+  <li>
+    <p>Log in to the Luma website and select <strong>Catalog &gt; Products</strong>. Click on the <strong>Champ Tee</strong> configurable product and expand the <strong>Customizable Options</strong> section.</p>
+
+    <p><img src="/guides/v2.2/rest/images/options-section.png" alt="Product page with configurable and simple products" /></p>
+  </li>
+  <li>
+    <p>On the Luma store front page, search for <code class="highlighter-rouge">Champ</code>. Then click on the Champ Tee product.</p>
+
+    <p><img src="/guides/v2.2/rest/images/add-your-name.png" alt="Search results" /></p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>If the personalization option is not displayed, go to the <strong>Champ Tee</strong> configuration product page in Admin and set  <strong>Stock Status</strong> to <strong>In Stock</strong>.</p>
+    </div>
+
+    <h2 class="no_toc" id="congratulations-youve-finished">Congratulations! You’ve finished.</h2>
+
+    <h2 id="related-topics">Related topics</h2>
+
+    <ul>
+      <li><a href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs Tutorial</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+      <div class="horisontal-nav">
+        
+        
+          
+          
+
+          <a href="/guides/v2.2/rest/tutorials/configurable-product/define-config-product-options.html" class="btn btn-secondary">Previous</a>
+          
+
+        
+      </div>
+      <!-- /.horisontal-nav -->
 
 		</div>
 		<!-- /.content-wrap -->
@@ -645,14 +461,14 @@ url_path
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/rest/modules/catalog.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/rest/tutorials/configurable-product/create-personalization-option.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/rest/modules/catalog.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/rest/tutorials/configurable-product/create-personalization-option.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
