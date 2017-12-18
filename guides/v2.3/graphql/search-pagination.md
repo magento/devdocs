@@ -18,9 +18,6 @@ The `search` element causes Magento to perform a full text search on the specifi
 
 The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Currently. if you specify a generic search keyword, such as `blue`, and don't provide any filters, the query will not be performant.
-</div>
 
 ## Specifying filters
 
