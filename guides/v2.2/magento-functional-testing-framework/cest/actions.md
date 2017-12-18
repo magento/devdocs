@@ -229,7 +229,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### clearField
 
-Clear a text input field. Equivalent to using fillField with an empty string.
+Clears a text input field.
+Equivalent to using [fillField](#fillfield) with an empty string.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -301,8 +302,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### comment
 
-Comments provide a way to add informative output during test runs. These are usually not needed but may
-come in handy for complex tests.
+Comments provide a way to add informative output during test runs.
+May come in handy for complex tests.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -657,11 +658,10 @@ after|xs:string|optional|
 
 ### getData
 
-Get an entity (e.g. a category or product). In other words, make a GET request
-to the Magento API according to the data and metadata of the entity type that is
-requested.
+Gets an entity (e.g. a category or product).
+In other words, makes a GET request to the Magento API according to the data and metadata of the entity type that is requested.
 
-For example, using getData in a test looks like this:
+For example, using `getData` in a test looks like this:
 
 ```xml
 <getData stepKey="getAttributeOption1Handle" entity="ProductAttributeOptionGetter" index="1">
@@ -669,7 +669,7 @@ For example, using getData in a test looks like this:
 </getData>
 ```
 
-A `ProductAttributeOptionGetter` entity must be defined in a data xml.
+The `ProductAttributeOptionGetter` entity must be defined in the corresponding [data `*.xml`](../data.html).
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -1329,10 +1329,10 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### updateData
 
-When you create a data entity via `createData`, you may need to update it later in the test.
-The `updateData` action will allow this.
+When you create a data entity using `createData`, you may need to update it later in the test.
+The `updateData` action allows this.
 
-For example to change the price of a product:
+For example, to change the price of a product:
 
 ```xml
 <updateData stepKey="updateProduct" entity="AdjustPriceProduct" createDataKey="productHandle"/>
