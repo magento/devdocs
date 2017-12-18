@@ -227,6 +227,18 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
+### clearField
+
+Clears a text input field.
+Equivalent to using [fillField](#fillfield) with an empty string.
+
+Attribute|Type|Use|Description
+---|---|---|---
+selector|xs:string|required|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
+
 ### click
 
 [See click docs on codeception.com](http://codeception.com/docs/modules/WebDriver#click){:target='_blank'}
@@ -288,6 +300,18 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
+### comment
+
+Comments provide a way to add informative output during test runs.
+May come in handy for complex tests.
+
+Attribute|Type|Use|Description
+---|---|---|---
+userInput|xs:string|required|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
+
 ### conditionalClick
 
 Conditionally click on an element if and only if another element is visible or not.
@@ -320,7 +344,7 @@ For example, you can create the entity with the name "SampleProduct":
 
 Attribute|Type|Use|Description
 ---|---|---|---
-entity|string|required| 
+entity|string|required|
 stepKey|string|required
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -346,7 +370,7 @@ by indicating the relationship.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-createDataKey|string|required|  
+createDataKey|string|required|
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -621,6 +645,43 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
+### formatMoney
+
+Attribute|Type|Use|Description
+---|---|---|---
+userInput|xs:string|optional|
+locale|xs:string|optional|
+variable|xs:string|optional|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
+
+### getData
+
+Gets an entity (e.g. a category or product).
+In other words, makes a GET request to the Magento API according to the data and metadata of the entity type that is requested.
+
+For example, using `getData` in a test looks like this:
+
+```xml
+<getData stepKey="getAttributeOption1Handle" entity="ProductAttributeOptionGetter" index="1">
+    <required-entity createDataKey="productAttributeHandle"/>
+</getData>
+```
+
+The `ProductAttributeOptionGetter` entity must be defined in the corresponding [data `*.xml`](../data.html).
+
+Attribute|Type|Use|Description
+---|---|---|---
+storeCode|string|optional|
+stepKey|string|required|
+index|integer|optional|
+entity|string|required|
+before|string|optional|
+after|string|optional|
+
+This action can optionally contain one or more [required-entity](#required-entity) child elements.
+
 ### grabAttributeFrom
 
 [See grabAttributeFrom docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabAttributeFrom){:target='_blank'}
@@ -863,6 +924,14 @@ Attribute|Type|Use|Description
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+### remove
+
+Removes action by its `stepKey`.
+
+Attribute|Type|Use|Description
+---|---|---|---
+keyForRemoval|xs:string|required|Set `stepKey` of the action you want to remove.
 
 ### resetCookie
 
@@ -1257,6 +1326,39 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
+
+### updateData
+
+When you create a data entity using `createData`, you may need to update it later in the test.
+The `updateData` action allows this.
+
+For example, to change the price of a product:
+
+```xml
+<updateData stepKey="updateProduct" entity="AdjustPriceProduct" createDataKey="productHandle"/>
+```
+
+where `AdjustPriceProduct` simply looks like this:
+
+```xml
+<entity name="AdjustPriceProduct" type="product">
+    <data key="price">321.00</data>
+</entity>
+```
+
+Notice only the fields that you wish to update are set.
+
+Attribute|Type|Use|Description
+---|---|---|---
+storeCode|string|optional|
+stepKey|string|required|
+entity|string|required|
+createDataKey|string|required|
+before|string|optional|
+after|string|optional|
+
+This action can optionally contain one or more [required-entity](#required-entity) child elements.
+
 ### wait
 
 [See wait docs on codeception.com](http://codeception.com/docs/modules/WebDriver#wait){:target='_blank'}
@@ -1357,7 +1459,7 @@ The CSS class for loading masks is not used consistently throughout Magento. The
 //div[contains(@class, "admin__form-loading-mask")]
 //div[@data-role="spinner"]
 ```
- 
+
 
 Attribute|Type|Use|Description
 ---|---|---|---
