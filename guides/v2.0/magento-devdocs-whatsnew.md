@@ -7,10 +7,13 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## November 2017
+## December 2017
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+You must prepend [environment variables](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#variables) with `env:` when using the Magento Commerce (Cloud) Project Web Interface to override configuration settings.|2.x|Updated|Dec 14
+Advanced reporting: [Overview](http://devdocs.magento.com/guides/v2.2/advanced-reporting.html), [Modules](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html), [Data collection](http://devdocs.magento.com/guides/v2.2/advanced-reporting/data-collection.html), [Report XML](http://devdocs.magento.com/guides/v2.2/advanced-reporting/report-xml.html)|2.2.x|New|Dec 13
+Added info about backward incompatible changes ([Open Source 2.1.10 - 2.1.11](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html) and [Commerce 2.1.10-2.1.11](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html); [Open Source 2.2.1 - 2.2.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce 2.2.1-2.2.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html); [B2B](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html))|2.1.x, 2.2.x|Updated|Dec 13
 [Magento Functional Testing Framework Guide](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/introduction.html)|2.2.x|New|Dec 08
 [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/)|2.2.x|New|Dec 07
 Revised guidance on which environments are limited to 5-minute cron intervals in the Magento Commerce (Cloud) guide. See [Configure cron settings in the Magento Admin](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#admin) for more information.|2.2.x|Updated|Dec 06
@@ -19,6 +22,9 @@ Updated the following Magento Commerce (Cloud) topics to include details about s
 Magento Commerce (Cloud) will now auto-generate an `app/etc/config.php` file if it doesn't detect one in your project directory during the build phase. Updated references to configuration management in the [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) topic.|2.2.x|Updated|Dec 06
 Replaced references to the `mysqldump` command with the new [`vendor/bin/ece-tools db-dump`](http://localhost:9999/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) CLI command for Staging and Production environments in the Magento Commerce (Cloud) guide|2.2.x|Updated|Dec 06
 [Tech guidelines: Added strict mode requirement 1.3.1](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html#1-basic-programming-principles)|2.2.x|Updated|Dec 05
+
+{% collapsibleh2 November 2017 %}
+
 Added a [new troubleshooting section](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) to the Magento Commerce (Cloud) cron topic describing how to reset Magento cron jobs|2.2.x|Updated|Nov 30
 Revised and added new content for Magento Commerce (Cloud) for custom Fastly VCLs including [Custom Fastly VCL snippets](http://devdocs.magento.com/guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html), [Custom whitelist VCL](http://devdocs.magento.com/guides/v2.2/cloud/configure/fastly-vcl-whitelist.html), [Custom blacklist VCL](http://devdocs.magento.com/guides/v2.2/cloud/configure/fastly-vcl-blacklist.html), [Custom extend Admin timeout VCL](http://devdocs.magento.com/guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html), [Custom redirect to Wordpress VCL](http://devdocs.magento.com/guides/v2.2/cloud/configure/fastly-vcl-wordpress.html), and [Custom block bad referer VCL](http://devdocs.magento.com/guides/v2.2/loud/configure/fastly-vcl-badreferer.html).|2.0.x, 2.1.x, 2.2.x, 2.x|New|Nov 29
 Update content for Magento Commerce (Cloud) for [Composer](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html) commands and files, add new content for [Git](http://devdocs.magento.com/guides/v2.2/cloud/reference/git-integration.html), added Security Scan Tool info to [Go live and launch](http://devdocs.magento.com/guides/v2.2/cloud/live/live.html), add .gitignore info to [Project structure](http://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html), add notes to [Patch Magento Commerce (Cloud)](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html), update information for upgrading Fastly in [Upgrade Magento Commerce (Cloud)](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html), and updated redirects|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Nov 29
@@ -43,6 +49,7 @@ Updated [New Relic APM](http://devdocs.magento.com/guides/v2.2/cloud/project/new
 Update relationship name for [RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html) service for Magento Commerce (Cloud)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Nov 06
 Update Magento Commerce (Cloud) content for deploy commands in [Deploy code and migrate static files and data](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html)for new and existing Pro plans and [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Nov 06
 Updated Fastly troubleshooting and supported features for Magento Commerce (Cloud) in [Fastly](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html) and [Fastly troubleshooting](http://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble_fastly.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Nov 03
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 October 2017 %}
 
