@@ -7,7 +7,7 @@ pages:
     - label: Searches and pagination
       url: graphql/search-pagination.html
 
-    - label: Object Reference
+    - label: Module Reference
       children:
 
         - label: Customer
