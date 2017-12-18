@@ -12,16 +12,16 @@ This page contains recent changes that we think you'd like to know about. We exc
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 You must prepend [environment variables](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#variables) with `env:` when using the Magento Commerce (Cloud) Project Web Interface to override configuration settings.|2.x|Updated|Dec 14
-Advanced reporting: [Overview](http://devdocs.magento.com/guides/v2.2/advanced-reporting.html), [Modules](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html), [Data collection](http://devdocs.magento.com/guides/v2.2/advanced-reporting/data-collection.html), [Report XML](http://devdocs.magento.com/guides/v2.2/advanced-reporting/report-xml.html)|2.2.x|New|Dec 13
+Advanced reporting: [Overview](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html), [Modules](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html), [Data collection](http://devdocs.magento.com/guides/v2.2/advanced-reporting/data-collection.html), [Report XML](http://devdocs.magento.com/guides/v2.2/advanced-reporting/report-xml.html)|2.2.x|New|Dec 13
 Added info about backward incompatible changes ([Open Source 2.1.10 - 2.1.11](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html) and [Commerce 2.1.10-2.1.11](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html); [Open Source 2.2.1 - 2.2.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce 2.2.1-2.2.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html); [B2B](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html))|2.1.x, 2.2.x|Updated|Dec 13
 [Magento Functional Testing Framework Guide](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/introduction.html)|2.2.x|New|Dec 08
 [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/)|2.2.x|New|Dec 07
-Revised guidance on which environments are limited to 5-minute cron intervals in the Magento Commerce (Cloud) guide. See [Configure cron settings in the Magento Admin](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#admin) for more information.|2.2.x|Updated|Dec 06
+Revised guidance on which environments are limited to 5-minute cron intervals in the Magento Commerce (Cloud) guide. See [Configure cron settings in the Magento Admin](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#add-cron) for more information.|2.2.x|Updated|Dec 06
 Added a new topic to the Magento Commerce (Cloud) guide about [configuring email and Slack notifications](http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html) for build/deploy actions in an environment.|2.2.x|New|Dec 06
 Updated the following Magento Commerce (Cloud) topics to include details about static content compression during build/deploy phases:<br/>- [Configuration Management](http://devdocs/magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)<br/>- [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)|2.2.x|Updated|Dec 06
 Magento Commerce (Cloud) will now auto-generate an `app/etc/config.php` file if it doesn't detect one in your project directory during the build phase. Updated references to configuration management in the [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) topic.|2.2.x|Updated|Dec 06
 Replaced references to the `mysqldump` command with the new [`vendor/bin/ece-tools db-dump`](http://localhost:9999/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) CLI command for Staging and Production environments in the Magento Commerce (Cloud) guide|2.2.x|Updated|Dec 06
-[Tech guidelines: Added strict mode requirement 1.3.1](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html#1-basic-programming-principles)|2.2.x|Updated|Dec 05
+[Tech guidelines: Added strict mode requirement 1.3.1](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#1-basic-programming-principles)|2.2.x|Updated|Dec 05
 
 {% collapsibleh2 November 2017 %}
 
@@ -129,7 +129,7 @@ Description  | Versions applied to  | New or Updated | Date
 [Added generated BICs for delta RC1.6-RC1.5](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html)|2.2.x|Updated|Jul 31
 [Migration Best Practices: use a copy of your DB when testing migration](http://devdocs.magento.com/guides/v2.1/migration/migration-overview-practices.html)<br/>[Migration Plan: recommendations on system upgrade, dry run, cron jobs, changes in migrated data](http://devdocs.magento.com/guides/v2.1/migration/migration-plan.html)<br/>[Data Migration Tool Preconditions: avoid creating new entities in Magento 2 before migration](http://devdocs.magento.com/guides/v2.1/migration/migration-tool-preconditions.html)|2.x|Updated|Jul 28
 [Added generated BICs for delta RC1.5-RC1.4](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html)|2.2.x|Updated|Jul 24
-[Technical Guidelines 2.2](http://devdocs.magento.com/guides/v2.1/coding-standards/technical-guidelines/technical-guidelines.html)|2.2.x|New|Jul 21
+[Technical Guidelines 2.2](http://devdocs.magento.com/guides/v2.1/coding-standards/technical-guidelines.html)|2.2.x|New|Jul 21
 [Added BICs for delta Magento CE 2.2.0 RC1.4-RC1.3](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html)<br/>[Added BICs for delta Magento EE 2.2.0 RC1.4-RC1.3](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Jul 17
 [Backward compatible changes for delta Magento 2.2.0 RC1.3 and RC1.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html#changes-220rc13)|2.2.x|Updated|Jul 12
 [Fix code example on the video tutorial page]()|2.x|Updated|Jul 10
@@ -332,7 +332,7 @@ Description  | Versions applied to  | New or Updated | Date
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Coding standards technical guidelines]({{ site.gdeurl21 }}coding-standards/technical-guidelines/technical-guidelines.html){:target="_blank"} | 2.1.x  |  New | Apr 1  |
+| [Coding standards technical guidelines]({{ site.gdeurl21 }}coding-standards/technical-guidelines.html){:target="_blank"} | 2.1.x  |  New | Apr 1  |
 | [Update sample contribution template]({{ page.baseurl }}contributor-guide/templates/basic_template.html){:target="_blank"} | 2.x  |  Updated |  Apr 1 |
 | [Update performance test data]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-perf-data.html){:target="_blank"} | 2.x  | Updated  | Mar 21  |
 | [Versioning and compatibility]({{ page.baseurl }}extension-dev-guide/versioning/index.html){:target="_blank"} | 2.x  |  New |  Mar 31 |
