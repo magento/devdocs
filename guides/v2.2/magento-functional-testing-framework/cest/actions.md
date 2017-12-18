@@ -19,7 +19,6 @@ Some actions drive browser elements, while others use REST APIs.
 All actions contain the following attributes that are useful for merging needs:
 
 * `stepKey` is a required attribute that stores a unique identifier of the action. Example: `"conditionalClickStep1"`.
-* `remove` is an optional attribute that removes the action when merging same test in different modules
 * `before` is an optional attribute that Set `stepKey` of an action that must be executed one step before the current one.
 * `after` is an optional attribute that Set `stepKey` of an action that must be executed next.
 
@@ -122,6 +121,19 @@ The only difference is that different data assigned to the attributes which set 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
 See the _StorefrontCustomerSignInPage.xml_ code in [step 2](#section-code)
 {%endraw%}
+
+## Actions returning a variable
+
+The following test actions return a variable:
+
+*  [grabAttributeFrom](#grabattributefrom)
+*  [grabCookie](#grabcookie)
+*  [grabFromCurrentUrl](#grabfromcurrenturl)
+*  [grabMultiple](#grabmultiple)
+*  [grabPageSource](#grabpagesource)
+*  [grabTextFrom](#grabtextfrom)
+*  [grabValueFrom](#grabValueFrom)
+
 ## Available actions
 
 The following list contains reference documentation about all action elements available in the MFTF.
@@ -134,7 +146,6 @@ If description of an element does not includes a link to Codeception analogue, i
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -147,7 +158,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -160,7 +170,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -173,7 +182,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -187,7 +195,6 @@ selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -201,7 +208,6 @@ selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -212,7 +218,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -224,9 +229,20 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+### clearField
+
+Clears a text input field.
+Equivalent to using [fillField](#fillfield) with an empty string.
+
+Attribute|Type|Use|Description
+---|---|---|---
+selector|xs:string|required|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
 
 ### click
 
@@ -239,7 +255,6 @@ selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -254,7 +269,6 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -269,7 +283,6 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -280,7 +293,6 @@ Remove from the DOM all elements with the CSS classes `.modal-popup` or `.modals
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -291,9 +303,20 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+### comment
+
+Comments provide a way to add informative output during test runs.
+May come in handy for complex tests.
+
+Attribute|Type|Use|Description
+---|---|---|---
+userInput|xs:string|required|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
 
 ### conditionalClick
 
@@ -311,7 +334,6 @@ selector|string|optional|
 dependentSelector|string|optional|
 visible|boolean|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -328,9 +350,8 @@ For example, you can create the entity with the name "SampleProduct":
 
 Attribute|Type|Use|Description
 ---|---|---|---
-entity|string|required| 
+entity|string|required|
 stepKey|string|required
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 storeCode|string|optional|
@@ -355,8 +376,7 @@ by indicating the relationship.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-createDataKey|string|required|  
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
+createDataKey|string|required|
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -383,7 +403,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 createDataKey|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 storeCode|string|optional|
@@ -399,7 +418,6 @@ selector|string|optional|
 selectorArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -411,7 +429,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -425,7 +442,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -438,7 +454,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -451,7 +466,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -464,7 +478,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -478,7 +491,6 @@ selector|string|optional|
 parameterArray|string|optional|
 attributeArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -491,7 +503,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -506,7 +517,6 @@ selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -519,7 +529,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -532,7 +541,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -544,7 +552,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -557,7 +564,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -568,7 +574,6 @@ Assert that there are no Javascript errors.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -582,7 +587,6 @@ userInput|string|optional|
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -596,7 +600,6 @@ selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -608,7 +611,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -621,7 +623,6 @@ Attribute|Type|Use|Description
 selector1|string|optional|
 selector2|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -633,7 +634,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -645,7 +645,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -660,9 +659,45 @@ selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+### formatMoney
+
+Attribute|Type|Use|Description
+---|---|---|---
+userInput|xs:string|optional|
+locale|xs:string|optional|
+variable|xs:string|optional|
+stepKey|xs:string|required|
+before|xs:string|optional|
+after|xs:string|optional|
+
+### getData
+
+Gets an entity (e.g. a category or product).
+In other words, makes a GET request to the Magento API according to the data and metadata of the entity type that is requested.
+
+For example, using `getData` in a test looks like this:
+
+```xml
+<getData stepKey="getAttributeOption1Handle" entity="ProductAttributeOptionGetter" index="1">
+    <required-entity createDataKey="productAttributeHandle"/>
+</getData>
+```
+
+The `ProductAttributeOptionGetter` entity must be defined in the corresponding [data `*.xml`](../data.html).
+
+Attribute|Type|Use|Description
+---|---|---|---
+storeCode|string|optional|
+stepKey|string|required|
+index|integer|optional|
+entity|string|required|
+before|string|optional|
+after|string|optional|
+
+This action can optionally contain one or more [required-entity](#required-entity) child elements.
 
 ### grabAttributeFrom
 
@@ -675,7 +710,6 @@ userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -690,7 +724,6 @@ parameterArray|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -704,7 +737,6 @@ url|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -719,7 +751,6 @@ userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -731,7 +762,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 returnVariable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -744,7 +774,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 returnVariable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -758,7 +787,6 @@ selector|string|optional|
 selectorArray|string|optional|
 returnVariable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -772,7 +800,6 @@ userInput|string|optional|
 returnVariable|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -786,7 +813,6 @@ Attribute|Type|Use|Description
 username|string|optional|
 password|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -799,7 +825,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -810,7 +835,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -821,7 +845,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -832,7 +855,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -847,7 +869,6 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -859,7 +880,6 @@ userInput|string|optional|
 locale|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -868,7 +888,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -879,7 +898,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -892,7 +910,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -903,7 +920,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -916,7 +932,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 function|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -931,7 +946,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -942,9 +956,16 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+### remove
+
+Removes action by its `stepKey`.
+
+Attribute|Type|Use|Description
+---|---|---|---
+keyForRemoval|xs:string|required|Set `stepKey` of the action you want to remove.
 
 ### resetCookie
 
@@ -956,7 +977,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -969,7 +989,6 @@ Attribute|Type|Use|Description
 width|string|optional|
 height|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -982,7 +1001,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -997,7 +1015,6 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1008,7 +1025,6 @@ A convenience function that executes `window.scrollTo(0,0)` as JavaScript thus r
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1024,7 +1040,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 requiredAction|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1039,7 +1054,6 @@ selector|string|optional|
 selectorArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1051,7 +1065,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1065,7 +1078,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1078,7 +1090,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1091,7 +1102,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1105,7 +1115,6 @@ selector|string|optional|
 selectorArray|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1118,7 +1127,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1131,7 +1139,6 @@ Attribute|Type|Use|Description
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1146,7 +1153,6 @@ selectorArray|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1159,7 +1165,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1171,7 +1176,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1184,7 +1188,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1196,7 +1199,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1209,7 +1211,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1223,7 +1224,6 @@ userInput|string|optional|
 url|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1238,7 +1238,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1252,7 +1251,6 @@ selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1267,7 +1265,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1281,7 +1278,6 @@ userInput|string|optional|
 parameterArray|string|optional|
 value|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1295,7 +1291,6 @@ selector|string|optional|
 parameterArray|string|optional|
 button|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1309,7 +1304,6 @@ selector|string|optional|
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1322,7 +1316,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1335,7 +1328,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1348,7 +1340,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1361,7 +1352,6 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1373,7 +1363,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1388,9 +1377,41 @@ userInput|string|optional|
 parameterArray|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
+
+
+### updateData
+
+When you create a data entity using `createData`, you may need to update it later in the test.
+The `updateData` action allows this.
+
+For example, to change the price of a product:
+
+```xml
+<updateData stepKey="updateProduct" entity="AdjustPriceProduct" createDataKey="productHandle"/>
+```
+
+where `AdjustPriceProduct` simply looks like this:
+
+```xml
+<entity name="AdjustPriceProduct" type="product">
+    <data key="price">321.00</data>
+</entity>
+```
+
+Notice only the fields that you wish to update are set.
+
+Attribute|Type|Use|Description
+---|---|---|---
+storeCode|string|optional|
+stepKey|string|required|
+entity|string|required|
+createDataKey|string|required|
+before|string|optional|
+after|string|optional|
+
+This action can optionally contain one or more [required-entity](#required-entity) child elements.
 
 ### wait
 
@@ -1400,7 +1421,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1412,7 +1432,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1426,7 +1445,6 @@ selector|string|optional|
 function|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1439,7 +1457,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1452,7 +1469,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1465,7 +1481,6 @@ Attribute|Type|Use|Description
 selector|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1478,7 +1493,6 @@ Attribute|Type|Use|Description
 function|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1499,12 +1513,11 @@ The CSS class for loading masks is not used consistently throughout Magento. The
 //div[contains(@class, "admin__form-loading-mask")]
 //div[@data-role="spinner"]
 ```
- 
+
 
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1516,7 +1529,6 @@ Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -1531,7 +1543,6 @@ time|string|optional|
 selector|string|optional|
 variable|string|optional|
 stepKey|string|required|A unique identifier of the action.
-remove|boolean|optional| Set to "true" to remove the action during parsing when merging same test in different modules.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
