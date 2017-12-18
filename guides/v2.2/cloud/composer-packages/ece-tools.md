@@ -24,6 +24,14 @@ For {{site.data.var.ece}}, versions are specified as `2.<x>.<y>`. The versioning
 You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get these updates.
 </div>
 
+## v2002.0.6
+
+### Fixed issues
+<!-- MAGECLOUD-1413 -->* We fixed an issue that was causing `gzip` errors when a file or directory name contains spaces.
+
+<!-- MAGECLOUD-1424 -->* We fixed an issue that was preventing deployment scripts from properly recognizing and enabling module dependencies.
+
+
 ## v2002.0.5
 
 ### New features
