@@ -1888,6 +1888,19 @@
   <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get these updates.</p>
 </div>
 
+<h2 id="v200206">v2002.0.6</h2>
+
+<h3 id="fixed-issues">Fixed issues</h3>
+<!-- MAGECLOUD-1413 -->
+<ul>
+  <li>We fixed an issue that was causing <code class="highlighter-rouge">gzip</code> errors when a file or directory name contains spaces.</li>
+</ul>
+
+<!-- MAGECLOUD-1424 -->
+<ul>
+  <li>We fixed an issue that was preventing deployment scripts from properly recognizing and enabling module dependencies.</li>
+</ul>
+
 <h2 id="v200205">v2002.0.5</h2>
 
 <h3 id="new-features">New features</h3>
@@ -1915,7 +1928,7 @@
   </li>
 </ul>
 
-<h3 id="fixed-issues">Fixed issues</h3>
+<h3 id="fixed-issues-1">Fixed issues</h3>
 <!-- MAGECLOUD-1322 -->
 <ul>
   <li>We fixed an issue causing errors during the static content generation step of deployment on Production environments.</li>
@@ -1953,7 +1966,7 @@
 
 <h2 id="v200204">v2002.0.4</h2>
 
-<h3 id="fixed-issues-1">Fixed issues</h3>
+<h3 id="fixed-issues-2">Fixed issues</h3>
 <!-- MAGECLOUD-1355 -->
 <ul>
   <li>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.</li>
