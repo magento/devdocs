@@ -193,7 +193,7 @@ This error occurs because the DEFINER for the triggers in the SQL dump is the pr
 
 To solve the issue, you can generate a new database dump changing or removing the `DEFINER` clause. The following is one example of completing this change:
 
-	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed -i 's/DEFINER=[^*]**/*/g' | gzip > /tmp/database_no-definer.sql.gz
+	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/g' | gzip > /tmp/database_no-definer.sql.gz
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 

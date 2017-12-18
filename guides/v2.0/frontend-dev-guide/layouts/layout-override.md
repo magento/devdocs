@@ -97,7 +97,7 @@ These files override the following layouts:
 
 <ul>
 <li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout1&gt;.xml</code></li>
-<li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout1&gt;.xml</code></li>
+<li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout2&gt;.xml</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">

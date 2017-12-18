@@ -3,9 +3,21 @@ pages:
     - label: Introduction
       url: release-notes/bk-release-notes.html
 
-    - label: 2.2.0 Release Notes
+    - label: 2.2 Release Notes
       versions: ["2.2"]
       children:
+
+        - label: Magento Open Source 2.2.2 Release Notes
+          url: release-notes/ReleaseNotes2.2.2CE.html
+
+        - label: Magento Commerce 2.2.2 Release Notes
+          url: release-notes/ReleaseNotes2.2.2EE.html
+
+        - label: Magento Open Source 2.2.1 Release Notes
+          url: release-notes/ReleaseNotes2.2.1CE.html
+
+        - label: Magento Commerce 2.2.1 Release Notes
+          url: release-notes/ReleaseNotes2.2.1EE.html
 
         - label: Magento Open Source 2.2.0 Release Notes
           url: release-notes/ReleaseNotes2.2.0CE.html
@@ -26,6 +38,12 @@ pages:
 
         - label: Magento Open Source 2.1.x Release Notes
           children:
+
+            - label: Magento Open Source 2.1.11 Release Notes
+              url: release-notes/ReleaseNotes2.1.11CE.html
+
+            - label: Magento Open Source 2.1.10 Release Notes
+              url: release-notes/ReleaseNotes2.1.10CE.html
 
             - label: Magento Open Source 2.1.9 Release Notes
               url: release-notes/ReleaseNotes2.1.9CE.html
@@ -110,6 +128,9 @@ pages:
 
             - label: magento-cloud-configuration release 101.4.x Release Notes
               url: cloud/release-notes/CloudReleaseNotes101.4.html
+
+            - label: Magento Commerce (Cloud) versions 2.1.6 through 2.1.11 Release Notes
+              url: cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html
 
             - label: Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes
               url: cloud/release-notes/CloudReleaseNotes2.1.5.html

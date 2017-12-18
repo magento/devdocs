@@ -1,12 +1,13 @@
 ---
 layout: default
 group: coding-standards
-subgroup: 02_Technical guidelines
 title: Technical guidelines
-menu_title: Technical guidelines
-menu_node: parent
-version: 2.1
-github_link: coding-standards/technical-guidelines/technical-guidelines.md
+version: 2.0
+github_link: coding-standards/technical-guidelines.md
+redirect_from:
+    - /guides/v2.1/coding-standards/technical-guidelines/technical-guidelines.html
+functional_areas:
+    - Standards
 ---
 
 ## About this document
@@ -37,27 +38,9 @@ Use [RFC2119] to interpret keywords like:
 
 * OPTIONAL
 
-### Guidelines for Magento 2.2 only
-
-Statements applicable to Magento v.2.2 only are marked with
-<span style="color: orange">[2.2]</span>,
-like this:
-
-> Explicit return types MUST BE used on functions
-><span style="color: orange">[2.2]</span>.
-
 ## 1. Basic programming principles
 
 1.1. Function arguments SHOULD NOT be modified.
-
-1.2. Explicit return types MUST BE declared on functions
-<span style="color: orange">[2.2]</span>.
-
-1.3. Type hints for scalar arguments SHOULD be used
-<span style="color: orange">[2.2]</span>.
-
-1.3.1. All new or updated PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`
-<span style="color: orange">[2.2]</span>.
 
 ## 2. Class design
 

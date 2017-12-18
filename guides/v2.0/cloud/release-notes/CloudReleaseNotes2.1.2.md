@@ -25,8 +25,8 @@ We made the following change in this release:
 ### Functional fixes and enhancements
 We made the following fixes in this release:
 
-*   Improved the performance of static file deployment.
-*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
+* Improved the performance of static file deployment.
+*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="\_blank"}.
 *   You no longer need a `pub/front-static.php` in your template.
 *   We now back up `env.php` before disabling the Redis cache during deployment.
 *   Patches are now applied in alphabetical order.

@@ -56,6 +56,18 @@ Here,
 * `customer` is a stepKey of the corresponding action, where an entity is created
 * `email` is a data key of the entity. The corresponding value will be assigned to `userInput` as a result.
 
+### Using data returned by test-actions
+
+A test can also reference data that was returned as a result of [test actions], like the action `<grabValueFrom selector="someSelector" stepKey="grabStepKey>`.
+Further in the test, the data grabbed by selector `someSelector` can be referenced using the `stepKey` value. In this case, it is `grabStepKey`.
+
+The following example demonstrates the usage of `grabValueFrom` in test, where the returned value is used by action's `stepKey`:
+
+```xml
+<grabValueFrom selector="someSelector" stepKey="grabStepKey"/>
+<fillField selector=".functionalTestSelector" userInput="{$grabStepKey}" stepKey="fillFieldKey1"/>
+```
+
 ### Hard-coded data input
 
 The data to operate against can be included as literals in a test. Hard-coded data input can be useful in assertions ([see] actions).
@@ -226,6 +238,7 @@ Individual piece of data to be passed in as part of the parent array type.
 <!-- Internal -->
 
 [see]: cest/actions.html#see
+[test actions]: cest/actions.html#actions-returning-a-variable
 
 <!-- External -->
 

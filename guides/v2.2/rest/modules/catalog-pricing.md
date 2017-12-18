@@ -406,7 +406,7 @@ You cannot delete a base price. It can only be changed to another value (0 or gr
 **REST Endpoints**
 
 ```
-POST /V1/products/base-price
+POST /V1/products/base-prices
 POST /V1/products/base-prices-information
 ```
 
@@ -432,7 +432,7 @@ The following example sets the base price for a simple and a downloadable produc
 
 **Sample Usage**
 
-`POST /V1/products/base-price`
+`POST /V1/products/base-prices`
 
 **Payload**
 

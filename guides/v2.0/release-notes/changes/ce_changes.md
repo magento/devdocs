@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-title: Magento Open Source Backward Incompatible Changes
+title: Backward incompatible changes in Magento Open Source
 version: 2.0
 github_link: release-notes/changes/ce_changes.md
 ---
@@ -11,11 +11,11 @@ This topic provides details about backward incompatible changes made in {{site.d
 All changes are generated automatically using the codebase of corresponding releases in [magento/magento2] repository.
 The changes are aggregated into two tables:
 
-- that contains backward incompatible changes made to Magento classes
-- that contains backward incompatible changes made to the Magento interfaces
+1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
+2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-**Temporary issue**: Added docblock tags like [@api] or [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.  
+**Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.
 </div>
 
 ## 2.0.16 - 2.0.17 {#releases-2_0_16-2_0_17}
@@ -89,5 +89,5 @@ The changes are aggregated into two tables:
 <!-- LINK DEFINITIONS -->
 
 [magento/magento2]: https://github.com/magento/magento2/releases
-[@api]: {{page.baseurl}}coding-standards/docblock-standard-general.html#api
+
 [@deprecated]: {{page.baseurl}}coding-standards/docblock-standard-general.html#deprecated

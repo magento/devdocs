@@ -150,7 +150,7 @@ pages:
         - label: TreeMassActions component
           url: ui_comp_guide/components/ui-treemassactions.html
 
-        - label: Wysiwyg component
+        - label: WYSIWYG component
           url: ui_comp_guide/components/ui-wysiwyg.html
 
     - label: Concepts

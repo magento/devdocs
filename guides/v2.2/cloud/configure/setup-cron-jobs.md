@@ -51,7 +51,7 @@ We use only this one cron for cloud due to the read-only nature of the environme
 
 Magento uses a five value specification for a cron job. The numbers per each `* * * * *` is as follows:
 
-*   Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your [Magento Admin](#admin).
+*   Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your Magento Admin.
 *   Hour (0-23)
 *   Day of month (1 - 31)
 *   Month (1 - 12)
@@ -84,25 +84,14 @@ With the settings:
 *   `/app/abc123edf890` is the install directory, which includes the Project ID for this example
 *   `bin/magento indexer:reindex catalog_category_product` is the script actions
 
-## Configure cron settings in the Magento Admin {#admin}
-Due to the minimum allowed frequency of **five minutes for Starter environments and Pro Integration environments**, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don't change the settings, crons will never run.
-
-You do not need to set this for Pro Staging and Production environments.
-
-To configure:
-
-1.  Log into the Magento Admin in your deployed environment: all Starter environments and Pro Integration environments.
-2.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Expand the **Cron (Scheduled Tasks)** section.
-3.  Expand the **Cron configuration options for group: index** section.
-4.  For the **Missed if Not Run Within** setting, deselect the checkbox for Use system value. Change the value from 2 to 10 minutes.
-5.  Expand the **Cron configuration options for group: staging** section.
-4.  Change the **Missed if Not Run Within** setting, deselect the checkbox for Use system value. Change the value from 2 to 10 minutes.
-5.  Expand the **Cron configuration options for group: catalog_event** section.
-4.  Change the **Missed if Not Run Within** setting, deselect the checkbox for Use system value. Change the value from 2 to 10 minutes.
-5.  Save the changes.
-
 ## Add cron jobs to .magento.app.yaml {#add-cron}
-You should add all cron jobs to your [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) file in the the `crons` section. We include a default cron job for Magento in the default file:
+You should add all cron jobs to your [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) file in the the `crons` section.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The default minimum frequency for cron jobs is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting in `.magento-app-yaml`.
+</div>
+
+We include a default cron job for Magento in the default file:
 
 ```yaml
 # Default Magento 2 cron jobs
