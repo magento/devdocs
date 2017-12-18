@@ -1195,30 +1195,30 @@
 </section>
 
 
-			<p>The <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> allows customers to place orders in seconds without going through full checkout process.</p>
+			<p>The <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> allows customers to place orders in seconds without going through the full checkout process.</p>
 
 <p>This feature takes the form of a button on product pages.
-When customers click this button, the system places their order using the default shipping, billing address, and stored payment method.
-When the order is placed, a confirmation message appears in the notification area.</p>
+When a customer clicks this button, the system places their order using the default shipping, billing address, and stored payment method.
+Once the order is placed, an order confirmation message appears in the notification area.</p>
 
-<p>This article explains how the module works and ways to customize it using its extension points.
+<p>This article explains how this module works and ways to customize it using its extension points.
 For merchant instructions, see <a href="http://docs.magento.com/m2/ce/user_guide/sales/checkout-instant-purchase.html">Instant Purchase</a> in the user guide.</p>
 
 <h2 id="implementation-details">Implementation details</h2>
 
-<p>The logic found in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> is divided in two parts:</p>
+<p>The logic found in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> is divided into two parts:</p>
 
 <ul>
-  <li><a href="#instant-purchase-capability">Instant Purchase capability</a></li>
+  <li><a href="#instant-purchase-capability">Instant Purchase logic</a></li>
   <li><a href="#order-placement">Order placement</a></li>
 </ul>
 
-<h3 id="instant-purchase-capability">Instant Purchase capability</h3>
+<h3 id="instant-purchase-logic">Instant Purchase logic</h3>
 
-<p>The Instant Purchase module allows any type of product to be added to an instant purchase order.</p>
+<p>This module allows any product to be added to an instant purchase order.</p>
 
-<p>The module creates an additional section in the <a href="/guides/v2.2/extension-dev-guide/cache/page-caching/private-content.html">Customer Data cache</a> and allows the client side to cache Instant Purchase data.
-This data is updated when relevant customer data changes, such as adding or removing a stored payment method or the default shipping address.</p>
+<p>The module creates an additional section in the <a href="/guides/v2.2/extension-dev-guide/cache/page-caching/private-content.html">Customer Data cache</a> for Instant Purchase data.
+This data is updated when the relevant customer data changes, such as adding or removing a stored payment method or the default shipping address.</p>
 
 <h4 id="important-interfaces">Important interfaces</h4>
 
@@ -1266,7 +1266,7 @@ For more customization details, see the <a href="#customization-points">Customiz
 
 <h3 id="order-placement">Order placement</h3>
 
-<p>The logic for the order placement process in the Instant Purchase module is found in the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/PlaceOrder.php"><code class="highlighter-rouge">PlaceOrder</code></a> class.</p>
+<p>The logic for the order placement process is found in the <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/InstantPurchase/Model/PlaceOrder.php"><code class="highlighter-rouge">PlaceOrder</code></a> class.</p>
 
 <p>The whole process is divided into several steps with each step implemented by a corresponding class in the <a href="https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase/Model/QuoteManagement"><code class="highlighter-rouge">Magento\InstantPurchase\Model\QuoteManagement</code></a> namespace.</p>
 
@@ -1275,7 +1275,7 @@ To customize the behavior of the order placement process, use <a href="/guides/v
 
 <h2 id="customization-points">Customization Points</h2>
 
-<p>Almost all aspects of the Instant Purchase module behavior may be changed by overriding preferences for interfaces marked with the <code class="highlighter-rouge">@api</code> annotation.</p>
+<p>Use <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependency injection</a> to override preferences for interfaces marked with the <code class="highlighter-rouge">@api</code> notation and modify the behavior of the module.</p>
 
 <h3 id="instant-purchase-calculation">Instant Purchase calculation</h3>
 
@@ -1394,7 +1394,7 @@ The format of the payment method can also be customized for <a href="#payment-to
 
 <p>Integration is not enabled by default and requires developer action to make sure everything works as expected and avoid unpredictable bugs on production sites.</p>
 
-<p>If the payment method meets all the requirements listed, you can enable Instant Purchase integration by adding several lines in the <code class="highlighter-rouge">config.xml</code> file.</p>
+<p>If the payment method meets all the requirements listed, you can enable Instant Purchase integration in the <code class="highlighter-rouge">config.xml</code> file.</p>
 
 <p>The minimal configuration for Instant Purchase integration development is as follows:</p>
 
@@ -1411,8 +1411,11 @@ The format of the payment method can also be customized for <a href="#payment-to
 <span class="nt">&lt;/config&gt;</span>  
 </code></pre></div></div>
 
-<p>The minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.
-The following is an example of a full configuration meant for production:</p>
+<div class="bs-callout bs-callout-warning">
+  <p>This minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.</p>
+</div>
+
+<p>The following is an example of a full configuration meant for production:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config&gt;</span>
   <span class="nt">&lt;default&gt;</span>
