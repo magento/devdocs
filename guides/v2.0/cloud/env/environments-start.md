@@ -19,7 +19,7 @@ functional_areas:
   - Cloud
 ---
 
-When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic_information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
+When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html).
 
