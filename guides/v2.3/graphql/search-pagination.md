@@ -115,7 +115,7 @@ The search returns 45 items.
 
 The following sample query returns a list of products that meets the following criteria:
 
-* The product name or product description contains the string `Messenger` (which causes it to be available for full text searches).
+* The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
 * The SKU begins with `24-MB`
 * The price is less than $50.
 
