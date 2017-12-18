@@ -1934,6 +1934,20 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 <th style="width: 200px;">Default value</th>
 </tr></thead>
 <tbody>
+<tr>
+<td><code>QUEUE_CONFIGURATION</code></td>
+<td><p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
+<p>This is available in 2.1.4 and later.</p>
+</td>
+<td>not set</td>
+</tr>
+<tr>
+<td><code>SEARCH_CONFIGURATION</code></td>
+<td><p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
+<p>This is available in 2.1.4 and later.</p>
+</td>
+<td>not set</td>
+</tr>
 <tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
@@ -2018,7 +2032,8 @@ scd_threads = 3 for Pro Staging and Production environments</td>
 <td><code>STATIC_CONTENT_SYMLINK</code></td>
 <td>Generates symlinks for static content. By default, symlinks are always generated unless you disable it using this environment variable. This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time. This is available in all versions.</td>
 <td>enabled</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
 
 <p>For information on the build and deploy process, see <a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
