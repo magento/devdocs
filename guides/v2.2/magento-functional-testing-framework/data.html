@@ -320,6 +320,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="assertions">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/cest/assertions.html">Assertions</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -750,6 +764,17 @@ Default data entities are provided for use and as templates for entity creation/
   <li><code class="highlighter-rouge">email</code> is a data key of the entity. The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
 </ul>
 
+<h3 id="using-data-returned-by-test-actions">Using data returned by test-actions</h3>
+
+<p>A test can also reference data that was returned as a result of <a href="cest/actions.html#actions-returning-a-variable">test actions</a>, like the action <code class="highlighter-rouge">&lt;grabValueFrom selector="someSelector" stepKey="grabStepKey&gt;</code>.
+Further in the test, the data grabbed by selector <code class="highlighter-rouge">someSelector</code> can be referenced using the <code class="highlighter-rouge">stepKey</code> value. In this case, it is <code class="highlighter-rouge">grabStepKey</code>.</p>
+
+<p>The following example demonstrates the usage of <code class="highlighter-rouge">grabValueFrom</code> in test, where the returned value is used by action’s <code class="highlighter-rouge">stepKey</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;grabValueFrom</span> <span class="na">selector=</span><span class="s">"someSelector"</span> <span class="na">stepKey=</span><span class="s">"grabStepKey"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">".functionalTestSelector"</span> <span class="na">userInput=</span><span class="s">"{$grabStepKey}"</span> <span class="na">stepKey=</span><span class="s">"fillFieldKey1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="hard-coded-data-input">Hard-coded data input</h3>
 
 <p>The data to operate against can be included as literals in a test. Hard-coded data input can be useful in assertions (<a href="cest/actions.html#see">see</a> actions).</p>
@@ -914,6 +939,12 @@ in another data entity, you can use this.</p>
       <td>string</td>
       <td>optional</td>
       <td>Key attribute of this entity to assign a value to.</td>
+    </tr>
+    <tr>
+      <td>unique</td>
+      <td>Available values: <code class="highlighter-rouge">prefix</code>, <code class="highlighter-rouge">suffix</code></td>
+      <td>optional</td>
+      <td>Add suite or test wide unique sequence as “prefix” or “suffix” to the data value if specified.</td>
     </tr>
     <tr>
       <td>entityType</td>

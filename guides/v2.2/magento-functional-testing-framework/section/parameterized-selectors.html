@@ -320,6 +320,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="assertions">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/cest/assertions.html">Assertions</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -647,12 +661,13 @@
 
 <p><img src="img/add-params2-3.png" alt="Add other parameters" /></p>
 
-<p>Here,</p>
+<p>Any data can be used in parameterized elements as well as entered in test actions like so:</p>
 
 <ul>
   <li><code class="highlighter-rouge">_defaultCategory.is_active</code> is a reference to <code class="highlighter-rouge">&lt;data key="is_active"&gt;</code> in <code class="highlighter-rouge">&lt;entity name="_defaultCategory" ... &gt;&lt;/entity&gt;</code> in the corresponding <em>…/Data/*.xml</em></li>
   <li><code class="highlighter-rouge">stringLiteral</code> is a literal</li>
   <li><code class="highlighter-rouge">$createDataKey.id$</code> is a reference to persisted data created in the <code class="highlighter-rouge">SampleCest1</code> within action with <code class="highlighter-rouge">stepKey="createDataKey"</code></li>
+  <li><code class="highlighter-rouge">{$variable}</code> is a reference to data returned by a test action, like <code class="highlighter-rouge">&lt;grabValueFrom&gt;</code>.</li>
 </ul>
 
 <!-- LINK DEFINITIONS -->

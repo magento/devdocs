@@ -320,6 +320,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="assertions">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/cest/assertions.html">Assertions</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -586,7 +600,6 @@ Some actions drive browser elements, while others use REST APIs.</p>
 
 <ul>
   <li><code class="highlighter-rouge">stepKey</code> is a required attribute that stores a unique identifier of the action. Example: <code class="highlighter-rouge">"conditionalClickStep1"</code>.</li>
-  <li><code class="highlighter-rouge">remove</code> is an optional attribute that removes the action when merging same test in different modules</li>
   <li><code class="highlighter-rouge">before</code> is an optional attribute that Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</li>
   <li><code class="highlighter-rouge">after</code> is an optional attribute that Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</li>
 </ul>
@@ -688,6 +701,20 @@ The only difference is that different data assigned to the attributes which set 
 <p>Here, <a href="#click">click</a> performs a click on a button that can be found by selector that is stored in the <code class="highlighter-rouge">signInAccountButton</code> of the <code class="highlighter-rouge">StorefrontCustomerSignInFormSection</code>.
 See the <em>StorefrontCustomerSignInPage.xml</em> code in <a href="#section-code">step 2</a></p>
 
+<h2 id="actions-returning-a-variable">Actions returning a variable</h2>
+
+<p>The following test actions return a variable:</p>
+
+<ul>
+  <li><a href="#grabattributefrom">grabAttributeFrom</a></li>
+  <li><a href="#grabcookie">grabCookie</a></li>
+  <li><a href="#grabfromcurrenturl">grabFromCurrentUrl</a></li>
+  <li><a href="#grabmultiple">grabMultiple</a></li>
+  <li><a href="#grabpagesource">grabPageSource</a></li>
+  <li><a href="#grabtextfrom">grabTextFrom</a></li>
+  <li><a href="#grabValueFrom">grabValueFrom</a></li>
+</ul>
+
 <h2 id="available-actions">Available actions</h2>
 
 <p>The following list contains reference documentation about all action elements available in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.
@@ -712,12 +739,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -767,12 +788,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -820,12 +835,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -871,12 +880,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -932,12 +935,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -991,12 +988,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1030,12 +1021,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1079,12 +1064,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1095,6 +1074,48 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>string</td>
       <td>optional</td>
       <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="clearfield">clearField</h3>
+
+<p>Clears a text input field.
+Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>selector</td>
+      <td>xs:string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>stepKey</td>
+      <td>xs:string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>before</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>after</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -1142,12 +1163,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1209,12 +1224,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1274,12 +1283,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1313,12 +1316,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1356,12 +1353,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1372,6 +1363,48 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>string</td>
       <td>optional</td>
       <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="comment">comment</h3>
+
+<p>Comments provide a way to add informative output during test runs.
+May come in handy for complex tests.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>userInput</td>
+      <td>xs:string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>stepKey</td>
+      <td>xs:string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>before</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>after</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -1420,12 +1453,6 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1471,12 +1498,6 @@ to the Magento API according to the data and metadata of the entity to be create
       <td>string</td>
       <td>required</td>
       <td> </td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1533,12 +1554,6 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1591,12 +1606,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1664,12 +1673,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1709,12 +1712,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1770,12 +1767,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1821,12 +1812,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1876,12 +1861,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -1927,12 +1906,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -1988,12 +1961,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2039,12 +2006,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2106,12 +2067,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2157,12 +2112,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2212,12 +2161,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2257,12 +2200,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2312,12 +2249,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2351,12 +2282,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2412,12 +2337,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2471,12 +2390,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2516,12 +2429,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2571,12 +2478,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2618,12 +2519,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2663,12 +2558,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2730,12 +2619,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2749,6 +2632,122 @@ previously created using <a href="#createdata">createData</a> in the scope of th
     </tr>
   </tbody>
 </table>
+
+<h3 id="formatmoney">formatMoney</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>userInput</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>locale</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>variable</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>stepKey</td>
+      <td>xs:string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>before</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>after</td>
+      <td>xs:string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="getdata">getData</h3>
+
+<p>Gets an entity (e.g. a category or product).
+In other words, makes a GET request to the Magento API according to the data and metadata of the entity type that is requested.</p>
+
+<p>For example, using <code class="highlighter-rouge">getData</code> in a test looks like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;getData</span> <span class="na">stepKey=</span><span class="s">"getAttributeOption1Handle"</span> <span class="na">entity=</span><span class="s">"ProductAttributeOptionGetter"</span> <span class="na">index=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;required-entity</span> <span class="na">createDataKey=</span><span class="s">"productAttributeHandle"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/getData&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">ProductAttributeOptionGetter</code> entity must be defined in the corresponding <a href="../data.html">data <code class="highlighter-rouge">*.xml</code></a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeCode</td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>stepKey</td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td>integer</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>entity</td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>before</td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>after</td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This action can optionally contain one or more <a href="#required-entity">required-entity</a> child elements.</p>
 
 <h3 id="grabattributefrom">grabAttributeFrom</h3>
 
@@ -2793,12 +2792,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2860,12 +2853,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -2917,12 +2904,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -2984,12 +2965,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3029,12 +3004,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3082,12 +3051,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3143,12 +3106,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3202,12 +3159,6 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3254,12 +3205,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3309,12 +3254,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3348,12 +3287,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3391,12 +3324,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3430,12 +3357,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3497,12 +3418,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3554,12 +3469,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3591,12 +3500,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3632,12 +3535,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3687,12 +3584,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3726,12 +3617,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3779,12 +3664,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3846,12 +3725,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3887,12 +3760,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -3903,6 +3770,29 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>optional</td>
       <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="remove">remove</h3>
+
+<p>Removes action by its <code class="highlighter-rouge">stepKey</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>keyForRemoval</td>
+      <td>xs:string</td>
+      <td>required</td>
+      <td>Set <code class="highlighter-rouge">stepKey</code> of the action you want to remove.</td>
     </tr>
   </tbody>
 </table>
@@ -3944,12 +3834,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -3999,12 +3883,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4050,12 +3928,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -4117,12 +3989,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4156,12 +4022,6 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -4224,12 +4084,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4289,12 +4143,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4334,12 +4182,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -4395,12 +4237,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4448,12 +4284,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4499,12 +4329,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -4560,12 +4384,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4613,12 +4431,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4664,12 +4476,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -4731,12 +4537,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4784,12 +4584,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4829,12 +4623,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -4884,12 +4672,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -4929,12 +4711,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -4982,12 +4758,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5041,12 +4811,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5108,12 +4872,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5165,12 +4923,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5232,12 +4984,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5289,12 +5035,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5350,12 +5090,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5409,12 +5143,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5460,12 +5188,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5515,12 +5237,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5566,12 +5282,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5621,12 +5331,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5666,12 +5370,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5733,12 +5431,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5752,6 +5444,76 @@ For example, the drop down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h3 id="updatedata">updateData</h3>
+
+<p>When you create a data entity using <code class="highlighter-rouge">createData</code>, you may need to update it later in the test.
+The <code class="highlighter-rouge">updateData</code> action allows this.</p>
+
+<p>For example, to change the price of a product:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;updateData</span> <span class="na">stepKey=</span><span class="s">"updateProduct"</span> <span class="na">entity=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">createDataKey=</span><span class="s">"productHandle"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>where <code class="highlighter-rouge">AdjustPriceProduct</code> simply looks like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">type=</span><span class="s">"product"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"price"</span><span class="nt">&gt;</span>321.00<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<p>Notice only the fields that you wish to update are set.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>storeCode</td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>stepKey</td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>entity</td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>createDataKey</td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>before</td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>after</td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This action can optionally contain one or more <a href="#required-entity">required-entity</a> child elements.</p>
 
 <h3 id="wait">wait</h3>
 
@@ -5778,12 +5540,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5825,12 +5581,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5886,12 +5636,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -5937,12 +5681,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -5992,12 +5730,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -6045,12 +5777,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -6096,12 +5822,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -6152,12 +5872,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
-    </tr>
-    <tr>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
@@ -6197,12 +5911,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
@@ -6262,12 +5970,6 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Set to “true” to remove the action during parsing when merging same test in different modules.</td>
     </tr>
     <tr>
       <td>before</td>
