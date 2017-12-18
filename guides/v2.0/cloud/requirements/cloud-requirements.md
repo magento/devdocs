@@ -49,6 +49,7 @@ Here are some advanced technologies we recommend getting familiar with:
 * [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html) for performance testing
 * [New Relic APM]({{page.baseurl}}cloud/project/new-relic.html) for performance testing
 * [GitHub]({{page.baseurl}}cloud/project/project-integrate-github.html) if you need a Git repo
+* [Bitbucket]({{page.baseurl}}cloud/project/bitbucket-integration.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 
