@@ -3,12 +3,12 @@ layout: default
 group: mftf
 title: Assertions in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/cest/annotations.md
+github_link: magento-functional-testing-framework/cest/assertions.md
 functional_areas:
  - Testing
 ---
 
-This topic contains general information about assertions in the MFTF and a reference list.
+This topic contains general information about assertions in the MFTF and the reference list of available assertions.
 
 ## Overview
 
@@ -44,11 +44,11 @@ Most assertions contain attribute `message` that specifies text of an informatio
 * array
 * const
 
-If `variable` is used, then the corresponding value reference uses PHP language style like `{$nameOfStepKey}`. See example.
+If `variable` is used, the corresponding value reference uses PHP language style like `{$nameOfStepKey}`. See the example below.
 
 ## Example
 
-In this very common test writing example we are grabbing text from a page and then asserting that it matches what we expect to see. If it does not, then the test will fail at the assert step.
+In this very common test writing example we are grabbing text from a page and then asserting that it matches what we expect to see. If it does not, the test will fail at the assert step.
 
 ```xml
 <!-- Grab a value from the page using any grab action -->
@@ -568,3 +568,8 @@ message|xs:string|required|
 stepKey|xs:string|required|
 before|xs:string|optional|
 after|xs:string|optional|
+
+
+
+<!-- Abbreviations -->
+*[MFTF]: Magento Functional Testing Framework
