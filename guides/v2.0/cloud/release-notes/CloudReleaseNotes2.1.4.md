@@ -25,7 +25,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 ## Fixes in this release
 <!--MAGECLOUD-1427-->* We fixed an issue that was causing the wrong products to be indexed in 2.1.4. Previously, the `mview.xml` configuration used `row_id`  instead of `entity_id` when collecting information from changelogs.
 
-<!--MAGECLOUD-1428-->* We fixed an issue that was preventing merchants from using AMQP and search services in 2.1.4. Previously, the deployment process was removing the AMQP section from `env.php` if the `amqpHost/amqpPort/etc.` environment variables were not set. 
+<!--MAGECLOUD-1428-->* We fixed an issue that was preventing merchants from using AMQP and search services. Previously, the deployment process was overwriting the AMQP section in `env.php` if the AMQP environment variables were not set.
 
 <!--MAGECLOUD-1246-->* The RabbitMQ configuration process now obtains all required parameters automatically in 2.1.4.
 
