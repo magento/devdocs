@@ -229,6 +229,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### clearField
 
+Clear a text input field. Equivalent to using fillField with an empty string.
+
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|xs:string|required|
@@ -299,6 +301,9 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### comment
 
+Comments provide a way to add informative output during test runs. These are usually not needed but may
+come in handy for complex tests.
+
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|xs:string|required|
@@ -338,7 +343,7 @@ For example, you can create the entity with the name "SampleProduct":
 
 Attribute|Type|Use|Description
 ---|---|---|---
-entity|string|required| 
+entity|string|required|
 stepKey|string|required
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
@@ -364,7 +369,7 @@ by indicating the relationship.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-createDataKey|string|required|  
+createDataKey|string|required|
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
@@ -641,7 +646,6 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### formatMoney
 
-
 Attribute|Type|Use|Description
 ---|---|---|---
 userInput|xs:string|optional|
@@ -653,6 +657,19 @@ after|xs:string|optional|
 
 ### getData
 
+Get an entity (e.g. a category or product). In other words, make a GET request
+to the Magento API according to the data and metadata of the entity type that is
+requested.
+
+For example, using getData in a test looks like this:
+
+```xml
+<getData stepKey="getAttributeOption1Handle" entity="ProductAttributeOptionGetter" index="1">
+    <required-entity createDataKey="productAttributeHandle"/>
+</getData>
+```
+
+A `ProductAttributeOptionGetter` entity must be defined in a data xml.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -1312,6 +1329,25 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 
 ### updateData
 
+When you create a data entity via `createData`, you may need to update it later in the test.
+The `updateData` action will allow this.
+
+For example to change the price of a product:
+
+```xml
+<updateData stepKey="updateProduct" entity="AdjustPriceProduct" createDataKey="productHandle"/>
+```
+
+where `AdjustPriceProduct` simply looks like this:
+
+```xml
+<entity name="AdjustPriceProduct" type="product">
+    <data key="price">321.00</data>
+</entity>
+```
+
+Notice only the fields that you wish to update are set.
+
 Attribute|Type|Use|Description
 ---|---|---|---
 storeCode|string|optional|
@@ -1423,7 +1459,7 @@ The CSS class for loading masks is not used consistently throughout Magento. The
 //div[contains(@class, "admin__form-loading-mask")]
 //div[@data-role="spinner"]
 ```
- 
+
 
 Attribute|Type|Use|Description
 ---|---|---|---
