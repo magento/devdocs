@@ -60,6 +60,12 @@ Affected {{site.data.var.ee}} classes:
 
 ## WYSIWYG Editor
 
+### Banner module
+
+* The Banner module now uses a UI Component form and no longer uses the `banner_edit_tab_properties_after_prepare_form` event in `Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Properties.php`.
+* The `Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Content.php` class is no longer used.
+  The `adminhtml_banner_edit_tab_content_before_prepare_form` that was used in this class is now used in the data provider for the banner form.
+
 ### Magento Banner
 
 * The Banner content type has been renamed to **Dynamic Block**.
