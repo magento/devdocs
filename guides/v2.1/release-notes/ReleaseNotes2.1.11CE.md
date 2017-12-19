@@ -174,7 +174,7 @@ Look for the following highlights in this release:
 
 ### Order management
 
-<!--- MAGETWO-82759 -->* We've corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As result, you cannot see the order item's information upon the order printing. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request 11631*. [GitHub-9830](https://github.com/magento/magento2/issues/9830), [GitHub-10530](https://github.com/magento/magento2/issues/10530)
+<!--- MAGETWO-82759 -->* We've corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As a result, you cannot see the order item's information upon the order printing. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request 11631*. [GitHub-9830](https://github.com/magento/magento2/issues/9830), [GitHub-10530](https://github.com/magento/magento2/issues/10530)
 
 
 
@@ -189,7 +189,7 @@ Look for the following highlights in this release:
 <!--- MAGETWO-83956 -->* Magento no longer throws an exception when you choose an Order page in the Admin, or set a transaction ID in a payment module. *Fix submitted by [Alex](https://github.com/madonzy) in pull request 12284*. [GitHub-3596](https://github.com/magento/magento2/issues/3596)
 
 ### Performance
-<!--- MAGETWO-82527 -->*  We’ve improved the performance of Web API calls that are used to access checkout payment information or place orders. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11640*.[GitHub-9007](https://github.com/magento/magento2/issues/9007)
+<!--- MAGETWO-82527 -->*  We’ve improved the performance of Web API calls that are used to access checkout payment information or place orders. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11640*. [GitHub-9007](https://github.com/magento/magento2/issues/9007)
 
 
 ### Reports
@@ -221,7 +221,7 @@ Look for the following highlights in this release:
 
 
 ## Known issue
-<!--- MAGETWO-85164 -->**Issue**:In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
+<!--- MAGETWO-85164 -->**Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
 
 **Workaround**: Use the Devdocs [static Swagger site](http://devdocs.magento.com/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
 
