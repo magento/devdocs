@@ -17,6 +17,9 @@ github_link: release-notes/ReleaseNotes2.1.11CE.md
 
 *Patch code and release notes were published on December 12,  2017.*
 
+*Release notes updated December 19, 2017.*
+
+
 We are pleased to present Magento Open Source  2.1.11. This release includes both new features and many improvements. Check out the many community-contributed fixes!
 
 
