@@ -5,91 +5,35 @@ title: Searches and pagination in GraphQL
 github_link: graphql/search-pagination.md
 ---
 
-A GraphQL search query contains the following components:
+A GraphQL search query can contain the following components:
 
+* A full text search keyword
 * Filters (search criteria).
 * Pagination information
 * Sorting instructions
 
-The following sample query returns a list of products in which the SKU begins with `24-MB` and the price is less than $50. The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
+## Specifying full text search keywords
 
-{% highlight json %}
-{
-    products(
-      find: {
-        and: {
-             sku: {like: "24-MB%"}
-             price: {lt: "50"}
-             }
-        }
-        pageSize: 25
-          sort: {
-          price: DESC
-        }
-    )
-    {
-        total_count
-        items {
-          name
-          sku
-          price
-        }
-        page_info {
-            page_size
-        }
-      }
-}
-{% endhighlight %}
+The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.
 
-The query returns the following:
-
-{% highlight json %}
-{
-  "data": {
-    "products": {
-      "total_count": 5,
-      "items": [
-        {
-          "name": "Rival Field Messenger",
-          "sku": "24-MB06",
-          "price": 45
-        },
-        {
-          "name": "Wayfarer Messenger Bag",
-          "sku": "24-MB05",
-          "price": 45
-        },
-        {
-          "name": "Crown Summit Backpack",
-          "sku": "24-MB03",
-          "price": 38
-        },
-        {
-          "name": "Joust Duffle Bag",
-          "sku": "24-MB01",
-          "price": 34
-        },
-        {
-          "name": "Strive Shoulder Pack",
-          "sku": "24-MB04",
-          "price": 32
-        }
-      ],
-      "page_info": {
-        "page_size": 25
-      }
-    }
-  }
-}
-{% endhighlight %}
+The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
 
 ## Specifying filters
 
-A search query must contain a top-level `and` operator, and the search criteria are specified within. The search query can contain one or two nested `and` or `or` clauses. However, you cannot perform a logical `or` across two `and` clauses, such as (A AND B) OR (X AND Y).
+The `filter` element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.
 
+Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two `and` clauses, such as (A AND B) OR (X AND Y).
 
-### Condition types
+### Search fields
+
+Each object type defines which fields can be searched. See the object-specific documentation for details.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You cannot specify the same search field twice in a GraphQL query.
+</div>
+
+### Condition types and search values
 
 The following table lists available condition types and provides the SQL statement equivalents.
 
@@ -111,10 +55,129 @@ Magento GraphQL clause | SQL equivalent
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
 `finset: [1, 2, 3]`	| <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
-**Notes:**
-
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 * `to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
 * `gt` and `lt` can be used in the same search term. For example, `qty: {lt: "10" gt: "20"}`.
+</div>
+
+## Specifying pagination
+
+Currently, Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
+
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 100 items are returned.
+
+The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
+
+
+## Sorting instructions
+
+The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
+
+In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
+
+```
+sort: {
+  price: DESC
+  name:  ASC
+}
+```
+
+## Example Searches
+
+### Full text search
+
+The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
+
+``` json
+{
+    products(
+      search: "Yoga pants"
+    )
+    {
+        total_count
+        items {
+          name
+          sku
+          price
+        }
+        page_info {
+          page_size
+          current_page
+        }
+      }
+}
+```
+
+The search returns 45 items.
+
+
+### Full text search with filters
+
+The following sample query returns a list of products that meets the following criteria:
+
+* The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
+* The SKU begins with `24-MB`
+* The price is less than $50.
+
+The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
+
+{% highlight json %}
+{
+    products(
+      search: "Messenger"
+      filter: {
+             sku: {like: "24-MB%"}
+             price: {lt: "50"}
+             }
+        pageSize: 25
+          sort: {
+          price: DESC
+        }
+    )
+    {
+      items
+      	{
+          name
+          sku
+          price
+          description
+        }
+        total_count
+        page_info {
+            page_size
+        }
+    }
+}
+{% endhighlight %}
+
+The query returns the following:
+
+{% highlight json %}
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Rival Field Messenger",
+          "sku": "24-MB06",
+          "price": 45,
+          "description": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>"
+        },
+        {
+          "name": "Wayfarer Messenger Bag",
+          "sku": "24-MB05",
+          "price": 45,
+          "description": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>"
+        }
+      ],
+      "total_count": 2,
+      "page_info": {
+        "page_size": 25
+      }
+    }
+  }
+}
+{% endhighlight %}
 
 
 ### Simple search using a timestamp
@@ -124,10 +187,8 @@ The following search finds all products that were added after the specified time
 {% highlight json %}
 {
     products(
-      find: {
-        and: {
-             created_at: {gt: "2017-11-01 00:00:00"}
-             }
+      filter: {
+          created_at: {gt: "2017-11-01 00:00:00"}
         }
         pageSize: 25
           sort: {
@@ -151,19 +212,17 @@ The following search finds all products that were added after the specified time
 
 ### Simple Logical OR search
 
-The following example searches for all products whose names contain the string `Leggings` or `Parachute`.
+The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
 
 {% highlight json %}
 {
     products(
-      find: {
-        and: {
+      filter: {
           or: {
-            name: {like: "%Leggings%"}
-            name: {like: "%Parachute%"}
+            sku: {like: "24-MB%"}
+            name: {like: "%Bag"}
 						}
        	 }
-        }
         pageSize: 25
           sort: {
           price: DESC
@@ -184,23 +243,19 @@ The following example searches for all products whose names contain the string `
 }
 {% endhighlight %}
 
-### Logical AND and OR search search
+### Logical AND and OR search
 
-This query searches the `sku`s for women’s shorts (WSH%) or pants (WP%) in size 29. The system performs logical ANDs to restrict the results to those that cost from $40 to $49.99 and has a name that contains the string `Orange`.
+This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the prodict is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
 
 {% highlight json %}
-
 {
     products(
-      find: {
-        and: {
+      filter: {
           price: {from: "40" to: "49.99"}
           name: {like: "%Orange"}
             or: {
               sku: {like: "WSH%29%"}
-              sku: {like: "WP%29%"}
-						}
        	 }
         }
         pageSize: 25
@@ -223,87 +278,4 @@ This query searches the `sku`s for women’s shorts (WSH%) or pants (WP%) in siz
 }
 {% endhighlight %}
 
-The query returns 6 items.
-
-### Logical AND and two OR search
-
-This query returns items with
-
-* Has a `sku` that begins with `WP`, AND
-* Has a `price` that's less than 60, AND
-* Has a `name` that contains the string `Parachute` OR `Capri`, AND
-* Has a `status` of `1` OR `visibility` of `1`
-
-{% highlight json %}
-{
-    products(
-        find:
-        {
-          and:
-          {
-            price: {lt:"60"}
-            sku: {like: "WP%"}
-
-           or:
-            {
-              name:{like:"%Parachute%"}
-              name:{like: "%Capri%"}
-
-            }
-             or:{
-              status: {eq: "1"}
-              visibility: {eq: "1"}
-            }
-          }
-        }
-        pageSize:100
-        currentPage:1
-        sort:
-          {
-            price:DESC
-          }
-        )
-    {
-        items
-         {
-           name
-           sku
-           price
-           status
-           type_id
-           visibility
-
-         }
-        total_count
-        page_info
-        {
-          page_size
-          current_page
-        }
-    }
-}
-{% endhighlight %}
-
-This query returns 42 items.
-
-## Specifying pagination
-
-Currently, Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
-
-The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 100 items are returned.
-
-The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
-
-
-## Sorting instructions
-
-The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
-
-In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
-
-```
-sort: {
-  price: DESC
-  name:  ASC
-}
-```
+The query returns 4 items.
