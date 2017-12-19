@@ -109,7 +109,7 @@ To set up port forwarding on a Mac or in a Unix environment, you will enter a co
 1. Open a terminal.
 2. Enter the following command:
 
-        ssh -R 9000:localhost:9000 <ssh url>
+        ssh -L 9000:localhost:9000 <ssh url>
 
     Add the `-v` option to the ssh command to show in the terminal whenever a socket is connected to the port that is being forwarded.
 
@@ -187,11 +187,11 @@ For Starter environments and Pro Integration environments, you can use the follo
 
 To use Xdebug, SSH to the environment as follows:
 
-	ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
+	ssh -L <xdebug listen port>:<host>:<xdebug listen port> <SSH URL>
 
 For example,
 
-	ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+	ssh -L 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 ## Debug for Pro Staging and Production {#pro-debug}
 To use Xdebug specifically on Pro plan Staging and Production environment, you create a separate SSH tunnel and web session only you have access to. This usage differs from typical access, only providing access to you and not to all users.
@@ -209,7 +209,7 @@ Set up an SSH tunnel to Staging or Production environment:
         ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
 3. Enter the following command to set up the SSH tunnel for Xdebug:
 
-        ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+        ssh -L /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
 
 To start debugging, use the following commands with the environment URL:
 
