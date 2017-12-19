@@ -8,12 +8,11 @@ functional_areas:
     - Reports
 ---
 
-**Report XML** is a markup language created to build analytical reports.
+**Report XML** is a markup language created to build advanced reports.
 The language declares SQL queries using declarations in XML.
 
-You can retrieve data for integration with analytical system using a report name. 
+You can retrieve data for integration with advanced reporting service using a report name.
 A report name is the same as the `name` attribute in the `<report>` node as described below.
-The `getReport` method of a report provider returns an object that implements the Iterator Interface.
 
 ## Report columns
 
@@ -48,14 +47,14 @@ Configuration of an XML.
 
 |Attribute|Description|Constant value|Use|
 |--- |--- |--- |
-|`xmlns:xsi`|Default namespace declaration.|http://www.w3.org/2001/XMLSchema-instance|Required|
-|`xsi:noNamespaceSchemaLocation`|An XML Schema document that does not have a target namespace.|urn:magento:module:Magento_Analytics:etc/reports.xsd|Required|
+|`xmlns:xsi`|Default namespace declaration.|`http://www.w3.org/2001/XMLSchema-instance`|Required|
+|`xsi:noNamespaceSchemaLocation`|An XML Schema document that does not have a target namespace.|`urn:magento:module:Magento_Analytics:etc/reports.xsd`|Required|
 
 ### `<report>`
 
 |Attribute|Description|Use|
 |--- |--- |--- |
-|`name`|Name of report configuration. You can use it for merging purposes or as a reference in |Required|
+|`name`|Name of report configuration. You can use it for merging purposes or as a reference.|Required|
 |`connection`|Name of connection to the database, when a Magento store has more than one database.|Optional|
 |`iterator`|Full class name or an interface name of a statement iterator. To use a custom iterator, add an `iterator` attribute which contains an iterator class or an interface name. This iterator can get statement iterator in the constructor method and wrap or change the current values with the custom data.|Optional|
 
@@ -100,9 +99,9 @@ After rendering it is represented as the `ON` statement in an SQL query.
 
 |Attribute|Description|Use
 |--- |--- |---
-|`name`|Column name in database.|Required
+|`name`|Column name in database|Required
 |`alias`|Column alias. It can be used in the same way as the column alias in SQL.|Optional
-|`function`|Available values: count, lower, date, sum, max, avg, min, sha1|Optional
+|`function`|Available values: `count`, `lower`, `date`, `sum`, `max`, `avg`, `min`, `sha1`|Optional
 |`group`|boolean|Optional
 |`distinct`|boolean|Optional
 
@@ -114,7 +113,7 @@ Filters use an attribute `glue` that helps to filter records that are based on m
 
 |Attribute|Description|Values|Use|
 |--- |--- |--- |
-|`glue`|Logical operator.|`or`, `and`|Optional|
+|`glue`|Logical operator|`or`, `and`|Optional|
 
 #### Example
 
@@ -155,7 +154,3 @@ Comparison operator is used to compare columns with the value or columns that ca
 You can find all the supported comparison operators in `\Magento\Analytics\ReportXml\DB\ConditionResolver::$conditionMap`.
 
 <!-- LINK DEFINITIONS -->
-
-
-<!-- ABBREVIATIONS -->
-*[MBI]: Magento Business Analytics
