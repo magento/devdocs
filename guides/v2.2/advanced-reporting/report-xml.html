@@ -382,12 +382,11 @@
 </section>
 
 
-			<p><strong>Report XML</strong> is a markup language created to build analytical reports.
+			<p><strong>Report XML</strong> is a markup language created to build advanced reports.
 The language declares SQL queries using declarations in XML.</p>
 
-<p>You can retrieve data for integration with analytical system using a report name. 
-A report name is the same as the <code class="highlighter-rouge">name</code> attribute in the <code class="highlighter-rouge">&lt;report&gt;</code> node as described below.
-The <code class="highlighter-rouge">getReport</code> method of a report provider returns an object that implements the Iterator Interface.</p>
+<p>You can retrieve data for integration with advanced reporting service using a report name.
+A report name is the same as the <code class="highlighter-rouge">name</code> attribute in the <code class="highlighter-rouge">&lt;report&gt;</code> node as described below.</p>
 
 <h2 id="report-columns">Report columns</h2>
 
@@ -688,13 +687,13 @@ Each report is declared in the <code class="highlighter-rouge">&lt;report&gt;</c
     <tr>
       <td><code class="highlighter-rouge">xmlns:xsi</code></td>
       <td>Default namespace declaration.</td>
-      <td>http://www.w3.org/2001/XMLSchema-instance</td>
+      <td><code class="highlighter-rouge">http://www.w3.org/2001/XMLSchema-instance</code></td>
       <td>Required</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">xsi:noNamespaceSchemaLocation</code></td>
       <td>An XML Schema document that does not have a target namespace.</td>
-      <td>urn:magento:module:Magento_Analytics:etc/reports.xsd</td>
+      <td><code class="highlighter-rouge">urn:magento:module:Magento_Analytics:etc/reports.xsd</code></td>
       <td>Required</td>
     </tr>
   </tbody>
@@ -713,7 +712,7 @@ Each report is declared in the <code class="highlighter-rouge">&lt;report&gt;</c
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">name</code></td>
-      <td>Name of report configuration. You can use it for merging purposes or as a reference in</td>
+      <td>Name of report configuration. You can use it for merging purposes or as a reference.</td>
       <td>Required</td>
     </tr>
     <tr>
@@ -817,7 +816,7 @@ After rendering it is represented as the <code class="highlighter-rouge">ON</cod
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">name</code></td>
-      <td>Column name in database.</td>
+      <td>Column name in database</td>
       <td>Required</td>
     </tr>
     <tr>
@@ -827,7 +826,7 @@ After rendering it is represented as the <code class="highlighter-rouge">ON</cod
     </tr>
     <tr>
       <td><code class="highlighter-rouge">function</code></td>
-      <td>Available values: count, lower, date, sum, max, avg, min, sha1</td>
+      <td>Available values: <code class="highlighter-rouge">count</code>, <code class="highlighter-rouge">lower</code>, <code class="highlighter-rouge">date</code>, <code class="highlighter-rouge">sum</code>, <code class="highlighter-rouge">max</code>, <code class="highlighter-rouge">avg</code>, <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">sha1</code></td>
       <td>Optional</td>
     </tr>
     <tr>
@@ -861,7 +860,7 @@ Filters use an attribute <code class="highlighter-rouge">glue</code> that helps 
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">glue</code></td>
-      <td>Logical operator.</td>
+      <td>Logical operator</td>
       <td><code class="highlighter-rouge">or</code>, <code class="highlighter-rouge">and</code></td>
       <td>Optional</td>
     </tr>
@@ -930,8 +929,6 @@ Filters use an attribute <code class="highlighter-rouge">glue</code> that helps 
 <p>You can find all the supported comparison operators in <code class="highlighter-rouge">\Magento\Analytics\ReportXml\DB\ConditionResolver::$conditionMap</code>.</p>
 
 <!-- LINK DEFINITIONS -->
-
-<!-- ABBREVIATIONS -->
 
 		</div>
 		<!-- /.content-wrap -->
