@@ -666,6 +666,11 @@
 <h2 id="fixed">Fixed issues</h2>
 <p>This release contains numerous fixes and enhancements. This section includes only fixes for Magento Commerce (Cloud). For all known Magento Commerce 2.2.0 GA issues, see <a href="http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html">Magento Commerce 2.2.0 Release Notes</a>.</p>
 
+<!--RFC-125-->
+<ul>
+  <li>We removed <code class="highlighter-rouge">var/view_preprocessed</code> symlinking to fix an issue that was causing JavaScript minification conflicts.</li>
+</ul>
+
 <!-- MAGECLOUD-1355 -->
 <ul>
   <li>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get this update.</li>

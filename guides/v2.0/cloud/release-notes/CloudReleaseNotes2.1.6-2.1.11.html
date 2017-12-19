@@ -1125,6 +1125,11 @@
 			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Commerce (Cloud) for versions 2.1.6 through 2.1.11.</p>
 
 <h2 id="fixes-in-this-release">Fixes in this release</h2>
+<!--RFC-125-->
+<ul>
+  <li>We removed <code class="highlighter-rouge">var/view_preprocessed</code> symlinking to fix an issue that was causing JavaScript minification conflicts in 2.1.9 through 2.1.11.</li>
+</ul>
+
 <!--MAGECLOUD-1427-->
 <ul>
   <li>We fixed an issue that was causing the wrong products to be indexed. Previously, the <code class="highlighter-rouge">mview.xml</code> configuration used <code class="highlighter-rouge">row_id</code>  instead of <code class="highlighter-rouge">entity_id</code> when collecting information from changelogs.</li>
