@@ -150,10 +150,10 @@
   padding: 0;
 
   .nav-section-title {
-    color: $brand-color;
+    color: #888;
     text-transform: uppercase;
     letter-spacing: .1em;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     padding: 15px 20px 10px 20px;
   }
@@ -221,19 +221,6 @@
   width: 100%;
 }
 
-/* TDD - Alternate menu appearance
-
-.nav-main #subnav-wrap #subnav ul li a {
-  font: 1em 'Open Sans',sans-serif;
-  font-weight: 600;
-  text-transform: none;
-  padding: 11px 15px;
-  outline: 0;
-  background: none repeat scroll 0 0 #31302b;
-} */
-
-
-
 
 body.offcanvas-active {
   overflow: hidden;
@@ -245,7 +232,7 @@ body.offcanvas-active {
     position: fixed;
     transition: all .2s;
     margin: 0;
-    top: 0;
+    top: $header-height;
     right: 0;
     height: auto;
     max-height: 100%;
@@ -257,98 +244,51 @@ body.offcanvas-active {
     overflow: auto;
     display: none;
 
+    .nav-main-item > a {
+      font-size: 18px;
+      padding-left: 10px;
+    }
+
     .offcanvas-active &.nav-main-mobile {
       display: block;
     }
 
-    li {
-      width: 100%;
+    .nav-popup {
+      display: block;
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      left: 0;
+      top: 0;
+      box-shadow: none;
       border: none;
-      border-bottom: 1px solid $light-gray-color;
     }
 
-    li a, {
-      display: block;
-      font-size: 16px;
-      padding: 20px $header-height 20px 20px;
+    .nav-section {
+      padding-bottom: 16px;
     }
+
+    .nav-main-separator {
+      height: 1px;
+      border-left: none;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 16px;
+    }
+
+
 
     li a, li a:hover {
       background: none;
       border: none;
     }
 
-    ul {
-      padding-top: $header-height;
+    li a:active {
+      background: #ccc;
     }
-
-    // Second level menu
-    ul ul {
-      visibility: visible;
-      position: relative;
-      left: 0;
-      top: 0;
-      opacity: 1;
-      width: 100%;
-      max-height: 0;
-      padding: 0;
-      margin: 0;
-      border: none;
-      overflow: hidden;
-      transition: max-height 0.2s;
-      box-shadow: none;
-
-      li a {
-        font-size: 14px;
-        padding-left: 20px;
-      }
-
-    }
-    .expanded ul {
-      max-height: 999px;
-    }
-
-    .children-toggle {
-      position: absolute;
-      display: block;
-      width: $header-height;
-      height: 57px;
-      border: none;
-      background: none;
-      top:0;
-      right: 0;
-      z-index: 1;
-
-      &:after {
-        width: 0;
-        height: 0;
-        margin: 0 auto;
-        position: relative;
-        top: 22px;
-        border-style: solid;
-        border-width: 8px 6px 0 6px;
-        border-color: #333 transparent transparent transparent;
-        display: block;
-        content: '';
-        transition: all .2s;
-      }
-    }
-
-    .expanded .children-toggle:after {
-      transform: rotate(180deg);
-    }
-
 
   }
 
-/*
-  .offcanvas-active .site-header,
-  .offcanvas-active #gl-wrapper,
-  .offcanvas-active #footer  {
-      //transform: translate(260px,0);
-  }*/
-
-}
+}// medium-screen
 
 .nav-main-fader {
   background: rgba(0,0,0,0);
