@@ -127,7 +127,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-81676 -->* Magento now displays the State/Province field after you edit the billing address on sales orders. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11378*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
 
-<!--- MAGETWO-82657 -->* We removed a typo in the Paypal Module. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11674* [GitHub-7591](https://github.com/magento/magento2/issues/7591)
+<!--- MAGETWO-82657 -->* We removed a typo in the Paypal Module. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11674*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
 <!--- MAGETWO-82646 -->* The Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11678*. 
 
@@ -187,7 +187,7 @@ Look for the following highlights in this release:
 ### Payment methods
 <!--- MAGETWO-83149 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
 
-<!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: "Sorry, but something went wrong".
+<!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: **Sorry, but something went wrong**.
 
 
 <!--- MAGETWO-83742 -->*  We've fixed the race condition that previously caused duplicate orders with a user double-clicked on the Braintree **Pay** button. *Fix submitted by [Daniel Doyle](https://github.com/tr33m4n) in pull request 11901*. [GitHub-10767](https://github.com/magento/magento2/issues/10767)
