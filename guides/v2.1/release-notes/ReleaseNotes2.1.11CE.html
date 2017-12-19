@@ -1040,6 +1040,7 @@
       <li><a href="#index" id="markdown-toc-index">Index</a></li>
       <li><a href="#order-management" id="markdown-toc-order-management">Order management</a></li>
       <li><a href="#payment-methods" id="markdown-toc-payment-methods">Payment methods</a></li>
+      <li><a href="#performance" id="markdown-toc-performance">Performance</a></li>
       <li><a href="#reports" id="markdown-toc-reports">Reports</a></li>
       <li><a href="#salesrule" id="markdown-toc-salesrule">SalesRule</a></li>
       <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
@@ -1057,6 +1058,8 @@
 </ul>
 
 <p><em>Patch code and release notes were published on December 12,  2017.</em></p>
+
+<p><em>Release notes updated December 19, 2017.</em></p>
 
 <p>We are pleased to present Magento Open Source  2.1.11. This release includes both new features and many improvements. Check out the many community-contributed fixes!</p>
 
@@ -1150,6 +1153,11 @@
   <li>If a configurable product is part of a shipment being created via REST, only the parent’s quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart.</li>
 </ul>
 
+<!--- MAGETWO-82756 -->
+<ul>
+  <li>The <strong>Add-to-cart</strong> checkboxes in Related Products are no longer visible on the storefront when <code class="highlighter-rouge">$canItemsAddToCart</code> is set to <strong>false</strong>. <em>Fix submitted by <a href="https://github.com/mrodespin">Marc Rodriguez</a> in pull request 11610</em>.  <a href="https://github.com/magento/magento2/issues/689">GitHub-689</a></li>
+</ul>
+
 <h3 id="cart-and-checkout">Cart and checkout</h3>
 
 <!--- MAGETWO-66447 -->
@@ -1169,9 +1177,14 @@
   <li>Magento now displays the correct drop-down option labels for configurable products when you create attributes for products with a custom source.</li>
 </ul>
 
+<!--- MAGETWO-58034 -->
+<ul>
+  <li>Magento now saves selected product options when you edit a product page. Previously, Magento did not save configurable options.</li>
+</ul>
+
 <!--- MAGETWO-71515 -->
 <ul>
-  <li>When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be “As low as” = <the lowest="" price="">. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.</the></li>
+  <li>When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be could be <strong>as low as</strong> as the lowest price. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.</li>
 </ul>
 
 <h3 id="framework">Framework</h3>
@@ -1239,7 +1252,7 @@
 
 <!--- MAGETWO-82657 -->
 <ul>
-  <li>We removed a typo in the Paypal Module. <em>Fix submitted by <a href="https://github.com/lewisvoncken">Mr. Lewis</a> in pull request 11674</em> <a href="https://github.com/magento/magento2/issues/7591">GitHub-7591</a></li>
+  <li>We removed a typo in the Paypal Module. <em>Fix submitted by <a href="https://github.com/lewisvoncken">Mr. Lewis</a> in pull request 11674</em>. <a href="https://github.com/magento/magento2/issues/7591">GitHub-7591</a></li>
 </ul>
 
 <!--- MAGETWO-82646 -->
@@ -1264,7 +1277,7 @@
 
 <!--- MAGETWO-83205 -->
 <ul>
-  <li>If you add a new value for an EAV attribute, Magento checks to make sure it’s unique for the attribute. <em>Fix submitted by <a href="https://github.com/raumatbel">Raul Mateos</a> in pull request 11621</em>.</li>
+  <li>If you add a new value for an EAV attribute, Magento checks to make sure it is unique for the attribute. <em>Fix submitted by <a href="https://github.com/raumatbel">Raul Mateos</a> in pull request 11621</em>.</li>
 </ul>
 
 <!--- MAGETWO-83284 -->
@@ -1312,6 +1325,11 @@
   <li>Magento now throws a PHP 500 Error when <code class="highlighter-rouge">$optionsArray['delete'][$optionId]</code> is not set. <em>Fix submitted by <a href="https://github.com/angelo983">@angelo983</a> in pull request 11728</em>.</li>
 </ul>
 
+<!--- MAGETWO-83488 -->
+<ul>
+  <li>Magento now correctly displays storefront search fields in Magento installations running in Safari. Previously, the search field shifted unexpectedly after you viewed shopping cart contents  in Magento installations running either desktop or mobile versions of Safari. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 12111</em>. <a href="https://github.com/magento/magento2/issues/8178">GitHub-8178</a></li>
+</ul>
+
 <h3 id="importexport">Import/export</h3>
 
 <!--- MAGETWO-82554 -->
@@ -1344,7 +1362,7 @@
 
 <!--- MAGETWO-82759 -->
 <ul>
-  <li>We’ve corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As result, you cannot see the order item’s information upon the order printing. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request 11631</em>. <a href="https://github.com/magento/magento2/issues/9830">GitHub-9830</a>, <a href="https://github.com/magento/magento2/issues/10530">GitHub-10530</a></li>
+  <li>We’ve corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As a result, you cannot see the order item’s information upon the order printing. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request 11631</em>. <a href="https://github.com/magento/magento2/issues/9830">GitHub-9830</a>, <a href="https://github.com/magento/magento2/issues/10530">GitHub-10530</a></li>
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
@@ -1355,7 +1373,7 @@
 
 <!--- MAGETWO-71185 -->
 <ul>
-  <li>Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: “Sorry, but something went wrong”.</li>
+  <li>Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: <strong>Sorry, but something went wrong</strong>.</li>
 </ul>
 
 <!--- MAGETWO-83742 -->
@@ -1368,6 +1386,12 @@
   <li>Magento no longer throws an exception when you choose an Order page in the Admin, or set a transaction ID in a payment module. <em>Fix submitted by <a href="https://github.com/madonzy">Alex</a> in pull request 12284</em>. <a href="https://github.com/magento/magento2/issues/3596">GitHub-3596</a></li>
 </ul>
 
+<h3 id="performance">Performance</h3>
+<!--- MAGETWO-82527 -->
+<ul>
+  <li>We’ve improved the performance of Web API calls that are used to access checkout payment information or place orders. <em>Fix submitted by <a href="https://github.com/nmalevanec">Malyovanets Nickolas</a> in pull request 11640</em>. <a href="https://github.com/magento/magento2/issues/9007">GitHub-9007</a></li>
+</ul>
+
 <h3 id="reports">Reports</h3>
 <!--- MAGETWO-82178 -->
 <ul>
@@ -1377,7 +1401,7 @@
 <h3 id="salesrule">SalesRule</h3>
 <!--- MAGETWO-64066 -->
 <ul>
-  <li>Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule.</li>
+  <li>Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the Cart Price rule.</li>
 </ul>
 
 <!--- MAGETWO-82242 -->
@@ -1387,7 +1411,7 @@
 
 <!--- MAGETWO-83689 -->
 <ul>
-  <li>We’ve fixed a range of issues that affect shipping when SalesRules and CartRules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. <em>Fix submitted by <a href="https://github.com/lewisvoncken">Mr. Lewis</a> in pull request 11919</em>. <a href="https://github.com/magento/magento2/issues/8172">GitHub-8172</a>, <a href="https://github.com/magento/magento2/issues/8089">GitHub-8089</a>, <a href="https://github.com/magento/magento2/issues/10507">GitHub-10507</a></li>
+  <li>We’ve fixed a range of issues that affect shipping when Sales rules and Cart rules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. <em>Fix submitted by <a href="https://github.com/lewisvoncken">Mr. Lewis</a> in pull request 11919</em>. <a href="https://github.com/magento/magento2/issues/8172">GitHub-8172</a>, <a href="https://github.com/magento/magento2/issues/8089">GitHub-8089</a>, <a href="https://github.com/magento/magento2/issues/10507">GitHub-10507</a></li>
 </ul>
 
 <h3 id="shipping">Shipping</h3>
@@ -1402,6 +1426,11 @@
   <li>Magento now correctly calculates the tier price percentage when displayed prices include tax. <a href="https://github.com/magento/magento2/issues/8833">GitHub-8833</a></li>
 </ul>
 
+<!--- MAGETWO-83403 -->
+<ul>
+  <li>The total tax amount displayed in the Full Tax Summary now equals the sum of the relevant individual taxes. <em>Fix submitted by <a href="https://github.com/PieterCappelle">Pieter Cappelle</a> in pull request 11593</em>. <a href="https://github.com/magento/magento2/issues/10347">GitHub-10347</a></li>
+</ul>
+
 <h3 id="translations">Translations</h3>
 <!--- MAGETWO-71591 -->
 <ul>
@@ -1410,11 +1439,11 @@
 
 <h2 id="known-issue">Known issue</h2>
 <!--- MAGETWO-85164 -->
-<p><strong>Issue</strong>:In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure.</p>
+<p><strong>Issue</strong>: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure.</p>
 
 <p><strong>Workaround</strong>: Use the Devdocs <a href="http://devdocs.magento.com/swagger/index_21.html">static Swagger site</a> to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance.</p>
 
-<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545     MAGETWO-69344  MAGETWO-69107   MAGETWO-67681  MAGETWO-66446  MAGETWO-65466    MAGETWO-64459   MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-58503 MAGETWO-77969     MAGETWO-71576  MAGETWO-82242 MAGETWO-82554 MAGETWO-71522-->
+<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545     MAGETWO-69344  MAGETWO-69107   MAGETWO-67681   MAGETWO-65466    MAGETWO-64459   MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-58503 MAGETWO-77969     MAGETWO-71576  MAGETWO-82242 MAGETWO-82554 MAGETWO-71522 MAGETWO-75526 -->
 
 <!--- WON'T FIX MAGETWO-82982   -->
 
