@@ -137,7 +137,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83100 -->* Magento no longer assigns multiple blocks the same ID. *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11804*. 
 
-<!--- MAGETWO-83205 -->* If you add a new value for an EAV attribute, Magento checks to make sure it's unique for the attribute. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11621*.
+<!--- MAGETWO-83205 -->* If you add a new value for an EAV attribute, Magento checks to make sure it is unique for the attribute. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11621*.
 
 <!--- MAGETWO-83284 -->* Shipping address lines no longer disappear when `street_lines` in customer configuration is set to 0 (zero). *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 12022*. [GitHub-7995](https://github.com/magento/magento2/issues/7995)
 
