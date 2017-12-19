@@ -91,7 +91,7 @@ Look for the following highlights in this release:
 
 
 
-<!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be "As low as" = <the lowest price>. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
+<!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be could be **as low as** as the lowest price. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
 
 
 
@@ -197,11 +197,11 @@ Look for the following highlights in this release:
 
 
 ### SalesRule
-<!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule. 
+<!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the Cart Price rule. 
 
 <!--- MAGETWO-82242 -->* Products in the cart with a price of $0.00 no longer cause an extra cent to be applied to the discount amount.
 
-<!--- MAGETWO-83689 -->* We've fixed a range of issues that affect shipping when SalesRules and CartRules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11919*. [GitHub-8172](https://github.com/magento/magento2/issues/8172), [GitHub-8089](https://github.com/magento/magento2/issues/8089), [GitHub-10507](https://github.com/magento/magento2/issues/10507)
+<!--- MAGETWO-83689 -->* We've fixed a range of issues that affect shipping when Sales rules and Cart rules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11919*. [GitHub-8172](https://github.com/magento/magento2/issues/8172), [GitHub-8089](https://github.com/magento/magento2/issues/8089), [GitHub-10507](https://github.com/magento/magento2/issues/10507)
 
 
 
