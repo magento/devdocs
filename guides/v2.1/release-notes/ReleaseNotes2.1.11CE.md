@@ -71,6 +71,9 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
 
+<!--- MAGETWO-82756 -->* The **Add-to-cart** checkboxes in Related Products are no longer visible on the storefront when `$canItemsAddToCart` is set to **false**. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11610*.  [GitHub-689](https://github.com/magento/magento2/issues/689)
+
+
 
 ### Cart and checkout
 
@@ -83,6 +86,10 @@ Look for the following highlights in this release:
 ### Configurable products
 
 <!--- MAGETWO-61133 -->* Magento now displays the correct drop-down option labels for configurable products when you create attributes for products with a custom source. 
+
+<!--- MAGETWO-58034 -->*  Magento now saves selected product options when you edit a product page. Previously, Magento did not save configurable options. 
+
+
 
 <!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be "As low as" = <the lowest price>. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
 
@@ -146,6 +153,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-82947 -->* Magento now throws a PHP 500 Error when `$optionsArray['delete'][$optionId]` is not set. *Fix submitted by [@angelo983](https://github.com/angelo983) in pull request 11728*. 
 
+<!--- MAGETWO-83488 -->* Magento now correctly displays storefront search fields in Magento installations running in Safari. Previously, the search field shifted unexpectedly after you viewed shopping cart contents  in Magento installations running either desktop or mobile versions of Safari. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 12111*. [GitHub-8178](https://github.com/magento/magento2/issues/8178)
 
 
 ### Import/export
@@ -180,6 +188,9 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83956 -->* Magento no longer throws an exception when you choose an Order page in the Admin, or set a transaction ID in a payment module. *Fix submitted by [Alex](https://github.com/madonzy) in pull request 12284*. [GitHub-3596](https://github.com/magento/magento2/issues/3596)
 
+### Performance
+<!--- MAGETWO-82527 -->*  We’ve improved the performance of Web API calls that are used to access checkout payment information or place orders. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11640*.[GitHub-9007](https://github.com/magento/magento2/issues/9007)
+
 
 ### Reports
 <!--- MAGETWO-82178 -->* You can now successfully search reports for a particular customer (**Reports > By Customers**). *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11523*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
@@ -201,6 +212,7 @@ Look for the following highlights in this release:
 ### Tax
 <!--- MAGETWO-72280 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
 
+<!--- MAGETWO-83403 -->* The total tax amount displayed in the Full Tax Summary now equals the sum of the relevant individual taxes. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11593*. [GitHub-10347](https://github.com/magento/magento2/issues/10347)
 
 
 ### Translations
@@ -215,7 +227,7 @@ Look for the following highlights in this release:
 
 
 
-<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545     MAGETWO-69344  MAGETWO-69107   MAGETWO-67681  MAGETWO-66446  MAGETWO-65466    MAGETWO-64459   MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-58503 MAGETWO-77969     MAGETWO-71576  MAGETWO-82242 MAGETWO-82554 MAGETWO-71522-->
+<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545     MAGETWO-69344  MAGETWO-69107   MAGETWO-67681   MAGETWO-65466    MAGETWO-64459   MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-58503 MAGETWO-77969     MAGETWO-71576  MAGETWO-82242 MAGETWO-82554 MAGETWO-71522 MAGETWO-75526 -->
 
 
 <!--- WON'T FIX MAGETWO-82982   -->
