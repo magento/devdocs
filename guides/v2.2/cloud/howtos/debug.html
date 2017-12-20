@@ -2065,7 +2065,7 @@
     <li>
       <p>Enter the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -L 9000:localhost:9000 &lt;ssh url&gt;
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -R 9000:localhost:9000 &lt;ssh url&gt;
 </code></pre></div>      </div>
 
       <p>Add the <code class="highlighter-rouge">-v</code> option to the ssh command to show in the terminal whenever a socket is connected to the port that is being forwarded.</p>
@@ -2174,12 +2174,12 @@ kill &lt;PID&gt;
 
   <p>To use Xdebug, SSH to the environment as follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -L &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
 </code></pre></div>  </div>
 
   <p>For example,</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -L 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 </code></pre></div>  </div>
 
   <h2 id="pro-debug">Debug for Pro Staging and Production</h2>
@@ -2205,7 +2205,7 @@ kill &lt;PID&gt;
     <li>
       <p>Enter the following command to set up the SSH tunnel for Xdebug:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -L /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
 </code></pre></div>      </div>
     </li>
   </ol>
