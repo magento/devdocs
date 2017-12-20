@@ -153,7 +153,7 @@
       <ul>
         <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
         
-        <li><a href="/guides/v2.2/magento-functional-testing-framework/getting-started.html">Functional Acceptance Testing (New!)</a></li>
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/introduction.html">Functional Acceptance Testing (New!)</a></li>
         
         <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
         <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
@@ -638,25 +638,25 @@ And disable the <strong>Add Secret Key in URLs</strong> setting to open pages us
 
 <p>Follow these steps to set up the <abbr title="Magento Functional Testing Framework">MFTF</abbr> on your system.</p>
 
-<h3 id="step-1-clone-the-magento2ce-source-code-repository">Step 1. Clone the magento2ce source code repository</h3>
+<h3 id="step-1-clone-the-magento2-source-code-repository">Step 1. Clone the magento2 source code repository</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/magento/magento2ce.git
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/magento/magento2.git
 </code></pre></div></div>
 
 <p>or</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone git@github.com:magento/magento2ce.git
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone git@github.com:magento/magento2.git
 </code></pre></div></div>
 
 <h3 id="step-2-install-dependencies">Step 2. Install dependencies</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>magento2ce/dev/tests/acceptance
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>magento2/dev/tests/acceptance
 <span class="nv">$ </span>composer install
 </code></pre></div></div>
 
 <h3 id="step-3-build-the-project">Step 3. Build the project</h3>
 
-<p>In <code class="highlighter-rouge">magento2ce/dev/tests/acceptance</code>, run the following command:</p>
+<p>In <code class="highlighter-rouge">magento2/dev/tests/acceptance</code>, run the following command:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo build:project
 </code></pre></div></div>
@@ -668,7 +668,7 @@ When added, you should be able to run commands: <code class="highlighter-rouge">
 
 <h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
 
-<p>In the <code class="highlighter-rouge">magento2ce/dev/tests/acceptance</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system.</p>
+<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system.</p>
 
 <p>The following list describes parameters, required to launch tests.</p>
 
@@ -710,7 +710,7 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
 
 <h3 id="step-5-generate-existing-tests">Step 5. Generate existing tests</h3>
 
-<p>In the <code class="highlighter-rouge">magento2ce/dev/tests/acceptance</code> directory, run the following command to generate tests as PHP classes from XML files:</p>
+<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to generate tests as PHP classes from XML files:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo generate:tests
 </code></pre></div></div>
