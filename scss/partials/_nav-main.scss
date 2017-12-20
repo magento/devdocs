@@ -229,24 +229,31 @@ body.offcanvas-active {
 @media ( $medium-screen ) {
 
   .nav-main {
+    background: #fff;
+    display: none;
+
+    margin: 0;
+    padding: $header-height 10px 30px 10px;
+
     position: fixed;
     transition: all .2s;
-    margin: 0;
-    top: $header-height;
+    top: 0;
     right: 0;
     height: auto;
     max-height: 100%;
     width: 100%;
     max-width: 400px;
     z-index: 3000;
-    -webkit-overflow-scrolling: touch;
-    background: #fff;
+
+
     overflow: auto;
-    display: none;
+    -webkit-overflow-scrolling: touch;
+
 
     .nav-main-item > a {
       font-size: 18px;
       padding-left: 10px;
+      color: #666;
     }
 
     .offcanvas-active &.nav-main-mobile {
