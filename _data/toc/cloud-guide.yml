@@ -274,9 +274,12 @@ pages:
           url: cloud/live/launch-steps.html
 
     - label: Composer package updates
-      url: cloud/patch-notes.html
+      url: cloud/composer-packages/patch-notes.html
       versions: ["2.2","2.3"]
       children:
+        - label: magento/ece-patches
+          url: cloud/composer-packages/ece-patches.html
+
         - label: magento/ece-tools
           url: cloud/composer-packages/ece-tools.html
 

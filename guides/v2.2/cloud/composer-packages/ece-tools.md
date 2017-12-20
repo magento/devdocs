@@ -10,15 +10,7 @@ functional_areas:
   - Configuration
 ---
 
-This package contains the following scripts and {{site.data.var.ece}} commands that automatically perform build and deploy actions of the codebase in your environments:
-
-  pre-deploy.php
-  bin/magento magento-cloud:deploy
-  bin/magento magento-cloud:build
-
-For {{site.data.var.ece}}, versions are specified as `2.<x>.<y>`. The versioning for `magento/ece-tools` will then be  `<2000 + <x>.<y>.*`. For example, Magento Commerce 2.2.0 is associated with 2002.0.0.
-
-`magento/ece-tools` patches strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the magento-cloud-metapackage.
+{% include cloud/ece-tools.md %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get these updates.
@@ -103,10 +95,9 @@ You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/
 <!--MAGECLOUD-1020-->* We fixed an issue that was causing redirect loops due to disabled by default secure admin.
 
 ## v2002.0.0
-
 <div class="bs-callout bs-callout-warning" markdown="1">
-This package is no longer compatible with other {{site.data.var.ece}} versions and **should not** be used.
+This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
 </div>
 
 ### Initial release
-* Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
+Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
