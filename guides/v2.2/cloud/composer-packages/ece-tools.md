@@ -24,6 +24,11 @@ For {{site.data.var.ece}}, versions are specified as `2.<x>.<y>`. The versioning
 You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get these updates.
 </div>
 
+## v2002.0.7
+
+### Fixed issues
+<!-- MAGECLOUD-1454-->* We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
+
 ## v2002.0.6
 
 ### Fixed issues
@@ -71,22 +76,22 @@ You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/
 
 ## v2002.0.3
 
-## Fixed issues
+### Fixed issues
 <!--MAGECLOUD-1311-->* We fixed an issue that was causing pages to time out because Redis was taking too long to read/write. You can now use the `disable_locking` parameter in Redis configurations to prevent this issue.
 
 ## v2002.0.2
 
-## Fixed issues
+### Fixed issues
 <!--MAGECLOUD-1246-->* The RabbitMQ configuration process now obtains all required parameters automatically.
 
 ## v2002.0.1
 
-## New features
+### New features
 <!--- MAGECLOUD-1057 -->* {{site.data.var.ece}} now supports scopes and [static content deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of `quick` for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options `standard`, `quick`, or `compact`. If you select `compact`, we override the `STATIC_CONTENT_THREADS` value with `1`, which can slow deployment, especially in production environments.
 
 <!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file name and location is `/app/var/log/cloud.log`.
 
-## Fixed issues
+### Fixed issues
 <!-- MAGECLOUD-919 & MAGECLOUD-1030-->* Refactored the `ece-tools` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
 
 <!-- MAGECLOUD-1186--> * We fixed an issue that was preventing `ece-tools` from halting execution and throwing an exception if no patches can be applied.
@@ -103,5 +108,5 @@ You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/
 This package is no longer compatible with other {{site.data.var.ece}} versions and **should not** be used.
 </div>
 
-## Initial release
+### Initial release
 * Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
