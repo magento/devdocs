@@ -72,26 +72,12 @@ The metapackage depends on the appropriate versions of [`magento/ece-patches`](#
 This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
 ### magento/ece-patches {#ece-patches}
-This package contains patch files that are specific to Cloud. Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Cloud code and the patch. Using `compuser update` automatically runs tools to check for available patches and to run them with build and deploy scripts.
 
-For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`.
-
-Patch versions are specified as: `<100 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with `ece-patches` 102.0.0. Subsequently, a new patch will be released that corresponds to the same {{site.data.var.ee}} version, and it would be 102.0.1.
-
-Code released in `ece-patches` is strictly for updates to {{site.data.var.ece}}. Patches are available in the `vendor/ece-patches` folder.
-
-To check for available patches, you can check in the `vendor/ece-patches` folder.
+{% include cloud/ece-patches.md %}
 
 ### magento/ece-tools {#ece-tools}
-This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:
 
- * `pre-deploy.php`
- * `bin/magento magento-cloud:deploy`
- * `bin/magento magento-cloud:build`
-
-For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`. The versioning for `ece-tools` will then be `<2000 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with 2002.0.0.
-
-We release updated `ece-tools` code strictly includes improvements for tools, including the build and deploy hooks. These tools are updated as needed through patching and product upgrades, managed by the `magento-cloud-metapackage`.
+{% include cloud/ece-tools.md %}
 
 ### magento/product-enterprise-edition {#cloud-composer-prodee}
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.

@@ -16,7 +16,7 @@ The release information in this section relates to [Composer packages](http://de
 Use this section to learn about updates to the following Composer packages:
 
 -   `magento/magento-cloud-metapackage`
--   `magento/ece-patches`
+-   [`magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html)
 -   [`magento/ece-tools`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html)
 -   `magento/product-enterprise-edition`
 
