@@ -8,7 +8,6 @@ functional_areas:
  - Testing
 ---
 
-
 ## Overview
 
 In the MFTF, you are able to unite actions in groups.
@@ -37,9 +36,9 @@ The following diagram demonstrates XML structure of an action group:
 
 ## Principles
 
-* All action groups are declared in XML files stored in the _/<module/>/ActionGroup/_ directory
+* All action groups are declared in XML files stored in the _\<module\>/ActionGroup/_ directory
 * One `*.xml`, one `<actionGroup>`
-* File name ends with `ActionGroup`. Example: `LoginToAdminActionGroup.xml`
+* File name ends with `ActionGroup`. Example: _LoginToAdminActionGroup.xml_
 * File name and `<actionGroup>` name are equal
 
 ## Example
@@ -53,7 +52,7 @@ This action group relates to functionality of the Backend module, so it should b
 The name and identifier of the action group is `LoginToAdminActionGroup`.
 In test, it will be used as a reference in `ref` parameter, like: `ref="LoginToAdminActionGroup"`.
 
-Lets start from a template for our action group in `Backend/ActionGroup/LoginToAdminActionGroup.xml`:
+Lets start from a template for our action group in _Backend/ActionGroup/LoginToAdminActionGroup.xml_:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
