@@ -52,28 +52,28 @@ And disable the **Add Secret Key in URLs** setting to open pages using direct UR
 
 Follow these steps to set up the MFTF on your system. 
 
-### Step 1. Clone the magento2ce source code repository
+### Step 1. Clone the magento2 source code repository
 
 ```bash
-$ git clone https://github.com/magento/magento2ce.git
+$ git clone https://github.com/magento/magento2.git
 ```
 
 or
 
 ```bash
-$ git clone git@github.com:magento/magento2ce.git
+$ git clone git@github.com:magento/magento2.git
 ```
 
 ### Step 2. Install dependencies
 
 ```bash
-$ cd magento2ce/dev/tests/acceptance
+$ cd magento2/dev/tests/acceptance
 $ composer install
 ```
 
 ### Step 3. Build the project
 
-In `magento2ce/dev/tests/acceptance`, run the following command:
+In `magento2/dev/tests/acceptance`, run the following command:
 
 ```bash
 $ vendor/bin/robo build:project
@@ -86,7 +86,7 @@ When added, you should be able to run commands: `robo`, `codecept`, and `phpunit
 
 ### Step 4. Edit environment settings
 
-In the `magento2ce/dev/tests/acceptance` directory, edit the `.env` file to match your system.
+In the `magento2/dev/tests/acceptance` directory, edit the `.env` file to match your system.
 
 The following list describes parameters, required to launch tests.
 
@@ -123,7 +123,7 @@ http://127.0.0.1:4444/wd/hub
 
 ### Step 5. Generate existing tests
 
-In the `magento2ce/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
+In the `magento2/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
 $ vendor/bin/robo generate:tests
