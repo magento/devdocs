@@ -55,13 +55,13 @@ Follow these steps to set up the MFTF on your system.
 ### Step 1. Clone the magento2ce source code repository
 
 ```bash
-$ git clone https://github.com/magento/magento2ce.git
+$ git clone https://github.com/magento/magento2.git
 ```
 
 or
 
 ```bash
-$ git clone git@github.com:magento/magento2ce.git
+$ git clone git@github.com:magento/magento2.git
 ```
 
 ### Step 2. Install dependencies
