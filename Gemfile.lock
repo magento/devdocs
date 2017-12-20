@@ -195,7 +195,7 @@ GEM
     net-dns (0.8.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    octokit (4.7.0)
+    octokit (4.8.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     parallel (1.12.1)
     pathutil (0.16.1)

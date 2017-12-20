@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Import existing code into a project | Magento 2 Developer Documentation</title>
+	<title>magento/ece-patches | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/composer-packages/ece-patches.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/composer-packages/ece-patches.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/composer-packages/ece-patches.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/composer-packages/ece-patches.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -669,7 +669,7 @@
     
     
 
-<li class="nav-level1 active " id="import-existing-code-into-a-project">
+<li class="nav-level1  " id="import-existing-code-into-a-project">
 
     
     <div class="toggle closed">&nbsp;</div>
@@ -1570,7 +1570,7 @@
         
         
         
-        <li class="nav-level2  " id="magento/ece-patches">
+        <li class="nav-level2 active " id="magento/ece-patches">
             
             
         
@@ -1857,7 +1857,7 @@
 
           
 
-          <span property="name">Import existing code into a project</span>
+          <span property="name">magento/ece-patches</span>
 
         
 
@@ -1880,7 +1880,7 @@
 
 	
 
-	<h1 class="page-heading">Import existing code into a project</h1>
+	<h1 class="page-heading">magento/ece-patches</h1>
 
   
 
@@ -1888,151 +1888,56 @@
 </section>
 
 
-			<p>When first creating your Magento Commerce (Cloud) project, you may have a choice of a blank template or importing existing code. We highly recommend always starting with a blank template to receive the Magento Commerce (Cloud) codebase to build on. You can start adding your existing Magento custom code, extensions and modules, themes, and more to development branches created from .</p>
+			<div>
+  <p>This package contains patch files that are specific to Cloud. Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Cloud code and the patch. Using <code class="highlighter-rouge">compuser update</code> automatically runs tools to check for available patches and to run them with build and deploy scripts.</p>
 
-<p>For trial Starter and Pro projects, we automatically provision your project with the latest version of Magento Commerce (Cloud). You do not have an option of creating a project by importing. Not to worry, if you still want to fully import your existing codebase and overwrite the Git <code class="highlighter-rouge">master</code> branch for your project, these instructions will walk through the process.</p>
+  <p>For Magento Commerce, versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>.</p>
 
-<p>These instructions primarily include information and instructions to import existing Magento code and data into a blank Magento Commerce (Cloud) template project.</p>
+  <p>Patch versions are specified as: <code class="highlighter-rouge">&lt;100 + x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with <code class="highlighter-rouge">ece-patches</code> 102.0.0. Subsequently, a new patch will be released that corresponds to the same Magento Commerce version, and it would be 102.0.1.</p>
 
-<p>If you have the option of creating a project using existing code,</p>
+  <p>Code released in <code class="highlighter-rouge">ece-patches</code> is strictly for updates to Magento Commerce (Cloud). Patches are available in the <code class="highlighter-rouge">vendor/ece-patches</code> folder.</p>
 
-<h2 id="prereqs">Prerequisites for importing code</h2>
-<p>Before you continue, make sure you have done all of the following:</p>
+  <p>To check for available patches, you can check in the <code class="highlighter-rouge">vendor/ece-patches</code> folder.</p>
 
-<ul>
-  <li>Your existing Magento Commerce code must be in Git. You need to have a Git account with a repository and your code added to it. If you do not have this set up, we recommend using <a href="/guides/v2.2/cloud/project/project-integrate-github.html">GitHub</a>. You must have a Git branch with your code pushed to it before continuing with these instructions.</li>
-  <li>You should have a fully installed and configured local development environment. For details, follow the instructions for <a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">Local environment setup</a>.</li>
-</ul>
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html">patch magento/ece-patches</a> to get these updates.</p>
+  </div>
 
-<h2 id="info">Required information for your import</h2>
-<p>You need to locate and gather the information required information to import Magento Commerce into Magento Commerce (Cloud), including:</p>
+  <h2 id="v10203">v102.0.3</h2>
 
-<ul>
-  <li>SSH access to the cloud environment for the target database</li>
-  <li>Database credentials</li>
-</ul>
+  <h3 id="fixed-issues">Fixed issues</h3>
+  <!--MAGECLOUD-1450-->
+  <p>We fixed an implementation issue related to versioning in <code class="highlighter-rouge">ece-patches</code> that was causing a conflict with other Composer-based patching modules.</p>
 
-<h3 id="ssh">SSH access to cloud environments</h3>
-<p>To transfer the database dump and files to Magento Commerce (Cloud), you must know the SSH URL. You can locate the SSH access using the CLI or Project Web Interface:</p>
+  <h2 id="v10202">v102.0.2</h2>
 
-<ul>
-  <li>On your local, you can locate the SSH information using the command: <code class="highlighter-rouge">magento-cloud environment:ssh --pipe</code></li>
-  <li>The <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Project Web Interface</a>.</li>
-</ul>
+  <h3 id="new-features">New features</h3>
+  <!--MAGECLOUD-1090-->
+  <p>We implemented smart patching. Now the package applies patches based not on Magento Commerce (Cloud) version, but on patched package version.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You must enter all Magento Commerce (Cloud) commands on the machine on which your Cloud SSH keys are stored. For more information, see <a href="/guides/v2.2/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> and <a href="/guides/v2.2/cloud/env/environments-ssh.html">SSH and sFTP</a>.</p>
+  <h3 id="fixed-issues-1">Fixed issues</h3>
+  <!--MAGECLOUD-1310-->
+  <p>We fixed an issue that was causing PHP memory issues during import.</p>
+
+  <h2 id="v10201">v102.0.1</h2>
+
+  <h3 id="new-features-1">New features</h3>
+  <p>Implemented version-based patching. Now the package is compatible with Magento Commerce (Cloud) 2.2.0 and higher.</p>
+
+  <h3 id="fixed-issues-2">Fixed issues</h3>
+  <!--MAGECLOUD-1033-->
+  <ul>
+    <li>Removed patch; fixing bug in <code class="highlighter-rouge">colinmollenhour/credis</code> v1.6 to enable support for Magento Commerce (Cloud) 2.2.1.</li>
+  </ul>
+
+  <h2 id="v10200">v102.0.0</h2>
+  <div class="bs-callout bs-callout-warning">
+    <p>This package is no longer compatible with other versions of Magento Commerce (Cloud) and <strong>should not</strong> be used.</p>
+  </div>
+
+  <h3 id="initial-release">Initial release</h3>
+  <p>Initial release of <code class="highlighter-rouge">ece-tools</code> for Magento Commerce (Cloud) 2.2.0.</p>
 </div>
-
-<h3 id="db-creds">Database credentials</h3>
-<p>Collect the credentials for your databases.</p>
-
-<p>For the Magento Commerce database, you need the name of the database and user credentials (username and password) to access the database.</p>
-
-<p>For the Magento Commerce (Cloud) database, you need credentials and data for the cloud database to import your data. The name of the database can be found in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable.</p>
-
-<p>To find Magento Commerce (Cloud) database access information:</p>
-
-<ol>
-  <li>
-    <p>SSH to into your environment:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Use the following command to list all database information:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<p>The database connection information is displayed:</p>
-
-<pre class="no-copy">database" : [
-      {
-         "username" : "user",
-         "query" : {
-            "is_master" : true
-         },
-         "path" : "main",
-         "port" : 3306,
-         "host" : "database.internal",
-         "password" : "",
-         "scheme" : "mysql",
-         "ip" : "192.0.2.150"
-      }
-   ]</pre>
-
-<p>This information provides the following: the database name is <code class="highlighter-rouge">main</code>, its listen port is <code class="highlighter-rouge">3306</code>, its host name is <code class="highlighter-rouge">database.internal</code>, its root user name is <code class="highlighter-rouge">user</code>, and the user has no password.</p>
-
-<h3 id="cloud-import-pre-baseurl">Cloud unsecure base URL</h3>
-<p>After you import the Magento Commerce database into Magento Commerce (Cloud), you must change the base URL so you can access the Magento Admin and storefront.</p>
-
-<p>Locate the base URL:</p>
-
-<ul>
-  <li>
-    <p>The command line:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud url
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>The <a href="/guides/v2.2/cloud/project/project-webint-basic.html">ProjectWeb Interface</a>.</p>
-  </li>
-</ul>
-
-<h2 id="import">Import workflow for existing code</h2>
-<p>The complete workflow for importing existing code includes the following steps.</p>
-
-<ol>
-  <li>If you do not have a project created and available, create a new <a href="#cloud-import-proj">project from a template</a>. This new project has files and directories specific to Magento Commerce (Cloud).</li>
-  <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Replace the contents</a> of this project with your code using Git.</li>
-  <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html#cloud-import-db">Import your Magento database</a> into your Magento Commerce (Cloud) project.</li>
-  <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html#cloud-import-media">Import your static files</a> into your Magento Commerce (Cloud) project.</li>
-  <li>Copy your Magento Commerce <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html#cloud-import-key">encryption key</a> to your Magento Commerce (Cloud) project. This key is required for data migration and access.</li>
-  <li>Clear the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and verify the project imported successfully.</li>
-</ol>
-
-<h2 id="cloud-import-proj">Create a new, empty Magento Enterprise Edition project</h2>
-<p>If you do not have a provisioned project created and available, you need to create your project selecting the</p>
-
-<ol>
-  <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
-  <li>
-    <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
-
-    <p><img src="/guides/v2.2/common/images/cloud_project_empty.png" alt="Project without code" /></p>
-  </li>
-  <li>
-    <p>Enter a name for the project.</p>
-
-    <p><img src="/guides/v2.2/common/images/cloud_project_name.png" alt="Project name" /></p>
-  </li>
-  <li>
-    <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
-
-    <p><img src="/guides/v2.2/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
-  </li>
-  <li>
-    <p>When prompted, enter your Magento Commerce <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">Magento authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click <strong>Finish</strong>.</p>
-
-    <p><img src="/guides/v2.2/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
-
-    <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
-  </li>
-  <li>
-    <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
-
-    <p><img src="/guides/v2.2/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
-  </li>
-  <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
-</ol>
-
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce install</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -2043,14 +1948,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/composer-packages/ece-patches.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/composer-packages/ece-patches.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
