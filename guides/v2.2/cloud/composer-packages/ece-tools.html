@@ -1972,6 +1972,72 @@
   <li>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.</li>
 </ul>
 
+<h2 id="v200203">v2002.0.3</h2>
+
+<h2 id="fixed-issues-3">Fixed issues</h2>
+<!--MAGECLOUD-1311-->
+<ul>
+  <li>We fixed an issue that was causing pages to time out because Redis was taking too long to read/write. You can now use the <code class="highlighter-rouge">disable_locking</code> parameter in Redis configurations to prevent this issue.</li>
+</ul>
+
+<h2 id="v200202">v2002.0.2</h2>
+
+<h2 id="fixed-issues-4">Fixed issues</h2>
+<!--MAGECLOUD-1246-->
+<ul>
+  <li>The RabbitMQ configuration process now obtains all required parameters automatically.</li>
+</ul>
+
+<h2 id="v200201">v2002.0.1</h2>
+
+<h2 id="new-features-1">New features</h2>
+<!--- MAGECLOUD-1057 -->
+<ul>
+  <li>Magento Commerce (Cloud) now supports scopes and <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="highlighter-rouge">–s</code> parameter with a default setting of <code class="highlighter-rouge">quick</code> for the static content deployment strategy. You can use the environment variable <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options <code class="highlighter-rouge">standard</code>, <code class="highlighter-rouge">quick</code>, or <code class="highlighter-rouge">compact</code>. If you select <code class="highlighter-rouge">compact</code>, we override the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> value with <code class="highlighter-rouge">1</code>, which can slow deployment, especially in production environments.</li>
+</ul>
+
+<!--- MAGECLOUD-1014, 1023 -->
+<ul>
+  <li>We have created a new log file on environments to capture and compile build and deploy actions. The file name and location is <code class="highlighter-rouge">/app/var/log/cloud.log</code>.</li>
+</ul>
+
+<h2 id="fixed-issues-5">Fixed issues</h2>
+<!-- MAGECLOUD-919 & MAGECLOUD-1030-->
+<ul>
+  <li>Refactored the <code class="highlighter-rouge">ece-tools</code> package to make it compatible with Magento Commerce (Cloud) 2.2.0 and higher.</li>
+</ul>
+
+<!-- MAGECLOUD-1186-->
+<ul>
+  <li>We fixed an issue that was preventing <code class="highlighter-rouge">ece-tools</code> from halting execution and throwing an exception if no patches can be applied.</li>
+</ul>
+
+<!-- MAGECLOUD-1047 & MAGECLOUD-1049-->
+<ul>
+  <li>We fixed an issue that was causing exceptions to be thrown when  dependency injection (di) compilation is skipped during builds.</li>
+</ul>
+
+<!-- MAGECLOUD-1019-->
+<ul>
+  <li>We fixed an issue that was causing the deploy process to overwrite custom Redis configurations in the <code class="highlighter-rouge">env.php</code> file.</li>
+</ul>
+
+<!--MAGECLOUD-1020-->
+<ul>
+  <li>We fixed an issue that was causing redirect loops due to disabled by default secure admin.</li>
+</ul>
+
+<h2 id="v200200">v2002.0.0</h2>
+
+<div class="bs-callout bs-callout-warning">
+  <p>This package is no longer compatible with other Magento Commerce (Cloud) versions and <strong>should not</strong> be used.</p>
+</div>
+
+<h2 id="initial-release">Initial release</h2>
+<ul>
+  <li>Initial release of <code class="highlighter-rouge">ece-tools</code> for Magento Commerce (Cloud) 2.2.0.</li>
+</ul>
+
 		</div>
 		<!-- /.content-wrap -->
 
