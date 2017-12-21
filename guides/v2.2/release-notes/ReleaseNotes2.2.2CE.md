@@ -124,6 +124,9 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Cart and checkout
+<!--- MAGETWO-81665 -->* The default shipping-save-processor now has a payload extender. This feature allows third party extensions to modify the payload for the shipping address selection process. As a result, developers can now add `extension_attributes` while minimizing potential extension conflicts. *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request 11249*. 
+
+
 <!--- MAGETWO-83476 -->* You can now view the **Products in cart** report if the cart contains a bundle or a grouped product. Previously, when you viewed the Products in Cart report, Magento threw an exception under these conditions. [GitHub-12079](https://github.com/magento/magento2/issues/12079)
 
 <!--- MAGETWO-83194 -->* Magento now recognizes zip codes without spaces for addresses located in the Netherlands. [GitHub-11898](https://github.com/magento/magento2/issues/11898)
@@ -153,6 +156,11 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82814 -->* Magento now allows underscore characters in module names and also permits their use when modules add a block to the layout via XML. Previously,  Magento did not support underscore characters in module names to be added to the layout via XML. *Fix submitted by [Ben Tideswell](https://github.com/bentideswell) in pull request 11765*. 
 
+
+<!--- MAGETWO-81467 -->* You can now save using the mass action **Update attributes** option when multiselect attributes are set. *Fix submitted by [Manu Gonzalez Rodriguez](https://github.com/manuelson) in pull request 11349*. [GitHub-11329](https://github.com/magento/magento2/issues/11329)
+ 
+
+
 #### App framework
 
 <!--- MAGETWO-83024 -->* Magento now correctly handles all meta keywords and description in categories and in every product in locales that use non-Latin characters. [GitHub-10682](https://github.com/magento/magento2/issues/10682)
@@ -172,6 +180,9 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83035 -->* The doc block of `setValue` in FilterBuilder now reflects that the `setValue` method will accept an array. *Fix submitted by [bytecreation](https://github.com/ByteCreation) in pull request 11854*. 
 
+<!--- MAGETWO-81515 -->* `htaccess` syntax now uses `Options -Indexes`  instead of `Options All -Indexes`. Previously, Magento used  `Options All -Indexes`, which resulted in Magento rendering a 500 error page because of high restrictions for Options override in shared hosting environments. *Fix submitted by [@Danny Verkade - Cream](https://github.com/dverkade) in pull request 11327*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
+
+
 
 #### Configuration framework
 <!--- MAGETWO-82887 -->* The X-Magento-Tags header can now contain  white space. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11767*. [GitHub-7640](https://github.com/magento/magento2/issues/7640), [GitHub-7640](https://github.com/magento/magento2/issues/7640)
@@ -188,6 +199,10 @@ Looking for more information on these new features as well as many others? Check
 
 #### Session framework
 <!--- MAGETWO-84106 -->* We've removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.
+
+<!--- MAGETWO-80912 -->* A typo in `sessionStorage` polyfill has been corrected.  *Fix submitted by [mszydlo](https://github.com/mszydlo) in pull request 11219*. 
+
+
 
 #### Web API framework
 <!--- MAGETWO-83095 -->* The `customerAccountManagementV1` interface now provides the `POST /V1/customers/resetPassword` endpoint. 
@@ -260,6 +275,16 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-71458 -->* Users are now subscribed by default to the Advanced Reporting service.
 
+<!--- MAGETWO-81679 -->* The design rule hint message no longer includes a typo. *Fix submitted by [Javier Villanueva](https://github.com/jahvi) in pull request 11390*. [GitHub-8958](https://github.com/magento/magento2/issues/8958)
+
+<!--- MAGETWO-81678 -->* Storefront labels and messages now use the American English spelling of “optimization”. *Fix submitted by [David Angel](https://github.com/davidangel) in pull request 11345*. 
+
+<!--- MAGETWO-80829 -->* The **Add page** button now works as expected. Previously, when you clicked **Add page** while logged in to the Admin, and clicked **Save**, Magento did not create a new page, but returned you to the **Orders** page, and displayed this message: **Data key is missing: code-entity**. *Fix submitted by [Tomasz Gregorczyk](https://github.com/Tomasz-Silpion) in pull request 11205*. [GitHub-11163](https://github.com/magento/magento2/issues/11163)
+
+
+
+
+
 
 
 ### Import/export
@@ -277,6 +302,9 @@ Looking for more information on these new features as well as many others? Check
 ### Indexing
 <!--- MAGETWO-80188 -->* Magento no longer re-indexes entities if they are unchanged, which improves the performance of the refresh index cron job without any loss of functionality. [GitHub-4893](https://github.com/magento/magento2/issues/4893)
 
+<!--- MAGETWO-80644 -->*  Magento now correctly resets status to `StateInterface::STATUS_INVALID` if a fatal PHP error occurs during indexing. *Fix submitted by [Lars Roettig](https://github.com/larsroettig) in pull request 11183*. [GitHub-11166](https://github.com/magento/magento2/issues/11166)
+
+
 
 ### Infrastructure
 <!--- MAGETWO-82273 -->* New static block tests  now detect blocks without a name attribute. We've also added a missing block name to allow block customisation, and added a name for the order items grid default renderer block. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11235*. [GitHub-10824](https://github.com/magento/magento2/issues/10824)
@@ -288,6 +316,8 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-82658 -->*  We fixed a typo in the `Paypal/Test/TestCase/OnePageCheckoutTest.xml`. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11673*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
 <!--- MAGETWO-83572 -->*  `FileClassScannerTest` no  longer has a dependency upon  `Magento_Catalog`. *Fix submitted by [WEXO team](https://github.com/wexo-team) in pull request 12144*. [GitHub-11230](https://github.com/magento/magento2/issues/11230)
+
+
 
 
   
@@ -320,6 +350,8 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-81647 -->*  `guest.php` now handles breadcrumb performance as expected. *Fix submitted by [Juliano Vargas](https://github.com/lano-vargas) in pull request 11299*. [GitHub-11275](https://github.com/magento/magento2/issues/11275)
 
+<!--- MAGETWO-81340 -->* Magento now sends confirmation emails to customers for orders containing a grouped product. Previously, when you tried to submit an invoice for an order containing a grouped product, Magento threw an error and did not send confirmation email to the customer. *Fix submitted by [Michiel Gerritsen](https://github.com/michielgerritsen) in pull request 11297*. [GitHub-5105](https://github.com/magento/magento2/issues/5105)
+
 
 ### Payment methods
 <!--- MAGETWO-82732 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
@@ -329,6 +361,9 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-83270 -->* Administrators with limited privileges can now log in without errors. Previously, Magento threw an error, but did not log errors in either the server or Magento logs. [GitHub-11700](https://github.com/magento/magento2/issues/11700)
 
 <!--- MAGETWO-82367 -->* Corrected a typo in a translatable string. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 11569*. 
+
+<!--- MAGETWO-80894 -->* Magento now displays the correct payment method string as displayed during checkout.  Previously, the translated string associated the payment method title for a particular store view was not consistently displayed. *Fix submitted by [Bernhard](https://github.com/bka) in pull request 11165*. [GitHub-7582](https://github.com/magento/magento2/issues/7582)
+
 
 
 ### Reports
@@ -438,7 +473,7 @@ MAGETWO-82754 MAGETWO-82814 MAGETWO-82854 MAGETWO-82367 MAGETWO-82535 MAGETWO-81
 MAGETWO-82748  MAGETWO-83013 MAGETWO-82991 MAGETWO-82978 MAGETWO-82976 MAGETWO-82952 MAGETWO-82943  MAGETWO-83171 MAGETWO-83135 MAGETWO-83132  MAGETWO-83128 MAGETWO-83035  MAGETWO-83490 MAGETWO-83428 MAGETWO-83310  MAGETWO-83563
  MAGETWO-83547 MAGETWO-83529 MAGETWO-83537 MAGETWO-83532  MAGETWO-83310  MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954  MAGETWO-82854 MAGETWO-82814 MAGETWO-82754 MAGETWO-82748 MAGETWO-83815  MAGETWO-83600 MAGETWO-70726 MAGETWO-80517   MAGETWO-81990 MAGETWO-82058 MAGETWO-84344 MAGETWO-84531
 MAGETWO-84321 MAGETWO-84091 MAGETWO-84051 MAGETWO-84000 MAGETWO-83914 MAGETWO-83898 MAGETWO-83870 MAGETWO-83184 MAGETWO-83004 MAGETWO-82596
-MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 -->*  
+MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->*  
 
 <!--- WON'T FIX  MAGETWO-69032--> 
 
