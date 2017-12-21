@@ -7,6 +7,8 @@ github_link: release-notes/ReleaseNotes2.2.2EE.md
 ---
 *Patch code and release notes published on December 12, 2017.* 
 
+*Release notes updated on December 21, 2017.*
+
 
 We are pleased to present Magento Commerce 2.2.2. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the ider Magento community.
 
@@ -62,7 +64,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
-<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  "postcode is a required field" error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
+<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field**the error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
 <!--- MAGETWO-82634 -->* We've replaced `FollowSymLinks` with `SymLinksIfOwnerMatch` in the `htaccess` templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811)
 
@@ -103,7 +105,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82946 -->* The `apply_to` setting for attributes is no longer hard-coded. [GitHub-7225](https://github.com/magento/magento2/issues/7225)
 
-<!--- MAGETWO-82755 -->* The add-to-cart checkboxes in Related Products are no longer visible on the storefront when **$canItemsAddToCart** is set to **false**.  *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11610*. [GitHub-6891](https://github.com/magento/magento2/issues/6891)
+<!--- MAGETWO-82755 -->* The **Add to cart** checkboxes in Related Products are no longer visible on the storefront when **$canItemsAddToCart** is set to **false**.  *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11610*. [GitHub-6891](https://github.com/magento/magento2/issues/6891)
 
 <!--- MAGETWO-83627 -->* You can now successfully save and duplicate a simple product. Previously, when you clicked the **Save and Duplicate** option for an existing simple product in the Catalog Manager, Magento did not duplicate the product, but threw an error. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12001*. [GitHub-11532](https://github.com/magento/magento2/issues/11532) 
 
@@ -162,7 +164,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-82851 -->* You can now include negative values in an XML export file and open the file with Office XML handler. Previously, the export files did not open correctly, and an Office XML handler error log was created.  *Fix submitted by [HausO](https://github.com/hauso) in pull request 11757*. [GitHub-11729](https://github.com/magento/magento2/issues/11729), [GitHub-11729](https://github.com/magento/magento2/issues/11729)
 
-<!--- MAGETWO-81977 -->* The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11470*. [GitHub-10231](https://github.com/magento/magento2/issues/10231),[GitHub-11469](https://github.com/magento/magento2/issues/11469), [GitHub-11471](https://github.com/magento/magento2/issues/11471)
+<!--- MAGETWO-81977 -->* The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11470*. [GitHub-10231](https://github.com/magento/magento2/issues/10231), [GitHub-11469](https://github.com/magento/magento2/issues/11469), [GitHub-11471](https://github.com/magento/magento2/issues/11471)
 
 <!--- MAGETWO-81973 -->* Magento now supports the setting of HTTP response status code in redirected responses. [GitHub-9028](https://github.com/magento/magento2/issues/9028)
 
@@ -175,7 +177,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83035 -->* The doc block of `setValue` in FilterBuilder now reflects that the `setValue` method will accept an array. *Fix submitted by [bytecreation](https://github.com/ByteCreation) in pull request 11854*. 
 
-<!--- MAGETWO-81515 -->* `htaccess` syntax now uses `Options -Indexes`  instead of `Options All -Indexes`. Previously, Magento used  `Options All -Indexes`, which resulted in Magento rendering a 500 error page because of high restrictions for Options override in shared hosting environments. *Fix submitted by [@Danny Verkade - Cream](https://github.com/dverkade) in pull request 11327*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
+<!--- MAGETWO-81515 -->* `htaccess` syntax now uses `Options -Indexes`  instead of `Options All -Indexes`. Previously, Magento used  `Options All -Indexes`, which resulted in Magento rendering a 500 error page because of high restrictions for Options overrides in shared hosting environments. *Fix submitted by [@Danny Verkade - Cream](https://github.com/dverkade) in pull request 11327*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
 
 
 
@@ -345,7 +347,7 @@ Looking for more information on these new features as well as many others? Check
 ### Payment methods
 <!--- MAGETWO-82732 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
 
-<!--- MAGETWO-71966 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: “Sorry, but something went wrong”.
+<!--- MAGETWO-71966 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: **Sorry, but something went wrong**.
 
 <!--- MAGETWO-83270 -->* Administrators with limited privileges can now log in without errors. Previously, Magento threw an error, but did not log errors in either the server or Magento logs. [GitHub-11700](https://github.com/magento/magento2/issues/11700)
 
