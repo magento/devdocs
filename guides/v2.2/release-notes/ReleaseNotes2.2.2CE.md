@@ -27,7 +27,7 @@ Look for the following highlights in this release:
 
 * Numerous fixes and enhancements to core features, including significant improvements to the payment process. 
 
-* Over one hundred community-submitted bug fixes and multiple pull requests.
+* Ninety-six community-submitted bug fixes and multiple pull requests.
 
 
 ### New Features
@@ -105,7 +105,8 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83066 -->* Magento now saves the correct background color for images. Previously, product images always had a black background when using the Luma theme. [GitHub-8799](https://github.com/magento/magento2/issues/8799)
 
-<!--- MAGETWO-83036 -->* You can now save a product custom option price with a value of 0 (zero) by simply not entering a price. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11843*. [GitHub-4808](https://github.com/magento/magento2/issues/4808) [GitHub-4808](https://github.com/magento/magento2/issues/4808)
+<!--- MAGETWO-83036 -->* You can now save a product custom option price with a value of 0 (zero) by simply not entering a price. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11843*. [GitHub-4808](https://github.com/magento/magento2/issues/4808) 
+
 
 <!--- MAGETWO-82972 -->* You can now assign products to categories if those products are already assigned to the category tree. [GitHub-8970](https://github.com/magento/magento2/issues/8970)
 
