@@ -1570,12 +1570,12 @@
         
         
         
-        <li class="nav-level2  " id="magento/ece-patches">
+        <li class="nav-level2  " id="vendor/magento/ece-patches">
             
             
         
             
-            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">magento/ece-patches</a>
+            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
             
 
             
@@ -1584,12 +1584,12 @@
         
         
         
-        <li class="nav-level2  " id="magento/ece-tools">
+        <li class="nav-level2  " id="vendor/magento/ece-tools">
             
             
         
             
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">magento/ece-tools</a>
+            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1896,7 +1896,7 @@
 
 <p>For information on what files should and shouldn’t be in source control, see <a href="/guides/v2.2/cloud/project/project-start.html">Project structure</a>. We provide a <code class="highlighter-rouge">.gitignore</code> file to aid.</p>
 
-<p>For Magento Commerce (Cloud) 2.2, the <code class="highlighter-rouge">magento/magento-cloud-configuration (MCC)</code> has been replaced by <code class="highlighter-rouge">magento/ece-patches</code> and <code class="highlighter-rouge">magento/ece-tools</code>. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.</p>
+<p>For Magento Commerce (Cloud) 2.2, the <code class="highlighter-rouge">magento/magento-cloud-configuration (MCC)</code> has been replaced by <code class="highlighter-rouge">vendor/magento/ece-patches</code> and <code class="highlighter-rouge">vendor/magento/ece-tools</code>. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.</p>
 
 <h2 id="files">Your project’s Composer files</h2>
 <p>Your project root directory contains <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code>.</p>
@@ -1935,10 +1935,10 @@
 <p>The following sections discuss the Composer packages used by Magento Commerce (Cloud):</p>
 
 <ul>
-  <li><a href="#cloud-composer-cloudmeta"><code class="highlighter-rouge">magento/magento-cloud-metapackage</code></a></li>
-  <li><a href="#ece-patches"><code class="highlighter-rouge">magento/ece-patches</code></a></li>
-  <li><a href="#ece-tools"><code class="highlighter-rouge">magento/ece-tools</code></a></li>
-  <li><a href="#cloud-composer-prodee"><code class="highlighter-rouge">magento/product-enterprise-edition</code></a></li>
+  <li><a href="#cloud-composer-cloudmeta"><code class="highlighter-rouge">vendor/magento/magento-cloud-metapackage</code></a></li>
+  <li><a href="#ece-patches"><code class="highlighter-rouge">vendor/magento/ece-patches</code></a></li>
+  <li><a href="#ece-tools"><code class="highlighter-rouge">vendor/magento/ece-tools</code></a></li>
+  <li><a href="#cloud-composer-prodee"><code class="highlighter-rouge">vendor/magento/product-enterprise-edition</code></a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1946,41 +1946,36 @@
 </div>
 
 <h3 id="cloud-composer-cloudmeta">magento/magento-cloud-metapackage</h3>
-<p><code class="highlighter-rouge">magento/magento-cloud-metapackage</code> should be the only package in the <code class="highlighter-rouge">require</code> section of your <code class="highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type" target="\_blank"><em>metapackage</em></a> and does not contain any code.</p>
+<p><code class="highlighter-rouge">vendor/magento/magento-cloud-metapackage</code> should be the only package in the <code class="highlighter-rouge">require</code> section of your <code class="highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type" target="\_blank"><em>metapackage</em></a> and does not contain any code.</p>
 
-<p>The metapackage depends on the appropriate versions of <a href="#ece-patches"><code class="highlighter-rouge">magento/ece-patches</code></a>, <a href="#ece-tools"><code class="highlighter-rouge">magento/ece-tools</code></a>, and <a href="#cloud-composer-prodee"><code class="highlighter-rouge">magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="highlighter-rouge">magento/product-enterprise-edition</code>. For example, to use Magento Commerce version 2.2.0, for example, <code class="highlighter-rouge">composer.json</code> must specify a requirement for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.2.0.</p>
+<p>The metapackage depends on the appropriate versions of <a href="#ece-patches"><code class="highlighter-rouge">vendor/magento/ece-patches</code></a>, <a href="#ece-tools"><code class="highlighter-rouge">vendor/magento/ece-tools</code></a>, and <a href="#cloud-composer-prodee"><code class="highlighter-rouge">vendor/magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="highlighter-rouge">magento/product-enterprise-edition</code>. For example, to use Magento Commerce version 2.2.0, for example, <code class="highlighter-rouge">composer.json</code> must specify a requirement for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.2.0.</p>
 
-<p>This package depends on a floating version of <code class="highlighter-rouge">magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento Commerce version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code class="highlighter-rouge">composer update</code>.</p>
+<p>This package depends on a floating version of <code class="highlighter-rouge">vendor/magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento Commerce version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code class="highlighter-rouge">composer update</code>.</p>
 
-<h3 id="ece-patches">magento/ece-patches</h3>
+<h3 id="ece-patches">vendor/magento/ece-patches</h3>
 
 <div>
-  <p>This package contains patch files that are specific to Cloud. Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Cloud code and the patch. Using <code class="highlighter-rouge">compuser update</code> automatically runs tools to check for available patches and to run them with build and deploy scripts.</p>
+  <p>This package contains patch files that are specific to Magento Commerce (Cloud). Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Magento Commerce (Cloud) code. Using <code class="highlighter-rouge">composer update</code> automatically runs tools to check for available patches and to run them with build and deploy scripts.</p>
 
-  <p>For Magento Commerce, versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>.</p>
+  <p>Versions are specified as <code class="highlighter-rouge">10&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
 
-  <p>Patch versions are specified as: <code class="highlighter-rouge">&lt;100 + x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with <code class="highlighter-rouge">ece-patches</code> 102.0.0. Subsequently, a new patch will be released that corresponds to the same Magento Commerce version, and it would be 102.0.1.</p>
+  <p>These updates strictly contain improvements to Magento Commerce (Cloud). Patches are available in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder. To check for available patches, you can check in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder.</p>
 
-  <p>Code released in <code class="highlighter-rouge">ece-patches</code> is strictly for updates to Magento Commerce (Cloud). Patches are available in the <code class="highlighter-rouge">vendor/ece-patches</code> folder.</p>
-
-  <p>To check for available patches, you can check in the <code class="highlighter-rouge">vendor/ece-patches</code> folder.</p>
-
-  <h3 id="ece-tools">magento/ece-tools</h3>
+  <h3 id="ece-tools">vendor/magento/ece-tools</h3>
 
   <div>
     <p>This package contains the following scripts and Magento Commerce (Cloud) commands that automatically perform build and deploy actions of the codebase in your environments:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">pre-deploy.php</code></li>
-      <li><code class="highlighter-rouge">bin/magento magento-cloud:deploy</code></li>
-      <li><code class="highlighter-rouge">bin/magento magento-cloud:build</code></li>
+      <li><code class="highlighter-rouge">php ./vendor/bin/m2-ece-build</code></li>
+      <li><code class="highlighter-rouge">php ./vendor/bin/m2-ece-deploy</code></li>
     </ul>
 
-    <p>For Magento Commerce (Cloud), versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>. The versioning for <code class="highlighter-rouge">magento/ece-tools</code> will then be  <code class="highlighter-rouge">&lt;2000 + &lt;x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with 2002.0.0.</p>
+    <p>Versions are specified as <code class="highlighter-rouge">200&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
 
-    <p><code class="highlighter-rouge">magento/ece-tools</code> patches strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the magento-cloud-metapackage.</p>
+    <p>These updates strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the <code class="highlighter-rouge">magento-cloud-metapackage</code>.</p>
 
-    <h3 id="cloud-composer-prodee">magento/product-enterprise-edition</h3>
+    <h3 id="cloud-composer-prodee">vendor/magento/product-enterprise-edition</h3>
     <p>This <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span> requires Magento application components, including modules, frameworks, themes, and so on.</p>
 
     <h2 id="base-packages-and-file-marshalling">Base packages and file marshalling</h2>

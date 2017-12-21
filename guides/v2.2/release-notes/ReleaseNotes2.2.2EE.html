@@ -604,6 +604,8 @@
 
 			<p><em>Patch code and release notes published on December 12, 2017.</em></p>
 
+<p><em>Release notes updated on December 21, 2017.</em></p>
+
 <p>We are pleased to present Magento Commerce 2.2.2. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the ider Magento community.</p>
 
 <h2 id="highlights">Highlights</h2>
@@ -618,7 +620,7 @@
     <p>Numerous fixes and enhancements to core features, including significant improvements to the payment process.</p>
   </li>
   <li>
-    <p>Over one hundred community-submitted bug fixes and multiple pull requests.</p>
+    <p>Ninety-six community-submitted bug fixes and multiple pull requests.</p>
   </li>
 </ul>
 
@@ -689,7 +691,7 @@
 
 <!--- MAGETWO-82595 -->
 <ul>
-  <li>You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  “postcode is a required field” error message, and <code class="highlighter-rouge">setup:upgrade</code> failed. <em>Fix submitted by <a href="https://github.com/lewisvoncken">Mr. Lewis</a> in pull request 11651</em>. <a href="https://github.com/magento/magento2/issues/11095">GitHub-11095</a></li>
+  <li>You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  <strong>postcode is a required field</strong>the error message, and <code class="highlighter-rouge">setup:upgrade</code> failed. <em>Fix submitted by <a href="https://github.com/lewisvoncken">Mr. Lewis</a> in pull request 11651</em>. <a href="https://github.com/magento/magento2/issues/11095">GitHub-11095</a></li>
 </ul>
 
 <!--- MAGETWO-82634 -->
@@ -775,7 +777,7 @@
 
 <!--- MAGETWO-83036 -->
 <ul>
-  <li>You can now save a product custom option price with a value of 0 (zero) by simply not entering a price. <em>Fix submitted by <a href="https://github.com/raumatbel">Raul Mateos</a> in pull request 11843</em>. <a href="https://github.com/magento/magento2/issues/4808">GitHub-4808</a> <a href="https://github.com/magento/magento2/issues/4808">GitHub-4808</a></li>
+  <li>You can now save a product custom option price with a value of 0 (zero) by simply not entering a price. <em>Fix submitted by <a href="https://github.com/raumatbel">Raul Mateos</a> in pull request 11843</em>. <a href="https://github.com/magento/magento2/issues/4808">GitHub-4808</a></li>
 </ul>
 
 <!--- MAGETWO-82972 -->
@@ -790,7 +792,7 @@
 
 <!--- MAGETWO-82755 -->
 <ul>
-  <li>The add-to-cart checkboxes in Related Products are no longer visible on the storefront when <strong>$canItemsAddToCart</strong> is set to <strong>false</strong>.  <em>Fix submitted by <a href="https://github.com/mrodespin">Marc Rodriguez</a> in pull request 11610</em>. <a href="https://github.com/magento/magento2/issues/6891">GitHub-6891</a></li>
+  <li>The <strong>Add to cart</strong> checkboxes in Related Products are no longer visible on the storefront when <strong>$canItemsAddToCart</strong> is set to <strong>false</strong>.  <em>Fix submitted by <a href="https://github.com/mrodespin">Marc Rodriguez</a> in pull request 11610</em>. <a href="https://github.com/magento/magento2/issues/6891">GitHub-6891</a></li>
 </ul>
 
 <!--- MAGETWO-83627 -->
@@ -824,6 +826,12 @@
 </ul>
 
 <h3 id="cart-and-checkout">Cart and checkout</h3>
+
+<!--- MAGETWO-81665 -->
+<ul>
+  <li>The default shipping-save-processor now has a payload extender. This feature allows third party extensions to modify the payload for the shipping address selection process. As a result, developers can now add <code class="highlighter-rouge">extension_attributes</code> while minimizing potential extension conflicts. <em>Fix submitted by <a href="https://github.com/navarr">Navarr Barnier</a> in pull request 11249</em>.</li>
+</ul>
+
 <!--- MAGETWO-83476 -->
 <ul>
   <li>You can now view the <strong>Products in cart</strong> report if the cart contains a bundle or a grouped product. Previously, when you viewed the Products in Cart report, Magento threw an exception under these conditions. <a href="https://github.com/magento/magento2/issues/12079">GitHub-12079</a></li>
@@ -846,7 +854,7 @@
 
 <!--- MAGETWO-82314 -->
 <ul>
-  <li>Magento no longer throws an exception when you place an order using a new address. Previously, Magento displayed this error, “An error occurred on the server. Please try to place the order again.”. <a href="https://github.com/magento/magento2/issues/10583">GitHub-10583</a></li>
+  <li>Magento no longer throws an exception when you place an order using a new address. Previously, Magento displayed this error, <strong>An error occurred on the server. Please try to place the order again.</strong>. <a href="https://github.com/magento/magento2/issues/10583">GitHub-10583</a></li>
 </ul>
 
 <!--- MAGETWO-81904 -->
@@ -886,6 +894,11 @@
   <li>Magento now allows underscore characters in module names and also permits their use when modules add a block to the layout via XML. Previously,  Magento did not support underscore characters in module names to be added to the layout via XML. <em>Fix submitted by <a href="https://github.com/bentideswell">Ben Tideswell</a> in pull request 11765</em>.</li>
 </ul>
 
+<!--- MAGETWO-81467 -->
+<ul>
+  <li>You can now save using the mass action <strong>Update attributes</strong> option when multiselect attributes are set. <em>Fix submitted by <a href="https://github.com/manuelson">Manu Gonzalez Rodriguez</a> in pull request 11349</em>. <a href="https://github.com/magento/magento2/issues/11329">GitHub-11329</a></li>
+</ul>
+
 <h4 id="app-framework">App framework</h4>
 
 <!--- MAGETWO-83024 -->
@@ -900,7 +913,7 @@
 
 <!--- MAGETWO-81977 -->
 <ul>
-  <li>The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. <em>Fix submitted by <a href="https://github.com/mrodespin">Marc Rodriguez</a> in pull request 11470</em>. <a href="https://github.com/magento/magento2/issues/10231">GitHub-10231</a>,<a href="https://github.com/magento/magento2/issues/11469">GitHub-11469</a>, <a href="https://github.com/magento/magento2/issues/11471">GitHub-11471</a></li>
+  <li>The Magento custom URL rewrite functionality now works as expected when you include redirection of Magento controllers. <em>Fix submitted by <a href="https://github.com/mrodespin">Marc Rodriguez</a> in pull request 11470</em>. <a href="https://github.com/magento/magento2/issues/10231">GitHub-10231</a>, <a href="https://github.com/magento/magento2/issues/11469">GitHub-11469</a>, <a href="https://github.com/magento/magento2/issues/11471">GitHub-11471</a></li>
 </ul>
 
 <!--- MAGETWO-81973 -->
@@ -926,6 +939,11 @@
 <!--- MAGETWO-83035 -->
 <ul>
   <li>The doc block of <code class="highlighter-rouge">setValue</code> in FilterBuilder now reflects that the <code class="highlighter-rouge">setValue</code> method will accept an array. <em>Fix submitted by <a href="https://github.com/ByteCreation">bytecreation</a> in pull request 11854</em>.</li>
+</ul>
+
+<!--- MAGETWO-81515 -->
+<ul>
+  <li><code class="highlighter-rouge">htaccess</code> syntax now uses <code class="highlighter-rouge">Options -Indexes</code>  instead of <code class="highlighter-rouge">Options All -Indexes</code>. Previously, Magento used  <code class="highlighter-rouge">Options All -Indexes</code>, which resulted in Magento rendering a 500 error page because of high restrictions for Options overrides in shared hosting environments. <em>Fix submitted by <a href="https://github.com/dverkade">@Danny Verkade - Cream</a> in pull request 11327</em>. <a href="https://github.com/magento/magento2/issues/10812">GitHub-10812</a></li>
 </ul>
 
 <h4 id="configuration-framework">Configuration framework</h4>
@@ -961,6 +979,11 @@
   <li>We’ve removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.</li>
 </ul>
 
+<!--- MAGETWO-80912 -->
+<ul>
+  <li>A typo in <code class="highlighter-rouge">sessionStorage</code> polyfill has been corrected.  <em>Fix submitted by <a href="https://github.com/mszydlo">mszydlo</a> in pull request 11219</em>.</li>
+</ul>
+
 <h4 id="web-api-framework">Web API framework</h4>
 <!--- MAGETWO-83095 -->
 <ul>
@@ -981,7 +1004,7 @@
 
 <!--- MAGETWO-82710 -->
 <ul>
-  <li>Magento now downloads the backup <code class="highlighter-rouge">.tgz</code> file that you select for downloading. Previously, no matter which backup you selected, Magento dwnloaded the most recent backup. <em>Fix submitted by <a href="https://github.com/PieterCappelle">Pieter Cappelle</a> in pull request 11595</em>. <a href="https://github.com/magento/magento2/issues/10032">GitHub-10032</a></li>
+  <li>Magento now downloads the backup <code class="highlighter-rouge">.tgz</code> file that you select for downloading. Previously, no matter which backup you selected, Magento downloaded the most recent backup. <em>Fix submitted by <a href="https://github.com/PieterCappelle">Pieter Cappelle</a> in pull request 11595</em>. <a href="https://github.com/magento/magento2/issues/10032">GitHub-10032</a></li>
 </ul>
 
 <!--- MAGETWO-82809 -->
@@ -1111,12 +1134,27 @@
 
 <!--- MAGETWO-82955 -->
 <ul>
-  <li>The Visual Swatch Attribute drop-down menu (accessible from Manage Swatch tab) now works as expected. Previously, when you clicked the <strong>Add Swatch</strong> button from this tab, the drop-down menu was not displayed. <em>Fix submitted by <a href="https://github.com/enriquei4">@enriquei4</a> in pull request 11747</em>. <a href="https://github.com/magento/magento2/issues/11534">GitHub-11534</a><!--- MAGETWO-71458 -->* Users are now subscribed by default to the Advanced Reporting service.</li>
+  <li>The Visual Swatch Attribute drop-down menu (accessible from Manage Swatch tab) now works as expected. Previously, when you clicked the <strong>Add Swatch</strong> button from this tab, the drop-down menu was not displayed. <em>Fix submitted by <a href="https://github.com/enriquei4">@enriquei4</a> in pull request 11747</em>. <a href="https://github.com/magento/magento2/issues/11534">GitHub-11534</a></li>
 </ul>
 
 <!--- MAGETWO-71458 -->
 <ul>
   <li>Users are now subscribed by default to the Advanced Reporting service.</li>
+</ul>
+
+<!--- MAGETWO-81679 -->
+<ul>
+  <li>The design rule hint message no longer includes a typo. <em>Fix submitted by <a href="https://github.com/jahvi">Javier Villanueva</a> in pull request 11390</em>. <a href="https://github.com/magento/magento2/issues/8958">GitHub-8958</a></li>
+</ul>
+
+<!--- MAGETWO-81678 -->
+<ul>
+  <li>Storefront labels and messages now use the American English spelling of “optimization”. <em>Fix submitted by <a href="https://github.com/davidangel">David Angel</a> in pull request 11345</em>.</li>
+</ul>
+
+<!--- MAGETWO-80829 -->
+<ul>
+  <li>The <strong>Add page</strong> button now works as expected. Previously, when you clicked <strong>Add page</strong> while logged in to the Admin, and clicked <strong>Save</strong>, Magento did not create a new page, but returned you to the <strong>Orders</strong> page, and displayed this message: <strong>Data key is missing: code-entity</strong>. <em>Fix submitted by <a href="https://github.com/Tomasz-Silpion">Tomasz Gregorczyk</a> in pull request 11205</em>. <a href="https://github.com/magento/magento2/issues/11163">GitHub-11163</a></li>
 </ul>
 
 <h3 id="importexport">Import/export</h3>
@@ -1137,7 +1175,7 @@
 
 <!--- MAGETWO-81594 -->
 <ul>
-  <li>Exception message was passed as a exception description argument instead of exception message.. <em>Fix submitted by <a href="https://github.com/tim-bezhashvyly">Tim Bezhashvyly</a> in pull request 11363</em>. <a href="https://github.com/magento/magento2/issues/6924">GitHub-6924</a></li>
+  <li>Exception message was passed as a exception description argument instead of exception message. <em>Fix submitted by <a href="https://github.com/tim-bezhashvyly">Tim Bezhashvyly</a> in pull request 11363</em>. <a href="https://github.com/magento/magento2/issues/6924">GitHub-6924</a></li>
 </ul>
 
 <!--- MAGETWO-83310 -->
@@ -1149,6 +1187,11 @@
 <!--- MAGETWO-80188 -->
 <ul>
   <li>Magento no longer re-indexes entities if they are unchanged, which improves the performance of the refresh index cron job without any loss of functionality. <a href="https://github.com/magento/magento2/issues/4893">GitHub-4893</a></li>
+</ul>
+
+<!--- MAGETWO-80644 -->
+<ul>
+  <li>Magento now correctly resets status to <code class="highlighter-rouge">StateInterface::STATUS_INVALID</code> if a fatal PHP error occurs during indexing. <em>Fix submitted by <a href="https://github.com/larsroettig">Lars Roettig</a> in pull request 11183</em>. <a href="https://github.com/magento/magento2/issues/11166">GitHub-11166</a></li>
 </ul>
 
 <h3 id="infrastructure">Infrastructure</h3>
@@ -1244,6 +1287,11 @@
   <li><code class="highlighter-rouge">guest.php</code> now handles breadcrumb performance as expected. <em>Fix submitted by <a href="https://github.com/lano-vargas">Juliano Vargas</a> in pull request 11299</em>. <a href="https://github.com/magento/magento2/issues/11275">GitHub-11275</a></li>
 </ul>
 
+<!--- MAGETWO-81340 -->
+<ul>
+  <li>Magento now sends confirmation emails to customers for orders containing a grouped product. Previously, when you tried to submit an invoice for an order containing a grouped product, Magento threw an error and did not send confirmation email to the customer. <em>Fix submitted by <a href="https://github.com/michielgerritsen">Michiel Gerritsen</a> in pull request 11297</em>. <a href="https://github.com/magento/magento2/issues/5105">GitHub-5105</a></li>
+</ul>
+
 <h3 id="payment-methods">Payment methods</h3>
 <!--- MAGETWO-82732 -->
 <ul>
@@ -1252,7 +1300,7 @@
 
 <!--- MAGETWO-71966 -->
 <ul>
-  <li>Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: “Sorry, but something went wrong”.</li>
+  <li>Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: <strong>Sorry, but something went wrong</strong>.</li>
 </ul>
 
 <!--- MAGETWO-83270 -->
@@ -1263,6 +1311,11 @@
 <!--- MAGETWO-82367 -->
 <ul>
   <li>Corrected a typo in a translatable string. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade - Cream</a> in pull request 11569</em>.</li>
+</ul>
+
+<!--- MAGETWO-80894 -->
+<ul>
+  <li>Magento now displays the correct payment method string as displayed during checkout.  Previously, the translated string associated the payment method title for a particular store view was not consistently displayed. <em>Fix submitted by <a href="https://github.com/bka">Bernhard</a> in pull request 11165</em>. <a href="https://github.com/magento/magento2/issues/7582">GitHub-7582</a></li>
 </ul>
 
 <h3 id="reports">Reports</h3>
@@ -1416,7 +1469,7 @@
 MAGETWO-82748 MAGETWO-82707 MAGETWO-83013 MAGETWO-82991 MAGETWO-82978 MAGETWO-82976 MAGETWO-82952  MAGETWO-83171 MAGETWO-83135 MAGETWO-83132  MAGETWO-83128 MAGETWO-83490 MAGETWO-83428 MAGETWO-83310  MAGETWO-83563
  MAGETWO-83547 MAGETWO-83529 MAGETWO-83537  MAGETWO-83532 MAGETWO-83310  MAGETWO-83130 MAGETWO-83013 MAGETWO-82978 MAGETWO-82976 MAGETWO-82954   MAGETWO-82854 MAGETWO-82748  MAGETWO-83600 MAGETWO-70726 MAGETWO-80517 MAGETWO-84344 MAGETWO-84531
 MAGETWO-84321 MAGETWO-84091 MAGETWO-84051 MAGETWO-84000 MAGETWO-83914 MAGETWO-83898 MAGETWO-83870 MAGETWO-83184 MAGETWO-83004 MAGETWO-82596
-MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 -->
+MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->
 <ul>
   <li></li>
 </ul>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>magento/ece-tools | Magento 2 Developer Documentation</title>
+	<title>vendor/magento/ece-tools | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1570,12 +1570,12 @@
         
         
         
-        <li class="nav-level2  " id="magento/ece-patches">
+        <li class="nav-level2  " id="vendor/magento/ece-patches">
             
             
         
             
-            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">magento/ece-patches</a>
+            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
             
 
             
@@ -1584,12 +1584,12 @@
         
         
         
-        <li class="nav-level2 active " id="magento/ece-tools">
+        <li class="nav-level2 active " id="vendor/magento/ece-tools">
             
             
         
             
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">magento/ece-tools</a>
+            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1857,7 +1857,7 @@
 
           
 
-          <span property="name">magento/ece-tools</span>
+          <span property="name">vendor/magento/ece-tools</span>
 
         
 
@@ -1880,7 +1880,7 @@
 
 	
 
-	<h1 class="page-heading">magento/ece-tools</h1>
+	<h1 class="page-heading">vendor/magento/ece-tools</h1>
 
   
 
@@ -1892,17 +1892,16 @@
   <p>This package contains the following scripts and Magento Commerce (Cloud) commands that automatically perform build and deploy actions of the codebase in your environments:</p>
 
   <ul>
-    <li><code class="highlighter-rouge">pre-deploy.php</code></li>
-    <li><code class="highlighter-rouge">bin/magento magento-cloud:deploy</code></li>
-    <li><code class="highlighter-rouge">bin/magento magento-cloud:build</code></li>
+    <li><code class="highlighter-rouge">php ./vendor/bin/m2-ece-build</code></li>
+    <li><code class="highlighter-rouge">php ./vendor/bin/m2-ece-deploy</code></li>
   </ul>
 
-  <p>For Magento Commerce (Cloud), versions are specified as <code class="highlighter-rouge">2.&lt;x&gt;.&lt;y&gt;</code>. The versioning for <code class="highlighter-rouge">magento/ece-tools</code> will then be  <code class="highlighter-rouge">&lt;2000 + &lt;x&gt;.&lt;y&gt;.*</code>. For example, Magento Commerce 2.2.0 is associated with 2002.0.0.</p>
+  <p>Versions are specified as <code class="highlighter-rouge">200&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
 
-  <p><code class="highlighter-rouge">magento/ece-tools</code> patches strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the magento-cloud-metapackage.</p>
+  <p>These updates strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the <code class="highlighter-rouge">magento-cloud-metapackage</code>.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
-    <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get these updates.</p>
+    <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html">update this package</a> to get these features and fixes.</p>
   </div>
 
   <h2 id="v200207">v2002.0.7</h2>
