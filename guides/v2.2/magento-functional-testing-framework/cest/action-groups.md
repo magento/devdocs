@@ -11,7 +11,7 @@ functional_areas:
 
 ## Overview
 
-In the MFTF, you are able to unite actions in groups.
+In the MFTF, it is possible to re-use a group of actions decalred in an xml file.
 It is handy when you need to repeat same sequence of actions over and over again.
 For example, to log in as an admin or a customer.
 
@@ -37,10 +37,9 @@ The following diagram demonstrates XML structure of an action group:
 
 ## Principles
 
-* All action groups are declared in XML files stored in the _/<module/>/ActionGroup/_ directory
-* One `*.xml`, one `<actionGroup>`
+* All action groups are declared in XML files stored in the _/&lt;module&gt;/ActionGroup/_ directory
 * File name ends with `ActionGroup`. Example: `LoginToAdminActionGroup.xml`
-* File name and `<actionGroup>` name are equal
+* File name and `<actionGroup>` name are the same
 
 ## Example
 {%raw%}
@@ -66,29 +65,6 @@ Lets start from a template for our action group in `Backend/ActionGroup/LoginToA
 </config>
 ```
 
-The action group must wrap the following actions:
-
-```xml
-<fillField stepKey=”fillUsername” selector="#username" userInput="{{adminUser.username}}" />
-<fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
-<click stepKey="click” selector=”#login" />
-```
-
-So, now we have the following code:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
-    <actionGroup name="LoginToAdminActionGroup">
-        <fillField stepKey=”fillUsername” selector="#username" userInput="{{adminUser.username}}" />
-        <fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
-        <click stepKey="click” selector=”#login" />
-    </actionGroup>
-</config>
-```
-
 Since we use a variable for data in `userInput`, we need to create a corresponding argument, where this variable will be defined in a test.
 Also we can add a default value for the variable that will be used in the most frequent cases.
 Let's assume that we want to use the `_defaultAdmin` entity by default.
@@ -97,7 +73,15 @@ Let's assume that we want to use the `_defaultAdmin` entity by default.
 <argument name="adminUser" defaultValue="_defaultAdmin"/>
 ```
 
-Let's finalize our action group code:
+The action group will include the following actions using our defined argument (by name):
+
+```xml
+<fillField stepKey=”fillUsername” selector="#username" userInput="{{adminUser.username}}" />
+<fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
+<click stepKey="click” selector=”#login" />
+```
+
+So, now we have the following code:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
