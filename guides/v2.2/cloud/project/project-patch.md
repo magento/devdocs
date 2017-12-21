@@ -16,9 +16,9 @@ redirect_from:
 
 You can apply patches as they are available to update {{site.data.var.ece}}. We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
-When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). Starting with 2.2.0, we use `ece-patches` for updating Magento with fixes, new features, and more. We also use `ece-tools` for keeping build and deploy processes updated.
+When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). Starting with 2.2.0, we use `vendor/magento/ece-patches` for updating Magento with fixes, new features, and more. We also use `vendor/magento/ece-tools` for keeping build and deploy processes updated.
 
-Available patches are in the `vendor/ece-patches` folder.
+Available patches are in the `vendor/magento/ece-patches` folder.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
@@ -115,18 +115,18 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
 
-### Patch magento/ece-tools
-This is only required when we release [magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html).
+### Patch vendor/magento/ece-tools
+This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html).
 
 1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
-2.  Enter the following command to patch `magento/ece-tools`:
+2.  Enter the following command to patch `vendor/magento/ece-tools`:
 
     ```shell
-    composer update magento/ece-tools
+    composer update vendor/magento/ece-tools
     ```
 3.  Push your changes to the remote server:
     ```
-    git add composer.lock && git commit -m "Update magento/ece-tools"
+    git add composer.lock && git commit -m "Update vendor/magento/ece-tools"
     git push origin <branch name>
     ```
 

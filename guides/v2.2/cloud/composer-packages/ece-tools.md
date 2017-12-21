@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: magento/ece-tools
+title: vendor/magento/ece-tools
 version: 2.2
 github_link: cloud/composer-packages/ece-tools.md
 functional_areas:
@@ -13,7 +13,7 @@ functional_areas:
 {% include cloud/ece-tools.md %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get these updates.
+You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) to get these features and fixes.
 </div>
 
 ## v2002.0.7
