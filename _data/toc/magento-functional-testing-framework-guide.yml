@@ -41,6 +41,9 @@ pages:
     url: magento-functional-testing-framework/data.html
     versions: ["2.2"]
 
+  - label: Merging
+    url: magento-functional-testing-framework/merging.html
+
   - label: CLI Commands
     versions: ["2.2"]
     children:
