@@ -73,7 +73,7 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
 * All names within the framework are in the CamelCase format
 * A test may have any number of assertions, at any point within the `<test>`
 
-## Cest elements
+## Reference
 
 The following list is reference documentation of elements that may be used in Cests.
 
