@@ -7,6 +7,9 @@ pages:
     - label: Searches and pagination
       url: graphql/search-pagination.html
 
+    - label: Headers
+      url: graphql/headers.html
+
     - label: Endpoint Reference
       children:
 
