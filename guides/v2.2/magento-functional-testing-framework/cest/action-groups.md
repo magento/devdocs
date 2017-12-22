@@ -10,7 +10,7 @@ functional_areas:
 
 ## Overview
 
-In the MFTF, you are able to unite actions in groups.
+In the MFTF, it is possible to re-use a group of actions declared in an XML file.
 It is handy when you need to repeat same sequence of actions over and over again.
 For example, to log in as an admin or a customer.
 
@@ -36,10 +36,9 @@ The following diagram demonstrates XML structure of an action group:
 
 ## Principles
 
-* All action groups are declared in XML files stored in the _\<module\>/ActionGroup/_ directory
-* One `*.xml`, one `<actionGroup>`
-* File name ends with `ActionGroup`. Example: _LoginToAdminActionGroup.xml_
-* File name and `<actionGroup>` name are equal
+* All action groups are declared in XML files stored in the _/&lt;module&gt;/ActionGroup/_ directory.
+* File name ends with `ActionGroup`. Example: _LoginToAdminActionGroup.xml_.
+* File name and `<actionGroup>` name are the same.
 
 ## Example
 {%raw%}
