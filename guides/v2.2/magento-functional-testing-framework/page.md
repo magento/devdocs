@@ -124,7 +124,7 @@ The `StorefrontCategoryPage` page declares one [section]:
 
  * `StorefrontCategoryMainSection` that is located in _Catalog/Section/StorefrontCategoryMainSection.xml_
 
-## Available elements
+## Reference
 
 ### page {#page-element}
 

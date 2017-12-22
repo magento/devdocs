@@ -44,7 +44,7 @@ If multiple annotation values are supported and required each value requires a s
 </annotations>
 ```
 
-## Available annotations
+## Reference
 
 ### description
 

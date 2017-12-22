@@ -109,7 +109,7 @@ Allure v1.x.x | Allure v2.x.x
 ---|---
 `$ vendor/bin/robo allure1:report` | `$ vendor/bin/robo allure2:report`
 
-## Available commands
+## Reference
 
 #### general
 
