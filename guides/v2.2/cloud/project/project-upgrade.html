@@ -1944,7 +1944,7 @@
 
 <ul>
   <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workspace</li>
-  <li><a href="http://php.net/manual/en/migration70.php" target="_blank">Migrating from PHP 5.6 to PHP 7.0.x</a></li>
+  <li><a href="http://php.net/manual/en/migration70.php" target="\_blank">Migrating from PHP 5.6 to PHP 7.0.x</a></li>
   <li><a href="http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php">Magento 2.2.x technology stack requirements</a></li>
 </ul>
 
@@ -1998,7 +1998,13 @@
      CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 </code></pre></div>    </div>
   </li>
-  <li>Save the file and push to your Git branch.</li>
+  <li>
+    <p>Save the file.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>Do not commit or push changes to your branch yet. You still need to <a href="#verify-changes">Verify other changes</a> and <a href="#upgrade">Complete the upgrade</a>.</p>
+    </div>
+  </li>
 </ol>
 
 <p><strong>For Pro plan merchants:</strong> When you are ready to deploy to Pro Staging and Production environments, you must enter a <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">Support ticket</a> advising you need your hooks updated for Magento Commerce (Cloud) 2.2.</p>
@@ -2013,7 +2019,7 @@
 <h3 id="fastly">Upgrade Fastly</h3>
 <p>If you have not upgraded to the latest supported version of Fastly, you should do so. Check <a href="/guides/v2.2/cloud/requirements/cloud-requirements.html#cloud-arch-software">Supported software versions</a> for the latest version of Fastly we recommend. For instructions, see <a href="/guides/v2.2/cloud/access-acct/fastly.html#upgrade">Upgrade Fastly</a>.</p>
 
-<p>If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see <a href="https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md" target="_blank">Fastly upgrade documentation</a>.</p>
+<p>If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see <a href="https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md" target="\_blank">Fastly upgrade documentation</a>.</p>
 
 <h3 id="gitignore">Update .gitignore for new generated directory</h3>
 <p>With Magento Commerce (Cloud) 2.2.X, the generated folders <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> have been moved to a <code class="highlighter-rouge">generated/</code> read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.</p>
