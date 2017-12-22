@@ -538,7 +538,7 @@
       <td>Database Isolation</td>
       <td><code class="highlighter-rouge">@magentoDbIsolation</code></td>
       <td><code class="highlighter-rouge">@magentoDbIsolation enabled|disabled</code></td>
-      <td>Enables or disables database isolation. Enabled by default. All data, required for a test, live during transaction only. Any test results won’t be written in a database.</td>
+      <td>Enables or disables database isolation. Disabled by default, unless you are using <code class="highlighter-rouge">@magentoDataFixture</code>, in which case it is enabled by default. All data, required for a test, live during transaction only. Any test results won’t be written in a database.</td>
     </tr>
     <tr>
       <td>Data Fixture</td>
