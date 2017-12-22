@@ -36,7 +36,7 @@ The following diagram demonstrates XML structure of an action group:
 
 ## Principles
 
-* All action groups are declared in XML files stored in the _/&lt;module&gt;/ActionGroup/_ directory.
+* All action groups are declared in XML files stored in the _&lt;module&gt;/ActionGroup/_ directory.
 * File name ends with `ActionGroup`. Example: _LoginToAdminActionGroup.xml_.
 * File name and `<actionGroup>` name are the same.
 
@@ -46,7 +46,7 @@ The following example demonstrates declaration of group of actions to execute au
 
 ### Declaration
 
-This action group relates to functionality of the Backend module, so it should be stored as `Backend/ActionGroup/LoginToAdminActionGroup.xml`.
+This action group relates to functionality of the Backend module, so it should be stored as _Backend/ActionGroup/LoginToAdminActionGroup.xml_.
 
 The name and identifier of the action group is `LoginToAdminActionGroup`.
 In test, it will be used as a reference in `ref` parameter, like: `ref="LoginToAdminActionGroup"`.
