@@ -145,7 +145,7 @@ To change it to `CustomAdminUser`, we must add an argument `adminUser` with the 
 
 That's it!
 
-## Available elements
+## Reference
 
 ### actionGroup
 

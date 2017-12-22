@@ -147,7 +147,7 @@ Example of use in test:
 
 This action inputs data from `name` of the `_defaultCategory` entity (for example, `simpleCategory598742365`) into the field with locator defined in the selector of the `categoryNameInput` element of the `AdminCategoryBasicFieldSection`.
 
-## Available elements
+## Reference
 
 ### entity
 
