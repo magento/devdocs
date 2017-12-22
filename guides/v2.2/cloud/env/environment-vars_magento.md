@@ -179,7 +179,23 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
+      <tr>
+        <td><code>QUEUE_CONFIGURATION</code></td>
+        <td>
+          <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
+          <p>This is available in 2.1.4 and later.</p>
+        </td>
+        <td>not set</td>
+      </tr>
+      <tr>
+        <td><code>SEARCH_CONFIGURATION</code></td>
+        <td>
+          <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
+          <p>This is available in 2.1.4 and later.</p>
+        </td>
+        <td>not set</td>
+      </tr>
+      <tr>
 				<td><code>UPDATE_URLS</code></td>
 				<td>
 					<p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>

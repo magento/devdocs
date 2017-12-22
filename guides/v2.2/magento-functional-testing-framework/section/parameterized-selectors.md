@@ -82,11 +82,12 @@ Add the 2nd/3rd parameters that you'd like to pass to the selector separated by 
 
 ![Add other parameters]
 
-Here,
+Any data can be used in parameterized elements as well as entered in test actions like so:
 
 * `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in the corresponding _.../Data/*.xml_
 * `stringLiteral` is a literal
 * `$createDataKey.id$` is a reference to persisted data created in the `SampleCest1` within action with `stepKey="createDataKey"`
+* `{$variable}` is a reference to data returned by a test action, like `<grabValueFrom>`.
 
 {%endraw%}
 

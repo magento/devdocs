@@ -3,7 +3,7 @@ layout: default
 group: cloud
 title: Magento Commerce (Cloud) package updates
 version: 2.2
-github_link: cloud/patch-notes.md
+github_link: cloud/composer-packages/patch-notes.md
 functional_areas:
   - Cloud
   - Setup
@@ -15,11 +15,11 @@ The release information in this section relates to [Composer packages](http://de
 
 Use this section to learn about updates to the following Composer packages:
 
--   `magento/magento-cloud-metapackage`
--   `magento/ece-patches`
--   [`magento/ece-tools`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html)
--   `magento/product-enterprise-edition`
+-   `vendor/magento/magento-cloud-metapackage`
+-   [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html)
+-   [`vendor/magento/ece-tools`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html)
+-   `vendor/magento/product-enterprise-edition`
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get updates.
+You must [update these packages](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) to get new features and fixes.
 </div>

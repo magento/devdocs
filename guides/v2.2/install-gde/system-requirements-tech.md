@@ -56,7 +56,7 @@ The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{
 *	<a href="http://php.net/manual/en/book.intl.php" target="&#95;blank">intl</a>
 *	<a href="http://php.net/manual/en/book.mbstring.php" target="&#95;blank">mbstring</a>
 *	<a href="http://php.net/manual/en/book.mcrypt.php" target="&#95;blank">mcrypt</a>
-*	<a href="http://php.net/manual/en/book.mhash.php" target="&#95;blank">mhash</a>
+*	<a href="http://php.net/manual/en/book.hash.php" target="&#95;blank">hash</a>
 *	<a href="http://php.net/manual/en/book.openssl.php" target="&#95;blank">openssl</a>
 *	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="&#95;blank">PDO/MySQL</a>
 *	<a href="http://php.net/manual/en/book.simplexml.php" target="&#95;blank">SimpleXML</a>
@@ -122,7 +122,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 	<p>For details, see <a href="{{page.baseurl}}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
-*	PHPUnit (as a command-line tool) 4.1.0
+*	PHPUnit (as a command-line tool) 6.2.0
 
 ### Documentation
 <a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>

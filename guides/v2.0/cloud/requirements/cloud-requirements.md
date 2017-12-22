@@ -7,7 +7,7 @@ menu_title: Technologies and requirements
 menu_order: 40
 menu_node: parent
 version: 2.0
-github_link: cloud/cloud-requirements.md
+github_link: cloud/requirements/cloud-requirements.md
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
   - /guides/v2.1/cloud/discover-tools.html
@@ -49,6 +49,7 @@ Here are some advanced technologies we recommend getting familiar with:
 * [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html) for performance testing
 * [New Relic APM]({{page.baseurl}}cloud/project/new-relic.html) for performance testing
 * [GitHub]({{page.baseurl}}cloud/project/project-integrate-github.html) if you need a Git repo
+* [Bitbucket]({{page.baseurl}}cloud/project/bitbucket-integration.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 
