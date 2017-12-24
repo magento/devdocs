@@ -31,9 +31,17 @@ The changes are aggregated into two tables:
 
 {% include changes/ee/2.2.0-2.2.1.html %}
 
-## 2.1.0 - 2.2.0 {#releases-2_1_0-2_2_0}
-
+{% collapsibleh2 2.1.0 - 2.2.0 %}
+{: #releases-2_1_0-2_2_0}
 {% include changes/ee/2.1.0-2.2.0.html %}
+
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 2.0.0 - 2.2.0 %}
+{: #releases-2_0_0-2_2_0}
+{% include changes/ee/2.0.0-2.2.0.html %}
+
+{% endcollapsibleh2 %}
 
 <!-- LINK DEFINITIONS -->
 
