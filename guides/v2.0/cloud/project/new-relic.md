@@ -30,14 +30,10 @@ New Relic APM provides the following features to Magento:
 The agent software for New Relic is packaged with your {{site.data.var.ece}} account. You receive your credentials and license information from Magento during launch. You can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
 
 ## Add New Relic APM to an environment {#configure}
-The {{site.data.var.ece}} plans support up to 3 licenses across all environments.
-
-For Magento Pro accounts, New Relic APM is set up for you in your _staging_ and _production_ environments. You can only add the third usage to your integration `master` branch.
-
-For Magento Starter accounts, New Relic APM provides your credentials and access information. You can add New Relic APM to a maximum of 3 branches. We recommend adding New Relic license on your _staging_ and _production_ environments, and you can add the license to one other environment of your choice.
+The {{site.data.var.ece}} plans support up to 3 instances of your New Relic license across all environments. You can add New Relic APM to a maximum of 3 branches. We recommend adding a New Relic license to your _staging_ and _production_ environments, and you can add the license to one other environment of your choice.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you have more than 3 active environments using your New Relic license key as a variable, you must remove any additional use of the license from the environment. For details, see [Remove New Relic from an environment](#remove).
+If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment. For details, see [Remove New Relic from an environment](#remove).
 </div>
 
 To add a New Relic license key to an environment:
@@ -46,7 +42,7 @@ To add a New Relic license key to an environment:
 1.  Select an environment.
 1.  Click **Access site** and copy the **SSH Access** link.
 
-    ![Access settings]({{site.baseurl}}common/images/cloud_project-access.png)
+   ![Access settings]({{site.baseurl}}common/images/cloud_project-access.png)
 
 1.  In a terminal, log in using the SSH access link.
 1.  Set the license variable.
@@ -56,7 +52,7 @@ To add a New Relic license key to an environment:
     ```
 
 ## Remove New Relic APM from an environment {#remove}
-The {{site.data.var.ece}} plans support up to 3 New Relic licenses across all environments. If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
+The {{site.data.var.ece}} plans support up to 3 instances of your New Relic license across all environments. If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
 
 To remove a New Relic license key from an environment:
 
@@ -69,20 +65,20 @@ To remove a New Relic license key from an environment:
 1.  In a terminal, log in using the SSH access link.
 1.  List all variables.
 
-    For project variables: `magento-cloud pvget`
+    For project variables: `magento-cloud pvget`  
     For environment variables: `magento-cloud vget`
 
 1.  Delete an environment variable.
 
     ```
-    magento-cloud variable:delete php:newrelic.license
-    ```
+   magento-cloud variable:delete php:newrelic.license
+   ```
 
-    If you added the license as a project variable, you must remove that project level variable. A project variable adds the license to every environment branch created, using or exceeding the license limit.
+    If you added the license as a project variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, using or exceeding the license limit.
 
     ```
-    magento-cloud project:variable:delete php:newrelic.license
-    ```
+   magento-cloud project:variable:delete php:newrelic.license
+   ```
 
 ## Investigate performance {#performance}
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
