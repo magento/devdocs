@@ -44,7 +44,7 @@ You need to add these files to your {{site.data.var.ee}} code:
 
     The following figure shows an example of selecting the `2.1.4` branch.
 
-    ![Switch to your current Magento Commerce branch]({{page.baseurl}}common/images/cloud_cloud-git-214.png){:width="600px"}
+    ![Switch to your current Magento Commerce branch]({{site.baseurl}}common/images/cloud_cloud-git-214.png){:width="600px"}
 
     In the procedure that follows, you'll copy the contents of some of these files to your {{site.data.var.ee}} system.
 3.  Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{page.baseurl}}cloud/before/before-workspace-file-sys-owner.html).
@@ -64,7 +64,7 @@ You need to add these files to your {{site.data.var.ee}} code:
     1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="_blank"}.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
-        ![View the raw version of the file]({{page.baseurl}}common/images/cloud_cloud-git_raw.png){:width="600px"}
+        ![View the raw version of the file]({{site.baseurl}}common/images/cloud_cloud-git_raw.png){:width="600px"}
     3.  In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
     4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
     5.  Make sure the file is named `.magento.app.yaml` when you save the file.
