@@ -47,6 +47,8 @@ You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/proj
 * **Cron interval limitations lifted**. All Starter environments and Pro Integration environments now support 1-minute intervals for cron jobs (previously minimum 5 minutes). The default cron interval is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting. To modify your existing cron jobs, edit your settings in `.magento.app.yaml` or create a support ticket for Production/Staging environments. Refer to [Set up cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html) for more information.
 
 ### Fixed issues
+<!-- MAGECLOUD-1327 -->* We fixed an issue that was causing long deploy times due to the deploy process invoking the `cache-clean` operation before static content deployment.
+
 <!-- MAGECLOUD-1322 -->* We fixed an issue causing errors during the static content generation step of deployment on Production environments.
 
 <!-- MAGECLOUD-1264 -->* We fixed an issue preventing some `magento/ece-tools` commands from logging output to `stderr`.
