@@ -1930,6 +1930,12 @@
   <h3 id="new-features">New features</h3>
   <ul>
     <li>
+      <p><strong>Configure a cron consumer with an environment variable</strong>. You can now configure cron consumers using the new <code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable.</p>
+    </li>
+    <li>
+      <p><strong>Configuration scanning</strong>. We now scan for critical components during the build/deploy process and halt the process if the scan fails, which prevents unnecessary downtime due to the site being in maintenance mode.</p>
+    </li>
+    <li>
       <p><strong>Build/deploy notifications</strong>. We added a new configuration file that you can use to <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html">set up Slack and/or email notifications</a> for build/deploy actions in all your environments.</p>
     </li>
     <li>
@@ -1953,6 +1959,11 @@
   </ul>
 
   <h3 id="fixed-issues-2">Fixed issues</h3>
+  <!-- MAGECLOUD-1327 -->
+  <ul>
+    <li>We fixed an issue that was causing long deploy times due to the deploy process invoking the <code class="highlighter-rouge">cache-clean</code> operation before static content deployment.</li>
+  </ul>
+
   <!-- MAGECLOUD-1322 -->
   <ul>
     <li>We fixed an issue causing errors during the static content generation step of deployment on Production environments.</li>
