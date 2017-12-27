@@ -32,6 +32,10 @@ You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/proj
 ## v2002.0.5
 
 ### New features
+* **Configure a cron consumer with an environment variable**. You can now configure cron consumers using the new `CRON_CONSUMERS_RUNNER` environment variable.
+
+* **Configuration scanning**. We now scan for critical components during the build/deploy process and halt the process if the scan fails, which prevents unnecessary downtime due to the site being in maintenance mode.
+
 * **Build/deploy notifications**. We added a new configuration file that you can use to [set up Slack and/or email notifications](http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html) for build/deploy actions in all your environments.
 
 * **Static content compression**. We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="\_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build) or [deploy variable](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy). See the following topics for more information:
