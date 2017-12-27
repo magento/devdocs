@@ -15,118 +15,101 @@ functional_areas:
   - Services
 ---
 
-[New Relic](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} Application Performance Monitoring (APM) provides application and performance information for end-user operations completed through your stores. This data helps you analyze and improve application interactions. For a great introduction to New Relic, see the [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="_blank"}.
-
-You can mix the higher level data captured by New Relic APM with the deeper method and call dive data from [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). Using these two tools together in Staging and Production environments, you gain a better view into your store performance.
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-You receive New Relic APM with your {{site.data.var.ece}} subscription. You do not need to purchase or install the New Relic extension (different than the APM service).
-</div>
+The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to 3 instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
 
 ## Key features {#features}
 
-New Relic APM provides the following [key features](https://newrelic.com/php/magento){:target="_blank"} to Magento:
+New Relic APM provides the following features to Magento:
 
-* Actively mark and monitor key customer actions in your site. For example, track performance of add to cart, checkout, or payment processing.
-* Locate and monitor slow database queries.
-* Use the App Map to view all application dependencies within your Magento site, extensions, and external services.
-* Follow Apdex scores to evaluate slow downs and bottlenecks. Create alerts to watch for these slumps to identify and notify you when an issues is occuring. For example, site slow downs due to a flash sale or web event.
-
-You can have New Relic active on up to 3 instances. These instances (or hosts) include a local system, active Integration environments, Staging, and Production. We recommend the following:
-
-* For Pro: Integration `master`, Staging, and Production. We add New Relic for you to Staging and Production environments.
-* For Starter: Any 3 environments. We recommend `master` Production, a Staging environment, and another of your choice.
+-  **Focus on specific transactions**—Actively mark and monitor key customer actions in your site, such as adding to the cart, checking out, or processing a payment.
+-  **Database query monitoring**—Locate and monitor database queries affecting performance.
+-  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
+-  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
 
 ## New Relic APM credentials {#credentials}
-When you sign up for a {{site.data.var.ece}} account, you will receive credentials and information for your account from Magento and a call with Launch Mangers. The agent software for New Relic is already installed to capture data for review through the service.
-
-You will need these credentials and the license associated to them. You receive this information from Magento. Your license key is also available through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
+The agent software for New Relic is packaged with your {{site.data.var.ece}} account. You receive your credentials and license information from Magento during launch. You can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
 
 ## Add New Relic APM to an environment {#configure}
-You can locate your New Relic APM credentials and key in the [Project Web Interface]({{page.baseurl}}cloud/project/project-integrate-blackfire.html). The Project Owner can [log in](https://accounts.magento.cloud){:target="_blank"} to the interface and review [project and environment credentials]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-creds).
+The {{site.data.var.ece}} plans support up to 3 instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your _staging_ and _production_ environments, and you can add the license to one other environment of your choice.
 
-* For **Pro plan projects**, New Relic is already set up for you in Staging and Production environments. You can only add the third usage to your Integration `master` branch. You will receive an email and possibly phone call with New Relic to provide credentials and access to their service.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment. For details, see [Remove New Relic from an environment](#remove).
+</div>
 
-  * If you previously added New Relic to any other Pro Integration environments (besides <code>master</code>), you must remove it.
-  * If you branch from Integration <code>master</code>, make sure the environment variable is not replicated in those new environments.
-  * If using Magento Cloud CLI, use the command <code>magento-cloud variable:delete</code> to remove the environment variable.
-* For **Starter plan projects**, New Relic will provide an email of credentials and access information, possibly also a call. You can add New Relic up to 3 branches. We recommend on `master` Production, a `staging` environment, and another of your choice.
+To add a New Relic license key to an environment:
 
-If you used all 3 instances, you must remove the variable before adding it to a new environment. for details, see [Remove New Relic from an environments](#remove).
+1.  Log in to your Project Web Interface.
+1.  Select an environment.
+1.  Click **Access site** and copy the **SSH Access** link.
 
-To add New Relic to a specific environment (for example, Starter plan Staging environment or Pro Integration `master`) you need to add an environment level variable with your license. Remember, you can only have 3 New Relic licenses active across all environments.
+    ![Access settings]({{site.baseurl}}common/images/cloud_project-access.png)
 
-1. Log in to the Project Web Interface.
-2. Select an environment and locate the SSH link under Access Site. For more information on SSH, see [SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
+1.  In a terminal, log in using the SSH access link.
+1.  Set the license variable.
 
-	![Access settings]({{ site.baseurl }}common/images/cloud_project-access.png)
-3. In a terminal, SSH log in to each environment (Production and Master) and enter the following command. You will need the license key from New Relic.
+    ```
+    magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
+    ```
 
-        magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
+## Remove New Relic APM from an environment {#remove}
+The {{site.data.var.ece}} plans support up to 3 instances of your New Relic license across all environments. If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
 
-## Remove New Relic from an environment {#remove}
-{{site.data.var.ece}} plans support up to 3 licenses active across all environments. If you have more than 3 active environments with the New Relic license key added as an environment variable, you will be in breach of the contracted 3 licenses. For details, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
+To remove a New Relic license key from an environment:
 
-* For Starter accounts, if you want to move the variable from one active Integration environment to another, you must remove the variable first.
-* For Pro accounts, you may want to make sure you did not add the variable to additional branches or environments in Integration.
+1.  Log in to your Project Web Interface.
+1.  Select an environment.
+1.  Click **Access site** and copy the **SSH Access** link.
 
-To remove the variable:
+    ![Access settings]({{site.baseurl}}common/images/cloud_project-access.png)
 
-1. Log in to the Project Web Interface.
-2. Select an environment and locate the SSH link under Access Site. For more information on SSH, see [SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
+1.  In a terminal, log in using the SSH access link.
+1.  List all variables.
 
-	![Access settings]({{ site.baseurl }}common/images/cloud_project-access.png)
-4. In a terminal, SSH log in to an environment.
-5. To list all variables, you can use this command:
+    For project variables: `magento-cloud pvget`  
+    For environment variables: `magento-cloud vget`
 
-    * For project variables: `magento-cloud pvget`
-    * For environment variables: `magento-cloud vget`
-6. To delete an environment variable, enter the following command:
+1.  Delete an environment variable.
 
-        magento-cloud variable:delete php:newrelic.license
-7. If you added the license as a project variable, you must remove that project level variable. A project variable will add the license to every branched environment created, using or exceeding the license limit. Use this command to remove the variable:
+    ```
+   magento-cloud variable:delete php:newrelic.license
+   ```
 
-        magento-cloud project:variable:delete php:newrelic.license
+    If you added the license as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, using or exceeding the license limit.
 
-<!-- Add New Relic to `.magento.app.yaml`:
+    ```
+   magento-cloud project:variable:delete php:newrelic.license
+   ```
 
-1. In your development code branch, edit `.magento.app.yaml` with a text editor.
-2. Add the following information:
+## Investigate performance {#performance}
+New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
 
-    runtime:
-      extensions:
-        - newrelic
-3. Save and push the changes to deploy across Staging and Production. -->
+Using the New Relic dashboard, you can immediately track and find the following:
 
-## Investigate performance {#investigate}
-New Relic connects and monitors your site using an agent via php. As it collects data, you can [log in](https://login.newrelic.com/login/){:target="_blank"} and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page){:target="_blank"}.
+-  Monitor applications and transactions encountering slow responses or bottlenecks
+-  Investigate customer comments of issues with your site
+-  Identify applications with high transaction time and follow up on queries, calls, and methods with Blackfire
+-  Verify and compare traffic to transaction time
 
-Through the dashboard, you can immediately track and find:
+We recommend reviewing tracked data:
 
-* Applications and transactions encountering slow responses or bottlenecks
-* Investigate customer comments of issues with your site
-* Locate the applications with high transaction time and follow up on queries, calls, and methods through Blackfire
-* Verify and compare traffic to transaction time
+-  **Most time consuming**—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks very high in time consumption, there may be a call or query dragging performance.
+-  **Highest throughput**—Identify pages hit the most based on the size and frequency of bytes transmitted.
 
-We recommend reviewing the tracked data for:
-
-* Most time consuming: All all requests in parallel to determine where time is going. For example, you may have the highest transaction time spent in product and category views. If suddenly a customer account page is highest, you may have a call or query dragging performance.
-* Highest throughput: Identifies the pages hit the most based on bytes transmitted/size.
-
-All collected data details the time spent on an action transmitting data, queries, redis, and more. If queries cause issues, New Relic provides a depth of information to track and respond to it.
+All collected data details the time spent on an action transmitting data, queries, or _Redis_ data. If queries cause issues, New Relic provides information to track and respond to it.
 
 ## New Relic and Blackfire {#blackfire}
 
-Armed with this information, you can investigate further with Blackfire.io Profiler. Each services has strengths and weaknesses that balance incredibly well together:
+You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire Profiler]({{page.baseurl}}cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
 
-* New Relic worst case requests are not averages but edge cases. Whereas, Blackfire provides more of the average worst case requests. Compare this data to refine your troubleshooting.
-* Blackfire is not detailed in determining and displaying queries giving you trouble. Use New Relic to find those.
-* Cron job and other background processes are not monitored by New Relic. Sometimes these could be the culprit behind the scenes. Watching processes with Blackfire could help to locate these issues.
+-  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
+-  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.
+-  Background processes, like Cron job, can cause issues. These background processes are not monitored by New Relic, but you can watch them using Blackfire.
 
 ## New Relic APM resources {#resources}
 
-* [Introduction to APM](https://docs.newrelic.com/docs/data-analysis/user-interface-functions/view-your-data/standard-page-functions){:target="_blank"}
-* [View transactions](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/transactions-page#tx_viewing){:target="_blank"}
-* [Analyze database and instance-level performance issues](https://docs.newrelic.com/docs/apm/applications-menu/features/analyze-database-instance-level-performance-issues){:target="_blank"}
-* [Tracking front-end time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="_blank"}
-* [APM best practices](https://docs.newrelic.com/docs/apm/new-relic-apm/guides/new-relic-apm-best-practices-guide){:target="_blank"}
+-  [Introduction to APM](https://docs.newrelic.com/docs/data-analysis/user-interface-functions/view-your-data/standard-page-functions){:target="\_blank"}
+-  [View transactions](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/transactions-page#tx_viewing){:target="\_blank"}
+-  [Analyze database and instance-level performance issues](https://docs.newrelic.com/docs/apm/applications-menu/features/analyze-database-instance-level-performance-issues){:target="\_blank"}
+-  [Tracking front-end time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="\_blank"}
+-  [APM best practices](https://docs.newrelic.com/docs/apm/new-relic-apm/guides/new-relic-apm-best-practices-guide){:target="\_blank"}
+-  [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="\_blank"}
