@@ -59,16 +59,6 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 * [{{site.data.var.ce}} 2.0.3 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.3CE.html)
 * [{{site.data.var.ee}} 2.0.3 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.3EE.html)
 
-* [{{site.data.var.ce}} 2.0.2 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.2CE.html)
-* [{{site.data.var.ee}} 2.0.2 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.2EE.html)
-
-* [{{site.data.var.ce}} 2.0.1 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.1CE.html)
-* [{{site.data.var.ee}} 2.0.1 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.1EE.html)
-
-* [{{site.data.var.ce}} 2.0.0 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.0CE.html)
-* [{{site.data.var.ee}} 2.0.0 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.0EE.html)
-
-
 ## Backward-incompatible changes
 
 * Overview of backward-incompatible changes made after Magento 2.0.0 release in scope of 2.0 version: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html)
@@ -78,9 +68,3 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 * [Magento Open Source third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
 * [Magento Commerce third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
 * [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html)
-
-
-
-
-
-

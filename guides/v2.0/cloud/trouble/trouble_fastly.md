@@ -70,7 +70,7 @@ First, check your live site to verify the response headers with `curl`. The comm
 
 If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
 
-Check for headers with a **dig command** to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
+Check for headers with a **dig command** to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="\_blank"}.
 
     dig http[s]://<your domain>
 
@@ -93,7 +93,7 @@ This section discusses how to use `dig` and `curl` to get response headers from 
 **Note:** If you encounter issues when using `dig` and `curl` to the direct origin servers, not through the live server domain, the issue may not be Fastly.
 
 ### dig command {#dig}
-First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
+First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="\_blank"}.
 
 For example:
 
@@ -131,7 +131,7 @@ If you do not have DNS set up for a public host name, enter a command similar to
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
 ### Check response headers {#response-headers}
-For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services){:target="_blank"}.
+For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services){:target="\_blank"}.
 
 Check the returned response headers and values:
 
@@ -140,8 +140,8 @@ Check the returned response headers and values:
 *	Fastly-Module-Enabled should be either Yes or the Fastly extension version number
 *	X-Cache should be either `HIT` or `HIT, HIT`
 *	x-cache-hits should be 1,1
-*	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
-* [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
+*	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="\_blank"} should be greater than 0
+* [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="\_blank"} should be `cache`
 
 The following example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
 
@@ -208,7 +208,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 				}
 6. If you use [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
 
-	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
+	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-initial.html).
 
 If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html) for instructions.
 
@@ -254,7 +254,7 @@ If the credentials are correct, you may have issues with your VCLs. To list and 
 
 	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 
-Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 
 ## Activating a deactivated version {#activate}
 Using `curl` commands and APIs, you can activate, deactivate, and delete a version and service. If you have deactivated a service, you have deactivated the version without leaving any version active.

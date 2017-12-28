@@ -102,8 +102,8 @@ The complete workflow for importing existing code includes the following steps.
 1.  If you do not have a project created and available, create a new [project from a template](#cloud-import-proj). This new project has files and directories specific to {{site.data.var.ece}}.
 2.  [Replace the contents]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html) of this project with your code using Git.
 3.  [Import your Magento database]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#cloud-import-db) into your {{site.data.var.ece}} project.
-4.  [Import your static files]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#cloud-import-media) into your {{site.data.var.ece}} project.
-5.  Copy your {{site.data.var.ee}} [encryption key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#cloud-import-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
+4.  [Import your static files]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#media) into your {{site.data.var.ece}} project.
+5.  Copy your {{site.data.var.ee}} [encryption key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#ncryption-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
 6.  Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and verify the project imported successfully.
 
 ## Create a new, empty Magento Enterprise Edition project {#cloud-import-proj}

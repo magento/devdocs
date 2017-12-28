@@ -178,7 +178,7 @@ To add your {{site.data.var.ee}} encryption key:
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
-3.  Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey).
+3.  Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
 
         {% highlight php startinline=true %}
         return array (

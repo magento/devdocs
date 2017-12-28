@@ -68,7 +68,7 @@ The view control should always be placed as the most right item on the same row 
 
 The controller should be accessible by keyboard and have a voice over for screen readers. Accessibility guideline follow buttons' guideline.
 
-PC: <a href="http://support.microsoft.com/kb/126449" target="\_blank">http://support.microsoft.com/kb/126449</a><br>
+PC: <a href="https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts" target="\_blank">https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts</a><br>
 OS: <a href="http://support.apple.com/en-us/HT201236" target="\_blank">http://support.apple.com/en-us/HT201236</a><br>
 (Keyboard shortcut same as checkbox)<br>
 
