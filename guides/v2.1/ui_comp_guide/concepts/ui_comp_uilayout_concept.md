@@ -16,7 +16,9 @@ The source file of the `uiLayout` module is `<UI_Module_dir>/view/base/web/js/co
 
 `uiLayout` source code is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js).
 
-In a [typical UI component's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `uiLayout` module is called by `app.js` (`<Ui_module_dir>/view/base/web/js/core/app.js`) and receives the component's configuration as a parameter.
+In a [typical UI component's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `uiLayout` module is called by `app.js` (`<Ui_module_dir>/view/base/web/js/core/app.js`) and its source code at Magento open source github repository 
+[app/code/Magento/Ui/view/base/web/js/core/app.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/app.js).
+[app.js] file receives the component's configuration as a parameter.
 
 In the same way, anyone who wants to create a component dynamically (from other components or the `<script/>` tag) can call `app.js` or `layout.js` and pass as a parameter the configuration of the desired component.
 
