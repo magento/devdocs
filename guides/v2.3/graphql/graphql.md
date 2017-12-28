@@ -3,6 +3,7 @@ layout: default
 group: graphql
 title: Overview
 landing-page: GraphQL Guide
+version: 2.3
 github_link: graphql/graphql.md
 ---
 
