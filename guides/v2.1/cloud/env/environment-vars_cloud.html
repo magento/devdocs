@@ -1850,15 +1850,16 @@ variables names and values are variable values (a string).</li>
 
 <p>For example, we use the <strong>MAGENTO_CLOUD_RELATIONSHIPS</strong> variable to retrieve environment-related relationships as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> /**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="sd">/**
      * Get relationships information from MagentoCloud environment variable.
      *
      * @return mixed
-     */
-    protected function getRelationships()
-    {
-        return json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]), true);
-    }</code></pre></figure>
+     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getRelationships</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s2">"MAGENTO_CLOUD_RELATIONSHIPS"</span><span class="p">]),</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
@@ -1881,7 +1882,7 @@ variables names and values are variable values (a string).</li>
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environment-vars_cloud.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/env/environment-vars_cloud.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

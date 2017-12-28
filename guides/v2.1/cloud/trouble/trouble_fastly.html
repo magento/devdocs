@@ -1880,7 +1880,7 @@
 
 <p>If you don’t have a live site set up with DNS, you can use either a static route or you can use the optional <code class="highlighter-rouge">--resolve</code> flag, which bypasses DNS name resolution.</p>
 
-<p>Check for headers with a <strong>dig command</strong> to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="_blank">Testing before changing DNS</a>.</p>
+<p>Check for headers with a <strong>dig command</strong> to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="\_blank">Testing before changing DNS</a>.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dig http[s]://&lt;your domain&gt;
 </code></pre></div></div>
@@ -1912,7 +1912,7 @@
 <p><strong>Note:</strong> If you encounter issues when using <code class="highlighter-rouge">dig</code> and <code class="highlighter-rouge">curl</code> to the direct origin servers, not through the live server domain, the issue may not be Fastly.</p>
 
 <h3 id="dig">dig command</h3>
-<p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="_blank">Testing before changing DNS</a>.</p>
+<p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="\_blank">Testing before changing DNS</a>.</p>
 
 <p>For example:</p>
 
@@ -1959,7 +1959,7 @@
 </code></pre></div></div>
 
 <h3 id="response-headers">Check response headers</h3>
-<p>For detailed information on hits and misses, see Fastly’s <a href="https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services" target="_blank">Understanding cache HIT and MISS headers with shielded services</a>.</p>
+<p>For detailed information on hits and misses, see Fastly’s <a href="https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services" target="\_blank">Understanding cache HIT and MISS headers with shielded services</a>.</p>
 
 <p>Check the returned response headers and values:</p>
 
@@ -1969,8 +1969,8 @@
   <li>Fastly-Module-Enabled should be either Yes or the Fastly extension version number</li>
   <li>X-Cache should be either <code class="highlighter-rouge">HIT</code> or <code class="highlighter-rouge">HIT, HIT</code></li>
   <li>x-cache-hits should be 1,1</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9" target="_blank">Cache-Control: max-age</a> should be greater than 0</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32" target="_blank">Pragma</a> should be <code class="highlighter-rouge">cache</code></li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9" target="\_blank">Cache-Control: max-age</a> should be greater than 0</li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32" target="\_blank">Pragma</a> should be <code class="highlighter-rouge">cache</code></li>
 </ul>
 
 <p>The following example shows the correct values for <code class="highlighter-rouge">Pragma</code>, <code class="highlighter-rouge">X-Magento-Tags</code>, and <code class="highlighter-rouge">Fastly-Module-Enabled</code>.</p>
@@ -2105,7 +2105,7 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
 </code></pre></div></div>
 
-<p>Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">Fastly default VCLs</a>. For editing your custom VCLs, see <a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+<p>Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">Fastly default VCLs</a>. For editing your custom VCLs, see <a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 <h2 id="activate">Activating a deactivated version</h2>
 <p>Using <code class="highlighter-rouge">curl</code> commands and APIs, you can activate, deactivate, and delete a version and service. If you have deactivated a service, you have deactivated the version without leaving any version active.</p>
@@ -2158,7 +2158,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble_fastly.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/trouble/trouble_fastly.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

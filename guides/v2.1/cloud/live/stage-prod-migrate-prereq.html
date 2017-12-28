@@ -1835,7 +1835,7 @@
 <p>You can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link. Your environments begin with Master, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.</p>
 
 <ol>
-  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="\_blank">your Magento Commerce (Cloud) account</a>.</li>
   <li>Select an environment.</li>
   <li>
     <p>Click <strong>Access site</strong> to display the URL and SSH information.</p>
@@ -1867,7 +1867,7 @@
 
   <p>If your project was created before October 23, 2017, you also need to set up <a href="#pro-remote">remote Git repositories</a> on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.</p>
 
-  <p>If you haven’t done so already, upload any <a href="/guides/v2.1/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
+  <p>If you haven’t done so already, upload any <a href="/guides/v2.1/cloud/access-acct/fastly.html#upload-vcl-snippets">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
 
   <h3 id="pro-yaml">Migrate your <code class="highlighter-rouge">.magento.app.yaml</code> file</h3>
   <p><strong>Important:</strong> If you have <strong>not modified</strong> the default deployment hooks or configurations, skip this step and continue with <a href="#pro-urls">Get your Pro access URLs</a>. Only migrate the file if you modified the deployment hooks or added configuration updates.</p>

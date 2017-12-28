@@ -1818,7 +1818,7 @@
 
 <p>For a new Pro project starting with a “blank site” Magento Commerce (Cloud) template, the Magento encryption key is on the Integration <code class="highlighter-rouge">master</code> branch and environment until you <a href="/guides/v2.1/cloud/access-acct/first-time-deploy.html">initially deploy</a> across all environments.</p>
 
-<p>If you have imported data from an existing Magento installation into Magento Commerce (Cloud), you need to <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">copy the key</a> and <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#cloud-import-key">deploy it</a> to the environments.</p>
+<p>If you have imported data from an existing Magento installation into Magento Commerce (Cloud), you need to <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">copy the key</a> and <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#ncryption-key">deploy it</a> to the environments.</p>
 
 <h3 id="cloud-trouble-nocrypt">Encryption key not in all environments</h3>
 <p>All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.</p>
@@ -1833,7 +1833,7 @@
 </code></pre></div>    </div>
   </li>
   <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
-  <li>Verify the existing value of <code class="highlighter-rouge">key</code> for <code class="highlighter-rouge">crypt</code>. The value should be your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento Commerce key</a>.</li>
+  <li>Verify the existing value of <code class="highlighter-rouge">key</code> for <code class="highlighter-rouge">crypt</code>. The value should be your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">Magento Commerce key</a>.</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>

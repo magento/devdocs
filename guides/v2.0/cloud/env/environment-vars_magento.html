@@ -1850,7 +1850,7 @@
 <td><code>CLEAN_STATIC_FILES</code></td>
 <td><p>The default value, <code>enable</code>, cleans <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="/guides/v2.0/architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+<p>Because of <a href="/guides/v2.0/howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
 <p>This is available in all versions.</p></td>
 <td>enabled</td>
 </tr>
@@ -1868,7 +1868,7 @@
 <td><code>STATIC_CONTENT_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
-<p>To further reduce deployment time, we recommend using <a href="/guides/v2.0/config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+<p>To further reduce deployment time, we recommend using <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>This is available in all versions.</p></td>
 <td>1 for Starter environments and Pro Integration environments<br />
 3 for Pro Staging and Production environments</td>
@@ -1967,8 +1967,6 @@ magento-cloud snapshot:restore &lt;snapshot&gt;
   <li><a href="/guides/v2.0/cloud/env/environment-vars_over.html">Overview of environment variables</a></li>
   <li><a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
   <li><a href="/guides/v2.0/cloud/env/set-variables.html">Example setting variables</a></li>
-  <li><a href="/guides/v2.0/cloud/live/sens-data-over.html">Configuration management</a></li>
-  <li><a href="/guides/v2.0/cloud/live/sens-data-initial.html">Example of configuration management</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
