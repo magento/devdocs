@@ -139,7 +139,7 @@ skip_scd=yes
 				<td><code>scd_threads</code></td>
 				<td>
 					<p>Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.</p>				
-					<p>To further decrease deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+					<p>To further decrease deployment time, we recommend using <a href="{{page.baseurl}}cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 				</td>
 				<td>
           <p><code>scd_threads=1</code> - Starter environments and Pro Integration environments</p>
@@ -149,7 +149,7 @@ skip_scd=yes
 			<tr>
 				<td><code>skip_scd</code></td>
 				<td><p>Skips static content deployment during the build phase.</p>
-        <p>If you are already deploying static content during the build phase with <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a>, you may want to turn it off for a quick build test.</p>
+        <p>If you are already deploying static content during the build phase with <a href="{{page.baseurl}}cloud/live/sens-data-over.html">Configuration Management</a>, you may want to turn it off for a quick build test.</p>
         <p>We do not recommend using this option because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in 2.2.X.</p></td>
 				<td>Not set</td>
 			</tr>
@@ -229,7 +229,7 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
 				<td>
 					<p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
 					<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
-					<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+					<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 					<p>This is available in all versions.</p>
 				</td>
 				<td>1 for Starter environments and Pro Integration environments<br>
