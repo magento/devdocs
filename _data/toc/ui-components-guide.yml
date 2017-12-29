@@ -156,6 +156,13 @@ pages:
 
         - label: WYSIWYG component
           url: ui_comp_guide/components/ui-wysiwyg.html
+          children:
+
+            - label: Extension Points
+              url: ui_comp_guide/components/wysiwyg/extension-points/
+
+            - label: Add Custom Editor
+              url: ui_comp_guide/components/wysiwyg/add-custom-editor/
 
     - label: Concepts
       children:
