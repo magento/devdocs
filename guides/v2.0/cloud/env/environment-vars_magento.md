@@ -184,7 +184,7 @@ To create a variable using the command line:
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the event something goes wrong and you can't access your environment after it deploys, try the following:
 
-*   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
+*   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#tunnel-services) are running.
 *   Restore your snapshot:
 
         magento-cloud snapshot:list
