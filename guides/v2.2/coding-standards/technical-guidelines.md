@@ -90,6 +90,7 @@ class Config
         if ($this->data === null) {
             $this->data = $this->fileReader->load('cache.xml');
         }
+        return $this->data[$key];
     }
 }
 {% endhighlight %}
