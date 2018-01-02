@@ -15,8 +15,8 @@ Magento accepts the following GraphQL headers:
 </tr>
 <tr>
 <td><code>Authorization</code></td>
-<td><p>An integration, admin, or customer token. See <a href="{{page.baseurl}}get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information.</p>
-<p><code>Bearer <i>authorization-token</i></code></p>
+<td><p><code>Bearer <i>authorization-token</i></code></p>
+<p>An integration, admin, or customer token. See <a href="{{page.baseurl}}get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information.</p>
 </td>
 </tr>
 <tr>

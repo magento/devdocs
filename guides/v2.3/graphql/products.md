@@ -2,6 +2,7 @@
 layout: default
 group: graphql
 title: Products endpoint
+version: 2.3
 github_link: graphql/products.md
 ---
 
@@ -69,7 +70,7 @@ Attribute | Data type | Description
 ~~old_id~~ | String |
 `options_container` | String | If the product has multiple options, determines where they appear on the product page.
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`.
-~~price~~ | Float |
+`price` | Float | The price of an item. A `ProductPrice` object is returned. See [Price]({{page.baseurl}}graphql/price.html) for more information.
 ~~price_type~~ | String |
 ~~price_view~~ |  |
 `quantity_and_stock_status` |  |

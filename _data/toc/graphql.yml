@@ -10,11 +10,17 @@ pages:
     - label: Headers
       url: graphql/headers.html
 
+    - label: Functional testing
+      url: graphql/functional-testing.html
+
     - label: Endpoint Reference
       children:
 
         - label: Customer
           url: graphql/customer.html
+
+        - label: Price
+          url: graphql/price.html
 
         - label: Products
           url: graphql/products.html
