@@ -81,7 +81,7 @@ When installing and adding the extension the extension, you must add the `compos
 ### Step 3: Verify the extension {#verify}
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
-1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh) on which the extension is installed.
+1.	[SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) on which the extension is installed.
 2.	Enter the following command to display a list of enabled modules:
 
         php bin/magento module:status

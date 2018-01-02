@@ -17,7 +17,7 @@ functional_areas:
 #### Previous step:
 [Migrate data and static files]({{page.baseurl}}cloud/live/stage-prod-migrate.html)
 
-When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{page.baseurl}}cloud/live/stage-prod-migrate.html#pro-urls) access information.
+When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html#pro-urls) access information.
 
 The following information provides information on verifying logs, testing Fastly configurations, user acceptence testing (UAT), and more.
 
@@ -60,7 +60,7 @@ For Pro Staging and Production, the command differs per server:
 	* The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 	* A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 
-After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`. You can also add `--resolve` if your live URL isn't set up with DNS.
+After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`. You can also add `--resolve` if your live URL is not set up with DNS.
 
 Check the returned response headers and values:
 
@@ -80,7 +80,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching won't work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
+Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
 </div>
 
 The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{page.baseurl}}cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{page.baseurl}}cloud/trouble/trouble_fastly.html).
