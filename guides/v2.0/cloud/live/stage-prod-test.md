@@ -17,7 +17,7 @@ functional_areas:
 #### Previous step:
 [Migrate data and static files]({{page.baseurl}}cloud/live/stage-prod-migrate.html)
 
-When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{page.baseurl}}cloud/live/stage-prod-migrate.html#starter-urls) and [Pro]({{page.baseurl}}cloud/live/stage-prod-migrate.html#pro-urls) access information.
+When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{page.baseurl}}cloud/live/stage-prod-migrate.html#pro-urls) access information.
 
 The following information provides information on verifying logs, testing Fastly configurations, user acceptence testing (UAT), and more.
 
@@ -50,7 +50,7 @@ Next, use a `curl` command to verify X-Magento-Tags exist and additional header 
 
 	curl http[s]://<full site URL> -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
 
-For Starter, enter the full site URL from your environment [Access info]({{page.baseurl}}cloud/live/stage-prod-migrate.html#starter-urls) in the command to view the headers.
+For Starter, enter the full site URL from your environment [Access info]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html#starter-urls) in the command to view the headers.
 
 For Pro Staging and Production, the command differs per server:
 
