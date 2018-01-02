@@ -1,12 +1,12 @@
 ---
 layout: default
 group: graphql
-title: Price object
+title: Price field
 version: 2.3
 github_link: graphql/price.md
 ---
 
-The Price object contains an amount and currency code. It may also contain price adjustment information.
+The Price field contains an amount and currency code. It may also contain price adjustment information.
 
 ## Example usage
 
@@ -111,5 +111,3 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
 `code` | PriceAdjustmentCodes | One of `tax`, `weee`, or `weee_tax`.
 `description` | Description | One of `Included` or `Excluded`
-
-##

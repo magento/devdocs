@@ -8,8 +8,7 @@ github_link: graphql/functional-testing.md
 
 Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.
 
-
-## How to create a new GraphQL functional testing
+## Creating a new GraphQL functional test
 
 All GraphQL functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\GraphQlAbstract`. It defines the `graphQlQuery()` method, which should be used to perform Web API calls from tests.
 
@@ -82,9 +81,9 @@ QUERY;
 
 {% endhighlight %}
 
+## Using the default GraphQlQueryTest
 
-## TestModuleGraphQlQuery
+The `\Magento\GraphQl\TestModule\GraphQlQueryTest.php` test case uses two test modules to determine whether the mechanisms for GraphQL extensibility work as expected. It illustrates best practices for extending an existing GraphQL endpoint.
 
-
-
-## TestModuleGraphQlQueryExtension
+* `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`.
+* `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute.
