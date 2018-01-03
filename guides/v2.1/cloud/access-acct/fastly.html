@@ -2042,7 +2042,7 @@ composer require fastly/magento2
 
   <p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.</p>
 
-  <p>You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for <a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html#dif-backend">Wordpress</a> to handle your blog.</p>
+  <p>You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for <a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Wordpress</a> to handle your blog.</p>
 
   <ol>
     <li>Access and expand <strong>Fastly Configuration</strong>.</li>
@@ -2119,7 +2119,7 @@ composer require fastly/magento2
   <p>For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see <a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></p>
 
   <h2 id="bulkaction">Extend Fastly timeout for the Magento Admin</h2>
-  <p>Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a <a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html#admin-timeout">custom VCL snippet</a> to set this to five minutes or ten minutes, (the hard cap).</p>
+  <p>Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a <a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">custom VCL snippet</a> to set this to five minutes or ten minutes, (the hard cap).</p>
 
   <h2 id="geoip">Configure GeoIP handling</h2>
   <p>The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.</p>

@@ -1837,7 +1837,7 @@
   <li>
     <p>Make a copy of <code class="highlighter-rouge">composer.json</code> <em>in a non-tracked directory</em> so it doesn’t get overwritten.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp composer.json ../composer.json.cloud
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   cp composer.json ../composer.json.cloud
 </code></pre></div>    </div>
   </li>
   <li>
@@ -1895,22 +1895,20 @@ git branch -u cloud-project/master
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Reset your Cloud <code class="highlighter-rouge">master</code> branch to contain the code and the commit history of your Magento Commerce branch:</p>
+    <p>Reset your Cloud <code class="highlighter-rouge">master</code> branch to contain the code and the commit history of your Magento Commerce branch.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset --hard prev-project/&lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Push code from your Magento Commerce project to your Magento Commerce (Cloud) project, overwriting the previous contents and commit history with that of your project:</p>
+    <p>Push code from your Magento Commerce project to your Magento Commerce (Cloud) project, overwriting the previous contents and commit history with that of your project.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push -f cloud-project master
 </code></pre></div>    </div>
-  </li>
-</ol>
 
-<p>As the project builds and deploys, many messages are displayed on the screen. A successful deployment is indicated by the following messages:</p>
+    <p>A successful deployment is indicated by the following messages:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Re-deploying environment 43biovskhelhy-master-l5ut8gq.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Re-deploying environment 43biovskhelhy-master-l5ut8gq.
    Environment configuration:
      mymagento (type: php:7.0, size: S, disk: 2048)
      mysql (type: mysql:10.0, size: S, disk: 2048)
@@ -1920,7 +1918,9 @@ git branch -u cloud-project/master
 Environment routes:
    http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
    https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
-</code></pre></div></div>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <h2 id="cloud-import-db">Import the Magento database</h2>
 <p>Before you can use your existing Magento Commerce code in Magento Commerce (Cloud), you must import the database.</p>
@@ -1988,9 +1988,9 @@ Environment routes:
 
 <ol>
   <li>
-    <p>If you haven’t already done so, SSH to the Cloud integration server:</p>
+    <p>If you haven’t already done so, SSH to the Cloud integration server.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    magento-cloud ssh
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2046,24 +2046,25 @@ Environment routes:
 </code></pre></div>    </div>
   </li>
   <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
-  <li>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">Magento Commerce key</a>.</li>
+  <li>
+    <p>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">Magento Commerce key</a>.</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+  <span class="s1">'crypt'</span> <span class="o">=&gt;</span>
+  <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'key'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;your encryption key&gt;'</span><span class="p">,</span>
+  <span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Save your changes to <code class="highlighter-rouge">env.php</code> and exit the text editor.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>Make sure to add this key to the <code class="highlighter-rouge">env.php</code> file for all environments: Integration, Staging, and Production.</p>
+    </div>
+  </li>
 </ol>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s1">'crypt'</span> <span class="o">=&gt;</span>
-          <span class="k">array</span> <span class="p">(</span>
-            <span class="s1">'key'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;your encryption key&gt;'</span><span class="p">,</span>
-          <span class="p">),</span>
-        <span class="p">);</span>
-        </code></pre></figure>
-
-<ol>
-  <li>Save your changes to <code class="highlighter-rouge">env.php</code> and exit the text editor.</li>
-</ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Make sure to add this key to the <code class="highlighter-rouge">env.php</code> file for all environments: Integration, Staging, and Production.</p>
-</div>
 
 <h2 id="media">Import media</h2>
 <p>To import media files into your Cloud environment:</p>

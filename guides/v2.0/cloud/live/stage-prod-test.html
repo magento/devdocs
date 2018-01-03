@@ -1779,7 +1779,7 @@
 			<h4 id="previous-step">Previous step:</h4>
 <p><a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate data and static files</a></p>
 
-<p>When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html#starter-urls">Starter</a> and <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html#pro-urls">Pro</a> access information.</p>
+<p>When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see <a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html#starter-urls">Starter</a> and <a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html#pro-urls">Pro</a> access information.</p>
 
 <p>The following information provides information on verifying logs, testing Fastly configurations, user acceptence testing (UAT), and more.</p>
 
@@ -1815,7 +1815,7 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http[s]://&lt;full site URL&gt; -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
 </code></pre></div></div>
 
-<p>For Starter, enter the full site URL from your environment <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html#starter-urls">Access info</a> in the command to view the headers.</p>
+<p>For Starter, enter the full site URL from your environment <a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html#starter-urls">Access info</a> in the command to view the headers.</p>
 
 <p>For Pro Staging and Production, the command differs per server:</p>
 
@@ -1831,7 +1831,7 @@
   </li>
 </ul>
 
-<p>After you are live, you can also check your live site: <code class="highlighter-rouge">curl https://&lt;your domain&gt; -k -vo /dev/null -HFastly-Debug:1</code>. You can also add <code class="highlighter-rouge">--resolve</code> if your live URL isn’t set up with DNS.</p>
+<p>After you are live, you can also check your live site: <code class="highlighter-rouge">curl https://&lt;your domain&gt; -k -vo /dev/null -HFastly-Debug:1</code>. You can also add <code class="highlighter-rouge">--resolve</code> if your live URL is not set up with DNS.</p>
 
 <p>Check the returned response headers and values:</p>
 
@@ -1855,7 +1855,7 @@
 </ol>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching won’t work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.</p>
+  <p>Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.</p>
 </div>
 
 <p>The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see <a href="/guides/v2.0/cloud/access-acct/fastly.html">Set up Fastly</a> and <a href="/guides/v2.0/cloud/trouble/trouble_fastly.html">Fastly troubleshooting</a>.</p>
