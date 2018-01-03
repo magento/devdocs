@@ -33,10 +33,10 @@ You can create all variables using the Magento Cloud CLI in all Starter environm
 ## Additional information {#magevar}
 For additional information on Magento variables for v2.1.X and later, see the following:
 
-* [Sensitive and system-specific]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
-* [Sensitive configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
-* [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-* [System settings reference]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html)
+* [Sensitive and system-specific](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-sens.html)
+* [Sensitive configuration paths reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-payment.html)
+* [Other configuration paths reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-most.html)
+* [System settings reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-var-name.html)
 
 To use a configuration path as a variable:
 
@@ -122,8 +122,6 @@ Everytime you add or modify a variable using the Project Web Interface or the CL
 * [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 * [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 * [Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-* [Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
 * [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 * [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 *	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
