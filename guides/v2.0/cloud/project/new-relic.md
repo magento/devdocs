@@ -34,6 +34,8 @@ The {{site.data.var.ece}} plans support up to 3 instances of your New Relic APM 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment. For details, see [Remove New Relic from an environment](#remove).
+
+If you are interested in using New Relic on more than 3 active environments, contact your dedicated Launch Manager for details or you can contact New Relic directly at sales@newrelic.com.
 </div>
 
 To add a New Relic license key to an environment:
