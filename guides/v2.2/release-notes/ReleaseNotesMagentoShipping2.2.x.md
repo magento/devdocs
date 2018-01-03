@@ -5,7 +5,7 @@ title: Magento Shipping Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotesMagentoShipping2.2.x.md
 ---
-*Code and release notes published on January 4, 2018.*
+*Code and release notes published on January 5, 2018.*
 
 
 
