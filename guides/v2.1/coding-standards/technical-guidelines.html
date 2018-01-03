@@ -678,9 +678,116 @@
 
 <p start="2.4">2.4. All dependencies MUST be requested by the most generic type that is required by the client object.</p>
 
+<div class="collapsible"><b class="collapsible-title">Examples: </b><div class="collapsible-content"><table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="nx">RedisSessionAdapter</span> <span class="k">implements</span> <span class="nx">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="k">class</span> <span class="nc">SessionManager</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">RedisSessionAdapter</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
+    <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="nx">Breaks</span> <span class="nx">polymorphism</span> <span class="nx">principle</span><span class="p">,</span> <span class="nx">restricts</span> <span class="nx">what</span> <span class="nx">types</span> <span class="nx">can</span> <span class="nx">be</span> <span class="nx">passed</span> <span class="nx">at</span> <span class="nx">the</span> <span class="nx">runtime</span><span class="o">.</span></code></pre></figure>
+
+        </td>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="nx">RedisSessionAdapter</span> <span class="k">implements</span> <span class="nx">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="k">class</span> <span class="nc">SessionManager</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">SessionAdapterInterface</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
+    <span class="p">{}</span>
+<span class="p">}</span></code></pre></figure>
+
+        </td>
+    </tr>
+</table>
+</div></div>
+
+<hr />
+
 <p>2.5. Proxies and interceptors MUST NEVER be explicitly requested in constructors.</p>
 
 <p>2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.</p>
+<div class="collapsible"><b class="collapsible-title">Examples: </b><div class="collapsible-content"><table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">AbstractController</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="c1">// ...
+</span>    <span class="k">protected</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span>
+        <span class="nv">$request</span>
+    <span class="p">)</span> <span class="p">{}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">generateHash</span><span class="p">(</span>
+        <span class="nv">$request</span>
+    <span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">AbstractController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+            <span class="nv">$request</span>
+        <span class="p">);</span>
+
+        <span class="c1">// ...
+</span>
+        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateHash</span><span class="p">(</span>
+            <span class="nv">$request</span>
+        <span class="p">);</span>
+        <span class="c1">// ...
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="nx">Smaller</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">one</span> <span class="nx">responsibility</span><span class="p">,</span> <span class="nx">more</span> <span class="nx">flexible</span><span class="p">,</span> <span class="nx">easy</span> <span class="nx">to</span> <span class="nx">understand</span><span class="p">,</span> <span class="nx">more</span> <span class="nx">testable</span><span class="o">.</span></code></pre></figure>
+
+        </td>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__constructor</span><span class="p">(</span>
+        <span class="nx">ValidatorInterface</span> <span class="nv">$validator</span><span class="p">,</span>
+        <span class="nx">HashGeneratorInterface</span> <span class="nv">$hashGenerator</span>
+    <span class="p">)</span> <span class="p">{}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+        <span class="c1">// ...
+</span>        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hashGenerator</span><span class="o">-&gt;</span><span class="na">generateHash</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+        </td>
+    </tr>
+</table>
+</div></div>
+
+<hr />
 
 <p>2.7. All non-public properties and methods SHOULD be private.</p>
 
@@ -697,18 +804,108 @@
 <p>2.13. Static methods SHOULD NOT be used.</p>
 
 <p>2.14. <a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/">Temporal coupling</a> MUST be avoided.</p>
+<div class="collapsible"><b class="collapsible-title">Example #1: </b><div class="collapsible-content"><table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
+<span class="nv">$url</span><span class="o">-&gt;</span><span class="na">setBaseUrl</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// prints full URL
+</span>
+<span class="c1">// Developer forgot or didn’t know that you need to call setBaseUrl
+</span><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// Throws exception, which makes issue smaller. If it doesn't throw and exception, it could lead to a hidden bug more likely.
+</span>
+<span class="o">//</span> <span class="nx">Method</span> <span class="nx">with</span> <span class="nx">out</span> <span class="nx">parameters</span> <span class="nx">that</span> <span class="nx">doesn</span><span class="err">’</span><span class="nx">t</span> <span class="k">return</span> <span class="nx">anything</span> <span class="nx">could</span> <span class="nx">be</span> <span class="nx">sign</span> <span class="nx">of</span> <span class="nx">temporal</span> <span class="nx">coupling</span><span class="o">.</span></code></pre></figure>
+
+        </td>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span>
+
+<span class="c1">// Or
+</span><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">,</span> <span class="s1">'custom/path'</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="nx">Only</span> <span class="nx">one</span> <span class="nx">way</span> <span class="nx">to</span> <span class="k">use</span> <span class="nx">API</span><span class="p">,</span> <span class="nx">no</span> <span class="nx">temporal</span> <span class="nx">coupling</span><span class="o">.</span></code></pre></figure>
+
+        </td>
+    </tr>
+</table>
+</div></div>
+
+<hr />
+
+<div class="collapsible"><b class="collapsible-title">Example #2: </b><div class="collapsible-content"><table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...
+</span>        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productResource</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$product</span><span class="p">,</span> <span class="nv">$productSku</span><span class="p">,</span> <span class="s1">'sku'</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">registry</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="s1">'product'</span><span class="p">,</span> <span class="nv">$product</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">Template</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getProductName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">registry</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'product'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+        </td>
+        <td>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...
+</span>        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">Template</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getProductName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...
+</span>        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nx">More</span> <span class="nx">flexible</span><span class="p">,</span> <span class="nx">no</span> <span class="nx">dependencies</span> <span class="nx">between</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">no</span> <span class="nx">temporal</span> <span class="nx">coupling</span><span class="o">.</span></code></pre></figure>
+</td></tr></table>
+</div></div>
+
+<hr />
 
 <p>2.15. Method chaining in class design MUST be avoided.</p>
 
 <p>2.16. <a href="https://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a> SHOULD be obeyed.</p>
 
-<p><strong>2.17. Patterns:</strong></p>
+<p>2.17. Patterns</p>
 
 <p>2.17.1. Proxies SHOULD be used for lazy-loading optional dependencies.</p>
 
 <p>2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.</p>
 
-<div class="collapsible"><b class="collapsible-title">For example: </b><div class="collapsible-content"><p>You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a <code class="highlighter-rouge">ConfigReaderInterface</code> with a composite implementation - <code class="highlighter-rouge">ConfigReaderComposite</code>, and configure particular readers as children of a composite reader.</p>
+<div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><p>You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a <code class="highlighter-rouge">ConfigReaderInterface</code> with a composite implementation - <code class="highlighter-rouge">ConfigReaderComposite</code>, and configure particular readers as children of a composite reader.</p>
 </div></div>
 <hr />
 <p>2.17.3. Strategy SHOULD be used when there are multiple algorithms for performing an operation.</p>
