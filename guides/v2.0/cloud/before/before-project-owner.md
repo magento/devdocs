@@ -83,7 +83,7 @@ The project contains all of your code branches, environments from development to
 
 The Project Owner creates the project, selecting the option for a blank site, which is a fully functional Magento template of a store and code. When created, we do the following:
 
-* Generate a `master` branch of Git code from the Magento template at [`magento-cloud-configuration` repository](https://github.com/magento/magento-cloud-configuration){:target="_blank"}
+* Generate a `master` branch of Git code from a Magento template at the `magento-cloud-configuration` repository
 * Add the authentication key information to `auth.json` in your `master` Git branch. When you clone and branch from `master`, the Magento authentication keys are carried over in `auth.json`.
 * For Starter, add it to a Production environment for `master`
 * For Pro, add it to an Integration environment for `master`
