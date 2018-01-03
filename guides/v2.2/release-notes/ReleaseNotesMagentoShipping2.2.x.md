@@ -14,7 +14,7 @@ The release information in this section describes changes to the Magento Shippin
 See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.2CE.html) for a comprehensive discussion of 2.2.2 fixes and enhancements.  
 
 
-## Changes effective January 4, 2018
+## Changes effective January 5, 2018
 
 Here are the enhancements and fixes available as of January 4, 2018:
 
