@@ -19,38 +19,48 @@ See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}release-notes/Rel
 Here are the enhancements and fixes available as of January 4, 2018:
 
 
-### Billing 
+
+### Enhancements  
+
+* Added automated billing subscription redirection for billing
+
+* Improved error handling for Australia Post
+
+
+### Fixes
+
+#### Billing 
 
 • Fixes to billing metric calculations and capture 
 
 • Release of automated billing subscription redirection
 
 
-### Tracking 
+#### Tracking 
 
 • Fixes to tracking capture and display
 
 
-### Portal 
+#### Portal 
 
 • Fix to redirection on log-out  
 
 • Fix to bug preventing consistent saving of qualification rules
 
 
-### Australia Post 
+#### Australia Post 
 
 • Improved error handling 
 
 • Correction of specific service names
 
 
-### UK Mail 
+#### UK Mail 
 
 • Removal of restriction on mandatory county information
 
 
-### FedEx 
+#### FedEx 
 
 • Removal of unsupported freight services from available list
 
@@ -61,12 +71,12 @@ Here are the enhancements and fixes available as of January 4, 2018:
 • Implement sensible defaults for FedEx specific 
 
 
-### Configuration 
+#### Configuration 
 
 • FedEx set to 'Upcoming' carrier
 
 
-### USPS 
+#### USPS 
 
 • Update label size to A6 default in PNG
 
