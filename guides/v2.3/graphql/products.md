@@ -2,6 +2,7 @@
 layout: default
 group: graphql
 title: Products endpoint
+version: 2.3
 github_link: graphql/products.md
 ---
 

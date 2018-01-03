@@ -21,7 +21,7 @@ If you didn't push code to the project because, for example, you didn't complete
 
 ![If the project has no code]({{ site.baseurl }}common/images/cloud_trouble_no-code.png)
 
-Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html#cloud-first-email).
+Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html#account).
 
 #### Related topics
 *	[Manage your projects]({{page.baseurl}}cloud/project/projects.html)
