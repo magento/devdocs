@@ -69,8 +69,8 @@ The deploy log contains start and stop messages for each of the two hooks:
 `Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.
 
 ## Application logs {#app-log}
-To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/ProjectID`.
+To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/<project ID>`.
 
-For Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`.
+For Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/<project ID>_stg`.
 
 Remember, when viewing the logs for Production, you have three nodes to check.
