@@ -229,6 +229,8 @@ class SessionManager
 </table>
 {% endcollapsible %}
 
+---
+
 2.5. Proxies and interceptors MUST NEVER be explicitly requested in constructors.
 
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
@@ -260,9 +262,9 @@ class Edit extends AbstractController
         $errors = $this->validate(
             $request
         );
-        
+
         // ...
-        
+
         $hash = $this->generateHash(
             $request
         );
@@ -297,6 +299,8 @@ class Edit extends Action
 </table>
 {% endcollapsible %}
 
+---
+
 2.7. All non-public properties and methods SHOULD be private.
 
 2.8. Abstract classes MUST NOT be marked as public `@api`.
@@ -312,7 +316,7 @@ class Edit extends Action
 2.13. Static methods SHOULD NOT be used.
 
 2.14. [Temporal coupling] MUST be avoided.
-{% collapsible Examples #1: %}
+{% collapsible Example #1: %}
 <table>
     <tr>
         <th><span style="color: red">Not recommended</span></th>
@@ -350,7 +354,9 @@ echo $url->get($baseUrl, 'custom/path');
 </table>
 {% endcollapsible %}
 
-{% collapsible Examples #2: %}
+---
+
+{% collapsible Example #2: %}
 <table>
     <tr>
         <th><span style="color: red">Not recommended</span></th>
@@ -373,7 +379,7 @@ class View extends Template
 {
     public function getProductName()
     {
-        $product = $this->registry->get('product'); 
+        $product = $this->registry->get('product');
         return $product->getName();
     }
 }
@@ -396,26 +402,29 @@ class View extends Template
     public function getProductName()
     {
         // ...
-        $product = $productRepository->get($productSku); 
+        $product = $productRepository->get($productSku);
         return $product->getName();
     }
 }
-
 // More flexible, no dependencies between classes, no temporal coupling.
 
+{% endhighlight %}
+
 {% endcollapsible %}
+
+---
 
 2.15. Method chaining in class design MUST be avoided.
 
 2.16. [Law of Demeter] SHOULD be obeyed.
 
-**2.17. Patterns:**
+2.17. Patterns:
 
 2.17.1. Proxies SHOULD be used for lazy-loading optional dependencies.
 
 2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.
 
- {% collapsible For example: %}
+ {% collapsible Example: %}
  You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
  {% endcollapsible %}
 ---
