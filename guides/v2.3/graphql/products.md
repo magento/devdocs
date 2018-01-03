@@ -38,9 +38,9 @@ These attributes can be used to create filters:
 
 Attribute | Data type | Description
 --- | --- | ---
-~~category_ids~~ | |
-`color` | String | A value representing the color
-~~cost~~ | String |
+~~category_ids~~ | [Int] |
+`color` | Int | A value representing the color
+~~cost~~ | Float |
 `country_of_manufacture` | String | The country where the product was manufactured
 `created_at` | String | Timestamp indicating when product was created
 `custom_design` | String | A theme that can be applied to the product page
@@ -54,49 +54,51 @@ Attribute | Data type | Description
 `has_options` | String | Indicates whether additional attributes have been created for the product. // Future Boolean?
 `image` | String | The relative path for the main image on the product page.
 `image_label` | String | The label associated with an image.
-~~links_exist~~ | String |
-`links_purchased_separately` | String | TBD whether used
+~~links_exist~~ | Int |
+`links_purchased_separately` | Int | TBD whether used
 ~~links_title~~ | String |
-~~media_gallery~~ | String |
+`manufacturer` | Int |
+~~media_gallery~~ | ProductMediaGallery |
 `meta_description` | String | A brief overview of the product for search results listings. Maximum 255 characters.
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines.
 `meta_title` | String | Appears in the title bar and tab of the browser and search results lists.
 ~~minimal_price~~ | String |
-~~msrp~~ | String |
+~~msrp~~ | Float |
 ~~msrp_display_actual_price_type~~ | String |
 `name` | String | The product name. Customers use this name to identify the product.
 `news_from_date` | String | The “from” date for new product listings, and determines if the product is featured as a new product.
 `news_to_date` | String | The “to” date for new product listings.
-~~old_id~~ | String |
+~~old_id~~ | Int |
 `options_container` | String | If the product has multiple options, determines where they appear on the product page.
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`.
 `price` | Float | The price of an item. A `ProductPrice` object is returned. See [Price]({{page.baseurl}}graphql/price.html) for more information.
-~~price_type~~ | String |
-~~price_view~~ |  |
+~~price_type~~ | Int |
+~~price_view~~ | Int |
 `quantity_and_stock_status` |  |
 ~~required_options~~ | String |
 ~~samples_title~~ | String |
-~~shipment_type~~ | String |
+~~shipment_type~~ | Int |
 `short_description` | String | A short description of the product. Its use depends on the theme.
 `sku` | String | A unique, alphanumeric identifier that is used to track inventory.
 `sku_type` |  |
 `small_image` | String | The file name of a small image, which is used on catalog pages
 `small_image_label` | String | The label associated with the small image.
 ~~special_from_date~~ | String |
-`special_price` | String |  The discounted price of the product
+`special_price` | Float |  The discounted price of the product
 ~~special_to_date~~ | String |
 `status` | Int | 0 - out of stock; 1 - in stock
+`style_bags` | String |
 ~~swatch_image~~ | String |
-~~tax_class_id~~ | String |
+~~tax_class_id~~ | Int |
 `thumbnail` | String | The file name of a thumbnail image
 `thumbnail_label` | String | The label associated with any thumbnail images.
-`tier_price` | String |
+`tier_price` | Float |
 `updated_at` | String | The date when the product was last updated.
 `url_key` | String |  The part of the URL that identifies the product
 `url_path` |  String | The part of the URL that precedes the `url_key`
 `visibility` | Int | 1 - the product is not displayed or searchable; 2 - the product is displayed but is not searchable; 3 - the product is searchable but not displayed; 4 - the product is displayed and is searchable.
 `weight` | Float | The weight of the item, in units defined by the store
-`weight_type` | String |
+`weight_type` | Int |
 
 
 ## Response
