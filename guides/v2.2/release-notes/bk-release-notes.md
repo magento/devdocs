@@ -44,7 +44,7 @@ We recommend installing full [{{site.data.var.ece}} upgrades](http://devdocs.mag
 
 ## Magento Shipping release notes
 
-We provide a list of current fixes and enhancements to the Magento Shipping extension [here]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html). 
+We provide a list of current fixes and enhancements to the Magento Shipping extension in the [Magento Shipping Release Notes]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html). 
 
 
 
