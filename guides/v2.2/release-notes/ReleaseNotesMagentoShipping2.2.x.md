@@ -66,7 +66,7 @@ Here are the enhancements and fixes available as of January 4, 2018:
 • FedEx set to 'Upcoming' carrier
 
 
-###USPS 
+### USPS 
 
 • Update label size to A6 default in PNG
 
