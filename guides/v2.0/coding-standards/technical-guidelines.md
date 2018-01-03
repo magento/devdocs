@@ -418,7 +418,7 @@ class View extends Template
 
 2.16. [Law of Demeter] SHOULD be obeyed.
 
-2.17. Patterns:
+2.17. Patterns
 
 2.17.1. Proxies SHOULD be used for lazy-loading optional dependencies.
 
