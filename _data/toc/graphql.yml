@@ -13,14 +13,16 @@ pages:
     - label: Functional testing
       url: graphql/functional-testing.html
 
-    - label: Endpoint Reference
+    - label: Reference
       children:
+        - label: CustomAttributeMetadata endpoint
+          url: graphql/custom-attribute-metadata.html
 
-        - label: Customer
+        - label: Customer endpoint
           url: graphql/customer.html
 
-        - label: Price
+        - label: Price field
           url: graphql/price.html
 
-        - label: Products
+        - label: Products endpoint
           url: graphql/products.html
