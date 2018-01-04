@@ -74,6 +74,34 @@ The following table explains this command's options, parameters, and values.
 	</tbody>
 </table>
 
+If no directory or filename are passed as arguments, the following application root is used as the default directory, and the following default filenames are used:
+
+<table>
+	<col width="50%">
+	<col width="50%">
+	<tbody>
+		<tr>
+			<th>Command</th>
+			<th>Filename</th>
+		</tr>
+		<tr>
+			<td>info:dependencies:show-modules</td>
+			<td>modules-dependencies.csv</td>
+		</tr>
+		<tr>
+			<td>info:dependencies:show-modules-circular</td>
+			<td>modules-circular-dependencies.csv</td>
+		</tr>
+		<tr>
+			<td>info:dependencies:show-framework</td>
+			<td>framework-dependencies.csv</td>
+		</tr>
+	</tbody>
+</table>
+	
+
+
+
 ### Sample module dependencies report
 The following is a portion of the output for a sample module dependencies report:
 
