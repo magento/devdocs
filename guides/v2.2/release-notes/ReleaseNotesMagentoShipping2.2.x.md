@@ -16,7 +16,7 @@ See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}release-notes/Rel
 
 ## Changes effective January 5, 2018
 
-Here are the enhancements and fixes available as of January 4, 2018:
+Here are the enhancements and fixes available as of January 5, 2018:
 
 
 
