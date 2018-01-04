@@ -31,54 +31,50 @@ Here are the enhancements and fixes available as of January 4, 2018:
 
 #### Billing 
 
-• Fixes to billing metric calculations and capture 
-
-• Release of automated billing subscription redirection
+• Fixed issue with billing metric calculations and capture 
 
 
 #### Tracking 
 
-• Fixes to tracking capture and display
+• Fixed issue with tracking capture and display
 
 
 #### Portal 
 
-• Fix to redirection on log-out  
+• Fixed issue with redirection on log-out  
 
-• Fix to bug preventing consistent saving of qualification rules
+• Fixed issue that prevented the consistent saving of qualification rules
 
 
 #### Australia Post 
 
-• Improved error handling 
-
-• Correction of specific service names
+• Corrected incorrect service names
 
 
 #### UK Mail 
 
-• Removal of restriction on mandatory county information
+• Removed restrictions on mandatory county information
 
 
 #### FedEx 
 
-• Removal of unsupported freight services from available list
+• Removed unsupported freight services from list of available services
 
-• Labels re-oriented from landscape to portrait 
+• Changed orientation of labels from landscape to portrait 
 
 • Corrected MPS handling in completion 
 
-• Implement sensible defaults for FedEx specific 
+• Implemented sensible defaults for FedEx  
 
 
 #### Configuration 
 
-• FedEx set to 'Upcoming' carrier
+• Set FedEx  to 'Upcoming' carrier
 
 
 #### USPS 
 
-• Update label size to A6 default in PNG
+• Updated label size to A6 default in PNG
 
 
 
