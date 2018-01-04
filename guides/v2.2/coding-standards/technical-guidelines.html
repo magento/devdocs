@@ -595,6 +595,8 @@
         <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
         <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
