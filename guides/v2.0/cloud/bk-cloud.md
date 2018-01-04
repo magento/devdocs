@@ -83,7 +83,7 @@ To get started, see:
 
 * [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) of first things to do right after signing up.
 * [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for new trials to get started.
-* Sign up for [status updates]({{page.baseurl}}cloud/onboarding/onboarding-portal.html#status) for components and services.
+* Sign up for [status updates]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html#status) for components and services.
 * For new non-trial projects, see [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
 
 To better understand {{site.data.var.ee}}, your plan, architecture, and workflows, see the following starting points:
