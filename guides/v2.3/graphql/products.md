@@ -32,7 +32,7 @@ Attribute |  Description
 
 ## ProductAttributeSearchCriteria object {#ProductAttributeSearchCriteria}
 
-The `ProductAttributeSearchCriteria` object defines the filters to be used in the search. You can also specify custom and extension attributes defined in any attribute sets.
+The `ProductAttributeSearchCriteria` object defines the filters to be used in the search. You can also specify custom and extension attributes defined in any attribute set.
 
 These attributes can be used to create filters:
 
@@ -121,7 +121,7 @@ Attribute |  Description
 
 ### Items Array
 
-The `Items` array can contain all the attributes that can be specified in an `ProductAttributeSearchCriteria` object, plus the attributes and objects listed in the following table. The array can also contain any custom and extension attributes defined in any attribute sets.
+The `Items` array can contain all the attributes that can be specified in an `ProductAttributeSearchCriteria` object, plus the attributes and objects listed in the following table. The array can also contain any custom and extension attributes defined in any attribute set.
 
 `id` | Int | The ID number assigned to the product.
 `attribute_set_id` | Int | The attribute set assigned to the product.

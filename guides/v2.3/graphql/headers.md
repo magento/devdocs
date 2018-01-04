@@ -25,7 +25,9 @@ Magento accepts the following GraphQL headers:
 <ul>
 <li><code>default</code></li>
 <li>A store code, which is defined when a store view is created.</li>
+<!--
 <li><p><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.</p></li>
+-->
 </ul>
 </td>
 </tr>
