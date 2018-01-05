@@ -42,6 +42,12 @@ You can apply patches as they become available to update Magento Commerce (Cloud
 We recommend installing full [{{site.data.var.ece}} upgrades](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
 </div>
 
+## Magento Shipping release notes
+
+We provide a list of current fixes and enhancements to the Magento Shipping extension in the [Magento Shipping Release Notes]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html). 
+
+
+
 ## Third-party license agreements
 
 *	[{{site.data.var.ce}} third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
