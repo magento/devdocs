@@ -15,7 +15,7 @@ functional_areas:
   - Services
 ---
 
-The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to 3 instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
+The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
 
 ## Key features {#features}
 
@@ -30,12 +30,12 @@ New Relic APM provides the following features to Magento:
 The agent software for New Relic is packaged with your {{site.data.var.ece}} account. You receive your credentials and license information from Magento during launch. You can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
 
 ## Add New Relic APM to an environment {#configure}
-The {{site.data.var.ece}} plans support up to 3 instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your _staging_ and _production_ environments, and you can add the license to one other environment of your choice.
+The {{site.data.var.ece}} plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your _staging_ and _production_ environments, and you can add the license to one other environment of your choice.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment. For details, see [Remove New Relic from an environment](#remove).
+If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment. For details, see [Remove New Relic from an environment](#remove).
 
-If you are interested in using New Relic on more than 3 active environments, contact your dedicated Launch Manager for details, or you can contact New Relic directly at sales@newrelic.com.
+If you are interested in using New Relic on more than three active environments, contact your dedicated Launch Manager for details, or you can contact New Relic directly at sales@newrelic.com.
 </div>
 
 To add a New Relic license key to an environment:
