@@ -19,7 +19,7 @@ For a new Starter project, the Magento encryption key is on your `master` branch
 
 For a new Pro project starting with a "blank site" {{site.data.var.ece}} template, the Magento encryption key is on the Integration `master` branch and environment until you [initially deploy]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) across all environments.
 
-If you have imported data from an existing Magento installation into {{site.data.var.ece}}, you need to [copy the key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#encryption-key) and [deploy it]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#ncryption-key) to the environments.
+If you have imported data from an existing Magento installation into {{site.data.var.ece}}, you need to [copy the key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#encryption-key) and [deploy it]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#encryption-key) to the environments.
 
 ### Encryption key not in all environments {#cloud-trouble-nocrypt}
 All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.
@@ -44,5 +44,5 @@ To verify and update the encryption key environment variable:
 5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.
 
 #### Related topics
-*	[List the current environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html#cloud-import-key)
+*	[List the current environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html#cloud-env-list)
 *	[Copy the encryption key]({{page.baseurl}}cloud/env/environment-vars_over.html)

@@ -7,7 +7,7 @@ github_link: release-notes/ReleaseNotes2.2.2EE.md
 ---
 *Patch code and release notes published on December 12, 2017.*
 
-*Release notes updated on December 21, 2017.*
+*Release notes updated on January 5, 2018.*
 
 
 We are pleased to present Magento Commerce 2.2.2. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the ider Magento community.
@@ -28,7 +28,7 @@ Look for the following highlights in this release:
 
 * **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html) for more information.
 
-* **Magento Shipping** (powered by Temando). This new feature provides integrated advanced multi-carrier shipping and fulfillment.
+* **Magento Shipping** (powered by Temando). This new feature provides integrated advanced multi-carrier shipping and fulfillment.  (In addition to these release notes, you can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html).)
 
 * **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
@@ -379,6 +379,10 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Shipping
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html).
+</div>
+
 <!--- MAGETWO-83278 -->* Magento now displays by default of two shipping address lines even when the `street_lines` setting in customer configuration is set to 0 (zero). [GitHub-7995](https://github.com/magento/magento2/issues/7995)
 
 <!--- MAGETWO-83272 -->* Magent no longer displays a blank page at the shipping stage of checkout when the user tries to return to the Shipping page from the Payments page by clicking **Back**. [GitHub-11197](https://github.com/magento/magento2/issues/11197)
