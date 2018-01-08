@@ -79,7 +79,7 @@ In `magento2ce/dev/tests/acceptance`, run the following command:
 $ vendor/bin/robo build:project
 ```
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+d
 To avoid typing `vendor/bin` every time, add to *PATH* your `<absolute path to acceptance dir>/vendor/bin` value.
 When added, you should be able to run commands: `robo`, `codecept`, and `phpunit`.
 </div>
@@ -121,7 +121,18 @@ They come together to form the path to where Selenium Server is running from lik
 http://127.0.0.1:4444/wd/hub
 ```
 
-### Step 5. Generate existing tests
+### Step 5. Make command.php visible in Magento Test environment
+
+In your Magento installation, navigate to the `magento2ce/dev/tests/acceptance` directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
+```bash
+$ cp .htaccess.sample .htaccess
+```
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you do not have access to your Magento installation and cannot perform the above, tests that run Magento CLI commands will not be able to run.
+</div>
+
+### Step 6. Generate existing tests
 
 In the `magento2ce/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
 
@@ -129,7 +140,7 @@ In the `magento2ce/dev/tests/acceptance` directory, run the following command to
 $ vendor/bin/robo generate:tests
 ```
 
-### Step 6. Run tests
+### Step 7. Run tests
 
 To run one or more tests, you need running Selenium server and a [`codecept`] or [`robo`] with required parameters. 
 
