@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.12EE.md
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on February 12, 2017.*
+*Patch code and release notes were published on February 12, 2018.*
 
 
 
