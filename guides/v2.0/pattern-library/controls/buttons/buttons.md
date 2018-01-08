@@ -278,7 +278,7 @@ Left/Right margin spacing should not be less than 10px<br>
 
 <h3 id="accessibility">Accessibility</h3>
 
-PC: <a href="http://support.microsoft.com/kb/126449" target="\_blank">http://support.microsoft.com/kb/126449</a><br>
+PC: <a href="https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts" target="\_blank">https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts</a><br>
 OS: <a href="http://support.apple.com/en-us/HT201236" target="\_blank">http://support.apple.com/en-us/HT201236</a><br>
 (Keyboard shortcut same as checkbox)<br>
 

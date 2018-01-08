@@ -41,7 +41,7 @@ For your environments, we recommend deploying and testing following a Developmen
 * Staging environment is a Git branch we recommend you create called `staging`, to receive full services matching Production
 * Integration environments include two active branches we recommend created from `staging`
 
-For your branches, you can follow any methodology. One example follows Agile such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
+For your branches, you can follow any methodology. One example follows an Agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html).
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
 

@@ -77,5 +77,3 @@ ADMIN_URL|magento_A8v10|Yes|No
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 *	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
