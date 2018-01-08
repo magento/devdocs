@@ -29,6 +29,9 @@ task :check_links => :build do
 
   puts 'Checking links with htmlproofer...'
 
+  # If you're running this for the first time, create the tmp/.htmlproofer directory first or the script fails.
+  mkdir_p 'tmp/.htmlproofer' unless File.exists?('tmp/.htmlproofer')
+
   # Write console output (stderr only) to a file. Use this if you need to also capture stdout: https://stackoverflow.com/a/2480439
   $stderr.reopen("tmp/.htmlproofer/bad-links.md", "w")
 

@@ -53,7 +53,7 @@ PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" 
 *	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 *	<a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a>
 *	<a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a>
-*	<a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a>
+*	<a href="http://php.net/manual/en/book.hash.php" target="_blank">hash</a>
 *	<a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a>
 *	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a>
 *	<a href="http://php.net/manual/en/book.simplexml.php" target="_blank">SimpleXML</a>

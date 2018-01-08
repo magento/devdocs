@@ -20,6 +20,9 @@ pages:
       - label: Actions
         url: magento-functional-testing-framework/cest/actions.html
 
+      - label: Action groups
+        url: magento-functional-testing-framework/cest/action-groups.html
+
       - label: Assertions
         url: magento-functional-testing-framework/cest/assertions.html
 

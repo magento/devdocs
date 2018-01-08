@@ -57,6 +57,5 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 *	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 * [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 *	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
-* [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html)
 * [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html)
 * [Go live and launch]({{page.baseurl}}cloud/live/live.html)

@@ -41,7 +41,7 @@ If you receive a 503 error, make the request directly to the origin or review lo
 
 Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes.
 
-We provide [VCL snippet instructions]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html#admin-timeout) for extending the timeout for the Magento Admin.
+We provide [VCL snippet instructions]({{ page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html) for extending the timeout for the Magento Admin.
 
 ## Backends and Origin shields {#backend}
 Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _backend_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.

@@ -134,7 +134,7 @@ The following test actions return a variable:
 *  [grabTextFrom](#grabtextfrom)
 *  [grabValueFrom](#grabValueFrom)
 
-## Available actions
+## Reference
 
 The following list contains reference documentation about all action elements available in the MFTF.
 If description of an element does not includes a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
