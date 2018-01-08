@@ -79,7 +79,7 @@ In `magento2ce/dev/tests/acceptance`, run the following command:
 $ vendor/bin/robo build:project
 ```
 
-d
+<div class="bs-callout bs-callout-tip" markdown="1">
 To avoid typing `vendor/bin` every time, add to *PATH* your `<absolute path to acceptance dir>/vendor/bin` value.
 When added, you should be able to run commands: `robo`, `codecept`, and `phpunit`.
 </div>
