@@ -14,15 +14,23 @@ github_link: release-notes/ReleaseNotes2.1.12EE.md
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on January , 2017.*
+*Patch code and release notes were published on February 12, 2017.*
 
 
 
-We are pleased to present Magento Commerce  2.1.12. This release includes 
+We are pleased to present Magento Commerce  2.1.12. This release includes important enhancements to your Magento software. 
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+</div>
 
 ## Highlights
-Look for the following highlights in this release:
+Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the following highlights in this release:
+
+* enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities. See [Magento 2.0.18 and 2.1.12 Security Patches](https://magento.com/security/patches/)
+
+
+(https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
 
 
