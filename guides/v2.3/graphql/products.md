@@ -24,8 +24,8 @@ where:
 
 Attribute |  Description
 --- | ---
-`search` | Performs a full-text search using the specified key words. See [Searches and pagination in GraphQL]({{page.baseurl}}graphql/search-pagination.html) for more information.
-`filter` | Identifies which attributes to search for and return. See [ProductAttributeSearchCriteria](#ProductAttributeSearchCriteria) for more information.
+`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Searches and pagination in GraphQL]({{page.baseurl}}graphql/search-pagination.html) for more information.
+`filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductAttributeSearchCriteria](#ProductAttributeSearchCriteria) for more information.
 `pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Searches and pagination in GraphQL]({{page.baseurl}}graphql/search-pagination.html) for more information.
 `currentPage` | Specifies which page of results to return. The default value is 1. See [Searches and pagination in GraphQL]({{page.baseurl}}graphql/search-pagination.html) for more information.
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Searches and pagination in GraphQL]({{page.baseurl}}graphql/search-pagination.html) for more information.
@@ -40,7 +40,6 @@ Attribute | Data type | Description
 --- | --- | ---
 ~~category_ids~~ | [Int] |
 `color` | Int | A value representing the color
-~~cost~~ | Float |
 `country_of_manufacture` | String | The country where the product was manufactured
 `created_at` | String | Timestamp indicating when product was created
 `custom_design` | String | A theme that can be applied to the product page
@@ -49,47 +48,30 @@ Attribute | Data type | Description
 `custom_layout` | String |
 `custom_layout_update` | String | XML code that is applied as a layout update to the product page
 `description` | String | A detailed information about the product. The value can include simple HTML tags.
-~~gallery~~ | String |
-`gift_message_available` | String | Determines if a gift message can be included with the product purchase. // Future Boolean?
-`has_options` | String | Indicates whether additional attributes have been created for the product. // Future Boolean?
+`has_options` | String | Indicates whether additional attributes have been created for the product.
 `image` | String | The relative path for the main image on the product page.
 `image_label` | String | The label associated with an image.
-~~links_exist~~ | Int |
 `links_purchased_separately` | Int | TBD whether used
-~~links_title~~ | String |
 `manufacturer` | Int |
 ~~media_gallery~~ | ProductMediaGallery |
 `meta_description` | String | A brief overview of the product for search results listings. Maximum 255 characters.
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines.
 `meta_title` | String | Appears in the title bar and tab of the browser and search results lists.
-~~minimal_price~~ | String |
-~~msrp~~ | Float |
-~~msrp_display_actual_price_type~~ | String |
 `name` | String | The product name. Customers use this name to identify the product.
 `news_from_date` | String | The “from” date for new product listings, and determines if the product is featured as a new product.
 `news_to_date` | String | The “to” date for new product listings.
-~~old_id~~ | Int |
 `options_container` | String | If the product has multiple options, determines where they appear on the product page.
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`.
 `price` | Float | The price of an item. A `ProductPrice` object is returned. See [Price]({{page.baseurl}}graphql/price.html) for more information.
-~~price_type~~ | Int |
-~~price_view~~ | Int |
 `quantity_and_stock_status` |  |
-~~required_options~~ | String |
-~~samples_title~~ | String |
-~~shipment_type~~ | Int |
 `short_description` | String | A short description of the product. Its use depends on the theme.
 `sku` | String | A unique, alphanumeric identifier that is used to track inventory.
-`sku_type` |  |
 `small_image` | String | The file name of a small image, which is used on catalog pages
 `small_image_label` | String | The label associated with the small image.
-~~special_from_date~~ | String |
+`special_from_date` | String |
 `special_price` | Float |  The discounted price of the product
-~~special_to_date~~ | String |
+`special_to_date` | String |
 `status` | Int | 0 - out of stock; 1 - in stock
-`style_bags` | String |
-~~swatch_image~~ | String |
-~~tax_class_id~~ | Int |
 `thumbnail` | String | The file name of a thumbnail image
 `thumbnail_label` | String | The label associated with any thumbnail images.
 `tier_price` | Float |

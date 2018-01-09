@@ -4,11 +4,21 @@ pages:
     - label: Overview
       url: graphql/graphql.html
 
-    - label: Searches and pagination
-      url: graphql/search-pagination.html
+    - label: Implementation
+      children:
+        - label: Send a request
+          url: graphql/send-request.html
 
-    - label: Headers
-      url: graphql/headers.html
+        - label: Perform a search-pagination
+          url: graphql/search-pagination.html
+
+    - label: Development
+      children:
+        - label: Declarative schemas
+          url: graphql/declarative-schemas.html
+
+        - label: URL resolver service
+          url: graphql/url-resolver.html
 
     - label: Functional testing
       url: graphql/functional-testing.html
@@ -26,3 +36,6 @@ pages:
 
         - label: Products endpoint
           url: graphql/products.html
+
+        - label: Products endpoint (temp)
+          url: graphql/prducts_temp.html
