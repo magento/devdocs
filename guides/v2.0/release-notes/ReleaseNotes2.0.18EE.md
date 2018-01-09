@@ -11,28 +11,11 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.18EE.md
 ---
 
-*Patch code and release notes were published on NJanuary, 2017.* 
+*Patch code and release notes were published on February 12, 2018.* 
 
-We are pleased to present Magento Commerce 2.0.18. This release includes 
+We are pleased to present Magento Commerce 2.0.18. This release includes multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
-
-## Highlights
-
-Look for the following highlights in this release:
-
-
-* multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
-
-## Security enhancements
-Magento 2.0.17 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
-
-See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
-
-
-
-## Fixed issues
-
-
+Magento 2.0.18 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 
 ## System requirements

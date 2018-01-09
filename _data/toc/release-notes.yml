@@ -156,6 +156,9 @@ pages:
         - label: Magento Open Source 2.0.x Release Notes
           children:
 
+            - label: Magento Open Source 2.0.18 Release Notes
+              url: release-notes/ReleaseNotes2.0.18CE.html
+
             - label: Magento Open Source 2.0.17 Release Notes
               url: release-notes/ReleaseNotes2.0.17CE.html
 
@@ -203,6 +206,9 @@ pages:
 
         - label: Magento Commerce 2.0.x Release Notes
           children:
+
+            - label: Magento Commerce 2.0.18 Release Notes
+              url: release-notes/ReleaseNotes2.0.18EE.html
 
             - label: Magento Commerce 2.0.17 Release Notes
               url: release-notes/ReleaseNotes2.0.17EE.html
