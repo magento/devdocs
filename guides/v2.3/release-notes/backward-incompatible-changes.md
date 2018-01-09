@@ -57,3 +57,13 @@ Affected {{site.data.var.ee}} classes:
 * `\Magento\AdvancedSearch\Model\Client\ClientResolver`
 * `\Magento\AdvancedSearch\Model\Indexer\Fulltext\Plugin\CustomerGroup`
 * `\Magento\AdvancedSearch\Model\SuggestedQueries`
+
+## WYSIWYG Editor
+
+### Magento Banner
+
+* The Banner content type has been renamed to **Dynamic Block**.
+
+### Magento Banner Rotator widget
+
+* The Banner Rotator widget has been renamed to **Dynamic Blocks Rotator**.
