@@ -36,8 +36,6 @@ The following sections detail more about project and environment variables:
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 *	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
 
 ### Upgrade and patch {#upgrade}
 To upgrade and patch Magento, see:
@@ -46,7 +44,7 @@ To upgrade and patch Magento, see:
 *	[Patch and test Magento Commerce]({{page.baseurl}}cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
-With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
+With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="\_blank"}.
 
 ![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
 

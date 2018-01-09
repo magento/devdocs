@@ -84,6 +84,8 @@ class Config
         if ($this->data === null) {
             $this->data = $this->fileReader->load('cache.xml');
         }
+
+        return $this->data[$key];
     }
 }
 {% endhighlight %}
@@ -186,9 +188,120 @@ class Config
 {:start="2.4"}
 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.
 
+{% collapsible Examples: %}
+<table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+{% highlight php %}
+interface SessionAdapterInterface
+{}
+
+RedisSessionAdapter implements SessionAdapterInterface
+{}
+
+class SessionManager
+{
+    public function __construct(RedisSessionAdapter $sessionAdapter)
+    {}
+}
+
+// Breaks polymorphism principle, restricts what types can be passed at the runtime.
+{% endhighlight %}
+        </td>
+        <td>
+{% highlight php %}
+interface SessionAdapterInterface
+{}
+
+RedisSessionAdapter implements SessionAdapterInterface
+{}
+
+class SessionManager
+{
+    public function __construct(SessionAdapterInterface $sessionAdapter)
+    {}
+}
+{% endhighlight %}
+        </td>
+    </tr>
+</table>
+{% endcollapsible %}
+
+---
+
 2.5. Proxies and interceptors MUST NEVER be explicitly requested in constructors.
 
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
+{% collapsible Examples: %}
+<table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+{% highlight php %}
+class AbstractController extends Action
+{
+    // ...
+    protected function validate(
+        $request
+    ) {}
+
+    protected function generateHash(
+        $request
+    ) {}
+}
+
+class Edit extends AbstractController
+{
+    public function execute()
+    {
+        $errors = $this->validate(
+            $request
+        );
+
+        // ...
+
+        $hash = $this->generateHash(
+            $request
+        );
+        // ...
+    }
+}
+
+// Smaller classes, one responsibility, more flexible, easy to understand, more testable.
+
+{% endhighlight %}
+        </td>
+        <td>
+{% highlight php %}
+class Edit extends Action
+{
+    public function __constructor(
+        ValidatorInterface $validator,
+        HashGeneratorInterface $hashGenerator
+    ) {}
+
+    public function execute()
+    {
+        $errors = $this->validator->validate($request);
+        // ...
+        $hash = $this->hashGenerator->generateHash($request);
+    }
+}
+
+{% endhighlight %}
+        </td>
+    </tr>
+</table>
+{% endcollapsible %}
+
+---
 
 2.7. All non-public properties and methods SHOULD be private.
 
@@ -205,18 +318,115 @@ class Config
 2.13. Static methods SHOULD NOT be used.
 
 2.14. [Temporal coupling] MUST be avoided.
+{% collapsible Example #1: %}
+<table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+{% highlight php %}
+$url = new Url();
+$url->setBaseUrl($baseUrl);
+echo $url->get('custom/path'); // prints full URL
+
+// Developer forgot or didn’t know that you need to call setBaseUrl
+$url = new Url();
+echo $url->get('custom/path'); // Throws exception, which makes issue smaller. If it doesn't throw and exception, it could lead to a hidden bug more likely.
+
+// Method with out parameters that doesn’t return anything could be sign of temporal coupling.
+
+{% endhighlight %}
+        </td>
+        <td>
+{% highlight php %}
+$url = new Url($baseUrl);
+echo $url->get('custom/path');
+
+// Or
+$url = new Url();
+echo $url->get($baseUrl, 'custom/path');
+
+// Only one way to use API, no temporal coupling.
+
+{% endhighlight %}
+        </td>
+    </tr>
+</table>
+{% endcollapsible %}
+
+---
+
+{% collapsible Example #2: %}
+<table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+{% highlight php %}
+class Edit extends Action
+{
+    public function execute()
+    {
+        // ...
+        $product = $productResource->load($product, $productSku, 'sku');
+        $this->registry->register('product', $product);
+    }
+}
+
+class View extends Template
+{
+    public function getProductName()
+    {
+        $product = $this->registry->get('product');
+        return $product->getName();
+    }
+}
+
+{% endhighlight %}
+        </td>
+        <td>
+{% highlight php %}
+class Edit extends Action
+{
+    public function execute()
+    {
+        // ...
+        $product = $productRepository->get($productSku);
+    }
+}
+
+class View extends Template
+{
+    public function getProductName()
+    {
+        // ...
+        $product = $productRepository->get($productSku);
+        return $product->getName();
+    }
+}
+// More flexible, no dependencies between classes, no temporal coupling.
+
+{% endhighlight %}
+
+{% endcollapsible %}
+
+---
 
 2.15. Method chaining in class design MUST be avoided.
 
 2.16. [Law of Demeter] SHOULD be obeyed.
 
-**2.17. Patterns:**
+2.17. Patterns
 
 2.17.1. Proxies SHOULD be used for lazy-loading optional dependencies.
 
 2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.
 
- {% collapsible For example: %}
+ {% collapsible Example: %}
  You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
  {% endcollapsible %}
 ---

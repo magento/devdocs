@@ -58,7 +58,7 @@ In this very common test writing example we are grabbing text from a page and th
 <assertEquals expected="Some String" expectedType="string" actual="{$stepKeyOfGrab}" actualType="variable" message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1"/>
 ```
 
-## Available assertions
+## Reference
 
 ### assertElementContainsAttribute
 

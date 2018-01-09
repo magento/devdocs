@@ -16,7 +16,7 @@ functional_areas:
   - Search
 ---
 
-[Elasticsearch](https://www.elastic.co){:target="_blank"} is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
+[Elasticsearch](https://www.elastic.co){:target="\_blank"} is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
 
 *   Elasticsearch performs quick and advanced searches on products in the product catalog
 *   Elasticsearch analyzers support multiple languages
@@ -27,7 +27,7 @@ We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7.
 
 We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. For {{site.data.var.ece}} 2.0.X, you can use [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
 
-For more information, see [Elasticsearch information]({{page.baseurl}}config-guide/elasticsearch/es-overview.html).
+For more information, see [Elasticsearch information](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you're upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
@@ -97,7 +97,7 @@ The following are supported Elasticsearch plugins for version 2.4:
 
 If using `smile-es`, the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
 
-For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="_blank"}.
+For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="\_blank"}.
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
@@ -127,7 +127,7 @@ The response includes all relationships for services and configuration data for 
 {% endhighlight %}
 
 ## Configure Elasticsearch for your site {#configure}
-The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
+The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
 
 
 <!-- The following info is from Platform.sh and may not be required for Magento Cloud:

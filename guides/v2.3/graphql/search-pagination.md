@@ -2,6 +2,7 @@
 layout: default
 group: graphql
 title: Searches and pagination in GraphQL
+version: 2.3
 github_link: graphql/search-pagination.md
 ---
 
@@ -88,7 +89,7 @@ sort: {
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-``` json
+{% highlight json %}
 {
     products(
       search: "Yoga pants"
@@ -98,7 +99,14 @@ The following search returns items that contain the word `yoga` or `pants`. The 
         items {
           name
           sku
-          price
+          price {
+            regularPrice {
+              amount {
+                value
+                currency
+              }
+            }
+          }
         }
         page_info {
           page_size
@@ -106,7 +114,7 @@ The following search returns items that contain the word `yoga` or `pants`. The 
         }
       }
 }
-```
+{% endhighlight  %}
 
 The search returns 45 items.
 
@@ -139,8 +147,16 @@ The response for each item includes the `name`, `sku`, `price` and `description`
       	{
           name
           sku
-          price
           description
+          price {
+            regularPrice {
+              amount {
+                value
+                currency
+              }
+            }
+          }
+
         }
         total_count
         page_info {
@@ -158,16 +174,30 @@ The query returns the following:
     "products": {
       "items": [
         {
-          "name": "Rival Field Messenger",
-          "sku": "24-MB06",
-          "price": 45,
-          "description": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>"
-        },
-        {
           "name": "Wayfarer Messenger Bag",
           "sku": "24-MB05",
-          "price": 45,
-          "description": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>"
+          "description": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Rival Field Messenger",
+          "sku": "24-MB06",
+          "description": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
         }
       ],
       "total_count": 2,
@@ -200,7 +230,14 @@ The following search finds all products that were added after the specified time
         items {
           name
           sku
-          price
+          price {
+            regularPrice {
+              amount {
+                value
+                currency
+              }
+            }
+          }
         }
         page_info {
           page_size
@@ -233,7 +270,14 @@ The following example searches for all products whose `sku` begins with the stri
         items {
           name
           sku
-          price
+          price {
+            regularPrice {
+              amount {
+                value
+                currency
+              }
+            }
+          }
         }
         page_info {
           page_size
@@ -243,10 +287,11 @@ The following example searches for all products whose `sku` begins with the stri
 }
 {% endhighlight %}
 
+The query returns 8 items.
+
 ### Logical AND and OR search
 
 This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the prodict is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
-
 
 {% highlight json %}
 {
@@ -268,7 +313,13 @@ This query searches for products that have `name` that ends with `Orange` or has
         items {
           name
           sku
-          price
+          price {
+            regularPrice {
+              amount {
+                value
+              }
+            }
+          }
         }
         page_info {
           page_size

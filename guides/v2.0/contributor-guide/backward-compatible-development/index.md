@@ -337,6 +337,8 @@ Use the `@deprecated` tag to mark methods as deprecated and follow it up with an
 
 Use the  `@see` tag to recommend the new API to use instead of the old one.
 
+Preserve `@api` tag when deprecating `@api`-marked code.
+
 #### Deprecated tag in PHP
 
 ~~~
