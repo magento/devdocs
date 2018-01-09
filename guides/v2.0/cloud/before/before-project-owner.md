@@ -26,7 +26,7 @@ To initially set up your {{site.data.var.ece}} project, you need the Project Own
 After you have completed those tasks, the Technical Admin can manage development and deployments for you.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you joined us with a 30 day free trial {{site.data.var.ece}} account, we took care of the following first steps. See [Onboarding Portal management]({{page.baseurl}}cloud/onboarding/onboarding-portal.html) for further information and steps.
+If you joined us with a 30-day free trial {{site.data.var.ece}} account, we completed the following first steps for you:
 
 * Created your Cloud account and project
 * Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
