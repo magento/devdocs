@@ -7,6 +7,14 @@ pages:
       versions: ["2.2"]
       children:
 
+
+
+        - label: Magento Open Source 2.2.3 Release Notes
+          url: release-notes/ReleaseNotes2.2.3CE.html
+
+        - label: Magento Commerce 2.2.3 Release Notes
+          url: release-notes/ReleaseNotes2.2.3EE.html
+
         - label: Magento Open Source 2.2.2 Release Notes
           url: release-notes/ReleaseNotes2.2.2CE.html
 

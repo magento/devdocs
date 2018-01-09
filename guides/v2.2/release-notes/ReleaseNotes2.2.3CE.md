@@ -10,10 +10,10 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.3CE.md
 ---
-*Patch code and release notes published on February , 2017.* 
+*Patch code and release notes published on February 12, 2018.* 
 
 
-We are pleased to present Magento Open Source 2.2.3. This release includes .
+We are pleased to present Magento Open Source 2.2.3. This release includes multiple enhancements to the security of your Magento installarion. It also includes a significant, community-submitted enhancement: Support for Elasticsearch 5.x. 
 
 
 ## Highlights
@@ -23,9 +23,6 @@ Look for the following highlights in this release:
 
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
-
-
-## Fixed issues
 
 
 

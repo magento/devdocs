@@ -5,19 +5,16 @@ title: Magento Commerce 2.2.3 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.3EE.md
 ---
-*Patch code and release notes published on January, 2017.* 
+*Patch code and release notes published on February 12, 2018.* 
 
 
-We are pleased to present Magento Commerce 2.2.3. This release includes .
+We are pleased to present Magento Commerce 2.2.3. This release includes multiple enhancements to the security of your Magento installarion. It also includes a significant, community-submitted enhancement: Support for Elasticsearch 5.x. 
 
 
 ## Highlights
 
 Look for the following highlights in this release:
 
-
-
-## Fixed issues
 
 
 
