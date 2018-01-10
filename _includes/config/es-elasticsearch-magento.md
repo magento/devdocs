@@ -30,7 +30,7 @@ To configure Magento to use Elasticsearch:
 	</tr>
 	<tr>
 		<td>Elasticsearch Index Prefix</td>
-		<td>Enter the Elasticsearch Index Prefix. If you use single Elasticsearch instance for several Magento installations, for example, for Staging and Production environments, you have to specify different prefixes for each Magento installation. Otherwise you can left default prefix <code>magento2</code>.</td>
+		<td>Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix <code>magento2</code>.</td>
 	</tr>
 	<tr>
 		<td>Enable Elasticsearch HTTP Auth</td>
