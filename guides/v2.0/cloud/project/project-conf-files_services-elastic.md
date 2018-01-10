@@ -23,14 +23,14 @@ functional_areas:
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until reindex is completed
 
-We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7.
-
-We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. For {{site.data.var.ece}} 2.0.X, you can use [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
-
-For more information, see [Elasticsearch information](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html).
+We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more. For {{site.data.var.ece}} 2.0.X, you can use [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you're upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
+</div>
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html#search) environment variable to connect it to your site.
 </div>
 
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
