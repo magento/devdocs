@@ -1284,6 +1284,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="use-cases">
+            
+            
+        
+            
+            <a href="/guides/v2.1/cloud/env/use-cases.html">Use cases</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1800,12 +1814,16 @@
 
 			<p>The <a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">Message Queue Framework (MQF)</a> is a system within Magento Commerce that allows a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.</p>
 
-<p>The MQF uses <a href="http://www.rabbitmq.com" target="_blank">RabbitMQ</a> as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.</p>
+<p>The MQF uses <a href="http://www.rabbitmq.com" target="\_blank">RabbitMQ</a> as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.</p>
 
 <p>We support RabbitMQ version 3.5.</p>
 
+<div class="bs-callout bs-callout-warning">
+  <p>If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on Magento Commerce (Cloud) to create it for you, use the <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html#queue"><code class="highlighter-rouge">QUEUE_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
+</div>
+
 <h2 id="settings">Add RabbitMQ in services.yaml and .magento.app.yaml</h2>
-<p>To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
+<p>To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to the <code class="highlighter-rouge">.magento/services.yaml</code> file.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">rabbitmq</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">rabbitmq</span>
