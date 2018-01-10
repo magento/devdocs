@@ -152,7 +152,7 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 <li>Check all themes and assets load correctly</li>
 <li>Verify CSS displays correctly, including responsive media sizes</li>
 <li>Check Terms & Conditions, refund policy, and other policy information</li>
-<li>Check contant information, links, and more about your company</li>
+<li>Check content information, links, and more about your company</li>
 <li>Search for products and content, check filtering of results</li>
 <li>Verify the footer block and top navigation blocks</li>
 <li>Test the 404 and Maintenance pages</li>
