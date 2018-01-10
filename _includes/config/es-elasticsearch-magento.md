@@ -29,6 +29,10 @@ To configure Magento to use Elasticsearch:
 		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
 	</tr>
 	<tr>
+		<td>Elasticsearch Index Prefix</td>
+		<td>Enter the Elasticsearch Index Prefix. If you use single Elasticsearch instance for several Magento installations, for example, for Staging and Production environments, you have to specify different prefixes for each Magento installation. Otherwise you can left default prefix <code>magento2</code>.</td>
+	</tr>
+	<tr>
 		<td>Enable Elasticsearch HTTP Auth</td>
 		<td>Click <strong>Yes</strong> only if you enabled authentication for your Elasticsearch server. If so, provide a user name and password in the provided fields.</td>
 	</tr>
