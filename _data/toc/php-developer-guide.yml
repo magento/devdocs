@@ -205,6 +205,9 @@ pages:
 
         - label: Adapters
           url: extension-dev-guide/adapters.html
+        
+        - label: Variable Pool
+          url: extension-dev-guide/variable-pool/
 
     - label: Configuration
       versions: ["2.2", "2.3"]
