@@ -18,8 +18,8 @@ If you prefer using an existing search service, like RabbitMQ, instead of relyin
 You must set the variable value using JSON. For example:
 
 ```json
-{  
-   "amqp":{  
+{
+   "amqp":{
       "host":"test.host",
       "port":"1234",
       "username":"guest",
@@ -27,13 +27,13 @@ You must set the variable value using JSON. For example:
       "virtual_host":"/",
       "ssl":"false"
    },
-   "amqp2":{  
+   "amqp2":{
       "host":"test.host2",
       "port":"12345",
       "username":"guest2",
       "password":"guest2"
    },
-   "mq":{  
+   "mq":{
       "host":"mq.host",
       "port":"1234"
    }
@@ -55,7 +55,7 @@ To configure the `QUEUE_CONFIGURATION` environment variable:
         magento-cloud project:variable:set --json QUEUE_CONFIGURATION '{"amqp": {"host":"test.host", "port":"1234", "username":"guest", "password":"guest","virtual_host":"/","ssl":"false"}, "amqp2": {"host":"test.host2", "port":"12345", "username":"guest2", "password":"guest2"}, "mq":{"host":"mq.host", "port":"1234"}}'
 
 <div class="bs-callout bs-callout-info" markdown="1">
-After setting project-specific variables, you must manually redploy the remote environment for the change to take effect. Use `git push` with new commits to trigger a redeploy. Setting environment-specific variables automatically redeploys the remote environment.
+After setting project-specific variables, you must manually redeploy the remote environment for the change to take effect. Use `git push` with new commits to trigger a redeploy. Setting environment-specific variables automatically redeploys the remote environment.
 </div>
 
 ## Connect to an existing search service {#search}
@@ -65,7 +65,7 @@ If you prefer using an existing search service, like Elasticsearch, instead of r
 You must set the variable value using JSON. For example:
 
 ```json
-{  
+{
    "engine":"elasticsearch",
    "elasticsearch_server_hostname":"hostname",
    "elasticsearch_server_port":"12345",
@@ -89,5 +89,5 @@ To configure the `SEARCH_CONFIGURATION` environment variable:
         magento-cloud project:variable:set --json SEARCH_CONFIGURATION '{"engine":"elasticsearch","elasticsearch_server_hostname":"hostname","elasticsearch_server_port":"12345","elasticsearch_index_prefix":"magento","elasticsearch_server_timeout":"15"}'
 
 <div class="bs-callout bs-callout-info" markdown="1">
-After setting project-specific variables, you must manually redploy the remote environment for the change to take effect. Use `git push` with new commits to trigger a redeploy. Setting environment-specific variables automatically redeploys the remote environment.
+After setting project-specific variables, you must manually redeploy the remote environment for the change to take effect. Use `git push` with new commits to trigger a redeploy. Setting environment-specific variables automatically redeploys the remote environment.
 </div>
