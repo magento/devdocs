@@ -7,7 +7,13 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## December 2017
+## January 2018
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+We added code examples to help explain the following [Technical Guidelines](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html) related to class design:<br/>- 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.<br/>- 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.<br/>- 2.1.4 Temporal coupling MUST be avoided.|2.x|Updated|Jan 03
+
+{% collapsibleh2 December 2017 %}
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
@@ -27,6 +33,8 @@ Updated the following Magento Commerce (Cloud) topics to include details about s
 Magento Commerce (Cloud) will now auto-generate an `app/etc/config.php` file if it doesn't detect one in your project directory during the build phase. Updated references to configuration management in the [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) topic.|2.2.x|Updated|Dec 06
 Replaced references to the `mysqldump` command with the new [`vendor/bin/ece-tools db-dump`](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) CLI command for Staging and Production environments in the Magento Commerce (Cloud) guide|2.2.x|Updated|Dec 06
 [Tech guidelines: Added strict mode requirement 1.3.1](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#1-basic-programming-principles)|2.2.x|Updated|Dec 05
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 November 2017 %}
 
