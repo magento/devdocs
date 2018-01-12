@@ -79,7 +79,7 @@ Building is over. {{site.data.var.ece}} creates an archive of the application an
 
 The environment with all its applications has been deployed (here there is just one) and {{site.data.var.ece}} will now give you an overview of its configuration.
 
-You will not be able to see output from the "deploy" hook as these happen in the context of the deployed application. But you could ssh to the environment and inspect the log files.
+You will not be able to see output from the "deploy" hook as these happen in the context of the deployed application. But you could SSH to the environment and inspect the log files.
 
     Environment configuration:
         myapp (type: php, size: S, disk: 200)

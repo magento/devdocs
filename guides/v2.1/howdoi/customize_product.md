@@ -20,7 +20,7 @@ The following image is an illustration of the default view of the form on the **
 
 ## Overview
 
-In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component]({{page.baseurl}}ui-components/components/ui-form.html). 
+In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html). 
 
 Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 

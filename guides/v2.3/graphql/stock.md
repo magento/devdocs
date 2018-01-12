@@ -2,6 +2,7 @@
 layout: default
 group: graphql
 title: Stock attributes
+version: 2.3
 github_link: graphql/stock.md
 ---
 

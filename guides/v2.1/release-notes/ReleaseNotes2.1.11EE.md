@@ -16,6 +16,9 @@ github_link: release-notes/ReleaseNotes2.1.11EE.md
 
 *Patch code and release notes were published on December 12, 2017.*
 
+*Release notes updated December 19, 2017.*
+
+
 We are pleased to present Magento Open Source  2.1.11. This release includes both new features and many improvements. Check out the many community-contributed fixes!
 
 ## Highlights
@@ -70,6 +73,9 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
 
+<!--- MAGETWO-82756 -->* The **Add-to-cart** checkboxes in Related Products are no longer visible on the storefront when `$canItemsAddToCart` is set to **false**. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11610*.  [GitHub-689](https://github.com/magento/magento2/issues/689)
+
+
 
 ### Cart and checkout
 
@@ -78,13 +84,17 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83195 -->* Magento now permits zip codes for the Netherlands to contain spaces. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11960*. [GitHub-11898](https://github.com/magento/magento2/issues/11898)
 
+<!--- MAGETWO-66446 -->* If you’ve enabled persistent shopping cart, you can now check out even after your session has expired. Previously, if you tried to check out after your session ended, cart contents were not available, and Magento displayed this message: **Unable to place order. Please try again later.**
 
 
 ### Configurable products
 
 <!--- MAGETWO-61133 -->* Magento now displays the correct drop-down option labels for configurable products when you create attributes for products with a custom source. 
 
-<!--- MAGETWO-71515 -->*  When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be "As low as" = <the lowest price>. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
+<!--- MAGETWO-58034 -->*  Magento now saves selected product options when you edit a product page. Previously, Magento did not save configurable options. 
+
+
+<!--- MAGETWO-71515 -->*  When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be **as low as** as the lowest price.   Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
 
 
 
@@ -117,7 +127,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-81676 -->* Magento now displays the State/Province field after you edit the billing address on sales orders. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11378*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
 
-<!--- MAGETWO-82657 -->* We removed a typo in the Paypal Module. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11674* [GitHub-7591](https://github.com/magento/magento2/issues/7591)
+<!--- MAGETWO-82657 -->* We removed a typo in the Paypal Module. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11674*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
 <!--- MAGETWO-82646 -->* The Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11678*. 
 
@@ -127,7 +137,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83100 -->* Magento no longer assigns multiple blocks the same ID. *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11804*. 
 
-<!--- MAGETWO-83205 -->* If you add a new value for an EAV attribute, Magento checks to make sure it's unique for the attribute. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11621*.
+<!--- MAGETWO-83205 -->* If you add a new value for an EAV attribute, Magento checks to make sure it is unique for the attribute. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11621*.
 
 <!--- MAGETWO-83284 -->* Shipping address lines no longer disappear when `street_lines` in customer configuration is set to 0 (zero). *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 12022*. [GitHub-7995](https://github.com/magento/magento2/issues/7995)
 
@@ -147,9 +157,9 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-82947 -->* Magento now throws a PHP 500 Error when `$optionsArray['delete'][$optionId]` is not set. *Fix submitted by [@angelo983](https://github.com/angelo983) in pull request 11728*. 
 
-Magento now displays the State/Province field after you edit the billing address on sales orders.  *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11381*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
+* Magento now displays the State/Province field after you edit the billing address on sales orders.  *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11381*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
 
-
+<!--- MAGETWO-83488 -->* Magento now correctly displays storefront search fields in Magento installations running in Safari. Previously, the search field shifted unexpectedly after you viewed shopping cart contents  in Magento installations running either desktop or mobile versions of Safari. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 12111*. [GitHub-8178](https://github.com/magento/magento2/issues/8178)
 
 
 ### Import/export
@@ -170,19 +180,24 @@ Magento now displays the State/Province field after you edit the billing address
 
 ### Order management
 
-<!--- MAGETWO-82759 -->* We've corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As result, you cannot see the order item's information upon the order printing. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request 11631*. [GitHub-9830](https://github.com/magento/magento2/issues/9830), [GitHub-10530](https://github.com/magento/magento2/issues/10530)
+<!--- MAGETWO-82759 -->* We've corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As a result, you cannot see the order item's information upon the order printing. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request 11631*. [GitHub-9830](https://github.com/magento/magento2/issues/9830), [GitHub-10530](https://github.com/magento/magento2/issues/10530)
 
 
 
 ### Payment methods
 <!--- MAGETWO-83149 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
 
-<!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: "Sorry, but something went wrong".
+<!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: **Sorry, but something went wrong**.
 
 
 <!--- MAGETWO-83742 -->*  We've fixed the race condition that previously caused duplicate orders with a user double-clicked on the Braintree **Pay** button. *Fix submitted by [Daniel Doyle](https://github.com/tr33m4n) in pull request 11901*. [GitHub-10767](https://github.com/magento/magento2/issues/10767)
 
 <!--- MAGETWO-83956 -->* Magento no longer throws an exception when you choose an Order page in the Admin, or set a transaction ID in a payment module. *Fix submitted by [Alex](https://github.com/madonzy) in pull request 12284*. [GitHub-3596](https://github.com/magento/magento2/issues/3596)
+
+
+
+### Performance
+<!--- MAGETWO-82527 -->*  We’ve improved the performance of Web API calls that are used to access checkout payment information or place orders. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11640*. [GitHub-9007](https://github.com/magento/magento2/issues/9007)
 
 
 ### Reports
@@ -191,12 +206,15 @@ Magento now displays the State/Province field after you edit the billing address
 
 
 ### SalesRule
-<!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule. 
+<!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the Cart Price rule. 
 
 <!--- MAGETWO-82242 -->* Products in the cart with a price of $0.00 no longer cause an extra cent to be applied to the discount amount.
 
-<!--- MAGETWO-83689 -->* We've fixed a range of issues that affect shipping when SalesRules and CartRules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11919*. [GitHub-8172](https://github.com/magento/magento2/issues/8172), [GitHub-8089](https://github.com/magento/magento2/issues/8089), [GitHub-10507](https://github.com/magento/magento2/issues/10507)
+<!--- MAGETWO-83689 -->* We've fixed a range of issues that affect shipping when Sales rules and Cart rules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11919*. [GitHub-8172](https://github.com/magento/magento2/issues/8172), [GitHub-8089](https://github.com/magento/magento2/issues/8089), [GitHub-10507](https://github.com/magento/magento2/issues/10507)
 
+
+### Search
+<!--- MAGETWO-71569 -->* The Elasticsearch indexer search-by-attribute functionality now works as expected.
 
 ### Shipping
 <!--- MAGETWO-83429 -->* Magento no longer throws an error (`Undefined variable: responseAjax`) when you try to save a shipment package. *Fix submitted by [Joe Constant](https://github.com/lazyguru) in pull request 12092*. 
@@ -204,6 +222,8 @@ Magento now displays the State/Province field after you edit the billing address
 
 ### Tax
 <!--- MAGETWO-72280 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
+
+<!--- MAGETWO-83403 -->* The total tax amount displayed in the Full Tax Summary now equals the sum of the relevant individual taxes. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11593*. [GitHub-10347](https://github.com/magento/magento2/issues/10347)
 
 
 
@@ -220,12 +240,12 @@ Magento now displays the State/Province field after you edit the billing address
 
 
 ## Known issue
-<!--- MAGETWO-85164 -->**Issue**:In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
+<!--- MAGETWO-85164 -->**Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
 
 **Workaround**: Use the Devdocs [static Swagger site](http://devdocs.magento.com/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
 
 
-<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545 MAGETWO-72376   MAGETWO-69512 MAGETWO-69344  MAGETWO-69107   MAGETWO-67681    MAGETWO-65466 MAGETWO-65049    MAGETWO-64429 MAGETWO-64459  MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-77969    MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522-->
+<!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545 MAGETWO-72376   MAGETWO-69512 MAGETWO-69344  MAGETWO-69107   MAGETWO-67681    MAGETWO-65466 MAGETWO-65049    MAGETWO-64429 MAGETWO-64459  MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-77969    MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522  MAGETWO-75526-->
 
 
 <!--- WON'T FIX MAGETWO-82982   -->
