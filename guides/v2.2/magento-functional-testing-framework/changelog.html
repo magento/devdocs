@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Update the Magento Functional Testing Framework and pull new tests | Magento 2 Developer Documentation</title>
+	<title>Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/magento-functional-testing-framework/update.html">
+	<link rel="canonical" href="//guides/v2.2/magento-functional-testing-framework/changelog.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/update.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/contribution-guidelines.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/update.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/contribution-guidelines.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/update.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/contribution-guidelines.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -484,7 +484,7 @@
     
     
 
-<li class="nav-level1 active " id="update">
+<li class="nav-level1  " id="update">
 
     
     
@@ -529,7 +529,7 @@
     
     
 
-<li class="nav-level1  " id="changelog">
+<li class="nav-level1 active " id="changelog">
 
     
     
@@ -586,7 +586,7 @@
 
           
 
-          <span property="name">Update the Magento Functional Testing Framework and pull new tests</span>
+          <span property="name"></span>
 
         
 
@@ -609,7 +609,7 @@
 
 	
 
-	<h1 class="page-heading">Update the Magento Functional Testing Framework and pull new tests</h1>
+	<h1 class="page-heading"></h1>
 
   
 
@@ -617,52 +617,65 @@
 </section>
 
 
-			<div class="bs-callout bs-callout-info">
-  <p>The Magento Functional Testing Framework is under rapid development and delivers changes to the <a href="https://github.com/magento/magento2-functional-testing-framework"><code class="highlighter-rouge">develop</code></a> branch biweekly.</p>
-</div>
+			<h1 id="magento-functional-testing-framework-changelog">Magento Functional Testing Framework Changelog</h1>
 
-<h2 id="overview">Overview</h2>
+<h2 id="110">1.1.0</h2>
 
-<p>Magento tests and the Framework are stored in different repositories.</p>
-
-<p>Magento tests are stored in the same repository as the Magento code base.
-When you pull changes in the Magento code, you’re potentially pulling corresponding tests .</p>
-
-<p>The Framework is installed separately as a dependency using Composer.
-When pulling the latest Magento code, you need to update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2ce/dev/tests/acceptance</code> directory. This ensures that the <abbr title="Magento Functional Testing Framework">MFTF</abbr> is up to date.</p>
-
-<h2 id="update-the-mftf">Update the <abbr title="Magento Functional Testing Framework">MFTF</abbr></h2>
-
+<h3 id="added">Added</h3>
 <ul>
-  <li>
-    <p>When you updated Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</p>
-  </li>
-  <li>
-    <p>Go to the <code class="highlighter-rouge">magento2ce/dev/tests/acceptance</code> directory:</p>
-  </li>
+  <li>Added the <code class="highlighter-rouge">CUSTOM_MODULE_PATHS</code> env variable. This can be used to target paths, such as extensions, that are outside of the Magento directory for test generation.</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/acceptance
-</code></pre></div></div>
-
+<h3 id="changed">Changed</h3>
 <ul>
-  <li>Run <code class="highlighter-rouge">composer update</code> to get the latest framework version:</li>
+  <li>The <code class="highlighter-rouge">waitForPageLoad</code> action will no longer close admin notification modals. These notifications can be closed with the <code class="highlighter-rouge">closeAdminNotification</code> action.</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>composer update
-</code></pre></div></div>
-
+<h3 id="removed">Removed</h3>
 <ul>
-  <li>Generate newly pulled tests:</li>
+  <li>Removed the <code class="highlighter-rouge">returnVariable</code> attribute from all actions. Instead, the variable name will be the same as the <code class="highlighter-rouge">stepKey</code> for the action that it originated from.</li>
+  <li>Removed the <code class="highlighter-rouge">variable</code> attribute from all actions. Variables can now be referenced via the php style syntax <code class="highlighter-rouge">{$stepKeyHere}</code></li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo generate:tests
-</code></pre></div></div>
+<h3 id="fixed">Fixed</h3>
+<ul>
+  <li>Fixed a crash that could occur if a system level variable collided names with the .env file.</li>
+  <li>Fixed incorrect generation of the <code class="highlighter-rouge">unselectOption</code> when a <code class="highlighter-rouge">parameterArray</code> attribute is used.</li>
+</ul>
 
-<!-- LINK DEFINITIONS -->
+<h2 id="100">1.0.0</h2>
 
-<!-- Abbreviations -->
+<h3 id="core-features">Core features</h3>
 
+<ul>
+  <li><strong>Traceability</strong> for clear logging and reporting capabilities</li>
+  <li><strong>Modularity</strong> to run tests based on modules/extensions installed</li>
+  <li><strong>Customizability</strong> to have an ability to customize existed tests</li>
+  <li><strong>Readability</strong> using clear declarative XML test steps</li>
+  <li><strong>Maintainability</strong> based on simple test creation and overall structure</li>
+</ul>
+
+<h3 id="supported-systems">Supported systems</h3>
+
+<h4 id="operation-systems">Operation systems</h4>
+
+<ul>
+  <li>Windows 10</li>
+  <li>macOS Sierra</li>
+</ul>
+
+<h4 id="browser">Browser</h4>
+
+<ul>
+  <li>Chrome (Latest) with ChromeDriver Latest</li>
+</ul>
+
+<h3 id="known-issues">Known issues</h3>
+
+<ul>
+  <li>Support for Firefox is currently incomplete. This will be resolved to support Firefox 57 (Quantum) and latest Gecko driver in next minor release.</li>
+  <li><code class="highlighter-rouge">MAGENTO_BASE_URL</code> in <em>.env</em> file must have <code class="highlighter-rouge">/</code> at the end. Example: http://magento.com/</li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -673,14 +686,14 @@ When pulling the latest Magento code, you need to update the corresponding Compo
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/update.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/contribution-guidelines.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/magento-functional-testing-framework/update.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/magento-functional-testing-framework/changelog.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
