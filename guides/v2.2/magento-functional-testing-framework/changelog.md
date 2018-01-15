@@ -2,7 +2,7 @@
 layout: default
 group: mftf
 version: 2.2
-github_link: magento-functional-testing-framework/contribution-guidelines.md
+github_link: magento-functional-testing-framework/changelog.md
 functional_areas:
  - Testing
 ---
