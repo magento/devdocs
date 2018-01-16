@@ -761,19 +761,6 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
 after|string|optional| Set `stepKey` of an action that must be executed next.
 
-### loginAsAdmin
-
-A convenient helper that will go to the Magento admin page, fill in the username and password, click login, and finally
-calls [closeAdminNotification](#closeAdminNotification)
-
-Attribute|Type|Use|Description
----|---|---|---
-username|string|optional|
-password|string|optional|
-stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
-
 ### makeScreenshot
 
 [See makeScreenshot docs on codeception.com](http://codeception.com/docs/modules/WebDriver#makeScreenshot){:target='_blank'}
