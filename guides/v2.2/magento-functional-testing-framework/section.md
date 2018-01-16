@@ -88,7 +88,8 @@ Example of a call in test:
 <!-- Click on the button with locator "#add_subcategory_button" on the web page-->
 <click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
 ```
-## Available elements
+
+## Reference
 
 ### section {#section-ref}
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: magento/ece-patches
+title: vendor/magento/ece-patches
 version: 2.2
 github_link: cloud/composer-packages/ece-patches.md
 functional_areas:
@@ -13,7 +13,7 @@ functional_areas:
 {% include cloud/ece-patches.md %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must [patch magento/ece-patches](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) to get these updates.
+You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) to get these features and changes.
 </div>
 
 ## v102.0.3

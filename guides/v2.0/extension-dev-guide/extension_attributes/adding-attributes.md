@@ -205,4 +205,4 @@ In second one:
 </product>
 {% endhighlight %}
 
-<a href="https://github.com/magento-south/magento2-samples/tree/MAGETWO-55017/sample-external-links">Sample module on github</a>
+<a href="https://github.com/magento/magento2-samples/tree/master/sample-external-links">Sample module on github</a>

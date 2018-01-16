@@ -7,10 +7,24 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## December 2017
+## January 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added information about the index prefix when [configuring Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/configure-magento.html), which is necessary when using a single Elasticsearch instance with multiple Magento installations, like Staging and Production environments.|2.1.x, 2.2.x|Updated|Jan 10
+Created a [new topic](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html) describing different scenarios for working with environment variables to the Magento Commerce (Cloud) guide. For example, connecting an existing search or AMQP-based service to your Magento site.<br/>Added guidance for using these variables in the [Set up RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html) and [Set up Elasticsearch](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html) topics.|2.1.x, 2.2.x|New, Updated|Jan 10
+[Added Magento Shipping release notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotesMagentoShipping2.2.x.html)|2.2.x|New|Jan 05
+We added code examples to help explain the following [Technical Guidelines](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html) related to class design:<br/>- 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.<br/>- 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.<br/>- 2.1.4 Temporal coupling MUST be avoided.|2.x|Updated|Jan 03
+
+{% collapsibleh2 December 2017 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Added details about backward incompatible changes between 2.0.0 and 2.2.0 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html#200---220-) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html#200---220-)|2.2.x|Updated|Dec 24
+[Action Groups in the MFTF](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/cest/action-groups.html)|2.2.x|New|Dec 22
+Added a new section in the Magento Commerce (Cloud) guide for release notes related to the [`ece-patches`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html) Composer package.|2.2.x|New, Updated|Dec 20
+Published release notes for the Magento Commerce (Cloud) [`ece-tools 2002.0.7`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200207) Composer package.|2.2.x|Updated|Dec 20
+Added a new topic about setting up the [Bitbucket integration](http://devdocs.magento.com/guides/v2.2/cloud/project/bitbucket-integration.html) for Magento Commerce (Cloud).|2.x|New|Dec 18
 You must prepend [environment variables](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#variables) with `env:` when using the Magento Commerce (Cloud) Project Web Interface to override configuration settings.|2.x|Updated|Dec 14
 Advanced reporting: [Overview](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html), [Modules](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html), [Data collection](http://devdocs.magento.com/guides/v2.2/advanced-reporting/data-collection.html), [Report XML](http://devdocs.magento.com/guides/v2.2/advanced-reporting/report-xml.html)|2.2.x|New|Dec 13
 Added info about backward incompatible changes ([Open Source 2.1.10 - 2.1.11](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html) and [Commerce 2.1.10-2.1.11](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html); [Open Source 2.2.1 - 2.2.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce 2.2.1-2.2.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html); [B2B](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html))|2.1.x, 2.2.x|Updated|Dec 13
@@ -18,10 +32,12 @@ Added info about backward incompatible changes ([Open Source 2.1.10 - 2.1.11](ht
 [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/)|2.2.x|New|Dec 07
 Revised guidance on which environments are limited to 5-minute cron intervals in the Magento Commerce (Cloud) guide. See [Configure cron settings in the Magento Admin](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#add-cron) for more information.|2.2.x|Updated|Dec 06
 Added a new topic to the Magento Commerce (Cloud) guide about [configuring email and Slack notifications](http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html) for build/deploy actions in an environment.|2.2.x|New|Dec 06
-Updated the following Magento Commerce (Cloud) topics to include details about static content compression during build/deploy phases:<br/>- [Configuration Management](http://devdocs/magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)<br/>- [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)|2.2.x|Updated|Dec 06
+Updated the following Magento Commerce (Cloud) topics to include details about static content compression during build/deploy phases:<br/>- [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)<br/>- [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)|2.2.x|Updated|Dec 06
 Magento Commerce (Cloud) will now auto-generate an `app/etc/config.php` file if it doesn't detect one in your project directory during the build phase. Updated references to configuration management in the [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) topic.|2.2.x|Updated|Dec 06
-Replaced references to the `mysqldump` command with the new [`vendor/bin/ece-tools db-dump`](http://localhost:9999/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) CLI command for Staging and Production environments in the Magento Commerce (Cloud) guide|2.2.x|Updated|Dec 06
+Replaced references to the `mysqldump` command with the new [`vendor/bin/ece-tools db-dump`](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) CLI command for Staging and Production environments in the Magento Commerce (Cloud) guide|2.2.x|Updated|Dec 06
 [Tech guidelines: Added strict mode requirement 1.3.1](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#1-basic-programming-principles)|2.2.x|Updated|Dec 05
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 November 2017 %}
 

@@ -76,14 +76,14 @@ For extensive details, see the following:
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 
 ## Environment services {#services}
-Your cloud environments for Starter and Pro configure the available and used database, web server, caching, and services per the settings entered for a series of YAML files. When you push Git code from your local, these services and more configure automatically in the environments hosted in the cloud (PaaS). For Pro Staging and Production environments (IaaS), you need to enter a ticket for those files to be migrated to configure those environment services and more. For details, see [Configure your enviornments](#configenv).
+Your cloud environments for Starter and Pro configure the available and used database, web server, caching, and services per the settings entered for a series of YAML files. When you push Git code from your local, these services and more configure automatically in the environments hosted in the cloud (PaaS). For Pro Staging and Production environments (IaaS), you need to enter a ticket for those files to be migrated to configure those environment services and more. For details, see [Configure your environments](#configenv).
 
-Additional services and drivers are automatically included in your enviornments, including the following.
+Additional services and drivers are automatically included in your environments, including the following.
 
 ### SQL Server extension driver {#sqldriver}
 We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud MS SQL Servers. No additional installation is necessary to use these drivers. You will need to complete a couple configurations before using the connection and external SQL.
 
-These drivers are included in all Starter environments and Pro Integration enviornments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with the request.
+These drivers are included in all Starter environments and Pro Integration environments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with the request.
 
 To configure, you need to configure and provide the following:
 
@@ -108,7 +108,7 @@ For Pro, you need to enter a ticket to have these files and settings pushed to S
 
   * [MySQL service]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml
   * [Redis service]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html) configuration for a backend caching solution set in services.yaml
-  * [Solr service]({{ page.baseurl }}cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
+  * [Solr service](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
   * [Elasticsearch service]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.ee}} 2.1 and later set in services.yaml
   * [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html) configuration for a messaging broker set in services.yaml
 * [routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) configures how Magento processes an incoming URL for your Integration environment

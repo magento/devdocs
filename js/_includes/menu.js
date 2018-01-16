@@ -43,7 +43,7 @@ $.fn.mainNavigation = function(settings) {
 			e.stopPropagation();
 			e.preventDefault();
 			var currentItem = $(this);
-			console.log('enter');
+			//console.log('enter');
 			// Center the flyout menu
 			var popup = currentItem.find( settings.popupSelector );
 			if ( popup.find('.nav-section').length ) {
@@ -65,7 +65,7 @@ $.fn.mainNavigation = function(settings) {
 		var handleMenuMouseLeave = function (e) {
 			e.stopPropagation();
 			e.preventDefault();
-			console.log('leave');
+			//console.log('leave');
 			var currentItem = $(this);
 
 			hidePopup( currentItem );
@@ -80,7 +80,7 @@ $.fn.mainNavigation = function(settings) {
 		}
 
 		var handleLastLinkFocusOut = function (e) {
-			console.log( $(this) );
+			//console.log( $(this) );
 			hidePopup ( $(this).closest( settings.popupSelector ) );
 		}
 

@@ -21,8 +21,6 @@ pages:
     - label: Onboarding tasks
       url: cloud/onboarding/onboarding-tasks.html
       children:
-        - label: Onboarding Portal management
-          url: cloud/onboarding/onboarding-portal.html
 
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
@@ -227,6 +225,9 @@ pages:
         - label: Magento Commerce (Cloud) environment variables
           url: cloud/env/environment-vars_cloud.html
 
+        - label: Working with variables
+          url: cloud/env/working-with-variables.html
+
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
       children:
@@ -277,10 +278,10 @@ pages:
       url: cloud/composer-packages/patch-notes.html
       versions: ["2.2","2.3"]
       children:
-        - label: magento/ece-patches
+        - label: vendor/magento/ece-patches
           url: cloud/composer-packages/ece-patches.html
 
-        - label: magento/ece-tools
+        - label: vendor/magento/ece-tools
           url: cloud/composer-packages/ece-tools.html
 
     - label: Troubleshooting
