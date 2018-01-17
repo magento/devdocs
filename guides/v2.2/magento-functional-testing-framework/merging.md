@@ -9,19 +9,51 @@ functional_areas:
 ---
 
 The MFTF allows you to merge entities defined in XML files such as [Cests], [Pages], [Sections], and [Data].
-This will be used to support rapid test creation for extensions and customizations.
+It is useful for supporting rapid test creation for extensions and customizations.
 
-We allow a user to specify their changes needed to an existing file and to have that merged. This produces a modification of the original that incorporates the specified changes (the 'delta').
+We allow a user to specify their changes needed to an existing file and to have that merged.
+This produces a modification of the original that incorporates the specified changes (the 'delta').
 
-Merging operates on XML tag level. MFTF allows a change file to
+## General
+
+Merging operates on XML tag level.
+MFTF allows a change file to
      * Specify additional steps to be added
      * The removal of steps from original.
+
 The items in the change file must specify the order in which they should be merged.
-Merging is triggered by our parser when there are two (or more) entities with the same name. Therefore, your change file must have the same name attribute as it's target object to be changed.
 
-## Example
+Merging is triggered by our parser when there are two (or more) entities with the same name.
+Therefore, your change file must have the same name attribute as it's target object to be changed.
 
-Original test
+### Sequencing
+
+Any change must specify it's sequence.
+This means it must include information about where it should be inserted relative to other test steps - usually relative to the original, but can reference itself or other change files.
+
+This is done by a `before` or after `element`. See the above example.
+The action can only specify either a before or after.
+
+### Deletion
+
+An action can be removed from the original test.
+This is done by using the <remove> action and specifying the stepKey of the action in the original file to be removed.
+
+## Merging in Cests
+
+### Remove a cest
+
+### Add a test
+
+### Remove a test
+
+### Change a test
+
+#### Add an action
+
+#### Remove an action
+
+#### Change an action
 
 ```xml
 <test name="LogInAsAdminTest">
@@ -35,7 +67,6 @@ Original test
 
 Test update
 
-
 ```xml
 <test name="LogInAsAdminTest">
     <checkOption selector="{{AdminLoginFormSection.rememberMe}}" mergeKey="checkRememberMe" before="clickLogin"/>
@@ -43,6 +74,29 @@ Test update
     <see mergeKey="seeLifetimeSales" remove="true"/>
 </test>
 ```
+
+## Pages merging
+
+### Add a section
+
+### Remove a section
+
+## Sections merging
+
+### Add an element
+
+### Remove an element
+
+### Change an element
+
+## Data merging
+
+### Add data
+
+### Remove data
+
+### Change data
+
 
 <!-- LINK DEFINITIONS -->
 
