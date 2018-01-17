@@ -2,23 +2,26 @@ label: GraphQL Developer Guide
 pages:
 
     - label: Overview
-      url: graphql/graphql.html
+      url: graphql/index.html
 
     - label: Implementation
       children:
         - label: Send a request
           url: graphql/send-request.html
 
-        - label: Perform a search-pagination
+        - label: Perform a search
           url: graphql/search-pagination.html
 
     - label: Development
       children:
-        - label: Declarative schemas
-          url: graphql/declarative-schemas.html
+        - label: Configure the GraphQL schema for a module
+          url: graphql/configure-graphql-xml.html
 
-        - label: URL resolver service
-          url: graphql/url-resolver.html
+        - label: Resolvers
+          url: graphql/resolvers.html
+
+        - label: URL rewrite service
+          url: graphql/url-resolver-service.html
 
     - label: Functional testing
       url: graphql/functional-testing.html
