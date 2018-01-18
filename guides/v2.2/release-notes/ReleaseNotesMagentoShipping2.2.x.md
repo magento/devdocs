@@ -14,6 +14,74 @@ The release information in this section describes changes to the Magento Shippin
 See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.2CE.html) for a comprehensive discussion of 2.2.2 fixes and enhancements.  
 
 
+# Changes effective January 22, 2018
+
+Here are the enhancements and fixes available as of January 22, 2018:
+
+### Enhancements   
+
+* Added a tutorial for activating Magento Shipping.
+
+ * Redesigned the Shipping Experience Rules page so that it displays the rule execution sequence. 
+
+* Added alphanumeric validation to the Huxloe Hermes carrier tab. (Huxloe Hermes)
+
+ * Improved the functionality of the label converter. (Huxloe Hermes)
+
+* Improved the error messages for PickUpAvailability endpoint. (FedEx)
+
+ * Improved the general quality of all error messages. (UPS)
+
+* Improved the validation of customer API keys during configuration.  (UK Mail)
+
+
+
+### Fixes
+The fixes described here are categorized by shipping carrier. 
+
+#### Australia Post
+ * Fixed an issue with the error thrown if Export Category is **commercial** when the shipment isn't dutiable. Previously, the error thrown did not correctly address the issue. 
+
+
+#### FedEx 
+
+* Changed the default signature option to DIRECT for all services. 
+
+#### UPS 
+
+* Resolved a UI issue with validation so that users do not need to enter State or Province when connecting to UPS with a United Kingdom  address.
+
+
+#### DHL Express
+
+ * Updated the pickup error response from DHL. Previously, this response was inaccurate.
+
+ * Updated the `getCompanyName` and `getOrganisationName` validation functions to check only for company name and organization name respectively.
+
+ * Updated the validation process for company name and organization name in `CIN.marco`.
+
+* Updated the currency fields in the `cn23` template to match other documents and labels.
+
+ * Changed the default display of the `quantityUnit` field. The default value is now zero, and this field is left blank.
+
+
+#### Huxloe Hermes
+
+ * Increased the duration of the response timeout from 10 to 20 seconds.
+
+ * Fixed Linting
+
+ * Improved the functionality of the label converter.
+
+ * Upgraded to Local timezone (Booking, PickupAt, Tracking)
+
+
+
+
+
+
+
+
 ## Changes effective January 5, 2018
 
 Here are the enhancements and fixes available as of January 5, 2018:
