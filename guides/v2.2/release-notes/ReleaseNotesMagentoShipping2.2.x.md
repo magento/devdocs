@@ -74,7 +74,7 @@ The fixes described here are categorized by shipping carrier.
 
  * Improved the functionality of the label converter.
 
- * Upgraded to Local timezone (Booking, PickupAt, Tracking)
+ * Upgraded to Local timezone for booking, pickup, tracking times.
 
 
 
@@ -98,52 +98,51 @@ Here are the enhancements and fixes available as of January 5, 2018:
 
 ### Fixes
 
-#### Billing 
 
-• Fixed issue with billing metric calculations and capture 
+#### Billing 
+* Fixed issue with billing metric calculations and capture 
 
 
 #### Tracking 
 
-• Fixed issue with tracking capture and display
+* Fixed issue with tracking capture and display
 
 
 #### Portal 
 
-• Fixed issue with redirection on log-out  
+* Fixed issue with redirection on log-out  
 
-• Fixed issue that prevented the consistent saving of qualification rules
+* Fixed issue that prevented the consistent saving of qualification rules
 
 
 #### Australia Post 
 
-• Corrected incorrect service names
+* Corrected incorrect service names
 
 
 #### UK Mail 
 
-• Removed restrictions on mandatory county information
+* Removed restrictions on mandatory county information
 
 
 #### FedEx 
+* Removed unsupported freight services from list of available services
 
-• Removed unsupported freight services from list of available services
+* Changed orientation of labels from landscape to portrait 
 
-• Changed orientation of labels from landscape to portrait 
+* Corrected MPS handling in completion 
 
-• Corrected MPS handling in completion 
-
-• Implemented sensible defaults for FedEx  
+* Implemented sensible defaults for FedEx  
 
 
 #### Configuration 
 
-• Set FedEx  to 'Upcoming' carrier
+* Set FedEx  to 'Upcoming' carrier.
 
 
 #### USPS 
 
-• Updated label size to A6 default in PNG
+* Updated label size to A6 default in PNG.
 
 
 
