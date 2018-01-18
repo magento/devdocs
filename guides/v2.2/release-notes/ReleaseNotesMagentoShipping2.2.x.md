@@ -14,7 +14,7 @@ The release information in this section describes changes to the Magento Shippin
 See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.2CE.html) for a comprehensive discussion of 2.2.2 fixes and enhancements.  
 
 
-# Changes effective January 22, 2018
+## Changes effective January 22, 2018
 
 Here are the enhancements and fixes available as of January 22, 2018:
 
@@ -22,15 +22,15 @@ Here are the enhancements and fixes available as of January 22, 2018:
 
 * Added a tutorial for activating Magento Shipping.
 
- * Redesigned the Shipping Experience Rules page so that it displays the rule execution sequence. 
+* Redesigned the Shipping Experience Rules page so that it displays the rule execution sequence. 
 
 * Added alphanumeric validation to the Huxloe Hermes carrier tab. (Huxloe Hermes)
 
- * Improved the functionality of the label converter. (Huxloe Hermes)
+* Improved the functionality of the label converter. (Huxloe Hermes)
 
 * Improved the error messages for PickUpAvailability endpoint. (FedEx)
 
- * Improved the general quality of all error messages. (UPS)
+* Improved the general quality of all error messages. (UPS)
 
 * Improved the validation of customer API keys during configuration.  (UK Mail)
 
@@ -40,7 +40,8 @@ Here are the enhancements and fixes available as of January 22, 2018:
 The fixes described here are categorized by shipping carrier. 
 
 #### Australia Post
- * Fixed an issue with the error thrown if Export Category is **commercial** when the shipment isn't dutiable. Previously, the error thrown did not correctly address the issue. 
+
+* Fixed an issue with the error thrown if Export Category is **commercial** when the shipment isn't dutiable. Previously, the error thrown did not correctly address the issue. 
 
 
 #### FedEx 
@@ -54,7 +55,7 @@ The fixes described here are categorized by shipping carrier.
 
 #### DHL Express
 
- * Updated the pickup error response from DHL. Previously, this response was inaccurate.
+* Updated the pickup error response from DHL. Previously, this response was inaccurate.
 
  * Updated the `getCompanyName` and `getOrganisationName` validation functions to check only for company name and organization name respectively.
 
@@ -67,7 +68,7 @@ The fixes described here are categorized by shipping carrier.
 
 #### Huxloe Hermes
 
- * Increased the duration of the response timeout from 10 to 20 seconds.
+* Increased the duration of the response timeout from 10 to 20 seconds.
 
  * Fixed lint program.
 
