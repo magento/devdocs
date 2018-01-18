@@ -22,47 +22,54 @@ The following table lists the community members who created pull requests and is
 
 PR contributors|Issue contributors
 :-----:|:-----:
-[RakeshJesadiya](https://github.com/RakeshJesadiya){:target="\_blank"}|[hostep](https://github.com/hostep){:target="\_blank"}
-[aleron75](https://github.com/aleron75){:target="\_blank"}|[LavenderGrey](https://github.com/LavenderGrey){:target="\_blank"}
-[csned](https://github.com/csned){:target="\_blank"}|[ekuusela](https://github.com/ekuusela){:target="\_blank"}
-[tonegolf71](https://github.com/tonegolf71){:target="\_blank"}|[eugenbg](https://github.com/eugenbg){:target="\_blank"}
-[sgnsajgon](https://github.com/sgnsajgon){:target="\_blank"}|[slackerz](https://github.com/slackerz){:target="\_blank"}
-[peterjaap](https://github.com/peterjaap){:target="\_blank"}|[tgoeminne](https://github.com/tgoeminne){:target="\_blank"}
-[sprankhub](https://github.com/sprankhub){:target="\_blank"}|[erikhansen](https://github.com/erikhansen){:target="\_blank"}
-[ihor-sviziev](https://github.com/ihor-sviziev){:target="\_blank"}|[s3rj1k](https://github.com/s3rj1k){:target="\_blank"}
-[rogyar](https://github.com/rogyar){:target="\_blank"}|[divivu](https://github.com/divivu){:target="\_blank"}
-[rafaelstz](https://github.com/rafaelstz){:target="\_blank"}|[dufferman87](https://github.com/dufferman87){:target="\_blank"}
-[roman204](https://github.com/roman204){:target="\_blank"}  |[Orstio](https://github.com/Orstio){:target="\_blank"}
- |[jsutariya](https://github.com/jsutariya){:target="\_blank"}
- |[vishwasahan](https://github.com/vishwasahan){:target="\_blank"}
- |[magentounit2](https://github.com/magentounit2){:target="\_blank"}
- |[hiteshvaghasiya83](https://github.com/hiteshvaghasiya83){:target="\_blank"}
- |[allamsettiramesh](https://github.com/allamsettiramesh){:target="\_blank"}
- |[zainengineer](https://github.com/zainengineer){:target="\_blank"}
- |[Tjmstudios](https://github.com/Tjmstudios){:target="\_blank"}
- |[drillsar](https://github.com/drillsar){:target="\_blank"}
- |[Oxidant](https://github.com/Oxidant){:target="\_blank"}
- |[ihor-sviziev](https://github.com/ihor-sviziev){:target="\_blank"}
- |[matthew0918](https://github.com/matthew0918){:target="\_blank"}
- |[st2forget](https://github.com/st2forget){:target="\_blank"}
- |[WileESpaghetti](https://github.com/WileESpaghetti){:target="\_blank"}
- |[Drakhunter](https://github.com/Drakhunter){:target="\_blank"}
- |[akhan522](https://github.com/akhan522){:target="\_blank"}
- |[AlexVandenKerkhof](https://github.com/AlexVandenKerkhof){:target="\_blank"}
- |[franckgarnier21](https://github.com/franckgarnier21){:target="\_blank"}
- |[sourabhmodi60](https://github.com/sourabhmodi60){:target="\_blank"}
- |[rsiemens77](https://github.com/rsiemens77){:target="\_blank"}
- |[korostii](https://github.com/korostii){:target="\_blank"}
- |[paales](https://github.com/paales){:target="\_blank"}
- |[NeuralNeurosis](https://github.com/NeuralNeurosis){:target="\_blank"}
- |[yehor-chernyshov](https://github.com/yehor-chernyshov){:target="\_blank"}
- |[gab0019](https://github.com/gab0019){:target="\_blank"}
- |[mousebat](https://github.com/mousebat){:target="\_blank"}
- |[phronesis](https://github.com/phronesis){:target="\_blank"}
- |[victorw999](https://github.com/victorw999){:target="\_blank"}
- |[noctufaber](https://github.com/noctufaber){:target="\_blank"}
- |[awilsonCurt](https://github.com/awilsonCurt){:target="\_blank"}
- |[abelyanvahe](https://github.com/abelyanvahe){:target="\_blank"}
+[likemusic](https://github.com/likemusic)|[Prutha29](https://github.com/Prutha29)
+[chickenland](https://github.com/chickenland)|[embed0](https://github.com/embed0)
+[chris-pook]((https://github.com/chris-pook))|[camdixon](https://github.com/camdixon)
+[ihor-sviziev](https://github.com/ihor-sviziev)|[vovsky](https://github.com/vovsky)
+[rhoerr](https://github.com/rhoerr)|[lazyguru](https://github.com/lazyguru)
+[hostep](https://github.com/hostep)|[roman204](https://github.com/roman204)
+[avoelkl](https://github.com/avoelkl)|[osrecio](https://github.com/osrecio)
+[rogyar](https://github.com/rogyar)|[fdrechsler](https://github.com/fdrechsler)
+[osrecio](https://github.com/osrecio)|[adamrandazzo](https://github.com/adamrandazzo)
+[erikhansen](https://github.com/erikhansen)|[McFizh](https://github.com/McFizh)
+[DavidLambuer](https://github.com/DavidLambuer)|[erichagz](https://github.com/erichagz)
+[JosephMaxwell](https://github.com/JosephMaxwell)|[rossmc](https://github.com/rossmc)
+[nshiff](https://github.com/nshiff)|[36serg6](https://github.com/36serg6)
+[rafaelstz](https://github.com/rafaelstz)|[kunal1234gh](https://github.com/kunal1234gh)
+[asrar7787](https://github.com/asrar7787)|[iunia27](https://github.com/iunia27)
+ |[zaibi099](https://github.com/zaibi099)
+ |[tiwarimukesh](https://github.com/tiwarimukesh)
+ |[SunshineTech](https://github.com/SunshineTech)
+ |[documarezc](https://github.com/documarezc)
+ |[mpingu](https://github.com/mpingu)
+ |[hostep](https://github.com/hostep)
+ |[aryaashwani](https://github.com/aryaashwani)
+ |[danistor](https://github.com/danistor)
+ |[timri](https://github.com/timri)
+ |[ZariMatan](https://github.com/ZariMatan)
+ |[koenner01](https://github.com/koenner01)
+ |[likemusic](https://github.com/likemusic)
+ |[bgronek](https://github.com/bgronek)
+ |[korostii](https://github.com/korostii)
+ |[hjsprite](https://github.com/hjsprite)
+ |[vmistrybas](https://github.com/vmistrybas)
+ |[KarlComSe](https://github.com/KarlComSe)
+ |[csned](https://github.com/csned)
+ |[terolahtinen](https://github.com/terolahtinen)
+ |[mehdiagharlou](https://github.com/mehdiagharlou)
+ |[allamsettiramesh](https://github.com/allamsettiramesh)
+ |[valugi](https://github.com/valugi)
+ |[DavidLambuer](https://github.com/DavidLambuer)
+ |[kevingimbel](https://github.com/kevingimbel)
+ |[drdreamm](https://github.com/drdreamm)
+ |[milansimek](https://github.com/milansimek)
+ |[yogeshsyscraft](https://github.com/yogeshsyscraft)
+ |[WaPoNe](https://github.com/WaPoNe)
+ |[Igloczek](https://github.com/Igloczek)
+ |[lalittmohan](https://github.com/lalittmohan)
+ |[arthurlataks](https://github.com/arthurlataks)
+ |[bmxmale](https://github.com/bmxmale)
+ |[maderlock](https://github.com/maderlock)
 
 Follow the easy instructions on [how to contribute to DevDocs][0] to join these contributors!
 
