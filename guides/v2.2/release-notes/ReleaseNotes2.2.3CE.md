@@ -30,11 +30,6 @@ Looking for more information on these new features as well as many others? Check
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
-The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
-
-
-
-
 
 ### System requirements
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
@@ -45,7 +40,7 @@ For more information, [System Requirements]({{ site.baseurl }}magento-system-req
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.2 General Availability (GA) using Composer.
+You can install Magento Open Source 2.2.x using Composer.
 
 
 {% include install/releasenotes/ce_install_21.md %}

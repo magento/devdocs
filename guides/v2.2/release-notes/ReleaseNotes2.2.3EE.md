@@ -15,6 +15,7 @@ We are pleased to present Magento Commerce 2.2.3. This release includes multiple
 
 Look for the following highlights in this release:
 
+* support for Elasticsearch 5.x. See [Install and configure Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information abut using Elasticsearch with Magento. 84775
 
 
 
@@ -22,7 +23,6 @@ Look for the following highlights in this release:
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
-The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
 
 ### System requirements
@@ -34,7 +34,7 @@ For more information, [System Requirements]({{ site.baseurl }}magento-system-req
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.2 General Availability (GA) using Composer.
+You can install Magento Commerce 2.2.x using Composer.
 
 
 {% include install/releasenotes/ee_install_21.md %}
