@@ -69,7 +69,7 @@ The fixes described here are categorized by shipping carrier.
 
  * Increased the duration of the response timeout from 10 to 20 seconds.
 
- * Fixed Linting
+ * Fixed lint program.
 
  * Improved the functionality of the label converter.
 
