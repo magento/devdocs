@@ -20,9 +20,6 @@ pages:
         - label: Resolvers
           url: graphql/resolvers.html
 
-        - label: URL rewrite service
-          url: graphql/url-resolver-service.html
-
     - label: Functional testing
       url: graphql/functional-testing.html
 
@@ -40,5 +37,5 @@ pages:
         - label: Products endpoint
           url: graphql/products.html
 
-        - label: Products endpoint (temp)
-          url: graphql/prducts_temp.html
+        - label: urlResolver service
+          url: graphql/url-resolver.html

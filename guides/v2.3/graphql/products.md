@@ -115,8 +115,6 @@ The `Items` array can contain all the attributes that can be specified in an `Pr
 
 #### ProductCategoryLinks object {#ProductCategoryLinks}
 
-Marked for omission
-
 Field | Type | Description
 --- | --- | --
 `position` | Int | The position of the category in the category tree
