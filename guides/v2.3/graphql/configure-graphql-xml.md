@@ -155,13 +155,13 @@ If your module does more than add attributes to an existing module, you must def
 
 ### Define enumerations
 
-You can define an enumeration in the schema as follows:
+You can define an enumeration in the schema as follows. Values are capitalized. If a value contains a dash (-), the system converts it to an underscore (_).
 
 ``` xml
 <type xsi:type="Enum" name="VolumeEnum">
-  <item name="in3">in3</item>
-  <item name="ft3">ft3</item>
-  <item name="cm3">cm3</item>
-  <item name="m3">m3</item>
+  <item name="in3">IN3</item>
+  <item name="ft3">FT3</item>
+  <item name="cm3">CM3</item>
+  <item name="m3">M3</item>
 </type>
 ```

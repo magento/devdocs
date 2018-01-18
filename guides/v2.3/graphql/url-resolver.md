@@ -2,7 +2,7 @@
 layout: default
 group: graphql
 version: 2.3
-title: urlResolver service
+title: urlResolver endpoint
 github_link: graphql/url-resolver.md
 ---
 

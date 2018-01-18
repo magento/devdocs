@@ -20,6 +20,9 @@ pages:
         - label: Resolvers
           url: graphql/resolvers.html
 
+        - label: Create a custom urlResolver service
+          url: graphql/create-custom-url-resolver.html
+
     - label: Functional testing
       url: graphql/functional-testing.html
 
