@@ -1908,7 +1908,7 @@
    <span class="k">do
    </span><span class="nv">TYPE</span><span class="o">=</span><span class="k">${</span><span class="nv">vcl</span><span class="p">%.vcl</span><span class="k">}</span>
    curl <span class="nt">-X</span> POST <span class="nt">-s</span> https://app.fastly.com/service/<span class="k">${</span><span class="nv">SERVICE_ID</span><span class="k">}</span>/version/<span class="k">${</span><span class="nv">VERSION</span><span class="k">}</span>/snippet <span class="se">\</span>
-   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    <span class="nt">-H</span> <span class="s2">"Fastly-Key:</span><span class="nv">$API_KEY</span><span class="s2">"</span> <span class="se">\</span>
    <span class="nt">--data</span> <span class="s2">"name=</span><span class="k">${</span><span class="nv">SNIPPET_NAME_PREFIX</span><span class="k">}</span><span class="s2">_</span><span class="k">${</span><span class="nv">TYPE</span><span class="k">}</span><span class="s2">&amp;type=</span><span class="nv">$TYPE</span><span class="s2">&amp;dynamic=0&amp;content=</span><span class="k">$(</span><span class="nb">cat</span> <span class="nv">$vcl</span> | rawurlencode<span class="k">)</span><span class="s2">"</span><span class="p">;</span>
    <span class="k">done</span>
