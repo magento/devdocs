@@ -8,14 +8,41 @@ github_link: graphql/conigure-graphql-xml.md
 
 The `<module_name>/etc/graphql.xml` file defines the GraphQL schema for a module. This file
 
-* Determines which attributes to make available for GraphQL queries. You can define separate lists of attributes for queries and results.
 * Defines the structure of queries.
+* Determines which attributes to make available for GraphQL queries. You can define separate lists of attributes for queries and results.
 * Serves as the source for displaying the schema in a GraphQL browser
 
 A module's `graphql.xml` file inherits properties from the base `graphql.xml` file, located in the `app/code/GraphQl/etc/` directory. All `graphql.xml` files must follow the specifications defined in the `app/code/GraphQl/etc/graphql.xsd` file.
 
 To illustrate how to configure the `graphql.xml` file, let's suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. The contents of this file will vary, depending on whether the module extends the Catalog module or acts as a standalone.
 
+## Define the query
+
+A query definition can be one line, or it can be complex. If your module's query implements `searchCriteria`, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition is simple.
+
+The following example shows the `products` query. The top-level `name` is `Query`, indicating that is a child of the `Query` node. All module schema definitions contain this line. The `argument` definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL](({{page.baseurl}}graphql/search-pagination.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes)
+
+``` xml
+<type xsi:type="OutputType" name="Query">
+    <field xsi:type="ObjectOutputField" name="products" type="Products" resolver="\Magento\GraphQlCatalog\Model\Resolver\Products">
+        <argument xsi:type="ScalarArgument" name="search" type="String"/>
+        <argument xsi:type="ObjectArgument" name="filter" type="ProductFilterInput" required="true"/>
+        <argument xsi:type="ScalarArgument" name="pageSize" type="Int"/>
+        <argument xsi:type="ScalarArgument" name="currentPage" type="Int"/>
+        <argument xsi:type="ObjectArgument" name="sort" type="ProductSortInput"/>
+    </field>
+</type>
+```
+
+In contrast, this `customer` query returns the `Customer` object associated with the current user. There is no need to define pagination information.
+
+``` xml
+ <type xsi:type="OutputType" name="Query">
+   <field xsi:type="ObjectOutputField" name="customer" type="Customer" resolver="Magento\CustomerGraphQl\Model\Resolver\Customer"/>
+</type>`
+```
+
+If all your module's attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module's query definition.
 
 ## Declare input attributes
 
@@ -78,7 +105,7 @@ where:
 * `name=<value>` specifies the name of an input attribute.
 * `type="SortEnum"` is defined in the base `graphql.xml` file.
 
-## Specify output attributes
+## Specify output attributes {#specify-output-attributes}
 
 Output attributes are more complex than input attributes. You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.
 
@@ -134,22 +161,6 @@ The following example shows the output type definition of `VolumeWithUnit` objec
 <type xsi:type="OutputType" name="VolumeWithUnit">
   <field xsi:type="ScalarOutputField" name="v_number" type="Float"/>
   <field xsi:type="ScalarOutputField" name="v_unit" type="String"/>
-</type>
-```
-
-### Define the query
-
-If your module does more than add attributes to an existing module, you must define the query. The following example defines the search query for the Products endpoint.
-
-``` xml
-<type xsi:type="OutputType" name="Query">
-    <field xsi:type="ObjectOutputField" name="products" type="Products" resolver="\Magento\GraphQlCatalog\Model\Resolver\Products">
-        <argument xsi:type="ScalarArgument" name="search" type="String"/>
-        <argument xsi:type="ObjectArgument" name="filter" type="ProductFilterInput" required="true"/>
-        <argument xsi:type="ScalarArgument" name="pageSize" type="Int"/>
-        <argument xsi:type="ScalarArgument" name="currentPage" type="Int"/>
-        <argument xsi:type="ObjectArgument" name="sort" type="ProductSortInput"/>
-    </field>
 </type>
 ```
 

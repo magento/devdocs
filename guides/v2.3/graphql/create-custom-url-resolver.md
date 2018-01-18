@@ -42,19 +42,24 @@ See [Events and observers]({{page.baseurl}}extension-dev-guide/events-and-observ
 Use the following steps to configure your custom GraphQL `urlResolver` service:
 
 1. Define the enumeration in your module's `graphql.xml` file. `UrlRewriteEntityTypeEnum` is defined by the `UrlRewriteGraphQl` module.
+
+``` xml
   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_GraphQl:etc/graphql.xsd">
     <type xsi:type="Enum" name="UrlRewriteEntityTypeEnum">
       <item name="my_entity">MY_ENTITY</item>
     </type>
   </config>
-
+```
 2. Define two events similar to the following in your module's `etc/events.xml` file.
+
+``` xml
   <event name="mymodule_page_save_after">
     <observer name="process_url_rewrite_saving" instance="Magento\MyModuleRewrite\Observer\ProcessUrlRewriteSavingObserver" />
   </event>
   <event name="mymodule_page_delete_after">
     <observer name="process_url_rewrite_delete" instance="Magento\MyModuleRewrite\Observer\ProcessUrlRewriteDeleteObserver" />
   </event>
+```
 
 ## Related Topics
 
