@@ -141,7 +141,7 @@ To create the bash script files:
           do
           TYPE=${vcl%.vcl}
           curl -X POST -s https://app.fastly.com/service/${SERVICE_ID}/version/${VERSION}/snippet \
-          -H 'Content-Type: application/json'
+          -H 'Content-Type: application/json' \
           -H "Fastly-Key:$API_KEY" \
           --data "name=${SNIPPET_NAME_PREFIX}_${TYPE}&type=$TYPE&dynamic=0&content=$(cat $vcl | rawurlencode)";
           done
