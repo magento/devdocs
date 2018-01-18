@@ -28,7 +28,7 @@ Here are the enhancements and fixes available as of January 22, 2018:
 
 * Improved the functionality of the label converter. (Huxloe Hermes)
 
-* Improved the error messages for PickUpAvailability endpoint. (FedEx)
+* Improved the error messages for the PickUpAvailability endpoint. (FedEx)
 
 * Improved the general quality of all error messages. (UPS)
 
@@ -59,9 +59,9 @@ The fixes described here are categorized by shipping carrier.
 
  * Updated the `getCompanyName` and `getOrganisationName` validation functions to check only for company name and organization name respectively.
 
- * Updated the validation process for company name and organization name in `CIN.marco`.
+ * Updated the validation process for company name and organization name used on the DHL Express Connect page.
 
-* Updated the currency fields in the `cn23` template to match other documents and labels.
+* Updated the currency fields in the `cn23` template for customs declaration forms to match other documents and labels.
 
  * Changed the default display of the `quantityUnit` field. The default value is now zero, and this field is left blank.
 
@@ -74,10 +74,7 @@ The fixes described here are categorized by shipping carrier.
 
  * Improved the functionality of the label converter.
 
- * Upgraded to Local timezone for booking, pickup, tracking times.
-
-
-
+ * Upgraded to local time zones for booking, pickup, and tracking times.
 
 
 
