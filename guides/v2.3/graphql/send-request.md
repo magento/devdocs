@@ -2,8 +2,8 @@
 layout: default
 group: graphql
 version: 2.3
-title: GraphQL headers
-github_link: graphql/headers.md
+title: Request headers
+github_link: graphql/send-request.md
 ---
 
 Magento accepts the following GraphQL headers:
