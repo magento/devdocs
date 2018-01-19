@@ -31,8 +31,6 @@ Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the
 
 * **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied.  See Magento Shipping to print USPS shipping labels with postage. 
 
-(https://magento.com/security/patches/magento-2016-and-219-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
-
 
 
 ## Security enhancements
