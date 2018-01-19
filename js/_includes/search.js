@@ -51,7 +51,10 @@ $(function() {
       templates: {
         //'suggestion' templating function used to render a single suggestion
         suggestion: function(suggestion) {
-          return '<a href="' + suggestion.url + '">' + suggestion._highlightResult.title.value + '</a>';
+          var title = suggestion._highlightResult.title;
+          if ( typeof title !== 'undefined') {
+            return '<a href="' + suggestion.url + '">' + title.value + '</a>';
+          }
         }
       }
     }
@@ -59,7 +62,6 @@ $(function() {
     if ( typeof suggestion.url != 'undefined' ) {
       window.location.href = suggestion.url;
     }
-    console.log(suggestion);
   }).on('keypress', function (event) {
     if(event.which == 13) {
       var value = escapeHTML(event.target.value);
