@@ -225,6 +225,9 @@ pages:
         - label: Magento Commerce (Cloud) environment variables
           url: cloud/env/environment-vars_cloud.html
 
+        - label: Working with variables
+          url: cloud/env/working-with-variables.html
+
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
       children:

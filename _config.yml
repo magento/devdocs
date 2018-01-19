@@ -92,7 +92,7 @@ algolia:
   index_name: 'devdocs'
   api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
   lazy_update: false
-  excluded_files:
+  files_to_exclude:
     - guides/m1x
     - swagger
 

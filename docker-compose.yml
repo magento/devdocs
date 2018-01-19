@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  devdocs:
+    image: devdocs:dev
+    build: 
+      context: .
+    environment:
+      - LANG=C.UTF-8
+    ports:
+      - 4000:80
