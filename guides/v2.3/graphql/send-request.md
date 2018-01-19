@@ -2,7 +2,7 @@
 layout: default
 group: graphql
 version: 2.3
-title: Send a GraphQL request
+title: Request headers
 github_link: graphql/send-request.md
 ---
 

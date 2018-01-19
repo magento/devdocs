@@ -6,7 +6,7 @@ pages:
 
     - label: Implementation
       children:
-        - label: Send a request
+        - label: Request headers
           url: graphql/send-request.html
 
         - label: Perform a search
