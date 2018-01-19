@@ -44,13 +44,25 @@ In contrast, this `customer` query returns the `Customer` object associated with
 
 If all your module's attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module's query definition.
 
+The Volumizer query will be based on the `products` query. Since we're not expecting large number of returned items, the `pageSize` and `currentPage` arguments are omitted.
+
+``` xml
+<type xsi:type="OutputType" name="Query">
+    <field xsi:type="ObjectOutputField" name="volumizer" type="Volumizer" resolver="\Magento\GraphQlCatalog\Model\Resolver\Products">
+        <argument xsi:type="ScalarArgument" name="search" type="String"/>
+        <argument xsi:type="ObjectArgument" name="filter" type="VolumizerFilterInput" required="true"/>
+        <argument xsi:type="ObjectArgument" name="sort" type="ProductSortInput"/>
+    </field>
+</type>
+```
+
 ## Declare input attributes
 
 You must explicitly define each attribute that can be used as input in a GraphQL query. Complex objects are not supported as inputs, so each attribute definition will contain an `xsi:type`, `name`, and `type`.
 
 The following example defines four Volumizer attributes that can be specified as input to a query. If the Volumizer module extends Catalog, then the InputType `name` value must be the value assigned in the Catalog module's `graphql.xml`file (`ProductFilterInput`). If the Volumizer module is a standalone module, then provide a `name` such as `VolumizerFilterInput`. In this case, the attributes will be available only to queries processed by the Volumizer module.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+<div class="bs-callout bs-callout-warning" id="info" markdown="1">
 The specified `name` must end with the string `Input`.
 </div>
 
@@ -89,7 +101,9 @@ The base `graphql.xml` file defines the filter operations (`eq`, `like`, `gt`, e
 
 You must also define which attributes can be used for sorting the search results. This list does not not have to be identical to the list of input or output attributes.
 
-If your module extends another module, use the name defined in the extended module. Otherwise, be sure that the value assigned to `name` must end with the string `Input`.
+If your attributes extend another module, use the name defined in the extended module. Otherwise, be sure that the value assigned to `name` must end with the string `Input`.
+
+This example allows sorting on the `v_volume` attribute only.
 
 ``` xml
 <type xsi:type="InputType" name="ProductSortInput">
@@ -144,7 +158,7 @@ For example:
 <field xsi:type="ScalarOutputField" name="v_height" type="Float"/>
 <field xsi:type="ScalarOutputField" name="v_width" type="Float"/>
 <field xsi:type="ScalarOutputField" name="v_depth" type="Float"/>
-<field xsi:type-"ObjectOutputField" name="v_volume" type="VolumeWithUnit">
+<field xsi:type-"ObjectOutputField" name="v_volume" type="VolumeWithUnit"/>
 ```
 
 ### Define attribute output types
@@ -155,7 +169,7 @@ Individual output types have the same structure as the output interface definiti
 * The `name` must match a value defined by the `type` parameter.
 * The `typeResolver` parameter is not used.
 
-The following example shows the output type definition of `VolumeWithUnit` object:
+The following example shows the output type definition of the `VolumeWithUnit` object:
 
 ``` xml
 <type xsi:type="OutputType" name="VolumeWithUnit">
@@ -166,7 +180,7 @@ The following example shows the output type definition of `VolumeWithUnit` objec
 
 ### Define enumerations
 
-You can define an enumeration in the schema as follows. Values are capitalized. If a value contains a dash (-), the system converts it to an underscore (_).
+You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_).
 
 ``` xml
 <type xsi:type="Enum" name="VolumeEnum">
