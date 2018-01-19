@@ -8,14 +8,24 @@ github_link: release-notes/ReleaseNotes2.2.3EE.md
 *Patch code and release notes published on February 12, 2018.* 
 
 
-We are pleased to present Magento Commerce 2.2.3. This release includes multiple enhancements to the security of your Magento installarion. It also includes a significant, community-submitted enhancement: Support for Elasticsearch 5.x. 
+We are pleased to present Magento Commerce 2.2.3. This release includes multiple enhancements to the security of your Magento installarion. It also includes support for Elasticsearch 5.x, thanks to community members.
 
 
 ## Highlights
 
 Look for the following highlights in this release:
 
-* support for Elasticsearch 5.x. See [Install and configure Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information abut using Elasticsearch with Magento. 84775
+* Multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
+
+<!--- MAGETWO-84775 -->* Support for Elasticsearch 5.x. See [Install and configure Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento.
+
+Note: On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied.  See Magento Shipping to print USPS shipping labels with postage. 
+
+## Security enhancements
+
+Magento 2.2.3 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+
+See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 
 
