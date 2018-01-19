@@ -57,24 +57,24 @@ The fixes described here are categorized by shipping carrier.
 
 * Updated the pickup error response from DHL. Previously, this response was inaccurate.
 
- * Updated the `getCompanyName` and `getOrganisationName` validation functions to check only for company name and organization name respectively.
+* Updated the `getCompanyName` and `getOrganisationName` validation functions to check only for company name and organization name respectively.
 
  * Updated the validation process for company name and organization name used on the DHL Express Connect page.
 
 * Updated the currency fields in the `cn23` template for customs declaration forms to match other documents and labels.
 
- * Changed the default display of the `quantityUnit` field. The default value is now zero, and this field is left blank.
+* Changed the default display of the `quantityUnit` field. The default value is now zero, and this field is left blank.
 
 
 #### Huxloe Hermes
 
 * Increased the duration of the response timeout from 10 to 20 seconds.
 
- * Fixed lint program.
+* Fixed lint program.
 
- * Improved the functionality of the label converter.
+* Improved the functionality of the label converter.
 
- * Upgraded to local time zones for booking, pickup, and tracking times.
+* Upgraded to local time zones for booking, pickup, and tracking times.
 
 
 
