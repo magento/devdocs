@@ -8,6 +8,10 @@ menu_node:
 menu_order: 350
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_php-set.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
@@ -71,14 +75,12 @@ Error text is typically:
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
 Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
 
-{% highlight PHP %}
-<?php
+{% highlight PHP inline=true %}
 <img
     class="product-image"
     src="<%- data.url %>"
     data-position="<%- data.position %>"
     alt="<%- data.label %>" />
-?>
 {% endhighlight %}
 
 More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.

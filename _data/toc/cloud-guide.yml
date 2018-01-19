@@ -21,8 +21,6 @@ pages:
     - label: Onboarding tasks
       url: cloud/onboarding/onboarding-tasks.html
       children:
-        - label: Onboarding Portal management
-          url: cloud/onboarding/onboarding-portal.html
 
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
@@ -33,11 +31,17 @@ pages:
         - label: Composer
           url: cloud/reference/cloud-composer.html
 
-        - label: GitHub
-          url: cloud/project/project-integrate-github.html
+        - label: Magento Cloud CLI
+          url: cloud/reference/cli-ref-topic.html
 
-        - label: Fastly
-          url: cloud/basic-information/cloud-fastly.html
+        - label: Git
+          url: cloud/reference/git-integration.html
+
+        - label: Bitbucket integration
+          url: cloud/project/bitbucket-integration.html
+
+        - label: GitHub integration
+          url: cloud/project/project-integrate-github.html
 
         - label: SSH and sFTP
           url: cloud/env/environments-ssh.html
@@ -48,7 +52,7 @@ pages:
         - label: Blackfire Profiler
           url: cloud/project/project-integrate-blackfire.html
 
-    - label: First-time local environment setup
+    - label: Local environment setup
       url: cloud/access-acct/first-time-setup.html
       children:
         - label: Prepare for local environment setup
@@ -72,22 +76,49 @@ pages:
         - label: First time deployment
           url: cloud/access-acct/first-time-deploy.html
 
-        - label: Import an existing Magento project
-          children:
-            - label: First steps for importing Magento EE
-              url: cloud/access-acct/first-time-setup_import-first-steps.html
+        - label: Optional - Install sample data
+          url: cloud/howtos/sample-data.html
 
-            - label: Find the information you need for your import
-              url: cloud/access-acct/first-time-setup_import-prereq.html
+        - label: Optional - Configure Xdebug
+          url: cloud/howtos/debug.html
 
-            - label: Prepare your existing Magento EE system
-              url: cloud/access-acct/first-time-setup_import-prepare.html
+    - label: Import existing code into a project
+      url: cloud/access-acct/first-time-setup_import-first-steps.html
+      children:
+        - label: Prepare your existing Magento Commerce system
+          url: cloud/access-acct/first-time-setup_import-prepare.html
 
-            - label: Import Magento EE into Magento Enterprise Cloud Edition
-              url: cloud/access-acct/first-time-setup_import-import.html
+        - label: Import Magento Commerce into Magento Commerce (Cloud)
+          url: cloud/access-acct/first-time-setup_import-import.html
 
-    - label: Configure Magento Commerce (Cloud)
+    - label: Configure your store
       url: cloud/configure/configuration-overview.html
+      children:
+        - label: Best practices for store configuration
+          url: cloud/configure/configure-best-practices.html
+
+        - label: Set up PayPal
+          url: cloud/live/paypal-onboarding.html
+          versions: ["2.1","2.2","2.3"]
+
+        - label: Set up Magento B2B
+          url: cloud/configure/setup-b2b.html
+          versions: ["2.2","2.3"]
+
+        - label: Set up cron jobs
+          url: cloud/configure/setup-cron-jobs.html
+
+        - label: Set up multiple Cloud websites or stores
+          url: cloud/project/project-multi-sites.html
+
+        - label: Install, manage, and upgrade modules
+          url: cloud/howtos/install-components.html
+
+        - label: Install a theme
+          url: cloud/howtos/custom-theme.html
+
+    - label: Configure Fastly
+      url: cloud/basic-information/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: cloud/access-acct/fastly.html
@@ -95,53 +126,72 @@ pages:
         - label: Custom Fastly VCL snippets
           url: cloud/configure/cloud-vcl-custom-snippets.html
 
-        - label: Set up PayPal
-          url: cloud/live/paypal-onboarding.html
-          versions: ["2.1","2.2","2.3"]
+        - label: Custom whitelist VCL
+          url: cloud/configure/fastly-vcl-whitelist.html
 
-        - label: Set up multiple Cloud websites or stores
-          url: cloud/project/project-multi-sites.html
+        - label: Custom blacklist VCL
+          url: cloud/configure/fastly-vcl-blacklist.html
 
-        - label: Set up cron jobs
-          url: cloud/configure/setup-cron-jobs.html
+        - label: Custom extend Admin timeout VCL
+          url: cloud/configure/fastly-vcl-extend-timeout.html
 
-        - label: .magento.app.yaml
+        - label: Custom redirect to Wordpress VCL
+          url: cloud/configure/fastly-vcl-wordpress.html
+
+        - label: Custom block bad referer VCL
+          url: cloud/configure/fastly-vcl-badreferer.html
+
+        - label: Fastly troubleshooting
+          url: cloud/trouble/trouble_fastly.html
+
+    - label: Configure environments
+      url: cloud/env/environments.html
+      children:
+        - label: Configure .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
 
-        - label: Configure routes
-          children:
-            - label: routes.yaml
-              url: cloud/project/project-conf-files_routes.html
+        - label: Configure services - services.yaml
+          url: cloud/project/project-conf-files_services.html
 
-            - label: Caching
-              url: cloud/project/project-routes-more-cache.html
+        - label: Set up MySQL service
+          url: cloud/project/project-conf-files_services-mysql.html
 
-            - label: Redirects
-              url: cloud/project/project-routes-more-redir.html
+        - label: Set up Redis service
+          url: cloud/project/project-conf-files_services-redis.html
 
-            - label: Server side includes
-              url: cloud/project/project-routes-more-ssi.html
+        - label: Set up Solr service
+          url: cloud/project/project-conf-files_services-solr.html
+          versions: ["2.0"]
 
-        - label: Configure services
-          children:
-            - label: services.yaml
-              url: cloud/project/project-conf-files_services.html
+        - label: Set up Elasticsearch service
+          url: cloud/project/project-conf-files_services-elastic.html
+          versions: ["2.1","2.2","2.3"]
 
-            - label: Set up MySQL service
-              url: cloud/project/project-conf-files_services-mysql.html
+        - label: Set up RabbitMQ service
+          url: cloud/project/project-conf-files_services-rabbit.html
 
-            - label: Set up Redis service
-              url: cloud/project/project-conf-files_services-redis.html
+        - label: Set up notifications
+          url: cloud/env/setup-notifications.html
+          versions: ["2.2", "2.3"]
 
-            - label: Set up Solr service
-              url: cloud/project/project-conf-files_services-solr.html
-              versions: ["2.0"]
+        - label: Configure routes - routes.yaml
+          url: cloud/project/project-conf-files_routes.html
 
-            - label: Set up Elasticsearch service
-              url: cloud/project/project-conf-files_services-elastic.html
+        - label: Caching
+          url: cloud/project/project-routes-more-cache.html
 
-            - label: Set up RabbitMQ service
-              url: cloud/project/project-conf-files_services-rabbit.html
+        - label: Redirects
+          url: cloud/project/project-routes-more-redir.html
+
+        - label: Server side includes
+          url: cloud/project/project-routes-more-ssi.html
+
+    - label: Configuration management for store settings
+      url: cloud/live/sens-data-over.html
+      versions: ["2.1","2.2","2.3"]
+      children:
+        - label: Example of managing system-specific settings
+          url: cloud/live/sens-data-initial.html
 
     - label: Manage your project
       url: cloud/project/projects.html
@@ -165,40 +215,18 @@ pages:
         - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
 
-    - label: Manage your environments
-      url: cloud/env/environments.html
+    - label: Manage variables
+      url: cloud/env/environment-vars_over.html
       children:
 
-        - label: Magento Cloud CLI
-          url: cloud/reference/cli-ref-topic.html
+        - label: Magento application environment variables
+          url: cloud/env/environment-vars_magento.html
 
-        - label: Configuration management
-          url: cloud/live/sens-data-over.html
+        - label: Magento Commerce (Cloud) environment variables
+          url: cloud/env/environment-vars_cloud.html
 
-        - label: Example of managing system-specific settings
-          url: cloud/live/sens-data-initial.html
-
-        - label: Environment variables
-          children:
-            - label: Overview of environment variables
-              url: cloud/env/environment-vars_over.html
-
-            - label: Magento application environment variables
-              url: cloud/env/environment-vars_magento.html
-
-            - label: Magento Commerce (Cloud) environment variables
-              url: cloud/env/environment-vars_cloud.html
-
-        - label: Configuration reference
-          children:
-            - label: All configuration paths except payments reference
-              url: cloud/live/config-reference-most.html
-
-            - label: Payment configuration paths reference
-              url: cloud/live/config-reference-payment.html
-
-            - label: Sensitive configuration paths reference
-              url: cloud/live/config-reference-sens.html
+        - label: Working with variables
+          url: cloud/env/working-with-variables.html
 
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
@@ -231,7 +259,7 @@ pages:
         - label: Prepare to deploy to Staging and Production
           url: cloud/live/stage-prod-migrate-prereq.html
 
-        - label: Migrate and deploy code, static files, and data
+        - label: Deploy code and migrate static files and data
           url: cloud/live/stage-prod-migrate.html
 
         - label: Test deployment
@@ -245,6 +273,16 @@ pages:
 
         - label: Launch steps
           url: cloud/live/launch-steps.html
+
+    - label: Composer package updates
+      url: cloud/composer-packages/patch-notes.html
+      versions: ["2.2","2.3"]
+      children:
+        - label: vendor/magento/ece-patches
+          url: cloud/composer-packages/ece-patches.html
+
+        - label: vendor/magento/ece-tools
+          url: cloud/composer-packages/ece-tools.html
 
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
@@ -267,9 +305,6 @@ pages:
         - label: Component deployment failure
           url: cloud/trouble/trouble_comp-deploy-fail.html
 
-        - label: Fastly troubleshooting
-          url: cloud/trouble/trouble_fastly.html
-
         - label: Redis troubleshooting
           url: cloud/trouble/redis-troubleshooting.html
 
@@ -285,24 +320,5 @@ pages:
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
 
-    - label: How To
-      children:
-        - label: Install and update extensions
-          children:
-            - label: Install extensions
-              url: cloud/howtos/install-components.html
-
-            - label: Update extensions
-              url: cloud/howtos/update-components.html
-
-        - label: Merge and delete an environment (tutorial)
-          url: cloud/howtos/environment-tutorial-env-merge.html
-
-        - label: Install a theme
-          url: cloud/howtos/custom-theme.html
-
-        - label: Install optional sample data
-          url: cloud/howtos/sample-data.html
-
-        - label: Run a PHP debugger
-          url: cloud/howtos/debug.html
+        - label: Theme troubleshooting
+          url: cloud/trouble/theme-troubleshooting.html

@@ -8,6 +8,11 @@ menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/reference/cli-ref-topic.md
+functional_areas:
+  - Cloud
+redirect_from:
+  - /guides/v2.0/cloud/cli-ref/cli-ref-topic.html
+  - /guides/v2.1/cloud/cli-ref/cli-ref-topic.html
 ---
 
 The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.
@@ -309,7 +314,8 @@ The following table lists all commands for interacting with your environments an
 	 				</tr>
 	 				<tr>
 	 				<td>local:build (build)</td>
-	 				<td>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</td>
+	 				<td><p>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</p>
+          <p>You should only use this command to <a href="{{page.baseurl}}cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
 	 				</tr>
 	 				<tr>
 	 				<td>local:dir (dir)</td>

@@ -7,6 +7,8 @@ menu_title: Payment info rendering in Admin checkout
 menu_order: 4
 version: 2.1
 github_link: payments-integrations/base-integration/formblocktype.md
+functional_areas:
+  - Integration
 ---
 
 The payment information form rendering in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation is defined by the block class, its template and {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. 

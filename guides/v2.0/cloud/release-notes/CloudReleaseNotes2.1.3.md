@@ -12,6 +12,8 @@ version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes2.1.3.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.3.html
+functional_areas:
+  - Cloud
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.3 and 2.0.11.
@@ -190,7 +192,7 @@ This section discusses how to get connection information for Elasticsearch so yo
 
 ### Step 5: Configure the Magento application to use Elasticsearch
 
-Configure Magento using the instructions in the [Magento configuration for Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html) guide.
+Configure Magento using the instructions in the [Magento configuration for Elasticsearch](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/configure-magento.html) guide.
 
 ## Fixed issue
 

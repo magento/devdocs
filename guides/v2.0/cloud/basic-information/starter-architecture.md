@@ -8,6 +8,8 @@ menu_order: 20
 menu_node:
 version: 2.0
 github_link: cloud/basic-information/starter-architecture.md
+functional_areas:
+  - Cloud
 ---
 
 All of your code is contained in the {{site.data.var.ece}} Starter project. The _project_ is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to 4 total environments including three active Integration *environments* and a Production environment using the `master` Git branch.
@@ -85,12 +87,12 @@ This software is *not* upgradable but versions for the following software is con
 
 * [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 * [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
-* [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
+* [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
 * [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
 * [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
 * [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.27 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 

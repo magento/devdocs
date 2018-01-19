@@ -8,6 +8,12 @@ menu_order: 35
 menu_node:
 version: 2.0
 github_link: cloud/welcome/discover-workflow.md
+redirect_from:
+  - /guides/v2.0/cloud/discover-workflow.html
+  - /guides/v2.1/cloud/discover-workflow.html
+  - /guides/v2.2/cloud/discover-workflow.html
+functional_areas:
+  - Cloud
 ---
 
 Everything in {{site.data.var.ece}} is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.ece}} plan subscription, your deployment workflow may differ.
@@ -35,7 +41,7 @@ If you do not request this update, you must use CLI commands or tickets to modif
 ### Pro environments and branches {#env-branches}
 For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These environments are not public facing. Finally, Production is your live, public environment.
 
-For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
+For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html).
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
 
@@ -110,6 +116,7 @@ When you are ready to configure your store, have all code pushed to your Integra
 
 For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
+* [Best practices for store configuration]({{page.baseurl}}cloud/configure/configure-best-practices.html) for specific best practices in the cloud
 * [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
 * [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="_blank"} for your look and feel of the site and stores including CSS and layouts
 * [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html){:target="_blank"} for roles, tools, notifications, and your encryption key for your database
@@ -122,7 +129,7 @@ Now you need to get these settings into your code. We have a helpful command to 
 ### Generate configuration management files {#config-management}
 If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or Excel all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.
 
-{{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later** (not 2.2).
+{{site.data.var.ece}} provides a set of two [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.1.4 and later** (not 2.2).
 
 * `php bin/magento magento-cloud:scd-dump`: **Recommended**. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
@@ -147,7 +154,7 @@ An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any 
 
 ![Environment variables generate]({{ site.baseurl }}common/images/cloud_workflow-pro-env-variables.png)
 
-For more information, see [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html).
+For more information, see [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html).
 
 ### Push code and test {#push-code}
 At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.

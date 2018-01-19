@@ -1,14 +1,14 @@
 ---
 layout: default
 group: unit-testing
-subgroup: 30_Running_Unit_Tests
 title: Running Unit Tests in PHPStorm
-menu_title: Running Unit Tests in PHPStorm
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/unit_test_execution_phpstorm.md
+functional_areas:
+  - Testing
+  - test
 ---
 
 Running tests in PHPStorm requires a couple steps to setup the system.

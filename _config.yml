@@ -50,7 +50,7 @@ mage2200url: "https://github.com/magento/magento2/blob/2.2/"
 
 gdeurl23: "/guides/v2.3/"
 githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
-mage2300url: "https://github.com/magento/magento2/blob/develop/"
+mage2300url: "https://github.com/magento/magento2/blob/2.3-develop/"
 
 # Other variables
 namem2fedg: "Magento 2 Frontend Developer's Guide"
@@ -63,6 +63,9 @@ collections:
   videos:
     output: true
     permalink: "/videos/:path/"
+
+plugins:
+  - jekyll-redirect-from
 
 
 defaults:
@@ -89,8 +92,8 @@ algolia:
   index_name: 'devdocs'
   api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
   lazy_update: false
-  excluded_files:
+  files_to_exclude:
     - guides/m1x
     - swagger
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea' ]
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]

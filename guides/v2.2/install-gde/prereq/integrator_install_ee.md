@@ -8,6 +8,10 @@ menu_order: 4
 menu_node:
 version: 2.2
 github_link: install-gde/prereq/integrator_install_ee.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 To get the {{site.data.var.ee}} metapackage:
@@ -52,7 +56,7 @@ If you installed EE prior to installing B2B, run the following commands after Co
     bin/magento setup:static-content:deploy
 </div>
 
-After installing Magento, you'll need to [configure the B2B module]({{page.baseurl}}config-guide/b2b-module.html).
+After installing Magento, you'll need to [configure the B2B module]({{page.baseurl}}comp-mgr/install-extensions/b2b-installation.html#configure-b2b).
 
 {% include install/file-system-perms-before_22.md %}
 

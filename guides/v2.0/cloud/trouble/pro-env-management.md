@@ -12,10 +12,10 @@ github_link: cloud/trouble/pro-env-management.md
 
 For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.
 
-To add these environments to the Project Web Interface, review this entire document to complete a few preparation steps and enter a ticket.
+To add these environments to the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html), review this entire document to complete a few preparation steps and enter a ticket.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Please be aware, you ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.
+Please be aware, your ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.
 </div>
 
 All new projects already include these features.
@@ -44,9 +44,9 @@ As an important note, while you can manage Staging and Production environments, 
 
 You will need to enter support tickets to update and modify the following in Staging and Production:
 
-* Configurations for .magento.app.yaml and services.yaml
+* Configurations for `.magento.app.yaml` and `services.yaml`
 * Cron jobs
-* Redirects from routes.yaml
+* Redirects from `routes.yaml`
 
 You will continue to use SSH for:
 
@@ -68,7 +68,7 @@ After the conversion, the three repositories are merged into a single repository
 <tr>
 <td>(no branch)</td>
 <td>Global Master</td>
-<td>This "branch" captures global project changes including adding user accounts and variables.
+<td>This "branch" captures global project changes including adding user accounts and variables. <b>Important:</b> Do not create branches from or merge to Global Master.
 </td>
 </tr>
 <tr>
@@ -108,8 +108,18 @@ When we add Staging and Production access to the Project Web Interface, we will 
 
 To prepare, ensure you have all settings and environment variables set correctly.
 
+* [Verify Git code matches across environments](#matchcode)
 * [Verify user account access](#prep-user)
 * [Prepare variables](#prep-variables)
+
+### Verify Git code matches across environments {#matchcode}
+We strongly recommend working in your local development environment then deploying to Integration, Staging, and finally Production. All Git code should match 100% across each of these environments. If you have additional code (for example new extensions) on Production without following this workflow, any deployments from Integration or Staging will overwrite your Production code.
+
+Before entering a ticket, make sure your Git code matches and is synced.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+The process will create a new Git branch of code for Staging and Production environments. When we create this code, it will push and overwrite on Production. Do not skip this step.
+</div>
 
 ### Verify user account access {#prep-user}
 We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.

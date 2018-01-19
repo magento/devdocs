@@ -7,6 +7,8 @@ menu_title: RequisitionList
 menu_order: 190
 version: 2.2
 github_link: mrg/b2b/RequisitionList.md
+functional_areas:
+  - B2B
 ---
 
 ## Overview
@@ -47,7 +49,7 @@ The following directories contain extensible UI components:
 
 * `Magento\RequisitionList\view\frontend\ui_component` - requisition list listing
 
-For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui-components/ui-listing-grid.html).
+For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
 
 ## Additional information
 

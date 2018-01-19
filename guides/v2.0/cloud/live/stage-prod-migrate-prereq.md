@@ -8,6 +8,10 @@ menu_order: 40
 menu_node:
 version: 2.0
 github_link: cloud/live/stage-prod-migrate-prereq.md
+functional_areas:
+  - Cloud
+  - Configuration
+  - Deploy
 ---
 
 #### Previous step:
@@ -15,7 +19,7 @@ github_link: cloud/live/stage-prod-migrate-prereq.md
 
 When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
 
-This information is broken down into prerequisite steps for [Starter](#starter) and [Pro](pro) projects.
+This information is broken down into prerequisite steps for [Starter](#starter) and [Pro](#pro) projects.
 
 ## Starter plan projects {#starter}
 For Starter, make sure all of your code is merged into a single development branch to test prior to deployment to Production. Due to all of your branches and environments being on a PaaS infrastructure, you only need access information for Master Production and other environments as needed. This access information includes your store URLs and SSH link.
@@ -30,7 +34,7 @@ To prepare your environments for full deployment, you need:
 ### Get your Starter access URLs and SSH information {#starter-urls}
 You can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link. Your environments begin with Master, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="\_blank"}.
 2. Select an environment.
 3. Click **Access site** to display the URL and SSH information.
 
@@ -47,11 +51,11 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 2.	Get your [access URLs and SSH](#pro-urls) for Staging and Production.
 4.	Set up your [SSH agent](#ssh-agent) for Staging and Production.
 
-If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#cloud-live-migrate-git) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
+If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#pro-remote) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
 
-If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
+If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
-### Migrate your `.magento.app.yaml` file (optional) {#pro-yaml}
+### Migrate your `.magento.app.yaml` file {#pro-yaml}
 **Important:** If you have **not modified** the default deployment hooks or configurations, skip this step and continue with [Get your Pro access URLs](#pro-urls). Only migrate the file if you modified the deployment hooks or added configuration updates.
 
 {% include cloud/hooks.md %}
@@ -76,13 +80,10 @@ For Pro projects created **before October 23, 2017**, you would need to access t
 *	Web URL format:
 
 	*	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
-	*	Production:
-
-		*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-		*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+	*	Production: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 
 ### Set up Pro remote Git repositories {#pro-remote}
-For Pro projects created **after October 23, 2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`.
+For Pro projects created **after October 23, 2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`. You can also use the Project Web Interface to merge your code without SSH or Git commands.
 
 For Pro projects created **before October 23, 2017**, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.
 

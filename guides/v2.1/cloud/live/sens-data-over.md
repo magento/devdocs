@@ -2,12 +2,15 @@
 layout: default
 group: cloud
 subgroup: 120_env
-title: Configuration management
-menu_title: Configuration management
-menu_order:  20
+title: Configuration management for store settings
+menu_title: Configuration management for store settings
+menu_order: 20
 menu_node:
 version: 2.1
 github_link: cloud/live/sens-data-over.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 Configuration management in {{site.data.var.ece}} provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments to keep consistent settings and reduce downtime.
@@ -15,8 +18,7 @@ Configuration management in {{site.data.var.ece}} provides a new way to deploy a
 It provides the following benefits:
 
 *	Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
-<!-- Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only. -->
-*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build process.
+*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from the deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
 
 <div class="bs-callout bs-callout-info" markdown="1">
 These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
@@ -36,12 +38,17 @@ After configuring your environment, generate the file using one of the following
 * `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default settings
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-For {{site.data.var.ece}}, we **do not recommend** app:config:dump as this command pulls and locks all values as read-only. This will affect Fastly and other important modules.
+For {{site.data.var.ece}}, we **do not recommend** `app:config:dump` as this command pulls and locks all values as read-only. This will affect Fastly and other important modules. Specifically, this affects customizing your extensions across environments.
 </div>
 
 Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments.
 
 By using the `scd-dump` command, you can configure only the settings you want copied across all environments. After you merge the code, you can configure additional settings in Staging and Production. For sensitive configurations, you can also add those settings to environment variables. For example, you may want to add different PayPal merchant account credentials for Staging (sandbox) and Production (live).
+
+### Switching between commands {#commands}
+Can you switch between using `php bin/magento magento-cloud:scd-dump` and `php bin/magento app:config:dump`? Yes, you can.
+
+For 2.1.4 and later (not 2.2.X), you can always delete the `config.local.php` file and regenerate it with either command. Remember, `scd-dump` only pulls configured values (not defaults) and `app:config:dump` captures all values (default and modified).
 
 ### Configuration data {#data}
 System settings refer to the configurations in the Magento Admin in **Stores** > Settings > **Configuration**. Depending on the command used, all or just modified system configurations save to the file.
@@ -54,7 +61,7 @@ Sensitive values are _not_ stored in `app/etc/config.local.php`. You should crea
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 </div>
 
-For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html).
+For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
 Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
@@ -77,11 +84,13 @@ If no value exists in any of those sources, we use either the default value or `
 ## Configuration settings you can change {#cloud-clp-settings}
 The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php bin/magento app:config:dump`, all settings are exported.
 
+The `config.local.php` file includes the following settings and configuration values:
+
 <table>
 <tbody>
 <tr>
 <th style="width:250px;">Description</th>
-<th>Path in Magento Admin (omitting Stores > Configuration)</th>
+<th>Path in Magento Admin: Stores > Configuration > ...</th>
 </tr>
 <tr>
 <td>Store locale</td>
@@ -129,10 +138,10 @@ The **Pro plan** environment high-level overview of this process:
 
 ![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
 
-### Step 1: Configure your store
+### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:
 
-1. Log into the Magento Adming for one of the environments:
+1. Log into the Magento Admin for one of the environments:
 
     * Starter: An active development branch
     * Pro: The `master` environment in Integration
@@ -146,7 +155,7 @@ Complete all configurations for your stores in the Admin console:
 
     ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 
-### Step 2: Transfer and add the file to Git
+### Step 2: Transfer and add the file to Git {#transfer-file}
 Push `config.local.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
 
 1. Transfer `config.local.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
@@ -157,7 +166,7 @@ Push `config.local.php` to Git. To push this file to the `master` Git branch, yo
 
     `git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master`
 
-### Step 3 & 4: Push Git branch to Staging and Production
+### Step 3 & 4: Push Git branch to Staging and Production {#push-git}
 Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
 
 For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.

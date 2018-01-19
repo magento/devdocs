@@ -8,6 +8,11 @@ menu_order: 25
 menu_node:
 version: 2.0
 github_link: cloud/project/project-integrate-blackfire.md
+functional_areas:
+  - Cloud
+  - Integration
+  - Setup
+  - Services
 ---
 
 [Blackfire Profiler](https://blackfire.io/profiler){:target="_blank"} helps you locate and investigate performance issues in your environment at the code-level. it creates a performance profile by tracking every PHP call and method and SQL queries performed by your code. Blackfire digs deeper providing granular performance analytics. You can activate and use Blackfire Profiler in all of your environments, especially helpful in Staging and Production.
@@ -18,9 +23,9 @@ For full details on integrations, also review [Blackfire’s complete Magento Co
 
 Blackfire includes the following [environments](https://blackfire.io/docs/reference-guide/environments){:target="_blank"} through their site:
 
-* `Magento Cloud (<Project ID>)` - Dev: This is your Integration environments
-* `Magento Cloud (<Project ID>)` - Test: This is your Staging environment
-* `Magento Cloud (<Project ID>)` - Prod: This is your Production environment
+* `Magento Cloud (<your instance reference>)` - Integration and Development
+* `Magento Cloud (<your instance reference>)` - Staging
+* `Magento Cloud (<your instance reference>)` - Production
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For Pro plans, you need to enter a Support ticket with your Blackfire credentials to get Staging and Production configured with Blackfire. We'll help you get Blackfire configured in those environments.
@@ -29,7 +34,7 @@ For Pro plans, you need to enter a Support ticket with your Blackfire credential
 ## Get your Blackfire credentials {#cloud-int-black}
 The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
 
-For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}.
+For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
 
 ## Add collaborator accounts {#collaborators}
 After you have accessed your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}.
@@ -83,7 +88,12 @@ The following sections include instructions for completing this list of integrat
 * [Save changes in Blackfire](#save)
 
 ### Add Blackfire to .magento.app.yaml {#magentoappyaml}
-To enable and integrate Blackfire into your code, you will modify the `.magento.app.yaml` file. You can push these settings into your remote Git branch, merge, and deploy across all environments including Staging and Production.
+By default, the Blackfire module should be included in the .magento.app.yaml file as part of your Git branch.
+
+The following instructions provide additional instructions if the module is not added to `.magento.app.yaml`. To enable and integrate Blackfire into your code, you will modify the `.magento.app.yaml` file, push the file into your remote Git branch, merge, and deploy across all environments.
+
+* For Starter, merging your Git branch across all environments adds the module.
+* For Pro, you need to enter a Support ticket to have `.magento.app.yaml` updated to Staging and Production.
 
 We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the `.magento.app.yaml` file. If you need instructions creating a branch, complete the following:
 
@@ -112,16 +122,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 Next, modify the `.magento.app.yaml` file:
 
 1.	Use a text editor to locate and edit `<project root dir>/.magento.app.yaml` in your branch.
-2.	Enter the following code in the `extensions` block under `runtime`.
-
-		    - name: blackfire
-		      configuration:
-		         server_id: "<blackfire Server ID>"
-		         server_token: "<blackfire Server token>"
-
-	Change `<Blackfire Server ID>` and `<Blackfire Server token>` to the values from your Blackfire account.
-
-	For example:
+2.	Enter `- name: blackfire` in the `extensions` block under `runtime`.
 
 		runtime:
     	  extensions:
@@ -129,10 +130,7 @@ Next, modify the `.magento.app.yaml` file:
 		    - redis
 		    - xsl
 		    - json
-		    - name: blackfire
-		      configuration:
-		         server_id: "12345677890123456789012345678901234567890"
-		         server_token: "abcdefghi123456-12345667788-odjfvfuvfjvf-29847r87:19283475y6576"
+		    - blackfire
 3.	Save your changes to `.magento.app.yaml` and exit the text editor.
 4.	Add, commit, and push your changes to the environment:
 
@@ -203,7 +201,7 @@ If adding a route to Blackfire, make sure to add the default route to `routes.ya
 		magento-cloud snapshot:create -e <environment ID>
 
 8.	Use a text editor to locate and edit `<project root dir>/magento/routes.yaml` in your branch.
-9.	Add the route the file. For details, see [`routes.yaml`](({{page.baseurl}}cloud/project/project-conf-files_routes.html)). Here's an example:
+9.	Add the route the file. For details, see [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html). Here's an example:
 
 		"http://{default}/":
 		type: upstream

@@ -35,7 +35,7 @@ If you do not request this update, you must use CLI commands or tickets to modif
 ### Pro environments and branches {#env-branches}
 For your environments, we recommend deploying and testing following a Development > Staging > Production workflow. The Integration environment acts as your extensive testing area for custom code, extensions, and 3rd party integrations. Deploying to Staging gives you Production features and additional services including Fastly in a safe environment for testing. Integration and Staging environments are only accessible by user accounts with strict access via SSH and URLs. These environments are not public facing. Finally, Production is your live, public environment.
 
-For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html#cloud-env-work).
+For your branches, you can follow any methodology. One example follows an Agile methodology such as scrum to create [branches for every sprint]({{page.baseurl}}cloud/env/environments.html).
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
 
@@ -111,6 +111,7 @@ When you are ready to configure your store, have all code pushed to your Integra
 
 For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
+* [Best practices for store configuration]({{page.baseurl}}cloud/configure/configure-best-practices.html) for specific best practices in the cloud
 * [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
 * [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="_blank"} for your look and feel of the site and stores including CSS and layouts
 * [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html){:target="_blank"} for roles, tools, notifications, and your encryption key for your database

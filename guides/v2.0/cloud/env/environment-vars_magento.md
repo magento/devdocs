@@ -8,9 +8,12 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
-These sections list the environment variables for [general Magento](#application), [build](#build), and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
+These sections list the environment variables for [general Magento](#application) and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 ## Magento application variables {#application}
 
@@ -18,9 +21,9 @@ The following table lists variables that you can override using environment vari
 
 <table>
 <thead><tr>
-<th>Variable name</th>
+<th style="width: 165px;">Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 150px;">Default value</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -58,95 +61,10 @@ The following table lists variables that you can override using environment vari
 <p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p></td>
 <td>production</td>
 </tr>
-<tr><td><code>CLEAN_STATIC_FILES</code></td>
-<td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
-<p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p></td>
-<td>enable</td>
-</tr>
-<tr>
-<td><code>UPDATE_URLS</code></td>
-<td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
-<p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production, where the base URLs can't change.</p>
-<p>Available in {{site.data.var.ece}} 2.0.10 and later, and 2.1.2 and later.</p></td>
-<td>enabled</td>
-</tr></tbody>
-</table>
-
-For additional build and deploy variables, continue to the following sections.
-
-<!-- <tr><td>RECOMPILE_DI</td>
-    <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
-    <td>true</td>
-    </tr> -->
-
-## Magento build variables {#build}
-The following variables are options available during the build process of build and deploy. The variables help prepare the codebase before it is moved to the server and then built.
-
-You can use these options as part of a `build_options.ini` file for customizing the build process. This file is located in the Magento root directory.
-
-<table>
-<thead>
-<tr>
-<th>Variable name</th>
-<th>Description</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>BUILD_OPT_SKIP_DI_COMPILATION</code></td>
-<td>If you are needing to quickly debug a set of code in developer mode, you can enable this option to skip compilation and before a build immediately. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing in developer mode. You should always run di_compilation. Available in versions 2.1.2 and later, 2.2.X. For 2.2.X, we have removed `skip_di_compilation` from `build-options.ini` as it cannot be skipped during the build phase.</td>
-<td>skip_di_compilation = disabled</td>
-</tr>
-<tr>
-<td><code>BUILD_OPT_SKIP_DI_CLEARING</code></td>
-<td>Before di_generation runs, the build process clears the existing build to rebuild before deploying. If you are simply redeploying without needing to fully rebuild, you can use this option to skip the deletion of the existing built files. The deploy phase will reuse the existing build files. Available in versions 2.1.2 and later, 2.2.X. For 2.2.X, we have removed `skip_di_clearing` from `build-options.ini` as it cannot be skipped during the build phase.</td>
-<td>skip_di_clearing = disabled</td>
-</tr>
-<tr>
-<td><code>BUILD_OPT_SCD_EXCLUDE_THEMES</code></td>
-<td>When enabled, this option does not generate static content for an entered theme location. This is extremely helpful when static content deployment occurs during the build phase. For example, the Luma theme is included with all {{site.data.var.ece}} projects. To exclude this theme, you would enter <code>exclude_themes = Magento/luma</code>. You may not need to constantly generate static content for this theme, which adds time to your build. Available in versions 2.1.4 and later, 2.2.X. </td>
-<td>exclude_themes = </td>
-</tr>
-<tr>
-<td><code>BUILD_OPT_SCD_THREADS</code></td>
-<td><p>Sets the number of threads for processing and deploying static content files. These threads are used The higher amount of threads increasing the amount of files processed during the deployment of static content during the build phase. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
-<p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
-<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
-<p>Available in versions 2.1.4 and later, 2.2.X.</p></td>
-<td>scd_threads = 1 for all Starter environments and Pro Integration environments<br />
-scd_threads = 3 for Pro Staging and Production environments</td>
-</tr>
-<tr>
-<td><code>BUILD_OPT_SKIP_SCD</code></td>
-<td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.4 and later, 2.2.X.</td>
-<td>skip_scd = disabled</td>
-</tr>
-<tr>
-<td><code>GENERATED_CODE_SYMLINK</code></td>
-<td><p>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.</p>
-This variable was removed in 2.2. In 2.2 <code>var/generation</code> and <code>var/di</code> content is moved to <code>generated/</code>. This folder is removed after build and deploy completes.</p></td>
-<td>GENERATED_CODE_SYMLINK = disabled</td>
-</tr>
 </tbody>
 </table>
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
-
-<!-- <tr>
-<td><code>SCD_STRATEGY</code></td>
-<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
-<p>Use these options only if you have more than one locale.</p>
-<ul>
-<li>Use the standard strategy to deploy all static view files for all packages.</li>
-<li>Use the quick strategy to minimize deployment time. This is the default command option if not specified.</li>
-<li>Use the compact strategy to conserve disk space on the server.</li>
-</ul>
-</td>
-<td><code>scd_strategy = standard</code>, <code>scd_strategy = quick</code>, <code>scd_strategy = compact</code></td>
-<td>2.2.X</td>
-</tr> -->
+For additional variables, continue to the following sections.
 
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
@@ -156,20 +74,20 @@ The following variables are available during the deploy process of build and dep
 <tr>
 <th>Variable name</th>
 <th>Description</th>
-<th>Default value</th>
+<th style="width: 200px;">Default value</th>
 </tr></thead>
 <tbody>
 <tr><td><code>UPDATE_URLS</code></td>
 <td><p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
 <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
-<p>This is available in versions 2.0.10 and later, 2.1.2 and later, and 2.2 and later.</p></td>
+<p>This is available in versions 2.0.10 and later.</p></td>
 <td>enabled</td>
 </tr>
 <tr>
 <td><code>CLEAN_STATIC_FILES</code></td>
 <td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+<p>Because of <a href="{{page.baseurl}}howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
 <p>This is available in all versions.</p></td>
 <td>enabled</td>
 </tr>
@@ -187,7 +105,7 @@ The following variables are available during the deploy process of build and dep
 <td><code>STATIC_CONTENT_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
-<p>To further reduce deployment time, we recommend using <a href="{{page.baseurl}}config-guide/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+<p>To further reduce deployment time, we recommend using <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>This is available in all versions.</p></td>
 <td>1 for Starter environments and Pro Integration environments<br />
 3 for Pro Staging and Production environments</td>
@@ -248,19 +166,6 @@ The following variables are available during the deploy process of build and dep
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
-<!-- <tr><td><code>SCD_STRATEGY</code></td>
-<td><p>The variable allows you to set a deployment strategy for static content deployment. For details on these options and features, see [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).</p>
-<p>Use these options only if you have more than one locale.</p>
-<ul>
-<li>Use the standard strategy to deploy all static view files for all packages.</li>
-<li>Use the quick strategy to minimize deployment time. This is the default command option if not specified.</li>
-<li>Use the compact strategy to conserve disk space on the server.</li>
-</ul>
-</td>
-<td><code>standard</code>, <code>quick</code>, <code>compact</code></td>
-<td>2.2.X</td>
-</tr> -->
-
 ## Add environment variables {#addvariables}
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
@@ -277,9 +182,9 @@ To create a variable using the command line:
 5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
-In the event something goes wrong and you can't access your environment after it deploys, try the following:
+In the event something goes wrong and you can not access your environment after it deploys, try the following:
 
-*   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
+*   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#tunnel-services) are running.
 *   Restore your snapshot:
 
         magento-cloud snapshot:list
@@ -291,8 +196,6 @@ For more information on snapshots, see [Snapshots and backup management]({{page.
 * [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
 * [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 * [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 * [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

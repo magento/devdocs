@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: comp-mgr/trouble/tshoot.md
+functional_areas:
+  - UpgradeUpgrade
 ---
 
 The following topics discuss Component Manager and System Upgrade errors and suggested solutions:

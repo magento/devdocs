@@ -8,6 +8,9 @@ menu_order: 25
 menu_node:
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 Configuration management exports your configurations to a file for pushing across your environments. This file, `config.local.php`, keeps your configurations consistent across all environments, decreases downtime by moving static deploy to build, and much more. This information details an example for configuring your settings, exporting the file, and deploying it.
@@ -24,8 +27,9 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}clou
 	3.	Re-create and push the updated `config.local.php` to the Integration environment.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
 </div> -->
+
 For example, you may want to set the following settings:
 
 * Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Integration environment
@@ -173,7 +177,7 @@ To change values in the Integration environment Magento Admin:
 1.	If you haven't done so already, log out of the Integration Admin.
 1.	Log in to the Integration Admin.
 
-	For URL and credentials, see [Find Admin login information](#cloud-deploy-admin-login).
+	For URL and credentials, see [Find Admin login information](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
 6.	Clear the **Use default value** check box next to the **Minify Html** list.

@@ -10,6 +10,10 @@ level3_subgroup: php
 version: 2.0
 github_link: install-gde/prereq/php-ubuntu.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -54,7 +58,6 @@ If PHP is *not* installed, see one of the following sections:
 
 *	[PHP 7.0 on Ubuntu 14 or 16](#instgde-prereq-php70-ubuntu)
 *	[PHP 5.6 on Ubuntu 14](#php-56-on-ubuntu-14)
-*	<a href="#instgde-prereq-php5.6-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
 *	[PHP 5.5 on Ubuntu 14](#php-55-on-ubuntu-14)
 
 ## PHP 7.0 on Ubuntu 14 or 16 {#instgde-prereq-php70-ubuntu}
@@ -100,7 +103,7 @@ If PHP is *not* installed, see one of the following sections:
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php
 		apt-get -y update
-		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
+		apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip php5.6-soap
 
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
@@ -129,7 +132,7 @@ If PHP is *not* installed, see one of the following sections:
 1.	Enter the following commands in the order shown:
 
 		apt-get -y update
-		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
+		apt-get -y install php5 php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-soap
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 

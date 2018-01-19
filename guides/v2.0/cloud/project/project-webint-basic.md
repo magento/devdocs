@@ -8,9 +8,12 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-basic.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
-The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to do the following for all Starter and Pro environments:
+The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="\_blank"} enables you to do the following for all Starter and Pro environments:
 
 * [Access projects](#project-access)
 * Create and manage projects
@@ -101,6 +104,11 @@ To set environment specific variables in the Project Web Interface:
 	![Set environment variables]({{ site.baseurl }}common/images/cloud_env-var.png)
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
+![Environment variable example]({{site.baseurl}}common/images/cloud_env_var_example.png)
+</div>
 
 ### Project variable {#project}
 To set project variables in the Project Web Interface:

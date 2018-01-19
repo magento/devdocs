@@ -9,9 +9,12 @@ menu_node:
 version: 2.0
 github_link: cloud/project/project-start.md
 redirect_from:
-  -  /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
-  -  /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
-  -  /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
+  - /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
+  - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
+  - /guides/v2.2/cloud/access-acct/first-time-setup_dir-structure.html
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 When you create your project, you receive a cloned repository of {{site.data.var.ece}} code.
@@ -38,19 +41,24 @@ Not including the Magento application itself, your local project has the followi
   <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
-## Magento application root directory
+### .gitignore file {gitignore}
+Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
+
+We include a base `.gitignore` file with the project repository. For a review of the {{site.data.var.ece}} file, see [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="\_blank"}. You can review the recommended files for your file in the [`.gitignore` reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-gitignore.html).
+
+## Magento application root directory {#rootdir}
 The Magento application root directory is located in different locations depending on the environment.
 
 For Starter:
 
-* [Integration environment]({{ page.baseurl }}cloud/basic-information/starter-architecture.html#cloud-arch-int): the Magento application is located in the `/app` directory.
-* [Production environment]({{ page.baseurl }}cloud/basic-information/starter-architecture.html#cloud-arch-prod): the Magento application is located in the `/<project code>` directory.
+* [Integration environment]({{page.baseurl}}cloud/basic-information/starter-architecture.html#cloud-arch-int): the Magento application is located in the `/app` directory.
+* [Production environment]({{page.baseurl}}cloud/basic-information/starter-architecture.html#cloud-arch-prod): the Magento application is located in the `/<project code>` directory.
 
 For Pro:
 
-* [Integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) the Magento application is located in the `/app` directory.
-* [Staging environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) the Magento application is located in the `/<project code>_stg` directory.
-* [Production environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) the Magento application is located in the ` /<project code>` directory.
+* [Integration environment]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) the Magento application is located in the `/app` directory.
+* [Staging environment]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage) the Magento application is located in the `/<project code>_stg` directory.
+* [Production environment]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod) the Magento application is located in the ` /<project code>` directory.
 
 ## Writable directories {#write-dir}
 In Integration, Staging, and Production, *only* the following directories are writable due to security reasons:

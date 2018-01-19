@@ -12,6 +12,9 @@ redirect_from:
   - /guides/v2.0/cloud/live/stage-prod-over.html
   - /guides/v2.1/cloud/live/stage-prod-over.html
   - /guides/v2.2/cloud/live/stage-prod-over.html
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 The process for deploying and going live begins with development, continues to Staging, and ends with going live in Production. To provide the best experience for developing, testing, and deploying your store with consistent configurations we provide an end-to-end environment solution. Every environment supports direct URL access to the store and Admin console and SSH access for CLI commands.
@@ -59,10 +62,16 @@ After you know these URLs, you can access those environments without further int
 * Use the URL /admin to access the Admin panel.
 * (Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
 
-For more information, see [SSH and sFTP]({{ page.baseurl }}cloud/env/environments-ss.html).
+For more information, see [SSH and sFTP]({{ page.baseurl }}cloud/env/environments-ssh.html).
 
 ## Read-only environments {#read-only}
-You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments. If you need to fix issues, fix them in local development, push to Git, and complete the full deployment.
+You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments through the Magento Admin or using environment variables.
+
+Always update your code in a branch on your local environment, push to Git, and complete the full deployment when you need to do the following:
+
+* Add extensions
+* Add 3rd party integrations
+* Fix issues and check errors
 
 ## Next steps
 To learn more, check the following:

@@ -4,10 +4,14 @@ group: install_trouble
 subgroup: 02_access
 title: Error after logging in to the Magento Admin
 menu_title: Error after logging in to the Magento Admin
-menu_node: 
+menu_node:
 menu_order: 15
 version: 2.0
 github_link: install-gde/trouble/tshoot_admin.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 

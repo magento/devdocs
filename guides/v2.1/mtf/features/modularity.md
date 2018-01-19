@@ -1,9 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Modularity in the Functional Testing Framework
-menu_title: Modularity
 version: 2.1
 github_link: mtf/features/modularity.md
 ---

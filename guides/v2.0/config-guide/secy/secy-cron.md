@@ -8,6 +8,10 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: config-guide/secy/secy-cron.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic discusses securing `pub/cron.php` to prevent it from being used in a malicious exploit. If you don't secure cron, any user could potentially run cron to attack your Magento application.
@@ -20,23 +24,23 @@ The Magento cron job runs a number of scheduled tasks and is a vital part of you
 -   Generating sitemaps
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-conf) for more information about cron groups.
+Refer to [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
 </div>
 
 You can run a Magento cron job in the following ways:
 
--   Using the [`magento cron:run`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group) command either from the command line or in a crontab
+-   Using the [`magento cron:run`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command either from the command line or in a crontab
 -   Accessing `pub/cron.php?[group=<name>]` in a web browser
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You don't need to do anything if you use the [`magento cron:run`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group) command to run cron because it uses a different process that is already secure.
+You don't need to do anything if you use the [`magento cron:run`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command to run cron because it uses a different process that is already secure.
 </div>
 
 ## Secure cron with Apache
 This section discusses how to secure cron using [HTTP Basic authentication](http://tools.ietf.org/html/rfc2617"){:target="&#95;blank"} with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:
 
 -   [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html){:target="&#95;blank"}
--   [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html"){:target="&#95;blank"}
+-   [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="&#95;blank"}
 
 ### Create a password file
 For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we're storing the password file in a new directory.
@@ -255,5 +259,5 @@ For example,
 	http://magento.example.com/magento2/pub/cron.php?group=index
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-conf) for more information about cron groups.
+You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
 </div>

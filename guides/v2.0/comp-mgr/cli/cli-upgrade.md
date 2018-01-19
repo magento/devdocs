@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 28_cli-upgr
 title: Command-line upgrade
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: comp-mgr/cli/cli-upgrade.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Command-line upgrade
@@ -32,7 +34,7 @@ This section applies to you *only* if you set the Magento root directory to `<yo
 
 {% collapsible If you use pub as your Magento root directory: %}
 
-*	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root. 
+*	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
 	Run the [System Upgrade utility]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html) using that subdomain.
 *	Use the [following procedure](#upgrade-cli-upgr) to upgrade Magento using the command line.
@@ -79,9 +81,9 @@ To prevent access to your store while it's being upgraded, put your store in mai
 
 		composer require magento/product-enterprise-edition 2.0.13 --no-update
 		composer update
-	
+
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+  		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
 3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
@@ -89,7 +91,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
 
 		rm -rf <Magento install dir>/var/cache/*
 		rm -rf <Magento install dir>/var/page_cache/*
-		rm -rf <Magento install dir>/var/generation/* 
+		rm -rf <Magento install dir>/var/generation/*
 
     <div class="bs-callout bs-callout-info" markdown="1">
     If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
@@ -109,14 +111,14 @@ To prevent access to your store while it's being upgraded, put your store in mai
 	The following error might display:
 
 		We're sorry, an error has occurred while generating this email.
-	
+
 	If so, perform the following tasks:
 
 	1.	Reset [file system ownership and permissions]({{page.baseurl}}install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
 	2.	Clear the following directories and try again:
 
-			<your Magento install dir>/var/cache 
-			<your Magento install dir>/var/page_cache 
-			<your Magento install dir>/var/generation 
+			<your Magento install dir>/var/cache
+			<your Magento install dir>/var/page_cache
+			<your Magento install dir>/var/generation
 
 {% endcollapsible %}
