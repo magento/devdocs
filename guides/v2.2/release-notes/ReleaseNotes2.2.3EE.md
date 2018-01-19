@@ -28,13 +28,6 @@ Magento 2.2.3 includes multiple security enhancements. Although this release inc
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 
-
-## Community contributions
-
-We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
-
-
-
 ### System requirements
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
 
