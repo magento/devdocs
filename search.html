@@ -312,6 +312,7 @@
             var title_highlighted = item._highlightResult.title;
             var title_plain = item.title;
             var url = item.url;
+            var content = '';
             // Check if we can show title, if not - at least show URL
             if (typeof title_highlighted !== 'undefined') {
               title = title_highlighted.value;
@@ -321,6 +322,11 @@
               title = url;
             }
 
+            // Check if we have the description of the hit
+            if ( typeof item._highlightResult.content !== 'undefined' ) {
+              content = item._highlightResult.content.value;
+            }
+
             //TODO: fix the baseurl on the entire site then remove this:
             if ( baseUrl == '/' ) {
               var link = '<a href="' + url + '">' + title +'</a>';
@@ -328,7 +334,7 @@
               var link = '<a href="' + baseUrl + url + '">' + title +'</a>';
             }
 
-            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + url +'</div><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
+            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + url +'</div><div class="hit-content">'+ content + '</div></div>';
           },
           empty: '<div id="no-results-message"><p>No results found.</p></div>',
 
