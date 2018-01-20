@@ -111,16 +111,23 @@ To view the status of the cache, enter
 
 A sample follows:
 
+There are 13 types of cache types display as result for Magento open source by default.
+
+For Cache type enable they will display status as 1,
+if Cache type is disable, show status as 0.
+
                 config: 1
                 layout: 1
             block_html: 1
            collections: 1
+            reflection: 1
                 db_ddl: 1
                    eav: 1
-             full_page: 1
-             translate: 1
+ customer_notification: 1
     config_integration: 1
 config_integration_api: 1
+             full_page: 1
+             translate: 1
      config_webservice: 1
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
@@ -154,6 +161,19 @@ Sample result:
 	Changed cache status:
                         db_ddl: 1 -> 0
                      full_page: 1 -> 0
+
+For example, to enable the full page cache and the DDL cache:
+
+	magento cache:disable db_ddl full_page
+
+Sample result:
+
+	Changed cache status:
+                        db_ddl: 0 -> 1
+                     full_page: 0 -> 1
+	Cleaned cache types:
+	db_ddl
+	full_page                    
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Enabling a {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %} automatically clears that cache type.
@@ -195,7 +215,11 @@ Sample result:
 	config_webservice
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You can also clean and flush cache types in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `magento cache:flush`. **Flush Magento Cache** is equivalent to `magento cache:clean`.
+You can also clean and flush cache types in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management**.
+ 
+ **Flush Cache Storage** is equivalent to `magento cache:flush`.
+
+ **Flush Magento Cache** is equivalent to `magento cache:clean`.
 </div>
 
 #### Related topics
