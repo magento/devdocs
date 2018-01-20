@@ -48,6 +48,22 @@ Command options:
 
 where `--group` specifies the cron group to run (omit this option to run cron for all groups)
 
+For run indexing cron job,
+
+`php bin/magento cron:run --group index`
+
+Output will be display as,
+`Ran jobs by schedule.`
+
+For run default cron job,
+
+`php magento cron:run --group default`
+
+Output will be display as,
+`Ran jobs by schedule.`
+
+
+
 To set up custom cron jobs and groups, see [Configure custom cron jobs and cron groups]({{ page.baseurl }}config-guide/cron/custom-cron.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
