@@ -1912,12 +1912,12 @@ This example shows how you can set and lock configuration values for everything 
     <li>
       <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
 </code></pre></div>      </div>
 
       <p>For example,</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 </code></pre></div>      </div>
 
       <!-- A message similar to the following displays if you have any sensitive settings configured in your system:
@@ -2080,12 +2080,12 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
     <li>
       <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
 </code></pre></div>      </div>
 
       <p>For example,</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 </code></pre></div>      </div>
     </li>
     <li>If you haven’t done so already, change to the project root directory.</li>

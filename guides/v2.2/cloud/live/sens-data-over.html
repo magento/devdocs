@@ -2065,13 +2065,13 @@
   <li>
     <p>Open a terminal on your local and use an SSH command to generate <code class="highlighter-rouge">/app/etc/config.php</code> on the environment:</p>
 
-    <p><code class="highlighter-rouge">ssh -k &lt;SSH URL&gt; "&lt;Command&gt;"</code></p>
+    <p><code class="highlighter-rouge">ssh &lt;SSH URL&gt; "&lt;Command&gt;"</code></p>
   </li>
 </ol>
 
 <p>For example for Pro, to run the <code class="highlighter-rouge">scd-dump</code> on Integration <code class="highlighter-rouge">master</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 </code></pre></div></div>
 
 <p><strong>Important:</strong> The <code class="highlighter-rouge">config.php</code> file includes the following settings and configuration values:</p>

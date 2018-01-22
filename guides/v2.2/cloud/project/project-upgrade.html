@@ -2146,11 +2146,11 @@ git push origin &lt;branch name&gt;
     <li>
       <p>Open a terminal on your local and use an SSH command to generate <code class="highlighter-rouge">/app/etc/config.php</code> on the environment:</p>
 
-      <p><code class="highlighter-rouge">ssh -k &lt;SSH URL&gt; "&lt;Command&gt;"</code></p>
+      <p><code class="highlighter-rouge">ssh &lt;SSH URL&gt; "&lt;Command&gt;"</code></p>
 
       <p>For example for Pro, to run the <code class="highlighter-rouge">scd-dump</code> on Integration <code class="highlighter-rouge">master</code>:</p>
 
-      <p><code class="highlighter-rouge">ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"</code></p>
+      <p><code class="highlighter-rouge">ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"</code></p>
     </li>
     <li>
       <p>Transfer <code class="highlighter-rouge">config.php</code> to your local system using <code class="highlighter-rouge">rsync</code> or <code class="highlighter-rouge">scp</code>. You can only add this file to the Git branch through your local.</p>
