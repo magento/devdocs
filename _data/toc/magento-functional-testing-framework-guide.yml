@@ -41,9 +41,6 @@ pages:
       - label: Data
         url: magento-functional-testing-framework/2.0/data.html
 
-      - label: Merging
-        url: magento-functional-testing-framework/2.0/merging.html
-
       - label: CLI Commands
         children:
 
@@ -97,9 +94,6 @@ pages:
   
     - label: Data
       url: magento-functional-testing-framework/1.0/data.html
-  
-    - label: Merging
-      url: magento-functional-testing-framework/1.0/merging.html
   
     - label: CLI Commands
       children:
