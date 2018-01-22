@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-version: 2.2
+version: 2.3
 github_link: magento-functional-testing-framework/changelog.md
 functional_areas:
  - Testing
