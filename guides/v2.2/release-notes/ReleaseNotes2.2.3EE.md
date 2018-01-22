@@ -19,7 +19,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-84775 -->* Support for Elasticsearch 5.x. See [Install and configure Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento.
 
-Note: On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied.  See Magento Shipping to print USPS shipping labels with postage. 
+* **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
 
 ## Security enhancements
 
