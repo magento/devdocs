@@ -382,24 +382,20 @@
 </section>
 
 
-			<p>Advanced reporting functionality is provided through integration of a Magento instance with the <a href="https://magento.com/products/business-intelligence">Magento Business Intelligence</a> (MBI).
+			<p><a href="http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html" target="_blank">Advanced reporting functionality</a> is provided through integration of a Magento instance with the <a href="https://magento.com/products/business-intelligence" target="_blank">Magento Business Intelligence</a> (MBI).
 Magento collects data and sends this information to the MBI for analytics.</p>
 
 <p><strong>Magento Admin &gt; Dashboard &gt; “Go to Advanced Reporting”</strong> button opens reports in  <code class="highlighter-rouge">https://advancedreporting.rjmetrics.com/report</code> with corresponding authorization.</p>
 
-<p>Learn more about:</p>
-
-<ul>
-  <li><a href="modules.html">Magento modules that implement the functionality</a></li>
-  <li><a href="data-collection.html">Data collection configuration and settings</a></li>
-</ul>
-
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ol>
-  <li>A Magento store website has a real domain name.</li>
-  <li>The website works using HTTPS with a valid certificate.</li>
-  <li>Successful subscription to the Advanced reporting.</li>
+  <li>The website must run on a public web server.</li>
+  <li>The domain must have a valid security (SSL) certificate.</li>
+  <li>Magento must have been installed or upgraded successfully without error.</li>
+  <li>In the Magento configuration, the <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html" target="_blank">Base URL (Secure) setting</a> for the store view must point to the secure URL. For example https://yourdomain.com.</li>
+  <li>In the Magento configuration, <strong>Use Secure URLs on Storefront</strong>, <strong>and Use Secure URLs in Admin</strong> must be <a href="http://docs.magento.com/m2/ce/user_guide/Resources/Images/config-general-web-base-urls-secure.png" target="_blank">set to <strong>Yes</strong></a>.</li>
+  <li>Make sure that <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html" target="_blank">Magento crontab</a> is created and cron jobs are running on the installed server.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info">
@@ -418,9 +414,9 @@ Magento collects data and sends this information to the MBI for analytics.</p>
 
 <h2 id="related-topics">Related topics</h2>
 
-<p><a href="modules.html">Magento modules that implement the functionality</a></p>
+<p><a href="modules.html" target="_blank">Magento modules that implement the functionality</a></p>
 
-<p><a href="data-collection.html">Data collection configuration and settings</a></p>
+<p><a href="data-collection.html" target="_blank">Data collection configuration and settings</a></p>
 
 <!-- LINK DEFINITIONS -->
 
