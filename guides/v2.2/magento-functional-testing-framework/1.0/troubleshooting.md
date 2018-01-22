@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Troubleshooting in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/troubleshooting.md
+github_link: magento-functional-testing-framework/1.0/troubleshooting.md
 functional_areas:
  - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/troubleshooting.html
 ---
 
 ## WebDriver issues

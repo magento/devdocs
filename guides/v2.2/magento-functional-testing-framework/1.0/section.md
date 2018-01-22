@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Section structure in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/section.md
+github_link: magento-functional-testing-framework/1.0/section.md
 functional_areas:
  - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/section.html
 ---
 
 ## Overview

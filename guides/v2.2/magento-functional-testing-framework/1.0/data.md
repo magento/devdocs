@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Input testing data in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/data.md
+github_link: magento-functional-testing-framework/1.0/data.md
 functional_areas:
  - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/data.html
 ---
 
 ## Overview

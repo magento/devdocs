@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Assertions in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/cest/assertions.md
+github_link: magento-functional-testing-framework/1.0/cest/assertions.md
 functional_areas:
  - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/cest/assertions.html
 ---
 
 This topic contains general information about assertions in the MFTF and the reference list of available assertions.

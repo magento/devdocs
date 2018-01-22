@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Cest structure in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/cest.md
+github_link: magento-functional-testing-framework/1.0/cest.md
 functional_areas:
  - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/cest.html
 ---
 
 ## Overview

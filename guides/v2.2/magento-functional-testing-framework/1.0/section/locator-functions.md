@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Use Codeception's Locator Functions in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/section/locator-functions.md
+github_link: magento-functional-testing-framework/1.0/section/locator-functions.md
 functional_areas:
  - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/section/locator-functions.html
 ---
 
 {%raw%}

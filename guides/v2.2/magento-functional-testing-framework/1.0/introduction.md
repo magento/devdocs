@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Introduction to the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/introduction.md
+github_link: magento-functional-testing-framework/1.0/introduction.md
 functional_areas:
     - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/introduction.html
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">

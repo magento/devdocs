@@ -3,9 +3,10 @@ layout: default
 group: mftf
 title: Update the Magento Functional Testing Framework and pull new tests
 version: 2.2
-github_link: magento-functional-testing-framework/update.md
+github_link: magento-functional-testing-framework/1.0/update.md
 functional_areas:
  - Testing
+redirect_from: guides/v2.2/magento-functional-testing-framework/update.html
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">
