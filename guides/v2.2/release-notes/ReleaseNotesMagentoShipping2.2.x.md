@@ -59,7 +59,7 @@ The fixes described here are categorized by shipping carrier.
 
 * Updated the `getCompanyName` and `getOrganisationName` validation functions to check only for company name and organization name respectively.
 
- * Updated the validation process for company name and organization name used on the DHL Express Connect page.
+* Updated the validation process for company name and organization name used on the DHL Express Connect page.
 
 * Updated the currency fields in the `cn23` template for customs declaration forms to match other documents and labels.
 
