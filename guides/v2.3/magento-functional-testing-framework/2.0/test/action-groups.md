@@ -1,9 +1,9 @@
 ---
 layout: default
 group: mftf
-title: Action groups in cests of the Magento Functional Testing Framework
+title: Action groups in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/cest/action-groups.md
+github_link: magento-functional-testing-framework/test/action-groups.md
 functional_areas:
  - Testing
 ---
@@ -36,7 +36,7 @@ The following diagram demonstrates XML structure of an action group:
 
 ## Principles
 
-* All action groups are declared in XML files stored in the _&lt;module&gt;/ActionGroup/_ directory.
+* All action groups are declared in XML files stored in the _\<module\>/ActionGroup/_ directory.
 * File name ends with `ActionGroup`. Example: _LoginToAdminActionGroup.xml_.
 * File name and `<actionGroup>` name are the same.
 
@@ -59,7 +59,7 @@ Lets start from a template for our action group in _Backend/ActionGroup/LoginToA
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
     <actionGroup name="LoginToAdminActionGroup">
-
+        <!-- ACTIONS -->
     </actionGroup>
 </config>
 ```

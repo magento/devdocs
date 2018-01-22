@@ -9,21 +9,21 @@ pages:
       - label: Getting Started
         url: magento-functional-testing-framework/2.0/getting-started.html
 
-      - label: Cest
-        url: magento-functional-testing-framework/2.0/cest.html
+      - label: Test
+        url: magento-functional-testing-framework/2.0/test.html
         children:
 
           - label: Annotations
-            url: magento-functional-testing-framework/2.0/cest/annotations.html
+            url: magento-functional-testing-framework/2.0/test/annotations.html
 
           - label: Actions
-            url: magento-functional-testing-framework/2.0/cest/actions.html
+            url: magento-functional-testing-framework/2.0/test/actions.html
 
           - label: Action groups
-            url: magento-functional-testing-framework/2.0/cest/action-groups.html
+            url: magento-functional-testing-framework/2.0/test/action-groups.html
 
           - label: Assertions
-            url: magento-functional-testing-framework/2.0/cest/assertions.html
+            url: magento-functional-testing-framework/2.0/test/assertions.html
 
       - label: Page
         url: magento-functional-testing-framework/2.0/page.html
