@@ -149,11 +149,11 @@ Complete all configurations for your stores in the Admin console:
 2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.
 3. Open a terminal on your local and use an SSH command to generate `/app/etc/config.local.php` on the environment:
 
-    `ssh -k <SSH URL> "<Command>"`
+    `ssh <SSH URL> "<Command>"`
 
   For example for Pro, to run the `scd-dump` on Integration `master`:
 
-    ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 
 ### Step 2: Transfer and add the file to Git {#transfer-file}
 Push `config.local.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
