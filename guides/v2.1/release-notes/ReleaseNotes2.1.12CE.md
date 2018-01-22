@@ -29,7 +29,7 @@ Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the
 
 * **enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
-* **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied.  See Magento Shipping to print USPS shipping labels with postage. 
+* **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
 
 
 
