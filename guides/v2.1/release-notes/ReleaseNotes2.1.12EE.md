@@ -18,11 +18,7 @@ github_link: release-notes/ReleaseNotes2.1.12EE.md
 
 
 
-We are pleased to present Magento Commerce 2.1.12. This release includes important enhancements to the secuorty of your Magento installation. 
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
+We are pleased to present Magento Commerce 2.1.12. This release includes important enhancements to the security of your Magento installation. 
 
 ## Highlights
 Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the following highlights in this release:
