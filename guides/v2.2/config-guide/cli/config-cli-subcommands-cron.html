@@ -2087,8 +2087,7 @@ For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.
       <li>
         <p>Enter the following command:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cron:remove
-</code></pre></div>        </div>
+        <p>php bin/magento cron:remove</p>
       </li>
     </ol>
 
@@ -2099,10 +2098,17 @@ For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.
     <h2 id="config-cli-cron-group-run">Run cron from the command line</h2>
     <p>Command options:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento cron:run [--group="&lt;cron group name&gt;"]
-</code></pre></div>    </div>
+    <p>magento cron:run [–group=”<cron group="" name="">"]</cron></p>
 
     <p>where <code class="highlighter-rouge">--group</code> specifies the cron group to run (omit this option to run cron for all groups)</p>
+
+    <p>To run the indexing cron job, enter:</p>
+
+    <p><code class="highlighter-rouge">php bin/magento cron:run --group index</code></p>
+
+    <p>To run the default cron job, enter:</p>
+
+    <p><code class="highlighter-rouge">php magento cron:run --group default</code></p>
 
     <p>To set up custom cron jobs and groups, see <a href="/guides/v2.2/config-guide/cron/custom-cron.html">Configure custom cron jobs and cron groups</a>.</p>
 
