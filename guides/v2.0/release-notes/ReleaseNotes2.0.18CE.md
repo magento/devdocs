@@ -17,6 +17,21 @@ We are pleased to present Magento Open Source 2.0.18. This release includes mult
 
 Magento 2.0.18 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+The Magento Commerce 2.0.18 software release marks the final supported software release for Magento Commerce version 2.0.X. Magento Commerce 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired, as defined by our Magento Commerce Support Service Terms.
+To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Commerce. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
+</div>
+
+## Highlights
+
+Look for the following highlights in this release:
+
+* **enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
+
+* **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
+
+
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
