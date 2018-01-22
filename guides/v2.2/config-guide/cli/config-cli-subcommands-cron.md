@@ -35,7 +35,7 @@ To remove the Magento crontab:
 2.  Change to the Magento installation directory.
 3.  Enter the following command:
 
-    	php bin/magento cron:remove
+      php bin/magento cron:remove
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
@@ -44,24 +44,18 @@ This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ M
 ## Run cron from the command line {#config-cli-cron-group-run}
 Command options:
 
-	magento cron:run [--group="<cron group name>"]
+  magento cron:run [--group="<cron group name>"]
 
 where `--group` specifies the cron group to run (omit this option to run cron for all groups)
 
-For run indexing cron job,
+To run the indexing cron job, enter:
 
 `php bin/magento cron:run --group index`
 
-Output will be display as,
-`Ran jobs by schedule.`
 
-For run default cron job,
+To run the default cron job, enter:
 
 `php magento cron:run --group default`
-
-Output will be display as,
-`Ran jobs by schedule.`
-
 
 
 To set up custom cron jobs and groups, see [Configure custom cron jobs and cron groups]({{ page.baseurl }}config-guide/cron/custom-cron.html).
