@@ -10,14 +10,14 @@ functional_areas:
 
 ## Overview
 
-Test cases in the MFTF are defined in XML as [cests][cest].
-A Cest is [Codeception test container][codeception cest] that contains multiple individual tests with cest-level metadata and before/after actions with dependency management.
+Test cases in the MFTF are defined in XML as [tests][test].
+Tests is a [Codeception test container][codeception cest] that contains multiple individual tests with metadata and before/after actions.
 Tests in the MFTF are considered as a sequence of actions with associated parameters.
-Any failed assertion within a test fails that test and the MFTF reports it using [Allure].
+Any failed assertion within a test fails the test.
 
 The following diagram demonstrates XML structure of a Cest in the MFTF:
 
-{% include_relative img/cest-dia.svg %}
+{% include_relative img/test-dia.svg %}
 
 ## Format
 
@@ -75,19 +75,27 @@ The following diagram demonstrates XML structure of a Cest in the MFTF:
 
 ## Reference
 
-The following list is reference documentation of elements that may be used in Cests.
+The following list is reference documentation of elements that may be used in tests.
 
-### cest {#cest-element}
+### tests {#tests-tag}
 
-A cest is a Codeception container for multiple tests. Logically, it is a group of tests that define test flows within a test case.
-
-Attribute|Type|Use
----|---|---
-name|string|required
+A container for multiple tests. Logically, it is a group of tests that define test flows within a test case.
 
 It MUST contain at least one [`<test>`][test].
 
-It MAY contain [`<annotations>`][annotations], [`<before>`][before], [`<after>`][after].
+***
+***
+
+### test
+
+A set of actions with an assertion.
+
+Attribute|Type|Use|Description
+---|---|---|---
+name|string|optional|
+remove|boolean|optional|Set `true` to remove the test when merging.
+
+It MAY contain [`<annotations>`][annotations], [`<before>`][before], [`<after>`][after], any [action], [`<actionGroup>`][action group]
 
 ***
 ***
@@ -105,7 +113,7 @@ Read about annotations in a separate topic [Annotations][annotations].
 
 ### before
 
-Specifies actions to perform before all [tests][test] in a [cest].
+Specifies actions to perform before all [tests][test] in a [test].
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -122,7 +130,7 @@ It MAY contain the following child elements:
 
 ### after
 
-Specifies actions to perform after all [tests][test] in a [cest].
+Specifies actions to perform after all [tests][test] in a [test].
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -132,24 +140,6 @@ remove|boolean|optional|
 It MAY contain:
 
  * any [action]
- * [`<actionGroup>`][action group]
-
-***
-***
-
-### test
-
-A set of actions with an assertion.
-
-Attribute|Type|Use|Description
----|---|---|---
-name|string|optional|
-remove|boolean|optional|
-
-It MAY contain:
-
- * any [action]
- * [`<annotations>`][annotations]
  * [`<actionGroup>`][action group]
 
 ***
@@ -191,7 +181,7 @@ value|string|optional
 [annotations]: cest/annotations.html
 [argument]: #argument
 [before]: #before
-[cest]: #cest
+[test]: #cest
 [test]: #test
 
 [Allure]: https://github.com/allure-framework/
