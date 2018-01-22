@@ -15,7 +15,7 @@ We are pleased to present Magento Commerce 2.2.3. This release includes multiple
 
 Look for the following highlights in this release:
 
-* **Multiple enhancements to product security**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
+* **enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 <!--- MAGETWO-84775 -->* **Support for Elasticsearch 5.x**. See [Install and configure Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento.
 
