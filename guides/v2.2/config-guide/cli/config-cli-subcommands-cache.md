@@ -111,10 +111,11 @@ To view the status of the cache, enter
 
 A sample follows:
 
-There are 13 types of cache types display as result for Magento open source by default.
+There are lists of cache types available for Magento by default. You can check it by run command,
 
-For Cache type enable they will display status as 1,
-if Cache type is disable, show status as 0.
+`php bin/magento cache:status`
+
+Enabled cache types have a value of 1. Otherwise, the value is 0.
 
                 config: 1
                 layout: 1
