@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.0.18EE.md
 
 *Patch code and release notes were published on February 12, 2018.* 
 
-We are pleased to present Magento Commerce 2.0.18. This release includes multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
+We are pleased to present Magento Commerce 2.0.18. This release includes multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update)  for more information.
 
 Magento 2.0.18 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -28,7 +28,7 @@ To maintain the performance and security of your site, we advise you to upgrade 
 
 Look for the following highlights in this release:
 
-* **enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
+* **enhancements that help close authenticated Admin user remote code execution, unauthorized data leak, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 * **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
 
