@@ -21,8 +21,6 @@ pages:
     - label: Onboarding tasks
       url: cloud/onboarding/onboarding-tasks.html
       children:
-        - label: Onboarding Portal management
-          url: cloud/onboarding/onboarding-portal.html
 
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
@@ -39,7 +37,10 @@ pages:
         - label: Git
           url: cloud/reference/git-integration.html
 
-        - label: GitHub
+        - label: Bitbucket integration
+          url: cloud/project/bitbucket-integration.html
+
+        - label: GitHub integration
           url: cloud/project/project-integrate-github.html
 
         - label: SSH and sFTP
@@ -132,7 +133,7 @@ pages:
           url: cloud/configure/fastly-vcl-blacklist.html
 
         - label: Custom extend Admin timeout VCL
-          url: cloud/configure/fastly-vcl-extendtimeout.html
+          url: cloud/configure/fastly-vcl-extend-timeout.html
 
         - label: Custom redirect to Wordpress VCL
           url: cloud/configure/fastly-vcl-wordpress.html
@@ -168,6 +169,10 @@ pages:
 
         - label: Set up RabbitMQ service
           url: cloud/project/project-conf-files_services-rabbit.html
+
+        - label: Set up notifications
+          url: cloud/env/setup-notifications.html
+          versions: ["2.2", "2.3"]
 
         - label: Configure routes - routes.yaml
           url: cloud/project/project-conf-files_routes.html
@@ -220,6 +225,9 @@ pages:
         - label: Magento Commerce (Cloud) environment variables
           url: cloud/env/environment-vars_cloud.html
 
+        - label: Working with variables
+          url: cloud/env/working-with-variables.html
+
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
       children:
@@ -265,6 +273,16 @@ pages:
 
         - label: Launch steps
           url: cloud/live/launch-steps.html
+
+    - label: Composer package updates
+      url: cloud/composer-packages/patch-notes.html
+      versions: ["2.2","2.3"]
+      children:
+        - label: vendor/magento/ece-patches
+          url: cloud/composer-packages/ece-patches.html
+
+        - label: vendor/magento/ece-tools
+          url: cloud/composer-packages/ece-tools.html
 
     - label: Troubleshooting
       url: cloud/trouble/trouble.html

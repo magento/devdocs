@@ -75,7 +75,7 @@ If you add a certain field as additional grid column, you also need to set the f
 ## Customize the design options {#customize_options}
 
 ### Customize the form configuration
-Design configuration form is implemented using the [form UI component]({{page.baseurl}}ui-components/components/ui-form.html).
+Design configuration form is implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html).
 
 To customize the form view, take the following steps:
 

@@ -15,7 +15,7 @@ functional_areas:
 
 [Fastly]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html) and {{site.data.var.ece}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You're free to customize your Fastly VCL snippets any way you like to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
 
-To create and upload these VCL snippets, you use a terminal application. You do not need to SSH into a specific environment. This information includes a walk-through creating regular snippets with [`curl` commands](#vcl-curl). _Don't worry, we walk you through the process with examples._
+To create and upload these VCL snippets, you use a terminal application. You do not need to SSH into a specific environment. This information includes a walk-through creating regular snippets a bash command and `.vcl` snippet files of JSON code. _Don't worry, we walk you through the process with examples._
 
 You need the following information to create VCL snippets:
 
@@ -141,7 +141,7 @@ To create the bash script files:
           do
           TYPE=${vcl%.vcl}
           curl -X POST -s https://app.fastly.com/service/${SERVICE_ID}/version/${VERSION}/snippet \
-          -H 'Content-Type: application/json'
+          -H 'Content-Type: application/json' \
           -H "Fastly-Key:$API_KEY" \
           --data "name=${SNIPPET_NAME_PREFIX}_${TYPE}&type=$TYPE&dynamic=0&content=$(cat $vcl | rawurlencode)";
           done
@@ -243,7 +243,7 @@ For detailed examples and custom code, see the following:
 * [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
 * [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
 * [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
-* [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-backend.html)
+* [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
 * [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
 
 <!-- ### Update an existing VCL snippet {#update}

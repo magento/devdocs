@@ -20,9 +20,9 @@ functional_areas:
 ## Overview of dependency reports
 You can run the following types of reports:
 
--   {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}**Module**{% endglossarytooltip %} dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft
--   **Circular dependencies:** Shows the total number of dependency chains and the number and list of circular dependencies for each module
--   **Framework dependencies:** Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library)
+-   {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}**Module**{% endglossarytooltip %} dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft.
+-   **Circular dependencies:** Shows the total number of dependency chains and the number and list of circular dependencies for each module.
+-   **Framework dependencies:** Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library).
 
 A dependency in a comment is also a dependency.
 
@@ -73,6 +73,34 @@ The following table explains this command's options, parameters, and values.
 	</tr>
 	</tbody>
 </table>
+
+If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:
+
+<table>
+	<col width="50%">
+	<col width="50%">
+	<tbody>
+		<tr>
+			<th>Command</th>
+			<th>Filename</th>
+		</tr>
+		<tr>
+			<td>magento info:dependencies:show-modules</td>
+			<td>modules-dependencies.csv</td>
+		</tr>
+		<tr>
+			<td>magento info:dependencies:show-modules-circular</td>
+			<td>modules-circular-dependencies.csv</td>
+		</tr>
+		<tr>
+			<td>magento info:dependencies:show-framework</td>
+			<td>framework-dependencies.csv</td>
+		</tr>
+	</tbody>
+</table>
+	
+
+
 
 ### Sample module dependencies report
 The following is a portion of the output for a sample module dependencies report:

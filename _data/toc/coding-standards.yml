@@ -32,5 +32,4 @@ pages:
           url: coding-standards/code-standard-html.html
 
     - label: Technical guidelines
-      url: coding-standards/technical-guidelines/technical-guidelines.html
-      versions: ["2.1","2.2", "2.3"]
+      url: coding-standards/technical-guidelines.html

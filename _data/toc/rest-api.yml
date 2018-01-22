@@ -41,6 +41,11 @@ pages:
         - label: REST usage notes
           url: rest/notes.html
 
+    - label: Create configurable products Tutorial
+      class: tutorial
+      url: rest/tutorials/configurable-product/config-product-intro.html
+      versions: ["2.2", "2.3"]
+
     - label: Modules
       children:
 

@@ -47,7 +47,9 @@ Back up your staging or production system database:
 1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+    ```
+    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+    ```
 
 3.  Create a database dump:
 

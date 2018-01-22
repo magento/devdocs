@@ -105,7 +105,7 @@ For these environments, you are pushing code from repository to repository: Inte
 ## Migrate static files {#cloud-live-migrate-static}
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
 
-We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
+We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="\_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
 We suggest using the following syntax:
 
@@ -118,7 +118,7 @@ Options:
 	`v` verbose
 	`P` partial progress
 
-For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
+For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="\_blank"}.
 
 To migrate static files:
 
@@ -134,11 +134,11 @@ To migrate static files:
 
 ## Migrate the database {#cloud-live-migrate-db}
 
-**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="\_blank"}.
 
 **Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 
-For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ page.baseurl }}cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
+For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 
@@ -153,7 +153,10 @@ To migrate a database:
 			magento-cloud environment:ssh
 2.	Find the database login information with the following command:
 
+    ```
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+    ```
+
 3.	Create a database dump. The following command creates a database dump as a gzip file.
 
 	For Starter environments and Pro Integration environments:
@@ -193,7 +196,7 @@ This error occurs because the DEFINER for the triggers in the SQL dump is the pr
 
 To solve the issue, you can generate a new database dump changing or removing the `DEFINER` clause. The following is one example of completing this change:
 
-	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed -i 's/DEFINER=[^*]**/*/g' | gzip > /tmp/database_no-definer.sql.gz
+	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/g' | gzip > /tmp/database_no-definer.sql.gz
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 

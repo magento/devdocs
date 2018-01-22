@@ -41,7 +41,7 @@ To upgrade from **2.0.X**:
 
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
-* [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Verify or set the ADMIN_EMAIL variable](#variable): This variable is required for upgrades and patch to 2.2 and later
 * [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 
 To upgrade from **2.1.X**:
@@ -49,7 +49,7 @@ To upgrade from **2.1.X**:
 * [Upgrade your PHP version](#php): v2.2 supports PHP 7.0 and later
 * [Configuration Management](#config): Create a new `config.php` using the `config.local.php` to properly upgrade
 * [.magento.app.yaml](#magento-app-yaml): Update the file with new settings and required changes for hooks and environment variables
-* [Verify or set the ADMIN_EMAIL variable](variable): This variable is required for upgrades and patch to 2.2 and later
+* [Verify or set the ADMIN_EMAIL variable](#variable): This variable is required for upgrades and patch to 2.2 and later
 * [Upgrade Fastly](#fastly): Make sure you are upgraded to the latest supported version of Fastly
 * [Update .gitignore for new generated directory](#gitignore): With 2.2 and later, changes in generated folder require additions to `.gitignore`
 
@@ -59,7 +59,7 @@ After completing your upgrade, you may also want to [Verify and upgrade your ext
 With v2.2, we only support PHP 7.0 and later. Make sure to upgrade your local development workspace PHP version. For more information, see the following:
 
 * [PHP](http://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workspace
-* [Migrating from PHP 5.6 to PHP 7.0.x](http://php.net/manual/en/migration70.php){:target="_blank"}
+* [Migrating from PHP 5.6 to PHP 7.0.x](http://php.net/manual/en/migration70.php){:target="\_blank"}
 * [Magento 2.2.x technology stack requirements](http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
 ### Configuration Management and upgrading {#config}
@@ -103,7 +103,11 @@ If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your 
             CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
             CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
             CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
-5. Save the file and push to your Git branch.
+5. Save the file.
+
+    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    Do not commit or push changes to your branch yet. You still need to [Verify other changes](#verify-changes) and [Complete the upgrade](#upgrade).
+    </div>
 
 **For Pro plan merchants:** When you are ready to deploy to Pro Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated for {{site.data.var.ece}} 2.2.
 
@@ -117,7 +121,7 @@ The environment variable `ADMIN_EMAIL` is required for upgrading and patching. T
 ### Upgrade Fastly {#fastly}
 If you have not upgraded to the latest supported version of Fastly, you should do so. Check [Supported software versions]({{page.baseurl}}cloud/requirements/cloud-requirements.html#cloud-arch-software) for the latest version of Fastly we recommend. For instructions, see [Upgrade Fastly]({{page.baseurl}}cloud/access-acct/fastly.html#upgrade).
 
-If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="_blank"}.
+If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="\_blank"}.
 
 ### Update .gitignore for new generated directory {#gitignore}
 With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.
@@ -126,29 +130,8 @@ With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `va
     !/generated/.htaccess
 
 ## Back up the database {#backup-db}
-We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
-Back up your Integration environment database and code:
-
-1.  Enter the following command to make a local backup of the remote database:
-
-        magento-cloud db:dump
-2.  Enter the following command to back up code and media:
-
-        php bin/magento setup:backup --code [--media]
-
-    You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
-
-Back up your staging or production system database:
-
-1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
-2.  Find the database login information:
-
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-
-3.  Create a database dump:
-
-        mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+{% include cloud/backup-db.md %}
 
 ## Verify other changes {#verify-changes}
 Verify other changes you're going to submit to source control before you start the upgrade:

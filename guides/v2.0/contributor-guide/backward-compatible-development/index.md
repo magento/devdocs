@@ -337,6 +337,8 @@ Use the `@deprecated` tag to mark methods as deprecated and follow it up with an
 
 Use the  `@see` tag to recommend the new API to use instead of the old one.
 
+Preserve `@api` tag when deprecating `@api`-marked code.
+
 #### Deprecated tag in PHP
 
 ~~~
@@ -389,9 +391,9 @@ These backward incompatible changes do not need manual documentation:
 * Adding/removing a class/interface constant
 * Adding removing a class property
 
-Auto-generated [CE changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ce/216-develop.html)
+Auto-generated [{{site.data.var.ce}} changes]({{page.baseurl}}release-notes/changes/ce_changes.html)
 
-Auto-generated [EE changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ee/216-develop.html)
+Auto-generated [{{site.data.var.ee}} changes]({{page.baseurl}}release-notes/changes/ee_changes.html)
 
 ### Where to document
 

@@ -201,7 +201,7 @@ If adding a route to Blackfire, make sure to add the default route to `routes.ya
 		magento-cloud snapshot:create -e <environment ID>
 
 8.	Use a text editor to locate and edit `<project root dir>/magento/routes.yaml` in your branch.
-9.	Add the route the file. For details, see [`routes.yaml`](({{page.baseurl}}cloud/project/project-conf-files_routes.html)). Here's an example:
+9.	Add the route the file. For details, see [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html). Here's an example:
 
 		"http://{default}/":
 		type: upstream

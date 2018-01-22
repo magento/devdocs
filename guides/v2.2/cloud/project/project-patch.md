@@ -16,9 +16,9 @@ redirect_from:
 
 You can apply patches as they are available to update {{site.data.var.ece}}. We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
-When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). Starting with 2.2.0, we use `ece-patches` for updating Magento with fixes, new features, and more. We also use `ece-tools` for keeping build and deploy processes updated.
+When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). Starting with 2.2.0, we use `vendor/magento/ece-patches` for updating Magento with fixes, new features, and more. We also use `vendor/magento/ece-tools` for keeping build and deploy processes updated.
 
-Available patches are in the `vendor/ece-patches` folder.
+Available patches are in the `vendor/magento/ece-patches` folder.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
@@ -48,27 +48,8 @@ Our patches are Composer driven. For more information on Composer, see [Composer
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
 
 ## Back up the database {#backup-db}
-Back up your Integration environment database and code:
 
-1.  Enter the following command to make a local backup of the remote database:
-
-        magento-cloud db:dump
-2.  Enter the following command to back up code and media:
-
-        php bin/magento setup:backup --code [--media]
-
-    You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
-
-Back up your Staging or Production environment database before deploying to those environments:
-
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
-2.  Find the database login information:
-
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-
-3.  Create a database dump:
-
-        mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+{% include cloud/backup-db.md %}
 
 ## Verify other changes {#verify-changes}
 Verify other changes you're going to submit to source control before you start the upgrade:
@@ -127,12 +108,27 @@ To test a general patch on your local system, you create a branch from the Pro I
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
 4.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 5.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
+
+### Patch vendor/magento/ece-tools
+This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html).
+
+1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
+2.  Enter the following command to patch `vendor/magento/ece-tools`:
+
+    ```shell
+    composer update vendor/magento/ece-tools
+    ```
+3.  Push your changes to the remote server:
+    ```
+    git add composer.lock && git commit -m "Update vendor/magento/ece-tools"
+    git push origin <branch name>
+    ```
 
 ### Push a general patch to Staging or Production environments {#gen-pushpatch}
 After you've successfully tested a patch locally and on your Integration environment, you can push the patch to Staging or Production environment:

@@ -15,7 +15,7 @@ functional_areas:
   - Upgrade
 ---
 
-We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in {{site.data.var.ece}} and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage dependencies and upgrades in {{site.data.var.ece}} and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 Composer is a dependency manager for PHP. Composer manages the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place. For {{site.data.var.ece}}, we use `composer.json` and `composer.lock` to manage your modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more. Magento extension and module developers use `composer.json` to also manage their product installations and upgrades. For details, see [Your project's Composer files](#files).
 
@@ -23,7 +23,7 @@ The following sections detail the specifics of {{site.data.var.ece}} composer pa
 
 For information on what files should and shouldn't be in source control, see [Project structure]({{page.baseurl}}cloud/project/project-start.html). We provide a `.gitignore` file to aid.
 
-For {{site.data.var.ece}} 2.2, the `magento/magento-cloud-configuration (MCC)` has been replaced by `magento/ece-patches` and `magento/ece-tools`. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.
+For {{site.data.var.ece}} 2.2, the `magento/magento-cloud-configuration (MCC)` has been replaced by `vendor/magento/ece-patches` and `vendor/magento/ece-tools`. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.
 
 ## Your project's Composer files {#files}
 Your project root directory contains `composer.json` and `composer.lock`.
@@ -55,41 +55,31 @@ We use the following commands for Magento:
 ## Magento Commerce (Cloud) packages
 The following sections discuss the Composer packages used by {{site.data.var.ece}}:
 
-*	[`magento/magento-cloud-metapackage`](#cloud-composer-cloudmeta)
-*	[`magento/ece-patches`](#ece-patches)
-*	[`magento/ece-tools`](#ece-tools)
-*	[`magento/product-enterprise-edition`](#cloud-composer-prodee)
+*	[`vendor/magento/magento-cloud-metapackage`](#cloud-composer-cloudmeta)
+*	[`vendor/magento/ece-patches`](#ece-patches)
+*	[`vendor/magento/ece-tools`](#ece-tools)
+*	[`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee)
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Refer to [Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html) for release information.
+</div>
 
 ### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
-`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
+`vendor/magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="\_blank"} and does not contain any code.
 
-The metapackage depends on the appropriate versions of [`magento/ece-patches`](#ece-patches), [`magento/ece-tools`](#ece-tools), and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
+The metapackage depends on the appropriate versions of [`vendor/magento/ece-patches`](#ece-patches), [`vendor/magento/ece-tools`](#ece-tools), and [`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
 
-This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
+This package depends on a floating version of `vendor/magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
-### magento/ece-patches {#ece-patches}
-This package contains patch files that are specific to Cloud. Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Cloud code and the patch. Using `compuser update` automatically runs tools to check for available patches and to run them with build and deploy scripts.
+### vendor/magento/ece-patches {#ece-patches}
 
-For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`.
+{% include cloud/ece-patches.md %}
 
-Patch versions are specified as: `<100 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with `ece-patches` 102.0.0. Subsequently, a new patch will be released that corresponds to the same {{site.data.var.ee}} version, and it would be 102.0.1.
+### vendor/magento/ece-tools {#ece-tools}
 
-Code released in `ece-patches` is strictly for updates to {{site.data.var.ece}}. Patches are available in the `vendor/ece-patches` folder.
+{% include cloud/ece-tools.md %}
 
-To check for available patches, you can check in the `vendor/ece-patches` folder.
-
-### magento/ece-tools {#ece-tools}
-This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:
-
- * `pre-deploy.php`
- * `bin/magento magento-cloud:deploy`
- * `bin/magento magento-cloud:build`
-
-For {{site.data.var.ee}}, versions are specified as `2.<x>.<y>`. The versioning for `ece-tools` will then be `<2000 + x>.<y>.*`. For example, {{site.data.var.ee}} 2.2.0 is associated with 2002.0.0.
-
-We release updated `ece-tools` code strictly includes improvements for tools, including the build and deploy hooks. These tools are updated as needed through patching and product upgrades, managed by the `magento-cloud-metapackage`.
-
-### magento/product-enterprise-edition {#cloud-composer-prodee}
+### vendor/magento/product-enterprise-edition {#cloud-composer-prodee}
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.
 
 ## Base packages and file marshalling

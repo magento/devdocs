@@ -1,13 +1,17 @@
 label: Magento Functional Testing Framework Guide
 pages:
 
+  - label: Introduction
+    url: magento-functional-testing-framework/introduction.html
+    versions: ["2.2", "2.3"]
+
   - label: Getting Started
     url: magento-functional-testing-framework/getting-started.html
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
 
   - label: Cest
     url: magento-functional-testing-framework/cest.html
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
     children:
  
       - label: Annotations
@@ -16,12 +20,18 @@ pages:
       - label: Actions
         url: magento-functional-testing-framework/cest/actions.html
 
+      - label: Action groups
+        url: magento-functional-testing-framework/cest/action-groups.html
+
+      - label: Assertions
+        url: magento-functional-testing-framework/cest/assertions.html
+
   - label: Page
     url: magento-functional-testing-framework/page.html
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
   - label: Section
     url: magento-functional-testing-framework/section.html
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
     children:
 
       - label: Parameterized selectors
@@ -30,8 +40,12 @@ pages:
       - label: Locator Functions
         url: magento-functional-testing-framework/section/locator-functions.html
 
+  - label: Data
+    url: magento-functional-testing-framework/data.html
+    versions: ["2.2", "2.3"]
+
   - label: CLI Commands
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
     children:
 
       - label: robo
@@ -41,12 +55,16 @@ pages:
 
   - label: Update
     url: magento-functional-testing-framework/update.html
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
 
   - label: Troubleshooting
     url: magento-functional-testing-framework/troubleshooting.html
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
 
   - label: Contribution Guidelines
     url: magento-functional-testing-framework/contribution-guidelines.html
-    versions: ["2.3"]
+    versions: ["2.2", "2.3"]
+
+  - label: Changelog
+    url: magento-functional-testing-framework/changelog.html
+    versions: ["2.2", "2.3"]
