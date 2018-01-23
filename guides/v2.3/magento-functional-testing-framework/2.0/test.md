@@ -126,7 +126,7 @@ It MAY contain:
 ***
 ***
 
-### actionGroup {#actionGroup-tag}
+### actionGroup {#actiongroup-tag}
 
 Calls a corresponding [action group].
 
@@ -157,12 +157,12 @@ Learn more in [Action groups][action group].
 
 [action]: cest/actions.html
 [action group]: test/action-group.html
-[action group tag]: #actiongroup
-[after]: #after
+[action group tag]: #actiongroup-tag
+[after]: #after-tag
 [annotations]: cest/annotations.html
-[argument]: #argument
+[argument]: #argument-tag
 [assertions]: test/assertions.html
-[before]: #before
+[before]: #before-tag
 [tests]: #tests-tag
 [test]: #test-tag
 
