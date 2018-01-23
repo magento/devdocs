@@ -1,9 +1,9 @@
 ---
 layout: default
-group: config-guide
-title: Performance Configuration Best Practices
+group: perf-best-practices
+title: Deployment flow
 version: 2.2
-github_link: config-guide/prod/performance-deployment-flow.md
+github_link: performance-best-practices/deployment-flow.md
 functional_areas:
   - Configuration
   - System

@@ -1,9 +1,9 @@
 ---
 layout: default
-group: config-guide
-title: Software performance configuration best practices
+group: perf-best-practices
+title: Software recommendations
 version: 2.2
-github_link: config-guide/prod/performance-software.md
+github_link: performance-best-practices/software.md
 functional_areas:
   - Configuration
   - System
@@ -15,14 +15,14 @@ functional_areas:
 The following is a list of recommended software for production instances in order of impact:
 
 * PHP 7
-* [Varnish cache][config-varnish]
-* (Magento Commerce only) Use the [Elasticsearch & Elasticsearch Search Adapter][elasticsearch]
-*	Nginx and [PHP-FPM][php-fpm]
+* [Varnish cache]({{page.baseurl}}config-guide/varnish/config-varnish.html)
+* ({{site.data.var.ee}} only) Use the [Elasticsearch & Elasticsearch Search Adapter]({{page.baseurl}}config-guide/elasticsearch/es-overview.html)
+*	Nginx and [PHP-FPM](https://php-fpm.org/)
 
 For multi-server deployments or for merchants planning on scaling their business we recommend the following:
 
-*	[Redis][redis-session] for sessions (from 2.0.6+)
-*	A separate Redis instance as your [default cache][redis-default-cache]
+*	[Redis]({{page.baseurl}}config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
+*	A separate Redis instance as your [default cache]({{page.baseurl}}config-guide/redis/redis-pg-cache.html)
   *	Do not use this instance for page cache
 
 ## Operating system
@@ -217,8 +217,3 @@ If you need to serve hundreds and thousands of simultaneous requests, you may ne
 **Sessions** - Consider how sessions are flushed from the cache and your merchants abandoned cart strategy.
 
 **Caches** - Estimate a memory size to fit the total number of effective skus, product pages and content pages you expect will be used.
-
-
-[elasticsearch]: {{page.baseurl}}config-guide/elasticsearch/es-overview.html
-[config-varnish]: {{page.baseurl}}config-guide/varnish/config-varnish.html
-[php-fpm]: https://php-fpm.org/

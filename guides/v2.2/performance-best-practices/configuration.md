@@ -1,9 +1,9 @@
 ---
 layout: default
-group: config-guide
-title: Performance Configuration Best Practices
+group: perf-best-practices
+title: Configuration best practices
 version: 2.2
-github_link: config-guide/prod/performance-configuration.md
+github_link: performance-best-practices/configuration.md
 functional_areas:
   - Configuration
   - System

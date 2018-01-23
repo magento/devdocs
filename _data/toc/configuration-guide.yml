@@ -374,23 +374,3 @@ pages:
       children:
         - label: Magento Optimization Guide
           url: config-guide/prod/prod_perf-optimize.html
-
-    - label: Performance Configuration Best Practices
-      url: config-guide/prod/performance-best-practices.html
-      versions: ["2.2"]
-      children:
-
-        - label: Hardware
-          url: config-guide/prod/performance-hardware.html
-
-        - label: Software
-          url: config-guide/prod/performance-software.html
-
-        - label: Configuration
-          url: config-guide/prod/performance-configuration.html
-
-        - label: Deployment flow
-          url: config-guide/prod/performance-deployment-flow.html
-
-        - label: Advanced Setup
-          url: config-guide/prod/performance-advanced-setup.html
