@@ -149,7 +149,7 @@ Sets an argument that is used in parent [`<actionGroup>`][action group tag].
 Attribute|Type|Use
 ---|---|---
 name|string|optional| Name of the argument.
-value|string|optional Value of the argument.
+value|string|optional| Value of the argument.
 
 Learn more in [Action groups][action group].
 
