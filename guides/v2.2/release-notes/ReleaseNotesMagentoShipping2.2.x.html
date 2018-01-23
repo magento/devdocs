@@ -603,11 +603,99 @@
 </section>
 
 
-			<p><em>Code and release notes published on January 5, 2018.</em></p>
+			<p><em>Code and release notes published on January 22, 2018.</em></p>
 
 <p>The release information in this section describes changes to the Magento Shipping extension bundled with Magento 2.2.2.  Fixes and enhancements are listed by availability date.</p>
 
 <p>See the <a href="/guides/v2.2/release-notes/ReleaseNotes2.2.2CE.html">Magento Commerce 2.2.2 Release Notes</a> for a comprehensive discussion of 2.2.2 fixes and enhancements.</p>
+
+<h2 id="changes-effective-january-22-2018">Changes effective January 22, 2018</h2>
+
+<p>Here are the enhancements and fixes available as of January 22, 2018:</p>
+
+<h3 id="enhancements--">Enhancements   </h3>
+
+<ul>
+  <li>
+    <p>Added a tutorial for activating Magento Shipping.</p>
+  </li>
+  <li>
+    <p>Redesigned the Shipping Experience Rules page so that it displays the rule execution sequence.</p>
+  </li>
+  <li>
+    <p>Added alphanumeric validation to the Huxloe Hermes carrier tab. (Huxloe Hermes)</p>
+  </li>
+  <li>
+    <p>Improved the functionality of the label converter. (Huxloe Hermes)</p>
+  </li>
+  <li>
+    <p>Improved the error messages for the PickUpAvailability endpoint. (FedEx)</p>
+  </li>
+  <li>
+    <p>Improved the general quality of all error messages. (UPS)</p>
+  </li>
+  <li>
+    <p>Improved the validation of customer API keys during configuration.  (UK Mail)</p>
+  </li>
+</ul>
+
+<h3 id="fixes">Fixes</h3>
+<p>The fixes described here are categorized by shipping carrier.</p>
+
+<h4 id="australia-post">Australia Post</h4>
+
+<ul>
+  <li>Fixed an issue with the error thrown if Export Category is <strong>commercial</strong> when the shipment isn’t dutiable. Previously, the error thrown did not correctly address the issue.</li>
+</ul>
+
+<h4 id="fedex">FedEx </h4>
+
+<ul>
+  <li>Changed the default signature option to DIRECT for all services.</li>
+</ul>
+
+<h4 id="ups">UPS </h4>
+
+<ul>
+  <li>Resolved a UI issue with validation so that users do not need to enter State or Province when connecting to UPS with a United Kingdom  address.</li>
+</ul>
+
+<h4 id="dhl-express">DHL Express</h4>
+
+<ul>
+  <li>
+    <p>Updated the pickup error response from DHL. Previously, this response was inaccurate.</p>
+  </li>
+  <li>
+    <p>Updated the <code class="highlighter-rouge">getCompanyName</code> and <code class="highlighter-rouge">getOrganisationName</code> validation functions to check only for company name and organization name respectively.</p>
+  </li>
+  <li>
+    <p>Updated the validation process for company name and organization name used on the DHL Express Connect page.</p>
+  </li>
+  <li>
+    <p>Updated the currency fields in the <code class="highlighter-rouge">cn23</code> template for customs declaration forms to match other documents and labels.</p>
+  </li>
+  <li>
+    <p>Changed the default display of the <code class="highlighter-rouge">quantityUnit</code> field. The default value is now zero, and this field is left blank.</p>
+  </li>
+</ul>
+
+<h4 id="huxloe-hermes">Huxloe Hermes</h4>
+
+<ul>
+  <li>
+    <p>Increased the duration of the response timeout from 10 to 20 seconds.</p>
+  </li>
+  <li>
+    <p>Fixed lint program.</p>
+  </li>
+  <li>
+    <p>Improved the functionality of the label converter.</p>
+  </li>
+  <li>
+    <p>Upgraded to local time zones for booking, pickup, and tracking times.</p>
+  </li>
+</ul>
 
 <h2 id="changes-effective-january-5-2018">Changes effective January 5, 2018</h2>
 
@@ -624,47 +712,69 @@
   </li>
 </ul>
 
-<h3 id="fixes">Fixes</h3>
+<h3 id="fixes-1">Fixes</h3>
 
 <h4 id="billing">Billing </h4>
-
-<p>• Fixed issue with billing metric calculations and capture </p>
+<ul>
+  <li>Fixed issue with billing metric calculations and capture </li>
+</ul>
 
 <h4 id="tracking">Tracking </h4>
 
-<p>• Fixed issue with tracking capture and display</p>
+<ul>
+  <li>Fixed issue with tracking capture and display</li>
+</ul>
 
 <h4 id="portal">Portal </h4>
 
-<p>• Fixed issue with redirection on log-out  </p>
+<ul>
+  <li>
+    <p>Fixed issue with redirection on log-out  </p>
+  </li>
+  <li>
+    <p>Fixed issue that prevented the consistent saving of qualification rules</p>
+  </li>
+</ul>
 
-<p>• Fixed issue that prevented the consistent saving of qualification rules</p>
+<h4 id="australia-post-1">Australia Post </h4>
 
-<h4 id="australia-post">Australia Post </h4>
-
-<p>• Corrected incorrect service names</p>
+<ul>
+  <li>Corrected incorrect service names</li>
+</ul>
 
 <h4 id="uk-mail">UK Mail </h4>
 
-<p>• Removed restrictions on mandatory county information</p>
+<ul>
+  <li>Removed restrictions on mandatory county information</li>
+</ul>
 
-<h4 id="fedex">FedEx </h4>
-
-<p>• Removed unsupported freight services from list of available services</p>
-
-<p>• Changed orientation of labels from landscape to portrait </p>
-
-<p>• Corrected MPS handling in completion </p>
-
-<p>• Implemented sensible defaults for FedEx</p>
+<h4 id="fedex-1">FedEx </h4>
+<ul>
+  <li>
+    <p>Removed unsupported freight services from list of available services</p>
+  </li>
+  <li>
+    <p>Changed orientation of labels from landscape to portrait </p>
+  </li>
+  <li>
+    <p>Corrected MPS handling in completion </p>
+  </li>
+  <li>
+    <p>Implemented sensible defaults for FedEx</p>
+  </li>
+</ul>
 
 <h4 id="configuration">Configuration </h4>
 
-<p>• Set FedEx  to ‘Upcoming’ carrier</p>
+<ul>
+  <li>Set FedEx  to ‘Upcoming’ carrier.</li>
+</ul>
 
 <h4 id="usps">USPS </h4>
 
-<p>• Updated label size to A6 default in PNG</p>
+<ul>
+  <li>Updated label size to A6 default in PNG.</li>
+</ul>
 
 
 		</div>
