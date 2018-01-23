@@ -162,11 +162,10 @@ Calls a corresponding action group.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-ref|string|required|
-stepKey|string|required|
-remove|boolean|optional|
-before|string|optional|
-after|string|optional|
+ref|string|required|Reference to the required action group by its `name`.
+stepKey|string|required|Identifier of the element within `<test>`.
+before|string|optional|`<stepKey>` of an action or action group that must be executed next while merging.
+after|string|optional|`<stepKey>` of an action or action group that must be executed one step before the current one while merging.
 
 It MAY contain [`<argument>`][argument]
 

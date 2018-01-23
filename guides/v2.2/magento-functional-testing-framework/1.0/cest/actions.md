@@ -19,9 +19,29 @@ Some actions drive browser elements, while others use REST APIs.
 
 All actions contain the following attributes that are useful for merging needs:
 
-* `stepKey` is a required attribute that stores a unique identifier of the action. Example: `"conditionalClickStep1"`.
-* `before` is an optional attribute that Set `stepKey` of an action that must be executed one step before the current one.
-* `after` is an optional attribute that Set `stepKey` of an action that must be executed next.
+* `stepKey` is a required attribute that stores a unique identifier of the action. Example: 
+
+```xml
+<myAction stepKey="conditionalClickStep1"/>
+```
+
+`myAction` has identifier, which is `conditionalClickStep1`. This step can be referenced within the test using this identifier.
+
+* `before` and `after` are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is `stepKey` of reference action. Example:
+
+```xml
+<myAction before="fillField stepKey="conditionalClickStep1"/>
+```
+
+`myAction` will be executed before the action, which has `stepKey="fillField"`.
+
+* `after` is an optional attribute. It stores `stepKey` of action that will be executed before the current one. Example:
+
+```xml
+<myAction after="fillField stepKey="seeResult"/>
+```
+
+`myAction` will be executed after the action, which has `stepKey="fillField"`.
 
 ## Principles
 
@@ -147,8 +167,8 @@ If description of an element does not includes a link to Codeception analogue, i
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### amOnPage
 
@@ -158,8 +178,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### amOnSubdomain
 
@@ -169,8 +189,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### amOnUrl
 
@@ -180,8 +200,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### appendField
 
@@ -192,8 +212,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### attachFile
 
@@ -204,8 +224,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### cancelPopup
 
@@ -214,8 +234,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### checkOption
 
@@ -225,8 +245,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### clearField
 
@@ -250,8 +270,8 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### clickWithLeftButton
 
@@ -264,8 +284,8 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### clickWithRightButton
 
@@ -278,8 +298,8 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### closeAdminNotification
 
@@ -288,8 +308,8 @@ Remove from the DOM all elements with the CSS classes `.modal-popup` or `.modals
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### closeTab
 
@@ -298,8 +318,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### conditionalClick
 
@@ -317,8 +337,8 @@ selector|string|optional|
 dependentSelector|string|optional|
 visible|boolean|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### createData
 
@@ -335,8 +355,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 entity|string|required|
 stepKey|string|required
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 storeCode|string|optional|
 
 This action can optionally contain one or more `required-entity` child elements.
@@ -360,8 +380,8 @@ by indicating the relationship.
 Attribute|Type|Use|Description
 ---|---|---|---
 createDataKey|string|required|
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### deleteData
 
@@ -386,8 +406,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 createDataKey|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 storeCode|string|optional|
 
 ### dontSee
@@ -400,8 +420,8 @@ userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeCheckboxIsChecked
 
@@ -411,8 +431,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeCookie
 
@@ -423,8 +443,8 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeCurrentUrlEquals
 
@@ -434,8 +454,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeCurrentUrlMatches
 
@@ -445,8 +465,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeElement
 
@@ -457,8 +477,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeElementInDOM
 
@@ -470,8 +490,8 @@ selector|string|optional|
 parameterArray|string|optional|
 attributeArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeInCurrentUrl
 
@@ -481,8 +501,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeInField
 
@@ -494,8 +514,8 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeInFormFields
 
@@ -506,8 +526,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeInPageSource
 
@@ -517,8 +537,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeInSource
 
@@ -528,8 +548,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeInTitle
 
@@ -539,8 +559,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeJsError
 
@@ -549,8 +569,8 @@ Assert that there are no Javascript errors.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeLink
 
@@ -561,8 +581,8 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dontSeeOptionIsSelected
 
@@ -573,8 +593,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### doubleClick
 
@@ -584,8 +604,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### dragAndDrop
 
@@ -596,8 +616,8 @@ Attribute|Type|Use|Description
 selector1|string|optional|
 selector2|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### executeInSelenium
 
@@ -607,8 +627,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### executeJS
 
@@ -618,8 +638,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 function|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### fillField
 
@@ -631,8 +651,8 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### formatMoney
 
@@ -680,8 +700,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### grabCookie
 
@@ -692,8 +712,8 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### grabFromCurrentUrl
 
@@ -703,8 +723,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### grabMultiple
 
@@ -715,8 +735,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### grabPageSource
 
@@ -725,8 +745,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### grabTextFrom
 
@@ -736,8 +756,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### grabValueFrom
 
@@ -748,8 +768,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 selectorArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### loadSessionSnapshot
 
@@ -759,8 +779,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### loginAsAdmin
 
@@ -772,8 +792,8 @@ Attribute|Type|Use|Description
 username|string|optional|
 password|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### makeScreenshot
 
@@ -783,8 +803,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### maximizeWindow
 
@@ -793,8 +813,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### moveBack
 
@@ -803,8 +823,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### moveForward
 
@@ -813,8 +833,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### moveMouseOver
 
@@ -827,8 +847,8 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### mSetLocale
 
@@ -837,16 +857,16 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 locale|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### mResetLocale
 
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### openNewTab
 
@@ -855,8 +875,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### parseFloat
 
@@ -866,8 +886,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### pauseExecution
 
@@ -876,8 +896,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### performOn
 
@@ -888,8 +908,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 function|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### pressKey
 
@@ -901,8 +921,8 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### reloadPage
 
@@ -911,8 +931,8 @@ after|string|optional| Set `stepKey` of an action that must be executed next.
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### remove
 
@@ -931,8 +951,8 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### resizeWindow
 
@@ -943,8 +963,8 @@ Attribute|Type|Use|Description
 width|string|optional|
 height|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### saveSessionSnapshot
 
@@ -954,8 +974,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### scrollTo
 
@@ -968,8 +988,8 @@ selectorArray|string|optional|
 x|string|optional|
 y|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### scrollToTopOfPage
 
@@ -978,8 +998,8 @@ A convenience function that executes `window.scrollTo(0,0)` as JavaScript thus r
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### searchAndMultiSelectOption
 
@@ -993,8 +1013,8 @@ userInput|string|optional|
 parameterArray|string|optional|
 requiredAction|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### see
 
@@ -1006,8 +1026,8 @@ userInput|string|optional|
 selector|string|optional|
 selectorArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeCheckboxIsChecked
 
@@ -1017,8 +1037,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeCookie
 
@@ -1029,8 +1049,8 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeCurrentUrlEquals
 
@@ -1040,8 +1060,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeCurrentUrlMatches
 
@@ -1051,8 +1071,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeElement
 
@@ -1064,8 +1084,8 @@ selector|string|optional|
 selectorArray|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeElementInDOM
 
@@ -1076,8 +1096,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeInCurrentUrl
 
@@ -1087,8 +1107,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeInField
 
@@ -1100,8 +1120,8 @@ selector|string|optional|
 selectorArray|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeInFormFields
 
@@ -1112,8 +1132,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeInPageSource
 
@@ -1123,8 +1143,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeInPopup
 
@@ -1134,8 +1154,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeInSource
 
@@ -1145,8 +1165,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 html|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeInTitle
 
@@ -1156,8 +1176,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeLink
 
@@ -1168,8 +1188,8 @@ Attribute|Type|Use|Description
 userInput|string|optional|
 url|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeNumberOfElements
 
@@ -1181,8 +1201,8 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### seeOptionIsSelected
 
@@ -1193,8 +1213,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### selectOption
 
@@ -1206,8 +1226,8 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### setCookie
 
@@ -1219,8 +1239,8 @@ userInput|string|optional|
 parameterArray|string|optional|
 value|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### submitForm
 
@@ -1232,8 +1252,8 @@ selector|string|optional|
 parameterArray|string|optional|
 button|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### switchToIFrame
 
@@ -1244,8 +1264,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### switchToNextTab
 
@@ -1255,8 +1275,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### switchToPreviousTab
 
@@ -1266,8 +1286,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### switchToWindow
 
@@ -1277,8 +1297,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### typeInPopup
 
@@ -1288,8 +1308,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 userInput|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### uncheckOption
 
@@ -1299,8 +1319,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### unselectOption
 
@@ -1312,8 +1332,8 @@ selector|string|optional|
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 
 ### updateData
@@ -1356,8 +1376,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForAjaxLoad
 
@@ -1367,8 +1387,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForElementChange
 
@@ -1380,8 +1400,8 @@ selector|string|optional|
 function|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForElement
 
@@ -1392,8 +1412,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForElementNotVisible
 
@@ -1404,8 +1424,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForElementVisible
 
@@ -1416,8 +1436,8 @@ Attribute|Type|Use|Description
 selector|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForJS
 
@@ -1428,8 +1448,8 @@ Attribute|Type|Use|Description
 function|string|optional|
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForLoadingMaskToDisappear
 
@@ -1453,8 +1473,8 @@ The CSS class for loading masks is not used consistently throughout Magento. The
 Attribute|Type|Use|Description
 ---|---|---|---
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForPageLoad
 
@@ -1464,8 +1484,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 time|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### waitForText
 
@@ -1477,8 +1497,8 @@ userInput|string|optional|
 time|string|optional|
 selector|string|optional|
 stepKey|string|required|A unique identifier of the action.
-before|string|optional| Set `stepKey` of an action that must be executed one step before the current one.
-after|string|optional| Set `stepKey` of an action that must be executed next.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 
 <!-- Abbreviations -->
