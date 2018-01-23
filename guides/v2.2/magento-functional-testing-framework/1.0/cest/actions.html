@@ -627,13 +627,38 @@
 They are mostly XML implementations of <a href="http://codeception.com/docs/modules/WebDriver#Actions">Codeception actions</a>.
 Some actions drive browser elements, while others use REST APIs.</p>
 
-<p>All actions contain the following attributes that are useful for merging needs:</p>
+<h3 id="common-attributes">Common attributes</h3>
 
-<ul>
-  <li><code class="highlighter-rouge">stepKey</code> is a required attribute that stores a unique identifier of the action. Example: <code class="highlighter-rouge">"conditionalClickStep1"</code>.</li>
-  <li><code class="highlighter-rouge">before</code> is an optional attribute that Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</li>
-  <li><code class="highlighter-rouge">after</code> is an optional attribute that Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</li>
-</ul>
+<p>All actions contain the following attributes that are useful for merging needs.</p>
+
+<h4 id="stepkey"><code class="highlighter-rouge">stepKey</code></h4>
+
+<p><code class="highlighter-rouge">stepKey</code> is a required attribute that stores a unique identifier of the action.</p>
+
+<p>Example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">stepKey=</span><span class="s">"conditionalClickStep1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">myAction</code> has identifier, which is <code class="highlighter-rouge">conditionalClickStep1</code>. This step can be referenced within the test using this identifier.</p>
+
+<h4 id="before-and-after"><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code></h4>
+
+<p><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is <code class="highlighter-rouge">stepKey</code> of reference action.</p>
+
+<p>Example with <code class="highlighter-rouge">before</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">before=</span><span class="s">"fillField stepKey="</span><span class="err">conditionalClickStep1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">myAction</code> will be executed before the action, which has <code class="highlighter-rouge">stepKey="fillField"</code>.</p>
+
+<p>Example with <code class="highlighter-rouge">after</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">after=</span><span class="s">"fillField stepKey="</span><span class="err">seeResult"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">myAction</code> will be executed after the action, which has <code class="highlighter-rouge">stepKey="fillField"</code>.</p>
 
 <h2 id="principles">Principles</h2>
 
@@ -775,13 +800,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -816,13 +841,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -857,13 +882,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -898,13 +923,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -945,13 +970,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -992,13 +1017,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1027,13 +1052,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1068,13 +1093,13 @@ If description of an element does not includes a link to Codeception analogue, i
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1163,13 +1188,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1222,13 +1247,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1281,13 +1306,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1316,13 +1341,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1351,13 +1376,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1409,13 +1434,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1456,13 +1481,13 @@ to the Magento API according to the data and metadata of the entity to be create
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
     <tr>
       <td>storeCode</td>
@@ -1510,13 +1535,13 @@ by indicating the relationship.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1564,13 +1589,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
     <tr>
       <td>storeCode</td>
@@ -1623,13 +1648,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1664,13 +1689,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1711,13 +1736,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1752,13 +1777,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1793,13 +1818,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1840,13 +1865,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1893,13 +1918,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1934,13 +1959,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -1987,13 +2012,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2034,13 +2059,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2075,13 +2100,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2116,13 +2141,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2157,13 +2182,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2192,13 +2217,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2239,13 +2264,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2286,13 +2311,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2327,13 +2352,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2374,13 +2399,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2415,13 +2440,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2456,13 +2481,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2509,13 +2534,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2672,13 +2697,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2719,13 +2744,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2760,13 +2785,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2807,13 +2832,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2842,13 +2867,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2883,13 +2908,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2930,13 +2955,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2971,13 +2996,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3019,13 +3044,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3060,13 +3085,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3095,13 +3120,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3130,13 +3155,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3165,13 +3190,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3224,13 +3249,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3269,13 +3294,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3302,13 +3327,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3337,13 +3362,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3378,13 +3403,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3413,13 +3438,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3460,13 +3485,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3513,13 +3538,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3548,13 +3573,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3618,13 +3643,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3665,13 +3690,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3706,13 +3731,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3765,13 +3790,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3800,13 +3825,13 @@ calls <a href="#closeAdminNotification">closeAdminNotification</a></p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3860,13 +3885,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3913,13 +3938,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3954,13 +3979,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4001,13 +4026,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4042,13 +4067,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4083,13 +4108,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4136,13 +4161,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4183,13 +4208,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4224,13 +4249,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4277,13 +4302,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4324,13 +4349,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4365,13 +4390,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4406,13 +4431,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4447,13 +4472,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4488,13 +4513,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4535,13 +4560,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4588,13 +4613,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4635,13 +4660,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4688,13 +4713,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4741,13 +4766,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4794,13 +4819,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4841,13 +4866,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4882,13 +4907,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4923,13 +4948,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4964,13 +4989,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5005,13 +5030,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5046,13 +5071,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5099,13 +5124,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5210,13 +5235,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5251,13 +5276,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5304,13 +5329,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5351,13 +5376,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5398,13 +5423,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5445,13 +5470,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5492,13 +5517,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5540,13 +5565,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5581,13 +5606,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -5634,13 +5659,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>before</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
       <td>after</td>
       <td>string</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
