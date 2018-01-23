@@ -17,9 +17,15 @@ Actions in the MFTF allow you to automate different scenarios of Magento user's 
 They are mostly XML implementations of [Codeception actions](http://codeception.com/docs/modules/WebDriver#Actions).
 Some actions drive browser elements, while others use REST APIs.
 
-All actions contain the following attributes that are useful for merging needs:
+### Common attributes
 
-* `stepKey` is a required attribute that stores a unique identifier of the action. Example: 
+All actions contain the following attributes that are useful for merging needs.
+
+#### `stepKey`
+
+`stepKey` is a required attribute that stores a unique identifier of the action.
+
+Example:
 
 ```xml
 <myAction stepKey="conditionalClickStep1"/>
@@ -27,7 +33,11 @@ All actions contain the following attributes that are useful for merging needs:
 
 `myAction` has identifier, which is `conditionalClickStep1`. This step can be referenced within the test using this identifier.
 
-* `before` and `after` are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is `stepKey` of reference action. Example:
+#### `before` and `after`
+
+`before` and `after` are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is `stepKey` of reference action.
+
+Example with `before`:
 
 ```xml
 <myAction before="fillField stepKey="conditionalClickStep1"/>
@@ -35,7 +45,7 @@ All actions contain the following attributes that are useful for merging needs:
 
 `myAction` will be executed before the action, which has `stepKey="fillField"`.
 
-* `after` is an optional attribute. It stores `stepKey` of action that will be executed before the current one. Example:
+Example with `after`:
 
 ```xml
 <myAction after="fillField stepKey="seeResult"/>
