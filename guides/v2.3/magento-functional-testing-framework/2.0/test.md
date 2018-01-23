@@ -155,13 +155,13 @@ Learn more in [Action groups][action group].
 
 <!-- LINKS DEFINITIONS -->
 
-[action]: cest/actions.html
-[action group]: test/action-group.html
+[action]: ./test/actions.html
+[action group]: ./test/action-group.html
 [action group tag]: #actiongroup-tag
 [after]: #after-tag
-[annotations]: cest/annotations.html
+[annotations]: ./test/annotations.html
 [argument]: #argument-tag
-[assertions]: test/assertions.html
+[assertions]: ./test/assertions.html
 [before]: #before-tag
 [tests]: #tests-tag
 [test]: #test-tag
