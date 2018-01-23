@@ -11,9 +11,14 @@ functional_areas:
 ## Overview
 
 Test cases in the MFTF are defined in XML as [tests][test].
-Tests is a [Codeception test container][codeception] that contains multiple individual tests with metadata and before/after actions.
+Tests is a [Codeception test container][codeception] that contains multiple individual tests with test metadata and before/after actions.
 Tests in the MFTF are considered as a sequence of actions with associated parameters.
 Any failed assertion within a test fails the test.
+
+{% include note.html
+type="info"
+content="`<before>`and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
+They only apply to the `<test>` they are declared under." %}
 
 The following diagram demonstrates XML structure of a test case in the MFTF:
 
@@ -50,11 +55,14 @@ The following diagram demonstrates XML structure of a test case in the MFTF:
 
 ## Principles
 
-* One `*.xml`, one `<tests>`
-* File name and `<tests>` name are equal
 * All names within the framework are in the CamelCase format
 * Each action and action group has its own identifier `<stepKey>` to be able to reference on it
 * A test may have any number of [assertions], at any point within the `<test>`
+* File name and `<test>` name are equal.
+
+Multiple <test> tags per xml file can be confusing and hard to find/organize.
+We generate one test.php file per <test> tag provided.
+This is not a hard requirement and we obviously support both.
 
 ## Reference
 
@@ -69,7 +77,7 @@ It MUST contain at least one [`<test>`][test].
 ***
 ***
 
-### test
+### test {#test-tag}
 
 A set of actions with an assertion.
 
@@ -83,7 +91,7 @@ It MAY contain [`<annotations>`][annotations], [`<before>`][before], [`<after>`]
 ***
 ***
 
-### annotations {#annotations-element}
+### annotations {#annotations-tag}
 
 Annotations are supported by both [Codeception][codeception] and [Allure].
 Codeception annotations typically provide metadata. Also, they are able to influence test selection.
@@ -94,7 +102,7 @@ Read about annotations in a separate topic [Annotations][annotations].
 ***
 ***
 
-### before
+### before {#before-tag}
 
 Wraps actions to perform before the [test].
 
@@ -106,7 +114,7 @@ It MAY contain the following child elements:
 ***
 ***
 
-### after
+### after {#after-tag}
 
 Wraps actions to perform after the [test].
 
@@ -118,7 +126,7 @@ It MAY contain:
 ***
 ***
 
-### actionGroup
+### actionGroup {#actionGroup-tag}
 
 Calls a corresponding [action group].
 
@@ -126,23 +134,24 @@ Attribute|Type|Use|Description
 ---|---|---|---
 ref|string|required|Reference to the required action group by its `name`.
 stepKey|string|required| Identifier of the element within `<test>`.
-before|string|optional|
-after|string|optional|
+before|string|optional| `<stepKey>` of an action or action group that must be executed next while merging.
+after|string|optional| `<stepKey>` of an action or action group that must be executed one step before the current one while merging.
 
 It MAY contain [`<argument>`][argument]
 
 ***
 ***
 
-### argument
+### argument {#argument-tag}
 
 Sets an argument that is used in parent [`<actionGroup>`][action group tag].
 
 Attribute|Type|Use
 ---|---|---
-name|string|optional
-value|string|optional
+name|string|optional| Name of the argument.
+value|string|optional Value of the argument.
 
+Learn more in [Action groups][action group].
 
 <!-- LINKS DEFINITIONS -->
 
@@ -154,8 +163,8 @@ value|string|optional
 [argument]: #argument
 [assertions]: test/assertions.html
 [before]: #before
-[test]: #cest
-[test]: #test
+[tests]: #tests-tag
+[test]: #test-tag
 
 [Allure]: https://github.com/allure-framework/
 [codeception]: http://codeception.com/docs/07-AdvancedUsage
