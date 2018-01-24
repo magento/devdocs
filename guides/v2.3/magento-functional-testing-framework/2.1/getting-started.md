@@ -121,9 +121,10 @@ They come together to form the path to where Selenium Server is running from lik
 http://127.0.0.1:4444/wd/hub
 ```
 
-### Step 5. Make command.php visible in Magento Test environment
+### Step 5. Make `command.php` visible in the Magento testing environment
 
-In your Magento installation, navigate to the `magento2ce/dev/tests/acceptance` directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
+In your Magento installation, navigate to the `magento2/dev/tests/acceptance` directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
+
 ```bash
 $ cp .htaccess.sample .htaccess
 ```
