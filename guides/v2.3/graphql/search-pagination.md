@@ -85,6 +85,8 @@ sort: {
 
 ## Example Searches
 
+The following sections provide examples of each type of search. These examples use the Magento Open Source sample data.
+
 ### Full text search
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
