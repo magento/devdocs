@@ -48,7 +48,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 
 * When you create a new project using the 30-day free trial, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for `ADMIN_EMAIL` using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see [Onboarding tasks](http://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-tasks.html) and [What is autoprovisioning](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#autoprovisioning).
 
-<!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile Build and Deploy actions. The file name and location is `/app/var/log/cloud.log`.
+<!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file is located in the `app/var/log/cloud.log` file inside the Magento root application directory.
 
 ## Known issues {#known}
 For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html).

@@ -31,12 +31,12 @@ You can also [set up log-based Slack and email notifications]({{page.baseurl}}cl
 ## Build logs
 After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of `git push`, so you can observe them in the terminal or capture them (along with error messages) with `git push > build.log 2>&1`.
 
-For 2.1.9 and later and 2.2.X, we include a `/app/var/log/cloud.log` file that compiles both build and deploy actions into one file.
+For 2.1.9 and later and 2.2.X, we include a `var/log/cloud.log` file inside the Magento application root directory, that compiles both build and deploy actions into one file.
 
 ## Deploy logs {#log-deploy-log}
 You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.
 
-For 2.1.9 and later and 2.2.X, we include a `/app/var/log/cloud.log` file that compiles both build and deploy actions into one file.
+For 2.1.9 and later and 2.2.X, we include a `var/log/cloud.log` file inside the Magento application root directory, that compiles both build and deploy actions into one file.
 
 Logs from the deploy hook are located on the server in the following locations:
 
