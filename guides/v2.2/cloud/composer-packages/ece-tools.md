@@ -87,7 +87,7 @@ You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/proj
 ### New features
 <!--- MAGECLOUD-1057 -->* {{site.data.var.ece}} now supports scopes and [static content deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of `quick` for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options `standard`, `quick`, or `compact`. If you select `compact`, we override the `STATIC_CONTENT_THREADS` value with `1`, which can slow deployment, especially in production environments.
 
-<!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file name and location is `/app/var/log/cloud.log`.
+<!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file is located in the `app/var/log/cloud.log` file inside the Magento root application directory.
 
 ### Fixed issues
 <!-- MAGECLOUD-919 & MAGECLOUD-1030-->* Refactored the `ece-tools` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
