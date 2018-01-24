@@ -59,16 +59,8 @@ In this very common test writing example we are grabbing text from a page and th
 <grabTextFrom selector="#elementId" stepKey="stepKeyOfGrab"/>
 
 <!-- Ensure that the value we grabbed matches our expectation -->
-<assertEquals stepKey="assertEquals1"  message="This is an optional human readable hint that will be shown in the logs if this assert fails.">
-    <expectedResult type="string">Some String</expectedResult>
-    <actualResult type="string">{$stepKeyOfGrab}</actualResult>
-</assertEquals>
+<assertEquals expected="Some String" expectedType="string" actual="{$stepKeyOfGrab}" actualType="variable" message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1"/>
 ```
-
-DIMA: Insert a warning of some kind here that the old, single line syntax is still valid, but that it will be deprecated in MFTF 3.0.0. The generator throws this warning as well.
-
-DIMA: though this old schema below is still valid, there were a lot of changes that would cause the below to be incomplete. Personally I think we should provide examples of the new schema only. If you need code samples, in MQE-559 magento2-functional-testing-framework/dev/tests/verification/TestModule/Test/AssertTest.xml has an example of each assert.
-
 
 ## Reference
 
