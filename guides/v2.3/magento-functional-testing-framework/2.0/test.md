@@ -15,6 +15,8 @@ Tests is a [Codeception test container][codeception] that contains multiple indi
 Tests in the MFTF are considered as a sequence of actions with associated parameters.
 Any failed assertion within a test fails the test.
 
+@DIMA: MQE-672 adds the generation of the contents of an <after> tag to the failed hook. This means that the steps in <after> are run in both successful AND failed test runs. Not sure how to best convey this information, but it should probably belong here.
+
 {% include note.html
 type="info"
 content="`<before>`and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
