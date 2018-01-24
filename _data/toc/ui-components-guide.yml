@@ -183,7 +183,7 @@ pages:
         - label: About the uiCollection class
           url: ui_comp_guide/concepts/ui_comp_uicollection_concept.html
 
-        - label: About the uiLayout service module
+        - label: The uiLayout service object
           url: ui_comp_guide/concepts/ui_comp_uilayout_concept.html
 
         - label: Linking properties of UI components
