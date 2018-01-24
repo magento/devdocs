@@ -35,11 +35,8 @@ Most assertions contain attribute `message` that specifies text of an informatio
 * Should be in camelCase with lowercase first letter
 * Should be the last attribute of an element
 
-Assertion actions have a nested `<expectedResult>` and `<actualResult>`. These elements contain the expected and actual:
-* `type`
-* `value`
+`expectedType` and `actualType` can be:
 
-`type` can be any of the following:
 * int
 * float
 * bool
