@@ -111,7 +111,7 @@ To set up port forwarding on a Mac or in a Unix environment, you will enter a co
 
         ssh -R 9000:localhost:9000 <ssh url>
 
-    Add the `-v` option to the ssh command to show in the terminal whenever a socket is connected to the port that is being forwarded.
+    Add the `-v` option to the SSH command to show in the terminal whenever a socket is connected to the port that is being forwarded.
 
 If an "unable to connect" or "could not listen to port on remote" error is displayed, there could be another active SSH session persisting on the server that is occupying port 9000. If that connection isn't being used, you can terminate it.
 

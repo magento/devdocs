@@ -32,7 +32,6 @@ pages:
           url: release-notes/release-candidate/component-status.html
 
     - label: Magento 2.1 Release Notes
-      url: release-notes/release-notes.html
       versions: ["2.1"]
       children:
 
@@ -77,6 +76,12 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.11 Release Notes
+              url: release-notes/ReleaseNotes2.1.11EE.html
+
+            - label: Magento Commerce 2.1.10 Release Notes
+              url: release-notes/ReleaseNotes2.1.10EE.html
 
             - label: Magento Commerce 2.1.9 Release Notes
               url: release-notes/ReleaseNotes2.1.9EE.html
@@ -145,12 +150,14 @@ pages:
               url: cloud/release-notes/CloudReleaseNotes2.1.2.html
 
     - label: Magento 2.0 Release Notes
-      url: release-notes/release-notes.html
       versions: ["2.0"]
       children:
 
         - label: Magento Open Source 2.0.x Release Notes
           children:
+
+            - label: Magento Open Source 2.0.17 Release Notes
+              url: release-notes/ReleaseNotes2.0.17CE.html
 
             - label: Magento Open Source 2.0.16 Release Notes
               url: release-notes/ReleaseNotes2.0.16CE.html
@@ -196,6 +203,9 @@ pages:
 
         - label: Magento Commerce 2.0.x Release Notes
           children:
+
+            - label: Magento Commerce 2.0.17 Release Notes
+              url: release-notes/ReleaseNotes2.0.17EE.html
 
             - label: Magento Commerce 2.0.16 Release Notes
               url: release-notes/ReleaseNotes2.0.16EE.html

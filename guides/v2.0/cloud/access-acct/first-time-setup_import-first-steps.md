@@ -102,8 +102,8 @@ The complete workflow for importing existing code includes the following steps.
 1.  If you do not have a project created and available, create a new [project from a template](#cloud-import-proj). This new project has files and directories specific to {{site.data.var.ece}}.
 2.  [Replace the contents]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html) of this project with your code using Git.
 3.  [Import your Magento database]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#cloud-import-db) into your {{site.data.var.ece}} project.
-4.  [Import your static files]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#cloud-import-media) into your {{site.data.var.ece}} project.
-5.  Copy your {{site.data.var.ee}} [encryption key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#cloud-import-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
+4.  [Import your static files]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#media) into your {{site.data.var.ece}} project.
+5.  Copy your {{site.data.var.ee}} [encryption key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#encryption-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
 6.  Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and verify the project imported successfully.
 
 ## Create a new, empty Magento Enterprise Edition project {#cloud-import-proj}
@@ -112,25 +112,25 @@ If you do not have a provisioned project created and available, you need to crea
 1. Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the _This project has no code yet_ link next to the Project name.
 
-	![Project without code]({{page.baseurl}}common/images/cloud_project_empty.png)
+	![Project without code]({{site.baseurl}}common/images/cloud_project_empty.png)
 
 3. Enter a name for the project.
 
-	![Project name]({{page.baseurl}}common/images/cloud_project_name.png)
+	![Project name]({{site.baseurl}}common/images/cloud_project_name.png)
 
 4. Click **Create a blank site from a template** and click **Continue**. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.
 
-	![Create a site using the sample Magento project]({{page.baseurl}}common/images/cloud_project_template.png){:width="650px"}
+	![Create a site using the sample Magento project]({{site.baseurl}}common/images/cloud_project_template.png){:width="650px"}
 
 5. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
 
-	![Enter your authentication keys]({{page.baseurl}}common/images/cloud-project-magento-auth-creds.png){:width="650px"}
+	![Enter your authentication keys]({{site.baseurl}}common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 
 	The keys are added to the `auth.json` file in the repository `master` branch, required for all created branches and deployments.
 
 6. Wait a few minutes while the project deploys. A status of _Pending_ displays until completed, similar to the following:
 
-	![Your sample Magento project]({{page.baseurl}}common/images/cloud_project_template2.png){:width="650px"}
+	![Your sample Magento project]({{site.baseurl}}common/images/cloud_project_template2.png){:width="650px"}
 
 7. After the project deploys, **Success** displays next to the name of your project.
 

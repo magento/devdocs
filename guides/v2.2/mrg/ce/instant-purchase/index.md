@@ -7,28 +7,28 @@ functional_areas:
   - Checkout
 ---
 
-The [Instant Purchase module] allows customers to place orders in seconds without going through full checkout process.
+The [Instant Purchase module] allows customers to place orders in seconds without going through the full checkout process.
 
 This feature takes the form of a button on product pages.
-When customers click this button, the system places their order using the default shipping, billing address, and stored payment method.
-When the order is placed, a confirmation message appears in the notification area.
+When a customer clicks this button, the system places their order using the default shipping, billing address, and stored payment method.
+Once the order is placed, an order confirmation message appears in the notification area.
 
-This article explains how the module works and ways to customize it using its extension points.
+This article explains how this module works and ways to customize it using its extension points.
 For merchant instructions, see [Instant Purchase] in the user guide.
 
 ## Implementation details
 
-The logic found in the [Instant Purchase module] is divided in two parts:
+The logic found in the [Instant Purchase module] is divided into two parts:
 
-* [Instant Purchase capability]
+* [Instant Purchase logic]
 * [Order placement]
 
-### Instant Purchase capability
+### Instant Purchase logic
 
-The Instant Purchase module allows any type of product to be added to an instant purchase order.
+This module allows any product to be added to an instant purchase order.
 
-The module creates an additional section in the [Customer Data cache] and allows the client side to cache Instant Purchase data.
-This data is updated when relevant customer data changes, such as adding or removing a stored payment method or the default shipping address.
+The module creates an additional section in the [Customer Data cache] for Instant Purchase data.
+This data is updated when the relevant customer data changes, such as adding or removing a stored payment method or the default shipping address.
 
 #### Important interfaces
 
@@ -68,7 +68,7 @@ For more customization details, see the [Customization Points] section.
 
 ### Order placement
 
-The logic for the order placement process in the Instant Purchase module is found in the [`PlaceOrder`] class.
+The logic for the order placement process is found in the [`PlaceOrder`] class.
 
 The whole process is divided into several steps with each step implemented by a corresponding class in the [`Magento\InstantPurchase\Model\QuoteManagement`] namespace.
 
@@ -77,7 +77,7 @@ To customize the behavior of the order placement process, use [plugins].
 
 ## Customization Points
 
-Almost all aspects of the Instant Purchase module behavior may be changed by overriding preferences for interfaces marked with the `@api` annotation.
+Use [dependency injection] to override preferences for interfaces marked with the `@api` notation and modify the behavior of the module.
 
 ### Instant Purchase calculation
 
@@ -159,7 +159,7 @@ The framework for payment method integration is provided in the [`Magento\Instan
 
 Integration is not enabled by default and requires developer action to make sure everything works as expected and avoid unpredictable bugs on production sites.
 
-If the payment method meets all the requirements listed, you can enable Instant Purchase integration by adding several lines in the `config.xml` file.
+If the payment method meets all the requirements listed, you can enable Instant Purchase integration in the `config.xml` file.
 
 The minimal configuration for Instant Purchase integration development is as follows:
 
@@ -177,7 +177,10 @@ The minimal configuration for Instant Purchase integration development is as fol
 </config>  
 ```
 
-The minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.
+<div class="bs-callout bs-callout-warning" markdown="1">
+This minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.
+</div>
+
 The following is an example of a full configuration meant for production:
 
 ```xml
@@ -257,7 +260,7 @@ Use this marker if no other options are available to implement specific payment 
 [Braintree PayPal]: https://github.com/magento/magento2/tree/{{page.guide_version}}-develop/app/code/Magento/Braintree/Model/InstantPurchase/PayPal
 [PayPal Payflow Pro]: https://github.com/magento/magento2/tree/{{page.guide_version}}-develop/app/code/Magento/Paypal/Model/InstantPurchase/Payflow/Pro
 [module customization]: #customization-points
-[Instant Purchase capability]: #instant-purchase-capability
+[Instant Purchase logic]: #instant-purchase-capability
 [Customer Data cache]: {{page.baseurl}}extension-dev-guide/cache/page-caching/private-content.html
 [Order placement]: #order-placement
 [Customization Points]: #customization-points
@@ -290,3 +293,4 @@ Use this marker if no other options are available to implement specific payment 
 [`PaymentAdditionalInformationProviderInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentAdditionalInformationProviderInterface.php
 [`Quote\Address`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Quote/Model/Quote/Address.php
 [`InfoInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Payment/Model/InfoInterface.php
+[dependency injection]: {{page.baseurl}}extension-dev-guide/depend-inj.html
