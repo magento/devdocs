@@ -1939,9 +1939,7 @@
       <p>If Magento <strong>is installed</strong>, performs any necessary upgrades. The deployment script runs <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html"><code class="highlighter-rouge">bin/magento setup:upgrade</code></a> to update the database schema and data (which is necessary after extension or core code updates), and also updates the <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a>, <code class="highlighter-rouge">app/etc/env.php</code>, and the database for your environment. Finally, the deployment script clears the Magento cache.</p>
     </li>
     <li>
-      <p>Sets the mode to either <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer"><code class="highlighter-rouge">developer</code></a> or <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production"><code class="highlighter-rouge">production</code></a> based on the environment variable <a href="/guides/v2.0/cloud/env/environment-vars_magento.html"><code class="highlighter-rouge">APPLICATION_MODE</code></a>.</p>
-
-      <p>In <code class="highlighter-rouge">production</code> mode, the script optionally generates static web content using the command <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html"><code class="highlighter-rouge">magento setup:static-content:deploy</code></a>.</p>
+      <p>The script optionally generates static web content using the command <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html"><code class="highlighter-rouge">magento setup:static-content:deploy</code></a>.</p>
     </li>
   </ul>
 
