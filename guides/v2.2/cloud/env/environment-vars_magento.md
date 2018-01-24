@@ -65,14 +65,6 @@ The following table lists variables that you can override using environment vari
       <td>Specifies the default locale used by the Magento Admin.</td>
       <td>en_US</td>
     </tr>
-    <tr>
-      <td><code>MAGE_MODE</code></td>
-      <td>
-        <p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
-        <p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode.</p>
-      </td>
-      <td>production</td>
-    </tr>
   </tbody>
 </table>
 
