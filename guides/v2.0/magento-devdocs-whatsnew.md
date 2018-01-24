@@ -11,6 +11,12 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Advanced Reporting: added more details to [Prerequisites](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html)|2.2.x|Updated|Jan 22
+We updated the [quarterly contributors](http://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page for Q4 2017.|2.x|Updated|Jan 18
+MFTF: Updated [actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/cest/actions.html) and added [Changelog](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/changelog.html)|2.2.x|Updated|Jan 12
+Added information about the index prefix when [configuring Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/configure-magento.html), which is necessary when using a single Elasticsearch instance with multiple Magento installations, like Staging and Production environments.|2.1.x, 2.2.x|Updated|Jan 10
+Created a [new topic](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html) describing different scenarios for working with environment variables to the Magento Commerce (Cloud) guide. For example, connecting an existing search or AMQP-based service to your Magento site.<br/>Added guidance for using these variables in the [Set up RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html) and [Set up Elasticsearch](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html) topics.|2.1.x, 2.2.x|New and Updated|Jan 10
+[Added Magento Shipping release notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotesMagentoShipping2.2.x.html)|2.2.x|New|Jan 05
 We added code examples to help explain the following [Technical Guidelines](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html) related to class design:<br/>- 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.<br/>- 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.<br/>- 2.1.4 Temporal coupling MUST be avoided.|2.x|Updated|Jan 03
 
 {% collapsibleh2 December 2017 %}

@@ -199,11 +199,11 @@ To generate a new file:
 		magento-cloud environment:ssh --pipe
 2.	Create `config.local.php` on the integration server.
 
-		ssh -k <SSH URL> "php bin/magento magento-cloud:scd-dump"
+		ssh <SSH URL> "php bin/magento magento-cloud:scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 5.	If you haven't done so already, change to the project root directory.
 6.	Transfer `config.local.php` to your local system.
 
