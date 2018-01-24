@@ -36,7 +36,7 @@ For 2.1.9 and later and 2.2.X, we include a `/app/var/log/cloud.log` file that c
 
 Logs from the deploy hook are located on the server in the following locations:
 
-*	Integration: `/tmp/log/deploy.log`
+*	Integration: `/var/log/deploy.log`
 *	Staging: `/var/log/platform/<prodject ID>_stg/post_deploy.log`
 *	Production: `/var/log/platform/<prodject ID>/post_deploy.log`
 
