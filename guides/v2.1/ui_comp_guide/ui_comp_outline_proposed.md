@@ -138,8 +138,6 @@ If you would like to help us by writing any of the topics that we have not yet g
 	-  SelectionsColumn
 	-  Component
 	-  Container
-	-  Fieldset
-	-  Field
 	-  Bookmark
 	-  InsertForm
 	-  InsertListing
