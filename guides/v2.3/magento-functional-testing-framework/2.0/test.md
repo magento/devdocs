@@ -13,14 +13,16 @@ functional_areas:
 Test cases in the MFTF are defined in XML as [tests][test].
 Tests is a [Codeception test container][codeception] that contains multiple individual tests with test metadata and before/after actions.
 Tests in the MFTF are considered as a sequence of actions with associated parameters.
-Any failed assertion within a test fails the test.
-
-@DIMA: MQE-672 adds the generation of the contents of an <after> tag to the failed hook. This means that the steps in <after> are run in both successful AND failed test runs. Not sure how to best convey this information, but it should probably belong here.
+Any failed [assertion] within a test fails the test.
 
 {% include note.html
 type="info"
 content="`<before>`and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
 They only apply to the `<test>` they are declared under." %}
+
+{% include note.html
+type="info"
+content="The steps in `<after>` are run in both successful **AND** failed test runs." %}
 
 The following diagram demonstrates XML structure of a test case in the MFTF:
 
@@ -59,7 +61,7 @@ The following diagram demonstrates XML structure of a test case in the MFTF:
 
 * All names within the framework are in the CamelCase format
 * Each action and action group has its own identifier `<stepKey>` to be able to reference on it
-* A test may have any number of [assertions], at any point within the `<test>`
+* A test may have any number of [assertions][assertion], at any point within the `<test>`
 * File name and `<test>` name are equal.
 
 Multiple <test> tags per xml file can be confusing and hard to find/organize.
@@ -81,7 +83,7 @@ It MUST contain at least one [`<test>`][test].
 
 ### test {#test-tag}
 
-A set of actions with an assertion.
+A set of steps including [actions][action] and [assertions][assertion].
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -106,7 +108,7 @@ Read about annotations in a separate topic [Annotations][annotations].
 
 ### before {#before-tag}
 
-Wraps actions to perform before the [test].
+Wraps steps to perform before the [test].
 
 It MAY contain the following child elements:
 
@@ -118,7 +120,8 @@ It MAY contain the following child elements:
 
 ### after {#after-tag}
 
-Wraps actions to perform after the [test].
+Wraps steps to perform after the [test].
+The steps are run in both successful **AND** failed test runs.
 
 It MAY contain:
 
