@@ -168,7 +168,7 @@ The following test actions return a variable:
 ## Reference
 
 The following list contains reference documentation about all action elements available in the MFTF.
-If description of an element does not includes a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
+If description of an element does not include a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
 
 ### acceptPopup
 
