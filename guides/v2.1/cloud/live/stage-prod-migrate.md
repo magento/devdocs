@@ -113,10 +113,10 @@ We suggest using the following syntax:
 
 Options:
 
-	`a` archive
-	`z` compress
-	`v` verbose
-	`P` partial progress
+	a archive
+	z compress
+	v verbose
+	P partial progress
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
 
@@ -124,8 +124,8 @@ To migrate static files:
 
 1.	Open an SSH connection to your Staging or Production environment:
 
-			*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-			*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+			*	Staging: ssh -A <project ID>_stg@<project ID>.ent.magento.cloud
+			*	Production: ssh -A <project ID>@<project ID>.ent.magento.cloud
 2.	rsync the `pub/media` directory from your local Magento server to staging or production:
 
 		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/
