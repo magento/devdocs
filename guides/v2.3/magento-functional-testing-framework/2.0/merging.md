@@ -2,8 +2,8 @@
 layout: default
 group: mftf
 title: Merging in the Magento Functional Testing Framework
-version: 2.2
-github_link: magento-functional-testing-framework/merging.md
+version: 2.3
+github_link: magento-functional-testing-framework/2.0/merging.md
 functional_areas:
  - Testing
 ---
@@ -16,10 +16,8 @@ This produces a modification of the original that incorporates the specified cha
 
 ## General
 
-Merging operates on XML tag level.
-
-Merging is triggered by our parser when there are two (or more) entities with the same name.
-Therefore, your change file must have the same file name and the same attribute `name`  as it's target object to be changed.
+Merging operates on XML tag level. It is triggered by our parser when there are two (or more) entities with the same name.
+Therefore, your change file (file with changes) must have the same file name and the same attribute `name`  as its base file (target object to be changed).
 
 ### Deletion
 
@@ -39,7 +37,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ### Remove a test
@@ -53,7 +51,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ### Update a test
@@ -87,7 +85,7 @@ Update:
 </test>
 ```
 
-Updated test:
+Result
 
 ```xml
 <test name="LogInAsAdminTest">
@@ -123,7 +121,7 @@ Update:
 </test>
 ```
 
-Updated test:
+Result
 
 ```xml
 <test name="LogInAsAdminTest">
@@ -156,7 +154,7 @@ Update:
 </test>
 ```
 
-Updated test:
+Result
 
 ```xml
 <test name="LogInAsAdminTest">
@@ -181,7 +179,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ### Remove a section
@@ -195,7 +193,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ## Sections merging
@@ -211,7 +209,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ### Remove an element
@@ -225,7 +223,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ### Update an element
@@ -239,7 +237,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ## Data merging
@@ -255,7 +253,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ### Remove data
@@ -269,7 +267,7 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 ### Update data
@@ -283,13 +281,13 @@ update
 ```
 
 ```xml
-Updated test:
+Result
 ```
 
 
 <!-- LINK DEFINITIONS -->
 
-[Tests]: cest.html
-[Pages]: page.html
-[Sections]: section.html
-[Data]: data.html
+[Tests]: ./test.html
+[Pages]: ./page.html
+[Sections]: ./section.html
+[Data]: ./data.html
