@@ -66,8 +66,6 @@ Example with `after`:
 
 ## Example
 
-<!-- TODO: Review the example -->
-
 {%raw%}
 The following example contains four actions:
 
