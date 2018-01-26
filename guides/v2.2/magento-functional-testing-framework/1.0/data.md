@@ -57,7 +57,7 @@ Here,
 * `customer` is a stepKey of the corresponding action, where an entity is created
 * `email` is a data key of the entity. The corresponding value will be assigned to `userInput` as a result.
 
-### Using data returned by test-actions
+### Using data returned by test actions
 
 A test can also reference data that was returned as a result of [test actions], like the action `<grabValueFrom selector="someSelector" stepKey="grabStepKey>`.
 Further in the test, the data grabbed by selector `someSelector` can be referenced using the `stepKey` value. In this case, it is `grabStepKey`.

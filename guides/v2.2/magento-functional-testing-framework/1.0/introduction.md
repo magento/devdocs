@@ -39,7 +39,7 @@ All functional tests are located in _\<magento2 root dir\>/dev/tests/acceptance
 
 <div class="bs-callout bs-callout-info" markdown="1">
 The tests haven't been released yet.
-But you can find them for your experiments in the corresponding [`magento` repositories] on GitHub in `*-develop` branches starting from **2.2**.
+But you can find them for your experiments in the corresponding [`magento` repositories] on GitHub in the `2.2-develop` branch.
 </div>
 
 ## What tools do I need to run MFTF?
