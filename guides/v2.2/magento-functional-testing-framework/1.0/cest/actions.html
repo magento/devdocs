@@ -691,15 +691,15 @@ Some actions drive browser elements, while others use REST APIs.</p>
   <li><a href="#example-step4">Click the Sign In button</a></li>
 </ol>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span>  <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage}}"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;fillField</span>  <span class="na">stepKey=</span><span class="s">"fillEmail"</span> <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;fillField</span>  <span class="na">stepKey=</span><span class="s">"fillPassword"</span> <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;click</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h4 id="example-step1">1. Open the Sign In page for a Customer</h4>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span>  <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage.url}}"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>The Customer Sign In page is declared in the <em>…/Customer/Page/StorefrontCustomerSignInPage.xml</em>.
@@ -721,7 +721,7 @@ Here, <code class="highlighter-rouge">url</code> contains a pointer to a <code c
 
 <h4 id="example-step2">2. Enter customer’s e-mail</h4>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">stepKey=</span><span class="s">"fillEmail"</span> <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p><a href="#fillfield">fillField</a> fills a text field with the given string.</p>
@@ -746,7 +746,7 @@ A required selector is stored in the <code class="highlighter-rouge">emailField<
 
 <h4 id="example-step3">3. Enter customer’s password</h4>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">stepKey=</span><span class="s">"fillPassword"</span> <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>The action here is very similar to the action in a previous step.
@@ -754,7 +754,7 @@ The only difference is that different data assigned to the attributes which set 
 
 <h4 id="example-step4">4. Click the Sign In button</h4>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;click</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>Here, <a href="#click">click</a> performs a click on a button that can be found by selector that is stored in the <code class="highlighter-rouge">signInAccountButton</code> of the <code class="highlighter-rouge">StorefrontCustomerSignInFormSection</code>.
@@ -774,10 +774,12 @@ See the <em>StorefrontCustomerSignInPage.xml</em> code in <a href="#section-code
   <li><a href="#grabValueFrom">grabValueFrom</a></li>
 </ul>
 
+<p>Learn more about <a href="../data.html#using-data-returned-by-test-actions">using data returned by test actions</a>.</p>
+
 <h2 id="reference">Reference</h2>
 
 <p>The following list contains reference documentation about all action elements available in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.
-If description of an element does not includes a link to Codeception analogue, it means that the action is developed by Magento for specific <abbr title="Magento Functional Testing Framework">MFTF</abbr> needs.</p>
+If description of an element does not include a link to Codeception analogue, it means that the action is developed by Magento for specific <abbr title="Magento Functional Testing Framework">MFTF</abbr> needs.</p>
 
 <h3 id="acceptpopup">acceptPopup</h3>
 
@@ -2606,7 +2608,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <p>For example, using <code class="highlighter-rouge">getData</code> in a test looks like this:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;getData</span> <span class="na">stepKey=</span><span class="s">"getAttributeOption1Handle"</span> <span class="na">entity=</span><span class="s">"ProductAttributeOptionGetter"</span> <span class="na">index=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;getData</span> <span class="na">entity=</span><span class="s">"ProductAttributeOptionGetter"</span> <span class="na">index=</span><span class="s">"1"</span> <span class="na">stepKey=</span><span class="s">"getAttributeOption1Handle"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;required-entity</span> <span class="na">createDataKey=</span><span class="s">"productAttributeHandle"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/getData&gt;</span>
 </code></pre></div></div>
@@ -5145,7 +5147,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <p>For example, to change the price of a product:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;updateData</span> <span class="na">stepKey=</span><span class="s">"updateProduct"</span> <span class="na">entity=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">createDataKey=</span><span class="s">"productHandle"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;updateData</span> <span class="na">entity=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">createDataKey=</span><span class="s">"productHandle"</span> <span class="na">stepKey=</span><span class="s">"updateProduct"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>where <code class="highlighter-rouge">AdjustPriceProduct</code> simply looks like this:</p>
