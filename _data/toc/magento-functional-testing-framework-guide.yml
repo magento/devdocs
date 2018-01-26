@@ -1,66 +1,168 @@
 label: Magento Functional Testing Framework Guide
 pages:
 
-  - label: Introduction
-    url: magento-functional-testing-framework/introduction.html
-    versions: ["2.2", "2.3"]
-
-  - label: Getting Started
-    url: magento-functional-testing-framework/getting-started.html
-    versions: ["2.2", "2.3"]
-
-  - label: Cest
-    url: magento-functional-testing-framework/cest.html
-    versions: ["2.2", "2.3"]
-    children:
- 
-      - label: Annotations
-        url: magento-functional-testing-framework/cest/annotations.html
-
-      - label: Actions
-        url: magento-functional-testing-framework/cest/actions.html
-
-      - label: Action groups
-        url: magento-functional-testing-framework/cest/action-groups.html
-
-      - label: Assertions
-        url: magento-functional-testing-framework/cest/assertions.html
-
-  - label: Page
-    url: magento-functional-testing-framework/page.html
-    versions: ["2.2", "2.3"]
-  - label: Section
-    url: magento-functional-testing-framework/section.html
-    versions: ["2.2", "2.3"]
+  - label:  MFTF 2.1
+    url: magento-functional-testing-framework/2.1/introduction.html
+    versions: ["2.3"]
     children:
 
-      - label: Parameterized selectors
-        url: magento-functional-testing-framework/section/parameterized-selectors.html
+      - label: Getting Started
+        url: magento-functional-testing-framework/2.1/getting-started.html
 
-      - label: Locator Functions
-        url: magento-functional-testing-framework/section/locator-functions.html
+      - label: Test
+        url: magento-functional-testing-framework/2.1/test.html
+        children:
 
-  - label: Data
-    url: magento-functional-testing-framework/data.html
-    versions: ["2.2", "2.3"]
+          - label: Annotations
+            url: magento-functional-testing-framework/2.1/test/annotations.html
 
-  - label: CLI Commands
-    versions: ["2.2", "2.3"]
+          - label: Actions
+            url: magento-functional-testing-framework/2.1/test/actions.html
+
+          - label: Action groups
+            url: magento-functional-testing-framework/2.1/test/action-groups.html
+
+          - label: Assertions
+            url: magento-functional-testing-framework/2.1/test/assertions.html
+
+      - label: Page
+        url: magento-functional-testing-framework/2.1/page.html
+
+      - label: Section
+        url: magento-functional-testing-framework/2.1/section.html
+        children:
+
+          - label: Parameterized selectors
+            url: magento-functional-testing-framework/2.1/section/parameterized-selectors.html
+
+          - label: Locator Functions
+            url: magento-functional-testing-framework/2.1/section/locator-functions.html
+
+      - label: Data
+        url: magento-functional-testing-framework/2.1/data.html
+
+      - label: CLI Commands
+        children:
+
+          - label: robo
+            url: magento-functional-testing-framework/2.1/commands/robo.html
+          - label: codecept
+            url: magento-functional-testing-framework/2.1/commands/codeception.html
+
+      - label: Update
+        url: magento-functional-testing-framework/2.1/update.html
+
+      - label: Troubleshooting
+        url: magento-functional-testing-framework/2.1/troubleshooting.html
+
+  - label:  MFTF 2.0
+    url: magento-functional-testing-framework/2.0/introduction.html
+    versions: ["2.3"]
     children:
 
-      - label: robo
-        url: magento-functional-testing-framework/commands/robo.html
-      - label: codecept
-        url: magento-functional-testing-framework/commands/codeception.html
+      - label: Getting Started
+        url: magento-functional-testing-framework/2.0/getting-started.html
 
-  - label: Update
-    url: magento-functional-testing-framework/update.html
-    versions: ["2.2", "2.3"]
+      - label: Test
+        url: magento-functional-testing-framework/2.0/test.html
+        children:
 
-  - label: Troubleshooting
-    url: magento-functional-testing-framework/troubleshooting.html
-    versions: ["2.2", "2.3"]
+          - label: Annotations
+            url: magento-functional-testing-framework/2.0/test/annotations.html
 
+          - label: Actions
+            url: magento-functional-testing-framework/2.0/test/actions.html
+
+          - label: Action groups
+            url: magento-functional-testing-framework/2.0/test/action-groups.html
+
+          - label: Assertions
+            url: magento-functional-testing-framework/2.0/test/assertions.html
+
+      - label: Page
+        url: magento-functional-testing-framework/2.0/page.html
+
+      - label: Section
+        url: magento-functional-testing-framework/2.0/section.html
+        children:
+
+          - label: Parameterized selectors
+            url: magento-functional-testing-framework/2.0/section/parameterized-selectors.html
+
+          - label: Locator Functions
+            url: magento-functional-testing-framework/2.0/section/locator-functions.html
+
+      - label: Data
+        url: magento-functional-testing-framework/2.0/data.html
+
+      - label: CLI Commands
+        children:
+
+          - label: robo
+            url: magento-functional-testing-framework/2.0/commands/robo.html
+          - label: codecept
+            url: magento-functional-testing-framework/2.0/commands/codeception.html
+
+      - label: Update
+        url: magento-functional-testing-framework/2.0/update.html
+
+      - label: Troubleshooting
+        url: magento-functional-testing-framework/2.0/troubleshooting.html
+
+  - label: MFTF 1.0
+    url: magento-functional-testing-framework/1.0/introduction.html
+    versions: ["2.2"]
+    children:
+
+    - label: Getting Started
+      url: magento-functional-testing-framework/1.0/getting-started.html
+  
+    - label: Cest
+      url: magento-functional-testing-framework/1.0/cest.html
+      children:
+   
+        - label: Annotations
+          url: magento-functional-testing-framework/1.0/cest/annotations.html
+  
+        - label: Actions
+          url: magento-functional-testing-framework/1.0/cest/actions.html
+  
+        - label: Action groups
+          url: magento-functional-testing-framework/1.0/cest/action-groups.html
+  
+        - label: Assertions
+          url: magento-functional-testing-framework/1.0/cest/assertions.html
+  
+    - label: Page
+      url: magento-functional-testing-framework/1.0/page.html
+
+    - label: Section
+      url: magento-functional-testing-framework/1.0/section.html
+      children:
+  
+        - label: Parameterized selectors
+          url: magento-functional-testing-framework/1.0/section/parameterized-selectors.html
+  
+        - label: Locator Functions
+          url: magento-functional-testing-framework/1.0/section/locator-functions.html
+  
+    - label: Data
+      url: magento-functional-testing-framework/1.0/data.html
+  
+    - label: CLI Commands
+      children:
+  
+        - label: robo
+          url: magento-functional-testing-framework/1.0/commands/robo.html
+        - label: codecept
+          url: magento-functional-testing-framework/1.0/commands/codeception.html
+  
+    - label: Update
+      url: magento-functional-testing-framework/1.0/update.html
+  
+    - label: Troubleshooting
+      url: magento-functional-testing-framework/1.0/troubleshooting.html
+      
   - label: Contribution Guidelines
     url: magento-functional-testing-framework/contribution-guidelines.html
     versions: ["2.2", "2.3"]
