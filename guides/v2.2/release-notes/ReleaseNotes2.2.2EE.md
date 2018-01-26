@@ -10,7 +10,7 @@ github_link: release-notes/ReleaseNotes2.2.2EE.md
 *Release notes updated on January 5, 2018.*
 
 
-We are pleased to present Magento Commerce 2.2.2. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the ider Magento community.
+We are pleased to present Magento Commerce 2.2.2. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
 
 
 ## Highlights
