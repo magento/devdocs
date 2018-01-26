@@ -102,6 +102,8 @@ Attribute |  Description
 
 The `Items` array can contain all the attributes that can be specified in an `ProductFilterInput` object, plus the attributes and objects listed in the following table. The array can also contain any custom and extension attributes defined in any attribute set.
 
+Attribute | Data type | Description
+--- | --- | ---
 `id` | Int | The ID number assigned to the product.
 `attribute_set_id` | Int | The attribute set assigned to the product.
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
@@ -202,8 +204,6 @@ Field | Type | Description
 `video_metadata` | String | Optional data about the video
 
 ### ProductTierPrices object
-
-Marked for omission
 
 Field | Type | Description
 --- | --- | ---

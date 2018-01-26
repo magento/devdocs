@@ -3,13 +3,45 @@ layout: default
 group: graphql
 title: Overview
 version: 2.3
-landing-page: GraphQL Guide
+landing-page: GraphQL Developer's Guide
 github_link: graphql/index.md
 ---
 
 [GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs.
 
-A primary benefit of GraphQL is that it allows you to define the structure of the data that you need, and the server returns only the data you request. This avoids two types of problems:
+The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento) to explore and try it out for yourself.
 
-* The server returns too much data. For example, if you run a REST call such as `GET /V1/products/:sku` on a simple product, the response may contain well over 100 lines.
-* The system requires multiple calls to return the information you need. [Need example]
+## Where we're at
+
+Most of the development team's work thus far has been devoted to building the GraphQL infrastructure and enhancing the ability to query products. The complexity of the Catalog module made it the ideal candidate for early development. It supports multiple types of products as well as extension, custom, and EAV attributes.
+
+GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax of all of that module's queries, as well as the attributes that can be returned. If you run a REST call such as `GET /V1/products/:sku` on a simple product, the response may contain well over 100 lines. If all you need is the current price, the call has returned over 99 lines too many. With GraphQL, a query against the same SKU could return just the price.
+
+A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the front end.
+Extension attributes ???
+
+The current GraphQL codebase also supports the following features:
+
+* You can perform full text searches on products.
+* A product query returns complex price objects that include the amount, the currency code, and any adjustments.
+* You can query attributes of a logged-in customer. A session token provides authorization.
+* The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the `products` query.
+* Developers can create a URL resolver service so that an app can render a page by a URL without any prior knowledge about the landing page
+* GraphQL supports multiple stores. The context is specified in the HTTP header.  Your GraphQL client must support HTTP headers to query the non-default store.
+
+## Where we're going
+
+In the near future, we'll roll out the following features:
+
+* Support of all product types. Currently, simple and configurable products are supported.
+* More robust error handling.
+* A new query API.
+* Attribute-level help that will be displayed in the GraphQL browser.
+
+## How to access GraphQL
+
+GraphiQL is an in-browser tool for writing, validating, and testing GraphQL queries. You can download an extension from your browser's app store. The following image shows a sample query, its response, and the GraphQL browser
+
+![GraphiQL browser]({{page.baseurl}}/graphql/images/graphql-browser.png)
+
+To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar. Then use the browser in the right column to determine how to set up a query. Additional examples are also available at [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html).
