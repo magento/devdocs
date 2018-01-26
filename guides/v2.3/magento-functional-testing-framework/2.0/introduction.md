@@ -9,7 +9,7 @@ functional_areas:
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The Magento Functional Testing Framework (MFTF) is aimed to replace the [Functional Testing Framework] in far future releases to make test creation easier for developers and improve qualities like:
+The Magento Functional Testing Framework (MFTF) is designed to replace the [Functional Testing Framework] in far future releases to make test creation easier for developers and improve qualities like:
 
 * **Traceability** for clear logging and reporting capabilities
 * **Modularity** to run tests based on modules/extensions installed
