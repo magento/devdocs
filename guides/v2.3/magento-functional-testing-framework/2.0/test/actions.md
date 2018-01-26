@@ -39,7 +39,7 @@ Example:
 Example with `before`:
 
 ```xml
-<myAction before="fillField stepKey="conditionalClickStep1"/>
+<myAction before="fillField" stepKey="conditionalClickStep1"/>
 ```
 
 `myAction` will be executed before the action, which has `stepKey="fillField"`.
@@ -47,7 +47,7 @@ Example with `before`:
 Example with `after`:
 
 ```xml
-<myAction after="fillField stepKey="seeResult"/>
+<myAction after="fillField" stepKey="seeResult"/>
 ```
 
 `myAction` will be executed after the action, which has `stepKey="fillField"`.
@@ -56,7 +56,7 @@ Example with `after`:
 
 `stepKey` value format principles:
 
-* Must be unique within [`<test>`](../tests.html#test)
+* Must be unique within [`<test>`](../test.html#test)
 * Naming should be as descriptive as possible
   * Should describe the action performed
   * Should briefly describe the purpose
@@ -65,6 +65,7 @@ Example with `after`:
 * Should be the last attribute of an element
 
 ## Example
+
 {%raw%}
 The following example contains four actions:
 
@@ -74,16 +75,16 @@ The following example contains four actions:
 4. [Click the Sign In button](#example-step4)
 
 ```xml
-<amOnPage stepKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage}}"/>
-<fillField  stepKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
-<fillField  stepKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
-<click stepKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+<amOnPage url="{{StorefrontCustomerSignInPage}}" stepKey="amOnSignInPage"/>
+<fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}} stepKey="fillEmail"/>
+<fillField  userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}" stepKey="fillPassword"/>
+<click selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}" stepKey="clickSignInAccountButton"/>
 ```
 
 #### 1. Open the Sign In page for a Customer {#example-step1}
 
 ```xml
-<amOnPage stepKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage.url}}"/>
+<amOnPage url="{{StorefrontCustomerSignInPage.url}}" stepKey="amOnSignInPage"/>
 ```
 
 The Customer Sign In page is declared in the _.../Customer/Page/StorefrontCustomerSignInPage.xml_.
@@ -107,7 +108,7 @@ Here, `url` contains a pointer to a `url` attribute of the `StorefrontCustomerSi
 #### 2. Enter customer's e-mail  {#example-step2}
 
 ```xml
-<fillField  stepKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
+<fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
 ```
 
 [fillField](#fillfield) fills a text field with the given string.
@@ -135,17 +136,16 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 #### 3. Enter customer's password  {#example-step3}
 
 ```xml
-<fillField  stepKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
+<fillField  userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}" stepKey="fillPassword"/>
 ```
 
 The action here is very similar to the action in a previous step.
 The only difference is that different data assigned to the attributes which set a field with password.
 
-
 #### 4. Click the Sign In button {#example-step4}
 
 ```xml
-<click stepKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+<click selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}" stepKey="clickSignInAccountButton"/>
 ```
 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
@@ -164,10 +164,12 @@ The following test actions return a variable:
 *  [grabTextFrom](#grabtextfrom)
 *  [grabValueFrom](#grabValueFrom)
 
+Learn more in [Using data returned by test actions](../data.html#using-data-returned-by-test-actions).
+
 ## Reference
 
 The following list contains reference documentation about all action elements available in the MFTF.
-If description of an element does not includes a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
+If description of an element does not include a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
 
 ### acceptPopup
 
@@ -264,10 +266,10 @@ Equivalent to using [fillField](#fillfield) with an empty string.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-selector|xs:string|required|
-stepKey|xs:string|required|
-before|xs:string|optional|
-after|xs:string|optional|
+selector|string|required|
+stepKey|string|required|A unique identifier of the action.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### click
 
@@ -330,6 +332,19 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
 
+### comment
+
+Allows input of a string as a PHP code comment.
+This tag is not executed.
+It is intended to aid documentation and clarity of tests.
+
+Attribute|Type|Use|Description
+---|---|---|---
+userInput|string|required|PHP comment that will be written in generated test file.
+stepKey|string|required|A unique identifier of the action.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
+
 ### conditionalClick
 
 Conditionally click on an element if and only if another element is visible or not.
@@ -368,9 +383,9 @@ before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
 storeCode|string|optional|
 
-This action can optionally contain one or more `required-entity` child elements.
+This action can optionally contain one or more `requiredEntity` child elements.
 
-#### required-entity
+#### requiredEntity
 
 Specify relationships amongst data to be created. For example, a complex Product
 object may contain within it a pointer (an ID) to a complex Category object.
@@ -382,7 +397,7 @@ by indicating the relationship.
 <createData entity="SampleCategory" stepKey="createCategory"/>
 
 <createData entity="SampleProduct" stepKey="createProduct">
-    <required-entity createDataKey="createCategory"/>
+    <requiredEntity createDataKey="createCategory"/>
 </createData>
 ```
 
@@ -397,7 +412,7 @@ after|string|optional| `stepKey` of preceding action.
 Delete an entity that was previously created.
 
 It's important to note that this action is only able to delete entities that were
-previously created using [createData](#createdata) in the scope of the [test](../test.html#test).
+previously created using [createData](#createdata) in the scope of the [test](../test.html#test-tag).
 
 Assuming we created _SampleCategory_ like:
 
@@ -470,9 +485,11 @@ after|string|optional| `stepKey` of preceding action.
 
 [See dontSeeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlMatches){:target='_blank'}
 
+<!-- TODO: Add description of regex customization -->
+
 Attribute|Type|Use|Description
 ---|---|---|---
-url|string|optional|
+regex|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
@@ -667,12 +684,11 @@ after|string|optional| `stepKey` of preceding action.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-userInput|xs:string|optional|
-locale|xs:string|optional|
-variable|xs:string|optional|
-stepKey|xs:string|required|
-before|xs:string|optional|
-after|xs:string|optional|
+userInput|string|optional|
+locale|string|optional|
+stepKey|string|required|A unique identifier of the action.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
 ### getData
 
@@ -682,8 +698,8 @@ In other words, makes a GET request to the Magento API according to the data and
 For example, using `getData` in a test looks like this:
 
 ```xml
-<getData stepKey="getAttributeOption1Handle" entity="ProductAttributeOptionGetter" index="1">
-    <required-entity createDataKey="productAttributeHandle"/>
+<getData entity="ProductAttributeOptionGetter" index="1" stepKey="getAttributeOption1Handle">
+    <requiredEntity createDataKey="productAttributeHandle"/>
 </getData>
 ```
 
@@ -692,13 +708,13 @@ The `ProductAttributeOptionGetter` entity must be defined in the corresponding [
 Attribute|Type|Use|Description
 ---|---|---|---
 storeCode|string|optional|
-stepKey|string|required|
+stepKey|string|required|A unique identifier of the action.
 index|integer|optional|
 entity|string|required|
-before|string|optional|
-after|string|optional|
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
-This action can optionally contain one or more [required-entity](#required-entity) child elements.
+This action can optionally contain one or more [requiredEntity](#requiredEntity) child elements.
 
 ### grabAttributeFrom
 
@@ -728,9 +744,11 @@ after|string|optional| `stepKey` of preceding action.
 
 [See grabFromCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl){:target='_blank'}
 
+<!-- Add description for customized regex -->
+
 Attribute|Type|Use|Description
 ---|---|---|---
-url|string|optional|
+regex|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
@@ -936,7 +954,7 @@ Removes action by its `stepKey`.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-keyForRemoval|xs:string|required|Set `stepKey` of the action you want to remove.
+keyForRemoval|string|required|Set `stepKey` of the action you want to remove.
 
 ### resetCookie
 
@@ -1063,9 +1081,11 @@ after|string|optional| `stepKey` of preceding action.
 
 [See seeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches){:target='_blank'}
 
+<!-- Add description for customized regex -->
+
 Attribute|Type|Use|Description
 ---|---|---|---
-url|string|optional|
+regex|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
@@ -1340,7 +1360,7 @@ The `updateData` action allows this.
 For example, to change the price of a product:
 
 ```xml
-<updateData stepKey="updateProduct" entity="AdjustPriceProduct" createDataKey="productHandle"/>
+<updateData entity="AdjustPriceProduct" createDataKey="productHandle" stepKey="updateProduct"/>
 ```
 
 where `AdjustPriceProduct` simply looks like this:
@@ -1356,13 +1376,13 @@ Notice only the fields that you wish to update are set.
 Attribute|Type|Use|Description
 ---|---|---|---
 storeCode|string|optional|
-stepKey|string|required|
+stepKey|string|required|A unique identifier of the action.
 entity|string|required|
 createDataKey|string|required|
-before|string|optional|
-after|string|optional|
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
 
-This action can optionally contain one or more [required-entity](#required-entity) child elements.
+This action can optionally contain one or more [requiredEntity](#requiredEntity) child elements.
 
 ### wait
 

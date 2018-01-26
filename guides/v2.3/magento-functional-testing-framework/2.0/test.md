@@ -60,8 +60,8 @@ The following diagram demonstrates XML structure of a test case in the MFTF:
 * A test may have any number of [assertions], at any point within the `<test>`
 * File name and `<test>` name are equal.
 
-Multiple <test> tags per xml file can be confusing and hard to find/organize.
-We generate one test.php file per <test> tag provided.
+Multiple <test> tags per XML file can be confusing and hard to find/organize.
+We generate one _test.php_ file per <test> tag provided.
 This is not a hard requirement and we obviously support both.
 
 ## Reference

@@ -75,16 +75,16 @@ The following example contains four actions:
 4. [Click the Sign In button](#example-step4)
 
 ```xml
-<amOnPage stepKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage}}"/>
-<fillField  stepKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
-<fillField  stepKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
-<click stepKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+<amOnPage url="{{StorefrontCustomerSignInPage}}" stepKey="amOnSignInPage"/>
+<fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
+<fillField  userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}" stepKey="fillPassword"/>
+<click selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}" stepKey="clickSignInAccountButton"/>
 ```
 
 #### 1. Open the Sign In page for a Customer {#example-step1}
 
 ```xml
-<amOnPage stepKey="amOnSignInPage"  url="{{StorefrontCustomerSignInPage.url}}"/>
+<amOnPage url="{{StorefrontCustomerSignInPage.url}}" stepKey="amOnSignInPage"/>
 ```
 
 The Customer Sign In page is declared in the _.../Customer/Page/StorefrontCustomerSignInPage.xml_.
@@ -108,7 +108,7 @@ Here, `url` contains a pointer to a `url` attribute of the `StorefrontCustomerSi
 #### 2. Enter customer's e-mail  {#example-step2}
 
 ```xml
-<fillField  stepKey="fillEmail" userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}"/>
+<fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
 ```
 
 [fillField](#fillfield) fills a text field with the given string.
@@ -136,7 +136,7 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 #### 3. Enter customer's password  {#example-step3}
 
 ```xml
-<fillField  stepKey="fillPassword" userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}"/>
+<fillField  userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}" stepKey="fillPassword"/>
 ```
 
 The action here is very similar to the action in a previous step.
@@ -146,7 +146,7 @@ The only difference is that different data assigned to the attributes which set 
 #### 4. Click the Sign In button {#example-step4}
 
 ```xml
-<click stepKey="clickSignInAccountButton" selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}"/>
+<click selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}" stepKey="clickSignInAccountButton"/>
 ```
 
 Here, [click](#click) performs a click on a button that can be found by selector that is stored in the `signInAccountButton` of the `StorefrontCustomerSignInFormSection`.
@@ -165,10 +165,12 @@ The following test actions return a variable:
 *  [grabTextFrom](#grabtextfrom)
 *  [grabValueFrom](#grabValueFrom)
 
+Learn more about [using data returned by test actions](../data.html#using-data-returned-by-test-actions).
+
 ## Reference
 
 The following list contains reference documentation about all action elements available in the MFTF.
-If description of an element does not includes a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
+If description of an element does not include a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.
 
 ### acceptPopup
 
@@ -683,7 +685,7 @@ In other words, makes a GET request to the Magento API according to the data and
 For example, using `getData` in a test looks like this:
 
 ```xml
-<getData stepKey="getAttributeOption1Handle" entity="ProductAttributeOptionGetter" index="1">
+<getData entity="ProductAttributeOptionGetter" index="1" stepKey="getAttributeOption1Handle">
     <required-entity createDataKey="productAttributeHandle"/>
 </getData>
 ```
@@ -1354,7 +1356,7 @@ The `updateData` action allows this.
 For example, to change the price of a product:
 
 ```xml
-<updateData stepKey="updateProduct" entity="AdjustPriceProduct" createDataKey="productHandle"/>
+<updateData entity="AdjustPriceProduct" createDataKey="productHandle" stepKey="updateProduct"/>
 ```
 
 where `AdjustPriceProduct` simply looks like this:
