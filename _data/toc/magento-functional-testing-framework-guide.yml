@@ -3,7 +3,7 @@ pages:
 
   - label:  MFTF release 2
     url: magento-functional-testing-framework/release-2/introduction.html
-    versions: ["2.2", "2.3"]
+    versions: ["2.3"]
     children:
 
       - label: Getting Started
