@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Introduction to the Magento Functional Testing Framework
+title: Introduction to the Magento Functional Testing Framework (release 1)
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/introduction.md
 functional_areas:

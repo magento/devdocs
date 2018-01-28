@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Robo commands available in the Magento Functional Testing Framework
+title: Robo commands in the Magento Functional Testing Framework (release 1)
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/commands/robo.md
 functional_areas:

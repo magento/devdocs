@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Update the Magento Functional Testing Framework and pull new tests
+title: Update the Magento Functional Testing Framework and pull new tests (release 2)
 version: 2.3
 github_link: magento-functional-testing-framework/release-2/update.md
 functional_areas:

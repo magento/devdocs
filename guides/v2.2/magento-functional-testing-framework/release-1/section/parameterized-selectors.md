@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Create and use parameterized selectors in the Magento Functional Testing Framework
+title: Create and use parameterized selectors in the Magento Functional Testing Framework (release 1)
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/section/parameterized-selectors.md
 functional_areas:

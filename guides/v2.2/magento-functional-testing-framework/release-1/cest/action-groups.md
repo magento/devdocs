@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Action groups in cests of the Magento Functional Testing Framework
+title: Action groups in the Magento Functional Testing Framework (release 1)
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/cest/action-groups.md
 functional_areas:

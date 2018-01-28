@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Use Codeception's Locator Functions in the Magento Functional Testing Framework
+title: Use Codeception's Locator Functions in the Magento Functional Testing Framework (release 1)
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/section/locator-functions.md
 functional_areas:

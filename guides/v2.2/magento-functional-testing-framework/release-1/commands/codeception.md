@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Codeception commands in the Magento Functional Testing Framework
+title: Codeception commands in the Magento Functional Testing Framework (release 1)
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/commands/codeception.md
 functional_areas:
