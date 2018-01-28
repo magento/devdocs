@@ -190,7 +190,7 @@ GEM
     mini_portile2 (2.3.0)
     minima (2.1.1)
       jekyll (~> 3.3)
-    minitest (5.11.2)
+    minitest (5.11.3)
     multipart-post (2.0.0)
     net-dns (0.8.0)
     nokogiri (1.8.1)
