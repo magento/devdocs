@@ -15,7 +15,7 @@ Robo is a task runner for PHP that allows you to alias long complex CLI commands
 
 ### Format
 
-Assuming that you're working in the `magento2ce/dev/tests/acceptance` directory in your terminal, run Robo commands using the following format:
+Assuming that you're working in the `magento2/dev/tests/acceptance` directory in your terminal, run Robo commands using the following format:
 
 ```bash
 $ vendor/bin/robo command [options] [arguments]

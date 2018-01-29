@@ -23,13 +23,13 @@ Magento tests are stored in the same repository as the Magento code base.
 When you pull changes in the Magento code, you're potentially pulling corresponding tests .
 
 The Framework is installed separately as a dependency using Composer.
-When pulling the latest Magento code, you need to update the corresponding Composer dependencies in the `magento2ce/dev/tests/acceptance` directory. This ensures that the MFTF is up to date.
+When pulling the latest Magento code, you need to update the corresponding Composer dependencies in the `magento2/dev/tests/acceptance` directory. This ensures that the MFTF is up to date.
 
 ## Update the MFTF
 
 * When you updated Magento, verify that the Magento [WYSIWYG settings] and [Security settings] are set appropriately.
 
-* Go to the `magento2ce/dev/tests/acceptance` directory:
+* Go to the `magento2/dev/tests/acceptance` directory:
 
 ```bash
 $ cd dev/tests/acceptance
