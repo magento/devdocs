@@ -99,7 +99,7 @@ scd_threads=2
 scd_strategy=standard
 
 ; Skips static content deployment during the build phase.
-skip_scd=yes
+;skip_scd=yes
 ```
 
 <table>
