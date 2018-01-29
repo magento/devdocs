@@ -64,7 +64,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
-<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field**the error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
+<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
 <!--- MAGETWO-82634 -->* We've replaced `FollowSymLinks` with `SymLinksIfOwnerMatch` in the `htaccess` templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811)
 
@@ -385,7 +385,7 @@ can find Magento Shipping-specific release notes in [Magento Shipping Release No
 
 <!--- MAGETWO-83278 -->* Magento now displays by default of two shipping address lines even when the `street_lines` setting in customer configuration is set to 0 (zero). [GitHub-7995](https://github.com/magento/magento2/issues/7995)
 
-<!--- MAGETWO-83272 -->* Magent no longer displays a blank page at the shipping stage of checkout when the user tries to return to the Shipping page from the Payments page by clicking **Back**. [GitHub-11197](https://github.com/magento/magento2/issues/11197)
+<!--- MAGETWO-83272 -->* Magento no longer displays a blank page at the shipping stage of checkout when the user tries to return to the Shipping page from the Payments page by clicking **Back**. [GitHub-11197](https://github.com/magento/magento2/issues/11197)
 
 <!--- MAGETWO-83197 -->* The Shipping report available from the Admin now uses the correct currency code. [GitHub-11793](https://github.com/magento/magento2/issues/11793)
 
