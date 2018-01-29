@@ -1812,69 +1812,55 @@
 </section>
 
 
-			<p>When first creating your Magento Commerce (Cloud) project, you may have a choice of a blank template or importing existing code. We highly recommend always starting with a blank template to receive the Magento Commerce (Cloud) codebase to build on. You can start adding your existing Magento custom code, extensions and modules, themes, and more to development branches created from .</p>
+			<p>You can create a Magento Commerce (Cloud) project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing Magento code on top of it.</p>
 
-<p>For trial Starter and Pro projects, we automatically provision your project with the latest version of Magento Commerce (Cloud). You do not have an option of creating a project by importing. Not to worry, if you still want to fully import your existing codebase and overwrite the Git <code class="highlighter-rouge">master</code> branch for your project, these instructions will walk through the process.</p>
-
-<p>These instructions primarily include information and instructions to import existing Magento code and data into a blank Magento Commerce (Cloud) template project.</p>
-
-<p>If you have the option of creating a project using existing code,</p>
+<div class="bs-callout bs-callout-info">
+  <p>You cannot create trial projects by importing existing code.</p>
+</div>
 
 <h2 id="prereqs">Prerequisites for importing code</h2>
-<p>Before you continue, make sure you have done all of the following:</p>
+<p>Before you begin, do the following:</p>
 
 <ul>
-  <li>Your existing Magento Commerce code must be in Git. You need to have a Git account with a repository and your code added to it. If you do not have this set up, we recommend using <a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub</a>. You must have a Git branch with your code pushed to it before continuing with these instructions.</li>
-  <li>You should have a fully installed and configured local development environment. For details, follow the instructions for <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">Local environment setup</a>.</li>
-</ul>
+  <li>Add the existing Magento Commerce code to a Git repository. We recommend using <a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub</a>.</li>
+  <li>Set up your <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">local development environment</a>.</li>
+  <li>
+    <p>Gather required information:</p>
 
-<h2 id="info">Required information for your import</h2>
-<p>You need to locate and gather the information required information to import Magento Commerce into Magento Commerce (Cloud), including:</p>
-
-<ul>
-  <li>SSH access to the cloud environment for the target database</li>
-  <li>Database credentials</li>
+    <ul>
+      <li><a href="#ssh">SSH access link</a> to the target environment</li>
+      <li><a href="#db-creds">Database credentials</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="ssh">SSH access to cloud environments</h3>
-<p>To transfer the database dump and files to Magento Commerce (Cloud), you must know the SSH URL. You can locate the SSH access using the CLI or Project Web Interface:</p>
+<p>To transfer the database dump and files to Magento Commerce (Cloud), you must know the SSH access link. You can locate the SSH access link using the [<code class="highlighter-rouge">magento-cloud</code>] CLI tool(/guides/v2.1/cloud/reference/cli-ref-topic.html):</p>
 
-<ul>
-  <li>On your local, you can locate the SSH information using the command: <code class="highlighter-rouge">magento-cloud environment:ssh --pipe</code></li>
-  <li>The <a href="/guides/v2.1/cloud/project/project-webint-basic.html">Project Web Interface</a>.</li>
-</ul>
+<p>magento-cloud environment:ssh –pipe</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You must enter all Magento Commerce (Cloud) commands on the machine on which your Cloud SSH keys are stored. For more information, see <a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> and <a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH and sFTP</a>.</p>
 </div>
 
 <h3 id="db-creds">Database credentials</h3>
-<p>Collect the credentials for your databases.</p>
-
-<p>For the Magento Commerce database, you need the name of the database and user credentials (username and password) to access the database.</p>
-
-<p>For the Magento Commerce (Cloud) database, you need credentials and data for the cloud database to import your data. The name of the database can be found in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable.</p>
+<p>You need your Magento Commerce (Cloud) database name and credentials so that you can import your Magento Commerce data. You can find the name and credentials for your Magento Commerce (Cloud) database in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable.</p>
 
 <p>To find Magento Commerce (Cloud) database access information:</p>
 
 <ol>
   <li>
-    <p>SSH to into your environment:</p>
+    <p>Log in to your remote repository using  <a href="/guides/v2.1/cloud/env/environments-ssh.html#ssh">SSH</a>.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Use the following command to list all database information:</p>
+    <p>List all database information:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
-</code></pre></div>    </div>
-  </li>
-</ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
 
-<p>The database connection information is displayed:</p>
-
-<pre class="no-copy">database" : [
+&lt;pre class="no-copy"&gt;database" : [
       {
          "username" : "user",
          "query" : {
@@ -1887,32 +1873,26 @@
          "scheme" : "mysql",
          "ip" : "192.0.2.150"
       }
-   ]</pre>
-
-<p>This information provides the following: the database name is <code class="highlighter-rouge">main</code>, its listen port is <code class="highlighter-rouge">3306</code>, its host name is <code class="highlighter-rouge">database.internal</code>, its root user name is <code class="highlighter-rouge">user</code>, and the user has no password.</p>
-
-<h3 id="cloud-import-pre-baseurl">Cloud unsecure base URL</h3>
-<p>After you import the Magento Commerce database into Magento Commerce (Cloud), you must change the base URL so you can access the Magento Admin and storefront.</p>
-
-<p>Locate the base URL:</p>
-
-<ul>
-  <li>
-    <p>The command line:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud url
+   ]&lt;/pre&gt;
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>The <a href="/guides/v2.1/cloud/project/project-webint-basic.html">ProjectWeb Interface</a>.</p>
-  </li>
-</ul>
+</ol>
+
+<p>In the previous example, the database name is <code class="highlighter-rouge">main</code>, the listen port is <code class="highlighter-rouge">3306</code>, the hostname is <code class="highlighter-rouge">database.internal</code>, the root user name is <code class="highlighter-rouge">user</code>, and the user has no password.</p>
+
+<h3 id="cloud-unsecure-base-url">Cloud unsecure base URL</h3>
+<p>After you import the Magento Commerce database into Magento Commerce (Cloud), you must change the base URL so you can access the Magento Admin and storefront.</p>
+
+<p>Use the magento-cloud CLI tool to locate the base URL:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud url
+</code></pre></div></div>
 
 <h2 id="import">Import workflow for existing code</h2>
-<p>The complete workflow for importing existing code includes the following steps.</p>
+<p>The complete workflow for importing existing code includes the following steps:</p>
 
 <ol>
-  <li>If you do not have a project created and available, create a new <a href="#cloud-import-proj">project from a template</a>. This new project has files and directories specific to Magento Commerce (Cloud).</li>
+  <li>If you do not have a project, create a new <a href="#cloud-import-proj">project from a template</a>. This new project has files and directories specific to Magento Commerce (Cloud).</li>
   <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Replace the contents</a> of this project with your code using Git.</li>
   <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#cloud-import-db">Import your Magento database</a> into your Magento Commerce (Cloud) project.</li>
   <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#media">Import your static files</a> into your Magento Commerce (Cloud) project.</li>
@@ -1920,13 +1900,14 @@
   <li>Clear the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and verify the project imported successfully.</li>
 </ol>
 
-<h2 id="cloud-import-proj">Create a new, empty Magento Enterprise Edition project</h2>
-<p>If you do not have a provisioned project created and available, you need to create your project selecting the</p>
+<h2 id="cloud-import-proj">Create a new Magento Commerce (Cloud) project</h2>
 
 <ol>
-  <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
   <li>
-    <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
+    <p>Access your account. Open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="\_blank">your Magento Commerce account</a>.</p>
+  </li>
+  <li>
+    <p>Click the <em>This project has no code yet</em> link next to the project name.</p>
 
     <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
   </li>
@@ -1936,7 +1917,7 @@
     <p><img src="/common/images/cloud_project_name.png" alt="Project name" /></p>
   </li>
   <li>
-    <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
+    <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can import existing code later.</p>
 
     <p><img src="/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
   </li>
@@ -1945,14 +1926,16 @@
 
     <p><img src="/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
 
-    <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
+    <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file and the file is required for all branches and deployments.</p>
   </li>
   <li>
     <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
 
     <p><img src="/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
   </li>
-  <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
+  <li>
+    <p>After the project deploys, <strong>Success</strong> displays next to the name of your project.</p>
+  </li>
 </ol>
 
 <h4 id="next-step">Next step</h4>
