@@ -12,7 +12,7 @@ functional_areas:
 
 Make sure that you've set up the following software:
 
-* [PHP v7.1.x+][php]
+* [PHP versions supported by Magento instance under test][php]
 * [Composer v1.3.x+][composer]
 * [Java v1.8.x+][java]
 * [Selenium Server Standalone v3.6.0+](#selenium-server)
@@ -188,7 +188,7 @@ $ vendor/bin/robo allure2:report
 [`robo`]: commands/robo.html
 [allure commands]: commands/robo.html#allure-robo-commands
 
-[php]: http://php.net/manual/en/install.php
+[php]: {{page.baseurl}}install-gde/system-requirements-tech.html#php
 [composer]: https://getcomposer.org/download/
 [java]: https://www.java.com/en/download/
 
