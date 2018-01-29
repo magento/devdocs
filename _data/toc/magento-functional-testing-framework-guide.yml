@@ -52,6 +52,9 @@ pages:
       - label: Update
         url: magento-functional-testing-framework/release-2/update.html
 
+      - label: Tips and tricks
+        url: magento-functional-testing-framework/release-2/tips-and-tricks.html
+
       - label: Troubleshooting
         url: magento-functional-testing-framework/release-2/troubleshooting.html
 

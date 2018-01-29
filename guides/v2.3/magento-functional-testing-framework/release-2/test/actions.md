@@ -485,11 +485,9 @@ after|string|optional| `stepKey` of preceding action.
 
 [See dontSeeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlMatches){:target='_blank'}
 
-<!-- TODO: Add description of regex customization -->
-
 Attribute|Type|Use|Description
 ---|---|---|---
-regex|string|optional|
+regex|string|optional|Regular expression against the current URI.
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
@@ -744,11 +742,9 @@ after|string|optional| `stepKey` of preceding action.
 
 [See grabFromCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl){:target='_blank'}
 
-<!-- Add description for customized regex -->
-
 Attribute|Type|Use|Description
 ---|---|---|---
-regex|string|optional|
+regex|string|optional|Regular expression against the current URI.
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
@@ -1081,11 +1077,9 @@ after|string|optional| `stepKey` of preceding action.
 
 [See seeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches){:target='_blank'}
 
-<!-- Add description for customized regex -->
-
 Attribute|Type|Use|Description
 ---|---|---|---
-regex|string|optional|
+regex|string|optional|Regular expression against the current URI.
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
