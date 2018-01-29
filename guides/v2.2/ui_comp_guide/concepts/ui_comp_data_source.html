@@ -1345,7 +1345,7 @@
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
-<p>In the block of code above, [YourNameSpace][YourModule] would the directory that contains all of the module’s files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.</p>
+<p>In the block of code above, [YourNameSpace][YourModule] would be the directory that contains all of the module’s files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.</p>
 
 <p>The main node of interest is <code class="highlighter-rouge">&lt;argument name="class" /&gt;.</code> This references a PHP class that must implement <code class="highlighter-rouge">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code>. To meet that requirement, it can extend <code class="highlighter-rouge">\Magento\Ui\DataProvider\AbstractDataProvider</code>. The <code class="highlighter-rouge">AbstractDataProvider</code> class implements all of the required methods in the <code class="highlighter-rouge">DataProviderInterface</code>. The DataProvider class is the primary source of any data or <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> that the component needs or will use.</p>
 
