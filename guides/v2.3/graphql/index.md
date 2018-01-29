@@ -17,16 +17,21 @@ Most of the development team's work thus far has been devoted to building the Gr
 
 GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax of all of that module's queries, as well as the attributes that can be returned. If you run a REST call such as `GET /V1/products/:sku` on a simple product, the response may contain well over 100 lines. If all you need is the current price, the call has returned over 99 lines too many. With GraphQL, a query against the same SKU could return just the price.
 
-A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the front end.
-Extension attributes ???
+A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage tributes product-related attributes, but you are free to use alternate methods:
+
+* **EAV attributes** are explicitly declared in the schema. Any attribute values will be pulled from the database, if they exist.
+* **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, the we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
+* **Extension attributes** can be declared in a `graphql.xml` file or by a custom reader, but they should be declared in a separate `*GraphQL` module. The attributes should extend from the resolver that fetches that model's data.
+
+You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the front end.
 
 The current GraphQL codebase also supports the following features:
 
-* You can perform full text searches on products.
+* You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter on products. This is new functionality available only with GraphQL.
 * A product query returns complex price objects that include the amount, the currency code, and any adjustments.
 * You can query attributes of a logged-in customer. A session token provides authorization.
 * The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the `products` query.
-* Developers can create a URL resolver service so that an app can render a page by a URL without any prior knowledge about the landing page
+* Developers who have URLs being rewritten using the rewrites table can send these generated URLs to the `urlResolver` query and receive back the canonical URL in the response.
 * GraphQL supports multiple stores. The context is specified in the HTTP header.  Your GraphQL client must support HTTP headers to query the non-default store.
 
 ## Where we're going

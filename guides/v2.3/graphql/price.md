@@ -102,12 +102,12 @@ Attribute |  Data Type | Description
 Attribute |  Data Type | Description
 --- | --- | ---
 `value` | Float | The price of the product
-`currency` | Currency | A three-letter currency code, such as `USD` or `EUR`.
+`currency` | CurrencyEnum | A three-letter currency code, such as `USD` or `EUR`.
 
 #### PriceAdjustment array {#PriceAdjustment}
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
-`code` | PriceAdjustmentCodes | One of `tax`, `weee`, or `weee_tax`.
-`description` | Description | One of `Included` or `Excluded`
+`code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
+`description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
