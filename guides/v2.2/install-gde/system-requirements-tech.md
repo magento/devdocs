@@ -8,6 +8,10 @@ menu_node:
 menu_order: 2
 version: 2.2
 github_link: install-gde/system-requirements-tech.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Operating systems (Linux x86-64)
@@ -31,6 +35,10 @@ MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
+</div>
+
 ### PHP
 {% include install/php_2.2.md %}
 
@@ -48,7 +56,7 @@ The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{
 *	<a href="http://php.net/manual/en/book.intl.php" target="&#95;blank">intl</a>
 *	<a href="http://php.net/manual/en/book.mbstring.php" target="&#95;blank">mbstring</a>
 *	<a href="http://php.net/manual/en/book.mcrypt.php" target="&#95;blank">mcrypt</a>
-*	<a href="http://php.net/manual/en/book.mhash.php" target="&#95;blank">mhash</a>
+*	<a href="http://php.net/manual/en/book.hash.php" target="&#95;blank">hash</a>
 *	<a href="http://php.net/manual/en/book.openssl.php" target="&#95;blank">openssl</a>
 *	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="&#95;blank">PDO/MySQL</a>
 *	<a href="http://php.net/manual/en/book.simplexml.php" target="&#95;blank">SimpleXML</a>
@@ -79,7 +87,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/
 
 	*	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
 
-	*	[More information about `repo.magento.com`]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)
+	*	[More information about `repo.magento.com`](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
@@ -114,7 +122,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 	<p>For details, see <a href="{{page.baseurl}}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
-*	PHPUnit (as a command-line tool) 4.1.0
+*	PHPUnit (as a command-line tool) 6.2.0
 
 ### Documentation
 <a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>

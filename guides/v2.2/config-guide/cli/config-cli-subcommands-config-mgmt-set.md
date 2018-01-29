@@ -10,7 +10,13 @@ level3_subgroup: cli-config-mgmt
 menu_order: 252
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-config-mgmt-set.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
+
+{% include config/cli-intro.md %}
 
 This topic discusses advanced configuration commands you can use to:
 
@@ -37,11 +43,6 @@ Use the following commands:
 *   `config:set` sets any non-sensitive configuration value by its configuration path
 *   `config:sensitive:set` sets any sensitive configuration value by its configuration path
 *   `config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks
-
-## First steps {#first}
-{% include install/first-steps-cli.html %}
-
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites
 To set a configuration value, you must know at least one of the following:

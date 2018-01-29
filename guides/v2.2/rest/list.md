@@ -7,13 +7,15 @@ menu_title: List of REST endpoints by module
 menu_order: 3
 version: 2.2
 github_link: rest/list.md
+functional_areas:
+  - Integration
 ---
 
 ## List of REST endpoints for {{site.data.var.ee}} {#listee}
 
 The REST endpoints for {{site.data.var.ee}} (formerly Enterprise Edition (EE)) are available on {{site.data.var.ee}} installations only. Commerce installations automatically have access to all {{site.data.var.ce}} (formerly Community Edition (CE)) REST APIs.
 
-Additions since 2.1 are marked with asterisks (*).
+Additions since 2.1 are marked with a single asterisk (*).
 
 See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}.
 
@@ -76,7 +78,11 @@ See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a
 
 The {{site.data.var.ce}} REST APIs are available on all {{site.data.var.ee}} and {{site.data.var.ce}} installations.
 
-Additions since 2.1 are marked with asterisks (*).
+Additions since 2.1 are marked with asterisks (*). Additions since 2.2 are marked with hash characters (#).
+
+### Analytics
+
+    #GET    /V1/analytics/link
 
 ### Backend
 
@@ -248,7 +254,7 @@ Additions since 2.1 are marked with asterisks (*).
     GET    /V1/attributeMetadata/customerAddress/custom
     GET    /V1/customers/:customerId
     POST   /V1/customers
-    PUT    /V1/customers/:id
+    PUT    /V1/customers/:customerId
     PUT    /V1/customers/me
     GET    /V1/customers/me
     PUT    /V1/customers/me/activate
@@ -257,6 +263,7 @@ Additions since 2.1 are marked with asterisks (*).
     PUT    /V1/customers/me/password
     GET    /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken
     PUT    /V1/customers/password
+    #POST  /V1/customers/resetPassword
     GET    /V1/customers/:customerId/confirm
     POST   /V1/customers/confirm
     PUT    /V1/customers/validate

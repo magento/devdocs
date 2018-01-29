@@ -8,6 +8,10 @@ menu_order: 23
 menu_node:
 version: 2.0
 github_link: cloud/trouble/redis-troubleshooting.md
+functional_areas:
+  - Cloud
+  - Configuration
+  - Services
 ---
 
 Redis is an optional backend cache solution for {{site.data.var.ece}}. This information helps you troubleshoot errors and issues you encounter with Redis. These issues and resolutions affect Starter and Pro plans.
@@ -53,7 +57,7 @@ This information helps if you receive a number of Redis connection errors in you
 To resolve, we recommend enabling and using Configuration Management options to move your static content deployment from the Deploy to Build phase.
 
 1. Remove all static content first from `pub/static/frontend/*` and also from `var/view_preprocessed`.
-2. Enable and use the recommended [`scd-dump` command]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) for Configuration Management (Pipeline Deployment). Remember, you will need to add and push the file generated to Git: `config.local.php` for 2.1.X or `config.php` for 2.2.X.
+2. Enable and use the recommended [`scd-dump` command](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm) for Configuration Management (Pipeline Deployment). Remember, you will need to add and push the file generated to Git: `config.local.php` for 2.1.X or `config.php` for 2.2.X.
 
 If you continue to encounter these issues after using this method of deployment, you can attempt the following work-around. However, this method will dramatically increase the static content deployment time as it reduces deployment to a single thread.
 

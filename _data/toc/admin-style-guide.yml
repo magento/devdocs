@@ -25,7 +25,7 @@ pages:
       children:
 
             - label: Voice and Tone
-              url: design-styleguide/content-voide-tone/content-voice-tone.html
+              url: design-styleguide/content-voice-tone/content-voice-tone.html
 
             - label: Errors and Messages Writing
               url: design-styleguide/errors-and-messages/errors-and-messages.html

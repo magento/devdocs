@@ -7,7 +7,12 @@ menu_title: Technical Details
 menu_node:
 menu_order: 1200
 version: 2.2
-github_link: config-guide/deployment/pipeline/technical-details.html
+github_link: config-guide/deployment/pipeline/technical-details.md
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 This topic discusses technical implementation details about pipeline deployment in Magento 2.2 and later. Improvements can be divided into the following areas:

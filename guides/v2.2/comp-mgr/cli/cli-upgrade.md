@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 28_cli-upgr
 title: Command-line upgrade
@@ -8,6 +8,8 @@ menu_node: parent
 menu_order: 1
 version: 2.2
 github_link: comp-mgr/cli/cli-upgrade.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Command-line upgrade
@@ -23,8 +25,8 @@ You can upgrade Magento from the command line if you installed the software usin
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <ul><li>If you're upgrading to version 2.1, see <a href="{{ page.baseurl }}release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
-    	<li>If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
+    <ul><li>If you're upgrading to version 2.1, see <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
+    	<li>If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
 </div>
 
 ## Pre-upgrade checklist
@@ -35,7 +37,7 @@ This section applies to you *only* if you set the Magento root directory to `<yo
 
 {% collapsible If you use pub as your Magento root directory: %}
 
-*	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root. 
+*	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
 	Run the [System Upgrade utility]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html) using that subdomain.
 *	Use the [following procedure](#upgrade-cli-upgr) to upgrade Magento using the command line.
@@ -82,17 +84,17 @@ To prevent access to your store while it's being upgraded, put your store in mai
 
 		composer require magento/product-enterprise-edition 2.0.11 --no-update
 		composer update
-	
+
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+  		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2>Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
-3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
+3.	If prompted, enter your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
 4.	Manually clear `var` subdirectories:
 
 		rm -rf <Magento install dir>/var/cache/*
 		rm -rf <Magento install dir>/var/page_cache/*
-		rm -rf <Magento install dir>/generated/code/* 
+		rm -rf <Magento install dir>/generated/code/*
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
@@ -107,14 +109,14 @@ To prevent access to your store while it's being upgraded, put your store in mai
 	The following error might display:
 
 		We're sorry, an error has occurred while generating this email.
-	
+
 	If so, perform the following tasks:
 
 	1.	Reset [file system ownership and permissions]({{page.baseurl}}install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
 	2.	Clear the following directories and try again:
 
-			<your Magento install dir>/var/cache 
-			<your Magento install dir>/var/page_cache 
-			<your Magento install dir>/generated/code 
+			<your Magento install dir>/var/cache
+			<your Magento install dir>/var/page_cache
+			<your Magento install dir>/generated/code
 
 {% endcollapsible %}

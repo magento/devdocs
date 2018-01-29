@@ -7,6 +7,8 @@ menu_title: Display the stored information
 menu_order: 20
 version: 2.1
 github_link: payments-integrations/vault/customer-stored-payments.md
+functional_areas:
+  - Integration
 ---
 
 This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens. 

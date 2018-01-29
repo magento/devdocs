@@ -7,6 +7,8 @@ menu_title: GiftCardSharedCatalog
 menu_order: 130
 version: 2.2
 github_link: mrg/b2b/GiftCardSharedCatalog.md
+functional_areas:
+  - B2B
 ---
 
 ## Overview
@@ -45,7 +47,7 @@ The following directory contains extensible UI components:
 
 * `Magento\GiftCardSharedCatalog\view\adminhtml\ui_component` - renderer for pricing and structure listings
 
-For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui-components/ui-listing-grid.html).
+For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
 
 ## Additional information
 

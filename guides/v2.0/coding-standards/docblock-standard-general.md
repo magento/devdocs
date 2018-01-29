@@ -9,6 +9,8 @@ menu_order: 4
 version: 2.0
 github_link: coding-standards/docblock-standard-general.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
+functional_areas:
+  - Standards
 ---
 
 
@@ -611,7 +613,7 @@ class LimitedMutableClass implements MutableInterface
 ### @api tag
 {:#api}
 
-The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy](../extension-dev-guide/backward-compatibility.html).
+The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{page.baseurl}}extension-dev-guide/backward-compatibility.html).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
  If the `@api` tag is applied at the file level, then all methods within the file are part of the public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.

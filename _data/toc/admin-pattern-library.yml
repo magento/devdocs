@@ -80,6 +80,7 @@ pages:
           url: pattern-library/getting-user-input/select_from_list/select_from_list.html
 
     - label: Graphics
+      versions: ["2.1","2.2", "2.3"]
       children:
 
         - label: Iconography

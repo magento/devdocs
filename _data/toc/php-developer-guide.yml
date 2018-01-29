@@ -111,7 +111,7 @@ pages:
         - label: How to add CLI commands
           url: extension-dev-guide/cli-cmds/cli-howto.html
 
-    - label: Staging (Enterprise Edition only)
+    - label: Staging (Magento Commerce only)
       versions: ["2.1","2.2", "2.3"]
       url: extension-dev-guide/staging.html
 
@@ -168,7 +168,7 @@ pages:
             - label: Adding a custom indexer
               url: extension-dev-guide/indexing-custom.html
 
-        - label: Message Queues (Enterprise Edition Only)
+        - label: Message Queues (Magento Commerce Edition Only)
           children:
 
             - label: Message queues overview

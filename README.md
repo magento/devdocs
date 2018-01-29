@@ -2,44 +2,91 @@
 
 Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases.
 
-To contribute, please fork the `develop` branch. 
+To contribute, please fork the `develop` branch.
 
 # Building this site
 
-You can build this site locally using Jekyll
+You can build this site locally in the following ways:
 
-*	Windows users _must_ build the site in a Vagrant container running on Virtual Box as discussed in more detail in the [Vagrant README](vagrant/README.md).
+- [Installing the project dependencies locally](#build-using-jekyll) (Mac, Linux)
+- [Using a Docker container](#build-using-docker) (Mac, Linux)
+- [Using a Vagrant virtual machine](#build-using-vagrant) (Mac, Linux, Windows)
 
-	We use symbolic links (symlinks) in the `guides/v2.1` directory to link to topics that haven't changed since the 2.0.x release. Because symlinks aren't supported by Windows, you _cannot_ use the Windows environment; you must use a Linux environment.
+## Build using Jekyll
 
-*	Mac and Linux users can build this site locally using Jekyll or you can use Vagrant. 
+For local builds, you need to install [Bundler](http://bundler.io/), and [Ruby](https://www.ruby-lang.org) version manager.
 
-	Vagrant might be easier because the software runs in a container that isn't dependent on, and cannot conflict with, any other software installed on your computer.
+### To prepare your MacOS environment:
+1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
+1. Use Homebrew to install a Ruby version manager.
+
+   ```
+   $ brew install rbenv ruby-build
+   ```
+
+1. Add rbenv to bash so that it loads every time you open a terminal.
+
+   ```
+   $ echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+   ```
+
+1. Source your `.bash_profile` file.
+
+   ```
+   $ source ~/.bash_profile
+   ```
+
+1. Install a specific version of Ruby.
+
+   ```
+   $ rbenv install 2.4.x
+   $ rbenv global 2.4.x
+   $ ruby -v
+   ```
+
+1. Install the Bundler gem, which helps with Ruby dependencies.
+
+   ```
+   $ gem install bundler
+   ```
+
+1. Run `bundle install` the first time you are in the `devdocs` directory or when you need to pick up theme changes.
+
+### To build locally:
+Once you have completed preparing your environment, you can build locally and review the site in your browser.
+
+1. Run the serve command.
+
+   ```
+   $ bundle exec jekyll serve --incremental
+
+    Configuration file: /Users/username/Github/devdocs/_config.yml
+                Source: /Users/username/Github/devdocs
+           Destination: /Users/username/Github/devdocs/_site
+     Incremental build: enabled
+          Generating...
+                        done in x.x seconds.
+     Auto-regeneration: enabled for '/Users/username/Github/devdocs'
+        Server address: http://127.0.0.1:4000//
+      Server running... press ctrl-c to stop.
+   ```
+
+1. Use the **Server address** URL `http://127.0.0.1:4000/` in a browser to preview the content.
+
+1. Press `Ctrl+C` in the serve terminal to stop the server.
+
+> ***TIP***  
+> Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file requires a fresh build. Using the `--incremental` option limits re-builds to posts and pages that have changed.
+
+## Build using Docker
+
+[This Docker container](https://github.com/magento-devdocs/docker-for-devdocs) contains everything necessary to run Jekyll3 for working with Magento DevDocs.
 
 ## Build using Vagrant
 
-To build the site locally using Vagrant you need only the files in the `vagrant/` directory.
-For more information, see the [Vagrant README](vagrant/README.md).
+You can deploy the devdocs site locally using [this Vagrant project](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
 
-## Requirements
-
-Currently, building this site requires:
-
-*	Ruby Version: >= 2.0.0
-
-Use [bundler](http://bundler.io/) to get compatible versions of other dependencies.
-
-## Build locally in Mac or Linux
-
-To build this site locally:
-
-```bash
-# Install dependencies
-$ bundle install
-
-# Visit http://localhost:4000 in your favorite browser!
-$ bin/jekyll serve --incremental
-```
+***
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
@@ -47,4 +94,4 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 *	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
 
-*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built on GitHub using [Jekyll](http://jekyllrb.com/).
+*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).

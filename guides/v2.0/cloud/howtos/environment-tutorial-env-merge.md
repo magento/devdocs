@@ -1,18 +1,16 @@
 ---
 layout: default
-group: cloud
-subgroup: How To
+group:
+subgroup:
 title: Merge and delete an environment (tutorial)
 menu_title: Merge and delete an environment (tutorial)
-menu_order: 51
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/howtos/environment-tutorial-env-merge.md
-redirect_from: 
-  - guides/v2.0/cloud/env/environment-tutorial-env-merge.html
-  - guides/v2.1/cloud/env/environment-tutorial-env-merge.html
-  - guides/v2.0/cloud/env/environment-tutorial-parent.html
-  - guides/v2.1/cloud/env/environment-tutorial-parent.html
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 ## Merge an environment {#tut-env-merge}
@@ -103,7 +101,7 @@ To delete a environment:
 		Delete the remote Git branch too? [Y/n]
 
 	A `Y` answer completely removes the branch from the project.
-		
+
 Wait for the environment to delete.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -111,4 +109,4 @@ Wait for the environment to delete.
 </div>
 
 #### Related topic
-[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
+[Set Magento environment variables]({{page.baseurl}}cloud/env/set-variables.html)

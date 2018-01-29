@@ -7,8 +7,13 @@ menu_title: Configure nginx and Elasticsearch
 menu_order: 5
 menu_node:
 version: 2.1
-ee_only: true
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-nginx.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
 #### Contents
@@ -21,7 +26,7 @@ github_link: config-guide/elasticsearch/es-config-nginx.md
 
 {% include config/es-webserver-overview.md %}
 
-## Set up a proxy {#es-nginx-prox}
+## Set up a proxy {#es-nginx-proxy}
 This section discusses how to configure nginx as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
 
 <div class="bs-callout bs-callout-info" id="info">

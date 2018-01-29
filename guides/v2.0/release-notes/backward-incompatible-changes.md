@@ -3,7 +3,8 @@ layout: default
 group: release-notes
 title: Magento 2.0 Backward Incompatible Changes
 github_link: release-notes/backward-incompatible-changes.md
-redirect_from: release-notes/changes_2.0.html
+version: 2.0
+redirect_from: guides/v2.0/release-notes/changes_2.0.html
 ---
 
 This topic discusses the most important backward incompatible changes made after Magento 2.0.0 release in scope of 2.0 version.
@@ -142,7 +143,7 @@ When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09c
 
 <!-- LINK DEFINITIONS -->
 
-[Magento’s backward compatibility policy]: http://devdocs.magento.com/guides/v2.0/architecture/backward-compatibility.html
+[Magento’s backward compatibility policy]: http://devdocs.magento.com/guides/v2.0/contributor-guide/backward-compatible-development/index.html
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml

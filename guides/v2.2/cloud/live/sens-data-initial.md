@@ -4,12 +4,13 @@ group: cloud
 subgroup: 120_env
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 72
+menu_order: 25
 menu_node:
-level3_menu_node:
-level3_subgroup:
 version: 2.2
 github_link: cloud/live/sens-data-initial.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 Configuration management exports your configurations to a file for pushing across your environments. This file, `config.php`, keeps your configurations consistent across all environments, decreases downtime by moving static deploy to build, and much more. This information details an example for configuring your settings, exporting the file, and deploying it.
@@ -28,7 +29,7 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}clou
 	* Commit and push to Git.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
 </div> -->
 For example, you may want to set the following settings:
 
@@ -86,11 +87,11 @@ To create and transfer `config.php`:
 		magento-cloud environment:ssh --pipe
 2.	Create `config.php` on the integration server.
 
-		ssh -k <SSH URL> "php bin/magento magento-cloud:scd-dump"
+		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 5.	If you haven't done so already, change to the project root directory.
 6.	Transfer `config.php` to your local system.
 
@@ -178,7 +179,7 @@ To add additional configuration values in the Integration environment Magento Ad
 1.	If you haven't done so already, log out of the Integration Admin.
 2.	Log in to the Integration Admin.
 
-	For URL and credentials, see [Find Admin login information](#cloud-deploy-admin-login).
+	For URL and credentials, see [Find Admin login information](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 3.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 4.	In the right pane, expand **JavaScript Settings**.
 5.	From the **Merge JavaScript Files** list, click **Yes**.
@@ -187,18 +188,18 @@ To add additional configuration values in the Integration environment Magento Ad
 8.	Log out of the Magento Admin.
 
 ### Run the config.php command {#regenerate}
-By running the command again for `magento-cloud:scd-dump`, the new configuration is appended to the file.
+By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new configuration is appended to the file.
 
 1.	On your local system, find the integration server's SSH URL.
 
 		magento-cloud environment:ssh --pipe
 2.	Run the `config.php` creation command again on the Integration server.
 
-		ssh -k <SSH URL> "php bin/magento magento-cloud:scd-dump"
+		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 3.	If you haven't done so already, change to the project root directory.
 4.	Transfer `config.php` to your local system.
 

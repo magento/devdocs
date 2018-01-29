@@ -40,20 +40,23 @@ The Framework is responsible for operations that are useful for potentially all 
 Here is the Magento Framework folder structure:
 
 <pre>
-Lib/
-    ../Internal
-        ../Magento
-            ../Framework
+vendor/
+    ../magento
+        ../framework
+lib/
+    ../internal
+        ../LinLibertineFont
+    ../web
  </pre>
 
-* `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and LESS/CSS.
+* `/vendor/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} rendering.
 
-* `/lib/internal/Magento/Framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} rendering.
+* `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and LESS/CSS.
 
 * `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p>
+  <p>The <code>vendor/magento/framework</code> directory maps to the <code>Magento\Framework</code> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p>
 </div>
 
 ## Highlights of Magento Framework

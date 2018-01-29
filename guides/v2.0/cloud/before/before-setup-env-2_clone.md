@@ -15,6 +15,9 @@ redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-env.html
   - /guides/v2.1/cloud/before/before-setup-env-env.html
   - /guides/v2.2/cloud/before/before-setup-env-env.html
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 #### Previous step:
@@ -22,7 +25,7 @@ redirect_from:
 
 The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
 
-To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation){:target="_blank"}.
+To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation){:target="\_blank"}.
 
 The commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. For a full list of Magento Cloud CLI commands, enter `magento-cloud list` or see the [Magento CLI reference]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
@@ -60,12 +63,12 @@ To clone the project's `master` environment to your local:
 	`magento-cloud environment:list` displays environment hierarchies whereas `git branch` does not. If you have any nested environments, use `magento-cloud environment:list`.
 	</div>
 
-8.	Fetch origin branches:
+8.	Fetch remote branches:
 
-		git fetch origin
+		git fetch magento
 9.	Pull updated code:
 
-		git pull origin <environment ID>
+		git pull magento <environment ID>
 
 ## Change the Magento Admin URL, user name, and password on master {#setvariables}
 We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned `master`. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
@@ -88,7 +91,7 @@ To set Admin variables, you will use this command format:
 
 	magento-cloud variable:set <name> <value> -e <environment ID>
 
-You can also [log into your project](https://accounts.magento.cloud){:target="_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
+You can also [log into your project](https://accounts.magento.cloud){:target="\_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
@@ -137,7 +140,7 @@ To set variables using the CLI (with example values used):
 ### Add variables using the Project Web Interface {#web}
 To set variables using the Project Web Interface:
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="\_blank"}.
 2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
 
 	![Project without code]({{ site.baseurl }}common/images/cloud_project_empty.png)
