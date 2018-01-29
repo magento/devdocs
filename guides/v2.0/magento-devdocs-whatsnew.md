@@ -11,6 +11,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+MFTF 1.0: Updated descriptions for the `before` and `after` attributes in [Actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-1/cest/actions.html)|2.2.x|Updated|Jan 23
 Advanced Reporting: added more details to [Prerequisites](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html)|2.2.x|Updated|Jan 22
 We updated the [quarterly contributors](http://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page for Q4 2017.|2.x|Updated|Jan 18
 MFTF: Updated [actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/cest/actions.html) and added [Changelog](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/changelog.html)|2.2.x|Updated|Jan 12
