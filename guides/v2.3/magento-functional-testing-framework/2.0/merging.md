@@ -1,9 +1,9 @@
 ---
 layout: default
 group: mftf
-title: Merging in the Magento Functional Testing Framework
+title: Merging in the Magento Functional Testing Framework (release 2)
 version: 2.3
-github_link: magento-functional-testing-framework/2.0/merging.md
+github_link: magento-functional-testing-framework/release-2/merging.md
 functional_areas:
  - Testing
 ---
