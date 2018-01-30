@@ -217,6 +217,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58132-->* We’ve fixed problems with the uninstall process. Previously, when Magento tries to uninstall a module using composer, it simultaneously tried to update the `symfony/process` version. However,  because the `module:uninstall`  command uses   `symfony/process`, the command stopped running. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
 
+<!--- 58132-->* We’ve fixed problems with the uninstall process. Previously, when Magento tries to uninstall a module using composer, it simultaneously tried to update the `symfony/process` version. However,  because the `module:uninstall`  command uses   `symfony/process`, the command stopped running. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
 
 
 ### AMQP 
@@ -231,6 +232,8 @@ This release contains hundreds of fixes and enhancements.
 <!--- 70518-->* You can now override queue publishers configuration through the `env.php` file.
 
 <!--- 66993-->* Magento now re-processes queue messages if the consumer process is terminated.
+
+<!--- 58081-->*  Magento no longer inserts HTTPSS:// for HTTPS in a store address when you install Magento using an HTTPS address over SSL. [GitHub-6262](https://github.com/magento/magento2/issues/6262)
 
 
 ### Cart and checkout
@@ -314,6 +317,8 @@ This release contains hundreds of fixes and enhancements.
 <!--- 60110-->* When you select `New Address` while reviewing order information during check out, Magento now profiles the user name and country fields, but leaves the address fields empty. Previously, Magento did not leave the address fields empty, and the checkout process failed. [GitHub-6869](https://github.com/magento/magento2/issues/6869)
 
 <!--- 57682-->* Checkout agreement validation now works as expected after you change payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
+
+<!--- 58059-->* The shopping cart now displays a shipping rate that reflects tax settings. Previously, the prices displayed in your shopping cart were not adjusted to include these settings. [GitHub-6166](https://github.com/magento/magento2/issues/6166)
 
 <!--- 58059-->* The shopping cart now displays a shipping rate that reflects tax settings. Previously, the prices displayed in your shopping cart were not adjusted to include these settings. [GitHub-6166](https://github.com/magento/magento2/issues/6166)
 
@@ -457,7 +462,14 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58053 -->* Product images in Magento installations with multiple store views are now assigned as expected to each store view. [GitHub-6259](https://github.com/magento/magento2/issues/6259)
 
-59512
+<!--- 59130 -->* Products returned by an API product paginated search now include `category_ids` as a member of `custom_attributes`. [GitHub-6127](https://github.com/magento/magento2/issues/6127)
+
+<!--- 58053 -->* Product images in Magento installations with multiple store views are now assigned as expected to each store view. [GitHub-6259](https://github.com/magento/magento2/issues/6259)
+
+<!--- 56943-->*  Magento now successfully handles purchases of product with minimum quantities of less than one. [GitHub-5570](https://github.com/magento/magento2/issues/5570)
+
+<!--- 58290 -->* Magento no longer adds an empty product option to each PUT request. Previously, Magento added an empty option even when the options array was empty. [GitHub-5963](https://github.com/magento/magento2/issues/5963)
+
 
 ### Configurable products
 
@@ -575,6 +587,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
 
+<!---58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a> 
 
 
 #### Configuration framework
@@ -751,6 +764,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 57675-->* Magento now displays the WYSIWYG editor as expected. [GitHub-6222](https://github.com/magento/magento2/issues/6222), [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6815](https://github.com/magento/magento2/issues/6815)
 
+<!--- 57796-->* Magento now renders images as expected in the product description area. Previously, Magento did not render images in this area, and would display a broken link. [GitHub-6138](https://github.com/magento/magento2/issues/6138)
 
 
 
@@ -903,8 +917,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---63835 -->* The CatalogImportExport uploader can now handle HTTPS images. Previously, if the URL of a file contained HTTPS, the uploader  still used the HTTP provider to retrieve the image, which lead to an error. [GitHub-8277](https://github.com/magento/magento2/issues/8277)
 
-<!---58385 -->* Magento now updates attribute sets as expected when importing  products from CSV. [GitHub-5498](https://github.com/magento/magento2/issues/5498)
-
 <!--- 57675-->* Magento now displays the WYSIWYG editor as expected. [GitHub-6222](https://github.com/magento/magento2/issues/6222), [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6815](https://github.com/magento/magento2/issues/6815)
 
 <!--- 56014-->* The Admin’s Most Viewed Products tab now displays correct product prices. Previously, prices for products in Most Viewed Products tab were incorrectly listed as $0. [GitHub-5660](https://github.com/magento/magento2/issues/5660)
@@ -1026,6 +1038,12 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 57880-->*  You can now cancel an order of a bundle product. [GitHub-5194](https://github.com/magento/magento2/issues/5194)
 
+<!--- 57312-->* We’ve fixed an issue with an undefined offset in the `order\config.php` file. [GitHub-6111](https://github.com/magento/magento2/issues/6111)
+
+<!--- 56014-->* The Admin’s Most Viewed Products tab now displays correct product prices. Previously, prices for products in Most Viewed Products tab were incorrectly listed as $0. [GitHub-5660](https://github.com/magento/magento2/issues/5660)
+
+
+<!--- 57846-->* New orders no longer stay in the processing state after you click the Place Order button. Previously, new orders stayed in the processing state even after you clicked Place Order. [GitHub-5860](https://github.com/magento/magento2/issues/5860) 
 
 
 
@@ -1055,7 +1073,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 * We've introduced the `Magento\Vault\Block\TokenRendererInterface::getToken` method. This method provides details about payment tokens to renderer components, such as public hash and available card or account details. Third-party developers can use this method to implement this functionality in their payment integrations.
 
-<!--- 56345-->*  56345 Error messages associated with the `Authorize.net` payment method are now translated to fit the configured locale. [GitHub-5934](https://github.com/magento/magento2/issues/5934)
+<!--- 56345-->* Error messages associated with the `Authorize.net` payment method are now translated to fit the configured locale. [GitHub-5934](https://github.com/magento/magento2/issues/5934)
+
+<!--- 58722-->* We’ve increased the size of the `shipping_method` column in the `sales_order` and `quote_address` tables. [GitHub-6475](https://github.com/magento/magento2/issues/6475)
+
+<!---56347 -->* We’ve fixed an issue with the REST API that previously resulted in the PayPal gateway rejecting requests. [GitHub-10410](https://github.com/magento/magento2/issues/10410)
 
 
 #### Braintree
@@ -1235,6 +1257,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 56871 -->* Non-administrative users with access rights to Products, Marketing, Promotions, and Cart Price rules can now search for categories in Cart Price rules. GitHub-6168](https://github.com/magento/magento2/issues/6168)
 
+<!--- 56871 -->* Non-administrative users with access rights to Products, Marketing, Promotions, and Cart Price rules can now search for categories in Cart Price rules. GitHub-6168](https://github.com/magento/magento2/issues/6168)
 
 
 ### Scope
@@ -1277,6 +1300,8 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
 
+<!---56097 -->* Magento no longer throws an indexing error when Elastic search is enabled. 
+
 
 ### Shipping
 
@@ -1309,6 +1334,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 59149-->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
+<!--- 58664-->* The Free Shipping rule now works as expected with table rate shipping. [GitHub-6346](https://github.com/magento/magento2/issues/6346)
 
 
 ### Sitemap
@@ -1483,6 +1509,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---64295 -->* URL rewrites are now correctly generated for multiple store views during product import.  [GitHub-8396](https://github.com/magento/magento2/issues/8396)
 
+<!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923) 
 
 
 
@@ -1540,6 +1567,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---58652 -->* Magento now sends REST multiselect attribute values in compatible formats. Previously, putting an unchanged GET returned errors on the multiselect attribute, and the only way to clear a multi-select field of all selections was to delete the product and re-create it. [GitHub-6120](https://github.com/magento/magento2/issues/6120)
 
+<!---58338 -->* The REST API now successfully handles attribute options that start with a number. [GitHub-5715](https://github.com/magento/magento2/issues/5715)
 
 
 

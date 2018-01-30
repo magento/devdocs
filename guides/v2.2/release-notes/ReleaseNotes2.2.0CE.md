@@ -256,6 +256,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58059-->* The shopping cart now displays a shipping rate that reflects tax settings. Previously, the prices displayed in your shopping cart were not adjusted to include these settings. [GitHub-6166](https://github.com/magento/magento2/issues/6166)
 
+<!--- 59807-->* Magento now displays the ”Thank you for your purchase!" on the checkout success page.
 
 
 ### Catalog
@@ -487,6 +488,8 @@ This release contains hundreds of fixes and enhancements.
 
 <!---57995 -->* Videos now play as expected on simple products as they do  for configurable products. Previously, simple product videos were displayed as thumbnail images only.[GitHub-6360](https://github.com/magento/magento2/issues/6360)
 
+<!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, special characters in the store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094)
+
 
 
 #### Admin framework
@@ -510,11 +513,13 @@ This release contains hundreds of fixes and enhancements.
 
 <!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
 
-
+<!---58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a> 
 
 #### Configuration framework
 
 <!--- 65003 -->* The currency setup in Admin no longer throws an `in_array` error when a single value is selected. *Fix submitted by community member <a href="https://github.com/deriknel" target="_blank">Derik Nel</a> in pull request <a href="https://github.com/magento/magento2/pull/8077" target="_blank">8077</a>.*
+
+<!--- 65422 -->* Magento now writes all default configuration values to the `config.php` file.
 
 
 
@@ -910,7 +915,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---56347 -->* We’ve fixed an issue with the REST API that previously resulted in the PayPal gateway rejecting requests. [GitHub-10410](https://github.com/magento/magento2/issues/10410)
 
-<!--- 56345-->*  56345 Error messages associated with the `Authorize.net` payment method are now translated to fit the configured locale. [GitHub-5934](https://github.com/magento/magento2/issues/5934)
+<!--- 56345-->* Error messages associated with the `Authorize.net` payment method are now translated to fit the configured locale. [GitHub-5934](https://github.com/magento/magento2/issues/5934)
 
 <!--- 58722-->* We’ve increased the size of the `shipping_method` column in the `sales_order` and `quote_address` tables. [GitHub-6475](https://github.com/magento/magento2/issues/6475)
 
@@ -1302,6 +1307,10 @@ This release includes substantial improvements to Magento caching, image process
 <!---58338 -->* The REST API now successfully handles attribute options that start with a number. [GitHub-5715](https://github.com/magento/magento2/issues/5715)
 
 <!---58269 -->* You can now save a billing address using the REST  ’useForShipping' parameter. Previously use of the parameter resulted in a Rest API V1 error. [GitHub-6557](https://github.com/magento/magento2/issues/6557), [GitHub-5180](https://github.com/magento/magento2/issues/5180)
+
+<!---58609 -->* We’ve resolved issues updating `default_frontend_label` using REST. [GitHub-5963](https://github.com/magento/magento2/issues/5963)
+
+<!---58652 -->* Magento now sends REST multiselect attribute values in compatible formats. Previously, putting an unchanged GET returned errors on the multiselect attribute, and the only way to clear a multi-select field of all selections was to delete the product and re-create it. [GitHub-6120](https://github.com/magento/magento2/issues/6120)
 
 
 ## Community contributions
