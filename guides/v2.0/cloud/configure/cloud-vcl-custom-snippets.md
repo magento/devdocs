@@ -76,7 +76,7 @@ The following is an example of a returned JSON for a customer VCL snippet:
 {% highlight json %}
 {
   "id": "62Yd1WfiCBPENLloXfXmlO",
-  "service_id": "{Service ID}",
+  "service_id": "{FASTLY_SERVICE_ID}",
   "version": "{Editable Version #}",
   "name": "apply_acl",
   "priority": "100",
@@ -194,7 +194,7 @@ For more information on this Fastly API, see this [get version command](https://
 ## Clone the active VCL version and all snippets {#clone}
 Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version with a new version number. After you clone the version, you can [modify and add](#create-snippet) VCL snippets. Save the new version number as you will need it for the bash script.
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Current Active Version #}/clone
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Current Active Version #}/clone
 
 For more information on this Fastly API, see this [clone command](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709){:target="_blank"}.
 
@@ -206,7 +206,7 @@ When you validate and activate your snippets, you actually activate a version. A
 
 To generate the version, use the following command with your Service ID and API key in the command:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{Service ID}/version
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X POST https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version
 
 Fastly returns the editable version number and Service ID. You use the version number when creating, calling, and managing VCL snippets. For example:
 
@@ -281,13 +281,13 @@ To add custom snippets:
 ## Validate and activate snippets for a version {#validate}
 When you add the VCL snippet(s) to the version, Fastly creates and assigns it to your service per that version number. Next, you should validate the entered VCL snippets with Fastly. Use the following command to validate all snippets for the version:
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/validate
 
 Fastly should return: `"status": "ok"`. If you received an OK, activate the version for that service.
 
 Assuming no errors (if there are errors, fix them before proceeding), the last step is to activate the version with the following command. All VCL snippets associated with the version activate and the previous version snippets deactivate.
 
-	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
+	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate
 
 If your received errors back from Fastly, track down the errors and update the specific snippet with the following command. Make sure to use the same version number you are working to activate.
 
