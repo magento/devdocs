@@ -88,7 +88,7 @@ You can review these logs via SSH into the environment. Change to the directorie
 
 Logs from the deploy hook are located on the server in the following locations:
 
-*	Integration: `/tmp/log/deploy.log`
+*	Integration: `/var/log/deploy.log`
 *	Staging: `/var/log/platform/<prodject ID>/post_deploy.log`
 *	Production: `/var/log/platform/{1|2|3}.<prodject ID>/post_deploy.log`
 
