@@ -185,7 +185,7 @@ The following are **best practices and recommendations**:
 ## Locate the currently active VCL snippet version {#list}
 To view an entire list of all VCL snippets by version, use the following command:
 
-	curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version -H "Fastly-Key: <FASTLY_API_TOKEN>"
+	curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/active -H "Fastly-Key: <FASTLY_API_TOKEN>"
 
 Look for the `active` key from the returned list. This is the version you will clone in the next section.
 
