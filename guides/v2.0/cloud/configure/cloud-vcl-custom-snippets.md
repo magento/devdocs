@@ -142,7 +142,7 @@ To create the bash script files:
           TYPE=${vcl%.vcl}
           curl -X POST -s https://app.fastly.com/service/${SERVICE_ID}/version/${VERSION}/snippet \
           -H 'Content-Type: application/json' \
-          -H "Fastly-Key:$API_KEY" \
+          -H "Fastly-Key: $API_KEY" \
           --data "name=${SNIPPET_NAME_PREFIX}_${TYPE}&type=$TYPE&dynamic=0&content=$(cat $vcl | rawurlencode)";
           done
 2. Save two versions of the file: `staging_snippets.sh` and `production_snippets.sh`.
@@ -185,7 +185,7 @@ The following are **best practices and recommendations**:
 ## Locate the currently active VCL snippet version {#list}
 To view an entire list of all VCL snippets by version, use the following command:
 
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key: FASTLY_API_TOKEN"
 
 Look for the `active` key from the returned list. This is the version you will clone in the next section.
 
@@ -249,11 +249,11 @@ For detailed examples and custom code, see the following:
 <!-- ### Update an existing VCL snippet {#update}
 Locate the snippet you want to update from the list of snippets included in the cloned version. You can use the following command to list the snippets:
 
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Cloned version #>/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Cloned version #>/snippet/ -H "Fastly-Key: FASTLY_API_TOKEN"
 
 Copy the data and build a `curl` command with the cloned version number, name, and edits. The following is an example template for the update command. You would enter the cloned version number for `Editable Version #` and data for the command in `--data`.
 
-	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
+	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key: FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
 
 If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults). -->
 
@@ -291,24 +291,24 @@ Assuming no errors (if there are errors, fix them before proceeding), the last s
 
 If your received errors back from Fastly, track down the errors and update the specific snippet with the following command. Make sure to use the same version number you are working to activate.
 
-	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
+	curl -X PUT -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key: FASTLY_API_TOKEN" -H 'Content-Type: application/x-www-form-urlencoded' --data $'content=if ( req.url ) {\n set req.http.my-snippet-test-header = \"affirmative\";\n}';
 
 For more information on these Fastly APIs, see [validate](https://docs.fastly.com/api/config#version_97f8cf7bfd5dc2e5ea1933d94dc5a9a6){:target="_blank"} and [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5){:target="_blank"} commands.
 
 ## Manage regular VCL snippets with curl {#manage-vcl}
 To review an individual snippet, enter the following API call in a terminal:
 
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key: FASTLY_API_TOKEN"
 
 To list all regular VCL snippets attached to a service, enter the following API call in a terminal:
 
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key:FASTLY_API_TOKEN"
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key: FASTLY_API_TOKEN"
 
 If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a priority of 100 (overrides the defaults).
 
 To delete an individual VCL snippet using the API, get a list of snippets and enter a `curl` command with the speicific snippet information to delete. We recommend keeping a copy of the `.vcl` file in an archive directory if you need to recreate it later.
 
-	curl -X DELETE -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key:FASTLY_API_TOKEN"
+	curl -X DELETE -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/<Snippet Name e.g my_regular_snippet> -H "Fastly-Key: FASTLY_API_TOKEN"
 
 #### Fastly resources
 For Fastly resources on creating VCL snippets, you can review their docs:
