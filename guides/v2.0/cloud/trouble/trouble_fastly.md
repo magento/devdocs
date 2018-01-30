@@ -252,7 +252,7 @@ Verify if you have the correct Fastly Service ID and API token in your environme
 ### Check VCL snippets {#snippets}
 If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:
 
-	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key: FASTLY_API_TOKEN"
+	curl -X GET -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key: <FASTLY_API_TOKEN>"
 
 Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 
@@ -261,7 +261,7 @@ Using `curl` commands and APIs, you can activate, deactivate, and delete a versi
 
 1. List and find a version you want to activate. For a fully deactivated service, all of the versions will have a flag of `active: false`.
 
-    curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key: FASTLY_API_TOKEN"
+    curl -X GET -s https://api.fastly.com/service/<Service ID>/version -H "Fastly-Key: <FASTLY_API_TOKEN>"
 
 2. Use the following command to validate all snippets for the version you want to activate:
 
