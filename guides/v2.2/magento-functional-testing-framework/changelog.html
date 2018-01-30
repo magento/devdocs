@@ -620,9 +620,36 @@
 
 			<h1 id="magento-functional-testing-framework-changelog">Magento Functional Testing Framework Changelog</h1>
 
-<h2 id="201">2.0.1</h2>
+<h2 id="202">2.0.2</h2>
+
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+  <li>Customizability
+    <ul>
+      <li>Added the <code class="highlighter-rouge">&lt;magentoCLI&gt;</code> test action. Action takes the given <code class="highlighter-rouge">command=""</code> and passes it for execution in Magento Environment.
+        <ul>
+          <li>Note: Installation step to enable above action has been added. See <code class="highlighter-rouge">Step 5</code> in the MFTF <code class="highlighter-rouge">Getting Started</code> article.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Maintainability
+    <ul>
+      <li>Tests now run actions declared in <code class="highlighter-rouge">&lt;after&gt;</code> hook in both successful and failed test runs.</li>
+    </ul>
+  </li>
+</ul>
 
 <h3 id="fixes">Fixes</h3>
+<ul>
+  <li>Fixed inability to use <code class="highlighter-rouge">[]</code> characters within selector/url parameters.</li>
+  <li>Fixed a bug where the <code class="highlighter-rouge">&lt;formatMoney&gt;</code> action did not return a variable for test use.</li>
+  <li>Fixed a bug where the <code class="highlighter-rouge">&lt;waitForLoadingMaskToDisappear&gt;</code> action could not be used twice in an <code class="highlighter-rouge">&lt;actionGroup&gt;</code>.</li>
+</ul>
+
+<h2 id="201">2.0.1</h2>
+
+<h3 id="fixes-1">Fixes</h3>
 <ul>
   <li>Fixed an issue with <code class="highlighter-rouge">group</code> annotation.</li>
 </ul>
@@ -630,7 +657,7 @@
 <h2 id="200">2.0.0</h2>
 <p>Changes are compatible with Magento v2.3</p>
 
-<h3 id="enhancements">Enhancements</h3>
+<h3 id="enhancements-1">Enhancements</h3>
 <ul>
   <li>Modularity
     <ul>
@@ -659,7 +686,7 @@
   </li>
 </ul>
 
-<h3 id="fixes-1">Fixes</h3>
+<h3 id="fixes-2">Fixes</h3>
 <ul>
   <li>Fixed the <code class="highlighter-rouge">unselectOption.parameterArray</code> property to work as expected.</li>
   <li>Fixed a crash if you had a system environment variable set with the same name as any variable in the <code class="highlighter-rouge">.env</code> file.</li>
