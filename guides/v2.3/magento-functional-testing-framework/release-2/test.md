@@ -31,12 +31,6 @@ The following diagram demonstrates XML structure of a test case in the MFTF:
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
-    <tests name="">
-        <annotations>
-            <features value=""/>
-            <stories value=""/>
-            <group value=""/>
-        </annotations>
         <test name="">
             <annotations>
                 <!-- TEST ANNOTATIONS -->
@@ -47,7 +41,7 @@ The following diagram demonstrates XML structure of a test case in the MFTF:
             <after>
                 <!-- ACTIONS AND ACTION GROUPS PERFORMED AFTER THE TEST -->
             </after>
-            <!-- TEST ACTIONS AND ACTION GROUPS -->
+            <!-- TEST ACTIONS, ACTION GROUPS, AND ASSERTIONS-->
         </test>
     </tests>
 </config>
@@ -70,7 +64,7 @@ Reference documentation with details about XML elements that may be used in test
 
 ### tests {#tests-tag}
 
-A container for multiple tests. Logically, it is a group of tests that define test flows within a test case.
+A container for multiple tests. Logically, it is a group of test methods that define test flows within a test case.
 
 It MUST contain at least one [`<test>`][test].
 
@@ -79,7 +73,7 @@ It MUST contain at least one [`<test>`][test].
 
 ### test {#test-tag}
 
-A set of actions with an assertion.
+A set of actions with an assertion. Logically, it is a sequence of test steps that define test flow within a test method.
 
 Attribute|Type|Use|Description
 ---|---|---|---
