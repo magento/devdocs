@@ -1814,6 +1814,8 @@
 
 			<p>Use the Bitbucket integration to automatically build and deploy an environment when you push new code to Bitbucket. This integration synchronizes your Bitbucket repository with your Magento Commerce (Cloud) account.</p>
 
+<p>For Pro projects <strong>created before October 23, 2017</strong>, this integration works on Integration environments <em>only</em>. You must <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">request an upgrade</a> before you can use this integration on Staging and Production environments.</p>
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>We <em>strongly</em> recommend using a private Bitbucket repository for your Magento Commerce (Cloud) project.</p>
 </div>
@@ -1822,7 +1824,7 @@
 <ul>
   <li>You must have a Magento Commerce (Cloud) project and you must be an administrator of the project.</li>
   <li>You must have a Bitbucket account and administrative access to the Bitbucket repository you want to integrate.</li>
-  <li>You must install the <a href="/guides/v2.1/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install">Magento Cloud CLI</a> tool in your local environment.</li>
+  <li>You must install the <a href="/guides/v2.1/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install"><code class="highlighter-rouge">magento-cloud</code> CLI</a> tool in your local environment.</li>
 </ul>
 
 <h2 id="prepare-your-repository">Prepare your repository</h2>
@@ -1936,7 +1938,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
     </div>
   </li>
   <li>
-    <p>Add the integration to your project using the Magento Cloud CLI. Replace <code class="highlighter-rouge">PROJECT ID</code> with your Magento Commerce (Cloud) project ID.</p>
+    <p>Add the integration to your project using the <code class="highlighter-rouge">magento-cloud</code> CLI tool. Replace <code class="highlighter-rouge">PROJECT ID</code> with your Magento Commerce (Cloud) project ID.</p>
 
     <div class="bs-callout bs-callout-warning">
       <p>Running the following command overwrites <em>all</em> code in your Magento Commerce (Cloud) project with code from your Bitbucket repository. This includes all branches, including the master (production) branch. This action happens instantly and cannot be undone.</p>
@@ -1985,9 +1987,37 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 </ol>
 
 <h2 id="branching">Branching</h2>
-<p>The Bitbucket integration cannot create new environments in your project, so you must use the Magento Cloud CLI to <a href="/guides/v2.1/cloud/env/environments-start.html#getstarted">create branches</a>.</p>
+<p>The Bitbucket integration cannot create new environments in your project, so you must use the <code class="highlighter-rouge">magento-cloud</code> CLI tool to <a href="/guides/v2.1/cloud/env/environments-start.html#getstarted">create branches</a>.</p>
 
 <p>After creating a new environment, you can push the corresponding branch up to your remote Bitbucket repository using regular git commands. For example, <code class="highlighter-rouge">git push -u origin &lt;your-branch&gt;</code>. Subsequent changes to your branch in Bitbucket will automatically build and deploy the environment.</p>
+
+<h2 id="remove-the-integration">Remove the integration</h2>
+<p>You can safely remove the Bitbucket integration from your project without affecting your code.</p>
+
+<p>To remove the integration using the <code class="highlighter-rouge">magento-cloud</code> CLI tool:</p>
+
+<ol>
+  <li>
+    <p>Log in to your project.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List your integrations. You need the Bitbucket integration ID to complete the next step.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:list
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Delete the integration.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:delete &lt;ID&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>You can also remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the <em>Settings</em> page.</p>
 
 		</div>
 		<!-- /.content-wrap -->
