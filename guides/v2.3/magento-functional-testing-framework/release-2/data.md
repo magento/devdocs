@@ -238,8 +238,8 @@ Individual piece of data to be passed in as part of the parent array type.
 
 <!-- devdocs links -->
 
-[see]: cest/actions.html#see
-[test actions]: cest/actions.html#actions-returning-a-variable
+[see]: ./test/actions.html#see
+[test actions]: ./test/actions.html#actions-returning-a-variable
 
 <!-- External links-->
 
