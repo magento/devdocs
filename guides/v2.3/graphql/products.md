@@ -39,9 +39,9 @@ These attributes can be used to create filters:
 Attribute | Data type | Description
 --- | --- | ---
 `category_ids` | [Int] |
-`color` | Int | A value representing the color
-`country_of_manufacture` | String | The country where the product was manufactured
-`created_at` | String | Timestamp indicating when product was created
+`color` | Int | A number assigned to represent the color
+`country_of_manufacture` | String | The product's country of origin
+`created_at` | String | Timestamp indicating when the product was created
 `custom_design` | String | A theme that can be applied to the product page
 `custom_design_from` | String | The beginning date when a theme is applied to the product page
 `custom_design_to` | String| The date at which a theme is no longer applied to the product page
@@ -50,11 +50,10 @@ Attribute | Data type | Description
 `description` | String | A detailed information about the product. The value can include simple HTML tags.
 `has_options` | String | Indicates whether additional attributes have been created for the product.
 `image` | String | The relative path for the main image on the product page.
-`image_label` | String | The label associated with a product image.
-`manufacturer` | Int | A code representing the manufacturer.
+`image_label` | String | The label assigned to a product image.
 `meta_description` | String | A brief overview of the product for search results listings. Maximum 255 characters.
 `meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines.
-`meta_title` | String | Appears in the title bar and tab of the browser and search results lists.
+`meta_title` | String | A string that is displayed in the title bar and tab of the browser and in search results lists.
 `name` | String | The product name. Customers use this name to identify the product.
 `new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product.
 `new_to_date` | String | The end date for new product listings.
@@ -77,8 +76,8 @@ Attribute | Data type | Description
 `weight` | Float | The weight of the item, in units defined by the store
 `gift_message_available` | String |
 `required_options` |  |
-`tax_class_id` | Int |
-`swatch_image` | String |
+`tax_class_id` | Int | An ID assigned to a tax class.
+`swatch_image` | String | The file name of a swatch image
 
 ## Response
 
@@ -106,6 +105,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `id` | Int | The ID number assigned to the product.
 `attribute_set_id` | Int | The attribute set assigned to the product.
+`or` | `ProductFilterInput` | The keyword required to perform a logical OR comparison.
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `website_ids` | [Int] | An array of website IDs in which the product is available.
 `category_links` | [ProductCategoryLinks] | An array of [ProductCategoryLinks](#ProductCategoryLinks) objects
@@ -126,13 +126,13 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | --
-`id` | Int |
-`attribute_id` | String |
-`label` | String |
-`position` | Int |
-`is_use_default` | Boolean |
-`values` | [ProductOptionsValues] |
-`product_id` | Int |
+`id` | Int | The configurable option ID number assigned by the system
+`attribute_id` | String | The ID assigned to the attribute
+`label` | String | A string that describes the configurable product option. It is displayed on the UI
+`position` | Int | A number that indicates the order in which the attribute is displayed.
+`is_use_default` | Boolean | Indicates whether the option is the default
+`values` | [ProductOptionsValues] | An array that defines the value_index codes assigned to the configurable product.
+`product_id` | Int | This is the same as a product's 'id' field.
 
 ##### ProductOptionsValues {#ProductOptionsValues}
 
@@ -181,13 +181,13 @@ Field | Type | Description
 --- | --- | ---
 `id` | Int | The identifier assigned to the object
 `media_type` | String | `image` or `video`
-`label` | String | The label that will be displayed on theUI when pointing to the image
-`position` | Int | The sort order
+`label` | String | The the "alt" text displayed on the UI when the user points to the image
+`position` | Int | The media item's position after it has been sorted.
 `disabled` | Boolean | Whether the image is hidden from view
-`types` | [String] | Array of image types. Can have the following values: `image`, `small_image`, `thumbnail`
-`file` | String | The path the the image on the server
-`content` | ProductMediaGalleryEntriesContent | An array of [ProductMediaGalleryEntriesContent](#ProductMediaGalleryEntriesContent) objects
-`video_content` | ProductMediaGalleryEntriesVideoContent | Any array of [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) objects
+`types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
+`file` | String | The path of the image on the server
+`content` | ProductMediaGalleryEntriesContent | Contains a [ProductMediaGalleryEntriesContent](#ProductMediaGalleryEntriesContent) object
+`video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
 
 ##### ProductMediaGalleryEntriesContent object {#ProductMediaGalleryEntriesContent}
 
@@ -195,7 +195,7 @@ Field | Type | Description
 --- | --- | ---
 `base64_encoded_data` | String | The image in base64 format
 `type` | String | The MIME type of the file, such as `image/png`
-`name` | String | The name the file will be saved as on the server
+`name` | String | The file name of the image
 
 ##### ProductMediaGalleryEntriesVideoContent object {#ProductMediaGalleryEntriesVideoContent}
 

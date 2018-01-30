@@ -52,7 +52,7 @@ The following query returns the attribute type for various custom and EAV attrib
  }
  {% endhighlight %}
 
-
+The key you're storing EAV attributes under
 **Response**
 
 {% highlight json %}
@@ -96,6 +96,6 @@ The following query returns the attribute type for various custom and EAV attrib
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`attribute_code` | String |
-`attribute_type` | String | Response only.
-`entity_type` | String |
+`attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
+`attribute_type` | String | The data type of the attribute. (Response only)
+`entity_type` | String | The type of entity that defines the attribute.
