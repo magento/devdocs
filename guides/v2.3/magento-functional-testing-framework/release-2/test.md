@@ -150,7 +150,7 @@ Learn more in [Action groups][action group].
 <!-- LINKS DEFINITIONS -->
 
 [action]: ./test/actions.html
-[action group]: ./test/action-group.html
+[action group]: ./test/action-groups.html
 [action group tag]: #actiongroup-tag
 [after]: #after-tag
 [annotations]: ./test/annotations.html
