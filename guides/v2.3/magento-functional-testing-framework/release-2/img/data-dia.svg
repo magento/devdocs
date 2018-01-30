@@ -118,8 +118,8 @@
      id="text40">0..∞</text>
   <a
      id="a3945"
-     xlink:href="#required-entity"
-     xlink:title="zero or more &lt;required-entity&gt; elements">
+     xlink:href="#requiredentity-tag"
+     xlink:title="zero or more &lt;requiredEntity&gt; elements">
     <g
        id="g213">
       <rect
