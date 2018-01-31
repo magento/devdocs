@@ -10,7 +10,7 @@ functional_areas:
 
 ## Overview
 
-In the MFTF, it is possible to re-use a group of actions declared in an XML file.
+In the MFTF, it is possible to re-use a group of [actions] declared in an XML file.
 It is handy when you need to repeat same sequence of actions over and over again.
 For example, to log in as an admin or a customer.
 
@@ -23,7 +23,7 @@ The following diagram demonstrates XML structure of an action group:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
     <actionGroup name="">
         <arguments>
@@ -31,14 +31,14 @@ The following diagram demonstrates XML structure of an action group:
             <argument name="" defaultValue=""/>
         </arguments>
     </actionGroup>
-</config>
+</actionGroups>
 ```
 
 ## Principles
 
-* All action groups are declared in XML files stored in the _&lt;module&gt;/ActionGroup/_ directory.
+* All action groups are declared in XML files stored in the _\<module\>/ActionGroup/_ directory.
 * File name ends with `ActionGroup`. Example: _LoginToAdminActionGroup.xml_.
-* File name and `<actionGroup>` name are the same.
+* File name and [`<actionGroup>`] name are the same.
 
 ## Example
 {%raw%}
@@ -49,19 +49,19 @@ The following example demonstrates declaration of group of actions to execute au
 This action group relates to functionality of the Backend module, so it should be stored as _Backend/ActionGroup/LoginToAdminActionGroup.xml_.
 
 The name and identifier of the action group is `LoginToAdminActionGroup`.
-In test, it will be used as a reference in `ref` parameter, like: `ref="LoginToAdminActionGroup"`.
+In [test], it will be used as a reference in `ref` parameter, like: `ref="LoginToAdminActionGroup"`.
 
 Lets start from a template for our action group in _Backend/ActionGroup/LoginToAdminActionGroup.xml_:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
     <actionGroup name="LoginToAdminActionGroup">
 
     </actionGroup>
-</config>
+</actionGroups>
 ```
 
 The action group must wrap the following actions:
@@ -77,14 +77,14 @@ So, now we have the following code:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
     <actionGroup name="LoginToAdminActionGroup">
         <fillField stepKey=”fillUsername” selector="#username" userInput="{{adminUser.username}}" />
         <fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
         <click stepKey="click” selector=”#login" />
     </actionGroup>
-</config>
+</actionGroups>
 ```
 
 Since we use a variable for data in `userInput`, we need to create a corresponding argument, where this variable will be defined in a test.
@@ -100,7 +100,7 @@ Let's finalize our action group code:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
     <actionGroup name="LoginToAdminActionGroup">
         <arguments>
@@ -110,7 +110,7 @@ Let's finalize our action group code:
         <fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
         <click stepKey="click” selector=”#login" />
     </actionGroup>
-</config>
+</actionGroups>
 ```
 
 
@@ -147,7 +147,18 @@ That's it!
 
 ## Reference
 
-### actionGroup
+### actionGroups {#actiongroups-tag}
+
+A root element that contains XML configuration attributes.
+
+Attribute|Value|Description
+---|---|---
+xmlns:xsi|`"http://www.w3.org/2001/XMLSchema-instance"`|Tells the XML parser that this document should be validated against a schema.
+xsi:noNamespaceSchemaLocation|`"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"`|Relative path to the corresponding schema.
+
+It may contain one or more `<actionGroup>`.
+
+### actionGroup {#actiongroup-tag}
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -155,11 +166,11 @@ name|string|required|Identifier of the action group.
 
 It may contain `<arguments>`.
 
-### arguments
+### arguments {#arguments-tag}
 
 A wrapper for an array of `<argument>` elements.
 
-### argument
+### argument {#argument-tag}
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -168,3 +179,8 @@ defaultValue|string|optional|Data entity that is used by default.
 
 {%endraw%}
 
+<!-- LINK DEFINITIONS -->
+
+[actions]: ./actions.html
+[`<actionGroup>`]: #actiongroup-tag
+[test]: ../test.html
