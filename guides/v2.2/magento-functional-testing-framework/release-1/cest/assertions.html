@@ -624,13 +624,7 @@
 
 <p>Assertions serve to pass or fail the test if a condition is not met. These assertions will look familiar to you if you’ve used any other framework like PHPUnit.</p>
 
-<p>All assertions contain the following attributes (same as actions):</p>
-
-<ul>
-  <li><code class="highlighter-rouge">stepKey</code> is a required attribute that stores a unique identifier of the action. Example: <code class="highlighter-rouge">"conditionalClickStep1"</code>.</li>
-  <li><code class="highlighter-rouge">before</code> is an optional attribute that Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed one step before the current one.</li>
-  <li><code class="highlighter-rouge">after</code> is an optional attribute that Set <code class="highlighter-rouge">stepKey</code> of an action that must be executed next.</li>
-</ul>
+<p>All assertions contain same <a href="./actions#common-attributes">common actions attributes</a>: <code class="highlighter-rouge">stepKey</code>, <code class="highlighter-rouge">before</code>, and <code class="highlighter-rouge">after</code>.</p>
 
 <p>Most assertions contain attribute <code class="highlighter-rouge">message</code> that specifies text of an informational message to help you to know more about the cause of the failure.</p>
 
@@ -711,12 +705,6 @@
       <td>attribute</td>
       <td>xs:string</td>
       <td>required</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>variable</td>
-      <td>xs:string</td>
-      <td>optional</td>
       <td> </td>
     </tr>
     <tr>
