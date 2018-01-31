@@ -29,7 +29,7 @@ Substitutable values in the test can be of the following formats:
 * Reference to [data entity][data] (XML data from the corresponding _.../Data/*.xml_): `entityName.Field`
 * Persisted Data
     * `$persistedCreateDataKey.field$` for data created in scope of a [test] using the [createData] action with `stepKey="persistedCreateDataKey"`
-    * `$$persistedCreateDataKey.field$$` for data created in [before] and that is why used in scope of a [test] using [createData] action with `stepKey="persistedCreateDataKey"`
+    * `$$persistedCreateDataKey.field$$` for data created in [before] and [after] hooks. Even though `<before>`and `<after>` are nested inside a [`<test>`][test], persisted data is stored differently when it is done in a test hook, therefore it must be accessed with a different notation.
 
 The following diagram demonstrates XML structure of a section in the MFTF:
 
@@ -111,7 +111,7 @@ type|string|required|The type of the element. Possible values: `text`, `textarea
 selector|string|optional|[XPath] or [CSS] selector of the element.
 locatorFunction|string|optional|[Locator Function] declaration to be used in lieu of a selector.
 timeout|string|optional|Default: `-`. Optional timeout value in seconds to wait for the operation on the element.
-parameterized|boolean|optional|Include and set to `true` if the `selector` for this element has parameters that need to be replaced for proper use.
+parameterized|boolean|optional|Include and set to `true` if the `selector` for this element has parameters that need to be replaced for proper use. Learn more in [Parameterized selectors].
 remove|boolean|optional|Default: `false`. Set to `true` to remove this element during parsing.
 
 {% endraw %}
@@ -121,12 +121,13 @@ remove|boolean|optional|Default: `false`. Set to `true` to remove this element d
 <!-- devdocs links -->
 
 [action]: ./test/actions.html
-[before]: ./test.html#before
+[before]: ./test.html#before-tag
 [createData]: ./test/actions.html#createdata
 [data]: ./data.html
 [Locator Function]: ./section/locator-functions.html
 [page]: ./page.html
-[test]: ./test.html#test
+[Parameterized selectors]: ./section/parameterized-selectors.html
+[test]: ./test.html#test-tag
 [tests]: ./test.html
 
 <!-- External links -->
