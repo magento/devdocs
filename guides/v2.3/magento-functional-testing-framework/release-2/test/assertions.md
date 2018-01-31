@@ -12,35 +12,31 @@ This topic contains general information about assertions in the MFTF and the ref
 
 ## Overview
 
-Assertions serve to pass or fail the [test](../test.html#test) if a condition is not met. These assertions will look familiar to you if you've used any other framework like PHPUnit.
+Assertions serve to pass or fail the [test](../test.html#test-tag) if a condition is not met. These assertions will look familiar to you if you've used any other framework like PHPUnit.
 
-All assertions contain same [common actions attributes](./actions#common-attributes): `stepKey`, `before`, and `after`.
+All assertions contain same [common actions attributes](./actions.html#common-attributes): `stepKey`, `before`, and `after`.
 
 Most assertions contain attribute `message` that specifies text of an informational message to help you to know more about the cause of the failure.
 
 ## Principles
 
-`stepKey` value format principles:
+* [actions' principles](../test.html#principles) are also applicable to assertions
 
-* Must be unique within [`<test>`](../test.html#test)
-* Naming should be as descriptive as possible
-  * Should describe the action performed
-  * Should briefly describe the purpose
-  * May describe which data is in use
-* Should be in camelCase with lowercase first letter
-* Should be the last attribute of an element
+*  `expectedType` and `actualType` can be:
+    * const (default)
+    * int
+    * float
+    * bool
+    * string
+    * variable
+    * array
 
-`expectedType` and `actualType` can be:
+If `variable` is used, the test transforms the corresponding value to `$variable`.
+Use `stepKey` of a test that returns the value you want to use in assertion.
+Example: `actual="stepKeyOfGrab" actualType="variable"`
 
-* const (default)
-* int
-* float
-* bool
-* string
-* variable
-* array
-
-If `variable` is used, the corresponding value reference uses PHP language style like `{$nameOfStepKey}`. See the example below.
+To use variables embedded in a string in `expected` and `actual` of your assertion, use the `{$stepKey}` format.
+Example: `actual="A long assert string {$stepKeyOfGrab} with an embedded variable reference." actualType="variable"`
 
 ## Example
 
@@ -51,7 +47,7 @@ In this very common test writing example we are grabbing text from a page and th
 <grabTextFrom selector="#elementId" stepKey="stepKeyOfGrab"/>
 
 <!-- Ensure that the value we grabbed matches our expectation -->
-<assertEquals expected="Some String" expectedType="string" actual="{$stepKeyOfGrab}" actualType="variable" message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1"/>
+<assertEquals expected="Some String" expectedType="string" actual="A long assert string {$stepKeyOfGrab} with an embedded variable reference." actualType="variable" message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1"/>
 ```
 
 ## Reference
@@ -69,7 +65,6 @@ Attribute|Type|Use|Description
 selector|string|required|
 expectedValue|string|optional| A value of the expected result.
 attribute|string|required|
-variable|string|optional|
 stepKey|string|required| A unique identifier of the text step.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of the preceding action.
