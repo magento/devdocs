@@ -78,6 +78,13 @@ For the parameterized part of the selector, add `{{var1}}, {{var2}}, ..., {{varN
 </section>
 ```
 
+{%
+include note.html
+type="info"
+content="Note that there is no need to use sequential variables like `{{var1}}`, `{{var2}}`.
+Parameterized replacement reads variables and maps them to the test call of the element sequentially from left to right, meaning you can use a selector like `#element .{{categoryId}} .{{productId}}`."
+%}
+
 ## Using a parameterized selector in a test
 
 Create a new [test].
@@ -147,7 +154,7 @@ Add the 2nd/3rd parameters that you'd like to pass to the selector separated by 
 Any data can be used in parameterized elements as well as entered in test actions like so:
 
 * `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in the corresponding _.../Data/*.xml_
-* `stringLiteral` is a literal
+* `'StringLiteral'` is a literal
 * `$createDataKey.id$` is a reference to persisted data created in the `SampleTest1` within action with `stepKey="createDataKey"`
 * `{$variable}` is a reference to data returned by a test action, like `<grabValueFrom>`.
 
