@@ -12,7 +12,11 @@ functional_areas:
 This topic describes Magento [application](#application) and [deploy](#deploy) environment variables as well as [build](#build) options.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var) or [CLI commands](#addvariables).
+Use one of the following methods to manage variables:
+
+-   [**Configuration file**](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)—All Starter and Pro environments
+-   [**Project Web Interface**]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var)—All Starter and Pro environments created after October 23, 2017 or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html)
+-   [**Magento Cloud CLI tool**](#addvariables)—All Starter and Pro Integration environments
 </div>
 
 ## Magento application variables {#application}
@@ -76,31 +80,11 @@ For additional deploy variables and build options, continue to the following sec
     </tr> -->
 
 ## Magento build options {#build}
-The following options are available during the build phase. These options help prepare the codebase before it is moved to the server and built.
+The following options are available during the build phase. Refer to [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
 
-To use these options, create a `build_options.ini` file in your root Magento project directory and push it to your environment.
-
-**Example `build_options.ini` file**
-
-```
-;exactly
-VERBOSE_COMMANDS=enabled
-
-; A path to a Magento theme. Don't generate static content for the specified theme. Adds the --exlude-theme option to the php ./bin/magento setup:static-content:deploy command.
-exclude_themes=magento/luma
-
-; A number (0-9) that specifies which gzip compression level to use when compressing static content; 0 disables compression.
-;SCD_COMPRESSION_LEVEL=0
-
-; A number, defaults to 0, that specifies how many threads to use for static content deployment. Increases and descreases processing speed. Passed into --max-procs xargs flag.
-scd_threads=2
-
-; A string that gets passed to the -s flag of the php ./bin/magento setup:static-content:deploy command. No validation.
-scd_strategy=standard
-
-; Skips static content deployment during the build phase.
-;skip_scd=yes
-```
+<div class="bs-callout bs-callout-info" markdown="1">
+You can still use the [`build_options.ini`](http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html#build) file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
+</div>
 
 <table>
   <thead>
@@ -173,7 +157,11 @@ For information on the build and deploy process, see [Deployment process]({{page
 The following variables are available during the deploy process.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var) or [CLI commands](#addvariables).
+Use one of the following methods to manage variables:
+
+-   [**Configuration file**](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)—All Starter and Pro environments
+-   [**Project Web Interface**]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var)—All Starter and Pro environments created after October 23, 2017 or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html)
+-   [**Magento Cloud CLI tool**](#addvariables)—All Starter and Pro Integration environments
 </div>
 
 <table>

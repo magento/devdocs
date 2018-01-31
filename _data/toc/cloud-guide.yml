@@ -150,6 +150,9 @@ pages:
         - label: Configure .magento.app.yaml
           url: cloud/project/project-conf-files_magento-app.html
 
+        - label: Manage build and deploy actions
+          url: cloud/project/magento-env-yaml.html
+
         - label: Configure services - services.yaml
           url: cloud/project/project-conf-files_services.html
 
@@ -308,6 +311,9 @@ pages:
         - label: Redis troubleshooting
           url: cloud/trouble/redis-troubleshooting.html
 
+        - label: Reset cron jobs
+          url: cloud/trouble/reset-cron-jobs.html
+          
         - label: Resolve issues with encryption key
           url: cloud/trouble/trouble-crypt-key-variable.html
 
@@ -316,6 +322,10 @@ pages:
 
         - label: Resolve issues with Google Analytics during deployment
           url: cloud/trouble/trouble-google-analytics-deploy.html
+
+        - label: Restore configuration files
+          url: cloud/trouble/restore-configuration-files.html
+          versions: ["2.2"]
 
         - label: Add sitemap and robots.txt
           url: cloud/trouble/robots-sitemap.html
