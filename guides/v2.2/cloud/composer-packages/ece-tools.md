@@ -32,7 +32,7 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 
 -   <!-- MAGECLOUD-1369 -->**Unified configuration file**—You can now configure build and deploy stages using a [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) file.
 
--   <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command](http://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble-google-analytics-deploy.html) to restore these configuration files from a backup.
+-   <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command](http://devdocs.magento.com/guides/v2.2/cloud/trouble/restore-configuration-files.html) to restore these configuration files from a backup.
 
 -   <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
 
