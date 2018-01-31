@@ -1,37 +1,41 @@
 ---
 layout: default
 group: release-notes
-title: Magento Commerce 2.2.4 Release Notes
+subgroup: Release Notes
+title: Magento Open Source 2.2.4 Release Notes
+menu_title: Magento Open Source 2.2.4 Release Notes
+menu_order: 280
+level3_menu_node:
+level3_subgroup:
 version: 2.2
-github_link: release-notes/ReleaseNotes2.2.4EE.md
+github_link: release-notes/ReleaseNotes2.2.4CE.md
 ---
-*Patch code and release notes published on , 2018.*
+*Patch code and release notes published on March, 2018.*
 
 
 
-We are pleased to present Magento Commerce 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
+We are pleased to present Magento Open Source 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
 
 
 ## Highlights
 
 Look for the following highlights in this release:
 
+* Significant new features that streamline the customer experience and provide merchants with greater insight into their online business.
 
+* Numerous fixes and enhancements to core features, including significant improvements to the payment process.
+
+* Ninety-six community-submitted bug fixes and multiple pull requests.
 
 
 ### New Features
 
-*
-Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+
+Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
 
 ## Fixes and enhancements
 
-
-
-
-
-## Fixed issues
 
 ### Installation, setup, and deployment
 <!--- MAGETWO-86496 -->* 
@@ -789,9 +793,7 @@ can find Magento Shipping-specific release notes in [Magento Shipping Release No
 
 <!--- MAGETWO-85520 -->* static tests
 
-<!--- MAGETWO- -->* 
 
-<!--- MAGETWO- -->* 
 
 
 ### Tax
@@ -860,16 +862,9 @@ can find Magento Shipping-specific release notes in [Magento Shipping Release No
 
 
 
-
-
 ## Known issues
 
 ### General
-
-
-
-### Magento Shipping issues
-
 
 
 
@@ -902,10 +897,10 @@ For more information, [System Requirements]({{ site.baseurl }}magento-system-req
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.2 General Availability (GA) using Composer.
+You can install Magento Open Source 2.2 General Availability (GA) using Composer.
 
 
-{% include install/releasenotes/ee_install_21.md %}
+{% include install/releasenotes/ce_install_21.md %}
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
