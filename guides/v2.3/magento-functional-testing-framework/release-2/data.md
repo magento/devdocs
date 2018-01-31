@@ -47,17 +47,36 @@ Here,
 
 A test can specify an entity which should be persisted (created in the database) so that the test actions can operate on known existing data.
 
+If data has been persisted in `<test>`:
+
+```xml
+userInput="$customer.email$"
+```
+
+If data has been persisted in `<before>` or `<after>`:
+
 ```xml
 userInput="$$customer.email$$"
 ```
-
+{%endraw%}
 Here,
 
-* `customer` is a stepKey of the corresponding action, where an entity is created
-* `email` is a data key of the entity. The corresponding value will be assigned to `userInput` as a result.
+* `customer` is a `stepKey` of the corresponding test step, where an entity is created
+* `email` is a `dataKey` of the entity. The corresponding value will be assigned to `userInput` as a result.
+
+{%
+include note.html
+type="info"
+content="It is a side effect of PHP outputting.
+Even though both are nested, in PHP they end up being different methods inside a class.
+Since `_before()` is a function outside a test method `myTest()`, it creates a variable in the class scope instead of the method scope (`$this->persistedData` vs `$persistedData`).
+As they are relevant to test:
+* `$persistedData.field$` turns into `$persistedData.getData('field')`
+* `$$persistedData.field$$` turns into `$this->persistedData.getData('field')`"
+%}
 
 ### Using data returned by test actions
-
+{%raw%}
 A test can also reference data that was returned as a result of [test actions], like the action `<grabValueFrom selector="someSelector" stepKey="grabStepKey>`.
 Further in the test, the data grabbed by selector `someSelector` can be referenced using the `stepKey` value. In this case, it is `grabStepKey`.
 
