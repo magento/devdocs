@@ -985,6 +985,20 @@
         
         
         
+        <li class="nav-level2  " id="manage-build-and-deploy-actions">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configure-services---services.yaml">
             
             
@@ -1717,6 +1731,20 @@
         
         
         
+        <li class="nav-level2  " id="reset-cron-jobs">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/reset-cron-jobs.html">Reset cron jobs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="resolve-issues-with-encryption-key">
             
             
@@ -1751,6 +1779,20 @@
         
             
             <a href="/guides/v2.2/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="restore-configuration-files">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/restore-configuration-files.html">Restore configuration files</a>
             
 
             
@@ -1888,20 +1930,35 @@
 </section>
 
 
-			<div>
+			<div class="bs-callout bs-callout-warning">
+  <p>We merged <code class="highlighter-rouge">vendor/magento/ece-patches</code> with <a href="http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208"><code class="highlighter-rouge">vendor/magento/ece-tools v2002.0.8</code></a>. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
+</div>
+
+<div>
   <p>This package contains patch files that are specific to Magento Commerce (Cloud). Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Magento Commerce (Cloud) code. Using <code class="highlighter-rouge">composer update</code> automatically runs tools to check for available patches and to run them with build and deploy scripts.</p>
 
   <p>Versions are specified as <code class="highlighter-rouge">10&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
 
   <p>These updates strictly contain improvements to Magento Commerce (Cloud). Patches are available in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder. To check for available patches, you can check in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html">update this package</a> to get these features and changes.</p>
-  </div>
+  <h2 id="v10204">v102.0.4</h2>
+
+  <h3 id="fixed-issues">Fixed issues</h3>
+
+  <ul>
+    <li>
+      <!--  MAGECLOUD-1567  -->
+      <p>We fixed an issue preventing you from exporting the configuration files using <code class="highlighter-rouge">app:config:dump</code> more than once.</p>
+    </li>
+    <li>
+      <!--  MAGECLOUD-1582  -->
+      <p>We fixed a Redis session <em>locking</em> issue that caused an <em>Admin</em> login delay.</p>
+    </li>
+  </ul>
 
   <h2 id="v10203">v102.0.3</h2>
 
-  <h3 id="fixed-issues">Fixed issues</h3>
+  <h3 id="fixed-issues-1">Fixed issues</h3>
   <!--MAGECLOUD-1450-->
   <p>We fixed an implementation issue related to versioning in <code class="highlighter-rouge">ece-patches</code> that was causing a conflict with other Composer-based patching modules.</p>
 
@@ -1911,7 +1968,7 @@
   <!--MAGECLOUD-1090-->
   <p>We implemented smart patching. Now the package applies patches based not on Magento Commerce (Cloud) version, but on patched package version.</p>
 
-  <h3 id="fixed-issues-1">Fixed issues</h3>
+  <h3 id="fixed-issues-2">Fixed issues</h3>
   <!--MAGECLOUD-1310-->
   <p>We fixed an issue that was causing PHP memory issues during import.</p>
 
@@ -1920,7 +1977,7 @@
   <h3 id="new-features-1">New features</h3>
   <p>Implemented version-based patching. Now the package is compatible with Magento Commerce (Cloud) 2.2.0 and higher.</p>
 
-  <h3 id="fixed-issues-2">Fixed issues</h3>
+  <h3 id="fixed-issues-3">Fixed issues</h3>
   <!--MAGECLOUD-1033-->
   <ul>
     <li>Removed patch; fixing bug in <code class="highlighter-rouge">colinmollenhour/credis</code> v1.6 to enable support for Magento Commerce (Cloud) 2.2.1.</li>

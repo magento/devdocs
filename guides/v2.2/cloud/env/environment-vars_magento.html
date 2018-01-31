@@ -985,6 +985,20 @@
         
         
         
+        <li class="nav-level2  " id="manage-build-and-deploy-actions">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configure-services---services.yaml">
             
             
@@ -1717,6 +1731,20 @@
         
         
         
+        <li class="nav-level2  " id="reset-cron-jobs">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/reset-cron-jobs.html">Reset cron jobs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="resolve-issues-with-encryption-key">
             
             
@@ -1751,6 +1779,20 @@
         
             
             <a href="/guides/v2.2/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="restore-configuration-files">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/trouble/restore-configuration-files.html">Restore configuration files</a>
             
 
             
@@ -1891,7 +1933,13 @@
 			<p>This topic describes Magento <a href="#application">application</a> and <a href="#deploy">deploy</a> environment variables as well as <a href="#build">build</a> options.</p>
 
 <div class="bs-callout bs-callout-tip">
-  <p>You can add variables using the <a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a> or <a href="#addvariables">CLI commands</a>.</p>
+  <p>Use one of the following methods to manage variables:</p>
+
+  <ul>
+    <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html"><strong>Configuration file</strong></a>—All Starter and Pro environments</li>
+    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var"><strong>Project Web Interface</strong></a>—All Starter and Pro environments created after October 23, 2017 or <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">updated</a></li>
+    <li><a href="#addvariables"><strong>Magento Cloud CLI tool</strong></a>—All Starter and Pro Integration environments</li>
+  </ul>
 </div>
 
 <h2 id="application">Magento application variables</h2>
@@ -1955,30 +2003,11 @@
     </tr> -->
 
 <h2 id="build">Magento build options</h2>
-<p>The following options are available during the build phase. These options help prepare the codebase before it is moved to the server and built.</p>
+<p>The following options are available during the build phase. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a> for more information about using these options in the <code class="highlighter-rouge">.magento.env.yaml</code> file.</p>
 
-<p>To use these options, create a <code class="highlighter-rouge">build_options.ini</code> file in your root Magento project directory and push it to your environment.</p>
-
-<p><strong>Example <code class="highlighter-rouge">build_options.ini</code> file</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;exactly
-VERBOSE_COMMANDS=enabled
-
-; A path to a Magento theme. Don't generate static content for the specified theme. Adds the --exlude-theme option to the php ./bin/magento setup:static-content:deploy command.
-exclude_themes=magento/luma
-
-; A number (0-9) that specifies which gzip compression level to use when compressing static content; 0 disables compression.
-;SCD_COMPRESSION_LEVEL=0
-
-; A number, defaults to 0, that specifies how many threads to use for static content deployment. Increases and descreases processing speed. Passed into --max-procs xargs flag.
-scd_threads=2
-
-; A string that gets passed to the -s flag of the php ./bin/magento setup:static-content:deploy command. No validation.
-scd_strategy=standard
-
-; Skips static content deployment during the build phase.
-;skip_scd=yes
-</code></pre></div></div>
+<div class="bs-callout bs-callout-info">
+  <p>You can still use the <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html#build"><code class="highlighter-rouge">build_options.ini</code></a> file, but we recommend using the <code class="highlighter-rouge">.magento.env.yaml</code> file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.</p>
+</div>
 
 <table>
   <thead>
@@ -2053,7 +2082,13 @@ scd_strategy=standard
 <p>The following variables are available during the deploy process.</p>
 
 <div class="bs-callout bs-callout-tip">
-  <p>You can add variables using the <a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a> or <a href="#addvariables">CLI commands</a>.</p>
+  <p>Use one of the following methods to manage variables:</p>
+
+  <ul>
+    <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html"><strong>Configuration file</strong></a>—All Starter and Pro environments</li>
+    <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var"><strong>Project Web Interface</strong></a>—All Starter and Pro environments created after October 23, 2017 or <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">updated</a></li>
+    <li><a href="#addvariables"><strong>Magento Cloud CLI tool</strong></a>—All Starter and Pro Integration environments</li>
+  </ul>
 </div>
 
 <table>
@@ -2066,11 +2101,20 @@ scd_strategy=standard
   </thead>
   <tbody>
     <tr>
+      <td><code>CRON_CONSUMERS_RUNNER</code></td>
+      <td>
+        <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to make sure message queues are running after a deployment.</p>
+        <p>This is available in 2.2.x.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.2/coud/env/use-cases.html#manage-message-queues">Manage message queues</a> for more information.</p>
+      </td>
+      <td>not set</td>
+    </tr>
+    <tr>
       <td><code>QUEUE_CONFIGURATION</code></td>
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing AMQP-based service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue) for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
@@ -2079,7 +2123,7 @@ scd_strategy=standard
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing search service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search) for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search">Connect to an existing search service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
