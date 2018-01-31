@@ -46,8 +46,9 @@ Create an `blocklist.vcl` file with the following JSON content:
 {% highlight json %}
 {
   "name": "blocklist",
-  "priority": "5",
+  "dynamic": "0",
   "type": "recv",
+  "priority": "5",
   "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }",
 }
 {% endhighlight %}

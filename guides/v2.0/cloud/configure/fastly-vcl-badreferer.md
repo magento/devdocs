@@ -45,8 +45,9 @@ Create an `badreferer.vcl` file with the following JSON content:
 {% highlight json %}
 {
   "name": "badreferer",
-  "priority": "5",
+  "dynamic": "0",
   "type": "recv",
+  "priority": "5",
   "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }",
 }
 {% endhighlight %}

@@ -31,8 +31,9 @@ Create an `extendtimeout.vcl` file with the following JSON content:
 {% highlight json %}
 {
   "name": "extendtimeout",
-  "priority": "100",
+  "dynamic": "0",
   "type": "pass",
+  "priority": "100",
   "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }",
 }
 {% endhighlight %}

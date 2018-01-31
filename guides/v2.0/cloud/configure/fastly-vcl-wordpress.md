@@ -45,8 +45,9 @@ Create an `wordpress.vcl` file with the following JSON content:
 {% highlight json %}
 {
   "name": "wordpress",
-  "priority": "5",
+  "dynamic": "0",
   "type": "recv",
+  "priority": "5",
   "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }",
 }
 {% endhighlight %}
