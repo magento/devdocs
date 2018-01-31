@@ -49,7 +49,7 @@ Create an `blocklist.json` file with the following JSON content:
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }",
+  "content": "if ( client.ip ~ blocklist) { error 403 \"Forbidden\"; }"
 }
 {% endhighlight %}
 

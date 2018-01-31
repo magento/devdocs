@@ -48,7 +48,7 @@ Create an `wordpress.json` file with the following JSON content:
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }",
+  "content": "if ( req.url.path ~ \"^\\/?([^:\/\\s]+).*$\" ) { if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" ) { set req.http.X-WP = \"1\"; } }"
 }
 {% endhighlight %}
 
