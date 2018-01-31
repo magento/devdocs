@@ -67,9 +67,9 @@ Lets start from a template for our action group in _Backend/ActionGroup/LoginToA
 The action group must wrap the following actions:
 
 ```xml
-<fillField stepKey=”fillUsername” selector="#username" userInput="{{adminUser.username}}" />
-<fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
-<click stepKey="click” selector=”#login" />
+<fillField stepKey="fillUsername" selector="#username" userInput="{{adminUser.username}}" />
+<fillField stepKey="fillPassword" selector="#password" userInput="{{adminUser.password}}" />
+<click stepKey="click" selector="#login" />
 ```
 
 So, now we have the following code:
@@ -80,9 +80,9 @@ So, now we have the following code:
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
     <actionGroup name="LoginToAdminActionGroup">
-        <fillField stepKey=”fillUsername” selector="#username" userInput="{{adminUser.username}}" />
-        <fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
-        <click stepKey="click” selector=”#login" />
+        <fillField stepKey="fillUsername" selector="#username" userInput="{{adminUser.username}}" />
+        <fillField stepKey="fillPassword" selector="#password" userInput="{{adminUser.password}}" />
+        <click stepKey="click" selector="#login" />
     </actionGroup>
 </actionGroups>
 ```
@@ -106,9 +106,9 @@ Let's finalize our action group code:
         <arguments>
             <argument name="adminUser" defaultValue="_defaultAdmin"/>
         </arguments>
-        <fillField stepKey=”fillUsername” selector="#username" userInput="{{adminUser.username}}" />
-        <fillField stepKey="fillPassword” selector="#password" userInput="{{adminUser.password}}" />
-        <click stepKey="click” selector=”#login" />
+        <fillField stepKey="fillUsername" selector="#username" userInput="{{adminUser.username}}" />
+        <fillField stepKey="fillPassword" selector="#password" userInput="{{adminUser.password}}" />
+        <click stepKey="click" selector="#login" />
     </actionGroup>
 </actionGroups>
 ```
@@ -121,9 +121,9 @@ Let's see how the action group can be used in tests.
 In the following example, instead of adding a set of actions:
 
 ```xml
-<fillField stepKey=”fillUsername” selector="#username" userInput="{{CustomAdminUser.username}}" />
-<fillField stepKey="fillPassword” selector="#password" userInput="{{CustomAdminUser.password}}" />
-<click stepKey="click” selector=”#login" />
+<fillField stepKey="fillUsername" selector="#username" userInput="{{CustomAdminUser.username}}" />
+<fillField stepKey="fillPassword" selector="#password" userInput="{{CustomAdminUser.password}}" />
+<click stepKey="click" selector="#login" />
 ```
 
 we can use the action group _LoginToAdminActionGroup_ that we created above.
@@ -131,15 +131,15 @@ we can use the action group _LoginToAdminActionGroup_ that we created above.
 First, the `<actionGroup>` element must be added with reference to _LoginToAdminActionGroup_, like.
 
 ```xml
-<actionGroup stepKey=”loginToAdminPanel” ref="LoginToAdminActionGroup"/>
+<actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup"/>
 ```
 
 This action group will take data from the `_defaultAdmin` by default.
 To change it to `CustomAdminUser`, we must add an argument `adminUser` with the corresponding value.
 
 ```xml
-<actionGroup stepKey=”loginToAdminPanel” ref="LoginToAdminActionGroup">
-    <argument name="adminUser" value=”CustomAdminUser” />
+<actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup">
+    <argument name="adminUser" value="CustomAdminUser" />
 </actionGroup>
 ```
 
