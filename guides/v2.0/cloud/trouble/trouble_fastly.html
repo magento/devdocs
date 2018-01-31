@@ -2096,7 +2096,7 @@
 <h3 id="snippets">Check VCL snippets</h3>
 <p>If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;Service ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key:FASTLY_API_TOKEN"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;FASTLY_SERVICE_ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key: &lt;FASTLY_API_TOKEN&gt;"
 </code></pre></div></div>
 
 <p>Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">Fastly default VCLs</a>. For editing your custom VCLs, see <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
@@ -2108,14 +2108,14 @@
   <li>
     <p>List and find a version you want to activate. For a fully deactivated service, all of the versions will have a flag of <code class="highlighter-rouge">active: false</code>.</p>
 
-    <p>curl -X GET -s https://api.fastly.com/service/<Service ID="">/version -H "Fastly-Key:FASTLY_API_TOKEN"</Service></p>
+    <p>curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version -H "Fastly-Key: <FASTLY_API_TOKEN>"</FASTLY_API_TOKEN></FASTLY_SERVICE_ID></p>
   </li>
   <li>
     <p>Use the following command to validate all snippets for the version you want to activate:</p>
   </li>
 </ol>
 
-  	curl -H “Fastly-Key: {FASTLY_API_TOKEN}” -H ‘Content-Type: application/json’ -H “Accept: application/json” -X GET https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/validate
+  	curl -H “Fastly-Key: {FASTLY_API_TOKEN}” -H ‘Content-Type: application/json’ -H “Accept: application/json” -X GET https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/validate
 
 <p>Fastly should return: <code class="highlighter-rouge">"status": "ok"</code>.</p>
 
@@ -2123,18 +2123,18 @@
   <li>
     <p>To activate a deactivated Version, enter the Service ID and Version in the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <p>If you want to activate an older version, you need to deactivate the currently active version:</p>
 
-<p>curl -H “Fastly-Key: {FASTLY_API_TOKEN}” -H ‘Content-Type: application/json’ -H “Accept: application/json” -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/deactivate</p>
+<p>curl -H “Fastly-Key: {FASTLY_API_TOKEN}” -H ‘Content-Type: application/json’ -H “Accept: application/json” -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/deactivate</p>
 
 <p>Then activate the version you want active:</p>
 
-<p>curl -H “Fastly-Key: {FASTLY_API_TOKEN}” -H ‘Content-Type: application/json’ -H “Accept: application/json” -X PUT https://api.fastly.com/service/{Service ID}/version/{Editable Version #}/activate</p>
+<p>curl -H “Fastly-Key: {FASTLY_API_TOKEN}” -H ‘Content-Type: application/json’ -H “Accept: application/json” -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

@@ -1872,16 +1872,17 @@
 
 <p>You will use the Edge ACL by name in your VCL snippet code.</p>
 
-<h2 id="vcl">Create allowlist.vcl</h2>
+<h2 id="vcl">Create allowlist.json</h2>
 <p>To allow only whitelisted IPs access to Staging and Production environments, you can use the same VCL snippet file without edits.</p>
 
-<p>Create an <code class="highlighter-rouge">allowlist.vcl</code> file with the following JSON content:</p>
+<p>Create an <code class="highlighter-rouge">allowlist.json</code> file with the following JSON content:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allowlist"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((req.url ~ "</span><span class="err">^/admin</span><span class="s2">") &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) { error 403 "</span><span class="err">Forbidden</span><span class="s2">"; }"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((req.url ~ </span><span class="se">\"</span><span class="s2">^/admin</span><span class="se">\"</span><span class="s2">) &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) { error 403 </span><span class="se">\"</span><span class="s2">Forbidden</span><span class="se">\"</span><span class="s2">; }"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p>Review the following values for the code to determine if you need to make changes:</p>

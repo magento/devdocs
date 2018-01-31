@@ -1816,16 +1816,17 @@
   <p>This information is just the code portion for setting up your VCL. Use this information with <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 </div>
 
-<h2 id="vcl">Create extendtimeout.vcl</h2>
+<h2 id="vcl">Create extendtimeout.json</h2>
 <p>To extend the timeout for the Magento Admin to Staging and Production environments, you can use the same VCL snippet file without edits.</p>
 
-<p>Create an <code class="highlighter-rouge">extendtimeout.vcl</code> file with the following JSON content:</p>
+<p>Create an <code class="highlighter-rouge">extendtimeout.json</code> file with the following JSON content:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extendtimeout"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url ~ "</span><span class="err">^/(index\.php/)?admin(_.*)?/</span><span class="s2">" ) { set bereq.first_byte_timeout = 600s; }"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url ~ </span><span class="se">\"</span><span class="s2">^/(index</span><span class="se">\\</span><span class="s2">.php/)?admin(_.*)?/</span><span class="se">\"</span><span class="s2"> ) { set bereq.first_byte_timeout = 600s; }"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p>Review the following values for the code to determine if you need to make changes:</p>

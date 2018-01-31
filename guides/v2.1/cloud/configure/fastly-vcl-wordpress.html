@@ -1870,16 +1870,17 @@
 
 <p>For more information on using Edge Dictionaries with your VCL snippets, see Fastly’s <a href="https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries" target="_blank">Creating and using Edge Dictionaries</a> and their example <a href="https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples" target="_blank">custom VCL snippets</a>.</p>
 
-<h2 id="vcl">Create wordpress.vcl</h2>
+<h2 id="vcl">Create wordpress.json</h2>
 <p>For this example, you may only want to run it against the Production server. You can also add it to Staging for testing.</p>
 
-<p>Create an <code class="highlighter-rouge">wordpress.vcl</code> file with the following JSON content:</p>
+<p>Create an <code class="highlighter-rouge">wordpress.json</code> file with the following JSON content:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wordpress"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url.path ~ "</span><span class="err">^\/?(</span><span class="p">[</span><span class="err">^</span><span class="p">:</span><span class="err">\/\s</span><span class="p">]</span><span class="err">+).*$</span><span class="s2">" ) { if ( table.lookup(wordpress_urls, re.group.1, "</span><span class="err">NOTFOUND</span><span class="s2">") != "</span><span class="err">NOTFOUND</span><span class="s2">" ) { set req.http.X-WP = "</span><span class="mi">1</span><span class="s2">"; } }"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url.path ~ </span><span class="se">\"</span><span class="s2">^</span><span class="se">\\</span><span class="s2">/?([^:</span><span class="se">\/\\</span><span class="s2">s]+).*$</span><span class="se">\"</span><span class="s2"> ) { if ( table.lookup(wordpress_urls, re.group.1, </span><span class="se">\"</span><span class="s2">NOTFOUND</span><span class="se">\"</span><span class="s2">) != </span><span class="se">\"</span><span class="s2">NOTFOUND</span><span class="se">\"</span><span class="s2"> ) { set req.http.X-WP = </span><span class="se">\"</span><span class="s2">1</span><span class="se">\"</span><span class="s2">; } }"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p>Review the following values for the code to determine if you need to make changes:</p>
