@@ -25,7 +25,6 @@ You need the following information to create VCL snippets:
 To get started, review the following sections:
 
 -   [Understand VCL snippet values](#vcl-curl)—Provides an overview of values for Fastly VCL JSON.
--   [Prepare to create VCL snippets](#prepare)—You only need to do this once!
 -   [The custom VCL snippet process](#process)—Walks you through the entire process, including links to custom VCL snippets you can create with ease.
 
 ## Understand VCL snippet values {#vcl-curl}
