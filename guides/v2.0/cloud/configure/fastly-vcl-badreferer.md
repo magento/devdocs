@@ -37,17 +37,18 @@ Edge Dictionaries create key-value pairs for running against your VCL snippet. F
 
 For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries){:target="_blank"} and their example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples){:target="_blank"}.
 
-## Create badreferer.vcl {#vcl}
+## Create badreferer.json {#vcl}
 For this example, you may only want to run it against the Production server. You can also add it to Staging for testing.
 
-Create an `badreferer.vcl` file with the following JSON content:
+Create an `badreferer.json` file with the following JSON content:
 
 {% highlight json %}
 {
   "name": "badreferer",
-  "priority": "5",
+  "dynamic": "0",
   "type": "recv",
-  "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/\s]+).*$", "\1"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }",
+  "priority": "5",
+  "content": "set req.http.Referer-Host = regsub(req.http.Referer, \"^https?://?([^:/\\s]+).*$\", \"\\1\"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 \"Forbidden\"; }"
 }
 {% endhighlight %}
 
