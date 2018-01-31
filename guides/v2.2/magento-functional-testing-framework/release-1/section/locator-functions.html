@@ -629,7 +629,7 @@
 <p>When using the <code class="highlighter-rouge">locatorFunction</code>, you can also omit <code class="highlighter-rouge">Locator::</code> for code simplicity.</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocatorShorthand"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"contains('label', 'Name')"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
-<p>An element’s <code class="highlighter-rouge">locatorFunction</code> can also be parameterized the same way as <a href="parameterized-selectors.html">parameterized-selectors</a>.</p>
+<p>An element’s <code class="highlighter-rouge">locatorFunction</code> can also be parameterized the same way as <a href="parameterized-selectors.html">parameterized selectors</a>.</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocatorTwoParam"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"contains({{arg1}}, {{arg2}})"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 <p>Lastly, an element <strong>cannot</strong> have both a <code class="highlighter-rouge">selector</code> and a <code class="highlighter-rouge">locatorFunction</code>.</p>
