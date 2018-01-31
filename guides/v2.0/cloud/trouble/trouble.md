@@ -12,19 +12,15 @@ functional_areas:
   - Cloud
 ---
 
-The following topics discuss solutions to common issues with {{site.data.var.ece}}:
+The troubleshooting topics help to resolve specific issues with your {{site.data.var.ece}} project. Before submitting a Support ticket, check the following:
 
-* [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html)
-*	[Troubleshoot your deployment]({{page.baseurl}}cloud/access-acct/trouble.html)
-*	[Use logs for troubleshooting]({{page.baseurl}}cloud/trouble/environments-logs.html)
-*	[Resolve a broken branch](http://devdocs.magento.com/guides/v2.0/cloud/trouble/trouble-broken-branch.html)
-*	[Incorrect credentials]({{page.baseurl}}cloud/trouble/trouble_ce-creds.html)
-*	[Resolve issues with a new project]({{page.baseurl}}cloud/trouble/trouble_proj-startover.html)
-*	[Component deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html)
-*	[Fastly troubleshooting]({{page.baseurl}}cloud/trouble/trouble_fastly.html)
-*	[Redis troubleshooting]({{page.baseurl}}cloud/trouble/redis-troubleshooting.html)
-*	[Resolve issues with encryption key]({{page.baseurl}}cloud/trouble/trouble-crypt-key-variable.html)
-*	[Resolve issues with HTML minification]({{page.baseurl}}cloud/trouble/trouble-error-html-minification.html)
-*	[Resolve issues with Google Analytics during deployment]({{page.baseurl}}cloud/trouble/trouble-google-analytics-deploy.html)
-*	[Add sitemap and robots.txt]({{page.baseurl}}cloud/trouble/robots-sitemap.html)
-*	[Theme troubleshooting]({{page.baseurl}}cloud/trouble/theme-troubleshooting.html)
+-  Verify your [credentials]({{page.baseurl}}cloud/trouble/trouble_ce-creds.html)
+-  Review the [log files]({{page.baseurl}}cloud/live/stage-prod-test.html)
+-  Search for relevant content in the {{site.data.var.ece}} documentation
+
+If you still require technical support, you can create a Support ticket through the Project Web Interface:
+
+1. Log in to your Magento Cloud account.
+1. On the _Support Tickets_ tab, click **Create Ticket**. Or you can submit a ticket from your project view by clicking **Support** > **Submit ticket** from the top menu.
+1. Fill out the support ticket form and attach any helpful documentation, such as screenshots or notes.
+1. Click **Submit**.

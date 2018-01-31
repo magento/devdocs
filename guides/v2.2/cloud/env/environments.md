@@ -104,6 +104,7 @@ For Starter, you can push these files across all environments including Producti
 For Pro, you need to enter a ticket to have these files and settings pushed to Staging and Production environments. You can push these files and settings across all Integration environments.
 
 * [.magento.app.yaml]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
+* [.magento.env.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, so that you can manage configuration changes without opening a support ticket
 * [services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html) configures the services you use in your stores and sites including name, version, and allocated disk space
 
   * [MySQL service]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml

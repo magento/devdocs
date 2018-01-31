@@ -69,7 +69,7 @@ To use a custom file for Grunt configuration:
 
 
        {
-           "themes": "dev/tools/grunt/configs/local-themes"
+           "themes": "dev/tools/grunt/configs/local-themes/themes"
        }
 
 
