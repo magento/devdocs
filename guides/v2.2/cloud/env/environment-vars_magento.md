@@ -186,11 +186,20 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
   </thead>
   <tbody>
     <tr>
+      <td><code>CRON_CONSUMERS_RUNNER</code></td>
+      <td>
+        <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to make sure message queues are running after a deployment.</p>
+        <p>This is available in 2.2.x.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.2/coud/env/use-cases.html#manage-message-queues">Manage message queues</a> for more information.</p>
+      </td>
+      <td>not set</td>
+    </tr>
+    <tr>
       <td><code>QUEUE_CONFIGURATION</code></td>
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing AMQP-based service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue) for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
@@ -199,7 +208,7 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing search service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search) for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search">Connect to an existing search service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
