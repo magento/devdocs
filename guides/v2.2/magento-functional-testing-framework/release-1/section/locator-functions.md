@@ -23,7 +23,7 @@ When using the `locatorFunction`, you can also omit `Locator::` for code simplic
 ```xml
 <element name="simpleLocatorShorthand" type="button" locatorFunction="contains('label', 'Name')"/>
 ```
-An element's `locatorFunction` can also be parameterized the same way as [parameterized-selectors].
+An element's `locatorFunction` can also be parameterized the same way as [parameterized selectors].
 ```xml
 <element name="simpleLocatorTwoParam" type="button" locatorFunction="contains({{arg1}}, {{arg2}})" parameterized="true"/>
 ```
@@ -50,7 +50,7 @@ No special reference is required, as you are still just referring to an `element
 <!-- Internal -->
 
 [section]: ../section.html
-[parameterized-selectors]: parameterized-selectors.html
+[parameterized selectors]: parameterized-selectors.html
 
 <!-- External -->
 [Locator Functions]: http://codeception.com/docs/reference/Locator
