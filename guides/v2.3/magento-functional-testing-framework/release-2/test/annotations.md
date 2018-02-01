@@ -1,12 +1,16 @@
 ---
 layout: default
 group: mftf
-title: Annotations in the Magento Functional Testing Framework (release 2)
+title: Annotations in the Magento Functional Testing Framework
 version: 2.3
 github_link: magento-functional-testing-framework/release-2/test/annotations.md
 functional_areas:
  - Testing
+mftf-release: 2.0.2
 ---
+
+_This topic corresponds to the MFTF {{page.mftf-release}} release._
+{: style="text-align: right"}
 
 Annotations are essentially comments in the code.
 (In PHP, they all are marked by a preceding `@` symbol.)
