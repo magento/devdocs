@@ -39,7 +39,7 @@ You need to complete configurations for your DNS including:
 
   We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.
 
-After you've checked with your registrar about where to change your DNS settings, add a CNAME record that references the Master environment's host name: `<environment>-<project>.<region>.magentosite.cloud`. If you use multiple host names for your site, you must add a CNAME record for each of them.
+After you've checked with your registrar about where to change your DNS settings, add a CNAME record that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple host names for your site, you must add a CNAME record for each of them.
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>This will not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
@@ -55,13 +55,10 @@ The following is a possible list of DNS providers strictly for your information.
 
 Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirection service to redirect the apex over to the `www` version of the domain. Consult your DNS provider to see how they support this.
 
-For the format, we support `www.domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`. We don't support a domain without www: `domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`.
-
-### Configure DNS for Fastly {#fastly-dns}
-We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership.
+Another option for <em>apex domain</em> is to add an A record which maps a domain name to the Fastly IP address: `150.101.113.124`.
 
 ### TLS and Fastly {#fastly-tls}
-If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly's TXT record file for your account. You can then send this record to your DNS provider.
+If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using a TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
 

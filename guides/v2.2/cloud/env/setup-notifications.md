@@ -10,7 +10,7 @@ functional_areas:
   - Configuration
 ---
 
-By default, {{site.data.var.ece}} writes build and deploy actions to a single file called `app/var/log/cloud.log`, but you can also send logs to messaging systems, like Slack and email, if you want to receive real-time notifications.
+By default, {{site.data.var.ece}} writes build and deploy actions to a single file called `app/var/log/cloud.log` inside the Magento root application directory, but you can also send logs to messaging systems, like Slack and email, if you want to receive real-time notifications.
 
 For example, you may want to send a Slack message to a group of people when a deployment fails so someone can immediately start investigating what went wrong.
 
