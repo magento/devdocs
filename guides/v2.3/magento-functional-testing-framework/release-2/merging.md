@@ -171,29 +171,45 @@ Result
 ### Add a section
 
 ```xml
-base
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>    
+    <section name="AnotherBackendSection"/>
+</page>
 ```
 
 ```xml
-update
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="NewExtensionSection"/>
+</page>
 ```
 
 ```xml
-Result
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>    
+    <section name="AnotherBackendSection"/>
+    <section name="NewExtensionSection"/>
+</page>
 ```
 
 ### Remove a section
 
 ```xml
-base
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>    
+    <section name="AnotherBackendSection"/>
+</page>
 ```
 
 ```xml
-update
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="AnotherBackendSection" remove="true"/>
+</page>
 ```
 
 ```xml
-Result
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>
+</page>
 ```
 
 ## Sections merging
@@ -201,87 +217,122 @@ Result
 ### Add an element
 
 ```xml
-base
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ```xml
-update
+<section name="AdminLoginFormSection">
+    <element name="mergeElement" type="input" selector="#selector"/>
+</section>
 ```
 
 ```xml
-Result
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+    <element name="mergeElement" type="input" selector="#selector"/>
+</section>
 ```
 
 ### Remove an element
 
 ```xml
-base
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ```xml
-update
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" remove="true"/>
+</section>
 ```
 
 ```xml
-Result
+<section name="AdminLoginFormSection">
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ### Update an element
 
 ```xml
-base
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ```xml
-update
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#newSelector"/>
+</section>
 ```
 
 ```xml
-Result
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#newSelector"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ## Data merging
 
+`<data>` elements within an entity are additive; removal of individual `<data>` tags is not supported.
+
 ### Add data
 
 ```xml
-base
+<entity name="sampleData" type="testData">
+    <data key="firstField">field1</data>
+    <data key="secondField">field2</data>
+</entity>
 ```
 
 ```xml
-update
+<entity name="sampleData" type="testData">
+    <data key="thirdField">field3</data>
+</entity>
 ```
 
 ```xml
-Result
-```
-
-### Remove data
-
-```xml
-base
-```
-
-```xml
-update
-```
-
-```xml
-Result
+<entity name="sampleData" type="testData">
+    <data key="firstField">field1</data>
+    <data key="secondField">field2</data>
+    <data key="thirdField">field3</data>
+</entity>
 ```
 
 ### Update data
 
 ```xml
-base
+<entity name="sampleData" type="testData">
+    <data key="firstField">field1</data>
+    <data key="secondField">field2</data>
+</entity>
 ```
 
 ```xml
-update
+<entity name="sampleData" type="testData">
+    <data key="firstField">overrideField</data>
+</entity>
 ```
 
 ```xml
-Result
+<entity name="sampleData" type="testData">
+    <data key="firstField">overrideField</data>
+    <data key="secondField">field2</data>
+</entity>
 ```
 
 
