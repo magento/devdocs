@@ -10,7 +10,7 @@ functional_areas:
   - Services
 ---
 
-If you are having site availability issues, the first thing you should do is review your [deployment logs]({{page.baseurl}}cloud/trouble/environments-logs.html#log-deploy-log) to see if you can identify the problem.
+If you have site availability issues, the first thing you should do is review your [deployment logs]({{page.baseurl}}cloud/trouble/environments-logs.html#log-deploy-log) to see if you can identify the problem.
 
 You may be able to resolve your issue by searching your logs for examples in this topic and trying the associated solution.
 
@@ -30,7 +30,7 @@ During static content deployment, the default number of processing jobs is set t
 -   Your site is functioning normally, but fails to refresh static assets.
 
 ### Solution
-Modify the deploy phase using the `STATIC_CONTENT_THREADS` environmental variable and redeploy your site.
+Modify the deploy phase using the `STATIC_CONTENT_THREADS` environment variable and redeploy your site.
 
 1.  In a terminal, log in to your project.
 
