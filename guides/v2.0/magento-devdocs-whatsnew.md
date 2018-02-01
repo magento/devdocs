@@ -11,6 +11,10 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.|2.2.x|Updated|Jan 31
+You can now [manage build and deploy actions](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) across all your environments—including Pro Staging and Production—using a `.magento.env.yaml` file.|2.2.x|New|Jan 31
+You can now unlock specific stuck cron jobs in Magento Commerce (Cloud) with the [cron:unlock](http://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html) command instead of stopping and re-launching all of them.|2.2.x|Updated|Jan 31
+The deployment process creates backup files for the configuration files. You can restore the configuration files using the [restore](http://devdocs.magento.com/guides/v2.2/cloud/trouble/restore-configuration-files.html) command.|2.2.x|Updated|Jan 31
 MFTF 1.0: Updated descriptions for the `before` and `after` attributes in [Actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-1/cest/actions.html)|2.2.x|Updated|Jan 23
 Advanced Reporting: added more details to [Prerequisites](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html)|2.2.x|Updated|Jan 22
 We updated the [quarterly contributors](http://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page for Q4 2017.|2.x|Updated|Jan 18

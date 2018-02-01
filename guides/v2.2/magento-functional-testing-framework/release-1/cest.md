@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Cest structure in the Magento Functional Testing Framework (release 1)
+title: Cest structure in the Magento Functional Testing Framework
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/cest.md
 functional_areas:
@@ -9,7 +9,11 @@ functional_areas:
 redirect_from:
     - guides/v2.2/magento-functional-testing-framework/cest.html
     - guides/v2.2/magento-functional-testing-framework/1.0/cest.html
+mftf-release: 1.0.0
 ---
+
+_This topic corresponds to the MFTF {{page.mftf-release}} release._
+{: style="text-align: right"}
 
 ## Overview
 
@@ -118,7 +122,7 @@ remove|boolean|optional|
 It MAY contain the following child elements:
 
  * any [action]
- * [`<actionGroup>`][action group]
+ * [`<actionGroup>`][action group tag]
 
 ***
 ***
@@ -135,7 +139,7 @@ remove|boolean|optional|
 It MAY contain:
 
  * any [action]
- * [`<actionGroup>`][action group]
+ * [`<actionGroup>`][action group tag]
 
 ***
 ***
@@ -153,14 +157,14 @@ It MAY contain:
 
  * any [action]
  * [`<annotations>`][annotations]
- * [`<actionGroup>`][action group]
+ * [`<actionGroup>`][action group tag]
 
 ***
 ***
 
 ### actionGroup
 
-Calls a corresponding action group.
+Calls a corresponding [action group].
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -177,7 +181,7 @@ It MAY contain [`<argument>`][argument]
 
 ### argument
 
-Sets an argument that is used in parent [action group].
+Sets an argument that is used in parent [action group tag].
 
 Attribute|Type|Use
 ---|---|---
@@ -187,14 +191,16 @@ value|string|optional
 
 <!-- LINKS DEFINITIONS -->
 
-[action]: cest/actions.html
-[action group]: #actiongroup
+[action group tag]: #actiongroup
 [after]: #after
-[annotations]: cest/annotations.html
 [argument]: #argument
 [before]: #before
 [cest]: #cest
 [test]: #test
+
+[action]: ./cest/actions.html
+[annotations]: ./cest/annotations.html
+[action group]: ./cest/action-groups.html
 
 [Allure]: https://github.com/allure-framework/
 [codeception cest]: http://codeception.com/docs/07-AdvancedUsage#Cest-Classes
