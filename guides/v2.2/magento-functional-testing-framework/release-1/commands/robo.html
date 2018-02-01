@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Robo commands in the Magento Functional Testing Framework (release 1) | Magento 2 Developer Documentation</title>
+	<title>Robo commands in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -587,7 +587,7 @@
 
           
 
-          <span property="name">Robo commands in the Magento Functional Testing Framework (release 1)</span>
+          <span property="name">Robo commands in the Magento Functional Testing Framework</span>
 
         
 
@@ -610,7 +610,7 @@
 
 	
 
-	<h1 class="page-heading">Robo commands in the Magento Functional Testing Framework (release 1)</h1>
+	<h1 class="page-heading">Robo commands in the Magento Functional Testing Framework</h1>
 
   
 
@@ -618,7 +618,9 @@
 </section>
 
 
-			<p>Robo is a task runner for PHP that allows you to alias long complex CLI commands to simple commands.</p>
+			<p style="text-align: right"><em>This topic corresponds to the <abbr title="Magento Functional Testing Framework">MFTF</abbr> 1.0.0 release.</em></p>
+
+<p>Robo is a task runner for PHP that allows you to alias long complex CLI commands to simple commands.</p>
 
 <h2 id="usage">Usage</h2>
 
@@ -645,7 +647,7 @@
 
 <p>The following list contains most popular commands purposed to interact with the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.</p>
 
-<p>For more commands, see <a href="#available-commands">Available commands</a> or run in your terminal: <code class="highlighter-rouge">$ vendor/bin/robo</code>.</p>
+<p>For more commands, see <a href="#reference">Reference</a> or run in your terminal: <code class="highlighter-rouge">$ vendor/bin/robo</code>.</p>
 
 <h3 id="codeception-robo-commands">Codeception Robo Commands</h3>
 
@@ -751,27 +753,27 @@
 <table>
   <tbody>
     <tr>
-      <td><a href="#functional"><code class="highlighter-rouge">functional</code></a></td>
+      <td><code class="highlighter-rouge">functional</code></td>
       <td>Run all functional tests, excluding <code class="highlighter-rouge">@group 'skip'</code></td>
     </tr>
     <tr>
-      <td><a href="#example"><code class="highlighter-rouge">example</code></a></td>
+      <td><code class="highlighter-rouge">example</code></td>
       <td>Run all Tests marked with the <code class="highlighter-rouge">@group</code> tag <code class="highlighter-rouge">'example'</code></td>
     </tr>
     <tr>
-      <td><a href="#folder"><code class="highlighter-rouge">folder</code></a></td>
+      <td><code class="highlighter-rouge">folder</code></td>
       <td>Run all Acceptance tests located under the Directory Path provided</td>
     </tr>
     <tr>
-      <td><a href="#group"><code class="highlighter-rouge">group</code></a></td>
+      <td><code class="highlighter-rouge">group</code></td>
       <td>Run all Tests with the specified <code class="highlighter-rouge">@group</code> tag, excluding <code class="highlighter-rouge">@group 'skip'</code></td>
     </tr>
     <tr>
-      <td><a href="#help"><code class="highlighter-rouge">help</code></a></td>
+      <td><code class="highlighter-rouge">help</code></td>
       <td>Displays help for a command</td>
     </tr>
     <tr>
-      <td><a href="#list"><code class="highlighter-rouge">list</code></a></td>
+      <td><code class="highlighter-rouge">list</code></td>
       <td>Lists commands</td>
     </tr>
   </tbody>
@@ -782,15 +784,15 @@
 <table>
   <tbody>
     <tr>
-      <td><a href="#allure1generate"><code class="highlighter-rouge">allure1:generate</code></a></td>
+      <td><code class="highlighter-rouge">allure1:generate</code></td>
       <td>Generate the HTML for the Allure report based on the Test XML output - Allure v1.4.X</td>
     </tr>
     <tr>
-      <td><a href="#allure1open"><code class="highlighter-rouge">allure1:open</code></a></td>
+      <td><code class="highlighter-rouge">allure1:open</code></td>
       <td>Open the HTML Allure report - Allure v1.4.xX</td>
     </tr>
     <tr>
-      <td><a href="#allure1report"><code class="highlighter-rouge">allure1:report</code></a></td>
+      <td><code class="highlighter-rouge">allure1:report</code></td>
       <td>Generate and open the HTML Allure report - Allure v1.4.X</td>
     </tr>
   </tbody>
@@ -801,15 +803,15 @@
 <table>
   <tbody>
     <tr>
-      <td><a href="#allure2generate"><code class="highlighter-rouge">allure2:generate</code></a></td>
+      <td><code class="highlighter-rouge">allure2:generate</code></td>
       <td>Generate the HTML for the Allure report based on the Test XML output - Allure v2.3.X</td>
     </tr>
     <tr>
-      <td><a href="#allure2open"><code class="highlighter-rouge">allure2:open</code></a></td>
+      <td><code class="highlighter-rouge">allure2:open</code></td>
       <td>Open the HTML Allure report - Allure v2.3.X</td>
     </tr>
     <tr>
-      <td><a href="#allure2report"><code class="highlighter-rouge">allure2:report</code></a></td>
+      <td><code class="highlighter-rouge">allure2:report</code></td>
       <td>Generate and open the HTML Allure report - Allure v2.3.X</td>
     </tr>
   </tbody>
@@ -820,7 +822,7 @@
 <table>
   <tbody>
     <tr>
-      <td><a href="#buildproject"><code class="highlighter-rouge">build:project</code></a></td>
+      <td><code class="highlighter-rouge">build:project</code></td>
       <td>Clone the Example configuration files Build the Codeception project</td>
     </tr>
   </tbody>
@@ -831,7 +833,7 @@
 <table>
   <tbody>
     <tr>
-      <td><a href="#clonefiles"><code class="highlighter-rouge">clone:files</code></a></td>
+      <td><code class="highlighter-rouge">clone:files</code></td>
       <td>Duplicate the Example configuration files used to customize the Project for customization</td>
     </tr>
   </tbody>
@@ -842,7 +844,7 @@
 <table>
   <tbody>
     <tr>
-      <td><a href="#generatetests"><code class="highlighter-rouge">generate:tests</code></a></td>
+      <td><code class="highlighter-rouge">generate:tests</code></td>
       <td>Generate all Tests</td>
     </tr>
   </tbody>
@@ -853,7 +855,7 @@
 <table>
   <tbody>
     <tr>
-      <td><a href="#selfupdate"><code class="highlighter-rouge">self:update</code></a> or <code class="highlighter-rouge">update</code></td>
+      <td><code class="highlighter-rouge">self:update</code> or <code class="highlighter-rouge">update</code></td>
       <td>Updates the <code class="highlighter-rouge">robo.phar</code> to the latest version. Only works when running the <code class="highlighter-rouge">phar</code> version of Robo.</td>
     </tr>
   </tbody>

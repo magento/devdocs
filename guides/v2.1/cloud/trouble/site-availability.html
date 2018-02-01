@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Technologies and requirements | Magento 2 Developer Documentation</title>
+	<title>Site availability | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/requirements/cloud-requirements.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/trouble/site-availability.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/trouble/site-availability.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/requirements/cloud-requirements.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/trouble/site-availability.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/requirements/cloud-requirements.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/trouble/site-availability.html">Magento 2.2</a></li>
 	
   </ul>
 
@@ -369,7 +369,7 @@
     
     
 
-<li class="nav-level1 active " id="technologies-and-requirements">
+<li class="nav-level1  " id="technologies-and-requirements">
 
     
     <div class="toggle closed">&nbsp;</div>
@@ -1713,7 +1713,7 @@
         
         
         
-        <li class="nav-level2  " id="site-availability">
+        <li class="nav-level2 active " id="site-availability">
             
             
         
@@ -1825,7 +1825,7 @@
 
           
 
-          <span property="name">Technologies and requirements</span>
+          <span property="name">Site availability</span>
 
         
 
@@ -1848,7 +1848,7 @@
 
 	
 
-	<h1 class="page-heading">Technologies and requirements</h1>
+	<h1 class="page-heading">Site availability</h1>
 
   
 
@@ -1856,158 +1856,51 @@
 </section>
 
 
-			<p>This topic describes technologies, knowledge, accounts, and steps to complete when working with your Magento Commerce (Cloud) code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.</p>
+			<p>If you have site availability issues, the first thing you should do is review your <a href="/guides/v2.1/cloud/trouble/environments-logs.html#log-deploy-log">deployment logs</a> to see if you can identify the problem.</p>
 
-<h2 id="cloud-req-pre">Technologies</h2>
-<p>The following technologies are requirements for developing and deploying your store code:</p>
+<p>You may be able to resolve your issue by searching your logs for examples in this topic and trying the associated solution.</p>
 
+<h2 id="credisexception">CredisException</h2>
+<p>This exception is caused by a known issue with how Magento handles simultaneous connections to Redis during static content deployment.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2018-01-30 18:56:52] Generating static content for locales: en_US
+[2018-01-30 18:56:52] Command:php ./bin/magento setup:static-content:deploy --jobs=3  en_US
+
+  [CredisException]
+  read error on connection
+</code></pre></div></div>
+
+<p>During static content deployment, the default number of processing jobs is set to <code class="highlighter-rouge">3</code>. We recommend setting the number of processing jobs to <code class="highlighter-rouge">1</code> as a workaround.</p>
+
+<h3 id="symptoms">Symptoms</h3>
 <ul>
-  <li><a href="#git">Git</a></li>
-  <li><a href="/guides/v2.1/cloud/reference/cloud-composer.html">Composer</a></li>
-  <li><a href="/guides/v2.1/cloud/bk-cloud.html#magento2">Magento 2</a></li>
-  <li><a href="/guides/v2.1/cloud/deploy/continuous-deployment.html">Continuous Integration</a></li>
-  <li>Architectures including <a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter</a> or <a href="/guides/v2.1/cloud/reference/discover-arch.html">Pro</a> architecture</li>
+  <li>Your site is not functioning at all. HTTP requests result in 50x errors.</li>
+  <li>Your site is functioning normally, but fails to refresh static assets.</li>
 </ul>
 
-<p>Here are some advanced technologies we recommend getting familiar with:</p>
+<h3 id="solution">Solution</h3>
+<p>Modify the deploy phase using the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> environment variable and redeploy your site.</p>
 
-<ul>
-  <li><a href="/guides/v2.1/cloud/basic-information/cloud-fastly.html">Fastly</a> for CDN and caching (based on Varnish)</li>
-  <li><a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a> for performance testing</li>
-  <li><a href="/guides/v2.1/cloud/project/new-relic.html">New Relic APM</a> for performance testing</li>
-  <li><a href="/guides/v2.1/cloud/project/project-integrate-github.html">GitHub</a> if you need a Git repo</li>
-  <li><a href="/guides/v2.1/cloud/project/bitbucket-integration.html">Bitbucket</a> if you need a Git repo</li>
-</ul>
+<ol>
+  <li>
+    <p>In a terminal, log in to your project.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Commerce (Cloud) does <em>not</em> support the <a href="/guides/v2.1/config-guide/multi-master/multi-master.html">split database performance solution</a> at this time.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud-login
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Set the variable.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:set STATIC_CONTENT_THREADS '1' -e &lt;environment&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Refer to <a href="/guides/v2.1/cloud/env/environment-vars_over.html">Manage variables</a> and <a href="/guides/v2.1/guides/v2.0/cloud/trouble/redis-troubleshooting.html#static-content">Redis and static-content deployment</a> for more information.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">support ticket</a> to add this environment variable to your production and staging environments.</p>
 </div>
-
-<h3 id="git">What is Git</h3>
-<p>Git is the heart of all your code in repositories. It acts as a version control system through branches from a parent. Multiple developers can work together in personal branches all merging into the same parent. You can also work on features at the same time in multiple branches.</p>
-
-<p>We hope you have a good working knowledge of Git. Need some help? Don’t worry, we have you covered with some of our favorite links and information. We’ll also include a Git guide to branching and developing soon.</p>
-
-<ul>
-  <li><a href="https://git-scm.com/documentation" target="\_blank">Git documentation</a> and <a href="https://git-scm.com/videos" target="\_blank">videos</a> from the makers of Git</li>
-  <li><a href="http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf" target="\_blank">Git cheatsheet</a> and <a href="http://rogerdudler.github.io/git-guide/" target="\_blank">quick guide</a> from Roger Dudler</li>
-  <li><a href="https://www.youtube.com/watch?v=8KCQe9Pm1kg" target="\_blank">Git video</a> with DevForge to understand how people use the repo and commands with a fun story</li>
-</ul>
-
-<p>To get started with Git, you should have <a href="https://git-scm.com/downloads" target="\_blank">Git installed</a> on your local.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, Magento Commerce adds two additional requirements:</p>
-  <ul><li>The <code>/</code> character isn't allowed.</li>
-  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
-</div>
-
-<p>You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.</p>
-
-<h2 id="cloud-arch-software">Supported software versions</h2>
-<p>Magento Commerce (Cloud) uses:</p>
-
-<ul>
-  <li>Operating system: Debian GNU/Linux 8 (jessie)</li>
-  <li>Web server: <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span> 1.8</li>
-</ul>
-
-<p>This software is <em>not</em> upgradable but versions for the following software is configurable:</p>
-
-<ul>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">PHP</a> - For Magento Commerce (Cloud) 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For Magento Commerce (Cloud) 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.</li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">MySQL</a> 5.6 and 5.7</li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Redis</a> 2.8 and 3.0</li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a> 3.5</li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Elasticsearch</a> 1.4, 1.7, and 2.4</li>
-</ul>
-
-<p>For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see <a href="/guides/v2.1/cloud/basic-information/cloud-fastly.html">Fastly in Cloud</a>.</p>
-
-<p>For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.</p>
-
-<ul>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
-</ul>
-
-<h2 id="requirements">Requirements to get started</h2>
-<p>To get started as a developer in a Magento Commerce (Cloud) project, you need to set up the following:</p>
-
-<ul>
-  <li>Set up a <a href="/guides/v2.1/cloud/before/before-workspace.html">local development environment</a>. Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project <code class="highlighter-rouge">master</code> Git branch cloned. You’ll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your <a href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">Starter</a> or <a href="/guides/v2.1/cloud/welcome/discover-workflow.html">Pro</a> plan.</li>
-  <li>Get <a href="/guides/v2.1/install-gde/prereq/connect-auth.html"><code class="highlighter-rouge">repo.magento.com</code> credentials</a> in your account</li>
-  <li>Get a <a href="/guides/v2.1/cloud/before/before-project-owner.html#cloud-owner-admins">project invite</a> by the Project Owner or a super user to the project</li>
-  <li>Get <a href="/guides/v2.1/cloud/before/before-project-owner.html#cloud-owner-keys">Magento authentication keys</a> from the Project Owner</li>
-</ul>
-
-<p>We walk you through everything you need to do and know.</p>
-
-<h2 id="cloud-req-test">Magento configurations</h2>
-<p>Before you test any custom code in your local Magento Commerce environment, you must do all of the following:</p>
-
-<ul>
-  <li>For Pro, set the database <a href="/guides/v2.1/cloud/before/before-workspace-magento-prereqs.html#database"><code class="highlighter-rouge">auto_increment_increment</code> to 3</a></li>
-  <li>
-    <p>Test with the correct file permissions in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">PRODUCTION mode</a></p>
-
-    <p>Correct permissions only allow write access to <code class="highlighter-rouge">var</code>, <code class="highlighter-rouge">pub/static, pub/media</code>, and <code class="highlighter-rouge">app/etc</code></p>
-  </li>
-  <li>Test with minification for HTML, JavaScript, and <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> enabled</li>
-  <li>Test with <a href="/guides/v2.1/config-guide/redis/config-redis.html">Redis enabled for page cache and session cache</a></li>
-  <li>Install and configure <a href="/guides/v2.1/cloud/access-acct/fastly.html">Fastly</a></li>
-  <li>Test using <a href="/guides/v2.1/config-guide/varnish/config-varnish.html">Varnish</a> for the page <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span></li>
-</ul>
-
-<h2 id="cloud-req-devtest">Development and testing</h2>
-<p>For development and testing, we recommend the following:</p>
-
-<ul>
-  <li>
-    <p>Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications</p>
-
-    <p>You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.</p>
-  </li>
-  <li>
-    <p>Verify <a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html"><code class="highlighter-rouge">magento setup:install</code></a> and <a href="/guides/v2.1/comp-mgr/cli/cli-upgrade.html"><code class="highlighter-rouge">magento setup:upgrade</code></a> commands work during the build and deploy process and that any extensions and customizations compile correctly in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a></p>
-
-    <p>You can set an environment variable or enter a CLI command for this specific mode.</p>
-  </li>
-  <li>Fully <a href="/guides/v2.1/cloud/live/stage-prod-test.html">test your site</a> in Staging as a merchant and customer prior to Production deployment</li>
-  <li>Verify the Fastly VCL is uploaded to Fastly</li>
-  <li>Send a ticket with all storefront domains when going live (to be added to the shared SSL (HTTPS) certificate)</li>
-  <li>For custom deploy hooks in Integration, open a Support ticket to have them added to the Staging and Production deployment process</li>
-  <li>Profile key flows and customizations using Blackfire.io</li>
-</ul>
-
-<h2 id="license-and-authentication-requirements">License and authentication requirements</h2>
-<p>The <a href="/guides/v2.1/cloud/before/before-project-owner.html">Account Owner</a> creates the initial Magento Commerce (Cloud) account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.</p>
-
-<p>To work with and deploy stores, you need the following:</p>
-
-<ul>
-  <li><a href="/guides/v2.1/cloud/onboarding/onboarding-tasks.html#cloud-first-acct">Magento Commerce (Cloud) account</a> already created or created via an invitation</li>
-  <li><a href="/guides/v2.1/cloud/before/before-project-owner.html#cloud-owner-admins">Project invitiation</a> for contributing developers from the Account Owner or a super user</li>
-  <li>Magento <a href="/guides/v2.1/cloud/before/before-project-owner.html#cloud-owner-keys">authentication key</a> for each user who contributes to the project</li>
-</ul>
-
-<p>Your Magento Commerce account must <em>authenticate</em> using any of the following:</p>
-
-<ul>
-  <li>GitHub</li>
-  <li>Bitbucket</li>
-  <li>Google</li>
-  <li>Create your own Cloud account</li>
-</ul>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html">Cloud Architexture</a></li>
-  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">First-time local environment setup</a></li>
-  <li><a href="/guides/v2.1/cloud/welcome/discover-workflow.html">Develop and Deploy Workflow</a></li>
-  <li><a href="/guides/v2.1/cloud/live/live.html">Go live and launch</a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -2018,14 +1911,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/requirements/cloud-requirements.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/site-availability.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/requirements/cloud-requirements.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/trouble/site-availability.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
