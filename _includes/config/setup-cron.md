@@ -40,7 +40,7 @@ For example,
 A text editor displays. (You might need to choose a text editor first.)
 
 <pre class="no-copy">* * * * * &lt;path to php binary> &lt;magento install dir>/bin/magento cron:run | grep -v "Ran jobs by schedule" >> &lt;magento install dir>/var/log/magento.cron.log
-* * * * * &lt;path to php binary> &lt;magento install dir>/update/cron.php >> &lt;magento install dir>/var/log/update.cron.log
+* * * * * &lt;path to php binary> &lt;magento install dir>/pub/cron.php >> &lt;magento install dir>/var/log/update.cron.log
 * * * * * &lt;path to php binary> &lt;magento install dir>/bin/magento setup:cron:run >> &lt;magento install dir>/var/log/setup.cron.log</pre>
 
 where 
@@ -62,7 +62,7 @@ For example, if the PHP binary is located in `/usr/bin`, you installed Magento i
 Example:
 
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
-	* * * * * /usr/bin/php /var/www/magento2/update/cron.php >> /var/www/magento2/var/log/update.cron.log
+	* * * * * /usr/bin/php /var/www/magento2/pub/cron.php >> /var/www/magento2/var/log/update.cron.log
 	* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
 
 **Example 2:** Contributing developers only (that is, you cloned the Magento 2 GitHub repository):
