@@ -1355,14 +1355,13 @@
 <p>Plugins cannot be used with any of the following:</p>
 
 <ul>
-  <li>Objects that are instantiated before <code class="highlighter-rouge">Magento\Framework\Interception</code> is bootstrapped</li>
   <li>Final methods</li>
   <li>Final classes</li>
-  <li>Any class that contains at least one final public method</li>
   <li>Non-public methods</li>
   <li>Static methods</li>
   <li><code class="highlighter-rouge">__construct</code></li>
   <li>Virtual types</li>
+  <li>Objects that are instantiated before <code class="highlighter-rouge">Magento\Framework\Interception</code> is bootstrapped</li>
 </ul>
 
 <h3 id="declaring-a-plugin">Declaring a plugin</h3>
