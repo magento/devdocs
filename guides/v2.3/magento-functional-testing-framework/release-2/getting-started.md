@@ -21,7 +21,6 @@ Make sure that you've set up the following software:
 * [Java v1.8.x+][java]
 * [Selenium Server Standalone v3.6.0+](#selenium-server)
 * [ChromeDriver v2.33+][chromedriver]
-* [Allure CLI v2.3.x+](#allure)
 
 ### Recommendations
 
