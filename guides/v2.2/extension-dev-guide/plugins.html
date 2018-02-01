@@ -1516,7 +1516,7 @@
 <ul>
   <li><code class="highlighter-rouge">type name</code>. A class or interface which the plugin observes.</li>
   <li><code class="highlighter-rouge">plugin name</code>. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
-  <li><code class="highlighter-rouge">plugin type</code>. The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code class="highlighter-rouge">\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
+  <li><code class="highlighter-rouge">plugin type</code>. The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code class="highlighter-rouge">\Vendor\Module\Plugin\&lt;ClassName&gt;</code>.</li>
 </ul>
 
 <p>The following elements are optional:</p>
@@ -1540,7 +1540,7 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="k">class</span> <span class="nc">ProductAttributesUpdater</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1557,7 +1557,7 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="k">class</span> <span class="nc">ProductAttributesUpdater</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1571,7 +1571,7 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">AuthPlugin</span>
+<span class="k">class</span> <span class="nc">AuthLogger</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$logger</span>
 
@@ -1597,7 +1597,7 @@
 
 <p>The following example is a class with an after method for <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Model/Product/Action.php" target="_blank"><code class="highlighter-rouge">\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)</code></a>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">MyPlugin</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">WebsitesLogger</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$logger</span>
 
@@ -1631,7 +1631,7 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="k">class</span> <span class="nc">ProductAttributesUpdater</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1662,7 +1662,7 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
+<span class="k">class</span> <span class="nc">MyUtilityUpdater</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nx">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1676,7 +1676,7 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
+<span class="k">class</span> <span class="nc">MyUtilityUpdater</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="o">...</span><span class="nv">$args</span><span class="p">)</span>
     <span class="p">{</span>
