@@ -104,6 +104,7 @@ Full reference:
 
 <!-- LINK DEFINITIONS -->
 
+[annotation]: ../test/annotations.html
 [robo]: robo.html
 
 <!-- Abbreviations -->
