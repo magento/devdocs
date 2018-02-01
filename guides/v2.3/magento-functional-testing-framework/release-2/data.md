@@ -201,9 +201,9 @@ in another data entity, you can use this.
 Attributes|Type|Use|Description
 ---|---|---|---
 key|string|optional|Key attribute of this entity to assign a value to.
-unique|Available values: `prefix`, `suffix`|optional|*This attribute hasn't been implemented yet.*
 entityType|string|optional|Type attribute of referenced entity.
 entityKey|string|optional|Key attribute of the referenced entity from which to get a value.
+unique|--|--|*This attribute hasn't been implemented yet.*
 
 ### requiredEntity
 
