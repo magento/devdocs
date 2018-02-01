@@ -20,7 +20,6 @@ All the Codeception commands you need are wrapped using Robo."
 %}
 
 [See the list of Robo commands][robo].
-</div>
 
 If you'd like to run the Codeception tests directly without using Robo, run:
 
