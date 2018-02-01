@@ -24,12 +24,11 @@ Plugins can not be used on following:
 
 * Final methods
 * Final classes
-* Any class that contains at least one final public method
 * Non-public methods
 * Class methods (such as static methods)
 * `__construct`
 * Virtual types
-* Objects that are instantiated before Interception infrastructure is bootstrapped
+* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 
 ### Declaring a plugin
 
