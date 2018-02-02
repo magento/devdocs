@@ -27,31 +27,60 @@ This is done by using the `<remove>` action and specifying a `stepKey` of the ac
 ## Merging in Tests
 
 ### Add a test
-
-```xml
-base
-```
-
-```xml
-update
-```
-
-```xml
-Result
-```
+Adding of a `<test>` is done by creating a new file, or adding a `<test>` node to an existing `*test.xml` file.
 
 ### Remove a test
+Tests cannot be removed by deltas. If a test must be skipped due to a module completely invalidating a functionality, you can add the test to the `skip` group.
 
 ```xml
-base
+<test name="AdminLoginTest">
+        <annotations>
+            <features value="Admin Login"/>
+            <stories value="Login on the Admin Login page"/>
+            <title value="You should be able to log into the Magento Admin backend."/>
+            <description value="You should be able to log into the Magento Admin backend."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MAGETWO-71572"/>
+            <group value="example"/>
+            <group value="login"/>
+        </annotations>
+    <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
+    <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
+    <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
+    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
+    <closeAdminNotification stepKey="closeAdminNotification"/>
+    <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
+</test>
 ```
 
 ```xml
-update
+<test name="AdminLoginTest">
+        <annotations>
+            <group value="skip"/>
+        </annotations>
+</test>
 ```
 
 ```xml
-Result
+<test name="AdminLoginTest">
+        <annotations>
+            <features value="Admin Login"/>
+            <stories value="Login on the Admin Login page"/>
+            <title value="You should be able to log into the Magento Admin backend."/>
+            <description value="You should be able to log into the Magento Admin backend."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MAGETWO-71572"/>
+            <group value="example"/>
+            <group value="login"/>
+            <group value="skip"/>
+        </annotations>
+    <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
+    <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
+    <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
+    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
+    <closeAdminNotification stepKey="closeAdminNotification"/>
+    <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
+</test>
 ```
 
 ### Update a test
