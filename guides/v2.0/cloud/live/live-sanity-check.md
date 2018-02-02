@@ -151,7 +151,7 @@ We highly recommend having Magento already installed prior to deployment. During
 *	Install the Magento application if needed
 *	If the Magento application is installed, upgrade components
 *	Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
-*	Set the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) mode
+*	Set the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 To deploy your site:
 
@@ -165,7 +165,7 @@ To deploy your site:
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean
-5.	Set the Magento application for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production):
+5.	Set the Magento application for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode):
 
 		php bin/magento deploy:mode:set production
 
