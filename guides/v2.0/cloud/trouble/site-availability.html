@@ -1822,10 +1822,10 @@
 
 			<p>If you have site availability issues, the first thing you should do is review your <a href="/guides/v2.0/cloud/trouble/environments-logs.html#log-deploy-log">deployment logs</a> to see if you can identify the problem.</p>
 
-<p>You may be able to resolve your issue by searching your logs for examples in this topic and trying the associated solution.</p>
+<p>You may be able to resolve your issue by searching your logs for one of the examples in this topic and trying the associated solution.</p>
 
 <h2 id="credisexception">CredisException</h2>
-<p>This exception is caused by a known issue with how Magento handles simultaneous connections to Redis during static content deployment.</p>
+<p>This exception is caused by a known issue with how Magento handles simultaneous connections to Redis during static content deployment in the deploy phase.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2018-01-30 18:56:52] Generating static content for locales: en_US
 [2018-01-30 18:56:52] Command:php ./bin/magento setup:static-content:deploy --jobs=3  en_US
@@ -1834,7 +1834,13 @@
   read error on connection
 </code></pre></div></div>
 
-<p>During static content deployment, the default number of processing jobs is set to <code class="highlighter-rouge">3</code>. We recommend setting the number of processing jobs to <code class="highlighter-rouge">1</code> as a workaround.</p>
+<p>During static content deployment in the deploy phase, the default number of processing jobs is set to <code class="highlighter-rouge">3</code>. We recommend setting the number of processing jobs to <code class="highlighter-rouge">1</code> as a workaround.</p>
+
+<p>You can also move static content deployment from the deploy phase to the build phase, which does not have access to Redis. Refer to <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a> for more information.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>Static content deployment in the build phase also reduces downtime. The deploy phase puts your application in maintenance mode, which takes your site offline until static content deployment is complete. If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. A failure during the build phase prevents deployment, which prevents downtime.</p>
+</div>
 
 <h3 id="symptoms">Symptoms</h3>
 <ul>
