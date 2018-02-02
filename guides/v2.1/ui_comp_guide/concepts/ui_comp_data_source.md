@@ -31,7 +31,7 @@ The component's data provider class is declared inside `<dataSource />`. The fol
 </argument>
 {% endhighlight %}
 
-In the block of code above, [YourNameSpace]\[YourModule] would the directory that contains all of the module's files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.
+In the block of code above, [YourNameSpace]\[YourModule] would be the directory that contains all of the module's files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.
 
 The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`. To meet that requirement, it can extend `\Magento\Ui\DataProvider\AbstractDataProvider`. The `AbstractDataProvider` class implements all of the required methods in the `DataProviderInterface`. The DataProvider class is the primary source of any data or {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} that the component needs or will use.
 

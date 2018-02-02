@@ -145,7 +145,7 @@ The following variables are available during the deploy process of build and dep
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing AMQP-based service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue) for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
@@ -154,7 +154,7 @@ The following variables are available during the deploy process of build and dep
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing search service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search) for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search">Connect to an existing search service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
@@ -170,7 +170,7 @@ The following variables are available during the deploy process of build and dep
     <tr>
       <td><code>CLEAN_STATIC_FILES</code></td>
       <td>
-        <p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
+        <p>The default value, <code>enabled</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enabled</code> and <code>disabled</code>.</p>
         <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them.</p>
         <p>Because of <a href="{{page.baseurl}}howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
         <p>This is available in all versions.</p>

@@ -179,7 +179,7 @@ In the Magento root directory, run:
 
 `php bin/magento deploy:mode:set production`
 
-See [Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#mode-production) for details.
+See [Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode) for details.
 </div>
 <div class="flow-arrow"></div>
 
