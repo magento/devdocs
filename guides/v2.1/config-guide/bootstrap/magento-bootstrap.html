@@ -1774,7 +1774,7 @@
 <p>The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:</p>
 
 <ul>
-  <li>In <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>, displays the <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> as-is.</li>
+  <li>In <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a>, displays the <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> as-is.</li>
   <li>In any other mode, attempts to log exception and display a generic error message.</li>
   <li>Terminates Magento with error code <code class="highlighter-rouge">1</code></li>
 </ul>
@@ -1797,7 +1797,7 @@
   <li>Uses an HTTP response object to return result obtained from the controller action.</li>
   <li>Error handling (in the following priority order):
     <ol>
-      <li>If you’re using <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>:
+      <li>If you’re using <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a>:
         <ul>
           <li>If the Magento application is not installed, redirect to Setup Wizard.</li>
           <li>If the Magento application is installed, display an error and HTTP status code 500 (Internal Server Error).</li>
@@ -1817,7 +1817,7 @@
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The entry point for static view files is not used in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</p></span>
+  <p>The entry point for static view files is not used in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a> to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</p></span>
 </div>
 
 <p>In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate <code class="highlighter-rouge">.htaccess</code>.
@@ -1826,7 +1826,7 @@ When the request is redirected to the entry point, the Magento application parse
 <ul>
   <li>In developer mode, the content of the file is returned so that every time the resource is requested, the returned content is up to date.</li>
   <li>
-    <p>In <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-default">default</a> mode, the retrieved resource is published so it is accessible by the previously requested URL.</p>
+    <p>In <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#default-mode">default</a> mode, the retrieved resource is published so it is accessible by the previously requested URL.</p>
 
     <p>All future requests for the static resource are processed by the server the same as static files; that is, without involving the entry point. If it’s necessary to synchronize published files with original ones, the <code class="highlighter-rouge">pub/static</code> directory should be removed; as a result, files are automatically republished with the next request.</p>
   </li>
