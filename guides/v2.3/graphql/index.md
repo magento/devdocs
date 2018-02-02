@@ -11,16 +11,16 @@ github_link: graphql/index.md
 
 The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento) to explore and try it out for yourself.
 
-## Where we're at
+## The current state of Magento GraphQL
 
 Most of the development team's work thus far has been devoted to building the GraphQL infrastructure and enhancing the ability to query products. The complexity of the Catalog module made it the ideal candidate for early development. It supports multiple types of products as well as extension, custom, and EAV attributes.
 
-GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax of all of that module's queries, as well as the attributes that can be returned. If you run a REST call such as `GET /V1/products/:sku` on a simple product, the response may contain well over 100 lines. If all you need is the current price, the call has returned over 99 lines too many. With GraphQL, a query against the same SKU could return just the price.
+GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as `GET /V1/products/:sku` on a simple product, the response may contain well over 100 lines. If all you need is the current price, the call has returned over 99 lines too many. With GraphQL, a query against the same SKU could return just the price.
 
-A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage tributes product-related attributes, but you are free to use alternate methods:
+A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
 
 * **EAV attributes** are explicitly declared in the schema. Any attribute values will be pulled from the database, if they exist.
-* **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, the we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
+* **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 * **Extension attributes** can be declared in a `graphql.xml` file or by a custom reader, but they should be declared in a separate `*GraphQL` module. The attributes should extend from the resolver that fetches that model's data.
 
 You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the front end.
@@ -40,7 +40,7 @@ In the near future, we'll roll out the following features:
 
 * Support of all product types. Currently, simple and configurable products are supported.
 * More robust error handling.
-* A new query API.
+* A more performant data retrieval mechanism.
 * Attribute-level help that will be displayed in the GraphQL browser.
 
 ## How to access GraphQL

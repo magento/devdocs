@@ -63,6 +63,9 @@ Attribute |  Data Type | Description
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
 `default_billing` | Boolean | Indicates whether the address is the default billing address
+`reward_update_notification` | Int | The number of the email template to use for notifications about reward updates. This attribute is defined in the Reward module.
+`reward_warning_notification` | Int | The number of the email template to use for notifications about rewards points expiring. This attribute is defined in the Reward module.
+
 
 ## Example usage
 

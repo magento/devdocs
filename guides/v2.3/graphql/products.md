@@ -217,3 +217,162 @@ Field | Type | Description
 `value` | Float | The price of the fixed price item
 `percentage_value` | Float | The percentage discount of the item
 `website_id` | Int | The ID assigned to the website.
+
+## Product type-specific attributes
+
+### Bundle products
+
+
+#### BundleProduct
+
+Field | Type | Description
+--- | --- | ---
+`price_view` | PriceViewEnum | One of PRICE_RANGE or AS_LOW_AS
+`dynamic_price` | Boolean | Indicates whether the bundle product has a dynamic price.
+`dynamic_sku` | Boolean | Indicates whether the bundle product has a dynamic SKU.
+`ship_bundle_items` | ShipBundleItemsEnum | Indicates whether to ship bundle items together or individually.
+`dynamic_weight` | Boolean | Indicates whether the bundle product has a dynamically calculated weight.
+`items` | BundleItem | An array containing information about individual bundle items.
+
+#### BundleItem
+
+Field | Type | Description
+--- | --- | ---
+`option_id` | Int | An ID assigned to each type of item in a bundle product.
+`title` | String | The display name of the item
+`required` | Boolean | Indicates whether the item must be included in the bundle.
+`type` | String | The input type that the customer uses to select the item. Examples include radio button and checkbox." />
+`position` | Int | The relative position of this item compared to the other bundle items.
+`sku` | String | The SKU of the bundle product
+`options`  | BundleItemOption | An array of additional options for this bundle item
+
+####  BundleItemOption
+
+Field | Type | Description
+--- | --- | ---
+`id` | Int | The ID assigned to the bundled item option
+`label` | String | The text that identifies the bundled item option
+`qty` | Float | Indicates the quantity of this specific bundle item
+`position` | Int | When a bundle item contains multiple options, the relative position of this option compared to the other options
+`is_default` | Boolean | Indicates whether this option is the default option
+`price` | Float | The price of the selected option
+`price_type` | PriceTypeEnum | One of FIXED, PERCENT, or DYNAMIC
+`can_change_quantity` | Boolean | Indicates whether the customer can change the number of items for this option
+`product` | ProductInterface | The ProductInterface object, which contains details about this product option
+
+### Configurable products
+
+#### ConfigurableProduct
+
+Field | Type | Description
+--- | --- | ---
+`configurable_product_links` | SimpleProduct | An array of linked simple products
+`configurable_product_options` | ConfigurableProductOptions | An array of linked simple product items
+
+#### ConfigurableProductOptions
+
+Field | Type | Description
+--- | --- | ---
+`id` | Int | The configurable option ID number assigned by the system
+`attribute_id` | String | The ID assigned to the attribute
+`attribute_code` | String | A string that identifies the attribute
+`label` | String | A string that describes the configurable product option. It is displayed on the UI.
+`position` | Int | A number that indicates the order in which the attribute is displayed.
+`is_use_default` | Boolean | Indicates whether the option is the default.
+`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product.
+`product_id` | Int | This is the same as a product's 'id' field.
+
+#### ConfigurableProductOptionsValues
+
+Field | Type | Description
+--- | --- | ---
+`value_index` | Int | A unique index number assigned to the configurable product option
+
+### Downloadable products
+
+#### DownloadableProduct
+
+Field | Type | Description
+--- | --- | ---
+`downloadable_product_samples` | DownloadableProductSamples | An array containing information about samples of this downloadable product.
+`downloadable_product_links` | DownloadableProductLinks | An array containing information about the links for this downloadable product.
+`links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately.
+`links_title` | String | The heading above the list of downloadable products
+
+#### DownloadableProductSamples
+
+Field | Type | Description
+--- | --- | ---
+`id` | Int | The unique ID for the downloadable product sample
+`title` | String | The display name of the sample
+`sort_order` | Int | A number indicating the sort order.
+`sample_type` | DownloadableFileTypeEnum | Either FILE or URL
+`sample_file` | String | The relative path to the downloadable sample
+`sample_url` | String | The relative URL to the downloadable sample
+
+#### DownloadableProductLinks
+
+Field | Type | Description
+--- | --- | ---
+`id` | Int | The unique ID for the link to the downloadable product
+`title` | String | The display name of the link
+`sort_order` | Int | A number indicating the sort order.
+`is_shareable` | Boolean | Indicates whether the link is shareable
+`price` | Float | The price of the downloadable product
+`number_of_downloads` | Int | The maximum number of times the product can be downloaded. A value of 0 means unlimited.
+`link_type` | DownloadableFileTypeEnum | Either FILE or URL
+`sample_type` | DownloadableFileTypeEnum | Either FILE or URL
+`sample_file` | String | The relative path to the downloadable sample
+`sample_url` | String | The relative URL to the downloadable sample
+
+### Gift cards
+
+#### GiftCardProduct
+
+Field | Type | Description
+--- | --- | ---
+`giftcard_amounts` |  `GiftCardAmounts` | An array that contains information about the values and ID of a gift card.
+`allow_open_amount` | Boolean | Indicates whether customers have the ability to set the value of the gift card.
+`open_amount_min` | Float | The minimum acceptable value of an open amount gift card.
+`open_amount_max` | Float | The maximum acceptable value of an open amount gift card.
+`giftcard_type`"  | `GiftCardTypeEnum` | Either VIRTUAL, PHYSICAL, or COMBINED
+`is_redeemable` | Boolean | Indicates whether the customer can redeem the value on the card for cash.
+`lifetime` | Int | The number of days after purchase until the gift card expires. A null value means there is no limit.
+`allow_message` | Boolean | Indicates whether the customer can provide a message to accompany the gift card.
+`message_max_length` | Int | The maximum number of characters a gift card message can contain
+`color` | Int | The color of the product
+`size` |  String | The size of the product
+`manufacturer` | Int | The manufacturer of the product
+
+#### GiftCardAmounts
+
+Field | Type | Description
+--- | --- | ---
+`value_id` | Int | An ID that is  assigned to each unique gift card amount.
+`website_id` | Int | ID of the website that generated the gift card
+`value` | Float | The value of the gift card
+`attribute_id` | Int | An internal attribute ID.
+`website_value` | Float |The value of the gift card
+
+### Grouped products
+
+#### GroupedProduct
+
+Field | Type | Description
+--- | --- | ---
+items | GroupedProductItem | An array containing grouped product items"/>
+
+#### GroupedProductItem
+
+Field | Type | Description
+--- | --- | ---
+qty | Float | The quantity of this grouped product item"/>
+position | Int | The relative position of this item compared to the other group items."/>
+product | ProductInterface | The ProductInterface object, which contains details about this product option"/>
+
+
+### RMA
+
+Field | Type | Description
+--- | --- | ---
+is_returnable | String | Indicates whether the product can be returned
