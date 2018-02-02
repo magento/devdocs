@@ -33,6 +33,7 @@ The following diagram demonstrates XML structure of an action group:
         <arguments>
             <argument name=""/>
             <argument name="" defaultValue=""/>
+            <argument name="" defaultValue="" simpleData=""/>
         </arguments>
     </actionGroup>
 </actionGroups>
@@ -148,6 +149,37 @@ To change it to `CustomAdminUser`, we must add an argument `adminUser` with the 
 ```
 
 That's it!
+
+## Simple Data Usage
+
+When defining an `actionGroup`'s `argument`, you may define the argument to be `simpleData` like so:
+
+```xml
+<actionGroup name="fillExample">
+    <arguments>
+        <argument name="relevantString" defaultValue="defaultString" simpleData="true"/>
+    </arguments>
+    <fillField stepKey="fillField1" selector="#input" userInput="{{relevantString}}"/>
+    <click stepKey="clickSave" selector="#save"/>
+    <see stepKey="seeItWorked" selector="#outputArea" userInput="{{relevantString}}"/>
+    <click stepKey="clickParameterizedSelector" selector="{{SomeSection.parameterizedElement(relevantString)}}"/>
+</actionGroup
+```
+
+The above tells the `actionGroup` that the replacement argument is not a data entity, but rather just a simple piece of data that needs to be replaced.
+This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing an entire entity:
+
+```xml
+<actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
+    <argument name="relevantString" value="overrideString" />
+</actionGroup>
+<actionGroup stepKey="fillWithXmlData" ref="fillExample">
+    <argument name="relevantString" value="myCustomEntity.field1" />
+</actionGroup>
+<actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
+    <argument name="relevantString" value="$persistedData.field1$" />
+</actionGroup>
+```
 
 ## Reference
 
