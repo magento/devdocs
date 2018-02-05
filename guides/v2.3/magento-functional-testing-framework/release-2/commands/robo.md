@@ -146,7 +146,9 @@ Allure v1.x.x | Allure v2.x.x
 
 #### generate
 
-`generate:tests`   | Generate all Tests
+`generate:tests`   | Generate all Tests based on a specific Magento Instance module load order
+`generate:tests --force`   | Generate all Tests regardless of whether a Magento Instance is available
+
   
 #### self
 
