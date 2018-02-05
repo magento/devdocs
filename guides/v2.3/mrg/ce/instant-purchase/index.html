@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Instant Purchase module | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/mrg/ce/instant-purchase/">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/mrg/ce/instant-purchase/index.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/mrg/ce/instant-purchase/index.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/mrg/ce/instant-purchase/index.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/mrg/ce/instant-purchase/index.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Module Reference Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.3/mrg/intro.html">INTRODUCTION</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/mrg/intro.html">
+            <span property="name">Introduction to Module Reference Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Instant Purchase module</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Instant Purchase module</h1>
+
+  
+
+
+</section>
+
+
+			<p>The <a href="https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> allows customers to place orders in seconds without going through the full checkout process.</p>
+
+<p>This feature takes the form of a button on product pages.
+When a customer clicks this button, the system places their order using the default shipping, billing address, and stored payment method.
+Once the order is placed, an order confirmation message appears in the notification area.</p>
+
+<p>This article explains how this module works and ways to customize it using its extension points.
+For merchant instructions, see <a href="http://docs.magento.com/m2/ce/user_guide/sales/checkout-instant-purchase.html">Instant Purchase</a> in the user guide.</p>
+
+<h2 id="implementation-details">Implementation details</h2>
+
+<p>The logic found in the <a href="https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/InstantPurchase">Instant Purchase module</a> is divided into two parts:</p>
+
+<ul>
+  <li><a href="#instant-purchase-capability">Instant Purchase logic</a></li>
+  <li><a href="#order-placement">Order placement</a></li>
+</ul>
+
+<h3 id="instant-purchase-logic">Instant Purchase logic</h3>
+
+<p>This module allows any product to be added to an instant purchase order.</p>
+
+<p>The module creates an additional section in the <a href="/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html">Customer Data cache</a> for Instant Purchase data.
+This data is updated when the relevant customer data changes, such as adding or removing a stored payment method or the default shipping address.</p>
+
+<h4 id="important-interfaces">Important interfaces</h4>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseInterface.php"><code class="highlighter-rouge">InstantPurchaseInterface</code></a></p>
+
+    <p>The implementation for this interface defines Instant Purchase calculations.
+The default implementation uses several interfaces to choose the appropriate payment method, billing and shipping addresses, and shipping method.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/PaymentMethodChoose/PaymentTokenChooserInterface.php"><code class="highlighter-rouge">PaymentTokenChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the stored payment method.
+The default value is the last created and saved payment method used.</p>
+
+    <p>Instant Purchase will not use payment methods that were used but not saved.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingAddressChoose/ShippingAddressChooserInterface.php"><code class="highlighter-rouge">ShippingAddressChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the shipping address.
+The default implementation chooses the default shipping address set by the customer.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/BillingAddressChoose/BillingAddressChooserInterface.php"><code class="highlighter-rouge">BillingAddressChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the billing address.
+The default implementation chooses the default billing address set by the customer.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php"><code class="highlighter-rouge">ShippingMethodChooserInterface</code></a></p>
+
+    <p>Responsible for choosing the shipping method.
+The default implementation chooses the cheapest shipping method.</p>
+
+    <p>Since the final price of the shipment is calculated after product and quantity are specified in the final confirmation, “Cheapest price” is displayed in the confirmation pop-up for the customer.</p>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-tip">
+  <p>The Instant Purchase capability logic is the most customizable part of the module.
+For more customization details, see the <a href="#customization-points">Customization Points</a> section.</p>
+</div>
+
+<h3 id="order-placement">Order placement</h3>
+
+<p>The logic for the order placement process is found in the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/PlaceOrder.php"><code class="highlighter-rouge">PlaceOrder</code></a> class.</p>
+
+<p>The whole process is divided into several steps with each step implemented by a corresponding class in the <a href="https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/InstantPurchase/Model/QuoteManagement"><code class="highlighter-rouge">Magento\InstantPurchase\Model\QuoteManagement</code></a> namespace.</p>
+
+<p>Since order placement requires specific steps to be followed, this part of the module does not declare separate interfaces.
+To customize the behavior of the order placement process, use <a href="/guides/v2.3/extension-dev-guide/plugins.html">plugins</a>.</p>
+
+<h2 id="customization-points">Customization Points</h2>
+
+<p>Use <a href="/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection</a> to override preferences for interfaces marked with the <code class="highlighter-rouge">@api</code> notation and modify the behavior of the module.</p>
+
+<h3 id="instant-purchase-calculation">Instant Purchase calculation</h3>
+
+<p>Custom implementations of the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseInterface.php"><code class="highlighter-rouge">InstantPurchaseInterface</code></a> should return an <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseOption.php"><code class="highlighter-rouge">InstantPurchaseOption</code></a> object.</p>
+
+<p>The <code class="highlighter-rouge">InstantPurchaseOption</code> object is a data container that holds the stored payment method, shipping and billing addresses, and shipping method used by the Instant Purchase module.
+The logic of how this data is retrieved is the responsibility of the <code class="highlighter-rouge">InstantPurchaseInterface</code> implementation.</p>
+
+<p>To create an <code class="highlighter-rouge">InstantPurchaseOption</code> object from the gathered data, use the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseOptionFactory.php"><code class="highlighter-rouge">InstantPurchaseOptionFactory</code></a>.</p>
+
+<p>The customization points for stored payment, shipping address, billing address, and shipping method are used in the default <code class="highlighter-rouge">InstantPurchaseInterface</code> implementation (<a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseChooser.php"><code class="highlighter-rouge">InstantPurchaseChooser</code></a>).
+They become invalid if a different implementation is used.</p>
+
+<p>The <code class="highlighter-rouge">choose()</code> method for custom implementations of the following interfaces must return an instance of the correct class or <code class="highlighter-rouge">null</code> if nothing can be chosen.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customization Point</th>
+      <th>Interface</th>
+      <th>Return Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Stored Payment</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/PaymentMethodChoose/PaymentTokenChooserInterface.php"><code class="highlighter-rouge">PaymentTokenChooserInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a></td>
+    </tr>
+    <tr>
+      <td>Shipping Address</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingAddressChoose/ShippingAddressChooserInterface.php"><code class="highlighter-rouge">ShippingAddressChooserInterface</code></a></td>
+      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
+    </tr>
+    <tr>
+      <td>Billing Address</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/BillingAddressChoose/BillingAddressChooserInterface.php"><code class="highlighter-rouge">BillingAddressChooserInterface</code></a></td>
+      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
+    </tr>
+    <tr>
+      <td>Shipping Method</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php"><code class="highlighter-rouge">ShippingMethodChooserInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Quote/Api/Data/ShippingMethodInterface.php"><code class="highlighter-rouge">ShippingMethodInterface</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="deferred-shipping-method">Deferred Shipping Method</h4>
+
+<p>Choosing the shipping method based on a customer’s address is difficult without all the information on the shipping subject because it is hard to estimate the cost and effort.
+To address this issue, the Instant Purchase module allows you to postpone the final decision on which shipping method to use until the exact product and quantity is known.</p>
+
+<p>Use the following steps to help you implement a custom deferred shipping method:</p>
+
+<ol>
+  <li>Create an implementation of the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php"><code class="highlighter-rouge">ShippingMethodChooserInterface</code></a> with a <code class="highlighter-rouge">choose()</code> method that returns a <code class="highlighter-rouge">ShippingMethodInterface</code> with the following properties:
+    <ul>
+      <li>Returns <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/DeferredShippingMethodChooserInterface.php#L20"><code class="highlighter-rouge">DeferredShippingMethodChooserInterface::CARRIER</code></a> when <code class="highlighter-rouge">getCarrierCode()</code> is called.</li>
+      <li>
+        <p>Returns a unique string when <code class="highlighter-rouge">getMethodCode()</code> is called.</p>
+
+        <p>This string is used as a key to determine the corresponding logic during order placement.</p>
+      </li>
+      <li>
+        <p>Returns a translated phrase when <code class="highlighter-rouge">getCarrierTitle()</code> is called.</p>
+
+        <p>This phrase is shown as the shipping method description in the Instant Purchase confirmation pop-up.</p>
+      </li>
+      <li>Returns <code class="highlighter-rouge">true</code> when <code class="highlighter-rouge">getAvailable()</code> is called.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Create an implementation of the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/DeferredShippingMethodChooserInterface.php"><code class="highlighter-rouge">DeferredShippingMethodChooserInterface</code></a>.
+Unlike the <code class="highlighter-rouge">ShippingMethodChooserInterface</code>, this interface retrieves the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Quote/Model/Quote/Address.php"><code class="highlighter-rouge">Quote\Address</code></a> instead of the customer’s address, so it has access to the necessary data.</p>
+
+    <p>This method must return a string that identifies the shipping method using the format <code class="highlighter-rouge">&lt;carrier code&gt;_&lt;method code&gt;</code> or <code class="highlighter-rouge">null</code> if nothing can be chosen.</p>
+  </li>
+  <li>Add an entry in the <a href="/guides/v2.3/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file that specifies your defined method code and custom implementation:</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\InstantPurchase\Model\ShippingMethodChoose\DeferredShippingMethodChooserPool"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"choosers"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- item name attribute is method code defined in ShippingMethodChooserInterface implementation--&gt;</span>
+            <span class="c">&lt;!-- item value is class name of DeferredShippingMethodChooserInterface implementation--&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"cheapest"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\InstantPurchase\Model\ShippingMethodChoose\CheapestMethodDeferredChooser<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<h3 id="order-placement-1">Order placement</h3>
+
+<p>You can customize order placement using <a href="/guides/v2.3/extension-dev-guide/plugins.html">plugins</a>.
+Before and after plugins can be created to add custom behaviors in the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/PlaceOrder.php"><code class="highlighter-rouge">PlaceOrder</code></a> class and any class in the <a href="https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/InstantPurchase/Model/QuoteManagement"><code class="highlighter-rouge">Magento\InstantPurchase\Model\QuoteManagement</code></a> namespace.</p>
+
+<p>Customizing payment handling is a special case for the order placement process.
+See <a href="#payment-method-integration">Payment Method Integration</a> for more details.</p>
+
+<h3 id="confirmation-pop-up">Confirmation pop-up</h3>
+
+<p>You can customize the strings on the Instant Purchase confirmation pop-up by using <a href="/guides/v2.3/extension-dev-guide/plugins.html">plugins</a> on classes in the <a href="https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/InstantPurchase/Model/Ui"><code class="highlighter-rouge">Magento\InstantPurchase\Model\Ui</code></a> namespace.
+The format of the payment method can also be customized for <a href="#payment-token-formatter">specific payments</a>.</p>
+
+<h2 id="payment-method-integration">Payment method integration</h2>
+
+<p>A payment method implementation can be integrated with Instant Purchase if it meets the following requirements:</p>
+
+<ul>
+  <li>It implements the <a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">payment provider gateway</a> mechanism.</li>
+  <li>It implements <a href="/guides/v2.3/payments-integrations/vault/vault-intro.html">vault integration</a>.</li>
+  <li>The payment along with the stored payment token is processed on the server side</li>
+</ul>
+
+<p>The framework for payment method integration is provided in the <a href="https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration"><code class="highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration</code></a> namespace.</p>
+
+<p>Integration is not enabled by default and requires developer action to make sure everything works as expected and avoid unpredictable bugs on production sites.</p>
+
+<p>If the payment method meets all the requirements listed, you can enable Instant Purchase integration in the <code class="highlighter-rouge">config.xml</code> file.</p>
+
+<p>The minimal configuration for Instant Purchase integration development is as follows:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+    <span class="nt">&lt;payment&gt;</span>
+      <span class="nt">&lt;vault_payment_method_code&gt;</span><span class="c">&lt;!-- replace this value with your vault payment method code --&gt;</span>
+        <span class="nt">&lt;instant_purchase&gt;</span>
+            <span class="nt">&lt;supported&gt;</span>1<span class="nt">&lt;/supported&gt;</span>
+        <span class="nt">&lt;/instant_purchase&gt;</span>
+      <span class="nt">&lt;/vault_payment_method_code&gt;</span>
+    <span class="nt">&lt;/payment&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+<span class="nt">&lt;/config&gt;</span>  
+</code></pre></div></div>
+
+<div class="bs-callout bs-callout-warning">
+  <p>This minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.</p>
+</div>
+
+<p>The following is an example of a full configuration meant for production:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+    <span class="nt">&lt;payment&gt;</span>
+      <span class="nt">&lt;vault_payment_method_code&gt;</span><span class="c">&lt;!-- replace this value with your vault payment method code --&gt;</span>
+        <span class="nt">&lt;instant_purchase&gt;</span>
+            <span class="nt">&lt;available&gt;</span>Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\AvailabilityCheckerInterface<span class="nt">&lt;/available&gt;</span>
+            <span class="nt">&lt;tokenFormat&gt;</span>Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentTokenFormatterInterface<span class="nt">&lt;/tokenFormat&gt;</span>
+            <span class="nt">&lt;additionalInformation&gt;</span>Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentAdditionalInformationProviderInterface<span class="nt">&lt;/additionalInformation&gt;</span>
+        <span class="nt">&lt;/instant_purchase&gt;</span>
+      <span class="nt">&lt;/vault_payment_method_code&gt;</span>
+    <span class="nt">&lt;/payment&gt;</span>
+  <span class="nt">&lt;default&gt;</span>
+<span class="nt">&lt;/config&gt;</span>  
+</code></pre></div></div>
+
+<p>All elements of the integration configuration are optional and have default implementations.
+If some integration options are provided, then explicit usage of <code class="highlighter-rouge">&lt;supported&gt;1&lt;/supported&gt;</code> is not required.
+However, adding <code class="highlighter-rouge">&lt;supported&gt;0&lt;/supported&gt;</code> will disable integration regardless of all other settings.</p>
+
+<h3 id="integration-availability-checker">Integration availability checker</h3>
+
+<p>The integration availability checker allows you to specify if your payment integration is available based on the current Magento configuration specification or other data.
+For example, Magento Open Source provides Braintree Stored Credit Cards which supports Instant Purchase unless 3D Secure is enabled.</p>
+
+<p>The default implementation for the availability checker always returns <code class="highlighter-rouge">true</code>.</p>
+
+<p>Custom availability checkers need to implement the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/AvailabilityCheckerInterface.php"><code class="highlighter-rouge">AvailabilityCheckerInterface</code></a> and can be applied to a payment method by specifying the class name (or virtual type name) in the <code class="highlighter-rouge">default/payment/&lt;vault payment method code&gt;/instant_purchase/available</code> configuration option.</p>
+
+<h3 id="payment-token-formatter">Payment Token Formatter</h3>
+
+<p>The Magento <a href="https://github.com/magento/magento2/tree/2.3/app/code/Magento/Vault">Vault module</a> provides an interface to persist and manage stored payment methods.</p>
+
+<p>The properties defined in the interface is necessary to use the payment method.</p>
+
+<p>Almost all the information used to provide the description for stored payment methods are stored as additional data and are not standardized.
+This is why the default token formatter returns the payment method title as the token description.</p>
+
+<p>We recommend you provide a custom token formatter for your Instant Purchase integration to provide the correct information for your payment token</p>
+
+<p>A custom payment token formatter should implement the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentTokenFormatterInterface.php"><code class="highlighter-rouge">PaymentTokenFormatterInterface</code></a> and return a human-readable string that describes the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a>.</p>
+
+<p>The Instant Purchase module guarantees that the correct token associated with corresponding payment method is passed to the formatter.
+To configure the formatter, use the <code class="highlighter-rouge">default/payment/&lt;vault payment method code&gt;/instant_purchase/tokenFormat</code> configuration path.</p>
+
+<h3 id="additional-payment-information-provider">Additional Payment Information Provider</h3>
+
+<p>Some payment methods require the collection of additional information during the checkout process for order placement.</p>
+
+<p>By default, the Instant Purchase module specifies the following properties as additional payment information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">customer_id</code></td>
+      <td>Holds the Customer identifier</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">public_hash</code></td>
+      <td>The public hash for the stored payment method</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">is_active_payment_token_enabler</code></td>
+      <td>Required by Vault framework</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To change the default behavior or add specific fields, implement the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentAdditionalInformationProviderInterface.php"><code class="highlighter-rouge">PaymentAdditionalInformationProviderInterface</code></a> and specify it as the value for the <code class="highlighter-rouge">default/payment/&lt;vault payment method code&gt;/instant_purchase/additionalInformation</code> configuration option.
+The default implementation returns an empty array.</p>
+
+<h3 id="instant-purchase-payment-marker">Instant Purchase Payment Marker</h3>
+
+<p>In most cases, developers should use interfaces for custom implementations and not rely on internal code.</p>
+
+<p>However, sometimes conditional logic for payment processing needs to be implemented to handle payments initiated from different entry points.</p>
+
+<p>For these cases, the payment object’s <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Payment/Model/InfoInterface.php"><code class="highlighter-rouge">InfoInterface</code></a> holds an <code class="highlighter-rouge">additional_information</code> property, accessible via the <code class="highlighter-rouge">getAdditionalInformation()</code> method, which can return the <code class="highlighter-rouge">instant-purchase</code> marker.
+Use this marker if no other options are available to implement specific payment logic for the Instant Purchase module.</p>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/mrg/ce/instant-purchase/index.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/mrg/ce/instant-purchase/" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

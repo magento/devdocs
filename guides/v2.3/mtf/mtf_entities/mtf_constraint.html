@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Constraint | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/mtf/mtf_entities/mtf_constraint.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/mtf/mtf_entities/mtf_constraint.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/mtf/mtf_entities/mtf_constraint.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/mtf/mtf_entities/mtf_constraint.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Functional Testing Framework Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_introduction.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="installation">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_installation.html">Installation</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="quick-start">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_quickstart.html">Quick Start</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="adjust-configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="prepare-magento-application">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="prepare-environment-for-test-run">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test-run">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="see-logs-for-failed-tests">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="create-a-test">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/create_test.html">Create a Test</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="out-of-the-box-test">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="new-functional-test.-theory">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/create_test/new_test.html">New functional test. Theory</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="new-functional-test.-practice">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/create_test/create_new_test.html">New functional test. Practice</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="features">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/features.html">Features</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="isolation-management">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/isolation.html">Isolation management</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="modularity">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/modularity.html">Modularity</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="parallel-execution-flow">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/parallel_execution.html">Parallel execution flow</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="reporting">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/reporting.html">Reporting</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test-suite">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/test_suite.html">Test suite</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="web-driver-replacement">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/webdriver.html">Web driver replacement</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="entities">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_entities.html">Entities</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="fixture">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html">Fixture</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="fixture-repository">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="handler">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_handler.html">Handler</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="block">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_block.html">Block</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="typified-element">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_typified-element.html">Typified element</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="page">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_page.html">Page</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="constraint">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_constraint.html">Constraint</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="data-set">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_dataset.html">Data set</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test-case">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_testcase.html">Test case</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="scenario-test">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configuration">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/configuration.html">Configuration</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="update">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_update.html">Update</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="troubleshooting">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/troubleshooting.html">Troubleshooting</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="changelog">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_changelog.html">Changelog</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/mtf/mtf_introduction.html">
+            <span property="name">Introduction to the Functional Testing Framework</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Constraint</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Constraint</h1>
+
+  
+
+
+</section>
+
+
+			<p>The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
+Each constraint name must be globally unique in Magento application and must be placed in the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> to which it belongs. Constraints run automatically after test flow has finished.</p>
+
+<p><img src="/common/images/ftf/mtf_constraint_flow.png" alt="Constraints and test flow" /></p>
+
+<h2 id="mtf_constraint_structure">Constraint structure</h2>
+
+<h3 id="mtf_constraint_directory"><code class="highlighter-rouge">Constraint</code> directory</h3>
+
+<p>A module in functional tests (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code class="highlighter-rouge">Constraint</code> directory. The following image shows the <code class="highlighter-rouge">Constraint</code> directory of the Magento_Widget module.</p>
+
+<p><img src="/common/images/ftf/mtf_constraint_dir.png" alt="" /></p>
+
+<h3 id="mtf_constraint_assert">Constraint class</h3>
+
+<p>The constraint <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class must:</p>
+
+<ul>
+  <li>
+    <p>Have unique name created using the following template <code class="highlighter-rouge">Assert{MagentoEntityName}{verification|action|place}</code>. For example:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">AssertUserSuccessDeleteMessage</code> corresponds to <code class="highlighter-rouge">Assert{entityName}{verification}</code></li>
+      <li><code class="highlighter-rouge">AssertOrderPlaced</code> corresponds to <code class="highlighter-rouge">Assert{entityName}{action}</code></li>
+      <li><code class="highlighter-rouge">AssertProductForm</code> corresponds to <code class="highlighter-rouge">Assert{entityName}{place}</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Extend the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php">Magento\Mtf\Constraint\AbstractConstraint</a> class.</p>
+  </li>
+  <li>
+    <p>Contain the following methods:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">processAssert()</code> which contains assertions. A <code class="highlighter-rouge">PHPUnit_Framework_Assert</code> class (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php</code>) can be used to simplify assertions.</li>
+      <li><code class="highlighter-rouge">toString()</code> which returns a success message if the assertion is performed successfully</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="constraint-arguments">Constraint arguments</h3>
+
+<p>In the FTF, <a href="/guides/v2.3/mtf/mtf_entities/mtf_dataset.html">data set</a> values are shared with a test class and constraints. A node name in data set can be complex like <code class="highlighter-rouge">item1/item2/item3</code>. The argument name in <code class="highlighter-rouge">processAssert()</code> must be the same as the <code class="highlighter-rouge">item1</code> to transfer data from data set to constraint.</p>
+
+<p>If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the <em>injectable</em> <a href="/guides/v2.3/mtf/mtf_entities/mtf_testcase.html">test case</a>  class in <code class="highlighter-rouge">test()</code>, <code class="highlighter-rouge">__inject()</code> and <code class="highlighter-rouge">__prepare()</code> methods, and then passed to the constraint class by <code class="highlighter-rouge">return</code>. Furthermore, any returned value of these methods can be used as an argument in constraint.</p>
+
+<p>An object that is not defined in the data set or isn’t returned from the test case is created using the Object Manager.</p>
+
+<p>Let’s see the following images for the <code class="highlighter-rouge">CreateSimpleProductEntityTest</code> test and the <code class="highlighter-rouge">AssertProductPricesOnCategoryPage</code> constraint. Data set from the diagrams contains three variables with data: <code class="highlighter-rouge">product</code>, <code class="highlighter-rouge">category</code> and <code class="highlighter-rouge">price</code>.</p>
+
+<p><img src="/common/images/ftf/mtf_constraint_arguments_green.png" width="800" /></p>
+
+<p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code class="highlighter-rouge">product</code> value is transferred to the test and the constraint.</p>
+
+<p><img src="/common/images/ftf/mtf_constraint_arguments_orange.png" width="800" /></p>
+
+<p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code class="highlighter-rouge">category</code> variable is transferred to the test directly, overwritten by <code class="highlighter-rouge">testCreate()</code> method and only then transferred to constraint.</p>
+
+<p><img src="/common/images/ftf/mtf_constraint_arguments_blue.png" width="800" /></p>
+
+<p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code class="highlighter-rouge">price</code> value is transferred to the constraint only.</p>
+
+<h3 id="mtf_constraint_variation">Constraint in the test</h3>
+
+<p>A <a href="/guides/v2.3/mtf/mtf_entities/mtf_testcase.html">test case</a>’s constraints are nodes in variations of a data set. The data set has references to the PHP classes with assertions.</p>
+
+<p>Constraints are performed in order they listed in the data set. However, you can use <code class="highlighter-rouge">prev</code> (previous) and <code class="highlighter-rouge">next</code> attributes to set your custom order.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategorySaveMessage"</span> <span class="na">next=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryForm"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryForm"</span> <span class="na">prev=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategorySaveMessage"</span> <span class="na">next=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryPage"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryPage"</span> <span class="na">prev=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryForm"</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
+</div>
+
+<p>A test can contain constraints from different modules.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.
+  </p>
+</div>
+
+<p>The following example shows the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml</code> <a href="/guides/v2.3/mtf/mtf_entities/mtf_dataset.html">data set</a> with two constraints.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/etc/variations.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\TestCase\DeleteWidgetEntityTest"</span> <span class="na">summary=</span><span class="s">"Delete Widget"</span> <span class="na">ticketId=</span><span class="s">"MAGETWO-28459"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">"DeleteWidgetEntityTestVariation1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"widget/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>default<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\Constraint\AssertWidgetSuccessDeleteMessage"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\Constraint\AssertWidgetAbsentOnFrontendHome"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>Immediately after the test steps complete, both constraints are performed in the order listed.</p>
+
+<h3 id="tagging">Tagging</h3>
+
+<p>Tagging enables you to indicate what constraints must be called.</p>
+
+<p>You can tag constraints in <code class="highlighter-rouge">&lt;module&gt;/Test/etc/di.xml</code> using a <code class="highlighter-rouge">severity</code> argument. Severity tagging of constraints is used for the customization of test run.</p>
+
+<p>You can use the following severity tags:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">high</code></li>
+  <li><code class="highlighter-rouge">middle</code></li>
+  <li><code class="highlighter-rouge">low</code></li>
+</ul>
+
+<p>To assign severity tags do the following:</p>
+
+<ul>
+  <li>Create <code class="highlighter-rouge">di.xml</code> file in <code class="highlighter-rouge">Test/etc</code> of the module.</li>
+  <li>Assign <code class="highlighter-rouge">severity</code> to constraints in the following format:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\[Module_name]\Test\Constraint\Assert..."</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>high|middle|low<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></figure>
+
+<p>For example, <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedProductPage"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/type&gt;</span>
+  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedCatalogPage"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/type&gt;</span>
+  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedShoppingCart"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h2 id="mtf_constraint_create">How to create constraint</h2>
+
+<p>Use case: We want to assert widget availability in a widget grid.</p>
+
+<p>Step 1. What module does it belong?</p>
+
+<p>Widget grid and widget fixture are related to the Magento_Widget module.
+  Thus, we need to create constraint in the Magento_Widget module, in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint</code>.</p>
+
+<p>Step 2. What name should constraint have?</p>
+
+<p>Using <a href="#mtf_constraint_assert">constraint naming principle</a>, the constraint should be named as <code class="highlighter-rouge">AssertWidgetInGrid</code>.</p>
+
+<p>Step 3. Create <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php</code> with <a href="#mtf_constraint_assert">required structure</a></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Constraint</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
+
+<span class="sd">/**
+ * Assert widget is available in widget grid.
+ */</span>
+<span class="k">class</span> <span class="nc">AssertWidgetInGrid</span> <span class="k">extends</span> <span class="nx">AbstractConstraint</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * Assert widget availability in widget grid.
+     * 
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">processAssert</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * Returns a string representation of the object.
+     *
+     * @return string
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'Widget is present in widget grid.'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Step 4. Implement assertion in <code class="highlighter-rouge">processAssert()</code></p>
+
+<p><strong>Assertion logic</strong>: Take title of the widget from the widget <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html">fixture</a>, open the page with a grid, check if the grid has our title.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Constraint</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Widget\Test\Fixture\Widget</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Widget\Test\Page\Adminhtml\WidgetInstanceIndex</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
+
+<span class="sd">/**
+ * Assert widget is available in widget grid.
+ */</span>
+<span class="k">class</span> <span class="nc">AssertWidgetInGrid</span> <span class="k">extends</span> <span class="nx">AbstractConstraint</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * Assert widget availability in widget grid.
+     * 
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">processAssert</span><span class="p">(</span><span class="nx">Widget</span> <span class="nv">$widget</span><span class="p">,</span> <span class="nx">WidgetInstanceIndex</span> <span class="nv">$widgetInstanceIndex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">()];</span>
+        <span class="nv">$widgetInstanceIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
+        <span class="nx">\PHPUnit_Framework_Assert</span><span class="o">::</span><span class="na">assertTrue</span><span class="p">(</span>
+            <span class="nv">$widgetInstanceIndex</span><span class="o">-&gt;</span><span class="na">getWidgetGrid</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">isRowVisible</span><span class="p">(</span><span class="nv">$filter</span><span class="p">),</span>
+            <span class="s1">'Widget with title \''</span> <span class="o">.</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'\' is absent in Widget grid.'</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * Returns a string representation of the object.
+     *
+     * @return string
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'Widget is present in widget grid.'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="mtf_constraint_use">How to use constraint</h2>
+
+<p>To use constraint we’ve created in previous section, add a corresponding node to the <a href="/guides/v2.3/mtf/mtf_entities/mtf_dataset.html">data set</a> of your test</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\Constraint\AssertWidgetInGrid"</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<p>in the order that it must be performed.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/etc/variations.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\TestCase\CreateWidgetEntityTest"</span> <span class="na">summary=</span><span class="s">"Create Widget"</span> <span class="na">ticketId=</span><span class="s">"MAGETWO-27916"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">"CreateWidgetEntityTestVariation1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"widget/data/code"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>CMS Static Block<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"widget/data/theme_id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento Luma<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"widget/data/title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Title_%isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"widget/data/store_ids/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>all_store_views<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"widget/data/widget_instance/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>on_category<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"widget/data/parameters/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cmsStaticBlock<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\Constraint\AssertWidgetSuccessSaveMessage"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\Constraint\AssertWidgetInGrid"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\Constraint\AssertWidgetOnFrontendInCatalog"</span> <span class="nt">/&gt;</span>     
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<!-- LINK DEFINITIONS -->
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_constraint.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/mtf/mtf_entities/mtf_constraint.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

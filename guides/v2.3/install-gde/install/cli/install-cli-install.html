@@ -1,0 +1,3021 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Install the Magento software | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/install-gde/install/cli/install-cli-install.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/install-gde/install/cli/install-cli-install.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/install-gde/install/cli/install-cli-install.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/install-gde/install/cli/install-cli-install.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Installation Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="how-to-get-the-magento-software">
+
+    
+    
+    
+    <a href="/guides/v2.3/install-gde/bk-install-guide.html">How to get the Magento software</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="installation-flow-diagram">
+
+    
+    
+    
+    <a href="/guides/v2.3/install-gde/install-flow-diagram.html">Installation flow diagram</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="just-the-basics">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Just the basics</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="is-the-magento-software-installed-already?">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="what-operating-system-is-my-server-running?">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="how-do-i-log-in-to-my-magento-server-using-a-terminal,-command-prompt,-or-ssh?">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="what's-the-difference-between-a-module-and-a-component?">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/basics/basics_module.html">What's the difference between a module and a component?</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="what-is-the-software-that-the-magento-server-needs-to-run?">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="what-is-a-docroot?">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/basics/basics_docroot.html">What is a docroot?</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="getting-started">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Getting Started</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="helpful-resources">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install-resources-parent.html">Helpful resources</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="installation-quick-reference-(tutorial)">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="installation-flow-diagram">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install-resource-diagram.html">Installation flow diagram</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="installation-roadmap-(reference)">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-system-requirements">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/system-requirements2.html">Magento system requirements</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-technology-stack-requirements">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/system-requirements-tech.html">Magento technology stack requirements</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="supported-browsers">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/system-requirements_browsers.html">Supported browsers</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="transport-layer-security-(tls)-requirements">
+                    
+                    <div class="toggle closed">&nbsp;</div>
+                    
+
+                    
+                    <span>Transport Layer Security (TLS) requirements</span>
+                    
+
+                    
+                    <ul>
+                        
+                        
+                        
+                        <li class="nav-level4  " id="tls-1.2-requirement-for-paypal">
+
+                        
+                        <a  href="/guides/v2.3/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a>
+                        
+
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="nav-level4  " id="tls-requirement-for-repo.magento.com">
+
+                        
+                        <a  href="/guides/v2.3/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
+                        
+
+                        </li>
+                        
+                         
+                    </ul> 
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="prerequisites">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/prereq/prereq-overview.html">Prerequisites</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="apache">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/apache.html">Apache</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="nginx">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/nginx.html">nginx</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="php">
+                    
+                    <div class="toggle closed">&nbsp;</div>
+                    
+
+                    
+                    <span>PHP</span>
+                    
+
+                    
+                    <ul>
+                        
+                        
+                        
+                        <li class="nav-level4  " id="php-5.6-or-7.0—centos">
+
+                        
+                        <a  href="/guides/v2.3/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0—CentOS</a>
+                        
+
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="nav-level4  " id="php-5.6-or-7.0—ubuntu">
+
+                        
+                        <a  href="/guides/v2.3/install-gde/prereq/php-ubuntu.html">PHP 5.6 or 7.0—Ubuntu</a>
+                        
+
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="nav-level4  " id="required-php-settings">
+
+                        
+                        <a  href="/guides/v2.3/install-gde/prereq/php-settings.html">Required PHP settings</a>
+                        
+
+                        </li>
+                        
+                         
+                    </ul> 
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="mysql">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/mysql.html">MySQL</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="get-your-authentication-keys">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/connect-auth.html">Get your authentication keys</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-file-system-ownership-and-permissions">
+                    
+                    <div class="toggle closed">&nbsp;</div>
+                    
+
+                    
+                    <span>Magento file system ownership and permissions</span>
+                    
+
+                    
+                    <ul>
+                        
+                        
+                        
+                        <li class="nav-level4  " id="overview-of-ownership-and-permissions">
+
+                        
+                        <a  href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>
+                        
+
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="nav-level4  " id="set-pre-installation-ownership-and-permissions">
+
+                        
+                        <a  href="/guides/v2.3/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>
+                        
+
+                        </li>
+                        
+                         
+                    </ul> 
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="rabbitmq-(magento-commerce-only)">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Magento Commerce only)</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="set-up-a-remote-mysql-database-connection">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="selinux-and-iptables">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/security.html">SELinux and iptables</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="optional-software">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/optional.html">Optional software</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="set-up-the-updater-(obsolete)">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/prereq_updater.html">Set up the updater (obsolete)</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="get-the-magento-software">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/get-software.html">Get the Magento software</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="(easy)-install-the-magento-archive-on-your-server">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="(integrator)-integrator-installation">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/prereq/integrator_install.html">(Integrator) Integrator installation</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="install-composer">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/integrator_install_composer.html">Install Composer</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="get-the-magento-open-source-metapackage">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/integrator_install_ce.html">Get the Magento Open Source metapackage</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="get-the-magento-commerce-metapackage">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/prereq/integrator_install_ee.html">Get the Magento Commerce metapackage</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="(contributor)-clone-the-magento-repository">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="update-installation-dependencies">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/prepare-install.html">Update installation dependencies</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="get-help-with-your-installation">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/get-help.html">Get help with your installation</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-options">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/continue-to-install.html">Install options</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="setup-wizard-install">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Setup Wizard Install</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="installation-roadmap-(reference)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install-roadmap_web.html">Installation roadmap (reference)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-optional-sample-data-modules">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/web/install-web-sample-data.html">Install optional sample data modules</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="install-using-composer">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web-sample-data-composer.html">Install using Composer</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="install-by-cloning-repositories">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web-sample-data-clone.html">Install by cloning repositories</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="setup-wizard-installation">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/web/install-web.html">Setup Wizard installation</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="step-1.-readiness-check">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web_1-readiness.html">Step 1. Readiness check</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="step-2.-add-a-database">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web_2-db.html">Step 2. Add a Database</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="step-3.-web-configuration">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web_3-web-conf.html">Step 3. Web Configuration</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="step-4.-customize-your-store">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web_4-customize-store.html">Step 4. Customize Your Store</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="step-5.-create-admin-account">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web_5-create-admin.html">Step 5. Create Admin Account</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="step-6.-install">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/web/install-web_6-install.html">Step 6. Install</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="post-installation">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/continue-to-verify.html">Post-installation</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="command-line-installation">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Command Line Installation</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="installation-roadmap-(reference)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install-roadmap_cli.html">Installation roadmap (reference)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-optional-sample-data-modules">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/cli/install-cli-sample-data.html">Install optional sample data modules</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="install-using-composer">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-sample-data-composer.html">Install using Composer</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="install-by-cloning-repositories">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-sample-data-clone.html">Install by cloning repositories</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-the-magento-software-using-the-command-line">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="get-started-with-the-command-line-installation">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3 active " id="install-the-magento-software">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-install.html">Install the Magento software</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="uninstall-or-reinstall-magento">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html">Uninstall or reinstall Magento</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="display-or-change-the-admin-uri">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="remove-sample-data-modules-or-update-sample-data">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-sample-data-other.html">Remove sample data modules or update sample data</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="enable-or-disable-modules">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="uninstall-modules">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="create-or-update-the-deployment-configuration">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="enable-or-disable-maintenance-mode">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="create-the-magento-database-schema">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="update-the-magento-database-schema-and-data">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configure-the-store">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="create,-edit,-or-unlock-a-magento-administrator-account">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-admin.html">Create, edit, or unlock a Magento administrator account</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="back-up-and-roll-back-the-file-system,-media,-and-database">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="uninstall-themes-composer-packages">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes Composer packages</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="uninstall-language-packages">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="contributing-developers—update,-reinstall-magento">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="update-the-magento-application">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="add-or-update-components">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/dev_add-update.html">Add or update components</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="change-to-a-released-version">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/dev_downgrade.html">Change to a released version</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="reinstall-the-magento-software">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/cli/dev_reinstall.html">Reinstall the Magento software</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="post-installation">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/continue-to-verify_cli.html">Post-installation</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="post-installation">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Post Installation</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="verify-the-installation">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/verify.html">Verify the installation</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="configure-the-magento-application">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/post-install-config.html">Configure the Magento application</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="optionally-set-a-umask">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/post-install-umask.html">Optionally set a umask</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="appendix—magento-file-system-ownership-and-appendix-(legacy)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/legacy-file-system-perms.html">Appendix—Magento file system ownership and appendix (legacy)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-sample-data-after-magento">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install/sample-data-after-magento.html">Install sample data after Magento</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="install-using-composer">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/sample-data-after-composer.html">Install using Composer</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="install-by-cloning-repositories">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/install/sample-data-after-clone.html">Install by cloning repositories</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="troubleshooting">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Troubleshooting</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="troubleshooting-suggestions">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="access-issues">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/trouble/php/tshoot_access-main.html">Access issues</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="cannot-access-magento-software-in-a-web-browser">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="503-(service-unavailable)-errors-accessing-magento-software-in-a-web-browser">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="after-installing,-images-and-stylesheets-do-not-load;-only-text-displays,-no-graphics">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="exceptions-during-installation">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="cannot-write-to-the-var/generation-directory">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_var-gen-perms.html">Cannot write to the var/generation directory</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="installation-dependencies-not-met">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="error-after-logging-in-to-the-magento-admin">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="errors-during-installation">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/trouble/php/tshoot_install-main.html">Errors during installation</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="installation-stops-at-about-70%">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_70pct.html">Installation stops at about 70%</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="cannot-install-using-nginx">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_nginx-port.html">Cannot install using nginx</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="during-installation,-fatal-pdo-error-displays">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="during-installation,-reflection-exception-error">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="during-installation,-exception-sessionhandler::read()">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="download-fails-because-of-changes-in-composer">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_composer-fail.html">Download fails because of changes in Composer</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="unknown-module-magento_bundlesampledata">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_bundlesampledata.html">Unknown module Magento_BundleSampleData</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="installation-fails;-cannot-create-install.log">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="errors-installing-optional-sample-data">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="during-installation,-xdebug-maximum-function-nesting-level-error">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="readiness-check-issues">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/trouble/readiness/tshoot_rc_main.html">Readiness check issues</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="component-dependency-readiness-issues">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/readiness/tshoot_rc_depend.html">Component dependency readiness issues</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="cron-readiness-check-issues">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/readiness/tshoot_rc_cron.html">cron readiness check issues</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="file-permissions-readiness-check-issues">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/readiness/tshoot_rc_perms.html">File permissions readiness check issues</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="php-version-readiness-check-issues">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/readiness/tshoot_rc_php.html">PHP version readiness check issues</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="github-errors">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/trouble/git/tshoot_git-main.html">GitHub errors</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="cannot-clone-the-magento-github-repository">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="git-pull-origin-develop-fails-when-updating-the-magento-software">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="php-errors">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/trouble/php/tshoot_php-main.html">PHP errors</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="resolve-an-illegal-offset-error">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_opcache.html">Resolve an illegal offset error</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="php-settings-errors">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="the-php-mcrypt-extension-is-not-installed-properly">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="during-installation,-php-date-warning">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="other-issues">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/trouble/tshoot_other.html">Other issues</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="known-issues-that-affect-installation">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_install-issues.html">Known issues that affect installation</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="error-'mysql-server-has-gone-away'-during-installation">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="segmentation-fault-during-rollback">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="sqlstate[hy000]-[2002]-no-such-file-or-directory">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="cannot-run-'composer-install'">
+                    
+
+                    
+                    <a  href="/guides/v2.3/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="installation-roadmap-(reference)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/install-roadmap_trouble.html">Installation roadmap (reference)</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="how-tos">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>How Tos</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="modify-docroot-to-improve-security">
+            
+            
+        
+            
+            <a href="/guides/v2.3/install-gde/tutorials/change-docroot-to-pub.html">Modify docroot to improve security</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Install the Magento software</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Install the Magento software</h1>
+
+  
+
+
+</section>
+
+
+			<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.3/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.3/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
+<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
+
+<p>Before you begin, make sure that:</p>
+
+<ol>
+  <li>Your system meets the requirements discussed in <a href="/guides/v2.3/install-gde/system-requirements.html">Magento system requirements</a>.</li>
+  <li>You completed all prerequisite tasks discussed in <a href="/guides/v2.3/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
+  <li>You took your first installation steps as discussed in <a href="/guides/v2.3/install-gde/bk-install-guide.html">Your install or upgrade path</a>.</li>
+  <li>After you log in to the Magento server, <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</li>
+  <li>Review the information discussed in <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.</li>
+</ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must install Magento from its <code>bin</code> subdirectory.</p></span>
+</div>
+
+<p>The installer is designed to be run multiple times if necessary so you can:</p>
+
+<ul>
+  <li>
+    <p>Provide different values</p>
+
+    <p>For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.</p>
+  </li>
+  <li>Correct mistakes in previous installations</li>
+  <li>Install Magento in a different database instance</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
+  <li>If you get errors during the installation, see <a href="/guides/v2.3/install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
+</div>
+
+<p>See also <a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
+
+<div>
+
+  <h2 id="instgde-cli-fully-secure">Completely secure installation</h2>
+  <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
+
+  <ul>
+    <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
+    <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
+    <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
+<!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
+  </ul>
+
+  <p>More details about these parameters can be found later in this topic.</p>
+
+  <h2 id="instgde-cli-help-cmds">Installer help commands</h2>
+  <p>You can run the following commands to find values for some required arguments:</p>
+
+  <table>
+<tbody>
+	<tr>
+		<th>Installer argument</th>
+		<th>Command</th>
+	</tr>
+<tr>
+	<td>Language</td>
+	<td><code>magento info:language:list</code></td>
+</tr>
+<tr>
+	<td>Currency</td>
+	<td><code>magento info:currency:list</code></td>
+</tr>
+<tr>
+	<td>Time zone</td>
+	<td><code>php  magento info:timezone:list</code></td>
+</tr>
+</tbody>
+</table>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="/guides/v2.3/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
+</div>
+
+  <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
+  <p>The format of the install command follows:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
+</code></pre></div>  </div>
+
+  <p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Any options that contain spaces or special characters must be enclosed in either single or double quotes.</p></span>
+</div>
+  <table>
+	<col width="35%" />
+	<col width="55%" />
+	<col width="10%" />
+	<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Value</th>
+			<th>Required?</th>
+		</tr>
+		<tr>
+		<td><p>--admin-firstname</p></td>
+		<td><p>Magento administrator user's first name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-lastname</p></td>
+		<td><p>Magento administrator user's last name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-email</p></td>
+		<td><p>Magento administrator user's e-mail address.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-user</p></td>
+		<td><p>Magento administrator user name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-password</p></td>
+		<td><p>Magento administrator user password.</p>
+			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
+			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code>--admin-password='A0b9%t_3`g'</code></p></td>
+		<td><p>Yes</p></td>
+	</tr>
+		<tr>
+		<td><p>--base-url</p></td>
+		<td><p>Base URL to use to access your Magento Admin and storefront in any of the following formats:</p>
+		<ul><li><code>http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>.&lt;/p&gt;
+		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
+		<p><code>&lt;your Magento install dir&gt;</code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
+		<p>To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir&gt;/</code> or <code>http://127.0.0.1/&lt;your Magento install dir&gt;/</code>.</p></li>
+		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the host name <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>
+
+		</td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--backend-frontname</p></td>
+		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
+			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
+			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="/guides/v2.3/install-gde/install/cli/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
+			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. </p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-host</p></td>
+		<td><p>Use any of the following:</p>
+		<ul><li>The database server's fully qualified host name or IP address.</li>
+		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br /><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
+		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
+</td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-name</p></td>
+		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
+			<p>Default is <code>magento2</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-user</p></td>
+		<td><p>User name of the Magento database instance owner.</p>
+			<p>Default is <code>root</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-password</p></td>
+		<td><p>Magento database instance owner's password.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-prefix</p></td>
+		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
+		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
+		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
+		<td><p>No</p></td>
+	</tr>
+
+	<tr>
+		<td><p>--language</p></td>
+		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--currency</p></td>
+		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--timezone</p></td>
+		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--use-rewrites</p></td>
+		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
+		<p><code>0</code> disables the use of web server rewrites. This is the default.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--use-secure</p></td>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.</p>
+		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p>
+		</td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--base-url-secure</p></td>
+		<td>Secure base URL to use to access your Magento Admin and storefront in the following format:
+		<code>http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>
+		</td>
+		<td><p>No</p></td>
+	</tr>
+
+	<tr>
+		<td><p>--use-secure-admin</p></td>
+		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
+		<p><code>0</code> means you do not use SSL with the Admin. This is the default.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-use-security-key</p></td>
+		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>. This is the default.</p>
+		<p><code>0</code> disables the use of the key.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<!-- <tr>
+		<td>enable_modules=&lt;list>}</td>
+		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<p>To enable and disable modules after installing Magento, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td>disable_modules=&lt;list>}</td>
+		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<p>To enable and disable modules after installing Magento, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<td>No</td>
+	</tr> -->
+	<tr>
+		<td><p>--session-save</p></td>
+		<td><p>Use any of the following:</p>
+		<ul><li><code>db</code> to store session data in the <a href="/guides/v2.3/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+
+    <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.</li>
+
+    <li><code>redis</code> to store session data in <a href="/guides/v2.3/config-guide/redis/config-redis.html">Redis</a>. If you will be using Redis for default or page caching, Redis must be already installed. See <a href="/guides/v2.3/config-guide/redis/redis-session.html">Use Redis for session storage</a> for additional information about configuring support for Redis. </li>
+	</ul></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--key</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--cleanup-database</p></td>
+		<td><p>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--db-init-statements</p></td>
+		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p>
+			<p>Default is <code>SET NAMES utf8;</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--sales-order-increment-prefix</p></td>
+		<td><p>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</p></td>
+		<td><p>No</p></td>
+	</tr>
+<tr>
+<td><p>--amqp-host</p></td>
+<td><p>Magento Commerce only. Do not use the` --amqp` options unless you have already set up an installation of RabbitMQ. See <a href="/guides/v2.3/install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about installing and configuring RabbitMQ..</p>
+<p>The host name where RabbitMQ is installed.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-port</p></td>
+<td><p>Magento Commerce only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-user</p></td>
+<td><p>Magento Commerce only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-password</p></td>
+<td><p>Magento Commerce only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-virtualhost</p></td>
+<td><p>Magento Commerce only. The virtual host for connecting to RabbitMQ. The default is <code>/</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-ssl</p></td>
+<td><p>Magento Commerce only. Indicates whether to connect to RabbitMQ. The default is <code>false</code>. See <a href="/guides/v2.3/install-gde/prereq/install-rabbitmq.html">RabbitMQ</a> for information about setting up SSL for RabbitMQ. </p></td>
+<td><p>No</p></td>
+</tr>
+	</tbody>
+</table>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>To enable or disable modules after installing Magento, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+  	</span>
+</div>
+
+  <div>
+
+    <h4 id="sens-data">What is sensitive data?</h4>
+    <p>Magento uses your encryption key to encrypt the following:</p>
+
+    <ul>
+      <li>Credit card information</li>
+      <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
+      <li>CAPTCHA values sent over the network</li>
+    </ul>
+
+    <p>Magento does <em>not</em> encrypt:</p>
+
+    <ul>
+      <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+      <li>Address</li>
+      <li>Phone number</li>
+      <li>Other types of personally identifiable information except for credit card numbers</li>
+    </ul>
+
+    <h4 id="install-cli-example">Sample localhost installations</h4>
+
+    <p><strong>Example 1</strong></p>
+
+    <p>The following example installs Magento with the following options:</p>
+
+    <ul>
+      <li>
+        <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+
+        <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+      </li>
+      <li>
+        <p>The database server is on the same host as the web server.</p>
+
+        <p>The database name is <code class="highlighter-rouge">magento</code>, and the user name and password are both <code class="highlighter-rouge">magento</code></p>
+      </li>
+      <li>
+        <p>Uses server rewrites</p>
+      </li>
+      <li>
+        <p>The Magento administrator has the following properties:</p>
+
+        <ul>
+          <li>First and last name are <code class="highlighter-rouge">Magento User</code></li>
+          <li>User name is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
+          <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+        </ul>
+      </li>
+      <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+      <li>Default currency is U.S. dollars</li>
+      <li>
+        <p>Default time zone is U.S. Central (America/Chicago)</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --use-rewrites=1
+</code></pre></div>        </div>
+      </li>
+    </ul>
+
+    <p>Messages similar to the following display to indicate a successful installation:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
+[Progress: 274 / 274]
+[SUCCESS]: Magento installation complete.
+[SUCCESS]: Admin Panel URI: /admin_puu71q
+</code></pre></div>    </div>
+
+    <p><strong>Example 2</strong> (with additional options)</p>
+
+    <p>The following example installs Magento with the following options:</p>
+
+    <ul>
+      <li>
+        <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+
+        <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+      </li>
+      <li>
+        <p>The database server is on the same host as the web server.</p>
+
+        <p>The database name is <code class="highlighter-rouge">magento</code>, and the user name and password are both <code class="highlighter-rouge">magento</code></p>
+      </li>
+      <li>
+        <p>The Magento administrator has the following properties:</p>
+
+        <ul>
+          <li>First and last name are is <code class="highlighter-rouge">Magento User</code></li>
+          <li>User name is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
+          <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+        </ul>
+      </li>
+      <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+      <li>Default currency is U.S. dollars</li>
+      <li>Default time zone is U.S. Central (America/Chicago)</li>
+      <li>The installer first cleans up the database before installing the tables and schema</li>
+      <li>You use a sales order increment prefix <code class="highlighter-rouge">ORD$</code> and because it contains a special character (<code class="highlighter-rouge">$</code>), the value must be enclosed in double quotes</li>
+      <li>Session data is saved in the database</li>
+      <li>
+        <p>Uses server rewrites</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--db-host=localhost --db-name=magento \
+--db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --cleanup-database \
+--sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
+</code></pre></div>        </div>
+      </li>
+    </ul>
+
+    <p>Messages similar to the following display to indicate a successful installation:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
+[Progress: 274 / 274]
+[SUCCESS]: Magento installation complete.
+[SUCCESS]: Admin Panel URI: /admin_puu71q
+</code></pre></div>    </div>
+
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
+</div>
+
+    <h4 id="next-step">Next step</h4>
+    <ul>
+      <li>
+        <p>If you have one user account to access the Magento server, see <a href="/guides/v2.3/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
+
+        <p>This type of setup is typical for shared hosting.</p>
+      </li>
+      <li>
+        <p><a href="/guides/v2.3/install-gde/install/verify.html">Verify the installation</a>.</p>
+      </li>
+    </ul>
+
+    <h4 id="related-topics">Related topics</h4>
+
+    <ul>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-sample-data-other.html">Remove sample data modules or update sample data</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+      <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+    </ul>
+  </div>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/install-gde/install/cli/install-cli-install.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/install-gde/install/cli/install-cli-install.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

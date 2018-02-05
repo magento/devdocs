@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Extension Lifecycle | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/extension-dev-guide/prepare/lifecycle.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/extension-dev-guide/prepare/lifecycle.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/extension-dev-guide/prepare/lifecycle.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/extension-dev-guide/prepare/lifecycle.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>PHP Developer Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="developer-roadmap">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="introduction-to-composer">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="glossary-of-common-terms">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="prepare-(development-quick-start)">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/prepare/prepare.html">Prepare (development quick start)</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="component-types">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/dev-modtypes.html">Component types</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-component-file-structure">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="roadmap-for-developing-and-packaging-components">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="extension-lifecycle">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="build">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/build/build.html">Build</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="the-di.xml-file">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/di-xml-file.html">The di.xml file</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="optimal-development-environment">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/optimal-dev-environment.html">Optimal development environment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="the-composer.json-file">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/composer-integration.html">The composer.json file</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="define-your-configuration-files">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="create-your-component-file-structure">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="register-your-component">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html">Register your component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="urn-schema-validation">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="name-your-component">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/create_component.html">Name your component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="component-load-order">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/module-load-order.html">Component load order</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="enable-or-disable-your-component">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/enable-module.html">Enable or disable your component</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="package">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/package/package.html">Package</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="package-a-component">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/package/package_module.html">Package a component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="upload-your-component-to-the-magento-marketplace">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/package/package_mktpl.html">Upload your component to the Magento Marketplace</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="validate">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/validate/validate.html">Validate</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="test-your-component">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/validate/test-module.html">Test your component</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="partial-caching">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching.html">Partial caching</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="create-custom-cache-engines">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching/database-caching.html">Create custom cache engines</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="create-a-cache-type">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching/create-cache-type.html">Create a cache type</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="full-page-caching">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/cache/page-caching.html">Full page caching</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="public-content">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/page-caching/public-content.html">Public content</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="private-content">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html">Private content</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="add-cli-commands">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="command-naming-guidelines">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="how-to-add-cli-commands">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="staging-(magento-commerce-only)">
+
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/staging.html">Staging (Magento Commerce only)</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="component-development">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/module-development.html">Component development</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="service-contracts">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="public-interfaces-&amp;-apis">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/api-concepts.html">Public interfaces &amp; APIs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="service-contract-design-patterns">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="dependency-injection">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/depend-inj.html">Dependency injection</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="objectmanager">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/object-manager.html">ObjectManager</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="events-and-observers">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/events-and-observers.html">Events and observers</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="factories">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/factories.html">Factories</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="proxies">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/proxies.html">Proxies</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="code-generation">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/code-generation.html">Code generation</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="eav-and-extension-attributes">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/attributes.html">EAV and extension attributes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="plugins-(interceptors)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/plugins.html">Plugins (Interceptors)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="routing">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/routing.html">Routing</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="indexing">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Indexing</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="indexing-overview">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/indexing.html">Indexing overview</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="indexer-optimization">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/indexer-batch.html">Indexer optimization</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="adding-a-custom-indexer">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="message-queues-(magento-commerce-edition-only)">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Message Queues (Magento Commerce Edition Only)</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="message-queues-overview">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/message-queues.html">Message queues overview</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configure-message-queues">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/config-mq.html">Configure message Queues</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="migrate-message-queue-configuration">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="bulk-operations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/bulk-operations.html">Bulk operations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="example-bulk-operations-implementation">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/implement-bulk.html">Example bulk operations implementation</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="adding-extension-attributes-to-entity">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to entity</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="searching-with-repositories">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/searching-with-repositories.html">Searching with repositories</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="configure-services-as-web-apis">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="clear-directories-during-development">
+            
+            
+        
+            
+            <a href="/guides/v2.3/howdoi/php/php_clear-dirs.html">Clear directories during development</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="adapters">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/adapters.html">Adapters</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configuration">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Configuration</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="sensitive-environemnt-settings">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/configuration/sensitive-and-environment-settings.html">Sensitive Environemnt Settings</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="configuration-importers">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/configuration/importers.html">Configuration Importers</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="framework">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Framework</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="serialize-library">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/framework/serializer.html">Serialize Library</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="security">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Security</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="xss-prevention">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/xss-protection.html">XSS Prevention</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="non-secure-functions">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="versioning">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/extension-dev-guide/versioning/">Versioning</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="module-version-dependencies">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/versioning/dependencies.html">Module version dependencies</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="codebase-changes">
+            
+            
+        
+            
+            <a href="/guides/v2.3/extension-dev-guide/versioning/codebase-changes.html">Codebase changes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">
+            <span property="name">PHP Developer Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Extension Lifecycle</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Extension Lifecycle</h1>
+
+  
+
+
+</section>
+
+
+			<p>This topic describes a module’s lifecycle and how to create classes that execute code when your module is initialized, upgraded, or uninstalled.
+These executable classes can perform tasks that set up the database, update data, and clean up data.</p>
+
+<p><em>Note:</em> Theme and language package extensions do not need initialization or uninstallation tasks because they do not install database schemas or update data.</p>
+
+<h2 id="lifecycle-guidelines">Lifecycle guidelines</h2>
+
+<p>Follow these guidelines when developing your executable classes to have them run during specific lifecycle stages:</p>
+
+<ul>
+  <li>Put your executable class in the <code class="highlighter-rouge">Setup</code> directory inside your module’s root directory.</li>
+  <li>Use the specific file and class name for your class’s target lifecycle stage.</li>
+  <li>Implement the specific class interface and function for your class’s target stage.</li>
+  <li>Follow Magento’s <a href="/guides/v2.3/architecture/versioning.html">versioning policy</a> when changing your module’s version.</li>
+</ul>
+
+<h2 id="schema-initialization-stages">Schema initialization stages</h2>
+
+<p>The schema initialization stages are the first set of processes Magento runs when your module is installed, re-installed, or upgraded.</p>
+
+<h3 id="schema-installation">Schema installation</h3>
+
+<p>Magento executes the schema installation class during your module’s initial install. 
+If the <code class="highlighter-rouge">schema_version</code> for your module is found in the <code class="highlighter-rouge">setup_module</code> table, Magento skips this stage and proceeds to the <a href="#schema-upgrade">schema upgrade</a> stage.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Class name:</strong></td>
+      <td><code class="highlighter-rouge">InstallSchema</code></td>
+    </tr>
+    <tr>
+      <td><strong>Interface:</strong></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Method:</strong></td>
+      <td><code class="highlighter-rouge">install()</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong> InstallSchema.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\InstallSchema</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallSchemaInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Install schema logic
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="schema-upgrade">Schema upgrade</h3>
+
+<p>Magento executes your module’s schema upgrade class when it detects an earlier installation. 
+The purpose of this class is to update the database structure or apply patches.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Class name</strong></td>
+      <td><code class="highlighter-rouge">UpgradeSchema</code></td>
+    </tr>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php"><code class="highlighter-rouge">UpgradeSchemaInterface</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Method</strong></td>
+      <td><code class="highlighter-rouge">upgrade()</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong> UpgradeSchema.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\UpgradeSchema</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UpgradeSchemaInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Upgrade schema logic
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="recurring-schema-event">Recurring schema event</h3>
+
+<p>Magento executes your module’s recurring schema event class after every schema installation or upgrade stage.
+This class makes final modifications to the database schema after it has been installed or updated.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Class name</strong></td>
+      <td><code class="highlighter-rouge">Recurring</code></td>
+    </tr>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Method</strong></td>
+      <td><code class="highlighter-rouge">install()</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong> Recurring.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\Recurring</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallSchemaInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Recurring schema event logic
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="data-initialization">Data initialization</h2>
+
+<p>Magento goes through your module’s data initialization stages after the schema initialization processes complete.</p>
+
+<h3 id="data-installation">Data installation</h3>
+
+<p>Magento executes the data installation class during your module’s initial install unless an existing version entry is found in the database.
+The purpose of this class is to populate the database with initial data.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Class name</strong></td>
+      <td><code class="highlighter-rouge">InstallData</code></td>
+    </tr>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Method</strong></td>
+      <td><code class="highlighter-rouge">install()</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong> InstallData.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\InstallData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallDataInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Data install logic
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="data-upgrade">Data upgrade</h3>
+
+<p>Magento executes the data upgrade class when it detects an earlier version in the <code class="highlighter-rouge">schema_version</code> field for the module in the <code class="highlighter-rouge">setup_module</code> table.
+The purpose of this class is to fix corrupted data or populate a new data field after a schema change.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Class name</strong></td>
+      <td><code class="highlighter-rouge">UpgradeData</code></td>
+    </tr>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php"><code class="highlighter-rouge">UpgradeDataInterface</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Method</strong></td>
+      <td><code class="highlighter-rouge">upgrade()</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong> UpgradeData.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\UpgradeData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UpgradeDataInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">);</span>
+    <span class="p">{</span>
+        <span class="c1">// Data upgrade logic
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="recurring-data-event">Recurring data event</h3>
+
+<p>Magento executes your module’s recurring data event class after every data installation or upgrade stage.
+This class makes final modifications to the database store after data has been installed or updated.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Class name</strong></td>
+      <td><code class="highlighter-rouge">RecurringData</code></td>
+    </tr>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Method</strong></td>
+      <td><code class="highlighter-rouge">install()</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong> InstallDataInterface.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\RecurringData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallDataInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Recurring data event logic
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="database-interface">Database interface</h2>
+
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php"><code class="highlighter-rouge">ModuleDataSetupInterface</code></a> when you need to do database manipulations.
+If your installation or upgrade logic spans multiple classes, pass this resource on to other classes that need to modify the database.</p>
+
+<p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Setup/InstallData.php">Customer module’s InstallData.php</a></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * @var CustomerFactory
+     */</span>
+    <span class="k">private</span> <span class="nv">$customerSetupFactory</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * @param CustomerFactory $customerSetupFactory
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">CustomerFactory</span> <span class="nv">$customerSetupFactory</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerSetupFactory</span> <span class="o">=</span> <span class="nv">$customerSetupFactory</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="sd">/** @var Customer $customerSetup */</span>
+        <span class="nv">$customerSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
+
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
+
+        <span class="o">...</span>
+
+        <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="na">installEntities</span><span class="p">();</span>
+
+        <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="na">installCustomerForms</span><span class="p">();</span>
+
+        <span class="nv">$disableAGCAttribute</span> <span class="o">=</span> <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="na">getEavConfig</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getAttribute</span><span class="p">(</span><span class="s1">'customer'</span><span class="p">,</span> <span class="s1">'disable_auto_group_change'</span><span class="p">);</span>
+        
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="module-version">Module version</h2>
+
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php"><code class="highlighter-rouge">ModuleContextInterface</code></a> to get the current module version and execute logic based on the version.</p>
+
+<p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/User/Setup/UpgradeData.php">User module’s UpgradeData.php</a></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nx">Magento\User\Setup</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Framework\Encryption\Encryptor</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\UpgradeDataInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">UpgradeData</span> <span class="k">implements</span> <span class="nx">UpgradeDataInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * @inheritdoc
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">(),</span> <span class="s1">'2.0.1'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upgradeHash</span><span class="p">(</span><span class="nv">$setup</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="o">...</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="uninstall-event">Uninstall event</h2>
+
+<p>Magento executes the uninstall event class when your module is uninstalled using the <a href="/guides/v2.3/comp-mgr/module-man/compman-uninst-final.html">Component Manager</a> or with the following command line command:</p>
+
+<p><code class="highlighter-rouge">bin/magento module:uninstall --remove-data &lt;module_name&gt;</code></p>
+
+<p>In this phase, your module should remove all traces of its existence in the database by dropping tables, deleting data, or restoring data.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Class name</strong></td>
+      <td><code class="highlighter-rouge">Uninstall</code></td>
+    </tr>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Setup/UninstallInterface.php"><code class="highlighter-rouge">UninstallInterface</code></a></td>
+    </tr>
+    <tr>
+      <td><strong>Method</strong></td>
+      <td><code class="highlighter-rouge">uninstall()</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong> Uninstall.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\Uninstall</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UninstallInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">uninstall</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Uninstall logic
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="disabled-modules">Disabled modules</h3>
+
+<p>A disabled module can still execute its uninstall event.
+However, module-specific configurations such as its dependency injection and event/observer configurations will not be available and will cause problems.</p>
+
+<p>Avoid this situation by not including dependencies in your uninstall event class</p>
+
+<p><strong>Related Topics</strong></p>
+
+<ul>
+  <li>Magento’s <a href="/guides/v2.3/architecture/versioning.html">versioning policy</a></li>
+</ul>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/prepare/lifecycle.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/extension-dev-guide/prepare/lifecycle.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

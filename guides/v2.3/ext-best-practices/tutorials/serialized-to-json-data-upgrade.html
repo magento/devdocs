@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Serialized to JSON data upgrade | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Extension Best Practices</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="admin">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/ext-best-practices/admin/admin-best-practices.html">Admin</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="admin-panel-placement-and-design">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/admin/placement-and-design.html">Admin Panel Placement and Design</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="admin-faq">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/admin/ext-best-practices_admin_FAQ.html">Admin FAQ</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="extension-coding">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/ext-best-practices/extension-coding/coding-best-practices.html">Extension Coding</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="programming-best-practices">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/extension-coding/common-programming-bp.html">Programming best practices</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="working-with-the-architecture">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/extension-coding/working-with-arch-bp.html">Working with the Architecture</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="security,-performance,-and-data-handling">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/extension-coding/security-performance-data-bp.html">Security, performance, and data handling</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="observers-best-practices">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/extension-coding/observers-bp.html">Observers best practices</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="coding-faq">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/extension-coding/coding-faq.html">Coding FAQ</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="creating-a-magento-admin-page">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/extension-coding/example-module-adminpage.html">Creating a Magento admin page</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="storefront">
+
+    
+    
+    
+    <a href="/guides/v2.3/ext-best-practices/storefront/storefront-best-practices.html">Storefront</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="security">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Security</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="writing-secure-code">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/security/writing-secure-code.html">Writing secure code</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="tutorials">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Tutorials</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="copying-fieldsets">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/tutorials/copy-fieldsets.html">Copying fieldsets</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="serialized-to-json-data-upgrade">
+            
+            
+        
+            
+            <a href="/guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Serialized to JSON data upgrade</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">
+            <span property="name">Best Practices for Extension Developers</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Serialized to JSON data upgrade</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Serialized to JSON data upgrade</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="overview">Overview</h2>
+
+<p>The following tutorial lists the steps needed to create an upgrade script that converts the data stored in the database from the default <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> serialized format to JSON format.</p>
+
+<p>Use this tutorial to create an upgrade script to update your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> to work with Magento 2.2 and above.</p>
+
+<h2 id="before-you-begin">Before you begin</h2>
+
+<p>Identify the data you need to convert to JSON in the database.</p>
+
+<p>Your extension <em>must</em> convert data in the following cases:</p>
+
+<ol>
+  <li>The extension stores serialized data provided by a core <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that now uses the JSON format.</li>
+  <li>The extension uses the automatic serializing mechanism provided by the Magento framework (i.e. the extension declares <code class="highlighter-rouge">\Magento\Framework\Model\ResourceModel\Db\AbstractDb::$_serializableFields</code>).</li>
+</ol>
+
+<p>Your extension will continue working in Magento 2.2 and above in the following cases, but we recommend you switch to using the JSON format for security reasons:</p>
+
+<ol>
+  <li>The extension stores its own serialized data.</li>
+  <li>The extension is responsible for serializing/unserializing data stored in core tables.</li>
+</ol>
+
+<h3 id="api-overview">API Overview</h3>
+
+<p>This tutorial uses the following framework <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> in the following ways:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code> - This class converts values for a field in a table from one format to another.
+    <ul>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverterFactory</code> - This class creates instances of the <code class="highlighter-rouge">FieldDataConverter</code> with the appropriate data converter implementation.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter</code> - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the <code class="highlighter-rouge">FieldDataConverter</code> class and accepts a list of <code class="highlighter-rouge">\Magento\Framework\DB\FieldToConvert</code> value objects with field information. A single <code class="highlighter-rouge">convert()</code> method call is limited to one DB connection.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">\Magento\Framework\DB\DataConverter\DataConverterInterface</code> - This interface is for classes that convert data between different formats or types of data.</li>
+  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code> This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
+    <ul>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierInterface</code> - Interface for classes that add a condition to the database query to target specific entries.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierFactory</code> - This class creates instances of specific implementations of <code class="highlighter-rouge">QueryModifierInterface</code>.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\InQueryModifier</code> - An implementation of the <code class="highlighter-rouge">QueryModifierInterface</code> that adds an IN condition to a query.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\LikeQueryModifier</code> - An implementation of the <code class="highlighter-rouge">QueryModifierInterface</code> that adds a LIKE condition to a query.</li>
+      <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\CompositeQueryModifier</code> - An implementation of the <code class="highlighter-rouge">QueryModifierInterface</code> that allows the application of multiple query modifiers.</li>
+    </ul>
+
+    <p>You can create your own query modifier or use any of the ones listed in the <code class="highlighter-rouge">app/etc/di.xml</code> file.</p>
+  </li>
+  <li><code class="highlighter-rouge">\Magento\Framework\Module\Manager</code> - This class checks the status of a module.</li>
+</ul>
+
+<h2 id="step-1">Step 1: Create the basic upgrade script</h2>
+
+<p>The upgrade script is what gets run during the upgrade step of your extension’s <a href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html" title="Extension Lifecycle">lifecycle</a>.
+Create the <code class="highlighter-rouge">UpgradeData.php</code> file in the <code class="highlighter-rouge">Setup</code> directory inside your extension’s root directory.</p>
+
+<p>Inside the file, create the class <code class="highlighter-rouge">UpgradeData</code> which implements <code class="highlighter-rouge">\Magento\Framework\Setup\UpgradeDataInterface</code>.</p>
+
+<p>The following is an example of the content for your upgrade script.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show upgrade script content</b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\CustomModule\Setup</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">UpgradeData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UpgradeDataInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * @var \Magento\Framework\DB\FieldDataConverterFactory
+     */</span>
+    <span class="k">private</span> <span class="nv">$fieldDataConverterFactory</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * @var \Magento\Framework\DB\Select\QueryModifierFactory
+     */</span>
+    <span class="k">private</span> <span class="nv">$queryModifierFactory</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * @var \Magento\Framework\DB\Query\Generator
+     */</span>
+    <span class="k">private</span> <span class="nv">$queryGenerator</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * Constructor
+     *
+     * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
+     * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
+     * @param \Magento\Framework\DB\Query\Generator $queryGenerator
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">\Magento\Framework\DB\FieldDataConverterFactory</span> <span class="nv">$fieldDataConverterFactory</span><span class="p">,</span>
+        <span class="nx">\Magento\Framework\DB\Select\QueryModifierFactory</span> <span class="nv">$queryModifierFactory</span><span class="p">,</span>
+        <span class="nx">\Magento\Framework\DB\Query\Generator</span> <span class="nv">$queryGenerator</span>
+    <span class="p">)</span> <span class="p">{</span>
+          <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fieldDataConverterFactory</span> <span class="o">=</span> <span class="nv">$fieldDataConverterFactory</span><span class="p">;</span>
+          <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryModifierFactory</span> <span class="o">=</span> <span class="nv">$queryModifierFactory</span><span class="p">;</span>
+          <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryGenerator</span> <span class="o">=</span> <span class="nv">$queryGenerator</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * {@inheritdoc}
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span>
+        <span class="nx">\Magento\Framework\Setup\ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span>
+        <span class="nx">\Magento\Framework\Setup\ModuleContextInterface</span> <span class="nv">$context</span>
+    <span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">(),</span> <span class="s1">'2.0.1'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">))</span> <span class="p">{</span>
+              <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">convertSerializedDataToJson</span><span class="p">(</span><span class="nv">$setup</span><span class="p">);</span>
+          <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
+     * from serialized to JSON format
+     *
+     * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
+     * @return void
+     */</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">convertSerializedDataToJson</span><span class="p">(</span><span class="nx">\Magento\Framework\Setup\ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Upgrade logic here
+</span>    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="step-2">Step 2: Check that the module exists</h2>
+
+<p>Any module can replace another module in Magento.
+If your extension stores data in the tables of another module or it serializes/unserializes data stored in core modules, make sure the module exists and is active before executing the upgrade logic.</p>
+
+<p>Use the <code class="highlighter-rouge">\Magento\Framework\Module\Manager</code> class to check the status of the module your extension depends on.</p>
+
+<p>Add this dependency in the constructor of your upgrade script class.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">moduleManager</span><span class="o">-&gt;</span><span class="na">isEnabled</span><span class="p">(</span><span class="s1">'Magento_Sales'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// Upgrade logic goes here
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="step-3">Step 3: Write the conversion logic</h2>
+
+<p>The <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span> logic in your script depends on how your extension stores the serialized data.</p>
+
+<p>If your extension stores serialized data in different ways, you will need to use different conversion methods.</p>
+
+<h3 id="step-3a">Step 3a: Convert data in a column for all rows</h3>
+
+<p>Use a <code class="highlighter-rouge">FieldDataConverterFactory</code> to create a <code class="highlighter-rouge">FieldDataConverter</code> instance with the appropriate data converter.</p>
+
+<p>You can convert data for a column in a table using the code below.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$fieldDataConverter</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fieldDataConverterFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">SerializedToJson</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+
+<span class="nv">$fieldDataConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span>
+    <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(),</span>
+    <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'my_table'</span><span class="p">),</span>
+    <span class="s1">'entity_id'</span><span class="p">,</span>
+    <span class="s1">'field'</span>
+<span class="p">);</span></code></pre></figure>
+</div></div>
+
+<h3 id="step-3b">Step 3b: Convert data in specific rows for a field</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>option_id</th>
+      <th>code</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>my_option</td>
+      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>another_option</td>
+      <td>&lt;non-serialized string&gt;</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>my_option</td>
+      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you need to convert specific rows in the column, you can use a query modifier to update values using a condition.</p>
+
+<p>The following code sample upgrades the data for options in the <code class="highlighter-rouge">value</code> column in the <code class="highlighter-rouge">quote_item_option</code> table with the code <code class="highlighter-rouge">my_option</code>.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$fieldDataConverter</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fieldDataConverterFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+    <span class="nx">\Magento\Framework\DB\DataConverter\SerializedToJson</span><span class="o">::</span><span class="na">class</span>
+<span class="p">);</span>
+
+<span class="c1">// Convert data for the option with static name in quote_item_option.value
+</span><span class="nv">$queryModifier</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryModifierFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+    <span class="s1">'in'</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="s1">'values'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'my_option'</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+<span class="nv">$fieldDataConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span>
+    <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(),</span>
+    <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'quote_item_option'</span><span class="p">),</span>
+    <span class="s1">'option_id'</span><span class="p">,</span>
+    <span class="s1">'value'</span><span class="p">,</span>
+    <span class="nv">$queryModifier</span>
+<span class="p">);</span></code></pre></figure>
+</div></div>
+
+<h4 id="using-values-from-another-table-in-the-condition">Using values from another table in the condition</h4>
+
+<p>The following tables show how the <code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">option_id</code> columns from the <code class="highlighter-rouge">catalog_product_option</code> table form the unique <code class="highlighter-rouge">code</code> value for custom options in the <code class="highlighter-rouge">quote_item_option</code> table.</p>
+
+<p><strong>Table: <code class="highlighter-rouge">catalog_product_option</code></strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>option_id</th>
+      <th>product_id</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1001</td>
+      <td>1</td>
+      <td>my_custom_option</td>
+    </tr>
+    <tr>
+      <td>1002</td>
+      <td>2</td>
+      <td>my_custom_option</td>
+    </tr>
+    <tr>
+      <td>1003</td>
+      <td>5</td>
+      <td>my_custom_option</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Table: <code class="highlighter-rouge">quote_item_option</code></strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>option_id</th>
+      <th>code</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>my_custom_option_1001</td>
+      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>another_option</td>
+      <td>&lt;non-serialized string&gt;</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>my_custom_option_1002</td>
+      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>my_custom_option_1003</td>
+      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Use the following approach to update custom options data in the <code class="highlighter-rouge">quote_item_option</code> table.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$fieldDataConverter</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fieldDataConverterFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+    <span class="nx">\Magento\Framework\DB\DataConverter\SerializedToJson</span><span class="o">::</span><span class="na">class</span>
+<span class="p">);</span>
+<span class="c1">// Convert data for the option with dynamic name in quote_item_option.value
+</span><span class="nv">$select</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">select</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'catalog_product_option'</span><span class="p">),</span>
+        <span class="p">[</span><span class="s1">'option_id'</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'type = ?'</span><span class="p">,</span> <span class="s1">'my_custom_option'</span><span class="p">);</span>
+<span class="nv">$iterator</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryGenerator</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">'option_id'</span><span class="p">,</span> <span class="nv">$select</span><span class="p">);</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$iterator</span> <span class="k">as</span> <span class="nv">$selectByRange</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$codes</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fetchCol</span><span class="p">(</span><span class="nv">$selectByRange</span><span class="p">);</span>
+    <span class="nv">$codes</span> <span class="o">=</span> <span class="nb">array_map</span><span class="p">(</span>
+        <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s1">'my_custom_option_'</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="nv">$codes</span>
+    <span class="p">);</span>
+    <span class="nv">$queryModifier</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">queryModifierFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+        <span class="s1">'in'</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="s1">'values'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="nv">$codes</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">);</span>
+    <span class="nv">$fieldDataConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(),</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'quote_item_option'</span><span class="p">),</span>
+        <span class="s1">'option_id'</span><span class="p">,</span>
+        <span class="s1">'value'</span><span class="p">,</span>
+        <span class="nv">$queryModifier</span>
+    <span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h3 id="step-3c">Step 3c: Convert nested serialized data</h3>
+
+<p>If your module uses nested serialized data in the database, create a custom data converter to hold the logic for converting the data.</p>
+
+<p>The following example is a custom data converter class that converts data in the <code class="highlighter-rouge">product_options</code> column in the <code class="highlighter-rouge">sales_order_item</code> table.
+This field contains nested serialized data that needs conversion.</p>
+
+<p>Since you cannot assume the format of the data when initially converted, the following example also checks the format and uses the appropriate methods to unserialize and serialize the data using the original format.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\CustomModule\Setup</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Framework\Serialize\Serializer\Serialize</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Serialize\Serializer\Json</span><span class="p">;</span>
+
+<span class="sd">/**
+ * Serializer used to convert data in product_options field
+ */</span>
+<span class="k">class</span> <span class="nc">SerializedToJsonDataConverter</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\DB\DataConverter\DataConverterInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * @var Serialize
+     */</span>
+    <span class="k">private</span> <span class="nv">$serialize</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * @var Json
+     */</span>
+    <span class="k">private</span> <span class="nv">$json</span><span class="p">;</span>
+
+    <span class="sd">/**
+     * Constructor
+     *
+     * @param Serialize $serialize
+     * @param Json $json
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Serialize</span> <span class="nv">$serialize</span><span class="p">,</span>
+        <span class="nx">Json</span> <span class="nv">$json</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serialize</span> <span class="o">=</span> <span class="nv">$serialize</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">json</span> <span class="o">=</span> <span class="nv">$json</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * Convert from serialized to JSON format
+     *
+     * @param string $value
+     * @return string
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">convert</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$isSerialized</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">isSerialized</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+        <span class="nv">$unserialized</span> <span class="o">=</span> <span class="nv">$isSerialized</span>
+          <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="o">-&gt;</span><span class="na">unserialize</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+          <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">json</span><span class="o">-&gt;</span><span class="na">unserialize</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$unserialized</span><span class="p">[</span><span class="s1">'options'</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$unserialized</span><span class="p">[</span><span class="s1">'options'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$option</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$option</span><span class="p">[</span><span class="s1">'option_type'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'my_custom_option'</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nv">$unserialized</span><span class="p">[</span><span class="s1">'options'</span><span class="p">][</span><span class="nv">$key</span><span class="p">][</span><span class="s1">'option_value'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">json</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="o">-&gt;</span><span class="na">unserialize</span><span class="p">(</span>
+                            <span class="nv">$option</span><span class="p">[</span><span class="s1">'option_value'</span><span class="p">]</span>
+                        <span class="p">)</span>
+                    <span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$unserialized</span><span class="p">[</span><span class="s1">'my_option'</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nv">$unserialized</span><span class="p">[</span><span class="s1">'my_option'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">json</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="o">-&gt;</span><span class="na">unserialize</span><span class="p">(</span>
+                    <span class="nv">$unserialized</span><span class="p">[</span><span class="s1">'my_option'</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$isSerialized</span>
+          <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$unserialized</span><span class="p">)</span>
+          <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">json</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$unserialized</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * Check if value is serialized string
+     *
+     * @param string $value
+     * @return boolean
+     */</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">isSerialized</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nx">boolean</span><span class="p">)</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s1">'/^((s|i|d|b|a|O|C):|N;)/'</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<p>After creating your custom data converter class, use the <code class="highlighter-rouge">FieldDataConverterFactory</code> to create a <code class="highlighter-rouge">FieldDataConverter</code> instance with your custom converter.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// Convert options in sales_order_item.product_options
+</span><span class="nv">$fieldDataConverter</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fieldDataConverterFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+    <span class="nx">\Magento\CustomModule\Setup\SerializedToJsonDataConverter</span><span class="o">::</span><span class="na">class</span>
+<span class="p">);</span>
+<span class="nv">$fieldDataConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span>
+    <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(),</span>
+    <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'sales_order_item'</span><span class="p">),</span>
+    <span class="s1">'item_id'</span><span class="p">,</span>
+    <span class="s1">'product_options'</span>
+<span class="p">);</span></code></pre></figure>
+</div></div>
+
+<h3 id="step-3d">Step 3d: Convert data in a multi-database setup</h3>
+
+<p>The Magento Enterprise Edition supports storing Quote, Sales and Inventory data in separate databases.
+Use the specific connections for each of these modules to update your extension’s stored data for the entities of these modules.</p>
+
+<p>The following code sample gets the Sales module connection and uses it during data update.</p>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */</span>
+<span class="nv">$salesSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">salesSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
+
+<span class="nv">$fieldDataConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span>
+    <span class="nv">$salesSetup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(),</span>
+    <span class="nv">$salesSetup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'sales_order_item'</span><span class="p">),</span>
+    <span class="s1">'item_id'</span><span class="p">,</span>
+    <span class="s1">'product_options'</span>
+<span class="p">);</span></code></pre></figure>
+</div></div>
+
+<h3 id="step-3e-convert-data-from-multiple-fields">Step 3e: Convert data from multiple fields</h3>
+
+<p>Use the <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter</code> class to update multiple files instead of <code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code>.
+The following code sample updates two fields in different tables taking into account setup version of the module.
+It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter::convert()</code> must be made.</p>
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */</span>
+<span class="nv">$salesSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">salesSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
+
+<span class="nv">$fieldsToUpdate</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">FieldToConvert</span><span class="p">(</span>
+        <span class="nx">SerializedToJson</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="nv">$salesSetup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'sales_invoice_item'</span><span class="p">),</span>
+        <span class="s1">'entity_id'</span><span class="p">,</span>
+        <span class="s1">'tax_ratio'</span>
+    <span class="p">),</span>
+<span class="p">];</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$setupVersion</span><span class="p">,</span> <span class="s1">'2.0.5'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$fieldsToUpdate</span><span class="p">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FieldToConvert</span><span class="p">(</span>
+        <span class="nx">SerializedDataConverter</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="nv">$salesSetup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'sales_order_item'</span><span class="p">),</span>
+        <span class="s1">'item_id'</span><span class="p">,</span>
+        <span class="s1">'product_options'</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">aggregatedFieldConverter</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="nv">$fieldsToUpdate</span><span class="p">,</span> <span class="nv">$salesSetup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">());</span></code></pre></figure>
+</div></div>
+
+<h2 id="related-topics">Related Topics</h2>
+
+<ul>
+  <li><a href="/guides/v2.3/extension-dev-guide/framework/serializer.html" title="Serialize Library">Serialize Library</a></li>
+  <li><a href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html" title="Extension Lifecycle">Extension Lifecycle</a></li>
+</ul>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

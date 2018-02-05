@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configure the GraphQL schema for a module | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/graphql/develop/configure-graphql-xml.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/develop/conigure-graphql-xml.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/develop/conigure-graphql-xml.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/develop/conigure-graphql-xml.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/develop/conigure-graphql-xml.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>GraphQL Developer Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="overview">
+
+    
+    
+    
+    <a href="/guides/v2.3/graphql/index.html">Overview</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="implementation">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Implementation</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="request-headers">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="perform-a-search">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/search-pagination.html">Perform a search</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="development">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Development</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2 active " id="configure-the-graphql-schema-for-a-module">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/configure-graphql-xml.html">Configure the GraphQL schema for a module</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="resolvers">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/resolvers.html">Resolvers</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="create-a-custom-urlresolver-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/create-custom-url-resolver.html">Create a custom urlResolver service</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="handling-exceptions">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="functional-testing">
+
+    
+    
+    
+    <a href="/guides/v2.3/graphql/functional-testing.html">Functional testing</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="reference">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Reference</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="customattributemetadata-endpoint">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="customer-endpoint">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="price-field">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="products-endpoint">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/products.html">Products endpoint</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="bundle-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configurable-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/configurable-product.html">Configurable product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="downloadable-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/downloadable-product.html">Downloadable product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="gift-card-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/gift-card-product.html">Gift card product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="grouped-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/grouped-product.html">Grouped product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="urlresolver-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/graphql/index.html">
+            <span property="name">Overview</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Configure the GraphQL schema for a module</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Configure the GraphQL schema for a module</h1>
+
+  
+
+
+</section>
+
+
+			<p>The <code class="highlighter-rouge">&lt;module_name&gt;/etc/graphql.xml</code> file defines the GraphQL schema for a module. This file</p>
+
+<ul>
+  <li>Defines the structure of queries.</li>
+  <li>Determines which attributes to make available for GraphQL queries. You can define separate lists of attributes for queries and results.</li>
+  <li>Serves as the source for displaying the schema in a GraphQL browser</li>
+</ul>
+
+<p>A module’s <code class="highlighter-rouge">graphql.xml</code> file inherits properties from the base <code class="highlighter-rouge">graphql.xml</code> file, located in the <code class="highlighter-rouge">app/code/GraphQl/etc/</code> directory. All <code class="highlighter-rouge">graphql.xml</code> files must follow the specifications defined in the <code class="highlighter-rouge">app/code/GraphQl/etc/graphql.xsd</code> file.</p>
+
+<p>To illustrate how to configure the <code class="highlighter-rouge">graphql.xml</code> file, let’s suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. The contents of this file will vary, depending on whether the module extends the Catalog module or acts as a standalone.</p>
+
+<h2 id="define-the-query">Define the query</h2>
+
+<p>A query definition can be one line, or it can be complex. If your module’s query implements <code class="highlighter-rouge">searchCriteria</code>, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition is simple.</p>
+
+<p>The following example shows the <code class="highlighter-rouge">products</code> query. The top-level <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">Query</code>, indicating that is a child of the <code class="highlighter-rouge">Query</code> node. All module schema definitions contain this line. The <code class="highlighter-rouge">argument</code> definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL]((/guides/v2.3/graphql/search-pagination.html). The parameter definitions will be discussed in <a href="#specify-output-attributes">Specify output attributes</a></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"OutputType"</span> <span class="na">name=</span><span class="s">"Query"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectOutputField"</span> <span class="na">name=</span><span class="s">"products"</span> <span class="na">type=</span><span class="s">"Products"</span> <span class="na">resolver=</span><span class="s">"\Magento\GraphQlCatalog\Model\Resolver\Products"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ScalarArgument"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ObjectArgument"</span> <span class="na">name=</span><span class="s">"filter"</span> <span class="na">type=</span><span class="s">"ProductFilterInput"</span> <span class="na">required=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ScalarArgument"</span> <span class="na">name=</span><span class="s">"pageSize"</span> <span class="na">type=</span><span class="s">"Int"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ScalarArgument"</span> <span class="na">name=</span><span class="s">"currentPage"</span> <span class="na">type=</span><span class="s">"Int"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ObjectArgument"</span> <span class="na">name=</span><span class="s">"sort"</span> <span class="na">type=</span><span class="s">"ProductSortInput"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<p>In contrast, this <code class="highlighter-rouge">customer</code> query returns the <code class="highlighter-rouge">Customer</code> object associated with the current user. There is no need to define pagination information.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"OutputType"</span> <span class="na">name=</span><span class="s">"Query"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectOutputField"</span> <span class="na">name=</span><span class="s">"customer"</span> <span class="na">type=</span><span class="s">"Customer"</span> <span class="na">resolver=</span><span class="s">"Magento\CustomerGraphQl\Model\Resolver\Customer"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/type&gt;</span>`
+</code></pre></div></div>
+
+<p>If all your module’s attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module’s query definition.</p>
+
+<p>The Volumizer query will be based on the <code class="highlighter-rouge">products</code> query. Since we’re not expecting large number of returned items, the <code class="highlighter-rouge">pageSize</code> and <code class="highlighter-rouge">currentPage</code> arguments are omitted.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"OutputType"</span> <span class="na">name=</span><span class="s">"Query"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectOutputField"</span> <span class="na">name=</span><span class="s">"volumizer"</span> <span class="na">type=</span><span class="s">"Volumizer"</span> <span class="na">resolver=</span><span class="s">"\Magento\GraphQlCatalog\Model\Resolver\Products"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ScalarArgument"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ObjectArgument"</span> <span class="na">name=</span><span class="s">"filter"</span> <span class="na">type=</span><span class="s">"VolumizerFilterInput"</span> <span class="na">required=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">xsi:type=</span><span class="s">"ObjectArgument"</span> <span class="na">name=</span><span class="s">"sort"</span> <span class="na">type=</span><span class="s">"ProductSortInput"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<h2 id="declare-input-attributes">Declare input attributes</h2>
+
+<p>You must explicitly define each attribute that can be used as input in a GraphQL query. Complex objects are not supported as inputs, so each attribute definition will contain an <code class="highlighter-rouge">xsi:type</code>, <code class="highlighter-rouge">name</code>, and <code class="highlighter-rouge">type</code>.</p>
+
+<p>The following example defines four Volumizer attributes that can be specified as input to a query. If the Volumizer module extends Catalog, then the InputType <code class="highlighter-rouge">name</code> value must be the value assigned in the Catalog module’s <code class="highlighter-rouge">graphql.xml</code>file (<code class="highlighter-rouge">ProductFilterInput</code>). If the Volumizer module is a standalone module, then provide a <code class="highlighter-rouge">name</code> such as <code class="highlighter-rouge">VolumizerFilterInput</code>. In this case, the attributes will be available only to queries processed by the Volumizer module.</p>
+
+<div class="bs-callout bs-callout-warning" id="info">
+  <p>The specified <code class="highlighter-rouge">name</code> must end with the string <code class="highlighter-rouge">Input</code>.</p>
+</div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"InputType"</span> <span class="na">name=</span><span class="s">"ProductFilterInput"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectInputField"</span> <span class="na">name=</span><span class="s">"v_height"</span> <span class="na">type=</span><span class="s">"FilterTypeInput"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectInputField"</span> <span class="na">name=</span><span class="s">"v_width"</span> <span class="na">type=</span><span class="s">"FilterTypeInput"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectInputField"</span> <span class="na">name=</span><span class="s">"v_depth"</span> <span class="na">type=</span><span class="s">"FilterTypeInput"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectInputField"</span> <span class="na">name=</span><span class="s">"v_volume"</span> <span class="na">type=</span><span class="s">"FilterTypeInput"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<p>where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">xsi:type="InputType"</code> indicates that a set of input attributes are being defined.</li>
+  <li><code class="highlighter-rouge">name="ProductFilterInput"</code> specifies that the input attributes will be available to catalog (Product) queries.  The specified value must end with the string <code class="highlighter-rouge">Input</code>.</li>
+  <li><code class="highlighter-rouge">xsi:type="ObjectInputField"</code> indicates an input attribute is being defined.</li>
+  <li><code class="highlighter-rouge">name=&lt;value&gt;</code> specifies the name of an input attribute.</li>
+  <li><code class="highlighter-rouge">type="FilterTypeInput"</code> indicates the attribute can be used as part of a filter. <code class="highlighter-rouge">FilterTypeInput</code> is defined in the base <code class="highlighter-rouge">graphql.xml</code> file. It defines the types of comparisons  that the query can perform.</li>
+</ul>
+
+<h3 id="override-default-graphql-settings">Override default GraphQL settings</h3>
+
+<p>The base <code class="highlighter-rouge">graphql.xml</code> file defines the filter operations (<code class="highlighter-rouge">eq</code>, <code class="highlighter-rouge">like</code>, <code class="highlighter-rouge">gt</code>, etc.) that are available to all queries. If you want to restrict which filter operations can be used in queries in your module, add a definition similar to the following:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"InputType"</span> <span class="na">name=</span><span class="s">"FilterTypeInput"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarInputField"</span> <span class="na">name=</span><span class="s">"eq"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarInputField"</span> <span class="na">name=</span><span class="s">"gt"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarInputField"</span> <span class="na">name=</span><span class="s">"gteq"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarInputField"</span> <span class="na">name=</span><span class="s">"lt"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarInputField"</span> <span class="na">name=</span><span class="s">"lteq"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<h2 id="specify-sorting-attributes">Specify sorting attributes</h2>
+
+<p>You must also define which attributes can be used for sorting the search results. This list does not not have to be identical to the list of input or output attributes.</p>
+
+<p>If your attributes extend another module, use the name defined in the extended module. Otherwise, be sure that the value assigned to <code class="highlighter-rouge">name</code> must end with the string <code class="highlighter-rouge">Input</code>.</p>
+
+<p>This example allows sorting on the <code class="highlighter-rouge">v_volume</code> attribute only.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"InputType"</span> <span class="na">name=</span><span class="s">"ProductSortInput"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ObjectInputField"</span> <span class="na">name=</span><span class="s">"v_volume"</span> <span class="na">type=</span><span class="s">"SortEnum"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<p>where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">xsi:type="InputType"</code> indicates that a set of input attributes are being defined.</li>
+  <li><code class="highlighter-rouge">name="ProductSortInput"</code> specifies that the  attributes will be available to catalog (Product) queries. If you specify a value such as <code class="highlighter-rouge">VolumizerSortInput</code>, then the attribute will be available only to queries processed by the Volumizer module. The specified value must end with the string <code class="highlighter-rouge">Input</code>.</li>
+  <li><code class="highlighter-rouge">xsi:type="ObjectInputField"</code> indicates an input attribute is being defined.</li>
+  <li><code class="highlighter-rouge">name=&lt;value&gt;</code> specifies the name of an input attribute.</li>
+  <li><code class="highlighter-rouge">type="SortEnum"</code> is defined in the base <code class="highlighter-rouge">graphql.xml</code> file.</li>
+</ul>
+
+<h2 id="specify-output-attributes">Specify output attributes</h2>
+
+<p>Output attributes are more complex than input attributes. You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.</p>
+
+<p>In an <code class="highlighter-rouge">graphql.xml</code> file, the <code class="highlighter-rouge">OutputInterface</code> type definition is the container for top-level attributes. Each object returned is defined in an <code class="highlighter-rouge">OutputType</code> type definition.</p>
+
+<h3 id="define-the-output-interface">Define the output interface</h3>
+
+<p>Use the following parameters to define the <code class="highlighter-rouge">OutputInterface</code> container:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">xsi:type</code></td>
+      <td>Required. Must be <code class="highlighter-rouge">OutputInterface</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>Required. A name, such as <em>ModuleName</em><code class="highlighter-rouge">Interface</code> that uniquely identifies the output interface.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">typeResolver</code></td>
+      <td>The path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See <a href="/guides/v2.3/graphql/resolvers.html">Resolvers</a> for more information.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"OutputInterface"</span> <span class="na">name=</span><span class="s">"ProductInterface"</span> <span class="na">typeResolver=</span><span class="s">"PathToModule\Model\MyResolver"</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<p>Each attribute is defined as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">xsi:type</code></td>
+      <td>Required. The value must be <code class="highlighter-rouge">ScalarOutputField</code>, <code class="highlighter-rouge">ScalarArrayOutputField</code>, <code class="highlighter-rouge">ObjectOutputField</code>, or <code class="highlighter-rouge">ObjectArrayOutputField</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>The attribute name</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">type</code></td>
+      <td>Used only when the <code class="highlighter-rouge">xsi:type</code> is <code class="highlighter-rouge">ScalarOutputField</code> or <code class="highlighter-rouge">ObjectOutputField</code>. Specifies the attribute’s data type, such as <code class="highlighter-rouge">String</code>, <code class="highlighter-rouge">Int</code>, <code class="highlighter-rouge">Float</code>, <code class="highlighter-rouge">Boolean</code>, or an object name.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">itemType</code></td>
+      <td>Used only when the <code class="highlighter-rouge">xsi:type</code> is <code class="highlighter-rouge">ScalarArrayOutputField</code> or <code class="highlighter-rouge">ObjectArrayOutputField</code>. Specifies an object name.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarOutputField"</span> <span class="na">name=</span><span class="s">"v_height"</span> <span class="na">type=</span><span class="s">"Float"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarOutputField"</span> <span class="na">name=</span><span class="s">"v_width"</span> <span class="na">type=</span><span class="s">"Float"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarOutputField"</span> <span class="na">name=</span><span class="s">"v_depth"</span> <span class="na">type=</span><span class="s">"Float"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="err">xsi:type-"ObjectOutputField"</span> <span class="na">name=</span><span class="s">"v_volume"</span> <span class="na">type=</span><span class="s">"VolumeWithUnit"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="define-attribute-output-types">Define attribute output types</h3>
+
+<p>Individual output types have the same structure as the output interface definition with the following exceptions:</p>
+
+<ul>
+  <li>The <code class="highlighter-rouge">xsi:type</code> parameter must be set to <code class="highlighter-rouge">OutputType</code>.</li>
+  <li>The <code class="highlighter-rouge">name</code> must match a value defined by the <code class="highlighter-rouge">type</code> parameter.</li>
+  <li>The <code class="highlighter-rouge">typeResolver</code> parameter is not used.</li>
+</ul>
+
+<p>The following example shows the output type definition of the <code class="highlighter-rouge">VolumeWithUnit</code> object:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"OutputType"</span> <span class="na">name=</span><span class="s">"VolumeWithUnit"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarOutputField"</span> <span class="na">name=</span><span class="s">"v_number"</span> <span class="na">type=</span><span class="s">"Float"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">xsi:type=</span><span class="s">"ScalarOutputField"</span> <span class="na">name=</span><span class="s">"v_unit"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<h3 id="define-enumerations">Define enumerations</h3>
+
+<p>You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_).</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">xsi:type=</span><span class="s">"Enum"</span> <span class="na">name=</span><span class="s">"VolumeEnum"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"in3"</span><span class="nt">&gt;</span>IN3<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"ft3"</span><span class="nt">&gt;</span>FT3<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"cm3"</span><span class="nt">&gt;</span>CM3<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"m3"</span><span class="nt">&gt;</span>M3<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/develop/conigure-graphql-xml.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/develop/configure-graphql-xml.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

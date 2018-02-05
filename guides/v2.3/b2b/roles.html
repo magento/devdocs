@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Manage company roles | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/b2b/roles.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/b2b/roles.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/b2b/roles.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/b2b/roles.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/b2b/roles.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>B2B Developer Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.3/b2b/bk-b2b.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="integrate-with-b2b-using-rest">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/b2b/integrations.html">Integrate with B2B using REST</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="company">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Company</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="integrate-with-the-company-module">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/company.html">Integrate with the Company module</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="manage-company-objects">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/company-object.html">Manage company objects</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="manage-company-users">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/company-users.html">Manage company users</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3 active " id="manage-company-roles">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/roles.html">Manage company roles</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="manage-company-structures">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/company-structures.html">Manage company structures</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="company-credit">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Company credit</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="integrate-with-the-companycredit-module">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/company-credit.html">Integrate with the CompanyCredit module</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="manage-company-credit">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/credit-manage.html">Manage company credit</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="shared-catalog">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Shared Catalog</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="integrate-with-the-sharedcatalog-module">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/shared-catalog.html">Integrate with the SharedCatalog module</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="manage-shared-catalogs">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/shared-cat-manage.html">Manage shared catalogs</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="assign-categories-and-products">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/shared-cat-product-assign.html">Assign categories and products</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="assign-companies">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/shared-cat-company.html">Assign companies</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="negotiable-quotes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Negotiable Quotes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="integrate-with-the-negotiablequote-module">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/negotiable-quote.html">Integrate with the NegotiableQuote module</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="manage-negotiable-quotes">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/negotiable-manage.html">Manage negotiable quotes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="update-a-negotiable-quote">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/negotiable-update.html">Update a negotiable quote</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="negotiable-quote-checkout">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/negotiable-checkout.html">Negotiable quote checkout</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="place-a-negotiable-quote-order">
+                    
+
+                    
+                    <a  href="/guides/v2.3/b2b/negotiable-order-workflow.html">Place a negotiable quote order</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="develop-b2b-extensions">
+
+    
+    
+    
+    <a href="/guides/v2.3/b2b/extensions.html">Develop B2B extensions</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/b2b/bk-b2b.html">
+            <span property="name">B2B Developer Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Manage company roles</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+		<span class="ee-only">Magento Commerce only</span>
+	
+
+	
+
+	<h1 class="page-heading">Manage company roles</h1>
+
+  
+
+
+</section>
+
+
+			<p>Within a company, customers may have different job roles, levels of responsibility, and access to information about their company. Magento Commerce for B2B defines several types of system resources, and the Company Admin (or an integration that operates on the behalf of the Company Admin) grants or denies access to these resources using company roles. The Company Admin has access to all resources.</p>
+
+<p>Magento Commerce for B2B defines the following types of resources:</p>
+
+<ul>
+  <li>Sales</li>
+  <li>Negotiable quotes</li>
+  <li>Company profile</li>
+  <li>Company user management</li>
+  <li>Company credit</li>
+</ul>
+
+<p>Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block accesss using web APIs, you must specify each resource individually.</p>
+
+<p>The following table lists all the resources that are available to the customers defined with a company. To visualize the resource hierarchy, log in to a store as the Company Admin and select <strong>Roles and Permissions</strong>, then click the <strong>Edit</strong> action next to the Default User role.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource name</th>
+      <th>Display name</th>
+      <th>Hierarchy level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Magento_Company::index</td>
+      <td>All</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Magento_Sales::all</td>
+      <td>Sales</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Magento_Sales::place_order</td>
+      <td>Checkout (place order)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Sales::payment_account</td>
+      <td>Use Pay On Account method</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_Sales::view_orders</td>
+      <td>View orders</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Sales::view_orders_sub</td>
+      <td>View orders of subordinate users</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_NegotiableQuote::all</td>
+      <td>Quotes</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Magento_NegotiableQuote::view_quotes</td>
+      <td>View</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_NegotiableQuote::manage</td>
+      <td>Request, Edit, Delete</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_NegotiableQuote::checkout</td>
+      <td>Checkout with Quote</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_NegotiableQuote::view_quotes_sub</td>
+      <td>View quotes of subordinate users</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::view</td>
+      <td>Company Profile</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::view_account</td>
+      <td>Account Information (View)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::edit_account</td>
+      <td>Edit</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::view_address</td>
+      <td>Legal Address (View)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::edit_address</td>
+      <td>Edit</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::contacts</td>
+      <td>Contacts (View)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::payment_information</td>
+      <td>Payment Information (View)</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::user_management</td>
+      <td>Company User Management</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::roles_view</td>
+      <td>View roles and permissions</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::roles_edit</td>
+      <td>Manage roles and permissions</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::users_view</td>
+      <td>View users and teams</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::users_edit</td>
+      <td>Manage users and teams</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::credit</td>
+      <td>Company credit</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Magento_Company::credit_history</td>
+      <td>view</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="manage-company-roles">Manage company roles</h2>
+
+<p>The Company Admin controls the possible actions for each customer within the company by creating common roles with embedded permissions and then assigning them to company users. In most cases, a few roles will be sufficient to cover all the different possible combinations of permissions needed for a company.</p>
+
+<p><strong>Service Name</strong></p>
+
+<p><code class="highlighter-rouge">companyRoleRepositoryV1</code></p>
+
+<p><strong>REST Endpoints</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/company/role/</span><span class="w">
+</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/company/role/</span><span class="p">:</span><span class="err">id</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/company/role/</span><span class="p">:</span><span class="err">roleId</span><span class="w">
+</span><span class="err">DELETE</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/company/role/</span><span class="p">:</span><span class="err">roleId</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/company/role/</span></code></pre></figure>
+
+<p><strong>RoleInterface Parameters</strong></p>
+
+<p>The following table lists the parameters defined in <code class="highlighter-rouge">RoleInterface</code>.</p>
+
+<table>
+<tr>
+<th>Name</th><th>Description</th><th>Format</th><th>Requirements</th></tr>
+<tr>
+<td><code>id</code></td><td>The role ID</td><td>integer </td><td>Required for updates and deletes</td></tr>
+<tr>
+<td><code>role_name</code></td><td>The label assigned to the role</td><td>string</td><td>Required to create a role</td></tr>
+<tr>
+<td><code>permissions</code></td><td>A list of resources and permissions granted to the role. See the Permissions array table below for details.</td><td>Array[string]</td><td> Required to create a role</td></tr>
+<tr>
+<td><code>company_id</code></td><td>The company associated with this role </td><td>integer</td><td>Required to create a role</td></tr>
+</table>
+
+<p><strong>Permissions array</strong></p>
+
+<table>
+<tr>
+<th>Name</th><th>Description</th><th>Format</th><th>Requirements</th></tr>
+<tr>
+<td><code>id</code></td><td>The permission ID generated by Magento.</td><td>integer</td><td>Required for updates and deletes</td></tr>
+<tr>
+<td><code>role_id</code></td><td>The role ID to which the permission applies. </td><td>integer</td><td>Required to create a role</td></tr>
+<tr>
+<td><code>resource_id</code></td><td>The internal name of a Magento resource, such as <code>Magento_Sales::place_order</code>.</td><td>string</td><td>Required</td></tr>
+<tr>
+<td><code>permission</code></td><td>Either <code>allow</code> or <code>deny</code>.</td><td>string</td><td>Required</td></tr>
+</table>
+
+<h3 id="create-a-role">Create a role</h3>
+
+<p>This example creates a role named “Junior Buyer”. It allows the assignee to access to all Sales resources except “View orders of subordinate users”.</p>
+
+<p>All resouces that are not explicitly allowed are denied. You must specify the <code class="highlighter-rouge">Magento_Company::index</code> resource in all calls.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code class="highlighter-rouge">POST /V1/company/role</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"role_name"</span><span class="p">:</span><span class="s2">"Junior Buyer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"permissions"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"deny"</span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"role_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Junior Buyer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">176</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">177</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">178</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">179</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">182</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::all"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">183</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">184</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::manage"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">185</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::checkout"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">186</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes_sub"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">187</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">188</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">189</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">190</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">191</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">192</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::contacts"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">193</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::payment_information"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">194</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::user_management"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">195</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">196</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_edit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">197</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">198</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_edit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">199</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit_history"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h3 id="update-a-role">Update a role</h3>
+
+<p>Each update call must include all resources the assignee will have access to.</p>
+
+<p>This example call adds access to all Negotiable Quote resources except “View quotes of subordinate users” to the Junior Buyer role.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code class="highlighter-rouge">PUT /V1/company/role/6</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"permissions"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"deny"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::all"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::manage"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::checkout"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"allow"</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes_sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"permission"</span><span class="p">:</span><span class="s2">"deny"</span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"role_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Junior Buyer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">227</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">228</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">229</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">232</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::all"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">234</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::manage"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::checkout"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">236</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes_sub"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">237</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">238</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">241</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::contacts"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">243</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::payment_information"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">244</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::user_management"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">245</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">246</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_edit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">247</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">248</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_edit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">249</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit_history"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h3 id="return-all-information-about-a-role">Return all information about a role</h3>
+
+<p>This call returns the <code class="highlighter-rouge">id</code>, role name, and set of permissions defined within the specified <code class="highlighter-rouge">role_id</code>.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code class="highlighter-rouge">GET /V1/company/role/6</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>None</p>
+
+<p><strong>Response</strong></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"role_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Junior Buyer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">226</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">227</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">228</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">229</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">231</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">232</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::all"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">234</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::manage"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">235</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::checkout"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">236</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes_sub"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">237</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">238</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">239</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">241</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_address"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::contacts"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">243</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::payment_information"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">244</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::user_management"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">245</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">246</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_edit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">247</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_view"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">248</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_edit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">249</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit_history"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h3 id="delete-a-role">Delete a role</h3>
+
+<p>You cannot delete a role if it is the only role defined within the company.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code class="highlighter-rouge">DELETE /V1/company/role/5</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>None</p>
+
+<p><strong>Response</strong></p>
+
+<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
+
+<h3 id="search-for-a-role">Search for a role</h3>
+
+<p>The following call returns all roles that have been created for a company  (<code class="highlighter-rouge">company_id</code> = <code class="highlighter-rouge">2</code>).</p>
+
+<p>See <a href="/guides/v2.3/rest/performing-searches.html">Search using REST APIs</a> for information about constructing a search query.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code class="highlighter-rouge">GET /V1/company/role?searchCriteria[filter_groups][0][filters][0][field]=company_id&amp;searchCriteria[filter_groups][0][filters][0][value]=2&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=eq</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>None</p>
+
+<p><strong>Response</strong></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"role_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default User"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::all"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::manage"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::checkout"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes_sub"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::contacts"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::payment_information"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::user_management"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_edit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_edit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit_history"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"role_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senior Buyer"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">57</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::all"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">58</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::manage"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::checkout"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes_sub"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::contacts"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::payment_information"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::user_management"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_edit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_edit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit_history"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"role_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Junior Buyer"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::index"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::all"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::place_order"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::payment_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">81</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Sales::view_orders_sub"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">82</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::all"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::manage"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::checkout"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">86</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_NegotiableQuote::view_quotes_sub"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_account"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::view_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::edit_address"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::contacts"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::payment_information"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">94</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::user_management"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::roles_edit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">97</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_view"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::users_edit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deny"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Magento_Company::credit_history"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"permission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allow"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"search_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"filter_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"company_id"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"condition_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eq"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="related-information">Related information</h2>
+
+<ul>
+  <li><a href="/guides/v2.3/b2b/company.html">Integrate with the Company module</a></li>
+  <li><a href="/guides/v2.3/b2b/company-object.html">Manage company objects</a></li>
+  <li><a href="/guides/v2.3/b2b/company-users.html">Manage company users</a></li>
+  <li><a href="/guides/v2.3/b2b/company-structures.html">Manage company structures</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/b2b/roles.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/b2b/roles.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

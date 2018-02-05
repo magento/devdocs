@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Manage branches with the CLI | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/cloud/env/environments-start.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/env/environments-start.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/env/environments-start.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/env/environments-start.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/env/environments-start.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4></h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="welcome-to-magento-commerce-(cloud)">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/bk-cloud.html">Welcome to Magento Commerce (Cloud)</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="subscriptions-and-plans">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="starter-architecture">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter architecture</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="starter-develop-and-deploy-workflow">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/basic-information/starter-develop-deploy-workflow.html">Starter develop and deploy workflow</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="pro-architecture">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/reference/discover-arch.html">Pro architecture</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="pro-develop-and-deploy-workflow">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/welcome/discover-workflow.html">Pro develop and deploy workflow</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="onboarding-tasks">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="prepare-project-environments">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/before/before-project-owner.html">Prepare project environments</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="technologies-and-requirements">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="composer">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/reference/cloud-composer.html">Composer</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-cloud-cli">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="git">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/reference/git-integration.html">Git</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="bitbucket-integration">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/bitbucket-integration.html">Bitbucket integration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="github-integration">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-integrate-github.html">GitHub integration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="ssh-and-sftp">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH and sFTP</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="new-relic-apm">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/new-relic.html">New Relic APM</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="blackfire-profiler">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="local-environment-setup">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/access-acct/first-time-setup.html">Local environment setup</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="prepare-for-local-environment-setup">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-magento-prerequisites">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="enable-ssh-keys">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/before/before-workspace-ssh.html">Enable SSH keys</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-the-magento-file-system-owner">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="clone-and-branch-the-project">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-magento">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/before/before-setup-env-install.html">Install Magento</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="first-time-deployment">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/access-acct/first-time-deploy.html">First time deployment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="optional---install-sample-data">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/howtos/sample-data.html">Optional - Install sample data</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="optional---configure-xdebug">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="import-existing-code-into-a-project">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html">Import existing code into a project</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="prepare-your-existing-magento-commerce-system">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="import-magento-commerce-into-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configure-your-store">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/configure/configuration-overview.html">Configure your store</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="best-practices-for-store-configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-paypal">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/paypal-onboarding.html">Set up PayPal</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-magento-b2b">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/setup-b2b.html">Set up Magento B2B</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-cron-jobs">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-multiple-cloud-websites-or-stores">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install,-manage,-and-upgrade-modules">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="install-a-theme">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/howtos/custom-theme.html">Install a theme</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configure-fastly">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/basic-information/cloud-fastly.html">Configure Fastly</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="set-up-fastly">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/access-acct/fastly.html">Set up Fastly</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-fastly-vcl-snippets">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-whitelist-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-blacklist-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-extend-admin-timeout-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-redirect-to-wordpress-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="custom-block-bad-referer-vcl">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="fastly-troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/trouble_fastly.html">Fastly troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configure-environments">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/env/environments.html">Configure environments</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="configure-.magento.app.yaml">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html">Configure .magento.app.yaml</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="manage-build-and-deploy-actions">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="configure-services---services.yaml">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services.html">Configure services - services.yaml</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-mysql-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-redis-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-elasticsearch-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-rabbitmq-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-notifications">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/setup-notifications.html">Set up notifications</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="configure-routes---routes.yaml">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-conf-files_routes.html">Configure routes - routes.yaml</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="caching">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-routes-more-cache.html">Caching</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="redirects">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-routes-more-redir.html">Redirects</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="server-side-includes">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-routes-more-ssi.html">Server side includes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configuration-management-for-store-settings">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration management for store settings</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="example-of-managing-system-specific-settings">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="manage-your-project">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/project/projects.html">Manage your project</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="configure-your-project">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-webint-basic.html">Configure your project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="project-structure">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-start.html">Project structure</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="create-and-manage-users">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/user-admin.html">Create and manage users</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="manage-branches-with-the-interface">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="manage-branches-with-the-cli">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/environments-start.html">Manage branches with the CLI</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="snapshots-and-backup-management">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-webint-snap.html">Snapshots and backup management</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="manage-variables">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/env/environment-vars_over.html">Manage variables</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-application-environment-variables">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-(cloud)-environment-variables">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="working-with-variables">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/working-with-variables.html">Working with variables</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="deploy-your-store">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy your store</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="deployment-process">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment process</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="continuous-deployment">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/deploy/continuous-deployment.html">Continuous deployment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="protective-block">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/live-prot.html">Protective block</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="build-and-deploy-on-local">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/live-sanity-check.html">Build and deploy on local</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="prepare-to-deploy-to-staging-and-production">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test-deployment">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/stage-prod-test.html">Test deployment</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="go-live-and-launch">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/live/live.html">Go live and launch</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="go-live-checklist">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/go-live-checklist.html">Go live checklist</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="launch-steps">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/launch-steps.html">Launch steps</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="composer-package-updates">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="vendor/magento/ece-patches">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="vendor/magento/ece-tools">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="troubleshooting">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/trouble/trouble.html">Troubleshooting</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="troubleshoot-deployment">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/access-acct/trouble.html">Troubleshoot deployment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="view-logs-for-troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/environments-logs.html">View logs for troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="incorrect-credentials">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="resolve-issues-with-a-new-project">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="component-deployment-failure">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="redis-troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/redis-troubleshooting.html">Redis troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="reset-cron-jobs">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/reset-cron-jobs.html">Reset cron jobs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="resolve-issues-with-encryption-key">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="resolve-issues-with-html-minification">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="resolve-issues-with-google-analytics-during-deployment">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="site-availability">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/site-availability.html">Site availability</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="add-sitemap-and-robots.txt">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/robots-sitemap.html">Add sitemap and robots.txt</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="theme-troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/cloud/bk-cloud.html">
+            <span property="name">Welcome to Magento Commerce (Cloud)</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Manage branches with the CLI</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Manage branches with the CLI</h1>
+
+  
+
+
+</section>
+
+
+			<p>When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see <a href="/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter</a> or <a href="/guides/v2.3/cloud/reference/discover-arch.html">Pro</a> architecture information.</p>
+
+<p>To manage the branches and environments with the Project Web Interface, see <a href="/guides/v2.3/cloud/project/project-webint-branch.html">Manage branches with the Project Web Interface</a>.</p>
+
+<h2 id="env-start-comm">Common Magento CLI commands</h2>
+<p>The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The <code class="highlighter-rouge">magento-cloud</code> versions directly connect with Magento Git, the Magento ECE project, and provide Git features.</p>
+
+<p>All commands are shown with required options only. Get help for any <code class="highlighter-rouge">magento-cloud</code> command by appending <code class="highlighter-rouge">--help</code>.</p>
+
+<dl>
+  <dt><code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
+  <dd>Push an empty commit to force a redeployment. Some actions, like adding a user for example, don’t result in deployment.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud login</code></dt>
+  <dd>Log in to the project.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
+  <dd>Clone a project to a directory. To clone the <code class="highlighter-rouge">master</code> environment, omit <code class="highlighter-rouge">-e &lt;environment ID&gt;</code>.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
+  <dd>List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).</dd>
+  <dt><code class="highlighter-rouge">magento-cloud environment:branch &lt;name&gt; &lt;parent branch&gt;</code></dt>
+  <dd>Create a new branch with a name and an ID. This information corresponds to the environment.</dd>
+</dl>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
+
+  <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
+</div>
+
+<dl>
+  <dt><code class="highlighter-rouge">magento-cloud environment:checkout &lt;environment ID&gt;</code></dt>
+  <dd>Check out an existing environment.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud environment:merge -p &lt;project ID&gt; -e &lt;environment ID&gt;</code></dt>
+  <dd>Merge changes in this environment with its parent.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud environment:synchronize -p &lt;project ID&gt; -e &lt;environment ID&gt; {code|data}</code></dt>
+  <dd>Synchronize (that is, <code class="highlighter-rouge">git pull</code>) code and/or data from the parent to this environment.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud variable:list</code></dt>
+  <dd>List variables in this environment.</dd>
+  <dt><code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></dt>
+  <dd>Set a value for an environment variable in this environment.</dd>
+</dl>
+
+<p>For a full list of Magento cloud CLI commands, see the Magento cloud <a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></p>
+
+<h2 id="getstarted">Get started creating branches</h2>
+<p>To begin, you’ll need a branch to work in.</p>
+
+<div>
+
+  <ol>
+    <li>Log in to your local development system, or switch to, the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+    <li>Change to a directory to which the Magento file system owner has write access.</li>
+    <li>
+      <p>Enter the following command in a terminal to log in to your project:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>List your projects. With the project ID, you can complete additional commands.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre></div>      </div>
+    </li>
+    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+    <li>
+      <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+</code></pre></div>      </div>
+
+      <div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
+</div>
+    </li>
+    <li>
+      <p>Fetch origin branches to get the latest code:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre></div>      </div>
+
+      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.3/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+  <h2 id="merge">Merge a branch</h2>
+  <p>After completing development, you can merge this branch to the parent. The following instructions provide an example.</p>
+
+  <ol>
+    <li>Complete code in your local branch.</li>
+    <li>
+      <p>Add, commit, and push your change to the environment:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
+git commit -m "&lt;commit message&gt;"
+git push origin &lt;branch name&gt;
+</code></pre></div>      </div>
+
+      <p>Where <code class="highlighter-rouge">&lt;branch name&gt;</code> is the Git name of the environment (that is, the environment ID).</p>
+    </li>
+    <li>
+      <p>Merge with the parent environment:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge &lt;environment ID&gt;
+</code></pre></div>      </div>
+
+      <p>For example,</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge master
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+  <h2 id="env-delete">Optionally delete the environment</h2>
+  <p>Before you delete an environment, make sure you don’t need it anymore. You cannot recover a deleted environment later.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+  <p>You cannot delete the <code>master</code> environment of any project.</p>
+</div>
+
+  <p>You must be a <a href="/guides/v2.3/cloud/project/user-admin.html#cloud-role-project">project administrator</a>, <a href="/guides/v2.3/cloud/project/user-admin.html#cloud-role-env">environment administrator</a>, or <a href="/guides/v2.3/cloud/project/user-admin.html#cloud-role-acct-owner">Project Owner</a> to perform this task.</p>
+
+  <p>This section discusses how to optionally delete an environment in the following ways:</p>
+
+  <ul>
+    <li>Make the environment <em>inactive</em> but let it remain in the project</li>
+    <li>Delete the environment entirely and remove it from the project</li>
+  </ul>
+
+  <p>To delete a environment:</p>
+
+  <ol>
+    <li>Log in to your project if you haven’t already done so.</li>
+    <li>
+      <p>Fetch branches from the origin server.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>To delete the branch entirely (removing it from the project), check out the branch.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Delete the environment:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt;
+</code></pre></div>      </div>
+
+      <p>For example, to delete the <code class="highlighter-rouge">deleteme</code> environment:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete deleteme
+</code></pre></div>      </div>
+
+      <p>To delete more than one environment:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt; &lt;environmentID&gt;
+</code></pre></div>      </div>
+
+      <p>For additional options, see the command-line help:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete --help
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Answer the prompt:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Are you sure you want to delete the remote Git branch deleteme? [Y/n]
+</code></pre></div>      </div>
+
+      <p>A <code class="highlighter-rouge">Y</code> answer makes the branch inactive but leaves it in the project.</p>
+    </li>
+    <li>
+      <p>Answer the prompt:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Delete the remote Git branch too? [Y/n]
+</code></pre></div>      </div>
+
+      <p>A <code class="highlighter-rouge">Y</code> answer completely removes the branch from the project.</p>
+    </li>
+  </ol>
+
+  <p>Wait for the environment to delete.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+  <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
+</div>
+
+  <h2 id="ipaddress">Integration environment IP addresses</h2>
+  <p>The following table lists incoming and outgoing IP addresses used by Magento Commerce (Cloud) <a href="/guides/v2.3/cloud/reference/discover-arch.html#cloud-arch-int">Integration environments</a>.These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.</p>
+
+  <p>If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.</p>
+
+  <table>
+<tr>
+<th colspan="2"><b>Outbound IP addresses</b></th>
+<th colspan="2"><b>Inbound IP addresses</b></th>
+</tr>
+<tr>
+<td>US Region</td>
+<td>EU Region</td>
+<td>US Region</td>
+<td>EU Region</td>
+</tr>
+<tr>
+<td>
+<p>52.200.155.111</p>
+<p>52.200.149.44</p>
+<p>50.17.163.75</p>
+</td>
+<td>
+<p>52.51.163.159</p>
+<p>52.209.44.60</p>
+<p>52.208.156.247</p>
+</td>
+<td>
+<p>52.200.159.23</p>
+<p>52.200.159.125</p>
+<p>52.200.160.5</p>
+</td>
+<td>
+<p>52.209.44.44</p>
+<p>52.209.23.96</p>
+<p>52.51.117.101</p>
+</td>
+</tr>
+</table>
+
+  <h2 id="commands">Interact with environments via CLI</h2>
+  <p>After setting up your <a href="/guides/v2.3/cloud/env/environments-ssh.html">set up SSH</a>, you can interact with services and modify settings through your local to a remote environment.</p>
+
+  <p>The following steps provide an example of accessing a database:</p>
+
+  <div>
+
+    <ol>
+      <li>
+        <p>SSH to the integration environment.</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Find the database login information:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+</code></pre></div>        </div>
+
+        <p>Sample output follows:</p>
+
+        <pre class="no-copy">
+Array
+   (
+      [0] =&gt; stdClass Object
+        (
+           [username] =&gt; user
+           [password] =&gt;
+           [ip] =&gt; 192.0.2.60
+           [host] =&gt; database.internal
+           [query] =&gt; stdClass Object
+              (
+                [is_master] =&gt; 1
+              )
+
+           [path] =&gt; main
+           [scheme] =&gt; mysql
+           [port] =&gt; 3306
+        )
+    )</pre>
+      </li>
+      <li>
+        <p>Use the following command to connect to the database:</p>
+
+        <pre class="no-copy">mysql --host=&lt;host&gt; --user='&lt;database user name&gt;' --password='&lt;user password&gt;' --port='&lt;port&gt;' --database='&lt;path&gt;'</pre>
+      </li>
+    </ol>
+
+    <h2 id="env-start-tunn">SSH tunneling</h2>
+
+    <div>
+
+      <p>You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH configured</a>.</p>
+
+      <p>Use a terminal application to log in and issue commands.</p>
+
+      <p>magento-cloud login</p>
+
+      <p>First, you may want to check if any tunnels are already open using the following command:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:list
+</code></pre></div>      </div>
+
+      <p>To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;project directory&gt;
+magento-cloud project:list
+magento-cloud apps
+</code></pre></div>      </div>
+
+      <p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
+
+      <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
+      <p>Use the following command:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
+</code></pre></div>      </div>
+
+      <p>For example, to open a tunnel to the <code class="highlighter-rouge">sprint5</code> branch in a project with an app named <code class="highlighter-rouge">mymagento</code>, enter</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
+</code></pre></div>      </div>
+
+      <p>Messages similar to the following display:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSH tunnel opened on port 30003 to relationship: solr
+SSH tunnel opened on port 30004 to relationship: redis
+SSH tunnel opened on port 30005 to relationship: database
+Logs are written to: /home/magento_user/.magento/tunnels.log
+
+List tunnels with: magento-cloud tunnels
+View tunnel details with: magento-cloud tunnel:info
+Close tunnels with: magento-cloud tunnel:close
+</code></pre></div>      </div>
+
+      <h3 id="tunnel-info">Get tunnel information</h3>
+      <p>To display information about your tunnel, enter:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
+</code></pre></div>      </div>
+
+      <h3 id="tunnel-services">Connect to services</h3>
+      <p>Now you can connect to services as if they were running locally.</p>
+
+      <p>For example, to connect to the database, use the following command:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql --host=127.0.0.1 --user='&lt;database user name&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
+</code></pre></div>      </div>
+
+      <p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
+
+      <h4 id="related-topics">Related topics</h4>
+      <ul>
+        <li><a href="/guides/v2.3/cloud/project/project-webint-branch.html">Manage branches with the Project Web Interface</a></li>
+        <li><a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environments-start.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/cloud/env/environments-start.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

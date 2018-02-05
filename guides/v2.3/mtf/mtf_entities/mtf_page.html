@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Page | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/mtf/mtf_entities/mtf_page.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/mtf/mtf_entities/mtf_page.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/mtf/mtf_entities/mtf_page.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Functional Testing Framework Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_introduction.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="installation">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_installation.html">Installation</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="quick-start">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_quickstart.html">Quick Start</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="adjust-configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="prepare-magento-application">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="prepare-environment-for-test-run">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test-run">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="see-logs-for-failed-tests">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="create-a-test">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/create_test.html">Create a Test</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="out-of-the-box-test">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="new-functional-test.-theory">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/create_test/new_test.html">New functional test. Theory</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="new-functional-test.-practice">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/create_test/create_new_test.html">New functional test. Practice</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="features">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/features.html">Features</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="isolation-management">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/isolation.html">Isolation management</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="modularity">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/modularity.html">Modularity</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="parallel-execution-flow">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/parallel_execution.html">Parallel execution flow</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="reporting">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/reporting.html">Reporting</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test-suite">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/test_suite.html">Test suite</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="web-driver-replacement">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/features/webdriver.html">Web driver replacement</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="entities">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_entities.html">Entities</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="fixture">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html">Fixture</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="fixture-repository">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="handler">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_handler.html">Handler</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="block">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_block.html">Block</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="typified-element">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_typified-element.html">Typified element</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="page">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_page.html">Page</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="constraint">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_constraint.html">Constraint</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="data-set">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_dataset.html">Data set</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test-case">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_testcase.html">Test case</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="scenario-test">
+            
+            
+        
+            
+            <a href="/guides/v2.3/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configuration">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/configuration.html">Configuration</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="update">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_update.html">Update</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="troubleshooting">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/troubleshooting.html">Troubleshooting</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="changelog">
+
+    
+    
+    
+    <a href="/guides/v2.3/mtf/mtf_changelog.html">Changelog</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/mtf/mtf_introduction.html">
+            <span property="name">Introduction to the Functional Testing Framework</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Page</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Page</h1>
+
+  
+
+
+</section>
+
+
+			<p>A page object is a class that serves to interact with the Magento page under test.
+A page serves as container for <a href="/guides/v2.3/mtf/mtf_entities/mtf_page.html">blocks</a>.</p>
+
+<p>In the functional tests, Page Object <span term-uuid="53755359-9916-4677-bff2-f7d26025095a" class="glossary-term" data-toggle="popover">Design Pattern</span> is used. Test uses block methods of page object class to interact with application under test.</p>
+
+<p>Benefit of this approach is that tests don’t need to be changed after changes in the UI. Only code in corresponding block must be changed. This approach provides the following advantages:</p>
+
+<ul>
+  <li>Clean separation between test code and page specific code like locator.</li>
+  <li>Single repository for the services or operations provided by the page.</li>
+  <li>Decreased duplication of the code.</li>
+</ul>
+
+<p>You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
+
+<h2 id="mtf_page_create">Create page</h2>
+
+<p>The general flow is the following:</p>
+
+<ol>
+  <li>
+    <p>Create an <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file in the Page directory of the module to which it belongs</p>
+  </li>
+  <li>
+    <p>Add the previously created blocks presented on this page to the <code class="highlighter-rouge">&lt;page&gt;</code> node</p>
+  </li>
+  <li>
+    <p>Run the page generator</p>
+  </li>
+</ol>
+
+<p>Let’s see an example of the Magento <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">Widget</span> page:</p>
+
+<p><code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml</code></p>
+
+<p>where four blocks have been added:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"WidgetInstanceIndex"</span> <span class="na">area=</span><span class="s">"Adminhtml"</span> <span class="na">mca=</span><span class="s">"admin/widget_instance/index"</span> <span class="na">module=</span><span class="s">"Magento_Widget"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"pageActionsBlock"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Test\Block\GridPageActions"</span> <span class="na">locator=</span><span class="s">".page-main-actions"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"widgetGrid"</span> <span class="na">class=</span><span class="s">"Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid"</span> <span class="na">locator=</span><span class="s">"#widgetInstanceGrid"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"messagesBlock"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Test\Block\Messages"</span> <span class="na">locator=</span><span class="s">"#messages"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"systemMessageDialog"</span> <span class="na">class=</span><span class="s">"Magento\AdminNotification\Test\Block\System\Messages"</span> <span class="na">locator=</span><span class="s">'[role="dialog"].ui-popup-message'</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p id="mtf_page_attributes">The following table explains <code class="highlighter-rouge">&lt;page&gt;</code> attributes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><code class="highlighter-rouge">&lt;page&gt;</code> attribute</th>
+      <th>Description</th>
+      <th>Example with explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>Name of the page PHP class, that will be generated in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/&lt;module&gt;/Page/&lt;area&gt;/&lt;name&gt;.php</code>.</td>
+      <td><code class="highlighter-rouge">WidgetInstanceIndex</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">area</code></td>
+      <td>The page usage area. Determines a <a href="#mtf_page_types">type of the page</a>. The directory with the name assigned to <code class="highlighter-rouge">area</code> will be created in the module. Value can be <code class="highlighter-rouge">Adminhtml</code> for the Admin area, or any other for another area.</td>
+      <td><code class="highlighter-rouge">Adminhtml</code>. The page class will be generated in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">mca</code></td>
+      <td>Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.</td>
+      <td><code class="highlighter-rouge">admin/widget_instance/index</code>. Considering that <code class="highlighter-rouge">area="Adminhtml"</code>, the Magento page under test is <code class="highlighter-rouge">http://example.com/admin/admin/widget_instance/index</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">module</code></td>
+      <td>Module where the page will be generated.</td>
+      <td><code class="highlighter-rouge">Magento_Widget</code>. The page will be generated in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/Magento/Widget/Page</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+
+  <p>See the <code class="highlighter-rouge">block</code> node attributes details in the following table:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th><code class="highlighter-rouge">block</code> attribute</th>
+        <th>Description</th>
+        <th>Is required</th>
+        <th>Values</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">name</code></td>
+        <td>Name of the block</td>
+        <td>Required</td>
+        <td>Unique in the page. The method to get the block class instance is generated using this value.</td>
+        <td><code class="highlighter-rouge">widgetGrid</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">class</code></td>
+        <td>Full name of the block class</td>
+        <td>Required</td>
+        <td>Class name</td>
+        <td><code class="highlighter-rouge">Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">locator</code></td>
+        <td>CSS selector or XPath locator of the block</td>
+        <td>Required</td>
+        <td><a href="http://www.w3.org/TR/selectors/">CSS Selectors</a>, <a href="http://www.w3.org/TR/xpath-31/">XPath</a></td>
+        <td>CSS: <code class="highlighter-rouge">#widgetInstanceGrid</code>, XPath: <code class="highlighter-rouge">//*[@id="widgetInstanceGrid"]</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">strategy</code></td>
+        <td>Selector strategy</td>
+        <td>Required</td>
+        <td><code class="highlighter-rouge">css selector</code> or <code class="highlighter-rouge">xpath</code></td>
+        <td><code class="highlighter-rouge">css selector</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>Also, block can contain a <code class="highlighter-rouge">render</code> node. <a href="/guides/v2.3/mtf/mtf_entities/mtf_block.html#mtf_block_render">Read about renders in the Block topic</a>.</p>
+
+<p>To apply all changes you've made to the page (XML file), run the class generator.</p>
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php</code></pre>
+<p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+
+<h2 id="mtf_page_types">Page types</h2>
+
+<p>Depending on <code class="highlighter-rouge">area</code> and <code class="highlighter-rouge">mca</code> attributes, page can be of one of the following types:</p>
+
+<ul>
+  <li><span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class</li>
+  <li><span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">Storefront</span> page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class</li>
+  <li>External page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class</li>
+</ul>
+
+<h3 id="mtf_page_admin">Admin page</h3>
+
+<p>Admin page has attribute <code class="highlighter-rouge">area="Adminhtml"</code> in <code class="highlighter-rouge">&lt;page&gt;</code> node of the page XML file. Generated page extends  <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
+
+<p>The page will be opened as a concatenation of <code class="highlighter-rouge">app_backend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="highlighter-rouge">mca</code> link.</p>
+
+<h3 id="mtf_page_storefront">Storefront page</h3>
+
+<p>Storefront page is recognizable by <code class="highlighter-rouge">area</code> assigned any value except <code class="highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="highlighter-rouge">mca</code> doesn’t have <code class="highlighter-rouge">http</code>. This type of page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a>.</p>
+
+<p>Page will be opened as concatenation of <code class="highlighter-rouge">app_frontend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="highlighter-rouge">mca</code> link.</p>
+
+<h3 id="mtf_page_extern">External page</h3>
+
+<p>External page has <code class="highlighter-rouge">area</code> assigned any value except <code class="highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="highlighter-rouge">mca</code> containing <code class="highlighter-rouge">http</code>. Generated page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a>.</p>
+
+<p>The page will be opened using <code class="highlighter-rouge">mca</code> link.</p>
+
+<h2 id="mtf_page_merge">Merge pages</h2>
+
+<p>Page merging can help you to override modules declared in a page, or add blocks from different modules.</p>
+
+<p>Pages are merged when they have the same <code class="highlighter-rouge">name</code> attribute value.</p>
+
+<p>Pages are merged module by module in the order that modules are loaded in Magento. All new modules are loaded after related Magento modules (according to the dependencies) so that the pages from new modules are merged the last.</p>
+
+<h3 id="add-block-another-module">Add blocks from different modules</h3>
+
+<p>To add blocks from different modules to the page, you can merge pages by following steps:</p>
+
+<p><strong>Step 1.</strong> <a href="#mtf_page_create">Create an XML page</a> in the corresponding module</p>
+
+<p><strong>Step 2.</strong> Assign <a href="#mtf_page_attributes">page attributes</a></p>
+
+<ul>
+  <li>with the same name as the page you want to merge</li>
+  <li>with the same <code class="highlighter-rouge">mca</code></li>
+  <li>the <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">area</code> attributes can be omitted</li>
+</ul>
+
+<p><strong>Step 3.</strong> Add blocks to the page</p>
+
+<p><strong>Step 4.</strong> Run the page generator</p>
+
+<p>For example, we have <code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> page and want to add three blocks from the Magento_Review module.</p>
+
+<p><code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> contains:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">area=</span><span class="s">"Product"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"viewBlock"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Product\View"</span> <span class="na">locator=</span><span class="s">"#maincontent"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"additionalInformationBlock"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Product\Additional"</span> <span class="na">locator=</span><span class="s">"#additional"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"customOptionsBlock"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Product\View\CustomOptions"</span> <span class="na">locator=</span><span class="s">"#product-options-wrapper"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>        
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"messagesBlock"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Test\Block\Messages"</span> <span class="na">locator=</span><span class="s">".page.messages"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"titleBlock"</span> <span class="na">class=</span><span class="s">"Magento\Theme\Test\Block\Html\Title"</span> <span class="na">locator=</span><span class="s">".page-title-wrapper h1.page-title .base"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>        
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>We should create <code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml</code> page with blocks we want to add:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"reviewSummary"</span> <span class="na">class=</span><span class="s">"Magento\Review\Test\Block\Product\View\Summary"</span> <span class="na">locator=</span><span class="s">".product-reviews-summary"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"customerReviewBlock"</span> <span class="na">class=</span><span class="s">"Magento\Review\Test\Block\Product\View"</span> <span class="na">locator=</span><span class="s">"#customer-reviews"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"reviewFormBlock"</span> <span class="na">class=</span><span class="s">"Magento\Review\Test\Block\ReviewForm"</span> <span class="na">locator=</span><span class="s">"#review-form"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>And generate the updated page:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
+
+<p>The result is in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
+<span class="k">namespace</span> <span class="nx">Magento\Catalog\Test\Page\Product</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Page\FrontendPage</span><span class="p">;</span>
+<span class="sd">/**
+ * Class CatalogProductView
+ */</span>
+<span class="k">class</span> <span class="nc">CatalogProductView</span> <span class="k">extends</span> <span class="nx">FrontendPage</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">MCA</span> <span class="o">=</span> <span class="s1">'catalog/product/view'</span><span class="p">;</span>
+    <span class="sd">/**
+     * Blocks' config
+     *
+     * @var array
+     */</span>
+    <span class="k">protected</span> <span class="nv">$blocks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'viewBlock'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Catalog\Test\Block\Product\View'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'#maincontent'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'additionalInformationBlock'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Catalog\Test\Block\Product\Additional'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'#additional'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'customOptionsBlock'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Catalog\Test\Block\Product\View\CustomOptions'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'#product-options-wrapper'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'messagesBlock'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Backend\Test\Block\Messages'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'.page.messages'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'titleBlock'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Theme\Test\Block\Html\Title'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'.page-title-wrapper h1.page-title .base'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'reviewSummary'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Review\Test\Block\Product\View\Summary'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'.product-reviews-summary'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'customerReviewBlock'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Review\Test\Block\Product\View'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'#customer-reviews'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">'reviewFormBlock'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'Magento\Review\Test\Block\ReviewForm'</span><span class="p">,</span>
+            <span class="s1">'locator'</span> <span class="o">=&gt;</span> <span class="s1">'#review-form'</span><span class="p">,</span>
+            <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">];</span>
+    <span class="sd">/**
+     * @return \Magento\Catalog\Test\Block\Product\View
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getViewBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'viewBlock'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * @return \Magento\Catalog\Test\Block\Product\Additional
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAdditionalInformationBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'additionalInformationBlock'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * @return \Magento\Catalog\Test\Block\Product\View\CustomOptions
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCustomOptionsBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'customOptionsBlock'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * @return \Magento\Backend\Test\Block\Messages
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getMessagesBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'messagesBlock'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * @return \Magento\Theme\Test\Block\Html\Title
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTitleBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'titleBlock'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * @return \Magento\Review\Test\Block\Product\View\Summary
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getReviewSummary</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'reviewSummary'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * @return \Magento\Review\Test\Block\Product\View
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCustomerReviewBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'customerReviewBlock'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**
+     * @return \Magento\Review\Test\Block\ReviewForm
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getReviewFormBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'reviewFormBlock'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="override-blocks">Block overriding</h3>
+
+<p>Your module can influence functionality of another module that is defined in a corresponding block of that module. In this case, you can override existing block by a block from your module.</p>
+
+<p>To override blocks, follow:</p>
+
+<p><strong>Step 1.</strong> <a href="#mtf_page_create">Create an XML page</a> in your new module with the name of page you want to merge.</p>
+
+<p><strong>Step 2.</strong> Assign <a href="#mtf_page_attributes">page attributes</a></p>
+
+<ul>
+  <li>with the same name as the page you want to merge</li>
+  <li>with the same <code class="highlighter-rouge">mca</code></li>
+  <li>without <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">area</code> attributes</li>
+</ul>
+
+<p><strong>Step 3.</strong> Add blocks that you want to override (indicating a block class with new behaviour)</p>
+
+<p><strong>Step 4.</strong> Run the page generator.</p>
+
+<p>Let’s see an example with the following use case:</p>
+
+<ul>
+  <li>A Magento_NewModule changes the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> creation behaviour of a Magento_Catalog module.</li>
+  <li><code class="highlighter-rouge">editForm</code> block from page <code class="highlighter-rouge">\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> must be changed according to new functionality.</li>
+</ul>
+
+<p>Let us see page <code class="highlighter-rouge">\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogCategoryEdit"</span> <span class="na">area=</span><span class="s">"Adminhtml"</span> <span class="na">mca=</span><span class="s">"catalog/category/edit"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"messagesBlock"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Test\Block\Messages"</span> <span class="na">locator=</span><span class="s">"#messages"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"formPageActions"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Adminhtml\Category\Edit\PageActions"</span> <span class="na">locator=</span><span class="s">".page-main-actions"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"#container"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"modalBlock"</span> <span class="na">class=</span><span class="s">"Magento\Ui\Test\Block\Adminhtml\Modal"</span> <span class="na">locator=</span><span class="s">"._show[data-role=modal]"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>The block that we want to change is:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"#container"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span></code></pre></figure>
+
+<p>We shouldn’t change the <code class="highlighter-rouge">editForm</code> block in the Magento_Catalog module because in case of disabling of a Magento_NewModule module, the test will fail. Best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
+
+<p>Assume that we already created the new block <code class="highlighter-rouge">\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code>.</p>
+
+<p>To use the <code class="highlighter-rouge">editForm</code> block from the Magento_NewModule, we must follow:</p>
+
+<p><strong>Step 1.</strong> Create a <code class="highlighter-rouge">CatalogCategoryEdit.xml</code> page in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
+
+<p><strong>Step 2.</strong> Assign page attributes</p>
+
+<ul>
+  <li>with the same name as the page you want to merge</li>
+  <li>with the same <code class="highlighter-rouge">mca</code></li>
+  <li>without <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">area</code> attributes</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogCategoryEdit"</span> <span class="na">mca=</span><span class="s">"catalog/category/edit"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p><strong>Step 3.</strong> Add blocks that you want to <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span>.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogCategoryEdit"</span> <span class="na">mca=</span><span class="s">"catalog/category/edit"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"//div[contains(@data-bind, 'category_form')]"</span> <span class="na">strategy=</span><span class="s">"xpath"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p><strong>Step 4.</strong> Run the page generator.</p>
+
+<p>Enter in terminal:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
+
+<p>Now when you call <code class="highlighter-rouge">editForm</code> block from the <code class="highlighter-rouge">CatalogCategoryEdit</code> page, class <code class="highlighter-rouge">\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> will be used.</p>
+
+<!-- LINK DEFINITIONS -->
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_page.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/mtf/mtf_entities/mtf_page.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

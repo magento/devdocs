@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Step 1. Plan the product | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/rest/tutorials/configurable-product/plan-product.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/rest/tutorials/configurable-product/plan-product.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/rest/tutorials/configurable-product/plan-product.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/rest/tutorials/configurable-product/plan-product.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/rest/tutorials/configurable-product/plan-product.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+  <aside class="sidebar">
+  	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+  	<div class="sidebar-wrapper">
+
+      
+      <div class="back-link">
+        <a href="/guides/v2.3/rest/bk-rest.html">
+          <i class="back-link-arrow"></i>
+          <span class="back-link-subtitle">Return to</span>
+          <span class="back-link-title">Overview</span>
+        </a>
+      </div>
+
+      
+      
+      <ul>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/config-product-intro.html">Initial tasks</a>
+        </li>
+      
+        <li class="level1  active">
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/plan-product.html">Step 1. Plan the product</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/create-configurable-product.html">Step 2. Create the configurable product</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/create-simple-products.html">Step 3. Create the simple products</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/define-config-product-options.html">Step 4. Define configurable product options</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/create-personalization-option.html">Step 5. Create the personalization option</a>
+        </li>
+      
+      </ul>
+
+    </div>
+  </aside>
+  <!-- /.sidebar -->
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/rest/bk-rest.html">
+            <span property="name">Overview</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+            <a href="/guides/v2.3/rest/tutorials/configurable-product/config-product-intro.html">Create a configurable product Tutorial</a>
+          
+
+          <span property="name">Step 1. Plan the product</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Step 1. Plan the product</h1>
+
+  
+
+
+</section>
+
+			<p>To create a configurable product programmatically, you’ll need to know the following:</p>
+
+<ul>
+  <li>The attribute names and values defined in the attribute set assigned to the configurable product.</li>
+  <li>The categories numbers assigned to the configurable product.</li>
+  <li>Which attributes to use as the configuration options.</li>
+</ul>
+
+<p>Since this tutorial uses the sample data, we can take advantage of the options that the Top attribute set provides. This attribute set contains attributes that describe the fabric, sleeve length, and other characteristics that are specific to clothing. It also includes EAV attributes such as size and color, which are commonly available to all types of physical products.</p>
+
+<p>The size of the t-shirt will be the configurable aspect of this product. Therefore, we’ll create a simple product for each size (Small, Medium, and Large).</p>
+
+<h2 id="define-product-characteritics">Define product characteritics</h2>
+
+<p>The following table lists the general characteristics of men’s t-shirt we’re creating. These items are among those listed on the New Product page in Admin when the Top attribute set is selected.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Characteristic</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Attribute Set</td>
+      <td>Top</td>
+    </tr>
+    <tr>
+      <td>Product Name</td>
+      <td>Champ Tee</td>
+    </tr>
+    <tr>
+      <td>SKU</td>
+      <td>MS-Champ</td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>Tax Class</td>
+      <td>Taxable Goods</td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>Categories</td>
+      <td>Men, Tops, Tees</td>
+    </tr>
+    <tr>
+      <td>Visibility</td>
+      <td>Catalog, Search</td>
+    </tr>
+    <tr>
+      <td>Material</td>
+      <td>LumaTech</td>
+    </tr>
+    <tr>
+      <td>Pattern</td>
+      <td>Graphic Print</td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td>Gray</td>
+    </tr>
+    <tr>
+      <td>Size</td>
+      <td>Configurable in small, medium, or large</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are are defined by the system.</p>
+
+<h2 id="find-the-system-defined-values">Find the system-defined values</h2>
+
+<p>We’ll make several calls to find the values needed to create the product</p>
+
+<h3 id="get-the-attribute-set-id">Get the attribute set ID</h3>
+
+<p>The sample data provides multiple attribute sets, including Default, Top, and Bottom. To assign the Top attribute set to the product, we need to know the corresponding <code class="highlighter-rouge">attribute_set_id</code>.</p>
+
+<p>Use the following call to search for the attribute set named <code class="highlighter-rouge">Top</code>.</p>
+
+<p><strong>Endpoint</strong></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="nt">&lt;host&gt;</span>/index.php/rest/V1/eav/attribute-sets/list?
+searchCriteria[filter_groups][0][filters][0][field]=attribute_set_name<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=Top<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=eq
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<p>The <code class="highlighter-rouge">attribute_set_id</code> for the Top attribute set is <code class="highlighter-rouge">9</code>.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_set_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attribute_set_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Top"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sort_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"entity_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"search_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"filter_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attribute_set_name"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Top"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"condition_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eq"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h3 id="get-attributes">Get the list of attributes defined in an attribute searchCriteria</h3>
+
+<p>Use the <code class="highlighter-rouge">GET V1/products/attribute-sets/:attributeSetId/attributes</code> call to return information about the attributes defined in the Top attribute set.</p>
+
+<p><strong>Endpoint</strong></p>
+
+<p><code class="highlighter-rouge">GET &lt;host&gt;/V1/products/attribute-sets/9/attributes</code></p>
+
+<p><strong>Response</strong></p>
+
+<p>The response contains almost 3,000 lines. The following table provides a summary of the attributes that are relevant in this tutorial.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Admin label</th>
+      <th>Selected value</th>
+      <th>Attribute ID</th>
+      <th>attribute_code</th>
+      <th>Attribute value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tax Class</td>
+      <td>Taxable Goods</td>
+      <td>132</td>
+      <td><code class="highlighter-rouge">tax_class_id</code></td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Visibility</td>
+      <td>Catalog, Search</td>
+      <td>99</td>
+      <td><code class="highlighter-rouge">visibility</code></td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Material</td>
+      <td>LumaTech</td>
+      <td>136</td>
+      <td><code class="highlighter-rouge">material</code></td>
+      <td>148</td>
+    </tr>
+    <tr>
+      <td>Pattern</td>
+      <td>Graphic Print</td>
+      <td>152</td>
+      <td><code class="highlighter-rouge">pattern</code></td>
+      <td>196</td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td>Gray</td>
+      <td>93</td>
+      <td><code class="highlighter-rouge">color</code></td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <td>Size</td>
+      <td>Not applicable</td>
+      <td>141</td>
+      <td><code class="highlighter-rouge">size</code></td>
+      <td>168 (small), 169 (medium), 170 (large)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-warning">
+  <p>The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.</p>
+</div>
+
+<h3 id="get-the-list-of-category-values">Get the list of category values</h3>
+
+<p>You must assign the product to one or more categories to enable customers to find the product by browsing. We’ll assign the Champ Tee to the Men, Tops, and Tees categories.</p>
+
+<p>Use the following call to search for for all categories (<code class="highlighter-rouge">id</code> is greater than or equal to <code class="highlighter-rouge">0</code>).</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET <span class="nt">&lt;host&gt;</span>/V1/categories?
+searchCriteria[filter_groups][0][filters][0][field]=id<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=1<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=gte
+</code></pre></div></div>
+
+<p>Note that women’s tops and tees have different ids than men’s tops and tees. The values for men’s clothing are:</p>
+
+<ul>
+  <li>Men - <code class="highlighter-rouge">11</code></li>
+  <li>Tops - <code class="highlighter-rouge">12</code></li>
+  <li>Tees - <code class="highlighter-rouge">16</code></li>
+</ul>
+
+<h2 id="verify-this-step">Verify this step</h2>
+
+<p>At this point, we’re gathering information, so there is nothing to verify.</p>
+
+
+      <div class="horisontal-nav">
+        
+        
+          
+          
+
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/config-product-intro.html" class="btn btn-secondary">Previous</a>
+          
+          <a href="/guides/v2.3/rest/tutorials/configurable-product/create-configurable-product.html" class="btn btn-primary">Next</a>
+          
+
+        
+      </div>
+      <!-- /.horisontal-nav -->
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/rest/tutorials/configurable-product/plan-product.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/rest/tutorials/configurable-product/plan-product.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

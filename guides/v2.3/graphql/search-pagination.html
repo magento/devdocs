@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Searches and pagination in GraphQL | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/graphql/search-pagination.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/search-pagination.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/search-pagination.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/search-pagination.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/search-pagination.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>GraphQL Developer Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="overview">
+
+    
+    
+    
+    <a href="/guides/v2.3/graphql/index.html">Overview</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="implementation">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Implementation</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="request-headers">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="perform-a-search">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/search-pagination.html">Perform a search</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="development">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Development</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="configure-the-graphql-schema-for-a-module">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/configure-graphql-xml.html">Configure the GraphQL schema for a module</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="resolvers">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/resolvers.html">Resolvers</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="create-a-custom-urlresolver-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/create-custom-url-resolver.html">Create a custom urlResolver service</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="handling-exceptions">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="functional-testing">
+
+    
+    
+    
+    <a href="/guides/v2.3/graphql/functional-testing.html">Functional testing</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="reference">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Reference</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="customattributemetadata-endpoint">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="customer-endpoint">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="price-field">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="products-endpoint">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/products.html">Products endpoint</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="bundle-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configurable-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/configurable-product.html">Configurable product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="downloadable-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/downloadable-product.html">Downloadable product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="gift-card-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/gift-card-product.html">Gift card product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="grouped-product-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/grouped-product.html">Grouped product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="urlresolver-service">
+            
+            
+        
+            
+            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/graphql/index.html">
+            <span property="name">Overview</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Searches and pagination in GraphQL</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Searches and pagination in GraphQL</h1>
+
+  
+
+
+</section>
+
+
+			<p>A GraphQL search query can contain the following components:</p>
+
+<ul>
+  <li>A full text search keyword</li>
+  <li>Filters (search criteria).</li>
+  <li>Pagination information</li>
+  <li>Sorting instructions</li>
+</ul>
+
+<h2 id="specifying-full-text-search-keywords">Specifying full text search keywords</h2>
+
+<p>The <code class="highlighter-rouge">search</code> element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.</p>
+
+<p>The <code class="highlighter-rouge">search</code> element is optional, but it can be used with or without filters. Each query must contain a <code class="highlighter-rouge">search</code> or <code class="highlighter-rouge">filter</code> element.</p>
+
+<h2 id="specifying-filters">Specifying filters</h2>
+
+<p>The <code class="highlighter-rouge">filter</code> element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.</p>
+
+<p>Search filters are logically ANDed unless an <code class="highlighter-rouge">or</code> statement is specified. The search query can contain unlimited number of nested <code class="highlighter-rouge">or</code> clauses. However, you cannot perform a logical <code class="highlighter-rouge">or</code> across two <code class="highlighter-rouge">and</code> clauses, such as (A AND B) OR (X AND Y).</p>
+
+<h3 id="search-fields">Search fields</h3>
+
+<p>Each object type defines which fields can be searched. See the object-specific documentation for details.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You cannot specify the same search field twice in a GraphQL query.</p>
+</div>
+
+<h3 id="condition-types-and-search-values">Condition types and search values</h3>
+
+<p>The following table lists available condition types and provides the SQL statement equivalents.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Magento GraphQL clause</th>
+      <th>SQL equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">eq: "value"</code></td>
+      <td><code><i>field</i> = 'value'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">neq: "value"</code></td>
+      <td><code><i>field</i> != 'value'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">like: "value%"</code></td>
+      <td><code><i>field</i> LIKE 'value%'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">nlike: "value%"</code></td>
+      <td><code><i>field</i> NOT LIKE 'value%'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">in: [1, 2, 3] </code></td>
+      <td><code><i>field</i> IN (1, 2, 3)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">nin: [1, 2, 3]</code></td>
+      <td><code><i>field</i> NOT IN (1, 2, 3)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">notnull: true</code></td>
+      <td><code><i>field</i> IS NOT NULL</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">null: true</code></td>
+      <td><code><i>field</i> IS NULL</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">lt: "value"</code></td>
+      <td><code><i>field</i> &lt; 'value'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">gt: "value"</code></td>
+      <td><code><i>field</i> &gt; 'value'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">gteq: "value"</code></td>
+      <td><code><i>field</i> &gt;= 'value'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">lteq: "value"</code></td>
+      <td><code><i>field</i> &lt;= 'value'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">moreq: "value"</code></td>
+      <td><code><i>field</i> &gt;= 'value'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">from: "value1"</code> <code class="highlighter-rouge">to: "value2"</code></td>
+      <td><code><i>field</i> BETWEEN 'value1' AND 'value2'</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">finset: [1, 2, 3]</code></td>
+      <td><code>FINSET(<i>field</i>, '1, 2, 3')</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <ul>
+    <li><code class="highlighter-rouge">to</code> and <code class="highlighter-rouge">from</code> must always be used together. These condition types can be used in the same search term. For example, <code class="highlighter-rouge">qty: {from: "10" to: "20"}</code>.</li>
+    <li><code class="highlighter-rouge">gt</code> and <code class="highlighter-rouge">lt</code> can be used in the same search term. For example, <code class="highlighter-rouge">qty: {lt: "10" gt: "20"}</code>.</li>
+  </ul>
+</div>
+
+<h2 id="specifying-pagination">Specifying pagination</h2>
+
+<p>Currently, Magento’s GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.</p>
+
+<p>The <code class="highlighter-rouge">pageSize</code> attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.</p>
+
+<p>The <code class="highlighter-rouge">currentPage</code> attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.</p>
+
+<h2 id="sorting-instructions">Sorting instructions</h2>
+
+<p>The <code class="highlighter-rouge">sort</code> object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either <code class="highlighter-rouge">ASC</code> or <code class="highlighter-rouge">DESC</code>.</p>
+
+<p>In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sort: {
+  price: DESC
+  name:  ASC
+}
+</code></pre></div></div>
+
+<h2 id="example-searches">Example Searches</h2>
+
+<p>The following sections provide examples of each type of search. These examples use the Magento Open Source sample data.</p>
+
+<h3 id="full-text-search">Full text search</h3>
+
+<p>The following search returns items that contain the word <code class="highlighter-rouge">yoga</code> or <code class="highlighter-rouge">pants</code>. The Catalog Search index contains search terms taken from the product <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">description</code>, <code class="highlighter-rouge">short_description</code> and related attributes.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">products(</span><span class="w">
+      </span><span class="err">search</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yoga pants"</span><span class="w">
+    </span><span class="err">)</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">total_count</span><span class="w">
+        </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">name</span><span class="w">
+          </span><span class="err">sku</span><span class="w">
+          </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="err">value</span><span class="w">
+                </span><span class="err">currency</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">page_size</span><span class="w">
+          </span><span class="err">current_page</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>The search returns 45 items.</p>
+
+<h3 id="full-text-search-with-filters">Full text search with filters</h3>
+
+<p>The following sample query returns a list of products that meets the following criteria:</p>
+
+<ul>
+  <li>The product name, product description, or related field contains the string <code class="highlighter-rouge">Messenger</code> (which causes it to be available for full text searches).</li>
+  <li>The SKU begins with <code class="highlighter-rouge">24-MB</code></li>
+  <li>The price is less than $50.</li>
+</ul>
+
+<p>The response for each item includes the <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">sku</code>, <code class="highlighter-rouge">price</code> and <code class="highlighter-rouge">description</code> only. Up to 25 results are returned at a time, in decreasing order of price.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">products(</span><span class="w">
+      </span><span class="err">search</span><span class="p">:</span><span class="w"> </span><span class="s2">"Messenger"</span><span class="w">
+      </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+             </span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">like</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB%"</span><span class="p">}</span><span class="w">
+             </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">lt</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">}</span><span class="w">
+             </span><span class="p">}</span><span class="w">
+        </span><span class="err">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+          </span><span class="err">sort</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="err">DESC</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="err">)</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">items</span><span class="w">
+      	</span><span class="p">{</span><span class="w">
+          </span><span class="err">name</span><span class="w">
+          </span><span class="err">sku</span><span class="w">
+          </span><span class="err">description</span><span class="w">
+          </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="err">value</span><span class="w">
+                </span><span class="err">currency</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">total_count</span><span class="w">
+        </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">page_size</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>The query returns the following:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wayfarer Messenger Bag"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB05"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\n</span><span class="s2">&lt;li&gt;Multiple internal zip pockets.&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&lt;li&gt;Made of durable nylon.&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&lt;/ul&gt;"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"regularPrice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rival Field Messenger"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB06"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\n</span><span class="s2">&lt;li&gt;Leather construction.&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&lt;li&gt;Adjustable fabric carry strap.&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&lt;li&gt;Dimensions: 18</span><span class="se">\"</span><span class="s2"> x 10</span><span class="se">\"</span><span class="s2"> x 4</span><span class="se">\"</span><span class="s2">.&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&lt;/ul&gt;"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"regularPrice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"page_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h3 id="simple-search-using-a-timestamp">Simple search using a timestamp</h3>
+
+<p>The following search finds all products that were added after the specified time (midnight, November 1, 2017).</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">products(</span><span class="w">
+      </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">created_at</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">gt</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01 00:00:00"</span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+          </span><span class="err">sort</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="err">DESC</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="err">)</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">total_count</span><span class="w">
+        </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">name</span><span class="w">
+          </span><span class="err">sku</span><span class="w">
+          </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="err">value</span><span class="w">
+                </span><span class="err">currency</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">page_size</span><span class="w">
+          </span><span class="err">current_page</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h3 id="simple-logical-or-search">Simple Logical OR search</h3>
+
+<p>The following example searches for all products whose <code class="highlighter-rouge">sku</code> begins with the string <code class="highlighter-rouge">24-MB</code> or whose <code class="highlighter-rouge">name</code> ends with <code class="highlighter-rouge">Bag</code>.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">products(</span><span class="w">
+      </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">or</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">like</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB%"</span><span class="p">}</span><span class="w">
+            </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">like</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Bag"</span><span class="p">}</span><span class="w">
+						</span><span class="p">}</span><span class="w">
+       	 </span><span class="p">}</span><span class="w">
+        </span><span class="err">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+          </span><span class="err">sort</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="err">DESC</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="err">)</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">total_count</span><span class="w">
+        </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">name</span><span class="w">
+          </span><span class="err">sku</span><span class="w">
+          </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="err">value</span><span class="w">
+                </span><span class="err">currency</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">page_size</span><span class="w">
+          </span><span class="err">current_page</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>The query returns 8 items.</p>
+
+<h3 id="logical-and-and-or-search">Logical AND and OR search</h3>
+
+<p>This query searches for products that have <code class="highlighter-rouge">name</code> that ends with <code class="highlighter-rouge">Orange</code> or has a <code class="highlighter-rouge">sku</code> that indicates the prodict is a pair of women’s shorts in size 29 (<code class="highlighter-rouge">WSH%29%</code>). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">products(</span><span class="w">
+      </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">from</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="w"> </span><span class="err">to</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.99"</span><span class="p">}</span><span class="w">
+          </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">like</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Orange"</span><span class="p">}</span><span class="w">
+            </span><span class="err">or</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">like</span><span class="p">:</span><span class="w"> </span><span class="s2">"WSH%29%"</span><span class="p">}</span><span class="w">
+       	 </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+          </span><span class="err">sort</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="err">DESC</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="err">)</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">total_count</span><span class="w">
+        </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">name</span><span class="w">
+          </span><span class="err">sku</span><span class="w">
+          </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="err">value</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">page_size</span><span class="w">
+          </span><span class="err">current_page</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>The query returns 4 items.</p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/search-pagination.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/search-pagination.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
