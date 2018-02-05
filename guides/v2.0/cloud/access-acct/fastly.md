@@ -210,7 +210,16 @@ To create a custom error/maintenance page:
 For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
 
 ## Extend Fastly timeout for the Magento Admin {#bulkaction}
-Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a [custom VCL snippet]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html) to set this to five minutes or ten minutes, (the hard cap).
+Fastly sets a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. Since Fastly extension version 1.2.41 you can manage the timeout for Magento Admin.
+
+1. In the **Fastly Configuration** section, expand **Advanced**.
+2. Set the **Admin path timeout** value in seconds. 
+3. Click Save Config at the top of the page.
+4. After page reload, click *Upload VCL to Fastly* in the *Fastly Configuration* section.
+
+Note, that effective **Admin path timeout** cannot be more than one hour (3600 seconds).
+
+Since version 1.2.39 Fastly extension gets Magento Admin path for generating VCL from the `app/etc/env.php` configuration file.
 
 ## Configure GeoIP handling {#geoip}
 The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
