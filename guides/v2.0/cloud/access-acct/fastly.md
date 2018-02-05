@@ -239,12 +239,28 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 ## Configure DNS for Fastly {#fastly-dns}
 These steps you complete when going live.
 
-We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership.
+After you've checked with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple host names for your site, you must add a CNAME record for each of them.
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>This will not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
+</div>
+
+The following is a possible list of DNS providers strictly for your information. Use a DNS provider you prefer.
+
+*	CNAME with ALIAS record from [Dyn](http://dyn.com){:target="_blank"}
+*	ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com){:target="_blank"}
+*	ANAME at [easyDNS](https://www.easydns.com){:target="_blank"}
+*	ACNAME at [CloudFlare](https://www.cloudflare.com){:target="_blank"}
+*	ALIAS at [PointDNS](https://pointhq.com){:target="_blank"}
+
+Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirection service to redirect the apex over to the `www` version of the domain. Consult your DNS provider to see how they support this.
+
+Another option for <em>apex domain</em> is to add an A record which maps a domain name to the Fastly IP address: `150.101.113.124`.
 
 For details, see [Go live checklist]({{page.baseurl}}cloud/live/go-live-checklist.html).
 
 ### TLS and Fastly {#fastly-tls}
-If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly's TXT record file for your account. You can then send this record to your DNS provider.
+If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using a TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="\_blank"}.
 
