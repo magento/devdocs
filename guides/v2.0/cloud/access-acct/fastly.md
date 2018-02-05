@@ -267,6 +267,11 @@ For details on this TXT record, see Fastly's [DNS TXT record validation](https:/
 ## Upgrade Fastly {#upgrade}
 Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check [Magento Marketplace](https://marketplace.magento.com/fastly-magento2.html){:target="\_blank"} and their [GitHub](https://github.com/fastly/fastly-magento2/releases){:target="\_blank"} for updates on the latest releases.
 
+When you upgrade the Fastly extension, you get the upgraded subset of default VCL snippets. When you have done with the Fastly module upgrade, you have to [upload upgraded default VCL snippets to Fastly](#upload-vcl-snippets):
+
+1. In the **Fastly Configuration** section, click **Upload VCL to Fastly**.
+2. Once the upload completes, the modal automatically closes with a success message.
+
 When you upgrade, your default VCL snippets you uploaded should not be affected or require any additional steps.
 
 For information on upgrading modules, see [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html).
