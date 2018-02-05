@@ -3,7 +3,7 @@ layout: default
 group: graphql
 title: Price field
 version: 2.3
-github_link: graphql/price.md
+github_link: graphql/reference/price.md
 ---
 
 The Price field contains an amount and currency code. It may also contain price adjustment information.

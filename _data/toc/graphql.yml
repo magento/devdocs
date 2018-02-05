@@ -15,16 +15,16 @@ pages:
     - label: Development
       children:
         - label: Configure the GraphQL schema for a module
-          url: graphql/configure-graphql-xml.html
+          url: graphql/develop/configure-graphql-xml.html
 
         - label: Resolvers
-          url: graphql/resolvers.html
+          url: graphql/develop/resolvers.html
 
         - label: Create a custom urlResolver service
-          url: graphql/create-custom-url-resolver.html
+          url: graphql/develop/create-custom-url-resolver.html
 
         - label: Handling Exceptions
-          url: graphql/exceptions.html
+          url: graphql/develop/exceptions.html
 
     - label: Functional testing
       url: graphql/functional-testing.html
@@ -32,16 +32,31 @@ pages:
     - label: Reference
       children:
         - label: CustomAttributeMetadata endpoint
-          url: graphql/custom-attribute-metadata.html
+          url: graphql/reference/custom-attribute-metadata.html
 
         - label: Customer endpoint
-          url: graphql/customer.html
+          url: graphql/reference/customer.html
 
         - label: Price field
-          url: graphql/price.html
+          url: graphql/reference/price.html
 
         - label: Products endpoint
-          url: graphql/products.html
+          url: graphql/reference/products.html
+          children:
+            - label: Bundle product endpoint
+              url: graphql/reference/bundle-product.html
+
+            - label: Configurable product endpoint
+              url: graphql/reference/configurable-product.html
+
+            - label: Downloadable product endpoint
+              url: graphql/reference/downloadable-product.html
+
+            - label: Gift card product endpoint
+              url: graphql/reference/gift-card-product.html
+
+            - label: Grouped product endpoint
+              url: graphql/reference/grouped-product.html
 
         - label: urlResolver service
-          url: graphql/url-resolver.html
+          url: graphql/reference/url-resolver.html
