@@ -24,6 +24,7 @@ Production mode also has better performance because static view files are popula
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 -   In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
 -   Unlike other Magento modes, developer and production modes are set in `env.php`.
+-   <a href="{{page.baseurl}}cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
 </div>
 
 Refer to [Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html) for more information.
@@ -68,7 +69,7 @@ Command usage:
   -   **`--skip-compilation`** is an optional parameter you can use to skip <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
 
   <div class="bs-callout bs-callout-info" id="info" makrdown="1">
-  You cannot currently change from either developer or production mode to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.
+  You cannot currently change from either developer or production mode to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#default-mode">default mode</a>.
   </div>
 
 Examples follow.

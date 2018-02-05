@@ -39,17 +39,18 @@ If you want to allow access to Staging and Production, create the Edge ACL in bo
 
 You will use the Edge ACL by name in your VCL snippet code.
 
-## Create allowlist.vcl {#vcl}
+## Create allowlist.json {#vcl}
 To allow only whitelisted IPs access to Staging and Production environments, you can use the same VCL snippet file without edits.
 
-Create an `allowlist.vcl` file with the following JSON content:
+Create an `allowlist.json` file with the following JSON content:
 
 {% highlight json %}
 {
   "name": "allowlist",
-  "priority": "5",
+  "dynamic": "0",
   "type": "recv",
-  "content": "if ((req.url ~ "^/admin") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 "Forbidden"; }",
+  "priority": "5",
+  "content": "if ((req.url ~ \"^/admin\") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 \"Forbidden\"; }"
 }
 {% endhighlight %}
 

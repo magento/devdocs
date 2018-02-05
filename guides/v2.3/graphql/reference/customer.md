@@ -23,12 +23,12 @@ B2B customer attributes are not currently supported.
 Attribute |  Data Type | Description
 --- | --- | ---
 `created_at` | String | Timestamp indicating when the account was created
-`group_id` | Int | The ID of the group the customer is assigned to
-`prefix` | String | An honorific, such as Mr., Mrs., or Dr.
+`group_id` | Int | The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale), and 3 (Retailer)
+`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `firstname` | String | The customer's first name
 `middlename` |String | The customer's middle name
 `lastname` | String | The customer's family name
-`suffix` | String | A value such as Sr., Jr., III, etc.
+`suffix` | String | A value such as Sr., Jr., or III
 `email` | String | The customer's email address. Required
 `default_billing` | String | The ID assigned to the billing address
 `default_shipping` | String | The ID assigned to the shipping address
@@ -46,7 +46,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int | The ID assigned to the address object
 `customer_id` | Int | The customer ID
-`region` | CustomerAddressesRegion | An object
+`region` | CustomerAddressesRegion | An object containing the region name, region code, and region ID
 `region_id` | Int | A number that uniquely identifies the state, province, or other area
 `country_id` | String | The customer's country.
 `street` | [String] | An array of strings that define the street number and name
@@ -58,11 +58,14 @@ Attribute |  Data Type | Description
 `firstname` | String | The first name of the person associated with the shipping/billing address
 `lastname` | String | The family name of the person associated with the shipping/billing address
 `middlename` | String | The middle name of the person associated with the shipping/billing address
-`prefix` | String | An honorific, such as Mr., Mrs., or Dr.
+`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `suffix` | String | A value such as Sr., Jr., III, etc.
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
 `default_billing` | Boolean | Indicates whether the address is the default billing address
+`reward_update_notification` | Int | The number of the email template to use for notifications about reward updates. This attribute is defined in the Reward module.
+`reward_warning_notification` | Int | The number of the email template to use for notifications about rewards points expiring. This attribute is defined in the Reward module.
+
 
 ## Example usage
 

@@ -23,14 +23,13 @@ This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% en
 
 Plugins cannot be used with any of the following:
 
-* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 * Final methods
 * Final classes
-* Any class that contains at least one final public method
 * Non-public methods
 * Static methods
 * `__construct`
 * Virtual types
+* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 
 ### Declaring a plugin
 
