@@ -27,31 +27,60 @@ This is done by using the `<remove>` action and specifying a `stepKey` of the ac
 ## Merging in Tests
 
 ### Add a test
-
-```xml
-base
-```
-
-```xml
-update
-```
-
-```xml
-Result
-```
+Adding of a `<test>` is done by creating a new file, or adding a `<test>` node to an existing `*test.xml` file.
 
 ### Remove a test
+Tests cannot be removed by deltas. If a test must be skipped due to a module completely invalidating a functionality, you can add the test to the `skip` group.
 
 ```xml
-base
+<test name="AdminLoginTest">
+        <annotations>
+            <features value="Admin Login"/>
+            <stories value="Login on the Admin Login page"/>
+            <title value="You should be able to log into the Magento Admin backend."/>
+            <description value="You should be able to log into the Magento Admin backend."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MAGETWO-71572"/>
+            <group value="example"/>
+            <group value="login"/>
+        </annotations>
+    <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
+    <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
+    <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
+    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
+    <closeAdminNotification stepKey="closeAdminNotification"/>
+    <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
+</test>
 ```
 
 ```xml
-update
+<test name="AdminLoginTest">
+        <annotations>
+            <group value="skip"/>
+        </annotations>
+</test>
 ```
 
 ```xml
-Result
+<test name="AdminLoginTest">
+        <annotations>
+            <features value="Admin Login"/>
+            <stories value="Login on the Admin Login page"/>
+            <title value="You should be able to log into the Magento Admin backend."/>
+            <description value="You should be able to log into the Magento Admin backend."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MAGETWO-71572"/>
+            <group value="example"/>
+            <group value="login"/>
+            <group value="skip"/>
+        </annotations>
+    <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
+    <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
+    <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
+    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
+    <closeAdminNotification stepKey="closeAdminNotification"/>
+    <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
+</test>
 ```
 
 ### Update a test
@@ -171,29 +200,45 @@ Result
 ### Add a section
 
 ```xml
-base
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>    
+    <section name="AnotherBackendSection"/>
+</page>
 ```
 
 ```xml
-update
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="NewExtensionSection"/>
+</page>
 ```
 
 ```xml
-Result
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>    
+    <section name="AnotherBackendSection"/>
+    <section name="NewExtensionSection"/>
+</page>
 ```
 
 ### Remove a section
 
 ```xml
-base
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>    
+    <section name="AnotherBackendSection"/>
+</page>
 ```
 
 ```xml
-update
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="AnotherBackendSection" remove="true"/>
+</page>
 ```
 
 ```xml
-Result
+<page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+    <section name="BaseBackendSection"/>
+</page>
 ```
 
 ## Sections merging
@@ -201,87 +246,122 @@ Result
 ### Add an element
 
 ```xml
-base
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ```xml
-update
+<section name="AdminLoginFormSection">
+    <element name="mergeElement" type="input" selector="#selector"/>
+</section>
 ```
 
 ```xml
-Result
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+    <element name="mergeElement" type="input" selector="#selector"/>
+</section>
 ```
 
 ### Remove an element
 
 ```xml
-base
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ```xml
-update
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" remove="true"/>
+</section>
 ```
 
 ```xml
-Result
+<section name="AdminLoginFormSection">
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ### Update an element
 
 ```xml
-base
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#username"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ```xml
-update
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#newSelector"/>
+</section>
 ```
 
 ```xml
-Result
+<section name="AdminLoginFormSection">
+    <element name="username" type="input" selector="#newSelector"/>
+    <element name="password" type="input" selector="#login"/>
+    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+</section>
 ```
 
 ## Data merging
 
+`<data>` elements within an entity are additive; removal of individual `<data>` tags is not supported.
+
 ### Add data
 
 ```xml
-base
+<entity name="sampleData" type="testData">
+    <data key="firstField">field1</data>
+    <data key="secondField">field2</data>
+</entity>
 ```
 
 ```xml
-update
+<entity name="sampleData" type="testData">
+    <data key="thirdField">field3</data>
+</entity>
 ```
 
 ```xml
-Result
-```
-
-### Remove data
-
-```xml
-base
-```
-
-```xml
-update
-```
-
-```xml
-Result
+<entity name="sampleData" type="testData">
+    <data key="firstField">field1</data>
+    <data key="secondField">field2</data>
+    <data key="thirdField">field3</data>
+</entity>
 ```
 
 ### Update data
 
 ```xml
-base
+<entity name="sampleData" type="testData">
+    <data key="firstField">field1</data>
+    <data key="secondField">field2</data>
+</entity>
 ```
 
 ```xml
-update
+<entity name="sampleData" type="testData">
+    <data key="firstField">overrideField</data>
+</entity>
 ```
 
 ```xml
-Result
+<entity name="sampleData" type="testData">
+    <data key="firstField">overrideField</data>
+    <data key="secondField">field2</data>
+</entity>
 ```
 
 
