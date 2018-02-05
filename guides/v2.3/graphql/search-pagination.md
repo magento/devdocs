@@ -69,7 +69,6 @@ The `pageSize` attribute specifies the maximum number of items to return. If no 
 
 The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
 
-
 ## Sorting instructions
 
 The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
