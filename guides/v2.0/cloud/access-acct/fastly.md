@@ -185,7 +185,8 @@ To configure Fastly purge options:
 
 1. In the **Fastly Configuration** section, expand **Advanced**.
 2. All purge options display. Select "Yes" per purge option to enable automatic purging. Select "No" to disable automatic purging, allowing you to manually purge caches through the Cache Management page.
-4. Click **Save Config** at the top of the page.
+3. Click **Save Config** at the top of the page.
+4. After page reload, click *Upload VCL to Fastly* in the *Fastly Configuration* section.
 
 For more information, see [Fastly's configuration options](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options){:target="\_blank"}.
 
@@ -231,6 +232,7 @@ The Fastly module includes GeoIP handling to automatically redirect visitors or 
 
 	![Add GeoIP country maps]({{ site.baseurl }}common/images/cloud_fastly-geo-code.png)
 5. Click **Save Config** at the top of the page.
+6. After page reload, click *Upload VCL to Fastly* in the *Fastly Configuration* section.
 
 Fastly also provides a series of [geolocation-related VCL features](https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features){:target="\_blank"} for customized geolocation coding.
 
