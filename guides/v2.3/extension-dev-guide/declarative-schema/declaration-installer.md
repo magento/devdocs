@@ -1,26 +1,30 @@
 ---
 layout: default
-group: install_pre
+group: extension-dev-guide
 title: Declarative Setup
 version: 2.3
-github_link: install-gde/install/declarative-setup.md
+github_link: extension-dev-guide/declarative-schema/declaration-installer.md
 ---
 
-## What is Declarative Setup
+## What is Declarative Setup?
 
-At the moment, in order to change the database schema, extension developers need to write code (PHP script) with the desired operations: renaming columns, adding new CMS pages, etc. Currently Magento 2 has 5 types of scripts:
+Before Magento 2.3, extension developers were required to write code (PHP script) to change the database schema.
 
-InstallData and InstallSchema scripts, that are executed on a clean (empty) database;
-UpgradeData and UpgradeSchema incremental scripts, that supplement an existing Magento database;
-Recurring scripts, that are executed each time you install or upgrade Magento.
+Currently, Magento 2 has the following types of scripts:
 
-Each script add its change iteratively. So during installation only changes, that were not applied yet will be applied.
-For instance, if you have database version of Magento - 2.0.3 and the latest one is 2.0.6, then upgrade scripts
-2.0.4, 2.0.5, 2.0.6 will be applied consistently. That procedure is called `migration setup` or `migration scripts`.
-The biggest disadvantage of this approach is that Magento applied changes blindly. So the main goal of alternative approach - to defeat that blindness. From 2.3 release we start using such approach in Magento. The name of it is `declarative setup`
-`Declarative setup` is based on database structure declarations, as is done by projects such as Doctrine. 
-Schema files (in Magento such files has name: `db_schema.xml`) declare what the database structure should be, 
-and Magento determines the differences between the current table structure and what it should be. These differences can be represented with atomic SQL operations. Here is an example of such a declaration:
+* InstallData and InstallSchema scripts, which are executed on a clean (empty) database
+* UpgradeData and UpgradeSchema incremental scripts, which supplement an existing Magento database
+* Recurring scripts, which are executed each time you install or upgrade Magento.
+
+Each script iterively adds changes. During the installation process, Magento applies only those changes that have not been applied yet. For example, if you have Magento 2.1.8 installed and the latest version is 2.1.11, then the upgrade scripts for
+2.1.9, 2.1.10, and 2.1.11 will be applied, in order, when you upgrade to 2.1.11. That procedure is called _migration setup_ or _migration scripts_.
+
+The main disadvantage of this approach is that Magento applies changes blindly. For example, in one version a new database column might be introduced, only to be removed in the next. _Declarative setup_ eliminates this type of unnecessary work.
+
+Declarative setup is based on database structure declarations, and is used in projects such as [Doctrine](http://www.doctrine-project.org/). Schema files declare what the database structure should be,
+and Magento determines the differences between the current table structure and what it should be. These differences can be represented with atomic SQL operations.
+
+The following example, extracted from the `Catalog/etc/db_schema.xml` file, defines the `catalog_product_entity_datetime` table:
 
 ```xml
 <table name="catalog_product_entity_datetime" resource="default" engine="innodb"
@@ -33,39 +37,34 @@ and Magento determines the differences between the current table structure and w
         <constraint xsi:type="primary" name="PRIMARY">
             <column name="value_id"/>
         </constraint>
-</table>        
+</table>
 ```
 
-## Theory of operations:
+## Theory of operations
 
 The declarative schema upgrade compares current state against the declared state in configuration and computes the difference that is converted to statements sequence and applied to DB.
-![Db Schema Invocation]
+
+![Db Schema Invocation]({{page.baseurl}}extension-dev-guide/declarative-schema/images/declarative-schema-invocation.png)
 
 
 ## Db Schema Structure
 
-Lets dig into how such `db_schema.xml` should be declared:
-The path of `db_schema.xml` file is:
+Let's dig into how such `db_schema.xml` should be declared.
 
-```
---Module_Vendor
-    --Module_Name
-        --etc
-            --db_schema.xml
-```
+A module's `db_schema.xml` schema file is defined in `<Module_Vendor>/<Module_Name>/etc/db_schema.xml`.
 
-Each db declaration file should consist of: `table` node. This node is represent table in database. 
+Each db declaration file should consist of: `table` node. This node is represent table in database.
 Table node has next allowed attributes:
 
  - `name`. Name of the table
  - `engine`. SQL engine
  - `resource`. Means database shard, on which this tables should be installed
  - `comment`. Table comment
- 
+
  Also table node can consist of 3 different subnodes. The type of almost all subnodes is controlled by node name
  and `xsi:type` declaration. For example, for `column` sub-node (which represents table column in SQL) the name of the node
- is `column` and `xsi:type` is regulates, which type of column should be chosen: 
- 
+ is `column` and `xsi:type` is regulates, which type of column should be chosen:
+
  - `int` (smallint, bigint, tinyint)
  - `real` (decimal, float, double, real)
  - `text` (text, mediumtext, longtext)
@@ -76,7 +75,7 @@ Table node has next allowed attributes:
  - `timestamp`
  - `date`
  - `boolean`
- 
+
 You can read about each type in XSD annotation of each type.
 For example, here is XSD for boolean: `urn:magento:setup:Model/Declaration/Schema/etc/types/boolean.xsd`
 Each column can have different attributes. For instance, integer column can be auto incremented and text column - not
@@ -93,11 +92,11 @@ Here is list of all attributes, that can be applied to `column` subnode:
 - `identity`. Used to say, whether a column is auto incremented or not
 - `length`. Used in text and binary types (also in varchar and varbinary), and is used for specifiing length of a column
 - `nullable`. Determine, whether column can be nullable or not
-- `default`. Initialize column with default value, specified here. Please note, that default value should have the same type, as column   
+- `default`. Initialize column with default value, specified here. Please note, that default value should have the same type, as column
 - `unsigned`. Can be applied only to numeric types, and said whether column can be positive and negative or only positive
-- `disabled`. This flag should be used only in case when you want to disable/delete table/column/constraint/index, 
+- `disabled`. This flag should be used only in case when you want to disable/delete table/column/constraint/index,
 that is declared
-- `onCreate`. This is DDL trigger, which allows for example to move data from column you want to remove to newely created column. 
+- `onCreate`. This is DDL trigger, which allows for example to move data from column you want to remove to newely created column.
 This trigger works only during column creation process.
 
 Example:
@@ -126,7 +125,7 @@ Example:
                     onDelete="CASCADE"/>
 ```
 
-`Internal` constraints are represented by `name` attribute and `column` subnode. In column subnode you can list columns you want 
+`Internal` constraints are represented by `name` attribute and `column` subnode. In column subnode you can list columns you want
 to add to constraint:
 
 ```xml
@@ -139,9 +138,9 @@ Third subnode is `index`. `Index` has the same structure as internal constraint,
 
 ## Migrating from old scripts to new db_schema.xml
 
-As convertion process from old scripts to new declarative schema is long, boring and painstaking we developed tool, which allows to do 
+As convertion process from old scripts to new declarative schema is long, boring and painstaking we developed tool, which allows to do
 this automatically - `Schema Listener Tool`. The main principle that underpin `Schema Listener Tool` is ordinar Magento Installation / Upgrade, during of which, all schema changes are logged under modules, and after Installation / Upgrade are persisted in `db_schema.xml` files
-by modules. As this tool will always listen schema changes and tries to change Magento code, it can be undesirable to run such tool, 
+by modules. As this tool will always listen schema changes and tries to change Magento code, it can be undesirable to run such tool,
 for example, on production, so this tool is disabled by default.
 
 In order to enable it, please add next argument to your `setup:install` or `setup:upgrade` CLI command:
@@ -153,10 +152,10 @@ In order to enable it, please add next argument to your `setup:install` or `setu
 Please note, that tool can be enabled only through CLI.
 
 #### Tool troubleshooting
- 
+
 1. Tool supports only DDL operations represented in `\Magento\Framework\DB\Adapter\Pdo\Mysql`. So all custom DDL operations will be ignored
 2. If you have any raw SQL in your `InstallSchema` or `UpgradeSchema` it will ignored too
-3. If you have any DDL statements in `Reccurring` file they will not be transfered to new schema, as this file supposed to be running during each 
+3. If you have any DDL statements in `Reccurring` file they will not be transfered to new schema, as this file supposed to be running during each
 installation / upgrade
 
 ## Backward Compatability and Db whitelist
@@ -167,7 +166,7 @@ Right now db schema is described not only a desired state, but also change appro
 If with old scripts sequence of changes could be setuped with help of module sequences, for new approach sequence declaration is more difficult.
 All changes are split by tables, on which they will be applied. All changes per table are accumulated in one statement: `ALTER`, `CREATE`, `DROP`.
 Tables are sorted by references on them. Table without references inside will goes first. All old scripts will be executed only after
-declarative schema installation / upgrade. 
+declarative schema installation / upgrade.
 
 As declarative schema makes database schema as in XML files, it will tries to undo all changes done by old scripts. In order to prevent such illegal behavior
 we provide `db_schema_whitelist.json` - whitelist of tables, that can be modified and dropped with declarative schema tool.
@@ -185,8 +184,8 @@ Till we will support backward compatability for this tool, we will not be able t
 1. **How to drop column/table/constraint/index?**. If you want to drop a change from your module - you just need to delete it XML declaration
 from `db_schema.xml` file. If you want to drop element, declared in another module, you should redeclare it with `disabled` attribute set to 'true'.
 2. **How to rename column/table?**.
-     - Table renaming is unsupported. You can remove old declaration of table and add new one. Data will not be lost (It will be persisted in CSV dump), but will not be added to new table automatically. You can add it manually with help 
-     of data / recurring patches. 
+     - Table renaming is unsupported. You can remove old declaration of table and add new one. Data will not be lost (It will be persisted in CSV dump), but will not be added to new table automatically. You can add it manually with help
+     of data / recurring patches.
      - Column rename is supported. You should do the same manipulations as for table renaming, but in new column you can specify `onCreate` attribute, which will say from what column, data should be migrated.
      Data can be migrated from the same table, for this you can use next construction:
 
@@ -200,7 +199,7 @@ Also data can be migrated from another table:
 onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
 ```
 
-3. **How to do optimization or non-trivial things with db schema?**. Declarative schema is developed to work with simple operations: add, change, drop structural elements. 
+3. **How to do optimization or non-trivial things with db schema?**. Declarative schema is developed to work with simple operations: add, change, drop structural elements.
 So for all other complex operations, you will need to add PHP handlers into Recurring scripts. Note that Recurring scripts will not be deprecated and will
 exists in system in future too.
 
@@ -221,29 +220,28 @@ Once module is disabled from console, it's DB schema configuration is no longer 
 In this section with `git diff` shortly will be described how to do old manilpulations, like creating table in new manner:
 
 **Create table**
-![Create Table](install/image/declaration_create_table.png)
+![Create Table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/declaration-create-table.png)
 
 **Drop table**
-![Drop Table](install/image/drop_declarative_table.png)
+![Drop Table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/drop-declarative-table.png)
 
 **Create foreign key**
-![Create Foreign Key](install/image/create_fk.png)
+![Create Foreign Key]({{page.baseurl}}extension-dev-guide/declarative-schema/images/create-fk.png)
 
 **Drop foreign key**
-![Drop Foreign Key](install/image/drop_fk.png)
+![Drop Foreign Key]({{page.baseurl}}extension-dev-guide/declarative-schema/images/drop-fk.png)
 
 **Add column to table**
-![Add column to table](install/image/add_column.png)
+![Add column to table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/add-column.png)
 
 **Drop column from table**
-![Drop column from table](install/image/remove_column.png)
+![Drop column from table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/remove-column.png)
 
 **Change column type**
-![Change column type](install/image/change_column_type.png)
+![Change column type]({{page.baseurl}}extension-dev-guide/declarative-schema/images/change-column-type.png)
 
 **Add index**
-![Add index](install/image/add_index.png)
+![Add index]({{page.baseurl}}extension-dev-guide/declarative-schema/images/add-index.png)
 
-[How to generate urns?]:{{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html
-[Db Schema Autocomplete]:install/image/db_schema_autocomplete.png
-[Db Schema Invocation]:install/image/declarative_schema_invocation.png
+[How to generate urns?]:{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html
+[Db Schema Autocomplete]:{{page.baseurl}}extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png
