@@ -167,7 +167,7 @@ The following test actions return a variable:
 *  [grabMultiple](#grabmultiple)
 *  [grabPageSource](#grabpagesource)
 *  [grabTextFrom](#grabtextfrom)
-*  [grabValueFrom](#grabValueFrom)
+*  [grabValueFrom](#grabvaluefrom)
 
 Learn more about [using data returned by test actions](../data.html#using-data-returned-by-test-actions).
 
