@@ -166,7 +166,7 @@ The following test actions return a variable:
 *  [grabMultiple](#grabmultiple)
 *  [grabPageSource](#grabpagesource)
 *  [grabTextFrom](#grabtextfrom)
-*  [grabValueFrom](#grabValueFrom)
+*  [grabValueFrom](#grabvaluefrom)
 
 Learn more in [Using data returned by test actions](../data.html#using-data-returned-by-test-actions).
 
@@ -716,7 +716,7 @@ entity|string|required|
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
 
-This action can optionally contain one or more [requiredEntity](#requiredEntity) child elements.
+This action can optionally contain one or more [requiredEntity](#requiredentity) child elements.
 
 ### grabAttributeFrom
 

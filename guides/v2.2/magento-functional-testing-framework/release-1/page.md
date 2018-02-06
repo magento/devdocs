@@ -160,12 +160,14 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 
 <!-- LINK DEFINITIONS -->
 
-[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-[test]: cest.html
+[explicit page]: #explicit-page
+[parameterized page]: #parameterized-page
+
 [createData]: cest/actions.html#createdata
 [section]: section.html
-[explicit page]: #explicit-page
-[parameterized page]: #parameterized-page.
+[test]: cest.html
+
+[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 
 <!-- Abbreviations -->
 

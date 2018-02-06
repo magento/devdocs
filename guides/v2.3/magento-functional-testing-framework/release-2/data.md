@@ -253,11 +253,11 @@ Individual piece of data to be passed in as part of the parent array type.
 
 <!-- Anchors -->
 
-[`<data`]: #data-tag
-[`<var>`]: #var-tag
-[`<required-entities>`]: #requiredentities-tag
 [`<array>`]: #array-tag
+[`<data`]: #data-tag
 [`<item>`]: #item-tag
+[`<required-entities>`]: #requiredentities-tag
+[`<var>`]: #var-tag
 
 <!-- devdocs links -->
 
