@@ -36,7 +36,7 @@ $ robo command [options] [arguments]
 * Original: `$ allure generate tests/_output/allure-results/ -o tests/_output/allure-report/`
 * Robo: `$ vendor/bin/robo allure1:generate`
 
-## Most useful сommands
+## Most useful commands
 
 The following list contains most popular commands purposed to interact with the MFTF.
 
