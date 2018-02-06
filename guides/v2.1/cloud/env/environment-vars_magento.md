@@ -145,7 +145,7 @@ The following variables are available during the deploy process of build and dep
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/use-cases.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
@@ -154,7 +154,7 @@ The following variables are available during the deploy process of build and dep
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search">Connect to an existing search service</a> for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/use-cases.html#search">Connect to an existing search service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
