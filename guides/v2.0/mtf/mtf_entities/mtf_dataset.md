@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Data set
-menu_title: Data set
-menu_order: 8
 version: 2.0
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
@@ -255,13 +252,11 @@ Also, in similar cases you can use array type in a data set, like:
 
 For example, if a [test case] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with the `$price` argument.
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate($price)
 {
     //
 }
-?>
 {%endhighlight php%}
 
 To assign it with `10` in one of the variations, add the following field to a variation of the corresponding data set:
@@ -274,13 +269,11 @@ To assign it with `10` in one of the variations, add the following field to a va
 
 In your test you often need to use injectable [fixture] instances. For example:
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate(\Magento\Catalog\Test\Fixture\CatalogProductSimple $product)
 {
     //
 }
-?>
 {%endhighlight php%}
 
 In this case, the ObjectManager sends data to the [InjectableFixture] constructor. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign the existing fixture field `weight` with `50` you can use the following notation:
@@ -366,13 +359,13 @@ If you want to extend variation in another module using [merging], you should us
 For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`
 
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
  {%endhighlight xml%}
  
  the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module:
  
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
   {%endhighlight xml%}
 
 <!-- LINK DEFINITIONS -->

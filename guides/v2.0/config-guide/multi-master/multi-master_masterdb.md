@@ -7,10 +7,13 @@ menu_title: Automatically configure master databases
 menu_order: 2
 menu_node:
 version: 2.0
+ee_only: True
 github_link: config-guide/multi-master/multi-master_masterdb.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 <h2 id="config-ee-multidb-master-over">Overview of master databases</h2>
 This topic discusses how to get started with the split database solution by:

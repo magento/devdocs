@@ -32,13 +32,13 @@ The following topics are included in the Guide:
 
 What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documentation, or just good suggestions.
 
-We have a <a href="{{page.baseurl}}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/develop/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>.
+We have a <a href="{{page.baseurl}}contributor-guide/templates/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/develop/guides/v2.0/contributor-guide/templates/basic_template.md">.md file  on Github</a>.
 
 The language we use in our documentation is [Markdown](http://daringfireball.net/projects/markdown/){:target="_blank"}, which is a simple markup language that gets converted to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="_blank"}.
 
 We also have a [list of suggested topics]({{page.baseurl}}contributor-guide/contributing_docs_suggested.html), if you want to peruse and pick one that appeals to you.
 
-If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
+If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}contributor-guide/quarterly-contributors.html">ring of honor</a> as one of our featured contributors.
 
 Use the <a href="#fork">fork</a> and <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
 This contribution model means that contributors maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
@@ -118,7 +118,7 @@ To add an issue:
 2. Fill in the Title and issue description.
 3. Click **Submit new issue**.
 
-<h2 id="report">Edit metadata</h2>  
+<h2 id="edit">Edit metadata</h2>  
 The .md (Markdown) file's {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.
 
 ### Example:

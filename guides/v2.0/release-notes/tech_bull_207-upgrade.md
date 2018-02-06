@@ -97,7 +97,7 @@ To apply this patch:
 		<th>Patch location</th>
 	</tr>
 	<tr> 
-	<td>Magento CE</td>
+	<td>{{site.data.var.ce}}</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
 		<p>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</p></td>
 	</tr>

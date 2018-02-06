@@ -8,6 +8,11 @@ menu_node:
 menu_order: 1500
 version: 2.2
 github_link: config-guide/deployment/pipeline/production-system.md
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 {::options syntax_highlighter="rouge" /}
@@ -23,7 +28,7 @@ You can have one production system. All of the following must be true:
 	*	`pub/media/wysiwyg` directory (and subdirectories)
 	*	`pub/static` directory (and subdirectories)
 
-*	Magento 2.2 or later must be installed and set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Magento 2.2 or later must be installed and set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode)
 *	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Set up a production machine

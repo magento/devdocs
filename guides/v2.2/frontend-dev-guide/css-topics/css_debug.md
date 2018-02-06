@@ -7,6 +7,8 @@ menu_order: 4
 menu_title: Compile LESS using Grunt
 version: 2.2
 github_link: frontend-dev-guide/css-topics/css_debug.md
+functional_areas:
+  - Frontend
 ---
 
 The topic describes how to install, configure and use [Grunt JavaScript task runner](http://gruntjs.com/) for compiling `.less` files in Magento 2.
@@ -100,7 +102,7 @@ grunt watch
 </td>
 <td>
 Tracks the changes in the source files, recompiles <code>.css</code> files, and reloads the page in the browser pages
-(you need to have <a href="#livereload">LiveReload</a> installed for you browser)
+(you need to have installed for you browser)
 </td>
 </tr>
 </table>
@@ -113,7 +115,7 @@ The following shows which Grunt tasks to use for debugging:
 <li>After you switch the compilation mode from client-side to server-side, run the <code>exec</code> command.</li>
 <li>
 After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
-<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
+<li>After you <a href="http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
 </ul>
 
 If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:
@@ -121,13 +123,13 @@ If you have LiveReload installed, run the <code>grunt watch</code> command, and 
 <li>
 After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
 
-<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
+<li>After you <a href="http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
 
 </ul>
 
 ## CSS source maps {#source_maps}
 
-When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier. 
+When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier.
 
 For each theme, Magento compliles all theme `.less` files into two CSS files: `styles-m.css` and `styles-l.css`. So when you debug a theme, you browser only sees `styles-m.css` and it might be difficult to define which exactly `.css` or `.less` file requires corrections. For example:
 

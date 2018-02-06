@@ -53,7 +53,7 @@ The following is a list of optimizations you can make on your local development 
   You can increase the memory available to PHP to get an increase in performance with Xdebug on.
 * If you need sample data, you can install it using [composer]({{page.baseurl}}install-gde/install/web/install-web-sample-data-composer.html) or by [cloning repositories]({{page.baseurl}}install-gde/install/web/install-web-sample-data-clone.html).
 * To speed up front end development, [turn off merging of CSS and JavaScript](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html){:target="_blank"}.
-* Make sure [caching]({{page.baseurl}}config-guide/cache/caching.html) is turned on (this is the default behavior).
+* Make sure [caching]({{page.baseurl}}config-guide/cache.html) is turned on (this is the default behavior).
   Generally, only page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and block cache should be turned off for development and turned back on when testing.
 * [Opcache timestamp validation](http://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps){:target="_blank"} should always be on for development.
   Development is impossible with opcache on and revalidation off because any PHP modification would require a cache reset.

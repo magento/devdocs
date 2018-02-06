@@ -16,7 +16,7 @@ This software is available from `repo.magento.com`. Before installing the Open S
 
 where `<version>` matches the version you want (for example, `2.0.10`)
 
-For example, to install Magento CE 2.0.10 in the `magento2` directory:
+For example, to install {{site.data.var.ce}} 2.0.10 in the `magento2` directory:
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
 

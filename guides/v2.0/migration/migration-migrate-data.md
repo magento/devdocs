@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: D_Migrate using the data migration tool
 title: Migrate data
 menu_title: Migrate data
@@ -9,6 +9,8 @@ menu_order: 2
 version: 2.0
 github_link: migration/migration-migrate-data.md
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
+functional_areas:
+  - Tools
 ---
 
 ## Before you start: routine preparations
@@ -26,7 +28,7 @@ To start migrating data, run:
 
 where:
 
-* `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration
+* `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 

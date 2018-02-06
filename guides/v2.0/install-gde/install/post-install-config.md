@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 2
 version: 2.0
 github_link: install-gde/install/post-install-config.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 Now that you've finished installing the Magento application, you need to configure it. This topic provides some recommended configuration settings for Magento; the list is not complete so watch this space.
@@ -79,9 +83,8 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 *	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
 
 <h2 id="post-install-ee">Settings for {{site.data.var.ee}} only</h2>
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
-You can configure the following only if you use Magento EE:
+You can configure the following only if you use {{site.data.var.ee}}:
 
 *	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Apache Solr search</a>
 *	<a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>

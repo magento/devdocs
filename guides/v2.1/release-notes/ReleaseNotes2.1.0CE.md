@@ -951,7 +951,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48079-->* Resolved issues with shipping providers for one-page checkout.
 
-<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between Magento CE and EE components.
+<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between {{site.data.var.ce}} and {{site.data.var.ee}} components.
 
 <!--- 48171-->* User notifications work as expected.
 

@@ -22,6 +22,4 @@ The following diagram illustrates the components of Magento, and shows the "laye
 
 ## Related topics
 
-* <a href="{{page.baseurl}}architecture/arch_asmodsys.html">Magento as a modular system</a>
-
 * <a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>

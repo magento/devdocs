@@ -8,6 +8,10 @@ menu_order: 15
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-magento.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 ## Configure Magento to use Varnish {#config-varnish-magento}
 
@@ -106,5 +110,5 @@ Static files should not be cached by default, but if you want to cache them, you
 You need to make these changes before you configure Magento to use Varnish.
 
 ## Next steps
-<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a> (Optional)</p>
+<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a> (Optional)</p>
 <p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a></p>

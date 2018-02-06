@@ -7,11 +7,14 @@ menu_title: Configure Apache and Elasticsearch
 menu_order: 7
 menu_node:
 version: 2.1
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-apache.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
-
 
 #### Contents
 
@@ -19,7 +22,7 @@ github_link: config-guide/elasticsearch/es-config-apache.md
 *	[Set up a proxy](#es-apache-proxy)
 *	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
 *	[Secure communication with Apache](#es-ws-secure-apache)
-*	[Verify communication is secure](#es-ws-secure-verify-apache)
+*	[Verify communication is secure](#es-ws-secure-verify)
 
 {% include config/es-webserver-overview.md %}
 

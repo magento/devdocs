@@ -1,16 +1,20 @@
 ---
-layout: default 
-group:  install_cli
+layout: default
+group: install_cli
 subgroup: 05_Command-line installation
 title: Enable or disable modules
 menu_title: Enable or disable modules
-menu_node: 
+menu_node:
 menu_order: 7
 version: 2.0
 github_link: install-gde/install/cli/install-cli-subcommands-enable.md
 redirect_from:
-  -  /guides/v1.0/install-gde/install/install-cli-subcommands-enable.html
-  -  /guides/v2.0/install-gde/install/install-cli-subcommands-enable.html
+  - /guides/v1.0/install-gde/install/install-cli-subcommands-enable.html
+  - /guides/v2.0/install-gde/install/install-cli-subcommands-enable.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 
@@ -24,19 +28,19 @@ This command has no prerequisites.
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
 To enable or disable available modules, use the following command:
 
-	magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
-	magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
+	magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
+	magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
 
 where
 
 *	`<module-list>` is a space-delimited list of modules to enable or disable. If any {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} name contains special characters, enclose the name in either single or double quotes.
 *	`--all` to enable or disable all modules at the same time.
 *	`-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
-*	`-c` or `--clear-static-content` cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>. 
+*	`-c` or `--clear-static-content` cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
 
-	Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. 
+	Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them.
 
-	In other words, because of <a href="{{page.baseurl}}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+	In other words, because of <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
 Use the following command to list enabled and disabled modules:
 

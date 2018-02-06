@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 40_Approach
 title: Create a test in the Functional Testing Framework
-menu_title: New functional test. Practice
-menu_order: 3
 version: 2.0
 github_link: mtf/create_test/create_new_test.md
 ---
@@ -66,7 +63,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 ### Test creation {#test-creation}
 
 #### Step 1. Check the FTF configuration and environment {#check-mtf}
- 
+
 * Adjust configuration. Learn how to [adjust a configuration][].
 
 * Prepare Magento application. Learn how to [prepare Magento application][].
@@ -90,7 +87,7 @@ See the following explanations.
 |-|-|-
 |`--name`|`synonym`|A name of the fixture. It can have any name. `synonym` seems to be logical.
 |`--entity_type`|`search_synonyms`|Database table name where entity data is stored. You can track database input when you perform a [manual testing][]. A new record will be created in a table that you need.
-|`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Collection to generate data sets. Synonyms are the entities of a Magento_Search module. A collection can always be found in model resources. 
+|`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Collection to generate data sets. Synonyms are the entities of a Magento_Search module. A collection can always be found in model resources.
 
 All slashes must be escaped with `\\`.
 
@@ -257,12 +254,12 @@ class ScopeId extends DataSource
 {% endhighlight %}
 
 This data source:
- 
+
  1. Checks if a field has a `dataset` key in a value that comes from a variation. If it doesn't, then field is assigned a value from the variation.
  2. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
  3. Checks if the `store_id` field exists in the Store fixture. If it doesn't, a new Store in Magento is created.
  4. Returns a Store `name` value.
- 
+
 We should save it as `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
 
 ![Synonym ScopeID data source location]({{site.baseurl}}common/images/ftf/mtf_tutorial_datasource.png)
@@ -365,9 +362,9 @@ Now we can create a [test case][].
 
 From the [test case topic][] we know about the structure, location and name of the test case.
 In this example it is named `CreateSynonymEntityTest.php` and stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase`.
- 
+
  ![A test case location]({{site.baseurl}}common/images/ftf/mtf_tutorial_testcase_location.png)
- 
+
 As a result of [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. The pages will be created in [Step 5][]. Also, we will use the fixture from the [Step 2][].
 
 {% highlight php %}
@@ -472,7 +469,7 @@ According to a New Synonym Group form we need to enter data in the `synonyms` an
 |variation 3|`shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%`|`default_store_view`
 
 Let's see the data set with data.
- 
+
 {% highlight xml %}
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -495,7 +492,7 @@ Let's see the data set with data.
 {% endhighlight %}
 
  A bit later we will add assertions to complete our data set.
- 
+
 #### Step 5. Create the pages {#create-pages}
 
 In [Step 3][], we added two [pages][] to the test case class. Because both pages are in the Admin area, we should create them in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml` directory.
@@ -532,9 +529,9 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 To generate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes for these [pages][] enter and run in your terminal
 
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
-    
+
 ![PHP classes of pages]({{site.baseurl}}common/images/ftf/mtf_tutorial_pages_php.png)
-    
+
 In the next step we will create [blocks][] that implements logic in these pages.
 
 #### Step 6. Create the blocks {#create-blocks}
@@ -587,12 +584,12 @@ We need to enter data from a data set into the form fields.
 ![New Synonym Group page]({{site.baseurl}}common/images/ftf/mtf_tutorial_page_new_synonym.png)
 
 The `Block` directory in the Magento_Search module (in the Magento code) contains the `Adminhtml/Synonyms/Edit` directories, as shown below:
- 
-![Block structure in a code base]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct.png) 
- 
+
+![Block structure in a code base]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct.png)
+
 The `Search/Test` directory in functional tests should be constructed in a similar manner:
- 
-![Block structure in a functional test]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct_test.png) 
+
+![Block structure in a functional test]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct_test.png)
 
 We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a mapping file.
 
@@ -601,7 +598,7 @@ We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a map
 [Learn about form mapping.][].
 
 We don't need to define mapping parameters for the `synonyms` field, because they are the same as the default values. (See the [nodes description table][].) The same is applicable to the `scope_id` field except a type of input element, which is a [custom typified element][] [`\Magento\Mtf\Client\Element\SelectstoreElement`][] in our case. Let's create the mapping file `SynonymsForm.xml`, which has the following code:
-                                                                      
+
 {% highlight xml %}
 
 <mapping strict="0">
@@ -663,7 +660,7 @@ The `SynonymsNew.xml` page must contain this class. The `.page-main-actions` css
 #### Step 7. Add the blocks to pages {#add-blocks-to-pages}
 
 In previous step, we created blocks with methods that enable us to perform the required test flow.
- 
+
 To associate methods with [pages][], blocks must be added to pages.
 
 **Search Synonym page**
@@ -717,7 +714,7 @@ An argument for the `test()` method is a [test object][] (a [fixture][]).
 
 /**
  * Create Synonym group test.
- * 
+ *
  * @param Synonym $synonym
  * @return void
  */
@@ -738,7 +735,7 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 ```
 
 All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 5][], [Step 7][]).
- 
+
 Remember our test flow:
 
 1. Log in to Admin
@@ -806,7 +803,7 @@ public function test(Synonym $synonym)
     // Steps
     $this->synonymsIndex->open(); // logs in to Admin, opens Search Synonyms page
     $this->synonymsIndex->getPageActionsBlock()->addNew(); // receiving of the page action block with '_rootElement' containing locator which is indicated in the page class for PageActionBlock from the page, makes 'click' action on it
-    $this->synonymsNew->getSynonymForm()->fill($synonym); // enters data from variation in the New Synonym Group fields 
+    $this->synonymsNew->getSynonymForm()->fill($synonym); // enters data from variation in the New Synonym Group fields
     $this->synonymsNew->getFormPageActions()->save(); // `click` on the Save Synonym Group button
 }
 
@@ -900,8 +897,8 @@ The last item in the test description says that the test must check that a succe
 
 ![Message about the successful save]({{site.baseurl}}common/images/ftf/mtf_tutorial_success_message.png)
 
-To cover this, we should create the test assertion ([constraint][]) and add the full class name to a variation of the data set. 
- 
+To cover this, we should create the test assertion ([constraint][]) and add the full class name to a variation of the data set.
+
 Fortunately, this type of assertion  is commonly used in functional tests. If we search on the phrase "SuccessSaveMessage" in `<magento2_root_dir>/dev/tests/functional`, there will be several matches. Let's select from the list of results a [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`][] class. It has the following code:
 
 {% highlight php %}
@@ -1013,7 +1010,7 @@ To handle the messages we use the `\Magento\Backend\Test\Block\Messages` class, 
 {% highlight xml %}
 <block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator="#messages .messages" strategy="css selector"/>
 {% endhighlight %}
-    
+
 This block must be added to `SynonymsIndex` class. To do this:
 
 1) Open `<magento2_root_dir>dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`.
@@ -1056,7 +1053,7 @@ And now we can add `<constraint>` to each variation of a data set `<magento2_roo
 The test is ready to run.
 
 You can run the test using your IDE or the CLI. The Selenium Server must be [up and running][]. To run the test using the CLI, enter in your terminal:
-    
+
     cd <magento2_root_dir>/dev/tests/functional
     vendor/bin/phpunit --filter CreateSynonymEntityTest
 
@@ -1101,7 +1098,7 @@ That's it!
 
 [manual testing]: #manual-test
 [test description]: #auto-test
-[test object]: #test-object
+[test object]: #test-creation
 [Step 2]: #create-test-object
 [Step 3]: #create-init-test-case
 [Step 5]: #create-pages

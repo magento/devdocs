@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Block
-menu_title: Block
-menu_order: 4
 version: 2.0
 github_link: mtf/mtf_entities/mtf_block.md
 ---
@@ -27,9 +24,7 @@ This topic shows how to create a new block and explore its structure. It discuss
 A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
 
 {% collapsible Show/hide the code %}
-{% highlight php %}
-
-<?php
+{% highlight php inline=true %}
 /**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
@@ -219,7 +214,6 @@ protected function addLayoutUpdates()
 {
    $this->_rootElement->find($this->addLayoutUpdates)->click();
 }
-?>
 {%endhighlight%}
 
 This code uses `_rootElement` to search the button element by the `$this->addLayoutUpdates` selector. The advantage of the `_rootElement` is that it enables search in the context of the block to which the element belongs.
@@ -452,7 +446,6 @@ protected function _toHtml()
     }
     return $this->fetchView($this->getTemplateFile());
 }
-?>
 {% endhighlight php %}
 
 * Change the code to the following
@@ -471,7 +464,6 @@ protected function _toHtml()
         . $this->fetchView($template)
         . "<!-- END $name using $template -->";
 }
-?>
 {% endhighlight php %}
 
 * Save the file
@@ -519,7 +511,6 @@ protected function getTemplateBlock()
         ['element' => $this->_rootElement->find($this->templateBlock, Locator::SELECTOR_XPATH)]
     );
 }
-?>
 {%endhighlight%}
 
 In this code we are creating the `Magento\Backend\Test\Block\Template` block with the selector `$this->templateBlock`.
@@ -614,7 +605,6 @@ public function getOptions(FixtureInterface $product)
         ? $this->callRender($typeId, 'getOptions', ['product' => $product])
         : $this->getCustomOptionsBlock()->getOptions($product);
 }
-?>
 {%endhighlight%}
 
 It contains the `getOptions()` method that:

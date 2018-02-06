@@ -6,16 +6,18 @@ title: Manage company roles
 menu_title: Manage company roles
 menu_order: 14
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
 github_link: b2b/roles.md
+functional_areas:
+  - B2B
 ---
 
 
-Within a company, customers may have different job roles, levels of responsibility, and access to information about their company. B2B defines several types of system resources, and the Company Admin (or an integration that operates on the behalf of the Company Admin) grants or denies access to these resources using company roles. The Company Admin has access to all resources.
+Within a company, customers may have different job roles, levels of responsibility, and access to information about their company. {{site.data.var.b2b}} defines several types of system resources, and the Company Admin (or an integration that operates on the behalf of the Company Admin) grants or denies access to these resources using company roles. The Company Admin has access to all resources.
 
-B2B defines the following types of resources:
+{{site.data.var.b2b}} defines the following types of resources:
 
 * Sales
 * Negotiable quotes
@@ -501,6 +503,8 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 ### Return all information about a role
 
+This call returns the `id`, role name, and set of permissions defined within the specified `role_id`.
+
 **Sample Usage**
 
 `GET /V1/company/role/6`
@@ -694,7 +698,7 @@ None
 
 The following call returns all roles that have been created for a company  (`company_id` = `2`).
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 

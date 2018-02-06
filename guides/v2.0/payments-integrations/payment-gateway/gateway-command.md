@@ -37,7 +37,7 @@ In the following example the `BraintreeAuthorizeCommand` gateway command is adde
 </virtualType>
 {% endhighlight %}
 
-(The code sample is from Magento CE v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)
+(The code sample is from {{site.data.var.ce}} v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)
 
 A gateway command must be configured with the following arguments:
 

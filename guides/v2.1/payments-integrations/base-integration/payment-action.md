@@ -7,6 +7,8 @@ menu_title: Add a payment action
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/base-integration/payment-action.md
+functional_areas:
+  - Integration
 ---
 
 For each payment action available for the payment method, you must implement the following:
@@ -21,12 +23,12 @@ For each payment action available for the payment method, you must implement the
 
 The gateway command for the payment action must be configured in the `di.xml` file of your module. Conventionally, its location must be `<your_module_dir>/etc/di.xml`
 
-Configure the command as described in [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
+Configure the command as described in [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
 
 
 ## Example: `authorize` payment action for Braintree
 
-Configuring the gateway command and adding it to command pool (`app/code/Magento/Braintree/etc/di.xml`): 
+Configuring the gateway command and adding it to command pool (`app/code/Magento/Braintree/etc/di.xml`):
 
 {% highlight xml %}
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
@@ -77,4 +79,3 @@ Please see the [Get payment information from frontend to backend]({{page.baseurl
 ## Related topics
 
 - [Add a custom payment method to checkout]({{page.baseurl}}howdoi/checkout/checkout_payment.html): how to add a custom payment integration to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page.
-

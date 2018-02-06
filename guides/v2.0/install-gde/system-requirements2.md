@@ -8,7 +8,13 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/system-requirements2.md
-redirect_from: /guides/v2.0/install-gde/system-requirements-2.0.html
+redirect_from:
+  - /guides/v2.0/install-gde/system-requirements-2.0.html
+  - /guides/v2.0/install-gde/system-requirements.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 Our system requirements include required software to run the Magento application, supported web browsers, and also recent requirements to securely connect with our software repository and with PayPal.

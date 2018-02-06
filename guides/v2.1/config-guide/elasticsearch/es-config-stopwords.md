@@ -7,11 +7,14 @@ menu_title: Configure Elasticsearch stopwords
 menu_order: 10
 menu_node:
 version: 2.1
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-stopwords.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
-
 
 #### Contents
 
