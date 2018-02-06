@@ -57,8 +57,8 @@ No special reference is required, as you are still just referring to an `element
 
 <!-- Internal -->
 
-[section]: ../section.html
 [parameterized selectors]: ./parameterized-selectors.html
+[section]: ../section.html
 
 <!-- External -->
 [Locator Functions]: http://codeception.com/docs/reference/Locator

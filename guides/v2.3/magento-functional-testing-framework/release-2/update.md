@@ -49,9 +49,10 @@ $ vendor/bin/robo generate:tests
 <!-- LINK DEFINITIONS -->
 
 [Changelog]: ../changelog.html
+
 [`develop`]: https://github.com/magento/magento2-functional-testing-framework
-[WYSIWYG settings]: getting-started.html#wysiwyg-settings
 [Security settings]: getting-started.html#security-settings
+[WYSIWYG settings]: getting-started.html#wysiwyg-settings
 
 <!-- Abbreviations -->
 

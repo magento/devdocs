@@ -3,7 +3,7 @@ layout: default
 group: graphql
 version: 2.3
 title: Resolvers
-github_link: graphql/resolvers.md
+github_link: graphql/develop/resolvers.md
 ---
 
 A resolver performs GraphQL request processing. In general, it is responsible for constructing a query, fetching data and performing any calculations, then transforming the fetched and calculated data into a GraphQL array format. Finally, it returns the results to the query for rendering.

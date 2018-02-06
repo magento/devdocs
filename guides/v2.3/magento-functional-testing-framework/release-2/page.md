@@ -163,15 +163,17 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 
 <!-- LINK DEFINITIONS -->
 
-[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-[test]: ./test.html
+[explicit page]: #explicit-page
+[parameterized page]: #parameterized-page
+
 [createData]: ./test/actions.html#createdata
 [section]: ./section.html
-[explicit page]: #explicit-page
-[parameterized page]: #parameterized-page.
+[test]: ./test.html
+
+[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 
 <!-- Abbreviations -->
 
+*[ID]: Identifier
 *[MFTF]: Magento Functional Testing Framework
 *[UI]: User Interface
-*[ID]: Identifier

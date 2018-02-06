@@ -23,6 +23,9 @@ versions:
    -
       name: "2.2"
       url: guides/v2.2/
+   -
+      name: "2.3 Pre-release"
+      url: guides/v2.3/
 
 # GitHub variables
 github: "https://github.com/magento/devdocs/tree/develop/guides/"
