@@ -90,6 +90,10 @@ Click the base link and then click **Create pull request**. Provide a descriptiv
 
 Scroll to the bottom of the page and click **Merge pull request**, then click **Confirm Merge**.
 
+You can see the next video to understand the process:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mJDCL0uzIpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 <h2 id="pull_request">Create a pull request</h2>
 
 First, check the <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
