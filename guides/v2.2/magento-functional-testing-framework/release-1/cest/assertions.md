@@ -19,7 +19,7 @@ This topic contains general information about assertions in the MFTF and the ref
 
 Assertions serve to pass or fail the test if a condition is not met. These assertions will look familiar to you if you've used any other framework like PHPUnit.
 
-All assertions contain same [common actions attributes](./actions#common-attributes): `stepKey`, `before`, and `after`.
+All assertions contain same [common actions attributes](./actions.html#common-attributes): `stepKey`, `before`, and `after`.
 
 Most assertions contain attribute `message` that specifies text of an informational message to help you to know more about the cause of the failure.
 

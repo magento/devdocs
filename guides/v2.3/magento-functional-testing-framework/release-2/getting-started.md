@@ -192,14 +192,14 @@ $ vendor/bin/robo allure2:report
 [allure commands]: commands/robo.html#allure-robo-commands
 
 [php]: {{page.baseurl}}install-gde/system-requirements-tech.html#php
-[composer]: https://getcomposer.org/download/
-[java]: https://www.java.com/en/download/
 
-[selenium server]: http://www.seleniumhq.org/download/
-[selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
-[Install Allure]: https://docs.qameta.io/allure/latest/
 [allure reports]: https://docs.qameta.io/allure/latest/#_report_structure
 [chromedriver]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+[composer]: https://getcomposer.org/download/
+[Install Allure]: https://docs.qameta.io/allure/latest/
+[java]: https://www.java.com/en/download/
+[selenium server]: http://www.seleniumhq.org/download/
+[selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
 
 <!-- Abbreviations -->
 
