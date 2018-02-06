@@ -8,16 +8,20 @@ functional_areas:
  - Testing
 ---
 
+_This topic corresponds to the MFTF {{page.mftf-release}} release._
+{: style="text-align: right"}
+
 The MFTF allows you to merge entities defined in XML files such as [Tests], [Pages], [Sections], and [Data].
 It is useful for supporting rapid test creation for extensions and customizations.
 
-We allow a user to specify their changes needed to an existing file and to have that merged.
+You can specify changes needed to an existing file and have that merged.
 This produces a modification of the original that incorporates the specified changes (the 'delta').
 
 ## General
 
-Merging operates on XML tag level. It is triggered by our parser when there are two (or more) entities with the same name.
-Therefore, your change file (file with changes) must have the same file name and the same attribute `name`  as its base file (target object to be changed).
+Merging operates on XML tag level.
+It is triggered by our parser when there are two (or more) entities with the same name.
+Therefore, your change file (file with changes) **must have** the same file name and the same attribute `name` as its base file (target object to be changed).
 
 ### Deletion
 
@@ -27,108 +31,147 @@ This is done by using the `<remove>` action and specifying a `stepKey` of the ac
 ## Merging in Tests
 
 ### Add a test
-Adding of a `<test>` is done by creating a new file, or adding a `<test>` node to an existing `*test.xml` file.
+
+Adding of a `<test>` is done by creating a new file, or adding a `<test>` node to an existing `*Test.xml` file.
+
+<!-- **Use case**: Add a test for the `Magento_Foo` module related to your extension implemented in the `Foo_extension` module
+`Magento_Foo` -->
+
+
 
 ### Remove a test
-Tests cannot be removed by deltas. If a test must be skipped due to a module completely invalidating a functionality, you can add the test to the `skip` group.
+
+Tests **cannot be removed** while merging.
+
+If a test must be skipped due to a module completely invalidating a functionality, you can add the test to the `skip` group.
+
+Learn more about running tests with different options using [robo] or [codecept] commands.
+
+**Example**:
+
+Skip `AdminLoginTest` test in `.../Backend/Test/AdminLoginTest.xml` while merging with `.../Foo/Test/AdminLoginTest.xml`:
+
+`.../Backend/Test/AdminLoginTest.xml` code:
 
 ```xml
-<test name="AdminLoginTest">
-        <annotations>
-            <features value="Admin Login"/>
-            <stories value="Login on the Admin Login page"/>
-            <title value="You should be able to log into the Magento Admin backend."/>
-            <description value="You should be able to log into the Magento Admin backend."/>
-            <severity value="CRITICAL"/>
-            <testCaseId value="MAGETWO-71572"/>
-            <group value="example"/>
-            <group value="login"/>
-        </annotations>
-    <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
-    <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
-    <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
-    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
-    <closeAdminNotification stepKey="closeAdminNotification"/>
-    <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
-</test>
+<tests ...>
+    <test name="AdminLoginTest">
+            <annotations>
+                <features value="Admin Login"/>
+                <stories value="Login on the Admin Login page"/>
+                <title value="You should be able to log into the Magento Admin backend."/>
+                <description value="You should be able to log into the Magento Admin backend."/>
+                <severity value="CRITICAL"/>
+                <testCaseId value="MAGETWO-71572"/>
+                <group value="example"/>
+                <group value="login"/>
+            </annotations>
+        <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
+        <closeAdminNotification stepKey="closeAdminNotification"/>
+        <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
+    </test>
+</tests>
 ```
 
-```xml
-<test name="AdminLoginTest">
-        <annotations>
-            <group value="skip"/>
-        </annotations>
-</test>
-```
+Create `.../Foo/Test/AdminLoginTest.xml`:
 
 ```xml
-<test name="AdminLoginTest">
-        <annotations>
-            <features value="Admin Login"/>
-            <stories value="Login on the Admin Login page"/>
-            <title value="You should be able to log into the Magento Admin backend."/>
-            <description value="You should be able to log into the Magento Admin backend."/>
-            <severity value="CRITICAL"/>
-            <testCaseId value="MAGETWO-71572"/>
-            <group value="example"/>
-            <group value="login"/>
-            <group value="skip"/>
-        </annotations>
-    <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
-    <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
-    <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
-    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
-    <closeAdminNotification stepKey="closeAdminNotification"/>
-    <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
-</test>
+<tests ...>
+    <test name="AdminLoginTest">
+            <annotations>
+                <group value="skip"/>
+            </annotations>
+    </test>
+</tests>
+```
+
+Resulted `AdminLoginTest` will correspond to the following code:
+
+```xml
+<tests ...>
+    <test name="AdminLoginTest">
+            <annotations>
+                <features value="Admin Login"/>
+                <stories value="Login on the Admin Login page"/>
+                <title value="You should be able to log into the Magento Admin backend."/>
+                <description value="You should be able to log into the Magento Admin backend."/>
+                <severity value="CRITICAL"/>
+                <testCaseId value="MAGETWO-71572"/>
+                <group value="example"/>
+                <group value="login"/>
+                <group value="skip"/>
+            </annotations>
+        <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickOnSignIn"/>
+        <closeAdminNotification stepKey="closeAdminNotification"/>
+        <seeInCurrentUrl url="{{AdminLoginPage.url}}" stepKey="seeAdminLoginUrl"/>
+    </test>
+</tests>
 ```
 
 ### Update a test
 
 Any change must specify it's sequence.
-This means it must include information about where it should be inserted relative to other test steps - usually relative to the original, but can reference itself or other change files.
+This means it must include information about where it should be inserted relative to other test steps.
+Usually, is is relative to the original, but can reference itself or other change files.
 
-This is done by a `before` or after `element`. See the above example.
+This is done by a `before` or `after` element.
 The action can only specify either a before or after.
+See the above examples.
 
 #### Add an action
 
-Test:
+**Use case**: Add `checkOption` before `click` and `seeInCurrentUrl` to the `LogInAsAdminTest` test (in `.../Backend/Test/LogInAsAdminTest.xml`) while merging with `.../Foo/Test/LogInAsAdminTest.xml`
+
+`.../Backend/Test/LogInAsAdminTest.xml` code:
 
 ```xml
-<test name="LogInAsAdminTest">
-    <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
-    <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
-    <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
-    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
-    <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
-</test>
+<tests ...>
+    <test name="LogInAsAdminTest">
+        <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
+        <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
+    </test>
+</tests>
 ```
 
-Update:
+Create `.../Foo/Test/LogInAsAdminTest.xml`:
 
 ```xml
-<test name="LogInAsAdminTest">
-    <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe" before="clickLogin"/>
-    <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl" after="clickLogin"/>
-</test>
+<tests ...>
+    <test name="LogInAsAdminTest">
+        <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe" before="clickLogin"/>
+        <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl" after="clickLogin"/>
+    </test>
+</tests>
 ```
 
-Result
+Resulted `LogInAsAdminTest` will correspond to the following code:
 
 ```xml
-<test name="LogInAsAdminTest">
-    <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
-    <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
-    <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
-    <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
-    <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
-    <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
-    <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
-</test>
+<tests ...>
+    <test name="LogInAsAdminTest">
+        <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
+        <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
+        <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
+        <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
+    </test>
+</tests>
 ```
 
 #### Remove an action
+
+**Use case**: Remove an actions from the `LogInAsAdminTest` test (in `.../Backend/Test/LogInAsAdminTest.xml`) while merging with `.../Foo/Test/LogInAsAdminTest.xml`
 
 Test:
 
@@ -367,7 +410,13 @@ Result
 
 <!-- LINK DEFINITIONS -->
 
-[Tests]: ./test.html
-[Pages]: ./page.html
-[Sections]: ./section.html
+[codecept]: ./commands/codeception.html
 [Data]: ./data.html
+[Pages]: ./page.html
+[robo]: ./commands/robo.html#run-all-functional-tests-excluding-group-skip
+[Sections]: ./section.html
+[Tests]: ./test.html
+
+
+
+
