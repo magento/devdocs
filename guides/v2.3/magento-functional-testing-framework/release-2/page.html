@@ -651,7 +651,7 @@ Avoiding hardcoded location selectors from tests increases the maintainability a
 
 <ul>
   <li>page with <code class="highlighter-rouge">url</code> declared as a constant string or <a href="#explicit-page">explicit page</a>. It is called in a test in a format like <code class="highlighter-rouge">{{NameOfPage.url}}</code> , where <code class="highlighter-rouge">NameOfPage</code> is a value of <code class="highlighter-rouge">name</code> in corresponding page declaration <em>*.xml</em> file.</li>
-  <li>page with <code class="highlighter-rouge">url</code> declared as a string with one or more variables or <a href="#parameterized-page.">parameterized page</a>. It is called in a test using a format like <code class="highlighter-rouge">{{NameOfPage.url(var1, var2, ...)}}</code>, where <code class="highlighter-rouge">var1, var2, ...</code> are parameters that will be substituted in <code class="highlighter-rouge">url</code> of the corresponding <code class="highlighter-rouge">&lt;page&gt;</code> declaration.</li>
+  <li>page with <code class="highlighter-rouge">url</code> declared as a string with one or more variables or <a href="#parameterized-page">parameterized page</a>. It is called in a test using a format like <code class="highlighter-rouge">{{NameOfPage.url(var1, var2, ...)}}</code>, where <code class="highlighter-rouge">var1, var2, ...</code> are parameters that will be substituted in <code class="highlighter-rouge">url</code> of the corresponding <code class="highlighter-rouge">&lt;page&gt;</code> declaration.</li>
 </ul>
 
 <p>The following diagram demonstrates XML structure of a page in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>:</p>
