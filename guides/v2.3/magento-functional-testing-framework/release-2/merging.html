@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Merging in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/magento-functional-testing-framework/release-2/merging.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/release-2/merging.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/release-2/merging.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/release-2/merging.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/release-2/merging.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Magento Functional Testing Framework Guide</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="mftf-release-2">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">MFTF release 2</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="getting-started">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="test">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/test.html">Test</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="annotations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/test/annotations.html">Annotations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="actions">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/test/actions.html">Actions</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="action-groups">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/test/action-groups.html">Action groups</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="assertions">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/test/assertions.html">Assertions</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="page">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/page.html">Page</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="section">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/section.html">Section</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="parameterized-selectors">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/parameterized-selectors.html">Parameterized selectors</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="locator-functions">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="data">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/data.html">Data</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="merging">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/merging.html">Merging</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="cli-commands">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>CLI Commands</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="robo">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="codecept">
+                    
+
+                    
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/codeception.html">codecept</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="update">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/update.html">Update</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="tips-and-tricks">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="troubleshooting">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/troubleshooting.html">Troubleshooting</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+    
+    
+
+<li class="nav-level1  " id="contribution-guidelines">
+
+    
+    
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/contribution-guidelines.html">Contribution Guidelines</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="changelog">
+
+    
+    
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/changelog.html">Changelog</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Merging in the Magento Functional Testing Framework</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Merging in the Magento Functional Testing Framework</h1>
+
+  
+
+
+</section>
+
+
+			<p style="text-align: right"><em>This topic corresponds to the MFTF 2.0.2 release.</em></p>
+
+<p>The MFTF allows you to merge test components defined in XML files such as <a href="./test.html">Tests</a>, <a href="./page.html">Pages</a>, <a href="./section.html">Sections</a>, and <a href="./data.html">Data</a>.
+You can create, delete, or update the component.
+It is useful for supporting rapid test creation for extensions and customizations.</p>
+
+<p>You can specify changes needed to an existing file and have that merged.
+This produces a modification of the original that incorporates the specified changes (the ‘delta’).</p>
+
+<h2 id="general">General</h2>
+
+<p>Merging operates on XML tag level.
+It is triggered by our parser when there are two (or more) entities with the same name.
+Therefore, your update (XML node with changes) <strong>must have</strong> the same attribute <code class="highlighter-rouge">name</code> as its base node (target object to be changed).</p>
+
+<p>For example:</p>
+<ul>
+  <li>all tests with <code class="highlighter-rouge">&lt;test name="SampleTest&gt;</code> will be merged into one</li>
+  <li>all pages with <code class="highlighter-rouge">&lt;page name="SamplePage&gt;</code> will be merged into one</li>
+  <li>all sections with <code class="highlighter-rouge">&lt;section name="SampleAction"&gt;</code> will be merged into one</li>
+  <li>all data entities with <code class="highlighter-rouge">&lt;entity name="sampleData" type="sample"&gt;</code> will be merged into one</li>
+</ul>
+
+<p>Although a file name doesn’t influence merging, we recommend to use same file names in merging updates, for convenience of search.</p>
+
+<h2 id="merging-in-tests">Merging in Tests</h2>
+
+<h3 id="add-a-test">Add a test</h3>
+
+<p>There is no way to add another <a href="./test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a> using merging functionality.
+Adding of a <code class="highlighter-rouge">&lt;test&gt;</code> is done by creating a new <code class="highlighter-rouge">*Test.xml</code> file, or adding a <code class="highlighter-rouge">&lt;test&gt;</code> node to an existing <code class="highlighter-rouge">*Test.xml</code> file.</p>
+
+<h3 id="remove-a-test">Remove a test</h3>
+
+<p>Tests <strong>cannot be removed</strong> while merging.</p>
+
+<p>If a <a href="./test.html">test</a> must be skipped due to a module completely invalidating a functionality, you can add the test to the <code class="highlighter-rouge">skip</code> group.</p>
+
+<p>Learn more about running tests with different options using <a href="./commands/robo.html#run-all-functional-tests-excluding-group-skip">robo</a> or <a href="./commands/codeception.html">codecept</a> commands.</p>
+
+<p><strong>Example</strong>:</p>
+
+<p>Skip the <code class="highlighter-rouge">AdminLoginTest</code> test in <code class="highlighter-rouge">.../Backend/Test/AdminLoginTest.xml</code> while merging with <code class="highlighter-rouge">.../Foo/Test/AdminLoginTest.xml</code>:</p>
+
+<p><code class="highlighter-rouge">.../Backend/Test/AdminLoginTest.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"AdminLoginTest"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;annotations&gt;</span>
+                <span class="nt">&lt;features</span> <span class="na">value=</span><span class="s">"Admin Login"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;stories</span> <span class="na">value=</span><span class="s">"Login on the Admin Login page"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"You should be able to log into the Magento Admin backend."</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;description</span> <span class="na">value=</span><span class="s">"You should be able to log into the Magento Admin backend."</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;severity</span> <span class="na">value=</span><span class="s">"CRITICAL"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;testCaseId</span> <span class="na">value=</span><span class="s">"MAGETWO-71572"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"example"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"login"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/annotations&gt;</span>
+        <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"amOnAdminLoginPage"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickOnSignIn"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;closeAdminNotification</span> <span class="na">stepKey=</span><span class="s">"closeAdminNotification"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"seeAdminLoginUrl"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../Foo/Test/AdminLoginTest.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"AdminLoginTest"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;annotations&gt;</span>
+                <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"skip"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/annotations&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">AdminLoginTest</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"AdminLoginTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;annotations&gt;</span>
+            <span class="nt">&lt;features</span> <span class="na">value=</span><span class="s">"Admin Login"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;stories</span> <span class="na">value=</span><span class="s">"Login on the Admin Login page"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"You should be able to log into the Magento Admin backend."</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;description</span> <span class="na">value=</span><span class="s">"You should be able to log into the Magento Admin backend."</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;severity</span> <span class="na">value=</span><span class="s">"CRITICAL"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;testCaseId</span> <span class="na">value=</span><span class="s">"MAGETWO-71572"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"example"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"login"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"skip"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/annotations&gt;</span>
+    <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"amOnAdminLoginPage"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickOnSignIn"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;closeAdminNotification</span> <span class="na">stepKey=</span><span class="s">"closeAdminNotification"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"seeAdminLoginUrl"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/test&gt;</span>
+</code></pre></div></div>
+
+<h3 id="update-a-test">Update a test</h3>
+
+<p>Any change must include information about where it should be inserted relative to other test steps in scope of test.</p>
+
+<p>This is done using the <code class="highlighter-rouge">before</code> or <code class="highlighter-rouge">after</code> element.
+The action can only specify either a before or after correspondingly.
+See the examples given above.</p>
+
+<h4 id="add-a-test-step">Add a test step</h4>
+
+<p><strong>Use case</strong>: Add <code class="highlighter-rouge">checkOption</code> before <code class="highlighter-rouge">click</code> (<code class="highlighter-rouge">stepKey="clickLogin"</code>) and <code class="highlighter-rouge">seeInCurrentUrl</code> after the <code class="highlighter-rouge">click</code> in the <code class="highlighter-rouge">LogInAsAdminTest</code> test (in <code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code>) while merging with <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code></p>
+
+<p><code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Lifetime Sales"</span> <span class="na">stepKey=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;checkOption</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"checkRememberMe"</span> <span class="na">before=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">"admin/admin/dashboard/"</span> <span class="na">stepKey=</span><span class="s">"seeAdminUrl"</span> <span class="na">after=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">LogInAsAdminTest</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;checkOption</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"checkRememberMe"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">"admin/admin/dashboard/"</span> <span class="na">stepKey=</span><span class="s">"seeAdminUrl"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Lifetime Sales"</span> <span class="na">stepKey=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/test&gt;</span>
+</code></pre></div></div>
+
+<h4 id="remove-a-test-step">Remove a test step</h4>
+
+<p><strong>Use case</strong>: Remove <code class="highlighter-rouge">see</code> (<code class="highlighter-rouge">stepKey="seeLifetimeSales"</code>) from the <code class="highlighter-rouge">LogInAsAdminTest</code> test (in <code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code>) while merging with <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code></p>
+
+<p><code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Lifetime Sales"</span> <span class="na">stepKey=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">keyForRemoval=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">LogInAsAdminTest</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/test&gt;</span>
+</code></pre></div></div>
+
+<h4 id="update-a-test-step">Update a test step</h4>
+
+<p><strong>Use case</strong>: Change selector in <code class="highlighter-rouge">fillField</code> (<code class="highlighter-rouge">stepKey="fillPassword"</code>) of the <code class="highlighter-rouge">LogInAsAdminTest</code> test (in <code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code>) while merging with <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Lifetime Sales"</span> <span class="na">stepKey=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">LogInAsAdminTest</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Lifetime Sales"</span> <span class="na">stepKey=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/test&gt;</span>
+</code></pre></div></div>
+
+<h2 id="pages-merging">Pages merging</h2>
+
+<p>Using merging in <a href="./page.html">pages</a>, you can add or remove <a href="./section.html">sections</a> defining updates in your module.
+To merge <a href="./page.html">pages</a>, the <code class="highlighter-rouge">page name</code> must be the same as in base module, whish is set in the <code class="highlighter-rouge">module</code> attribute.</p>
+
+<h3 id="add-a-section">Add a section</h3>
+
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires use of two new sections that must be covered with tests.
+Add <code class="highlighter-rouge">BaseBackendSection</code> and <code class="highlighter-rouge">AnotherBackendSection</code> to the <code class="highlighter-rouge">BaseBackendPage</code>.</p>
+
+<p><code class="highlighter-rouge">.../Backend/Page/BaseBackendPage.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;pages</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"BaseBackendPage"</span> <span class="na">url=</span><span class="s">"admin"</span> <span class="na">area=</span><span class="s">"admin"</span> <span class="na">module=</span><span class="s">"Magento_Backend"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"BaseBackendSection"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AnotherBackendSection"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/pages&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../FooBackend/Page/BaseBackendPage.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;pages</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"BaseBackendPage"</span> <span class="na">url=</span><span class="s">"admin"</span> <span class="na">area=</span><span class="s">"admin"</span> <span class="na">module=</span><span class="s">"Magento_Backend"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"NewExtensionSection"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/pages&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">BaseBackendPage</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"BaseBackendPage"</span> <span class="na">url=</span><span class="s">"admin"</span> <span class="na">area=</span><span class="s">"admin"</span> <span class="na">module=</span><span class="s">"Magento_Backend"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"BaseBackendSection"</span><span class="nt">/&gt;</span>    
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AnotherBackendSection"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"NewExtensionSection"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
+
+<h3 id="remove-a-section">Remove a section</h3>
+
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires deletion of <code class="highlighter-rouge">AnotherBackendSection</code> section.</p>
+
+<p><code class="highlighter-rouge">.../Backend/Page/BaseBackendPage.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"BaseBackendPage"</span> <span class="na">url=</span><span class="s">"admin"</span> <span class="na">area=</span><span class="s">"admin"</span> <span class="na">module=</span><span class="s">"Magento_Backend"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"BaseBackendSection"</span><span class="nt">/&gt;</span>    
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AnotherBackendSection"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../FooBackend/Page/BaseBackendPage.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"BaseBackendPage"</span> <span class="na">url=</span><span class="s">"admin"</span> <span class="na">area=</span><span class="s">"admin"</span> <span class="na">module=</span><span class="s">"Magento_Backend"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AnotherBackendSection"</span> <span class="na">remove=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">BaseBackendPage</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"BaseBackendPage"</span> <span class="na">url=</span><span class="s">"admin"</span> <span class="na">area=</span><span class="s">"admin"</span> <span class="na">module=</span><span class="s">"Magento_Backend"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"BaseBackendSection"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
+
+<h2 id="sections-merging">Sections merging</h2>
+
+<p>If you need to add, remove, or update <a href="././section.html#element-tag">elements</a> in sections, you can use merging functionality.
+All sections with the same <em>file name</em>, <em>section name</em>, and <em>element name</em> are merged during test generation.</p>
+
+<h3 id="add-an-element">Add an element</h3>
+
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires a new element <code class="highlighter-rouge">mergeElement</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>.
+Add <code class="highlighter-rouge">mergeElement</code> to the <code class="highlighter-rouge">AdminLoginFormSection</code>.</p>
+
+<p><code class="highlighter-rouge">.../Backend/Section/AdminLoginFormSection.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#username"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#login"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signIn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">".actions .action-primary"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/sections&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../FooBackend/Section/AdminLoginFormSection.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"mergeElement"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#selector"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/sections&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">AdminLoginFormSection</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#username"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#login"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signIn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">".actions .action-primary"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"mergeElement"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#selector"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h3 id="remove-an-element">Remove an element</h3>
+
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires deletion of <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>.
+Remove <code class="highlighter-rouge">username</code> from the <code class="highlighter-rouge">AdminLoginFormSection</code>.</p>
+
+<p><code class="highlighter-rouge">.../Backend/Section/AdminLoginFormSection.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#username"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#login"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signIn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">".actions .action-primary"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/sections&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../FooBackend/Section/AdminLoginFormSection.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">remove=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/sections&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">AdminLoginFormSection</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#login"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signIn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">".actions .action-primary"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h3 id="update-an-element">Update an element</h3>
+
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires change of selector in <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>.
+Update <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>.</p>
+
+<p><code class="highlighter-rouge">.../Backend/Section/AdminLoginFormSection.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#username"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#login"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signIn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">".actions .action-primary"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/sections&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../FooBackend/Section/AdminLoginFormSection.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#newSelector"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/sections&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">AdminLoginFormSection</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#newSelector"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#login"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signIn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">".actions .action-primary"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h2 id="data-merging">Data merging</h2>
+
+<p>You can add or update <code class="highlighter-rouge">&lt;data&gt;</code> elements within an [entity]. Removal of individual <code class="highlighter-rouge">&lt;data&gt;</code> tags is not supported.
+Entities and data with the same <em>file name</em>, <em>entity name and type</em>, and <em>data key</em> are merged during test generation.</p>
+
+<h3 id="add-data">Add data</h3>
+
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooSample</code> module extends the <code class="highlighter-rouge">Sample</code> module and requires a new data item <code class="highlighter-rouge">thirdField</code> in the <code class="highlighter-rouge">_defaultSample</code> entity.
+Add <code class="highlighter-rouge">&lt;data key="thirdField"&gt;field3&lt;/data&gt;</code> to the <code class="highlighter-rouge">_defaultSample</code>.</p>
+
+<p><code class="highlighter-rouge">.../Sample/Data/SampleData.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entities</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultSample"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"firstField"</span><span class="nt">&gt;</span>field1<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"secondField"</span><span class="nt">&gt;</span>field2<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/entities&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../FooSample/Data/SampleData.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entities</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"sampleData"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"thirdField"</span><span class="nt">&gt;</span>field3<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/entities&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">_defaultSample</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultSample"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"firstField"</span><span class="nt">&gt;</span>field1<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"secondField"</span><span class="nt">&gt;</span>field2<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"thirdField"</span><span class="nt">&gt;</span>field3<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<h3 id="update-data">Update data</h3>
+
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooSample</code> module extends the <code class="highlighter-rouge">Sample</code> module and requires change of data item <code class="highlighter-rouge">firstField</code> in the <code class="highlighter-rouge">_defaultSample</code> entity.
+Change <code class="highlighter-rouge">firstField</code> to <code class="highlighter-rouge">&lt;data key="firstField"&gt;overrideField&lt;/data&gt;</code> in the <code class="highlighter-rouge">_defaultSample</code>.</p>
+
+<p><code class="highlighter-rouge">.../Sample/Data/SampleData.xml</code> code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entities</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultSample"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"firstField"</span><span class="nt">&gt;</span>field1<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"secondField"</span><span class="nt">&gt;</span>field2<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<p>Create <code class="highlighter-rouge">.../FooSample/Data/SampleData.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entities</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultSample"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"firstField"</span><span class="nt">&gt;</span>overrideField<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/entity&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<p>The resulted <code class="highlighter-rouge">_defaultSample</code> will correspond to the following code:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultSample"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"firstField"</span><span class="nt">&gt;</span>overrideField<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"secondField"</span><span class="nt">&gt;</span>field2<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<!-- LINK DEFINITIONS -->
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/magento-functional-testing-framework/release-2/merging.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/magento-functional-testing-framework/release-2/merging.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
