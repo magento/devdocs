@@ -12,7 +12,8 @@ mftf-release: 2.0.2
 _This topic corresponds to the MFTF {{page.mftf-release}} release._
 {: style="text-align: right"}
 
-The MFTF allows you to merge entities defined in XML files such as [Tests], [Pages], [Sections], and [Data].
+The MFTF allows you to merge test components defined in XML files such as [Tests][test], [Pages][page], [Sections][section], and [Data][data].
+You can create, delete, or update the component.
 It is useful for supporting rapid test creation for extensions and customizations.
 
 You can specify changes needed to an existing file and have that merged.
@@ -22,35 +23,34 @@ This produces a modification of the original that incorporates the specified cha
 
 Merging operates on XML tag level.
 It is triggered by our parser when there are two (or more) entities with the same name.
-Therefore, your change file (file with changes) **must have** the same file name and the same attribute `name` as its base file (target object to be changed).
+Therefore, your update (XML node with changes) **must have** the same attribute `name` as its base node (target object to be changed).
 
-### Deletion
+For example:
+* all tests with `<test name="SampleTest>` will be merged into one
+* all pages with `<page name="SamplePage>` will be merged into one
+* all sections with `<section name="SampleAction">` will be merged into one
+* all data entities with `<entity name="sampleData" type="sample">` will be merged into one
 
-An action can be removed from the original test.
-This is done by using the `<remove>` action and specifying a `stepKey` of the action in the original file to be removed.
+Although a file name doesn't influence merging, we recommend to use same file names in merging updates, for convenience of search.
 
 ## Merging in Tests
 
 ### Add a test
 
-Adding of a `<test>` is done by creating a new file, or adding a `<test>` node to an existing `*Test.xml` file.
-
-<!-- **Use case**: Add a test for the `Magento_Foo` module related to your extension implemented in the `Foo_extension` module
-`Magento_Foo` -->
-
-
+There is no way to add another [`<test>`][test] using merging functionality.
+Adding of a `<test>` is done by creating a new `*Test.xml` file, or adding a `<test>` node to an existing `*Test.xml` file.
 
 ### Remove a test
 
 Tests **cannot be removed** while merging.
 
-If a test must be skipped due to a module completely invalidating a functionality, you can add the test to the `skip` group.
+If a [test] must be skipped due to a module completely invalidating a functionality, you can add the test to the `skip` group.
 
 Learn more about running tests with different options using [robo] or [codecept] commands.
 
 **Example**:
 
-Skip `AdminLoginTest` test in `.../Backend/Test/AdminLoginTest.xml` while merging with `.../Foo/Test/AdminLoginTest.xml`:
+Skip the `AdminLoginTest` test in `.../Backend/Test/AdminLoginTest.xml` while merging with `.../Foo/Test/AdminLoginTest.xml`:
 
 `.../Backend/Test/AdminLoginTest.xml` code:
 
@@ -115,13 +115,11 @@ The resulted `AdminLoginTest` will correspond to the following code:
 
 ### Update a test
 
-Any change must specify it's sequence.
-This means it must include information about where it should be inserted relative to other test steps.
-Usually, is is relative to the original, but can reference itself or other change files.
+Any change must include information about where it should be inserted relative to other test steps in scope of test.
 
-This is done by a `before` or `after` element.
-The action can only specify either a before or after.
-See the above examples.
+This is done using the `before` or `after` element.
+The action can only specify either a before or after correspondingly.
+See the examples given above.
 
 #### Add a test step
 
@@ -189,7 +187,7 @@ Create `.../Foo/Test/LogInAsAdminTest.xml`:
 ```xml
 <tests ...>
     <test name="LogInAsAdminTest">
-        <see stepKey="seeLifetimeSales" remove="true"/>
+        <remove keyForRemoval="seeLifetimeSales"/>
     </test>
 </tests>
 ```
@@ -246,7 +244,7 @@ The resulted `LogInAsAdminTest` will correspond to the following code:
 ## Pages merging
 
 Using merging in [pages][page], you can add or remove [sections][section] defining updates in your module.
-To merge [pages][page], the file name and `page name` must be the same as in base model (set in the `module` attribute).
+To merge [pages][page], the `page name` must be the same as in base module, whish is set in the `module` attribute.
 
 ### Add a section
 
@@ -509,11 +507,12 @@ The resulted `_defaultSample` will correspond to the following code:
 <!-- LINK DEFINITIONS -->
 
 [codecept]: ./commands/codeception.html
-[Data]: ./data.html
-[Pages]: ./page.html
+[data]: ./data.html
+[element]: ././section.html#element-tag
+[page]: ./page.html
 [robo]: ./commands/robo.html#run-all-functional-tests-excluding-group-skip
-[Sections]: ./section.html
-[Tests]: ./test.html
+[section]: ./section.html
+[test]: ./test.html
 
 
 
