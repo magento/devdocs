@@ -2226,6 +2226,7 @@ composer require fastly/magento2
     <li>In the <strong>Fastly Configuration</strong> section, expand <strong>Advanced</strong>.</li>
     <li>All purge options display. Select “Yes” per purge option to enable automatic purging. Select “No” to disable automatic purging, allowing you to manually purge caches through the Cache Management page.</li>
     <li>Click <strong>Save Config</strong> at the top of the page.</li>
+    <li>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</li>
   </ol>
 
   <p>For more information, see <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options" target="\_blank">Fastly’s configuration options</a>.</p>
@@ -2257,7 +2258,16 @@ composer require fastly/magento2
   <p>For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></p>
 
   <h2 id="bulkaction">Extend Fastly timeout for the Magento Admin</h2>
-  <p>Fastly enforces a 180 second (three minute) timeout for HTTPS requests for the Magento Admin. If you need to complete bulk actions, you may encounter timeouts from Fastly. You can extend the timeout using a <a href="/guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html">custom VCL snippet</a> to set this to five minutes or ten minutes, (the hard cap).</p>
+  <p>Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you may encounter timeouts if you need to complete bulk actions that take longer than 3 minutes. You can manage timeouts using Fastly 1.2.41.</p>
+
+  <ol>
+    <li>In the <em>Fastly Configuration</em> section, expand <strong>Advanced</strong>.</li>
+    <li>Set the <strong>Admin path timeout</strong> value in seconds. This value cannot be more than one hour (3600 seconds).</li>
+    <li>Click <strong>Save Config</strong> at the top of the page.</li>
+    <li>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</li>
+  </ol>
+
+  <p>Since version 1.2.39, Fastly gets the Magento Admin path for generating the VCL file from the <code class="highlighter-rouge">app/etc/env.php</code> configuration file.</p>
 
   <h2 id="geoip">Configure GeoIP handling</h2>
   <p>The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.</p>
@@ -2272,28 +2282,54 @@ composer require fastly/magento2
       <p><img src="/common/images/cloud_fastly-geo-code.png" alt="Add GeoIP country maps" /></p>
     </li>
     <li>Click <strong>Save Config</strong> at the top of the page.</li>
+    <li>After page reload, click <em>Upload VCL to Fastly</em> in the <em>Fastly Configuration</em> section.</li>
   </ol>
 
   <p>Fastly also provides a series of <a href="https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features" target="\_blank">geolocation-related VCL features</a> for customized geolocation coding.</p>
 
   <h2 id="fastly-dns">Configure DNS for Fastly</h2>
-  <p>These steps you complete when going live.</p>
+  <p>You must complete these steps when you go live.</p>
 
-  <p>We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. The domain validation process is executed by Fastly. When you are ready to go, you will need to provide your domain names in a Support ticket to us. We will then provide a DNS TXT record to add to your apex domain to confirm ownership.</p>
+  <p>After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: <code class="highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple host names for your site, you must add a CNAME record for each one.</p>
 
-  <p>For details, see <a href="/guides/v2.3/cloud/live/go-live-checklist.html">Go live checklist</a>.</p>
+  <div class="bs-callout bs-callout-info" id="info">
+<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
+</div>
+
+  <p>The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.</p>
+
+  <ul>
+    <li>CNAME with ALIAS record from <a href="http://dyn.com" target="_blank">Dyn</a></li>
+    <li>ANAME record on <a href="http://www.dnsmadeeasy.com" target="_blank">DNS Made Easy</a></li>
+    <li>ANAME at <a href="https://www.easydns.com" target="_blank">easyDNS</a></li>
+    <li>ACNAME at <a href="https://www.cloudflare.com" target="_blank">CloudFlare</a></li>
+    <li>ALIAS at <a href="https://pointhq.com" target="_blank">PointDNS</a></li>
+  </ul>
+
+  <p>Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code class="highlighter-rouge">www</code> host on the domain and then use the DNS provider’s redirect service to redirect the apex over to the <code class="highlighter-rouge">www</code> version of the domain. Consult your DNS provider for more information.</p>
+
+  <p>Another option for apex domain is to add an A record, which maps a domain name to the Fastly IP address: <code class="highlighter-rouge">150.101.113.124</code>.</p>
+
+  <p>Refer to <a href="/guides/v2.3/cloud/live/go-live-checklist.html">Go live checklist</a> for more information.</p>
 
   <h3 id="fastly-tls">TLS and Fastly</h3>
-  <p>If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly’s TXT record file for your account. You can then send this record to your DNS provider.</p>
+  <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="#dns">Support ticket</a> for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
 
   <p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="\_blank">DNS TXT record validation</a>.</p>
 
   <h2 id="upgrade">Upgrade Fastly</h2>
-  <p>Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check <a href="https://marketplace.magento.com/fastly-magento2.html" target="\_blank">Magento Marketplace</a> and their <a href="https://github.com/fastly/fastly-magento2/releases" target="\_blank">GitHub</a> for updates on the latest releases.</p>
+  <p>Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check the <a href="https://marketplace.magento.com/fastly-magento2.html" target="\_blank">Magento Marketplace</a> and <a href="https://github.com/fastly/fastly-magento2/releases" target="\_blank">GitHub</a> for updates on the latest releases.</p>
 
-  <p>When you upgrade, your default VCL snippets you uploaded should not be affected or require any additional steps.</p>
+  <p>When you upgrade Fastly, you get the upgraded subset of default VCL snippets. When you finish upgrading, you must <a href="#upload-vcl-snippets">upload upgraded default VCL snippets to Fastly</a>:</p>
 
-  <p>For information on upgrading modules, see <a href="/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>.</p>
+  <ol>
+    <li>In the <em>Fastly Configuration</em> section, click <strong>Upload VCL to Fastly</strong>.</li>
+    <li>After the upload completes, the modal automatically closes with a success message.</li>
+  </ol>
+
+  <p>When you upgrade, the default VCL snippets you uploaded should not be affected or require any additional steps.</p>
+
+  <p>For information on upgrading modules, refer to <a href="/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>.</p>
 
   <p>If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
