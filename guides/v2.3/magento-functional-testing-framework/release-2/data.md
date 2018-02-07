@@ -172,9 +172,13 @@ This action inputs data from `name` of the `_defaultCategory` entity (for exampl
 
 ## Reference
 
+### entities
+
+An element that contains all Entity elements.
+
 ### entity
 
-An element that contains entitiesuration array containing all Entity elements.
+An element that contains data elements.
 
 Attributes|Type|Use|Description
 ---|---|---|---
