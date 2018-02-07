@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Upgrades and Patches | Magento 2 Developer Documentation</title>
+	<title>Message queues | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/project/project-upgrade-parent.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/trouble/message-queues.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,13 +69,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/project/project-upgrade-parent.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/trouble/message-queues.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/trouble/message-queues.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/trouble/message-queues.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/trouble/message-queues.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -1354,7 +1354,7 @@
     
     
 
-<li class="nav-level1 active " id="upgrades-and-patches">
+<li class="nav-level1  " id="upgrades-and-patches">
 
     
     <div class="toggle closed">&nbsp;</div>
@@ -1847,7 +1847,7 @@
         
         
         
-        <li class="nav-level2  " id="message-queues">
+        <li class="nav-level2 active " id="message-queues">
             
             
         
@@ -1931,7 +1931,7 @@
 
           
 
-          <span property="name">Upgrades and Patches</span>
+          <span property="name">Message queues</span>
 
         
 
@@ -1954,7 +1954,7 @@
 
 	
 
-	<h1 class="page-heading">Upgrades and Patches</h1>
+	<h1 class="page-heading">Message queues</h1>
 
   
 
@@ -1962,23 +1962,53 @@
 </section>
 
 
-			<p>The following information helps you upgrade and patch Magento Commerce (Cloud). All of our upgrades and patches are <a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a> driven. We recommend using <code class="highlighter-rouge">composer update</code> for running updates.</p>
+			<p>If you use cron jobs—or some other external process manager—to manage message queues instead of <a href="/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a>, you may need to use an environment variable to restart message queue consumers after every deployment.</p>
 
-<p>As part of your normal pushes of code, Magento Commerce (Cloud) checks for any pending patches and updates. These instructions walk through the specific steps needed, including preparing, updating, and verifying the upgrade.</p>
+<h2 id="symptom">Symptom</h2>
+<p>Message queue consumers fail to restart after you deploy code to an environment.</p>
 
-<p>What you need:</p>
+<h2 id="solution">Solution</h2>
+<!-- Available for 2.2.x only. -->
+<p>Use the <code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable to ensure that consumers are retrieving messages from the message queue.</p>
 
-<ul>
-  <li>An active branch on your local to test in your Integration environment. We recommend using a dedicated branch for the upgrades and patches, without additional in-progress extension or code work.</li>
-  <li>Access to the environment and variables if needed</li>
-</ul>
+<div>
 
-<p>For detailed instructions:</p>
+  <p>You must set the variable value using JSON. For example:</p>
 
-<ul>
-  <li>[Upgrade Magento Commerce (Cloud)]</li>
-  <li>[Patch Magento Commerce (Cloud)]</li>
-</ul>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"cron_run"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"max_messages"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"consumers"</span><span class="p">:[</span><span class="w">  
+      </span><span class="s2">"consumer1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"consumer2"</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+
+  <ul>
+    <li><code class="highlighter-rouge">cron_run</code>—A boolean value that enables or disables the <code class="highlighter-rouge">consumers_runner</code> cron job (default = <code class="highlighter-rouge">false</code>).</li>
+    <li><code class="highlighter-rouge">max_messages</code>—A number specifiying the maximum number of messages each consumer must process before terminating (default = <code class="highlighter-rouge">1000</code>). Although we do not recommend it, you can use <code class="highlighter-rouge">0</code> to prevent the consumer from terminating.</li>
+    <li><code class="highlighter-rouge">consumers</code>—An array of strings specifying which consumer(s) to run. An empty array runs <em>all</em> consumers. Refer to <a href="/guides/v2.2/config-guide/mq/manage-mysql.html#list-consumers">List consumers</a> for more information.</li>
+  </ul>
+
+  <p>To configure the <code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable:</p>
+
+  <ol>
+    <li>
+      <p>In a terminal, log in to your project.</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Set the variable value. You must include the <code class="highlighter-rouge">--json</code> option and enclose the JSON with single quotes. For example:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:set --json CRON_CONSUMERS_RUNNER '{"cron_run":"true", "max_messages":1000, "consumers":["consumer1","consumer2"]}'
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1989,14 +2019,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/project/project-upgrade-parent.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/message-queues.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/project/project-upgrade-parent.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/trouble/message-queues.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

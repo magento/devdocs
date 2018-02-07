@@ -1833,6 +1833,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="message-queues">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/message-queues.html">Message queues</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -2032,9 +2046,11 @@
   <p>Refer to <a href="/guides/v2.3/config-guide/mq/manage-mysql.html">Manage message queues</a> for more information about how this works in Magento Open Source and Magento Commerce.</p>
 </div>
 
-<p>You must set the variable value using JSON. For example:</p>
+<div>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
+  <p>You must set the variable value using JSON. For example:</p>
+
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
    </span><span class="s2">"cron_run"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"max_messages"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
    </span><span class="s2">"consumers"</span><span class="p">:[</span><span class="w">  
@@ -2042,30 +2058,32 @@
       </span><span class="s2">"consumer2"</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre></div>  </div>
 
-<ul>
-  <li><code class="highlighter-rouge">cron_run</code>—A boolean value that enables or disables the <code class="highlighter-rouge">consumers_runner</code> cron job (default = <code class="highlighter-rouge">false</code>).</li>
-  <li><code class="highlighter-rouge">max_messages</code>—A number specifiying the maximum number of messages each consumer must process before terminating (default = <code class="highlighter-rouge">1000</code>). Although we do not recommend it, you can use <code class="highlighter-rouge">0</code> to prevent the consumer from terminating.</li>
-  <li><code class="highlighter-rouge">consumers</code>—An array of strings specifying which consumer(s) to run. An empty array runs <em>all</em> consumers. Refer to <a href="/guides/v2.3/config-guide/mq/manage-mysql.html#list-consumers">List consumers</a> for more information.</li>
-</ul>
+  <ul>
+    <li><code class="highlighter-rouge">cron_run</code>—A boolean value that enables or disables the <code class="highlighter-rouge">consumers_runner</code> cron job (default = <code class="highlighter-rouge">false</code>).</li>
+    <li><code class="highlighter-rouge">max_messages</code>—A number specifiying the maximum number of messages each consumer must process before terminating (default = <code class="highlighter-rouge">1000</code>). Although we do not recommend it, you can use <code class="highlighter-rouge">0</code> to prevent the consumer from terminating.</li>
+    <li><code class="highlighter-rouge">consumers</code>—An array of strings specifying which consumer(s) to run. An empty array runs <em>all</em> consumers. Refer to <a href="/guides/v2.3/config-guide/mq/manage-mysql.html#list-consumers">List consumers</a> for more information.</li>
+  </ul>
 
-<p>To configure the <code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable:</p>
+  <p>To configure the <code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable:</p>
 
-<ol>
-  <li>
-    <p>In a terminal, log in to your project.</p>
+  <ol>
+    <li>
+      <p>In a terminal, log in to your project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Set the variable value. You must include the <code class="highlighter-rouge">--json</code> option and enclose the JSON with single quotes. For example:</p>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Set the variable value. You must include the <code class="highlighter-rouge">--json</code> option and enclose the JSON with single quotes. For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:set --json CRON_CONSUMERS_RUNNER '{"cron_run":"true", "max_messages":1000, "consumers":["consumer1","consumer2"]}'
-</code></pre></div>    </div>
-  </li>
-</ol>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:set --json CRON_CONSUMERS_RUNNER '{"cron_run":"true", "max_messages":1000, "consumers":["consumer1","consumer2"]}'
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
