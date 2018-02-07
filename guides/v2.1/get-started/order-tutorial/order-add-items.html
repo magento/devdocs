@@ -396,7 +396,7 @@
 
 <p>To add a <span term-uuid="f85f36ad-2942-446e-b711-39f2a16f6364" class="glossary-term" data-toggle="popover">simple product</span> to a cart, you must provide a <code class="highlighter-rouge">sku</code>, the quantity, and the <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> ID, which was generated when the cart was created.</p>
 
-<p>The following example adds an orange medium-sized  Radiant women’s t-shirt (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">WS12-M-Orange</code>) to the cart.</p>
+<p>The following example adds an orange medium-sized Radiant women’s t-shirt (<code class="highlighter-rouge">sku</code>: <code class="highlighter-rouge">WS12-M-Orange</code>) to the cart.</p>
 
 <p><strong>Endpoint</strong></p>
 
@@ -573,7 +573,7 @@
 
 <p>To add a bundle product to a cart, you must specify the <code class="highlighter-rouge">sku</code> of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the <code class="highlighter-rouge">id</code> defined in the item’s <code class="highlighter-rouge">product_links</code> object. The <code class="highlighter-rouge">product_links</code> object primarily describes the ordering and placement of options on the customization page, but it also links an item’s <code class="highlighter-rouge">sku</code> and <code class="highlighter-rouge">id</code> to the <code class="highlighter-rouge">sku</code> of the bundle product.</p>
 
-<p>The <code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/bundle-products/24-WG080/options/all</code> call returns <code class="highlighter-rouge">id</code> values, as shown in the following simplified respose:</p>
+<p>The <code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/bundle-products/24-WG080/options/all</code> call returns <code class="highlighter-rouge">id</code> values, as shown in the following simplified response:</p>
 
 <div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
