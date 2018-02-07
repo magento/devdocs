@@ -168,6 +168,15 @@ pages:
             - label: Adding a custom indexer
               url: extension-dev-guide/indexing-custom.html
 
+        - label: Declarative schema
+          versions: ["2.3"]
+          children:
+            - label: Set up declarative schema
+              url: extension-dev-guide/declarative-schema/db-schema.html
+
+            - label: Migrate to declarative schema
+              url: extension-dev-guide/declarative-schema/migration-commands.html
+
         - label: Message Queues (Magento Commerce Edition Only)
           children:
 
