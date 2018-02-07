@@ -335,3 +335,7 @@ pages:
 
         - label: Theme troubleshooting
           url: cloud/trouble/theme-troubleshooting.html
+
+        - label: Message queues
+          url: cloud/trouble/message-queues.html
+          versions: ["2.2","2.3"]
