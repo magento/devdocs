@@ -38,17 +38,13 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 </table>
 ```
 
-## Theory of operations
-
-The declarative schema upgrade compares the current state of the schema against the declared state in configuration. It then determines the differences, which are converted to a sequence of statements and applied to the DB.
-
-![Db Schema Invocation]({{page.baseurl}}extension-dev-guide/declarative-schema/images/declarative-schema-invocation.png)
-
 ## Db Schema Structure
 
-Let's examine how such `db_schema.xml` should be declared.
-
 A module's database declaration file is defined in `<Module_Vendor>/<Module_Name>/etc/db_schema.xml`.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you have enabled [Urn highlighting]({{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
+</div>
 
 ### Top-level node
 
@@ -65,8 +61,8 @@ A table node can contain the following attributes:
 Attribute | Description
 --- | ---
 `name` | The name of the table
-`engine` | SQL engine
-`resource` | The database shard on which to install the table
+`engine` | SQL engine. This value must be `innodb` or `memory`.
+`resource` | The database shard on which to install the table. This value must be `default`, `quote`, or `sales`.
 `comment` | Table comment
 
  A `table` node can contain three types of subnodes:
@@ -124,7 +120,7 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>onCreate</code></td>
-<td>This is a DDL trigger which allows you to move data from an existing column, for example, that you want to remove to a newly created column. This trigger works only when a column is created.</td>
+<td>This is a DDL trigger that allows you to move data from an existing column to a newly created column. This trigger works only when a column is created.</td>
 </tr>
 <tr>
 <td><code>padding</code></td>
@@ -144,15 +140,8 @@ A column can have the following attributes:
 </tr>
 </table>
 
-For more information about each type, refer to the annotations in the corresponding XSD file.
-For example, here is XSD for boolean: `urn:magento:setup:Model/Declaration/Schema/etc/types/boolean.xsd`
-Each column can have different attributes. For instance, integer column can be auto incremented and text column - not
-All attributes are declared in particular XSDs. Also all allowed attributes can be observed, if you will generate urns, by running
-this command: [How to generate urns?]
+For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory/setup/src/Magento/Setup/Model/Declaration/Schema/etc` directory.
 
-If urns are already generated, you can exploit PHPStorm autocomplete after choosing column `xsi:type`. That is true for other subnodes too.
-
-![Db Schema Autocomplete]
 
 Example:
 
@@ -199,10 +188,46 @@ Example:
 For more information about foreign key triggers, refer to the SQL engines documentation.
 
 
-#### `index` node
+#### `index` subnode
 
 The `index` subnode has the same structure as internal constraints, but contains different logic. While constraints are used for defining limitations, index are used for speeding up DQL operations.
 
+
+## Performing common tasks
+
+The following screen captures use `git diff` to illustrate how to perform common tasks.
+
+**Create table**
+
+![Create Table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/declaration-create-table.png)
+
+**Drop table**
+
+![Drop Table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/drop-declarative-table.png)
+
+**Create foreign key**
+
+![Create Foreign Key]({{page.baseurl}}extension-dev-guide/declarative-schema/images/create-fk.png)
+
+**Drop foreign key**
+
+![Drop Foreign Key]({{page.baseurl}}extension-dev-guide/declarative-schema/images/drop-fk.png)
+
+**Add column to table**
+
+![Add column to table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/add-column.png)
+
+**Drop column from table**
+
+![Drop column from table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/remove-column.png)
+
+**Change column type**
+
+![Change column type]({{page.baseurl}}extension-dev-guide/declarative-schema/images/change-column-type.png)
+
+**Add index**
+
+![Add index]({{page.baseurl}}extension-dev-guide/declarative-schema/images/add-index.png)
 
 [How to generate urns?]:{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{page.baseurl}}extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png
