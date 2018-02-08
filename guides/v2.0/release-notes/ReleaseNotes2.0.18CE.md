@@ -19,7 +19,8 @@ Although this release includes these enhancements, no confirmed attacks related 
 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The Magento Commerce 2.0.18 software release marks the final supported software release for Magento Commerce version 2.0.X. Magento Commerce 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired, as defined by our Magento Commerce Support Service Terms.
+The Magento Commerce 2.0.18 software release marks the final supported software release for Magento Commerce version 2.0.X. Magento Commerce 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired, as defined by our <a href="https://magento.com/legal/terms/enterprise-agreement" target="_blank">Magento Commerce Support Service Terms</a>.
+
 To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Commerce. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
 </div>
 
