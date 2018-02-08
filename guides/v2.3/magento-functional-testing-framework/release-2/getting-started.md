@@ -1,12 +1,16 @@
 ---
 layout: default
 group: mftf
-title: Getting started with the Magento Functional Testing Framework (release 2)
+title: Getting started with the Magento Functional Testing Framework
 version: 2.3
 github_link: magento-functional-testing-framework/release-2/getting-started.md
 functional_areas:
  - Testing
+mftf-release: 2.0.2
 ---
+
+_This topic corresponds to the MFTF {{page.mftf-release}} release._
+{: style="text-align: right"}
 
 ## Prepare environment
 
@@ -17,7 +21,6 @@ Make sure that you've set up the following software:
 * [Java v1.8.x+][java]
 * [Selenium Server Standalone v3.6.0+](#selenium-server)
 * [ChromeDriver v2.33+][chromedriver]
-* [Allure CLI v2.3.x+](#allure)
 
 ### Recommendations
 
@@ -189,14 +192,14 @@ $ vendor/bin/robo allure2:report
 [allure commands]: commands/robo.html#allure-robo-commands
 
 [php]: {{page.baseurl}}install-gde/system-requirements-tech.html#php
-[composer]: https://getcomposer.org/download/
-[java]: https://www.java.com/en/download/
 
-[selenium server]: http://www.seleniumhq.org/download/
-[selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
-[Install Allure]: https://docs.qameta.io/allure/latest/
 [allure reports]: https://docs.qameta.io/allure/latest/#_report_structure
 [chromedriver]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+[composer]: https://getcomposer.org/download/
+[Install Allure]: https://docs.qameta.io/allure/latest/
+[java]: https://www.java.com/en/download/
+[selenium server]: http://www.seleniumhq.org/download/
+[selenium web driver]: http://docs.seleniumhq.org/about/platforms.jsp
 
 <!-- Abbreviations -->
 

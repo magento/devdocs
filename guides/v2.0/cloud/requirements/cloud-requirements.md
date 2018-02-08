@@ -109,7 +109,7 @@ We walk you through everything you need to do and know.
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{page.baseurl}}cloud/before/before-workspace-magento-prereqs.html#database)
-*	Test with the correct file permissions in [PRODUCTION mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Test with the correct file permissions in [PRODUCTION mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
@@ -123,7 +123,7 @@ For development and testing, we recommend the following:
 *	Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
 
 	You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.
-*	Verify [`magento setup:install`]({{page.baseurl}}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Verify [`magento setup:install`]({{page.baseurl}}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode)
 
     You can set an environment variable or enter a CLI command for this specific mode.
 *	Fully [test your site]({{page.baseurl}}cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment

@@ -1,12 +1,16 @@
 ---
 layout: default
 group: mftf
-title: Page structure in the Magento Functional Testing Framework (release 2)
+title: Page structure in the Magento Functional Testing Framework
 version: 2.3
 github_link: magento-functional-testing-framework/release-2/page.md
 functional_areas:
  - Testing
+mftf-release: 2.0.2
 ---
+
+_This topic corresponds to the MFTF {{page.mftf-release}} release._
+{: style="text-align: right"}
 
 ## Overview
 
@@ -159,15 +163,17 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 
 <!-- LINK DEFINITIONS -->
 
-[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-[test]: ./test.html
+[explicit page]: #explicit-page
+[parameterized page]: #parameterized-page
+
 [createData]: ./test/actions.html#createdata
 [section]: ./section.html
-[explicit page]: #explicit-page
-[parameterized page]: #parameterized-page.
+[test]: ./test.html
+
+[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 
 <!-- Abbreviations -->
 
+*[ID]: Identifier
 *[MFTF]: Magento Functional Testing Framework
 *[UI]: User Interface
-*[ID]: Identifier

@@ -1,12 +1,16 @@
 ---
 layout: default
 group: mftf
-title: Update the Magento Functional Testing Framework and pull new tests (release 2)
+title: Update the Magento Functional Testing Framework and pull new tests
 version: 2.3
 github_link: magento-functional-testing-framework/release-2/update.md
 functional_areas:
  - Testing
+mftf-release: 2.0.2
 ---
+
+_This topic corresponds to the MFTF {{page.mftf-release}} release._
+{: style="text-align: right"}
 
 ## Overview
 
@@ -45,9 +49,10 @@ $ vendor/bin/robo generate:tests
 <!-- LINK DEFINITIONS -->
 
 [Changelog]: ../changelog.html
+
 [`develop`]: https://github.com/magento/magento2-functional-testing-framework
-[WYSIWYG settings]: getting-started.html#wysiwyg-settings
 [Security settings]: getting-started.html#security-settings
+[WYSIWYG settings]: getting-started.html#wysiwyg-settings
 
 <!-- Abbreviations -->
 

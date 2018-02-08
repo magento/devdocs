@@ -1,12 +1,16 @@
 ---
 layout: default
 group: mftf
-title: Use Codeception's Locator Functions in the Magento Functional Testing Framework (release 2)
+title: Use Codeception's Locator Functions in the Magento Functional Testing Framework
 version: 2.3
 github_link: magento-functional-testing-framework/release-2/section/locator-functions.md
 functional_areas:
  - Testing
+mftf-release: 2.0.2
 ---
+
+_This topic corresponds to the MFTF {{page.mftf-release}} release._
+{: style="text-align: right"}
 
 {%raw%}
 
@@ -53,8 +57,8 @@ No special reference is required, as you are still just referring to an `element
 
 <!-- Internal -->
 
-[section]: ../section.html
 [parameterized selectors]: ./parameterized-selectors.html
+[section]: ../section.html
 
 <!-- External -->
 [Locator Functions]: http://codeception.com/docs/reference/Locator

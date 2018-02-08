@@ -18,7 +18,7 @@ You can use Composer to install sample data either before or after installing Ma
 If you're a contributing developer, refer to [Install by cloning repositories]({{install-gde/install/sample-data-after-clone.html}}).
 
 <div class="bs-callout bs-callout-warning">
-    <p>Do not install sample data if your Magento application is set for <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. Switch to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> first. Installing sample data in production mode <a href="{{ page.baseurl }}install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod">fails</a>.</p>
+    <p>Do not install sample data if your Magento application is set for <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>. Switch to <a href="{{ page.baseurl }}config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a> first. Installing sample data in production mode <a href="{{ page.baseurl }}install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod">fails</a>.</p>
 </div>
 
 To install sample data using the command line, enter the following command as the Magento file system owner:
