@@ -33,7 +33,7 @@ The following diagram demonstrates XML structure of an action group:
         <arguments>
             <argument name=""/>
             <argument name="" defaultValue=""/>
-            <argument name="" defaultValue="" simpleData=""/>
+            <argument name="" defaultValue="" data=""/>
         </arguments>
     </actionGroup>
 </actionGroups>
@@ -150,14 +150,14 @@ To change it to `CustomAdminUser`, we must add an argument `adminUser` with the 
 
 That's it!
 
-## Simple Data Usage
+## Data Type Usage
 
-When defining an `actionGroup`'s `argument`, you may define the argument to be `simpleData` like so:
+There are cases where instead of passing in an entity, you may need to only send in a `string` or an `integer` as a `argument`. By default, `argument`s expect to be an entire entity, but when defining an `actionGroup`'s `argument`, you may define the argument to have a primitive data type like so:
 
 ```xml
 <actionGroup name="fillExample">
     <arguments>
-        <argument name="relevantString" defaultValue="defaultString" simpleData="true"/>
+        <argument name="relevantString" defaultValue="defaultString" data="string"/>
     </arguments>
     <fillField stepKey="fillField1" selector="#input" userInput="{{relevantString}}"/>
     <click stepKey="clickSave" selector="#save"/>
@@ -166,8 +166,8 @@ When defining an `actionGroup`'s `argument`, you may define the argument to be `
 </actionGroup
 ```
 
-The above tells the `actionGroup` that the replacement argument is not a data entity, but rather just a simple piece of data that needs to be replaced.
-This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing an entire entity:
+The above tells the `actionGroup` that the replacement argument is not a data entity, but rather just a simple piece of data that needs to be replaced. By default, and if no `data` attribute is defined, it is assumed to be an `entity`
+This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing the entire entity:
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
@@ -212,6 +212,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 name|string|required|Identifier of an argument in scope of action group.
 defaultValue|string|optional|Data entity that is used by default.
+data|sting|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`
 
 {%endraw%}
 
