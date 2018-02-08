@@ -55,6 +55,9 @@ $ magento declaration:generate:whitelist --module-name[=MODULE-NAME]
 
 Until we support backward compatability for this tool, we will not be able to clean 'garbage', like db schema, that is left after removed or disabled module.
 
+**Note to developer:** We need information about the structure of the `whitelist.json` file and troubleshooting information about running the `declaration:generate:whitelist` command.
+
+
 ## Edge cases and frequently asked questions
 
 **How do I drop a column/table/constraint/index?**
