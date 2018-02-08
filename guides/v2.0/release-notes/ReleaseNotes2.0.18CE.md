@@ -11,7 +11,7 @@ level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.18CE.md
 ---
 
-*Patch code and release notes were published on February 12, 2018.* 
+*Patch code and release notes were published on February 27, 2018.* 
 
 We are pleased to present Magento Open Source 2.0.18. This release includes multiple enhancements to product security, a change to the Magento Admin to support upcoming USPS shipping changes, and a copyright update. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update)  for more information.
 
@@ -19,9 +19,9 @@ Although this release includes these enhancements, no confirmed attacks related 
 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The Magento Commerce 2.0.18 software release marks the final supported software release for Magento Commerce version 2.0.X. Magento Commerce 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired, as defined by our <a href="https://magento.com/legal/terms/enterprise-agreement" target="_blank">Magento Commerce Support Service Terms</a>.
+The Magento Open Source 2.0.18 software release marks the final supported software release for Magento Open Source version 2.0.X. Magento Open Source 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired.
 
-To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Commerce. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
+To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Open Source. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
 </div>
 
 ## Highlights

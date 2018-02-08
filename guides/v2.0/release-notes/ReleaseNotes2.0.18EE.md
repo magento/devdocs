@@ -11,7 +11,7 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.18EE.md
 ---
 
-*Patch code and release notes were published on February 12, 2018.* 
+*Patch code and release notes were published on February 27, 2018.* 
 
 We are pleased to present Magento Commerce 2.0.18. This release includes multiple enhancements to product security, a change to the Magento Admin to support upcoming USPS shipping changes, and a copyright update. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update)  for more information.
 
