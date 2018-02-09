@@ -210,7 +210,7 @@ For Starter, when you push, the updated code pushes to the active environment. M
 
 For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
-## Update configuations {#update}
+## Update configurations {#update}
 If you need to modify or remove any existing configuration settings in `config.php`, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.
 
 To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.
