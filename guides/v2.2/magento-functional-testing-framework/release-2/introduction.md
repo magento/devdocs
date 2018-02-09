@@ -3,22 +3,17 @@ layout: default
 group: mftf
 title: Introduction to the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/release-1/introduction.md
+github_link: magento-functional-testing-framework/release-2/introduction.md
 functional_areas:
     - Testing
-redirect_from:
-    - guides/v2.0/magento-functional-testing-framework/release-1/introduction.html
-    - guides/v2.1/magento-functional-testing-framework/release-1/introduction.html
-    - guides/v2.2/magento-functional-testing-framework/1.0/introduction.html
-    - guides/v2.2/magento-functional-testing-framework/introduction.html
-mftf-release: 1.0.0
+mftf-release: 2.0.2
 ---
 
 _This topic corresponds to the MFTF {{page.mftf-release}} release._
 {: style="text-align: right"}
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The Magento Functional Testing Framework (MFTF) is aimed to replace the [Functional Testing Framework] in far future releases to make test creation easier for developers and improve qualities like:
+The Magento Functional Testing Framework (MFTF) is designed to replace the [Functional Testing Framework] in far future releases to make test creation easier for developers and improve qualities like:
 
 * **Traceability** for clear logging and reporting capabilities
 * **Modularity** to run tests based on modules/extensions installed
@@ -47,7 +42,7 @@ All functional tests are located in _\<magento2 root dir\>/dev/tests/acceptance
 
 <div class="bs-callout bs-callout-info" markdown="1">
 The tests haven't been released yet.
-But you can find them for your experiments in the corresponding [`magento` repositories] on GitHub in the `2.2-develop` branch.
+But you can find them for your experiments in the corresponding [`magento` repositories] on GitHub in the corresponding `*-develop` branch.
 </div>
 
 ## What tools do I need to run MFTF?
