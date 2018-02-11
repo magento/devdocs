@@ -240,7 +240,11 @@ hooks:
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
     grunt
+    cd
+    php ./vendor/bin/m2-ece-build
 ```
+
+Note, that SASS compile should be run before static assets deployment, so you have to put the grunt command before the `m2-ece-build` command.
 
 ## Environment variables {#variables}
 The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
