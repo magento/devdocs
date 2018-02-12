@@ -1188,47 +1188,23 @@
 </section>
 
 
-			<h2>Introduction</h2>
-
-<p>Magento application implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into <em>layers</em>, including the <em>view layer</em>.</p>
-
-<p>The major part of the view layer of Magento application is <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.</p>
-
+			<h2>What's in this topic</h2>
 <p>This article describes the basic concepts you need to know to create layouts for your custom <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
 
-<h2 id="layout-over-terms">Terms used</h2>
+<h2>Introduction</h2>
+<p>In Magento, the basic components of page design are layouts, containers, and blocks. A <em>layout</em> represents the structure of a web page (1). <em>Containers</em> represent the placeholders within that web page structure (2). And <em>blocks</em> represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.</p>
 
-<p><span id="handle"><em>Layout handle</em></span></p>
+<p><img src="/common/images/layouts_block_containers_defn21.png" /></p>
 
-<p>A <em>layout handle</em> is a uniquely identified set of <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span> that serves as a name of a layout file.</p>
+<p>(1) <em>Layouts</em> provide the structures for web pages using an XML file that identifies all the containers and blocks composing the page. The details of layout XML files are described later in this section.</p>
 
-<p>There are three kinds of layout handles:</p>
+<p>(2) <em>Containers</em> assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.</p>
 
-<ul>
-  <li><strong>page type layout handles</strong> – Synonyms of the page type identifiers. Correspond to “full action names” of controller actions, for example, catalog_product_view.</li>
-  <li><strong>page layout handles</strong> – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.</li>
-  <li><strong>arbitrary handles</strong> - Do not correspond to any page type, but other handles use them by including.</li>
-</ul>
-
-<h2 id="layout_overview_blocks">Basic layout elements</h2>
-
-<p>The basic components of Magento page design are blocks and containers.</p>
-
-<p>A <em>container</em> exists for the sole purpose of assigning content structure to a page. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.</p>
-
-<p>The following figure shows an example:</p>
-
-<p><img src="/common/images/layouts_containers_defn.jpg" /></p>
-
-<p>A <em>block</em> represents each feature on a page and employs templates to generate the <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> to insert into its parent structural block. Examples of blocks include a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> list, a mini cart, product tags, and product listing.</p>
-
-<p>The following figure shows an example:</p>
-
-<p><img src="/common/images/layouts_block_defn.jpg" />.</p>
+<p>(3) <em>Blocks</em> render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> to insert into its parent structural block. Examples of blocks include a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> list, a mini cart, product tags, and product listing.</p>
 
 <h2 id="basic-layouts">Basic layouts</h2>
 
-<p>The basic view of all Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> pages is defined in two page configuration layout files located in the Magento_Theme module:</p>
+<p>The basic view of all Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> pages in defined in two page configuration layout files located in the Magento_Theme module:</p>
 
 <ul>
   <li><code class="highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>: defines the page layout.</li>
@@ -1238,6 +1214,20 @@
 <p>These basic page configuration layouts are extended in other Magento modules and in Magento themes.</p>
 
 <p>You can also <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html">extend</a> or <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-override.html">override</a> these files in your custom theme.</p>
+
+<h2 id="layout-over-terms">Layout handles</h2>
+
+<p><span id="handle"></span></p>
+
+<p>A <em>layout handle</em> is a uniquely identified set of <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span> that serves as a name of a layout file.</p>
+
+<p>There are three kinds of layout handles:</p>
+
+<ul>
+  <li><strong>page-type layout handles</strong> – Synonyms of the page type identifiers. Correspond to “full action names” of controller actions, for example, catalog_product_view.</li>
+  <li><strong>page layout handles</strong> – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128 or for a CMS page, cms_page_view_id_home.xml.</li>
+  <li><strong>arbitrary handles</strong> - Do not correspond to any page type, but other handles use them by including.</li>
+</ul>
 
 <h2 id="layout-files-types-and-conventions">Layout files types and conventions</h2>
 
