@@ -38,9 +38,7 @@ The utilities can take several minutes to complete.
 ## Create a code backup {#config-cli-spt-utils-code}
 This command backs up code and compresses it in `tar.gz` format.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-This is _not_ the same code backup performed by the [magento setup:backup]({{page.baseurl}}install-gde/install/cli/install-cli-backup.html) command. This command is intended to be used to back up code for examination by Magento Support.
-</div>
+{% include config/code-backup.md %}
 
 Command options:
 
@@ -61,9 +59,7 @@ After the command completes, provide the code backup to Magento Support.
 ## Create a database backup {#config-cli-spt-utils-db}
 This command backs up the Magento database and compresses it in `tar.gz` format.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-This is _not_ the same code backup performed by the [magento setup:backup]({{page.baseurl}}install-gde/install/cli/install-cli-backup.html) command. This command is intended to be used to back up code for examination by Magento Support.
-</div>
+{% include config/code-backup.md %}
 
 Command options:
 
