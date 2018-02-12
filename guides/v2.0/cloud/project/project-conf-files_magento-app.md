@@ -252,7 +252,7 @@ hooks:
     php ./bin/magento magento-cloud:build
 ```
 
-Note, that SASS compile should be run before static assets deployment, so you have to put the grunt command before the `m2-ece-build` command.
+You must compile SASS files using `grunt` before static content deployment, which happens during the build.
 
 ## `crons` {#cloud-yaml-platform-cron}
 `crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
