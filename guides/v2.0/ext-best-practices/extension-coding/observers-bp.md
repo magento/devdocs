@@ -28,7 +28,12 @@ Your observer should not contain logic other than what is needed for it to run. 
 
 #### Declare observer in the appropriate scope
 
-Make your observer as specific as it needs to be. This means that if your observer is only concerned with front end events, you should declare your observer in the `<module-dir>/etc/frontend/events.xml` file instead of the global `<module-dir>/etc/events.xml` file.
+Make your observer as specific as it needs to be. Declare your observer in the appropriate scope:
+
+* For frontend events, declare observers in `<module-dir>/etc/frontend/events.xml`
+* For backend events, declare observers in `<module-dir>/etc/adminhtml/events.xml`
+
+Use the global `<module-dir>/etc/events.xml` file only when an event can occur on both the frontend and the backend.
 
 #### Avoid cyclical event loops
 
