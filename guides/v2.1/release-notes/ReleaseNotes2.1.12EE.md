@@ -18,7 +18,7 @@ github_link: release-notes/ReleaseNotes2.1.12EE.md
 
 
 
-We are pleased to present Magento Commerce 2.1.12. This release includes multiple enhancements to product security, a change to the Magento Admin to support upcoming USPS shipping changes, and a copyright update. 
+We are pleased to present Magento Commerce 2.1.12. This release includes multiple enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. 
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
