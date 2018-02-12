@@ -2030,24 +2030,6 @@
 
 <p>For the Production environment, you should set the docroot to <code class="highlighter-rouge">/magento/pub</code>, which helps restrict access to vulnerable areas of the system. The webserver docroot should be set to <code class="highlighter-rouge">/magento/pub</code> only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in <code class="highlighter-rouge">/magento/pub</code>. Alternatively, you could also create a subdomain (for example, <code class="highlighter-rouge">install.domain.com</code>) and configure your webserver’s docroot to the Magento installed root folder.</p>
 
-<h2 id="metapackage">Get the Magento metapackage</h2>
-
-<p>Prior to installing, you need to get the metapackage.</p>
-
-<ol>
-  <li>Access your local environment VM or Docker container.</li>
-  <li>
-    <p>Get the Magento Commerce metapackage using the following compose command.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
-</code></pre></div>    </div>
-
-    <p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
-
-    <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code class="highlighter-rouge">&lt;installation directory name&gt;</code> if you provided the parameter or <code class="highlighter-rouge">project-enterprise-edition</code> if you did not.</p>
-  </li>
-</ol>
-
 <h2 id="file-system-permissions">Set file system permissions and ownership</h2>
 <p>After you have installed Magento, you need to set the file system permissions and ownership.</p>
 
