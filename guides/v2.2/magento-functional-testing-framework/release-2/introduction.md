@@ -43,7 +43,9 @@ Open the file and check the corresponding dependency. Example:
             "name": "magento/magento2-functional-testing-framework",
             "version": "2.0.2",
             ...
-         }
+        }
+        ...
+    ]
     ...
 }
 ```
