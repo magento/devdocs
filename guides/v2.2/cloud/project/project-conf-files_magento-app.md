@@ -244,7 +244,7 @@ hooks:
     php ./vendor/bin/m2-ece-build
 ```
 
-Note, that SASS compile should be run before static assets deployment, so you have to put the grunt command before the `m2-ece-build` command.
+You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ## Environment variables {#variables}
 The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
