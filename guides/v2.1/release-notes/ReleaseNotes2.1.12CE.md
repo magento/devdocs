@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.12CE.md
 {:toc}
 
 
-*Patch code and release notes were published on February 12, 2018.*
+*Patch code and release notes were published on February 27, 2018.*
 
 
 We are pleased to present Magento Commerce 2.1.12. This release includes multiple enhancements to product security, a change to the Magento Admin to support upcoming USPS shipping changes, and a copyright update. 
@@ -29,7 +29,9 @@ Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the
 
 * **enhancements that help close authenticated Admin user remote code execution, unauthorized data leak, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
-* **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS will remove APIs that support the creation of shipping labels without postage. In anticipation of this change, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
+* **change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS  removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
+
+* **copyright update to 2018**. 
 
 
 ## System requirements
