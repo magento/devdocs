@@ -2015,8 +2015,11 @@
   <h2 id="config-cli-spt-utils-code">Create a code backup</h2>
   <p>This command backs up code and compresses it in <code class="highlighter-rouge">tar.gz</code> format.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>This is <em>not</em> the same code backup performed by the <code class="highlighter-rouge">[magento setup:backup](/guides/v2.3/install-gde/install/cli/install-cli-backup.html)</code> command. This command is intended to be used to back up code for examination by Magento Su</p>
+  <div>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.3/install-gde/install/cli/install-cli-backup.html">magento setup:backup</a> command. This command is intended to be used to back up code for examination by Magento Support.</p>
+    </div>
 
     <p>Command options:</p>
 
@@ -2041,67 +2044,69 @@
     <h2 id="config-cli-spt-utils-db">Create a database backup</h2>
     <p>This command backs up the Magento database and compresses it in <code class="highlighter-rouge">tar.gz</code> format.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.3/install-gde/install/cli/install-cli-backup.html">magento setup:backup</a> command. This command is intended to be used to back up code for examination by Magento Support.&lt;/p&gt;&lt;/span&gt;</p>
-    </div>
-
-    <p>Command options:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
-</code></pre></div>    </div>
-
-    <p>Where:</p>
-
-    <ul>
-      <li><strong><code class="highlighter-rouge">--name</code></strong> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
-      <li>**<code class="highlighter-rouge">-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
-      <li><strong><code class="highlighter-rouge">-l|--logs</code></strong> includes log files (optional).</li>
-      <li><strong><code class="highlighter-rouge">-i|--ignore-sanitize</code></strong> means that data is preserved; omit the flag to hash <a href="#sens-data">sensitive data</a> stored in the database when creating the backup (optional).</li>
-    </ul>
-
-    <p>After the command completes, provide the database backup to Magento Support.</p>
-
     <div>
 
-      <h4 id="sens-data">What is sensitive data?</h4>
-      <p>Magento uses your encryption key to encrypt the following:</p>
+      <div class="bs-callout bs-callout-info" id="info">
+        <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.3/install-gde/install/cli/install-cli-backup.html">magento setup:backup</a> command. This command is intended to be used to back up code for examination by Magento Support.</p>
+      </div>
 
-      <ul>
-        <li>Credit card information</li>
-        <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
-        <li>CAPTCHA values sent over the network</li>
-      </ul>
+      <p>Command options:</p>
 
-      <p>Magento does <em>not</em> encrypt:</p>
-
-      <ul>
-        <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
-        <li>Address</li>
-        <li>Phone number</li>
-        <li>Other types of personally identifiable information except for credit card numbers</li>
-      </ul>
-
-      <h2 id="config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</h2>
-      <p>We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> or on the command line:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Utility lsof not found
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
 </code></pre></div>      </div>
 
-      <p>Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:</p>
+      <p>Where:</p>
 
-      <ol>
-        <li>Change to your Magento installation directory.</li>
-      </ol>
+      <ul>
+        <li><strong><code class="highlighter-rouge">--name</code></strong> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
+        <li>**<code class="highlighter-rouge">-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
+        <li><strong><code class="highlighter-rouge">-l|--logs</code></strong> includes log files (optional).</li>
+        <li><strong><code class="highlighter-rouge">-i|--ignore-sanitize</code></strong> means that data is preserved; omit the flag to hash <a href="#sens-data">sensitive data</a> stored in the database when creating the backup (optional).</li>
+      </ul>
 
-      <p>For example, <code class="highlighter-rouge">cd /var/www/magento2</code></p>
+      <p>After the command completes, provide the database backup to Magento Support.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" id="info" markdown="1"&gt;   The commands run properly _only_ from your Magento installation directory.
+      <div>
+
+        <h4 id="sens-data">What is sensitive data?</h4>
+        <p>Magento uses your encryption key to encrypt the following:</p>
+
+        <ul>
+          <li>Credit card information</li>
+          <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
+          <li>CAPTCHA values sent over the network</li>
+        </ul>
+
+        <p>Magento does <em>not</em> encrypt:</p>
+
+        <ul>
+          <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+          <li>Address</li>
+          <li>Phone number</li>
+          <li>Other types of personally identifiable information except for credit card numbers</li>
+        </ul>
+
+        <h2 id="config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</h2>
+        <p>We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> or on the command line:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Utility lsof not found
+</code></pre></div>        </div>
+
+        <p>Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:</p>
+
+        <ol>
+          <li>Change to your Magento installation directory.</li>
+        </ol>
+
+        <p>For example, <code class="highlighter-rouge">cd /var/www/magento2</code></p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" id="info" markdown="1"&gt;   The commands run properly _only_ from your Magento installation directory.
 &lt;/div&gt; 2.  `php bin/magento support:utility:paths` creates `&lt;your Magento install dir&gt;/var/support/Paths.php`, which lists the paths to all application used by the utility. 3.  `php bin/magento support:utility:check` displays the file system paths.
-</code></pre></div>      </div>
+</code></pre></div>        </div>
 
-      <p>A sample follows:</p>
+        <p>A sample follows:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzip =&gt; /bin/gzip
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzip =&gt; /bin/gzip
 lsof =&gt; /usr/sbin/lsof
 mysqldump =&gt; /usr/bin/mysqldump
 nice =&gt; /bin/nice
@@ -2110,26 +2115,27 @@ tar =&gt; /bin/tar
 sed =&gt; /bin/sed
 bash =&gt; /bin/bash
 mysql =&gt; /usr/bin/mysql
-</code></pre></div>      </div>
+</code></pre></div>        </div>
 
-      <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code class="highlighter-rouge">$PATH</code> environment variable.</p>
+        <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code class="highlighter-rouge">$PATH</code> environment variable.</p>
 
-      <h4 id="related-topics">Related topics</h4>
+        <h4 id="related-topics">Related topics</h4>
 
-      <ul>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-        <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-      </ul>
+        <ul>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+          <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
