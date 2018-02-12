@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.0.18EE.md
 
 *Patch code and release notes were published on February 27, 2018.* 
 
-We are pleased to present Magento Commerce 2.0.18. This release includes multiple enhancements to product security, a change to the Magento Admin to support upcoming USPS shipping changes, and a copyright update. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update)  for more information.
+We are pleased to present Magento Commerce 2.0.18. This release includes multiple enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update)  for more information.
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
