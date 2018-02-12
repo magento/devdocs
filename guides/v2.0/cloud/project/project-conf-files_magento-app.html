@@ -2054,7 +2054,11 @@ languages:</p>
     <span class="no">cd public/profiles/project_name/themes/custom/theme_name</span>
     <span class="no">npm install</span>
     <span class="no">grunt</span>
+    <span class="no">cd</span>
+    <span class="no">php ./bin/magento magento-cloud:build</span>
 </code></pre></div></div>
+
+<p>You must compile SASS files using <code class="highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="highlighter-rouge">grunt</code> command before the <code class="highlighter-rouge">build</code> command.</p>
 
 <h2 id="cloud-yaml-platform-cron"><code class="highlighter-rouge">crons</code></h2>
 <p><code class="highlighter-rouge">crons</code> describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do not run cron as <code class="highlighter-rouge">root</code>. We also recommend against running cron as the web server user.</p>

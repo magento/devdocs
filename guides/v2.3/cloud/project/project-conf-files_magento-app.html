@@ -2176,7 +2176,11 @@ languages:</p>
     <span class="no">cd public/profiles/project_name/themes/custom/theme_name</span>
     <span class="no">npm install</span>
     <span class="no">grunt</span>
+    <span class="no">cd</span>
+    <span class="no">php ./vendor/bin/m2-ece-build</span>
 </code></pre></div></div>
+
+<p>You must compile SASS files using <code class="highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="highlighter-rouge">grunt</code> command before the <code class="highlighter-rouge">build</code> command.</p>
 
 <h2 id="variables">Environment variables</h2>
 <p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce (Cloud) 2.2.X.</p>
