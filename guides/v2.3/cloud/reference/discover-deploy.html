@@ -280,6 +280,27 @@
         </li>
         
         
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="architecture">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/architecture/cloud-architecture.html">Architecture</a>
+    
+
+    
+    <ul>
+        
         
         
         <li class="nav-level2  " id="starter-architecture">
@@ -315,7 +336,7 @@
             
         
             
-            <a href="/guides/v2.3/cloud/reference/discover-arch.html">Pro architecture</a>
+            <a href="/guides/v2.3/cloud/architecture/pro-architecture.html">Pro architecture</a>
             
 
             
@@ -329,7 +350,35 @@
             
         
             
-            <a href="/guides/v2.3/cloud/welcome/discover-workflow.html">Pro develop and deploy workflow</a>
+            <a href="/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="pro-architecture-(legacy)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1637,20 +1686,6 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1950,13 +1985,13 @@
 </section>
 
 
-			<p>When you deploy Magento Commerce (Cloud)–complete all of your development in your local Git branch and push the code to the remote Git repository–every push starts the Magento build process. The build scripts parse the configuration files committed to the repository and use the configuration information to rebuild the current environment.</p>
+			<p>Every time you push code from your local workstation to the remote environment or merge code to a base environment branch, such as a merge from the Integration environment to the Staging environment, this activates the build and deploy scripts. These scripts generate new Magento code and provision configured services to the remote environment.</p>
 
 <p>The build and deploy process is slightly different for each plan:</p>
 
 <ul>
-  <li><strong>Starter plans</strong>—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. Fully test your code before merging to the <code class="highlighter-rouge">staging</code> branch. Finally, to go live, push <code class="highlighter-rouge">staging</code> to <code class="highlighter-rouge">master</code> to deploy to Production. You have full access to all branches through the Project Web Interface and CLI commands.</li>
-  <li><strong>Pro plans</strong>—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the <code class="highlighter-rouge">master</code> branch in Integration then deployed using CLI commands via SSH or through the Project Web Interface. If you don’t see Staging or Production in your UI, you may need to <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">update the Project Web Interface</a>.</li>
+  <li><strong>Starter plans</strong>—For the Integration environment, every active branch build and deploys to a full environment for access and testing. Fully test your code after merging to the <code class="highlighter-rouge">staging</code> branch. To go live, push <code class="highlighter-rouge">staging</code> to <code class="highlighter-rouge">master</code> to deploy to Production. You have full access to all branches through the Project Web Interface and the CLI commands.</li>
+  <li><strong>Pro plans</strong>—For the Integration environment, every <em>active</em> branch builds and deploys to a full environment for access and testing. You must merge your code to the <code class="highlighter-rouge">integration</code> branch before you can merge to the Staging environment and then the Production environment. You can only merge to Staging and Production using CLI commands with SSH or using the Project Web Interface. If you do not see the Staging or Production environments in your Project Web Interface, then you need to <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1981,7 +2016,7 @@
   <h2 id="cloud-deploy-conf">Project configuration</h2>
   <p>A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies. If you intend to make changes, modify the YAML files in your local branch. The build and deploy scripts access those files for specific settings.</p>
 
-  <p>For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files. For Pro Staging and Production environments, you will need to enter a <a href="/guides/v2.3/cloud/bk-cloud.html#gethelp">Support ticket</a>. We will configure those environments using configurations from the Git files.</p>
+  <p>For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files. For Pro Staging and Production environments, you will need to enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">Support ticket</a>. We will configure those environments using configurations from the Git files.</p>
 
   <ul>
     <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>—defines how to build and deploy Magento. Enter specific build and deploy options to the <code class="highlighter-rouge">hooks</code> section.</li>

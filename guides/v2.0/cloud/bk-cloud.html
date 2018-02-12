@@ -270,6 +270,27 @@
         </li>
         
         
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="architecture">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/cloud/architecture/cloud-architecture.html">Architecture</a>
+    
+
+    
+    <ul>
+        
         
         
         <li class="nav-level2  " id="starter-architecture">
@@ -305,7 +326,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architecture</a>
+            <a href="/guides/v2.0/cloud/architecture/pro-architecture.html">Pro architecture</a>
             
 
             
@@ -319,7 +340,35 @@
             
         
             
-            <a href="/guides/v2.0/cloud/welcome/discover-workflow.html">Pro develop and deploy workflow</a>
+            <a href="/guides/v2.0/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="pro-architecture-(legacy)">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1525,20 +1574,6 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -1839,32 +1874,9 @@
 
 <p>To start your free 30-day trial, see our <a href="https://magento.com/trial/plans-comparison" target="_blank">Plan Comparison</a>. You can select a plan that fits your business and start a trial with a newly provisioned project and code-base with the latest version of Magento Commerce (Cloud).</p>
 
-<h2 id="environments">Direct access to your environments</h2>
-<p>Fully access your Magento development and deployment through the Project Web Interface (a UI console) and CLI commands via SSH access. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.</p>
-
-<p>We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.</p>
-
-<h3 id="starter">Starter environments</h3>
-<p>For Starter plan subscriptions, you receive four <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">environments</a> including the following:</p>
-
-<ul>
-  <li><strong>Integration</strong>: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.</li>
-  <li><strong>Staging</strong>: We highly recommend you create an active <code class="highlighter-rouge">staging</code> branch as one of the three Integration environments. Create this branch directly from <code class="highlighter-rouge">master</code>. As code and extensions pass your tests, you can merge your Integration branches to <code class="highlighter-rouge">staging</code>. This Staging environment becomes your pre-Production testing environment. It includes the <code class="highlighter-rouge">staging</code> active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.</li>
-  <li><strong>Production</strong>: When code is ready and tested, all code merges to <code class="highlighter-rouge">master</code> for deployment to the Production live site. This environment includes your active <code class="highlighter-rouge">master</code> Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.</li>
-</ul>
-
-<h3 id="pro">Pro environments</h3>
-<p>For Pro subscriptions, you receive the following <a href="/guides/v2.0/cloud/reference/discover-arch.html">environments</a>:</p>
-
-<ul>
-  <li><strong>Integration</strong>: The ultimate developer environment, Integration provides eight testable environments including a <code class="highlighter-rouge">master</code>. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to <code class="highlighter-rouge">master</code> to push to Staging.</li>
-  <li><strong>Staging</strong>: As code and extensions pass your tests, deploy the Integration <code class="highlighter-rouge">master</code> Git branch to Staging for pre-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.</li>
-  <li><strong>Production</strong>: When code is ready and testing complete, deploy the Integration <code class="highlighter-rouge">master</code> Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.</li>
-</ul>
-
 <h3 id="details">Details about the cloud</h3>
 <ul>
-  <li>Each plan includes Integration <em>active</em> environments for development, testing, and integrating services. Additional active environments are available at additional cost.</li>
+  <li>Each plan includes Integration environment for development, testing, and integrating services. Additional active environments are available at additional cost.</li>
   <li>All environments run with active Git branches of code.</li>
   <li>You have an unlimited number of <em>inactive</em> Git branches.</li>
   <li>You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.</li>
@@ -1883,10 +1895,10 @@
   <li>Basic linux shell usage</li>
 </ul>
 
-<p>See <a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>, <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architechture</a>, and <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a> for details and additional technologies.</p>
+<p>See <a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>, <a href="/guides/v2.0/cloud/architecture/pro-architecture.html">Pro architecture</a>, and <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a> for details and additional technologies.</p>
 
 <h2 id="getstarted">Where do I get started?</h2>
-<p>If you have experience with Magento Commerce 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between Magento Commerce and Magento Commerce (Cloud). If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.</p>
+<p>If you have experience with Magento Commerce 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between Magento Commerce and Magento Commerce (Cloud). If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, setting up your local, continuous deployment across environments, and going live.</p>
 
 <p>If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of Magento Commerce as a base template.</p>
 
@@ -1914,8 +1926,8 @@
     <p>Pro information:</p>
 
     <ul>
-      <li><a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architecture</a></li>
-      <li><a href="/guides/v2.0/cloud/welcome/discover-workflow.html">Pro develop and deploy workflow</a></li>
+      <li><a href="/guides/v2.0/cloud/architecture/pro-architecture.html">Pro architecture</a></li>
+      <li><a href="/guides/v2.0/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a></li>
     </ul>
   </li>
   <li><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
@@ -1978,21 +1990,6 @@
     </ul>
   </li>
 </ul>
-
-<h2 id="gethelp">Technical support</h2>
-<p>You can enter a support ticket through the Project Web Interface:</p>
-
-<ol>
-  <li>Log in to your <a href="https://accounts.magento.cloud/" target="_blank">Magento Cloud account</a>.</li>
-  <li>
-    <p>Click <strong>Support</strong> &gt; <strong>Submit ticket</strong> from the top menu.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/cloud_support-ticket.png" alt="Enter a support ticket" /></p>
-  </li>
-  <li>Follow the prompts to open an issue with Support. Support will respond to your ticket in a timely manner.</li>
-</ol>
 
 		</div>
 		<!-- /.content-wrap -->

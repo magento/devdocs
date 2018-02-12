@@ -270,6 +270,27 @@
         </li>
         
         
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="architecture">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.0/cloud/architecture/cloud-architecture.html">Architecture</a>
+    
+
+    
+    <ul>
+        
         
         
         <li class="nav-level2  " id="starter-architecture">
@@ -305,7 +326,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/reference/discover-arch.html">Pro architecture</a>
+            <a href="/guides/v2.0/cloud/architecture/pro-architecture.html">Pro architecture</a>
             
 
             
@@ -319,7 +340,35 @@
             
         
             
-            <a href="/guides/v2.0/cloud/welcome/discover-workflow.html">Pro develop and deploy workflow</a>
+            <a href="/guides/v2.0/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="pro-architecture-(legacy)">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
+            
+            
+        
+            
+            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -1525,20 +1574,6 @@
         
         
         
-        <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
-            
-            
-        
-            
-            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="troubleshoot-deployment">
             
             
@@ -2041,7 +2076,7 @@ export FASTLY_API_TOKEN=&lt;API Token&gt;
 
 <p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code that use a priority of <code class="highlighter-rouge">100</code>.</p>
 
-<p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the speicific snippet name to delete:</p>
+<p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the specific snippet name to delete:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/&lt;snippet_name&gt; -X DELETE
 </code></pre></div></div>
