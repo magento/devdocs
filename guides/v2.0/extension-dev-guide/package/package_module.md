@@ -34,26 +34,13 @@ The Magento `composer.json` file defines the name, requirements, version, and ot
 
 The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
 
-<table>
-<tbody>
-<tr>
-<th>Element</th>
-<th>Description</th>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>A fully-qualified component name, in the format <code>&lt;vendor-name&gt;/&lt;component-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;component-name&gt;</code> to separate words.</td>
-</tr>
-<tr>
-<td><code>type</code> </td>
-<td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
-</tr>
-<td><code>autoload </code></td>
-<td>Specify necessary information to be loaded, such as [registration.php]({{page.baseurl}}extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
-</tr>
-</tbody>
-</table>
+Element | Description
+--- | ---
+`name` | A fully-qualified component name, in the format `<vendor-name>/<component-name>`. All letters must be in lowercase. Use dashes in the `<component-name>` to separate words.
+`type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
+`autoload` | Specify necessary information to be loaded, such as [registration.php]({{page.baseurl}}extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.
+
 
 {% include php-dev/composer-types.md %}
 

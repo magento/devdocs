@@ -1,9 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Web Driver Replacement in the Functional Testing Framework
-menu_title: Web driver replacement
 version: 2.0
 github_link: mtf/features/webdriver.md
 ---

@@ -8,6 +8,9 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/live/go-live-checklist.md
+functional_areas:
+  - Cloud
+  - Testing
 ---
 
 Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment.
@@ -36,13 +39,13 @@ You need to complete configurations for your DNS including:
 
   We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.
 
-After you've checked with your registrar about where to change your DNS settings, add a CNAME record that references the Master environment's host name: `<environment>-<project>.<region>.magentosite.cloud`. If you use multiple host names for your site, you must add a CNAME record for each of them.
+After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple host names for your site, you must add a CNAME record for each one.
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>This will not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
+<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
 </div>
 
-The following is a possible list of DNS providers strictly for your information. Use a DNS provider you prefer.
+The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.
 
 *	CNAME with ALIAS record from [Dyn](http://dyn.com){:target="_blank"}
 *	ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com){:target="_blank"}
@@ -50,12 +53,12 @@ The following is a possible list of DNS providers strictly for your information.
 *	ACNAME at [CloudFlare](https://www.cloudflare.com){:target="_blank"}
 *	ALIAS at [PointDNS](https://pointhq.com){:target="_blank"}
 
-Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirection service to redirect the apex over to the `www` version of the domain. Consult your DNS provider to see how they support this.
+Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirect service to redirect the apex over to the `www` version of the domain. Consult your DNS provider for more information.
 
-For the format, we support `www.domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`. We don't support a domain without www: `domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`.
+Another option for <em>apex domain</em> is to add an A record which maps a domain name to the Fastly IP address: `150.101.113.124`.
 
 ### TLS and Fastly {#fastly-tls}
-If you use TLS with Fastly enabled in your environment, you will also need a TXT record Fastly provides for your DNS provider. When entering your Support ticket for DNS information and going live, let us know you are using a TLS and request the TXT record. We can provide Fastly's TXT record file for your account. You can then send this record to your DNS provider.
+If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
 
@@ -80,7 +83,7 @@ Test and verify Fastly caching is correctly working in Production. For detailed 
 *	Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/develop/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit]({{site.mage2000url}}setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 

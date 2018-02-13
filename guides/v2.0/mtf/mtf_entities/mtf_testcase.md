@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Test case
-menu_title: Test case
-menu_order: 9
 version: 2.0
 github_link: mtf/mtf_entities/mtf_testcase.md
 ---

@@ -6,13 +6,16 @@ title: Manage company structures
 menu_title: Manage company structures
 menu_order: 15
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
 github_link: b2b/company-structures.md
+functional_areas:
+  - B2B
+  - Integration
 ---
 
-B2B allows company users to be assigned to company teams and hierarchies.
+{{site.data.var.b2b}} allows company users to be assigned to company teams and hierarchies.
 
 ## Manage company teams
 
@@ -129,7 +132,7 @@ An empty array
 
 The following query returns information about all teams (`team_id` &ge; `0`)
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -177,8 +180,7 @@ Not applicable
 
 In the B2B storefront, a buyer can view the company structure represented as a hierarchy tree. The tree can display multiple levels of company subdivisions (teams) as well as company users. The company hierarchy can have any number of items and levels.
 
-You can use REST endpoints to retrieve the current structure and move teams and customers within the hierarchy. You cannot delete  teams or customers.
-
+You can use REST endpoints to retrieve the current structure and move teams and buyers within the hierarchy. You cannot delete teams or buyers.
 
 **Service name**
 

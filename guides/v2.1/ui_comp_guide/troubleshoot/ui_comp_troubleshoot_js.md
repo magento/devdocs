@@ -44,7 +44,7 @@ A simple example:
 
 To retrieve the context within markup, you can also use the instance of Knockout:
 
-At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_requirejs_concept.html) `knockout`.
+At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html) `knockout`.
 
 {%highlight js%}
 var ko = require('knockout');
@@ -70,4 +70,3 @@ console.log(fieldName.name); // product_form.product_form.product-details.contai
 ## See also
 
 [Debug using uiRegistry]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry.html#debug_uiregistry)
-

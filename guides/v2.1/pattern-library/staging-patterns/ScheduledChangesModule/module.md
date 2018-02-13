@@ -7,9 +7,9 @@ menu_title: Scheduled Changes Module
 menu_order: 2
 menu_node: 
 version: 2.1
+ee_only: true
 github_link: pattern-library/staging-patterns/ScheduledChangesModule/module.md
 ---
-<img src="img/ee-only_large.png">
 
 <h2> Scheduled Changes Module </h2>
 

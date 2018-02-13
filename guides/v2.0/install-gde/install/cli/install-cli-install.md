@@ -8,8 +8,12 @@ menu_order: 4
 version: 2.0
 github_link: install-gde/install/cli/install-cli-install.md
 redirect_from:
-  -  /guides/v1.0/install-gde/install/install-cli-install.html
-  -  /guides/v2.0/install-gde/install/install-cli-install.html
+  - /guides/v1.0/install-gde/install/install-cli-install.html
+  - /guides/v2.0/install-gde/install/install-cli-install.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-tip">
@@ -234,7 +238,7 @@ The following table discusses the meanings of installation option names and valu
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>To enable and disable modules after installing Magento, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
+		<p>For important information about module dependencies, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -276,7 +280,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 <tr>
 <td><p>--amqp-host</p></td>
-<td><p>{{site.data.var.ee}} only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<td><p>{{site.data.var.ee}} only. Do not use the `--amqp` options unless you have already set up an installation of RabbitMQ. See <a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about installing and configuring RabbitMQ.</p>
 <p>The host name where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>

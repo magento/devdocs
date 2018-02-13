@@ -5,12 +5,15 @@ subgroup: 20_cqrs
 title: Manually configure master databases
 menu_title: Manually configure master databases
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
+ee_only: True
 github_link: config-guide/multi-master/multi-master_manual.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.

@@ -8,6 +8,9 @@ menu_order: 70
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-inherit.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 <h2 id="theme-inherit-over">What's in this topic</h2>

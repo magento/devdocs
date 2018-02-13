@@ -11,6 +11,10 @@ github_link: install-gde/system-requirements-tech.md
 redirect_from:
   - /guides/v1.0/install-gde/system-requirements.html
   - /guides/v2.0/install-gde/system-requirements-2.0-tech.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Operating systems (Linux x86-64)
@@ -43,13 +47,13 @@ PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" 
 
 #### Required PHP extensions:
 
-*	<a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> <img src="{{ site.baseurl }}common/images/ee-only_small.png">
+*	<a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> ({{site.data.var.ee}} only)
 *	<a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a>
 *	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
 *	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 *	<a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a>
 *	<a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a>
-*	<a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a>
+*	<a href="http://php.net/manual/en/book.hash.php" target="_blank">hash</a>
 *	<a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a>
 *	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a>
 *	<a href="http://php.net/manual/en/book.simplexml.php" target="_blank">SimpleXML</a>
@@ -91,7 +95,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 *	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 3.0.5 or latest stable 4.x version for page caching
 *	<a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
-*	{{site.data.var.ee}} only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
+*	{{site.data.var.ee}} only
 
 	*   Apache Solr 4.x
 

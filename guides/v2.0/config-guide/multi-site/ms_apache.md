@@ -8,6 +8,10 @@ menu_order: 9
 menu_node:
 version: 2.0
 github_link: config-guide/multi-site/ms_apache.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Set values in an entry point script {#ms-entry-script}

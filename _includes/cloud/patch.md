@@ -18,12 +18,12 @@ There are two types of patches:
 
 *   [Custom patches](#cloud-patch-custom)
 
-    Custom patches can be provided by Magento to address a specific issue you raised in a Support ticket. Third-party extension developers can also provide a custom patch.
+    Custom patches can be provided by Magento to address a specific issue you raised in a Support ticket. Third-party module / extension developers can also provide a custom patch.
 
     Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always test a patch your local system. When complete, push the local Git branch to deploy your [Integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) environment. Resolve any issues before you deploy to [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
+Always test a patch your local system. When complete, push the local Git branch to deploy your Integration environment. Resolve any issues before you deploy to Staging or Production.
 </div>
 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
@@ -36,7 +36,7 @@ Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
 
-        magento-cloud environment:mysql-dump
+        magento-cloud db:dump
 2.  Enter the following command to back up code and media:
 
         php bin/magento setup:backup --code [--media]
@@ -86,7 +86,7 @@ Verify other changes you're going to submit to source control before you start t
 ## Test general patches {#cloud-patch-gen}
 *General patches* are provided for all Magento Commerce customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.
 
-The procedure you use is slightly different, depending on the type of environment: [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage), or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
+The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#gen-getstarted}
 We recommend you test a patch in the `master` branch.
@@ -144,7 +144,7 @@ After you've successfully tested a patch locally and on your integration environ
 ## Test custom patches {#cloud-patch-custom}
 *Custom patches* are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.
 
-The procedure you use is slightly different, depending on the type of environment: [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage), or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
+The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#custom-getstarted}
 We recommend you test a patch locally in the `master` branch.

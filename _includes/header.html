@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -54,7 +54,7 @@
 
 	<nav id="global-nav">
 
-		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
 
 		<div class="container">
 
@@ -68,9 +68,9 @@
 				<a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a>
 			</div>
 
-			<form class="quick-search" action="{{site.baseurl}}search.html" method="get">
-				<input type="search" name="q" placeholder="Search" />
-				<a href="#" class="quick-search-close">&times;</a>
+			<form class="quick-search" action="{{page.baseurl}}search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
 			</form>
 
 		</div>

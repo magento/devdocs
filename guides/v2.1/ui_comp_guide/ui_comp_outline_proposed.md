@@ -19,7 +19,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 - Overview
 - What are UI components
 	- What is a UI component
-	- [The architectural structure of a UI component]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_architecture_concept.html)
+	- [The architectural structure of a UI component]({{page.baseurl}}architecture/archi_perspectives/components/AComponents.html)
 	- Application workflow description
 	- [Configuration flow: the configuration pieces and their part in workflow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html)
 		- Declaration in `definition.xml`
@@ -35,7 +35,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 			- [`uiLayout`  as a built-in initializer]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uilayout_concept.html)
 			- [`uiRegistry`  as a in memory storage]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry.html)
 			- Linking properties of UI components
-		- [Require JS with UI components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_requirejs_concept.html)
+		- [Require JS with UI components]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html)
 	- Templates customization rules & techniques (using Knockout.js)
 		- Overview of Knockout templates (explain custom bindings, whatever else is important)
 		- Templates syntax
@@ -138,8 +138,6 @@ If you would like to help us by writing any of the topics that we have not yet g
 	-  SelectionsColumn
 	-  Component
 	-  Container
-	-  Fieldset
-	-  Field
 	-  Bookmark
 	-  InsertForm
 	-  InsertListing

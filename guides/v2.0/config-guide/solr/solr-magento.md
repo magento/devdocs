@@ -7,16 +7,20 @@ menu_title: Configure Solr and Magento
 menu_order: 2
 menu_node:
 version: 2.0
+ee_only: True
 github_link: config-guide/solr/solr-magento.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
 In a future release, Solr compatibility will be removed.
 
-If possible, use [Elastic Search]({{page.baseurl}}config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
+If possible, use [Elastic Search](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
 </div>
 
 The following topics discuss how to configure Solr to work with {{site.data.var.ee}}:

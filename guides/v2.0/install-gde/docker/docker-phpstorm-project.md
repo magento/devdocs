@@ -4,10 +4,14 @@ group: install-dock
 subgroup: 05_PhpStorm
 title: Set up your PhpStorm project
 menu_title: Set up your PhpStorm project
-menu_node: 
+menu_node:
 menu_order: 5
 version: 2.0
 github_link: install-gde/docker/docker-phpstorm-project.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/docker/deprecated-note.html %}

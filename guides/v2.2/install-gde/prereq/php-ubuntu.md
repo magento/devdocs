@@ -9,6 +9,10 @@ level3_menu_node: level3child
 level3_subgroup: php
 version: 2.2
 github_link: install-gde/prereq/php-ubuntu.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -53,7 +57,7 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get -y update
 		sudo add-apt-repository ppa:ondrej/php
 		sudo apt-get -y update
-		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
+		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
 
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
     The last command installs all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
@@ -142,7 +146,7 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get -y update
 		sudo add-apt-repository ppa:ondrej/php
 		sudo apt-get -y update
-		sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1 php7.1-common php7.1-gd php7.1-mysql php7.1-mcrypt php7.1-curl php7.1-intl php7.1-xsl php7.1-mbstring php7.1-zip php7.1-bcmath php7.1-iconv php7.1-soap
+		sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1-common php7.1-gd php7.1-mysql php7.1-mcrypt php7.1-curl php7.1-intl php7.1-xsl php7.1-mbstring php7.1-zip php7.1-bcmath php7.1-iconv php7.1-soap
 
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
     The last command installs all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.

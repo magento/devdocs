@@ -9,10 +9,10 @@ menu_order: 0
 level3_menu_node:
 level3_subgroup: sample-tutorial
 version: 2.0
-github_link: contributor-guide/tutorial-template-first.md
+github_link: contributor-guide/templates/tutorial-template-first.md
 ---
 
-A tutorial provides procedurial information spread across multiple pages. It contains several design elements that differ from standard topics:
+A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:
 
 * When a user clicks on a tutorial title from the left navigation area, the Devdocs {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} replaces the navigation with a table of contents that is specific to the tutorial.
 * **Next** and **Previous** buttons are displayed at the bottom of each topic.

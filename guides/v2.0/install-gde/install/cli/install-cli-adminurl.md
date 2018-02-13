@@ -4,18 +4,22 @@ group: install_cli
 subgroup: 05_Command-line installation
 title: Display or change the Admin URI
 menu_title: Display or change the Admin URI
-menu_node: 
+menu_node:
 menu_order: 6
 version: 2.0
 github_link: install-gde/install/cli/install-cli-adminurl.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-adminurl.html
   - /guides/v2.0/install-gde/install/install-cli-adminurl.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
 Before you run this command, you must <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.

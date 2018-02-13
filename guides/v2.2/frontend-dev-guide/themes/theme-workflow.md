@@ -7,6 +7,9 @@ menu_title: Theme development workflow
 menu_order: 10
 version: 2.2
 github_link: frontend-dev-guide/themes/theme-workflow.md
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 
@@ -79,7 +82,7 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 
 * [Setup Grunt]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html)
 * [Add the theme to Grunt configuration]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#add_theme)
-* [Track changes]({{page.baseurl}}{{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_commands)
+* [Track changes]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_commands)
 
 </div>
 <div class="flow-nav top-bottom"></div>
@@ -157,7 +160,7 @@ See:
 
 * Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Сlean static files]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.
 
-* Changes in layout and templates requires cleaning cache. See [Clean cache]({{page.baseurl}}frontend-dev-guide/cache_for_frontdevs.md#clean_cache) for details.
+* Changes in layout and templates requires cleaning cache. See [Clean cache]({{page.baseurl}}frontend-dev-guide/cache_for_frontdevs.html#clean_cache) for details.
 
 </div>
 <div class="flow-arrow"></div>
@@ -176,7 +179,7 @@ In the Magento root directory, run:
 
 `php bin/magento deploy:mode:set production`
 
-See [Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#mode-production) for details.
+See [Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode) for details.
 </div>
 <div class="flow-arrow"></div>
 

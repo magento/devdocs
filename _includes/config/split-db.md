@@ -33,7 +33,7 @@ Create checkout and OMS master databases as follows:
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
-## Configure Magento EE to use the master databases {#config-ee-multidb-master-cli}
+## Configure {{site.data.var.ee}} to use the master databases {#config-ee-multidb-master-cli}
 After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)
 
 ### First steps
