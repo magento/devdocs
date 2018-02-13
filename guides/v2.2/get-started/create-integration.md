@@ -195,7 +195,7 @@ The process for customizing your module includes
 
 <h3 id="resources">Define the required resources</h3>
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
-Also, you can define own `etc/acl.xml` file with a custom resource.
+Also, you can define your own `etc/acl.xml` file with a custom resource.
 
 ```xml
 <?xml version="1.0"?>
