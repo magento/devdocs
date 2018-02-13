@@ -721,16 +721,16 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 
      public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
      {
-         $this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);
+         $this-&gt;integrationManager-&gt;processIntegrationConfig(['TestIntegration']);
      }
  }
  </pre>
 
     <p>In the following line</p>
 
-    <p><code class="highlighter-rouge">$this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);</code></p>
+    <p><code class="highlighter-rouge">$this-&gt;integrationManager-&gt;processIntegrationConfig(['TestIntegration']);</code></p>
 
-    <p><code class="highlighter-rouge">testIntegration</code> must refer to your <code class="highlighter-rouge">etc/integrations/config.xml</code> file, and the integration name value must be the same.</p>
+    <p><code class="highlighter-rouge">testIntegration</code> must refer to your <code class="highlighter-rouge">etc/integration.xml</code> file, and the integration name value must be the same.</p>
 
     <p>Also, be sure to change the path after <code class="highlighter-rouge">namespace</code> for your vendor and module names.</p>
   </li>
@@ -755,54 +755,55 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 </ul>
 
 <h3 id="resources">Define the required resources</h3>
-<p>The <code class="highlighter-rouge">etc/integration/api.xml</code> file defines which <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> resources the integration has access to.</p>
+<p>To determine which resources an integration needs access to, review the permissions defined in each module’s <code class="highlighter-rouge">etc/acl.xml</code> file.
+Also, you can define your own <code class="highlighter-rouge">etc/acl.xml</code> file with a custom resource.</p>
 
-<p>To determine which resources an integration needs access to, review the permissions defined in each module’s <code class="highlighter-rouge">etc/acl.xml</code> file.</p>
-
-<p>In the following example, the test integration requires access to the following resources in the Sales module:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
-    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">"testIntegration"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Acl/etc/acl.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;acl&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
-            <span class="c">&lt;!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well--&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Customer::customer"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Log::online"</span> <span class="nt">/&gt;</span>
-            <span class="c">&lt;!-- To grant permission to Magento_Sales::reorder, all its parent resources need to be declared--&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales_operation"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales_order"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::actions"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::reorder"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Magento_Backend::admin"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;resource</span> <span class="na">id=</span><span class="s">"Magento_TestIntegration::TestIntegration"</span> <span class="na">title=</span><span class="s">"Test Integration"</span> <span class="na">translate=</span><span class="s">"title"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/resource&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
-    <span class="nt">&lt;/integration&gt;</span>
-<span class="nt">&lt;/integrations&gt;</span></code></pre></figure>
+    <span class="nt">&lt;/acl&gt;</span>
+<span class="nt">&lt;/config&gt;</span> 
+</code></pre></div></div>
 
 <h3 id="preconfig">Pre-configure the integration</h3>
 
-<p>Your module can optionally provide a configuration file <code class="highlighter-rouge">config.xml</code> so that the integration can be automatically pre-configured with default values. To enable this feature, create the <code class="highlighter-rouge">config.xml</code> file in the <code class="highlighter-rouge">etc/integration</code> directory.</p>
+<p>Your module can optionally provide a configuration file <code class="highlighter-rouge">integration.xml</code> so that the integration can be automatically pre-configured with default values.
+To enable this feature, create the <code class="highlighter-rouge">integration.xml</code> file in the <code class="highlighter-rouge">etc</code> directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you pre-configure the integration, the values cannot be edited from the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> panel.</p>
 </div>
 
-<p>The  file defines which API resources the integration has access to.</p>
+<p>The  file defines which API resources the integration has access to.
+In the following example, the test integration requires access to the following resources in the Sales module:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
-   <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">"TestIntegration"</span><span class="nt">&gt;</span>
-       <span class="nt">&lt;email&gt;&lt;/email&gt;</span>
-       <span class="nt">&lt;endpoint_url&gt;&lt;/endpoint_url&gt;</span>
-       <span class="nt">&lt;identity_link_url&gt;&lt;/identity_link_url&gt;</span>
-   <span class="nt">&lt;/integration&gt;</span>
-<span class="nt">&lt;/integrations&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">"TestIntegration"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;email&gt;</span>Email<span class="nt">&lt;/email&gt;</span>
+    <span class="nt">&lt;endpoint_url&gt;</span>Callback URL<span class="nt">&lt;/endpoint_url&gt;</span>
+    <span class="nt">&lt;identity_link_url&gt;</span>Identity link URL<span class="nt">&lt;/identity_link_url&gt;</span>
+    <span class="nt">&lt;resources&gt;</span>
+        <span class="c">&lt;!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well--&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Customer::customer"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Log::online"</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- To grant permission to Magento_Sales::reorder, all its parent resources need to be declared--&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales_operation"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::sales_order"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::actions"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::reorder"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/resources&gt;</span>
+<span class="nt">&lt;/integration&gt;</span>
+</code></pre></div></div>
 
 <table>
 <tr>
 <th>Element</th>
 <th>Description</th>
-</tr>
-<tr>
-<td>integrations</td>
-<td>Contains one or more integration definitions.</td>
 </tr>
 <tr>
 <td>integration name=""</td>
@@ -820,6 +821,14 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 <tr>
 <td>identity_link_url</td>
 <td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
+</tr>
+<tr>
+<td>resources</td>
+<td>List of required resources.</td>
+</tr>
+<tr>
+<td>resource</td>
+<td>The name of specific resource like `Magento_Sales::reorder`</td>
 </tr>
 </table>
 <h2 id="install">Install your module</h2>
