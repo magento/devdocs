@@ -41,7 +41,7 @@ The following technologies are requirements for developing and deploying your st
 *	[Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
 *	[Magento 2]({{page.baseurl}}cloud/bk-cloud.html#magento2)
 *	[Continuous Integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html)
-*	Architectures including [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture
+*	Architectures including [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-architecture.html) architecture
 
 Here are some advanced technologies we recommend getting familiar with:
 
@@ -97,7 +97,7 @@ For detailed information on supported versions and extensions, see the following
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
-*	Set up a [local development environment]({{page.baseurl}}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{page.baseurl}}cloud/welcome/discover-workflow.html) plan.
+*	Set up a [local development environment]({{page.baseurl}}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{page.baseurl}}install-gde/prereq/connect-auth.html) in your account
 *	Get a [project invite]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
 *	Get [Magento authentication keys]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
@@ -148,7 +148,7 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *	Create your own Cloud account
 
 #### Related topics
-*	[Cloud Architexture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Cloud Architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html)
 *	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
-*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Go live and launch]({{page.baseurl}}cloud/live/live.html)

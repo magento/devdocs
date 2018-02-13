@@ -6,6 +6,9 @@ pages:
         - label: Subscriptions and plans
           url: cloud/basic-information/cloud-plans.html
 
+    - label: Architecture
+      url: cloud/architecture/cloud-architecture.html
+      children:
         - label: Starter architecture
           url: cloud/basic-information/starter-architecture.html
 
@@ -13,15 +16,20 @@ pages:
           url: cloud/basic-information/starter-develop-deploy-workflow.html
 
         - label: Pro architecture
-          url: cloud/reference/discover-arch.html
+          url: cloud/architecture/pro-architecture.html
 
         - label: Pro develop and deploy workflow
-          url: cloud/welcome/discover-workflow.html
+          url: cloud/architecture/pro-develop-deploy-workflow.html
+
+        - label: Pro architecture (legacy)
+          url: cloud/architecture/pro-architecture-legacy.html
+
+        - label: Add Staging and Production to Pro projects UI
+          url: cloud/trouble/pro-env-management.html
 
     - label: Onboarding tasks
       url: cloud/onboarding/onboarding-tasks.html
       children:
-
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
 
@@ -290,9 +298,6 @@ pages:
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
       children:
-        - label: Add Staging and Production to Pro projects UI
-          url: cloud/trouble/pro-env-management.html
-
         - label: Troubleshoot deployment
           url: cloud/access-acct/trouble.html
 
