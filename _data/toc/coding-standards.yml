@@ -39,4 +39,4 @@ pages:
       children:
 
         - label: WebApi
-        - url: coding-standards/technical-vision/webapi.html
+          url: coding-standards/technical-vision/webapi.html
