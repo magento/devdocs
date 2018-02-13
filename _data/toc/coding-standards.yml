@@ -34,9 +34,9 @@ pages:
     - label: Technical guidelines
       url: coding-standards/technical-guidelines.html
 
-#     - label: Technical vision
-#       versions: ["2.0"]
-#       children:
-#
-#       - label: WebApi
-#        - url: coding-standards/technical-vision/webapi.html
+    - label: Technical vision
+      versions: ["2.0"]
+      children:
+
+        - label: WebApi
+        - url: coding-standards/technical-vision/webapi.html
