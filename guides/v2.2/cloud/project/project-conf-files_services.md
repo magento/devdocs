@@ -22,7 +22,9 @@ This file is located at `.magento/services.yaml` in your project.
 
 To see an example, see this [sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}.
 
-**For Pro:** Changes you make using `.yaml` files affect your [Integration environment]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) only. For technical reasons, your [Staging]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage) and [Production]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod) environments do not use `.yaml` files. To make these changes in these environments, you must create a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+**For Pro:**
+
+{% include cloud/note-pro-using-yaml.md %}
 
 The following sections discuss properties in `services.yaml`.
 
@@ -34,7 +36,7 @@ This affects the following environments:
 * All Starter environments including Production `master`
 * Pro Integration environments
 
-To install and update services in Pro Staging and Production environments (IaaS), you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp). Indicate the service changes needed and your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
+To install and update services in Pro Staging and Production environments (IaaS), you must enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html). Indicate the service changes needed and your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
 
 ## Default and supported services {#cloud-yaml-services-default}
 Your Git branch includes the following default `services.yaml` file:

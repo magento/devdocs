@@ -39,7 +39,7 @@ To deploy, you need the following:
 * SSH access to Staging and Production environments
 
 ## Enter a ticket {#ticket}
-If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp).
+If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl }}cloud/trouble/trouble.html).
 
 To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.
 
@@ -147,6 +147,6 @@ When this code is fully deployed to those environments, you can begin developmen
 
 #### Related topics
 
-* [Cloud Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html)
+* [Cloud Architecture]({{ page.baseurl }}cloud/architecture/pro-architecture.html)
 * [Deploy your store]({{ page.baseurl }}cloud/live/stage-prod-live.html)
 * [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html)
