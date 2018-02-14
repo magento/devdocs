@@ -16,11 +16,11 @@ See [more details](https://en.wikipedia.org/wiki/Web_API) about importance of we
 ### Components Dependencies
 Below are some basic examples of what you can do with markdown.
 
-`![Web API components dependencies]({{page.baseurl}}coding-standards/technical-vision/images/webapi-components-dependencies.png}})`
+`![Web API components dependencies]({{page.baseurl}}coding-standards/technical-vision/images/webapi-components-dependencies.png)`
 
 ### High-level Architecture
 
-`![Web API request processing overview]({{page.baseurl}}coding-standards/technical-vision/images/webapi-request-processing-high-level-overview.png}})`
+`![Web API request processing overview]({{page.baseurl}}coding-standards/technical-vision/images/webapi-request-processing-high-level-overview.png)`
 
 ### Extension Scenarios
 
@@ -88,7 +88,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Internal server errors must be masked and never shown to the user in production mode. In developer mode original exceptions must never be masked and should be displayed along with related stacktrace
 1. Pagination must be supported by all list operations
 
-**GraphQL:**
+**GraphQL**
 
 1. Unlimited nesting should be supported during requests for related entities (e.g. get Order => Order Items => Products => Related Products)
 1. Fields filtration must be done using SQL queries, not on application layer after fetching all possible fields
@@ -98,19 +98,19 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Must return 200 HTTP status code for all queries. In case of exceptional situation, error should be returned in response body. Schema requests may return 500 HTTP status code.
 1. Store code should be passed via headers
 
-**REST:**
+**REST**
 
 1. Resource URL should be versioned (e.g. V1). Version must be specified in the following format: "V\\d.+"
 1. Resource names in URL should be in plural form (e.g. products, carts)
-1. ID parameters for operations on entities should be part of resource URL (e.g. \\V1\\products\\**:sku**)
+1. ID parameters for operations on entities should be part of resource URL (e.g. /V1/products/**:sku**)
 1. POST should be used for entity(s) creation
    PUT should be used for entity(s) update
    PATCH should be used for patch entity(s) update (when unchanged fields are omitted in the request)
 1. Is designed for system integrations, mobile app integrations as well as for one-page apps. Supports tokens, cookies and OAuth 1.0 with token exchange, as well as guest access to public resources
 1. Must return responses with standard [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-1. Store code must be passed via URL. E.g. GET \\rest\\frenchStoreView\\V1\\products. Persistence operations that should be performed for all stores at once, should have 'all' store code in URL1. 
+1. Store code must be passed via URL. E.g. GET /rest/frenchStoreView/V1/products. Persistence operations that should be performed for all stores at once, should have 'all' store code in URL1. 
 
-**SOAP:**
+**SOAP**
 
 1. Is designed for systems integration. Supports token authentication for customers and admins, as well as no authentication for anonymous service methods. Cookie authentication and OAuth 1.0 are not supported
 1. Schema is available for all exposed services in form of WSDL
