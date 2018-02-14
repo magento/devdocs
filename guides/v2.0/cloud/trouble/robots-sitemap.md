@@ -52,6 +52,6 @@ Move and add the files to your Git branch:
 4. Move the files into the `/pub/media/` directory using the rsync command:
 
     rsync -azvP pub/media/ <environment machine user name>@<environment machine host or IP>:pub/media/
-5. Enter a [ticket with Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to have URL rewrite rules added for `sitemap.xml` and `robots.txt`.
+5. Enter a [ticket with Support]({{ page.baseurl }}cloud/trouble/trouble.html) to have URL rewrite rules added for `sitemap.xml` and `robots.txt`.
 
 When the redirects are completed, keep these files updated in that file location for your Git branches during deployment.

@@ -48,7 +48,7 @@ Pro comes with a large Integration environment with eight active branches and en
 6. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
 7. Finally, deploy to the Production environment to complete testing, go live steps, and start selling.
 
-For detailed information of the process, see [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html).
+For detailed information of the process, see [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html).
 
 ### Enter a ticket for deploying hooks {#hooks}
 {% include cloud/hooks.md %}

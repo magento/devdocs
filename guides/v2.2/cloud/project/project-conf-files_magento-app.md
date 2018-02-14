@@ -19,9 +19,7 @@ redirect_from:
 
 This file controls the application and the way it is built and deployed on {{site.data.var.ece}}. To see a sample of the file, see [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="\_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Changes you make using `.yaml` files affect your [integration environment]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) only. For technical reasons, neither [staging]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage) nor [production]({{page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod) environments use `.yaml` files. To make these changes in a staging or production environment, you must create a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
-</div>
+{% include cloud/note-pro-using-yaml.md %}
 
 The following sections discuss properties in `.magento.app.yaml`.
 
@@ -240,7 +238,11 @@ hooks:
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
     grunt
+    cd
+    php ./vendor/bin/m2-ece-build
 ```
+
+You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ## Environment variables {#variables}
 The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
