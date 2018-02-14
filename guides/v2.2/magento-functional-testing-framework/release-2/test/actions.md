@@ -9,7 +9,7 @@ functional_areas:
 mftf-release: 2.0.2
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 This topic contains a reference list of available action type tags available in the MFTF tests.
