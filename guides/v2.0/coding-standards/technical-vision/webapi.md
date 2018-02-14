@@ -16,11 +16,11 @@ See [more details](https://en.wikipedia.org/wiki/Web_API) about importance of we
 ### Components Dependencies
 Below are some basic examples of what you can do with markdown.
 
-`![Web API components dependencies]({{page.baseurl}}coding-standards/technical-vision/images/webapi-components-dependencies.png)`
+![Web API components dependencies](images/webapi-components-dependencies.png)
 
 ### High-level Architecture
 
-`![Web API request processing overview]({{page.baseurl}}coding-standards/technical-vision/images/webapi-request-processing-high-level-overview.png)`
+![Web API request processing overview](images/webapi-request-processing-high-level-overview.png)
 
 ### Extension Scenarios
 
