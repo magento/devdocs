@@ -205,26 +205,24 @@ nodejs:
 ```
 
 ## `hooks` {#cloud-yaml-platform-hooks}
-The `hooks` (also referred to as `deployment hooks`) enable you to define shell commands to run during the deployment process.
+Use the `hooks` section to specify which shell commands to run during the build and deploy phases. For example, you may want to run a CLI command provided by a custom extension during the build phase.
 
-They can be executed at various points in the lifecycle of the application.
+-   **`build`**—Execute commands _before_ packaging your application. No other services, such as the database or Redis, are accessible at this time since the application has not been deployed yet.
 
-Possible hooks are:
+You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
+-   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point.
 
-* `build`: We run build hooks before your application has been packaged. No other services (such as the database, or redis) are accessible at this time since the application has not been deployed yet.
-* `deploy`: We run deploy hooks after your application has been deployed and started. You can access other services at this point.
-
-To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the `build` or
-`deploy` sections as follows:
+Add CLI commands under the `build` or `deploy` sections:
 
 ```yaml
 hooks:
+    # We run build hooks before your application has been packaged.
     build: |
-        php ./bin/magento magento-cloud:build
-        php ./bin/magento additional:build:hook
+        php ./bin/magento <custom-command>
+        php ./vendor/bin/m2-ece-build
+    # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./bin/magento magento-cloud:deploy
-        php ./bin/magento additional:deploy:hook
+        php ./vendor/bin/m2-ece-deploy
 ```
 
 The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be run unless you `cd` somewhere else.
