@@ -33,7 +33,7 @@ The following diagram demonstrates XML structure of an action group:
         <arguments>
             <argument name=""/>
             <argument name="" defaultValue=""/>
-            <argument name="" defaultValue="" data=""/>
+            <argument name="" defaultValue="" type=""/>
         </arguments>
     </actionGroup>
 </actionGroups>
