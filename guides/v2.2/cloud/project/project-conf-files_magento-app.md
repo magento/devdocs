@@ -213,6 +213,7 @@ hooks:
     # We run deploy hook after your application has been deployed and started.
     deploy: |
         php ./vendor/bin/m2-ece-deploy
+        php ./bin/magento <custom-command>
 ```
 
 The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be run unless you `cd` somewhere else.
