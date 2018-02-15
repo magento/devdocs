@@ -212,7 +212,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 name|string|required|Identifier of an argument in scope of action group.
 defaultValue|string|optional|Data entity that is used by default.
-data|sting|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`
+type|sting|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`
 
 {%endraw%}
 
