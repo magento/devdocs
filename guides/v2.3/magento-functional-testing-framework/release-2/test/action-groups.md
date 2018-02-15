@@ -157,13 +157,13 @@ There are cases where instead of passing in an entity, you may need to only send
 ```xml
 <actionGroup name="fillExample">
     <arguments>
-        <argument name="relevantString" defaultValue="defaultString" data="string"/>
+        <argument name="relevantString" defaultValue="defaultString" type="string"/>
     </arguments>
     <fillField stepKey="fillField1" selector="#input" userInput="{{relevantString}}"/>
     <click stepKey="clickSave" selector="#save"/>
     <see stepKey="seeItWorked" selector="#outputArea" userInput="{{relevantString}}"/>
     <click stepKey="clickParameterizedSelector" selector="{{SomeSection.parameterizedElement(relevantString)}}"/>
-</actionGroup
+</actionGroup>
 ```
 
 The above tells the `actionGroup` that the replacement argument is not a data entity, but rather just a simple piece of data that needs to be replaced. By default, and if no `data` attribute is defined, it is assumed to be an `entity`
