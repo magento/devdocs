@@ -199,7 +199,7 @@ nodejs:
 ## `hooks` {#cloud-yaml-platform-hooks}
 Use the `hooks` section to specify which shell commands to run during the build and deploy phases. For example, you may want to run a CLI command provided by a custom extension during the build phase.
 
--   **`build`**—Execute commands _before_ packaging your application. No other services, such as the database or Redis, are accessible at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
+-   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
 Add CLI commands under the `build` or `deploy` sections:
