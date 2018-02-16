@@ -2170,27 +2170,24 @@ languages:</p>
 </code></pre></div></div>
 
 <h2 id="cloud-yaml-platform-hooks"><code class="highlighter-rouge">hooks</code></h2>
-<p>The <code class="highlighter-rouge">hooks</code> (also referred to as <code class="highlighter-rouge">deployment hooks</code>) enable you to define shell commands to run during the deployment process.</p>
-
-<p>They can be executed at various points in the lifecycle of the application.</p>
-
-<p>Possible hooks are:</p>
+<p>Use the <code class="highlighter-rouge">hooks</code> section to specify which shell commands to run during the build and deploy phases. For example, you may want to run a CLI command provided by a custom extension during the build phase.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">build</code>: We run build hooks before your application has been packaged. No other services (such as the database, or redis) are accessible at this time since the application has not been deployed yet.</li>
-  <li><code class="highlighter-rouge">deploy</code>: We run deploy hooks after your application has been deployed and started. You can access other services at this point.</li>
+  <li><strong><code class="highlighter-rouge">build</code></strong>—Execute commands <em>before</em> packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands <em>before</em> the default <code class="highlighter-rouge">php ./vendor/bin/m2-ece-build</code> command to make sure custom-generated content makes it to the deployment phase.</li>
+  <li><strong><code class="highlighter-rouge">deploy</code></strong>—Execute commands <em>after</em> packaging and deploying your application. You can access other services at this point. Since the default <code class="highlighter-rouge">php ./vendor/bin/m2-ece-deploy</code> command copies the <code class="highlighter-rouge">app/etc</code> directory to correct location, you must add custom commands <em>after</em> the deploy command to prevent custom commands from failing.</li>
 </ul>
 
-<p>To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the <code class="highlighter-rouge">build</code> or
-<code class="highlighter-rouge">deploy</code> sections as follows:</p>
+<p>Add CLI commands under the <code class="highlighter-rouge">build</code> or <code class="highlighter-rouge">deploy</code> sections:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
     <span class="c1"># We run build hooks before your application has been packaged.</span>
     <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./bin/magento &lt;custom-command&gt;</span>
         <span class="no">php ./vendor/bin/m2-ece-build</span>
     <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
     <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
         <span class="no">php ./vendor/bin/m2-ece-deploy</span>
+        <span class="no">php ./bin/magento &lt;custom-command&gt;</span>
 </code></pre></div></div>
 
 <p>The home directory, where your application is mounted, is <code class="highlighter-rouge">/app</code>, and that is the directory from which hooks will be run unless you <code class="highlighter-rouge">cd</code> somewhere else.</p>
