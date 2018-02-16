@@ -1254,6 +1254,20 @@ stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
 
+### selectMultipleOptions
+
+Selects all given options in given Magento dropdown element.
+
+Attribute|Type|Use|Description
+---|---|---|---
+filterSelector|string|required|
+optionSelector|string|required|
+userInput|string|optional|
+parameterArray|string|optional|
+stepKey|string|required|A unique identifier of the action.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
+
 ### setCookie
 
 [See setCookie docs on codeception.com](http://codeception.com/docs/modules/WebDriver#setCookie){:target='_blank'}
