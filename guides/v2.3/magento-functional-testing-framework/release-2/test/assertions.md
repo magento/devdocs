@@ -73,6 +73,23 @@ stepKey|string|required| A unique identifier of the text step.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of the preceding action.
 
+### assertArrayIsSorted
+
+Example:
+
+```xml
+<assertArrayIsSorted parameterArray="[1, 2, 3, 4, 5]" sort="asc" stepKey="key1"/>
+<assertArrayIsSorted parameterArray="[{$grabbedValue1}, {$grabbedValue2}, {$grabbedValu3}]" sort="asc" stepKey="key2"/>
+```
+
+Attribute|Type|Use|Description
+---|---|---|---
+parameterArray|string|required| Array of items that should be checked for sorted order.
+sort|string|required| Expected sort direction (asc or desc).
+stepKey|string|required| A unique identifier of the text step.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of the preceding action.
+
 
 ### assertArrayHasKey
 
