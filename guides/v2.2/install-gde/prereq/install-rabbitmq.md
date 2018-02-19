@@ -70,6 +70,8 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 
 ```bash
 rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+```
+```bash
 yum install rabbitmq-server-3.5.6-1.noarch.rpm
 ```
 
