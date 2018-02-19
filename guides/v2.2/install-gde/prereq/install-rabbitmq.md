@@ -1,12 +1,9 @@
 ---
 layout: default
 group: install_pre
-subgroup: Prerequisites
 title: RabbitMQ
-menu_title: RabbitMQ (Magento Commerce only)
-menu_order: 50
 version: 2.2
-ee_only: True
+ee_only: true
 github_link: install-gde/prereq/install-rabbitmq.md
 functional_areas:
   - Install
