@@ -22,7 +22,7 @@ The first constructor parameter has a type of `Magento\Customer\Model\AddressFac
 Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.
 
 <h3 id="codegen-over-when">When is code generated?</h3>
-Provided the Magento application is not set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.
+Provided the Magento application is not set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, code is generated when the Magento application cannot find a class when executing code.
 
 In particular,
 

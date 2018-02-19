@@ -24,7 +24,7 @@ All calls are performed on behalf of a customer, and the customer's token is spe
 
 To add a {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} to a cart, you must provide a `sku`, the quantity, and the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} ID, which was generated when the cart was created.
 
-The following example adds an orange medium-sized  Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
+The following example adds an orange medium-sized Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
 
 **Endpoint**
 
@@ -214,7 +214,7 @@ The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sk
 
 To add a bundle product to a cart, you must specify the `sku` of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the `id` defined in the item's `product_links` object. The `product_links` object primarily describes the ordering and placement of options on the customization page, but it also links an item's `sku` and `id` to the `sku` of the bundle product.
 
-The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified respose:
+The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified response:
 
 {% collapsible Show code sample %}
 {% highlight json %}
