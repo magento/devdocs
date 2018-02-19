@@ -116,13 +116,6 @@ You can use these options as part of a `build_options.ini` file for customizing 
       <td>Skips static content deployment during the build phase. If you are already deploying static content during the build phase with Configuration Management, you may want to turn it off for a quick build test. We do not recommend using this option as running static deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in versions 2.1.4 and later.</td>
       <td>skip_scd = disabled</td>
     </tr>
-    <tr>
-      <td><code>GENERATED_CODE_SYMLINK</code></td>
-      <td>
-        <p>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.</p>
-      </td>
-      <td>GENERATED_CODE_SYMLINK = disabled</td>
-    </tr>
   </tbody>
 </table>
 
@@ -145,7 +138,7 @@ The following variables are available during the deploy process of build and dep
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/use-cases.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
@@ -154,7 +147,7 @@ The following variables are available during the deploy process of build and dep
       <td>
         <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search">Connect to an existing search service</a> for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/use-cases.html#search">Connect to an existing search service</a> for more information.</p>
       </td>
       <td>not set</td>
     </tr>
@@ -246,6 +239,13 @@ The following variables are available during the deploy process of build and dep
       <td><code>ADMIN_URL</code></td>
       <td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess. If you set this value through a variable and the Admin Panel in Starter environments, the variable overrides the Admin Panel (or database value). For Pro, the Admin Panel (database value) overrides the variable. The values are also managed by <code>UPDATE_URLS</code>. This is available in all versions.</td>
       <td>admin</td>
+    </tr>
+    <tr>
+      <td><code>GENERATED_CODE_SYMLINK</code></td>
+      <td>
+        <p>This variable enables the <code>var/generation</code> and <code>var/di</code> generated folders to be writable. Available in versions 2.1.X.</p>
+      </td>
+      <td>GENERATED_CODE_SYMLINK = disabled</td>
     </tr>
     <tr>
       <td><code>STATIC_CONTENT_SYMLINK</code></td>
