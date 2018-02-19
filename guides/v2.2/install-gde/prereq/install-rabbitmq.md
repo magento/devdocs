@@ -68,8 +68,10 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="&#95;blank"}.
 2. Run the following commands as a user with root permissions:
 
-`rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc{:target="&#95;blank"}
-`yum install rabbitmq-server-3.5.6-1.noarch.rpm`
+```bash
+rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+yum install rabbitmq-server-3.5.6-1.noarch.rpm
+```
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="&#95;blank"} for more information.
 
