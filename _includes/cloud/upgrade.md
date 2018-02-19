@@ -7,7 +7,7 @@ When you upgrade Magento Commerce (Cloud), you also upgrade with patches and ava
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
+Always upgrade your local workstation first, then update your remote Integration environment. Resolve any issues before upgrading either the Staging or Production environments.
 </div>
 
 ## Upgrade to the latest version

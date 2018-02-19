@@ -2,14 +2,14 @@
 layout: default
 group: mftf
 title: Test actions in the Magento Functional Testing Framework
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/actions.md
 functional_areas:
  - Testing
 mftf-release: 2.0.2
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 This topic contains a reference list of available action type tags available in the MFTF tests.
@@ -166,7 +166,7 @@ The following test actions return a variable:
 *  [grabMultiple](#grabmultiple)
 *  [grabPageSource](#grabpagesource)
 *  [grabTextFrom](#grabtextfrom)
-*  [grabValueFrom](#grabValueFrom)
+*  [grabValueFrom](#grabvaluefrom)
 
 Learn more in [Using data returned by test actions](../data.html#using-data-returned-by-test-actions).
 
@@ -716,7 +716,7 @@ entity|string|required|
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
 
-This action can optionally contain one or more [requiredEntity](#requiredEntity) child elements.
+This action can optionally contain one or more [requiredEntity](#requiredentity) child elements.
 
 ### grabAttributeFrom
 
@@ -1248,20 +1248,6 @@ after|string|optional| `stepKey` of preceding action.
 Attribute|Type|Use|Description
 ---|---|---|---
 selector|string|optional|
-userInput|string|optional|
-parameterArray|string|optional|
-stepKey|string|required|A unique identifier of the action.
-before|string|optional| `stepKey` of action that must be executed next.
-after|string|optional| `stepKey` of preceding action.
-
-### selectMultipleOptions
-
-Selects all given options in given Magento dropdown element.
-
-Attribute|Type|Use|Description
----|---|---|---
-filterSelector|string|required|
-optionSelector|string|required|
 userInput|string|optional|
 parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
