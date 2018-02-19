@@ -38,8 +38,9 @@ A basic message queue system can be implemented on EE without using cron instead
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
 To install RabbitMQ on Ubuntu 16 enter the following command:
-
-    sudo apt install -y rabbitmq-server
+```bash
+sudo apt install -y rabbitmq-server
+```
 
 This command also installs the required Erlang packages.
 
@@ -58,9 +59,12 @@ RabbitMQ was written using the Erlang programming language, which must be instal
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="&#95;blank"} for more information.
 
 Run the following commands to install this feature.
-
-1. `wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm`
-2. `rpm -Uvh erlang-solutions-1.0-1.noarch.rpm`
+```bash
+wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
+```
+```bash
+rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
+```
 
 ### Install RabbitMQ
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
@@ -131,7 +135,7 @@ where:
 
 To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the `<install_directory>/app/etc/env.php` file so that they are similar to the following:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 'queue' =>
   array (
@@ -150,8 +154,7 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
        ],
      ),
   ),
-
-{% endhighlight %}
+```
 
 ## Start the message queue consumers
 
