@@ -1,0 +1,1 @@
+../../../../guides/v2.0/cloud/architecture/cloud-architecture.md

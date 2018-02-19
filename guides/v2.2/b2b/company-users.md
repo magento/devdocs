@@ -2,7 +2,7 @@
 layout: default
 group: b2b
 subgroup: 10_REST
-title: Manage comapany users
+title: Manage company users
 menu_title: Manage company users
 menu_order: 13
 version: 2.2

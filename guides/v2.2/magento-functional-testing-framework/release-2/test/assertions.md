@@ -2,14 +2,14 @@
 layout: default
 group: mftf
 title: Assertions in the Magento Functional Testing Framework
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/assertions.md
 functional_areas:
  - Testing
 mftf-release: 2.0.2
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 This topic contains general information about assertions in the MFTF and the reference list of available assertions.
@@ -69,23 +69,6 @@ Attribute|Type|Use|Description
 selector|string|required|
 expectedValue|string|optional| A value of the expected result.
 attribute|string|required|
-stepKey|string|required| A unique identifier of the text step.
-before|string|optional| `stepKey` of action that must be executed next.
-after|string|optional| `stepKey` of the preceding action.
-
-### assertArrayIsSorted
-
-Example:
-
-```xml
-<assertArrayIsSorted parameterArray="[1, 2, 3, 4, 5]" sort="asc" stepKey="key1"/>
-<assertArrayIsSorted parameterArray="[{$grabbedValue1}, {$grabbedValue2}, {$grabbedValu3}]" sort="asc" stepKey="key2"/>
-```
-
-Attribute|Type|Use|Description
----|---|---|---
-parameterArray|string|required| Array of items that should be checked for sorted order.
-sort|string|required| Expected sort direction (asc or desc).
 stepKey|string|required| A unique identifier of the text step.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of the preceding action.

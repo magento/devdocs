@@ -140,7 +140,7 @@ Use the following templates for the license notice and copyright blocks:
 {% highlight php %}
 <?php
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -164,7 +164,7 @@ interface MetadataObjectInterface
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -175,7 +175,7 @@ interface MetadataObjectInterface
 {% highlight js %}
 
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 {% endhighlight %}

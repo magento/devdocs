@@ -15,12 +15,12 @@ functional_areas:
   - Deploy
 ---
 
-When you deploy {{site.data.var.ece}}--complete all of your development in your local Git branch and push the code to the remote Git repository--every push starts the Magento build process. The build scripts parse the configuration files committed to the repository and use the configuration information to rebuild the current environment.
+Every time you push code from your local workstation to the remote environment or merge code to a base environment branch, such as a merge from the Integration environment to the Staging environment, this activates the build and deploy scripts. These scripts generate new Magento code and provision configured services to the remote environment.
 
 The build and deploy process is slightly different for each plan:
 
--  **Starter plans**—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. Fully test your code before merging to the `staging` branch. Finally, to go live, push `staging` to `master` to deploy to Production. You have full access to all branches through the Project Web Interface and CLI commands.
--  **Pro plans**—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration then deployed using CLI commands via SSH or through the Project Web Interface. If you don't see Staging or Production in your UI, you may need to [update the Project Web Interface]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+-  **Starter plans**—For the Integration environment, every active branch build and deploys to a full environment for access and testing. Fully test your code after merging to the `staging` branch. To go live, push `staging` to `master` to deploy to Production. You have full access to all branches through the Project Web Interface and the CLI commands.
+-  **Pro plans**—For the Integration environment, every _active_ branch builds and deploys to a full environment for access and testing. You must merge your code to the `integration` branch before you can merge to the Staging environment and then the Production environment. You can only merge to Staging and Production using CLI commands with SSH or using the Project Web Interface. If you do not see the Staging or Production environments in your Project Web Interface, then you need to [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Verify the code for your site and stores is in the {{site.data.var.ece}} branch. If you point, or include hooks, to code in other branches, such as a private branch, you may encounter problems with the build and deploy process. For example, if you include a theme from a private repo in your branch, the theme will not build with the Magento code.
@@ -36,7 +36,7 @@ If you are using external GitHub repositories, the log of the operations does no
 ## Project configuration {#cloud-deploy-conf}
 A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies. If you intend to make changes, modify the YAML files in your local branch. The build and deploy scripts access those files for specific settings.
 
-For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files. For Pro Staging and Production environments, you will need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp). We will configure those environments using configurations from the Git files.
+For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files. For Pro Staging and Production environments, you will need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html). We will configure those environments using configurations from the Git files.
 
 -  [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)—defines how to build and deploy Magento. Enter specific build and deploy options to the `hooks` section.
 -  [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)—defines how {{site.data.var.ee}} processes an incoming URL.

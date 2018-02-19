@@ -10,7 +10,7 @@ redirect_from: guides/v2.2/magento-functional-testing-framework/cest/actions.htm
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 This topic contains a reference list of available action type tags available in the MFTF cests.
@@ -167,7 +167,7 @@ The following test actions return a variable:
 *  [grabMultiple](#grabmultiple)
 *  [grabPageSource](#grabpagesource)
 *  [grabTextFrom](#grabtextfrom)
-*  [grabValueFrom](#grabValueFrom)
+*  [grabValueFrom](#grabvaluefrom)
 
 Learn more about [using data returned by test actions](../data.html#using-data-returned-by-test-actions).
 
