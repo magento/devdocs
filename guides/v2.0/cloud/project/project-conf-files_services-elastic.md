@@ -130,7 +130,7 @@ The response includes all relationships for services and configuration data for 
 The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Staging and Production environments share single Elasticsearch instance and you must specify a unique Elasticsearch prefix for each of these environments.
+Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
 </div>
 
 <!-- The following info is from Platform.sh and may not be required for Magento Cloud:
