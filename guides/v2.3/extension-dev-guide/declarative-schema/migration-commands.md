@@ -35,11 +35,57 @@ The Schema Listener Tool does not support all possible contents of pre-Magento 2
 * The tool ignores all raw SQL in your `InstallSchema` or `UpgradeSchema` scripts.
 * Any DDL statements in a `Recurring` file will not be transfered to new schema, because this file should be designed to runduring each installation or upgrade.
 
+## Safe installation and rollback
+
+The advantage and the main problem of Declarative Schema is that it can blindly modify database schema. So developer can make mistake and remove some structural element from database and lose data.
+The question of this section is how to prevent such mistakable loses of data. Was proposed to dump everything, than can be lost during installation.
+
+Such dump can be restored automatically or manually. This approach allows do not create manual dumps during system upgrade (But please note, that this works only with schema)
+
+With this mechanism 2 additional flags were added to `setup:install` and `setup:upgrade` commands:
+
+`--safe-mode` - If you want to run Magento installation or upgrade and do dumps during this processes, you can add this optional flag to your command
+Please note, that this flag is available only from CLI
+
+`--data-restore` - If something goes wrong during installation, you can checkout code to previous version of Magento, and run `setup:upgrade`
+with this additional flag
+
+Lets consider during which operations of declarative schema, dumps will be created.
+
+*Destructive operations (DO)* - SQL DDL operations, that cause data deletion or data corruption. Next operations are destructive:
+
+- deleting table;
+- deleting column;
+- reducing column length;
+- change column precision;
+- change column type;
+
+*Opposite to destructive operations (ODO)* - SQL DDL operations, that are reverse to destructive operations, and can be used for rollback, in case of failed Magento installation. For example, changing column type from CHAR to INT will be destructive
+operation, and rollback operation which will change type from INT to CHAR will be opposite one.
+Opposite operations can appears, when we do rollback (`--data-restore`) to previous version in the code.
+
+So during each destructive operation for table or for column - dump will be created. You can find your dumps by this paths:
+
+`Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv`
+`Magento_root/var/declarative_dumps_csv/{table_name}.csv`
+
+Each dump will be created in CSV.
+Here is example of CSV format:
+
+```csv
+    column_nam1 | column_name 2 | ... | column_name n
+
+    data1              | data 2                 | ... | data n
+```
+
+**Dump Example**
+![Dump Example]({{page.baseurl}}extension-dev-guide/declarative-schema/images/dump_example.png)
+
+
 ## Backward compatability and DB whitelists
 
 **Question to developer:** Is "Mixed Mode" important? It's not mentioned again.
 Because many extensions and client code contain old scripts, Magento will continue to support installation from such scripts. Environments that are installed from both old scripts and declarative schema is called `Mixed Mode`.
-
 
 The process of changing the approach of installations and upgrades from migration scripts to declarative schema consists of more than swapping PHP scripts with XML schema. Many extensions and client code contain old scripts that can't be changed. Another consideration is sequencing. In the old scripts, the order in which to apply changes could be established with module sequences. Sequence declaration is more difficult with declarative schema.
 

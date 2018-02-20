@@ -177,6 +177,9 @@ pages:
             - label: Migrate to declarative schema
               url: extension-dev-guide/declarative-schema/migration-commands.html
 
+            - label: Declarative setup data patches
+              url: extension-dev-guide/declarative-schema/data-patches.html
+
         - label: Message Queues (Magento Commerce Edition Only)
           children:
 
