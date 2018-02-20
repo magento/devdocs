@@ -662,9 +662,9 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 
 <span class="sd">/**
  * @param $quote \Magento\Quote\Api\Data\CartInterface
- * @param $order Magento\Sales\Api\Data\Order
+ * @param $order \Magento\Sales\Api\Data\Order
  */</span>
-<span class="k">private</span> <span class="k">function</span> <span class="nf">copyQuoteToOrder</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span><span class="nv">$order</span><span class="p">)</span>
+<span class="k">private</span> <span class="k">function</span> <span class="nf">copyQuoteToOrder</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="nv">$order</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="o">...</span>
   <span class="nv">$copy</span><span class="o">-&gt;</span><span class="na">copyFieldsetToTarget</span><span class="p">(</span><span class="s1">'sales_convert_quote'</span><span class="p">,</span> <span class="s1">'to_order'</span><span class="p">,</span> <span class="nv">$quote</span><span class="p">,</span> <span class="nv">$order</span><span class="p">);</span>
