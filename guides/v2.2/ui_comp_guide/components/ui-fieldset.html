@@ -1331,58 +1331,113 @@
 </section>
 
 
-			<h2 id="overview">Overview</h2>
-<p>The Fieldset component implements a container for visually-grouped form elements, such as buttons and form fields.</p>
+			<p>The Fieldset component implements a container for visually-grouped form elements, such as buttons and form fields.</p>
 
-<h2 id="fieldset-options">Fieldset options</h2>
+<h2 id="core-files">Core files</h2>
+
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Filename</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PHP Class</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/Component/Form/Fieldset.php"><code class="highlighter-rouge">Magento/Ui/Component/Form/Fieldset.php</code></a></td>
+    </tr>
+    <tr>
+      <td>Javascript Module</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js"><code class="highlighter-rouge">Magento/Ui/view/base/web/js/form/components/fieldset.js</code></a></td>
+    </tr>
+    <tr>
+      <td>Template</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/form/fieldset.html"><code class="highlighter-rouge">Magento/Ui/view/base/web/templates/form/fieldset.html</code></a></td>
+    </tr>
+    <tr>
+      <td>Configuration Schema Definition</td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/ui_component/etc/definition/fieldset.xsd"><code class="highlighter-rouge">Magento/Ui/view/base/ui_component/etc/definition/fieldset.xsd</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="configuration-settings">Configuration settings</h2>
+
 <p>Extends all <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code class="highlighter-rouge">uiCollection</code></a> and <code class="highlighter-rouge">collapsible</code> configuration.</p>
 
-<p>Fieldset-specific options:</p>
+<h3 id="fieldset-component-specific-configuration">Fieldset component-specific configuration</h3>
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>additionalClasses</code></td>
-    <td>Set custom classes to the component's DOM block.</td>
-    <td>Object</td>
-    <td><code>{}</code></td>
-  </tr>
-  <tr>
-    <td><code>collapsible</code></td>
-    <td>Make the fieldset collapsible.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/components/fieldset</code></td>
-  </tr>
-  <tr>
-    <td><code>disabled</code></td>
-    <td>Initial component's state. When set to <code>true</code>, users can't take action on the element.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/form/fieldset</code></td>
-  </tr>
-  <tr>
-    <td><code>visible</code></td>
-    <td>Initial component's visibility. When set to <code>false</code>, the <code>display: none</code> CSS style is added to the component's DOM block.</td>
-    <td>Boolean</td>
-    <td><code>true</code></td>
-  </tr>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">disabled</code></td>
+      <td>Boolean</td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td>Initial component’s state. When <code class="highlighter-rouge">true</code>, users cannot take action on the element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">label</code></td>
+      <td>String</td>
+      <td> </td>
+      <td>Caption for an item in the UI component context.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">visible</code></td>
+      <td>Boolean</td>
+      <td><code class="highlighter-rouge">true</code></td>
+      <td>Initial component’s visibility. When set to <code class="highlighter-rouge">false</code>, the <code class="highlighter-rouge">display: none</code> CSS style is added to the component’s DOM block.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">additionalClasses</code></td>
+      <td>Object</td>
+      <td>{}</td>
+      <td>Custom classes added to the component’s DOM block.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">level</code></td>
+      <td>Integer</td>
+      <td> </td>
+      <td>Explicitly indicates the level of nesting([date-level] attribute).</td>
+    </tr>
+  </tbody>
 </table>
+
+<h3 id="collapsible-configuration"><code class="highlighter-rouge">collapsible</code> configuration:</h3>
+
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">collapsible</code></td>
+      <td>Boolean</td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td>Enables/disables the collapsible functionality.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">opened</code></td>
+      <td>Boolean</td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td>Initial collapsible state. Applied when the collapsible functionality is enabled.</td>
+    </tr>
+  </tbody>
+</table>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1393,7 +1448,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/ui_comp_guide/components/ui-fieldset.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/ui_comp_guide/components/ui-fieldset.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
