@@ -25,7 +25,7 @@ Although this release includes these enhancements, no confirmed attacks related 
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for a comprehensive discussion of these issues.
 
 ## Highlights
-Magento 2.1.12 contains 35 security fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.1.12 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
 
 * **Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
