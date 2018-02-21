@@ -162,6 +162,9 @@ Any data can be used in parameterized elements as well as entered in test action
 * `$createDataKey.id$` is a reference to persisted data created in the `SampleTest1` within action with `stepKey="createDataKey"`
 * `{$variable}` is a reference to data returned by a test action, like `<grabValueFrom>`.
 
+
+DIMA: add notice/warning that "In `'StringLiteral'` parameters, the character `'` cannot be used."
+
 {%endraw%}
 
 
