@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.2.3CE.md
 *Patch code and release notes published on February 27, 2018.* 
 
 
-We are pleased to present Magento Commerce 2.2.3. This release includes multiple enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. And thanks to our community members, it also includes support for Elasticsearch 5.x and enhancements to ACL control for cache management through Magento Admin.
+We are pleased to present Magento Commerce 2.2.3. This release includes 35 enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. And thanks to our community members, it also includes support for Elasticsearch 5.x and enhancements to ACL control for cache management through Magento Admin.
 
 
 ## Highlights
