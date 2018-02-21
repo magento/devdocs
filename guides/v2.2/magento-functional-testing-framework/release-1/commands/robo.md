@@ -10,7 +10,7 @@ redirect_from: guides/v2.2/magento-functional-testing-framework/commands/robo.ht
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 Robo is a task runner for PHP that allows you to alias long complex CLI commands to simple commands.
