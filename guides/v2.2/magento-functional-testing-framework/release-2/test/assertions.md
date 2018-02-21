@@ -75,18 +75,20 @@ after|string|optional| `stepKey` of the preceding action.
 
 ### assertArrayIsSorted
 
+Asserts that array is sorted according to sort direction.
+
 Example:
 
 ```xml
-<assertArrayIsSorted parameterArray="[1, 2, 3, 4, 5]" sort="asc" stepKey="key1"/>
-<assertArrayIsSorted parameterArray="[{$grabbedValue1}, {$grabbedValue2}, {$grabbedValu3}]" sort="asc" stepKey="key2"/>
+<assertArrayIsSorted sortOrder="asc" stepKey="assertSorted">
+    <array>[1,2,3,4,5,6,7]</array>
+</assertArrayIsSorted>
 ```
 
 Attribute|Type|Use|Description
 ---|---|---|---
-parameterArray|string|required| Array of items that should be checked for sorted order.
-sort|string|required| Expected sort direction (asc or desc).
-stepKey|string|required| A unique identifier of the text step.
+sortOrder|string|required| Sort order to assert on array values (`asc` or `desc`).
+stepKey|string|required| A unique identifier of the test step.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of the preceding action.
 
