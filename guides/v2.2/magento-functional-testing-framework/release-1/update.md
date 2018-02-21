@@ -12,7 +12,7 @@ redirect_from:
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 <div class="bs-callout bs-callout-info" markdown="1">
