@@ -9,7 +9,7 @@ functional_areas:
 mftf-release: 2.0.2
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 The MFTF allows you to merge test components defined in XML files such as [Tests][test], [Pages][page], [Sections][section], and [Data][data].

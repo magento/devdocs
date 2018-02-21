@@ -14,7 +14,7 @@ redirect_from:
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases to make test creation easier for developers and improve qualities like:
