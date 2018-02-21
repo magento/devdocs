@@ -25,13 +25,17 @@ Although this release includes these enhancements, no confirmed attacks related 
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for a comprehensive discussion of these issues.
 
 ## Highlights
-Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.1.12 contains 35 security fixes and enhancements.  Look for the following highlights in this release:
 
 * **Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 * **Change to Magento Admin to support upcoming USPS shipping changes**. On February 23, 2018, USPS  removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
 
 * **Updated copyright to 2018**. 
+
+## Fixed issues
+
+<!--- MAGETWO-85097 -->* Video and thumbnails on the Configurable Product page now work as expected. Previously, video did not play properly, and thumbnail images were not oriented correctly. [GitHub-12238](https://github.com/magento/magento2/issues/12238) *Fix submitted by [Chumack Roman](https://github.com/roma84) in pull request 12558*.
 
 
 ## System requirements

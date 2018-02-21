@@ -25,7 +25,7 @@ Although this release includes these enhancements, no confirmed attacks related 
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for a comprehensive discussion of these issues.
 
 ## Highlights
-Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.1.12 contains 35 security fixes and enhancements.  Look for the following highlights in this release:
 
 * **Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
@@ -33,6 +33,11 @@ Magento 2.1.12 contains almost 50 security fixes and enhancements.  Look for the
 
 * **Updated copyright to 2018**. 
 
+## Fixed issues
+
+<!--- MAGETWO-85097 -->* Video and thumbnails on the Configurable Product page now work as expected. Previously, video did not play properly, and thumbnail images were not oriented correctly. [GitHub-12238](https://github.com/magento/magento2/issues/12238) *Fix submitted by [Chumack Roman](https://github.com/roma84) in pull request 12558*.
+
+<!--- MAGETWO-83648 -->* The Related Products rule now works as expected when applied to products with multiselect attributes. Previously, 
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
