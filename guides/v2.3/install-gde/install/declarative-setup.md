@@ -36,12 +36,6 @@ and Magento determines the differences between the current table structure and w
 </table>        
 ```
 
-## Theory of operations:
-
-The declarative schema upgrade compares current state against the declared state in configuration and computes the difference that is converted to statements sequence and applied to DB.
-![Db Schema Invocation]
-
-
 ## Db Schema Structure
 
 Lets dig into how such `db_schema.xml` should be declared:
@@ -216,34 +210,80 @@ Table is dropped and recreated once table name in schema is cnanged.
 Once module is disabled from console, it's DB schema configuration is no longer read on upgrade or install, so if module was previously installed, then disabled and upgrade is executed schema will be rebuilt excluding DB schema configuration of the disabled module.
 **Truncate table**
 
+## Safe installation and rollback
+
+The advantage and the main problem of Declarative Schema is that it can blindly modify database schema. So developer can make mistake and remove some structural element from database and lose data.
+The question of this section is how to prevent such mistakable loses of data. Was proposed to dump everything, than can be lost during installation.
+Such dump can be restored automatically or manually. This approach allows do not create manual dumps during system upgrade (But please note, that this works only with schema)
+
+With this mechanism 2 additional flags were added to `setup:install` and `setup:upgrade` commands:
+
+`--safe-mode` - If you want to run Magento installation or upgrade and do dumps during this processes, you can add this optional flag to your command
+Please note, that this flag is available only from CLI
+
+`--data-restore` - If something goes wrong during installation, you can checkout code to previous version of Magento, and run `setup:upgrade`
+with this additional flag
+
+Lets consider during which operations of declarative schema, dumps will be created.
+
+*Destructive operations (DO)* - SQL DDL operations, that cause data deletion or data corruption. Next operations are destructive: 
+
+- deleting table;
+- deleting column;
+- reducing column length;
+- change column precision;
+- change column type;
+
+*Opposite to destructive operations (ODO)* - SQL DDL operations, that are reverse to destructive operations, and can be used for rollback, in case of failed Magento installation. For example, changing column type from CHAR to INT will be destructive 
+operation, and rollback operation which will change type from INT to CHAR will be opposite one. 
+Opposite operations can appears, when we do rollback (`--data-restore`) to previous version in the code.
+
+So during each destructive operation for table or for column - dump will be created. You can find your dumps by this paths:
+
+`Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv`
+`Magento_root/var/declarative_dumps_csv/{table_name}.csv`
+
+Each dump will be created in CSV.
+Here is example of CSV format:
+
+```csv
+    column_nam1 | column_name 2 | ... | column_name n
+    
+    data1              | data 2                 | ... | data n
+```
+
+**Dump Example**
+![Dump Example](image/dump_example.png)
+
+
 ## HOWTO
 
 In this section with `git diff` shortly will be described how to do old manilpulations, like creating table in new manner:
 
 **Create table**
-![Create Table](install/image/declaration_create_table.png)
+![Create Table](image/declaration_create_table.png)
 
 **Drop table**
-![Drop Table](install/image/drop_declarative_table.png)
+![Drop Table](image/drop_declarative_table.png)
 
 **Create foreign key**
-![Create Foreign Key](install/image/create_fk.png)
+![Create Foreign Key](image/create_fk.png)
 
 **Drop foreign key**
-![Drop Foreign Key](install/image/drop_fk.png)
+![Drop Foreign Key](image/drop_fk.png)
 
 **Add column to table**
-![Add column to table](install/image/add_column.png)
+![Add column to table](image/add_column.png)
 
 **Drop column from table**
-![Drop column from table](install/image/remove_column.png)
+![Drop column from table](image/remove_column.png)
 
 **Change column type**
-![Change column type](install/image/change_column_type.png)
+![Change column type](image/change_column_type.png)
 
 **Add index**
-![Add index](install/image/add_index.png)
+![Add index](image/add_index.png)
 
 [How to generate urns?]:{{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html
-[Db Schema Autocomplete]:install/image/db_schema_autocomplete.png
-[Db Schema Invocation]:install/image/declarative_schema_invocation.png
+[Db Schema Autocomplete]:image/db_schema_autocomplete.png
+[Db Schema Invocation]:image/declarative_schema_invocation.png
