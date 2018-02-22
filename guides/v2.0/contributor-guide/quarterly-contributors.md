@@ -32,7 +32,7 @@ PR contributors|Issue contributors
 [rogyar](https://github.com/rogyar)|[fdrechsler](https://github.com/fdrechsler)
 [osrecio](https://github.com/osrecio)|[adamrandazzo](https://github.com/adamrandazzo)
 [erikhansen](https://github.com/erikhansen)|[McFizh](https://github.com/McFizh)
-[DavidLambuer](https://github.com/DavidLambuer)|[erichagz](https://github.com/erichagz)
+[DavidLambuer](https://github.com/DavidLambauer)|[erichagz](https://github.com/erichagz)
 [JosephMaxwell](https://github.com/JosephMaxwell)|[rossmc](https://github.com/rossmc)
 [nshiff](https://github.com/nshiff)|[36serg6](https://github.com/36serg6)
 [rafaelstz](https://github.com/rafaelstz)|[kunal1234gh](https://github.com/kunal1234gh)
