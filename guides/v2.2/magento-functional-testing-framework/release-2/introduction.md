@@ -9,7 +9,7 @@ functional_areas:
 mftf-release: 2.0.2
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases to make test creation easier for developers and improve qualities like:
@@ -64,8 +64,8 @@ utils                           // Test running utilities
 .env.example                    // Example file with environmental settings
 .gitignore                      // List of files ignored by git
 .htaccess.sample                // Access settings for Appache web server to perform CLI commands on Magento application
-RoboFile.php                    // MFTF CLI commands configutaion for Robo task runner.
-codeception.dist.yml            // Codeception configuration.
+RoboFile.php                    // MFTF CLI commands configutaion for Robo task runner
+codeception.dist.yml            // Codeception configuration
 pre-install.php                 // Script that checks the environment on whether pre-installation requirements are met
 ```
 
