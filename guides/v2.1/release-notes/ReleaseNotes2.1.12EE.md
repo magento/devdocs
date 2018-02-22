@@ -37,7 +37,7 @@ Magento 2.1.12 contains 38 security fixes and enhancements.  Look for the follow
 
 <!--- MAGETWO-85097 -->* Video and thumbnails on the Configurable Product page now work as expected. Previously, video did not play properly, and thumbnail images were not oriented correctly. [GitHub-12238](https://github.com/magento/magento2/issues/12238) *Fix submitted by [Chumack Roman](https://github.com/roma84) in pull request 12558*.
 
-<!--- MAGETWO-83648 -->* The Related Products rule now works as expected when applied to products with multiselect attributes. Previously, 
+<!--- MAGETWO-83648 -->* The Related Products rule now works as expected when applied to products with multiselect attributes. Previously, Magento did not display the associations between products with multiselect attributes that you encoded in the Related Products rule, although the relationships between other products were accurately displayed.
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
