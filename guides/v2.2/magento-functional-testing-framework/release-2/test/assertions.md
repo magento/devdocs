@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/assertions.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.1.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -73,6 +73,27 @@ stepKey|string|required| A unique identifier of the text step.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of the preceding action.
 
+### assertArrayIsSorted
+
+Asserts that array is sorted according to a specified sort order: ascending or descending.
+
+Example:
+
+```xml
+<assertArrayIsSorted sortOrder="asc" stepKey="assertSorted">
+    <array>[1,2,3,4,5,6,7]</array>
+</assertArrayIsSorted>
+```
+
+Attribute|Type|Use|Description
+---|---|---|---
+sortOrder|Possible values: `asc`, `desc`|required| A sort order to assert on array values.
+stepKey|string|required| A unique identifier of the test step.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of the preceding action.
+
+It contains a child element `<array>` that specifies an array to be asserted for proper sorting.
+Must be in typical array format like `[1,2,3,4,5]` or `[alpha, brontosaurus, zebra]`.
 
 ### assertArrayHasKey
 
