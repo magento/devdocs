@@ -9,7 +9,7 @@ functional_areas:
 mftf-release: 2.0.2
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 Robo is a task runner for PHP that allows you to alias long complex CLI commands to simple commands.

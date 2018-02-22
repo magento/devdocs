@@ -9,7 +9,7 @@ functional_areas:
 mftf-release: 2.0.2
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 ## Prepare environment
