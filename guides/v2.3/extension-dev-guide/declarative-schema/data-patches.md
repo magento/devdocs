@@ -1,33 +1,39 @@
 ---
 layout: default
 group: extension-dev-guide
-title: Declarative Setup Data Patches
+title: Declarative setup data patches
 version: 2.3
 github_link: extension-dev-guide/declarative-schema/data-patches.md
 ---
 
-## Data Patches Glossary
 
-*Data patch* - class that contains data modification istructions, may have dependencies to other data or schema patches
+We had the following goals in mind when we replaced upgrade data scripts to data patches:
 
-*Revertable Data Patch* - patch that can be reverted during module deinstallation or path deinstallation. Revertable operations are DQL and partially DML operations: INSERT, UPDATE.
+1. By removing module sequential versioning, patches can be delivered to live merchants running any version of Magento without causing  conflicting situations in later releases.
 
-*Migration* - kind of non revertable data patches, that can be only applied but not reverted. Any complex operation, like operations with application layer (Collections, Serializers, etc) is non-revertable. Even SQL delete operation is non-revertable because it can cause triggering
+2. Uninstalling an extension removes both the code and data.
 
-*Schema patch* - class that contains custom schema modification instructions. Schema patches is used along with Declarative Schema. But this patches allows to do complex operations:
-
-1. Adding triggers, stored procedures, functions;
-2. Do data migration with DDL operation inside
-3. Do difficult rename of table, column, etc
-4. Add partitions and table options to table
-
-There are few goals of why we replace upgrade data scripts to data patches:
-
-1. To get rid of module sequential versioning so patches could be delivered to live merchants of any version and won't have conflicting situations for further releases.
-2. Make extensions uninstallable - we should have possibility to fully remove extensions from the instance: not only code but database too
 3. Make UpgradeData changes portable to previous versions and to specific clients
 
-## Creating your first Patch
+
+## Data Patches Glossary
+
+*Data patch* - A class that contains data modification instructions. It can have dependencies to other data or schema patches.
+
+*Revertable data patch* - A patch that can be reverted during module deinstallation or path deinstallation. Revertable operations are Data Query Language (DQL) and partially Data Markup Language (DML) operations: INSERT, UPDATE.
+
+**Note to reviewer** _Make sure I spelled out the meaning of DQL and DML correctly._
+
+*Migration* - A kind of non-revertable data patch that can be applied, but not reverted. Any complex operation, such one that contains an application layer (for example, Collections or Serializers) is non-revertable. SQL delete operations are non-revertable because they can cause triggering.
+
+*Schema patch* - A class that contains custom schema modification instructions. Schema patches are used along with declarative schema, but these patches allow complex operations such as:
+
+* Adding triggers, stored procedures, functions
+* Performing data migration with inside DDL operations
+* Renaming tables, columns, and other entities
+* Adding partitions and options to a table
+
+## Creating your first patch
 
 You can create patch in one of two kind of folders:
 
@@ -54,7 +60,8 @@ Schema Patch:
 ```
 
 Each php class (Patch), should implement: `\Magento\Setup\Model\Patch\DataPatchInterface` or `\Magento\Setup\Model\Patch\SchemaPatchInterface`.
-Optionally if you plan to have rollback for your patch, during module uninstallation, you can also implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`
+
+Optionally, if you plan to have rollback for your patch during module uninstallation, you can also implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`
 
 {% highlight php startinline=true %}
     <?php
@@ -148,12 +155,11 @@ Optionally if you plan to have rollback for your patch, during module uninstalla
 
 ## What are patch dependencies?
 
-In new approach we leave only composer version of module and remove `setup_module` version (of course we did this in Backward compatibility way).
-However all new patches and all new modules should be created without `setup_module` version.
-But how sequence of installed patches is handled?
-For this we design new dependency based approach. This basic of this approach says, that there can be 2 kinds of patches, that depends to others and independents
-Independet patches can be installed in any sequence. Dependent patches should depend only to minumum number of patches, with which we can succeed successfull Installation.
-In order to define dependency in your patch you can simply do static reference to patch class. There is no matter in which module this class is.
+In the new approach, we remove the version from the `setup_module` table (in a backward compatible way), leaving only the composer version. Create all new patches and modules without specifying a `setup_module` version.
+
+The sequence of installed patches is handled through a new dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
+
+To define a dependency in a patch, make a static reference to the patch class. The class can be in any module.
 
 
 ``` php
@@ -164,9 +170,9 @@ In order to define dependency in your patch you can simply do static reference t
 
 ## Will old scripts works in newer versions?
 
-Old scripts will definitely works with new versions of Magento. But if you want to convert your old scripts to new format,
-you should know basic rules:
+Old scripts definitely work with new versions of Magento. However, if you want to convert your old scripts to the new format,
+you should know these basic rules:
 
-1. Implement `\Magento\Setup\Model\Patch\PatchVersionInterface`. In this interface you can specify version. Under version means
-setup version of module in your database: if version of module is higher, than in your patch then patch will be skipped, otherwise
-if version in database is equal or lower then it will be installed
+**Note to reviewer:** _Only one rule is provided. Are there more?_
+
+1. Implement `\Magento\Setup\Model\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.

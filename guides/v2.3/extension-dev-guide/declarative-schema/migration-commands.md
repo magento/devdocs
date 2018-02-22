@@ -37,50 +37,39 @@ The Schema Listener Tool does not support all possible contents of pre-Magento 2
 
 ## Safe installation and rollback
 
-The advantage and the main problem of Declarative Schema is that it can blindly modify database schema. So developer can make mistake and remove some structural element from database and lose data.
-The question of this section is how to prevent such mistakable loses of data. Was proposed to dump everything, than can be lost during installation.
+The advantage and the main problem of declarative schema is that it can blindly modify the database schema. A developer can make a mistake and potentially remove a structural element from the database, causing data loss.
 
-Such dump can be restored automatically or manually. This approach allows do not create manual dumps during system upgrade (But please note, that this works only with schema)
+To help prevent data loss, the installer can specify command line options that dump all the data that can be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional--the installer does not have to create a manual dump during a system upgrade. _(But please note, that this works only with schema)_
 
-With this mechanism 2 additional flags were added to `setup:install` and `setup:upgrade` commands:
+**Question to Developer:** Does the sentence in italics above refer to declarative schema in general, schema patches, or some other
 
-`--safe-mode` - If you want to run Magento installation or upgrade and do dumps during this processes, you can add this optional flag to your command
-Please note, that this flag is available only from CLI
+Magento provides options to the `setup:install` and `setup:upgrade` commands that enable safe installations and rollbacks:
 
-`--data-restore` - If something goes wrong during installation, you can checkout code to previous version of Magento, and run `setup:upgrade`
-with this additional flag
+`--safe-mode` - Creates a data dump during the installation or upgrade process. This option is available only from the CLI.
 
-Lets consider during which operations of declarative schema, dumps will be created.
+`--data-restore` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore`.
 
-*Destructive operations (DO)* - SQL DDL operations, that cause data deletion or data corruption. Next operations are destructive:
+Several types of operations have an effect on data dumps and rollbacks.
 
-- deleting table;
-- deleting column;
-- reducing column length;
-- change column precision;
-- change column type;
+*Destructive operations (DO)* - SQL DDL operations that cause data deletion or data corruption. The following operations are destructive:
 
-*Opposite to destructive operations (ODO)* - SQL DDL operations, that are reverse to destructive operations, and can be used for rollback, in case of failed Magento installation. For example, changing column type from CHAR to INT will be destructive
-operation, and rollback operation which will change type from INT to CHAR will be opposite one.
-Opposite operations can appears, when we do rollback (`--data-restore`) to previous version in the code.
+- Deleting a table
+- Deleting a column
+- Reducing column length
+- Changing column precision
+- Changing the column type
 
-So during each destructive operation for table or for column - dump will be created. You can find your dumps by this paths:
+*Opposite to destructive operations (ODO)* - In the case of a failed Magento installation, SQL DDL operations that are the opposite of  destructive operations can be used for rollback. For example, changing the column type from CHAR to INT is an destructive
+operation. The rollback operation changes the type from INT to CHAR.
 
-`Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv`
-`Magento_root/var/declarative_dumps_csv/{table_name}.csv`
+When safe mode is enabled, Magento creates a CSV file each time a destructive operation for a table or column occurs. You can find these files in the following paths:
 
-Each dump will be created in CSV.
-Here is example of CSV format:
+* `Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv`
+* `Magento_root/var/declarative_dumps_csv/{table_name}.csv`
 
-```csv
-    column_nam1 | column_name 2 | ... | column_name n
+Each CSV file contains a row that define the column (or other database entity) names as well as rows of values, as shown in the following image:
 
-    data1              | data 2                 | ... | data n
-```
-
-**Dump Example**
 ![Dump Example]({{page.baseurl}}extension-dev-guide/declarative-schema/images/dump_example.png)
-
 
 ## Backward compatability and DB whitelists
 
@@ -148,4 +137,4 @@ When a module is disabled from the Admin console, its database schema configurat
 
 ### Truncate a table
 
-**Note to developer:** This section is empty
+**Developer question:** This section is empty
