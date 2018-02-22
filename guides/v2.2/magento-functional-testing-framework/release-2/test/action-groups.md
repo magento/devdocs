@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/action-groups.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.1.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -14,7 +14,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 ## Overview
 
-In the MFTF, it is possible to re-use a group of [actions] declared in an XML file.
+In the MFTF, it is possible to re-use a group of [actions]{:target="_blank"} declared in an XML file.
 It is handy when you need to repeat same sequence of actions over and over again.
 For example, to log in as an admin or a customer.
 
@@ -54,7 +54,7 @@ The following example demonstrates declaration of group of actions to execute au
 This action group relates to functionality of the Backend module, so it should be stored as _Backend/ActionGroup/LoginToAdminActionGroup.xml_.
 
 The name and identifier of the action group is `LoginToAdminActionGroup`.
-In [test], it will be used as a reference in `ref` parameter, like: `ref="LoginToAdminActionGroup"`.
+In [test]{:target="_blank"}, it will be used as a reference in `ref` parameter, like: `ref="LoginToAdminActionGroup"`.
 
 Lets start from a template for our action group in _Backend/ActionGroup/LoginToAdminActionGroup.xml_:
 
@@ -150,9 +150,12 @@ To change it to `CustomAdminUser`, we must add an argument `adminUser` with the 
 
 That's it!
 
-## Data Type Usage
+## Data type usage
 
-There are cases where instead of passing in an entity, you may need to only send in a `string` or an `integer` as a `argument`. By default, `argument`s expect to be an entire entity, but when defining an `actionGroup`'s `argument`, you may define the argument to have a primitive data type like so:
+By default, [`argument`][argument] expects an entire entity.
+(Because `type="entity"` when `type` wasn't defined.)
+But there are cases when instead of a whole entity you need to use just a string, or an integer, or other simple piece of data of a single type.
+You can define the argument to have a primitive data type when defining an `argument` of `actionGroup`, like so:
 
 ```xml
 <actionGroup name="fillExample">
@@ -166,20 +169,38 @@ There are cases where instead of passing in an entity, you may need to only send
 </actionGroup>
 ```
 
-The above tells the `actionGroup` that the replacement argument is not a data entity, but rather just a simple piece of data that needs to be replaced. By default, and if no `data` attribute is defined, it is assumed to be an `entity`
-This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing the entire entity:
+The above code tells the `actionGroup` that the replacement argument `relevantString` expects a string as a `value` when it is used in a test.
+This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing the entire entity.
+Let's see several examples of the above `fillExample` action group usage in test.
+In all examples the value expects a string.
+
+When `value` in a test is defined explicitly:
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
     <argument name="relevantString" value="overrideString" />
 </actionGroup>
+```
+
+When `value` in a test is returned from data entity:
+
+```xml
 <actionGroup stepKey="fillWithXmlData" ref="fillExample">
     <argument name="relevantString" value="myCustomEntity.field1" />
 </actionGroup>
+```
+
+here the value points to the `field1` data of the `myCustomEntity` entity.
+
+When `value` in a test is returned from persisted data entity:
+
+```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
     <argument name="relevantString" value="$persistedData.field1$" />
 </actionGroup>
 ```
+
+here the value points to the entity [created]{:target="_blank"} somewhere previously on test step `stepKey="persistedData"` where the `field1` data contains the required string.
 
 ## Reference
 
@@ -210,14 +231,17 @@ A wrapper for an array of `<argument>` elements.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-name|string|required|Identifier of an argument in scope of action group.
-defaultValue|string|optional|Data entity that is used by default.
-data|sting|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`
+name|string|required|Identifier of an argument in scope of the corresponding action group.
+defaultValue|string|optional|Data value that is used by default.
+type|Possible values: `string`, `int`, `float`, `boolean`, `entity` (default).|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`.
 
 {%endraw%}
 
 <!-- LINK DEFINITIONS -->
 
-[actions]: ./actions.html
 [`<actionGroup>`]: #actiongroup-tag
+[argument]: #argument-tag
+
+[actions]: ./actions.html
+[created]: ../data.html#persisting-a-data-entity-as-a-prerequisite-of-a-test
 [test]: ../test.html
