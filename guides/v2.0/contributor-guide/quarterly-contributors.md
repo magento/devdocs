@@ -24,7 +24,7 @@ PR contributors|Issue contributors
 :-----:|:-----:
 [likemusic](https://github.com/likemusic)|[Prutha29](https://github.com/Prutha29)
 [chickenland](https://github.com/chickenland)|[embed0](https://github.com/embed0)
-[chris-pook]((https://github.com/chris-pook))|[camdixon](https://github.com/camdixon)
+[chris-pook](https://github.com/chris-pook)|[camdixon](https://github.com/camdixon)
 [ihor-sviziev](https://github.com/ihor-sviziev)|[vovsky](https://github.com/vovsky)
 [rhoerr](https://github.com/rhoerr)|[lazyguru](https://github.com/lazyguru)
 [hostep](https://github.com/hostep)|[roman204](https://github.com/roman204)
