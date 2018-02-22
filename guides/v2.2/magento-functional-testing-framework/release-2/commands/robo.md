@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/robo.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.1.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -146,8 +146,8 @@ Allure v1.x.x | Allure v2.x.x
 
 #### generate
 
-`generate:tests`   | Generate all Tests based on a specific Magento Instance module load order
-`generate:tests --force`   | Generate all Tests regardless of whether a Magento Instance is available
+`generate:tests`   | Generate all Tests based on specific module load order of the Magento instance
+`generate:tests --force`   | Generate all Tests regardless of whether a Magento instance is available
 
   
 #### self
