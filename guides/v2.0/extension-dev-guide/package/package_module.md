@@ -165,7 +165,7 @@ Prerequisite: git must be set up on your machine.
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If you use the Setup Wizard, you must use the Magento Marketplace repository.
-A private repository can be used for development or private code but installation must be done with a command line interface (you can install a  that specifies a private repository only with a command line installation).</p></span>
+A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).</p></span>
 </div>
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Toran](https://toranproxy.com/).
