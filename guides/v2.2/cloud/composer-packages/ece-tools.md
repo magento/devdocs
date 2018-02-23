@@ -12,11 +12,11 @@ functional_areas:
 
 {% include cloud/ece-tools.md %}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) to get these features and fixes.
-</div>
-
 ## v2002.0.9
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You must [upgrade the {{site.data.var.ece}} metapackage](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html) to get this and all future updates.
+</div>
 
 ### New features
 -   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x.
