@@ -35,8 +35,7 @@ pages:
       url: coding-standards/technical-guidelines.html
 
     - label: Technical vision
-      versions: ["2.0"]
       children:
 
-        - label: WebApi
+        - label: Web Api
           url: coding-standards/technical-vision/webapi.html

@@ -46,7 +46,7 @@ See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/i
 1. Provide a custom implementation of `\Magento\Authorization\Model\UserContextInterface`, that verifies a user's identity using a  custom authentication mechanism.
 1. Declare custom user context in the composite user context for the target area(s) (`webapi_rest`, `webapi_soap`, `webapi_graphql`) :
 
-~~~
+```xml
 <type name="Magento\Authorization\Model\CompositeUserContext">
     <arguments>
         <argument name="userContexts" xsi:type="array">
@@ -57,7 +57,7 @@ See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/i
         </argument>
     </arguments>
 </type>
-~~~
+```
 
 #### Modify the schema of an existing SOAP and REST endpoint
 
@@ -75,9 +75,9 @@ To extend an interface, use [extension attributes]({{page.baseurl}}extension-dev
 
 Any new design related to Web API must satisfy the following constraints to keep the model consistency.
 
-**Generic**
+**General**
 
-1. REST and SOAP must be designed for Admin Panel integrations and have parity in terms of coverage. GraphQL should be designed for store front scenarios.
+1. REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for store front scenarios.
 1. Any identifier exposed in guest APIs (for example, cart ID) must be masked to prevent the possibility of unauthorized access to the data of other guest users.
 1. Authentication must be done via `\Magento\Authorization\Model\UserContextInterface`.
 1. Customer-specific identifiers (such as customer ID or cart ID) must be deducted from the record of the successfully authenticated customer. They must not be accepted via request parameters.
@@ -87,7 +87,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and store front areas from executing routers.
 1. Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)
 1. Authentication parameters must be be passed via headers.
-1. Throttling must be configured by the system integrator i. It is not supported by Magento
+1. Throttling must be configured by the system integrator. It is not supported by Magento
 1. Internal server errors must be masked and never shown to the user in production mode. In developer mode, original exceptions must never be masked and should be displayed along with the related stacktrace.
 1. Pagination must be supported by all list operations.
 
@@ -98,12 +98,12 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Third-party customizations must be done separately for Service Contracts and for GraphQL
 1. For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module `MyModule`, you must create the `graphql.xml` file in the `MyModuleGraphQl` module.
 1. GraphQL is primarily designed for store-front one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries
-1. All queries must return the 200 HTTP status code. In exceptional situations, return the error in the response body. Schema requests may return the 500 HTTP status code.
+1. All successful queries must return the 200 HTTP status code. If an error occurs, return the error in the response body.  Schema requests may return the 500 HTTP status code.
 1. The Store code should be passed via headers.
 
 **REST**
 
-1. The resource URL should be versioned (for example: V1). The version must be specified in the following format: "V\\d.+"
+1. The resource URL should be versioned (for example: V1). The version must be specified in the following format: `V\d.+`
 1. Resource names in a URL should be in plural form (for example: products, carts)
 1. ID parameters for operations on entities should be part of the resource URL (for example: /V1/products/**:sku** )
 1. POST should be used to create an entity.
@@ -117,4 +117,4 @@ Any new design related to Web API must satisfy the following constraints to keep
 
 1. SOAP is designed for systems integration. It supports token authentication for customers and admins, as well as no authentication for anonymous service methods. Cookie authentication and OAuth 1.0 are not supported.
 1. The schema is available in the form of a WSDL for all exposed services.
-1. All requests must return 200 HTTP status code. In exceptional situationd, return the error in the response
+1. All successful requests must return 200 HTTP status code. If an error occurs, return the error in the response. 
