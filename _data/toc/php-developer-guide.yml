@@ -180,6 +180,9 @@ pages:
             - label: Declarative setup data patches
               url: extension-dev-guide/declarative-schema/data-patches.html
 
+            - label: Declarative setup compatibility
+              url: extension-dev-guide/declarative-schema/setup-compatibility.html
+
         - label: Message Queues (Magento Commerce Edition Only)
           children:
 
