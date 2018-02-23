@@ -41,7 +41,7 @@ These exceptions result from file system permissions settings.
 <a href="{{page.baseurl}}install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}
-If you're currently set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command:
+If you're currently set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command:
 
 	PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /<path>/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /<path>/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
 

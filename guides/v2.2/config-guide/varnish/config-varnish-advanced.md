@@ -107,7 +107,7 @@ See [Varnish module collection](https://github.com/varnish/varnish-modules) for 
 
 ### Sample `vcl` file {#saint-sample}
 
-The following code example shows the code that must be added to your `.vcl` file to enable saint mode. Place the `import` statements and `backend` definitions at the top of the file.
+The following code example shows the code that must be added to your VCL file to enable saint mode. Place the `import` statements and `backend` definitions at the top of the file.
 
 {% collapsible Click to show/hide %}
 {% highlight cpp %}

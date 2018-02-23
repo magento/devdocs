@@ -173,7 +173,7 @@ For Starter, when you push, the updated code pushes to the active environment. M
 
 For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
-## Update configuations {#update}
+## Update configurations {#update}
 If you need to change any configuration settings `config.local.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.
 
 If you only need to make a small change, you can edit `config.local.php` in a local Git branch and redeploy across environments.

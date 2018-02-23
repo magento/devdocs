@@ -9,7 +9,11 @@ github_link: release-notes/ReleaseNotes2.2.4EE.md
 
 
 
+<<<<<<< HEAD
 We are pleased to present Magento Commerce 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
+=======
+We are pleased to present Magento Commerce 2.2.2. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
+>>>>>>> 09e6c388592966ce2ca8454e54934c489cab4984
 
 
 ## Highlights
@@ -712,7 +716,7 @@ Looking for more information on these new features as well as many others? Check
 
 ### Shipping
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html).
+You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
 
 
