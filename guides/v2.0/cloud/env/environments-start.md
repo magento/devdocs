@@ -19,7 +19,7 @@ functional_areas:
   - Cloud
 ---
 
-When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
+When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-architecture.html) architecture information.
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html).
 
@@ -148,7 +148,7 @@ Wait for the environment to delete.
 </div>
 
 ## Integration environment IP addresses {#ipaddress}
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{page.baseurl }}cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
