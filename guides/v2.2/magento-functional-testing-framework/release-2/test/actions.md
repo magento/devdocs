@@ -1256,17 +1256,26 @@ after|string|optional| `stepKey` of preceding action.
 
 ### selectMultipleOptions
 
-Selects all given options in given Magento dropdown element.
+Selects all given options in the given Magento dropdown element.
+
+Example:
+
+```xml
+<selectMultipleOptions filterSelector=".filter" optionSelector=".option" stepKey="selectMultipleOpts1">
+    <array>['opt1', 'opt2']</array>
+</selectMultipleOptions>
+```
 
 Attribute|Type|Use|Description
 ---|---|---|---
-filterSelector|string|required|
-optionSelector|string|required|
-userInput|string|optional|
-parameterArray|string|optional|
+filterSelector|string|required|The selector for the text filter field.
+optionSelector|string|required|The selector used to select the corresponding options based on the filter field.
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
+
+It contains a child element `<array>` where you specify the options that must be selected using array format like `['opt1', 'opt2']`.
+See the above example of use.
 
 ### setCookie
 
