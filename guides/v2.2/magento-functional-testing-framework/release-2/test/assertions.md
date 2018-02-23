@@ -26,14 +26,19 @@ Most assertions contain attribute `message` that specifies text of an informatio
 
 * [actions' principles](../test.html#principles) are also applicable to assertions
 
-*  `expectedType` and `actualType` can be:
-    * const (default)
-    * int
-    * float
-    * bool
-    * string
-    * variable
-    * array
+Assertion actions have a nested self-descriptive elements `<expectedResult>` and `<actualResult>`.
+These elements contain a type of result and a value itself:
+* `type`
+* `value`
+
+`type` can be any of the following:
+* const (default)
+* int
+* float
+* bool
+* string
+* variable
+* array
 
 If `variable` is used, the test transforms the corresponding value to `$variable`.
 Use `stepKey` of a test that returns the value you want to use in assertion.
@@ -51,7 +56,10 @@ In this very common test writing example we are grabbing text from a page and th
 <grabTextFrom selector="#elementId" stepKey="stepKeyOfGrab"/>
 
 <!-- Ensure that the value we grabbed matches our expectation -->
-<assertEquals expected="Some String" expectedType="string" actual="A long assert string {$stepKeyOfGrab} with an embedded variable reference." actualType="variable" message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1"/>
+<assertEquals message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1">
+   <expectedResult type="string">Some String</expectedResult>
+   <actualResult type="variable">A long assert string {$stepKeyOfGrab} with an embedded variable reference.</actualResult>
+</assertEquals>
 ```
 
 ## Reference
