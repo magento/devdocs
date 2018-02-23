@@ -26,7 +26,7 @@ Most assertions contain attribute `message` that specifies text of an informatio
 
 * [actions' principles](../test.html#principles) are also applicable to assertions
 
-Assertion actions have a nested self-descriptive elements `<expectedResult>` and `<actualResult>`.
+Assertion actions have nested self-descriptive elements `<expectedResult>` and `<actualResult>`.
 These elements contain a type of result and a value itself:
 * `type`
 * `value`
