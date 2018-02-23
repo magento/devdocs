@@ -47,7 +47,7 @@ You can run Magento in any of the following *modes*:
 	</tr>
 	<tr>
 		<td>production</td>
-		<td>Intended for deployment on a production system. This mode:
+		<td><p>Intended for deployment on a production system, this mode:</p>
 			<ul><li>Does not show exceptions to the user (exceptions are written to logs only).</li>
 				<li>Serves static view files from cache only.</li>
 				<li>Prevents automatic code file compilation. New or updated files are not written to the file system.</li>
