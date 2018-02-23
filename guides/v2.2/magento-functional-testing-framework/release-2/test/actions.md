@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/actions.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.1.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -1253,6 +1253,29 @@ parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
+
+### selectMultipleOptions
+
+Selects all given options in the given Magento dropdown element.
+
+Example:
+
+```xml
+<selectMultipleOptions filterSelector=".filter" optionSelector=".option" stepKey="selectMultipleOpts1">
+    <array>['opt1', 'opt2']</array>
+</selectMultipleOptions>
+```
+
+Attribute|Type|Use|Description
+---|---|---|---
+filterSelector|string|required|The selector for the text filter field.
+optionSelector|string|required|The selector used to select the corresponding options based on the filter field.
+stepKey|string|required|A unique identifier of the action.
+before|string|optional| `stepKey` of action that must be executed next.
+after|string|optional| `stepKey` of preceding action.
+
+It contains a child element `<array>` where you specify the options that must be selected using array format like `['opt1', 'opt2']`.
+See the above example of use.
 
 ### setCookie
 
