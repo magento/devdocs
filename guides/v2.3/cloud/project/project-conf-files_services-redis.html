@@ -1403,57 +1403,6 @@
     
     
 
-<li class="nav-level1  " id="upgrades-and-patches">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
 <li class="nav-level1  " id="deploy-your-store">
 
     
@@ -1608,55 +1557,6 @@
         
             
             <a href="/guides/v2.3/cloud/live/launch-steps.html">Launch steps</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="composer-package-updates">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.3/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-patches">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-tools">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1826,6 +1726,18 @@
         
         
         
+        <li class="nav-level2  " id="restore-configuration-files">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/restore-configuration-files.html">Restore configuration files</a>
+            
+
+            
+        </li>
+        
+        
         
         
         <li class="nav-level2  " id="site-availability">
@@ -1878,6 +1790,105 @@
             <a href="/guides/v2.3/cloud/trouble/message-queues.html">Message queues</a>
             
 
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.3/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.3/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -1985,33 +1996,32 @@
 </section>
 
 
-			<p><a href="http://redis.io" target="_blank">Redis</a> is an optional backend cache solution to replace <a href="http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="_blank">Zend_Cache_Backend_File</a>, which is used in Magento 2 by default.</p>
+			<p><a href="http://redis.io" target="\_blank">Redis</a> is an optional, backend cache solution that replaces the Zend Framework <a href="http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="\_blank">Zend_Cache_Backend_File</a>, which is used in Magento 2 by default.</p>
 
-<p><a href="/guides/v2.3/config-guide/redis/config-redis.html">More information about Redis</a></p>
+<p>We support Redis versions 2.8 and 3.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See <a href="/guides/v2.3/config-guide/redis/config-redis.html">Configure Redis</a>.</p>
 
-<p>We support Redis versions 2.8 and 3.0.</p>
+<h2 id="settings">Add Redis in configuration files</h2>
+<p>To enable Redis, add your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code> file:</p>
 
-<p>Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">myredis</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">redis:3.0</span>
+</code></pre></div></div>
 
-<h2 id="settings">Add Redis in services.yaml and .magento.app.yaml</h2>
-<p>To enable Redis, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
+<p>To provide your own Redis configuration, add a <code class="highlighter-rouge">core_config</code> key in your <code class="highlighter-rouge">.magento/services.yaml</code> file:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">myredis</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">redis:3.0</span></code></pre></figure>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">cache</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">redis:3.0</span>
+</code></pre></div></div>
 
-<p>If you want to provide your own Redis configuration, you can add a <code class="highlighter-rouge">core_config</code> key in your <code class="highlighter-rouge">.magento/services.yaml</code>:</p>
+<p>To configure relationships for an environment variable in your <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">cache</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">redis:3.0</span></code></pre></figure>
-
-<p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">runtime</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">runtime</span><span class="pi">:</span>
     <span class="na">extensions</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">redis</span>
 
 <span class="na">relationships</span><span class="pi">:</span>
-    <span class="na">redis</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myredis:redis"</span></code></pre></figure>
+    <span class="na">redis</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myredis:redis"</span>
+</code></pre></div></div>
 
 <p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
 
@@ -2021,26 +2031,27 @@
 <p>To verify this information used for configurations and settings:</p>
 
 <ol>
-  <li>SSH into the Integration environment with Redis installed and configured.</li>
+  <li>Use SSH to connect to the Integration environment with Redis installed and configured.</li>
   <li>
-    <p>Enter the following command to pretty-print connection information for Redis:</p>
+    <p>Create <code class="highlighter-rouge">pretty-print</code> connection information for Redis.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 </code></pre></div>    </div>
+
+    <p>The response includes all relationships for services and configuration data for that environment, similar to the following for Redis:</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"redis"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.0.2.55"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"redis"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">6379</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
   </li>
 </ol>
-
-<p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Redis:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-    <span class="s2">"redis"</span>: <span class="o">[</span>
-        <span class="o">{</span>
-            <span class="s2">"host"</span>: <span class="s2">"192.0.2.55"</span>,
-            <span class="s2">"scheme"</span>: <span class="s2">"redis"</span>,
-            <span class="s2">"port"</span>: 6379
-        <span class="o">}</span>
-    <span class="o">]</span>
-<span class="o">}</span></code></pre></figure>
 
 <!-- The following info is from Platform.sh and may not be required for Magento Cloud:
 You can then use the service in a configuration file of your application as follows:
@@ -2056,26 +2067,18 @@ You can then use the service in a configuration file of your application as foll
 <span class="p">}</span></code></pre></figure>
  -->
 
-<h2 id="using-redis-cli-to-access-your-redis-service">Using <code class="highlighter-rouge">redis-cli</code> to access your Redis service</h2>
-
-<p>Assuming your Redis relationship is named <code class="highlighter-rouge">redis</code>, you can access it by opening an SSH tunnel to a host named <code class="highlighter-rouge">redis.internal</code> using the redis-cli tool.</p>
+<h2 id="using-the-redis-cli">Using the Redis CLI</h2>
+<p>Assuming your Redis relationship is named <code class="highlighter-rouge">redis</code>, you can access it using the <code class="highlighter-rouge">redis-cli</code> tool.</p>
 
 <ol>
-  <li>SSH into the Integration environment with RabbitMQ installed and configured.</li>
+  <li>Use SSH to connect to the Integration environment with RabbitMQ installed and configured.</li>
   <li>
-    <p>Enter the following command:</p>
+    <p>Open an SSH tunnel to a host.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> redis-cli -h redis.internal
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli <span class="nt">-h</span> redis.internal
 </code></pre></div>    </div>
   </li>
 </ol>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->

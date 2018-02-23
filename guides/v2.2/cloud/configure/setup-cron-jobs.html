@@ -1403,57 +1403,6 @@
     
     
 
-<li class="nav-level1  " id="upgrades-and-patches">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
 <li class="nav-level1  " id="deploy-your-store">
 
     
@@ -1608,55 +1557,6 @@
         
             
             <a href="/guides/v2.2/cloud/live/launch-steps.html">Launch steps</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="composer-package-updates">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-patches">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-tools">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1900,6 +1800,105 @@
 
 
     
+    
+
+<li class="nav-level1  " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
     </ul>
 </div>
 
@@ -2076,7 +2075,7 @@
 <p>You should add all cron jobs to your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file in the the <code class="highlighter-rouge">crons</code> section.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The default minimum frequency for cron jobs is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting in <code class="highlighter-rouge">.magento-app-yaml</code>.</p>
+  <p>The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.</p>
 </div>
 
 <p>We include a default cron job for Magento in the default file:</p>
@@ -2115,14 +2114,14 @@
   <li>Pro: Only Integration environments you push to including <code class="highlighter-rouge">Master</code></li>
 </ul>
 
-<p>To add the cron jobs to Pro plan Staging and Production, you must <a href="/guides/v2.2/cloud/trouble/trouble.html">enter a ticket to Support</a>. Request to have the cron jobs in <code class="highlighter-rouge">.magento.app.yaml</code> added to those environments. We recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch.</p>
+<p>To add the cron jobs to Pro plan Staging and Production, you must <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">enter a ticket to Support</a>. Request to have the cron jobs in <code class="highlighter-rouge">.magento.app.yaml</code> added to those environments. We recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch.</p>
 
 <p>We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occassionally late.</p>
 
 <h2 id="update">Update cron jobs</h2>
 <p>If you need to change or update your cron jobs, update the crons section in your <code class="highlighter-rouge">.magento.app.yaml</code> file. Push the file to your Git branch and deploy across environments.</p>
 
-<p>For Pro plan Staging and Production environments, please <a href="/guides/v2.2/cloud/trouble/trouble.html">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>
+<p>For Pro plan Staging and Production environments, please <a href="/guides/v2.2/cloud/bk-cloud.html#gethelp">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -2133,7 +2132,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/configure/setup-cron-jobs.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/configure/setup-cron-jobs.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

@@ -1403,57 +1403,6 @@
     
     
 
-<li class="nav-level1  " id="upgrades-and-patches">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
 <li class="nav-level1  " id="deploy-your-store">
 
     
@@ -1608,55 +1557,6 @@
         
             
             <a href="/guides/v2.2/cloud/live/launch-steps.html">Launch steps</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="composer-package-updates">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-patches">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-tools">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1900,6 +1800,105 @@
 
 
     
+    
+
+<li class="nav-level1  " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
     </ul>
 </div>
 
@@ -1997,12 +1996,12 @@
 </section>
 
 
-			<p>By default, Magento Commerce (Cloud) writes build and deploy actions to a single file called <code class="highlighter-rouge">app/var/log/cloud.log</code> inside the Magento root application directory, but you can also send logs to messaging systems, like Slack and email, if you want to receive real-time notifications.</p>
+			<p>By default, Magento Commerce (Cloud) writes build and deploy actions to a single file called <code class="highlighter-rouge">app/var/log/cloud.log</code> inside the Magento root application directory. Optionally, you can send logs to a messaging system, such as Slack and email, to receive real-time notifications.</p>
 
-<p>For example, you may want to send a Slack message to a group of people when a deployment fails so someone can immediately start investigating what went wrong.</p>
+<p>For example, you could send a Slack message to alert a group of people when a deployment fails, and prompt an investigation into what went wrong.</p>
 
 <h2 id="plan-your-notifications">Plan your notifications</h2>
-<p>Before you start configuring notifications, you should spend some time thinking about the following:</p>
+<p>Before you configure notifications, consider the following:</p>
 
 <ul>
   <li>What kind of notifications do you want to receive (Slack messages, email, both)?</li>
@@ -2010,10 +2009,10 @@
   <li>Where do you want to set up notifications (integration, staging, production)?</li>
 </ul>
 
-<p>For example, during initial development you may prefer email notifications that show detailed logs about your integration environment to help you debug issues before deploying to staging or production. When you’re ready to deploy to staging or production, however, you may prefer Slack messages that contain less detailed information.</p>
+<p>For example, during initial development you may prefer email notifications that show detailed logs about your Integration environment to help you debug issues before deploying to the Staging environment. However, when you are ready to deploy to the Staging or Production environment, you may prefer a Slack message that contains less detailed information.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>The configuration file you use to set up notifications is located at the root of your project directory, so it applies to every environment you push it to. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment.</p>
+  <p>The configuration file used to set up notifications is at the root of your project directory, so it applies when you push changes to any environment. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment.</p>
 </div>
 
 <h2 id="configure-notifications">Configure notifications</h2>
@@ -2045,9 +2044,9 @@
     </div>
   </li>
   <li>
-    <p>Commit and push your changes to the remote server:</p>
+    <p>Commit and push your changes to the remote server.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git -A &amp;&amp; git commit -m "Configure build/deploy notifications"
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git <span class="nt">-A</span> <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"Configure build/deploy notifications"</span>
  git push origin &lt;branch-name&gt;
 </code></pre></div>    </div>
   </li>
@@ -2065,10 +2064,10 @@
 </code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">token</code> - Your Slack <a href="https://api.slack.com/docs/token-types#user" target="\_blank">user token</a>. Your user token authorizes Magento Commerce (Cloud) to send messages.</li>
-  <li><code class="highlighter-rouge">channel</code> - Name of the Slack channel where you want Magento Commerce (Cloud) to send notifications.</li>
-  <li><code class="highlighter-rouge">username</code> - Username you want Magento Commerce (Cloud) to use to send notification messages in Slack.</li>
-  <li><code class="highlighter-rouge">min_level</code> - Minimum log level for notification messages. We recommend using <code class="highlighter-rouge">info</code>.</li>
+  <li><code class="highlighter-rouge">token</code>—Your Slack <a href="https://api.slack.com/docs/token-types#user" target="\_blank">user token</a>. Your user token authorizes Magento Commerce (Cloud) to send messages.</li>
+  <li><code class="highlighter-rouge">channel</code>—Name of the Slack channel Magento Commerce (Cloud) sends notifications.</li>
+  <li><code class="highlighter-rouge">username</code>—Username Magento Commerce (Cloud) uses to send notification messages in Slack.</li>
+  <li><code class="highlighter-rouge">min_level</code>—Minimum log level for notification messages. We recommend using <code class="highlighter-rouge">info</code>.</li>
 </ul>
 
 <h3 id="example-email-configuration">Example email configuration</h3>
@@ -2078,7 +2077,7 @@
   <p>Magento Commerce (Cloud) only sends emails during the deployment phase.</p>
 </div>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">log</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">log</span><span class="pi">:</span>
   <span class="na">email</span><span class="pi">:</span>
       <span class="na">to</span><span class="pi">:</span> <span class="s">&lt;your-email&gt;</span>
       <span class="na">from</span><span class="pi">:</span> <span class="s">&lt;your-email&gt;</span>
@@ -2087,29 +2086,24 @@
 </code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">to</code> - Email address where Magento Commerce (Cloud) will send notification messages.</li>
-  <li><code class="highlighter-rouge">from</code> - Email address for sending notification messages to recipients.</li>
-  <li><code class="highlighter-rouge">subject</code> - Description of the email.</li>
-  <li><code class="highlighter-rouge">min_level</code> - Minimum log level for notification messages. We recommend using <code class="highlighter-rouge">notice</code> or <code class="highlighter-rouge">warning</code>.</li>
+  <li><code class="highlighter-rouge">to</code>—Email address Magento Commerce (Cloud) sends notification messages.</li>
+  <li><code class="highlighter-rouge">from</code>—Email address for sending notification messages to recipients.</li>
+  <li><code class="highlighter-rouge">subject</code>—Description of the email.</li>
+  <li><code class="highlighter-rouge">min_level</code>—Minimum log level for notification messages. We recommend using <code class="highlighter-rouge">notice</code> or <code class="highlighter-rouge">warning</code>.</li>
 </ul>
 
 <h3 id="log-levels">Log levels</h3>
-<p>Log levels determine what level of detail your notification messages will contain. You can choose from the following options:</p>
+<p>Log levels determine the level of detail your notification messages contain. You can choose from the following options:</p>
 
 <ul>
-  <li><strong>debug</strong>: Detailed debug information</li>
-  <li><strong>info</strong>: Interesting events. For example, a user logs in, SQL logs, etc.</li>
-  <li><strong>notice</strong>: Normal but significant events.</li>
-  <li><strong>warning</strong>: Exceptional occurrences that are not errors. For example, use of deprecated APIs, poor use of an API, undesirable things that are not necessarily wrong.</li>
-  <li><strong>error</strong>: Runtime errors that don’t require immediate action but should be logged and monitored.</li>
-  <li><strong>critical</strong>: Critical conditions. For example, an unavailable application component, unexpected exceptions.</li>
-  <li><strong>alert</strong>: Action must be taken immediately. For example, your website is down, the database is unavailable, etc. This should trigger SMS alerts and wake you up.</li>
-  <li><strong>emergency</strong>: The system is unusable.</li>
-</ul>
-
-<h4 id="related-topics">Related Topics</h4>
-<ul>
-  <li><a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a></li>
+  <li><strong>debug</strong>—Detailed debug information.</li>
+  <li><strong>info</strong>—Interesting events. For example, a user logs in, SQL logs, etc.</li>
+  <li><strong>notice</strong>—Normal but significant events.</li>
+  <li><strong>warning</strong>—Exceptional occurrences that are not errors. For example, use of deprecated APIs, poor use of an API, undesirable things that are not necessarily wrong.</li>
+  <li><strong>error</strong>—Runtime errors that don’t require immediate action but should be logged and monitored.</li>
+  <li><strong>critical</strong>—Critical conditions. For example, an unavailable application component, unexpected exceptions.</li>
+  <li><strong>alert</strong>—Action must be taken immediately. For example, your website is down, the database is unavailable, etc. This should trigger SMS alerts and wake you up.</li>
+  <li><strong>emergency</strong>—The system is unusable.</li>
 </ul>
 
 		</div>
@@ -2121,7 +2115,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/env/setup-notifications.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/env/setup-notifications.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

@@ -1403,57 +1403,6 @@
     
     
 
-<li class="nav-level1  " id="upgrades-and-patches">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
 <li class="nav-level1  " id="deploy-your-store">
 
     
@@ -1608,55 +1557,6 @@
         
             
             <a href="/guides/v2.3/cloud/live/launch-steps.html">Launch steps</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="composer-package-updates">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.3/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-patches">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-tools">
-            
-            
-        
-            
-            <a href="/guides/v2.3/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1826,6 +1726,18 @@
         
         
         
+        <li class="nav-level2  " id="restore-configuration-files">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/restore-configuration-files.html">Restore configuration files</a>
+            
+
+            
+        </li>
+        
+        
         
         
         <li class="nav-level2  " id="site-availability">
@@ -1878,6 +1790,105 @@
             <a href="/guides/v2.3/cloud/trouble/message-queues.html">Message queues</a>
             
 
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.3/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.3/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.3/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -1985,51 +1996,34 @@
 </section>
 
 
-			<p>Configuration management, or <a href="/guides/v2.3/config-guide/deployment/pipeline/">Pipeline Deployment</a>, provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments. to keep consistent settings and reduce downtime.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>For extended technical information, see <a href="/guides/v2.3/config-guide/deployment/pipeline/">Pipeline Deployment</a> (which is  prepared for on-premises). When configuring and using these features, follow this topic specifically. Magento Commerce (Cloud) provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy it via Git.</p>
-</div>
-
-<p>It provides the following benefits:</p>
+			<p>Configuration management, or <a href="/guides/v2.3/config-guide/deployment/pipeline/">Pipeline Deployment</a>, provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:</p>
 
 <ul>
   <li>Better way to <a href="#cloud-confman-over">manage and synchronize</a> the configuration across your Integration, Staging, and Production environments.</li>
   <li>Less time required to <a href="#cloud-confman-scd-over">build</a> and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see <a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment Process</a>.</li>
-  <li>Sensitive data is automatically added into and environment variables file (<code class="highlighter-rouge">/app/etc/env.php</code>). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.</li>
+  <li>Sensitive data is automatically added into an environment variables file (<code class="highlighter-rouge">/app/etc/env.php</code>). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info">
-  <p>These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.</p>
+<p>These methods are optional, but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.</p>
+
+<p>To complete configuration management tasks, you must have a project reader role with <a href="/guides/v2.3/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>For extended technical information, see <a href="/guides/v2.3/config-guide/deployment/pipeline/">Pipeline Deployment</a>. When configuring and using these features, follow this topic specifically. Magento Commerce (Cloud) provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.</p>
 </div>
-
-<div class="bs-callout bs-callout-info">
-  <p>If you used configuration management in 2.1, this process is similar in 2.2. The name of the file has changed to <code class="highlighter-rouge">config.php</code> and updating the file changed. You can <a href="#migrate">migrate</a> your <code class="highlighter-rouge">config.local.php</code> settings to a new <code class="highlighter-rouge">config.php</code>. This file includes a number of changes including:</p>
-
-  <ul>
-    <li>A list of modules and extensions</li>
-    <li>The scope for deployment</li>
-    <li>Should not be deleted to regenerate</li>
-  </ul>
-</div>
-
-<h2 id="release">Feature availability</h2>
-<p>Configuration management was released in <code class="highlighter-rouge">magento-cloud-configuration</code> 101.4.1 on Magento Commerce (Cloud) 2.1.4 and later. The options and functions differ in Magento Commerce (Cloud) 2.2. We provide recommendations for Magento Commerce (Cloud) deployments in this section.</p>
-
-<p>To complete these configuration management tasks, you must have at a minimum a project reader role with <a href="/guides/v2.3/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges.</p>
 
 <h2 id="cloud-confman-over">How it works</h2>
-<p>Magento’s store configurations are stored in the database. When updating configurations in development/Integration, Staging, and Production environments, you would need to make those changes in the Magento Admin per environment. By using these commands, you generate a file, exporting all Magento configuration settings into a single text file: <code class="highlighter-rouge">app/etc/config.php</code>.</p>
+<p>The database contains default configurations for your Magento store. When you update the configurations in the Integration, Staging, and Production environments using the Magento Admin, you generate a file of all Magento configuration settings into a single text file: <code class="highlighter-rouge">app/etc/config.php</code>.</p>
 
-<p>After configuring your environment, generate the file using one of the following commands:</p>
+<p>To generate the file, use one of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code>: <strong>Recommended</strong>. Exports only modified configuration settings</li>
-  <li><code class="highlighter-rouge">php bin/magento app:config:dump</code>: Exports every configuration setting, including modified and default settings</li>
+  <li><code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code>—<strong>Recommended</strong> Exports only modified configuration settings</li>
+  <li><code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>—Exports every configuration setting, including modified and default settings</li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-  <p>For Magento Commerce (Cloud), we <strong>do not recommend</strong> app:config:dump as this command pulls and locks all values as read-only. This will affect Fastly and other important modules.</p>
+  <p>For Magento Commerce (Cloud), we <strong>do not recommend</strong> using the <code class="highlighter-rouge">app:config:dump</code> command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.</p>
 </div>
 
 <p>Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments. And every time you run this command, any new configurations are appended to your config.php file. If you need to modify or delete an existing configuration, you must edit the file manually.</p>
@@ -2039,14 +2033,14 @@
 <p>If sensitive data is found in your configurations, it is generated as environment variables to <code class="highlighter-rouge">env.php</code>. This file remains in the environment and should not be added to your Git environment.</p>
 
 <h3 id="commands">Switching between commands</h3>
-<p>Can you switch between using <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> and <code class="highlighter-rouge">php bin/magento app:config:dump</code>? Only in one specific way.</p>
+<p>Can you switch between using <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> and <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>? Only in one specific way.</p>
 
 <p>In 2.2 and later, you cannot delete the <code class="highlighter-rouge">config.php</code> file to regenerate it. You can only edit the file to change or remove a value. This file includes more information than just configuration values.</p>
 
-<p>If you use <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> to generate the file, you can switch to <code class="highlighter-rouge">php bin/magento app:config:dump</code>. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.</p>
+<p>If you use <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> to generate the file, you can switch to <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.</p>
 
 <h3 id="data">Configuration data</h3>
-<p>System settings refer to the configurations in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong>. Depending on the command used, all or just modified system configurations save to the file.</p>
+<p>System settings refer to the configurations in the Magento Admin in <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong>. Depending on the command used, all or just modified system configurations save to the file.</p>
 
 <p>This file can include all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to static content deployment (for example, static file optimization) are also stored in <code class="highlighter-rouge">app/etc/config.php</code>. <em>Static file optimization</em> means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.</p>
 
@@ -2067,23 +2061,17 @@
   <p>Before deploying static files, the build and deploy phases compress static content using <code class="highlighter-rouge">gzip</code>. Compressing static files reduces server loads and increases site performance. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build">Magento build options</a> to learn about customizing or disabling file compression.</p>
 </div>
 
-<h2 id="cloud-config-specific-over">How we set configurations</h2>
-<p>All system settings are set according to the following override scheme.</p>
-
-<p><img src="/common/images/cloud_vars_flow-diagram.png" alt="How configuration variable values are determined" width="550px" /></p>
-
-<p>As the diagram shows, we get configuration values in the following order:</p>
+<h2 id="configuration-selection-flow">Configuration selection flow</h2>
+<p>All system configurations are set during deployment according to the following override scheme:</p>
 
 <ol>
-  <li>From an environment variable.	Environment variables, if they exist, override all other values.</li>
-  <li>From <code class="highlighter-rouge">config.php</code>. Values in <code class="highlighter-rouge">config.php</code> override settings in the database.</li>
-  <li>From the database.</li>
+  <li>If an environment variable exists, use the custom configuration and ignore the default configuration.</li>
+  <li>If an environment variable does not exist, use the configuration from a <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> name-value pair in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Ignore the default configuration.</li>
+  <li>If an environment variable does not exist and <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.</li>
 </ol>
 
-<p>If no value exists in any of those sources, we use either the default value or <code class="highlighter-rouge">NULL</code>. For an example of how this works, see <a href="/guides/v2.3/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>.</p>
-
 <h2 id="cloud-clp-settings">Configuration settings you can change</h2>
-<p>The following table shows the configuration settings affected by the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command. These are the configuration settings that you can manage in Git. If you use <code class="highlighter-rouge">php bin/magento app:config:dump</code>, all settings are exported including default and modified settings.</p>
+<p>The following table shows the configuration settings affected by the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command. These are the configuration settings that you can manage in Git. If you use <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>, all settings are exported including default and modified settings.</p>
 
 <p>The <code class="highlighter-rouge">config.php</code> file includes the following settings and configuration values:</p>
 
@@ -2232,9 +2220,6 @@
 </ol>
 
 <p>You only need to complete this migration once. When you need to update the file, you will always update the new <code class="highlighter-rouge">config.php</code>.</p>
-
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.3/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a></p>
 
 		</div>
 		<!-- /.content-wrap -->

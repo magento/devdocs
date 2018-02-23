@@ -1403,57 +1403,6 @@
     
     
 
-<li class="nav-level1  " id="upgrades-and-patches">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
 <li class="nav-level1  " id="deploy-your-store">
 
     
@@ -1608,55 +1557,6 @@
         
             
             <a href="/guides/v2.2/cloud/live/launch-steps.html">Launch steps</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="composer-package-updates">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-patches">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-tools">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1900,6 +1800,105 @@
 
 
     
+    
+
+<li class="nav-level1  " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
     </ul>
 </div>
 
@@ -1997,9 +1996,9 @@
 </section>
 
 
-			<p>The <code class="highlighter-rouge">.magento.env.yaml</code> file centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production.</p>
+			<p>The <code class="highlighter-rouge">.magento.env.yaml</code> file centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.</p>
 
-<p>Unlike other YAML configuration files, such as <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>, <a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a>, and <a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>, you can use this file to manage configuration settings without opening a support ticket.</p>
+<p>Unlike other YAML configuration files, such as <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>, <a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a>, and <a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">.magento/services.yaml</code></a>, you can use this file to manage configuration settings without opening a support ticket.</p>
 
 <div class="bs-callout bs-callout-warning">
   <ul>
@@ -2017,14 +2016,14 @@
   <li><strong><code class="highlighter-rouge">deploy</code></strong>—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section. Settings you configure with environment variables using the <code class="highlighter-rouge">magento-cloud</code> CLI tool or Project Web Interface override settings in this section.</li>
 </ul>
 
-<p>In each section, you use <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build">build options</a> or <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy">environment variables</a> to control the build and deploy actions.</p>
+<p>In each section, you use <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html#build">build</a> or <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html#deploy">deploy</a> variables to control build and deploy actions.</p>
 
 <h2 id="example">Example</h2>
 <p>The following example shows how to minimize downtime during deployment by managing static content deployment:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">global</span><span class="pi">:</span>
-    <span class="na">SCD_STRATEGY</span><span class="pi">:</span> <span class="s">quick</span>         <span class="c1"># Use the "quick" deployment strategy for both the build and deploy phases</span>
+    <span class="na">SCD_STRATEGY</span><span class="pi">:</span> <span class="s">standard</span>      <span class="c1"># You cannot modify the strategy in 2.1.x.</span>
     <span class="na">SKIP_SCD</span><span class="pi">:</span> <span class="no">true</span>              <span class="c1"># Skip static content deployment for both phases; you can override this in the build and deploy sections</span>
   <span class="na">build</span><span class="pi">:</span>
     <span class="na">SKIP_SCD</span><span class="pi">:</span> <span class="no">false</span>             <span class="c1"># Override the global setting and perform static content deployment in the build phase</span>
@@ -2042,7 +2041,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/project/magento-env-yaml.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/project/magento-env-yaml.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

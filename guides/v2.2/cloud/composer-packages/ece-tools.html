@@ -1403,57 +1403,6 @@
     
     
 
-<li class="nav-level1  " id="upgrades-and-patches">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
 <li class="nav-level1  " id="deploy-your-store">
 
     
@@ -1608,55 +1557,6 @@
         
             
             <a href="/guides/v2.2/cloud/live/launch-steps.html">Launch steps</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="composer-package-updates">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-patches">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2 active " id="vendor/magento/ece-tools">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1900,6 +1800,105 @@
 
 
     
+    
+
+<li class="nav-level1  " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3 active " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
     </ul>
 </div>
 
@@ -2013,12 +2012,68 @@
     <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html">update this package</a> to get these features and fixes.</p>
   </div>
 
+  <h2 id="v200209">v2002.0.9</h2>
+
+  <h3 id="new-features">New features</h3>
+  <ul>
+    <li>
+      <!-- MAGECLOUD-1086 -->
+      <p><strong>ece-tools</strong>—The <code class="highlighter-rouge">ece-tools</code> package now supports Magento 2.1.x.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1552 -->
+      <p><strong>Redis configuration</strong>—You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis">configure Redis</a> page and default cache and Redis session storage using an environment variable.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1437 -->
+      <p><strong>Search, AMQP, and Redis service improvements</strong>—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the <code class="highlighter-rouge">env.php</code> file to configure services is no longer supported. You must use environment variables or the <code class="highlighter-rouge">.magento.env.yaml</code> file instead.</p>
+    </li>
+    <li>
+      <p><strong>Environment variables</strong></p>
+
+      <ul>
+        <li>
+          <!-- MAGECLOUD-1507 -->
+          <p>The use of <code class="highlighter-rouge">env:STATIC_CONTENT_THREADS</code> was deprecated and will be removed in a future release. Use the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> environment variable instead.</p>
+        </li>
+        <li>
+          <!-- MAGECLOUD-1640 -->
+          <p>The <code class="highlighter-rouge">STATIC_CONTENT_EXCLUDE_THEMES</code> environment variable was deprecated. You must use the <code class="highlighter-rouge">SCD_EXCLUDE_THEMES</code> environment variable instead.</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1674 -->
+      <p><strong>Logging</strong>—We simplified logging around built-in patching operations.</p>
+    </li>
+  </ul>
+
+  <h3 id="fixed-issues">Fixed issues</h3>
+  <ul>
+    <li>
+      <!-- MAGECLOUD-1615 -->
+      <p>We removed <code class="highlighter-rouge">developer</code> mode support and the <code class="highlighter-rouge">APPLICATION_MODE</code> environment variable because they were causing unexpected behavior.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1630 -->
+      <p>We fixed an issue that was causing static content deployment failures related to Redis. Now, multi-threaded static content deployment runs as designed.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1175 -->
+      <p>We fixed an issue that was preventing users from saving modifications to configuration fields in the Admin, which are marked as sensitive after running the <code class="highlighter-rouge">app:config:dump</code> command.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1674 -->
+      <p>We added support for an earlier version of <code class="highlighter-rouge">symfony/yaml</code> to fix conflicts with some packages, which are not yet compatible with the latest version.</p>
+    </li>
+  </ul>
+
   <h2 id="v200208">v2002.0.8</h2>
   <div class="bs-callout bs-callout-info">
     <p>We merged <a href="http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html"><code class="highlighter-rouge">vendor/magento/ece-patches</code></a> with <code class="highlighter-rouge">vendor/magento/ece-tools</code> in this release. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
   </div>
 
-  <h3 id="new-features">New features</h3>
+  <h3 id="new-features-1">New features</h3>
   <ul>
     <li>
       <!-- MAGECLOUD-1253 -MAGECLOUD-1495-->
@@ -2035,7 +2090,7 @@
     </li>
     <li>
       <!-- MAGECLOUD-1367 -->
-      <p><strong>New cron command</strong>—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the <a href="http://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html"><code class="highlighter-rouge">cron:unlock</code></a> command.</p>
+      <p><strong>New cron command</strong>—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the <a href="http://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html"><code class="highlighter-rouge">cron:unlock</code></a> command. Not available in 2.1.</p>
     </li>
     <li>
       <!-- MAGECLOUD-1369 -->
@@ -2059,7 +2114,7 @@
     </li>
   </ul>
 
-  <h3 id="fixed-issues">Fixed issues</h3>
+  <h3 id="fixed-issues-1">Fixed issues</h3>
   <ul>
     <li>
       <!-- MAGECLOUD-1162 -->
@@ -2071,7 +2126,7 @@
     </li>
     <li>
       <!-- MAGECLOUD-1446 MAGECLOUD-1485-->
-      <p>We fixed an issue that was causing errors when using the compact strategy for static content generation.</p>
+      <p>We fixed an issue that was causing errors when using the compact strategy for static content generation. Not available in 2.1.</p>
     </li>
     <li>
       <!-- MAGECLOUD-1493 -->
@@ -2083,11 +2138,11 @@
     </li>
     <li>
       <!--  MAGECLOUD-1567  -->
-      <p>We fixed an issue preventing you from exporting the configuration files using <code class="highlighter-rouge">app:config:dump</code> more than once.</p>
+      <p>We fixed an issue preventing you from exporting the configuration files using <code class="highlighter-rouge">app:config:dump</code> more than once. Not available in 2.1.</p>
     </li>
     <li>
       <!--  MAGECLOUD-1582  -->
-      <p>We fixed a Redis session <em>locking</em> issue that caused an <em>Admin</em> login delay.</p>
+      <p>We fixed a Redis session <em>locking</em> issue that caused an <em>Admin</em> login delay. Not available in 2.1.</p>
     </li>
     <li>
       <!--MAGECLOUD-1450-->
@@ -2099,13 +2154,13 @@
     </li>
     <li>
       <!--MAGECLOUD-1033-->
-      <p>Removed patch; fixing bug in <code class="highlighter-rouge">colinmollenhour/credis</code> v1.6 to enable support for Magento Commerce (Cloud) 2.2.1.</p>
+      <p>Removed patch; fixing bug in <code class="highlighter-rouge">colinmollenhour/credis</code> v1.6 to enable support for Magento Commerce (Cloud) 2.2.1. Not available in 2.1.</p>
     </li>
   </ul>
 
   <h2 id="v200207">v2002.0.7</h2>
 
-  <h3 id="fixed-issues-1">Fixed issues</h3>
+  <h3 id="fixed-issues-2">Fixed issues</h3>
   <ul>
     <li>
       <!-- MAGECLOUD-1454-->
@@ -2115,7 +2170,7 @@
 
   <h2 id="v200206">v2002.0.6</h2>
 
-  <h3 id="fixed-issues-2">Fixed issues</h3>
+  <h3 id="fixed-issues-3">Fixed issues</h3>
   <ul>
     <li>
       <!-- MAGECLOUD-1413 -->
@@ -2129,7 +2184,7 @@
 
   <h2 id="v200205">v2002.0.5</h2>
 
-  <h3 id="new-features-1">New features</h3>
+  <h3 id="new-features-2">New features</h3>
   <ul>
     <li>
       <p><strong>Configure a cron consumer with an environment variable</strong>—You can now configure cron consumers using the new <code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable.</p>
@@ -2156,11 +2211,11 @@
       <p><strong>Database dumps</strong>—We added a new <code class="highlighter-rouge">magento/ece-tools</code> CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshots and backup management</a> for more information.</p>
     </li>
     <li>
-      <p><strong>Cron interval limitations lifted</strong>—All Starter environments and Pro Integration environments now support 1-minute intervals for cron jobs (previously minimum 5 minutes). The default cron interval is 5 minutes in Starter and Pro Integration environments and 1 minute in Pro Staging and Production environments, but you can change this setting. To modify your existing cron jobs, edit your settings in <code class="highlighter-rouge">.magento.app.yaml</code> or create a support ticket for Production/Staging environments. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a> for more information.</p>
+      <p><strong>Cron interval limitations lifted</strong>—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in <code class="highlighter-rouge">.magento.app.yaml</code> or create a support ticket for Production/Staging environments. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a> for more information.</p>
     </li>
   </ul>
 
-  <h3 id="fixed-issues-3">Fixed issues</h3>
+  <h3 id="fixed-issues-4">Fixed issues</h3>
   <ul>
     <li>
       <!-- MAGECLOUD-1327 -->
@@ -2198,17 +2253,17 @@
 
   <h2 id="v200204">v2002.0.4</h2>
 
-  <h3 id="fixed-issues-4">Fixed issues</h3>
+  <h3 id="fixed-issues-5">Fixed issues</h3>
   <ul>
     <li>
       <!-- MAGECLOUD-1355 -->
-      <p>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.</p>
+      <p>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. Not available in 2.1.</p>
     </li>
   </ul>
 
   <h2 id="v200203">v2002.0.3</h2>
 
-  <h3 id="fixed-issues-5">Fixed issues</h3>
+  <h3 id="fixed-issues-6">Fixed issues</h3>
   <ul>
     <li>
       <!--MAGECLOUD-1311-->
@@ -2218,7 +2273,7 @@
 
   <h2 id="v200202">v2002.0.2</h2>
 
-  <h3 id="fixed-issues-6">Fixed issues</h3>
+  <h3 id="fixed-issues-7">Fixed issues</h3>
   <ul>
     <li>
       <!--MAGECLOUD-1246-->
@@ -2228,11 +2283,11 @@
 
   <h2 id="v200201">v2002.0.1</h2>
 
-  <h3 id="new-features-2">New features</h3>
+  <h3 id="new-features-3">New features</h3>
   <ul>
     <li>
       <!--- MAGECLOUD-1057 -->
-      <p>Magento Commerce (Cloud) now supports scopes and <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="highlighter-rouge">–s</code> parameter with a default setting of <code class="highlighter-rouge">quick</code> for the static content deployment strategy. You can use the environment variable <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options <code class="highlighter-rouge">standard</code>, <code class="highlighter-rouge">quick</code>, or <code class="highlighter-rouge">compact</code>. If you select <code class="highlighter-rouge">compact</code>, we override the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> value with <code class="highlighter-rouge">1</code>, which can slow deployment, especially in production environments.</p>
+      <p>Magento Commerce (Cloud) now supports scopes and <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="highlighter-rouge">–s</code> parameter with a default setting of <code class="highlighter-rouge">quick</code> for the static content deployment strategy. You can use the environment variable <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options <code class="highlighter-rouge">standard</code>, <code class="highlighter-rouge">quick</code>, or <code class="highlighter-rouge">compact</code>. If you select <code class="highlighter-rouge">compact</code>, we override the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> value with <code class="highlighter-rouge">1</code>, which can slow deployment, especially in production environments. Not available in 2.1.</p>
     </li>
     <li>
       <!--- MAGECLOUD-1014 & MAGECLOUD-1023 -->
@@ -2240,7 +2295,7 @@
     </li>
   </ul>
 
-  <h3 id="fixed-issues-7">Fixed issues</h3>
+  <h3 id="fixed-issues-8">Fixed issues</h3>
   <ul>
     <li>
       <!-- MAGECLOUD-919 & MAGECLOUD-1030-->

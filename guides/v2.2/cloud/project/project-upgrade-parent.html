@@ -1403,57 +1403,6 @@
     
     
 
-<li class="nav-level1 active " id="upgrades-and-patches">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
 <li class="nav-level1  " id="deploy-your-store">
 
     
@@ -1608,55 +1557,6 @@
         
             
             <a href="/guides/v2.2/cloud/live/launch-steps.html">Launch steps</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="composer-package-updates">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-patches">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="vendor/magento/ece-tools">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
             
 
             
@@ -1900,6 +1800,105 @@
 
 
     
+    
+
+<li class="nav-level1 active " id="upgrades-and-patches">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <a href="/guides/v2.2/cloud/composer-packages/patch-notes.html">Composer package updates</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
     </ul>
 </div>
 
@@ -1997,23 +1996,62 @@
 </section>
 
 
-			<p>The following information helps you upgrade and patch Magento Commerce (Cloud). All of our upgrades and patches are <a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a> driven. We recommend using <code class="highlighter-rouge">composer update</code> for running updates.</p>
+			<p>We use <a href="/guides/v2.2/cloud/reference/cloud-composer.html">Composer</a> for upgrades and patches to Magento Commerce (Cloud) and recommend running the <code class="highlighter-rouge">composer update</code> command.</p>
 
-<p>As part of your normal pushes of code, Magento Commerce (Cloud) checks for any pending patches and updates. These instructions walk through the specific steps needed, including preparing, updating, and verifying the upgrade.</p>
+<p>Magento Commerce (Cloud) checks for pending patches and updates when you push code changes to the remote environment. The upgrade instructions walk through preparing, updating, and verifying the upgrade.</p>
 
-<p>What you need:</p>
+<p><strong>Prerequisite</strong>—Before beginning the upgrade process, create a new, active branch from Integration and checkout to your local workstation. Dedicating a branch to the upgrade process helps to avoid interference with work in progress.</p>
 
-<ul>
-  <li>An active branch on your local to test in your Integration environment. We recommend using a dedicated branch for the upgrades and patches, without additional in-progress extension or code work.</li>
-  <li>Access to the environment and variables if needed</li>
-</ul>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>PCI compliance requires TLS protocol version 1.2 or later. On April 30, 2018, all Magento Cloud instances must convert to using TLS version 1.2 or later.</p>
+</div>
 
-<p>For detailed instructions:</p>
+<h2 id="upgrade-your-magento-commerce-cloud-application-architecture">Upgrade your Magento Commerce (Cloud) application architecture</h2>
+<p>We combined the upgrade metapackages for tools and patches with the release of <a href="http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208">ece-tools version 2002.0.8</a>, which helps to provide an easier process for future updates. You need to upgrade to the new metapackage to use this process.</p>
 
-<ul>
-  <li>[Upgrade Magento Commerce (Cloud)]</li>
-  <li>[Patch Magento Commerce (Cloud)]</li>
-</ul>
+<p>Some restrictions in the core Magento Commerce code base prevent you from upgrading to the new application architecture directly, so use the following table to determine your upgrade path:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Current Version</th>
+      <th>Upgrade Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2.1.3 and earlier</td>
+      <td>You must upgrade to version 2.1.4 or later before you continue.</td>
+    </tr>
+    <tr>
+      <td>2.1.4</td>
+      <td>You can begin the upgrade to <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html#v200209">ece-tools 2002.0.9</a> and later.</td>
+    </tr>
+    <tr>
+      <td>2.2.x</td>
+      <td>You can begin the upgrade to <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208">ece-tools 2002.0.8</a> and later.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metapackage">Update the Magento Commerce (Cloud) metapackage</h3>
+<p>We are deprecating the <code class="highlighter-rouge">magento/magento-cloud-configuration</code> and <code class="highlighter-rouge">magento/ece-patches</code> packages.</p>
+
+<p>You must perform a one-time, manual step to update the package version constraint for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> in the <code class="highlighter-rouge">composer.json</code> file, located in the root directory. This constraint enables updates for Magento Cloud metapackages—including removing deprecated packages—without upgrading your current Magento Commerce version.</p>
+
+<p>Each Magento Commerce version requires a different constraint based on the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;=current_version &lt;next_version
+</code></pre></div></div>
+
+<p>You can always find the latest metapackage constraint in the <a href="https://github.com/magento/magento-cloud/blob/master/composer.json"><code class="highlighter-rouge">magento-cloud</code> template</a>.</p>
+
+<p>The following example places a constraint for the Magento Cloud metapackage to any version greater than or equal to the current version 2.2.0 and lower than next version 2.2.1:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"magento/magento-cloud-metapackage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=2.2.0 &lt;2.2.1"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre></div></div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -2024,7 +2062,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/cloud/project/project-upgrade-parent.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/project/project-upgrade-parent.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
