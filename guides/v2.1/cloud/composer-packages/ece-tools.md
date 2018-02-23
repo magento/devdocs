@@ -2,7 +2,7 @@
 layout: default
 group: cloud
 title: vendor/magento/ece-tools
-version: 2.2
+version: 2.1
 github_link: cloud/composer-packages/ece-tools.md
 functional_areas:
   - Cloud
@@ -13,15 +13,15 @@ functional_areas:
 {% include cloud/ece-tools.md %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) to get these features and fixes.
+You must [update this package](http://devdocs.magento.com/guides/v2.1/cloud/project/project-patch.html#patch-vendormagentoece-tools) to get these features and fixes.
 </div>
 
 ## v2002.0.9
 
 ### New features
--   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x.
+-   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x. You must [upgrade to ece-tools](http://devdocs.magento.com/guides/v2.1/cloud/project/project-patch.html#upgrade-to-ece-tools) to use these features.
 
--   <!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis) page and default cache and Redis session storage using an environment variable.
+-   <!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html#redis) page and default cache and Redis session storage using an environment variable.
 
 -   <!-- MAGECLOUD-1437 -->**Search, AMQP, and Redis service improvements**—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the `env.php` file to configure services is no longer supported. You must use environment variables or the `.magento.env.yaml` file instead.
 
@@ -44,7 +44,7 @@ You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/proj
 
 ## v2002.0.8
 <div class="bs-callout bs-callout-info" markdown="1">
-We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
+We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.1/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
 </div>
 
 ### New features
@@ -56,9 +56,9 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 
 -   <!-- MAGECLOUD-1367 -->**New cron command**—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the [`cron:unlock`](http://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html) command. Not available in 2.1.
 
--   <!-- MAGECLOUD-1369 -->**Unified configuration file**—You can now configure build and deploy stages using a [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) file.
+-   <!-- MAGECLOUD-1369 -->**Unified configuration file**—You can now configure build and deploy stages using a [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) file.
 
--   <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command](http://devdocs.magento.com/guides/v2.2/cloud/trouble/restore-configuration-files.html) to restore these configuration files from a backup.
+-   <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command](http://devdocs.magento.com/guides/v2.1/cloud/trouble/restore-configuration-files.html) to restore these configuration files from a backup.
 
 -   <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
 
@@ -109,19 +109,19 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 
 -   **Configuration scanning**—We now scan for critical components during the build/deploy process and halt the process if the scan fails, which prevents unnecessary downtime due to the site being in maintenance mode.
 
--   **Build/deploy notifications**—We added a new configuration file that you can use to [set up Slack and/or email notifications](http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html) for build/deploy actions in all your environments.
+-   **Build/deploy notifications**—We added a new configuration file that you can use to [set up Slack and/or email notifications](http://devdocs.magento.com/guides/v2.1/cloud/env/setup-notifications.html) for build/deploy actions in all your environments.
 
--   **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="\_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build) or [deploy variable](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy). See the following topics for more information:
+-   **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="\_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option](http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html#build) or [deploy variable](http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html#deploy). See the following topics for more information:
 
-    -   [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html)
-    -   [Static content deployment performance](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)
-    -   [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)
+    -   [Magento application environment variables](http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html)
+    -   [Static content deployment performance](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-confman-scd-over)
+    -   [Deployment process](http://devdocs.magento.com/guides/v2.1/cloud/reference/discover-deploy.html)
 
--   **Configuration management**—We now auto-generate an `app/etc/config.php` file in your git repository during the build phase if it doesn't already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process](http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) for more information.
+-   **Configuration management**—We now auto-generate an `app/etc/config.php` file in your git repository during the build phase if it doesn't already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process](http://devdocs.magento.com/guides/v2.1/cloud/reference/discover-deploy.html) for more information.
 
--   **Database dumps**—We added a new `magento/ece-tools` CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See [Snapshots and backup management](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) for more information.
+-   **Database dumps**—We added a new `magento/ece-tools` CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See [Snapshots and backup management](http://devdocs.magento.com/guides/v2.1/cloud/project/project-webint-snap.html#db-dump) for more information.
 
--   **Cron interval limitations lifted**—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in `.magento.app.yaml` or create a support ticket for Production/Staging environments. Refer to [Set up cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html) for more information.
+-   **Cron interval limitations lifted**—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in `.magento.app.yaml` or create a support ticket for Production/Staging environments. Refer to [Set up cron jobs](http://devdocs.magento.com/guides/v2.1/cloud/configure/setup-cron-jobs.html) for more information.
 
 ### Fixed issues
 -   <!-- MAGECLOUD-1327 -->We fixed an issue that was causing long deploy times due to the deploy process invoking the `cache-clean` operation before static content deployment.
