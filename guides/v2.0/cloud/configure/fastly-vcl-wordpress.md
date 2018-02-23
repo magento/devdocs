@@ -37,17 +37,18 @@ Edge Dictionaries create key-value pairs for running against your VCL snippet. F
 
 For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries){:target="_blank"} and their example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples){:target="_blank"}.
 
-## Create wordpress.vcl {#vcl}
+## Create wordpress.json {#vcl}
 For this example, you may only want to run it against the Production server. You can also add it to Staging for testing.
 
-Create an `wordpress.vcl` file with the following JSON content:
+Create an `wordpress.json` file with the following JSON content:
 
 {% highlight json %}
 {
   "name": "wordpress",
-  "priority": "5",
+  "dynamic": "0",
   "type": "recv",
-  "content": "if ( req.url.path ~ "^\/?([^:\/\s]+).*$" ) { if ( table.lookup(wordpress_urls, re.group.1, "NOTFOUND") != "NOTFOUND" ) { set req.http.X-WP = "1"; } }",
+  "priority": "5",
+  "content": "if ( req.url.path ~ \"^\\/?([^:\/\\s]+).*$\" ) { if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" ) { set req.http.X-WP = \"1\"; } }"
 }
 {% endhighlight %}
 

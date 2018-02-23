@@ -160,10 +160,10 @@ Repeat to optionally add the following variables using the examples above:
 * Name: `ADMIN_URL`, Value: magento_A8v10
 
 ## Branch an environment {#branch}
-With your project Git cloned and Magento administrator account configured, you can branch from `master`.
+With your project cloned and Magento administrator account configured, you can branch for development.
 
 * For [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, than branch from `staging` for development.
-* For [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html#clone-branch), create branches from `master` as needed for your development. These are environments in Integration.
+* For [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html), create branches in the Integration environment for your development.
 
 To branch from master:
 
