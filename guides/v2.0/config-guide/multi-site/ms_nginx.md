@@ -89,23 +89,25 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
            include /var/www/html/magento2/nginx.conf;
 		}
 4.	Save your changes to the files and exit the text editor.
-5.      Change `nginx.conf.sample` content 
+5.  Change `nginx.conf.sample` content 
 		
 		location ~ (index|get|static|report|404|503|health_check)\.php$ {
-		    try_files $uri =404;
-		    fastcgi_pass   fastcgi_backend;
-		    fastcgi_buffers 1024 4k;
+			try_files $uri =404;
+			fastcgi_pass   fastcgi_backend;
+			fastcgi_buffers 1024 4k;
 
-		    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
-		    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
-		    fastcgi_read_timeout 600s;
-		    fastcgi_connect_timeout 600s;
+			fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+			fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+			fastcgi_read_timeout 600s;
+			fastcgi_connect_timeout 600s;
 
-		    fastcgi_index  index.php;
-		    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-		    include        fastcgi_params;
+			fastcgi_index  index.php;
+			fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+			include        fastcgi_params;
 		}
+		
 	to
+	
 		location ~ (index|get|static|report|404|503|health_check)\.php$ {
 		    try_files $uri =404;
 		    fastcgi_pass   fastcgi_backend;
