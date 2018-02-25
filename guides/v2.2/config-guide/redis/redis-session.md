@@ -14,11 +14,7 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="reds-cache-prereq">Prerequisite</h2>
-
-If Redis will be used for default or page caching, you must [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install) before continuing. .
-
-<h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
+You must [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
 Magento now provides command line options to configure Redis session storage. In previous releases, you edited the `<Magento install dir>app/etc/env.php` file. The command line provides validation and is the recommended configuration method, but you can still edit the `env.php` file.
 
