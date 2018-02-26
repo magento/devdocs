@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP coding standard | Magento 2 Developer Documentation</title>
+	<title>Web API technical vision | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/coding-standards/code-standard-php.html">
+	<link rel="canonical" href="//guides/v2.1/coding-standards/technical-vision/webapi.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,13 +69,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/coding-standards/code-standard-php.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/coding-standards/technical-vision/webapi.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/coding-standards/code-standard-php.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/coding-standards/technical-vision/webapi.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/coding-standards/code-standard-php.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/coding-standards/technical-vision/webapi.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/coding-standards/code-standard-php.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/coding-standards/technical-vision/webapi.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -276,7 +276,7 @@
         
         
         
-        <li class="nav-level2 active " id="php-coding-standard">
+        <li class="nav-level2  " id="php-coding-standard">
             
             
         
@@ -424,7 +424,7 @@
         
         
         
-        <li class="nav-level2  " id="web-api">
+        <li class="nav-level2 active " id="web-api">
             
             
         
@@ -508,7 +508,7 @@
 
           
 
-          <span property="name">PHP coding standard</span>
+          <span property="name">Web API technical vision</span>
 
         
 
@@ -531,7 +531,7 @@
 
 	
 
-	<h1 class="page-heading">PHP coding standard</h1>
+	<h1 class="page-heading">Web API technical vision</h1>
 
   
 
@@ -539,30 +539,135 @@
 </section>
 
 
-			<p>The Magento core development team uses the <a href="http://www.php-fig.org/psr/psr-1/" target="_blank">PSR-1: Basic Coding Standard</a> and <a href="http://www.php-fig.org/psr/psr-2/" target="_blank">PSR-2: Coding Style Guide</a>.
-Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>
+			<p>Web API is crucial for Magento because of the need to integrate with order management, customer management, and other enterprise management software systems.</p>
 
-<p>Where possible, use <a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank"><code class="highlighter-rouge">PHP_CodeSniffer</code></a> to automatically enforce these standards.
-Otherwise, you must apply these standards and requirements through rigorous code review.</p>
+<p>There are many headless Magento installations in which a merchant partially uses Magento functionality, while the other pieces of an eCommerce website are provided by other systems.</p>
 
-<h3 id="class-name-resolution-standard">Class name resolution standard</h3>
+<p>See <a href="https://en.wikipedia.org/wiki/Web_API">more details</a> about importance of web APIs in modern web applications.</p>
 
-<p>For class name resolution, use the <a href="http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class" target="_blank"><code class="highlighter-rouge">::class</code></a> <span term-uuid="caa46cea-25d7-4e4f-bce1-11430ada59dc" class="glossary-term" data-toggle="popover">keyword</span> instead of a string literal for every class name reference outside of that class.
-This includes references to:</p>
+<h3 id="components-dependencies">Components Dependencies</h3>
 
-<ul>
-  <li>Fully qualified class name</li>
-  <li>Imported/non-imported class name</li>
-  <li><span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">Namespace</span> relative class name</li>
-  <li>Import relative class name</li>
-</ul>
+<p>The following diagram shows Web API component dependencies.</p>
 
-<p>Examples:</p>
+<p><img src="/common/images/coding-standards/webapi-components-dependencies.png" alt="Web API components dependencies" /></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">ClassName</span><span class="o">::</span><span class="na">class</span><span class="p">);</span></code></pre></figure>
+<h3 id="high-level-architecture">High-level Architecture</h3>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">\Magento\Path\To\Class</span><span class="o">::</span><span class="na">class</span><span class="p">);</span></code></pre></figure>
+<p>The following image provides an overview of how Web APIs are processed.</p>
 
+<p><img src="/common/images/coding-standards/webapi-request-processing-high-level-overview.png" alt="Web API request processing overview" /></p>
+
+<h3 id="extension-scenarios">Extension Scenarios</h3>
+
+<h4 id="declare-a-new-rest-and-soap-endpoint">Declare a new REST and SOAP endpoint</h4>
+
+<p>Any <a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">service contract</a> can be <a href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">exposed as REST and SOAP</a> endpoints via configuration in a module’s <code class="highlighter-rouge">webapi.xml</code> file.</p>
+
+<h4 id="declare-a-new-graphql-query">Declare a new GraphQL query</h4>
+
+<ol>
+  <li>Create custom resolvers.</li>
+  <li>Declare a custom query and all necessary types in <code class="highlighter-rouge">graphql.xml</code></li>
+</ol>
+
+<p>If the target module is called <code class="highlighter-rouge">MyModule</code>, then create the resolvers and configuration files in a a new module called <code class="highlighter-rouge">MyModuleGraphQl</code>.</p>
+
+<p>See the <a href="http://devdocs.magento.com/guides/v2.3/graphql/index.html">GraphQL documentation</a> for more information.</p>
+
+<h4 id="add-a-custom-authentication-mechanism">Add a custom authentication mechanism</h4>
+
+<ol>
+  <li>Provide a custom implementation of <code class="highlighter-rouge">\Magento\Authorization\Model\UserContextInterface</code>, that verifies a user’s identity using a  custom authentication mechanism.</li>
+  <li>Declare custom user context in the composite user context for the target area(s) (<code class="highlighter-rouge">webapi_rest</code>, <code class="highlighter-rouge">webapi_soap</code>, <code class="highlighter-rouge">webapi_graphql</code>) :</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Authorization\Model\CompositeUserContext"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"userContexts"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"customUserContext"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Vendor\Module\Model\Authentication\CustomUserContext<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>100<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<h4 id="modify-the-schema-of-an-existing-soap-and-rest-endpoint">Modify the schema of an existing SOAP and REST endpoint</h4>
+
+<p>The recommended approach for modifying an interface is to define a new endpoint. If you simply modify the schema, you might break existing integrations or extensions.</p>
+
+<p>To extend an interface, use <a href="/guides/v2.1/extension-dev-guide/attributes.html">extension attributes</a>.</p>
+
+<h4 id="modify-the-schema-of-an-existing-graphql-query">Modify the schema of an existing GraphQL query</h4>
+
+<ol>
+  <li>
+    <p>Add a <code class="highlighter-rouge">graphql.xml</code> file to the <code class="highlighter-rouge">&lt;ModuleName&gt;GraphQl</code> module. Magento merges this file with configurations from other modules using the same merge rules as other types of configuration.</p>
+  </li>
+  <li>
+    <p>Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in <code class="highlighter-rouge">graphql.xml</code></p>
+  </li>
+</ol>
+
+<h3 id="model-consistency-constraints">Model Consistency Constraints</h3>
+
+<p>Any new design related to Web API must satisfy the following constraints to keep the model consistency.</p>
+
+<p><strong>General</strong></p>
+
+<ol>
+  <li>REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for store front scenarios.</li>
+  <li>Any identifier exposed in guest APIs (for example, cart ID) must be masked to prevent the possibility of unauthorized access to the data of other guest users.</li>
+  <li>Authentication must be done via <code class="highlighter-rouge">\Magento\Authorization\Model\UserContextInterface</code>.</li>
+  <li>Customer-specific identifiers (such as customer ID or cart ID) must be deducted from the record of the successfully authenticated customer. They must not be accepted via request parameters.</li>
+  <li>All new web API endpoints must be covered with web API functional tests.
+    <ul>
+      <li>For REST and SOAP, by default, the same test will be executed in the scope of different continuous integration jobs. The base class for REST and SOAP tests is <code class="highlighter-rouge">\Magento\TestFramework\TestCase\WebapiAbstract</code></li>
+      <li>The base class for GraphQL tests is: <code class="highlighter-rouge">\Magento\TestFramework\TestCase\GraphQlAbstract</code></li>
+    </ul>
+  </li>
+  <li>Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and store front areas from executing routers.</li>
+  <li>Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)</li>
+  <li>Authentication parameters must be be passed via headers.</li>
+  <li>Throttling must be configured by the system integrator. It is not supported by Magento</li>
+  <li>Internal server errors must be masked and never shown to the user in production mode. In developer mode, original exceptions must never be masked and should be displayed along with the related stacktrace.</li>
+  <li>Pagination must be supported by all list operations.</li>
+</ol>
+
+<p><strong>GraphQL</strong></p>
+
+<ol>
+  <li>Unlimited nesting should be supported during requests for related entities. (For example, get Order =&gt; Order Items =&gt; Products =&gt; Related Products)</li>
+  <li>Field filtration must be performed with SQL queries. Do not filter on the application layer after you’ve fetched all possible fields.</li>
+  <li>Third-party customizations must be done separately for Service Contracts and for GraphQL</li>
+  <li>For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module <code class="highlighter-rouge">MyModule</code>, you must create the <code class="highlighter-rouge">graphql.xml</code> file in the <code class="highlighter-rouge">MyModuleGraphQl</code> module.</li>
+  <li>GraphQL is primarily designed for store-front one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries</li>
+  <li>All queries must return the 200 HTTP status code. If an error occurs, return the error in the response body. A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.</li>
+  <li>The Store code should be passed via headers.</li>
+</ol>
+
+<p><strong>REST</strong></p>
+
+<ol>
+  <li>The resource URL should be versioned (for example: V1). The version must be specified in the following format: <code class="highlighter-rouge">V\d.+</code></li>
+  <li>Resource names in a URL should be in plural form (for example: products, carts)</li>
+  <li>ID parameters for operations on entities should be part of the resource URL (for example: /V1/products/<strong>:sku</strong> )</li>
+  <li>POST should be used to create an entity.
+PUT should be used to update an entity.
+PATCH should be used to patch (update only selected fields) an entity(s) update.</li>
+  <li>REST is designed for system integrations, mobile app integrations, as well as for one-page apps. It supports tokens, cookies and OAuth 1.0 with token exchange. It also supports guest access to public resources.</li>
+  <li>Responses must return responses with standard <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a>.</li>
+  <li>The store code must be passed via URL. For example <code class="highlighter-rouge">GET /rest/frenchStoreView/V1/products</code>. Persistence operations that should be performed for all stores at once, should have ‘all’ store code in the URL.</li>
+</ol>
+
+<p><strong>SOAP</strong></p>
+
+<ol>
+  <li>SOAP is designed for systems integration. It supports token authentication for customers and admins, as well as no authentication for anonymous service methods. Cookie authentication and OAuth 1.0 are not supported.</li>
+  <li>The schema is available in the form of a WSDL for all exposed services.</li>
+  <li>All requests must return the 200 HTTP status code. If an error occurs, return the error in the response.</li>
+</ol>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -573,14 +678,14 @@ This includes references to:</p>
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-php.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/technical-vision/webapi.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/coding-standards/code-standard-php.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/coding-standards/technical-vision/webapi.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
