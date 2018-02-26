@@ -1338,6 +1338,7 @@
 
   <ul>
     <li><code class="highlighter-rouge">registration.php</code>: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, composer automatically installs components in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.0/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
+    <li><code class="highlighter-rouge">etc/module.xml</code>: This file specifies basic information about the component such as the components dependencies and its version number. This version number is used to determine schema and data updates when <code class="highlighter-rouge">bin/magento setup:upgrade</code> is run.</li>
     <li><code class="highlighter-rouge">composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
   </ul>
 
