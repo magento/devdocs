@@ -22,7 +22,7 @@ The following diagram demonstrates XML structure of an action group:
 
 -  All action groups are declared in XML files and stored in the _\<module\>/ActionGroup/_ directory.
 -  Every file name ends with `ActionGroup`, such as _LoginToAdminActionGroup.xml_.
--  The file name and  the [`<actionGroup>`] name are the same.
+-  The file name and the [`<actionGroup>`] name are the same.
 
 The following is an example of the XML format for the `actionGroups` declaration:
 
@@ -95,6 +95,7 @@ The following examples build a declaration for a group of actions that grant aut
     ```
 
 **To use the declaration in a test**:
+
 In this test example, we want to add the following set of actions:
 
 ```xml
