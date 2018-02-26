@@ -154,7 +154,7 @@ That's it!
 
 By default, [`argument`][argument] expects an entire entity.
 (Because `type="entity"` when `type` wasn't defined.)
-But there are cases when instead of a whole entity you need to use just a string, or an integer, or other simple piece of data of a single type.
+But there are cases when instead of a whole entity you need to just use a string.
 You can define the argument to have a primitive data type when defining an `argument` of `actionGroup`, like so:
 
 ```xml
@@ -170,7 +170,7 @@ You can define the argument to have a primitive data type when defining an `argu
 ```
 
 The above code tells the `actionGroup` that the replacement argument `relevantString` expects a string as a `value` when it is used in a test.
-This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing the entire entity.
+This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing in an entire entity.
 Let's see several examples of the above `fillExample` action group usage in test.
 In all examples the value expects a string.
 
@@ -182,17 +182,7 @@ When `value` in a test is defined explicitly:
 </actionGroup>
 ```
 
-When `value` in a test is returned from data entity:
-
-```xml
-<actionGroup stepKey="fillWithXmlData" ref="fillExample">
-    <argument name="relevantString" value="myCustomEntity.field1" />
-</actionGroup>
-```
-
-here the value points to the `field1` data of the `myCustomEntity` entity.
-
-When `value` in a test is returned from persisted data entity:
+The same is true for persisted data references.
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
@@ -200,7 +190,15 @@ When `value` in a test is returned from persisted data entity:
 </actionGroup>
 ```
 
-here the value points to the entity [created]{:target="_blank"} somewhere previously on test step `stepKey="persistedData"` where the `field1` data contains the required string.
+Here the value points to the entity [created]{:target="_blank"} somewhere previously on test step `stepKey="persistedData"` where the `field1` data contains the required string.
+
+To make use of data entity resolution, you must still name the argument's `type="entity"`. Even if you have a data entity with a name `myCustomEntity`, passing in the following will cause MFTF to interpret it as the string `myCustomEntity.field1`.
+
+```xml
+<actionGroup stepKey="fillWithXmlData" ref="fillExample">
+    <argument name="relevantString" value="myCustomEntity.field1" />
+</actionGroup>
+```
 
 ## Reference
 
@@ -233,7 +231,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 name|string|required|Identifier of an argument in scope of the corresponding action group.
 defaultValue|string|optional|Data value that is used by default.
-type|Possible values: `string`, `int`, `float`, `boolean`, `entity` (default).|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`.
+type|Possible values: `string`, `entity` (default).|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`.
 
 {%endraw%}
 
