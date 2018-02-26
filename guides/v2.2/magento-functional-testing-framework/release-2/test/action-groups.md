@@ -115,15 +115,13 @@ Instead of adding this set of actions, you can use the _LoginToAdminActionGroup_
 
     ```xml
     <actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup">
-        <argument name="adminUser" value="CustomAdminUser" />
+        <argument name="adminUser" value="CustomAdminUser"/>
     </actionGroup>
     ```
 
 ## Data type usage
 
-By default, an [`argument`][argument] expects an entire _entity_ when the `type` value is not defined; however, there are cases when you use a string instead of a whole entity.
-
-The following defines the `argument` of the `actionGroup` using a primitive data type:
+By default, an [`argument`][argument] expects an entire _entity_ when the `type` value is not defined; however, there are cases when you use a string instead of a whole entity. For example, the following defines the replacement argument `relevantString` using a primitive data type:
 
 ```xml
 <actionGroup name="fillExample">
@@ -137,34 +135,31 @@ The following defines the `argument` of the `actionGroup` using a primitive data
 </actionGroup>
 ```
 
-The above code tells the `actionGroup` that the replacement argument `relevantString` expects a string as a `value` when it is used in a test.
-This allows you to pass singular pieces of data for use in the `actionGroup` in the middle of a test, instead of passing in an entire entity.
-Let's see several examples of the above `fillExample` action group usage in test.
-In all examples the value expects a string.
+The `string` argument type provides a method to pass a single piece of data to the action group during a test instead of passing an entire entity.
 
-When `value` in a test is defined explicitly:
+**To explicitly define the argument value**:
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
-    <argument name="relevantString" value="overrideString" />
+    <argument name="relevantString" value="overrideString"/>
 </actionGroup>
 ```
 
-The same is true for persisted data references.
+**To define the argument value using persisted data references**:
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
-    <argument name="relevantString" value="$persistedData.field1$" />
+    <argument name="relevantString" value="$persistedData.field1$"/>
 </actionGroup>
 ```
 
-Here the value points to the entity [created]{:target="_blank"} somewhere previously on test step `stepKey="persistedData"` where the `field1` data contains the required string.
+**To define the argument value based on data entity resolution**:
 
-To make use of data entity resolution, you must still name the argument's `type="entity"`. Even if you have a data entity with a name `myCustomEntity`, passing in the following will cause MFTF to interpret it as the string `myCustomEntity.field1`.
+Create an argument of `type="entity"`. The argument value points to an entity and string pair [created]{:target="_blank"}  in a previous `stepKey="persistedData"` test step. The `field1` data contains the required string. Even with the `myCustomEntity` data entity, MFTF interprets the `myCustomEntity.field1` value as a string.
 
 ```xml
 <actionGroup stepKey="fillWithXmlData" ref="fillExample">
-    <argument name="relevantString" value="myCustomEntity.field1" />
+    <argument name="relevantString" value="myCustomEntity.field1"/>
 </actionGroup>
 ```
 
@@ -176,7 +171,7 @@ A root element that contains XML configuration attributes.
 
 Attribute|Value|Description
 ---|---|---
-xmlns:xsi|`"http://www.w3.org/2001/XMLSchema-instance"`|Tells the XML parser that this document should be validated against a schema.
+xmlns:xsi|`"http://www.w3.org/2001/XMLSchema-instance"`|Tells the XML parser to validate this document against a schema.
 xsi:noNamespaceSchemaLocation|`"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"`|Relative path to the corresponding schema.
 
 It may contain one or more `<actionGroup>`.
@@ -198,8 +193,8 @@ A wrapper for an array of `<argument>` elements.
 Attribute|Type|Use|Description
 ---|---|---|---
 name|string|required|Identifier of an argument in scope of the corresponding action group.
-defaultValue|string|optional|Data value that is used by default.
-type|Possible values: `string`, `entity` (default).|optional|Defines what type of data the argument is supposed to be. Defaults to `entity`.
+defaultValue|string|optional|Provides a default data value.
+type|Possible values: `string`, `entity` (default).|optional|Defines the argument data type. Defaults to `entity`.
 
 {%endraw%}
 
