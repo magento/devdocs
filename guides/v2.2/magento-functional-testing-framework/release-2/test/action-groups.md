@@ -45,7 +45,7 @@ The following is an example of the XML format for the `actionGroups` declaration
 {%raw%}
 The following examples build a declaration for a group of actions that grant authorization to the Admin area and uses the declaration in a test. The _Backend/ActionGroup/LoginToAdminActionGroup.xml_ action group relates to the functionality of the _Backend_ module. In [test]{:target="_blank"}, the name and identifier of the action group is used as a reference in `ref` parameter, such as `ref="LoginToAdminActionGroup"`.
 
-### To create the action group declaration:
+**To create the action group declaration**:
 
 1.  Begin with a template for the action group:  _Backend/ActionGroup/LoginToAdminActionGroup.xml_
 
@@ -94,7 +94,7 @@ The following examples build a declaration for a group of actions that grant aut
     </actionGroups>
     ```
 
-### To use the declaration in a test:
+**To use the declaration in a test**:
 In this test example, we want to add the following set of actions:
 
 ```xml
