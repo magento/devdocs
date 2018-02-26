@@ -12,17 +12,19 @@ mftf-release: 2.1.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-## Overview
-
-In the MFTF, it is possible to re-use a group of [actions]{:target="_blank"} declared in an XML file.
-It is handy when you need to repeat same sequence of actions over and over again.
-For example, to log in as an admin or a customer.
+In the MFTF, you can re-use a group of [actions]{:target="_blank"}—such as logging in as an administrator or a customer—declared in an XML file when you need to perform the same sequence of actions multiple times.
 
 The following diagram demonstrates XML structure of an action group:
 
 {% include_relative img/action-groups-dia.svg %}
 
-## Format
+## Principles
+
+-  All action groups are declared in XML files and stored in the _\<module\>/ActionGroup/_ directory.
+-  Every file name ends with `ActionGroup`, such as _LoginToAdminActionGroup.xml_.
+-  The file name and  the [`<actionGroup>`] name are the same.
+
+The following is an example of the XML format for the `actionGroups` declaration:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -39,91 +41,61 @@ The following diagram demonstrates XML structure of an action group:
 </actionGroups>
 ```
 
-## Principles
-
-* All action groups are declared in XML files stored in the _\<module\>/ActionGroup/_ directory.
-* File name ends with `ActionGroup`. Example: _LoginToAdminActionGroup.xml_.
-* File name and [`<actionGroup>`] name are the same.
-
 ## Example
 {%raw%}
-The following example demonstrates declaration of group of actions to execute authorization into Admin area.
+The following examples build a declaration for a group of actions that grant authorization to the Admin area and uses the declaration in a test. The _Backend/ActionGroup/LoginToAdminActionGroup.xml_ action group relates to the functionality of the _Backend_ module. In [test]{:target="_blank"}, the name and identifier of the action group is used as a reference in `ref` parameter, such as `ref="LoginToAdminActionGroup"`.
 
-### Declaration
+### To create the action group declaration:
 
-This action group relates to functionality of the Backend module, so it should be stored as _Backend/ActionGroup/LoginToAdminActionGroup.xml_.
+1.  Begin with a template for the action group:  _Backend/ActionGroup/LoginToAdminActionGroup.xml_
 
-The name and identifier of the action group is `LoginToAdminActionGroup`.
-In [test]{:target="_blank"}, it will be used as a reference in `ref` parameter, like: `ref="LoginToAdminActionGroup"`.
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
 
-Lets start from a template for our action group in _Backend/ActionGroup/LoginToAdminActionGroup.xml_:
+    <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+        <actionGroup name="LoginToAdminActionGroup">
+    ...
+        </actionGroup>
+    </actionGroups>
+    ```
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
+1.  Add actions to the `actionGroup` arguments.
 
-<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
-    <actionGroup name="LoginToAdminActionGroup">
-
-    </actionGroup>
-</actionGroups>
-```
-
-The action group must wrap the following actions:
-
-```xml
-<fillField stepKey="fillUsername" selector="#username" userInput="{{adminUser.username}}" />
-<fillField stepKey="fillPassword" selector="#password" userInput="{{adminUser.password}}" />
-<click stepKey="click" selector="#login" />
-```
-
-So, now we have the following code:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-
-<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+    ```xml
     <actionGroup name="LoginToAdminActionGroup">
         <fillField stepKey="fillUsername" selector="#username" userInput="{{adminUser.username}}" />
         <fillField stepKey="fillPassword" selector="#password" userInput="{{adminUser.password}}" />
         <click stepKey="click" selector="#login" />
     </actionGroup>
-</actionGroups>
-```
+    ```
 
-Since we use a variable for data in `userInput`, we need to create a corresponding argument, where this variable will be defined in a test.
-Also we can add a default value for the variable that will be used in the most frequent cases.
-Let's assume that we want to use the `_defaultAdmin` entity by default.
+1.  The `userInput`variable must contain a data value for test. Add a default data value for the variable to use in the most common cases. For this example, the default value is `_defaultAdmin`.
 
-```xml
-<argument name="adminUser" defaultValue="_defaultAdmin"/>
-```
+    ```xml
+    <argument name="adminUser" defaultValue="_defaultAdmin"/>
+    ```
 
-Let's finalize our action group code:
+1.  The following code shows the completed declaration.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
 
-<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
-    <actionGroup name="LoginToAdminActionGroup">
-        <arguments>
-            <argument name="adminUser" defaultValue="_defaultAdmin"/>
-        </arguments>
-        <fillField stepKey="fillUsername" selector="#username" userInput="{{adminUser.username}}" />
-        <fillField stepKey="fillPassword" selector="#password" userInput="{{adminUser.password}}" />
-        <click stepKey="click" selector="#login" />
-    </actionGroup>
-</actionGroups>
-```
+    <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+        <actionGroup name="LoginToAdminActionGroup">
+            <arguments>
+                <argument name="adminUser" defaultValue="_defaultAdmin"/>
+            </arguments>
+            <fillField stepKey="fillUsername" selector="#username" userInput="{{adminUser.username}}" />
+            <fillField stepKey="fillPassword" selector="#password" userInput="{{adminUser.password}}" />
+            <click stepKey="click" selector="#login" />
+        </actionGroup>
+    </actionGroups>
+    ```
 
-
-### Usage in a test
-
-Let's see how the action group can be used in tests.
-
-In the following example, instead of adding a set of actions:
+### To use the declaration in a test:
+In this test example, we want to add the following set of actions:
 
 ```xml
 <fillField stepKey="fillUsername" selector="#username" userInput="{{CustomAdminUser.username}}" />
@@ -131,31 +103,27 @@ In the following example, instead of adding a set of actions:
 <click stepKey="click" selector="#login" />
 ```
 
-we can use the action group _LoginToAdminActionGroup_ that we created above.
+Instead of adding this set of actions, you can use the _LoginToAdminActionGroup_ action group declaration in tests.
 
-First, the `<actionGroup>` element must be added with reference to _LoginToAdminActionGroup_, like.
+1.  Reference the `LoginToAdminActionGroup` action group.
 
-```xml
-<actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup"/>
-```
+    ```xml
+    <actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup"/>
+    ```
 
-This action group will take data from the `_defaultAdmin` by default.
-To change it to `CustomAdminUser`, we must add an argument `adminUser` with the corresponding value.
+1.  Update the argument **name** and **value** pair to `adminUser` and `CustomAdminUser`.
 
-```xml
-<actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup">
-    <argument name="adminUser" value="CustomAdminUser" />
-</actionGroup>
-```
-
-That's it!
+    ```xml
+    <actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup">
+        <argument name="adminUser" value="CustomAdminUser" />
+    </actionGroup>
+    ```
 
 ## Data type usage
 
-By default, [`argument`][argument] expects an entire entity.
-(Because `type="entity"` when `type` wasn't defined.)
-But there are cases when instead of a whole entity you need to just use a string.
-You can define the argument to have a primitive data type when defining an `argument` of `actionGroup`, like so:
+By default, an [`argument`][argument] expects an entire _entity_ when the `type` value is not defined; however, there are cases when you use a string instead of a whole entity.
+
+The following defines the `argument` of the `actionGroup` using a primitive data type:
 
 ```xml
 <actionGroup name="fillExample">
