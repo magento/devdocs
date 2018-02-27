@@ -30,7 +30,7 @@ We use [Markdown](http://daringfireball.net/projects/markdown/){:target="\_blank
 
 1.  Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits. The DevDocs team can also help find the best home for your new topics.
 
-1.  Focus on the content and on creating useful information for your fellow Magento developers and community members, but do not forget to review your work for typos, formatting errors, or sentences that need clarifying before opening a pull request.
+1.  Focus on the content and on creating useful information for your fellow Magento developers and community members. Don't forget to review your work for typos, formatting errors, or sentences that need clarifying before opening a pull request.
 
 1.  Use the following guidelines to help you with the writing process:
 
@@ -39,7 +39,7 @@ We use [Markdown](http://daringfireball.net/projects/markdown/){:target="\_blank
     -   Keep your sentences concise and try to separate conceptual information from procedural steps.
     -   Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"You can now view the output..."_.
     -   Use notes to alert readers about important details.
-    -   Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear and the template has an example.
+    -   Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
 
 ## Fork and clone a repository {#fork}
 Use the [fork](#fork) and [pull](#create-a-pull-request) model to contribute to Magento DevDocs. This model requires you to keep your forked repository in sync with the upstream repository. You submit pull requests to _pull_ a set of changes from your forked repository to the upstream repository.
@@ -52,7 +52,7 @@ To fork the devdocs repository on Github, do the following:
 
 1.  Click **Fork** at the top right.
 
-1.  Clone the repository into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on multiple changes.
+1.  Clone the repository into your development environment and then start writing and committing your changes. Optionally, create a branch first if you plan to work on multiple changes.
 
 1.  Build the devdocs site locally using Jekyll by following the instructions in our [README](https://github.com/magento/devdocs/blob/develop/README.md){:target="\_blank"}.
 
@@ -72,7 +72,7 @@ It is also possible to use the GitHub interface to update your fork. This is ref
 
 1.  Enter a name for your pull request.
 
-1.  Scroll to the bottom of the page and click **Merge pull request**
+1.  Scroll to the bottom of the page and click **Merge pull request**.
 
 1.  Click **Confirm Merge**.
 

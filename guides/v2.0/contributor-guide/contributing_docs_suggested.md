@@ -76,7 +76,7 @@ If you are interested in working on one of these projects, open a [pull request 
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Provide an extended explanation of the parameters <code>(key => value)</code> for the <code>addAttribute</code> function.
-              <p>For example <code>'type' => 'int'</code> and a list of all possible keys and their corresponding possible values.</p></li>
+              <p>For example, <code>'type' => 'int'</code> and a list of all possible keys and their corresponding possible values.</p></li>
               <li>Provide an extended explanation of the XML tags inside the tag. For example:
                 <ul>
                   <li>What basic structure should always be applied?</li>
@@ -104,7 +104,7 @@ If you are interested in working on one of these projects, open a [pull request 
                   <li>Log specific servers and networked logging</li>
                   <li>Logging in development</li>
                 </ul></li>
-              <li>Differentiate between versions of Magento, if applicable</li>
+              <li>Differentiate between versions of Magento, if applicable.</li>
             </ul>
         </td>
         <td></td>
