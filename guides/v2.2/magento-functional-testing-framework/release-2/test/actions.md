@@ -1,3 +1,4 @@
+
 ---
 layout: default
 group: mftf
@@ -410,6 +411,22 @@ Attribute|Type|Use|Description
 createDataKey|string|required|
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
+
+#### field
+
+Specify a custom field you'd like persisted to Magento (as a part of the entity) which will overwrite any other declaration in static data. This field will only replace at a top level (nested values such as custom attributes or extension attributes will not be replaceable via this annotation).
+
+For example, if we'd like to overwrite the `name` field in a particular product we could do so by specifying a field element during its creation.
+
+```xml
+<createData entity="SampleProduct" stepKey="createProduct">
+    <field key="name">myCustomProductName</field>
+</createData>
+```
+
+Attribute|Type|Use|Description
+---|---|---|---
+key|string|required|name of the field to be replaced or added
 
 ### deleteData
 
