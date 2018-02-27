@@ -57,6 +57,7 @@ The following diagram demonstrates XML structure of a section in the MFTF:
 ## Principles
 
 * `<section>` name is the same as the file name
+* `<section>` name must be alphanumeric.
 * `*Section.xml` is stored in the _Section_ directory of a module
 * a name format is `{Admin|Storefront}{SectionDescription}Section.xml`
 * Elements in sections are given camel case with first letter lowercase name.
@@ -110,7 +111,7 @@ A UI element used in an [action].
 
 Attributes|Type|Use|Description
 ---|---|---|---
-name|string|required|Element name
+name|string|required|Element name. Must be alphanumeric.
 type|string|required|The type of the element. Possible values: `text`, `textarea`, `input`, `button`, `checkbox`, `radio`, `checkboxset`, `radioset`, `date`, `file`, `select`, `multiselect`, `wysiwyg`, `iframe`.
 selector|string|optional|[XPath] or [CSS] selector of the element.
 locatorFunction|string|optional|[Locator Function] declaration to be used in lieu of a selector.
