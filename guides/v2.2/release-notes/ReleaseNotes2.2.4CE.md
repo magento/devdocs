@@ -943,12 +943,35 @@ https://github.com/magento/magento2/issues/10123
 
 
 
-<!--- MAGETWO-84272 -->* 
+<!--- MAGETWO-84272 -->* Update AbstractBackend.php 
 
-<!--- MAGETWO-72597 -->* 
+PR #12120
 
-<!--- MAGETWO-85833 -->* 
+when the validation message is returned, the attribute code is displayed.
 
+That prevents a better translation for other languages, has been adjusted to return the label instead of the attribute code.
+
+
+
+
+
+
+<!--- MAGETWO-72597 -->* Impossible to perform mass update on product with 60+ attributes in system
+Add ability to perform mass update on product with 60+ attributes in system
+
+
+
+
+<!--- MAGETWO-85833 -->* Stop the profiler when returning early in \Magento\Eav\Model\Config::getAttribute 
+
+Magento\Eav\Model\Config::getAttribute doesn't stop the Profiler when returning early, and thus incorrectly reports run time in these cases.
+This pull fixes it by stopping the profiler before returning
+
+#12810
+
+https://github.com/nicka101
+
+Nick Anstee
 <!--- MAGETWO-87588 -->*  
 
 <!--- MAGETWO-87354 -->* 
