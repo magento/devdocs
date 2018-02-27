@@ -160,6 +160,7 @@ pages:
 
         - label: Manage build and deploy actions
           url: cloud/project/magento-env-yaml.html
+          versions: ["2.1","2.2","2.3"]
 
         - label: Configure services - services.yaml
           url: cloud/project/project-conf-files_services.html
@@ -183,7 +184,7 @@ pages:
 
         - label: Set up notifications
           url: cloud/env/setup-notifications.html
-          versions: ["2.2", "2.3"]
+          versions: ["2.1","2.2","2.3"]
 
         - label: Configure routes - routes.yaml
           url: cloud/project/project-conf-files_routes.html
@@ -239,19 +240,6 @@ pages:
         - label: Working with variables
           url: cloud/env/working-with-variables.html
 
-    - label: Upgrades and Patches
-      url: cloud/project/project-upgrade-parent.html
-      children:
-        - label: Upgrade Magento Commerce (Cloud)
-          url: cloud/project/project-upgrade.html
-
-        - label: Patch Magento Commerce (Cloud)
-          url: cloud/project/project-patch.html
-
-        - label: Upgrade from 2.0.4 (Cloud)
-          url: cloud/upgrade/upgrade-from-2-0-4.html
-          versions: ["2.0"]
-
     - label: Deploy your store
       url: cloud/live/stage-prod-live.html
       children:
@@ -284,16 +272,6 @@ pages:
 
         - label: Launch steps
           url: cloud/live/launch-steps.html
-
-    - label: Composer package updates
-      url: cloud/composer-packages/patch-notes.html
-      versions: ["2.2","2.3"]
-      children:
-        - label: vendor/magento/ece-patches
-          url: cloud/composer-packages/ece-patches.html
-
-        - label: vendor/magento/ece-tools
-          url: cloud/composer-packages/ece-tools.html
 
     - label: Troubleshooting
       url: cloud/trouble/trouble.html
@@ -331,7 +309,7 @@ pages:
 
         - label: Restore configuration files
           url: cloud/trouble/restore-configuration-files.html
-          versions: ["2.2"]
+          versions: ["2.1","2.2","2.3"]
 
         - label: Site availability
           url: cloud/trouble/site-availability.html
@@ -344,4 +322,28 @@ pages:
 
         - label: Message queues
           url: cloud/trouble/message-queues.html
-          versions: ["2.2","2.3"]
+          versions: ["2.1","2.2","2.3"]
+
+    - label: Upgrades and Patches
+      url: cloud/project/project-upgrade-parent.html
+      children:
+        - label: Upgrade Magento Commerce (Cloud)
+          url: cloud/project/project-upgrade.html
+
+        - label: Patch Magento Commerce (Cloud)
+          url: cloud/project/project-patch.html
+
+        - label: Upgrade from 2.0.4 (Cloud)
+          url: cloud/upgrade/upgrade-from-2-0-4.html
+          versions: ["2.0"]
+
+        - label: Composer package updates
+          url: cloud/composer-packages/patch-notes.html
+          versions: ["2.1","2.2","2.3"]
+          children:
+            - label: vendor/magento/ece-patches
+              url: cloud/composer-packages/ece-patches.html
+              versions: ["2.2","2.3"]
+
+            - label: vendor/magento/ece-tools
+              url: cloud/composer-packages/ece-tools.html
