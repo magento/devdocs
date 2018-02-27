@@ -2543,34 +2543,33 @@
   <ul>
     <li><a href="/guides/v2.3/config-guide/redis/config-redis.html">Redis</a> version 3.2 (compatible with 2.4+ ) for page caching and session storage</li>
     <li><a href="/guides/v2.3/config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0</li>
+    <li><a href="/guides/v2.3/config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either <code class="highlighter-rouge">memcache</code> or <code class="highlighter-rouge">memcached</code> PHP extensions (latest stable version)</li>
+  </ul>
+
+  <h4 id="magento-commerce-only">Magento Commerce only</h4>
+
+  <ul>
     <li>
-      <p><a href="/guides/v2.3/config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either <code class="highlighter-rouge">memcache</code> or <code class="highlighter-rouge">memcached</code> PHP extensions (latest stable version)</p>
-    </li>
-    <li>
-      <p>Magento Commerce only</p>
+      <p>Elasticsearch</p>
+
+      <p>Magento Commerce version 2.2.x supports the following Elasticsearch versions:</p>
 
       <ul>
-        <li>
-          <p>Elasticsearch version 2.x</p>
-
-          <ul>
-            <li>If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.</li>
-            <li>If you get the Elasticsearch software from their <a href="https://github.com/elastic/elasticsearch-php" target="&#95;blank">Elasticsearch-PHP repository</a>, we support the <code class="highlighter-rouge">2.0</code> branch.</li>
-          </ul>
-        </li>
-        <li>
-          <p>RabbitMQ 3.5.x (compatible with 2.0 and later)</p>
-
-          <p><a href="/guides/v2.3/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento Commerce only.</p>
-        </li>
-        <li>
-          <p>Three master databases</p>
-
-          <p>These <a href="/guides/v2.3/config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).</p>
-
-          <p>Available for Magento Commerce only.</p>
-        </li>
+        <li>Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2" target="&#95;blank">5.x</a></li>
+        <li>Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5" target="&#95;blank">2.x</a></li>
       </ul>
+
+      <p>Magento 2.2.3 uses <a href="https://github.com/elastic/elasticsearch-php" target="&#95;blank">Elasticsearch PHP client</a> version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)</p>
+    </li>
+    <li>
+      <p>RabbitMQ 3.5.x (compatible with 2.0 and later)</p>
+
+      <p><a href="/guides/v2.3/config-guide/mq/rabbitmq-overview.html" target="&#95;blank">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.</p>
+    </li>
+    <li>
+      <p>Three master databases</p>
+
+      <p>These <a href="/guides/v2.3/config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).</p>
     </li>
   </ul>
 

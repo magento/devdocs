@@ -2008,14 +2008,14 @@
 </ul>
 
 <h3 id="es-spt-versions">Supported versions</h3>
-<p>Magento Commerce version 2.1.x supports the following Elasticsearch versions:</p>
+<p>Magento Commerce version 2.2.x supports the following Elasticsearch versions:</p>
 
 <ul>
-  <li>If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.</li>
-  <li>If you get the Elasticsearch software from their <a href="https://github.com/elastic/elasticsearch-php" target="_blank">Elasticsearch-PHP repository</a>, we support the <code class="highlighter-rouge">2.0</code> branch.</li>
+  <li>Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2" target="&#95;blank">5.x</a></li>
+  <li>Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5" target="&#95;blank">2.x</a></li>
 </ul>
 
-<p>We also support version 1.7 but recommend you use a later version.</p>
+<p>Magento 2.2.3 uses <a href="https://github.com/elastic/elasticsearch-php" target="&#95;blank">Elasticsearch PHP client</a> version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)</p>
 
 <h3 id="es-arch">Recommended configuration</h3>
 <p>The following figure shows our recommended configuration. All of the tasks we discuss assume you’ve configured your system this way.</p>
@@ -2066,7 +2066,9 @@
 <ul>
   <li><a href="#firewall-selinux">Firewall and SELinux</a></li>
   <li><a href="#prereq-java" target="_blank">Install the Java Software Development Kit (JDK)</a></li>
-  <li><a href="#es-install-es">Install Elasticsearch</a></li>
+  <li><a href="#es-install-es5">Install Elasticsearch 5.x</a></li>
+  <li><a href="#es-install-es">Install Elasticsearch 2.x</a></li>
+  <li><a href="#es-upgrade5">Upgrade from Elasticsearch 2.x to 5.x</a></li>
   <li><a href="#configure-magento-to-use-elasticsearch">Configure Magento to use Elasticsearch</a></li>
 </ul>
 
@@ -2108,11 +2110,11 @@
 
     <p>Be sure to install the JDK and <em>not</em> the JRE.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install java-1.7.0-openjdk
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install java-1.8.0-openjdk
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-	<p>Java version 7 might not be available for all operating systems. For example, you can <a href="http://packages.ubuntu.com/" target="_blank">search the list of available packages for Ubuntu</a>.</p>
+	<p>Java version 8 might not be available for all operating systems. For example, you can <a href="http://packages.ubuntu.com/" target="_blank">search the list of available packages for Ubuntu</a>.</p>
 </div>
 
     <h4 id="install-prereq-java-ubuntu">Install the JDK on Ubuntu</h4>
@@ -2125,10 +2127,61 @@ apt-get install -y oracle-java8-installer
 
     <p>For other options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.</p>
 
-    <h3 id="es-install-es">Install Elasticsearch</h3>
-    <p>This section discusses how to install the latest 2.x version of Elasticsearch from their repository.</p>
+    <h3 id="es-install-es5">Install Elasticsearch 5.x</h3>
 
-    <p>To install older versions, see the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html" target="_blank">2.0 reference</a>).</p>
+    <p>This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested. Magento Commerce (Cloud) supports Elasticsearch 5.2.)</p>
+
+    <ol>
+      <li>Log in to your Magento server as a user with <code class="highlighter-rouge">root</code> privileges.</li>
+      <li>
+        <p><em>CentOS</em>: Enter the following commands in the order shown:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+vim /etc/yum.repos.d/Elasticsearch.repo
+</code></pre></div>        </div>
+
+        <p>Add the following:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[elasticsearch-5.x]
+name=Elasticsearch repository for 5.x packages
+baseurl=https://artifacts.elastic.co/packages/5.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+</code></pre></div>        </div>
+
+        <p>Enter the following commands:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install elasticsearch
+chkconfig --add elasticsearch
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p><em>Ubuntu</em>: Install the Elasticsearch 5.2 version using the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.2/deb.html" target="_blank">Elasticsearch documentation</a></p>
+      </li>
+      <li>Optionally, configure Elasticsearch as needed. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html" target="_blank">Configuring Elasticsearch</a> for more information.</li>
+      <li>
+        <p>Start Elasticsearch:</p>
+
+        <p><code class="highlighter-rouge">service elasticsearch start</code></p>
+      </li>
+      <li>
+        <p>Verify that Elasticsearch is working by entering the following command on the server on which it’s running:</p>
+
+        <p><code class="highlighter-rouge">curl -XGET '&lt;host&gt;:9200/_cat/health?v&amp;pretty'</code></p>
+
+        <p>A message similar to the following is displayed:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
+1475247709 17:01:49  elasticsearch green           1         1      0   0    0    0        0             0                  -                100.0%
+</code></pre></div>        </div>
+      </li>
+    </ol>
+
+    <h3 id="es-install-es">Install Elasticsearch 2.x</h3>
+    <p>This section discusses how to install the latest 2.x version of Elasticsearch from their repository.</p>
 
     <p>To install Elasticsearch:</p>
 
@@ -2143,12 +2196,12 @@ vim /etc/yum.repos.d/Elasticsearch.repo
 
         <p>Add the following:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[elasticsearch-2.x]
-name=Elasticsearch repository for 2.x packages
-baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
-gpgcheck=1
-gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
-enabled=1
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [elasticsearch-2.x]
+    name=Elasticsearch repository for 2.x packages
+    baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
+    gpgcheck=1
+    gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+    enabled=1
 </code></pre></div>        </div>
 
         <p>Enter the following commands:</p>
@@ -2197,6 +2250,16 @@ cd elasticsearch-2.4.4/bin
 </code></pre></div>        </div>
       </li>
     </ol>
+
+    <h2 id="es-upgrade5">Upgrade from Elasticsearch 2.x to 5.x</h2>
+
+    <p>Refer to <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.2/setup-upgrade.html" target="_blank">Upgrading Elasticsearch</a> for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.</p>
+
+    <p>Upgrading from 2.x to 5.x requires a full cluster restart. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.w/restart-upgrade.html" target="_blank">Full cluster restart upgrade</a> for details.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See <a href="#prereq-java" target="_blank">Install the Java Software Development Kit (JDK)</a> to check which version of JDK is installed.</p>
+    </div>
 
     <h2 id="es-resources">Additional resources</h2>
     <p>For additional information, see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html">Elasticsearch documentation</a></p>
