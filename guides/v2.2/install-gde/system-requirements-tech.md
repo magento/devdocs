@@ -99,9 +99,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ####	{{site.data.var.ee}} only
 
-*	Elasticsearch version 2.x or 5.1 or Elasticsearch-PHP low-level client 5.0 or 2.0.
+*	Elasticsearch
 
-    See the [Elasticsearch repository](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} for more information about the Elasticsearch-PHP client.
+    {{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
+
+    *	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="&#95;blank"}
+    *	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="&#95;blank"}
+
+    Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
 
 *	RabbitMQ 3.5.x (compatible with 2.0 and later)
 

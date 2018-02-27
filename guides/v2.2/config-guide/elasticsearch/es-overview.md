@@ -41,9 +41,10 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 ### Supported versions {#es-spt-versions}
 {{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
 
-*	Elasticsearch [5.1](https://www.elastic.co/downloads/past-releases/elasticsearch-5-1-2) or  [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5)
+*	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="&#95;blank"}
+*	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="&#95;blank"}
 
-*	[Elasticsearch PHP low-level client](https://github.com/elastic/elasticsearch-php) 5.0 or 2.0
+Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
 
 
 ### Recommended configuration {#es-arch}
@@ -80,18 +81,18 @@ The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
 *	[Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"}
-*	[Install Elasticsearch 5.1](#es-install-es5)
+*	[Install Elasticsearch 5.x](#es-install-es5)
 *	[Install Elasticsearch 2.x](#es-install-es)
-*	[Upgrade from Elasticsearch 2.x to 5.1](#es-upgrade5)
+*	[Upgrade from Elasticsearch 2.x to 5.x](#es-upgrade5)
 *	[Configure Magento to use Elasticsearch](#configure-magento-to-use-elasticsearch)
 
 {% include config/solr-elastic-selinux.md %}
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch 5.1 {#es-install-es5}
+### Install Elasticsearch 5.x {#es-install-es5}
 
-This section discusses how to install Elasticsearch 5.1 from their repository.
+This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested. {{site.data.var.ece}} supports Elasticsearch 5.2.)
 
 1.	Log in to your Magento server as a user with `root` privileges.
 2.	_CentOS_: Enter the following commands in the order shown:
@@ -117,9 +118,9 @@ This section discusses how to install Elasticsearch 5.1 from their repository.
 		yum -y install elasticsearch
 		chkconfig --add elasticsearch
 
-3.	_Ubuntu_: Install the Elasticsearch 5.1 version using the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/deb.html){:target="_blank"}
+3.	_Ubuntu_: Install the Elasticsearch 5.2 version using the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/deb.html){:target="_blank"}
 
-4.	Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/settings.html){:target="_blank"} for more information.
+4.	Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html){:target="_blank"} for more information.
 5.	Start Elasticsearch:
 
     `service elasticsearch start`
@@ -191,14 +192,14 @@ To install Elasticsearch:
 
 		{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
 
-## Upgrade from Elasticsearch 2.x to 5.1 {#es-upgrade5}
+## Upgrade from Elasticsearch 2.x to 5.x {#es-upgrade5}
 
-Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/setup-upgrade.html){:target="_blank"} for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.
+Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/setup-upgrade.html){:target="_blank"} for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.
 
-Upgrading from 2.x to 5.1 requires a full cluster restart. See [Full cluster restart upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/restart-upgrade.html){:target="_blank"} for details.
+Upgrading from 2.x to 5.x requires a full cluster restart. See [Full cluster restart upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/5.w/restart-upgrade.html){:target="_blank"} for details.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Elasticsearch 5.1 requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"} to check which version of JDK is installed.
+Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"} to check which version of JDK is installed.
 </div>
 
 ## Additional resources {#es-resources}
