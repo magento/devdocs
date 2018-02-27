@@ -58,6 +58,7 @@ The following diagram demonstrates XML structure of a test case in the MFTF:
 ## Principles
 
 * All names within the framework are in the CamelCase format
+* `<test>` name must be alphanumeric.
 * Each action and action group has its own identifier `<stepKey>` to be able to reference on it
 * A test may have any number of [assertions][assertion], at any point within the `<test>`
 * File name and `<test>` name are equal.

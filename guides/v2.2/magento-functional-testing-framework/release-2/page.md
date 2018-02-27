@@ -47,6 +47,7 @@ The following diagram demonstrates XML structure of a page in the MFTF:
 ## Principles
 
 * `<page>` name is the same as the file name
+* `<page>` name must be alphanumeric.
 * `*Page.xml` is stored in the _Section_ directory of a module
 * a name format is `{Admin|Storefront}{PageDescription}Page.xml`
 
