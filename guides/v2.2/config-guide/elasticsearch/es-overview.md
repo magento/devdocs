@@ -92,7 +92,7 @@ The tasks discussed in this section require the following:
 
 ### Install Elasticsearch 5.x {#es-install-es5}
 
-This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested. {{site.data.var.ece}} supports Elasticsearch 5.2.)
+This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested.
 
 1.	Log in to your Magento server as a user with `root` privileges.
 2.	_CentOS_: Enter the following commands in the order shown:
@@ -131,8 +131,8 @@ This section discusses how to install Elasticsearch 5.2 from their repository. Y
     A message similar to the following is displayed:
 
     ```
-    epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
-1475247709 17:01:49  elasticsearch green           1         1      0   0    0    0        0             0                  -                100.0%
+    epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
+    1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
     ```
 
 
@@ -196,7 +196,7 @@ To install Elasticsearch:
 
 Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/setup-upgrade.html){:target="_blank"} for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.
 
-Upgrading from 2.x to 5.x requires a full cluster restart. See [Full cluster restart upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/5.w/restart-upgrade.html){:target="_blank"} for details.
+Upgrading from 2.x to 5.x requires a full cluster restart. See [Full cluster restart upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/restart-upgrade.html){:target="_blank"} for details.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"} to check which version of JDK is installed.
