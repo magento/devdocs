@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.0.16 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce 2.0.18 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.16EE.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.18EE.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,13 +69,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/ReleaseNotes2.0.16EE.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/ReleaseNotes2.0.18EE.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/ReleaseNotes2.0.16EE.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/ReleaseNotes2.0.18EE.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/ReleaseNotes2.0.16EE.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/ReleaseNotes2.0.18EE.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/release-notes/ReleaseNotes2.0.16EE.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/release-notes/ReleaseNotes2.0.18EE.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -539,7 +539,7 @@
 
                 
                 
-                <li class="nav-level3  " id="magento-commerce-2.0.18-release-notes">
+                <li class="nav-level3 active " id="magento-commerce-2.0.18-release-notes">
                     
 
                     
@@ -567,7 +567,7 @@
 
                 
                 
-                <li class="nav-level3 active " id="magento-commerce-2.0.16-release-notes">
+                <li class="nav-level3  " id="magento-commerce-2.0.16-release-notes">
                     
 
                     
@@ -1123,7 +1123,7 @@
 
           
 
-          <span property="name">Magento Commerce 2.0.16 Release Notes</span>
+          <span property="name">Magento Commerce 2.0.18 Release Notes</span>
 
         
 
@@ -1146,7 +1146,7 @@
 
 	
 
-	<h1 class="page-heading">Magento Commerce 2.0.16 Release Notes</h1>
+	<h1 class="page-heading">Magento Commerce 2.0.18 Release Notes</h1>
 
   
 
@@ -1154,40 +1154,32 @@
 </section>
 
 
-			<p><em>Patch code and release notes were published on September 14, 2017.</em></p>
+			<p><em>Patch code and release notes were published on February 27, 2018.</em></p>
 
-<p>We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.16. This release includes almost 40 security fixes and enhancements to your Magento software.</p>
+<p>We are pleased to present Magento Commerce 2.0.18. This release includes 35 enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. See <a href="https://magento.com/security/patches/magento-223-2112-and-2018-security-update">Magento Security Center</a>  for more information.</p>
+
+<p>Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+  <p>The Magento Commerce 2.0.18 software release marks the final supported software release for Magento Commerce version 2.0.X. Magento Commerce 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired, as defined by our <a href="https://magento.com/legal/terms/enterprise-agreement" target="_blank">Magento Commerce Support Service Terms</a>.</p>
+
+  <p>To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Commerce. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.</p>
 </div>
 
 <h2 id="highlights">Highlights</h2>
 
-<p>Magento 2.0.16 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:</p>
+<p>Look for the following highlights in this release:</p>
 
 <ul>
   <li>
-    <p>enhancements that help close cross-site request forgery (CSRF), unauthorized data leak, and authenticated Admin user remote code execution 
-vulnerabilities. See <a href="https://magento.com/security/patches/magento-2016-and-219-security-update" target="_blank">Magento 2.0.16 and 2.1.9 Security Patches</a> for a comprehensive discussion of these issues.</p>
+    <p><strong>Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities</strong>. See <a href="https://magento.com/security/patches/magento-223-2112-and-2018-security-update">Magento Security Center</a> for more information.</p>
   </li>
   <li>
-    <p>support for changes to the USPS API that USPS implemented on September 1, 2017</p>
+    <p><strong>Change to Magento Admin to support upcoming USPS shipping changes</strong>. On February 23, 2018, USPS  removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit <a href="https://magento.com/products/shipping">Magento Shipping</a> to learn more, and explore various shipping extensions on Magento Marketplace.</p>
   </li>
   <li>
-    <p>change to how Magento displays status updates during upgrade.</p>
+    <p><strong>Updated copyright for 2018</strong>.</p>
   </li>
-</ul>
-
-<h2 id="fixed-issue">Fixed issue</h2>
-
-<ul>
-  <li>We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html">here</a>.</li>
-</ul>
-
-<!--- 60835 -->
-<ul>
-  <li>We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.</li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>
@@ -1298,14 +1290,14 @@ vulnerabilities. See <a href="https://magento.com/security/patches/magento-2016-
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.16EE.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.18EE.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.16EE.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.18EE.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
