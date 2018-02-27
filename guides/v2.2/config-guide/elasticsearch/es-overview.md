@@ -131,8 +131,8 @@ This section discusses how to install Elasticsearch 5.2 from their repository. Y
     A message similar to the following is displayed:
 
     ```
-    epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
-1475247709 17:01:49  elasticsearch green           1         1      0   0    0    0        0             0                  -                100.0%
+    epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
+    1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0 
     ```
 
 
