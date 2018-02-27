@@ -2129,7 +2129,7 @@ apt-get install -y oracle-java8-installer
 
     <h3 id="es-install-es5">Install Elasticsearch 5.x</h3>
 
-    <p>This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested. Magento Commerce (Cloud) supports Elasticsearch 5.2.)</p>
+    <p>This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested.</p>
 
     <ol>
       <li>Log in to your Magento server as a user with <code class="highlighter-rouge">root</code> privileges.</li>
@@ -2174,8 +2174,8 @@ chkconfig --add elasticsearch
 
         <p>A message similar to the following is displayed:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
-1475247709 17:01:49  elasticsearch green           1         1      0   0    0    0        0             0                  -                100.0%
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
+1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
 </code></pre></div>        </div>
       </li>
     </ol>
@@ -2255,7 +2255,7 @@ cd elasticsearch-2.4.4/bin
 
     <p>Refer to <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.2/setup-upgrade.html" target="_blank">Upgrading Elasticsearch</a> for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.</p>
 
-    <p>Upgrading from 2.x to 5.x requires a full cluster restart. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.w/restart-upgrade.html" target="_blank">Full cluster restart upgrade</a> for details.</p>
+    <p>Upgrading from 2.x to 5.x requires a full cluster restart. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.2/restart-upgrade.html" target="_blank">Full cluster restart upgrade</a> for details.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p>Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See <a href="#prereq-java" target="_blank">Install the Java Software Development Kit (JDK)</a> to check which version of JDK is installed.</p>
