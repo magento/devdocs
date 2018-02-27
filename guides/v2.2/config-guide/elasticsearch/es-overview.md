@@ -92,7 +92,7 @@ The tasks discussed in this section require the following:
 
 ### Install Elasticsearch 5.x {#es-install-es5}
 
-This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested. {{site.data.var.ece}} supports Elasticsearch 5.2.)
+This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested.
 
 1.	Log in to your Magento server as a user with `root` privileges.
 2.	_CentOS_: Enter the following commands in the order shown:
