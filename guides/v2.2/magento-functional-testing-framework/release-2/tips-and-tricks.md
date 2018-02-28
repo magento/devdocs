@@ -18,15 +18,15 @@ functional_areas:
  
  - Annotation types and recommendations are described as:
  
-   **Feature**: report grouping, set of tests which verify a feature.
+   **Feature**: report grouping, a set of tests that verify a feature.
    
-   **Story**: report grouping, set of tests which verify a story.
+   **Story**: report grouping, a set of tests that verify a story.
    
    **Group**: module name.
    
-   **Title**: descriptive title of test purpose.
+   **Title**: describes the purpose of the test.
    
-   **Description**: describe how test achieves purpose from title.
+   **Description**: describes how the test achieves the purpose defined in the title.
    
    **Severity**: allowed values are **BLOCKER**, **CRITICAL**, **MAJOR**, **AVERAGE**, **MINOR**.
  
@@ -35,7 +35,7 @@ functional_areas:
 - When using a <createData> action in a <before> block, always use a corresponding <deleteData> in your <after> block.
 
 - Where data values are required to be unique in the database, enforce the uniqueness on the attribute of the data entity.
-  Use [unique=”suffix”] or [unique=”prefix”] to append or prepend unique value to entity attribute. This ensure repeatable running of tests using entity.
+  Use [unique=”suffix”] or [unique=”prefix”] to append or prepend a unique value to the entity attribute. This ensures tests using the entity can be repeated.
 
 - Do not modify existing data entity fields or add/merge additional data fields without fully understanding and verifying all existing data usages. We recommend that you create a new data entity for your test when you are not sure. 
 
@@ -43,7 +43,7 @@ functional_areas:
 
 - Do not overuse parameterized selectors. 
 
-  Parameterized selectors should only be used when test-specific or runtime-generated information is needed in constructing a selector. Do not use it for static elements. For example, do not define a parameterized element like the following:
+  Parameterized selectors should only be used when test-specific or runtime-generated information is needed to construct a selector. Do not use it for static elements. For example, do not define a parameterized element like the following:
   ``` xml
   <element name="relatedProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='{{productType}}']" parameterized="true"/>
   ```
