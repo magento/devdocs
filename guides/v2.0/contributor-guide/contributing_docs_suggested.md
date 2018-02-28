@@ -42,7 +42,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1635" target="\_blank">Admin grids</a></td>
+        <td><a href="https://github.com/magento/devdocs/issues/1465" target="\_blank">Admin grids</a></td>
         <td>Small</td>
         <td>
           <p>Help us improve DevDocs by creating a new topic that explains how to create a grid in the Admin interface.</p>
