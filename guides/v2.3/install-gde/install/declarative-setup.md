@@ -255,6 +255,28 @@ Here is example of CSV format:
 **Dump Example**
 ![Dump Example](image/dump_example.png)
 
+## Dry Run mode
+
+As was mentioned previously it is important to be sure that declarative installation do not break anything. 
+The usefull way to ensure in this is to see all DDL SQL statements, that were generated during declarative installation process. 
+And we did this possible by launching installation in `Dry Run` mode. `Dry run` mode is installation mode, during which 
+database state will not be changed: schema and data will be the same both before and after installation.
+In order to run such type of installation use additional flag on `setup:upgrade` and `setup:install` commands:
+
+```
+    --dry-run=1
+```
+
+This mode is helpfull because with it you can validate your schema and patches, see all DDL SQL statements that are generated during installation and 
+use that SQL statements for debug and performance optimization processes.
+You can find dry run log file with next path:
+
+```
+    ==Magento_Root
+        --var
+            --log
+                --dry-run-installation.log
+```
 
 ## HOWTO
 
