@@ -1488,13 +1488,58 @@ Nick Anstee
 
 <!--- MAGETWO-85637 -->* 
 
-<!--- MAGETWO- 84370-->* 
+<!--- MAGETWO- 84370-->* Layer navigation showing wrong product count 
 
-<!--- MAGETWO- 87293-->* 
+PR #12063
+https://github.com/magento/magento2/issues/11946
 
-<!--- MAGETWO-85842-->*  unresolved
 
-<!--- MAGETWO-85827-->* 
+
+
+<!--- MAGETWO- 87293-->* Admin Global Search was build in a hurry 
+
+PR #1167
+
+https://github.com/RomaKis
+Added new dependency for Backend - to Cms. This dependency was supposed to be here earlier. When we use search - we can press find in CMS, so it leads to CMS page.
+
+1.Install any other language pack
+2. Create an admin role that does not have access to orders and an admin user assigned to that role
+3. Login as the user created in the step above
+4. Search for something in the admin global search.
+Expected result
+I should see the links to " keywords in Products", " keywords in Customers", " keywords in Pages" only and translated in the selected language.
+I should see results for products, pages and customers matching my keywords (this actually works).
+
+Actual result
+I see the link "keywords in Orders" that I should not see because I don't have access to orders. Clicking it takes me to an "Access denied" page.
+The texts "in products", "in pages"... are not translated
+
+https://github.com/magento/magento2/issues/7698
+
+
+The admin global search is not entirely translatable, extensible and does not take into account the ACL settings for the current user
+
+ENHANCEMENT
+
+
+
+
+<!--- MAGETWO-85827-->* Grid filtration doesn't work for mysql special characters 
+PR #12749
+
+Expected result
+
+Grid shows only products with the symbol
+
+###Actual result
+
+Grid shows all products
+
+
+laconica-sergey
+https://github.com/laconica-sergey
+
 
 
 ### Shipping
@@ -1502,193 +1547,685 @@ Nick Anstee
 can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
 
-<!--- MAGETWO-86306 -->* 
+<!--- MAGETWO-86306 -->* Cast handling fee to float #13680
 
-<!--- MAGETWO-86400 -->* 
+https://github.com/schmengler
 
-<!--- MAGETWO-85291 -->* 
+Fabian Schmengler 
+PHP 7.1 complains with a warning if non-numeric strings are used in calculations (see: http://php.net/manual/en/migration71.other-changes.php)
+
+The handling fee configuration of shipping methods is often an empty string. Prior to PHP 7.1 it was silently casted to 0, now this should happen explicitly to avoid warnings.
+
+
+
+<!--- MAGETWO-86400 -->* remove not used count() from templates 
+
+PR #12901
+
+The main goal of this PR is to remove not used `count($_items)` in templates.
+Found that in some templates Magento2 counts items for table rendering and other stuff but files, add to this PR, do not use `$_count` variable and `<?php $_count = count($_items) ?>` can be excluded from them.
+
+https://github.com/Coderimus
+Alexander Shkurko
+
+
+<!--- MAGETWO-85291 -->* Can bypass Minimum Order Amount Logic 
+
+PR #963
+
+https://github.com/RomaKis
+Roman K.
+
+Can bypass Minimum Order Amount Logic
+
+
+Steps to reproduce
+Enable Minimum Order Amount in system config. (Store / Configuration / Sales / Sales / Minimum Order Amount Enable = Yes)
+Add products to the cart until you are over min amount.
+Click on cart and click on "View and Edit Cart"
+Click "Check Out with Multiple Addresses" on right side of page
+Remove few product from order, while sum of order will be less than in settings (min order amount)
+Then click "Update Qty & Addresses"
+And finish order.
+Expected result
+When hitting the Place Order button would expect to see error about min order.
+Actual result
+Order goes through just fine.
+Again, the theme must have the minicart visible during checkout and must allow for removing product.
+
 
 <!--- MAGETWO-85586 -->* 
 
 <!--- MAGETWO-87934 -->*  
 
-<!--- MAGETWO-84589 -->*  
+
+
+<!--- MAGETWO-84589 -->*  Multishipping for Cybersource: Render custom payment method in Multishipping Checkout
+Added possibility to use Cybersource on multi-shipping
+
+As a Magento merchant, I want the multishipping checkout flow to render custom payment methods on storefront so that my customers can use multishipping checkout flows with Cybersource to complete a purchase.
+
+Currently Magento multishipping only supports and renders hardcoded offline payment methods on storefront. This needs to be modified so that custom payment methods can be shown on in the checkout flow.
+
+
 
 ### Sitemap
 
-<!--- MAGETWO-86349 -->* 
+<!--- MAGETWO-86349 -->*  Add GetUtilityPageIdentifiers for Manage Custom Pages to be excluded … 
 
-<!--- MAGETWO-85285 -->* 
+PR #12649
+
+https://github.com/osrecio
+Oscar Recio
+Remove /home from the sitemap.xml
+https://github.com/magento/magento2/issues/12446
+
+I want to remove /home from the sitemap.xml (I want the URL in the sitemap to be "https://domain.com" instead of "https://domain.com/home").
+
+
+
+
+<!--- MAGETWO-85285 -->* Sitemap image links in MultiStore 
+
+PR #935 
+https://github.com/RomaKis
+Roman K.
+https://github.com/magento/magento2/issues/12482
+
+
+
 
 <!--- MAGETWO-81525 -->* 
+Fatal error: Call getTranslateInline of null when generating some sitemap with errors 
+This PR changes the logic for handling errors in the sitemap generation cron. If an exception is thrown when trying to generate any of the sitemaps, the processes is not stopped anymore, but instead the errors are sent by email based on the XML Sitemap configuration. The old `_translateModel` property is not used anymore, and the inline translation is correctly suspended using the `inlineTranslation` property instead.
+
+expected result: An email is delivered to the configured email address and the cron task should be successful.
+
+actual result: Cron task is successful. There are no new emails in Inbox or Spam
+
+https://github.com/marinagociu
+Marina Gociu
 
 
-### Staging
-
-<!--- MAGETWO-82061-->* 
-
-<!--- MAGETWO- -->* 
+https://github.com/magento/magento2/issues/10502
 
 ### Swagger
 
 
-<!--- MAGETWO-87444 -->* 
+<!--- MAGETWO-87444 -->* Update code formatting in Swagger Block 
+Update code formatting in Swagger Block/Template
+
+PR #13485
+
+https://github.com/JeroenVanLeusden
+Jeroen
+
 
 
 
 ### Swatches
 
-<!--- MAGETWO-77840-->* 
 
-<!--- MAGETWO-83290-->* 
+<!--- MAGETWO-83290-->* ask Oleksii -- says no release note is needed, but it's a community engineering fix
 
-<!--- MAGETWO-83628 -->* 
 
-<!--- MAGETWO-85661 -->* 
 
-<!--- MAGETWO-86132 -->*  unresolved
+<!--- MAGETWO-83628 -->*  When there are multiple variations of the same item in the cart, editing any earlier-added item loads the selected option from the most recent selection
 
-<!--- MAGETWO-86576 -->* 
+When adding the same configurable product to the cart twice with different configurable options - Magento is displaying the most recently selected option when editing during edit.
 
-<!--- MAGETWO-86665 -->* 
+EXPECTED RESULTS:
+When there are 2 variations of a configurable product in the cart, it should not matter which variation was added the most recently - when you edit an item, it should present the selected options for the item you are editing
 
-<!--- MAGETWO-84074 -->* 
+ACTUAL RESULTS:
+When there are multiple variations of a configurable product in the cart, trying to edit the item that was added first loads the options that were selected for the item that was added most recently
 
-<!--- MAGETWO-83676 -->* 
 
-<!--- MAGETWO-87570 -->* 
+UNRESOLVED
+
+
+
+
+<!--- MAGETWO-86576 -->* Fix issue with swatch colour block not showing in admin panel once colour selected (PHP7.1.x issue). #13101
+https://github.com/magento/magento2/issues/11828
+Visual Swatches not showing swatch color in admin
+Steps to reproduce
+Inside admin, go to Stores->Product and click on an attribute that contains visual swatches.
+Expected result
+Visual Swatches that have a color assigned should show that color in the swatch box.
+Actual result
+Although the color swatch values are being saved, the visual representation of the color in the box is colorless.
+
+https://github.com/chris-pook
+
+Chris Pook
+
+
+
+
+<!--- MAGETWO-86665 -->* Incorrect language on swatch error 
+
+PR #1117
+
+Malyovanets Nickolas
+https://github.com/nmalevanec
+https://github.com/magento/magento2/issues/5550
+
+While attempting to add a new swatch, I received the following error:
+
+Admin is a required field in the each row
+
+This is a bit odd and should instead read
+
+Admin is a required field in each row"
+
+
+
+
+<!--- MAGETWO-87570 -->* "Hide from Product Page" option does not work for child of configurable product
+
+EXPECTED RESULTS:
+if options are selected but image for child product with these options doesn't exist - base image of parent product is shown
+
+ACTUAL RESULTS:
+The child product image is shown on the front-end
+
+
 
 
 
 ### TargetRule
 
-<!--- MAGETWO-77754 -->* 
-<!--- MAGETWO-86013 -->* 
+<!--- MAGETWO-77754 -->* Related Products Rule for Up-sell Products with Customer Segments Specified Doesn't Work
 
-<!--- MAGETWO-87121 -->*  unresolved
+Partner explains that Related Products Rules are not working for Up-Sells when Customer Segments is set to Specified while Cross-Sells is working without issues. The Related Products Rules for Up-sells when Customer Segments is set to All works without issue.
+
+EXPECTED RESULTS:
+Five up-sell products from specified category B should display on a product page for a product from specified category A for a customer logged into account who has a default billing address entered in account profile.
+
+ACTUAL RESULTS:
+No up-sell products from specified category B display on a product page for a product from specified category A for a customer logged into account who has a default billing address entered in account profile.
+
+
+
+
+
+
+
+<!--- MAGETWO-86013 -->* It's impossible to save Related Product Rule	EE ONLY
+
+Login to admin
+Go to Marketing > Promotions > Related Product Rules
+Press Add Rule button:
+Rule name = Rule #1
+Status = Active
+Apply To = Related Products or Up-sells or Cross-sells
+Products to Match Multiselect #1 contains A
+Products to display Multiselect #1 contains B
+Save Related Product Rule
+
+Actual result: Rule is not saved. Notice: Products to match and products ti display tabs loses conditions.
+Error message displayed - Array to string conversion in /var/www/html/develop/magento2ee/app/code/Magento/TargetRule/Model/ResourceModel/Index.php on line 372
+
+
+
+
+
 
 ### Tax
-<!--- MAGETWO-87941 -->* 
+<!--- MAGETWO-87941 -->*  Use a selector to only select the correct tax rate sel… #13643
 
-<!--- MAGETWO-87352 -->*
+https://github.com/hostep
+Pieter Hoste
+https://github.com/magento/magento2/issues/12791
 
-<!--- MAGETWO-87339 -->*
+I'm having a weird issue on the production environment of one of our webshops. The styling of the Customer & Product Tax class UI components are getting the styling of the tax rate UI component.
+This results in a problem with saving the newly selected customer & product class changes. It just selects the corresponding rows from the Tax rate UI component, found at the top of the page.
+
+
+<!--- MAGETWO-87352 -->* Fix default discount tax calculation in double 
+
+The node `tax/calculation/discount_tax` is in double in file `Magento/Tax/etc/config.xml`.
+
+PR #13449
+https://github.com/VincentMarmiesse
+
+Vincent MARMIESSE
+
+
+
+<!--- MAGETWO-87339 -->* M2.x.x Translation Missing in Checkout for Tax 
+
+PR #1147
+https://github.com/magento/magento2/issues/7849
+
+https://github.com/RomaKis
+Roman K.
+
+
 
 
 ### Testing
 
-<!--- MAGETWO-87487 -->* 
+<!--- MAGETWO-87487 -->* phpunit.xml files should be ignored by Magento/Test/Integrity/Xml/SchemaTest.php
+Extension developers still use old MFTF and the only option for them to have tests distributed along with the code, is to provide custom phpunit.xml.
 
-<!--- MAGETWO-87290 -->*   
+Since phpunit.xml is not regular Magento configuration file, it should be blacklisted during some schema validation static tests, particularly Magento/Test/Integrity/Xml/SchemaTest.php
 
-<!--- MAGETWO-87984 -->* 
+
+
+
+
+
+
+<!--- MAGETWO-87290 -->*   ConfigurationTest fails when installing via composer 
+
+PR #1161
+
+https://github.com/nmalevanec
+Malyovanets Nickolas
+https://github.com/magento/magento2/issues/12574
+An integration test is failing when Magento is built via composer (not when clones from github).
+
+The problem seems to be that basePath is calculated as the app directory but the actual code is in vendor so XML configuration is not found and an uncatched exception is thrown
+
+
+
+<!--- MAGETWO-87984 -->* Add MagentoStyle as Console Input/output in Travis tests
+
+PR #13698  (ask Oleksii) 
+
+
  
 
-<!--- MAGETWO-86859 -->* unit tests
+<!--- MAGETWO-86859 -->* 
+
+Carlos Lizaga
+https://github.com/KarlDeux
+
+https://github.com/magento/magento2/issues/12342
+
+Currently Magento is using 2 different sets of tools for the JavaScript Testing:
+
+JSTestDriver, which is considered legacy and is not supported anymore by the core team.
+Jasmine, which was introduced to replace JSTestDriver. All new JS tests are implemented using it and executed in multiple CI environments, including public Travis CI and Magento's in-house CICD infrastructure.
+To remove legacy framework it is required to reimplement remaining tests using Jasmine, and completely remove JSTestDriver support afterwards.
 
 
-<!--- MAGETWO-86005 -->* functional tests
+
+<!--- MAGETWO-86005 -->* Update functional.suite.dist.yml to handle a custom backend name 
+In the file `functional.suite.dist.yml`, the value for the `backend_name` configuration is hardcoded. We should be able to customize the value by using the variable `MAGENTO_BACKEND_NAME` defined in the `.env` file.
+
+PR #12884
+https://github.com/scribam
+scribam
 
 
 
-<!--- MAGETWO-85947-->*  benchmarking
 
-<!--- MAGETWO-85940 -->* test framework
 
-<!--- MAGETWO-85537 -->* integration test framework
 
-<!--- MAGETWO-80738 -->* functional tests
 
-<!--- MAGETWO-80342 -->* functional tests
 
-<!--- MAGETWO-85520 -->* static tests
+<!--- MAGETWO-85940 -->* Add missing preference for ObjectManager\ConfigInterface in integrati… 
 
-<!--- MAGETWO-82062 -->*  functional tests
+PR #12845
+
+Fabian Schmengler 
+https://github.com/schmengler
+
+https://github.com/magento/magento2/issues/12844
+I logged which classes were instantiated befor the error and it seems like XmlCatalogGenerateCommand has the object manager config in its dependency graph, but in the integration test environment there is no preference for it.
+
+
+
+
+
+
+
+
+<!--- MAGETWO-85537 -->* Integration Test Annotation magentoAppArea breaks with some valid values. 
+
+PR #996
+https://github.com/nmalevanec
+Malyovanets Nickolas
+
+https://github.com/magento/magento2/issues/2907
+
+
+
+
+
+<!--- MAGETWO-85520 -->* Remove @escapeNotVerified from documentation 
+
+PR #12639
+
+Matthias Zeis
+https://github.com/mzeis
+The inline documentation of the static test for XSS vulnerabilities doesn't reflect that `@escapeNotVerified` is disallowed in >= 2.2.
+
+Update the comment to reflect the documentation (compare [2.1](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/templates/template-security.html#Static-Test) and [2.2](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html)).
+
+
 
 
 ### Tax
 
-<!--- MAGETWO-83974 -->* 
 
-<!--- MAGETWO-83402 -->* 
+
+<!--- MAGETWO-83402 -->* Wrong order tax amounts displayed when using specific tax configuration 
+
+https://github.com/magento/magento2/issues/10347
+
+Wrong order tax amounts displayed when using specific tax configuration 
+Pieter Cappelle
+
+https://github.com/PieterCappelle
+
+
+
 
 
 ### Themes
 
 <!--- MAGETWO-85785 -->* 
 
-<!--- MAGETWO-85549 -->* 
+Use full name in welcome message 
 
-<!--- MAGETWO-86310 -->* 
+PR #12738
+https://github.com/xpoback
+Oleh Kravets
 
-<!--- MAGETWO-84413 -->* 
+https://github.com/magento/magento2/issues/12719
+
+Expected result
+Website loads with customer logged in, welcome message contains customer's first and last names
+
+Actual result
+Website loads with customer logged in, welcome message does not contain customer's first and last names
+
+
+
+
+
+<!--- MAGETWO-85549 -->* The option <var name="allowfullscreen">false</var> for mobile device don't work in product view page gallery 
+https://github.com/magento/magento2/issues/12490
+I can't disable full screen gallery on mobile on magento 2.2.1
+
+
+Expected result:
+fullscrreen is disabled on mobile screens
+
+Actual result:
+fullscreen is working
+
+
+
+
+PR #1006
+
+https://github.com/p-bystritsky
+p-bystritsky
+https://github.com/magento/magento2/issues/12285
+
+
+
+
+
+
+
+<!--- MAGETWO-86310 -->* Change getHtml to append class rather than overwrite for children 
+PR #12862
+
+https://github.com/jonshipman
+jonshipman
+
+When creating a dependency injection for the Magento\Theme\Block\Html\Topmenu class, we are unable to change class names on children in a beforeGetHtml method because the protected method getHtml declares setClass() on all children items. What this contribution changes is checking each child for an existing class and appends the $outermostClass if true.
+
+
 
 <!--- MAGETWO-85708 -->* Zoom the image can be closed in iPhone or Safari browser
 
-<!--- MAGETWO-84804 -->* 
+If choose full screen zoom for any product image in iPhone 4s, 5s, 6, 6s with Safari browser, It will not unable to close that full screen zoom.
+EXPECTED RESULTS:
+Zoom the image should be closed
+ACTUAL RESULTS:
+Zoom the image is not closed
+
+
+
+
+
+
+
 
 ### Translations and locale
 
-<!--- MAGETWO-83977 -->* 
 
-<!--- MAGETWO-86286 -->* 
 
-<!--- MAGETWO-86778 -->* 
+<!--- MAGETWO-86286 -->* Fix #2156 Js\Dataprovider uses the RendererInterface. #12953
 
-<!--- MAGETWO-87226 -->* 
+https://github.com/dmitry-fedyuk
+Dmitry Fedyuk
 
-<!--- MAGETWO-86436 -->* 
+https://github.com/magento/magento2/issues/2156
+This lead to the 2 problems:
 
-<!--- MAGETWO-87575 -->* 
+Inline translation does not work for Knockout templates.
+Custom translators (which can be injected as an argument for \Magento\Framework\Phrase\Renderer\Composite) do not work for Knockout templates.
+
+
+
+
+
+
+
+
+<!--- MAGETWO-86778 -->* No locale for Swedish (Finland). 
+
+PR #1207
+
+Malyovanets Nickolas
+
+https://github.com/nmalevanec
+https://github.com/magento/magento2/issues/13095
+
+
+
+
+
+
+
+
+<!--- MAGETWO-87226 -->* Translate time zone label according to current locale in Stores > Configuration > Advanced Reporting 
+
+PR #13408
+
+https://github.com/adrian-martinez-interactiv4
+adrian-martinez-interactiv4
+
+Time zone label gets translated according to operating system settings, instead of using current locale:
+
+
+
+
+<!--- MAGETWO-86436 -->* Newsletter Label is broking on chinese Language 
+
+PR 13029
+
+https://github.com/dasharath-wagento
+Dasharth patel
+https://github.com/magento/magento2/issues/12320
+
+Set the newsletter subscribe button's title with at least two Chinese characters (either by changing it with your browser's Developer Tool or by switching the CMS language to Chinese)
+
+
+
+
+
+<!--- MAGETWO-87575 -->* missing translations in the js-translations.json 
+
+PR #13528
+https://github.com/mattijv
+
+Matti Vapa
+https://github.com/magento/magento2/issues/12081
+
+Since updating one of our stores to Magento 2.2 the translations for 'Item in Cart' are not compiled into the var/view_processed/pub/static/frontend/{Magento-Theme}/{language code}/js-translation.json files, though the translations for 'Items in Cart' are correctly loaded.
+
+
 
 
 ### User interface
 
-<!--- MAGETWO-85784-->* 
+<!--- MAGETWO-85784-->*  Validate range-words in Form component (UI Component) 
+
+PR #12739
+
+I cannot configure a form field with validation range-words, it different than validate-number-range
 
 
-<!--- MAGETWO-86025 -->* 
+Expected result
+Category Name is validated and Category is created (or correct error message is displayed, if validation fails)
+
+Actual result
+Nothing happens explicitly. Error message appers in browser console.
+
+https://github.com/robinhuy
+
+Robin Huy
 
 
 
-<!--- MAGETWO-86438 -->* 
+<!--- MAGETWO-86025 -->* "Save Block"-button on Add New Block silently ignores clicks if the content is empty. 
 
-<!--- MAGETWO-84903 -->* 
 
-<!--- MAGETWO-83815 -->* 
+PR #1032
+https://github.com/RomaKis
+Roman K.
+https://github.com/magento/magento2/issues/8114
+When clicking "Save Block", nothing happens if the content editor is empty.
 
-<!--- MAGETWO-83293 -->* 
 
-<!--- MAGETWO-71936 -->* 
+
+
+<!--- MAGETWO-86438 -->* Resolved Checkout-Payment-Wrong promo code cancelled issue 
+
+PR #13030
+
+	https://github.com/chiragp-wagento
+
+ Chirag P
+Disabled the input box for promo code when promo code is already applied to the site.
+Wrong promo code cancelled issue on Checkout > Payment and Cart page.
+
+Expected result
+Promo code input box will be disabled once we apply any promo code.
+
+Actual result
+Promo code removed
+
+
+
+<!--- MAGETWO-84903 -->* copy from 2.1.13
+
+
+
+
+<!--- MAGETWO-83815 -->* Fixed php notice when invalid ui_component config is used 
+
+PR #12239
+Just a tiny fix. Move `$argument['instance']` usage below `isset($argument['instance'])` check.
+
+Vova Yatsyuk
+
+https://github.com/vovayatsyuk
+
+
+
+
+
+<!--- MAGETWO-83293 -->* Inefficient SQL query on applying filter on sales order grid
+Verification for already set filter in Magento/Ui/Component/Filters added. 
+As a result filters in collection "where" conditions will not be duplicated.
+
+
+
+
+<!--- MAGETWO-71936 -->* Error: Invalid input datetime format of value "'DD/MM/+********"'
+https://github.com/magento/magento2/issues/10485
+
+Steps to reproduce
+Login to Magento admin
+Open an existing product for edit
+Click save
+Expected result
+Product is saved successfully as no changes are made from the previous state of the product
+Actual result
+An error Invalid input datetime format of value '25/07/+00201717' appears and the product is not saved
+This issue happened when I upgrade from 2.1.7 to 2.1.8. Some products seems to be able to save without an issue but majority of the ones I tried has this error with various values for the actual date.
+
+
 
 
 
 ### URL rewrites
 
-<!--- MAGETWO-84955 -->* 
+<!--- MAGETWO-84955 -->* Set Current Store from Store Code if isUseStoreInUrl 
 
-<!--- MAGETWO-86554 -->*  
+PR #12529
+
+
+
+
+
+
+
+<!--- MAGETWO-86554 -->*  Customer is redirected to 404 from Catalog page if switches to the Store with another root Category
+
+Unresolved
 
 
 ### Varnish
 
-###Visual Merchandiser
 
-<!--- MAGETWO-86117 -->*  
 
 
 ### Web API framework
-<!--- MAGETWO-85287 -->* 
+<!--- MAGETWO-85287 -->* REST API unable to make requests with slash (/) in SKU 
+
+PR #949
+
+https://github.com/RomaKis
+Roman K.
+
+https://github.com/magento/magento2/issues/8615
+
+Inside the REST API, it is impossible to access a resource that requires an SKU if the SKU contains a forward slash.
+
 
 
 
 ### Wishlist
 
-<!--- MAGETWO-69634 -->* 
-<!--- MAGETWO-85303 -->* 
+<!--- MAGETWO-69634 -->* Product with a special price must be showed with this price in the wishlist	
+Product with special prices are displayed in wishlist with special prices.
+
+If you add a product which has a special price into the wishlist, then product displayed with a regular price.
 
 
 
+
+<!--- MAGETWO-85303 -->* Can't remove item description from wishlist 
+
+https://github.com/magento/magento2/issues/12582
+
+
+PR #981
+
+https://github.com/p-bystritsky
+
+p-bystritsky
 
 
 
@@ -1700,7 +2237,7 @@ can find Magento Shipping-specific release notes in [Magento Shipping Release No
 
 
 
-<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 86982 86846 86772 86770 86767 86763 86015 86002 73161 80908 84209 84992 77767 84480 83329
+<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 86982 86846 86772 86770 86767 86763 86015 86002 73161 80908 84209 84992 77767 84480 83329 86117 83977 84804 84413 83974 82062 80342 80738 85947 83676 86132 85661 77840 82061 85842
  -->* 
  -->  
 
@@ -1708,7 +2245,7 @@ can find Magento Shipping-specific release notes in [Magento Shipping Release No
 
 <!--- WON'T FIX MAGETWO-72116 MAGETWO-64518 MAGETWO-64534 MAGETWO-72116 MAGETWO-72116 MAGETWO-83818 MAGETWO-84772 MAGETWO-84773 MAGETWO-85138 MAGETWO-85983 81082 77425 70376-->
 
-<!--- CANNOT REPRODUCE MAGETWO-58206 MAGETWO-61056 MAGETWO-64734 MAGETWO-68799 MAGETWO-69847 85986 88104 86279-->
+<!--- CANNOT REPRODUCE MAGETWO-58206 MAGETWO-61056 MAGETWO-64734 MAGETWO-68799 MAGETWO-69847 85986 88104 86279 84074-->
 
 
 ## Community contributions
