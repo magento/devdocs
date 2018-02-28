@@ -97,22 +97,24 @@ Mail Transfer Agent (MTA) or an SMTP server
 *	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
 *	<a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
-*	{{site.data.var.ee}} only
+####	{{site.data.var.ee}} only
 
-    *	Elasticsearch version 2.x
+*	Elasticsearch
 
-		*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
-		*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"}, we support the `2.0` branch.
+    {{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
 
-	*	RabbitMQ 3.5.x (compatible with 2.0 and later)
+    *	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="&#95;blank"}
+    *	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="&#95;blank"}
 
-		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for {{site.data.var.ee}} only.
+    Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
 
-	*	Three master databases
+*	RabbitMQ 3.5.x (compatible with 2.0 and later)
 
-		These <a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).
+    [RabbitMQ]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html){:target="&#95;blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
 
-		Available for {{site.data.var.ee}} only.
+*	Three master databases
+
+    These <a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).
 
 ### Optional but recommended:
 *	<a href="http://xdebug.org/download.php" target="&#95;blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)
