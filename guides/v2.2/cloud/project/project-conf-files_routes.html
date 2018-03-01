@@ -2028,11 +2028,7 @@
 
 <p>Magento Commerce also generates URLs for every active environment that enable you to test that system. In a test system, <code class="highlighter-rouge">{default}</code> is replaced with <code class="highlighter-rouge">[branch]-[project-id].[region].magentosite.cloud</code>.</p>
 
-<p>For example, if the project ID is <code class="highlighter-rouge">mswy7hzcuhcjw</code> on a branch called <code class="highlighter-rouge">refactorcss</code> hosted in the <code class="highlighter-rouge">na</code> cluster, the domains are: <code class="highlighter-rouge">http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/</code> and <code class="highlighter-rouge">https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog</code></p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>na</code> region is shown as an example; it's not currently available. Magento plans support for <code>na</code> first, then <code>au</code> and <code>eu</code> at a later date.</p>
-</div>
+<p>For example, if the project ID is <code class="highlighter-rouge">mswy7hzcuhcjw</code> on a branch called <code class="highlighter-rouge">refactorcss</code> hosted in the <code class="highlighter-rouge">us</code> cluster, the domains are: <code class="highlighter-rouge">http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/</code> and <code class="highlighter-rouge">https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog</code></p>
 
 <!-- Magento Commerce (Cloud) also supports [multiple applications](/guides/v2.2/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 
@@ -2097,15 +2093,15 @@ another route that will be identified by its template (see the following example
 <p>You can also route to a system that is not mapped to a domain (basically anything other than
 a live master).</p>
 
-<p>Suppose your project on the EU cluster has an ID <code class="highlighter-rouge">vmwklxcpbi6zq</code> and a branch named <code class="highlighter-rouge">add-theme</code>. Magento Commerce automatically routes the URL <code class="highlighter-rouge">http://add-theme-vmwklxcpbi6zq.na.magento.com/</code> to this environment. If, for example, you also defined a <code class="highlighter-rouge">http://www.{default}/</code> route, you could visit <code class="highlighter-rouge">http://www---add-theme-vmwklxcpbi6zq.na.magento.com/</code> to see the same environment.</p>
+<p>Suppose your project on the EU cluster has an ID <code class="highlighter-rouge">vmwklxcpbi6zq</code> and a branch named <code class="highlighter-rouge">add-theme</code>. Magento Commerce automatically routes the URL <code class="highlighter-rouge">http://add-theme-vmwklxcpbi6zq.us.magento.com/</code> to this environment. If, for example, you also defined a <code class="highlighter-rouge">http://www.{default}/</code> route, you could visit <code class="highlighter-rouge">http://www---add-theme-vmwklxcpbi6zq.us.magento.com/</code> to see the same environment.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The triple dash (<code>---</code>) is used as a separator for the subdomain. This is what replaces the dot (<code>.</code>).</p>
 </div>
 
-<p>You can put anything before the triple dashes and the route resolves. In this example, the route is defined as <code class="highlighter-rouge">http://*.{default}/</code> route, so both <code class="highlighter-rouge">http://foo---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code> and <code class="highlighter-rouge">http://bar---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code> would work just fine.</p>
+<p>You can put anything before the triple dashes and the route resolves. In this example, the route is defined as <code class="highlighter-rouge">http://*.{default}/</code> route, so both <code class="highlighter-rouge">http://foo---add-theme-vmwklxcpbi6zq.us.magentosite.cloud/</code> and <code class="highlighter-rouge">http://bar---add-theme-vmwklxcpbi6zq.us.magentosite.cloud/</code> would work just fine.</p>
 
-<p>If you examine the routes of your application (for example by running <code class="highlighter-rouge">echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp</code> in an SSH session on your environment), you will see a route such as <code class="highlighter-rouge">https://*---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code></p>
+<p>If you examine the routes of your application (for example by running <code class="highlighter-rouge">echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp</code> in an SSH session on your environment), you will see a route such as <code class="highlighter-rouge">https://*---add-theme-vmwklxcpbi6zq.us.magentosite.cloud/</code></p>
 
 <p><a href="/guides/v2.2/cloud/project/project-routes-more-cache.html">More information about caching</a>.</p>
 
