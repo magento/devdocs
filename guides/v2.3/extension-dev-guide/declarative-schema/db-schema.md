@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-title: Set up declarative schema
+title: Configure declarative schema
 version: 2.3
 github_link: extension-dev-guide/declarative-schema/db-schema.md
 ---
@@ -97,12 +97,12 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>default</code></td>
-<td>Initialize the column with the specified default value. The default value should have the same datatype defined in <code>xsi:type</code>
+<td>Initializes the column with the specified default value. The default value should have the same datatype defined in <code>xsi:type</code>
 </td>
 </tr>
 <tr>
 <td><code>disabled</code></td>
-<td>This flag should be used only when you want to disable or delete the declared table, column, constraint, or index.
+<td>Disables or deletes the declared table, column, constraint, or index.
 </td>
 </tr>
 <tr>
@@ -167,7 +167,6 @@ The following example shows the format of an internal constraint.
 </constraint>
 ```
 
-
 The `foreign` constraint is similar to foreign keys in SQL. This type of constraint connects two tables with each other. The following attributes define a foreign constraint:
 
 Attribute | Description
@@ -180,54 +179,92 @@ Attribute | Description
 Example:
 
 ```xml
-<constraint xsi:type="foreign" name="COMPANY_CREDIT_COMPANY_ID_DIRECTORY_COUNTRY_COUNTRY_ID"
-                    table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id"
-                    onDelete="CASCADE"/>
+<constraint xsi:type="foreign" name="COMPANY_CREDIT_COMPANY_ID_DIRECTORY_COUNTRY_COUNTRY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
 ```
-
-For more information about foreign key triggers, refer to the SQL engines documentation.
-
-
 #### `index` subnode
 
-The `index` subnode has the same structure as internal constraints, but contains different logic. While constraints are used for defining limitations, index are used for speeding up DQL operations.
+The `index` subnode has the same structure as internal constraints but contains different logic. While constraints are used for defining limitations, index are used for speeding up DQL operations.
 
+## Perform common database operations
 
-## Performing common tasks
+This section shows how to perform common database operations using declarative schema. The screen captures use `git diff` to illustrate how to perform these tasks.
 
-The following screen captures use `git diff` to illustrate how to perform common tasks.
+### Create a table
 
-**Create table**
+The following example creates the `table_name` table with five columns. The `id` column is the primary key.
 
 ![Create Table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/declaration-create-table.png)
 
-**Drop table**
+### Drop a table
+
+In the following example, the `table_name` table was completely removed from the `db-schema.xml` file. To drop a table declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
 ![Drop Table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/drop-declarative-table.png)
 
-**Create foreign key**
+### Rename a table
+
+Table renaming is not supported. However, you can remove an unneeded table declaration and add a new one. Data will be persisted in a CSV dump, but the data will not be added to the new table automatically. You can add the data manually by using data/recurring patches.
+
+### Create a foreign key
+
+In the following example, the selected `constraint` node defines the characteristics of the `FL_ALLOWED_SEVERITIES` foreign key.
 
 ![Create Foreign Key]({{page.baseurl}}extension-dev-guide/declarative-schema/images/create-fk.png)
 
-**Drop foreign key**
+### Drop a foreign key
+
+The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleting its `constraint` node. To drop a constraint declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
 ![Drop Foreign Key]({{page.baseurl}}extension-dev-guide/declarative-schema/images/drop-fk.png)
 
-**Add column to table**
+### Add a column to table
+
+The following example adds the `date_closed` column.
 
 ![Add column to table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/add-column.png)
 
-**Drop column from table**
+### Drop a column from a table
+
+The following example removes the  `date_closed` column by deleting its `column` node. To drop a column declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
 ![Drop column from table]({{page.baseurl}}extension-dev-guide/declarative-schema/images/remove-column.png)
 
-**Change column type**
+### Change the column type
+
+The following example changes the `type` of the `title` column from `varchar` to  `tinytext`.
 
 ![Change column type]({{page.baseurl}}extension-dev-guide/declarative-schema/images/change-column-type.png)
 
-**Add index**
+### Rename a column
+
+To rename a column, delete the original column declaration and create a new one. In the new declaration use the `onCreate` attribute to specify which column to migrate data from. Use the following construction to migrate data from the same table.
+
+```xml
+onCreate="migrateDataFrom(entity_id)"
+```
+
+To migrate data from another table, specify
+
+```xml
+onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
+```
+
+### Add an index
+
+The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
 
 ![Add index]({{page.baseurl}}extension-dev-guide/declarative-schema/images/add-index.png)
+
+
+## Other tasks
+
+### Disable a module
+
+When a module is disabled from the Admin console, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
+
+### Truncate a table
+
+**Developer question:** This section is empty
 
 [How to generate urns?]:{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{page.baseurl}}extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png
