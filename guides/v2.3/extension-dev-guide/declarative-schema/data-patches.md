@@ -10,25 +10,25 @@ A data patch is a class that contains data modification instructions. It is defi
 
 A schema patch contains custom schema modification instructions. These modifications can be complex. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Schema/<Patch_Name>.php` file and implements `\Magento\Setup\Model\Patch\SchemaPatchInterface`.
 
-Optionally, if you plan to enable rollback for your patch during module uninstallation, then implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`.
+Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`.
 
-The declarative schema approach removes the version from the `setup_module` table (in a backward compatible way), leaving only the composer version. Therefore, create all new patches and modules without specifying a `setup_module` version.
+The declarative schema approach removes the version from the `setup_module` table (in a backward compatible way), leaving only the Composer version. Therefore, create all new patches and modules without specifying a `setup_module` version.
 
-The sequence of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
+The sequnce of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
 
 To define a dependency in a patch, make a static reference to the patch class. The class can be in any module.
 
 ``` php
-    return [
-        \SomeVendor\SomeModule\Setup\Patch\Data\SomePatch::class
-    ];
+return [
+  \SomeVendor\SomeModule\Setup\Patch\Data\SomePatch::class
+];
 ```
 
 The following code sample defines a data patch class that has a dependency.
 
 
 {% highlight php startinline=true %}
-    <?php
+<?php
     /**
      * Copyright © Magento, Inc. All rights reserved.
      * See COPYING.txt for license details.

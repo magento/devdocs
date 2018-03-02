@@ -12,7 +12,7 @@ Currently, Magento 2 has the following types of scripts:
 
 * InstallData and InstallSchema scripts, which are executed on a clean (empty) database
 * UpgradeData and UpgradeSchema incremental scripts, which supplement an existing Magento database
-* Recurring scripts, which are executed each time you install or upgrade Magento.
+* Recurring scripts, which are executed each time you install or upgrade Magento
 
 Each script iteratively adds changes. During the installation process, Magento applies only those changes that have not been applied yet. For example, if you have Magento 2.1.8 installed and the latest version is 2.1.11, then the upgrade scripts for
 2.1.9, 2.1.10, and 2.1.11 will be applied, in order, when you upgrade to 2.1.11. That procedure is called _migration setup_ or _migration scripts_.
@@ -38,12 +38,12 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 </table>
 ```
 
-## Db Schema Structure
+## `db_schema` structure
 
-A module's database declaration file is defined in `<Module_Vendor>/<Module_Name>/etc/db_schema.xml`.
+The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you have enabled [Urn highlighting]({{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
+If you have enabled [URN highlighting]({{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 </div>
 
 ### Top-level node
@@ -51,7 +51,7 @@ If you have enabled [Urn highlighting]({{page.baseurl}}config-guide/cli/config-c
 The `schema` node defines the location of the `schema.xsd`  file.
 
 `<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:setup:Model/Declaration/Schema/etc/schema.xsd">`
+  xsi:noNamespaceSchemaLocation="urn:magento:setup:Model/Declaration/Schema/etc/schema.xsd">`
 
 ### `table` node
 
@@ -60,10 +60,10 @@ A table node can contain the following attributes:
 
 Attribute | Description
 --- | ---
-`name` | The name of the table
+`name` | The name of the table.
 `engine` | SQL engine. This value must be `innodb` or `memory`.
 `resource` | The database shard on which to install the table. This value must be `default`, `quote`, or `sales`.
-`comment` | Table comment
+`comment` | Table comment.
 
  A `table` node can contain three types of subnodes:
 
@@ -97,7 +97,7 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>default</code></td>
-<td>Initializes the column with the specified default value. The default value should have the same datatype defined in <code>xsi:type</code>
+<td>Initializes the column with the specified default value. The default value should have the same datatype defined in <code>xsi:type</code>.
 </td>
 </tr>
 <tr>
@@ -107,7 +107,7 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>identity</code></td>
-<td>Indicates whether a column is auto incremented
+<td>Indicates whether a column is auto incremented.
 </td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>nullable</code></td>
-<td>Indicates whether column can be nullable</td>
+<td>Indicates whether column can be nullable.</td>
 </tr>
 <tr>
 <td><code>onCreate</code></td>
@@ -128,11 +128,11 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>precision</code></td>
-<td>The number of allowed digits in a real data type</td>
+<td>The number of allowed digits in a real data type.</td>
 </tr>
 <tr>
 <td><code>scale</code></td>
-<td>The number of digits after the decimal in a real data type</td>
+<td>The number of digits after the decimal in a real data type.</td>
 </tr>
 <tr>
 <td><code>unsigned</code></td>
@@ -171,9 +171,9 @@ The `foreign` constraint is similar to foreign keys in SQL. This type of constra
 
 Attribute | Description
 --- | ---
-`column` | A column in the current table that refers to a specific column in another table
-`referenceTable` | The table being referenced
-`referenceColumn`| A column in the `referenceTable`
+`column` | A column in the current table that refers to a specific column in another table.
+`referenceTable` | The table being referenced.
+`referenceColumn`| A column in the `referenceTable`.
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`.
 
 Example:
@@ -183,7 +183,7 @@ Example:
 ```
 #### `index` subnode
 
-The `index` subnode has the same structure as internal constraints but contains different logic. While constraints are used for defining limitations, index are used for speeding up DQL operations.
+The `index` subnode has the same structure as internal constraints but contains different logic. While constraints are used for defining limitations, indexes are used for speeding up DQL operations.
 
 ## Perform common database operations
 
@@ -237,13 +237,13 @@ The following example changes the `type` of the `title` column from `varchar` to
 
 ### Rename a column
 
-To rename a column, delete the original column declaration and create a new one. In the new declaration use the `onCreate` attribute to specify which column to migrate data from. Use the following construction to migrate data from the same table.
+To rename a column, delete the original column declaration and create a new one. In the new declaration, use the `onCreate` attribute to specify which column to migrate data from. Use the following construction to migrate data from the same table.
 
 ```xml
 onCreate="migrateDataFrom(entity_id)"
 ```
 
-To migrate data from another table, specify
+To migrate data from another table, specify a value similar to the following:
 
 ```xml
 onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
