@@ -2118,7 +2118,47 @@
 </ul>
 
 <h3 id="backup-and-disaster-recovery">Backup and disaster recovery</h3>
-<p>Each production system cluster can withstand the loss of an entire server and all services running on it. A backup of your production system occurs automatically every six hours. The coordinating agent that monitors your production system detects failures at the service level (such as MySQL) and fully automates and coordinates recovery where possible.</p>
+<p>Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.</p>
+
+<p>In addition to the redundancy of the high-availability architecture, there is a full system backup every six hours that includes the file system and the database. We retain the backups according to the following schedule:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time Period</th>
+      <th>Backup Retention Policy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Days 1 to 3</td>
+      <td>Each backup</td>
+    </tr>
+    <tr>
+      <td>Days 4 to 6</td>
+      <td>One backup per day</td>
+    </tr>
+    <tr>
+      <td>Weeks 2 to 6</td>
+      <td>One backup per week</td>
+    </tr>
+    <tr>
+      <td>Weeks 8 to 12</td>
+      <td>One bi-weekly backup</td>
+    </tr>
+    <tr>
+      <td>Weeks 12 to 22</td>
+      <td>One backup per month</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Magento Commerce (Cloud) creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.</p>
+
+<ul>
+  <li><strong>Recovery Point Objective (RPO)</strong>—is 6 hours (maximum time to last backup).</li>
+  <li><strong>Recover Time Objective (RTO)</strong>—depends on the size of the storage. Large EBS volumes take more time to restore.</li>
+</ul>
 
 <h3 id="production-technology-stack">Production technology stack</h3>
 <p>The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:</p>
@@ -2166,13 +2206,6 @@
   <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a>—url processing</li>
   <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>—supported services</li>
   <li><a href=""><code class="highlighter-rouge">.magento.env.yaml</code></a>—unified configs for Magento Commerce (Cloud) 2.2</li>
-</ul>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html">Pro Develop and Deploy Workflow</a></li>
-  <li><a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment process</a></li>
-  <li><a href="/guides/v2.3/cloud/requirements/cloud-requirements.html">Magento Commerce requirements</a></li>
 </ul>
 
 		</div>
