@@ -6,9 +6,7 @@ version: 2.3
 github_link: extension-dev-guide/declarative-schema/db-schema.md
 ---
 
-Before Magento 2.3, extension developers were required to write code (PHP script) to change the database schema.
-
-Currently, Magento 2 has the following types of scripts:
+Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:
 
 * InstallData and InstallSchema scripts, which are executed on a clean (empty) database
 * UpgradeData and UpgradeSchema incremental scripts, which supplement an existing Magento database
@@ -262,9 +260,12 @@ The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
 
 When a module is disabled from the Admin console, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
 
+<!--
 ### Truncate a table
 
 **Developer question:** This section is empty
+
+-->
 
 [How to generate urns?]:{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{page.baseurl}}extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png

@@ -12,7 +12,7 @@ A schema patch contains custom schema modification instructions. These modificat
 
 Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`.
 
-The declarative schema approach removes the version from the `setup_module` table (in a backward compatible way), leaving only the Composer version. Therefore, create all new patches and modules without specifying a `setup_module` version.
+The declarative schema approach removes the version from the `setup_module` table (in a backward compatible way), leaving only the Composer version. Therefore, you can create all new patches and modules without specifying a `setup_module` version.
 
 The sequnce of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
 
@@ -120,8 +120,4 @@ The following code sample defines a data patch class that has a dependency.
 ## Will old scripts work in newer versions?
 
 Old scripts will work with new versions of Magento. However, if you want to convert your old scripts to the new format,
-you should know these basic rules:
-
-**Note to reviewer:** _Only one rule is provided. Are there more?_
-
-1. Implement `\Magento\Setup\Model\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.
+implement `\Magento\Setup\Model\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.

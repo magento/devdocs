@@ -175,14 +175,14 @@ pages:
             - label: Delcarative schema overview
               url: extension-dev-guide/declarative-schema/
 
-            - label: Develop declarative data and schema patches
-              url: extension-dev-guide/declarative-schema/data-patches.html
+            - label: Migrate install/upgrade scripts to declarative schema
+              url: extension-dev-guide/declarative-schema/migration-commands.html
 
             - label: Configure declarative schema
               url: extension-dev-guide/declarative-schema/db-schema.html
 
-            - label: Migrate install/upgrade scripts to declarative schema
-              url: extension-dev-guide/declarative-schema/migration-commands.html
+            - label: Develop declarative data and schema patches
+              url: extension-dev-guide/declarative-schema/data-patches.html
 
         - label: Message Queues (Magento Commerce Edition Only)
           children:
