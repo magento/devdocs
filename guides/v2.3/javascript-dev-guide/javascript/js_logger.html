@@ -764,25 +764,25 @@
 <h3 id="setdisplaylevellevel"><code class="highlighter-rouge">setDisplayLevel(level)</code></h3>
 <p>Sets the boundary entry level. The entries whose level is lower, than the specified one, are not passed to the output.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">level: number</code>: Minimum display level for an entry.</p>
 
 <h3 id="adddisplaycriteriacriteria"><code class="highlighter-rouge">addDisplayCriteria(criteria)</code></h3>
 <p>Adds a function that is used to define whether newly created entries should be passed to the output.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">criteria: Function</code>: A function that accepts instance of the <code class="highlighter-rouge">LogEntry</code> and returns a Boolean value.</p>
 
 <h3 id="removedisplaycriteriacriteria">removeDisplayCriteria(criteria)</h3>
 <p>Removes the previously added display criteria.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">criteria: Function</code>: The display criteria to be removed.</p>
 
 <h3 id="errormessage-messagedata"><code class="highlighter-rouge">error(message, [messageData])</code></h3>
 <p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">ERROR</code> level and passes it to the output, if it matches all current display criteria.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
 
 <p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
@@ -792,7 +792,7 @@
 <h3 id="warnmessage-messagedata"><code class="highlighter-rouge">warn(message, [messageData])</code></h3>
 <p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">WARN</code> level and passes it to the output, if it matches all current display criteria.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
 
 <p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
@@ -802,7 +802,7 @@
 <h3 id="infomessage-messagedata"><code class="highlighter-rouge">info(message, [messageData])</code></h3>
 <p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">INFO</code> level and passes it to the output if it matches all current display criteria.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
 
 <p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
@@ -812,7 +812,7 @@
 <h3 id="debugmessage-messagedata"><code class="highlighter-rouge">debug(message, [messageData])</code></h3>
 <p>Creates a <code class="highlighter-rouge">LogEntry</code> with the <code class="highlighter-rouge">DEBUG</code> level and passes it to the output, if it matches all current display criteria.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
 
 <p><code class="highlighter-rouge">messageData?: Object</code>: Optional data associated with the message.</p>
@@ -822,14 +822,14 @@
 <h3 id="getentriescriteria"><code class="highlighter-rouge">getEntries([criteria])</code></h3>
 <p>Returns all available log entries. It can additionally filter out the entries that don’t match the provided criteria.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">criteria?: Function</code>: Optional function that accepts an instance of <code class="highlighter-rouge">LogEntry</code> and implements the filter criteria by which the entries are added to the resulting array.</p>
 
 <p><strong>Returns:</strong> <code class="highlighter-rouge">Array&lt;LogEntry&gt;</code>: An array of <code class="highlighter-rouge">LogEntry</code>.</p>
 
 <h3 id="dumpcriteria"><code class="highlighter-rouge">dump(criteria)</code></h3>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">criteria?: Function</code>: Optional function that accepts an instance of <code class="highlighter-rouge">LogEntry</code> and implements the filter criteria by which entries are passed to the output handler.</p>
 
 <h2 id="logentry"><code class="highlighter-rouge">LogEntry</code></h2>
@@ -847,7 +847,7 @@
   <li><code class="highlighter-rouge">data?: Object</code>: Additional data associated with the entry.</li>
 </ul>
 
-<h3 id="properties">Properties</h3>
+<p><strong>Properties</strong></p>
 <ul>
   <li>
     <p><code class="highlighter-rouge">message: string</code>: Entry’s message.</p>
@@ -866,8 +866,6 @@
   </li>
 </ul>
 
-<p class="q">"Parameters" and "Properties", shouldn't they be heading of one level? or not headings, but of the same level?</p>
-
 <h2 id="logoutputhandler"><code class="highlighter-rouge">LogOutputHandler</code></h2>
 
 <p>The <code class="highlighter-rouge">LogOutputHandler</code> class responsible for the output of entries passed by <code class="highlighter-rouge">Logger</code>. Default implementation uses browser’s <code class="highlighter-rouge">console</code> object and invokes methods that correspond to the <code class="highlighter-rouge">level</code> of an entry. For instance, entry with the <code class="highlighter-rouge">INFO</code> level will be displayed using the console’s <code class="highlighter-rouge">info</code> method.</p>
@@ -876,19 +874,19 @@
 
 <h3 id="new-logoutputhandlerformatter">new LogOutputHandler(formatter)</h3>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">formatter: LogFormatter</code>: An instance of <code class="highlighter-rouge">LogFormatter</code> that will be used to create a display message for the  provided entries.</p>
 
 <h3 id="showentry">show(entry)</h3>
 <p>Displays the provided entry.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">entry: LogEntry</code>: The entry to be displayed.</p>
 
 <h3 id="dumpentries">dump(entries)</h3>
 <p>Displays multiple entries at once.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">entries: Array&lt;LogEntry&gt;</code>: An array of the <code class="highlighter-rouge">LogEntry</code> instances to be displayed.</p>
 
 <h2 id="logformatter">LogFormatter</h2>
@@ -915,7 +913,7 @@
 <h3 id="processentry"><code class="highlighter-rouge">process(entry)</code></h3>
 <p>Creates a text representation of the provided entry. If default settings are used, the resulting string looks like following: <code class="highlighter-rouge">[2017-04-07 01:36:24] [DEBUG] Log message</code>.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">entry: LogEntry</code>: An instance of <code class="highlighter-rouge">LogEntry</code> to be processed.</p>
 
 <p><strong>Returns:</strong> String</p>
@@ -943,7 +941,7 @@
 
 <h3 id="getnamebycodecode"><code class="highlighter-rouge">getNameByCode(code)</code></h3>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">code: string</code>: Level’s identifier.</p>
 
 <p><strong>Returns:</strong> Number</p>
@@ -957,7 +955,7 @@
 <h3 id="getmessagecode"><code class="highlighter-rouge">getMessage(code)</code></h3>
 <p>Returns message that matches the provided code.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">code: string</code>: Message’s identifier.</p>
 
 <p><strong>Returns:</strong> String</p>
@@ -965,7 +963,7 @@
 <h3 id="addmessagecode-message"><code class="highlighter-rouge">addMessage(code, message)</code></h3>
 <p>Adds a new message to the pool.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">code: string</code>: Message’s identifier.</p>
 
 <p><code class="highlighter-rouge">message: string</code>: Text of the message.</p>
@@ -973,7 +971,7 @@
 <h3 id="hasmessagecode"><code class="highlighter-rouge">hasMessage(code)</code></h3>
 <p>Checks whether a message with the provided code exists in the pool.</p>
 
-<p><strong>Parameters</strong><br />
+<p><strong>Parameters</strong>
 <code class="highlighter-rouge">code: string</code>: Message’s identifier.</p>
 
 <p><strong>Returns:</strong> Boolean</p>
@@ -988,7 +986,7 @@
 
 <p><strong>Path:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/console-logger.js</code> (<a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js">See on Github</a>)</p>
 
-<h3 id="properties-1">Properties</h3>
+<h3 id="properties">Properties</h3>
 <ul>
   <li><code class="highlighter-rouge">levels: {[name: string]: number}</code>: Reference to the available log levels.</li>
   <li><code class="highlighter-rouge">messages: messagePool</code>: Reference to <code class="highlighter-rouge">messagePool</code> that allows working with a list of predefined messages.</li>
