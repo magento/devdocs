@@ -269,14 +269,14 @@ crons:
 ```
 
 ## Configure PHP options {#cloud-yaml-platform-php}
-You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
+You can choose which version of PHP you want to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: myphpapp
 type: php:5.6
 ```
 
-For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0.
+{{site.data.var.ece}} supports PHP 5.5, 5.6, and 7.0.
 
 See one of the following sections for more information:
 

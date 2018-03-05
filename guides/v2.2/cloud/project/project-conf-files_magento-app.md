@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 090_configure
 title: .magento.app.yaml
-menu_title: .magento.app.yaml
-menu_order: 20
-menu_node:
 version: 2.2
 github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
@@ -286,14 +282,16 @@ For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron 
 For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/setup-cron-jobs.html).
 
 ## Configure PHP options {#cloud-yaml-platform-php}
-You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
+You can choose which version of PHP you want to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: myphpapp
-type: php:7.0
+type: php:7.1
 ```
 
-For PHP versions, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
+<div class="bs-callout bs-callout-info" markdown="1">
+{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to use PHP 7.1 on your Pro production and staging environments.
+</div>
 
 See one of the following sections for more information:
 
@@ -301,7 +299,7 @@ See one of the following sections for more information:
 *   [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
-You can define additional PHP extensions you want to enable or disable. Example:
+You can define additional PHP extensions you want to enable or disable:
 
 ```yaml
 # .magento.app.yaml
