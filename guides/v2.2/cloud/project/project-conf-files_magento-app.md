@@ -282,7 +282,7 @@ For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron 
 For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/setup-cron-jobs.html).
 
 ## Configure PHP options {#cloud-yaml-platform-php}
-You can choose which version of PHP you want to run in your `.magento.app.yaml` file:
+You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: myphpapp
@@ -290,7 +290,7 @@ type: php:7.1
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to use PHP 7.1 on your Pro production and staging environments.
+{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 </div>
 
 See one of the following sections for more information:
@@ -299,7 +299,7 @@ See one of the following sections for more information:
 *   [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
-You can define additional PHP extensions you want to enable or disable:
+You can define additional PHP extensions to enable or disable:
 
 ```yaml
 # .magento.app.yaml

@@ -52,7 +52,7 @@ To upgrade from **2.1.X**:
 After completing your upgrade, you may also want to [Verify and upgrade your extensions](#extensions).
 
 ### Upgrade your PHP version {#php}
-{{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to use PHP 7.1 on your Pro production and staging environments.
+{{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
 
