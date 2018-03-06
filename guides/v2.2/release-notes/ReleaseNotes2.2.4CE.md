@@ -972,55 +972,318 @@ This pull fixes it by stopping the profiler before returning
 https://github.com/nicka101
 
 Nick Anstee
-<!--- MAGETWO-87588 -->*  
 
-<!--- MAGETWO-87354 -->* 
+
+
+<!--- MAGETWO-87588 -->*  Fix json encoded attribute backend type to not encode attribute value multiple times 
+
+PR #13551
+https://github.com/tkotosz
+Tibor Kotosz
+the json encoded attribute value loaded back correctly, but if you save a product muliple times then the attribute value will also be encoded muliple times which will cause issue during the next load.
+
+This PR fixes the `beforeSave` method to only encode the attribute value when it is not encoded already.
+
+
+Expected result:
+Product is saved.
+
+Actual result:
+Product cant be saved and error message appear "Unable to unserialize value."
+
+
+
+
+
+
+<!--- MAGETWO-87354 -->* Usage of deprecated each() function. this fix removes this deprecated function.
+
+Ihor Sviziev
+https://github.com/ihor-sviziev
 
 
 ### Email
 
 <!--- MAGETWO-83741 -->* 
+Sending emails from Admin in Multi-Store Environment defaults to Primary Store
 
-<!--- MAGETWO-86881 -->* 
+https://github.com/RomaKis
+
+
+
+Steps to reproduce
+Create two stores: ABC.com (primary) and XYZ.com
+Have customer place order on XYZ.com
+Go into admin, click on order from XYZ.com, and resend order confirmation email
+
+Expected result
+Should send email using FROM EMAIL and FROM NAME of store XYZ.com
+Actual result
+Magneto sends correct email content, but FROM EMAIL and FROM NAME are both from the primary store ABC.com instead of the store the customer used, XYZ.com. Creates confusion for customer as the FROM information is not the store from which they placed the order. Happens on any email resent from admin--confirmation, shipping, credit, etc.
+
+https://github.com/magento/magento2/issues/11740
+
+
+<!--- MAGETWO-86881 -->* Misleading feedback when sending tracking information email 
+PR #1245
+
+https://github.com/nmalevanec
+Malyovanets Nickolas
+. Create order with some non-virtual products.
+2. Create invoice and shipment for created order.
+3. Navigate to created shipment view page.
+4. Press "Send Tracking Information" button and confirm sending email to customer.
+5. Check success message is: "An email confirming the order is underway has been sent to the customer."
+6. Change en_US.csv in app/code/Magento/Shipping or vendor/magento/module-shipping(in case of composer version), or create your own. Find line with 'An email confirming the order is underway has been sent to the customer.' and change translation to something like "An email confirming the order is underway has been sent to the customer. edited"
+7. Clean cache, deploy static content.
+8. Repeat steps 3 and 4.
+9. Check success message has changed to "An email confirming the order is underway has been sent to the customer. edited".
+
+https://github.com/magento/magento2/issues/5697
+
+When clicking the “Send Tracking Information” button when viewing the shipment info the response is “You sent the shipment”.
+
+Expected result
+Notification telling the user that the email confirming the order is underway has been sent.
+
+E.g. "An email confirming the order is underway has been sent to the customer.".
+
+Actual result
+Notification telling the user “You sent the shipment”.
+
 
 
 ### Frameworks
 
-<!--- MAGETWO-86337 -->* 
+<!--- MAGETWO-86337 -->* Ability to sitch to default mode 
 
-<!--- MAGETWO-87124 -->*  
+pr #12752	
+https://github.com/magento/magento2/issues/4292
+Why can't one switch back to default mode ? 
+Expected result
+Mode switched back to default
+Actual result
+Error message appears: "Cannot switch into given mode 'default'".
 
-<!--- MAGETWO-86654 -->* X-Magento-Vary & PHPSESSID now have the same expiration time
+https://github.com/Etty
+Etty
 
-<!--- MAGETWO-85290 -->* 
 
-<!--- MAGETWO-85770 -->* 
 
-<!--- MAGETWO-85872 -->* 
-<!--- MAGETWO-86484 -->* 
-<!--- MAGETWO-86277 -->* 
-<!--- MAGETWO-86154 -->* 
-<!--- MAGETWO-85992 -->* 
 
-<!--- MAGETWO-88146 -->*  
+<!--- MAGETWO-87124 -->*  Update the Emogrifier dependency to ^2.0.0 
 
-<!--- MAGETWO-88115 -->*  
+pr #13132
 
-<!--- MAGETWO-87261 -->*  
+https://github.com/oliverklee
+Oliver Klee
+
+
+Emogrifer 2.0.0 does not introduce any backwards-compatibilty-breaking
+API changes. This version adds new features, fixes bugs and improves
+the resulting HTML. So the update should be reasonably safe.
+
+<!--- MAGETWO- 86654-->* X-Magento-Vary & PHPSESSID now have the same expiration time
+Fix undeclared dependency magento/zendframework1 by magento/framework #12990
+https://github.com/ihor-sviziev
+Ihor Sviziev
+
+https://github.com/magento/magento2/issues/12967
+
+
+<!--- MAGETWO-85290 -->* File Put Contents file with empty content. 
+
+https://github.com/nmalevanec
+Malyovanets Nickolas
+
+https://github.com/magento/magento2/issues/7467
+
+Expected result
+file.txt contains is created
+Actual result
+getting error The specified "file.text" file could not be written
+
+PR #962
+
+
+
+<!--- MAGETWO-85770 -->* Cannot subscribe to events with a number in name 
+https://github.com/Mobecls
+Mobecls
+https://github.com/magento/magento2/issues/5035
+
+I can not to subscribe on change of all sections in Stores ->Configuration using event admin_system_config_changed_section
+
+
+PR #12758
+
+
+<!--- MAGETWO-85872 -->* Fix PhpDoc to show correct parameter types 
+
+PhpDoc only shows string as type, although array is a valid parameter type as well.
+
+
+
+https://github.com/FreekVandeursen
+Freek Vandeursen
+
+
+
+
+
+<!--- MAGETWO-86484 -->* Fix jumping content on page reload in admin area 
+
+PR #12985
+https://github.com/avoelkl
+Anna Völkl
+This PR sets a min-height on the notices-wrapper, causing the page not to jump any more. 
+
+
+
+<!--- MAGETWO-86277 -->* Correctly construct Magento\Framework\Phrase 
+
+PR #12951	
+
+https://github.com/punkstar
+Nick
+
+
+
+
+
+<!--- MAGETWO-86154 -->* Wrong page cached for logged in user	
+X-Magento-Vary & PHPSESSID now have the same expiration time
+
+Partner reported that Cookie X-Magento-Vary has expiration "Session" - which means it is not considered expired until the browser is closed.
+Cookie PHPSESSID has finite expiration time (not Session) - by default 1 hour. The conflict arises when PHPSESSID cookie is already expired, but "X-Magento-Vary" cookie is still valid. In that case if Varnish storage is empty, it will request the backend (Magento) and get the content for not logged in user (because PHPSESSID is expired), but cache it for logged in user (because X-Magento-Vary is not expired).
+
+
+
+<!--- MAGETWO-85992 -->* Throw ValidationException for invalid xml 
+
+PR #12859 
+
+https://github.com/pmclain
+Patrick McLain
+
+This change ensures the offending file path is output in the error
+report.
+
+Currently, when malformed `$content` is fed into `\Magento\Config\Model\Config\Structure\Reader::processingDocument` and unhandled `\Exception` is thrown. The output fails to indicate the location of the offending file,
+
+
+
+<!--- MAGETWO-88146 -->*  Add ObserverInterface to the api 
+
+PR #13759
+
+https://github.com/fooman
+
+Kristof, Fooman
+
+Creating an observer that uses ObserverInterface should not trigger a patch level dependency on magento/framework.
+
+
+
+<!--- MAGETWO-88115 -->* Add RewriteBase directive template in .htaccess file into pub/static folder 
+
+PR #13678 
+Add RewriteBase directive template in .htaccess file into pub/static folder
+
+https://github.com/ccasciotti
+Cristiano Casciotti
+
+
+
+
+
+<!--- MAGETWO-87261 -->*  Edited doc block of the walk method in a Collection 
+
+PR #13373
+
+https://github.com/ByteCreation
+bytecreation
+
+The following callback is created by passing an array that consists of an object and a string. The method of that object will be used in the callback, and each model in the collection will be passed to the method as the first parameter. While this results in a successful callback, the doc block of the walk method of a collection incorrectly reports that it will only accept a string, while the following example uses an array.
+
+
 
 
 
 #### App framework
 
-<!--- MAGETWO-81802 -->* 
+<!--- MAGETWO-81802 -->* Magento 2.2.0rc23: Customer Grid Indexer not working 
 
-<!--- MAGETWO-80223 -->* 
+PR #10838
 
-<!--- MAGETWO-84003 -->* 
+Cutomer Grid index works properly while upgrading from 2.1 to 2.2
 
-<!--- MAGETWO-84016 -->* 
+The Customer Grid Indexer doesn't work, when reindexing via CLI.
+
+https://github.com/magento/magento2/issues/10838
+
+Actual result: 
+At this stage only problems occuring, which are caused by plugins from extern modules using deprecated functions, classes, etc.)
+
+ask oleskii for attribution
+
+
+<!--- MAGETWO-80223 -->* Fix syntax of expectException() calls 
+
+PR #11099
+https://github.com/schmengler
+Fabian Schmengler 
+https://github.com/magento/magento2/issues/11059
+
+It seems like during the transition to PHPUnit 6, setExpectedException($class, $message) has been bulk replaced by expectExcpeption($class, $message)
+
+But the new expectException() method only takes one parameter, namely the exception class. To check the message as well, a second method is needed: expectExceptionMessage()
+
+
+
+
+
+
+<!--- MAGETWO-84003 -->*  exception message is wrong and misleading in findAccessorMethodName() of Magento\Framework\Reflection\NameFinder 
+
+PR #12303
+
+https://github.com/magento/magento2/issues/9764
+
+https://github.com/RomaKis
+
+
+
+
+<!--- MAGETWO-84016 -->* Fixed 'Non-numeric value' warning on account create/save when DOB field is visible 
+
+PR #12302
+
+broken customer registration page when "Date of Birth" field is visible on the frontend.
+not working customer save method when DOB is visible
+
+https://github.com/magento/magento2/issues/12146
+
+Customer with empty "Date of Birth" cannot be saved even when it is not marked (or checked on the JS side) as mandatory.
+
+Vova Yatsyuk
+
+https://github.com/vovayatsyuk
+
+
 
 <!--- MAGETWO-84371 -->* 
+
+
+https://github.com/magento/magento2/issues/10210
+
+Transport variable can not be altered in email_invoice_set_template_vars_before Event
+We waht to change the payment_html for banktransfer invoices. Unfortunately the instruction is also sent in invioce email. And there the customer already has paid the bill.
+
+https://github.com/RomaKis
+
+
+
 
 <!--- MAGETWO-84372 -->* 
 
@@ -1319,53 +1582,240 @@ Nick Anstee
 
 ### Indexing
 
-<!--- MAGETWO-86446 -->* 
+<!--- MAGETWO-86446 -->* Updated cron documentation URL to 2.2 
 
-<!--- MAGETWO-83503 -->* 
+PR #13050
+The documentation for setting up the cron jobs has updated significantly since 2.0/2.1, as Magento now automates the creation of the crontab. It is now worth pointing users to the new version of the documentation, as the installation instructions on the old documentation are now redundant.
+
+https://github.com/robbie-thompson
+
+Robbie Thompson
+
+
+
+
+
+<!--- MAGETWO-83503 -->* Add command to view mview state and queue 
+
+PR #12122
+
+I like the ability to view the mview queue in realtime as its being processed, it can be quite helpful when debugging indexing issues.
+
+This command will actually show how many items are in the list pending processing, as well information from the `mview_state` table.
+
+
+
+https://github.com/convenient
+
+Luke Rodgers
 
 
 ### Infrastructure
-<!--- MAGETWO-86682 -->* 
-<!--- MAGETWO-86542 -->* 
-<!--- MAGETWO-86505 -->* 
-<!--- MAGETWO-86501 -->* 
 
-<!--- MAGETWO-85698 -->* 
-<!--- MAGETWO-85694 -->* 
 
-<!--- MAGETWO-85332 -->* 
 
-<!--- MAGETWO-85292 -->* 
+
+<!--- MAGETWO-86542 -->* Product details page zoom issue when dropdown menu have overlap area with it. Zoom works fine, but when hover on category dropdown menu to the overlap area of product image and dropdown menu, the zoom is active abnormally, even the mouse is still on the dropdown menu.
+
+PR 13084
+
+https://github.com/magento/magento2/issues/5129
+
+Mayank Zalavadia
+https://github.com/mayankzalavadia
+
+
+
+<!--- MAGETWO-86505 -->* Fix for requireJS loading issues (for ad blockers) 
+
+PR #13061
+
+https://github.com/Yonn-Trimoreau
+Yonn Trimoreau
+When uBlock (or any ad blocker) forbids `trackingCode.js` file from loading, the exception thrown by RequireJS breaks the JS execution flow, causing unexpected and random issues elsewhere on the website.
+This fix catches the RequireJS script loading error, displays it in the console as is and returns true, to avoid execution flow to be broken.
+
+
+
+
+
+<!--- MAGETWO-86501 -->* Fix issues caused by using continue in loops #13076
+https://github.com/ihor-sviziev
+Ihor Sviziev
+The main goal of this PR is to remove not used count in templates.
+
+
+
+
+
+
+
+<!--- MAGETWO-85698 -->* Remove deprecation without alternative #11070
+
+https://github.com/schmengler
+Fabian Schmengler 
+https://github.com/magento/magento2/issues/10133
+
+Please add your expectations for @deprecated annotations
+I try to create own code based on the \Magento\Checkout\Controller\Cart\Add class. I see that this class uses \Magento\Checkout\Model\Cart class that has @deprecated annotation. I could use other class in my code but I don't know your expectations - which other class does Magento team use instead of deprecated \Magento\Checkout\Model\Cart?
+
+It would be more pleasantly if @deprecated annotations will have comments that point to expected replacements. 
+
+
+
+
+
+
+<!--- MAGETWO-85694 -->* Create CODE_OF_CONDUCT.md #12723
+https://github.com/ishakhsuvarov
+Ievgen Shakhsuvarov
+ A code of conduct defines standards for how to engage in a community. It signals an inclusive environment that respects all contributions. It also outlines procedures for addressing problems between members of your project's community.
+
+
+
+
+<!--- MAGETWO-85332 -->* Fix error loading theme configuration on PHP 7.2 #12606
+https://github.com/Alanaktion
+Alan Hardman
+
+This fixes an issue loading theme configuration on PHP 7.2 by checking that `$parentPathPieces` is an array before counting it, avoiding an error when the value is `NULL`. 
+
+
+
+
+<!--- MAGETWO-85292 -->* There is invalid type in PHPDoc block of \Magento\Framework\Data\Tree::getNodeById() #964
+
+ There is invalid type in PHPDoc block of \Magento\Framework\Data\Tree::getNodeById()
+
+https://github.com/RomaKis
+ Roman K.
+https://github.com/magento/magento2/issues/8507
+There is invalid type in PHPDoc block of \Magento\Framework\Data\Tree::getNodeById() 
+
+
 
 
 ### Newsletters
 
-<!--- MAGETWO-83999 -->* 
+<!--- MAGETWO-83999 -->* Order confirmation email contains non functioning links
+https://github.com/magento/magento2/issues/12261
+
+On the bottom of the Order Confirmation email (and all other emails sent to the customer) there are two links "About Us" and "Customer Service" which do not work - view screenshot
+
+https://github.com/RomaKis
+
+Roman K.
+
+
+
 <!--- MAGETWO-85783 -->* 
 
+https://github.com/Styopchik
+Styopchik
+
+Newsletter subscription success email not sent after confirmation
+Expected result
+Should receive the Newsletter Subscription Success email.
+
+Actual result
+No email is received, but database is changed from STATUS_UNCONFIRMED to STATUS_SUBSCRIBED.
+
+https://github.com/magento/magento2/issues/12439
+
+
 <!--- MAGETWO-86435 -->* 
-<!--- MAGETWO-86562 -->* 
-<!--- MAGETWO-86447 -->* 
+
+
+https://github.com/devamitbera
+
+Amit Bera
+
+https://github.com/magento/magento2/issues/12787
+
+Newsletter\Model\Subscriber::loadByEmail() does not use MySQL index 
+
+Expected result
+An index should be use to retrieve the subscriber instantly
+Actual result
+No index is used, resulting in a slow "Using where" query like this:
+
+
+<!--- MAGETWO-86562 -->* Fix Newsletter Subscribe Workflow 
+
+PR #13044
+
+https://github.com/torhoehn
+Torben Höhn
+https://github.com/magento/magento2/issues/12876
+
+
+Multiple newsletter confirmation emails sent
+
+Expected result
+There are a couple different results that I'll leave to the Magento core team:
+
+If someone signed up for a Newsletter subscription as a guest, have confirmed that subscription, and then create an account with the same email—then the Magento application could update the Newsletter Subscribers with the customer data and leave the status as Subscribed, thus no Need to Confirm email is sent since they've already confirmed they wanted to receive the newsletter.
+The Magento application could change the guest email status to STATUS_UNCONFIRMED, update the guest email with the customer data, and send the Need to Confirm email for the new account.
+Actual result
+Three Need to Confirm emails are received.
+
+
+
+
+
+<!--- MAGETWO-86447 -->* Solution For Newsletter subscribe button title wrapped 
+
+PR #13041
+
+monaemipro
+https://github.com/monaemipro
+https://github.com/magento/magento2/issues/12320
+
 
 
 ### Orders
 
-<!--- MAGETWO-75840 -->* 
-<!--- MAGETWO-82577 -->* 
+<!--- MAGETWO-75840 -->* When 2 stores are set up, now it's possible to add products from both stores to the same shopping cart and place 1 order for both stores.
+Recently Ordered block displays only one of two products if they were bought from different store views
 
-<!--- MAGETWO-83343 -->* 
+When 2 stores are set up, it's possible to add products from both stores to the same shopping cart and place 1 order for both stores. However, in this case, Recently Ordered block in Storefront displays only one product
 
-<!--- MAGETWO-83410 -->* 
 
-<!--- MAGETWO-83552 -->* 
+<!--- MAGETWO-82577 -->* #11067 -- Translate order getCreatedAtFormatted() to store locale (by @JeroenVanLeusden)
+Add `getDefaultStoreLocale()` to allow fetching scoped values. Use this in `getCreatedAtFormatted()` so `created_at` date of order will be translated in emails to locale being used in that store view.
 
-<!--- MAGETWO-83740 -->* 
+https://github.com/JeroenVanLeusden
 
-<!--- MAGETWO-83783 -->* 
 
-<!--- MAGETWO-83868 -->* 
 
-<!--- MAGETWO-83910 -->* 
+<!--- MAGETWO-83410 -->*  Potential error on order edit page when address has extension attributes #11787
+
+
+
+
+<!--- MAGETWO-83552 -->* Sets the invoice ID when an invoice is set on the credit memo
+Loads the invoice by id on getInvoice if an invoice ID is set on the credit memo
+
+https://github.com/magento/magento2/issues/11669
+
+Expected result
+Because I'm refunding an invoice, I'd expect the invoice ID to be saved on the credit memo.
+When I create a credit memo from the invoice in the admin pages, the invoice ID is saved on the credit memo
+
+
+
+
+<!--- MAGETWO-83740 -->* Credit memos can have the state open: `\Magento\Sales\Model\Order\Creditmemo::STATE_OPEN`.
+This means that it is possible to have a creditmemo with an ID which still has to be refunded.
+I'm creating a module that introduces a validation step for refund payments before the actual refund can take place. It uses the open state of credit memos to wait for approval and then refunds the creditmemo. Right now the credit memo is not refundable once it has an ID. I think this is incorrect in case of open credit memos.
+
+Even existing credit memos should be refundable if their state is open #11550
+
+
+<!--- MAGETWO-83783 -->* Shipping method fixtures not compatible with getShippingMethod(true) in OrderCreateTest #12227
+Test `Magento\Sales\Service\V1\OrderCreateTest` has an incorrect shipping method fixture which produces an error when ever something tries to get the orders shipping method as an object.
+
+
 
 <!--- MAGETWO-84219 -->* 
 
@@ -1388,107 +1838,460 @@ Nick Anstee
 
 
 ### Payment methods
-<!--- MAGETWO-86940 -->* 
+<!--- MAGETWO-86940 -->* Dedicated debug logging files for Payment and Shipping activity
+As a Magento developer, I want to have dedicated log files for payment and shipping activity so that it's easy for me to find information relevant to one particular area of functionality and it can be separated from other debugging log noise.
 
-<!--- MAGETWO-84588 -->* 
+Today all general debug information, if logging is turned on, gets compiled into one file, which makes it hard to find what developers are looking for due to all the noise (example: lots of entries about cache invalidation). There is not enough control to decouple logging info based on functional area.
 
-<!--- MAGETWO-84587 -->*  
+The proposal is to create dedicated payment and shipping debug log files to store information particular to those functional areas.
 
 
-<!--- MAGETWO-75497 -->* 
 
-<!--- MAGETWO-81322 -->* 
 
-<!--- MAGETWO-81395 -->* 
+<!--- MAGETWO-84588 -->* Multishipping for Cybersource: Negative flows on storefront
+Added possibility to use Cybersource payment method on multi-shipping
 
-<!--- MAGETWO-82910 -->* 
+enhancement
 
-<!--- MAGETWO-83959-->* 
+<!--- MAGETWO-84587 -->*  Added multi-shipping support for Cybersource payment method
 
-<!--- MAGETWO-86112 -->* 
+enhancement
 
-<!--- MAGETWO-86297 -->* 
+<!--- MAGETWO-75497 -->* Logged out customers can't see previously saved credit cards anymore
 
-<!--- MAGETWO-86308 -->* 
 
-<!--- MAGETWO-86351 -->* 
+<!--- MAGETWO-81322 -->* Shipping address missing after canceled payment redirect to checkout/#payment
 
-<!--- MAGETWO-84639 -->* 
+Actual result
+The shipping address is not loaded.
+Address is still present in db.
+Other quote info like products/prices are loaded.
 
-<!--- MAGETWO-86426 -->* 
+I am also facing same issue, when we cancel the payment it take us to cart instead of checkout page and all the fields get emptied.
+https://github.com/magento/magento2/issues/11247
 
-<!--- MAGETWO-84647 -->* 
+Payment method QuickPay
+
+
+<!--- MAGETWO-81395 -->* 3rd party developers have the possibility to customize payment errors messages for payment integrations based on Magento Payment Provider Gateway, more documentation will be available after merge 
+
+This task is extremely valuable to implement in Magento. First, this would eliminate a large volume of support issues that come in around this functionality (the above GH issue list may not even include all issues). In addition, it is a very commonly requested feature from the community - partners, SIs, extension developers. As an example the group developing the latest version of the Braintree payments extension requested this capability just a few weeks ago. Finally, this enables building much better front-end experiences for the Shoppers and would most certainly increase Magento store conversions. 
+The team already has a working prototype completed, so productionalizing this would not be a large effort. Considering very high value and relatively low effort to implement, I consider this a "low hanging fruit" effort worth pulling into the closest patch release. 
+
+
+
+
+<!--- MAGETWO-82910 -->* Fixed Billing Agreements configuration
+PayPal disappears as Payment Method from the Checkout page if admin turned off Billing Agreement functionality. At the same time PayPal buttons are still present on the Shopping Cart page and can be used.
+
+actual result: PayPal Express Checkout is absent
+
+
+
+
+
+<!--- MAGETWO-83959-->* If you have a custom *offline* payment method it automatically falls in exception group used while fetching all payment methods this cause that payment method don't have *value* key in the definition and as the result - undefined index on order view page in admin panel. My fix adds key *value* as null and it fixes the notice.
+https://github.com/magento/magento2/issues/3596
+
+I am getting following notice when choose order page in admin panel.
+I am getting this notice when set transaction id in my payment module.
+
+If you have a custom offline payment method it automatically falls in exception group used while fetching all payment methods this cause that payment method don't have value key in the definition and as the result - undefined index on order view page in admin panel. My fix adds key value as null and it fixes the notice.
+
+https://github.com/madonzy
+Alex
+
+
+
+<!--- MAGETWO-86112 -->*  Braintree "Place Order" button is disabled after failed validation 
+
+PR #12902
+Ievgen Sentiabov
+https://github.com/joni-jones
+After failed payment form validation the "Place Order" button is still disabled because `hosted-fields` triggers an error on validation and `isPlaceOrderActionAllowed` is still returns `false`.
+
+Added handler to enable "Place Order" button on failed validation
+
+
+
+
+<!--- MAGETWO-86297 -->* Fix vault_payment_token install script type where column defaults were not set 
+
+PR #12965
+
+https://github.com/helloitsluke
+helloitslukeThe is_active and is_visible columns were defaulting to false, however should default to true.
+
+The is_active and is_visible columns were defaulting to false, however should default to true.
+
+
+
+<!--- MAGETWO-86308 -->* Substitution payment method - Incorrect message 
+
+PR #12731
+https://github.com/zamoroka
+zamoroka
+
+https://github.com/magento/magento2/issues/12209
+Expected result
+We should have message "<payment_method_name> is not available. You still can process offline actions." OR we should have message "Payment method is not available. You still can process offline actions.
+
+Actual result
+We have message "is not available. You still can process offline actions."
+
+
+
+
+<!--- MAGETWO-86351 -->* PayPal pop up does not work with virtual product (gift card)
+Fixed PayPal popup for virtual products
+paypal pop up doesnt show when you're ordering gift cards
+reproducible for a customer without any address, when he tries to place an order with one virtual product via Onepage Checkout.
+In this case, billing address is optional (PayPal Express doesn't require it) and shipping address for a virtual product isn't required.
+So we don't have any address on Review & Payments step
+
+
+
+
+
+
+<!--- MAGETWO-84639 -->* Correctly set payment information when using paypal 
+
+PR #12401
+
+https://github.com/therool
+Ričards Zālītis
+
+Correctly set payment method information when using PayPal Express so the checkout agreements data is correctly added to the request and validated correctly. 
+Edited the `Magento_Paypal
+/js/action/set-payment-method` to use the `Magento_Checkout/js/action/set-payment-information` so the additional payment/checkout data is correctly added.
+Magento 2.2 Paypal Can't Accept Checkout Agreements Before Routing to PayPal 
+
+This could potentially be a module conflict, but after stepping through and inspecting the checkout code I can't find any obvious third-party interference.
+
+When going through standard checkout and selecting PayPal Express at the payment step, there is an agreements checkbox present. However, checking this box does nothing as the agreements data is not parsed and passed to the set-payment-information API. This triggers the CheckoutAgreements validation plugin which fails to validate with no agreements data.
+
+When I override the PayPal JS to add the agreements data to the paymentData before sending to the API, it passes validation but then fails because PayPal doesn't allow setting extension data.
+
+
+
+<!--- MAGETWO-86426 -->* Orders placed using PayPal Express Checkout are being populated in the archived orders grid.
+STEPS TO REPLICATE:
+
+Go to any product > Add to Cart > Proceed through checkout
+Enter required shipping information > select shipping rate > Continue
+Select payment method PayPal Express Checkout
+Login to the PayPal account > submit order
+Note the order number
+Go to Sales > Operations > Orders
+Notice the order is displaying as expected
+Go to Sales > Archive > Orders
+Notice the same order is listed in the archive orders
+EXPECTED RESULTS:
+The order should not be listed in the archive orders
+
+ACTUAL RESULTS:
+The order is listed in the archive orders
+
+
+<!--- MAGETWO-84647 -->* Handle transparncy correctly for watermark 
+
+PR #11060
+https://github.com/magento/magento2/issues/10661
+
+Elze Kool
+https://github.com/elzekool
+
 
 
 
 ### Performance
 
-<!--- MAGETWO-86744 -->* 
+<!--- MAGETWO-86744 -->* magento/module-catalog is_null change to strict comparison 
+
+PR #13171
+
+ Optimization: magento/module-catalog is_null change to strict comparison
+ https://github.com/Coderimus
+ Alexander Shkurko
+
+ This is the one of the optimization PR linked with the is_null() change. I decided to do them per module just to avoid any mistake during delivery and review.
+Best regards,
+
+
+
+
+
+
 
 <!--- MAGETWO-75769 -->* Magento now caches popular search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached.
 
-<!--- MAGETWO-86743 -->* 
 
-<!--- MAGETWO-86742 -->* 
 
-<!--- MAGETWO-88265 -->* unresolved
+
+<!--- MAGETWO-86743 -->* Optimization: magento/module-tax is_null change to strict comparison 
+
+PR #13170
+
+This is the one of the optimization PR linked with the `is_null()` change. I decided to do them per module just to avoid any mistake during delivery and review.
+https://github.com/Coderimus
+Alexander Shkurko
+
+
+
+
+
+<!--- MAGETWO-86742 -->* magento/module-eav is_null change to strict comparison … 
+
+PR #13169
+Alexander Shkurko
+https://github.com/Coderimus
+
+Optimization: magento/module-eav is_null change to strict comparison 
+*Micro-optimizations for Magento\Tax*
+ It checks next: `is_null must be avoided. Use strict comparison instead.`
+Some classes are under `// @codingStandardsIgnoreFile` such as Magento\Tax module models and cannot be checked during static tests. In this PR I replaced `is_null` with strict comparison only for models in Magento\Tax module.
+This is the one of the optimization PR linked with the is_null() change. I decided to do them per module just to avoid any mistake during delivery and review.
+
+
+
 
 ### Quote
 
-<!--- MAGETWO-86439 -->* 
+<!--- MAGETWO-86439 -->* Feature minimum order amount notice issue 
+During currency switch notice message shows wrong calculation of minimum order amount.
 
-<!--- MAGETWO-86434 -->* 
 
-<!--- MAGETWO-86430 -->* 
+PR #13039
+This is about notice message of min order amount on cart page.When we have set min order amount and on cart page someone change currency, user see same amount and only currency symbol changed. It should recalculate amount also.
+Instead of currency convert, we use price helper then it gives us re calculated price amount in notice message.
+https://github.com/neeta-wagento
+Neeta Kangiya
+
+
+
+
+<!--- MAGETWO-86434 -->* The quote address fields length expanded in the database
+field lengths differ across many tables 
+
+Steps to reproduce
+place an order
+enter a very wide telephone number (+20 characters)
+order
+Expected result
+the very long telephone number should appear in the database as the field is 255 characters long in sales_order_address
+Actual result
+the telephone number gets cut off after 20 characters as the quote_order_address field is just set to 20 characters VARCHAR
+
+
+PR #13015
+
+https://github.com/magento/magento2/issues/10869
+https://github.com/dverkade
+Danny Verkade - Cream
+
+
+
+<!--- MAGETWO-86430 -->* Attribute with "Catalog Input Type for Store Owner" equal "Fixed Product Tax" for Multi-store 
+
+
+PR #13019
+https://github.com/dverkade
+Danny Verkade - Cream
+
+https://github.com/magento/magento2/issues/12393
+Attribute with "Catalog Input Type for Store Owner" equal "Fixed Product Tax" did not work correctly for multi-stores.
+Expected result
+The new line with website column.
+Actual result
+The new line without website column.
+
+
+
 
 <!--- MAGETWO-85518 -->* Shipping methods list is displaying correctly despite negotiable quotes functionality that caused displaying only one selected method, even after reorder.
 
-<!--- MAGETWO-86595 -->* 
+All Shipping methods not displaying when reordering or going backward in checkout process from payment page
+EXPECTED RESULTS:
+All shipping methods should be shown when reordering or going backward in the checkout process/restarting the checkout process
+
+ACTUAL RESULTS:
+Only previously selected method shown when reordering or going backward in the checkout process/restarting the checkout process
+
+B2B 
+
+
+
+<!--- MAGETWO-86595 -->* Integrity constraint violation error after re…
+PR #13036
+Vinay Shah
+https://github.com/vinayshah
+https://github.com/magento/magento2/issues/12705
+Integrity constraint violation error after reordering product with custom options
+Expected result
+New order page is opened
+
+Actual result
+Unable to reorder, error is thrown and logged in var/report
+
+
 
 
 
 ### Reports
 
-<!--- MAGETWO-84981 -->* 
+<!--- MAGETWO-84981 -->* Trying to get data from non existent products 
+When calling Products in Cart report, it called data of deleted products resulting in exception trying to access $productData[$item->getProductId()]
 
-<!--- MAGETWO-88173 -->* 
+Steps to reproduce
+Delete a product recently sold
+Open Reports > Marketing > Products in Cart
+Expected result
+List of products
+Actual result
+Blank list
+
+PR #12539
+
+Trying to get data from non existent products #12539
+https://github.com/angelo983
+angelo983
+
+
+
+
+<!--- MAGETWO-88173 -->* Fix for ordered products report
+ISSUE:
+Exporting a CSV fo the Products Orderd Report returns an empty CSV containing only the column headers and no data.
+
+STEPS TO REPLICATE:
+
+Go to Reports > Products > Ordered
+Enter a From and To date > click Refresh
+Notice data of products that have been ordered.
+Go to Export To > select CSV > click Export
+Notice the CSV file does not contain any of the report data other than the column headers
+EXPECTED RESULTS:
+Exported CSV file should contain the report data
+
+ACTUAL RESULTS:
+Exported CSV file does not contain the report data
 
 
 
 
 ### SalesRule
 
-<!--- MAGETWO-73303 -->* 
+<!--- MAGETWO-73479 -->* Cart Rules are not excluding Bundle Products. EXPECTED RESULTS:
+The coupon code should not be able to be applied to the bundle product
 
-<!--- MAGETWO-73479 -->* 
+ACTUAL RESULTS:
+The coupon code that should exclude the bundle product is able to be applied to the product
 
-<!--- MAGETWO-71393 -->* 
 
-<!--- MAGETWO-86780 -->* 
 
-<!--- MAGETWO-86786-->* 
 
-<!--- MAGETWO-87013-->*  
+<!--- MAGETWO-71393 -->* Incorrect catalog rule price for bundle product with custom option. 
+Corrected calculation of catalog rule price applied for bundle product with custom option. found that Magento calculates catalog rule price in a different way that it happened before and after manual checking of calculations looks like it's a bug.
+
+
+
+
+
+<!--- MAGETWO-86780 -->* Cart Price calculates "Cart Price Rule shipping discount" correctly.
+
+NegotiableQuote plugin breaks Cart Price Rule shipping discount	
+
+
+EXPECTED RESULTS:
+"No Payment Required" payment method is shown and are able to place the order
+
+ACTUAL RESULTS:
+"No Payment Required" payment method is not shown and upon placing the order, observe that the error is returned: "Payment method is not available".
+
+
+
+
+<!--- MAGETWO-86786-->* Fix missing discount label in checkout 
+
+PR #13141
+
+
+
+<!--- MAGETWO-87013-->*  Nesting level for categories now is displayed correctly in Cart Price Rules, for categories that have nesting level more than 3
+Merchant reports when creating a new Cart Price Rule, under Actions or Conditions, when using Category as part of the condition, drilling down to the specific categories seem to stop at the third level. We cannot drill any more past that.
+
+If you click the + icon, the page just flickers, but subcategories are not listed down.
+
+
 
 <!--- MAGETWO-85960-->* 
+
+https://github.com/p-bystritsky
+p-bystritsky
+
+https://github.com/magento/magento2/issues/12817
+
+Expected result
+Coupon should be available again after all those steps.
+Actual result
+I can't use coupon again. It says Coupon code is not valid.
+
+Coupon code with canceled order
+
+teps to reproduce
+Add new coupon, For example to reproduce this bug easily.
+Do an order and apply this coupon code.
+Go to admin area and cancel this order.
+
 
 
 ### Sample data
 
-<!--- MAGETWO-84180 -->* 
+
+
+<!--- MAGETWO-84180 -->* Add a --no-update option to sampledata:deploy and sampledata:remove commands 
+
+This PR adds a `--no-update` flag for sampledata commands. It will be passed to composer, so that the user can add and remove sampledata modules without automatic `composer update`. This way, the actual update can be postponed to a manual composer execution. It gives the developer more control and is especially useful in scenarios where running composer from within bin/magento results in permission issues.
+
+PR #12359 
+
+https://github.com/schmengler
+Fabian Schmengler 
 
 
 ### Scope
 
 <!--- MAGETWO-88114 -->* Product set to one website resets correctly for all websites after special price scheduled update ends
 
+Product’s scope is set to one website/store/store view, then a special price is set by scheduled update. At the end of the special price event, the product’s scope is incorrectly set to all websites.
+
+EXPECTED RESULTS:
+The product should still be activated in only one website at the end of the scheduled update event.
+
+ACTUAL RESULTS:
+The product is incorrectly activated for all websites when the scheduled update event ends.
+
+
+
 ### Search
 
-<!--- MAGETWO-81901 -->* 
+<!--- MAGETWO-85637 -->* Magento 2 is not showing Popular Search Terms 
 
-<!--- MAGETWO-85637 -->* 
 
-<!--- MAGETWO- 84370-->* Layer navigation showing wrong product count 
+PR #1024
+
+https://github.com/p-bystritsky
+p-bystritsky
+https://github.com/magento/magento2/issues/10743
+
+
+
+
+
+
+
+<!--- MAGETWO- 84370
+-->* Layer navigation showing wrong product count 
 
 PR #12063
 https://github.com/magento/magento2/issues/11946
@@ -2237,11 +3040,11 @@ p-bystritsky
 
 
 
-<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 86982 86846 86772 86770 86767 86763 86015 86002 73161 80908 84209 84992 77767 84480 83329 86117 83977 84804 84413 83974 82062 80342 80738 85947 83676 86132 85661 77840 82061 85842
+<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 86982 86846 86772 86770 86767 86763 86015 86002 73161 80908 84209 84992 77767 84480 83329 86117 83977 84804 84413 83974 82062 80342 80738 85947 83676 86132 85661 77840 82061  81901 73303 83343 83910
  -->* 
  -->  
 
-<!--- NOT A BUG   MAGETWO-73011 MAGETWO-83817-->
+<!--- NOT A BUG   MAGETWO-73011 MAGETWO-83817 86682-->
 
 <!--- WON'T FIX MAGETWO-72116 MAGETWO-64518 MAGETWO-64534 MAGETWO-72116 MAGETWO-72116 MAGETWO-83818 MAGETWO-84772 MAGETWO-84773 MAGETWO-85138 MAGETWO-85983 81082 77425 70376-->
 
