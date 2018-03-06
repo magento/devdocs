@@ -558,7 +558,7 @@ Rules for usage of the tag:
 * Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
 * Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
 
-**DocBlock for the Intreface**
+**DocBlock for the Interface**
 {% highlight php startinline=true %}
 /**
  * Interface for mutable value object for integer values
