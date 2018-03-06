@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add sitemap and robots.txt | Magento 2 Developer Documentation</title>
+	<title>Add site map and search engine robots | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1754,12 +1754,12 @@
         
         
         
-        <li class="nav-level2 active " id="add-sitemap-and-robots.txt">
+        <li class="nav-level2 active " id="add-site-map-and-search-engine-robots">
             
             
         
             
-            <a href="/guides/v2.3/cloud/trouble/robots-sitemap.html">Add sitemap and robots.txt</a>
+            <a href="/guides/v2.3/cloud/trouble/robots-sitemap.html">Add site map and search engine robots</a>
             
 
             
@@ -1965,7 +1965,7 @@
 
           
 
-          <span property="name">Add sitemap and robots.txt</span>
+          <span property="name">Add site map and search engine robots</span>
 
         
 
@@ -1988,7 +1988,7 @@
 
 	
 
-	<h1 class="page-heading">Add sitemap and robots.txt</h1>
+	<h1 class="page-heading">Add site map and search engine robots</h1>
 
   
 
@@ -1996,59 +1996,78 @@
 </section>
 
 
-			<p>When creating and adding your sitemap and robots.txt to your store, you may run into issues due to the read-only environment. You may receive errors such as the following:</p>
+			<p>The <code class="highlighter-rouge">pub</code> directory is <em>read only</em> in the Magento Commerce (Cloud) Integration, Staging, and Production environments. An attempt to generate and write the <code class="highlighter-rouge">sitemap.xml</code> file to the root directory results in the following error:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The path ".:///app/app/" is not writable.
 Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
 </code></pre></div></div>
 
-<p>To best add these files, please review the steps below.</p>
-
-<p>For Magento Commerce (Cloud) 2.2, you do not need to move the files or have a redirection added. If you used these workarounds before 2.2, you can return the files to the original locations and ticket to have the redirection removed.</p>
-
-<h2 id="generate">Generate sitemap and robots</h2>
-<p>Access an environment fully configured for your site:</p>
+<p>To avoid this error, you can only write to specific directories, such as <code class="highlighter-rouge">var</code>, <code class="highlighter-rouge">pub/media</code>, or <code class="highlighter-rouge">app/etc</code>. When using Magento Commerce (Cloud), you must use a redirect in the <em>read-only</em> environments.  Generate the files on your local workstation and upload them to one of the write-enabled directories using the following, appropriate environment:</p>
 
 <ul>
-  <li>For Starter, access an active branch for example <code class="highlighter-rouge">staging</code></li>
-  <li>For Pro, access your <code class="highlighter-rouge">master</code> environment in Integration</li>
+  <li>For Starter, access the <code class="highlighter-rouge">staging</code> branch</li>
+  <li>For Pro, access the <code class="highlighter-rouge">integration</code> branch</li>
 </ul>
 
-<p>Generate your <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>:</p>
+<h4 id="to-add-a-sitemapxml-file">To add a <code class="highlighter-rouge">sitemap.xml</code> file:</h4>
 
 <ol>
-  <li>Log into the Magento Admin.</li>
-  <li>Navigate to <strong>Marketing</strong> &gt; <strong>Site Map</strong>.</li>
-  <li>Click <strong>Add Sitemap</strong> to generate a new site map. The file saves as <code class="highlighter-rouge">sitemap.xml</code>.</li>
-  <li>Navigate to Stores &gt; Configuration &gt; Design.</li>
-  <li>Select options and update <code class="highlighter-rouge">robots.txt</code>.</li>
-  <li>Save your configuration.</li>
-</ol>
-
-<p>For additional information, see <a href="http://docs.magento.com/m2/ee/user_guide/marketing/sitemap-xml.html" target="_blank">Using a Sitemap</a> and <a href="http://docs.magento.com/m2/ee/user_guide/marketing/search-engine-robots.html" target="_blank">Search Engine Robots</a>.</p>
-
-<h2 id="files">Import files to environment</h2>
-<p>If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use <code class="highlighter-rouge">rsync</code> or  <code class="highlighter-rouge">scp</code> through a terminal. If you completed the commands on your local, move the files to the correct location. The following example uses <code class="highlighter-rouge">rsync</code>.</p>
-
-<p>Move and add the files to your Git branch:</p>
-
-<ol>
-  <li>SSH into the environment you created the files.</li>
+  <li>On your local branch, access the Magento Admin panel.</li>
+  <li>On the <em>Marketing</em> menu, click <strong>Site Map</strong>.</li>
+  <li>In the <em>Site Map</em> view, click <strong>Add Sitemap</strong>.</li>
   <li>
-    <p>Use <code class="highlighter-rouge">rsync</code> to move the files to your local. The format of the command is <code class="highlighter-rouge">rsync -azvP &lt;source&gt; &lt;destination&gt;</code>.</p>
+    <p>In the <em>New Site Map</em> view, enter the following values:</p>
 
-    <p>rsync -azvP <source on="" environment="" /> <local machine="" user="" name="">@<local machine="" host="" or="" IP="">:pub/media/</local></local></p>
+    <ul>
+      <li><strong>Filename</strong>:<code class="highlighter-rouge">sitemap.txt</code></li>
+      <li><strong>Path</strong>:<code class="highlighter-rouge">"/media/"</code></li>
+    </ul>
   </li>
-  <li>SSH into the environment you want to move the files into.</li>
+  <li>Click <strong>Save &amp; Generate</strong>.</li>
+  <li>Import the generated files to the <code class="highlighter-rouge">pub/media</code> directory on the server.</li>
+  <li>Log in to the remote environment using SSH.</li>
   <li>
     <p>Move the files into the <code class="highlighter-rouge">/pub/media/</code> directory using the rsync command:</p>
 
-    <p>rsync -azvP pub/media/ <environment machine="" user="" name="">@<environment machine="" host="" or="" IP="">:pub/media/</environment></environment></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync <span class="nt">-azvP</span> pub/media/ &lt;user_name&gt;@&lt;environment_IP_address&gt;:pub/media/
+</code></pre></div>    </div>
   </li>
-  <li>Enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">ticket with Support</a> to have URL rewrite rules added for <code class="highlighter-rouge">sitemap.xml</code> and <code class="highlighter-rouge">robots.txt</code>.</li>
+  <li>This results in a <code class="highlighter-rouge">www.example.com/media/sitemap.xml</code> path, so you must submit a Support ticket to apply a redirect for your generated files.</li>
 </ol>
 
-<p>When the redirects are completed, keep these files updated in that file location for your Git branches during deployment.</p>
+<div class="bs-callout bs-callout-warning" id="warning">
+  <p>Do not change the location of the files during deployment.</p>
+</div>
+
+<h4 id="to-add-a-robotstxt-file">To add a <code class="highlighter-rouge">robots.txt</code> file:</h4>
+
+<ol>
+  <li>On your local branch, access the Magento Admin panel.</li>
+  <li>On the <em>Content</em> menu, click <strong>Configuration</strong>.</li>
+  <li>In the <em>Design Configuration</em> view, click <strong>Edit</strong> for the Global Website.</li>
+  <li>In the <em>Main Website</em> view, click <strong>Search Engine Robots</strong> in the <em>Other Settings</em> section.</li>
+  <li>Select options and update the <code class="highlighter-rouge">robots.txt</code> file.</li>
+  <li>Click <strong>Save Configuration</strong>.</li>
+</ol>
+
+<h2 id="rewrite-using-fastly-vcl-snippet">Rewrite using Fastly VCL snippet</h2>
+<p>You can generate the <code class="highlighter-rouge">sitemap.xml</code> file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+
+<h4 id="to-use-a-fastly-vcl-snippet-for-redirect">To use a Fastly VCL snippet for redirect:</h4>
+<p>Create a custom VCL snippet to rewrite the path for <code class="highlighter-rouge">sitemap.xml</code> to <code class="highlighter-rouge">/media/sitemap.xml</code> using the <code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">content</code> key and value pairs.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> 
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sitemapxml_rewrite"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url.path ~ </span><span class="se">\"</span><span class="s2">^/?sitemap.xml$</span><span class="se">\"</span><span class="s2"> ) { set req.url = </span><span class="se">\"</span><span class="s2">/media/sitemap.xml</span><span class="se">\"</span><span class="s2">; }"</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-tip" id="tip">
+  <p>When you upgrade from Magento version 2.1 to version 2.2, enter a Support ticket to remove any existing redirects for these files.</p>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
