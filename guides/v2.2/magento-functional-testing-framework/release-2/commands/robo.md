@@ -148,6 +148,8 @@ Allure v1.x.x | Allure v2.x.x
 
 `generate:tests`   | Generate all Tests based on specific module load order of the Magento instance
 `generate:tests --force`   | Generate all Tests regardless of whether a Magento instance is available
+`generate:tests --config singleRun`   | Generate tests with a manifest file containing only a path to the generated dir in the resulting testManifest.
+`generate:tests --config parallel --nodes <n>`   | Generate tests with a subdirectory called 'groups' containing <n> .txt files with tests listed ordered across files from largest to smallest (based on number of actions).
 
   
 #### self
