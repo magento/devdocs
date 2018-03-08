@@ -235,87 +235,558 @@ unresolved
 
 ### Catalog
 
-<!--- MAGETWO-71662 -->* 
 
-<!--- MAGETWO-86227 -->* 
+<!--- MAGETWO-87447 -->*  Problem happens during updating product stock item data via REST Post/PUT request /V1/products when previously product was created via REST API call without specified ?stock_item? in extension attributes of call Body.
 
-<!--- MAGETWO-87447 -->*  
 
-<!--- MAGETWO-87477 -->* 
-<!--- MAGETWO-73696 -->* 
 
-<!--- MAGETWO-75786 -->* 
+nuzil
+https://github.com/nuzil
+
+
+<!--- MAGETWO-87477 -->*  Method getUrl in Magento\Catalog\Model\Product\Attribu… #13498
+https://github.com/igortregub
+Igor Tregub
+Method getUrl in Magento\Catalog\Model\Product\Attribute\Frontend returns image url with double slash 
+
+Expected result
+returns image url without double slash
+Actual result
+will be returned image with double slash
+
+
+
+
+<!--- MAGETWO-73696 -->* Sorting by price column in admin doesn't count disabled products
+Fixed issue: Sorting by price column in admin doesn't count disabled products
+Expected result
+
+The number of records found should remain the same when sorting on different columns in the Catalog Product grid.
+
+Actual result
+
+When sorting by price, the product count is reduced by the number of disabled products.
+
+
+
+
+<!--- MAGETWO-75786 -->* Fixed issue with incorrect count for category filter at layered navigation for configurable product with no available options
+
+Incorrect count for category filter at layered navigation for configurable with no available options
+
+
 
 <!--- MAGETWO-81916 -->* 
 
-<!--- MAGETWO-81942 -->* 
+https://github.com/magento/magento2/issues/11341
 
-<!--- MAGETWO-82078 -->* 
+Manu Gonzalez Rodriguez
 
-<!--- MAGETWO-82313 -->* 
+https://github.com/manuelson
+
+
+Attribute category_ids issue
+
+Expected result
+
+Category ids not visible on the front because users are not interested in knowing id categories.
+
+Actual result: exception
+
+
+
+<!--- MAGETWO-81942 -->* A solution for Product Repeat Issue after filter on category listing page. #11429
+I have traced the issues and finally, I have found the problem. This issues magento/magento2#11139 is occurring just because of product position. When some products position are same on collection at that time we have faced this issue.
+
+Product Repeat Issues after apply price filter on category listing page. Same products display on next page. Also sometimes it gives me random products.
+
+Expected result
+Product Should not be repeated on category page when we filter.
+https://github.com/magento/magento2/issues/11139
+
+Mayank Zalavadia
+
+https://github.com/mayankzalavadia
+
+
+
+<!--- MAGETWO-82313 -->* REST API - Only associate automatically product with all websites when creating product in All Store Views scope
+
+https://github.com/adrian-martinez-interactiv4
+adrian-martinez-interactiv4
+
+Updating a product via the REST API using PUT /rest/all/V1/products/example_sku assigns it to all websites automatically.
+https://github.com/magento/magento2/issues/11324
+Expected result
+Products should be assigned to same stores as it was previously (none) as I didn't pass website_ids in extension attributes and I didn't call V1/products/example_sku/websites
+Actual result
+Product is assigned to all websites even though I didn't explicitly send any website associations
+
+
 
 <!--- MAGETWO-82464 -->* 
 
-<!--- MAGETWO-83399 -->* 
+https://github.com/raumatbel
+Raul Mateos
+https://github.com/magento/magento2/issues/6770
+Re-saving a product attribute with a different name than it's code results in an error
+Steps to reproduce
+Add a couple of options
+Save the attribute
+Add a couple of options more
+Re-save the attribute
+Expected result
+Options should be added
+No errors should be shown
+Actual result
+Upon re-saving, Magento tries to re-create the attribute code:
 
-<!--- MAGETWO-84018 -->* 
 
-<!--- MAGETWO-84087 -->* 
 
-<!--- MAGETWO-84311 -->* 
+<!--- MAGETWO-83399 -->* This solution solves the issue when you want to not have toolbar block set on product listing. The reason why toolbar persisted even after that was explicit removed from layout configuration, it's because the method Magento\Catalog\Block\Product\ListProduct:getToolbarBlock always returns a toolbar block.
 
-<!--- MAGETWO-84367 -->* 
+Cannot remove product_list_toolbar in XML
 
-<!--- MAGETWO-84411 -->* 
+Expected result
+The toolbar should be removed from the product list pages.
+Actual result
+The toolbar remains on the page
 
-<!--- MAGETWO-84498 -->* 
+https://github.com/magento/magento2/issues/9413
 
-<!--- MAGETWO-84515 -->* 
+https://github.com/mariuscris
 
-<!--- MAGETWO-84652 -->* 
+Marius
 
-<!--- MAGETWO-84665 -->* 
 
-<!--- MAGETWO-84808 -->* 
 
-<!--- MAGETWO-84949 -->* 
 
-<!--- MAGETWO-85293 -->* 
+<!--- MAGETWO-84018 -->* Wrong return type for getAttributeText($attributeCode) #
+When I pass the a multi-select attribute code to getAttributeText($attributeCode) I get an array instead of an string.
 
-<!--- MAGETWO-85294 -->* 
+Expected result
+I would expect the return to be a string type as the return type says.
 
-<!--- MAGETWO-85301 -->* 
+Actual result
+But the result is instead an array of attribute values.
 
-<!--- MAGETWO-85307 -->* 
+https://github.com/p-bystritsky
 
-<!--- MAGETWO-85545 -->* 
+p-bystritsky
 
-<!--- MAGETWO-85546 -->* 
 
-<!--- MAGETWO-85636 -->* 
 
-<!--- MAGETWO-86016 -->* 
+
+<!--- MAGETWO-84087 -->* Can't add customizable options to product #11965
+
+If you add custom tab with a name "options" to product form via attribute set, data-index for this tab and options from custom-options will be the same, so I changed targetName from index to name.
+
+https://github.com/magento/magento2/issues/11792
+Can't add customizable options to product
+Expected result
+A new customizable option form should appear
+Actual result
+Nothing happens on the page
+A 'Uncaught TypeError: Cannot read property 'apply' of undefined' error is thrown in the console
+
+https://github.com/RomaKis
+
+
+
+
+<!--- MAGETWO-84311 -->* Single quotation marks are now decoded properly in admin attribute option input fields.
+
+https://github.com/magento/magento2/issues/12127
+
+Expected result
+In the admin, the attribute option value text input should say "Nature's Way Supplements"
+If you check the value in the database, it should be "Nature's Way Supplements"
+Actual result
+The text input says: Nature&#039;s Way Supplements
+The database entry says: Nature&#039;s Way Supplements
+
+Erfan
+https://github.com/erfanimani
+
+
+
+<!--- MAGETWO-84367 -->* Can't save emoji in custom product options
+
+Expected result
+Either cart would render fine or show an error that specific emoji insertion is not supported
+Actual result
+The cart is empty 
+
+Carlos Lizaga
+
+https://github.com/KarlDeux
+https://github.com/magento/magento2/pull/12253
+
+
+
+<!--- MAGETWO-84411 -->* Unused product attributes display with value N/A or NO on storefront. #12057
+Attributes with no value set should not display on storefront
+
+https://github.com/magento/magento2/issues/6634
+https://github.com/magento/magento2/issues/9961
+
+https://github.com/magento/magento2/issues/9961
+
+https://github.com/p-bystritsky
+
+https://github.com/magento/magento2/pull/12057
+
+
+
+<!--- MAGETWO-84498 -->* Fix delay initialization options for customized JQuery UI menu widget #12161
+describes the ability to set the delay on the JQuery widget opening/closing with an option 'delay'.
+
+However, in the code, no such option appears and two undocumented options that aren't used do appear.
+
+This PR cleans up the unused variables and passes the delay parameter into JQuery menu widget so it is used.
+
+DEVDOCS
+
+https://github.com/scazz010
+Sam Carr
+
+
+
+
+
+
+<!--- MAGETWO-84515 -->* Fixed missing 'size' and 'type' props on a third-party category images [Backport 2.2] #12443
+Fixes hardcoded 'image' key when processing `ImageBackendModel` attribute.
+
+Vova Yatsyuk
+https://github.com/vovayatsyuk
+
+
+
+
+
+<!--- MAGETWO-84652 -->* Category page X-Magento-Tags headers contains product cache identities even which category display mode is set to "Static block only" #12466
+When varnish is selected as the cache engine, If there are products associated to a respective category, and the category `display mode` is set to `Static block only`, on the category page `X-Magento-Tags` headers contains product item cache identities even when no product is displayed for the page.
+
+Atish Goswami
+https://github.com/atishgoswami
+
+
+
+
+
+<!--- MAGETWO-84665 -->* Can't delete row in dynamicRows component
+
+https://github.com/RomaKis
+
+
+https://github.com/magento/magento2/issues/8830
+
+
+Steps to reproduce
+Go to Products -> Catalog
+Edit any product
+Click Add Attribute button
+Create new attribute of type Visual Swatch or Text Swatch
+Add swatch
+Try to Delete row with Bin icon
+Expected result
+Row is deleted
+Actual result
+An error is produced in the js console output
+
+
+
+<!--- MAGETWO-84808 -->* Missing cascade into attribute set deletion. #12167
+https://github.com/nmalevanec
+https://github.com/magento/magento2/issues/12110
+
+Steps to reproduce
+Got to attributes set admin page
+Delete your custom attributes set
+Confirm you want to remove attached products also
+Expected result
+Table url_rewrite should be cleaned from references to removed products
+A new product named like an old one should be insertable via API or admin interface
+Actual result
+Impossible to add a new product named like an old one because a request_path with the same value as computed already exists in table url_rewrite;
+
+
+
+<!--- MAGETWO-84949 -->* Added correction for og:type content value
+
+12530
+
+https://github.com/atishgoswami
+
+
+<!--- MAGETWO-85293 -->*  Verbiage Update Required: Product Image Watermark size Validation Message. #985
+https://github.com/nmalevanec
+
+https://github.com/magento/magento2/issues/12613
+
+Expected result
+The system expects the image size defined in 200x300 format as said in on-screen example format. But the validation message is misleading which has uppercase X instead lowercase x.
+Actual result
+Validation Message Screenshot
+
+
+
+<!--- MAGETWO-85294 -->*  Product change sku via repository. #984	
+
+https://github.com/nmalevanec
+https://github.com/magento/magento2/issues/12535
+
+Expected result
+saved
+Actual result
+It catches as NoSuchEntityException and creates as a new product
+
+
+
+
+<!--- MAGETWO-85301 -->* catalogProductTierPriceManagementV1 DELETE and POST operation wipes out media gallery selections when used on store code "all". #977
+
+https://github.com/nmalevanec
+
+https://github.com/magento/magento2/issues/10797
+
+With our new integration, make a curl request to delete the tier price, using the store code all (NOT default, that works just fine).
+
+Expected result
+The tier price for a quantity of 3 should be deleted from the product, and nothing else.
+Actual result
+The tier price for a quantity of 3 is deleted from the product, AND all the image selections for the product are deleted as well. (Images are still part of the product's image gallery, but the selections are lost).
+
+
+
+<!--- MAGETWO-85307 -->* Sort by Price not working on CatalogSearch Page in Magento 2 #929
+https://github.com/RomaKis
+
+https://github.com/magento/magento2/issues/12468
+
+I got an issue on catalogsearch page that sort by price not working after change Product Listing Sort by Price from magento backend.
+
+
+
+
+
+<!--- MAGETWO-85545 -->* catalog:images:resize = getimagesize(): Read error! #1000
+
+https://github.com/magento/magento2/issues/8204
+
+https://github.com/RomaKis
+
+When I attempt to execute:
+php bin\magento catalog:images:resize
+
+After a period of time, I receive this error:
+
+Notice: getimagesize(): Read error! in /vendor/magento/module-catalog/Model/Product/Image.php on line 410
+
+However, no report is pushed into any log file, so there is no way to find out the file causing the read error.
+
+
+Expected result
+It should just skip the offending file, and/or update the log file to indicate which/where the problematic file resides.
+
+
+
+
+<!--- MAGETWO-85546 -->* 2#12259Save and Duplicated product not working #983	
+https://github.com/magento/magento2/issues/12259
+
+
+https://github.com/p-bystritsky
+
+
+
+<!--- MAGETWO-85636 -->* 6486: Unable to save certain product properties via Rest API #1018
+
+https://github.com/nmalevanec
+
+Unable to save certain product properties via Rest API
+
+https://github.com/magento/magento2/issues/6486
+
+Steps to reproduce
+Create a product via the Rest API, including a price and weight
+Expected result
+The product is saved with the price and weight
+Actual result
+The price and weight are not saved and are not returned in the result of the POST request.
+
+
+
+
+<!--- MAGETWO-86016 -->* Latest Google Chrome Browser issue with duplicate id… #1036
+Latest Google Chrome Version { Version 63.0.3239.84 (Official Build) (64-bit) } detects duplicate ids and console.log an ERROR
+
+
+https://github.com/serhii-balko
+
+id="email".
+Some pages (e.g. Login Page, Contact Page, ...) contains input element with id="email" too.
+Internet browsers detects duplicate ids and console.log an ERROR.
+
+
+
+
 
 <!--- MAGETWO-86019 -->* 
+Fixed hasDataChanges attribute for loaded EAV collection items
 
-<!--- MAGETWO-86021 -->* 
+https://github.com/magento/magento2/issues/12374
 
-<!--- MAGETWO-86023 -->* 
+Model hasDataChanges always true
 
-<!--- MAGETWO-86662 -->* 
-<!--- MAGETWO-86547 -->* 
+Expected result
+hasDataChanges returns false because no data has been changed
+Actual result
+hasDataChanges returns true
+Performance impact on $category->save()
 
-<!--- MAGETWO-84267 -->* 
 
-<!--- MAGETWO-85288 -->* 
 
-<!--- MAGETWO-82949 -->* 
+https://github.com/virtual97
 
-<!--- MAGETWO-84397 -->* 
 
-<!--- MAGETWO-86663 -->* 
 
-<!--- MAGETWO-85876 -->* 
+
+<!--- MAGETWO-86021 -->* Add more parameters to ajax:addToCart #12875
+
+https://github.com/srenon
+Renon Stewart
+
+The SKU by itself is not very useful because for most third-party integration you will need at minimum SKU and qty.
+
+
+
+
+
+<!--- MAGETWO-86023 -->* magento/magento2#12294: Bug: Adding Custom Attribute - The value of A… #12755
+
+https://github.com/virtual97
+
+xpected result
+Attribute should save rather than trying to collect data that can no longer be entered.
+
+
+
+<!--- MAGETWO-86662 -->* Adding 'is_saleable' attribute to sort of product collection causes exception and adding 'is_salable' has no effect. #1045
+https://github.com/magento/magento2/issues/7768
+
+n Magento\Catalog\Model\ResourceModel\Product\Collection, addAttributeToSort() has the following lines:
+
+        } elseif ($attribute == 'is_saleable') {
+            $this->getSelect()->order("is_saleable " . $dir);
+            return $this;
+        }
+But the generated SQL query selects stock_status_index.stock_status as 'is_salable', not 'is_saleable'. So adding 'is_saleable' causes an SQL exception and since 'is_salable' is not a product attribute, it silently fails to be added to the SQL statement.
+
+https://github.com/nmalevanec
+Expected result
+The product stock_status is included in the query sort clause.
+Actual result
+Exceptions:
+
+
+
+
+
+<!--- MAGETWO-86547 -->* Add failsafe to items.phtml #13086
+https://github.com/samgranger
+We received a warning that $exist is undefined - not entirely sure what the exact scenario was but adding this as a failsafe.
+I have made sure that $exist is defined (null) in the 'default' and 'other' case.
+
+
+
+
+
+
+<!--- MAGETWO-84267 -->* #11528 can't save customizable options #12048
+
+change behavior to close modal
+Validation prevents form closing
+
+Steps to reproduce
+Go to admin
+Go to catalog
+Select product
+Click advanced pricing
+Click add customer group, do not fill any value
+Try to close
+Expected result
+Form is closed
+Actual result
+Form does not close, validation issue is triggered
+
+https://github.com/luismiguelyangehuaman
+LuisMi
+
+
+
+
+<!--- MAGETWO-85288 -->* 8624: Stock status not coming back after qty update #955
+Stock status not coming back after qty update #8624
+
+Steps to reproduce
+Set simple product qty to zero (and you will see it will turns to Out of Stock) & hit Save
+Set same product qty to 1 and save
+Expected result
+After insert qty more than zero - changed new stock status In Stock
+
+Actual result
+Still Out of Stock
+
+https://github.com/RomaKis
+
+
+
+
+<!--- MAGETWO-82949 -->* Product's are linked to categories without notice of any website. The visual merchandiser shows to lowest price of in stock and active simples that are associated with the configurable. The stock check ignores the website scope so if a simple is in stock on the website level but out of stock on default level it should been ignored to determine the lowest price. This commit fixes that issue.
+
+Before the fix:
+
+The price of the out of stock simple product was shown.
+After the fix:
+
+The price '0,00' is shown.
+
+Visual Merchandiser show prices of out of stock simple products for the associated configurable product
+
+
+
+
+<!--- MAGETWO-86663 -->* 11897: Catalog product list widget not working with multiple sku. #1050
+
+https://github.com/magento/magento2/issues/11897
+
+
+Steps to reproduce
+Added new catalog product list widget
+added all condition with multiple SKU
+Expected result
+showing product with selected SKU on the page
+https://github.com/nmalevanec
+
+
+Actual result
+it will not showing any product on the page and showing error as "We're sorry, an error has occurred while generating this email."
+
+
+
+
+<!--- MAGETWO-85876 -->* Reorder adding of page layout handles #12807
+https://github.com/aschrammel
+Andreas Schrammel
+
+Add type-dependent layout handles before more specific ID/SKU layout
+handles.
+
+When updating a product page layout for a specific ID with `catalog_product_view_id_<product_ID>.xml` some changes may be overwritten by a less specific `catalog_product_view_type_<product_type>.xml`.
+
+
 
 <!--- MAGETWO-87897 -->*  
 
@@ -1285,33 +1756,129 @@ https://github.com/RomaKis
 
 
 
-<!--- MAGETWO-84372 -->* 
+<!--- MAGETWO-84372 -->* South Korea Zip Code Validation incorrect #903
+
+Postal codes in South Korea are 5-digit numeric, whose system newly introduced in August 1, 2015.
+
+https://github.com/magento/magento2/issues/9515
+
+Zip code validation fails on adresses from South Korea since it validates against deprecated format.
+Current validation is 123-456. This should be 12345.
+
+https://github.com/RomaKis
+
+
+
 
 
 
 #### Configuration framework
 
-<!--- MAGETWO-84464 -->* 
+<!--- MAGETWO-84464 -->* Encrypted scope-specific config values fail to decrypt on PHP7 #8591
 
-<!--- MAGETWO-84815 -->* 
+It seems that scope based config fails to decrypt data on anything but the default store
+
+Actual result:
+The user field is blank, and the password field is garbed nonsense, from what I can only assume is a fail to decryp
+
+https://github.com/odubovyk
+
+DubovykOleksandr
+
+
+
+<!--- MAGETWO-84815 -->* Format generated config files using the short array syntax #12499
+
+ We are using a standard that complies with all requirements of PSR-2 and has some rules inherited from ZF coding standard. Although this document is not published yet.
+
+ Malyovanets Nickolas
+https://github.com/nmalevanec
+
+
+
 
 
 
 #### JavaScript framework
 
-<!--- MAGETWO-83401 -->* 
+<!--- MAGETWO-83401 -->* Fix depends field not working for radio elements #11539
 
-<!--- MAGETWO-83993 -->* 
+Currently the `<depends>` field only works when used on elements of `select` type, this PR aims to replicate the same functionality for fields with `radios` type.
+
+<depends> field doesn't work in system.xml for "radios" fields
+
+In system.xml file a field can depend on another field value; it will be shown or not depending from previous field choice.
+It works fine if the field depends on a "select" field but if you try to use a "radios" field dependency the mechanism doesn't work and the field will always be shown.
+
+Expected result
+discount_calculation value = 'automatic' => discount_category is shown
+discount_calculation value = 'manual' => discount_category is not shown
+Actual result
+discount_category is always shown so is not working
+If I declare discount_calculation field as "select" type, all works fine
+
+Javier Villanueva
+
+https://github.com/jahvi
+
+
+
+
+<!--- MAGETWO-83993 -->* Fixed a js bug where ui_component labels have the wrong sort order. #11846
+If you extend an dynamic-row element in a ui_component and add a sort order attribute with a amount between the others, the Fields are in the correct order but the label is always the last one.
+If you extend an dynamic-row element in a ui_component and add a sort order attribute with a amount between the others, the Fields are in the correct order but the label is always the last one.
+
+Harald Deiser
+https://github.com/deiserh
+
+
+
+
+
+
+
+
 
 
 
 #### Session framework
 
-<!--- MAGETWO-83373 -->* 
+<!--- MAGETWO-83373 -->* Fix for issue 9633 500 error on setup wizard with memcache #11608
+https://github.com/sylink
 
-<!--- MAGETWO-83287 -->* 
+Marty S
+https://jira.corp.magento.com/browse/MAGETWO-83373
+Expected result
+The Setup Wizard page loading successfully
+Actual result
+Page returns an HTTP ERROR 500. 
 
-<!--- MAGETWO-86880 -->* 
+
+
+
+
+<!--- MAGETWO-83287 -->* Generate new FormKey and replace for oldRequestParams Wishlist #12038
+https://github.com/magento/magento2/issues/11825
+2.1.9 Item not added to the Wishlist if the user is not logged at the moment he click on the button to add it.
+
+Expected result
+You are redirected to the customer account Wishlist page and the product is added.
+Actual result
+You are redirected to the customer account Wishlist page but the product is not added.
+
+
+
+
+<!--- MAGETWO-86880 -->* WEBAPI: PHP session is always started #1247
+Although REST API should be stateless for anonymous calls, PHP session is always created. This is caused by the fact that session_start() is called implicitly from '\Magento\Framework\Session\SessionManager' constructor.
+
+There are 2 issues with this: Spammed PHP session which will never be used, if remote address validation is enabled for sessions, clients with dynamic IP address will get 302 redirect instead of REST API result, and this is undesirable.
+
+https://github.com/magento/magento2/issues/7213
+https://github.com/serhii-balko
+Serhii
+
+
 
 
 #### Testing framework
@@ -1320,19 +1887,40 @@ https://github.com/RomaKis
 
 #### Web API framework
 
-<!--- MAGETWO-70725-->* 
+<!--- MAGETWO-83854 -->* Address Book: Access denied is displaying when user click on add new address
+Fixed bug when user with denied permissions for "Negotiable quote editing" was unable to create customer address
 
-<!--- MAGETWO-83854 -->* 
 
-<!--- MAGETWO-84979 -->* 
+<!--- MAGETWO-84979 -->* Fix swagger-ui on instances of Magento running on a non-standard port #12541
+https://github.com/JeroenVanLeusden
+Jeroen
 
-<!--- MAGETWO-84994 -->* 
 
-<!--- MAGETWO-85534 -->* 
+<!--- MAGETWO-84994 -->* Can't emptying values by magento 2 api #916
+https://github.com/magento/magento2/issues/8862
+https://github.com/RomaKis
 
-<!--- MAGETWO-85538 -->* 
 
-<!--- MAGETWO-83754 -->* 
+
+
+<!--- MAGETWO-85534 -->* [GitHub] Order of how arguments are merged in multiple di.xml-… #995
+https://github.com/serhii-balko
+Serhii
+
+https://github.com/magento/magento2/issues/8647
+Order of how arguments are merged in multiple di.xml-files causes unexpected results #8647
+Update the webapi module to explicitly choose the default-renderer when Accept = */*. However, this is not the reason of this bug, but more of a result.
+
+
+
+
+
+<!--- MAGETWO-85538 -->* SearchCriteriaBuilder builds wrong criteria (ORDER BY part). #1003
+https://github.com/nmalevanec
+Malyovanets Nickolas
+https://github.com/magento/magento2/issues/5738
+
+
 
 
 
@@ -1556,27 +2144,77 @@ https://github.com/RomaKis
 
 ### Import/export
 
-<!--- MAGETWO-73275 -->* 
-<!--- MAGETWO-75217 -->* 
 
-<!--- MAGETWO-81368 -->* 
+<!--- MAGETWO-81368 -->* Defaulting missing alt-text for a product to use the product name. #11323
+The code in app/code/Magento/Catalog/Block/Product/View/Gallery.php's getGalleryImagesJson() function was setting the image's label to $image->getLabel() regardless of whether the image's label was null or empty. The fix was to test the $image->getLabel() response and if it was empty to use the product's name instead.
 
-<!--- MAGETWO-83726 -->* 
+https://github.com/magento/magento2/issues/9931
 
-<!--- MAGETWO-83957 -->* 
+https://github.com/brobie
 
-<!--- MAGETWO-83958 -->* 
+Ben Robie
 
-<!--- MAGETWO-84448 -->* 
 
-<!--- MAGETWO-85629 -->* 
+<!--- MAGETWO-83726 -->*  Export Products action doesn't consider hide_for_product_page value. #11926
+Steps to reproduce
+Create a simple product and upload an image.
+Change the scope to 1 store view.
+Set the image as Hide for product page in that store view.
+Got to System -> Export.
+Select Products and then Continue.
+Expected result
+The CSV files should have 2 lines. The default values at the first row of values.
+The second lines should contain values on sku, store_view_code and hide_from_product_page columns
+Actual result
+I've created my simple product with an image. Same values for both store views.
 
-<!--- MAGETWO-86657 -->* 
-<!--- MAGETWO-88044 -->* 
+Malyovanets Nickolas
+https://github.com/nmalevanec
 
-<!--- MAGETWO-87023 -->* unresolved
 
-<!--- MAGETWO-74042 -->* 
+<!--- MAGETWO-83957 -->* Cannot import zero (0) value into custom attribute #12283
+When using the Admin product import feature it is not possible to import a zero (0) value into custom attribute field. Instead the value is unchanged.
+https://github.com/magento/magento2/issues/12083
+p-bystritsky
+https://github.com/p-bystritsky
+
+
+
+<!--- MAGETWO-84448 -->* Added an abbility to import/export store view specific product custom options and bundle product options. 
+- To import store specific product custom option title and value each product with custom options should have an additional string with store code specified in store_view_code row and required custom option data (store specific "name", "type" and "option_title" it should be changed) in custom_options row.
+- To import store specific bundle product option title this option name should be added to the "bundle_values" row (together with data for main store). Bundle option name value should have store code specified in the name key - if store code is "second_store", name key for this option is "name_second_store". 
+The full "bundle_value" row will looks like: "name=BundleOption1,name_second_store=BundleOption1 Second Store,type=select,required=1..." 
+
+Previously, Import/export feature does not include storeview level edits for the custom options.
+
+
+
+<!--- MAGETWO-85629 -->* Product csv import > fail on round brackets in image filename #1017
+Product csv import > fail on round brackets in image filename
+https://github.com/magento/magento2/issues/12084
+Expected result
+Data validated successfully
+Actual result
+Error message: "Wrong URL/path used for attribute image in row(s):"
+https://github.com/p-bystritsky
+
+
+<!--- MAGETWO-86657 -->* Existing customers import now changes only rows specified information for customers. 
+If rows for other customer attributes (group_id, store_id, created_at) are absent in import file - they will remain without any changes. 
+
+
+<!--- MAGETWO-88044 -->* Fix adding values to system variable collection unit test. #13742	
+https://github.com/nmalevanec
+
+
+<!--- MAGETWO-74042 -->* If user will try to import configurable product with specified configurable links and store view in single row the system should return error on the validation step: 
+
+Product with assigned super attributes should not have specified 'store_view_code' value
+
+Expected
+configurable product is created with all linked configurations
+Actual
+configurable product and its configurations are not linked
 
 
 
@@ -1817,22 +2455,117 @@ Test `Magento\Sales\Service\V1\OrderCreateTest` has an incorrect shipping method
 
 
 
-<!--- MAGETWO-84219 -->* 
+<!--- MAGETWO-84219 -->* Fixed issue with creditmemo comment via REST API did not send creditmemo update email
+When creating credit memo comment using REST api, no transactional email is sent to the customer.
 
-<!--- MAGETWO-84256 -->* 
 
-<!--- MAGETWO-85305 -->* 
-<!--- MAGETWO-85660 -->* 
 
-<!--- MAGETWO-86845 -->* 
 
-<!--- MAGETWO-80233 -->* 
+<!--- MAGETWO-84256 -->* Fix getReservedOrderId() to use current store instead of default store 
 
-<!--- MAGETWO-86258 -->* 
+PR #11702
+https://github.com/tdgroot
+Timon de Groot
 
-<!--- MAGETWO-87292 -->*  
+https://github.com/magento/magento2/issues/9055
+Default Store is always used when retrieving sequence value's for sales entity's.
 
-<!--- MAGETWO-87291 -->* 
+Expected result
+An increment id using the prefix from the new store view, and an entry in the sequence_order_2 table
+Actual result
+An increment id using the prefix from the default store view, and an entry in the sequence_order_1 table
+
+
+
+<!--- MAGETWO-85305 -->* Back-End issue for multi-store website: when editing Order shipping/billing address - allowed countries are selected from wrong Store View
+
+https://github.com/RomaKis
+Roman K.
+
+https://github.com/magento/magento2/issues/12560
+Expected result
+Address Country drop-down in Admin should take values from 'Allow Countries' setting configured for the Website Store View where that order was made (e.g.: for German store with id = 7)
+Actual result
+But it's picking the 'Allow Countries' from first store View (with id=1).
+If before steps 3 and 4 from "Steps to reproduce" go to Admin > Sales > Create New Order and when creating it select some different Store View (e.g.: Italian, with id = 10) then actual result after "Steps to reproduce" will show allowed countries for that selected Store View (with id = 10, if continue on example).
+
+
+
+
+
+
+
+<!--- MAGETWO-85660 -->* AbstractPdf - ZendException font is not set 
+
+PR 1016
+
+https://github.com/serhii-balko
+Serhii
+
+https://github.com/magento/magento2/issues/11743
+Fix method \Magento\Sales\Model\Order\Pdf\AbstractPdf::drawLineBlocks, when text block cover more than one page.
+After generate new page the font need be setted.
+
+
+
+
+<!--- MAGETWO-86845 -->* pass parameter for export button url
+
+Extra records are in exported CSV file for order
+Extra records are in exported CSV file for order #12714
+https://github.com/magento/magento2/issues/12714
+
+
+
+
+PR 13208
+
+
+
+<!--- MAGETWO-80233 -->* Added support to create later authorizations with PayPal "Order" action
+Previously, Paypal cannot place the order when Payment Action = Order. 
+
+ACTUAL RESULTS:
+"We cant place order" error shows
+../var/log/support_report.log contains:
+
+DETAILS:
+
+When PayPal is set to Authorize mode, the order can be placed successfully.
+However, when mode is changed to Order, upon reaching Review page and clicking Place Order, the page refreshes and an error is displayed: "We can't place the order."
+I was able to replicate it in clean magento. If Payment action is set to Authorize, it goes through. If Payment Action is set to Order, it gives the error. I didnt check the other payment action Sale. But it is only in Order where you have to enter Merchant ID. Not sure if that's connected to the issue or not.
+ADDITIONAL NOTES FROM MERCHANT:
+
+They have an external ERP system that needs to perform the authorization
+Magento needs to omit the auth when placing an order on the site so it can be done later by the ERP (ERP APIs don't allow to insert a record based on previously created auth)
+
+
+
+
+
+<!--- MAGETWO-86258 -->* Fix for reverting stock twice for cancelled orders #12668
+https://github.com/dverkade
+Danny Verkade
+
+https://github.com/magento/magento2/issues/9969
+Some payment methods in cancel payment action try to cancel current order and restore quote and as the result product qty is increased by 2.
+
+Cancel order and restore quote methods increase stocks twice
+
+
+
+<!--- MAGETWO-87292 -->*  Join extension attributes are not added to Order results (REST api) #1168
+Join extension attributes are not added to Order results (REST api)
+https://github.com/nmalevanec
+Malyovanets Nickolas
+
+
+
+
+<!--- MAGETWO-87291 -->* Shipment Tracking REST API should throw an error if order doesn't exist. #1162
+ Shipment Tracking REST API should throw an error if order doesn't exist.
+https://github.com/RomaKis
+Roman K.
 
 
 
@@ -2397,9 +3130,34 @@ Order goes through just fine.
 Again, the theme must have the minicart visible during checkout and must allow for removing product.
 
 
-<!--- MAGETWO-85586 -->* 
+<!--- MAGETWO-85586 -->* Fix incorrect DHL Product codes 
 
-<!--- MAGETWO-87934 -->*  
+PR #12666
+
+https://github.com/gwharton
+gwharton
+
+There are three DHL product codes in the DHL Shipping module that are incorrect.
+
+Description
+Product Code "1" changed from "Customer Services" to "Domestic express 12:00"
+Product Code "I" changed from "Break bulk economy" to "Domestic express 9:00"
+Product Code "O" changed from "Others" to "Domestic express 10:30"
+
+DHL product codes are now inline with those published in latest DHL products and services guide.
+
+
+
+<!--- MAGETWO-87934 -->*  Cast handling fee to float 
+
+PR #13680
+PHP 7.1 complains with a warning if non-numeric strings are used in calculations
+The handling fee configuration of shipping methods is often an empty string. Prior to PHP 7.1 it was silently casted to 0, now this should happen explicitly to avoid warnings.
+
+
+https://github.com/schmengler
+	Fabian Schmengler 
+
 
 
 
@@ -3040,7 +3798,7 @@ p-bystritsky
 
 
 
-<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 86982 86846 86772 86770 86767 86763 86015 86002 73161 80908 84209 84992 77767 84480 83329 86117 83977 84804 84413 83974 82062 80342 80738 85947 83676 86132 85661 77840 82061  81901 73303 83343 83910
+<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 86982 86846 86772 86770 86767 86763 86015 86002 73161 80908 84209 84992 77767 84480 83329 86117 83977 84804 84413 83974 82062 80342 80738 85947 83676 86132 85661 77840 82061  81901 73303 83343 83910 70725 83754 73275 75217 83958 87023 71662 82078 84397
  -->* 
  -->  
 
