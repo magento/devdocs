@@ -314,7 +314,7 @@ pages:
         - label: Site availability
           url: cloud/trouble/site-availability.html
 
-        - label: Add sitemap and robots.txt
+        - label: Add site map and search engine robots
           url: cloud/trouble/robots-sitemap.html
 
         - label: Theme troubleshooting
