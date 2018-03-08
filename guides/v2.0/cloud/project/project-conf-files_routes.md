@@ -28,10 +28,7 @@ This file is located at `.magento/routes.yaml` in your project.
 
 [Sample `routes.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento/routes.yaml){:target="_blank"}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/welcome/get-help.html">Support issue</a>.</p>
-</div>
-
+{% include cloud/note-pro-using-yaml.md %}
 
 ## Defaults {#cloud-yaml-routes-default}
 If you do not have a `routes.yaml` file, the following default is used:
@@ -47,11 +44,7 @@ If the domain is `example.com`, these routes resolve: `http://www.example.com/` 
 
 {{site.data.var.ee}} also generates URLs for every active environment that enable you to test that system. In a test system, `{default}` is replaced with `[branch]-[project-id].[region].magentosite.cloud`.
 
-For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcss` hosted in the `na` cluster, the domains are: `http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/` and `https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog`
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>na</code> region is shown as an example; it's not currently available. Magento plans support for <code>na</code> first, then <code>au</code> and <code>eu</code> at a later date.</p>
-</div>
+For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcss` hosted in the `us` cluster, the domains are: `http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/` and `https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog`
 
 <!-- {{site.data.var.ece}} also supports [multiple applications]({{page.baseurl}}cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 
@@ -103,15 +96,15 @@ For your live environment, this functions as a catch-all domain.
 You can also route to a system that is not mapped to a domain (basically anything other than
 a live master).
 
-Suppose your project on the EU cluster has an ID `vmwklxcpbi6zq` and a branch named `add-theme`. {{site.data.var.ee}} automatically routes the URL `http://add-theme-vmwklxcpbi6zq.na.magento.com/` to this environment. If, for example, you also defined a `http://www.{default}/` route, you could visit `http://www---add-theme-vmwklxcpbi6zq.na.magento.com/` to see the same environment.
+Suppose your project on the EU cluster has an ID `vmwklxcpbi6zq` and a branch named `add-theme`. {{site.data.var.ee}} automatically routes the URL `http://add-theme-vmwklxcpbi6zq.us.magento.com/` to this environment. If, for example, you also defined a `http://www.{default}/` route, you could visit `http://www---add-theme-vmwklxcpbi6zq.us.magento.com/` to see the same environment.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The triple dash (<code>---</code>) is used as a separator for the subdomain. This is what replaces the dot (<code>.</code>).</p>
 </div>
 
-You can put anything before the triple dashes and the route resolves. In this example, the route is defined as `http://*.{default}/` route, so both `http://foo---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/` and `http://bar---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/` would work just fine.
+You can put anything before the triple dashes and the route resolves. In this example, the route is defined as `http://*.{default}/` route, so both `http://foo---add-theme-vmwklxcpbi6zq.us.magentosite.cloud/` and `http://bar---add-theme-vmwklxcpbi6zq.us.magentosite.cloud/` would work just fine.
 
-If you examine the routes of your application (for example by running `echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp` in an SSH session on your environment), you will see a route such as `https://*---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/`
+If you examine the routes of your application (for example by running `echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp` in an SSH session on your environment), you will see a route such as `https://*---add-theme-vmwklxcpbi6zq.us.magentosite.cloud/`
 
 [More information about caching]({{page.baseurl}}cloud/project/project-routes-more-cache.html).
 

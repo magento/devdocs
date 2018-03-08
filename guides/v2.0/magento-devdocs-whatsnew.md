@@ -7,17 +7,39 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## January 2018
+## February 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
-You can now unlock specific stuck cron jobs in Magento Commerce (Cloud) with the [cron:unlock](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) command instead of stopping and re-launching all of them.|2.2.x|Updated|Jan 19
+Added upgrade path for Magento Cloud metapackage. | 2.1.x, 2.2.x | Updated | Feb 23
+Added reference and [examples](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20
+Listed the `adminhtml` option in the [Observers best practices](http://devdocs.magento.com/guides/v2.0/ext-best-practices/extension-coding/observers-bp.html) topic.|2.x|Updated|Feb 09
+The [MFTF-2 Guide](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) has been added to Magento 2.2 documentation|2.2.x|Updated|Feb 09
+Learn how to customize and extend the acceptance functional tests using [Merging](http://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/release-2/merging.html) in the MFTF 2.|2.3 pre-release|New|Feb 07
+We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/message-queues.html) to help customers resolve an issue with message queues.|2.2.x|New|Feb 07
+We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/site-availability.html) to help customers identify and resolve site availability issue related to Redis.|2.x|New|Feb 01
+
+{% collapsibleh2 January 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Updated documentation about [how to create a payment token](http://devdocs.magento.com/guides/v2.2/payments-integrations/vault/payment-token.html).|2.2.x|Updated|Jan 31
+Release notes for Magento Commerce (Cloud) [`ece-tools v2002.0.8`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208).|2.2.x|Updated|Jan 31
+We added instructions for [managing message queues](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#manage-message-queues) on Magento Commerce (Cloud) using the `CRON_CONSUMERS_RUNNER` environment variable.|2.2.x|Updated|Jan 31
+We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.|2.2.x|Updated|Jan 31
+You can now [manage build and deploy actions](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) across all your environments—including Pro Staging and Production—using a `.magento.env.yaml` file.|2.2.x|New|Jan 31
+You can now unlock specific stuck cron jobs in Magento Commerce (Cloud) with the [cron:unlock](http://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html) command instead of stopping and re-launching all of them.|2.2.x|Updated|Jan 31
+The deployment process creates backup files for the configuration files. You can restore the configuration files using the [restore](http://devdocs.magento.com/guides/v2.2/cloud/trouble/restore-configuration-files.html) command.|2.2.x|Updated|Jan 31
+MFTF 1.0: Updated descriptions for the `before` and `after` attributes in [Actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-1/cest/actions.html)|2.2.x|Updated|Jan 23
+Advanced Reporting: added more details to [Prerequisites](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html)|2.2.x|Updated|Jan 22
 We updated the [quarterly contributors](http://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page for Q4 2017.|2.x|Updated|Jan 18
-MFTF 1.0: Updated [actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/cest/actions.html) and added [Changelog](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/changelog.html)|2.2.x|Updated|Jan 12
+MFTF: Updated [actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/cest/actions.html) and added [Changelog](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/changelog.html)|2.2.x|Updated|Jan 12
 Added information about the index prefix when [configuring Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/configure-magento.html), which is necessary when using a single Elasticsearch instance with multiple Magento installations, like Staging and Production environments.|2.1.x, 2.2.x|Updated|Jan 10
-Created a [new topic](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html) describing different scenarios for working with environment variables to the Magento Commerce (Cloud) guide. For example, connecting an existing search or AMQP-based service to your Magento site.<br/>Added guidance for using these variables in the [Set up RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html) and [Set up Elasticsearch](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html) topics.|2.1.x, 2.2.x|New, Updated|Jan 10
+Created a [new topic](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html) describing different scenarios for working with environment variables to the Magento Commerce (Cloud) guide. For example, connecting an existing search or AMQP-based service to your Magento site.<br/>Added guidance for using these variables in the [Set up RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html) and [Set up Elasticsearch](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html) topics.|2.1.x, 2.2.x|New and Updated|Jan 10
 [Added Magento Shipping release notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotesMagentoShipping2.2.x.html)|2.2.x|New|Jan 05
 We added code examples to help explain the following [Technical Guidelines](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html) related to class design:<br/>- 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.<br/>- 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.<br/>- 2.1.4 Temporal coupling MUST be avoided.|2.x|Updated|Jan 03
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 December 2017 %}
 

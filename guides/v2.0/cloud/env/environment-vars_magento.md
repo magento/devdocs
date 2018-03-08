@@ -55,12 +55,6 @@ The following table lists variables that you can override using environment vari
 <td>Specifies the default locale used by the Magento Admin.</td>
 <td>en_US</td>
 </tr>
-<tr><td><code>APPLICATION_MODE</code></td>
-<td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
-<p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
-<p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p></td>
-<td>production</td>
-</tr>
 </tbody>
 </table>
 
@@ -85,7 +79,7 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>CLEAN_STATIC_FILES</code></td>
-<td><p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
+<td><p>The default value, <code>enabled</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enabled</code> and <code>disabled</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
 <p>Because of <a href="{{page.baseurl}}howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
 <p>This is available in all versions.</p></td>
@@ -119,13 +113,6 @@ The following variables are available during the deploy process of build and dep
 <td><code>MAGENTO_CLOUD_MODE</code></td>
 <td>We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. For example, for Pro, this value may be <code>enterprise</code> indicating Staging and Production. For <code>enterprise</code>, it sets the <code>STATIC_CONTENT_THREADS</code> to 3, otherwise sets it to 1 for Integration. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack. This is available in all versions.</td>
 <td>enterprise</td>
-</tr>
-<tr><td><code>APPLICATION_MODE</code></td>
-<td><p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
-<p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
-<p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p>
-<p>This is available in all versions.</p></td>
-<td>production</td>
 </tr>
 <tr>
 <td><code>VERBOSE_COMMANDS</code></td>
@@ -170,7 +157,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
+Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
 </div>
 
 To create a variable using the command line:
@@ -191,11 +178,3 @@ In the event something goes wrong and you can not access your environment after 
         magento-cloud snapshot:restore <snapshot>
 
 For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
-
-#### Related topics
-* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

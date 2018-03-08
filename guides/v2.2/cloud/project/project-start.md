@@ -46,14 +46,14 @@ The Magento application root directory is located in different locations dependi
 
 For Starter:
 
-* [Integration environment]({{ page.baseurl }}cloud/basic-information/starter-architecture.html#cloud-arch-int): the Magento application is located in the `/app` directory.
-* [Production environment]({{ page.baseurl }}cloud/basic-information/starter-architecture.html#cloud-arch-prod): the Magento application is located in the `/<project code>` directory.
+-  Integration environment—the Magento application is located in the `/app` directory.
+-  Production environment—the Magento application is located in the `/<project code>` directory.
 
 For Pro:
 
-* [Integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) the Magento application is located in the `/app` directory.
-* [Staging environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) the Magento application is located in the `/<project code>_stg` directory.
-* [Production environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) the Magento application is located in the ` /<project code>` directory.
+-  Integration environment—the Magento application is located in the `/app` directory.
+-  Staging environment—the Magento application is located in the `/<project code>_stg` directory.
+-  Production environment—the Magento application is located in the ` /<project code>` directory.
 
 ## Writable directories {#write-dir}
 In Integration, Staging, and Production, *only* the following directories are writable due to security reasons:
@@ -87,7 +87,7 @@ You can review these logs via SSH into the environment. Change to the directorie
 
 Logs from the deploy hook are located on the server in the following locations:
 
-*	Integration: `/tmp/log/deploy.log`
+*	Integration: `/var/log/deploy.log`
 *	Staging: `/var/log/platform/<prodject ID>/post_deploy.log`
 *	Production: `/var/log/platform/{1|2|3}.<prodject ID>/post_deploy.log`
 

@@ -109,10 +109,10 @@ If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your 
     Do not commit or push changes to your branch yet. You still need to [Verify other changes](#verify-changes) and [Complete the upgrade](#upgrade).
     </div>
 
-**For Pro plan merchants:** When you are ready to deploy to Pro Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated for {{site.data.var.ece}} 2.2.
+**For Pro plan merchants:** When you are ready to deploy to Pro Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) advising you need your hooks updated for {{site.data.var.ece}} 2.2.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-**For Pro:** You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
+**For Pro:** You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
 </div>
 
 ### Verify or set the ADMIN_EMAIL variable {#variable}
@@ -183,11 +183,11 @@ After fully upgrading, you need to create an updated `config.php` file. You will
 
 1. Open a terminal on your local and use an SSH command to generate `/app/etc/config.php` on the environment:
 
-    `ssh -k <SSH URL> "<Command>"`
+    `ssh <SSH URL> "<Command>"`
 
     For example for Pro, to run the `scd-dump` on Integration `master`:
 
-      `ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"`
+      `ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"`
 
 2. Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
@@ -251,7 +251,7 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 ### Deployment error {#deploy-error}
-If you encounter a deployment error to Pro Staging and Production environments, you need to have us update your `.magento.app.yaml` hooks. Please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
+If you encounter a deployment error to Pro Staging and Production environments, you need to have us update your `.magento.app.yaml` hooks. Please enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
 
 #### Related topic
 * [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)

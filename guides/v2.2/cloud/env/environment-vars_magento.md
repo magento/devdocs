@@ -9,15 +9,19 @@ functional_areas:
   - Configuration
 ---
 
-This topic describes Magento [application](#application) and [deploy](#deploy) environment variables as well as [build](#build) options.
+This topic describes Magento [application](#application), [build](#build), and [deploy](#deploy) environment variables.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var) or [CLI commands](#addvariables).
+Use one of the following methods to manage variables:
+
+-   [**Configuration file**](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)—All Starter and Pro environments
+-   [**Project Web Interface**]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var)—All Starter and Pro environments created after October 23, 2017 or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html)
+-   [**Magento Cloud CLI tool**](#addvariables)—All Starter and Pro Integration environments
 </div>
 
-## Magento application variables {#application}
+## Application
 
-The following table lists variables that you can override using environment variables.
+The following table lists application variables that you can override using environment variables.
 
 <table>
   <thead>
@@ -65,66 +69,31 @@ The following table lists variables that you can override using environment vari
       <td>Specifies the default locale used by the Magento Admin.</td>
       <td>en_US</td>
     </tr>
-    <tr>
-      <td><code>APPLICATION_MODE</code></td>
-      <td>
-        <p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
-        <p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
-        <p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p>
-      </td>
-      <td>production</td>
-    </tr>
   </tbody>
 </table>
 
-For additional deploy variables and build options, continue to the following sections.
+## Build
+The following variables are available during the build phase. Refer to [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
 
-<!-- <tr><td>RECOMPILE_DI</td>
-    <td>The default value, <code>true</code>, enables <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a>. We recommend the default value in development.</td>
-    <td>true</td>
-    </tr> -->
-
-## Magento build options {#build}
-The following options are available during the build phase. These options help prepare the codebase before it is moved to the server and built.
-
-To use these options, create a `build_options.ini` file in your root Magento project directory and push it to your environment.
-
-**Example `build_options.ini` file**
-
-```
-;exactly
-VERBOSE_COMMANDS=enabled
-
-; A path to a Magento theme. Don't generate static content for the specified theme. Adds the --exlude-theme option to the php ./bin/magento setup:static-content:deploy command.
-exclude_themes=magento/luma
-
-; A number (0-9) that specifies which gzip compression level to use when compressing static content; 0 disables compression.
-;SCD_COMPRESSION_LEVEL=0
-
-; A number, defaults to 0, that specifies how many threads to use for static content deployment. Increases and descreases processing speed. Passed into --max-procs xargs flag.
-scd_threads=2
-
-; A string that gets passed to the -s flag of the php ./bin/magento setup:static-content:deploy command. No validation.
-scd_strategy=standard
-
-; Skips static content deployment during the build phase.
-skip_scd=yes
-```
+<div class="bs-callout bs-callout-info" markdown="1">
+You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
+</div>
 
 <table>
   <thead>
     <tr>
-      <th>Option</th>
+      <th>Variable name</th>
       <th>Description</th>
       <th style="width: 200px;">Default value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code>exclude_themes</code></td>
+      <td><code>EXCLUDE_THEMES</code></td>
       <td>
-        <p>When enabled, this option does not generate static content for the specified theme location. This is helpful when static content deployment occurs during the build phase.</p>
-        <p>For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. To exclude the theme, use the following: <code>exclude_themes=magento/luma</code>.</p>
+        <p>When enabled, this option does not generate static content for the specified theme location. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations.</p>
+        <p>For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. To exclude the theme, use the following: <code>exclude_themes=magento/luma,magento/my-theme</code>.</p>
+        <p>Available in versions 2.1.4 and later.</p>
       </td>
       <td>Not set</td>
     </tr>
@@ -136,9 +105,9 @@ skip_scd=yes
       <td><code>6</code></td>
     </tr>
     <tr>
-      <td><code>scd_strategy</code></td>
+      <td><code>SCD_STRATEGY</code></td>
       <td>
-        <p>Allows you to customize the <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">deployment strategy</a> for static content. refer to <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a> for more information.</p>
+        <p>Allows you to customize the <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">deployment strategy</a> for static content. Refer to <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a> for more information.</p>
         <p>Use these options only if you have more than one locale.</p>
         <ul>
           <li><code>standard</code>: deploys all static view files for all packages.</li>
@@ -146,25 +115,26 @@ skip_scd=yes
           <li><code>compact</code>: conserves disk space on the server. If you use <code>compact</code>, it overrides the value for <code>scd_threads</code> with a value of <code>1</code>. This strategy does not work with multi-threads.</li>
         </ul>
       </td>
-      <td><code>standard</code></td>
+      <td><code>Not set</code></td>
     </tr>
     <tr>
-      <td><code>scd_threads</code></td>
+      <td><code>SCD_THREADS</code></td>
       <td>
         <p>Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.</p>
         <p>To further decrease deployment time, we recommend using <a href="{{page.baseurl}}cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+        <p>Available in versions 2.1.4 and later.</p>
       </td>
       <td>
-        <p><code>scd_threads=1</code> - Starter environments and Pro Integration environments</p>
-        <p><code>scd_threads=3</code> - Pro Staging and Production environments</p>
+        <p><code>1</code> - Starter environments and Pro Integration environments</p>
+        <p><code>3</code> - Pro Staging and Production environments</p>
       </td>
     </tr>
     <tr>
-      <td><code>skip_scd</code></td>
+      <td><code>SKIP_SCD</code></td>
       <td>
         <p>Skips static content deployment during the build phase.</p>
         <p>If you are already deploying static content during the build phase with <a href="{{page.baseurl}}cloud/live/sens-data-over.html">Configuration Management</a>, you may want to turn it off for a quick build test.</p>
-        <p>We do not recommend using this option because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site. Available in 2.2.X.</p>
+        <p>We do not recommend using this option because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.</p> <p>Available in version 2.2.x.</p>
       </td>
       <td>Not set</td>
     </tr>
@@ -178,11 +148,15 @@ The following variables were removed in v2.2:
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
-## Magento deploy variables {#deploy}
+## Deploy
 The following variables are available during the deploy process.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var) or [CLI commands](#addvariables).
+Use one of the following methods to manage variables:
+
+-   [**Configuration file**](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)—All Starter and Pro environments
+-   [**Project Web Interface**]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var)—All Starter and Pro environments created after October 23, 2017 or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html)
+-   [**Magento Cloud CLI tool**](#addvariables)—All Starter and Pro Integration environments
 </div>
 
 <table>
@@ -195,28 +169,55 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
   </thead>
   <tbody>
     <tr>
+      <td><code>CRON_CONSUMERS_RUNNER</code></td>
+      <td>
+        <p>By default, the deployment process overwrites all settings in the <code>env.php</code> file. Use this environment variable to make sure message queues are running after a deployment.</p>
+        <p>This is available in Magento version 2.1 and later.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="{{page.baseurl}}cloud/env/working-with-variables.html#manage-message-queues">Manage message queues</a> for more information.</p>
+      </td>
+      <td>Not set</td>
+    </tr>
+    <tr>
       <td><code>QUEUE_CONFIGURATION</code></td>
       <td>
-        <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized AMQP service settings between deployments.</p>
+        <p>By default, the deployment process overwrites all settings in the <code>env.php</code> file. Use this environment variable to retain customized AMQP service settings between deployments.</p>
         <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing AMQP-based service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#queue) for more information.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="{{page.baseurl}}cloud/env/working-with-variables.html#queue">Connect to an existing AMQP-based service</a> for more information.</p>
       </td>
-      <td>not set</td>
+      <td>Not set</td>
     </tr>
     <tr>
       <td><code>SEARCH_CONFIGURATION</code></td>
       <td>
-        <p>By default, the deployment process overwrites all settings in <code>env.php</code>. Use this environment variable to retain customized search service settings between deployments.</p>
-        <p>This is available in 2.1.4 and later.</p>
-        <p>You must set the variable value using JSON. Refer to [Connect to an existing search service](http://devdocs.magento.com/guides/v2.1/coud/env/use-cases.html#search) for more information.</p>
+        <p>By default, the deployment process overwrites all settings in the <code>env.php</code> file. Use this environment variable to retain customized search service settings between deployments.</p>
+        <p>This is available in Magento version 2.1.4 and later.</p>
+        <p>You must set the variable value using JSON. Refer to <a href="{{page.baseurl}}cloud/env/working-with-variables.html#search">Connect to an existing search service</a> for more information.</p>
       </td>
       <td>not set</td>
+    </tr>
+    <tr>
+      <td><code>CACHE_CONFIGURATION</code></td>
+      <td>
+        <p>Use to configure Redis page and default caching. Set the variable value using JSON. By default, the deployment process overwrites all settings in the <code>env.php</code> file. </p>
+        <p>This is available in Magento version 2.1 and later.</p>
+        <p>Refer to <a href="{{page.baseurl}}cloud/env/working-with-variables.html#redis">Configure Redis</a> for more information.</p>
+      </td>
+      <td>not set</td>
+    </tr>
+    <tr>
+      <td><code>SESSION_CONFIGURATION</code></td>
+      <td>
+        <p>Use to configure Redis session storage. Set the variable value using JSON. By default, the deployment process overwrites all settings in the <code>env.php</code> file. </p>
+        <p>This is available in Magento version 2.1 and later.</p>
+        <p>Refer to <a href="{{page.baseurl}}cloud/env/working-with-variables.html#redis">Configure Redis</a> for more information.</p>
+      </td>
+      <td>Not set</td>
     </tr>
     <tr>
       <td><code>UPDATE_URLS</code></td>
       <td>
         <p>On deployment, replace Magento base URLs in the database with project URLs. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.</p>
-        <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs can't change. For Pro, we already set this to <code>disabled</code> for you.</p>
+        <p>You should set this variable to <code>disabled</code> <em>only</em> in Staging or Production environments, where the base URLs cannot change. For Pro, we already set this to <code>disabled</code> for you.</p>
         <p>This is available in 2.2 and later.</p>
       </td>
       <td>enabled</td>
@@ -224,8 +225,8 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
     <tr>
       <td><code>CLEAN_STATIC_FILES</code></td>
       <td>
-        <p>The default value, <code>enable</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enable</code> and <code>disable</code>.</p>
-        <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them.</p>
+        <p>The default value, <code>enabled</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enabled</code> and <code>disabled</code>.</p>
+        <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them.</p>
         <p>Because of <a href="{{page.baseurl}}howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
         <p>This is available in all versions.</p>
       </td>
@@ -234,7 +235,7 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
     <tr>
       <td><code>STATIC_CONTENT_EXCLUDE_THEMES</code></td>
       <td>Themes can include numerous files. If you want to skip copying over theme files during deployment, you can set this environment variable. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude, you would add the theme, for example: <code>Magento/luma</code>. This is available in all versions.</td>
-      <td>not set</td>
+      <td>Not set</td>
     </tr>
     <tr>
       <td><code>ADMIN_LOCALE</code></td>
@@ -261,16 +262,6 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
       <td><code>MAGENTO_CLOUD_MODE</code></td>
       <td>We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. For example, for Pro, this value may be <code>enterprise</code> indicating Staging and Production. For <code>enterprise</code>, it sets the <code>STATIC_CONTENT_THREADS</code> to 3, otherwise sets it to 1 for Integration. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack. This is available in all versions.</td>
       <td>enterprise</td>
-    </tr>
-    <tr>
-      <td><code>APPLICATION_MODE</code></td>
-      <td>
-        <p>Determines whether or not Magento operates in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During deployment, we recommend the <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default mode</a>.</p>
-        <p>The variable supports the following values: <code>production</code> and <code>developer</code>. You cannot set this value to <code>default</code> mode. After you have changed the mode with an environment variable, it can only be set to <code>production</code> or <code>developer</code>.</p>
-        <p>To execute build and deploy scripts in a specific mode, set an environment variable for APPLICATION_MODE. If you execute these scripts in <code>default</code> mode without APPLICATION_MODE set as an environment variable, the mode will be set to <code>production</code>.</p>
-        <p>This is available in all versions.</p>
-      </td>
-      <td>production</td>
     </tr>
     <tr>
       <td><code>VERBOSE_COMMANDS</code></td>
@@ -334,7 +325,7 @@ You can add variables using the [Project Web Interface]({{page.baseurl}}cloud/pr
           <li><code>compact</code>: conserves disk space on the server. If you use <code>compact</code>, the value for <code>STATIC_CONTENT_THREADS</code> is overriden with a value of 1. This strategy does not work with multi-threads.</li>
         </ul>
       </td>
-      <td>not set</td>
+      <td>Not set</td>
     </tr>
   </tbody>
 </table>
@@ -345,7 +336,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
+Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
 </div>
 
 To create a variable using the command line:
@@ -366,13 +357,3 @@ In the event something goes wrong and you can not access your environment after 
         magento-cloud snapshot:restore <snapshot>
 
 For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
-
-#### Related topics
--   [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
--   [Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
--   [Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
--   [Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
--   [Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
--   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
--   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
--   [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

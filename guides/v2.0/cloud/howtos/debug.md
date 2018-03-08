@@ -40,7 +40,7 @@ To add Xdebug, we recommend creating a branch to work in and add the files.
 ### Enable Xdebug in your environment {#enable}
 Enable Xdebug by adding it to the extensions section of magento.app.yaml. When you push this update to Git and deploy to environments, the debugger is available.
 
-You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) to have it enabled. We will get Xdebug enabled onto those environments for you.
+You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to have it enabled. We will get Xdebug enabled onto those environments for you.
 
 <!-- You may need to run PHP with a separate config file to enable xdebug on the CLI, such as "php -c /etc/platform/<project_id>/php.ini ... " -->
 
@@ -174,7 +174,7 @@ If an "unable to connect" error displays, verify all of the following:
 *	You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
 
 ### Configure Pro Staging and Production {#pro}
-To complete configuration for Pro plan Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) to have Xdebug enabled and configured in Staging and Production environments.
+To complete configuration for Pro plan Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to have Xdebug enabled and configured in Staging and Production environments.
 
 We will enable Xdebug in the environment. Be aware, this will require a redeployment of Staging and Production.
 

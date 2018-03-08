@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
 title: Example of managing system-specific settings
-menu_title: Example of managing system-specific settings
-menu_order: 25
-menu_node:
 version: 2.2
 github_link: cloud/live/sens-data-initial.md
 functional_areas:
@@ -72,7 +68,7 @@ To change locale and static file optimization settings:
 
 	![Set static file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.php to your local system {#export}
@@ -87,11 +83,11 @@ To create and transfer `config.php`:
 		magento-cloud environment:ssh --pipe
 2.	Create `config.php` on the integration server.
 
-		ssh -k <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 5.	If you haven't done so already, change to the project root directory.
 6.	Transfer `config.php` to your local system.
 
@@ -195,11 +191,11 @@ By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new confi
 		magento-cloud environment:ssh --pipe
 2.	Run the `config.php` creation command again on the Integration server.
 
-		ssh -k <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
 3.	If you haven't done so already, change to the project root directory.
 4.	Transfer `config.php` to your local system.
 
@@ -266,6 +262,3 @@ To push your changes, enter the following command:
 Wait for deployment to complete.
 
 Repeat the deployment process for pushing the code to all environments.
-
-#### Related topics
-* [Overview of configuration management]({{ page.baseurl }}cloud/live/sens-data-over.html)
