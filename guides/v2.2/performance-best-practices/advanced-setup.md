@@ -20,22 +20,22 @@ To run Magento with ElasticSearch, you don’t need any specific configuration--
 
 ## Indexers fine tuning
 
-When dealing with large amounts of data in your store, re-indexing all this information becomes a concern. The Magento team selected the most loaded indexes and enabled batch indexing that allows you to set a portion of data to be processed on each iteration. This way, the user can tune batch size based on the type and size of data in database.
+When dealing with large amounts of data in your store, re-indexing all this information becomes a concern. The Magento team selected the most loaded indexes and enabled batch indexing, which  allows you to set a portion of data to be processed on each iteration. This way, the user can tune batch sizes based on the type and size of data in the database.
 
-To manage this setting, you need to edit the `batchRowsCount` parameter in the `di.xml` file of the corresponding module. The following indexes support this feature:
+To manage this setting, edit the `batchRowsCount` parameter in the `di.xml` file of the corresponding module. The following indexes support this feature:
 
 * Category Product Index (Catalog Module)
 * Price Index (Catalog Module)
 * EAV Index (Catalog Module)
 * Stock Index (CatalogInventory Module)
 
-You can tune indexers performance by adjusting the index batching size variables. This controls how many entities are processed at a time by the indexer. In some situations, we’ve seen significant decreases in indexing time.
+You can tune indexer performance by adjusting the index batching size variables. This controls how many entities are processed at a time by the indexer. In some situations, we’ve seen significant decreases in indexing time.
 
-For example, if you are running a profile similar to B2B Medium, you can override the configuration value `batchRowsCount` in `app/code/Magento/catalog/etc/di.xml` and override the default value of `5000` to `1000`. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration!
+For example, if you are running a profile similar to B2B Medium, you can override the configuration value `batchRowsCount` in `app/code/Magento/catalog/etc/di.xml` and override the default value of `5000` to `1000`. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration.
 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration value (default is 16M for both) will improve performance for this indexer but will result in MySQL consuming more RAM.
+We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to the TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration values (the default is 16M for both) will improve performance for this indexer, but will result in MySQL consuming more RAM.
 </div>
 
 ## Redis
@@ -44,17 +44,17 @@ Sometimes one Redis instance is not enough to serve incoming requests. There are
 
 First, Magento allows you to configure separate cache storage for each cache type. This allows you to install as many separate Redis instances as the number of types of cache that are registered in Magento. Realistically, you might want Redis instances for the most actively used caches, such those as configuration, layout, and blocks.
 
-Another solution can be to place the configuration cache on the filesystem and move the other caches to the Redis server. With this solution, you will need a separate tool for centralized invalidation of configuration cache on all your web nodes.
+Another solution can be to place the configuration cache on the filesystem and move the other caches to the Redis server. With this solution, you need a separate tool for centralized invalidation of configuration cache on all your web nodes.
 
 You could also use a Redis cluster that performs parallel read/write operations with an automatically-increasing number of nodes. Magento does not provide configuration for this case, but it can be launched with minor customizations.
 
 ## Job Server (RabbitMQ)
 
-{{site.data.var.ee}} supports message queue implemented through RabbitMQ. Magento uses this service for executing numerous asynchronous operations, including B2B catalog operations and asynchronous stock updates. All interfaces for adding more jobs to the job server are distributed with the product and are available for custom asynchronous logic implementation in the scope of 3rd party extensions. As with any other integration, Magento 2 provides a sample configuration file for RabbitMQ that contains all recommended settings and is fully ready for production usage.
+{{site.data.var.ee}} supports message queues implemented through RabbitMQ. Magento uses this service for executing numerous asynchronous operations, including B2B catalog operations and asynchronous stock updates. All interfaces for adding more jobs to the job server are distributed with the product and are available for custom asynchronous logic implementation in the scope of 3rd party extensions. As with any other integration, Magento provides a sample configuration file for RabbitMQ that contains all recommended settings and is fully ready for production usage.
 
 ## Splitting the database
 
-{{site.data.var.ee}} also allows you to scale in terms of your database storage to let you easily serve the growing needs of your business. With this purpose, Magento provides the opportunity to setup up to 3 separate master databases that serve specific domain areas:
+{{site.data.var.ee}} also allows you to scale in terms of your database storage to let you easily serve the growing needs of your business. With this purpose, Magento provides the opportunity to setup up to three separate master databases that serve specific domain areas:
 
 * Main (Catalog) Database
 * Checkout Database
@@ -72,12 +72,14 @@ These commands migrate specific domain tables from the main database to a domain
 
 By having separate databases for checkout and Order Management, you can distribute the load between your database servers. You can serve more checkouts and process more orders per second without affecting the availability of your сatalog and other operations. We recommend splitting databases for periods of flash or active sales, or using them permanently for naturally high-load projects. Migration of present data between databases should be executed under the supervision of your system administrator.  Do not split databases while in production mode.
 
-In addition to master databases, Magento allows you to configure a number of slave databases (1 for each data resource declared in the system). A slave database serves as a full replica of your main database, or one of your domain master databases. It is isused for read operations on a specific resource.
+In addition to master databases, Magento allows you to configure a number of slave databases (one for each data resource declared in the system). A slave database serves as a full replica of your main database, or one of your domain master databases. It is isused for read operations on a specific resource.
 
 
 You can add a slave database by running the following command:
 
-`bin/magento setup:db-schema:add-slave`
+``` bash
+bin/magento setup:db-schema:add-slave
+```
 
 This command performs configuration changes but does not configure replication itself. That should be done manually.
 
