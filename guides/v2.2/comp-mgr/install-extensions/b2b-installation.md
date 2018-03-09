@@ -30,7 +30,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
     bin/magento setup:di:compile
 
-    bin/magento setup:static-content:deploy
+    bin/magento setup:static-content:deploy -f
     ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
