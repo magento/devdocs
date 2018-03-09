@@ -62,9 +62,6 @@ Generated PHP code:
 @Description("Add Catalog via Admin")
 ```
 
-***
-***
-
 ### features
 
 The `<features>` element is an implementation of a [`@Features`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories) Allure tag.
@@ -88,9 +85,6 @@ Generated PHP code:
 @Features({"Catalog", "Add/Edit"})
 ```
 
-***
-***
-
 ### group
 
 The `<group>` element is an implementation of a [`@group`](http://codeception.com/docs/07-AdvancedUsage#Groups) Codeception tag.
@@ -113,9 +107,6 @@ Generated PHP code:
 @group catalog
 ```
 
-***
-***
-
 ### return
 
 The `<return>` element is an implementation of a [`@return`](http://codeception.com/docs/07-AdvancedUsage#Examples) Codeception tag. It specifies what is returned from a test execution.
@@ -137,9 +128,6 @@ Generated PHP code:
 @return void
 ```
 
-***
-***
-
 ### severity
 
 The `<return>` element is an implementation of a [`@Severity`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity) Allure tag; Metadata for report.
@@ -159,9 +147,6 @@ Generated PHP code:
 ``` php?start_inline=1
 @Severity(level = SeverityLevel::CRITICAL)
 ```
-
-***
-***
 
 ### stories
 
@@ -183,9 +168,6 @@ Generated PHP code:
 ``` php?start_inline=1
 @Stories({"Add Catalog", "Edit Catalog"})
 ```
-
-***
-***
 
 ### testCaseId
 
@@ -211,9 +193,6 @@ Generated PHP code:
 @TestCaseId("#")
 ```
 
-***
-***
-
 ### useCaseId
 
 The `<useCaseId>` element is an implementation of a `@UseCaseId` custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.
@@ -232,9 +211,6 @@ Generated PHP code:
 ``` php?start_inline=1
 @UseCaseId("USECASE-1")
 ```
-
-***
-***
 
 ### title
 
