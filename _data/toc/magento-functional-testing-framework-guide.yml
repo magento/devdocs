@@ -6,7 +6,7 @@ pages:
     versions: ["2.2", "2.3"]
     children:
 
-      - label: Getting Started
+      - label: Getting started
         url: magento-functional-testing-framework/release-2/getting-started.html
 
       - label: Test
@@ -35,7 +35,7 @@ pages:
           - label: Parameterized selectors
             url: magento-functional-testing-framework/release-2/section/parameterized-selectors.html
 
-          - label: Locator Functions
+          - label: Locator functions
             url: magento-functional-testing-framework/release-2/section/locator-functions.html
 
       - label: Data
@@ -55,8 +55,8 @@ pages:
       - label: Update
         url: magento-functional-testing-framework/release-2/update.html
 
-      - label: Tips and tricks
-        url: magento-functional-testing-framework/release-2/tips-and-tricks.html
+      - label: Best practices
+        url: magento-functional-testing-framework/release-2/best-practices.html
 
       - label: Troubleshooting
         url: magento-functional-testing-framework/release-2/troubleshooting.html

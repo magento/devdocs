@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Annotations in the Magento Functional Testing Framework
+title: Annotations
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/annotations.md
 functional_areas:
@@ -12,15 +12,17 @@ mftf-release: 2.0.2
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-Annotations are essentially comments in the code.
-(In PHP, they all are marked by a preceding `@` symbol.)
-Within [test methods], annotations are contained within their own node.
+Annotations are essentially comments in the code. In PHP, they all are marked by a preceding `@` symbol.
+
+Within [test methods](../test.html#test-tag), annotations are contained within their own node.
 
 ## Principles
 
-* All annotations are within an `<annotations>` element
-* Each element within corresponds to a supported annotation type
-* There is no distinction made in XML between Codeception annotations and Allure annotations
+The following conventions apply to MFTF annotations:
+
+* All annotations are within an `<annotations>` element.
+* Each element within corresponds to a supported annotation type.
+* There is no distinction made in XML between Codeception annotations and Allure annotations.
 * Each annotation contains only one value.
 If multiple annotation values are supported and required each value requires a separate annotation.
 
@@ -38,17 +40,15 @@ If multiple annotation values are supported and required each value requires a s
 </annotations>
 ```
 
-## Reference
+## Elements reference
 
 ### description
 
-_Implementation of an Allure tag [`@Description`]_
-
-Metadata for report.
+The `<description>` element is an implementation of a [`@Description`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description) Allure tag; Metadata for report.
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 #### Example
 
@@ -67,14 +67,13 @@ Generated PHP code:
 
 ### features
 
-_Implementation of an Allure tag [`@Features`]_
+The `<features>` element is an implementation of a [`@Features`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories) Allure tag.
 
-Sets a string that will be displayed as a **Feature** within the Allure report.
-Tests under the same feature are grouped together in the report.
+`<features>` sets a string that will be displayed as a feature within the Allure report. Tests under the same feature are grouped together in the report.
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 #### Example
 
@@ -94,15 +93,13 @@ Generated PHP code:
 
 ### group
 
-_Implementation of a Codeception tag [`@group`]_
+The `<group>` element is an implementation of a [`@group`](http://codeception.com/docs/07-AdvancedUsage#Groups) Codeception tag.
 
-Specifies a string to identify and collect tests together.
-Any test can be a part of multiple groups.
-The purpose of grouping is to create a set of test for a purpose (e.g. all Cart tests, all Slow tests) and run them together.
+`<group>` specifies a string to identify and collect tests together. Any test can be a part of multiple groups. The purpose of grouping is to create a set of test for a purpose, such as all cart tests or all slow tests) and run them together.
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 #### Example
 
@@ -121,13 +118,11 @@ Generated PHP code:
 
 ### return
 
-_Implementation of a Codeception tag [`@return`]_
-
-Specifies what is returned from a test execution.
+The `<return>` element is an implementation of a [`@return`](http://codeception.com/docs/07-AdvancedUsage#Examples) Codeception tag. It specifies what is returned from a test execution.
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 
 #### Example
@@ -147,13 +142,11 @@ Generated PHP code:
 
 ### severity
 
-_Implementation of an Allure tag [`@Severity`]_
-
-Metadata for report.
+The `<return>` element is an implementation of a [`@Severity`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity) Allure tag; Metadata for report.
 
 Attribute|Type|Use|Acceptable values
 ---|---|---|---
-value|string|required|`"BLOCKER"`, `"CRITICAL"`, `"NORMAL"`, `"MINOR"`, `"TRIVIAL"`
+`value`|string|required|`"BLOCKER"`, `"CRITICAL"`, `"NORMAL"`, `"MINOR"`, `"TRIVIAL"`
 
 #### Example
 
@@ -172,13 +165,11 @@ Generated PHP code:
 
 ### stories
 
-_Implementation of an Allure tag [`@Stories`]_
-
-Same functionality as [`features`](#features), within the **Story** report group.
+The `<stories>` element is an implementation of a [`@Stories`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories) Allure tag. It has the same functionality as [`features`](#features), within the Story report group.
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 #### Example
 
@@ -198,16 +189,15 @@ Generated PHP code:
 
 ### testCaseId
 
-_Implementation of an Allure tag [`@TestCaseId`]_
+The `<testCaseId>` element is an implementation of a [`@TestCaseId`](https://github.com/allure-framework/allure1/wiki/Test-Case-ID) Allure tag. It specifies a ZephyrId for a test.
 
-Specifies a ZephyrId for a test.
-If the linkage is set up correctly in Allure config, the test will have a hyperlink to the Zephyr test case in the report.
+If the linkage is set up correctly in the Allure config, the test will have a hyperlink to the Zephyr test case in the report.
 
-[Lean more about setup instructions in Allure](https://github.com/allure-framework/allure1/wiki/Test-Case-ID)
+Learn more about [setup instructions in Allure](https://github.com/allure-framework/allure1/wiki/Test-Case-ID).
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 #### Example
 
@@ -226,15 +216,11 @@ Generated PHP code:
 
 ### useCaseId
 
-_Implementation of a custom tag `@UseCaseId`_
-
-Specifies Use Case Id for a test.
-
-Ignored by Allure configuration at the moment, as Allure implementation is not complete.
+The `<useCaseId>` element is an implementation of a `@UseCaseId` custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 #### Example
 
@@ -252,13 +238,11 @@ Generated PHP code:
 
 ### title
 
-_Implementation of an Allure tag [`@Title`]_
-
-Metadata for report.
+The `<title>` element is an implementation of [`@Title`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title) Allure tag; Metadata for report.
 
 Attribute|Type|Use
 ---|---|--
-value|string|required
+`value`|string|required
 
 #### Example
 
@@ -271,21 +255,3 @@ Generated PHP code:
 ``` php?start_inline=1
 @Title("Add Catalog")
 ```
-
-<!-- LINKS DEFINITIONS-->
-
-[test methods]: ../test.html#test-tag
-
-[`@Description`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description
-[`@env`]: http://codeception.com/docs/07-AdvancedUsage#Environments
-[`@Features`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
-[`@group`]: http://codeception.com/docs/07-AdvancedUsage#Groups
-[`@return`]: http://codeception.com/docs/07-AdvancedUsage#Examples
-[`@Severity`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity
-[`@Stories`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
-[`@TestCaseId`]: https://github.com/allure-framework/allure1/wiki/Test-Case-ID
-[`@Title`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title
-
-<!-- Abbreviations -->
-
-*[MFTF]: Magento Functional Testing Framework
