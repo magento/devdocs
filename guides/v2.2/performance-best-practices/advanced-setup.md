@@ -29,6 +29,15 @@ To manage this setting, you need to edit the `batchRowsCount` parameter in the `
 * EAV Index (Catalog Module)
 * Stock Index (CatalogInventory Module)
 
+You can tune indexers performance by adjusting the index batching size variables. This controls how many entities are processed at a time by the indexer. In some situations, we’ve seen significant decreases in indexing time.
+
+For example, if you are running a profile similar to B2B Medium, you can override the configuration value `batchRowsCount` in `app/code/Magento/catalog/etc/di.xml` and override the default value of `5000` to `1000`. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration!
+
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration value (default is 16M for both) will improve performance for this indexer but will result in MySQL consuming more RAM.
+</div>
+
 ## Redis
 
 Sometimes one Redis instance is not enough to serve incoming requests. There are several solutions that we can recommend to address this situation.

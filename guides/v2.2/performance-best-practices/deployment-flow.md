@@ -28,7 +28,9 @@ Deployment operations are provided with a variety of options for different store
 
 Run the following command to deploy static content:
 
-`bin/magento setup:static-content:deploy`
+``` bash
+bin/magento setup:static-content:deploy
+```
 
 ## Preprocess DI instructions and configure Composer autoloading
 
@@ -41,11 +43,15 @@ When you preprocess and compile DI instructions, Magento
 
 Run the following command to preprocess and compile DI:
 
-`bin/magento setup:di:compile`
+``` bash
+bin/magento setup:di:compile
+```
 
 After compilation completes, we recommend running the following command:
 
-`composer dump-autoload -o`
+``` bash
+composer dump-autoload -o
+```
 
 This command allows composer to rebuild the mapping to project files so that they load faster.
 
@@ -55,18 +61,18 @@ Finally, you need to place your store in Production mode. Production mode is spe
 
 `SetEnv MAGE_MODE production`
 
-You can also set production mode from the command line.
+You can also deploy static content, compile the content, and set the mode in one CLI command:
 
-**Question to reviewer:** _Should `magento deploy:mode:set production` be mentioned here?_
+``` bash
+bin/magento deploy:mode:set production
+```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-You can deploy static content, compile the content, and set the mode in one CLI command (`bin/magento set:mode production`). The command runs in the background and does not allow you to set additional options on each specific step.
-</div>
+The command runs in the background and does not allow you to set additional options on each specific step.
 
 ## Additional pre-launch actions
 
-These steps are recommended, but not mandatory. They can be performed immediately before launching your store your store in production mode. The list includes:
+These steps are recommended, but not mandatory. You can perform them immediately before launching  your store in production mode. The list includes:
 
-* Re-indexing data: to avoid the presence of any inconsistent data in your indexes
-* Flushing the cache: to be sure no old or incorrect data are left in cache
-* Warm up the cache: calling out most popular or critical store pages in advance, so the cache for them is generated and stored. This operation can be performed with any intellectual crawler or manually (in case of small stores).
+* Re-index data to avoid the presence of any inconsistent data in your indexes
+* Flush the cache to be sure no old or incorrect data are left in cache
+* Warm up the cache, which calls out the most popular or critical store pages in advance, so the cache for them is generated and stored. This operation can be performed with any intellectual crawler or manually, if you have a small store.
