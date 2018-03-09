@@ -48,7 +48,12 @@ You can run Magento in any of the following *modes*:
 	</tr>
 	<tr>
 		<td>production</td>
-		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static view files are served from `pub/static` only. New or updated files are not written to the file system. </td>
+		<td><p>Intended for deployment on a production system, this mode:</p>
+			<ul><li>Does not show exceptions to the user (exceptions are written to logs only).</li>
+				<li>Serves static view files from cache only.</li>
+				<li>Prevents automatic code file compilation. New or updated files are not written to the file system.</li>
+				<li><b>Does not allow you to enable or disable cache types in Magento Admin.</b> <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
+			</ul></td>
 	</tr>
 </tbody>
 </table>

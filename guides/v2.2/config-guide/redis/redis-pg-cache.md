@@ -16,8 +16,7 @@ functional_areas:
 
 Magento provides command line options to configure Redis page and default caching. Although you can also configure caching by editing the `<Magento install dir>app/etc/env.php` file, the command line is the recommended method, especially for initial configuration. The command line provides validation, thereby ensuring the configuration is syntactically correct.
 
-<h2 id="reds-sess-prereq">Prerequisite</h2>
-Before you continue, [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install).
+You must  [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
 ## Configure Redis default caching {#config-redis-config}
 

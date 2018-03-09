@@ -101,7 +101,7 @@ For detailed information on supported versions and extensions, see the following
 *	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
 
 ### Backup and disaster recovery {#backup}
-We automatically back up your Production environment every six hours. This snapshot and backup includes your deployed code, installed software and services, and data. You can also perform [snapshots]({{page.baseurl}}cloud/project/project-webint-snap.html) and database dumps with CLI commands.
+You can create a snapshot of your database and file system using the Project Web Interface or the CLI. The snapshot includes your deployed code, installed software and services, and data. See [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
 
 ## Prepare for development {#develop}
 To branch and develop your Magento store:
