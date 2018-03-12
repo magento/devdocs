@@ -286,7 +286,7 @@ You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: myphpapp
-type: php:7.1
+type: php:7.0
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
