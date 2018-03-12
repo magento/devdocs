@@ -285,7 +285,7 @@ For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/set
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
-name: myphpapp
+name: mymagento
 type: php:7.0
 ```
 
