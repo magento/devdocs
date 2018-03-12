@@ -2049,7 +2049,7 @@
 <p>To upgrade from <strong>2.1.X</strong>:</p>
 
 <ul>
-  <li><a href="#php">Upgrade your PHP version</a>: v2.2 supports PHP 7.0 and later</li>
+  <li><a href="#php">Upgrade your PHP version</a>: v2.2 supports PHP 7.0 and 7.1</li>
   <li><a href="#config">Configuration Management</a>: Create a new <code class="highlighter-rouge">config.php</code> using the <code class="highlighter-rouge">config.local.php</code> to properly upgrade</li>
   <li><a href="#magento-app-yaml">.magento.app.yaml</a>: Update the file with new settings and required changes for hooks and environment variables</li>
   <li><a href="#variable">Verify or set the ADMIN_EMAIL variable</a>: This variable is required for upgrades and patch to 2.2 and later</li>
@@ -2060,7 +2060,9 @@
 <p>After completing your upgrade, you may also want to <a href="#extensions">Verify and upgrade your extensions</a>.</p>
 
 <h3 id="php">Upgrade your PHP version</h3>
-<p>With v2.2, we only support PHP 7.0 and later. Make sure to upgrade your local development workspace PHP version. For more information, see the following:</p>
+<p>Magento Commerce (Cloud) 2.2 supports PHP 7.0 and 7.1. For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
+
+<p>Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
 
 <ul>
   <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workspace</li>

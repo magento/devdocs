@@ -2284,13 +2284,15 @@ languages:</p>
 <p>For more information, see <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>.</p>
 
 <h2 id="cloud-yaml-platform-php">Configure PHP options</h2>
-<p>You can choose which version of PHP you want to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file.:</p>
+<p>You can choose which version of PHP to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">myphpapp</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">mymagento</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">php:7.0</span>
 </code></pre></div></div>
 
-<p>For PHP versions, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.</p>
+<div class="bs-callout bs-callout-info">
+  <p>Magento Commerce (Cloud) supports PHP 7.0 and 7.1. For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.2/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
+</div>
 
 <p>See one of the following sections for more information:</p>
 
@@ -2300,7 +2302,7 @@ languages:</p>
 </ul>
 
 <h3 id="cloud-yaml-platform-php-ext">PHP extensions</h3>
-<p>You can define additional PHP extensions you want to enable or disable. Example:</p>
+<p>You can define additional PHP extensions to enable or disable:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .magento.app.yaml</span>
 <span class="na">runtime</span><span class="pi">:</span>
