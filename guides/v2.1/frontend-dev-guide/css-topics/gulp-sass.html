@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Use Sass and Gulp preprocessor | Magento 2 Developer Documentation</title>
+	<title>Use Sass preprocessor and Gulp task runner | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1169,7 +1169,7 @@
 
           
 
-          <span property="name">Use Sass and Gulp preprocessor</span>
+          <span property="name">Use Sass preprocessor and Gulp task runner</span>
 
         
 
@@ -1192,7 +1192,7 @@
 
 	
 
-	<h1 class="page-heading">Use Sass and Gulp preprocessor</h1>
+	<h1 class="page-heading">Use Sass preprocessor and Gulp task runner</h1>
 
   
 
@@ -1202,7 +1202,7 @@
 
 			<p>By default, Magento uses <a href="http://lesscss.org/">Less</a> for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.</p>
 
-<p>If you decide not to use Less and default <a href="/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, you need to create your own theme from scratch and use an alternative preprocessor. You can write a custom pre-processor or use an existing one. This topic describes how to configure and use <a href="http://gulpjs.com/">Gulp</a> preprocessor for Sass.</p>
+<p>If you decide not to use Less and default <a href="/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, you need to create your own theme from scratch and use an alternative preprocessor. This topic describes how to configure and use <a href="http://gulpjs.com/">Gulp</a> task runner and gulp-sass package for Sass preprocessor.</p>
 
 <p>For details about adding a custom preprocessor, see the <a href="/guides/v2.1/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor</a> topic.</p>
 
@@ -1238,7 +1238,7 @@
     <p><code class="highlighter-rouge">npm install --save gulp-install</code></p>
   </li>
   <li>
-    <p>Add Gulp Sass preprocessor by running the following command:</p>
+    <p>Add gulp-sass package for Sass preprocessor by running the following command:</p>
 
     <p><code class="highlighter-rouge">npm install gulp-sass</code></p>
   </li>
@@ -1251,7 +1251,7 @@
     <p>Create a theme as described in <a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a>.</p>
   </li>
   <li>
-    <p>Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (<code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code>). You can use the following code sample (no changes needed, create an empty <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;/gulp.js</code> and copy-paste this code):
+    <p>Set up a Gulp task for Sass compilation. For this, put the file with the task code to the root of your theme directory (<code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code>). You can use the following code sample (no changes needed, create an empty <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;/gulp.js</code> and copy-paste this code):
  <code class="highlighter-rouge">package.json</code>:</p>
 
     <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
