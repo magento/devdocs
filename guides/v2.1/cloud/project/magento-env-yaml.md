@@ -11,11 +11,11 @@ functional_areas:
 
 The `.magento.env.yaml` file centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 
-Unlike other YAML configuration files, such as [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html), [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html), you can use this file to manage configuration settings without opening a support ticket.
+Unlike other YAML configuration files, such as [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html), [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html), you can use the `.magento.env.yaml` file to manage configuration settings without opening a support ticket.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 -   Settings you configure with environment variables using the `magento-cloud` CLI tool or Project Web Interface override settings in the `.magento.env.yaml` file.
--   If you want to configure unique actions in each environment, you must modify this file in each environment's Git branch.
+-   If you want to configure unique actions in each environment, you must modify this file in each environment branch.
 </div>
 
 Add the following sections to the `.magento.env.yaml` file:
