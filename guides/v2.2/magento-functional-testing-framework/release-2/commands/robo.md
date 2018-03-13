@@ -66,6 +66,11 @@ $ vendor/bin/robo build:project
 ```bash
 $ vendor/bin/robo generate:tests
 ```
+#### Generate specified Tests in PHP:
+
+```bash
+$ vendor/bin/robo generate:tests testName01 testName02 testName03
+```
 
 #### Run all Tests marked with the @group tag 'example', using the Chrome environment:
 
@@ -147,6 +152,7 @@ Allure v1.x.x | Allure v2.x.x
 #### generate
 
 `generate:tests`   | Generate all Tests based on specific module load order of the Magento instance
+`generate:tests testName01 testName02 testName03`    | Generate specified Tests only
 `generate:tests --force`   | Generate all Tests regardless of whether a Magento instance is available
 
   
