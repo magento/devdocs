@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Update the Magento Functional Testing Framework and pull new tests | Magento 2 Developer Documentation</title>
+	<title>Update the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Update the Magento Functional Testing Framework and pull new tests</span>
+          <span property="name">Update the Magento Functional Testing Framework</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Update the Magento Functional Testing Framework and pull new tests</h1>
+	<h1 class="page-heading">Update the Magento Functional Testing Framework</h1>
 
   
 
@@ -662,55 +662,40 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
-<h2 id="overview">Overview</h2>
+<p>Magento tests and the framework are stored in different repositories.</p>
 
-<p>Magento tests and the Framework are stored in different repositories.</p>
+<p>Magento tests are stored in the same repository as the Magento code base. When you pull changes in the Magento code, you’re potentially pulling corresponding tests as well.</p>
 
-<p>Magento tests are stored in the same repository as the Magento code base.
-When you pull changes in the Magento code, you’re potentially pulling corresponding tests .</p>
+<p>The MFTF is installed separately as a dependency using Composer. When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory. This ensures that the MFTF is up to date.</p>
 
-<p>The Framework is installed separately as a dependency using Composer.
-When pulling the latest Magento code, you need to update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory. This ensures that the <abbr title="Magento Functional Testing Framework">MFTF</abbr> is up to date.</p>
+<h2 id="update-the-mftf">Update the MFTF</h2>
 
-<h2 id="update-the-mftf">Update the <abbr title="Magento Functional Testing Framework">MFTF</abbr></h2>
+<p>To update the MFTF (via a command line interface):</p>
 
-<ul>
-  <li>
-    <p>When you updated Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</p>
-  </li>
+<ol>
+  <li>When you update Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</li>
   <li>
     <p>Go to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory:</p>
-  </li>
-</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/acceptance
-</code></pre></div></div>
-
-<ul>
-  <li>
-    <p>Update your own tests, including data, metadata etc, if they contain tags that are unsupported anymore in newer version. Check details about backward incompatible changes in <a href="../changelog.html">Changelog</a>, and learn documentation of new <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">cd </span>dev/tests/acceptance
+</code></pre></div>    </div>
   </li>
+  <li>Update your own tests, including data, metadata, etc. if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and see new MFTF release documentation in the <a href="../changelog.html">Changelog</a>.</li>
   <li>
     <p>Run <code class="highlighter-rouge">composer update</code> to get the latest framework version:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>composer update
+</code></pre></div>    </div>
   </li>
-</ul>
+  <li>
+    <p>Generate newly pulled tests:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>composer update
-</code></pre></div></div>
-
-<ul>
-  <li>Generate newly pulled tests:</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo generate:tests
-</code></pre></div></div>
-
-<!-- LINK DEFINITIONS -->
-
-<!-- Abbreviations -->
-
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>vendor/bin/robo generate:tests
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 		</div>
 		<!-- /.content-wrap -->

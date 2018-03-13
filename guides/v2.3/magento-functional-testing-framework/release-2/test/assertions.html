@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Assertions in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Assertions | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Assertions in the Magento Functional Testing Framework</span>
+          <span property="name">Assertions</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Assertions in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Assertions</h1>
 
   
 
@@ -662,57 +662,57 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
 
-<p>This topic contains general information about assertions in the <abbr title="Magento Functional Testing Framework">MFTF</abbr> and the reference list of available assertions.</p>
+<p>Assertions serve to pass or fail the <a href="../test.html#test-tag">test</a> if a condition is not met. These assertions will look familiar to you if you’ve used any other testing framework, like PHPUnit.</p>
 
-<h2 id="overview">Overview</h2>
+<p>All assertions contain the same <a href="./actions.html#common-attributes">common actions attributes</a>: <code class="highlighter-rouge">stepKey</code>, <code class="highlighter-rouge">before</code>, and <code class="highlighter-rouge">after</code>.</p>
 
-<p>Assertions serve to pass or fail the <a href="../test.html#test-tag">test</a> if a condition is not met. These assertions will look familiar to you if you’ve used any other framework like PHPUnit.</p>
-
-<p>All assertions contain same <a href="./actions.html#common-attributes">common actions attributes</a>: <code class="highlighter-rouge">stepKey</code>, <code class="highlighter-rouge">before</code>, and <code class="highlighter-rouge">after</code>.</p>
-
-<p>Most assertions contain attribute <code class="highlighter-rouge">message</code> that specifies text of an informational message to help you to know more about the cause of the failure.</p>
+<p>Most assertions contain a <code class="highlighter-rouge">message</code> attribute that specifies the text of an informational message to help you identify the cause of the failure.</p>
 
 <h2 id="principles">Principles</h2>
 
+<p>The <a href="../test.html#principles">principles for actions</a> are also applicable to assertions.</p>
+
+<p>Assertion actions have nested self-descriptive elements, <code class="highlighter-rouge">&lt;expectedResult&gt;</code> and <code class="highlighter-rouge">&lt;actualResult&gt;</code>. These elements contain a result type and a value:</p>
 <ul>
-  <li>
-    <p><a href="../test.html#principles">actions’ principles</a> are also applicable to assertions</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">expectedType</code> and <code class="highlighter-rouge">actualType</code> can be:</p>
+  <li><code class="highlighter-rouge">type</code>
     <ul>
-      <li>const (default)</li>
-      <li>int</li>
-      <li>float</li>
-      <li>bool</li>
-      <li>string</li>
-      <li>variable</li>
-      <li>array</li>
+      <li><code class="highlighter-rouge">const</code> (default)</li>
+      <li><code class="highlighter-rouge">int</code></li>
+      <li><code class="highlighter-rouge">float</code></li>
+      <li><code class="highlighter-rouge">bool</code></li>
+      <li><code class="highlighter-rouge">string</code></li>
+      <li><code class="highlighter-rouge">variable</code></li>
+      <li><code class="highlighter-rouge">array</code></li>
     </ul>
   </li>
+  <li><code class="highlighter-rouge">value</code></li>
 </ul>
 
-<p>If <code class="highlighter-rouge">variable</code> is used, the test transforms the corresponding value to <code class="highlighter-rouge">$variable</code>.
-Use <code class="highlighter-rouge">stepKey</code> of a test that returns the value you want to use in assertion.
-Example: <code class="highlighter-rouge">actual="stepKeyOfGrab" actualType="variable"</code></p>
+<p>If <code class="highlighter-rouge">variable</code> is used, the test transforms the corresponding value to <code class="highlighter-rouge">$variable</code>. Use the <code class="highlighter-rouge">stepKey</code> of a test, that returns the value you want to use, in assertions:</p>
 
-<p>To use variables embedded in a string in <code class="highlighter-rouge">expected</code> and <code class="highlighter-rouge">actual</code> of your assertion, use the <code class="highlighter-rouge">{$stepKey}</code> format.
-Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyOfGrab} with an embedded variable reference." actualType="variable"</code></p>
+<p><code class="highlighter-rouge">actual="stepKeyOfGrab" actualType="variable"</code></p>
+
+<p>To use variables embedded in a string in <code class="highlighter-rouge">expected</code> and <code class="highlighter-rouge">actual</code> of your assertion, use the <code class="highlighter-rouge">{$stepKey}</code> format:</p>
+
+<p><code class="highlighter-rouge">actual="A long assert string {$stepKeyOfGrab} with an embedded variable reference." actualType="variable"</code></p>
 
 <h2 id="example">Example</h2>
 
-<p>In this very common test writing example we are grabbing text from a page and then asserting that it matches what we expect to see. If it does not, the test will fail at the assert step.</p>
+<p>The following example shows a common test that gets text from a page and asserts that it matches what we expect to see. If it does not, the test will fail at the assert step.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Grab a value from the page using any grab action --&gt;</span>
 <span class="nt">&lt;grabTextFrom</span> <span class="na">selector=</span><span class="s">"#elementId"</span> <span class="na">stepKey=</span><span class="s">"stepKeyOfGrab"</span><span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- Ensure that the value we grabbed matches our expectation --&gt;</span>
-<span class="nt">&lt;assertEquals</span> <span class="na">expected=</span><span class="s">"Some String"</span> <span class="na">expectedType=</span><span class="s">"string"</span> <span class="na">actual=</span><span class="s">"A long assert string {$stepKeyOfGrab} with an embedded variable reference."</span> <span class="na">actualType=</span><span class="s">"variable"</span> <span class="na">message=</span><span class="s">"This is an optional human readable hint that will be shown in the logs if this assert fails."</span> <span class="na">stepKey=</span><span class="s">"assertEquals1"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;assertEquals</span> <span class="na">message=</span><span class="s">"This is an optional human readable hint that will be shown in the logs if this assert fails."</span> <span class="na">stepKey=</span><span class="s">"assertEquals1"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;expectedResult</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Some String<span class="nt">&lt;/expectedResult&gt;</span>
+   <span class="nt">&lt;actualResult</span> <span class="na">type=</span><span class="s">"variable"</span><span class="nt">&gt;</span>A long assert string {$stepKeyOfGrab} with an embedded variable reference.<span class="nt">&lt;/actualResult&gt;</span>
+<span class="nt">&lt;/assertEquals&gt;</span>
 </code></pre></div></div>
 
-<h2 id="reference">Reference</h2>
+<h2 id="elements-reference">Elements reference</h2>
 
 <h3 id="assertelementcontainsattribute">assertElementContainsAttribute</h3>
 
@@ -732,37 +732,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td>expectedValue</td>
+      <td><code class="highlighter-rouge">expectedValue</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>attribute</td>
+      <td><code class="highlighter-rouge">attribute</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -770,9 +770,16 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </tbody>
 </table>
 
-<h3 id="assertarrayhaskey">assertArrayHasKey</h3>
+<h3 id="assertarrayissorted">assertArrayIsSorted</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertArrayHasKey" target="_blank">See assertArrayHasKey docs on codeception.com</a></p>
+<p>The <code class="highlighter-rouge">&lt;assertArrayIsSorted&gt;</code> asserts that the array is sorted according to a specified sort order, ascending or descending.</p>
+
+<p>Example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;assertArrayIsSorted</span> <span class="na">sortOrder=</span><span class="s">"asc"</span> <span class="na">stepKey=</span><span class="s">"assertSorted"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;array&gt;</span>[1,2,3,4,5,6,7]<span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/assertArrayIsSorted&gt;</span>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -785,49 +792,93 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">sortOrder</code></td>
+      <td>Possible values: <code class="highlighter-rouge">asc</code>, <code class="highlighter-rouge">desc</code></td>
+      <td>required</td>
+      <td>A sort order to assert on array values.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
-      <td>A value of the expected result.</td>
+      <td>A unique identifier of the test step.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
-      <td>string</td>
-      <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
-    </tr>
-    <tr>
-      <td>actual</td>
-      <td>string</td>
-      <td>required</td>
-      <td>A value of the actual result.</td>
-    </tr>
-    <tr>
-      <td>actualType</td>
-      <td>string</td>
-      <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
-    </tr>
-    <tr>
-      <td>message</td>
-      <td>string</td>
-      <td>optional</td>
-      <td>Text of informational message about a cause of failure.</td>
-    </tr>
-    <tr>
-      <td>stepKey</td>
-      <td>string</td>
-      <td>required</td>
-      <td>A unique identifier of the text step.</td>
-    </tr>
-    <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It contains an <code class="highlighter-rouge">&lt;array&gt;</code> child element that specifies an array to be asserted for proper sorting.
+It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4,5]</code> or <code class="highlighter-rouge">[alpha, brontosaurus, zebra]</code>.</p>
+
+<h3 id="assertarrayhaskey">assertArrayHasKey</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertArrayHasKey" target="_blank">assertArrayHasKey docs on codeception.com</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">expected</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A value of the expected result.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">actual</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A value of the actual result.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">actualType</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">message</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Text of informational message about a cause of failure.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the text step.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -837,7 +888,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertarraynothaskey">assertArrayNotHasKey</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertArrayNotHasKey" target="_blank">See assertArrayNotHasKey docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertArrayNotHasKey" target="_blank">assertArrayNotHasKey docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -850,49 +901,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -902,7 +953,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertarraysubset">assertArraySubset</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertArraySubset" target="_blank">See assertArraySubset docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertArraySubset" target="_blank">assertArraySubset docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -915,55 +966,55 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>strict</td>
+      <td><code class="highlighter-rouge">strict</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -973,7 +1024,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertcontains">assertContains</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertContains" target="_blank">See assertContains docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertContains" target="_blank">assertContains docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -986,49 +1037,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1038,7 +1089,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertcount">assertCount</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertCount" target="_blank">See assertCount docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertCount" target="_blank">assertCount docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1051,49 +1102,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1103,7 +1154,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertempty">assertEmpty</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertEmpty" target="_blank">See assertEmpty docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertEmpty" target="_blank">assertEmpty docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1116,37 +1167,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1156,7 +1207,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertequals">assertEquals</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertEquals" target="_blank">See assertEquals docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertEquals" target="_blank">assertEquals docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1169,55 +1220,55 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>delta</td>
+      <td><code class="highlighter-rouge">delta</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1227,7 +1278,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertfalse">assertFalse</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertFalse" target="_blank">See assertFalse docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertFalse" target="_blank">assertFalse docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1240,37 +1291,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>Actual value.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>assertEnum</td>
       <td>optional</td>
       <td>Type of actual value.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1280,7 +1331,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertfileexists">assertFileExists</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertFileExists" target="_blank">See assertFileExists docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertFileExists" target="_blank">assertFileExists docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1293,37 +1344,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1333,7 +1384,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertfilenotexists">assertFileNotExists</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertFileNotExists" target="_blank">See assertFileNotExists docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertFileNotExists" target="_blank">assertFileNotExists docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1346,37 +1397,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1386,7 +1437,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertgreaterorequals">assertGreaterOrEquals</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertGreaterOrEquals" target="_blank">See assertGreaterOrEquals docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertGreaterOrEquals" target="_blank">assertGreaterOrEquals docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1399,49 +1450,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1451,7 +1502,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertgreaterthan">assertGreaterThan</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertGreaterThan" target="_blank">See assertGreaterThan docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertGreaterThan" target="_blank">assertGreaterThan docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1464,49 +1515,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1516,7 +1567,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertgreaterthanorequal">assertGreaterThanOrEqual</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertGreaterThanOrEqual" target="_blank">See assertGreaterThanOrEqual docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertGreaterThanOrEqual" target="_blank">assertGreaterThanOrEqual docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1529,49 +1580,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1581,7 +1632,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertinstanceof">assertInstanceOf</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertInstanceOf" target="_blank">See assertInstanceOf docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertInstanceOf" target="_blank">assertInstanceOf docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1594,49 +1645,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1646,7 +1697,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertinternaltype">assertInternalType</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertInternalType" target="_blank">See assertInternalType docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertInternalType" target="_blank">assertInternalType docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1659,49 +1710,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1711,7 +1762,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertisempty">assertIsEmpty</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertIsEmpty" target="_blank">See assertIsEmpty docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertIsEmpty" target="_blank">assertIsEmpty docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1724,37 +1775,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1764,7 +1815,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertlessorequals">assertLessOrEquals</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertLessOrEquals" target="_blank">See assertLessOrEquals docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertLessOrEquals" target="_blank">assertLessOrEquals docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1777,49 +1828,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1829,7 +1880,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertlessthan">assertLessThan</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertLessThan" target="_blank">See assertLessThan docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertLessThan" target="_blank">assertLessThan docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1842,49 +1893,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1894,7 +1945,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertlessthanorequal">assertLessThanOrEqual</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertLessThanOrEqual" target="_blank">See assertLessThanOrEqual docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertLessThanOrEqual" target="_blank">assertLessThanOrEqual docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1907,49 +1958,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -1959,7 +2010,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnotcontains">assertNotContains</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNotContains" target="_blank">See assertNotContains docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNotContains" target="_blank">assertNotContains docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1972,49 +2023,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2024,7 +2075,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnotempty">assertNotEmpty</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNotEmpty" target="_blank">See assertNotEmpty docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNotEmpty" target="_blank">assertNotEmpty docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2037,37 +2088,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2077,7 +2128,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnotequals">assertNotEquals</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNotEquals" target="_blank">See assertNotEquals docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNotEquals" target="_blank">assertNotEquals docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2090,55 +2141,55 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>delta</td>
+      <td><code class="highlighter-rouge">delta</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2148,7 +2199,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnotinstanceof">assertNotInstanceOf</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNotInstanceOf" target="_blank">See assertNotInstanceOf docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNotInstanceOf" target="_blank">assertNotInstanceOf docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2161,49 +2212,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2213,7 +2264,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnotnull">assertNotNull</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNotNull" target="_blank">See assertNotNull docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNotNull" target="_blank">assertNotNull docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2226,37 +2277,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2266,7 +2317,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnotregexp">assertNotRegExp</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNotRegExp" target="_blank">See assertNotRegExp docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNotRegExp" target="_blank">assertNotRegExp docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2279,49 +2330,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2331,7 +2382,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnotsame">assertNotSame</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNotSame" target="_blank">See assertNotSame docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNotSame" target="_blank">assertNotSame docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2344,49 +2395,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2396,7 +2447,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertnull">assertNull</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertNull" target="_blank">See assertNull docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertNull" target="_blank">assertNull docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2409,37 +2460,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2449,7 +2500,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertregexp">assertRegExp</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertRegExp" target="_blank">See assertRegExp docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertRegExp" target="_blank">assertRegExp docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2462,49 +2513,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2514,7 +2565,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertsame">assertSame</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertSame" target="_blank">See assertSame docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertSame" target="_blank">assertSame docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2527,49 +2578,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2579,7 +2630,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertstringstartsnotwith">assertStringStartsNotWith</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertStringStartsNotWith" target="_blank">See assertStringStartsNotWith docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertStringStartsNotWith" target="_blank">assertStringStartsNotWith docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2592,49 +2643,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2644,7 +2695,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="assertstringstartswith">assertStringStartsWith</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertStringStartsWith" target="_blank">See assertStringStartsWith docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertStringStartsWith" target="_blank">assertStringStartsWith docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2657,49 +2708,49 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2709,7 +2760,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="asserttrue">assertTrue</h3>
 
-<p><a href="http://codeception.com/docs/modules/Asserts#assertTrue" target="_blank">See assertTrue docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/Asserts#assertTrue" target="_blank">assertTrue docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2722,37 +2773,37 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2762,7 +2813,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="expectexception">expectException</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#expectException" target="_blank">See expectException docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#expectException" target="_blank">expectException docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2775,43 +2826,43 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>expected</td>
+      <td><code class="highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td>expectedType</td>
+      <td><code class="highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>actual</td>
+      <td><code class="highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td>actualType</td>
+      <td><code class="highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
@@ -2821,7 +2872,7 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
 
 <h3 id="fail">fail</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#fail" target="_blank">See fail docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#fail" target="_blank">fail docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2834,33 +2885,31 @@ Example: <code class="highlighter-rouge">actual="A long assert string {$stepKeyO
   </thead>
   <tbody>
     <tr>
-      <td>message</td>
+      <td><code class="highlighter-rouge">message</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
-
-<!-- Abbreviations -->
 
 		</div>
 		<!-- /.content-wrap -->

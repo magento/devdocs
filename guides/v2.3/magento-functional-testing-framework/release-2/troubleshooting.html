@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Troubleshooting | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Troubleshooting in the Magento Functional Testing Framework</span>
+          <span property="name">Troubleshooting</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Troubleshooting in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Troubleshooting</h1>
 
   
 
@@ -662,13 +662,17 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+
+<p>Having a little trouble with the MFTF? See some common errors and fixes below.</p>
 
 <h2 id="webdriver-issues">WebDriver issues</h2>
 
+<p>Troubleshoot your WebDriver issues on various browsers.</p>
+
 <h3 id="phantomjs">PhantomJS</h3>
 
-<p>Inability to upload file input using the <abbr title="Magento Functional Testing Framework">MFTF</abbr> actions, giving the following exception:</p>
+<p>You are unable to upload file input using the MFTF actions and are seeing the following exception:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Facebook\WebDriver\Exception\NoSuchDriverException]
 No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
@@ -676,13 +680,20 @@ No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
 
 <h4 id="reason">Reason</h4>
 
-<p>Use of PhantomJS is not actually supported by the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.</p>
+<p>Use of PhantomJS is not actually supported by the MFTF.</p>
 
 <h4 id="solution">Solution</h4>
 
-<p>For headless browsing, the <a href="https://developers.google.com/web/updates/2017/04/headless-chrome" target="_blank">Headless Chrome</a> has better compatibility with the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.</p>
+<p>For headless browsing, the <a href="https://developers.google.com/web/updates/2017/04/headless-chrome" target="_blank">Headless Chrome</a> has better compatibility with the MFTF.</p>
 
 <h3 id="chrome">Chrome</h3>
+
+<p>You are seeing an “unhandled inspector error” exception:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Facebook\WebDriver\Exception\UnknownServerException]
+unknown error: undhandled inspector error: {"code":-32601, "message":
+"'Network.deleteCookie' wasn't found"} ....
+</code></pre></div></div>
 
 <p><img src="./img/trouble-chrome232.png" alt="Screenshot with the exception" /></p>
 
@@ -700,17 +711,11 @@ No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
 
 <h4 id="reason-2">Reason</h4>
 
-<p>There’s a compatibility issue with Codeception’s <code class="highlighter-rouge">moveMouseOver</code> function and GeckoDriver/Firefox.</p>
+<p>There’s a compatibility issue with Codeception’s <code class="highlighter-rouge">moveMouseOver</code> function and GeckoDriver with Firefox.</p>
 
 <h4 id="solution-2">Solution</h4>
 
 <p>None yet. Solving this problem is dependent on a GeckoDriver fix.</p>
-
-<!-- LINK DEFINITIONS -->
-
-<!-- Images -->
-
-<!-- Abbreviations -->
 
 		</div>
 		<!-- /.content-wrap -->

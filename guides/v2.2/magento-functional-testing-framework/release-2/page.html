@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Page structure in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Page structure | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -891,7 +891,7 @@
 
           
 
-          <span property="name">Page structure in the Magento Functional Testing Framework</span>
+          <span property="name">Page structure</span>
 
         
 
@@ -914,7 +914,7 @@
 
 	
 
-	<h1 class="page-heading">Page structure in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Page structure</h1>
 
   
 
@@ -922,25 +922,24 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
-<h2 id="overview">Overview</h2>
+<p>The MFTF uses a modified concept of <a href="https://github.com/SeleniumHQ/selenium/wiki/PageObjects">PageObjects</a>, which models the testing areas of your page as objects within the code. This reduces occurrences of duplicated code and enables you to fix things quickly, in one place, when things change. You define the contents of a page, for reference in a <a href="./test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a>, at both the <a href="#page-tag"><code class="highlighter-rouge">&lt;page&gt;</code></a> and <a href="#section-tag"><code class="highlighter-rouge">&lt;section&gt;</code></a> level.</p>
 
-<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> employs a modified concept of <a href="https://github.com/SeleniumHQ/selenium/wiki/PageObjects">PageObjects</a>.
-You define the contents of a page, for reference in a <a href="./test.html">test</a>, at both a page and section level.
-The majority of elements are defined on a section reference. The section here is a reusable section of a page.
-The pageObject itself then serves to list the URL of the page and the sections which it contains.
-In this way, you reuse sections and maintain a reusable single source of truth to define the elements exercisable on a page.
-Avoiding hardcoded location selectors from tests increases the maintainability and readability of tests, and test execution output/logging.</p>
+<p>The <code class="highlighter-rouge">pageObject</code> lists the URL of the <code class="highlighter-rouge">page</code> and the <code class="highlighter-rouge">sections</code> that it contains. You can reuse <code class="highlighter-rouge">sections</code> to define the elements on a page that are exercisable, while also ensuring a single source of truth to help maintain consistency.</p>
+
+<div class="bs-callout bs-callout-tip">
+  <p>Avoid hard-coded location selectors from tests to increase the maintainability and readability of the tests, as well as improve the test execution output and logging.</p>
+</div>
 
 <p>Two types of pages are available:</p>
 
 <ul>
-  <li>page with <code class="highlighter-rouge">url</code> declared as a constant string or <a href="#explicit-page">explicit page</a>. It is called in a test in a format like <code class="highlighter-rouge">{{NameOfPage.url}}</code> , where <code class="highlighter-rouge">NameOfPage</code> is a value of <code class="highlighter-rouge">name</code> in corresponding page declaration <em>*.xml</em> file.</li>
-  <li>page with <code class="highlighter-rouge">url</code> declared as a string with one or more variables or <a href="#parameterized-page">parameterized page</a>. It is called in a test using a format like <code class="highlighter-rouge">{{NameOfPage.url(var1, var2, ...)}}</code>, where <code class="highlighter-rouge">var1, var2, ...</code> are parameters that will be substituted in <code class="highlighter-rouge">url</code> of the corresponding <code class="highlighter-rouge">&lt;page&gt;</code> declaration.</li>
+  <li>Page with <code class="highlighter-rouge">url</code> declared as a constant string or <a href="#explicit-page">explicit page</a> - In a test it is called in a format like <code class="highlighter-rouge">{{NameOfPage.url}}</code>, where <code class="highlighter-rouge">NameOfPage</code> is a value of <code class="highlighter-rouge">name</code> in the corresponding page declaration <code class="highlighter-rouge">*.xml</code> file.</li>
+  <li>Page with <code class="highlighter-rouge">url</code> declared as a string with one or more variables or <a href="#parameterized-page">parameterized page</a> - In a test it is called using a format like <code class="highlighter-rouge">{{NameOfPage.url(var1, var2, ...)}}</code>, where <code class="highlighter-rouge">var1, var2</code> etc. are parameters that will be substituted in the <code class="highlighter-rouge">url</code> of the corresponding <code class="highlighter-rouge">&lt;page&gt;</code> declaration.</li>
 </ul>
 
-<p>The following diagram demonstrates XML structure of a page in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>:</p>
+<p>The following diagram shows the XML structure of an MFTF page:</p>
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="370" height="62" version="1.1" id="svg78" sodipodi:docname="page-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
@@ -1006,6 +1005,8 @@ Avoiding hardcoded location selectors from tests increases the maintainability a
 
 <h2 id="format">Format</h2>
 
+<p>The format of <code class="highlighter-rouge">&lt;page&gt;</code> is:</p>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;pages</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
@@ -1019,19 +1020,22 @@ Avoiding hardcoded location selectors from tests increases the maintainability a
 
 <h2 id="principles">Principles</h2>
 
+<p>The following conventions apply to MFTF pages:</p>
+
 <ul>
-  <li><code class="highlighter-rouge">&lt;page&gt;</code> name is the same as the file name</li>
-  <li><code class="highlighter-rouge">*Page.xml</code> is stored in the <em>Section</em> directory of a module</li>
-  <li>a name format is <code class="highlighter-rouge">{Admin|Storefront}{PageDescription}Page.xml</code></li>
+  <li><code class="highlighter-rouge">&lt;page&gt;</code> name is the same as the file name.</li>
+  <li><code class="highlighter-rouge">&lt;page&gt;</code> name must be alphanumeric.</li>
+  <li><code class="highlighter-rouge">*Page.xml</code> is stored in the <em>Section</em> directory of a module.</li>
+  <li>The name format is <code class="highlighter-rouge">{Admin|Storefront}{PageDescription}Page.xml</code>.</li>
 </ul>
 
-<h2 id="examples">Examples</h2>
+<h2 id="page-examples">Page examples</h2>
 
-<p>The following examples demonstrate explicit page and parameterized page with explanations.</p>
+<p>These examples demonstrate explicit and parameterized pages and include informative explanations.</p>
 
 <h3 id="explicit-page">Explicit page</h3>
 
-<p><em>Catalog/Page/AdminCategoryPage.xml</em> is provided as an example:</p>
+<p>Example (<code class="highlighter-rouge">Catalog/Page/AdminCategoryPage.xml</code> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -1046,33 +1050,27 @@ Avoiding hardcoded location selectors from tests increases the maintainability a
 <span class="nt">&lt;/pages&gt;</span>
 </code></pre></div></div>
 
-<p>The example above demonstrates <em>Catalog/Page/AdminCategoryPage.xml</em> that declares a page with name <code class="highlighter-rouge">AdminCategoryPage</code>.
-It will be merged with other <code class="highlighter-rouge">AdminCategoryPage</code> pages from other modules.</p>
+<p>In this example, the <code class="highlighter-rouge">Catalog/Page/AdminCategoryPage.xml</code> file declares a page with the name <code class="highlighter-rouge">AdminCategoryPage</code>. It will be merged with the other <code class="highlighter-rouge">AdminCategoryPage</code> pages from other modules.</p>
 
-<p>A corresponding web page is:</p>
-
-<ul>
-  <li>generated by Magento Catalog module</li>
-  <li>called by URl <code class="highlighter-rouge">baseUrl</code> + <code class="highlighter-rouge">backendName</code> + <code class="highlighter-rouge">catalog/category/</code></li>
-</ul>
+<p>The corresponding web page is generated by the Magento Catalog module and is called by the <code class="highlighter-rouge">baseUrl</code> + <code class="highlighter-rouge">backendName</code> + <code class="highlighter-rouge">catalog/category/</code> URl.</p>
 
 <p>The <code class="highlighter-rouge">AdminCategoryPage</code> declares four <a href="./section.html">sections</a>:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">AdminCategorySidebarActionSection</code> that is located in <em>Catalog/Section/AdminCategorySidebarActionSection.xml</em></li>
-  <li><code class="highlighter-rouge">AdminCategorySidebarTreeSection</code> that is located in <em>Catalog/Section/AdminCategorySidebarTreeSection.xml</em></li>
-  <li><code class="highlighter-rouge">AdminCategoryBasicFieldSection</code> that is located in <em>Catalog/Section/AdminCategoryBasicFieldSection.xml</em></li>
-  <li><code class="highlighter-rouge">AdminCategorySEOSection</code> that is located in <em>Catalog/Section/AdminCategorySEOSection.xml</em></li>
+  <li><code class="highlighter-rouge">AdminCategorySidebarActionSection</code> - located in the <code class="highlighter-rouge">Catalog/Section/AdminCategorySidebarActionSection.xml</code> file</li>
+  <li><code class="highlighter-rouge">AdminCategorySidebarTreeSection</code> - located in the <code class="highlighter-rouge">Catalog/Section/AdminCategorySidebarTreeSection.xml</code> file</li>
+  <li><code class="highlighter-rouge">AdminCategoryBasicFieldSection</code> - located in the <code class="highlighter-rouge">Catalog/Section/AdminCategoryBasicFieldSection.xml</code> file</li>
+  <li><code class="highlighter-rouge">AdminCategorySEOSection</code> - located in the <code class="highlighter-rouge">Catalog/Section/AdminCategorySEOSection.xml</code> file</li>
 </ul>
 
-<p>Example of a call in test:</p>
+<p>The following is an example of a call in test:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{AdminCategoryPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"navigateToAdminCategory"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="parameterized-page">Parameterized page</h3>
 
-<p><em>Catalog/Page/StorefrontCategoryPage.xml</em> is provided as an example::</p>
+<p>Example (<code class="highlighter-rouge">Catalog/Page/StorefrontCategoryPage.xml</code> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -1084,39 +1082,36 @@ It will be merged with other <code class="highlighter-rouge">AdminCategoryPage</
 <span class="nt">&lt;/pages&gt;</span>
 </code></pre></div></div>
 
-<p>This example shows page with name <code class="highlighter-rouge">StorefrontCategoryPage</code>.
-It will be merged with other <code class="highlighter-rouge">StorefrontCategoryPage</code> pages from other modules.</p>
+<p>This example shows the page with the name <code class="highlighter-rouge">StorefrontCategoryPage</code>. It will be merged with the other <code class="highlighter-rouge">StorefrontCategoryPage</code> pages from other modules.</p>
 
-<p>Example of a call in test:</p>
+<p>The following is an example of a call in test:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}"</span> <span class="na">stepKey=</span><span class="s">"navigateToCategoryPage"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">StorefrontCategoryPage</code> page is declared as parameterized, where <code class="highlighter-rouge">url</code> contains a <code class="highlighter-rouge">{{var1}}</code> parameter.</p>
+<p>The <code class="highlighter-rouge">StorefrontCategoryPage</code> page is declared as parameterized, where the <code class="highlighter-rouge">url</code> contains a <code class="highlighter-rouge">{{var1}}</code> parameter.</p>
 
-<p>A corresponding web page is:</p>
+<p>The corresponding web page is generated by the Magento Catalog module and is called by the <code class="highlighter-rouge">baseUrl</code>+<code class="highlighter-rouge">/$$createPreReqCategory.name$$.html</code> URl.</p>
 
-<ul>
-  <li>generated by Magento Catalog module</li>
-  <li>called by URl <code class="highlighter-rouge">baseUrl</code>+<code class="highlighter-rouge">/$$createPreReqCategory.name$$.html</code>. It means, that <code class="highlighter-rouge">{{var1}}</code> is substituted by <code class="highlighter-rouge">name</code> of previously created category in the <code class="highlighter-rouge">createPreReqCategory</code> action. Learn more in <a href="./test/actions.html#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a>.</li>
-</ul>
+<p><code class="highlighter-rouge">{{var1}}</code> is substituted with the <code class="highlighter-rouge">name</code> of the previously created category in the <code class="highlighter-rouge">createPreReqCategory</code> action.</p>
 
-<p>The <code class="highlighter-rouge">StorefrontCategoryPage</code> page declares one <a href="./section.html">section</a>:</p>
+<p>See also <a href="./test/actions.html#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a>.</p>
 
-<ul>
-  <li><code class="highlighter-rouge">StorefrontCategoryMainSection</code> that is located in <em>Catalog/Section/StorefrontCategoryMainSection.xml</em></li>
-</ul>
+<hr />
 
-<h2 id="reference">Reference</h2>
+<p>The <code class="highlighter-rouge">StorefrontCategoryPage</code> page declares only the <code class="highlighter-rouge">StorefrontCategoryMainSection</code> <a href="./section.html">section</a>, which is located in the <code class="highlighter-rouge">Catalog/Section/StorefrontCategoryMainSection.xml</code> file.</p>
+
+<h2 id="elements-reference">Elements reference</h2>
+
+<p>There are several XML elements that are used in <code class="highlighter-rouge">&lt;page&gt;</code> in the MFTF.</p>
 
 <h3 id="pages-tag">pages</h3>
 
-<p>Root element that points to the corresponding XML Schema location.
-It contains one ore more <code class="highlighter-rouge">&lt;page&gt;</code> elements.</p>
+<p><code class="highlighter-rouge">&lt;pages&gt;</code> are elements that point to the corresponding XML Schema location. It contains one or more <code class="highlighter-rouge">&lt;page&gt;</code> elements.</p>
 
 <h3 id="page-tag">page</h3>
 
-<p>Contains sequence of <abbr title="User Interface">UI</abbr> sections in a page.</p>
+<p><code class="highlighter-rouge">&lt;page&gt;</code> contains a sequence of UI sections in a page.</p>
 
 <table>
   <thead>
@@ -1129,49 +1124,49 @@ It contains one ore more <code class="highlighter-rouge">&lt;page&gt;</code> ele
   </thead>
   <tbody>
     <tr>
-      <td>name</td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
       <td>Unique page name identifier.</td>
     </tr>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>required</td>
-      <td>URL path (excluding the base url) for the page. Use parameterized notation (<code class="highlighter-rouge">{{var1}}</code>) for replaceable parameters, such as the edit page for a persisted entity that is based on an <abbr title="Identifier">ID</abbr> or a name.</td>
+      <td>URL path (excluding the base URL) for the page. Use parameterized notation (<code class="highlighter-rouge">{{var1}}</code>) for replaceable parameters, such as the edit page for a persisted entity that is based on an ID or a name.</td>
     </tr>
     <tr>
-      <td>module</td>
+      <td><code class="highlighter-rouge">module</code></td>
       <td>string</td>
       <td>required</td>
-      <td>The name of the module to which the page belongs. For example: <code class="highlighter-rouge">"Magento_Catalog"</code>.</td>
+      <td>The name of the module to which the page belongs. Example: <code class="highlighter-rouge">"Magento_Catalog"</code>.</td>
     </tr>
     <tr>
-      <td>area</td>
+      <td><code class="highlighter-rouge">area</code></td>
       <td>string</td>
       <td>required</td>
-      <td>The area where this page lives. Three possible values: <code class="highlighter-rouge">admin</code> prepends <code class="highlighter-rouge">BACKEND_NAME</code> to <code class="highlighter-rouge">url</code>, <code class="highlighter-rouge">storefront</code> does not prepend anything to <code class="highlighter-rouge">url</code>, <code class="highlighter-rouge">external</code> flags this page to only be used with <code class="highlighter-rouge">amOnUrl</code> as the <code class="highlighter-rouge">url</code> provided must be a full URL instead of the URL for a Magento page (ex. <code class="highlighter-rouge">http://myFullUrl.com/</code>).</td>
+      <td>The area where this page lives. Three possible values: <code class="highlighter-rouge">admin</code> prepends <code class="highlighter-rouge">BACKEND_NAME</code> to <code class="highlighter-rouge">url</code>, <code class="highlighter-rouge">storefront</code> does not prepend anything to <code class="highlighter-rouge">url</code>, <code class="highlighter-rouge">external</code> flags the page for use with <code class="highlighter-rouge">amOnUrl</code>. The <code class="highlighter-rouge">url</code> provided must be a full URL, such as <code class="highlighter-rouge">http://myFullUrl.com/</code>, instead of the URL for a Magento page.</td>
     </tr>
     <tr>
-      <td>parameterized</td>
+      <td><code class="highlighter-rouge">parameterized</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Include and set to <code class="highlighter-rouge">"true"</code> if the <code class="highlighter-rouge">url</code> for this page has parameters that need to be replaced for proper use.</td>
     </tr>
     <tr>
-      <td>remove</td>
+      <td><code class="highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Default value: <code class="highlighter-rouge">"false"</code>. Set to <code class="highlighter-rouge">"true"</code> to remove this element during parsing.</td>
+      <td>The default value is <code class="highlighter-rouge">"false"</code>. Set to <code class="highlighter-rouge">"true"</code> to remove this element during parsing.</td>
     </tr>
   </tbody>
 </table>
 
-<p>It may contain several <a href="./section.html">&lt;section&gt;</a> elements.</p>
+<p><code class="highlighter-rouge">&lt;page&gt;</code> may contain several <a href="#section-tag">&lt;section&gt;</a> elements.</p>
 
 <h3 id="section-tag">section</h3>
 
-<p>Contains sequence of <abbr title="User Interface">UI</abbr> elements.</p>
+<p><code class="highlighter-rouge">&lt;section&gt;</code> contains the sequence of UI elements. A section is a reusable piece or part of a page.</p>
 
 <table>
   <thead>
@@ -1184,23 +1179,19 @@ It contains one ore more <code class="highlighter-rouge">&lt;page&gt;</code> ele
   </thead>
   <tbody>
     <tr>
-      <td>name</td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
       <td>Unique section name identifier.</td>
     </tr>
     <tr>
-      <td>remove</td>
+      <td><code class="highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Default value: <code class="highlighter-rouge">"false"</code>. Set to <code class="highlighter-rouge">"true"</code> to remove this element during parsing.</td>
+      <td>The default value is <code class="highlighter-rouge">"false"</code>. Set to <code class="highlighter-rouge">"true"</code> to remove this element during parsing.</td>
     </tr>
   </tbody>
 </table>
-
-<!-- LINK DEFINITIONS -->
-
-<!-- Abbreviations -->
 
 
 		</div>

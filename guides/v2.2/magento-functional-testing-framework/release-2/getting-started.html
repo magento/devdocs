@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Getting started with the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Getting started | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -891,7 +891,7 @@
 
           
 
-          <span property="name">Getting started with the Magento Functional Testing Framework</span>
+          <span property="name">Getting started</span>
 
         
 
@@ -914,7 +914,7 @@
 
 	
 
-	<h1 class="page-heading">Getting started with the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Getting started</h1>
 
   
 
@@ -922,14 +922,14 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated after 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated after 2.0.2 MFTF release.</em></p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
-<p>Make sure that you’ve set up the following software:</p>
+<p>Make sure that you’ve installed and set up the following software:</p>
 
 <ul>
-  <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php">PHP versions supported by Magento instance under test</a></li>
+  <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php">PHP version supported by Magento instance under test</a></li>
   <li><a href="https://getcomposer.org/download/">Composer v1.3.x+</a></li>
   <li><a href="https://www.java.com/en/download/">Java v1.8.x+</a></li>
   <li><a href="#selenium-server">Selenium Server Standalone v3.6.0+</a></li>
@@ -938,42 +938,42 @@
 
 <h3 id="recommendations">Recommendations</h3>
 
-<p>We recommend using <a href="https://www.jetbrains.com/phpstorm/">PHPStorm 2017</a> for your IDE.
-They recently added support for <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a> which is helpful when debugging.</p>
+<p>We recommend using <a href="https://www.jetbrains.com/phpstorm/">PHPStorm 2017</a> for your integrated development environment (IDE).
+They recently added support for <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
 
 <h2 id="prepare-magento">Prepare Magento</h2>
 
-<p>Make sure that the following settings in Magento are set as described.</p>
+<p>Configure the following settings in Magento as described below.</p>
 
 <h3 id="wysiwyg-settings">WYSIWYG settings</h3>
 
 <p>A Selenium web driver cannot enter data to fields with <span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">WYSIWYG</span>.</p>
 
-<p>This option disables the WYSIWYG and enables the web driver to process these fields as simple text areas.</p>
+<p>To disable the WYSIWYG and enable the web driver to process these fields as simple text areas:</p>
 
 <ol>
   <li>Log in to the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as an administrator.</li>
-  <li>Click <strong>Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options</strong>.</li>
-  <li>Set <strong>Enable WYSIWYG Editor</strong> to <strong>Disabled Completely</strong>.</li>
+  <li>Navigate to <strong>Stores &gt; Configuration &gt; General &gt; Content Management</strong>.</li>
+  <li>In the WYSIWYG Options section set the <strong>Enable WYSIWYG Editor</strong> option to <strong>Disabled Completely</strong>.</li>
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
 
 <h3 id="security-settings">Security settings</h3>
 
-<p>Enable the <strong>Admin Account Sharing</strong> setting to avoid unpredictable logout during testing session.
-And disable the <strong>Add Secret Key in URLs</strong> setting to open pages using direct URLs.</p>
+<p>To enable the <strong>Admin Account Sharing</strong> setting, to avoid unpredictable logout during a testing session, and disable the <strong>Add Secret Key in URLs</strong> setting, to open pages using direct URLs:</p>
 
 <ol>
-  <li>Follow <strong>Stores &gt; Configuration &gt; Advanced &gt; <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> &gt; Security</strong>.</li>
+  <li>Navigate to <strong>Stores &gt; Configuration &gt; Advanced &gt; <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> &gt; Security</strong>.</li>
   <li>Set <strong>Admin Account Sharing</strong> to <strong>Yes</strong>.</li>
   <li>Set <strong>Add Secret Key to URLs</strong> to <strong>No</strong>.</li>
+  <li>Click <strong>Save Config</strong>.</li>
 </ol>
 
 <h2 id="set-up-the-framework">Set up the framework</h2>
 
-<p>Follow these steps to set up the <abbr title="Magento Functional Testing Framework">MFTF</abbr> on your system.</p>
+<p>Follow these steps in a command line interface to set up the MFTF on your system.</p>
 
-<h3 id="step-1-clone-the-magento2-source-code-repository">Step 1. Clone the magento2 source code repository</h3>
+<h3 id="step-1-clone-the-magento2-source-code-repository">Step 1. Clone the <code class="highlighter-rouge">magento2</code> source code repository</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/magento/magento2.git
 </code></pre></div></div>
@@ -997,15 +997,13 @@ And disable the <strong>Add Secret Key in URLs</strong> setting to open pages us
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-tip">
-  <p>To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add to <em>PATH</em> your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value.
-When added, you should be able to run commands: <code class="highlighter-rouge">robo</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code>.</p>
+  <p>To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
+When added, you should be able to run the <code class="highlighter-rouge">robo</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
 </div>
 
 <h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system.</p>
-
-<p>The following list describes parameters, required to launch tests.</p>
+<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
 
 <ul>
   <li>
@@ -1017,16 +1015,16 @@ Example: <code class="highlighter-rouge">MAGENTO_BASE_URL=http://magento.test</c
 Example: <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> must contain a user name required for authorization in the Admin area.
+    <p><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> must contain the user name required for authorization in the Admin area.
 Example: <code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME=admin</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD</code> must contain a user password required for authorization in the Admin area.
+    <p><code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD</code> must contain the user password required for authorization in the Admin area.
 Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></p>
   </li>
 </ul>
 
-<p>The following self-descriptive variables have default values (included).</p>
+<p>The following self-descriptive variables have included default values.</p>
 
 <div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>=<span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>
 <span class="n">SELENIUM_PORT</span>=<span class="m">4444</span>
@@ -1038,20 +1036,20 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
   <p>Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
 </div>
 
-<p>They come together to form the path to where Selenium Server is running from like:</p>
-
+<p>Your environment settings form the path to your running Selenium Server.
+Example:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:4444/wd/hub
 </code></pre></div></div>
 
 <h3 id="step-5-make-commandphp-visible-in-the-magento-testing-environment">Step 5. Make <code class="highlighter-rouge">command.php</code> visible in the Magento testing environment</h3>
 
-<p>In your Magento installation, navigate to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory and run the following command to allow <abbr title="Magento Functional Testing Framework">MFTF</abbr> to send Magento CLI commands to your Magento instance.</p>
+<p>In your Magento installation, navigate to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cp .htaccess.sample .htaccess
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-warning">
-  <p>If you do not have access to your Magento installation and cannot perform the above, tests that run Magento CLI commands will not be able to run.</p>
+  <p>If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.</p>
 </div>
 
 <h3 id="step-6-generate-existing-tests">Step 6. Generate existing tests</h3>
@@ -1063,7 +1061,7 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
 
 <h3 id="step-7-run-tests">Step 7. Run tests</h3>
 
-<p>To run one or more tests, you need running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> with required parameters.</p>
+<p>To run tests you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> with required parameters.</p>
 
 <h4 id="selenium-server">Run the Selenium server</h4>
 
@@ -1072,13 +1070,13 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
     <p><a href="http://www.seleniumhq.org/download/">Download the latest Selenium Server</a>.</p>
   </li>
   <li>
-    <p><a href="http://docs.seleniumhq.org/about/platforms.jsp">Download a Selenium web driver for your web browser</a> into the same directory where the Selenium server is located.</p>
+    <p><a href="http://docs.seleniumhq.org/about/platforms.jsp">Download a Selenium web driver for your web browser</a> into the same directory that contains the Selenium server.</p>
   </li>
   <li>
-    <p>Add the directory with the web driver to PATH.</p>
+    <p>Add the directory with the web driver to <code class="highlighter-rouge">PATH</code>.</p>
   </li>
   <li>
-    <p>Run the Selenium server in the terminal:</p>
+    <p>Run the Selenium server in terminal (or other command line interface):</p>
   </li>
 </ol>
 
@@ -1094,22 +1092,15 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
 
 <h3 id="allure">Step 7. Generate reports</h3>
 
-<p><a href="https://docs.qameta.io/allure/latest/">Install Allure</a>, a tool that generates testing reports in HTML.
-Testing reports are generated in CLI during testing.</p>
+<p>Install <a href="https://docs.qameta.io/allure/latest/">Allure</a>, a tool that generates testing reports in HTML.
+Testing reports are generated in a CLI during testing.</p>
 
-<p>If you want to see the reports in GUI, run:</p>
+<p>If you want to see the reports in a GUI, run:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo allure2:report
 </code></pre></div></div>
 
-<p><a href="commands/robo.html#allure-robo-commands">See more Allure commands</a></p>
-
-<p><a href="https://docs.qameta.io/allure/latest/#_report_structure">Learn about report structure.</a></p>
-
-<!-- LINKS -->
-
-<!-- Abbreviations -->
-
+<p>See also <a href="commands/robo.html#allure-robo-commands">Allure <code class="highlighter-rouge">robo</code> commands</a> and <a href="https://docs.qameta.io/allure/latest/#_report_structure">Report structure</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Robo commands available in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Robo commands | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Robo commands available in the Magento Functional Testing Framework</span>
+          <span property="name">Robo commands</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Robo commands available in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Robo commands</h1>
 
   
 
@@ -662,9 +662,9 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
 
-<p>Robo is a task runner for PHP that allows you to alias long complex CLI commands to simple commands.</p>
+<p>Robo is a task runner for PHP that allows you to alias long, complex command line interface (CLI) commands to simple commands.</p>
 
 <h2 id="usage">Usage</h2>
 
@@ -675,7 +675,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
 </code></pre></div></div>
 
-<p>Or, if you added path of the Robo executable file to the system <em>PATH</em>, then run Robo commands using the following format:</p>
+<p>Or, if you added the path of the Robo executable file to the system <em>PATH</em>, then run Robo commands using the following format:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
 </code></pre></div></div>
@@ -687,11 +687,9 @@
   <li>Robo: <code class="highlighter-rouge">$ vendor/bin/robo allure1:generate</code></li>
 </ul>
 
-<h2 id="most-useful-commands">Most useful commands</h2>
+<h2 id="useful-commands">Useful commands</h2>
 
-<p>The following list contains most popular commands purposed to interact with the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.</p>
-
-<p>For more commands, see <a href="#reference">Reference</a> or run in your terminal: <code class="highlighter-rouge">$ vendor/bin/robo</code>.</p>
+<p>The following are the most popular commands used to interact with the MFTF. For more commands, see <a href="#reference">Reference</a> or run in your terminal: <code class="highlighter-rouge">$ vendor/bin/robo</code>.</p>
 
 <h3 id="codeception-robo-commands">Codeception Robo Commands</h3>
 
@@ -700,7 +698,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo
 </code></pre></div></div>
 
-<h4 id="duplicate-the-example-configuration-files-used-to-customize-the-project">Duplicate the Example configuration files used to customize the Project:</h4>
+<h4 id="duplicate-the-example-configuration-files-used-to-customize-the-project">Duplicate the example configuration files used to customize the project:</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo clone:files
 </code></pre></div></div>
@@ -710,36 +708,36 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo build:project
 </code></pre></div></div>
 
-<h4 id="generate-all-tests-in-php">Generate all Tests in PHP:</h4>
+<h4 id="generate-all-tests-in-php">Generate all tests in PHP:</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo generate:tests
 </code></pre></div></div>
 
-<h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all Tests marked with the @group tag ‘example’, using the Chrome environment:</h4>
+<h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all tests marked with the @group tag <code class="highlighter-rouge">example</code>, using the Chrome environment:</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo example
 </code></pre></div></div>
 
-<h4 id="run-all-functional-tests-located-under-the-directory-path-provided">Run all Functional tests located under the Directory Path provided:</h4>
+<h4 id="run-all-functional-tests-located-under-the-directory-path-provided">Run all functional tests located under the directory path provided:</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo folder ______
 </code></pre></div></div>
 
-<h4 id="run-all-functional-tests-excluding-group-skip">Run all Functional tests, excluding @group skip:</h4>
+<h4 id="run-all-functional-tests-excluding-group-skip">Run all functional tests, excluding @group skip:</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo functional
 </code></pre></div></div>
 
-<h4 id="run-all-tests-with-the-specified-group-tag-excluding-group-skip">Run all Tests with the specified @group tag, excluding @group ‘skip’:</h4>
+<h4 id="run-all-tests-with-the-specified-group-tag-excluding-group-skip">Run all tests with the specified @group tag, excluding @group ‘skip’:</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo group ______
 </code></pre></div></div>
 
-<h3 id="allure-robo-commands">Allure Robo Commands</h3>
+<h3 id="allure-robo-commands">Allure Robo commands</h3>
 
-<p>To determine which version of the Allure command you need to use please run <code class="highlighter-rouge">allure --version</code>.</p>
+<p>To determine which version of the Allure command you need to use run <code class="highlighter-rouge">allure --version</code>.</p>
 
-<h4 id="generate-the-html-for-the-allure-report-based-on-the-test-xml-output">Generate the HTML for the Allure report based on the Test XML output:</h4>
+<h4 id="generate-the-html-for-the-allure-report-based-on-the-test-xml-output">Generate the HTML for the Allure report based on the test XML output:</h4>
 
 <table>
   <thead>
@@ -798,27 +796,27 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">functional</code></td>
-      <td>Run all functional tests, excluding <code class="highlighter-rouge">@group 'skip'</code></td>
+      <td>Run all functional tests, excluding <code class="highlighter-rouge">@group 'skip'</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">example</code></td>
-      <td>Run all Tests marked with the <code class="highlighter-rouge">@group</code> tag <code class="highlighter-rouge">'example'</code></td>
+      <td>Run all Tests marked with the <code class="highlighter-rouge">@group</code> tag <code class="highlighter-rouge">'example'</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">folder</code></td>
-      <td>Run all Acceptance tests located under the Directory Path provided</td>
+      <td>Run all acceptance tests located under the directory path provided..</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">group</code></td>
-      <td>Run all Tests with the specified <code class="highlighter-rouge">@group</code> tag, excluding <code class="highlighter-rouge">@group 'skip'</code></td>
+      <td>Run all tests with the specified <code class="highlighter-rouge">@group</code> tag, excluding <code class="highlighter-rouge">@group 'skip'</code></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">help</code></td>
-      <td>Displays help for a command</td>
+      <td>Displays help for a command.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">list</code></td>
-      <td>Lists commands</td>
+      <td>Lists commands.</td>
     </tr>
   </tbody>
 </table>
@@ -829,15 +827,15 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">allure1:generate</code></td>
-      <td>Generate the HTML for the Allure report based on the Test XML output - Allure v1.4.X</td>
+      <td>Generate the HTML for the Allure report based on the test XML output - Allure v1.4.X.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">allure1:open</code></td>
-      <td>Open the HTML Allure report - Allure v1.4.xX</td>
+      <td>Open the HTML Allure report - Allure v1.4.xX.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">allure1:report</code></td>
-      <td>Generate and open the HTML Allure report - Allure v1.4.X</td>
+      <td>Generate and open the HTML Allure report - Allure v1.4.X.</td>
     </tr>
   </tbody>
 </table>
@@ -848,15 +846,15 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">allure2:generate</code></td>
-      <td>Generate the HTML for the Allure report based on the Test XML output - Allure v2.3.X</td>
+      <td>Generate the HTML for the Allure report based on the test XML output - Allure .v2.3.X</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">allure2:open</code></td>
-      <td>Open the HTML Allure report - Allure v2.3.X</td>
+      <td>Open the HTML Allure report - Allure v2.3.X.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">allure2:report</code></td>
-      <td>Generate and open the HTML Allure report - Allure v2.3.X</td>
+      <td>Generate and open the HTML Allure report - Allure v2.3.X.</td>
     </tr>
   </tbody>
 </table>
@@ -867,7 +865,7 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">build:project</code></td>
-      <td>Clone the Example configuration files Build the Codeception project</td>
+      <td>Clone the example configuration files and build the Codeception project.</td>
     </tr>
   </tbody>
 </table>
@@ -878,7 +876,7 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">clone:files</code></td>
-      <td>Duplicate the Example configuration files used to customize the Project for customization</td>
+      <td>Duplicate the example configuration files used to customize the project.</td>
     </tr>
   </tbody>
 </table>
@@ -889,7 +887,11 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">generate:tests</code></td>
-      <td>Generate all Tests</td>
+      <td>Generate all tests based on specific module load order of the Magento instance</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate:tests --force</code>.</td>
+      <td>Generate all tests regardless of whether a Magento instance is available.</td>
     </tr>
   </tbody>
 </table>
@@ -900,18 +902,13 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">self:update</code> or <code class="highlighter-rouge">update</code></td>
-      <td>Updates the <code class="highlighter-rouge">robo.phar</code> to the latest version. Only works when running the <code class="highlighter-rouge">phar</code> version of Robo.</td>
+      <td>Updates the <code class="highlighter-rouge">robo.phar</code> to the latest version, which only works when running the <code class="highlighter-rouge">phar</code> version of Robo.</td>
     </tr>
   </tbody>
 </table>
 
 <hr />
 <hr />
-
-<!-- LINK DEFINITIONS -->
-
-<!-- Abbreviations -->
-
 
 		</div>
 		<!-- /.content-wrap -->

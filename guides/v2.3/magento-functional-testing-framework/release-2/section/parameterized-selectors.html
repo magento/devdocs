@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create and use parameterized selectors in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Create and use parameterized selectors | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Create and use parameterized selectors in the Magento Functional Testing Framework</span>
+          <span property="name">Create and use parameterized selectors</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Create and use parameterized selectors in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Create and use parameterized selectors</h1>
 
   
 
@@ -664,23 +664,25 @@
 
 			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
-<h2 id="setting-up-a-selector-in-section">Setting up a selector in section</h2>
+<p>Use the following examples to create and use parameterized selectors in the MFTF.</p>
 
-<p>In a <code class="highlighter-rouge">&lt;section&gt;&lt;/section&gt;</code>, create a new <code class="highlighter-rouge">&lt;element/&gt;</code>.</p>
+<h2 id="set-up-a-selector-in-section">Set up a selector in section</h2>
+
+<p>Create a new <code class="highlighter-rouge">&lt;element/&gt;</code> in a <code class="highlighter-rouge">&lt;section&gt;&lt;/section&gt;</code>, :</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"SampleSection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">""</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
-<p>Add the attribute <code class="highlighter-rouge">parameterized="true"</code> to the <code class="highlighter-rouge">&lt;element/&gt;</code>.</p>
+<p>Add the attribute <code class="highlighter-rouge">parameterized="true"</code> to the <code class="highlighter-rouge">&lt;element/&gt;</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"SampleSection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
-<p>In the <code class="highlighter-rouge">selector=""</code> attribute add your selector.</p>
+<p>Add your selector in the <code class="highlighter-rouge">selector=""</code> attribute:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"SampleSection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">"#element"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
@@ -689,21 +691,21 @@
 
 <h3 id="selector-with-single-variable">Selector with single variable</h3>
 
-<p>For the parameterized part of the selector, add <code class="highlighter-rouge">{{var1}}</code> to represent the first piece of data that you want to replace.</p>
+<p>For the parameterized part of the selector, add <code class="highlighter-rouge">{{var1}}</code> to represent the first piece of data that you want to replace:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"SampleSection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">"#element .{{var1}}"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
-<p>Enter a descriptive name into the <code class="highlighter-rouge">name=""</code> attribute.</p>
+<p>Add a descriptive name in the <code class="highlighter-rouge">name=""</code> attribute:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"SampleSection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"oneParamElement"</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">"#element .{{var1}}"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
-<p>In <code class="highlighter-rouge">type</code>, enter the type of UI element that the <code class="highlighter-rouge">&lt;element/&gt;</code> represents.</p>
+<p>Add the type of UI element that the <code class="highlighter-rouge">&lt;element/&gt;</code> represents in <code class="highlighter-rouge">type</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"SampleSection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"oneParamElement"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">"#element .{{var1}}"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
@@ -712,7 +714,7 @@
 
 <h3 id="selector-with-multiple-variables">Selector with multiple variables</h3>
 
-<p>For the parameterized part of the selector, add <code class="highlighter-rouge">{{var1}}, {{var2}}, ..., {{varN}}</code> for each parameter that you need to pass in.</p>
+<p>For the parameterized part of the selector, add <code class="highlighter-rouge">{{var1}}, {{var2}}, ..., {{varN}}</code> for each parameter that you need to pass in:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"SampleSection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"threeParamElement"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">"#element .{{var1}} .{{var2}}"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
@@ -724,83 +726,76 @@
 <span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
-<p>{%
-include note.html
-type=”info”
-content=”Note that there is no need to use sequential variables like <code class="highlighter-rouge">{{var1}}</code>, <code class="highlighter-rouge">{{var2}}</code>.
-Parameterized replacement reads variables and maps them to the test call of the element sequentially from left to right, meaning you can use a selector like <code class="highlighter-rouge">#element .{{categoryId}} .{{productId}}</code>.”
-%}</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>There is no need to use sequential variables like <code class="highlighter-rouge">{{var1}}</code>, <code class="highlighter-rouge">{{var2}}</code>. Parameterized replacement reads variables and maps them to the test call of the element sequentially from left to right, meaning you can use a selector like <code class="highlighter-rouge">#element .{{categoryId}} .{{productId}}</code>.”</p>
+</div>
 
-<h2 id="using-a-parameterized-selector-in-a-test">Using a parameterized selector in a test</h2>
+<h2 id="use-a-parameterized-selector-in-a-test">Use a parameterized selector in a test</h2>
 
-<p>Create a new <a href="../test.html">test</a>.</p>
+<p>Create a new <a href="../test.html">test</a>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>Add an action.</p>
+<p>Add an action:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>In the <code class="highlighter-rouge">selector=""</code> attribute, enter <code class="highlighter-rouge">"{{}}"</code>.</p>
+<p>Enter <code class="highlighter-rouge">"{{}}"</code> in the <code class="highlighter-rouge">selector=""</code> attribute:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{}}"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>Inside the <code class="highlighter-rouge">{{}}</code>, make a reference to the section that the element is assigned to.</p>
+<p>Make a reference to the section that the element is assigned to inside the <code class="highlighter-rouge">{{}}</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{SampleSection}}"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>Inside the <code class="highlighter-rouge">{{}}</code>, add name of a parameterized element separated by <code class="highlighter-rouge">"."</code></p>
+<p>Add name of a parameterized element, separated by <code class="highlighter-rouge">"."</code>, inside the <code class="highlighter-rouge">{{}}</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{SampleSection.threeParamElement}}"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>Inside the <code class="highlighter-rouge">{{}}</code>, add a set of <code class="highlighter-rouge">"()"</code> following the parameterized element.</p>
+<p>Add a set of <code class="highlighter-rouge">"()"</code> following the parameterized element inside the <code class="highlighter-rouge">{{}}</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{SampleSection.threeParamElement()}}"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>Inside of the <code class="highlighter-rouge">()</code>, add the first parameter that you would like to pass to the selector.</p>
+<p>Add the first parameter, that you would like to pass to the selector, inside of the <code class="highlighter-rouge">()</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{SampleSection.threeParamElement(_defaultCategory.is_active)}}"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>Add the 2nd/3rd parameters that you’d like to pass to the selector separated by <code class="highlighter-rouge">, </code></p>
+<p>Add the second or third parameters, that you’d like to pass to the selector, separated by <code class="highlighter-rouge">, </code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SampleTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{SampleSection.threeParamElement(_defaultCategory.is_active,'StringLiteral',$createDataKey.id$)}}"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<p>Any data can be used in parameterized elements as well as entered in test actions like so:</p>
+<p>Any data can be used in parameterized elements, as well as entered in test actions:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">_defaultCategory.is_active</code> is a reference to <code class="highlighter-rouge">&lt;data key="is_active"&gt;</code> in <code class="highlighter-rouge">&lt;entity name="_defaultCategory" ... &gt;&lt;/entity&gt;</code> in the corresponding <em>…/Data/*.xml</em></li>
-  <li><code class="highlighter-rouge">'StringLiteral'</code> is a literal</li>
-  <li><code class="highlighter-rouge">$createDataKey.id$</code> is a reference to persisted data created in the <code class="highlighter-rouge">SampleTest1</code> within action with <code class="highlighter-rouge">stepKey="createDataKey"</code></li>
+  <li><code class="highlighter-rouge">_defaultCategory.is_active</code> is a reference to <code class="highlighter-rouge">&lt;data key="is_active"&gt;</code> in <code class="highlighter-rouge">&lt;entity name="_defaultCategory" ... &gt;&lt;/entity&gt;</code> in the corresponding <code class="highlighter-rouge">.../Data/*.xml</code>.</li>
+  <li><code class="highlighter-rouge">'StringLiteral'</code> is a literal.</li>
+  <li><code class="highlighter-rouge">$createDataKey.id$</code> is a reference to persisted data created in the <code class="highlighter-rouge">SampleTest1</code> within the <code class="highlighter-rouge">stepKey="createDataKey"</code> action.</li>
   <li><code class="highlighter-rouge">{$variable}</code> is a reference to data returned by a test action, like <code class="highlighter-rouge">&lt;grabValueFrom&gt;</code>.</li>
 </ul>
-
-<!-- LINK DEFINITIONS -->
-
-<!-- Internal -->
 
 
 		</div>

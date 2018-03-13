@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Annotations in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Annotations | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Annotations in the Magento Functional Testing Framework</span>
+          <span property="name">Annotations</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Annotations in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Annotations</h1>
 
   
 
@@ -662,18 +662,20 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
-<p>Annotations are essentially comments in the code.
-(In PHP, they all are marked by a preceding <code class="highlighter-rouge">@</code> symbol.)
-Within <a href="../test.html#test-tag">test methods</a>, annotations are contained within their own node.</p>
+<p>Annotations are essentially comments in the code. In PHP, they all are marked by a preceding <code class="highlighter-rouge">@</code> symbol.</p>
+
+<p>Within <a href="../test.html#test-tag">test methods</a>, annotations are contained within their own node.</p>
 
 <h2 id="principles">Principles</h2>
 
+<p>The following conventions apply to MFTF annotations:</p>
+
 <ul>
-  <li>All annotations are within an <code class="highlighter-rouge">&lt;annotations&gt;</code> element</li>
-  <li>Each element within corresponds to a supported annotation type</li>
-  <li>There is no distinction made in XML between Codeception annotations and Allure annotations</li>
+  <li>All annotations are within an <code class="highlighter-rouge">&lt;annotations&gt;</code> element.</li>
+  <li>Each element within corresponds to a supported annotation type.</li>
+  <li>There is no distinction made in XML between Codeception annotations and Allure annotations.</li>
   <li>Each annotation contains only one value.
 If multiple annotation values are supported and required each value requires a separate annotation.</li>
 </ul>
@@ -691,13 +693,11 @@ If multiple annotation values are supported and required each value requires a s
 <span class="nt">&lt;/annotations&gt;</span>
 </code></pre></div></div>
 
-<h2 id="reference">Reference</h2>
+<h2 id="elements-reference">Elements reference</h2>
 
 <h3 id="description">description</h3>
 
-<p><em>Implementation of an Allure tag <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description"><code class="highlighter-rouge">@Description</code></a></em></p>
-
-<p>Metadata for report.</p>
+<p>The <code class="highlighter-rouge">&lt;description&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description"><code class="highlighter-rouge">@Description</code></a> Allure tag; Metadata for report.</p>
 
 <table>
   <thead>
@@ -709,7 +709,7 @@ If multiple annotation values are supported and required each value requires a s
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -726,15 +726,11 @@ If multiple annotation values are supported and required each value requires a s
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Description</span><span class="p">(</span><span class="s2">"Add Catalog via Admin"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="features">features</h3>
 
-<p><em>Implementation of an Allure tag <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Features</code></a></em></p>
+<p>The <code class="highlighter-rouge">&lt;features&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Features</code></a> Allure tag.</p>
 
-<p>Sets a string that will be displayed as a <strong>Feature</strong> within the Allure report.
-Tests under the same feature are grouped together in the report.</p>
+<p><code class="highlighter-rouge">&lt;features&gt;</code> sets a string that will be displayed as a feature within the Allure report. Tests under the same feature are grouped together in the report.</p>
 
 <table>
   <thead>
@@ -746,7 +742,7 @@ Tests under the same feature are grouped together in the report.</p>
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -764,16 +760,11 @@ Tests under the same feature are grouped together in the report.</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Features</span><span class="p">({</span><span class="s2">"Catalog"</span><span class="p">,</span> <span class="s2">"Add/Edit"</span><span class="p">})</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="group">group</h3>
 
-<p><em>Implementation of a Codeception tag <a href="http://codeception.com/docs/07-AdvancedUsage#Groups"><code class="highlighter-rouge">@group</code></a></em></p>
+<p>The <code class="highlighter-rouge">&lt;group&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Groups"><code class="highlighter-rouge">@group</code></a> Codeception tag.</p>
 
-<p>Specifies a string to identify and collect tests together.
-Any test can be a part of multiple groups.
-The purpose of grouping is to create a set of test for a purpose (e.g. all Cart tests, all Slow tests) and run them together.</p>
+<p><code class="highlighter-rouge">&lt;group&gt;</code> specifies a string to identify and collect tests together. Any test can be a part of multiple groups. The purpose of grouping is to create a set of test for a purpose, such as all cart tests or all slow tests) and run them together.</p>
 
 <table>
   <thead>
@@ -785,7 +776,7 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -802,14 +793,9 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">group</span> <span class="nx">catalog</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="return">return</h3>
 
-<p><em>Implementation of a Codeception tag <a href="http://codeception.com/docs/07-AdvancedUsage#Examples"><code class="highlighter-rouge">@return</code></a></em></p>
-
-<p>Specifies what is returned from a test execution.</p>
+<p>The <code class="highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Examples"><code class="highlighter-rouge">@return</code></a> Codeception tag. It specifies what is returned from a test execution.</p>
 
 <table>
   <thead>
@@ -821,7 +807,7 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -838,14 +824,9 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="k">return</span> <span class="nx">void</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="severity">severity</h3>
 
-<p><em>Implementation of an Allure tag <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity"><code class="highlighter-rouge">@Severity</code></a></em></p>
-
-<p>Metadata for report.</p>
+<p>The <code class="highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity"><code class="highlighter-rouge">@Severity</code></a> Allure tag; Metadata for report.</p>
 
 <table>
   <thead>
@@ -858,7 +839,7 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
       <td><code class="highlighter-rouge">"BLOCKER"</code>, <code class="highlighter-rouge">"CRITICAL"</code>, <code class="highlighter-rouge">"NORMAL"</code>, <code class="highlighter-rouge">"MINOR"</code>, <code class="highlighter-rouge">"TRIVIAL"</code></td>
@@ -876,14 +857,9 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Severity</span><span class="p">(</span><span class="nx">level</span> <span class="o">=</span> <span class="nx">SeverityLevel</span><span class="o">::</span><span class="na">CRITICAL</span><span class="p">)</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="stories">stories</h3>
 
-<p><em>Implementation of an Allure tag <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Stories</code></a></em></p>
-
-<p>Same functionality as <a href="#features"><code class="highlighter-rouge">features</code></a>, within the <strong>Story</strong> report group.</p>
+<p>The <code class="highlighter-rouge">&lt;stories&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Stories</code></a> Allure tag. It has the same functionality as <a href="#features"><code class="highlighter-rouge">features</code></a>, within the Story report group.</p>
 
 <table>
   <thead>
@@ -895,7 +871,7 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -913,17 +889,13 @@ The purpose of grouping is to create a set of test for a purpose (e.g. all Cart 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Stories</span><span class="p">({</span><span class="s2">"Add Catalog"</span><span class="p">,</span> <span class="s2">"Edit Catalog"</span><span class="p">})</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="testcaseid">testCaseId</h3>
 
-<p><em>Implementation of an Allure tag <a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID"><code class="highlighter-rouge">@TestCaseId</code></a></em></p>
+<p>The <code class="highlighter-rouge">&lt;testCaseId&gt;</code> element is an implementation of a <a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID"><code class="highlighter-rouge">@TestCaseId</code></a> Allure tag. It specifies a ZephyrId for a test.</p>
 
-<p>Specifies a ZephyrId for a test.
-If the linkage is set up correctly in Allure config, the test will have a hyperlink to the Zephyr test case in the report.</p>
+<p>If the linkage is set up correctly in the Allure config, the test will have a hyperlink to the Zephyr test case in the report.</p>
 
-<p><a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID">Lean more about setup instructions in Allure</a></p>
+<p>Learn more about <a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID">setup instructions in Allure</a>.</p>
 
 <table>
   <thead>
@@ -935,7 +907,7 @@ If the linkage is set up correctly in Allure config, the test will have a hyperl
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -952,16 +924,9 @@ If the linkage is set up correctly in Allure config, the test will have a hyperl
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">TestCaseId</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="usecaseid">useCaseId</h3>
 
-<p><em>Implementation of a custom tag <code class="highlighter-rouge">@UseCaseId</code></em></p>
-
-<p>Specifies Use Case Id for a test.</p>
-
-<p>Ignored by Allure configuration at the moment, as Allure implementation is not complete.</p>
+<p>The <code class="highlighter-rouge">&lt;useCaseId&gt;</code> element is an implementation of a <code class="highlighter-rouge">@UseCaseId</code> custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.</p>
 
 <table>
   <thead>
@@ -973,7 +938,7 @@ If the linkage is set up correctly in Allure config, the test will have a hyperl
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -989,14 +954,9 @@ If the linkage is set up correctly in Allure config, the test will have a hyperl
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">UseCaseId</span><span class="p">(</span><span class="s2">"USECASE-1"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<hr />
-<hr />
-
 <h3 id="title">title</h3>
 
-<p><em>Implementation of an Allure tag <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title"><code class="highlighter-rouge">@Title</code></a></em></p>
-
-<p>Metadata for report.</p>
+<p>The <code class="highlighter-rouge">&lt;title&gt;</code> element is an implementation of <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title"><code class="highlighter-rouge">@Title</code></a> Allure tag; Metadata for report.</p>
 
 <table>
   <thead>
@@ -1008,7 +968,7 @@ If the linkage is set up correctly in Allure config, the test will have a hyperl
   </thead>
   <tbody>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -1024,11 +984,6 @@ If the linkage is set up correctly in Allure config, the test will have a hyperl
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Title</span><span class="p">(</span><span class="s2">"Add Catalog"</span><span class="p">)</span>
 </code></pre></div></div>
-
-<!-- LINKS DEFINITIONS-->
-
-<!-- Abbreviations -->
-
 
 		</div>
 		<!-- /.content-wrap -->

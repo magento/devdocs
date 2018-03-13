@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Use Codeception's Locator Functions in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Use Codeception's Locator functions | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Use Codeception's Locator Functions in the Magento Functional Testing Framework</span>
+          <span property="name">Use Codeception's Locator functions</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Use Codeception's Locator Functions in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Use Codeception's Locator functions</h1>
 
   
 
@@ -664,31 +664,29 @@
 
 			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
-<h2 id="defining-locatorfunctions-in-elements">Defining Locator::functions in Elements</h2>
+<h2 id="define-locatorfunctions-in-elements">Define Locator::functions in elements</h2>
 
-<p>Codeception has a set of very useful <a href="http://codeception.com/docs/reference/Locator">Locator Functions</a> that may be used by elements inside a <a href="../section.html">section</a>.</p>
+<p>Codeception has a set of very useful <a href="http://codeception.com/docs/reference/Locator">Locator functions</a> that may be used by elements inside a <a href="../section.html">section</a>.</p>
 
-<p>Declaration of an element with a <code class="highlighter-rouge">locatorFunction</code> can be done as follows:</p>
+<p>Declare an element with a <code class="highlighter-rouge">locatorFunction</code>:</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocator"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"Locator::contains('label', 'Name')"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>When using the <code class="highlighter-rouge">locatorFunction</code>, you can also omit <code class="highlighter-rouge">Locator::</code> for code simplicity.</p>
+<p>When using the <code class="highlighter-rouge">locatorFunction</code>, omit <code class="highlighter-rouge">Locator::</code> for code simplicity:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocatorShorthand"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"contains('label', 'Name')"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>An element’s <code class="highlighter-rouge">locatorFunction</code> can also be parameterized the same way as <a href="./parameterized-selectors.html">parameterized selectors</a>.</p>
+<p>An element’s <code class="highlighter-rouge">locatorFunction</code> can also be parameterized the same way as <a href="./parameterized-selectors.html">parameterized selectors</a>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocatorTwoParam"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"contains({{arg1}}, {{arg2}})"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Lastly, an element <strong>cannot</strong> have both a <code class="highlighter-rouge">selector</code> and a <code class="highlighter-rouge">locatorFunction</code>.</p>
+<p>An element cannot, however, have both a <code class="highlighter-rouge">selector</code> and a <code class="highlighter-rouge">locatorFunction</code>.</p>
 
-<h2 id="calling-elements-that-use-locatorfunction">Calling Elements that use locatorFunction</h2>
+<h2 id="call-elements-that-use-locatorfunction">Call Elements that use locatorFunction</h2>
 
-<p>Given the above element definitions, we call the elements in a test just like any other element.</p>
-
-<p>No special reference is required, as you are still just referring to an <code class="highlighter-rouge">element</code> inside a <code class="highlighter-rouge">section</code>.</p>
+<p>Given the above element definitions, you call the elements in a test just like any other element. No special reference is required, as you are still just referring to an <code class="highlighter-rouge">element</code> inside a <code class="highlighter-rouge">section</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LocatorFuctionTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{LocatorFunctionSection.simpleLocator}}"</span> <span class="na">stepKey=</span><span class="s">"SimpleLocator"</span><span class="nt">/&gt;</span>
@@ -696,11 +694,6 @@
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
-<!-- LINK DEFINITIONS -->
-
-<!-- Internal -->
-
-<!-- External -->
 
 		</div>
 		<!-- /.content-wrap -->

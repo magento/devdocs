@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Section structure in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Section structure | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -891,7 +891,7 @@
 
           
 
-          <span property="name">Section structure in the Magento Functional Testing Framework</span>
+          <span property="name">Section structure</span>
 
         
 
@@ -914,7 +914,7 @@
 
 	
 
-	<h1 class="page-heading">Section structure in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Section structure</h1>
 
   
 
@@ -922,20 +922,15 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
-<h2 id="overview">Overview</h2>
+<p>A <code class="highlighter-rouge">&lt;section&gt;</code> is a reusable part of a <a href="./page.html"><code class="highlighter-rouge">&lt;page&gt;</code></a> and is the standard file for defining UI elements on a page used in a test.</p>
 
-<p>A section is a reusable part of a <a href="./page.html">page</a>.
-It is the standard file for defining UI elements on a page used under test.</p>
-
-<p>You are able to define:</p>
+<p>A <code class="highlighter-rouge">&lt;section&gt;</code> can define:</p>
 
 <ul>
-  <li>explicit element that has a selector equal to constant string.
-Example: <code class="highlighter-rouge">selector="#add_root_category_button"</code></li>
-  <li>parameterized element that contains substitutable values in selector.
-Example: <code class="highlighter-rouge">selector="#element .{{var1}} .{{var2}}"</code>.</li>
+  <li>An explicit element that has a selector equal to the constant string. Example: <code class="highlighter-rouge">selector="#add_root_category_button"</code></li>
+  <li>A parameterized element that contains substitutable values in the selector. Example: <code class="highlighter-rouge">selector="#element .{{var1}} .{{var2}}"</code>.</li>
 </ul>
 
 <h3 id="substitutable-values">Substitutable values</h3>
@@ -943,17 +938,17 @@ Example: <code class="highlighter-rouge">selector="#element .{{var1}} .{{var2}}"
 <p>Substitutable values in the test can be of the following formats:</p>
 
 <ul>
-  <li>String literals: <code class="highlighter-rouge">stringLiteral</code></li>
-  <li>Reference to <a href="./data.html">data entity</a> (XML data from the corresponding <em>…/Data/*.xml</em>): <code class="highlighter-rouge">entityName.Field</code></li>
-  <li>Persisted Data
+  <li>String literals (<code class="highlighter-rouge">stringLiteral</code>)</li>
+  <li>References to a <a href="./data.html">data entity</a> (XML data from the corresponding <code class="highlighter-rouge">.../Data/*.xml</code>) such as <code class="highlighter-rouge">entityName.Field</code>.</li>
+  <li>Persisted data:
     <ul>
-      <li><code class="highlighter-rouge">$persistedCreateDataKey.field$</code> for data created in scope of a <a href="./test.html#test-tag">test</a> using the <a href="./test/actions.html#createdata">createData</a> action with <code class="highlighter-rouge">stepKey="persistedCreateDataKey"</code></li>
-      <li><code class="highlighter-rouge">$$persistedCreateDataKey.field$$</code> for data created in <a href="./test.html#before-tag">before</a> and [after] hooks. Even though <code class="highlighter-rouge">&lt;before&gt;</code>and <code class="highlighter-rouge">&lt;after&gt;</code> are nested inside a <a href="./test.html#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>, persisted data is stored differently when it is done in a test hook, therefore it must be accessed with a different notation.</li>
+      <li><code class="highlighter-rouge">$persistedCreateDataKey.field$</code> for data created in the scope of a <a href="./test.html#test-tag">test</a> using the <a href="./test/actions.html#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a> action with <code class="highlighter-rouge">stepKey="persistedCreateDataKey"</code>.</li>
+      <li><code class="highlighter-rouge">$$persistedCreateDataKey.field$$</code> for data created in <a href="./test.html#before-tag">before</a> and <a href="./test.html#after-tag">after</a> hooks. Even though <code class="highlighter-rouge">&lt;before&gt;</code>and <code class="highlighter-rouge">&lt;after&gt;</code> are nested inside a <a href="./test.html#test-tag">test</a>, persisted data is stored differently when it is done in a test hook. Therefore it must be accessed with a different notation.</li>
     </ul>
   </li>
 </ul>
 
-<p>The following diagram demonstrates XML structure of a section in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>:</p>
+<p>The following diagram shows the XML structure of an MFTF section:</p>
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="385" height="62" version="1.1" id="svg74" sodipodi:docname="section-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
@@ -1025,6 +1020,8 @@ Example: <code class="highlighter-rouge">selector="#element .{{var1}} .{{var2}}"
 
 <h2 id="format">Format</h2>
 
+<p>The format of a <code class="highlighter-rouge">&lt;section&gt;</code> is:</p>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;sections</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
@@ -1039,17 +1036,20 @@ Example: <code class="highlighter-rouge">selector="#element .{{var1}} .{{var2}}"
 
 <h2 id="principles">Principles</h2>
 
+<p>The following conventions apply to MFTF sections:</p>
+
 <ul>
-  <li><code class="highlighter-rouge">&lt;section&gt;</code> name is the same as the file name</li>
-  <li><code class="highlighter-rouge">*Section.xml</code> is stored in the <em>Section</em> directory of a module</li>
-  <li>a name format is <code class="highlighter-rouge">{Admin|Storefront}{SectionDescription}Section.xml</code></li>
-  <li>Elements in sections are given camel case with first letter lowercase name.
+  <li><code class="highlighter-rouge">&lt;section&gt;</code> name is the same as the file name.</li>
+  <li><code class="highlighter-rouge">&lt;section&gt;</code> name must be alphanumeric.</li>
+  <li><code class="highlighter-rouge">*Section.xml</code> is stored in the <em>Section</em> directory of a module.</li>
+  <li>The name format is <code class="highlighter-rouge">{Admin|Storefront}{SectionDescription}Section.xml</code>.</li>
+  <li>Camel case is used for <code class="highlighter-rouge">&lt;section&gt;</code> elements.
 They describe the function of the element rather than attempting to describe the selector used.</li>
 </ul>
 
 <h2 id="example">Example</h2>
 
-<p><em>…/Catalog/Section/AdminCategorySidebarActionSection.xml</em>:</p>
+<p>Example (<code class="highlighter-rouge">.../Catalog/Section/AdminCategorySidebarActionSection.xml</code> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 
@@ -1062,27 +1062,26 @@ They describe the function of the element rather than attempting to describe the
 <span class="nt">&lt;/sections&gt;</span>
 </code></pre></div></div>
 
-<p>The example demonstrates a section <code class="highlighter-rouge">AdminCategorySidebarActionSection</code>.
-All sections with same name will be merged during tests generation.</p>
+<p>This example uses a <code class="highlighter-rouge">AdminCategorySidebarActionSection</code> section. All sections with same name will be merged during test generation.</p>
 
-<p>The section declares two buttons:</p>
+<p>The <code class="highlighter-rouge">AdminCategorySidebarActionSection</code> section declares two buttons:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">addRootCategoryButton</code> is a button with a locator <code class="highlighter-rouge">#add_root_category_button</code> on the parent web page.</li>
-  <li><code class="highlighter-rouge">addSubcategoryButton</code> is a button with a locator <code class="highlighter-rouge">#add_subcategory_button</code> on the parent web page.</li>
+  <li><code class="highlighter-rouge">addRootCategoryButton</code> - button with a <code class="highlighter-rouge">#add_root_category_button</code> locator on the parent web page</li>
+  <li><code class="highlighter-rouge">addSubcategoryButton</code> - button with a <code class="highlighter-rouge">#add_subcategory_button</code> locator on the parent web page</li>
 </ul>
 
-<p>Example of a call in test:</p>
+<p>The following is an example of a call in test:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click on the button with locator "#add_subcategory_button" on the web page--&gt;</span>
 <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySidebarActionSection.addSubcategoryButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickOnAddSubCategory"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<h2 id="reference">Reference</h2>
+<h2 id="elements-reference">Elements reference</h2>
 
 <h3 id="section-tag">section</h3>
 
-<p>Contains sequence of UI elements in a section of a <a href="./page.html">page</a>.</p>
+<p><code class="highlighter-rouge">&lt;section&gt;</code> contains the sequence of UI elements in a section of a <a href="./page.html">page</a>.</p>
 
 <table>
   <thead>
@@ -1095,23 +1094,23 @@ All sections with same name will be merged during tests generation.</p>
   </thead>
   <tbody>
     <tr>
-      <td>name</td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
-      <td>Unique section name identifier</td>
+      <td>Unique section name identifier.</td>
     </tr>
     <tr>
-      <td>remove</td>
+      <td><code class="highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Default: <code class="highlighter-rouge">false</code>. Set to <code class="highlighter-rouge">true</code> to remove this element during parsing</td>
+      <td>The default is <code class="highlighter-rouge">false</code>. Set to <code class="highlighter-rouge">true</code> to remove this element during parsing.</td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="element-tag">element</h3>
 
-<p>A UI element used in an <a href="./test/actions.html">action</a>.</p>
+<p><code class="highlighter-rouge">&lt;element&gt;</code>is a UI element used in an <a href="./test/actions.html">action</a>.</p>
 
 <table>
   <thead>
@@ -1124,57 +1123,49 @@ All sections with same name will be merged during tests generation.</p>
   </thead>
   <tbody>
     <tr>
-      <td>name</td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
-      <td>Element name</td>
+      <td>The element name; Must be alphanumeric.</td>
     </tr>
     <tr>
-      <td>type</td>
+      <td><code class="highlighter-rouge">type</code></td>
       <td>string</td>
       <td>required</td>
       <td>The type of the element. Possible values: <code class="highlighter-rouge">text</code>, <code class="highlighter-rouge">textarea</code>, <code class="highlighter-rouge">input</code>, <code class="highlighter-rouge">button</code>, <code class="highlighter-rouge">checkbox</code>, <code class="highlighter-rouge">radio</code>, <code class="highlighter-rouge">checkboxset</code>, <code class="highlighter-rouge">radioset</code>, <code class="highlighter-rouge">date</code>, <code class="highlighter-rouge">file</code>, <code class="highlighter-rouge">select</code>, <code class="highlighter-rouge">multiselect</code>, <code class="highlighter-rouge">wysiwyg</code>, <code class="highlighter-rouge">iframe</code>.</td>
     </tr>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td><a href="https://www.w3schools.com/xml/xpath_nodes.asp">XPath</a> or <a href="https://www.w3schools.com/cssref/css_selectors.asp">CSS</a> selector of the element.</td>
     </tr>
     <tr>
-      <td>locatorFunction</td>
+      <td><code class="highlighter-rouge">locatorFunction</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><a href="./section/locator-functions.html">Locator Function</a> declaration to be used in lieu of a selector.</td>
+      <td><a href="./section/locator-functions.html">Locator function</a> declaration to be used in lieu of a selector.</td>
     </tr>
     <tr>
-      <td>timeout</td>
+      <td><code class="highlighter-rouge">timeout</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>Default: <code class="highlighter-rouge">-</code>. Optional timeout value in seconds to wait for the operation on the element.</td>
+      <td>The default is <code class="highlighter-rouge">-</code>; The optional timeout value in seconds to wait for the operation on the element.</td>
     </tr>
     <tr>
-      <td>parameterized</td>
+      <td><code class="highlighter-rouge">parameterized</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Include and set to <code class="highlighter-rouge">true</code> if the <code class="highlighter-rouge">selector</code> for this element has parameters that need to be replaced for proper use. Learn more in <a href="./section/parameterized-selectors.html">Parameterized selectors</a>.</td>
     </tr>
     <tr>
-      <td>remove</td>
+      <td><code class="highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Default: <code class="highlighter-rouge">false</code>. Set to <code class="highlighter-rouge">true</code> to remove this element during parsing.</td>
+      <td>The default is <code class="highlighter-rouge">false</code>. Set to <code class="highlighter-rouge">true</code> to remove this element during parsing.</td>
     </tr>
   </tbody>
 </table>
-
-<!-- LINK DEFINITIONS -->
-
-<!-- devdocs links -->
-
-<!-- External links -->
-
-<!-- Abbreviations -->
 
 
 		</div>

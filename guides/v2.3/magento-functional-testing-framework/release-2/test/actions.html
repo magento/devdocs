@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Test actions in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Test actions | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -285,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting Started</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Getting started</a>
             
 
             
@@ -418,7 +418,7 @@
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator Functions</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/section/locator-functions.html">Locator functions</a>
                     
 
                     
@@ -522,12 +522,12 @@
         
         
         
-        <li class="nav-level2  " id="tips-and-tricks">
+        <li class="nav-level2  " id="best-practices">
             
             
         
             
-            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/tips-and-tricks.html">Tips and tricks</a>
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/best-practices.html">Best practices</a>
             
 
             
@@ -631,7 +631,7 @@
 
           
 
-          <span property="name">Test actions in the Magento Functional Testing Framework</span>
+          <span property="name">Test actions</span>
 
         
 
@@ -654,7 +654,7 @@
 
 	
 
-	<h1 class="page-heading">Test actions in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Test actions</h1>
 
   
 
@@ -662,21 +662,17 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
 
-<p>This topic contains a reference list of available action type tags available in the <abbr title="Magento Functional Testing Framework">MFTF</abbr> tests.</p>
-
-<h2 id="overview">Overview</h2>
-
-<p>Actions in the <abbr title="Magento Functional Testing Framework">MFTF</abbr> allow you to automate different scenarios of Magento user’s actions.
+<p>Actions in the MFTF allow you to automate different scenarios of Magento user’s actions.
 They are mostly XML implementations of <a href="http://codeception.com/docs/modules/WebDriver#Actions">Codeception actions</a>.
 Some actions drive browser elements, while others use REST APIs.</p>
 
-<h3 id="common-attributes">Common attributes</h3>
+<h2 id="common-attributes">Common attributes</h2>
 
-<p>All actions contain the following attributes that are useful for merging needs.</p>
+<p>All <code class="highlighter-rouge">&lt;actions&gt;</code> contain the following attributes that are useful for merging needs.</p>
 
-<h4 id="stepkey"><code class="highlighter-rouge">stepKey</code></h4>
+<h3 id="stepkey"><code class="highlighter-rouge">stepKey</code></h3>
 
 <p><code class="highlighter-rouge">stepKey</code> is a required attribute that stores a unique identifier of the action.</p>
 
@@ -685,11 +681,13 @@ Some actions drive browser elements, while others use REST APIs.</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">stepKey=</span><span class="s">"conditionalClickStep1"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">myAction</code> has identifier, which is <code class="highlighter-rouge">conditionalClickStep1</code>. This step can be referenced within the test using this identifier.</p>
+<p><code class="highlighter-rouge">myAction</code> has an identifier, which is <code class="highlighter-rouge">conditionalClickStep1</code>. This step can be referenced within the test using this identifier.</p>
 
-<h4 id="before-and-after"><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code></h4>
+<hr />
 
-<p><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is <code class="highlighter-rouge">stepKey</code> of reference action.</p>
+<h3 id="before-and-after"><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code></h3>
+
+<p><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is the <code class="highlighter-rouge">stepKey</code> of reference action.</p>
 
 <p>Example with <code class="highlighter-rouge">before</code>:</p>
 
@@ -707,19 +705,19 @@ Some actions drive browser elements, while others use REST APIs.</p>
 
 <h2 id="principles">Principles</h2>
 
-<p><code class="highlighter-rouge">stepKey</code> value format principles:</p>
+<p>The following value format principles apply to the <code class="highlighter-rouge">stepKey</code> MFTF action:</p>
 
 <ul>
-  <li>Must be unique within <a href="../test.html#test"><code class="highlighter-rouge">&lt;test&gt;</code></a></li>
-  <li>Naming should be as descriptive as possible
+  <li>Must be unique within <a href="../test.html#test"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</li>
+  <li>Naming should be as descriptive as possible:
     <ul>
-      <li>Should describe the action performed</li>
-      <li>Should briefly describe the purpose</li>
-      <li>May describe which data is in use</li>
+      <li>Describe the action performed.</li>
+      <li>Briefly describe the purpose.</li>
+      <li>Describe which data is in use.</li>
     </ul>
   </li>
-  <li>Should be in camelCase with lowercase first letter</li>
-  <li>Should be the last attribute of an element</li>
+  <li>Should be in camelCase with lowercase first letter.</li>
+  <li>Should be the last attribute of an element.</li>
 </ul>
 
 <h2 id="example">Example</h2>
@@ -727,27 +725,29 @@ Some actions drive browser elements, while others use REST APIs.</p>
 <p>The following example contains four actions:</p>
 
 <ol>
-  <li><a href="#example-step1">Open the Sign In page for a Customer</a></li>
-  <li><a href="#example-step2">Enter customer’s e-mail</a></li>
-  <li><a href="#example-step3">Enter customer’s password</a></li>
-  <li><a href="#example-step4">Click the Sign In button</a></li>
+  <li><a href="#example-step1">Open the Sign In page for a Customer</a>.</li>
+  <li><a href="#example-step2">Enter a customer’s email</a>.</li>
+  <li><a href="#example-step3">Enter a customer’s password</a>.</li>
+  <li>
+    <p><a href="#example-step4">Click the Sign In button</a>.</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}} stepKey="</span><span class="err">fillEmail"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<h4 id="example-step1">1. Open the Sign In page for a Customer</h4>
+<h3 id="example-step1">1. Open the Sign In page for a customer</h3>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>The Customer Sign In page is declared in the <em>…/Customer/Page/StorefrontCustomerSignInPage.xml</em>.
-The given relative URI is declared in <code class="highlighter-rouge">StorefrontCustomerSignInPage.url</code></p>
+<p>The Customer Sign In page is declared in the <code class="highlighter-rouge">.../Customer/Page/StorefrontCustomerSignInPage.xml</code> file.
+The given relative URI is declared in <code class="highlighter-rouge">StorefrontCustomerSignInPage.url</code>.</p>
 
-<p>The <em>StorefrontCustomerSignInPage.xml</em> source code:</p>
+<p>Source code (<code class="highlighter-rouge">StorefrontCustomerSignInPage.xml</code> ):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd"</span><span class="nt">&gt;</span>
@@ -757,24 +757,24 @@ The given relative URI is declared in <code class="highlighter-rouge">Storefront
 <span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<p><a href="#amonpage">amOnPage</a> is an action that opens a page for a given URI. It has a key <code class="highlighter-rouge">"amOnSignInPage"</code> that will be used as a reference for merging needs in other modules.
-This action uses value of the <code class="highlighter-rouge">url</code> attribute for the given relative URI to open in browser.
+<p><a href="#amonpage"><code class="highlighter-rouge">&lt;amOnPage&gt;</code></a> is an action that opens a page for a given URI. It has a key <code class="highlighter-rouge">"amOnSignInPage"</code> that will be used as a reference for merging needs in other modules.
+This action uses the <code class="highlighter-rouge">url</code> attribute value for the given relative URI to open a browser page.
 Here, <code class="highlighter-rouge">url</code> contains a pointer to a <code class="highlighter-rouge">url</code> attribute of the <code class="highlighter-rouge">StorefrontCustomerSignInPage</code>.</p>
 
-<h4 id="example-step2">2. Enter customer’s e-mail</h4>
+<h3 id="example-step2">2. Enter a customer’s email</h3>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p><a href="#fillfield">fillField</a> fills a text field with the given string.</p>
+<p><a href="#fillfield"><code class="highlighter-rouge">&lt;fillField&gt;</code></a> fills a text field with the given string.</p>
 
-<p>The customer’s e-mail is stored in the <code class="highlighter-rouge">email</code> parameter of the <code class="highlighter-rouge">customer</code> entity created somewhere earlier it the test using a tag <a href="#createdata">createData</a>.
+<p>The customer’s email is stored in the <code class="highlighter-rouge">email</code> parameter of the <code class="highlighter-rouge">customer</code> entity created somewhere earlier in the test using a <a href="#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a> tag.
 <code class="highlighter-rouge">userInput</code> points to that data.</p>
 
-<p><code class="highlighter-rouge">selector</code> points to the field where to enter the data.
+<p><code class="highlighter-rouge">selector</code> points to the field where you enter the data.
 A required selector is stored in the <code class="highlighter-rouge">emailField</code> element of the <code class="highlighter-rouge">StorefrontCustomerSignInFormSection</code> section.</p>
 
-<p id="section-code">This section is declared in <em>…/Customer/Section/StorefrontCustomerSignInFormSection.xml</em>:</p>
+<p id="section-code">This section is declared in <code class="highlighter-rouge">.../Customer/Section/StorefrontCustomerSignInFormSection.xml</code> file:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd"</span><span class="nt">&gt;</span>
@@ -786,21 +786,22 @@ A required selector is stored in the <code class="highlighter-rouge">emailField<
 <span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<h4 id="example-step3">3. Enter customer’s password</h4>
+<h3 id="example-step3">3. Enter a customer’s password</h3>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>The action here is very similar to the action in a previous step.
-The only difference is that different data assigned to the attributes which set a field with password.</p>
+<p>This <code class="highlighter-rouge">&lt;action&gt;</code> is very similar to the <code class="highlighter-rouge">&lt;action&gt;</code> in a previous step.
+The only difference is that different data is assigned to the attributes, which set a field with a password.</p>
 
-<h4 id="example-step4">4. Click the Sign In button</h4>
+<h3 id="example-step4">4. Click the Sign In button</h3>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Here, <a href="#click">click</a> performs a click on a button that can be found by selector that is stored in the <code class="highlighter-rouge">signInAccountButton</code> of the <code class="highlighter-rouge">StorefrontCustomerSignInFormSection</code>.
-See the <em>StorefrontCustomerSignInPage.xml</em> code in <a href="#section-code">step 2</a></p>
+<p>Here, <a href="#click"><code class="highlighter-rouge">&lt;click&gt;</code></a> performs a click on a button that can be found by the selector that is stored in the <code class="highlighter-rouge">signInAccountButton</code> of the <code class="highlighter-rouge">StorefrontCustomerSignInFormSection</code>.
+See the <code class="highlighter-rouge">StorefrontCustomerSignInPage.xml</code> file code in <a href="#section-code">step 2</a>
+.</p>
 
 <h2 id="actions-returning-a-variable">Actions returning a variable</h2>
 
@@ -816,16 +817,16 @@ See the <em>StorefrontCustomerSignInPage.xml</em> code in <a href="#section-code
   <li><a href="#grabvaluefrom">grabValueFrom</a></li>
 </ul>
 
-<p>Learn more in <a href="../data.html#using-data-returned-by-test-actions">Using data returned by test actions</a>.</p>
+<p>Learn more in <a href="../data.html#use-data-returned-by-test-actions">Using data returned by test actions</a>.</p>
 
 <h2 id="reference">Reference</h2>
 
-<p>The following list contains reference documentation about all action elements available in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.
-If description of an element does not include a link to Codeception analogue, it means that the action is developed by Magento for specific <abbr title="Magento Functional Testing Framework">MFTF</abbr> needs.</p>
+<p>The following list contains reference documentation about all action elements available in the MFTF.
+If the description of an element does not include a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.</p>
 
 <h3 id="acceptpopup">acceptPopup</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#acceptPopup" target="_blank">See acceptPopup docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#acceptPopup" target="_blank">acceptPopup docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -838,19 +839,19 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -860,7 +861,7 @@ If description of an element does not include a link to Codeception analogue, it
 
 <h3 id="amonpage">amOnPage</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#amOnPage" target="_blank">See amOnPage docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnPage" target="_blank">amOnPage docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -873,25 +874,25 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -901,7 +902,7 @@ If description of an element does not include a link to Codeception analogue, it
 
 <h3 id="amonsubdomain">amOnSubdomain</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#amOnSubdomain" target="_blank">See amOnSubdomain docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnSubdomain" target="_blank">amOnSubdomain docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -914,25 +915,25 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -942,7 +943,7 @@ If description of an element does not include a link to Codeception analogue, it
 
 <h3 id="amonurl">amOnUrl</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#amOnUrl" target="_blank">See amOnUrl docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnUrl" target="_blank">amOnUrl docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -955,25 +956,25 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -983,7 +984,7 @@ If description of an element does not include a link to Codeception analogue, it
 
 <h3 id="appendfield">appendField</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#appendField" target="_blank">See appendField docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#appendField" target="_blank">appendField docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -996,31 +997,31 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1030,7 +1031,7 @@ If description of an element does not include a link to Codeception analogue, it
 
 <h3 id="attachfile">attachFile</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#attachFile" target="_blank">See attachFile docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#attachFile" target="_blank">attachFile docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1043,31 +1044,31 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1077,7 +1078,7 @@ If description of an element does not include a link to Codeception analogue, it
 
 <h3 id="cancelpopup">cancelPopup</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#cancelPopup" target="_blank">See cancelPopup docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#cancelPopup" target="_blank">cancelPopup docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1090,19 +1091,19 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1112,7 +1113,7 @@ If description of an element does not include a link to Codeception analogue, it
 
 <h3 id="checkoption">checkOption</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#checkOption" target="_blank">See checkOption docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#checkOption" target="_blank">checkOption docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1125,25 +1126,25 @@ If description of an element does not include a link to Codeception analogue, it
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1154,7 +1155,7 @@ If description of an element does not include a link to Codeception analogue, it
 <h3 id="clearfield">clearField</h3>
 
 <p>Clears a text input field.
-Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
+Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fillField&gt;</code></a> with an empty string.</p>
 
 <table>
   <thead>
@@ -1167,25 +1168,25 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1195,7 +1196,7 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
 
 <h3 id="click">click</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#click" target="_blank">See click docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#click" target="_blank">click docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1208,37 +1209,37 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1248,7 +1249,7 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
 
 <h3 id="clickwithleftbutton">clickWithLeftButton</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#clickWithLeftButton" target="_blank">See clickWithLeftButton docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#clickWithLeftButton" target="_blank">clickWithLeftButton docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1261,13 +1262,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -1285,19 +1286,19 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1307,7 +1308,7 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
 
 <h3 id="clickwithrightbutton">clickWithRightButton</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#clickWithRightButton" target="_blank">See clickWithRightButton docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#clickWithRightButton">clickWithRightButton docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1320,13 +1321,13 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -1344,19 +1345,19 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1366,7 +1367,7 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
 
 <h3 id="closeadminnotification">closeAdminNotification</h3>
 
-<p>Remove from the DOM all elements with the CSS classes <code class="highlighter-rouge">.modal-popup</code> or <code class="highlighter-rouge">.modals-overlay</code></p>
+<p>Remove from the DOM all elements with the CSS classes <code class="highlighter-rouge">.modal-popup</code> or <code class="highlighter-rouge">.modals-overlay</code>.</p>
 
 <table>
   <thead>
@@ -1379,19 +1380,19 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1401,7 +1402,7 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
 
 <h3 id="closetab">closeTab</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#closeTab" target="_blank">See closeTab docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#closeTab" target="_blank">closeTab docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1414,19 +1415,19 @@ Equivalent to using <a href="#fillfield">fillField</a> with an empty string.</p>
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1451,25 +1452,25 @@ It is intended to aid documentation and clarity of tests.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>required</td>
       <td>PHP comment that will be written in generated test file.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1479,7 +1480,7 @@ It is intended to aid documentation and clarity of tests.</p>
 
 <h3 id="conditionalclick">conditionalClick</h3>
 
-<p>Conditionally click on an element if and only if another element is visible or not.</p>
+<p>Conditionally click on an element if, and only if, another element is visible or not.</p>
 
 <p>For example, to click on <code class="highlighter-rouge">#foo</code> if <code class="highlighter-rouge">#bar</code> is visible:</p>
 
@@ -1497,13 +1498,13 @@ It is intended to aid documentation and clarity of tests.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>dependentSelector</td>
+      <td>dependent<code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -1515,19 +1516,19 @@ It is intended to aid documentation and clarity of tests.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1537,7 +1538,7 @@ It is intended to aid documentation and clarity of tests.</p>
 
 <h3 id="createdata">createData</h3>
 
-<p>Create an entity (e.g. a category or product). In other words, make a POST request
+<p>Create an entity (for example, a category or product). In other words, make a <code class="highlighter-rouge">POST</code> request
 to the Magento API according to the data and metadata of the entity to be created.</p>
 
 <p>For example, you can create the entity with the name “SampleProduct”:</p>
@@ -1562,19 +1563,19 @@ to the Magento API according to the data and metadata of the entity to be create
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1622,16 +1623,46 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="field">field</h4>
+
+<p>Specify a custom field you’d like persisted to Magento (as a part of the entity) which will overwrite any other declaration in static data. This field will only replace at a top level (nested values such as custom attributes or extension attributes will not be replaceable via this annotation).</p>
+
+<p>For example, to overwrite the <code class="highlighter-rouge">name</code> field in a particular product specify a field element during its creation.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createProduct"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"name"</span><span class="nt">&gt;</span>myCustomProductName<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/createData&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>required</td>
+      <td>Name of the field to be replaced or added.</td>
     </tr>
   </tbody>
 </table>
@@ -1640,15 +1671,14 @@ by indicating the relationship.</p>
 
 <p>Delete an entity that was previously created.</p>
 
-<p>It’s important to note that this action is only able to delete entities that were
-previously created using <a href="#createdata">createData</a> in the scope of the <a href="../test.html#test-tag">test</a>.</p>
+<p>This action is only able to delete entities that were previously created using <a href="#createdata"><code class="highlighter-rouge">createData</code></a> in the scope of the <a href="../test.html#test-tag">test</a>.</p>
 
 <p>Assuming we created <em>SampleCategory</em> like:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleCategory"</span> <span class="na">stepKey=</span><span class="s">"createCategory"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>We can delete <em>SampleCategory</em> like:</p>
+<p>We can delete <em>SampleCategory</em>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;deleteData createDataKey="createCategory" stepKey="deleteCategory"/&gt;
 </code></pre></div></div>
@@ -1670,19 +1700,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1698,7 +1728,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontsee">dontSee</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSee" target="_blank">See the codeception.com documentation for more information about this action.</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSee" target="_blank">the codeception.com documentation for more information about this action</a>.</p>
 
 <table>
   <thead>
@@ -1711,37 +1741,37 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1751,7 +1781,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseecheckboxischecked">dontSeeCheckboxIsChecked</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeCheckboxIsChecked" target="_blank">See dontSeeCheckboxIsChecked docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCheckboxIsChecked" target="_blank">dontSeeCheckboxIsChecked docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1764,25 +1794,25 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1792,7 +1822,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseecookie">dontSeeCookie</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeCookie" target="_blank">See dontSeeCookie docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCookie" target="_blank">dontSeeCookie docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1805,31 +1835,31 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1839,7 +1869,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseecurrenturlequals">dontSeeCurrentUrlEquals</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlEquals" target="_blank">See dontSeeCurrentUrlEquals docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlEquals" target="_blank">dontSeeCurrentUrlEquals docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1852,25 +1882,25 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1880,7 +1910,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseecurrenturlmatches">dontSeeCurrentUrlMatches</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlMatches" target="_blank">See dontSeeCurrentUrlMatches docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlMatches" target="_blank">dontSeeCurrentUrlMatches docs on codeception.com</a></p>
 
 <table>
   <thead>
@@ -1899,19 +1929,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td>Regular expression against the current URI.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1921,7 +1951,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeelement">dontSeeElement</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeElement" target="_blank">See dontSeeElement docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeElement" target="_blank">dontSeeElement docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1934,31 +1964,31 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -1968,7 +1998,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeelementindom">dontSeeElementInDOM</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeElementInDOM" target="_blank">See dontSeeElementInDOM docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeElementInDOM" target="_blank">dontSeeElementInDOM docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -1981,13 +2011,13 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -1999,19 +2029,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2021,7 +2051,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeincurrenturl">dontSeeInCurrentUrl</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeInCurrentUrl" target="_blank">See dontSeeInCurrentUrl docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInCurrentUrl" target="_blank">dontSeeInCurrentUrl docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2034,25 +2064,25 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2062,7 +2092,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeinfield">dontSeeInField</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeInField" target="_blank">See dontSeeInField docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInField" target="_blank">dontSeeInField docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2075,37 +2105,37 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2115,7 +2145,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeinformfields">dontSeeInFormFields</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeInFormFields" target="_blank">See dontSeeInFormFields docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInFormFields" target="_blank">dontSeeInFormFields docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2128,31 +2158,31 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2162,7 +2192,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeinpagesource">dontSeeInPageSource</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeInPageSource" target="_blank">See dontSeeInPageSource docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInPageSource" target="_blank">dontSeeInPageSource docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2175,25 +2205,25 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2203,7 +2233,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeinsource">dontSeeInSource</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeInSource" target="_blank">See dontSeeInSource docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInSource" target="_blank">dontSeeInSource docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2216,25 +2246,25 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>html</td>
+      <td><code class="highlighter-rouge">html</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2244,7 +2274,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeintitle">dontSeeInTitle</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeInTitle" target="_blank">See dontSeeInTitle docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInTitle" target="_blank">dontSeeInTitle docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2257,25 +2287,25 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2285,7 +2315,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseejserror">dontSeeJsError</h3>
 
-<p>Assert that there are no Javascript errors.</p>
+<p>Ensure that there are no JavaScript errors.</p>
 
 <table>
   <thead>
@@ -2298,19 +2328,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2320,7 +2350,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseelink">dontSeeLink</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeLink" target="_blank">See dontSeeLink docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeLink" target="_blank">dontSeeLink docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2333,31 +2363,31 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2367,7 +2397,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="dontseeoptionisselected">dontSeeOptionIsSelected</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dontSeeOptionIsSelected" target="_blank">See dontSeeOptionIsSelected docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeOptionIsSelected" target="_blank">dontSeeOptionIsSelected docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2380,31 +2410,31 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2414,7 +2444,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="doubleclick">doubleClick</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#doubleClick" target="_blank">See doubleClick docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#doubleClick" target="_blank">doubleClick docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2427,25 +2457,25 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2455,7 +2485,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="draganddrop">dragAndDrop</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#dragAndDrop" target="_blank">See dragAndDrop docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dragAndDrop" target="_blank">dragAndDrop docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2480,19 +2510,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2502,7 +2532,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="executeinselenium">executeInSelenium</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#executeInSelenium" target="_blank">See executeInSelenium docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#executeInSelenium" target="_blank">executeInSelenium docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2521,19 +2551,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2543,7 +2573,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="executejs">executeJS</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#executeJS" target="_blank">See executeJS docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#executeJS" target="_blank">executeJS docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2562,19 +2592,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2584,7 +2614,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="fillfield">fillField</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#fillField" target="_blank">See fillField docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#fillField" target="_blank">fillField docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2597,37 +2627,37 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2648,7 +2678,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -2660,19 +2690,19 @@ previously created using <a href="#createdata">createData</a> in the scope of th
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2682,8 +2712,7 @@ previously created using <a href="#createdata">createData</a> in the scope of th
 
 <h3 id="getdata">getData</h3>
 
-<p>Gets an entity (e.g. a category or product).
-In other words, makes a GET request to the Magento API according to the data and metadata of the entity type that is requested.</p>
+<p>Gets an entity (for example, a category, the Magento API according to the data and metadata of the entity type that is requested.</p>
 
 <p>For example, using <code class="highlighter-rouge">getData</code> in a test looks like this:</p>
 
@@ -2711,7 +2740,7 @@ In other words, makes a GET request to the Magento API according to the data and
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
@@ -2729,13 +2758,13 @@ In other words, makes a GET request to the Magento API according to the data and
       <td> </td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2747,7 +2776,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="grabattributefrom">grabAttributeFrom</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#grabAttributeFrom" target="_blank">See grabAttributeFrom docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabAttributeFrom" target="_blank">grabAttributeFrom docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2760,31 +2789,31 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2794,7 +2823,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="grabcookie">grabCookie</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#grabCookie" target="_blank">See grabCookie docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabCookie" target="_blank">grabCookie docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2807,31 +2836,31 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2841,7 +2870,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="grabfromcurrenturl">grabFromCurrentUrl</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl" target="_blank">See grabFromCurrentUrl docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl" target="_blank">grabFromCurrentUrl docs on codeception.com</a>..</p>
 
 <table>
   <thead>
@@ -2860,19 +2889,19 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>Regular expression against the current URI.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2882,7 +2911,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="grabmultiple">grabMultiple</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#grabMultiple" target="_blank">See grabMultiple docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabMultiple" target="_blank">grabMultiple docs on codeception.com</a>..</p>
 
 <table>
   <thead>
@@ -2895,31 +2924,31 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2929,7 +2958,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="grabpagesource">grabPageSource</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#grabPageSource" target="_blank">See grabPageSource docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabPageSource" target="_blank">grabPageSource docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2942,19 +2971,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -2964,7 +2993,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="grabtextfrom">grabTextFrom</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#grabTextFrom" target="_blank">See grabTextFrom docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabTextFrom" target="_blank">grabTextFrom docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -2977,25 +3006,25 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3005,7 +3034,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="grabvaluefrom">grabValueFrom</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#grabValueFrom" target="_blank">See grabValueFrom docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabValueFrom" target="_blank">grabValueFrom docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3018,31 +3047,31 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3052,7 +3081,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="loadsessionsnapshot">loadSessionSnapshot</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#loadSessionSnapshot" target="_blank">See loadSessionSnapshot docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#loadSessionSnapshot" target="_blank">loadSessionSnapshot docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3065,25 +3094,25 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3093,7 +3122,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="magentocli">magentoCLI</h3>
 
-<p>Passes CLI command for execution in Magento environment.</p>
+<p>Specifies a CLI command to execute in a Magento environment.</p>
 
 <table>
   <thead>
@@ -3112,19 +3141,19 @@ In other words, makes a GET request to the Magento API according to the data and
       <td>CLI command to be executed in Magento environment.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3134,7 +3163,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="makescreenshot">makeScreenshot</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#makeScreenshot" target="_blank">See makeScreenshot docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#makeScreenshot" target="_blank">makeScreenshot docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3147,25 +3176,25 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3175,7 +3204,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="maximizewindow">maximizeWindow</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#maximizeWindow" target="_blank">See maximizeWindow docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#maximizeWindow" target="_blank">maximizeWindow docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3188,19 +3217,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3210,7 +3239,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="moveback">moveBack</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#moveBack" target="_blank">See moveBack docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#moveBack" target="_blank">moveBack docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3223,19 +3252,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3245,7 +3274,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="moveforward">moveForward</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#moveForward" target="_blank">See moveForward docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#moveForward" target="_blank">moveForward docs on codeception.com</a>..</p>
 
 <table>
   <thead>
@@ -3258,19 +3287,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3280,7 +3309,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="movemouseover">moveMouseOver</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#moveMouseOver" target="_blank">See moveMouseOver docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#moveMouseOver" target="_blank">moveMouseOver docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3293,13 +3322,13 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3317,19 +3346,19 @@ In other words, makes a GET request to the Magento API according to the data and
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3350,7 +3379,7 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3362,19 +3391,19 @@ In other words, makes a GET request to the Magento API according to the data and
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3395,19 +3424,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3417,7 +3446,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="opennewtab">openNewTab</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#openNewTab" target="_blank">See openNewTab docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#openNewTab" target="_blank">openNewTab docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3430,19 +3459,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3452,7 +3481,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="parsefloat">parseFloat</h3>
 
-<p>Parse float number with thousands seperator.</p>
+<p>Parses float number with thousands separator.</p>
 
 <table>
   <thead>
@@ -3465,25 +3494,25 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3493,7 +3522,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="pauseexecution">pauseExecution</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#pauseExecution" target="_blank">See pauseExecution docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#pauseExecution" target="_blank">pauseExecution docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3506,19 +3535,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3528,7 +3557,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="performon">performOn</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#performOn" target="_blank">See performOn docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#performOn" target="_blank">performOn docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3541,7 +3570,7 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3553,19 +3582,19 @@ In other words, makes a GET request to the Magento API according to the data and
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3575,7 +3604,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="presskey">pressKey</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#pressKey" target="_blank">See pressKey docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#pressKey" target="_blank">pressKey docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3588,37 +3617,37 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3628,7 +3657,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="reloadpage">reloadPage</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#reloadPage" target="_blank">See reloadPage docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#reloadPage" target="_blank">reloadPage docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3641,19 +3670,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3686,7 +3715,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="resetcookie">resetCookie</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#resetCookie" target="_blank">See resetCookie docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#resetCookie" target="_blank">resetCookie docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3699,31 +3728,31 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3733,7 +3762,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="resizewindow">resizeWindow</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#resizeWindow" target="_blank">See resizeWindow docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#resizeWindow" target="_blank">resizeWindow docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3758,19 +3787,19 @@ In other words, makes a GET request to the Magento API according to the data and
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3780,7 +3809,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="savesessionsnapshot">saveSessionSnapshot</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#saveSessionSnapshot" target="_blank">See saveSessionSnapshot docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#saveSessionSnapshot" target="_blank">saveSessionSnapshot docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3793,25 +3822,25 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3821,7 +3850,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="scrollto">scrollTo</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#scrollTo" target="_blank">See scrollTo docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#scrollTo" target="_blank">scrollTo docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3834,13 +3863,13 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3858,19 +3887,19 @@ In other words, makes a GET request to the Magento API according to the data and
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3880,7 +3909,7 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="scrolltotopofpage">scrollToTopOfPage</h3>
 
-<p>A convenience function that executes <code class="highlighter-rouge">window.scrollTo(0,0)</code> as JavaScript thus returning to the top of the page.</p>
+<p>A convenience function that executes <code class="highlighter-rouge">window.scrollTo(0,0)</code> as JavaScript, thus returning to the top of the page.</p>
 
 <table>
   <thead>
@@ -3893,19 +3922,19 @@ In other words, makes a GET request to the Magento API according to the data and
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3915,8 +3944,8 @@ In other words, makes a GET request to the Magento API according to the data and
 
 <h3 id="searchandmultiselectoption">searchAndMultiSelectOption</h3>
 
-<p>Search for and select options from a Magento multi-select drop down menu.
-For example, the drop down menu you use to assign Products to Categories.</p>
+<p>Search for and select options from a Magento multi-select drop-down menu.
+For example, the drop-down menu you use to assign Products to Categories.</p>
 
 <table>
   <thead>
@@ -3929,19 +3958,19 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3953,19 +3982,19 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -3975,7 +4004,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="see">see</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#see" target="_blank">See see docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#see" target="_blank">see docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -3988,37 +4017,37 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4028,7 +4057,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seecheckboxischecked">seeCheckboxIsChecked</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeCheckboxIsChecked" target="_blank">See seeCheckboxIsChecked docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCheckboxIsChecked" target="_blank">seeCheckboxIsChecked docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4041,25 +4070,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4069,7 +4098,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seecookie">seeCookie</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeCookie" target="_blank">See seeCookie docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCookie" target="_blank">seeCookie docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4082,31 +4111,31 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4116,7 +4145,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seecurrenturlequals">seeCurrentUrlEquals</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlEquals" target="_blank">See seeCurrentUrlEquals docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlEquals" target="_blank">seeCurrentUrlEquals docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4129,25 +4158,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4157,7 +4186,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seecurrenturlmatches">seeCurrentUrlMatches</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches" target="_blank">See seeCurrentUrlMatches docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches" target="_blank">seeCurrentUrlMatches docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4176,19 +4205,19 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td>Regular expression against the current URI.</td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4198,7 +4227,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeelement">seeElement</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeElement" target="_blank">See seeElement docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeElement" target="_blank">seeElement docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4211,37 +4240,37 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4251,7 +4280,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeelementindom">seeElementInDOM</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeElementInDOM" target="_blank">See seeElementInDOM docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeElementInDOM" target="_blank">seeElementInDOM docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4264,31 +4293,31 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4298,7 +4327,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeincurrenturl">seeInCurrentUrl</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeInCurrentUrl" target="_blank">See seeInCurrentUrl docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInCurrentUrl" target="_blank">seeInCurrentUrl docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4311,25 +4340,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4339,7 +4368,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeinfield">seeInField</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeInField" target="_blank">See seeInField docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInField" target="_blank">seeInField docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4352,37 +4381,37 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selectorArray</td>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4392,7 +4421,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeinformfields">seeInFormFields</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeInFormFields" target="_blank">See seeInFormFields docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInFormFields" target="_blank">seeInFormFields docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4405,31 +4434,31 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4439,7 +4468,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeinpagesource">seeInPageSource</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeInPageSource" target="_blank">See seeInPageSource docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInPageSource" target="_blank">seeInPageSource docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4452,25 +4481,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>html</td>
+      <td><code class="highlighter-rouge">html</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4480,7 +4509,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeinpopup">seeInPopup</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeInPopup" target="_blank">See seeInPopup docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInPopup" target="_blank">seeInPopup docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4493,25 +4522,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4521,7 +4550,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeinsource">seeInSource</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeInSource" target="_blank">See seeInSource docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInSource" target="_blank">seeInSource docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4534,25 +4563,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>html</td>
+      <td><code class="highlighter-rouge">html</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4562,7 +4591,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeintitle">seeInTitle</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeInTitle" target="_blank">See seeInTitle docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInTitle" target="_blank">seeInTitle docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4575,25 +4604,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4603,7 +4632,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seelink">seeLink</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeLink" target="_blank">See seeLink docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeLink" target="_blank">seeLink docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4616,31 +4645,31 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>url</td>
+      <td><code class="highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4650,7 +4679,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seenumberofelements">seeNumberOfElements</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeNumberOfElements" target="_blank">See seeNumberOfElements docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeNumberOfElements" target="_blank">seeNumberOfElements docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4663,37 +4692,37 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4703,7 +4732,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="seeoptionisselected">seeOptionIsSelected</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#seeOptionIsSelected" target="_blank">See seeOptionIsSelected docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeOptionIsSelected" target="_blank">seeOptionIsSelected docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4716,31 +4745,31 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4750,7 +4779,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="selectoption">selectOption</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#selectOption" target="_blank">See selectOption docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#selectOption" target="_blank">selectOption docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4763,37 +4792,37 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4801,9 +4830,16 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
-<h3 id="setcookie">setCookie</h3>
+<h3 id="selectmultipleoptions">selectMultipleOptions</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#setCookie" target="_blank">See setCookie docs on codeception.com</a></p>
+<p>Selects all given options in the given Magento drop-down element.</p>
+
+<p>Example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;selectMultipleOptions</span> <span class="na">filterSelector=</span><span class="s">".filter"</span> <span class="na">optionSelector=</span><span class="s">".option"</span> <span class="na">stepKey=</span><span class="s">"selectMultipleOpts1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;array&gt;</span>['opt1', 'opt2']<span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/selectMultipleOptions&gt;</span>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -4816,13 +4852,63 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">filterSelector</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>The selector for the text filter field.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">optionSelector</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>The selector used to select the corresponding options based on the filter field.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It contains a child element <code class="highlighter-rouge">&lt;array&gt;</code> where you specify the options that must be selected using an array format like <code class="highlighter-rouge">['opt1', 'opt2']</code>.
+See the previous example.</p>
+
+<h3 id="setcookie">setCookie</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#setCookie" target="_blank">setCookie docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -4834,19 +4920,19 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4856,7 +4942,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="submitform">submitForm</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#submitForm" target="_blank">See submitForm docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#submitForm" target="_blank">submitForm docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4869,13 +4955,13 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -4887,19 +4973,19 @@ For example, the drop down menu you use to assign Products to Categories.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4909,7 +4995,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="switchtoiframe">switchToIFrame</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#switchToIFrame" target="_blank">See switchToIFrame docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToIFrame" target="_blank">switchToIFrame docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4922,31 +5008,31 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4956,7 +5042,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="switchtonexttab">switchToNextTab</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#switchToNextTab" target="_blank">See switchToNextTab docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToNextTab" target="_blank">switchToNextTab docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -4969,25 +5055,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -4997,7 +5083,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="switchtoprevioustab">switchToPreviousTab</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#switchToPreviousTab" target="_blank">See switchToPreviousTab docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToPreviousTab" target="_blank">switchToPreviousTab docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5010,25 +5096,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5038,7 +5124,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="switchtowindow">switchToWindow</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#switchToWindow" target="_blank">See switchToWindow docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToWindow" target="_blank">switchToWindow docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5051,25 +5137,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5079,7 +5165,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="typeinpopup">typeInPopup</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#typeInPopup" target="_blank">See typeInPopup docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#typeInPopup" target="_blank">typeInPopup docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5092,25 +5178,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5120,7 +5206,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="uncheckoption">uncheckOption</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#uncheckOption" target="_blank">See uncheckOption docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#uncheckOption" target="_blank">uncheckOption docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5133,25 +5219,25 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5161,7 +5247,7 @@ For example, the drop down menu you use to assign Products to Categories.</p>
 
 <h3 id="unselectoption">unselectOption</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#unselectOption" target="_blank">See unselectOption docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#unselectOption" target="_blank">unselectOption docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5174,37 +5260,37 @@ For example, the drop down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>parameterArray</td>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5222,14 +5308,14 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;updateData</span> <span class="na">entity=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">createDataKey=</span><span class="s">"productHandle"</span> <span class="na">stepKey=</span><span class="s">"updateProduct"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">AdjustPriceProduct</code> simply looks like this:</p>
+<p>Where <code class="highlighter-rouge">AdjustPriceProduct</code> simply looks like this:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">type=</span><span class="s">"product"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"price"</span><span class="nt">&gt;</span>321.00<span class="nt">&lt;/data&gt;</span>
 <span class="nt">&lt;/entity&gt;</span>
 </code></pre></div></div>
 
-<p>Notice only the fields that you wish to update are set.</p>
+<p>Only the fields that you want to update are set.</p>
 
 <table>
   <thead>
@@ -5248,7 +5334,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
@@ -5266,13 +5352,13 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5284,7 +5370,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="wait">wait</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#wait" target="_blank">See wait docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#wait" target="_blank">wait docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5297,25 +5383,25 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5338,25 +5424,25 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5366,7 +5452,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="waitforelementchange">waitForElementChange</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#waitForElementChange" target="_blank">See waitForElementChange docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElementChange" target="_blank">waitForElementChange docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5379,7 +5465,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -5391,25 +5477,25 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5419,7 +5505,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="waitforelement">waitForElement</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#waitForElement" target="_blank">See waitForElement docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElement" target="_blank">waitForElement docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5432,31 +5518,31 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5466,7 +5552,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="waitforelementnotvisible">waitForElementNotVisible</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#waitForElementNotVisible" target="_blank">See waitForElementNotVisible docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElementNotVisible" target="_blank">waitForElementNotVisible docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5479,31 +5565,31 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5513,7 +5599,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="waitforelementvisible">waitForElementVisible</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#waitForElementVisible" target="_blank">See waitForElementVisible docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElementVisible" target="_blank">waitForElementVisible docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5526,31 +5612,31 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5560,7 +5646,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="waitforjs">waitForJS</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#waitForJS" target="_blank">See waitForJS docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForJS" target="_blank">waitForJS docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5579,25 +5665,25 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5607,7 +5693,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="waitforloadingmasktodisappear">waitForLoadingMaskToDisappear</h3>
 
-<p>Wait for all Magento loading overlays to go away.</p>
+<p>Wait for all Magento loading overlays to disappear.</p>
 
 <div class="bs-callout bs-callout-info">
   <p>The CSS class for loading masks is not used consistently throughout Magento. Therefore, this convenience function tries to wait for various specific selectors.</p>
@@ -5633,19 +5719,19 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5668,25 +5754,25 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
@@ -5696,7 +5782,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
 
 <h3 id="waitfortext">waitForText</h3>
 
-<p><a href="http://codeception.com/docs/modules/WebDriver#waitForText" target="_blank">See waitForText docs on codeception.com</a></p>
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForText" target="_blank">waitForText docs on codeception.com</a>.</p>
 
 <table>
   <thead>
@@ -5709,45 +5795,43 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>userInput</td>
+      <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>time</td>
+      <td><code class="highlighter-rouge">time</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>selector</td>
+      <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>stepKey</td>
+      <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
     </tr>
     <tr>
-      <td>before</td>
+      <td><code class="highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td>after</td>
+      <td><code class="highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
     </tr>
   </tbody>
 </table>
-
-<!-- Abbreviations -->
 
 
 		</div>
