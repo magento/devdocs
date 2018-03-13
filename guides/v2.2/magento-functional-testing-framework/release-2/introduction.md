@@ -12,13 +12,13 @@ mftf-release: 2.0.2
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases to make test creation easier for developers and improve qualities like:
+The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html) in future releases. MFTF will make test creation easier for developers and will improve:
 
-* **Traceability** for clear logging and reporting capabilities
-* **Modularity** to run tests based on installed modules and extensions
-* **Customizability** for existing tests
-* **Readability** using clear, declarative XML test steps
-* **Maintainability** based on simple test creation and overall structure
+* **Traceability** for clear logging and reporting capabilities.
+* **Modularity** to run tests based on installed modules and extensions.
+* **Customizability** for existing tests.
+* **Readability** using clear and declarative XML test steps.
+* **Maintainability** based on simple test creation and overall structure.
 
 Because MFTF tests are written in XML, you no longer need to learn PHP to write tests.
 
@@ -26,13 +26,39 @@ Because MFTF tests are written in XML, you no longer need to learn PHP to write 
 include note.html
 type="info"
 content="We are actively developing functional tests.
-Refer to _\<magento2 root dir\>/dev/tests/acceptance/_ for examples."
+Refer to `<magento2 root dir\>/dev/tests/acceptance/` for examples."
 %}
 
-## What version of the MFTF do I use?
+## Audience
 
-The MFTF is installed as a Composer dependency in _\<magento2 root dir\>/dev/tests/acceptance/composer.lock_.
-Open the file and check the corresponding dependency. Example:
+This MFTF guide is intended for Magento developers and software engineers, such as QA specialists, PHP developers, and system integrators.
+
+## Goals
+
+The purpose of MFTF is to:
+-   Facilitate functional testing and minimize the effort it takes to perform regression testing.
+-   Make it easier to support the extension and customization of tests via XML merging.
+
+## Scope
+
+MFTF will enable you to:
+
+-   Test user interactions with web applications in testing.
+-   Write functional tests located in `<magento2 root dir\>/dev/tests/acceptance/`.
+-   Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
+-   Automate regression testing.
+
+## Use cases
+
+As a Magento developer, test changes, such as extended search functionality, a new form attribute, or new product tags.
+
+As a software engineer, perform regression testing before release to ensure that Magento works as expected with new functionality.
+
+## Find your MFTF version
+
+The MFTF is installed as a Composer dependency in `<magento2 root dir\>/dev/tests/acceptance/composer.lock`.
+
+Open the file and check the corresponding dependency:
 
 ```json
 {
@@ -50,7 +76,7 @@ Open the file and check the corresponding dependency. Example:
 }
 ```
 
-## What's in the "`dev/tests/acceptance`"
+## Contents of `dev/tests/acceptance`
 
 ```
 tests
@@ -69,7 +95,7 @@ codeception.dist.yml            // Codeception configuration
 pre-install.php                 // Script that checks the environment on whether pre-installation requirements are met
 ```
 
-## What output does the MFTF produce?
+## MFTF output
 
 - Generated PHP Codeception tests
 - Codeception results and console logs
@@ -77,41 +103,6 @@ pre-install.php                 // Script that checks the environment on whether
 - Allure formatted XML results
 - Allure report dashboard of results
 
-## Audience
-
-The MFTF guide is intended for Magento developers and software engineers, such as QA specialists, PHP developer, and system integrators.
-
-## Goals
-
--   Facilitate functional testing and minimize efforts to perform regression testing
--   Minimize efforts to support extension and customization of tests via XML merging
-
-## Scope
-
--   Test user interactions with web application under test
--   Write functional tests located in _\<magento2 root dir\>/dev/tests/acceptance/_
--   Cover basic functionality using out-of-the-box tests.
-You can test extended functionality using custom tests.
--   Automated regression testing
-
-## Use Case Examples
-
-As a Magento developer, test changes (for example, added attribute on Customer Form, extended Search functionality, added tags for Products, etc).
-
-As a software engineer, perform regression testing before release to ensure that Magento works as expected with new functionality.
-
 ## MFTF on Github
 
-Follow the [MFTF project] and [contribute on Github].
-
-<!-- LINK DEFINITIONS -->
-
-[contribute on Github]: ../contribution-guidelines.html
-[Functional Testing Framework]: {{page.baseurl}}mtf/mtf_introduction.html
-
-[`magento` repositories]: https://github.com/magento
-[MFTF project]: https://github.com/magento/magento2-functional-testing-framework
-
-<!-- Abbreviations -->
-
-*[MFTF]: Magento Functional Testing Framework
+Follow the [MFTF project](https://github.com/magento/magento2-functional-testing-framework) and [contribute on Github](../contribution-guidelines.html).
