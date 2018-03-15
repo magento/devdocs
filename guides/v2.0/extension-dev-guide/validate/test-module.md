@@ -46,7 +46,7 @@ One way to do this follows:
 
 	To create a static route, add a line similar to the following to your `hosts` file:
 
-		<IP or host name of your GitHub repository> https://repo.magento.com
+		<IP or host name of your GitHub repository> repo.magento.com
 
 3.	<a href="{{page.baseurl}}comp-mgr/module-man/compman-main-pg.html#compman-access" target="_blank">Install your component</a> exactly like a merchant.
 4.	Verify the component installed properly.
