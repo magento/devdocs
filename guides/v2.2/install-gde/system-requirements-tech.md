@@ -15,7 +15,7 @@ functional_areas:
 ---
 
 ### Operating systems (Linux x86-64)
-Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on.
+A Linux distribution such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on.
 
 ### Memory requirement
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
@@ -26,14 +26,14 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 ### Web servers
 *	<a href="http://httpd.apache.org/download.cgi" target="&#95;blank">Apache 2.2 or 2.4</a>
 
-	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">our Apache documentation</a>.
+	In addition, you must enable the Apache `mod_rewrite` and `mod_version` modules. The [`mod_rewrite`](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) module enables the server to perform URL rewriting. The [`mod_version`](https://httpd.apache.org/docs/2.4/mod/mod_version.html) module provides flexible version checking for different `httpd` versions. For more information, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">our Apache documentation</a>.
 
 *	<a href="https://nginx.org/en/download.html" target="&#95;blank">nginx 1.x</a>
 
 ### Database
 MySQL 5.6, 5.7
 
-Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
+Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
@@ -69,7 +69,7 @@ The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{
 *	[iconv](http://php.net/manual/en/book.iconv.php){:target="&#95;blank"}
 
 #### PHP OPcache
-We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a> or <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>.
+We strongly recommend you verify that  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a> or <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>.
 
 If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.
 
@@ -81,9 +81,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/
 ### SSL
 *	A valid {% glossarytooltip 363d6806-6a7d-4cb6-bc47-efc62bc26a1c %}security certificate{% endglossarytooltip %} is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
-*	Transport Layer Security (TLS) requirement
-
-	PayPal and `repo.magento.com` both require TLS 1.1 or later
+*	Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
 
 	*	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
 
@@ -106,7 +104,7 @@ Mail Transfer Agent (MTA) or an SMTP server
     *	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="&#95;blank"}
     *	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="&#95;blank"}
 
-    Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
+    Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. Before version 2.2.3, Magento used PHP client version 2.0.
 
 *	RabbitMQ 3.5.x (compatible with 2.0 and later)
 
@@ -114,7 +112,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *	Three master databases
 
-    These <a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).
+    These <a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application, such as checkout, orders, and all remaining Magento2 application tables.
 
 ### Optional but recommended:
 *	<a href="http://xdebug.org/download.php" target="&#95;blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)
