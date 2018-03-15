@@ -2435,7 +2435,7 @@
 
 
 			<h3 id="operating-systems-linux-x86-64">Operating systems (Linux x86-64)</h3>
-<p>Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on.</p>
+<p>A Linux distribution such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on.</p>
 
 <h3 id="memory-requirement">Memory requirement</h3>
 <p>Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a <a href="/guides/v2.3/comp-mgr/trouble/cman/out-of-memory.html">swap file</a>; otherwise, your upgrade might fail.</p>
@@ -2448,7 +2448,7 @@
   <li>
     <p><a href="http://httpd.apache.org/download.cgi" target="&#95;blank">Apache 2.2 or 2.4</a></p>
 
-    <p>In addition, the apache <code class="highlighter-rouge">mod_rewrite</code> module must be enabled. <code class="highlighter-rouge">mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/guides/v2.3/install-gde/prereq/apache.html">our Apache documentation</a>.</p>
+    <p>In addition, you must enable the Apache <code class="highlighter-rouge">mod_rewrite</code> and <code class="highlighter-rouge">mod_version</code> modules. The <a href="https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html"><code class="highlighter-rouge">mod_rewrite</code></a> module enables the server to perform URL rewriting. The <a href="https://httpd.apache.org/docs/2.4/mod/mod_version.html"><code class="highlighter-rouge">mod_version</code></a> module provides flexible version checking for different <code class="highlighter-rouge">httpd</code> versions. For more information, see <a href="/guides/v2.3/install-gde/prereq/apache.html">our Apache documentation</a>.</p>
   </li>
   <li>
     <p><a href="https://nginx.org/en/download.html" target="&#95;blank">nginx 1.x</a></p>
@@ -2458,7 +2458,7 @@
 <h3 id="database">Database</h3>
 <p>MySQL 5.6, 5.7</p>
 
-<p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.</p>
+<p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.</p>
@@ -2519,7 +2519,7 @@
   </ul>
 
   <h4 id="php-opcache">PHP OPcache</h4>
-  <p>We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="/guides/v2.3/install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a> or <a href="/guides/v2.3/install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>.</p>
+  <p>We strongly recommend you verify that  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="/guides/v2.3/install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a> or <a href="/guides/v2.3/install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>.</p>
 
   <p>If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
 
@@ -2533,9 +2533,7 @@
     <li>A valid <span term-uuid="363d6806-6a7d-4cb6-bc47-efc62bc26a1c" class="glossary-term" data-toggle="popover">security certificate</span> is required for HTTPS.</li>
     <li>Self-signed SSL certificates are not supported.</li>
     <li>
-      <p>Transport Layer Security (TLS) requirement</p>
-
-      <p>PayPal and <code class="highlighter-rouge">repo.magento.com</code> both require TLS 1.1 or later</p>
+      <p>Transport Layer Security (TLS) requirement - PayPal and <code class="highlighter-rouge">repo.magento.com</code> both require TLS 1.1 or later:</p>
 
       <ul>
         <li>
@@ -2571,7 +2569,7 @@
         <li>Elasticsearch <a href="https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5" target="&#95;blank">2.x</a></li>
       </ul>
 
-      <p>Magento 2.2.3 uses <a href="https://github.com/elastic/elasticsearch-php" target="&#95;blank">Elasticsearch PHP client</a> version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)</p>
+      <p>Magento 2.2.3 uses <a href="https://github.com/elastic/elasticsearch-php" target="&#95;blank">Elasticsearch PHP client</a> version 5.1. Before version 2.2.3, Magento used PHP client version 2.0.</p>
     </li>
     <li>
       <p>RabbitMQ 3.5.x (compatible with 2.0 and later)</p>
@@ -2581,7 +2579,7 @@
     <li>
       <p>Three master databases</p>
 
-      <p>These <a href="/guides/v2.3/config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).</p>
+      <p>These <a href="/guides/v2.3/config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application, such as checkout, orders, and all remaining Magento2 application tables.</p>
     </li>
   </ul>
 
