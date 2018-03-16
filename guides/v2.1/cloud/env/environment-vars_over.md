@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: Manage variables
+title: Manage environment variables
 version: 2.1
 github_link: cloud/env/environment-vars_over.md
 redirect_from:

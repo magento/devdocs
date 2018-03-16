@@ -155,30 +155,39 @@ pages:
     - label: Configure environments
       url: cloud/env/environments.html
       children:
-        - label: Configure application
+        - label: Application
           url: cloud/project/project-conf-files_magento-app.html
 
-        - label: Manage build and deploy actions
+        - label: Build and deploy
           url: cloud/project/magento-env-yaml.html
           versions: ["2.1","2.2","2.3"]
           children:
-            - label: Manage variables
-              url: cloud/env/environment-vars_over.html
+            - label: Set up notifications
+              url: cloud/env/setup-notifications.html
+              versions: ["2.1","2.2","2.3"]
 
-            - label: Magento application environment variables
+        - label: Environment variables
+          url: cloud/env/environment-vars_over.html
+          children:
+            - label: Application variables
               url: cloud/env/environment-vars_magento.html
 
-            - label: Magento Commerce (Cloud) environment variables
-              url: cloud/env/environment-vars_cloud.html
+            - label: Build variables
+              url: cloud/env/variables-build.html
+              versions: ["2.1","2.2","2.3"]
+
+            - label: Cloud variables
+              url: cloud/env/variables-cloud.html
+              versions: ["2.1","2.2","2.3"]
+
+            - label: Deploy variables
+              url: cloud/env/variables-deploy.html
+              versions: ["2.1","2.2","2.3"]
 
             - label: Working with variables
               url: cloud/env/working-with-variables.html
 
-        - label: Configure notifications
-          url: cloud/env/setup-notifications.html
-          versions: ["2.1","2.2","2.3"]
-
-        - label: Configure routes
+        - label: Routes
           url: cloud/project/project-conf-files_routes.html
           children:
             - label: Caching
@@ -190,7 +199,7 @@ pages:
             - label: Server side includes
               url: cloud/project/project-routes-more-ssi.html
 
-        - label: Configure services
+        - label: Services
           url: cloud/project/project-conf-files_services.html
           children:
             - label: Set up MySQL service

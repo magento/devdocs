@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: Magento application environment variables
+title: Application variables
 version: 2.2
 github_link: cloud/env/environment-vars_magento.md
 functional_areas:
@@ -19,134 +19,46 @@ Use one of the following methods to manage variables:
 -   [**Magento Cloud CLI tool**](#addvariables)—All Starter and Pro Integration environments
 </div>
 
-## Application
-
 The following table lists application variables that you can override using environment variables.
 
 <table>
   <thead>
     <tr>
-      <th style="width: 165px;">Variable name</th>
+      <th style="width: 165px;">Variable</th>
       <th>Description</th>
-      <th style="width: 150px;">Default value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code>ADMIN_USERNAME</code></td>
-      <td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
-      <td>admin</td>
-    </tr>
-    <tr>
       <td><code>ADMIN_FIRSTNAME</code></td>
       <td>Administrative user's first name.</td>
-      <td>John</td>
     </tr>
     <tr>
       <td><code>ADMIN_LASTNAME</code></td>
       <td>Administrative user's last name.</td>
-      <td>Doe</td>
     </tr>
     <tr>
       <td><code>ADMIN_EMAIL</code></td>
-      <td>
-        Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.
-      </td>
-      <td>Not set</td>
+      <td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+    </tr>
+    <tr>
+      <td><code>ADMIN_LOCALE</code></td>
+      <td>Default—<code>en_US</code><br>Specifies the default locale used by the Magento Admin.</td>
     </tr>
     <tr>
       <td><code>ADMIN_PASSWORD</code></td>
       <td>Administrative user's password. Initially, we generate a random password and provide an email directing the Project Owner to reset the password. You should immediately change this password.</td>
-      <td>Not set</td>
     </tr>
     <tr>
       <td><code>ADMIN_URL</code></td>
       <td>Enter the relative URL by which to access the Magento Admin. For security reasons, we recommend you choose a value other than <code>admin</code> or <code>backend</code> or another term that is easy to guess.</td>
-      <td>admin</td>
     </tr>
     <tr>
-      <td><code>ADMIN_LOCALE</code></td>
-      <td>Specifies the default locale used by the Magento Admin.</td>
-      <td>en_US</td>
+      <td><code>ADMIN_USERNAME</code></td>
+      <td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
     </tr>
   </tbody>
 </table>
-
-## Build
-The following variables are available during the build phase. Refer to [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
-
-<div class="bs-callout bs-callout-info" markdown="1">
-You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Variable name</th>
-      <th>Description</th>
-      <th style="width: 200px;">Default value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>EXCLUDE_THEMES</code></td>
-      <td>
-        <p>When enabled, this option does not generate static content for the specified theme location. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations.</p>
-        <p>For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. To exclude the theme, use the following: <code>exclude_themes=magento/luma,magento/my-theme</code>.</p>
-        <p>Available in versions 2.1.4 and later.</p>
-      </td>
-      <td>Not set</td>
-    </tr>
-    <tr>
-      <td><code>SCD_COMPRESSION_LEVEL</code></td>
-      <td>
-        Specifies which <a href="https://www.gnu.org/software/gzip" target="\_blank">gzip</a> compression level (<code>0</code> - <code>9</code>) to use when compressing static content; <code>0</code> disables compression.
-      </td>
-      <td><code>6</code></td>
-    </tr>
-    <tr>
-      <td><code>SCD_STRATEGY</code></td>
-      <td>
-        <p>Allows you to customize the <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">deployment strategy</a> for static content. Refer to <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a> for more information.</p>
-        <p>Use these options only if you have more than one locale.</p>
-        <ul>
-          <li><code>standard</code>: deploys all static view files for all packages.</li>
-          <li><code>quick</code>: minimizes deployment time. This is the default command option if not specified.</li>
-          <li><code>compact</code>: conserves disk space on the server. If you use <code>compact</code>, it overrides the value for <code>scd_threads</code> with a value of <code>1</code>. This strategy does not work with multi-threads.</li>
-        </ul>
-      </td>
-      <td><code>Not set</code></td>
-    </tr>
-    <tr>
-      <td><code>SCD_THREADS</code></td>
-      <td>
-        <p>Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.</p>
-        <p>To further decrease deployment time, we recommend using <a href="{{page.baseurl}}cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
-        <p>Available in versions 2.1.4 and later.</p>
-      </td>
-      <td>
-        <p><code>1</code> - Starter environments and Pro Integration environments</p>
-        <p><code>3</code> - Pro Staging and Production environments</p>
-      </td>
-    </tr>
-    <tr>
-      <td><code>SKIP_SCD</code></td>
-      <td>
-        <p>Skips static content deployment during the build phase.</p>
-        <p>If you are already deploying static content during the build phase with <a href="{{page.baseurl}}cloud/live/sens-data-over.html">Configuration Management</a>, you may want to turn it off for a quick build test.</p>
-        <p>We do not recommend using this option because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.</p> <p>Available in version 2.2.x.</p>
-      </td>
-      <td>Not set</td>
-    </tr>
-  </tbody>
-</table>
-
-The following variables were removed in v2.2:
-
--   `skip_di_clearing`
--   `skip_di_compilation`
-
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
 ## Deploy
 The following variables are available during the deploy process.
