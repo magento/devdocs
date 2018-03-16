@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: Configure your environments
+title: Configure environments
 version: 2.1
 github_link: cloud/env/environments.md
 redirect_from:

@@ -1,13 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 090_configure
-title: services.yaml
-menu_title: services.yaml
-menu_order: 55
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: services
+title: Services
 version: 2.0
 github_link: cloud/project/project-conf-files_services.md
 functional_areas:
