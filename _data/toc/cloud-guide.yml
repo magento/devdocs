@@ -186,6 +186,7 @@ pages:
 
             - label: Working with variables
               url: cloud/env/working-with-variables.html
+              versions: ["2.1","2.2","2.3"]
 
         - label: Routes
           url: cloud/project/project-conf-files_routes.html
