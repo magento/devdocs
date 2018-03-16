@@ -7,10 +7,26 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## February 2018
+## March 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added a section for backward incompatible changes between 2.0.17-2.0.18 in [OpenSource](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html#releases-2_0_17-2_0_18) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html#releases-2_0_17-2_0_18).|2.0.x|Updated|Mar 16
+Added a section for backward incompatible changes between 2.1.11-2.1.12 in [OpenSource](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html#releases-2_1_11-2_1_12) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html#releases-2_1_11-2_1_12).|2.1.x|Updated|Mar 16
+Added a section for backward incompatible changes between 2.2.2-2.2.3 in [OpenSource](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html#releases-2_2_2-2_2_3) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html#releases-2_2_2-2_2_3).|2.2.x|Updated|Mar 16
+The MFTF 2.1.0 has been released where we: <br/>[updated a CLI command `generate`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html#generate), <br/>[added a data type support for an argument of action group](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/action-groups.html#data-type-usage), <br/>[added a new action `selectMultipleOptions`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/actions.html#selectmultipleoptions), <br>[updated principles in Assertions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#principles)<br/> [added a new assertions `assertArrayIsSorted`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#assertarrayIssorted)|2.2.x, 2.3 pre-release|Updated|Mar 13
+Added support for PHP 7.1 in the [Magento Commerce (Cloud) Guide](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).|2.2.x|Updated|Mar 12
+Updated the [Magento Commerce (Cloud) Guide Configure routes](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_routes.html) topic to deprecate the `:php` endpoint and to note that now you can use the dot (\.) symbol to separate the subdomain instead of using the triple dash (\-\-\-).|2.2.x|Updated|Mar 09
+
+{% collapsibleh2 February 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+[Release Notes 2.0.18 CE and EE]()|2.0.x|New|Feb 27
+[Release Notes 2.1.12 EE and CE]()|2.1.x|New|Feb 27
+Release Notes 2.2.3 [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.md) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3EE.md)|2.2.x|New|Feb 27
+[add informormation about MariaDB to MySQL Page]()|2.2.x|Updated|Feb 27
+Updated the [DevDocs contributions](http://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_docs.html) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
 Added upgrade path for Magento Cloud metapackage. | 2.1.x, 2.2.x | Updated | Feb 23
 Added reference and [examples](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20
 Listed the `adminhtml` option in the [Observers best practices](http://devdocs.magento.com/guides/v2.0/ext-best-practices/extension-coding/observers-bp.html) topic.|2.x|Updated|Feb 09
@@ -18,6 +34,8 @@ The [MFTF-2 Guide](http://devdocs.magento.com/guides/v2.2/magento-functional-tes
 Learn how to customize and extend the acceptance functional tests using [Merging](http://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/release-2/merging.html) in the MFTF 2.|2.3 pre-release|New|Feb 07
 We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/message-queues.html) to help customers resolve an issue with message queues.|2.2.x|New|Feb 07
 We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/site-availability.html) to help customers identify and resolve site availability issue related to Redis.|2.x|New|Feb 01
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 January 2018 %}
 
