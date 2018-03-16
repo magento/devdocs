@@ -38,6 +38,10 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableProducts</td>
+        <td>[public] Method parameter name changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Filesystem::getDirectoryReadByPath</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -138,6 +142,10 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Theme\Block\Html\Footer::getCacheLifetime</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Store\Model\Store::getIsActive</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -230,6 +238,10 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Customer\Model\Address\AbstractAddress::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Customer\Block\CustomerScopeData::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
@@ -270,6 +282,26 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Config\Console\Command\ConfigSetCommand::OPTION_LOCK_ENV</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSetCommand::OPTION_LOCK_CONFIG</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSet\ConfigSetProcessorFactory::TYPE_LOCK_ENV</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSet\ConfigSetProcessorFactory::TYPE_LOCK_CONFIG</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Console\Command\ConfigSet\ProcessorFacade::processWithLockTarget</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\Block\System\Config\Edit::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
@@ -286,7 +318,19 @@
         <td>[protected] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\Full::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogImportExport\Model\Import\Product::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Eav::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
@@ -298,11 +342,35 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Model\Category::_getResource</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Category::$_resource</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\Product::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Model\Product::_getResource</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product::$_resource</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\ResourceModel\Eav\Attribute::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\ResourceModel\Eav\Attribute::isEnabledInFlat</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\ResourceModel\Eav\Attribute::getExtensionAttributes</td>
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
@@ -346,11 +414,59 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Framework\View\Element\Html\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Validation\ValidationException</td>
         <td>Class was added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Validation\ValidationResult</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ExchangeFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\MessageLockException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\PublisherPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\QueueFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Bulk\ExchangeFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\ConnectionTypeResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\Exchange</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\ExchangeFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\Queue</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\QueueFactory</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -375,6 +491,30 @@
     </tr>
     <tr>
         <td>Magento\Signifyd\Block\Adminhtml\CaseInfo</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\Message</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\MessageStatus</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\Queue</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\QueueManagement</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\ResourceModel\MessageStatusCollection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MessageQueue\Model\ConsumerRunner</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -466,6 +606,10 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Api\Data\AttributeInterface::setExtensionAttributes</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\Data\CategoryInterface::KEY_PARENT_ID</td>
         <td>Constant has been added.</td>
     </tr>
@@ -518,6 +662,10 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::getExtensionAttributes</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\Data\ProductInterface::MEDIA_GALLERY</td>
         <td>Constant has been added.</td>
     </tr>
@@ -534,11 +682,87 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\EnvelopeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ExchangeFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ExchangeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\MessageIdGeneratorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\PublisherInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\QueueFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\QueueInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Topology\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Publisher\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Consumer\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Bulk\ExchangeFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Bulk\ExchangeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Mail\MailMessageInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Exception\AggregateExceptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Event\ObserverInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\BulkManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\BulkStatusInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\BulkSummaryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\OperationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\OperationManagementInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -630,6 +854,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Customer\Model\Address\ValidatorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\Model\Config\StructureElementInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -647,6 +875,18 @@
     </tr>
     <tr>
         <td>Magento\CheckoutAgreements\Api\CheckoutAgreementsListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\BulkSummaryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\OperationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\OperationListInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
