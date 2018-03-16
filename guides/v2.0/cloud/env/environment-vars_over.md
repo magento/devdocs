@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
 title: Manage variables
-menu_title: Manage variables
-menu_order: 1
-menu_node: parent
 version: 2.0
 github_link: cloud/env/environment-vars_over.md
 redirect_from:
@@ -117,11 +113,3 @@ You can add environment variables for active environments through the Project We
 <div class="bs-callout bs-callout-warning" markdown="1">
 Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
 </div>
-
-#### Related topics
-* [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-* [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-* [Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
