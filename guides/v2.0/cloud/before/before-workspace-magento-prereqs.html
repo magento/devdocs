@@ -1855,7 +1855,7 @@
 
 <p>To begin, install and set up a VM on your host computer (Windows, Mac OS, Linux-based system). A VM gives you an environment to install a different Operating System, tools, software, a database, and Magento without requiring a customized system. You only need to install the VM software on your host. All other software can be installed and configured on your VM.</p>
 
-<p>When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, nginx, and database on the VM via SSH.</p>
+<p>When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, Nginx, and database on the VM via SSH.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.</p>
@@ -1875,14 +1875,14 @@
 
 <h2 id="devtools">Development tools</h2>
 <ul>
-  <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a> - Provides code branching and management for accessing Magento Commerce and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
+  <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a> - Provides code branching and management for accessing Magento Commerce and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
   For more information, see <a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud uses Git</a>.</li>
   <li><a href="https://getcomposer.org/download/" target="_blank">Composer</a> - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
   For more information, see <a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud uses Composer</a>.</li>
 </ul>
 
 <h2 id="webserver">Web server (local)</h2>
-<p>We strongly recommend installing <a href="/guides/v2.0/install-gde/prereq/nginx.html">nginx</a> for your web server on your local. While Magento Commerce supports <a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a>, Magento Commerce (Cloud) uses nginx. To have your local as close to cloud installations as possible, install and configure nginx.</p>
+<p>We strongly recommend installing <a href="/guides/v2.0/install-gde/prereq/nginx.html">Nginx</a> for your web server on your local. While Magento Commerce supports <a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a>, Magento Commerce (Cloud) uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.</p>
 
 <h2 id="php">PHP (local)</h2>
 <p>Install <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for <a href="/guides/v2.0/install-gde/prereq/php-centos.html">CentOS</a> and <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">Ubuntu</a>. For instructions for another OS, see the <a href="http://php.net/manual/en/install.php" target="_blank">PHP documentation</a>.</p>
@@ -1933,14 +1933,14 @@
           <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
         </ul>
       </li>
-      <li>nginx: <code class="highlighter-rouge">service nginx restart</code></li>
+      <li>Nginx: <code class="highlighter-rouge">service nginx restart</code></li>
     </ul>
   </li>
 </ol>
 
 <h2 id="database">Database (local)</h2>
 
-<p>You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Commerce environments use <a href="https://mariadb.org/" target="_blank">MariaDB</a>, with a <a href="http://galeracluster.com/" target="_blank">Galera Cluster</a> with triple reducency in the Production environment.</p>
+<p>You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Commerce environments use <a href="https://mariadb.org/" target="_blank">MariaDB</a>, with a <a href="http://galeracluster.com/" target="_blank">Galera Cluster</a> with triple redundancy in the Production environment.</p>
 
 <p>Regardless of database, for <strong>Pro plans</strong> you need to modify the <code class="highlighter-rouge">auto_increment_increment</code> value.</p>
 
@@ -2069,18 +2069,6 @@
 </code></pre></div>    </div>
   </li>
 </ol>
-
-<!-- ## Platform.sh CLI (local) {#platformcli}
-All Magento Commerce (Cloud) project environments are hosted by [Platform.sh](https://platform.sh/){:target="_blank"} on AWS instances. For additional environment management features, you can optionally install the Platform.sh CLI on your local. This CLI is entirely optional, but does include helpful commands for your environment management.
-
-All features available in the [Project Web Interface](/guides/v2.0/cloud/project/projects.html) and additional options including [Health Notifications](https://docs.platform.sh/administration/integrations/notifications.html#health-notifications){:target="_blank"}. You can use these commands for PaaS environments, including Pro Integration environments and all Starter environments.
-
-1.	Log in to your local development machine or switch to the [Magento file system owner](/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html).
-2.	In a terminal, enter the command:
-
-		curl -sS https://platform.sh/cli/installer | php
-
-For full installation and usage information, see Platform.sh [CLI (Command Line Interface)](https://docs.platform.sh/gettingstarted/cli.html){:target="_blank"} and their [GitHub content](https://github.com/platformsh/platformsh-cli/blob/master/README.md#installation){:target="_blank"}. -->
 
 <h2 id="commerce">Additional requirements for Magento Commerce</h2>
 <p>The requirements listed in this topic are specific to Magento Commerce (Cloud) environments. You will also install Magento Commerce on your VM or Docker container. For that installation, you should also review the following:</p>

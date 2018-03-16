@@ -2062,23 +2062,6 @@
    <span class="o">]</span>
 <span class="o">}</span></code></pre></figure>
 
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-You can use the preceding service in a configuration file of your application as follows:
-
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">getenv</span><span class="p">(</span><span class="s2">"MAGENTO_CLOUD_RELATIONSHIPS"</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$relationships</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$relationships</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
-
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$relationships</span><span class="p">[</span><span class="s1">'mq'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$endpoint</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">'rabbitmq_host'</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">'host'</span><span class="p">]);</span>
-  <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">'rabbitmq_port'</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">'port'</span><span class="p">]);</span>
-<span class="p">}</span></code></pre></figure>
- -->
-
 <h2 id="connect">Connect to RabbitMQ for debugging</h2>
 <p>For debugging purposes, it’s sometimes useful to directly connect to a service instance in one of the following ways:</p>
 
@@ -2128,13 +2111,6 @@ You can use the preceding service in a configuration file of your application as
 
 <h3 id="cloud-rabbitmq-conn-php">Connect from your PHP application</h3>
 <p>To connect to RabbitMQ using your PHP application, add a PHP <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> (like <a href="https://github.com/videlalvaro/php-amqplib" target="_blank">PHP AMQPlib</a>) to your source tree.</p>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->

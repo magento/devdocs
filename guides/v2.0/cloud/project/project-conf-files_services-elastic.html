@@ -1963,32 +1963,6 @@
   <p>Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.</p>
 </div>
 
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-
-## Add service to configuration file {#configuration-file}
-Add the service in a configuration file of your application. For example:
-
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">&lt;?php</span>
-<span class="s">if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {</span>
-  <span class="s">$relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);</span>
-
-  <span class="s">foreach ($relationships['elasticsearch'] as $endpoint) {</span>
-    <span class="s">$container-&gt;setParameter('elasticsearch_host', $endpoint['host']);</span>
-    <span class="s">$container-&gt;setParameter('elasticsearch_port', $endpoint['port']);</span>
-  <span class="s">}</span>
-<span class="err">}</span></code></pre></figure>
-
-
-When you create an index on Elasticsearch, you should not specify `number_of_shards` and `number_of_replicas` settings in your Elasticsearch API call. These values will be set automatically based on available resources. -->
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-</ul>
-
 		</div>
 		<!-- /.content-wrap -->
 

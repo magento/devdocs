@@ -2065,20 +2065,6 @@
   </li>
 </ol>
 
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-You can then use the service in a configuration file of your application as follows:
-
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s1">'MAGENTO_CLOUD_RELATIONSHIPS'</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s1">'MAGENTO_CLOUD_RELATIONSHIPS'</span><span class="p">)),</span> <span class="kc">true</span><span class="p">);</span>
-
-    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$relationships</span><span class="p">[</span><span class="s1">'redis'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$endpoint</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">'redis_host'</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">'host'</span><span class="p">]);</span>
-        <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">'redis_port'</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">'port'</span><span class="p">]);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
- -->
-
 <h2 id="using-the-redis-cli">Using the Redis CLI</h2>
 <p>Assuming your Redis relationship is named <code class="highlighter-rouge">redis</code>, you can access it using the <code class="highlighter-rouge">redis-cli</code> tool.</p>
 

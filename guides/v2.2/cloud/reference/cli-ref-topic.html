@@ -2008,7 +2008,7 @@
 </section>
 
 
-			<p>The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.</p>
+			<p>The Magento Cloud CLI is a cloud-specific version of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.</p>
 
 <p>This reference lists all available commands, and a list of commonly used commands, for Magento Commerce (Cloud). You can also use Magento CLI commands as needed, using <code class="highlighter-rouge">bin/magento</code> for entering commands.</p>
 
@@ -2315,7 +2315,7 @@ Options:
 	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories.</td>
 	 				</tr>
 					<tr>
-	 				<td>prohect:get (get)</td>
+	 				<td>project:get (get)</td>
 	 				<td>Clones a project locally</td>
 	 				</tr>
 	 				<tr>
@@ -2429,32 +2429,8 @@ Options:
 	 		</tbody>
 </table>
 
-<p>For a changelog, see the next section.</p>
-
 <h2 id="upgrade">Upgrade Magento Cloud CLI</h2>
 <p>When you login to the Magento Cloud CLI, it checks for available updates. You can enter <code class="highlighter-rouge">y</code> for yes to upgrade. After upgrading, you can login and use the <code class="highlighter-rouge">magento-cloud list</code> command to see a list of all commands.</p>
-
-<h3 id="changelog">Changelog for Magento Cloud CLI</h3>
-<p>Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates. For a general changelog, you can review the <a href="https://github.com/platformsh/platformsh-cli/releases" target="_blank">Platform.sh CLI changelog</a>.</p>
-
-<table>
-	     <thead>
-	         <tr>
-	             <th style="width: 200px;">Version</th>
-	             <th>Change</th>
-	         </tr>
-		</thead>
-			<tbody>
-	 				<tr>
-	 				<td>1.11.X</td>
-	 				<td>
-					<ul>
-					<li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
-					<li>Added local:dir to locate the root directory. You should enter a sub-directory arguement to locate specific information for local, web, or shared.</li>
-					</ul></td>
-	 				</tr>
-			</tbody>
-</table>
 
 		</div>
 		<!-- /.content-wrap -->
