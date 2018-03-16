@@ -9,17 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-This topic describes Magento [application](#application), [deploy](#deploy), and [build](#build) environment variables.
-
-<div class="bs-callout bs-callout-tip" markdown="1">
-Use one of the following methods to manage variables:
-
--   [**Configuration file**](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html)—All Starter and Pro environments
--   [**Project Web Interface**]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var)—All Starter and Pro environments created after October 23, 2017 or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html)
--   [**Magento Cloud CLI tool**](#addvariables)—All Starter and Pro Integration environments
-</div>
-
-The following table lists application variables that you can override using environment variables.
+The following table lists application variables that you can override using environment variables:
 
 <table>
   <thead>
@@ -59,6 +49,14 @@ The following table lists application variables that you can override using envi
     </tr>
   </tbody>
 </table>
+
+<div class="bs-callout bs-callout-tip" markdown="1">
+Use one of the following methods to manage variables:
+
+-   [**Configuration file**](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html)—All Starter and Pro environments
+-   [**Project Web Interface**]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var)—All Starter and Pro environments created after October 23, 2017 or [updated]({{page.baseurl}}cloud/trouble/pro-env-management.html)
+-   [**Magento Cloud CLI tool**](#addvariables)—All Starter and Pro Integration environments
+</div>
 
 ## Add environment variables {#addvariables}
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
