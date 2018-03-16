@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: Configure application
+title: Application
 version: 2.2
 github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
