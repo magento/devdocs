@@ -71,9 +71,6 @@ Attribute|Type|Use|Description
 `selector`|string|required|
 `expectedValue`|string|optional| A value of the expected result.
 `attribute`|string|required|
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertArrayIsSorted
 
@@ -90,9 +87,6 @@ Example:
 Attribute|Type|Use|Description
 ---|---|---|---
 `sortOrder`|Possible values: `asc`, `desc`|required| A sort order to assert on array values.
-`stepKey`|string|required| A unique identifier of the test step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 It contains an `<array>` child element that specifies an array to be asserted for proper sorting.
 It must be in typical array format like `[1,2,3,4,5]` or `[alpha, brontosaurus, zebra]`.
@@ -108,9 +102,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertArrayNotHasKey
 
@@ -123,9 +114,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertArraySubset
 
@@ -139,9 +127,6 @@ Attribute|Type|Use|Description
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `strict`|boolean|optional|
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertContains
 
@@ -169,9 +154,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertEmpty
 
@@ -182,9 +164,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertEquals
 
@@ -198,9 +177,6 @@ Attribute|Type|Use|Description
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `delta`|string|optional|
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertFalse
 
@@ -211,9 +187,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| Actual value.
 `actualType`|assertEnum|optional| Type of actual value.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertFileExists
 
@@ -224,9 +197,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertFileNotExists
 
@@ -237,9 +207,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertGreaterOrEquals
 
@@ -252,9 +219,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertGreaterThan
 
@@ -267,9 +231,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertGreaterThanOrEqual
 
@@ -282,9 +243,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertInstanceOf
 
@@ -297,9 +255,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertInternalType
 
@@ -312,9 +267,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertIsEmpty
 
@@ -325,9 +277,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertLessOrEquals
 
@@ -340,9 +289,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertLessThan
 
@@ -355,9 +301,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertLessThanOrEqual
 
@@ -370,9 +313,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNotContains
 
@@ -385,9 +325,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNotEmpty
 
@@ -398,9 +335,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNotEquals
 
@@ -414,9 +348,6 @@ Attribute|Type|Use|Description
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `delta`|string|optional|
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNotInstanceOf
 
@@ -429,9 +360,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNotNull
 
@@ -442,9 +370,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNotRegExp
 
@@ -457,9 +382,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNotSame
 
@@ -472,9 +394,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertNull
 
@@ -485,9 +404,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertRegExp
 
@@ -500,9 +416,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertSame
 
@@ -515,9 +428,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertStringStartsNotWith
 
@@ -530,9 +440,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertStringStartsWith
 
@@ -545,9 +452,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### assertTrue
 
@@ -558,9 +462,6 @@ Attribute|Type|Use|Description
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `message`|string|optional|Text of informational message about a cause of failure.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### expectException
 
@@ -572,9 +473,6 @@ Attribute|Type|Use|Description
 `expectedType`|string|optional| A type of the expected result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
 `actual`|string|required| A value of the actual result.
 `actualType`|string|optional| A type of the actual result. Possible values: `const` (default), `int`, `float`, `bool`, `string`, `variable`, `array`.
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
 
 ### fail
 
@@ -583,6 +481,3 @@ See [fail docs on codeception.com](http://codeception.com/docs/modules/WebDriver
 Attribute|Type|Use|Description
 ---|---|---|---
 `message`|string|required|
-`stepKey`|string|required| A unique identifier of the text step.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of the preceding action.
