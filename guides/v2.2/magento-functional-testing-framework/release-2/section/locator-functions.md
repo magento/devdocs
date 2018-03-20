@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Use Codeception's Locator Functions in the Magento Functional Testing Framework
+title: Use Codeception's Locator functions
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/section/locator-functions.md
 functional_areas:
@@ -14,34 +14,32 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 {%raw%}
 
-## Defining Locator::functions in Elements
+## Define Locator::functions in elements
 
-Codeception has a set of very useful [Locator Functions] that may be used by elements inside a [section].
+Codeception has a set of very useful [Locator functions](http://codeception.com/docs/reference/Locator) that may be used by elements inside a [section](../section.html).
 
-Declaration of an element with a `locatorFunction` can be done as follows:
+Declare an element with a `locatorFunction`:
 ```xml
 <element name="simpleLocator" type="button" locatorFunction="Locator::contains('label', 'Name')"/>
 ```
 
-When using the `locatorFunction`, you can also omit `Locator::` for code simplicity.
+When using the `locatorFunction`, omit `Locator::` for code simplicity:
 
 ```xml
 <element name="simpleLocatorShorthand" type="button" locatorFunction="contains('label', 'Name')"/>
 ```
 
-An element's `locatorFunction` can also be parameterized the same way as [parameterized selectors].
+An element's `locatorFunction` can also be parameterized the same way as [parameterized selectors](./parameterized-selectors.html):
 
 ```xml
 <element name="simpleLocatorTwoParam" type="button" locatorFunction="contains({{arg1}}, {{arg2}})" parameterized="true"/>
 ```
 
-Lastly, an element **cannot** have both a `selector` and a `locatorFunction`.
+An element cannot, however, have both a `selector` and a `locatorFunction`.
 
-## Calling Elements that use locatorFunction
+## Call Elements that use locatorFunction
 
-Given the above element definitions, we call the elements in a test just like any other element.
-
-No special reference is required, as you are still just referring to an `element` inside a `section`.
+Given the above element definitions, you call the elements in a test just like any other element. No special reference is required, as you are still just referring to an `element` inside a `section`:
 
 ```xml
 <test name="LocatorFuctionTest">
@@ -51,14 +49,3 @@ No special reference is required, as you are still just referring to an `element
 ```
 
 {%endraw%}
-
-
-<!-- LINK DEFINITIONS -->
-
-<!-- Internal -->
-
-[parameterized selectors]: ./parameterized-selectors.html
-[section]: ../section.html
-
-<!-- External -->
-[Locator Functions]: http://codeception.com/docs/reference/Locator

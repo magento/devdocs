@@ -69,7 +69,7 @@ Using composition over inheritance makes your extension easier to maintain when 
 ### Using around plugins
 Avoid using [around method plugins]({{page.baseurl}}extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance.
 
-The only use case for around method oplugins is when the execution of all further plugins and original methods need termination.
+The only use case for around method plugins is when the execution of all further plugins and original methods need termination.
 
 Use after method plugins if you require arguments for replacing or altering function results.
 
