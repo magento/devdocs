@@ -39,7 +39,7 @@ on Debian and Ubuntu
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
 To modify the Varnish system configuration:
 
-1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) in a text editor.
+1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian or /lib/systemd/system/varnish.service on Ubuntu) in a text editor.
 
 2.	Set the Varnish listen port to 80:
 
