@@ -10,6 +10,42 @@ functional_areas:
 
 Check out our best practices below to ensure you're getting the absolute most out of the MFTF.
 
+## File Names
+
+Name files according to these patterns to find everything more easily.
+
+* Examples:
+    * {Admin|Storefront}{Action}Test.xml
+        * Where Action briefly describes the test's purpose.
+        * e.g. `StorefrontCreateCustomerTest.xml`
+    * {Admin|Storefront}{Description}Section.xml
+        * Where Description briefly describes the test's purpose.
+        * e.g. `AdminNavbarSection.xml`
+    * {Type}Data.xml
+        * e.g. `ProductData.xml`
+
+
+## Object Names
+
+Use Foo.camelCase naming style similar to Classes and classProperties.
+
+Use a capital first letter for:
+
+* Filenames
+* Test name attributes -- `<test name="TestAllTheThingsTest">`
+* Data entity names -- `<entity name="OutOfStockProduct">`
+* Page name -- `<page name="AdminLoginPage">`
+* Section name -- `<actionGroup name="DeleteCategory">`
+
+Use a lower first letter for:
+
+* Data keys -- `<data key="firstName">`
+* Element names -- `<element name="confirmDeleteButton"/>`
+
+## Comments
+
+When writing tests, use inline XML comments such as  `<!-- Add an image to the product -->`. If you use these comments before "chunks" of test actions, tests become much easier to read, understand, and maintain.
+
 ## Annotations
 
  - Always use annotations in a test.
