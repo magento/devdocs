@@ -227,7 +227,7 @@ Almost as a side effect, those classes are very easy to test.
 
 #### For more information
 
-* Kent Beck's [rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"}
+* [Rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"} by Kent Beck
 * [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
 * [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
 * [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce
