@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/robo.md
 functional_areas:
  - Testing
-mftf-release: 2.1.0
+mftf-release: 2.1.2
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -144,7 +144,7 @@ Allure v1.x.x | Allure v2.x.x
 
 #### generate
 
-Generate PHP code from test defined in XML files.
+Generate PHP code from the tests defined in XML files.
 Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
 
 `generate:tests`   | Generate all tests based on specific module load order of the Magento instance
