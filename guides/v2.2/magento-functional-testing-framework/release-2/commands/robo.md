@@ -146,15 +146,17 @@ Allure v1.x.x | Allure v2.x.x
 
 #### generate
 
-`generate:tests`   | Generate all Tests based on specific module load order of the Magento instance
-`generate:tests --force`   | Generate all Tests regardless of whether a Magento instance is available
-`generate:tests --config singleRun`   | Generate tests with a manifest file containing only a path to the generated dir in the resulting testManifest.
-`generate:tests --config parallel --nodes <n>`   | Generate tests with a subdirectory called 'groups' containing <n> .txt files with tests listed ordered across files from largest to smallest (based on number of actions).
+Generate PHP code from test defined in XML files.
+Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
 
-  
+`generate:tests`   | Generate all tests based on specific module load order of the Magento instance
+`generate:tests --force`   | Generate all tests regardless of whether a Magento instance is available
+`generate:tests --config singleRun`   | Generate all tests and a manifest file, which is `_generated/testManifest.txt`. The file contains only a path to the directory with generated tests. 
+`generate:tests --config parallel --nodes <number of nodes>`   | Generate all tests and a directory with manifest files, which is `_generated/groups/`. The number of files corresponds to the number of nodes. Each file contains a proportional list of tests ordered across files from largest to smallest (based on number of actions).
+
 #### self
 
-`self:update` or `update`       | Updates the `robo.phar` to the latest version. Only works when running the `phar` version of Robo.
+`self:update` or `update`| Updates the `robo.phar` to the latest version. Only works when running the `phar` version of Robo.
 
 ***
 ***
