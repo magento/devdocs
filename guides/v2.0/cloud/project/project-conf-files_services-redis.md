@@ -73,20 +73,6 @@ To verify this information used for configurations and settings:
     }
     ```
 
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-You can then use the service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-if (getenv('MAGENTO_CLOUD_RELATIONSHIPS')) {
-    $relationships = json_decode(base64_decode(getenv('MAGENTO_CLOUD_RELATIONSHIPS')), true);
-
-    foreach ($relationships['redis'] as $endpoint) {
-        $container->setParameter('redis_host', $endpoint['host']);
-        $container->setParameter('redis_port', $endpoint['port']);
-    }
-}
-{% endhighlight %} -->
-
 ## Using the Redis CLI
 Assuming your Redis relationship is named `redis`, you can access it using the `redis-cli` tool.
 
