@@ -34,7 +34,7 @@ A sample follows:
 
 	#~ MAGENTO START
 	* * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento cron:run 2>&1 | grep -v Ran jobs by schedule >> /var/www/html/magento2ce/var/log/magento.cron.log
-	* * * * * /usr/bin/php /var/www/html/magento2ce/update/cron.php >> /var/www/html/magento2ce/var/log/update.cron.log
+	* * * * * /usr/bin/php /var/www/html/magento2ce/pub/cron.php >> /var/www/html/magento2ce/var/log/update.cron.log
 	* * * * * /usr/bin/php /var/www/html/magento2ce/bin/magento setup:cron:run >> /var/www/html/magento2ce/var/log/setup.cron.log
 	#~ MAGENTO END
 
