@@ -37,7 +37,7 @@ $ robo command [options] [arguments]
 
 ## Useful commands
 
-The following are the most popular commands used to interact with the MFTF. For more commands, see [Reference](#reference) or run in your terminal: `$ vendor/bin/robo`.
+The following are the most popular commands used to interact with the MFTF. For more commands, see [Reference] or run in your terminal: `$ vendor/bin/robo`.
 
 ### Codeception Robo Commands
 
