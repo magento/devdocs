@@ -154,7 +154,7 @@ Path to a directory with generated tests:  `tests/functional/Magento/FunctionalT
 
 #### self
 
-`self:update` or `update`| Updates the `robo.phar` to the latest version. Only works when running the `phar` version of Robo.
+`self:update` or `update`| Updates the `robo.phar` to the latest version, which only works when running the `phar` version of Robo.
 
 ***
 ***
