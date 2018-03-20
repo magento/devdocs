@@ -30,13 +30,9 @@ If multiple annotation values are supported and required each value requires a s
 
 ```xml
 <annotations>
-
-       <features value="Category Creation"/>
-
-       <title value="Create a Category via Admin"/>
-
-       <group value="category"/>
-
+    <features value="Category Creation"/>
+    <title value="Create a Category via Admin"/>
+    <group value="category"/>
 </annotations>
 ```
 
@@ -56,12 +52,6 @@ Attribute|Type|Use
 <description value="Add Catalog via Admin"/>
 ```
 
-Generated PHP code:
-
-``` php?start_inline=1
-@Description("Add Catalog via Admin")
-```
-
 ### features
 
 The `<features>` element is an implementation of a [`@Features`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories) Allure tag.
@@ -77,12 +67,6 @@ Attribute|Type|Use
 ```xml
 <features value="Catalog"/>
 <features value="Add/Edit"/>
-```
-
-Generated PHP code:
-
-``` php?start_inline=1
-@Features({"Catalog", "Add/Edit"})
 ```
 
 ### group
@@ -101,12 +85,6 @@ Attribute|Type|Use
 <group value="catalog"/>
 ```
 
-Generated PHP code:
-
-``` php?start_inline=1
-@group catalog
-```
-
 ### return
 
 The `<return>` element is an implementation of a [`@return`](http://codeception.com/docs/07-AdvancedUsage#Examples) Codeception tag. It specifies what is returned from a test execution.
@@ -120,12 +98,6 @@ Attribute|Type|Use
 
 ```xml
 <return value="void"/>
-```
-
-Generated PHP code:
-
-``` php?start_inline=1
-@return void
 ```
 
 ### severity
@@ -142,12 +114,6 @@ Attribute|Type|Use|Acceptable values
 <severity value="CRITICAL"/>
 ```
 
-Generated PHP code:
-
-``` php?start_inline=1
-@Severity(level = SeverityLevel::CRITICAL)
-```
-
 ### stories
 
 The `<stories>` element is an implementation of a [`@Stories`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories) Allure tag. It has the same functionality as [`features`](#features), within the Story report group.
@@ -161,12 +127,6 @@ Attribute|Type|Use
 ```xml
 <stories value="Add Catalog"/>
 <stories value="Edit Catalog"/>
-```
-
-Generated PHP code:
-
-``` php?start_inline=1
-@Stories({"Add Catalog", "Edit Catalog"})
 ```
 
 ### testCaseId
@@ -187,12 +147,6 @@ Attribute|Type|Use
 <testCaseId value="#"/>
 ```
 
-Generated PHP code:
-
-``` php?start_inline=1
-@TestCaseId("#")
-```
-
 ### useCaseId
 
 The `<useCaseId>` element is an implementation of a `@UseCaseId` custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.
@@ -205,11 +159,6 @@ Attribute|Type|Use
 
 ```xml
 <useCaseId value="USECASE-1"/>
-```
-Generated PHP code:
-
-``` php?start_inline=1
-@UseCaseId("USECASE-1")
 ```
 
 ### title
@@ -224,10 +173,4 @@ Attribute|Type|Use
 
 ```xml
 <title value="Add Catalog"/>
-```
-
-Generated PHP code:
-
-``` php?start_inline=1
-@Title("Add Catalog")
 ```
