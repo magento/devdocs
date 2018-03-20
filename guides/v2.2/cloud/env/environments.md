@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
 title: Configure your environments
-menu_title: Configure your environments
-menu_order: 1
-menu_node: parent
 version: 2.2
 github_link: cloud/env/environments.md
 redirect_from:
@@ -41,7 +37,7 @@ We recommend using GitHub for maintaining your code branches.
 You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{page.baseurl}}cloud/reference/cli-ref-topic.html) commands.
 
 ## Active and inactive branches {#active-inactive}
-You have access to a limited number of _active_ Git branches per plan. When you push this branch, an active environment is provisioned as a container, updating when you push per the configurations of .magento.app.yaml, services.yaml, and routes.yaml.
+You have access to a limited number of _active_ Git branches per plan. When you push this branch, an active environment is provisioned as a container, updating when you push per the configurations of .magento.app.yaml, .magento/services.yaml, and .magento/routes.yaml.
 
 You begin by creating active branches and pushing code. You can use the following command to create an active branch from a parent branch:
 
@@ -61,7 +57,7 @@ For Starter and Pro plans, the `master` environment is ultimately the source or 
 
 In your Integration, you have a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
 
-You fully develop on your in these branches. When ready, you push the code to build and deploy to an Integration enviornment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, he parent environment is redeployed with the code changes of the child environment. For Pro, this is the Integration `master`. For Starter, it is an environment and branch of your choice.
+You fully develop on your in these branches. When ready, you push the code to build and deploy to an Integration environment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, he parent environment is redeployed with the code changes of the child environment. For Pro, this is the Integration `master`. For Starter, it is an environment and branch of your choice.
 
 For extensive details, see the following:
 
@@ -97,35 +93,22 @@ The drivers and supported service only includes configuration and updates in {{s
 </div>
 
 ## Configure your environments {#configenv}
-After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.
+After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes.
 
 For Starter, you can push these files across all environments including Production `master`.
 
-For Pro, you need to enter a ticket to have these files and settings pushed to Staging and Production environments. You can push these files and settings across all Integration environments.
+For Pro, you can push these files across all Integration environments, but you must enter a support ticket to push these changes to your Staging and Production environments.
 
-* [.magento.app.yaml]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
-* [.magento.env.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, so that you can manage configuration changes without opening a support ticket
-* [services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html) configures the services you use in your stores and sites including name, version, and allocated disk space
+* [.magento.app.yaml]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)—defines how to build and deploy Magento, including services, hooks, cron jobs, and more.
+* [.magento.env.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables. You do not need to open a support ticket to push these changes to Staging and Production environments.
+* [.magento/services.yaml]({{ page.baseurl }}cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
 
-  * [MySQL service]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml
-  * [Redis service]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html) configuration for a backend caching solution set in services.yaml
-  * [Solr service](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
-  * [Elasticsearch service]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.ee}} 2.1 and later set in services.yaml
-  * [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html) configuration for a messaging broker set in services.yaml
-* [routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) configures how Magento processes an incoming URL for your Integration environment
+  * [MySQL]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html)—configure the database.
+  * [Redis]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html)—configure Redis for backend caching.
+  * [Elasticsearch]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html)
+  * [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html)
+* [.magento/routes.yaml]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
 
-  * [Caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html) configuration options for caches set in routes.yaml
-  * [Redirect]({{ page.baseurl }}cloud/project/project-routes-more-redir.html) configuration and rules for managing redirections set in routes.yaml
-  * [Server side includes]({{ page.baseurl }}cloud/project/project-routes-more-ssi.html) configured set in routes.yaml
-
-#### Related topics
-*	[Manage your project]({{page.baseurl}}cloud/project/projects.html)
-*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-*	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
-* [Set up notifications]({{page.baseurl}}cloud/env/setup-notifications.html)
+  * [Caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html)
+  * [Redirects]({{ page.baseurl }}cloud/project/project-routes-more-redir.html)
+  * [Server side includes]({{ page.baseurl }}cloud/project/project-routes-more-ssi.html)

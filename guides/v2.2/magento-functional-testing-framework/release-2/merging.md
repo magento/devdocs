@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Merging in the Magento Functional Testing Framework
+title: Merging
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/merging.md
 functional_areas:
@@ -12,47 +12,33 @@ mftf-release: 2.0.2
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The MFTF allows you to merge test components defined in XML files such as [Tests][test], [Pages][page], [Sections][section], and [Data][data].
-You can create, delete, or update the component.
-It is useful for supporting rapid test creation for extensions and customizations.
+The MFTF allows you to merge test components defined in XML files such as [tests](./test.html), [pages](./page.html), [sections](./section.html), and [data](./data.html). You can create, delete, or update the component. It is useful for supporting rapid test creation for extensions and customizations.
 
-You can specify changes needed to an existing file and have that merged.
-This produces a modification of the original that incorporates the specified changes (the 'delta').
+You can specify needed changes to an existing file and merge them to produce a modification of the original that incorporates the specified changes (the "delta").
 
-## General
-
-Merging operates on XML tag level.
-It is triggered by our parser when there are two (or more) entities with the same name.
-Therefore, your update (XML node with changes) **must have** the same attribute `name` as its base node (target object to be changed).
+Merging operates at the XML tag level, triggered by our parser when there are two (or more) entities with the same name. Your update (XML node with changes) must have the same attribute `name` as its base node (target object to be changed).
 
 For example:
-* all tests with `<test name="SampleTest>` will be merged into one
-* all pages with `<page name="SamplePage>` will be merged into one
-* all sections with `<section name="SampleAction">` will be merged into one
-* all data entities with `<entity name="sampleData" type="sample">` will be merged into one
+* All tests with `<test name="SampleTest>` will be merged into one.
+* All pages with `<page name="SamplePage>` will be merged into one.
+* All sections with `<section name="SampleAction">` will be merged into one.
+* All data entities with `<entity name="sampleData" type="sample">` will be merged into one.
 
-Although a file name doesn't influence merging, we recommend to use same file names in merging updates, for convenience of search.
+Although a file name doesn't influence merging, we recommend using the same file names in merging updates. This makes it easier to search later on.
 
-## Merging in Tests
+## Add a test
 
-### Add a test
+You cannot add another [`<test>`](./test.html) using merging functionality. To add a `<test>`, create a new `*Test.xml` file or add a `<test>` node to an existing `*Test.xml` file.
 
-There is no way to add another [`<test>`][test] using merging functionality.
-Adding of a `<test>` is done by creating a new `*Test.xml` file, or adding a `<test>` node to an existing `*Test.xml` file.
+## Remove a test
 
-### Remove a test
+Tests cannot be removed while merging. If a [`<test>`](./test.html) must be skipped due to a module completely invalidating a function, you can add the test to the `skip` group.
 
-Tests **cannot be removed** while merging.
+Learn more about running tests with different options using [robo](./commands/robo.html#run-all-functional-tests-excluding-group-skip) or [codecept](./commands/codeception.html) commands.
 
-If a [test] must be skipped due to a module completely invalidating a functionality, you can add the test to the `skip` group.
+**Example**
 
-Learn more about running tests with different options using [robo] or [codecept] commands.
-
-**Example**:
-
-Skip the `AdminLoginTest` test in `.../Backend/Test/AdminLoginTest.xml` while merging with `.../Foo/Test/AdminLoginTest.xml`:
-
-`.../Backend/Test/AdminLoginTest.xml` code:
+Skip the `AdminLoginTest` test in the `.../Backend/Test/AdminLoginTest.xml` file while merging with the `.../Foo/Test/AdminLoginTest.xml` file:
 
 ```xml
 <tests ...>
@@ -77,7 +63,7 @@ Skip the `AdminLoginTest` test in `.../Backend/Test/AdminLoginTest.xml` while me
 </tests>
 ```
 
-Create `.../Foo/Test/AdminLoginTest.xml`:
+Create the `.../Foo/Test/AdminLoginTest.xml` file:
 
 ```xml
 <tests ...>
@@ -89,7 +75,7 @@ Create `.../Foo/Test/AdminLoginTest.xml`:
 </tests>
 ```
 
-The resulted `AdminLoginTest` will correspond to the following code:
+The `AdminLoginTest` result corresponds to:
 
 ```xml
 <test name="AdminLoginTest">
@@ -113,19 +99,15 @@ The resulted `AdminLoginTest` will correspond to the following code:
 </test>
 ```
 
-### Update a test
+## Update a test
 
-Any change must include information about where it should be inserted relative to other test steps in scope of test.
+Any change must include information about where it should be inserted relative to other test steps in the scope of the test.
 
-This is done using the `before` or `after` element.
-The action can only specify either a before or after correspondingly.
-See the examples given above.
+This is done using the `before` or `after` element. See the previous examples.
 
-#### Add a test step
+### Add a test step
 
-**Use case**: Add `checkOption` before `click` (`stepKey="clickLogin"`) and `seeInCurrentUrl` after the `click` in the `LogInAsAdminTest` test (in `.../Backend/Test/LogInAsAdminTest.xml`) while merging with `.../Foo/Test/LogInAsAdminTest.xml`
-
-`.../Backend/Test/LogInAsAdminTest.xml` code:
+**Use case**: Add `checkOption` before `click` (`stepKey="clickLogin"`) and add `seeInCurrentUrl` after the `click` in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file) while merging with the `.../Foo/Test/LogInAsAdminTest.xml` file:
 
 ```xml
 <tests ...>
@@ -139,7 +121,7 @@ See the examples given above.
 </tests>
 ```
 
-Create `.../Foo/Test/LogInAsAdminTest.xml`:
+Create the `.../Foo/Test/LogInAsAdminTest.xml` file:
 
 ```xml
 <tests ...>
@@ -150,7 +132,7 @@ Create `.../Foo/Test/LogInAsAdminTest.xml`:
 </tests>
 ```
 
-The resulted `LogInAsAdminTest` will correspond to the following code:
+The `LogInAsAdminTest` result corresponds to:
 
 ```xml
 <test name="LogInAsAdminTest">
@@ -164,11 +146,9 @@ The resulted `LogInAsAdminTest` will correspond to the following code:
 </test>
 ```
 
-#### Remove a test step
+### Remove a test step
 
-**Use case**: Remove `see` (`stepKey="seeLifetimeSales"`) from the `LogInAsAdminTest` test (in `.../Backend/Test/LogInAsAdminTest.xml`) while merging with `.../Foo/Test/LogInAsAdminTest.xml`
-
-`.../Backend/Test/LogInAsAdminTest.xml` code:
+**Use case**: Remove `see` (`stepKey="seeLifetimeSales"`) from the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file) while merging with the `.../Foo/Test/LogInAsAdminTest.xml` file:
 
 ```xml
 <tests ...>
@@ -182,7 +162,7 @@ The resulted `LogInAsAdminTest` will correspond to the following code:
 </tests>
 ```
 
-Create `.../Foo/Test/LogInAsAdminTest.xml`:
+Create the `.../Foo/Test/LogInAsAdminTest.xml` file:
 
 ```xml
 <tests ...>
@@ -192,7 +172,7 @@ Create `.../Foo/Test/LogInAsAdminTest.xml`:
 </tests>
 ```
 
-The resulted `LogInAsAdminTest` will correspond to the following code:
+The `LogInAsAdminTest` result corresponds to:
 
 ```xml
 <test name="LogInAsAdminTest">
@@ -203,9 +183,9 @@ The resulted `LogInAsAdminTest` will correspond to the following code:
 </test>
 ```
 
-#### Update a test step
+### Update a test step
 
-**Use case**: Change selector in `fillField` (`stepKey="fillPassword"`) of the `LogInAsAdminTest` test (in `.../Backend/Test/LogInAsAdminTest.xml`) while merging with `.../Foo/Test/LogInAsAdminTest.xml`
+**Use case**: Change selector in `fillField` (`stepKey="fillPassword"`) of the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file) while merging with the `.../Foo/Test/LogInAsAdminTest.xml` file:
 
 ```xml
 <tests ...>
@@ -219,7 +199,7 @@ The resulted `LogInAsAdminTest` will correspond to the following code:
 </tests>
 ```
 
-Create `.../Foo/Test/LogInAsAdminTest.xml`:
+Create the `.../Foo/Test/LogInAsAdminTest.xml` file:
 
 ```xml
 <tests ...>
@@ -229,7 +209,7 @@ Create `.../Foo/Test/LogInAsAdminTest.xml`:
 </tests>
 ```
 
-The resulted `LogInAsAdminTest` will correspond to the following code:
+The `LogInAsAdminTest` result corresponds to:
 
 ```xml
 <test name="LogInAsAdminTest">
@@ -241,17 +221,16 @@ The resulted `LogInAsAdminTest` will correspond to the following code:
 </test>
 ```
 
-## Pages merging
+## Merge pages
 
-Using merging in [pages][page], you can add or remove [sections][section] defining updates in your module.
-To merge [pages][page], the `page name` must be the same as in base module, whish is set in the `module` attribute.
+Use [page](./page.html) merging to add or remove [sections](./section.html) in your module.
+
+To merge [pages](./page.html), the `page name` must be the same as in base module. `page name` is set in the `module` attribute.
 
 ### Add a section
 
 **Use case**: The `FooBackend` module extends the `Backend` module and requires use of two new sections that must be covered with tests.
-Add `BaseBackendSection` and `AnotherBackendSection` to the `BaseBackendPage`.
-
-`.../Backend/Page/BaseBackendPage.xml` code:
+Add `BaseBackendSection` and `AnotherBackendSection` to the `BaseBackendPage` (`.../Backend/Page/BaseBackendPage.xml` file):
 
 ```xml
 <pages ...>
@@ -262,7 +241,7 @@ Add `BaseBackendSection` and `AnotherBackendSection` to the `BaseBackendPage`.
 </pages>
 ```
 
-Create `.../FooBackend/Page/BaseBackendPage.xml`:
+Create the `.../FooBackend/Page/BaseBackendPage.xml` file:
 
 ```xml
 <pages ...>
@@ -272,7 +251,7 @@ Create `.../FooBackend/Page/BaseBackendPage.xml`:
 </pages>
 ```
 
-The resulted `BaseBackendPage` will correspond to the following code:
+The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
@@ -284,9 +263,7 @@ The resulted `BaseBackendPage` will correspond to the following code:
 
 ### Remove a section
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires deletion of `AnotherBackendSection` section.
-
-`.../Backend/Page/BaseBackendPage.xml` code:
+**Use case**: The `FooBackend` module extends the `Backend` module and requires deletion of the `AnotherBackendSection` section (the `.../Backend/Page/BaseBackendPage.xml` file):
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
@@ -295,7 +272,7 @@ The resulted `BaseBackendPage` will correspond to the following code:
 </page>
 ```
 
-Create `.../FooBackend/Page/BaseBackendPage.xml`:
+Create the `.../FooBackend/Page/BaseBackendPage.xml` file:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
@@ -303,7 +280,7 @@ Create `.../FooBackend/Page/BaseBackendPage.xml`:
 </page>
 ```
 
-The resulted `BaseBackendPage` will correspond to the following code:
+The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
@@ -311,17 +288,15 @@ The resulted `BaseBackendPage` will correspond to the following code:
 </page>
 ```
 
-## Sections merging
+## Merge sections
 
-If you need to add, remove, or update [elements][element] in sections, you can use merging functionality.
+User merging to add, remove, or update [elements](././section.html#element-tag) in sections.
+
 All sections with the same _file name_, _section name_, and _element name_ are merged during test generation.
 
 ### Add an element
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires a new element `mergeElement` in the `AdminLoginFormSection`.
-Add `mergeElement` to the `AdminLoginFormSection`.
-
-`.../Backend/Section/AdminLoginFormSection.xml` code:
+**Use case**: The `FooBackend` module extends the `Backend` module and requires a new `mergeElement` element in the `AdminLoginFormSection`. Add `mergeElement` to the `AdminLoginFormSection`:
 
 ```xml
 <sections ...>
@@ -333,7 +308,7 @@ Add `mergeElement` to the `AdminLoginFormSection`.
 </sections>
 ```
 
-Create `.../FooBackend/Section/AdminLoginFormSection.xml`:
+Create the `.../FooBackend/Section/AdminLoginFormSection.xml` file:
 
 ```xml
 <sections ...>
@@ -343,7 +318,7 @@ Create `.../FooBackend/Section/AdminLoginFormSection.xml`:
 </sections>
 ```
 
-The resulted `AdminLoginFormSection` will correspond to the following code:
+The `AdminLoginFormSection` result corresponds to:
 
 ```xml
 <section name="AdminLoginFormSection">
@@ -356,10 +331,7 @@ The resulted `AdminLoginFormSection` will correspond to the following code:
 
 ### Remove an element
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires deletion of `username` in the `AdminLoginFormSection`.
-Remove `username` from the `AdminLoginFormSection`.
-
-`.../Backend/Section/AdminLoginFormSection.xml` code:
+**Use case**: The `FooBackend` module extends the `Backend` module and requires deletion of `username` in the `AdminLoginFormSection`. Remove `username` from the `AdminLoginFormSection`:
 
 ```xml
 <sections ...>
@@ -371,7 +343,7 @@ Remove `username` from the `AdminLoginFormSection`.
 </sections>
 ```
 
-Create `.../FooBackend/Section/AdminLoginFormSection.xml`:
+Create the `.../FooBackend/Section/AdminLoginFormSection.xml` file:
 
 ```xml
 <sections ...>
@@ -381,7 +353,7 @@ Create `.../FooBackend/Section/AdminLoginFormSection.xml`:
 </sections>
 ```
 
-The resulted `AdminLoginFormSection` will correspond to the following code:
+The `AdminLoginFormSection` result corresponds to:
 
 ```xml
 <section name="AdminLoginFormSection">
@@ -392,10 +364,7 @@ The resulted `AdminLoginFormSection` will correspond to the following code:
 
 ### Update an element
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires change of selector in `username` in the `AdminLoginFormSection`.
-Update `username` in the `AdminLoginFormSection`.
-
-`.../Backend/Section/AdminLoginFormSection.xml` code:
+**Use case**: The `FooBackend` module extends the `Backend` module and requires change of selector in `username` in the `AdminLoginFormSection`. Update `username` in the `AdminLoginFormSection` (the `.../Backend/Section/AdminLoginFormSection.xml` file):
 
 ```xml
 <sections ...>
@@ -407,7 +376,7 @@ Update `username` in the `AdminLoginFormSection`.
 </sections>
 ```
 
-Create `.../FooBackend/Section/AdminLoginFormSection.xml`:
+Create the `.../FooBackend/Section/AdminLoginFormSection.xml` file:
 
 ```xml
 <sections ...>
@@ -417,7 +386,7 @@ Create `.../FooBackend/Section/AdminLoginFormSection.xml`:
 </sections>
 ```
 
-The resulted `AdminLoginFormSection` will correspond to the following code:
+The `AdminLoginFormSection` result corresponds to:
 
 ```xml
 <section name="AdminLoginFormSection">
@@ -427,17 +396,15 @@ The resulted `AdminLoginFormSection` will correspond to the following code:
 </section>
 ```
 
-## Data merging
+## Merge data
 
-You can add or update `<data>` elements within an [entity]. Removal of individual `<data>` tags is not supported.
+You can add or update `<data>` elements within an `<entity>`. Removal of individual `<data>` tags is not supported.
+
 Entities and data with the same _file name_, _entity name and type_, and _data key_ are merged during test generation.
 
 ### Add data
 
-**Use case**: The `FooSample` module extends the `Sample` module and requires a new data item `thirdField` in the `_defaultSample` entity.
-Add `<data key="thirdField">field3</data>` to the `_defaultSample`.
-
-`.../Sample/Data/SampleData.xml` code:
+**Use case**: The `FooSample` module extends the `Sample` module and requires a new data item `thirdField` in the `_defaultSample` entity. Add `<data key="thirdField">field3</data>` to the `_defaultSample` (the `.../Sample/Data/SampleData.xml` file):
 
 ```xml
 <entities ...>
@@ -448,7 +415,7 @@ Add `<data key="thirdField">field3</data>` to the `_defaultSample`.
 </entities>
 ```
 
-Create `.../FooSample/Data/SampleData.xml`:
+Create the `.../FooSample/Data/SampleData.xml` file:
 
 ```xml
 <entities ...>
@@ -458,7 +425,7 @@ Create `.../FooSample/Data/SampleData.xml`:
 </entities>
 ```
 
-The resulted `_defaultSample` will correspond to the following code:
+The `_defaultSample` result corresponds to:
 
 ```xml
 <entity name="_defaultSample" type="testData">
@@ -470,10 +437,7 @@ The resulted `_defaultSample` will correspond to the following code:
 
 ### Update data
 
-**Use case**: The `FooSample` module extends the `Sample` module and requires change of data item `firstField` in the `_defaultSample` entity.
-Change `firstField` to `<data key="firstField">overrideField</data>` in the `_defaultSample`.
-
-`.../Sample/Data/SampleData.xml` code:
+**Use case**: The `FooSample` module extends the `Sample` module and requires change of the `firstField` data item in the `_defaultSample` entity. Change `firstField` to `<data key="firstField">overrideField</data>` in the `_defaultSample` (the `.../Sample/Data/SampleData.xml` file):
 
 ```xml
 <entities ...>
@@ -484,7 +448,7 @@ Change `firstField` to `<data key="firstField">overrideField</data>` in the `_de
 </entity>
 ```
 
-Create `.../FooSample/Data/SampleData.xml`:
+Create the `.../FooSample/Data/SampleData.xml` file:
 
 ```xml
 <entities ...>
@@ -494,7 +458,7 @@ Create `.../FooSample/Data/SampleData.xml`:
 </entity>
 ```
 
-The resulted `_defaultSample` will correspond to the following code:
+The `_defaultSample` results corresponds to:
 
 ```xml
 <entity name="_defaultSample" type="testData">
@@ -502,18 +466,6 @@ The resulted `_defaultSample` will correspond to the following code:
     <data key="secondField">field2</data>
 </entity>
 ```
-
-
-<!-- LINK DEFINITIONS -->
-
-[codecept]: ./commands/codeception.html
-[data]: ./data.html
-[element]: ././section.html#element-tag
-[page]: ./page.html
-[robo]: ./commands/robo.html#run-all-functional-tests-excluding-group-skip
-[section]: ./section.html
-[test]: ./test.html
-
 
 
 

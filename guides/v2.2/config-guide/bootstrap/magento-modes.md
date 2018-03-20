@@ -36,7 +36,7 @@ You can run Magento in any of the following *modes*:
 		<td><p>Intended for development only, this mode:</p>
 			<ul><li>Disables static view file caching</li>
 				<li>Provides verbose logging</li>
-				<li>Enables <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-compile-overview">automatic code compilation</a></li>
+				<li>Enables <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">automatic code compilation</a></li>
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-&#42;</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul>
@@ -47,8 +47,12 @@ You can run Magento in any of the following *modes*:
 	</tr>
 	<tr>
 		<td>production</td>
-		<td><p>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static view files are served from cache only. New or updated files are not written to the file system.</p>
-			<p>In production mode, you cannot enable or disable cache types using the Magento Admin. <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</p></td>
+		<td><p>Intended for deployment on a production system, this mode:</p>
+			<ul><li>Does not show exceptions to the user (exceptions are written to logs only).</li>
+				<li>Serves static view files from cache only.</li>
+				<li>Prevents automatic code file compilation. New or updated files are not written to the file system.</li>
+				<li><b>Does not allow you to enable or disable cache types in Magento Admin.</b> <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
+			</ul></td>
 	</tr>
 </tbody>
 </table>

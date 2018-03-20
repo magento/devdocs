@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Codeception commands in the Magento Functional Testing Framework
+title: Codeception commands
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/codeception.md
 functional_areas:
@@ -12,36 +12,32 @@ mftf-release: 2.0.2
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-{%
-include note.html
-type="warning"
-content="We DO NOT recommend to use Codeception commands directly, they can break the MFTF basic workflow.
-All the Codeception commands you need are wrapped using Robo."
-%}
+<div class="bs-callout bs-callout-warning" markdown="1">
+We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
+All the Codeception commands you need are wrapped using Robo.
+</div>
 
-[See the list of Robo commands][robo].
-
-If you'd like to run the Codeception tests directly without using Robo, run:
+See the [list of Robo commands](robo.html). If you'd like to run the Codeception tests directly without using Robo, run:
 
 ```bash
 $ vendor/bin/codecept run functional
 ```
 
-### Examples
+## Examples
 
-Run ALL tests in `dev/tests/acceptance/tests/functional/Magento/FunctionalTest`:
+Run all tests in `dev/tests/acceptance/tests/functional/Magento/FunctionalTest`:
 
 ```bash
 $ vendor/bin/codecept run functional
 ```
 
-Run ALL tests without the `<group value="skpip"/>` [annotation]:
+Run all tests without the `<group value="skpip"/>` [annotation](../test/annotations.html):
 
 ```bash
 $ vendor/bin/codecept run functional --skip-group skip
 ```
 
-Run ALL tests with the `<group value="example"/>` [annotation] but with no `<group value="skpip"/>`:
+Run all tests with the `<group value="example"/>` [annotation](../test/annotations.html) but with no `<group value="skpip"/>`:
 
 ```bash
 $ vendor/bin/codecept run functional --group example --skip-group skip
@@ -49,17 +45,15 @@ $ vendor/bin/codecept run functional --group example --skip-group skip
 
 ## `codecept run`
 
-Runs the test suites
+`codecept run` runs the test suites:
 
 ```bash
 $ vendor/bin/codecept run
 ```
 
-{%
-include note.html
-type="info"
-content="The following documentation corresponds to Codeception 2.3.8"
-%}
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The following documentation corresponds to Codeception 2.3.8.
+</div>
 
 ```
 Full reference:
@@ -100,12 +94,3 @@ Full reference:
    --no-ansi             Disable ANSI output.
    --no-interaction (-n) Do not ask any interactive question.
 ```
-
-<!-- LINK DEFINITIONS -->
-
-[annotation]: ../test/annotations.html
-[robo]: robo.html
-
-<!-- Abbreviations -->
-
-*[MFTF]: Magento Functional Testing Framework
