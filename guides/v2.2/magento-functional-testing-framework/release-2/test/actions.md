@@ -294,8 +294,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `selectorArray`|string|optional|
-x|string|optional|
-y|string|optional|
+`x`|string|optional|
+`y`|string|optional|
 `stepKey`|string|required|A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -308,8 +308,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `selectorArray`|string|optional|
-x|string|optional|
-y|string|optional|
+`x`|string|optional|
+`y`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -360,8 +360,8 @@ For example, to click on `#foo` if `#bar` is visible:
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
-dependent`selector`|string|optional|
-visible|boolean|optional|
+`dependentSelector`|string|optional|
+`visible`|boolean|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -379,11 +379,11 @@ For example, you can create the entity with the name "SampleProduct":
 
 Attribute|Type|Use|Description
 ---|---|---|---
-entity|string|required|
-`stepKey`|string|required
+`entity`|string|required|
+`storeCode`|string|optional|
+`stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
-storeCode|string|optional|
 
 This action can optionally contain one or more `requiredEntity` child elements.
 
@@ -405,7 +405,8 @@ by indicating the relationship.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-createDataKey|string|required|
+`createDataKey`|string|required|
+`stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -423,7 +424,7 @@ For example, to overwrite the `name` field in a particular product specify a fie
 
 Attribute|Type|Use|Description
 ---|---|---|---
-key|string|required| Name of the field to be replaced or added.
+`key`|string|required| Name of the field to be replaced or added.
 
 ### deleteData
 
@@ -445,11 +446,11 @@ We can delete _SampleCategory_:
 
 Attribute|Type|Use|Description
 ---|---|---|---
-createDataKey|string|optional|
+`createDataKey`|string|optional|
+`storeCode`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
-storeCode|string|optional|
 
 ### dontSee
 
@@ -504,7 +505,7 @@ See [dontSeeCurrentUrlMatches docs on codeception.com](http://codeception.com/do
 
 Attribute|Type|Use|Description
 ---|---|---|---
-regex|string|optional| Regular expression against the current URI.
+`regex`|string|optional| Regular expression against the current URI.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -529,7 +530,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `parameterArray`|string|optional|
-attributeArray|string|optional|
+`attributeArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -654,8 +655,8 @@ See [dragAndDrop docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-selector1|string|optional|
-selector2|string|optional|
+`selector1`|string|optional|The element to drag.
+`selector2`|string|optional|The element to drop on.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -666,7 +667,7 @@ See [executeInSelenium docs on codeception.com](http://codeception.com/docs/modu
 
 Attribute|Type|Use|Description
 ---|---|---|---
-function|string|optional|
+`function`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -677,7 +678,7 @@ See [executeJS docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-function|string|optional|
+`function`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -700,7 +701,7 @@ Attribute|Type|Use|Description
 Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
-locale|string|optional|
+`locale`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -721,10 +722,10 @@ The `ProductAttributeOptionGetter` entity must be defined in the corresponding [
 
 Attribute|Type|Use|Description
 ---|---|---|---
-storeCode|string|optional|
+`storeCode`|string|optional|
+`index`|integer|optional|
+`entity`|string|required|
 `stepKey`|string|required| A unique identifier of the action.
-index|integer|optional|
-entity|string|required|
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -760,7 +761,7 @@ See [grabFromCurrentUrl docs on codeception.com](http://codeception.com/docs/mod
 
 Attribute|Type|Use|Description
 ---|---|---|---
-regex|string|optional| Regular expression against the current URI.
+`regex`|string|optional| Regular expression against the current URI.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -827,7 +828,7 @@ Specifies a CLI command to execute in a Magento environment.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-command|string |optional| CLI command to be executed in Magento environment.
+`command`|string |optional| CLI command to be executed in Magento environment.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -881,8 +882,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `selectorArray`|string|optional|
-x|string|optional|
-y|string|optional|
+`x`|string|optional|
+`y`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -892,7 +893,7 @@ y|string|optional|
 Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
-locale|string|optional|
+`locale`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -943,7 +944,7 @@ See [performOn docs on codeception.com](http://codeception.com/docs/modules/WebD
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
-function|string|optional|
+`function`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -977,7 +978,7 @@ Removes action by its `stepKey`.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-keyForRemoval|string|required| Set `stepKey` of the action you want to remove.
+`keyForRemoval`|string|required| Set `stepKey` of the action you want to remove.
 
 ### resetCookie
 
@@ -997,8 +998,8 @@ See [resizeWindow docs on codeception.com](http://codeception.com/docs/modules/W
 
 Attribute|Type|Use|Description
 ---|---|---|---
-width|string|optional|
-height|string|optional|
+`width`|string|optional|
+`height`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1022,8 +1023,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `selectorArray`|string|optional|
-x|string|optional|
-y|string|optional|
+`x`|string|optional|
+`y`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1048,7 +1049,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `userInput`|string|optional|
 `parameterArray`|string|optional|
-requiredAction|string|optional|
+`requiredAction`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1106,7 +1107,7 @@ See [seeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/m
 
 Attribute|Type|Use|Description
 ---|---|---|---
-regex|string|optional| Regular expression against the current URI.
+`regex`|string|optional| Regular expression against the current URI.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1297,7 +1298,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `parameterArray`|string|optional|
-value|string|optional|
+`value`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1310,7 +1311,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `parameterArray`|string|optional|
-button|string|optional|
+`button`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1419,10 +1420,10 @@ Only the fields that you want to update are set.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-storeCode|string|optional|
+`storeCode`|string|optional|
+`entity`|string|required|
+`createDataKey`|string|required|
 `stepKey`|string|required| A unique identifier of the action.
-entity|string|required|
-createDataKey|string|required|
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1457,7 +1458,7 @@ See [waitForElementChange docs on codeception.com](http://codeception.com/docs/m
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
-function|string|optional|
+`function`|string|optional|
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1505,7 +1506,7 @@ See [waitForJS docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-function|string|optional|
+`function`|string|optional|
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1559,4 +1560,3 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
-
