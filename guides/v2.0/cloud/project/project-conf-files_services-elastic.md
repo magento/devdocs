@@ -64,17 +64,16 @@ elasticsearch:
       - lang-python
 {% endhighlight %}
 
-For example, if you are using `smile-es`, you should add the following plugins:
+For example, if you are using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target="\_blank"}, you should add the following plugins:
 
 {% highlight yaml %}
 elasticsearch:
-   type: elasticsearch:1.7
+   type: elasticsearch:2.4
    disk: 1024
    configuration:
     plugins:
       - analysis-icu
       - analysis-phonetic
-      - lang-python
 {% endhighlight %}
 
 The following are supported Elasticsearch plugins for version 2.4:
@@ -95,7 +94,7 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 * `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-If using `smile-es`, the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
+If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target="\_blank"}, the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
 
 For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="\_blank"}.
 
@@ -132,27 +131,3 @@ The last step is to configure Elasticsearch for your catalog search options thro
 <div class="bs-callout bs-callout-warning" markdown="1">
 Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
 </div>
-
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-
-## Add service to configuration file {#configuration-file}
-Add the service in a configuration file of your application. For example:
-
-{% highlight yaml %}
-<?php
-if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {
-  $relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);
-
-  foreach ($relationships['elasticsearch'] as $endpoint) {
-    $container->setParameter('elasticsearch_host', $endpoint['host']);
-    $container->setParameter('elasticsearch_port', $endpoint['port']);
-  }
-}
-{% endhighlight %}
-
-When you create an index on Elasticsearch, you should not specify `number_of_shards` and `number_of_replicas` settings in your Elasticsearch API call. These values will be set automatically based on available resources. -->
-
-#### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

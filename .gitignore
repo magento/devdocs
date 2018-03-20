@@ -11,6 +11,7 @@ _site/
 ehthumbs.db
 Thumbs.db
 .idea
+.ruby-version
 
 # Config and output files #
 ###########################

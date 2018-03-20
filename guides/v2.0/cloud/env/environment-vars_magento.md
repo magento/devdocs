@@ -157,7 +157,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
+Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
 </div>
 
 To create a variable using the command line:
@@ -178,11 +178,3 @@ In the event something goes wrong and you can not access your environment after 
         magento-cloud snapshot:restore <snapshot>
 
 For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
-
-#### Related topics
-* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

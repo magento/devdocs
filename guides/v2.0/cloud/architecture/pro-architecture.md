@@ -130,7 +130,22 @@ The three gateways map to the three servers in your Production environment clust
 -   Three-server cluster comprising all Magento services, including the database and web server
 
 ### Backup and disaster recovery
-Each production system cluster can withstand the loss of an entire server and all services running on it. A backup of your production system occurs automatically every six hours. The coordinating agent that monitors your production system detects failures at the service level (such as MySQL) and fully automates and coordinates recovery where possible.
+Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.
+
+In addition to the redundancy of the high-availability architecture, there is a full system backup every six hours that includes the file system and the database. We retain the backups according to the following schedule:
+
+Time Period | Backup Retention Policy
+--- | ---
+Days 1 to 3 | Each backup
+Days 4 to 6 | One backup per day
+Weeks 2 to 6 | One backup per week
+Weeks 8 to 12 | One bi-weekly backup
+Weeks 12 to 22 | One backup per month
+
+{{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
+
+-  **Recovery Point Objective (RPO)**—is 6 hours (maximum time to last backup).
+-  **Recover Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
 ### Production technology stack
 The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:
@@ -172,8 +187,3 @@ Edit the following YAML files to configure specific software versions to use in 
 -   [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)—url processing
 -   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)—supported services
 -   [`.magento.env.yaml`]()—unified configs for {{site.data.var.ece}} 2.2
-
-#### Related topics
--   [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
--   [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
--   [{{site.data.var.ee}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)

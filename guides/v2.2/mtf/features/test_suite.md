@@ -86,10 +86,12 @@ In `phpunit.xml`:
 
 To run a test suite enter the following commands from your terminal:
 
-{% highlight bash %}
-cd phpunit <magento2>/dev/tests/functional
+```bash
+cd <magento2>/dev/tests/functional
+```
+```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
-{% endhighlight %}
+```
 
 ## Rule {#rule}
 

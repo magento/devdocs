@@ -18,6 +18,10 @@ The changes are aggregated into two tables:
 **Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.
 </div>
 
+## 2.0.17 - 2.0.18 {#releases-2_0_17-2_0_18}
+
+{% include changes/ce/2.0.17-2.0.18.html %}
+
 ## 2.0.16 - 2.0.17 {#releases-2_0_16-2_0_17}
 
 {% include changes/ce/2.0.16-2.0.17.html %}

@@ -46,7 +46,7 @@ Modify the deploy phase using the `STATIC_CONTENT_THREADS` environment variable 
 
         magento-cloud variable:set STATIC_CONTENT_THREADS '1' -e <environment>
 
-Refer to [Manage variables]({{page.baseurl}}cloud/env/environment-vars_over.html) and [Redis and static-content deployment]({{page.baseurl}}guides/v2.0/cloud/trouble/redis-troubleshooting.html#static-content) for more information.
+Refer to [Manage variables]({{page.baseurl}}cloud/env/environment-vars_over.html) and [Redis and static-content deployment]({{page.baseurl}}cloud/trouble/redis-troubleshooting.html#static-content) for more information.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to add this environment variable to your production and staging environments.

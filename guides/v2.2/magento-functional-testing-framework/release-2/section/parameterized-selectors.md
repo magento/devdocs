@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Create and use parameterized selectors in the Magento Functional Testing Framework
+title: Create and use parameterized selectors
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/section/parameterized-selectors.md
 functional_areas:
@@ -13,10 +13,11 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 {%raw%}
+Use the following examples to create and use parameterized selectors in the MFTF.
 
-## Setting up a selector in section
+## Set up a selector in section
 
-In a `<section></section>`, create a new `<element/>`.
+Create a new `<element/>` in a `<section></section>`, :
 
 ```xml
 <section name="SampleSection">
@@ -24,7 +25,7 @@ In a `<section></section>`, create a new `<element/>`.
 </section>
 ```
 
-Add the attribute `parameterized="true"` to the `<element/>`.
+Add the attribute `parameterized="true"` to the `<element/>`:
 
 ```xml
 <section name="SampleSection">
@@ -32,7 +33,7 @@ Add the attribute `parameterized="true"` to the `<element/>`.
 </section>
 ```
 
-In the `selector=""` attribute add your selector.
+Add your selector in the `selector=""` attribute:
 
 ```xml
 <section name="SampleSection">
@@ -42,7 +43,7 @@ In the `selector=""` attribute add your selector.
 
 ### Selector with single variable
 
-For the parameterized part of the selector, add `{{var1}}` to represent the first piece of data that you want to replace.
+For the parameterized part of the selector, add `{{var1}}` to represent the first piece of data that you want to replace:
 
 ```xml
 <section name="SampleSection">
@@ -50,7 +51,7 @@ For the parameterized part of the selector, add `{{var1}}` to represent the firs
 </section>
 ```
 
-Enter a descriptive name into the `name=""` attribute.
+Add a descriptive name in the `name=""` attribute:
 
 ```xml
 <section name="SampleSection">
@@ -58,7 +59,7 @@ Enter a descriptive name into the `name=""` attribute.
 </section>
 ```
 
-In `type`, enter the type of UI element that the `<element/>` represents.
+Add the type of UI element that the `<element/>` represents in `type`:
 
 ```xml
 <section name="SampleSection">
@@ -68,7 +69,7 @@ In `type`, enter the type of UI element that the `<element/>` represents.
 
 ### Selector with multiple variables
 
-For the parameterized part of the selector, add `{{var1}}, {{var2}}, ..., {{varN}}` for each parameter that you need to pass in.
+For the parameterized part of the selector, add `{{var1}}, {{var2}}, ..., {{varN}}` for each parameter that you need to pass in:
 
 ```xml
 <section name="SampleSection">
@@ -82,16 +83,13 @@ For the parameterized part of the selector, add `{{var1}}, {{var2}}, ..., {{varN
 </section>
 ```
 
-{%
-include note.html
-type="info"
-content="Note that there is no need to use sequential variables like `{{var1}}`, `{{var2}}`.
-Parameterized replacement reads variables and maps them to the test call of the element sequentially from left to right, meaning you can use a selector like `#element .{{categoryId}} .{{productId}}`."
-%}
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+There is no need to use sequential variables like `{{var1}}`, `{{var2}}`. Parameterized replacement reads variables and maps them to the test call of the element sequentially from left to right, meaning you can use a selector like `#element .{{categoryId}} .{{productId}}`."
+</div>
 
-## Using a parameterized selector in a test
+## Use a parameterized selector in a test
 
-Create a new [test].
+Create a new [test](../test.html):
 
 ```xml
 <test name="SampleTest">
@@ -99,7 +97,7 @@ Create a new [test].
 </test>
 ```
 
-Add an action.
+Add an action:
 
 ```xml
 <test name="SampleTest">
@@ -107,7 +105,7 @@ Add an action.
 </test>
 ```
 
-In the `selector=""` attribute, enter `"{{}}"`.
+Enter `"{{}}"` in the `selector=""` attribute:
 
 ```xml
 <test name="SampleTest">
@@ -115,7 +113,7 @@ In the `selector=""` attribute, enter `"{{}}"`.
 </test>
 ```
 
-Inside the `{{}}`, make a reference to the section that the element is assigned to.
+Make a reference to the section that the element is assigned to inside the `{{}}`:
 
 ```xml
 <test name="SampleTest">
@@ -123,7 +121,7 @@ Inside the `{{}}`, make a reference to the section that the element is assigned 
 </test>
 ```
 
-Inside the `{{}}`, add name of a parameterized element separated by `"."`
+Add name of a parameterized element, separated by `"."`, inside the `{{}}`:
 
 ```xml
 <test name="SampleTest">
@@ -131,7 +129,7 @@ Inside the `{{}}`, add name of a parameterized element separated by `"."`
 </test>
 ```
 
-Inside the `{{}}`, add a set of `"()"` following the parameterized element.
+Add a set of `"()"` following the parameterized element inside the `{{}}`:
 
 ```xml
 <test name="SampleTest">
@@ -139,7 +137,7 @@ Inside the `{{}}`, add a set of `"()"` following the parameterized element.
 </test>
 ```
 
-Inside of the `()`, add the first parameter that you would like to pass to the selector.
+Add the first parameter, that you would like to pass to the selector, inside of the `()`:
 
 ```xml
 <test name="SampleTest">
@@ -147,7 +145,7 @@ Inside of the `()`, add the first parameter that you would like to pass to the s
 </test>
 ```
 
-Add the 2nd/3rd parameters that you'd like to pass to the selector separated by `, `
+Add the second or third parameters, that you'd like to pass to the selector, separated by `, `:
 
 ```xml
 <test name="SampleTest">
@@ -155,18 +153,13 @@ Add the 2nd/3rd parameters that you'd like to pass to the selector separated by 
 </test>
 ```
 
-Any data can be used in parameterized elements as well as entered in test actions like so:
+Any data can be used in parameterized elements, as well as entered in test actions:
 
-* `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in the corresponding _.../Data/*.xml_
-* `'StringLiteral'` is a literal
-* `$createDataKey.id$` is a reference to persisted data created in the `SampleTest1` within action with `stepKey="createDataKey"`
+* `_defaultCategory.is_active` is a reference to `<data key="is_active">` in `<entity name="_defaultCategory" ... ></entity>` in the corresponding `.../Data/*.xml`.
+* `'StringLiteral'` is a literal.
+* `$createDataKey.id$` is a reference to persisted data created in the `SampleTest1` within the `stepKey="createDataKey"` action.
 * `{$variable}` is a reference to data returned by a test action, like `<grabValueFrom>`.
 
 {%endraw%}
 
 
-<!-- LINK DEFINITIONS -->
-
-<!-- Internal -->
-
-[test]: ../test.html

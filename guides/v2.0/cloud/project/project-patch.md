@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 130_upgrades
 title: Patch Magento Commerce (Cloud)
-menu_title: Patch Magento Commerce (Cloud)
-menu_order: 20
-menu_node:
 version: 2.0
 github_link: cloud/project/project-patch.md
 redirect_from:
