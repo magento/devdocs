@@ -32,6 +32,18 @@ Example:
 
 `myAction` has an identifier, which is `conditionalClickStep1`. This step can be referenced within the test using this identifier.
 
+## Principles
+
+The following value format principles apply to the `stepKey` MFTF action:
+
+* Must be unique within [`<test>`](../test.html#test).
+* Naming should be as descriptive as possible:
+  * Describe the action performed.
+  * Briefly describe the purpose.
+  * Describe which data is in use.
+* Should be in camelCase with lowercase first letter.
+* Should be the last attribute of an element.
+
 ***
 
 ### `before` and `after`
@@ -53,18 +65,6 @@ Example with `after`:
 ```
 
 `myAction` will be executed after the action, which has `stepKey="fillField"`.
-
-## Principles
-
-The following value format principles apply to the `stepKey` MFTF action:
-
-* Must be unique within [`<test>`](../test.html#test).
-* Naming should be as descriptive as possible:
-  * Describe the action performed.
-  * Briefly describe the purpose.
-  * Describe which data is in use.
-* Should be in camelCase with lowercase first letter.
-* Should be the last attribute of an element.
 
 ## Example
 
