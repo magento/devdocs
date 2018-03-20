@@ -61,7 +61,7 @@ In the Magento application, the following modes of compiling <code>.less</code> 
 
 <ol>
 <li>Server-side LESS compilation.<br>
-This is the default compilation mode, and is the only option in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production" target="_blank"> production application mode</a>.
+This is the default compilation mode, and is the only option in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode" target="_blank"> production application mode</a>.
 In this case the compilation is performed on the server, using the <a href="https://github.com/oyejorge/less.php" target="_blank">LESS PHP library</a>.
 </li>
 
@@ -131,7 +131,7 @@ You can find the detailed information about the configuration and other options 
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
-<span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{page.baseurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
+<span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">publication</a> processes anew.
 
 This is required in the following cases:
 <ul>
@@ -158,7 +158,7 @@ But in process of resolving the file path, Magento adds the `.less` extension fo
 @import (css) 'styles.less';
 {%endhighlight%}
 
-As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.md), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files.
+As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files.
 
 ### Importing remote CSS files
 

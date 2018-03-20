@@ -33,7 +33,7 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
-* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.28 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries](http://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html) have been upgraded to the latest stable version.
+* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries](http://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html) have been upgraded to the latest stable version.
 
 * **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{page.baseurl}}config-guide/deployment/pipeline/).
 
@@ -55,7 +55,7 @@ Magento 2.2.0 includes multiple security enhancements. Although this release inc
 
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
 
-[Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
+[Contact us](https://magento.com/company/contact-us){:target="\_blank"} for more information.
 
 
 ## Known issues {#known}
@@ -63,6 +63,10 @@ For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 
 
 ## Fixed issues {#fixed}
 This release contains numerous fixes and enhancements. This section includes only fixes for {{site.data.var.ece}}. For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
+
+<!--RFC-125-->* We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
+
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get this update.
 
 <!-- 57167 -->* You can now generate sitemap.xml and robots.txt normally through the Magento Admin panel, without needing to move the file and have a redirect entered. If you are upgrading to 2.2, please enter a [Support ticket] to have any redirects removed for sitemap and robots.txt.
 
@@ -93,11 +97,13 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html#magento-app-yaml). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
 
-* The build variable `GENERATED_CODE_SYMLINK` has been removed. The generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. The folder `var/generation` is now `generated/code` and `var/di` is now `generated/metapackage`.
+* The deploy variable `GENERATED_CODE_SYMLINK` has been removed. The generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. The folder `var/generation` is now `generated/code` and `var/di` is now `generated/metapackage`.
 
 * With the removal of `GENERATED_CODE_SYMLINK`, you cannot execute `setup:di:compile` directly on a server.
 
 * Modified and updated available build and deploy variables. For a full list, see [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html). For 2.2, we have removed `skip_di_compilation` and `skip_di_clearing` from `build-options.ini`. These cannot be run for 2.2 in the build phase.
+
+* For 2.2.X, we no longer enable all of your extensions are part of the build process. We will provide a new mechanism in a later release.
 
 ## Community contributions {#community}
 
@@ -112,7 +118,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 ## System requirements {#requirements}
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="\_blank"}.
 
 ## Installation and upgrade instructions {#install-upgrade}
 If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).

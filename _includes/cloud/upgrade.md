@@ -7,7 +7,7 @@ When you upgrade Magento Commerce (Cloud), you also upgrade with patches and ava
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
+Always upgrade your local workstation first, then update your remote Integration environment. Resolve any issues before upgrading either the Staging or Production environments.
 </div>
 
 ## Upgrade to the latest version
@@ -216,6 +216,6 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 #### Related topic
-*   [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
+*   [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
 *   [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
 *   [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)

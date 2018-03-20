@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/migration/migration-tool-install.html
 
 ## Prerequisite: Versions of Magento and Data Migration Tool must match {#data-migrate-prereq}
 
-Make sure you are using *the same released version* of both Magento 2 and the Data Migration Tool. For example, for Magento version 2.2, you must also use the Data Migration Tool version 2.2.
+Make sure you are using *the same released version* of both Magento 2 and the Data Migration Tool. For example, for Magento version 2.2.0, you must also use the Data Migration Tool version 2.2.0.
 
 ### Check your Magento 2 version {#magento-version}
 
@@ -33,7 +33,7 @@ If you cloned the Magento 2 GitHub repository, enter the following commands:
 If you're currently in the `develop` branch, you must change to a <a href="{{page.baseurl}}install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
 
 <div class="bs-callout bs-callout-tip">
-	<p>If you haven't installed the Magento software yet, <a href="{{page.baseurl}}install-gde/continue.html">install it now</a>.</p>
+	<p>If you haven't installed the Magento software yet, <a href="{{page.baseurl}}install-gde/bk-install-guide.html">install it now</a>.</p>
 
 	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p>
 </div>
@@ -76,10 +76,10 @@ To install the Data Migration Tool, you must update `composer.json` in the Magen
 
 	where `<version>` must match the version of the Magento 2 codebase.
 
-	For example, for version 2.2, enter:
+	For example, for version 2.2.0, enter:
 
 		composer config repositories.magento composer https://repo.magento.com
-		composer require magento/data-migration-tool:2.2
+		composer require magento/data-migration-tool:2.2.0
 
 4.  When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 
@@ -96,10 +96,10 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 
 	where `<version>` must match the version of the Magento 2 codebase.
 
-	For example, for version 2.2, enter:
+	For example, for version 2.2.0, enter:
 
 		composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-		composer require magento/data-migration-tool:2.2
+		composer require magento/data-migration-tool:2.2.0
 
 ### Check version of installed Data Migration Tool {#migration-tool-install-version}
 

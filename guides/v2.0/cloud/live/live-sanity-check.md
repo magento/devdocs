@@ -13,7 +13,7 @@ functional_areas:
   - Testing
 ---
 
-Before pushing your code to your [Starter]({{ page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl}}cloud/reference/discover-arch.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
+Before pushing your code to your [Starter]({{ page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl}}cloud/architecture/pro-architecture.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
 
 These tasks walk through:
 
@@ -80,7 +80,7 @@ During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#
 *	Enable all modules to build
 *	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
 
-The build also checks for a [configuration file]({{page.baseurl}}cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it's completed in the deployment stage.
+The build also checks for a [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it's completed in the deployment stage.
 
 Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
@@ -141,7 +141,7 @@ To build your site:
 		... more ...
 		Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
 
-If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to get additional assistance.
+If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/trouble/trouble.html) to get additional assistance.
 
 We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
 
@@ -151,7 +151,7 @@ We highly recommend having Magento already installed prior to deployment. During
 *	Install the Magento application if needed
 *	If the Magento application is installed, upgrade components
 *	Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
-*	Set the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) mode
+*	Set the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 To deploy your site:
 
@@ -165,11 +165,11 @@ To deploy your site:
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean
-5.	Set the Magento application for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production):
+5.	Set the Magento application for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode):
 
 		php bin/magento deploy:mode:set production
 
-If errors display, debug them if possible, [review logs]({{ page.baseurl }}cloud/trouble/environments-logs.html), or open a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to get additional assistance.
+If errors display, debug them if possible, [review logs]({{ page.baseurl }}cloud/trouble/environments-logs.html), or open a [support ticket]({{ page.baseurl }}cloud/trouble/trouble.html) to get additional assistance.
 
 #### Next step
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)

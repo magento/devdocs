@@ -27,7 +27,7 @@ To locate scripts used for a certain element:
 <li>Open the store page in a browser, and locate the element's <code>class</code> or <code>id</code> using browser debugging tools, such as Firebug (Firefox) or Inspect Element (Chrome).</li>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element in the page source and see if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{page.baseurl}}/videos/fundamentals/add-a-javascript-module/" target="_blank">JavaScript initialization</a>. 
+<li>Find the corresponding element in the page source and see if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.baseurl}}/videos/fundamentals/add-a-javascript-module/" target="_blank">JavaScript initialization</a>. 
 </li>
 <li>
 To find the source file of the used script:
@@ -53,7 +53,7 @@ To find the source file of the used script:
 <h2>Locate JS component: example</h2>
 
 As we discussed in the preceding section, you use browser debugging tools to define which JavaScript component or {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is used for an element. An example follows.
-To find what JS components are used for displaying the main navigation menu in the Luma theme: 
+To find what JS components are used for displaying the main navigation menu in the Luma theme:
 
 <ol>
 <li>Using the Inspect Element feature of the browser, define that the menu section <code>id</code> is <code>store.menu</code>:
@@ -65,18 +65,18 @@ To find what JS components are used for displaying the main navigation menu in t
 
 </li>
 <br>
-<li>Search the page source for <code>store.menu</code> (illustration follows): 
+<li>Search the page source for <code>store.menu</code> (illustration follows):
 <p>
 <img src="{{site.baseurl}}common/images/fdg_js_debug2.png" alt="Search the page source for the store.menu string">
 </p>
 
-We can see that there's a <code>data-mage-init</code> attribute in the scope of the <code>&lt;div id= &quot;store.menu&quot;&gt;&lt;/div&gt;</code> 
+We can see that there's a <code>data-mage-init</code> attribute in the scope of the <code>&lt;div id= &quot;store.menu&quot;&gt;&lt;/div&gt;</code>
 
 <pre>
 data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'
 </pre>
 
-According to the JS components initialization notation, this means that this code calls <code>menu.js</code>. 
+According to the JS components initialization notation, this means that this code calls <code>menu.js</code>.
 </li>
 <li>To find the source file of <code>menu.js</code></li>, let's open <code>requirejs-config.js</code> by clicking the link to it in the <head></head> section of the page source. The path to <code>menu.js</code> is specified there as follows:
 <pre>

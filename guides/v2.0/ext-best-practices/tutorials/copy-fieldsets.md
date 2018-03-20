@@ -83,9 +83,9 @@ public function __construct(
 
 /**
  * @param $quote \Magento\Quote\Api\Data\CartInterface
- * @param $order Magento\Sales\Api\Data\Order
+ * @param $order \Magento\Sales\Api\Data\Order
  */
-private function copyQuoteToOrder($quote,$order)
+private function copyQuoteToOrder($quote, $order)
 {
   ...
   $copy->copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);

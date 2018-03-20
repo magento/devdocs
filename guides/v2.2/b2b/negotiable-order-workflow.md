@@ -16,7 +16,7 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 ## Prerequisites
 
-* You have [installed]({{page.baseurl}}comp-mgr/install-extensions.html) and [enabled]({{page.baseurl}}comp-mgr/b2b-installation.html) {{site.data.var.b2b}}.
+* You have [installed and enabled]({{page.baseurl}}comp-mgr/install-extensions/b2b-installation.html) {{site.data.var.b2b}}.
 * You have [created a company]({{page.baseurl}}b2b/company-object.html) and a [company user]({{page.baseurl}}b2b/company-object.html).
 * You have an integration or [admin authorization token]({{page.baseurl}}get-started/order-tutorial/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{page.baseurl}}get-started/order-tutorial/order-create-customer.html#get-token) to make calls on behalf of the company user.
 

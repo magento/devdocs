@@ -12,7 +12,7 @@ github_link: cloud/trouble/pro-env-management.md
 
 For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.
 
-To add these environments to the Project Web Interface, review this entire document to complete a few preparation steps and enter a ticket.
+To add these environments to the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html), review this entire document to complete a few preparation steps and enter a ticket.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Please be aware, your ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.
@@ -44,9 +44,9 @@ As an important note, while you can manage Staging and Production environments, 
 
 You will need to enter support tickets to update and modify the following in Staging and Production:
 
-* Configurations for .magento.app.yaml and services.yaml
+* Configurations for `.magento.app.yaml` and `services.yaml`
 * Cron jobs
-* Redirects from routes.yaml
+* Redirects from `routes.yaml`
 
 You will continue to use SSH for:
 
@@ -68,7 +68,7 @@ After the conversion, the three repositories are merged into a single repository
 <tr>
 <td>(no branch)</td>
 <td>Global Master</td>
-<td>This "branch" captures global project changes including adding user accounts and variables.
+<td>This "branch" captures global project changes including adding user accounts and variables. <b>Important:</b> Do not create branches from or merge to Global Master.
 </td>
 </tr>
 <tr>
@@ -108,8 +108,18 @@ When we add Staging and Production access to the Project Web Interface, we will 
 
 To prepare, ensure you have all settings and environment variables set correctly.
 
+* [Verify Git code matches across environments](#matchcode)
 * [Verify user account access](#prep-user)
 * [Prepare variables](#prep-variables)
+
+### Verify Git code matches across environments {#matchcode}
+We strongly recommend working in your local development environment then deploying to Integration, Staging, and finally Production. All Git code should match 100% across each of these environments. If you have additional code (for example new extensions) on Production without following this workflow, any deployments from Integration or Staging will overwrite your Production code.
+
+Before entering a ticket, make sure your Git code matches and is synced.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+The process will create a new Git branch of code for Staging and Production environments. When we create this code, it will push and overwrite on Production. Do not skip this step.
+</div>
 
 ### Verify user account access {#prep-user}
 We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
@@ -126,16 +136,17 @@ We recommend verifying your user account access and permissions set in the Maste
 When we convert your project to the new Project Web Interface, we add variables from Integration `master` to Staging and Production. You can review, modify, and add variables through the current Project Web Interface prior to conversion.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2. Click the **Projects** tab and the name of your project.
-3. Click the Integration Master branch to open the environment information and settings.
-4. Click the **Variables** tab and review the environment variables.
-5. If you need to update variables, click ![edit variable]({{ site.baseurl }}common/images/cloud_edit-variable.png) and modify the variable and value.
-6. To create a new variable, click **Add Variable**, enter the variable name and value.
+1. Click the **Projects** tab and the name of your project.
+1. Click the Integration `master` branch to open the environment information and settings.
+1. Click **Configure environment**.
+1. On the _Variables_ tab, review the environment variables.  
+    To create a new variable, click **Add Variable**.  
+    To update an existing variable, click **Edit** next to the variable.
 
 For environment specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.
 
 ## Enter a ticket for updating the Project Web Interface {#enable}
-Enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
+Enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
 
 We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.
 
@@ -157,13 +168,14 @@ Second, add the variables from the CLI list through the Project Web Interface:
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.
 3. Click the Staging or Production environment to add variables.
-4. Click the **Variables** tab.
-5. If you need to update variables, click ![edit variable]({{ site.baseurl }}common/images/cloud_edit-variable.png) and modify the variable and value.
+1. On the _Variables_ tab, review the environment variables.  
+    To create a new variable, click **Add Variable**.  
+    To update an existing variable, click **Edit** next to the variable.
 6. To add a variable from the CLI list, click **Add Variable**, enter the variable name and value, and select the Override checkbox. This uses the variables from the Project Web Interface over the local CLI or database values.
 
 You can use CLI commands to remove the variables if you want while still accessing the environment using SSH.
 
-When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration Master and so on. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
+When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration Master and so on. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
 

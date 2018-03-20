@@ -110,7 +110,7 @@ You can find the list of modules that have dependencies on the Magento_CatalogSt
 
 ### UI components
 
-You can extend product and category updates using the UI components located in the `Magento\CatalogStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html).
+You can extend product and category updates using the UI components located in the `Magento\CatalogStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 

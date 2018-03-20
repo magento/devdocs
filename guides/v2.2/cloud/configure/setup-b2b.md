@@ -24,6 +24,7 @@ Prior to adding the B2B module, you should have the following:
 
 * Upgraded to a {{site.data.var.ece}} 2.2.X on your environments
 * A Git branch to add the new B2B module
+* Have your Magento Authentication keys (public and private) available
 
 We provide B2B as a module for Magento. For new Pro projects, we highly recommend having {{site.data.var.ece}} fully deployed to Intergration, Staging, and Production environments. For more information, see [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html). Adding a module as part of your initial deployment could cause issues.
 
@@ -33,7 +34,7 @@ We recommend working in a branch to add the B2B module and features to your impl
 {% include cloud/cli-get-started.md %}
 
 ## Add B2B in the cloud {#add}
-You need to add the module to `composer.json`. All extensions and modules must be added to this file.
+You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions](http://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) in the B2B guide.
 
 1. Open a terminal application.
 2. Change to your local development environment root directory.
@@ -45,7 +46,12 @@ You need to add the module to `composer.json`. All extensions and modules must b
 6. Run the composer update command to pull all B2B files into your branch.
 
         composer update
-4. Add the new B2B files to Git:
+
+    You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, make sure no additional spaces are included. Spaces could cause the following error:
+
+        InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
+
+5. Add the new B2B files to Git:
 
         git add setup dev pub lib && git commit -a -m "b2b"
 5. Enable all modules using the following command. You need to use this command to ensure all modules, including B2B, are enabled for updating.

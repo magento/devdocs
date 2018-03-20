@@ -13,7 +13,7 @@ functional_areas:
   - Configuration
 ---
 
-The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to do the following for all Starter and Pro environments:
+The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="\_blank"} enables you to do the following for all Starter and Pro environments:
 
 * [Access projects](#project-access)
 * Create and manage projects
@@ -49,7 +49,7 @@ The following figure shows an example.
 Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Configure environment settings {#project-conf-env-set}
-You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
 <table>
 	<tbody>
 		<tr>
@@ -79,7 +79,7 @@ One of these environment variables enables or disables outgoing emails for the e
 
 	![Set outgoing emails]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
 
-Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
 
 ## Set environment and project variables {#project-conf-env-var}
 You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html).
@@ -104,6 +104,11 @@ To set environment specific variables in the Project Web Interface:
 	![Set environment variables]({{ site.baseurl }}common/images/cloud_env-var.png)
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
+![Environment variable example]({{site.baseurl}}common/images/cloud_env_var_example.png)
+</div>
 
 ### Project variable {#project}
 To set project variables in the Project Web Interface:

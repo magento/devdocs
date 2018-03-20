@@ -86,6 +86,10 @@ input[type=search] {
     padding: 20px;
   }
 
+  @media ( $small-screen ) {
+    flex-direction: column;
+  }
+
 }
 
 .algolia__result-highlight {
@@ -104,13 +108,18 @@ input[type=search] {
 
 }
 
+.ais-Highlight {
+  font-style: normal;
+  background: #FFF8D7;
+}
+
 .ais-refinement-list--header {
   font-weight: bold;
   margin: 30px 0 20px 0;
 }
 
 .ais-refinement-list--item {
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   font-size: 16px;
 }
 
@@ -123,7 +132,7 @@ input[type=search] {
 // TODO: make this into a compoenent or move to _form.scss
 
 .ais-refinement-list--checkbox {
-  margin: 0 15px 0 0;
+  margin: 0 5px 0 0;
   width: 20px;
   height: 20px;
   display: inline-block;

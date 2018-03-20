@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 99_Module Development 
+subgroup: 99_Module Development
 title: Indexing overview
 menu_title: Indexing overview
 menu_order: 13
@@ -9,7 +9,7 @@ version: 2.0
 level3_menu_node: level3child
 level3_subgroup: index
 github_link: extension-dev-guide/indexing.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/architecture/index-cache/indexing.html
   - /guides/v2.0/architecture/index-cache/indexing.html
 ---
@@ -101,7 +101,7 @@ Depending on whether an index data is up to date, an indexer status value is one
 *	invalid: the original data was changed, the index should be updated
 *	working: indexing is in progress
 
-The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel under **System > New Index Management** or manually using the [command line]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-status). 
+The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel under **System > New Index Management** or manually using the [command line]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
 <h3 id="m2devgde-indexing-modes">Indexing modes</h3>
 Reindexing can be performed in two modes:
@@ -117,7 +117,7 @@ To set these options:
 4.	From the **Actions** list, click the indexing mode.
 5.	Click **Submit**.
 
-You can also reindex from the [command line]({{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-conf)
+You can also reindex from the [command line]({{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#configure-indexers)
 
 The following figure shows an example of setting indexers to Update by Schedule.
 
@@ -143,13 +143,13 @@ The Magento application implements the following indexers:
 	<tr>
 		<td>Category products</td>
 		<td>catalog_category_product</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Category/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Flat</a></td>
+		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product categories</td>
 		<td>catalog_product_category</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Product/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Flat</a></td>
+		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Product/Category.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Category</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
@@ -161,7 +161,7 @@ The Magento application implements the following indexers:
 	<tr>
 		<td>Product entity attribute value</td>
 		<td>catalog_product_attribute</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
+		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Product/Eav.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Eav</a></td>
 		<td>Reorganizes the EAV product structure to flat structure</td>
 	</tr>
 	<tr>
@@ -190,4 +190,3 @@ The Magento application implements the following indexers:
 	</tr>
 
 </tbody></table>
-

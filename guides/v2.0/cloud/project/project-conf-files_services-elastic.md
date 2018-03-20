@@ -16,21 +16,21 @@ functional_areas:
   - Search
 ---
 
-[Elasticsearch](https://www.elastic.co){:target="_blank"} is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
+[Elasticsearch](https://www.elastic.co){:target="\_blank"} is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
 
 *   Elasticsearch performs quick and advanced searches on products in the product catalog
 *   Elasticsearch analyzers support multiple languages
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until reindex is completed
 
-We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7.
-
-We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. For {{site.data.var.ece}} 2.0.X, you can use [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
-
-For more information, see [Elasticsearch information]({{page.baseurl}}config-guide/elasticsearch/es-overview.html).
+We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more. For {{site.data.var.ece}} 2.0.X, you can use [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you're upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{page.baseurl}}cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
+</div>
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html#search) environment variable to connect it to your site.
 </div>
 
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
@@ -64,17 +64,16 @@ elasticsearch:
       - lang-python
 {% endhighlight %}
 
-For example, if you are using `smile-es`, you should add the following plugins:
+For example, if you are using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target="\_blank"}, you should add the following plugins:
 
 {% highlight yaml %}
 elasticsearch:
-   type: elasticsearch:1.7
+   type: elasticsearch:2.4
    disk: 1024
    configuration:
     plugins:
       - analysis-icu
       - analysis-phonetic
-      - lang-python
 {% endhighlight %}
 
 The following are supported Elasticsearch plugins for version 2.4:
@@ -95,9 +94,9 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 * `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-If using `smile-es`, the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
+If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target="\_blank"}, the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
 
-For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="_blank"}.
+For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="\_blank"}.
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
@@ -127,29 +126,8 @@ The response includes all relationships for services and configuration data for 
 {% endhighlight %}
 
 ## Configure Elasticsearch for your site {#configure}
-The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
+The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
 
-
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-
-## Add service to configuration file {#configuration-file}
-Add the service in a configuration file of your application. For example:
-
-{% highlight yaml %}
-<?php
-if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {
-  $relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);
-
-  foreach ($relationships['elasticsearch'] as $endpoint) {
-    $container->setParameter('elasticsearch_host', $endpoint['host']);
-    $container->setParameter('elasticsearch_port', $endpoint['port']);
-  }
-}
-{% endhighlight %}
-
-When you create an index on Elasticsearch, you should not specify `number_of_shards` and `number_of_replicas` settings in your Elasticsearch API call. These values will be set automatically based on available resources. -->
-
-#### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+<div class="bs-callout bs-callout-warning" markdown="1">
+Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
+</div>

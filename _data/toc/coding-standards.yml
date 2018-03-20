@@ -32,4 +32,10 @@ pages:
           url: coding-standards/code-standard-html.html
 
     - label: Technical guidelines
-      url: coding-standards/technical-guidelines/technical-guidelines.html
+      url: coding-standards/technical-guidelines.html
+
+    - label: Technical vision
+      children:
+
+        - label: Web Api
+          url: coding-standards/technical-vision/webapi.html

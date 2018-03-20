@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 160_deploy
-title: Migrate and deploy code, static files, and data
-menu_title: Migrate and deploy code, static files, and data
+title: Deploy code and migrate static files and data
+menu_title: Deploy code and migrate static files and data
 menu_order: 50
 menu_node:
 version: 2.0
@@ -24,10 +24,13 @@ To migrate your database and static files to Staging and Production:
 
 If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
 
-## Deploy to Staging and Production {#code}
-The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans. You can also use SSH and CLI commands to complete these process. Previously for Pro plans, you could only use SSH and CLI commands for Staging and Production.
+## Deploy code to Staging and Production {#code}
+You can also use the [Project Web Interface](#interface) or [SSH and CLI commands](#ssh) to deploy your code to Staging and Production.
 
-For Pro projects created **after October 23, 2017**, deploy the Integration `master` branch you created to Staging and Production.
+### Deploy code with the Project Web Interface {#interface}
+The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans.
+
+For Pro projects created **after October 23, 2017** or [updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html), deploy the Integration `master` branch you created to Staging and Production:
 
 1. [Log in](https://accounts.magento.cloud) to your project.
 2. Select the Integration branch.
@@ -37,7 +40,7 @@ For Pro projects created **after October 23, 2017**, deploy the Integration `mas
 
 {% include cloud/wings-management.md %}
 
-For Starter, deploy your development branch you created to Staging and Production.
+For Starter, deploy your development branch you created to Staging and Production:
 
 1. [Log in](https://accounts.magento.cloud) to your project.
 2. Select the prepared code branch.
@@ -47,47 +50,62 @@ For Starter, deploy your development branch you created to Staging and Productio
 
 ![Use the merge option to deploy]({{ site.baseurl }}common/images/cloud_project-merge.png)
 
-## Deploy using SSH {#ssh}
+### Deploy code with SSH and CLI {#ssh}
 If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.
 
 You'll need the SSH and Git access information for your project.
 
-For Starter projects, locate the SSH and Git information through the Project Web Interface.
+* For Starter projects, locate the SSH and Git information through the Project Web Interface.
+* For Pro projects created **after October 23, 2017** or [updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html), locate the SSH and Git information through the Project Web Interface.
+* For Pro projects created **before October 23, 2017**, the formats are as follows:
 
-For Pro projects created **after October 23, 2017**, locate the SSH and Git information through the Project Web Interface.
+  *	Git URL format:
 
-For Pro projects created **before October 23, 2017**, the formats are as follows:
+  	*	Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
+  	*	Production: `git@git.ent.magento.cloud:<project ID>.git`
 
-*	Git URL format:
+  *	SSH URL format:
 
-	*	Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
-	*	Production: `git@git.ent.magento.cloud:<project ID>.git`
+  	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
+  	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
 
-*	SSH URL format:
+#### Deploy to Pro: updated or created after October 23, 2017 {#classic}
+To deploy to Pro projects **created after October 23, 2017** or [updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html):
 
-	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
-	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
+1. Open an SSH connection to your Staging or Production environment using the SSH command.
+2. Checkout your Staging or Production branch:
 
-After that is set up, you can SSH into the environment and use Git commands to push the branches.
+  * Staging: `git checkout staging`
+  * Production: `git checkout production`
+3. Pull the `master` branch from Integration. Remember, a pull performs a fetch and a merge in one step.
 
-### SSH and pull the Git branch {#git}
-This information is for Pro projects created **before October 23, 2017**.
+        git pull origin master
 
-1. Open an SSH connection to your Staging or Production environment:
+  You merge this code as `staging` and `production` are branches of `master`.
+4. To fully update all code, then perform a push:
 
-    * Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-    * Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+        git push origin
+
+
+#### Deploy to Pro: created before October 23, 2017 {#classic}
+For these environments, you are pushing code from repository to repository: Integration `master` to Staging or Production `master`. Due to these being `master` branches in different repositories, you cannot merge as if branch to branch. You should have completed all [prerequisites]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html) prior to deployment.
+
+1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Pull the `master` branch to the server.
 
         git pull origin master
 
-### SSH and merge the Git branch
-This information is for Pro projects created **after October 23, 2017**. The Integration branch is the `master` branch for your code base. To deploy to Staging and Production, you can merge or sync your `master` code to the `staging` and `production` branches.
+3. Merge changes to Staging or Production:
 
-## Deploy migrate static files {#cloud-live-migrate-static}
+  * Staging: `git push staging master:master`
+  * Production: `git push production master:master`
+
+  You must force push for these branches as they are separate repositories with a master branch.
+
+## Migrate static files {#cloud-live-migrate-static}
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
 
-We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
+We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="\_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
 We suggest using the following syntax:
 
@@ -95,42 +113,32 @@ We suggest using the following syntax:
 
 Options:
 
-	`a` archive
-	`z` compress
-	`v` verbose
-	`P` partial progress
+	a archive
+	z compress
+	v verbose
+	P partial progress
 
-For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
+For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="\_blank"}.
 
 To migrate static files:
 
-1.	Log in to your local system in a terminal.
-2.	Log in to your Magento Commerce (Cloud) account:
+1.	Open an SSH connection to your Staging or Production environment:
 
-		magento-cloud login
-3.	If necessary, change to the project directory.
-4.	If necessary, check out the master branch:
-
-		magento-cloud environment:checkout master
-5.	Pull any changes from the server:
-
-		git pull origin master
-6.	Open an SSH connection to your Staging or Production environment:
-
-			*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-			*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-7.	rsync the `pub/media` directory from your local Magento server to staging or production:
+			*	Staging: ssh -A <project ID>_stg@<project ID>.ent.magento.cloud
+			*	Production: ssh -A <project ID>@<project ID>.ent.magento.cloud
+2.	rsync the `pub/media` directory from your local Magento server to staging or production:
 
 		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/
-	The IP is for the Magento Commerce VM or container you created when setting up the local.
+
+  The IP is for the Magento Commerce VM or container you created when setting up the local.
 
 ## Migrate the database {#cloud-live-migrate-db}
 
-**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="\_blank"}.
 
 **Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 
-For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ page.baseurl }}cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
+For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 
@@ -143,10 +151,13 @@ To migrate a database:
 	* To SSH into the `master` branch of your Integration environment:
 
 			magento-cloud environment:ssh
-2.	Find the database login information:
+2.	Find the database login information with the following command:
 
+    ```
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-3.	Create a database dump:
+    ```
+
+3.	Create a database dump. The following command creates a database dump as a gzip file.
 
 	For Starter environments and Pro Integration environments:
 
@@ -168,7 +179,7 @@ To migrate a database:
 	* To SSH into the `master` branch of your Integration environment:
 
 			magento-cloud environment:ssh
-10.	Import the database dump:
+10.	Import the database dump with the following command:
 
 		zcat database.sql.gz | mysql -u <username> -p<password> <database name>
 
@@ -185,7 +196,7 @@ This error occurs because the DEFINER for the triggers in the SQL dump is the pr
 
 To solve the issue, you can generate a new database dump changing or removing the `DEFINER` clause. The following is one example of completing this change:
 
-	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed -i 's/DEFINER=[^*]**/*/g' | gzip > /tmp/database_no-definer.sql.gz
+	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/g' | gzip > /tmp/database_no-definer.sql.gz
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 

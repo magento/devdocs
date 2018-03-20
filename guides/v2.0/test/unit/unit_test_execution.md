@@ -1,10 +1,7 @@
 ---
 layout: default
 group: unit-testing
-subgroup: 10_Running_Unit_Tests
 title: Running Unit Tests
-menu_title: Running Unit Tests
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
@@ -26,6 +23,6 @@ Please refer to [Running Unit Tests in the CLI]({{page.baseurl}}test/unit/unit_t
 ### PHPStorm IDE  
 Running the tests inside an IDE like PHPStorm IDE is convenient for developers, since it allows for easier navigation in the code and debugging.
 
-Other then convenience there is no benefit over running the tests on the console.
+Other than convenience there is no benefit over running the tests on the console.
 
 Please refer to [Running Unit Tests in PHPStorm]({{page.baseurl}}test/unit/unit_test_execution_phpstorm.html) for further information.

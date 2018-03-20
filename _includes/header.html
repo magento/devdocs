@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -22,6 +22,18 @@
     var baseUrl = "{{ site.baseurl }}";
   </script>
 
+	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:806243,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+	
 	<!-- crazyegg -->
 	<script type="text/javascript">
 	setTimeout(function(){var a=document.createElement("script");
@@ -54,7 +66,7 @@
 
 	<nav id="global-nav">
 
-		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
 
 		<div class="container">
 
@@ -68,9 +80,9 @@
 				<a class="search-trigger search-icon" href="{{site.baseurl}}search.html"></a>
 			</div>
 
-			<form class="quick-search" action="{{site.baseurl}}search.html" method="get">
+			<form class="quick-search" action="{{page.baseurl}}search.html" method="get">
 				<input type="search" name="q" placeholder="Search" autocomplete="off" />
-				<a href="#" class="quick-search-close">&times;</a>
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
 			</form>
 
 		</div>

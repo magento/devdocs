@@ -1,10 +1,7 @@
 ---
 layout: default
 group: unit-testing
-subgroup: 30_Running_Unit_Tests
 title: Running Unit Tests in PHPStorm
-menu_title: Running Unit Tests in PHPStorm
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
@@ -14,7 +11,7 @@ functional_areas:
   - test
 ---
 
-Running tests in PHPStorm requires a couple steps to setup the system.
+Running tests in PHPStorm requires following steps to setup the system.
 
 1. Configuring the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interpreter
 2. Configuring PHPUnit
