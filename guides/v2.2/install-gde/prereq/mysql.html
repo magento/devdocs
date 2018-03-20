@@ -2820,7 +2820,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     <p>Enter the following commands in the order shown to create a database instance named <code class="highlighter-rouge">magento</code> with user name <code class="highlighter-rouge">magento</code>:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create database magento;
+create user magento IDENTIFIED BY 'magento';
 GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+flush privileges;
 </code></pre></div>    </div>
   </li>
   <li>
