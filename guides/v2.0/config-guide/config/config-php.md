@@ -8,6 +8,10 @@ menu_order: 1
 version: 2.0
 github_link: config-guide/config/config-php.md
 redirect_from: /guides/v1.0/config-guide/config/config-php.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Purpose of the deployment configuration {#config-php-overview}
@@ -128,7 +132,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/See <a href="{{page.baseurl}}config-guide/cache/caching_frontend-cache-types.html">frontend options</a></pre></td>
+   |__/See <a href="{{page.baseurl}}config-guide/cache/cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>
@@ -147,7 +151,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache_types</code></td>
       <td><pre>__/cache_types
  |-- &lt;enumerated {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types></pre></td>
-    </tr>     
+    </tr>
   </tbody>
 </table>
 

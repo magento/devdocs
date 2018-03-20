@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js]({{s
 
 ## TreeMassActions configuration
 
-Extends all [MassActions]({{page.baseurl}}ui_comp_guide/components/ui-massactions.md) configuration.
+Extends all [MassActions]({{page.baseurl}}ui_comp_guide/components/ui-massactions.html) configuration.
 
 TreeMassActions-specific configuration:
 
@@ -74,5 +74,3 @@ TreeMassActions-specific configuration:
     <td>Required</td>
   </tr>
 </table>
-
-

@@ -8,6 +8,10 @@ menu_order: 16
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-advanced.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
@@ -33,7 +37,7 @@ Every 5 seconds, this health check calls the `pub/health_check.php` script. This
 
 The `health_check.php` script is located in the `pub` directory. If your Magento root directory is `pub`, then be sure to change the path in the `url` parameter from `/pub/health_check.php` to `health_check.php`.
 
-For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/usrs-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
+For more information, see the <a href="https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks" target="_blank">Varnish health checks</a> documentation.
 
 ## Grace mode {#grace}
 
@@ -103,7 +107,7 @@ See [Varnish module collection](https://github.com/varnish/varnish-modules) for 
 
 ### Sample `vcl` file {#saint-sample}
 
-The following code example shows the code that must be added to your `.vcl` file to enable saint mode. Place the `import` statements and `backend` definitions at the top of the file.
+The following code example shows the code that must be added to your VCL file to enable saint mode. Place the `import` statements and `backend` definitions at the top of the file.
 
 {% collapsible Click to show/hide %}
 {% highlight cpp %}

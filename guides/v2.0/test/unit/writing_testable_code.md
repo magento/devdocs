@@ -1,14 +1,14 @@
 ---
 layout: default
 group: unit-testing
-subgroup: 40_Running_Unit_Tests
 title: Writing Testable Code
-menu_title: Writing Testable Code
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/writing_testable_code.md
+functional_areas:
+  - Testing
+  - test
 ---
 
 This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in *most* situations.
@@ -227,7 +227,7 @@ Almost as a side effect, those classes are very easy to test.
 
 #### For more information
 
-* Kent Beck's [rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"}
+* [Rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"} by Kent Beck
 * [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
 * [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
 * [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce

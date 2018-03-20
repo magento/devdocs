@@ -8,9 +8,12 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-basic.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
-The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to:
+The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="\_blank"} enables you to do the following for all Starter and Pro environments:
 
 * [Access projects](#project-access)
 * Create and manage projects
@@ -19,24 +22,25 @@ The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud
 * [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
 * [Manage Git branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
 
-As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter environments and Pro Integration environments (PaaS). To make changes for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
+
+{% include cloud/wings-management.md %}
 
 ## Access your project and environments {#project-access}
 The Project Web Interface provides several ways to access your project and environments:
 
-*	Your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} URL for each active (up to eight)
-*	Secure Shell (SSH), a way to interact with services using a command terminal
-*	Clone the project using the Magento ECE CLI
-*	Clone the project using Git
+*	Storefront URL for each active environment
+*	Secure Shell (SSH) link for SSH access via terminal application
+*	Clone the project using the Magento Cloud CLI or Git
 
-To access projects and environments through the Web Interface:
+To access projects and environments through the Project Web Interface:
 
-1.	[Log in to your project](#project-login).
+1.	[Log in to your project](https://accounts.magento.cloud).
 2.	Click **Access Project** for a list of URLs and SSH.
 
 	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png){:width="600px"}
 
-For more information about using SSH, see [SSH to an environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-ssh). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
+For more information about using SSH, see [SSH to an environment]({{page.baseurl}}cloud/env/environments-ssh.html#magento-cli). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
 
 The following figure shows an example.
 
@@ -45,12 +49,11 @@ The following figure shows an example.
 Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Configure environment settings {#project-conf-env-set}
-You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
-
+You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
 <table>
 	<tbody>
 		<tr>
-			<th>Option</th>
+			<th style="width= 300px;">Option</th>
 			<th>Description</th>
 		</tr>
 	<tr>
@@ -76,7 +79,7 @@ One of these environment variables enables or disables outgoing emails for the e
 
 	![Set outgoing emails]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
 
-Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
 
 ## Set environment and project variables {#project-conf-env-var}
 You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html).
@@ -84,6 +87,10 @@ You can set project wide and environment specific variables through the Project 
 For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
 
 To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
+
+For new Pro projects **created after October 23, 2017**, you can add variables for all environments through the Project Web Interface.
+
+{% include cloud/wings-variables.md %}
 
 ### Environment variable {#env}
 To set environment specific variables in the Project Web Interface:
@@ -97,6 +104,11 @@ To set environment specific variables in the Project Web Interface:
 	![Set environment variables]({{ site.baseurl }}common/images/cloud_env-var.png)
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
+![Environment variable example]({{site.baseurl}}common/images/cloud_env_var_example.png)
+</div>
 
 ### Project variable {#project}
 To set project variables in the Project Web Interface:
@@ -140,25 +152,22 @@ An environment's history includes:
 *	Syncs and merges
 *	Code pushes
 
-To view an environment's history:
+To view an environment's history, log into your project and select an environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. For more information on logs, see [Use logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html).
 
-1.	[Log in to your project](#project-login).
-2.	In the left pane, click the name of an environment.
+The following figure shows a sample history.
 
-	The following figure shows a sample history.
+![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png)
 
-	![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png){:width="600px"}
+The history shows, from oldest to newest:
 
-	The history shows, from oldest to newest:
+*	Environment branched from `FeatureX`
+*	Environment synced with the parent
+*	Environment snapshot created
 
-	*	Environment branched from `FeatureX`
-	*	Environment sync'd with the parent
-	*	Environment snapshot created
+We recommend [creating a snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) before you make any code changes.
 
-		We recommend [creating a snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) before you make any code changes.
-
-	*	Environment variable added
-	*	Environment snapshot created
+*	Environment variable added
+*	Environment snapshot created
 
 #### Related topics
 * [Project structure]({{page.baseurl}}cloud/project/project-start.html)

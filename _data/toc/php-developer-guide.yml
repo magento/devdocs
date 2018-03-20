@@ -111,7 +111,7 @@ pages:
         - label: How to add CLI commands
           url: extension-dev-guide/cli-cmds/cli-howto.html
 
-    - label: Staging (Enterprise Edition only)
+    - label: Staging (Magento Commerce only)
       versions: ["2.1","2.2", "2.3"]
       url: extension-dev-guide/staging.html
 
@@ -168,7 +168,23 @@ pages:
             - label: Adding a custom indexer
               url: extension-dev-guide/indexing-custom.html
 
-        - label: Message Queues (Enterprise Edition Only)
+        - label: Declarative schema
+          versions: ["2.3"]
+          children:
+
+            - label: Delcarative schema overview
+              url: extension-dev-guide/declarative-schema/
+
+            - label: Migrate install/upgrade scripts to declarative schema
+              url: extension-dev-guide/declarative-schema/migration-commands.html
+
+            - label: Configure declarative schema
+              url: extension-dev-guide/declarative-schema/db-schema.html
+
+            - label: Develop declarative data and schema patches
+              url: extension-dev-guide/declarative-schema/data-patches.html
+
+        - label: Message Queues (Magento Commerce Edition Only)
           children:
 
             - label: Message queues overview

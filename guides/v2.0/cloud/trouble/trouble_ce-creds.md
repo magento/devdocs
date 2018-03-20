@@ -8,6 +8,9 @@ menu_order: 7
 menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble_ce-creds.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 ## Incorrect credentials
@@ -20,7 +23,7 @@ The most common symptom of incorrect credentials is a deployment failure with an
 
 To see the error log:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
 2.	Click **Failure** to view the log as the following figure shows.
 
 	![View the log for a failed deployment]({{ site.baseurl }}common/images/cloud_deploy-failure-creds.png){:width="600px"}
@@ -142,7 +145,7 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
 <div class="bs-callout bs-callout-warning">
-	<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html">Set Magento environment variables</a>.</p>
+	<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{page.baseurl}}cloud/env/set-variables.html">Set Magento environment variables</a>.</p>
 </div>
 
 #### Related topics

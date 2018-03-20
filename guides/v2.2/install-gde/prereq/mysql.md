@@ -22,6 +22,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Magento application requires MySQL 5.6.x.</p>
   <p>Magention versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
+  <p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies. </p>
 </div>
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
@@ -277,7 +278,9 @@ To configure a MySQL database instance:
 4.	Enter the following commands in the order shown to create a database instance named `magento` with user name `magento`:
 
 		create database magento;
+		create user magento IDENTIFIED BY 'magento';
 		GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+		flush privileges;
 
 5.	Enter `exit` to quit the command prompt.
 

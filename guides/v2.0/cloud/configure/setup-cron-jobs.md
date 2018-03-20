@@ -8,18 +8,20 @@ menu_order: 17
 menu_node:
 version: 2.0
 github_link: cloud/configure/setup-cron-jobs.md
+functional_areas:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 Magento uses cron jobs for numerous features to schedule activities. You can add cron jobs to `.magento.app.yaml` and push it to your branches for deployment. For specific information for configuring and setting up cron in Magento, see [Magento Commerce cron information](#croninfo). The following information is specific to creating and deploying cron jobs in {{site.data.var.ece}}.
 
-We recommend you run cron jobs as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root` or as the web server user.
-
 ## Magento Commerce cron information {#croninfo}
 The following links provide more information on crons for {{site.data.var.ee}}. You can use this information for setting up and understanding cron jobs in Magento. When you want to add cron jobs for {{site.data.var.ece}}, you manage all crons through `.magento.app.yaml`. For more information, review this topic.
 
-* [Set up cron]({{ page.baseurl }}install-gde/install/post-install-config.html)
-* [Configure and run cron]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html)
-* [Set up a custom cron job and cron group]({{ page.baseurl }}config-guide/cron/custom-cron.html)
+* [Set up cron]({{page.baseurl}}install-gde/install/post-install-config.html)
+* [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html)
+* [Set up a custom cron job and cron group]({{page.baseurl}}config-guide/cron/custom-cron.html)
 
 ## Build a cron job {#build}
 A cron job includes the specification for scheduling and timing and the command to run at that time. For example, the general format is:
@@ -96,7 +98,7 @@ To configure:
 5. Save the changes.
 
 ## Add cron jobs to .magento.app.yaml {#add-cron}
-You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) file in the the `crons` section. We include a default cron job for Magento in the default file:
+You should add all cron jobs to your [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) file in the the `crons` section. We include a default cron job for Magento in the default file:
 
     # Default Magento 2 cron jobs
     crons:
@@ -125,9 +127,11 @@ When you push the code, the cron jobs will be added to and run in the following 
 * Starter: All environments you push to including `Master`
 * Pro: Only Integration environments you push to including `Master`
 
-To add the cron jobs to Pro plan Staging and Production, you must [enter a ticket to Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp). Request to have the cron jobs in `.magento.app.yaml` added to those environments. We recommend pushing the updates through to the Integration `master` branch.
+To add the cron jobs to Pro plan Staging and Production, you must [enter a ticket to Support]({{page.baseurl}}cloud/trouble/trouble.html). Request to have the cron jobs in `.magento.app.yaml` added to those environments. We recommend pushing the updates through to the Integration `master` branch.
+
+We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occassionally late.
 
 ## Update cron jobs {#update}
 If you need to change or update your cron jobs, update the crons section in your `.magento.app.yaml` file. Push the file to your Git branch and deploy across environments.
 
-For Pro plan Staging and Production environments, please [enter a ticket to Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) advising you need the cron jobs updated from the latest updated file. We recommend pushing the updates through to the Integration `master` branch.
+For Pro plan Staging and Production environments, please [enter a ticket to Support]({{page.baseurl}}cloud/trouble/trouble.html) to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration `master` branch in the `.magento.app.yaml` file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.

@@ -1,13 +1,15 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 32_UseUpgrade
 title: Step 4. Upgrade
 menu_title: Step 4. Upgrade
-menu_node: 
+menu_node:
 menu_order: 20
 version: 2.0
 github_link: comp-mgr/upgrader/upgrade.md
+functional_areas:
+  - Upgrade
 ---
 
 The components you're upgrading display. The following figure shows an example.

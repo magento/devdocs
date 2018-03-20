@@ -6,7 +6,7 @@ To configure Magento to use Elasticsearch:
 
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
-3.	From the **Search Engine** list, click **Elasticsearch** as the following figure shows.
+3.	From the **Search Engine** list, click **Elasticsearch** or **Elasticsearch 5.0+** as the following figure shows. (The **Elasticsearch 5.0+** option is not available for Magento 2.1.)
 
 	<img src="{{ site.baseurl }}common/images/elastic_choose-in-admin.png" width="650px">
 4.	The following table discusses only the configuration options required to test the connection with Magento.
@@ -27,6 +27,10 @@ To configure Magento to use Elasticsearch:
 		<td>Elasticsearch Server Port</td>
 		<td><p>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</p>
 		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
+	</tr>
+	<tr>
+		<td>Elasticsearch Index Prefix</td>
+		<td>Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix <code>magento2</code>.</td>
 	</tr>
 	<tr>
 		<td>Enable Elasticsearch HTTP Auth</td>

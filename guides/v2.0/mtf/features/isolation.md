@@ -1,9 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Isolation management
-menu_title: Isolation management
 version: 2.0
 github_link: mtf/features/isolation.md
 ---

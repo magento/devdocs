@@ -7,7 +7,8 @@ menu_title: Programming best practices
 menu_order: 1
 version: 2.0
 github_link: ext-best-practices/extension-coding/common-programming-bp.md
-
+functional_areas:
+  - Standards
 ---
 
 You should do your best to adhere to common programming best practices to reduce the amount of bugs and improve the quality and maintainability of your extensions.
@@ -68,7 +69,7 @@ Using composition over inheritance makes your extension easier to maintain when 
 ### Using around plugins
 Avoid using [around method plugins]({{page.baseurl}}extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance.
 
-The only use case for around method oplugins is when the execution of all further plugins and original methods need termination.
+The only use case for around method plugins is when the execution of all further plugins and original methods need termination.
 
 Use after method plugins if you require arguments for replacing or altering function results.
 

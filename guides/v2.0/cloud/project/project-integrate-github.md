@@ -2,12 +2,15 @@
 layout: default
 group: cloud
 subgroup: 020_tech
-title: GitHub
+title: GitHub integration
 menu_title: GitHub
 menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/project/project-integrate-github.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 ## About the GitHub integration {#cloud-int-gh-about}

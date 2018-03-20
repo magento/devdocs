@@ -5,10 +5,11 @@ subgroup: 20_REST
 title: Use cURL to run the request
 menu_title: Use cURL to run the request
 menu_order: 2
-
 version: 2.0
 github_link: get-started/gs-curl.md
 redirect_from: /guides/v1.0/get-started/gs-curl.html
+functional_areas:
+  - Integration
 ---
 
 <p>cURL is a command-line tool that lets you transmit and receive HTTP requests and
@@ -16,7 +17,7 @@ redirect_from: /guides/v1.0/get-started/gs-curl.html
    Mac OS X, and Windows.
 </p>
 
-<p>To use cURL to run your REST web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call, use the <a href="{{page.baseurl}}get-started/authentication/gs-authentication-token.html#curl-command-syntax">cURL command syntax</a> to construct the cURL command.</p>
+<p>To use cURL to run your REST web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call, use the cURL command syntax to construct the cURL command.</p>
 <p>To create the endpoint in the call, append the REST URI that you constructed in <a href="{{page.baseurl}}get-started/gs-web-api-request.html">Step 3. Construct a request</a> to this URL:</p>
 <pre>https://&lt;MAGENTO_HOST_OR_IP&gt;/&lt;MAGENTO_BASE_INSTALL_DIR&gt;/rest/</pre>
 <p>To pass the customer data object in the POST call payload, specify a JSON or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} request body on the call.</p>

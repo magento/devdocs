@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/trouble/readiness/tshoot_rc_main.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 *	[cron readiness check issues]({{ page.baseurl }}comp-mgr/trouble/cman/cron.html)

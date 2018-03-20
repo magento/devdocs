@@ -8,6 +8,9 @@ menu_order: 20
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 <h2 id="layout_theme_how-to_overview">What's in this topic</h2>
@@ -38,7 +41,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 <h2 id="theme-gen-read">Recommended reading</h2>
 
 * <a href="{{ site.mage2000url }}app/code/Magento" target="_blank">Checklist of modules</a>
-* <a href="{{page.baseurl}}architecture/view/static-process.html" target="_blank">Static view files processing</a>
+* <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Static view files processing</a>
 
 
 
@@ -82,7 +85,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
-## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
+## Make your theme a Composer package {#fedg_create_theme_composer}
 
 
 Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
@@ -261,6 +264,8 @@ Declaring the logo size is optional.
 
 To learn more about theme layouts, refer to the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
 
+## Some trouble {#trouble}  
+Some time, clear cache isn't enough to saw change, you can try ```magento setup:static-content:deploy en_US``` (adapt language with your own need) to generate assetic.  
 
 ## What's next {#next}
 

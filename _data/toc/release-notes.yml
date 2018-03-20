@@ -3,9 +3,29 @@ pages:
     - label: Introduction
       url: release-notes/bk-release-notes.html
 
-    - label: 2.2.0 Release Notes
+    - label: 2.2 Release Notes
       versions: ["2.2"]
       children:
+
+
+
+        - label: Magento Open Source 2.2.3 Release Notes
+          url: release-notes/ReleaseNotes2.2.3CE.html
+
+        - label: Magento Commerce 2.2.3 Release Notes
+          url: release-notes/ReleaseNotes2.2.3EE.html
+
+        - label: Magento Open Source 2.2.2 Release Notes
+          url: release-notes/ReleaseNotes2.2.2CE.html
+
+        - label: Magento Commerce 2.2.2 Release Notes
+          url: release-notes/ReleaseNotes2.2.2EE.html
+
+        - label: Magento Open Source 2.2.1 Release Notes
+          url: release-notes/ReleaseNotes2.2.1CE.html
+
+        - label: Magento Commerce 2.2.1 Release Notes
+          url: release-notes/ReleaseNotes2.2.1EE.html
 
         - label: Magento Open Source 2.2.0 Release Notes
           url: release-notes/ReleaseNotes2.2.0CE.html
@@ -20,12 +40,20 @@ pages:
           url: release-notes/release-candidate/component-status.html
 
     - label: Magento 2.1 Release Notes
-      url: release-notes/release-notes.html
       versions: ["2.1"]
       children:
 
         - label: Magento Open Source 2.1.x Release Notes
           children:
+
+            - label: Magento Open Source 2.1.12 Release Notes
+              url: release-notes/ReleaseNotes2.1.12CE.html
+
+            - label: Magento Open Source 2.1.11 Release Notes
+              url: release-notes/ReleaseNotes2.1.11CE.html
+
+            - label: Magento Open Source 2.1.10 Release Notes
+              url: release-notes/ReleaseNotes2.1.10CE.html
 
             - label: Magento Open Source 2.1.9 Release Notes
               url: release-notes/ReleaseNotes2.1.9CE.html
@@ -59,6 +87,15 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.12 Release Notes
+              url: release-notes/ReleaseNotes2.1.12EE.html
+
+            - label: Magento Commerce 2.1.11 Release Notes
+              url: release-notes/ReleaseNotes2.1.11EE.html
+
+            - label: Magento Commerce 2.1.10 Release Notes
+              url: release-notes/ReleaseNotes2.1.10EE.html
 
             - label: Magento Commerce 2.1.9 Release Notes
               url: release-notes/ReleaseNotes2.1.9EE.html
@@ -111,6 +148,9 @@ pages:
             - label: magento-cloud-configuration release 101.4.x Release Notes
               url: cloud/release-notes/CloudReleaseNotes101.4.html
 
+            - label: Magento Commerce (Cloud) versions 2.1.6 through 2.1.11 Release Notes
+              url: cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html
+
             - label: Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes
               url: cloud/release-notes/CloudReleaseNotes2.1.5.html
 
@@ -124,12 +164,17 @@ pages:
               url: cloud/release-notes/CloudReleaseNotes2.1.2.html
 
     - label: Magento 2.0 Release Notes
-      url: release-notes/release-notes.html
       versions: ["2.0"]
       children:
 
         - label: Magento Open Source 2.0.x Release Notes
           children:
+
+            - label: Magento Open Source 2.0.18 Release Notes
+              url: release-notes/ReleaseNotes2.0.18CE.html
+
+            - label: Magento Open Source 2.0.17 Release Notes
+              url: release-notes/ReleaseNotes2.0.17CE.html
 
             - label: Magento Open Source 2.0.16 Release Notes
               url: release-notes/ReleaseNotes2.0.16CE.html
@@ -175,6 +220,12 @@ pages:
 
         - label: Magento Commerce 2.0.x Release Notes
           children:
+
+            - label: Magento Commerce 2.0.18 Release Notes
+              url: release-notes/ReleaseNotes2.0.18EE.html
+
+            - label: Magento Commerce 2.0.17 Release Notes
+              url: release-notes/ReleaseNotes2.0.17EE.html
 
             - label: Magento Commerce 2.0.16 Release Notes
               url: release-notes/ReleaseNotes2.0.16EE.html
@@ -266,6 +317,11 @@ pages:
 
         - label: Magento Commerce changes
           url: release-notes/changes/ee_changes.html
+
+        - label: Magento Commerce for B2B changes
+          url: release-notes/changes/b2b_changes.html
+          versions: ["2.2"]
+
 
     - label: Third-party licenses
       children:

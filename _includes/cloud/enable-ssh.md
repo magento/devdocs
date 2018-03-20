@@ -98,9 +98,10 @@ You can add SSH keys to your account in any of the following ways:
 ### Add a key using the CLI {#add-key-cli}
 To add an SSH key using the CLI:
 
-1.	If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
+1.	Open a terminal application on your local.
+2.	If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
 
-2.	Log in to your project:
+3.	Log in to your project:
 
 		magento-cloud login
 
@@ -108,26 +109,25 @@ To add an SSH key using the CLI:
 
 		magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
 
-### Add a key using the Web Interface {#add-key-web}
-To add an SSH key using the Web Interface:
+#### Add a key using the Project Web Interface {#add-key-web}
+You will select and add your SSH public key to each environment in your account.
+
+* Starter: Add to Master (Production) and any environments you create by branching from Master
+* Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.
+
+To add an SSH key using the Project Web Interface:
 
 1.	Copy your SSH public key to the clipboard.
 
 	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
-2.	Using the link in your welcome e-mail, access your {{site.data.var.ece}} account.
+2.	Login and access your project through the [Project Web Interface](https://accounts.magento.cloud){:target="_blank"}.
+3.	In your selected branch, an icon displays if you do not have an SSH key added.
 
-3.	Log in to your project using Bitbucket, GitHub, Google, or a user name and password.
+	![No SSH key]({{ site.baseurl }}common/images/cloud_ssh-key-install.png)
+4.	Copy and paste the content of your public SSH key in the screen.
 
-	![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="350px"}
-4.	In the upper right corner of the page, click the **Account Settings** tab as the following figure shows.
-
-	![Account settings]({{ site.baseurl }}common/images/cloud_acct-settings.png){:width="550px"}
-5.	Expand **SSH Keys**.
-
-6.	On the next page, click **Add a public key** as the following figure shows.
-
-	![Add an SSH public key to your account]({{ site.baseurl }}common/images/cloud_add-public-key.png){:width="550px"}
-7.	Follow the prompts on your screen to complete the task.
+	![Add SSH key]({{ site.baseurl }}common/images/cloud_ssh-key-add.png)
+5.	Follow the prompts on your screen to complete the task.
 
 ## Set global Git variables
 Set required global Git variables on the machine to commit or push to a Git branch. These variables set Git credentials for accessing your GitHub account.

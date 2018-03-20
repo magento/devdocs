@@ -8,6 +8,9 @@ menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/deploy/continuous-deployment.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
@@ -52,8 +55,7 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 #### Related topics
 * [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
 *	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
-* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
-* [Configuration Management]({{ page.baseurl }}cloud/live/sens-data-over.html)
+* [Pro Architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html)
+*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
 * [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html)
 * [Go live and launch]({{page.baseurl}}cloud/live/live.html)

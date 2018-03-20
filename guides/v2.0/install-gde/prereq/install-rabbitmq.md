@@ -6,15 +6,13 @@ title: RabbitMQ
 menu_title: RabbitMQ (Magento Commerce only)
 menu_order: 50
 version: 2.0
-ee_only: true
+ee_only: True
 github_link: install-gde/prereq/install-rabbitmq.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-You must install and configure [RabbitMQ](http://rabbitmq.com){:target="&#95;blank"} _after_ installing {{site.data.var.ce}} or _before_ installing {{site.data.var.ee}}.
-</div>
-
-## RabbitMQ Overview {#overview}
 
 RabbitMQ is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
 

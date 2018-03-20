@@ -8,6 +8,10 @@ menu_title: Prerequisites
 menu_order: 1
 version: 2.2
 github_link: install-gde/prereq/prereq-overview.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ## Before you begin {#instgde-prereq-overview}
@@ -103,7 +107,7 @@ Enter `exit` at the `mysql>` prompt to exit.
 To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/continue.html">Choose how to install the Magento software</a>
+<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
 
 #### Related topics
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>

@@ -11,6 +11,10 @@ github_link: install-gde/system-requirements-tech.md
 redirect_from:
   - /guides/v1.0/install-gde/system-requirements.html
   - /guides/v2.0/install-gde/system-requirements-2.0-tech.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Operating systems (Linux x86-64)
@@ -49,7 +53,7 @@ PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" 
 *	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 *	<a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a>
 *	<a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a>
-*	<a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a>
+*	<a href="http://php.net/manual/en/book.hash.php" target="_blank">hash</a>
 *	<a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a>
 *	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a>
 *	<a href="http://php.net/manual/en/book.simplexml.php" target="_blank">SimpleXML</a>

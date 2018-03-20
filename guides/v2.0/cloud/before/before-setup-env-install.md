@@ -11,6 +11,11 @@ redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html
   - /guides/v2.1/cloud/before/before-setup-env-perms.html
   - /guides/v2.2/cloud/before/before-setup-env-perms.html
+functional_areas:
+  - Cloud
+  - Install
+  - Setup
+  - Configuration
 ---
 
 #### Previous step:
@@ -65,19 +70,6 @@ To create authentication keys through the Magento Marketplace:
 Set the docroot to the `/magento` directory until you complete all setup. If you change the docroot to `/magento/pub` prior to completion, you will encounter issues running the Web Setup Wizard.
 
 For the Production environment, you should set the docroot to `/magento/pub`, which helps restrict access to vulnerable areas of the system. The webserver docroot should be set to `/magento/pub` only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in `/magento/pub`. Alternatively, you could also create a subdomain (for example, `install.domain.com`) and configure your webserver's docroot to the Magento installed root folder.
-
-## Get the Magento metapackage {#metapackage}
-
-Prior to installing, you need to get the metapackage.
-
-1. Access your local environment VM or Docker container.
-2. Get the {{site.data.var.ee}} metapackage using the following compose command.
-
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
-
-	When prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
-
-	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
 ## Set file system permissions and ownership {#file-system-permissions}
 After you have installed Magento, you need to set the file system permissions and ownership.

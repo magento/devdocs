@@ -15,7 +15,7 @@ You might encounter the following issues with the PHP version readiness check:
 
 	<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron.png">
 
-	This is a symptom of incorrect cron job setup. For more information, see [Set up cron jobs]({{page.baseurl}}install-gde/install/post-install-config.html#post-install-cron").
+	This is a symptom of incorrect cron job setup. For more information, see [Set up cron jobs]({{page.baseurl}}install-gde/install/post-install-config.html#post-install-cron).
 
 ### PHP version is incorrect
 If the PHP version reported by the readiness check is incorrect, it's the result of a mismatch of PHP versions between the PHP CLI and the web server plug-in. Magento requires you to use *one version* of PHP for both the CLI (which runs cron) and the web server (which runs the Magento Admin, Component Manager, and System Upgrade).

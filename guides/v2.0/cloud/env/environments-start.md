@@ -8,16 +8,18 @@ menu_order: 2
 menu_node:
 version: 2.0
 github_link: cloud/env/environments-start.md
-redirect from:
+redirect_from:
   - /guides/v2.0/cloud/before/integration-ip-addr.html
   - /guides/v2.1/cloud/before/integration-ip-addr.html
   - /guides/v2.2/cloud/before/integration-ip-addr.html
   - /guides/v2.0/cloud/env/environment-tutorial-env-merge.html
   - /guides/v2.1/cloud/env/environment-tutorial-env-merge.html
   - /guides/v2.2/cloud/env/environment-tutorial-env-merge.html
+functional_areas:
+  - Cloud
 ---
 
-When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic_information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture information.
+When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-architecture.html) architecture information.
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html).
 
@@ -146,7 +148,7 @@ Wait for the environment to delete.
 </div>
 
 ## Integration environment IP addresses {#ipaddress}
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{page.baseurl }}cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
@@ -192,8 +194,10 @@ The following steps provide an example of accessing a database:
 
 {% include cloud/log-in-db.md %}
 
+## SSH tunneling {#env-start-tunn}
+
+{% include cloud/ssh-tunnel.md %}
+
 #### Related topics
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
+*	[Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
+*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)

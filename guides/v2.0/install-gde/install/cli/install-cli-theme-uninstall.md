@@ -1,16 +1,20 @@
 ---
 layout: default
-group: install_cli 
+group: install_cli
 subgroup: 05_Command-line installation
 title: Uninstall themes Composer packages
 menu_title: Uninstall themes Composer packages
-menu_node: 
+menu_node:
 menu_order: 200
 version: 2.0
 github_link: install-gde/install/cli/install-cli-theme-uninstall.md
 redirect_from:
-  -  /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
-  -  /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html
+  - /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
+  - /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="instgde-install-uninst-theme-prereq">Prerequisite</h2>
@@ -32,14 +36,14 @@ This command uninstalls *only* themes that are specified in `composer.json`; in 
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
 Command usage:
 
 	magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
 
-where 
+where
 
 *	`{theme path}` is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is `frontend/Magento/blank`.
 *	`--backup-code` backs up the Magento 2 codebase as discussed in the paragraphs that follow.
@@ -92,7 +96,7 @@ Messages similar to the following display:
 	Writing lock file
 	Generating autoload files
 	Cache cleared successfully.
-	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. 
+	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option.
 	Failure to clear static view files might cause display issues in the Admin and storefront.
 	Disabling maintenance mode
 

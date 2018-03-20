@@ -6,7 +6,7 @@ title: Install the B2B extension
 menu_title: Install the B2B extension
 menu_order: 1
 version: 2.2
-github_link: comp-mgr/b2b-installation.md
+github_link: comp-mgr/install-extensions/b2b-installation.md
 ee_only: true
 ---
 
@@ -30,14 +30,14 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
     bin/magento setup:di:compile
 
-    bin/magento setup:static-content:deploy
+    bin/magento setup:static-content:deploy -f
     ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-After completing the installation, you must follow the [post-installation steps](#post-installation).
+After completing the installation, you must follow the [post-installation steps](#configure-b2b).
 </div>
 
-## Post-installation
+## Post-installation {#configure-b2b}
 After installing the {{site.data.var.b2b}} extension, follow these instructions to launch {{site.data.var.b2b}}.
 
 ### Start message consumers

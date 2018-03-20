@@ -7,6 +7,10 @@ menu_title: First time deployment
 menu_order: 60
 version: 2.0
 github_link: cloud/access-acct/first-time-deploy.md
+functional_areas:
+  - Cloud
+  - Setup
+  - Deploy
 ---
 
 #### Previous step:
@@ -35,7 +39,7 @@ To deploy, you need the following:
 * SSH access to Staging and Production environments
 
 ## Enter a ticket {#ticket}
-If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp).
+If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl }}cloud/trouble/trouble.html).
 
 To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.
 
@@ -45,8 +49,23 @@ If you are on a Pro trial and do not have Staging and Production environments pr
 
 To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.
 
-## Deploy to Staging and Production
-You can SSH into the Staging and Production environments to push the `master` branch. You'll need the SSH and Git with your project ID. The formats are as follows:
+## Deploy to Staging and Production {#deploy}
+The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans. You can also use SSH and CLI commands to complete these process. Previously for Pro plans, you could only use SSH and CLI commands for Staging and Production.
+
+For the Pro plan, deploy the branch you created to Staging and Production.
+
+1. [Log in](https://accounts.magento.cloud) to your project.
+2. Select the branch you created.
+3. Select the **Merge** option to deploy to Staging.
+4. Select the Staging branch.
+5. Select the **Merge** option to deploy to Production.
+
+![Use the merge option to deploy]({{ site.baseurl }}common/images/cloud_project-merge.png)
+
+## Deploy using SSH {#ssh}
+If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.
+
+You'll need the SSH and Git with your project ID. The formats are as follows:
 
 *	Git URL format:
 
@@ -128,6 +147,6 @@ When this code is fully deployed to those environments, you can begin developmen
 
 #### Related topics
 
-* [Cloud Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html)
+* [Cloud Architecture]({{ page.baseurl }}cloud/architecture/pro-architecture.html)
 * [Deploy your store]({{ page.baseurl }}cloud/live/stage-prod-live.html)
 * [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html)

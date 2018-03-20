@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  migration
+group: migration
 subgroup: D_Migrate using the data migration tool
 title: Migrate changes
 menu_title: Migrate changes
@@ -9,6 +9,8 @@ menu_order: 3
 version: 2.0
 github_link: migration/migration-migrate-delta.md
 redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
+functional_areas:
+  - Tools
 ---
 
 ## Overview
@@ -59,3 +61,5 @@ If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endg
 ## Related topics
 
 * <a href="{{page.baseurl}}migration/migration-manually.html">Data that needs to be migrated manually</a>
+
+* <a href="{{page.baseurl}}migration/migration-migrate-after.html">End migration</a>

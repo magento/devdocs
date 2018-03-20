@@ -1,15 +1,17 @@
 ---
-layout: default 
+layout: default
 group: compman
 subgroup: 06_UseExtMan
 title: Step 3. Data Option
 menu_title: Remove or Keep Data
-menu_node: 
+menu_node:
 menu_order: 50
 level3_menu_node: level3child
 level3_subgroup: step3-ext
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-uninst-data.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Step 3. Data Option

@@ -1,17 +1,16 @@
 ---
 layout: default
 group: cloud
-subgroup: 130_upgrades
 title: Patch Magento Commerce (Cloud)
-menu_title: Patch Magento Commerce (Cloud)
-menu_order: 20
-menu_node:
 version: 2.0
 github_link: cloud/project/project-patch.md
-redirect from:
-  -  /guides/v2.0/cloud/howtos/patch-magent.html
-  -  /guides/v2.1/cloud/howtos/patch-magent.html
-  -  /guides/v2.1/cloud/howtos/patch-magent.html
+redirect_from:
+  - /guides/v2.0/cloud/howtos/patch-magento.html
+  - /guides/v2.1/cloud/howtos/patch-magento.html
+  - /guides/v2.2/cloud/howtos/patch-magento.html
+functional_areas:
+  - Cloud
+  - Upgrade
 ---
 
 You can apply patches as they are available to update {{site.data.var.ece}}. We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
@@ -39,7 +38,7 @@ There are two types of patches:
     Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
+Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments. All environments are read-only. You must update locally and push the Git branch to deploy across all environments.
 </div>
 
 Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
@@ -80,6 +79,9 @@ Verify other changes you're going to submit to source control before you start t
 3.  If there are changes you do *not* want to submit to source control, branch or stash them now.
 
 ## Apply the patch {#patch}
+To apply the patch, you run the `composer update` command. The command uses `composer.json` to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.
+
+If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.
 
 1.  Change to your Magento base directory and enter the following command:
 

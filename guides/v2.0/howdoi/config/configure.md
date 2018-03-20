@@ -8,6 +8,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: howdoi/config/configure.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 After you install the Magento application, you can:
