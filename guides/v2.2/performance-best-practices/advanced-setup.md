@@ -60,12 +60,10 @@ You could also use a Redis cluster that performs parallel read/write operations 
 * Checkout Database
 * Order Management System (OMS) Database
 
-To configure additional databases, you must
-
-* Create an empty database
-* Run one of the following commands:
+To configure additional databases, you must create an empty database and run one of the following commands:
 
   `bin/magento setup:db-schema:split-quote` (for Checkout Master DB)
+
   `bin/magento setup:db-schema:split-sales` (for OMS Master DB)
 
 These commands migrate specific domain tables from the main database to a domain database. They also change the Magento configuration to allow corresponding connectivity and constraints processing.

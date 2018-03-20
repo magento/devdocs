@@ -371,6 +371,7 @@ pages:
           url: config-guide/prod/single-machine-deployment.html
 
     - label: Optimization
+      versions: ["2.0", "2.1"]
       children:
         - label: Magento Optimization Guide
           url: config-guide/prod/prod_perf-optimize.html
