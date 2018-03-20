@@ -17,7 +17,6 @@ The following topics are included in this guide:
 
 * <a href="#question">Questions or enhancement requests?</a>
 
-
 * <a href="#requirements">Contribution requirements</a>
 
 * <a href="#fork">Fork a repository</a>
@@ -26,8 +25,9 @@ The following topics are included in this guide:
 
 * <a href="#report">Report an issue</a>
 
-* <a href="#labels">Labels applied by the Community Engineering Team</a>
+* <a href="#triage">Help triage issues</a>
 
+* <a href="#labels">Labels applied by the Community Engineering Team</a>
 
 <h2 id="contribute">Contribute to Magento 2 code</h2>
 
@@ -49,7 +49,7 @@ Often when the Community Engineering Team works on reviewing the suggested chang
 
 We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="_blank">Stack Exchange </a> and the <a href="https://community.magento.com/" target="_blank">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.
 
-Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>). 
+Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>).
 
 
 <h2 id="requirements">Contribution requirements</h2>
@@ -127,6 +127,9 @@ To add an issue:
 3. Fill in the Title and Issue description.
 4. Click **Submit new issue**.
 
+<h2 id="triage">Help triage issues <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a></h2>
+
+In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to <a href="https://www.codetriage.com/magento/magento2" target="_blank">subscribe to Magento on CodeTriage</a>.
 
 <h2 id="labels">Labels applied by the Magento team</h2>
 
@@ -165,11 +168,11 @@ Refer to the following table for a description of each label. These labels are a
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G1_Passed.png" alt="G1 Passed"/></td>
          <td>Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
-      </tr>  
+      </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G1_Failed.png" alt="G1 Failed"/></td>
          <td>Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
-      </tr> 
+      </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
          <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
@@ -185,7 +188,7 @@ Refer to the following table for a description of each label. These labels are a
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x"/></td>
          <td>The Community Engineering Team reproduced the issue on latest 2.1.x release.</td>
-      </tr>      
+      </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Reproduced_on_22x.png" alt="Reproduced on 2.2.x"/></td>
          <td>The Community Engineering Team reproduced the issue on latest 2.2.x release.</td>
@@ -197,11 +200,11 @@ Refer to the following table for a description of each label. These labels are a
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_20x.png" alt="Fixed in 2.0.x"/></td>
          <td>The issues has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with upcoming patch release.</td>
-      </tr>      
+      </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_21x.png" alt="Fixed in 2.1.x"/></td>
          <td>The issues has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with upcoming patch release.</td>
-      </tr>      
+      </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Fixed_in_22x.png" alt="Fixed in 2.2.x"/></td>
          <td>The issues has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with upcoming patch release.</td>
@@ -221,7 +224,7 @@ Refer to the following table for a description of each label. These labels are a
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce"/></td>
          <td>The Community Engineering Team can not reproduced the issue following steps to reproduce.</td>
-      </tr>  
+      </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_non-issue.png" alt="Non Issue"/></td>
          <td>A described behavior in the issue description is valid and shouldn't be changed in Magento code base.</td>
