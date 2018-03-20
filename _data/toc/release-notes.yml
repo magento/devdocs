@@ -3,6 +3,12 @@ pages:
     - label: Introduction
       url: release-notes/bk-release-notes.html
 
+    - label: 2.3 Release Notes
+      versions: ["2.3"]
+      children:
+        - label: Component Status
+          url: release-notes/component-status.html
+
     - label: 2.2 Release Notes
       versions: ["2.2"]
       children:
