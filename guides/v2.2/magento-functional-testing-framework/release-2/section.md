@@ -95,6 +95,13 @@ The following is an example of a call in test:
 
 ## Elements reference
 
+### timeout attribute
+
+You can set the timeout attribute of an element to automatically add a waitForPageLoad action whenever that element is referenced.
+For example:
+
+`<element name="signIn" type="button" selector="#signIn" timeout="30"/>`
+
 ### section {#section-tag}
 
 `<section>` contains the sequence of UI elements in a section of a [page](./page.html).

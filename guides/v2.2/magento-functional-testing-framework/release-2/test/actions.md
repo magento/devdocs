@@ -234,8 +234,8 @@ See [attachFile docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional|The `<input type="file"/>` to attach the file to.
+`userInput`|string|optional|The filename to attach. The file must be placed in the `tests/_data` directory.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
