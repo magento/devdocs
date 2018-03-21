@@ -1685,7 +1685,7 @@ setup:upgrade <span class="nt">--dry-run</span><span class="o">=</span>1
 
 <h2 id="maintain-backward-compatibility">Maintain backward compatibility</h2>
 
-<p>Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a <code class="highlighter-rouge">db_schema.xml</code> file. Declarative schema can’t delete these elements because these items can be declared somewhere else, such as in an <code class="highlighter-rouge">Install/UpgradeSchema.php</code> file.</p>
+<p>Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a <code class="highlighter-rouge">db_schema.xml</code> file. Declarative schema can’t delete these elements because these items can be declared somewhere else, such as in an <code class="highlighter-rouge">Setup/UpgradeSchema.php</code> file.</p>
 
 <p>The <code class="highlighter-rouge">&lt;module_vendor&gt;/&lt;module_name/etc/db_schema_whitelist.json</code> file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:</p>
 
