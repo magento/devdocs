@@ -922,7 +922,7 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
 
 <p>Robo is a task runner for PHP that allows you to alias long, complex command line interface (CLI) commands to simple commands.</p>
 
@@ -949,7 +949,7 @@
 
 <h2 id="useful-commands">Useful commands</h2>
 
-<p>The following are the most popular commands used to interact with the MFTF. For more commands, see <a href="#reference">Reference</a> or run in your terminal: <code class="highlighter-rouge">$ vendor/bin/robo</code>.</p>
+<p>The following are the most popular commands used to interact with the <abbr title="Magento Functional Testing Framework">MFTF</abbr>. For more commands, see <a href="#reference">Reference</a> or run in your terminal: <code class="highlighter-rouge">$ vendor/bin/robo</code>.</p>
 
 <h3 id="codeception-robo-commands">Codeception Robo Commands</h3>
 
@@ -1143,6 +1143,9 @@
 
 <h4 id="generate">generate</h4>
 
+<p>Generate PHP code from the tests defined in XML files.
+Path to a directory with generated tests:  <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/</code>.</p>
+
 <table>
   <tbody>
     <tr>
@@ -1150,8 +1153,16 @@
       <td>Generate all tests based on specific module load order of the Magento instance</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests --force</code>.</td>
-      <td>Generate all tests regardless of whether a Magento instance is available.</td>
+      <td><code class="highlighter-rouge">generate:tests --force</code></td>
+      <td>Generate all tests regardless of whether a Magento instance is available</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate:tests --config singleRun</code></td>
+      <td>Generate all tests and a manifest file, which is <code class="highlighter-rouge">_generated/testManifest.txt</code>. The file contains only a path to the directory with generated tests.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate:tests --config parallel --nodes &lt;number of nodes&gt;</code></td>
+      <td>Generate all tests and a directory with manifest files, which is <code class="highlighter-rouge">_generated/groups/</code>. The number of files corresponds to the number of nodes. Each file contains a proportional list of tests ordered across files from largest to smallest (based on number of actions).</td>
     </tr>
   </tbody>
 </table>
@@ -1167,8 +1178,10 @@
   </tbody>
 </table>
 
-<hr />
-<hr />
+<!-- LINK DEFINITIONS -->
+
+<!-- Abbreviations -->
+
 
 		</div>
 		<!-- /.content-wrap -->
