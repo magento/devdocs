@@ -95,13 +95,6 @@ The following is an example of a call in test:
 
 ## Elements reference
 
-### timeout attribute
-
-You can set the timeout attribute of an element to automatically add a waitForPageLoad action whenever that element is referenced.
-For example:
-
-`<element name="signIn" type="button" selector="#signIn" timeout="30"/>`
-
 ### section {#section-tag}
 
 `<section>` contains the sequence of UI elements in a section of a [page](./page.html).
@@ -121,8 +114,23 @@ Attributes|Type|Use|Description
 `type`|string|required|The type of the element. Possible values: `text`, `textarea`, `input`, `button`, `checkbox`, `radio`, `checkboxset`, `radioset`, `date`, `file`, `select`, `multiselect`, `wysiwyg`, `iframe`.
 `selector`|string|optional|[XPath](https://www.w3schools.com/xml/xpath_nodes.asp) or [CSS](https://www.w3schools.com/cssref/css_selectors.asp) selector of the element.
 `locatorFunction`|string|optional|[Locator function](./section/locator-functions.html) declaration to be used in lieu of a selector.
-`timeout`|string|optional|The default is `-`; The optional timeout value in seconds to wait for the operation on the element.
+`timeout`|string|optional|An optional timeout value in seconds to wait after the element is interacted with. The default is none.
 `parameterized`|boolean|optional|Include and set to `true` if the `selector` for this element has parameters that need to be replaced for proper use. Learn more in [Parameterized selectors](./section/parameterized-selectors.html).
 `remove`|boolean|optional|The default is `false`. Set to `true` to remove this element during parsing.
+
+### element timeout attribute
+
+If an element, such as a button, always needs to be followed by a wait then writing that wait manually every time can become tedious.
+
+Instead, you can set the timeout attribute of an element to automatically add a waitForPageLoad action after any reference to the element.
+For example, if you have a signIn button with a timeout of 30 seconds:
+
+`<element name="signIn" type="button" selector="#signIn" timeout="30"/>`
+
+Then anywhere this button is used in a test:
+
+`<click selector="{{SectionName.signIn}}" ../>
+
+Will result in a 30 second `waitForPageLoad` action inserted immediately after the click.
 
 {% endraw %}
