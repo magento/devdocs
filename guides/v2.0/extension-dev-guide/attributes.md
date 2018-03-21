@@ -70,7 +70,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
     public function __construct(
         \Magento\Eav\Setup\EavSetup $eavSetup,
         \Magento\Eav\Model\Config $eavConfig,
-        \Magento\Eav\Model\ResourceModel\Attribute $attributeResource
+        \Magento\Eav\Model\ResourceModel\Entity\Attribute $attributeResource
     ) {
         $this->eavSetup = $eavSetup;
         $this->eavConfig = $eavConfig;
