@@ -1990,16 +1990,14 @@
 </section>
 
 
-			<h2 id="config-memcache-over">Overview of memcached session storage</h2>
-<p>memcached is a general-purpose distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read. (Source: <a href="https://en.wikipedia.org/wiki/Memcached" target="_blank">Wikipedia</a>)</p>
+			<p>Memcached is a general-purpose, distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read. (Source: <a href="https://en.wikipedia.org/wiki/Memcached" target="_blank">Wikipedia</a>)</p>
 
-<p>memcache provides a very large hash table that can be distributed across multiple machines. When the table is full, subsequent inserts cause older data to be purged in least recently used (LRU) order. The size of this hash table is often very large. (Source: <a href="http://memcached.org/" target="_blank">memcached.org</a>)</p>
+<p>Memcache provides a very large hash table that can be distributed across multiple machines. When the table is full, subsequent inserts cause older data to be purged in least recently used (LRU) order. The size of this hash table is often very large. (Source: <a href="http://memcached.org/">memcached.org</a>)</p>
 
 <p>Magento uses memcached for session storage but not for page caching. For page caching, we recommend <a href="/guides/v2.3/config-guide/redis/config-redis.html">Redis</a> or <a href="/guides/v2.3/config-guide/varnish/config-varnish.html">Varnish</a>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-   <p>We recommend you use memcached for session storage. The Redis session handler in the <code>phpredis</code> <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> does not support session locking, which might cause issues with distributed systems and applications that rely on Ajax.</p></span>
+  <p>Refer to <a href="/guides/v2.3/config-guide/redis/config-redis.html#why-redis-is-better">Why Redis is better</a> for a list of advantages to using Redis.</p>
 </div>
 
 <h4 id="next-step">Next step</h4>
