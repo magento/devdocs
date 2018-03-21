@@ -136,7 +136,7 @@ To install Elasticsearch:
 	For example, it might be located in `/etc/elasticsearch` or `<elasticsearch install dir>/config`.
 5.	Add the following parameter to the `Memory` section:
 
-		index.query.bool.max_clause_count: 10024
+		indices.query.bool.max_clause_count: 10024
 
 	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
 6.	Save your changes to `elasticsearch.yml` and exit the text editor.
