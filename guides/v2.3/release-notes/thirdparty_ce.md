@@ -1,4 +1,4 @@
-|6---
+---
 layout: default
 group: release-notes
 subgroup: Third-party licenses
@@ -24,7 +24,7 @@ Name | Version |  License
 [composer/spdx-licenses](https://github.com/composer/spdx-licenses)  |1.2.0  |MIT
 [container-interop/container-interop](https://github.com/container-interop/container-interop) |1.2.0  |MIT
 [doctrine/instantiator](https://github.com/doctrine/instantiator) |1.0.5  |MIT
-[elasticsearch/elasticsearch]https://github.com/elastic/elasticsearch |v2.3.2 |Apache-2.0
+[elasticsearch/elasticsearch](https://github.com/elastic/elasticsearch) |v2.3.2 |Apache-2.0
 [friendsofphp/php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) |v2.1.3 |MIT
 [guzzlehttp/ringphp](https://github.com/guzzle/RingPHP)  |1.1.0  |MIT
 [guzzlehttp/streams](https://github.com/guzzle/streams)  |3.0.0  |MIT
@@ -32,7 +32,7 @@ Name | Version |  License
 [justinrainbow/json-schema](https://github.com/justinrainbow/json-schema) |5.2.6  |MIT
 [lusitanian/oauth](https://github.com/Lusitanian/PHPoAuthLib)  |v0.8.10  |MIT
 [monolog/monolog](https://github.com/Seldaek/monolog) |1.23.0 |MIT
-[myclabs/deep-copy]https://github.com/myclabs/DeepCopy |1.7.0  |MIT
+[myclabs/deep-copy](https://github.com/myclabs/DeepCopy) |1.7.0  |MIT
 [oyejorge/less.php]((https://github.com/oyejorge/less.php)) |v1.7.0.14  |Apache-2.0
 [paragonie/random_compat](https://github.com/paragonie/random_compat) |v2.0.11  |MIT
 [pdepend/pdepend](https://github.com/pdepend/pdepend) |2.5.0  |BSD-3-Clause
@@ -40,7 +40,7 @@ Name | Version |  License
 [phar-io/manifest](https://github.com/phar-io/manifest)  |1.0.1  |BSD-3-Clause
 [phar-io/version](https://github.com/phar-io/version) |1.0.1  |BSD-3-Clause
 [php-amqplib/php-amqplib](https://github.com/php-amqplib/php-amqplib) |v2.5.2 |LGPL-2.1
-[phpdocumentor/reflection-common]https://github.com/phpDocumentor/ReflectionCommon |1.0.1  |MIT
+[phpdocumentor/reflection-common](https://github.com/phpDocumentor/ReflectionCommon) |1.0.1  |MIT
 [phpdocumentor/reflection-docblock](https://github.com/phpDocumentor/ReflectionDocBlock) |4.2.0  |MIT
 [phpdocumentor/type-resolver](https://github.com/phpDocumentor/TypeResolver) 0.4.0  |MIT
 [phpmd/phpmd](https://github.com/phpmd/phpmd) |2.6.0  |BSD-3-Clause
@@ -56,7 +56,7 @@ Name | Version |  License
 [psr/container](https://github.com/php-fig/container) |1.0.0  |MIT
 [psr/log](https://github.com/php-fig/log) |1.0.2  |MIT
 [ramsey/uuid](https://github.com/ramsey/uuid) |3.6.1  |MIT
-[react/promise]https://github.com/reactphp/promise |v2.5.1 |MIT
+[react/promise](https://github.com/reactphp/promise) |v2.5.1 |MIT
 [sebastian/code-unit-reverse-lookup](https://github.com/sebastianbergmann/code-unit-reverse-lookup)  |1.0.1  |BSD-3-Clause
 [sebastian/comparator](https://github.com/sebastianbergmann/comparator)  |2.0.0  |BSD-3-Clause
 [sebastian/diff](https://github.com/sebastianbergmann/diff)  |1.4.3  |BSD-3-Clause
