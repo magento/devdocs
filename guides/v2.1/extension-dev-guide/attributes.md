@@ -44,7 +44,7 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetup` class as a dependency injection.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.</p>
+Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 </div>
 
 {% highlight PHP inline=true %}
