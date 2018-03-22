@@ -42,7 +42,7 @@ Name | Version |  License
 [php-amqplib/php-amqplib](https://github.com/php-amqplib/php-amqplib) |v2.5.2 |LGPL-2.1
 [phpdocumentor/reflection-common](https://github.com/phpDocumentor/ReflectionCommon) |1.0.1  |MIT
 [phpdocumentor/reflection-docblock](https://github.com/phpDocumentor/ReflectionDocBlock) |4.2.0  |MIT
-[phpdocumentor/type-resolver](https://github.com/phpDocumentor/TypeResolver) 0.4.0  |MIT
+[phpdocumentor/type-resolver](https://github.com/phpDocumentor/TypeResolver) |0.4.0  |MIT
 [phpmd/phpmd](https://github.com/phpmd/phpmd) |2.6.0  |BSD-3-Clause
 [phpseclib/phpseclib](https://github.com/phpseclib/phpseclib) |2.0.9  |MIT
 [phpspec/prophecy](https://github.com/phpspec/prophecy)  |1.7.3  |MIT
