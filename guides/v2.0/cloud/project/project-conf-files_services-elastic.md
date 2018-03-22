@@ -131,27 +131,3 @@ The last step is to configure Elasticsearch for your catalog search options thro
 <div class="bs-callout bs-callout-warning" markdown="1">
 Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
 </div>
-
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-
-## Add service to configuration file {#configuration-file}
-Add the service in a configuration file of your application. For example:
-
-{% highlight yaml %}
-<?php
-if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {
-  $relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);
-
-  foreach ($relationships['elasticsearch'] as $endpoint) {
-    $container->setParameter('elasticsearch_host', $endpoint['host']);
-    $container->setParameter('elasticsearch_port', $endpoint['port']);
-  }
-}
-{% endhighlight %}
-
-When you create an index on Elasticsearch, you should not specify `number_of_shards` and `number_of_replicas` settings in your Elasticsearch API call. These values will be set automatically based on available resources. -->
-
-#### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

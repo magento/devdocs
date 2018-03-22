@@ -13,6 +13,9 @@ github_link: release-notes/ReleaseNotes2.0.18CE.md
 
 *Patch code and release notes were published on February 27, 2018.* 
 
+*Release notes updated on March 22, 2018.*
+
+
 We are pleased to present Magento Open Source 2.0.18. This release includes 35 enhancements to product security, a change to the Magento Admin to recent upcoming USPS shipping changes, and a copyright update. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update)  for more information.
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
@@ -22,6 +25,10 @@ Although this release includes these enhancements, no confirmed attacks related 
 The Magento Open Source 2.0.18 software release marks the final supported software release for Magento Open Source version 2.0.X. Magento Open Source 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired.
 
 To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Open Source. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
+</div>
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For security reasons, this release limits the ability to use symlinks for <code>/media</code> and other folders. If you are using symlinks for deployment, or if your <code>/media</code> is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See <a href="https://github.com/magento/magento2/issues/13929" target="_blank">GitHub-13929</a> for more information.
 </div>
 
 ## Highlights
