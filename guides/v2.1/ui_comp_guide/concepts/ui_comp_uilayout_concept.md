@@ -6,7 +6,7 @@ github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
 The `uiLayout` service object is a JavaScript function object used for initializing and configuring UI components.
-This object is defined in the [`layout.js`] file in the UI module.
+This object is defined in the [`layout.js`](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
 
 ## `run()` method
 
@@ -120,7 +120,7 @@ The `isTemplate` configuration for the original UI component must be `true` to s
 
 In the following example, a custom Table UI component is created using an existing configuration template with the name `my_row_template_component_name`.
 
-The [`mageUtils`] helper library is also used in this example to create the new component based on `myRowTemplateConfig`.
+The [`mageUtils`](https://github.com/magento/magento2/tree/2.3-develop/lib/web/mage/utils) helper library is also used in this example to create the new component based on `myRowTemplateConfig`.
 
 **Example component file:** `app/code/OrangeCo/Sample/view/base/web/js/table.js`
 
@@ -152,6 +152,3 @@ define([
 });
 ```
 
-[`layout.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js
-[`app.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/core/app.js
-[`mageUtils`]: https://github.com/magento/magento2/tree/{{page.guide_version}}/lib/web/mage/utils

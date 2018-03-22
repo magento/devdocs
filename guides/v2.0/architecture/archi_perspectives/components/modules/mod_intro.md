@@ -32,7 +32,7 @@ A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa
 
 ## Where do modules live?
 
-Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-mame>`, where `<type>` can be one of the following values:
+Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-name>`, where `<type>` can be one of the following values:
  - **`module`** - for modules (`module-customer-import-export`)
  - **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
  - **`language`** - for language packs (`language-de_de`)

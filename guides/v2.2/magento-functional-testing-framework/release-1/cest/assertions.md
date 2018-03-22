@@ -1,13 +1,17 @@
 ---
 layout: default
 group: mftf
-title: Assertions in the Magento Functional Testing Framework (release 1)
+title: Assertions in the Magento Functional Testing Framework
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/cest/assertions.md
 functional_areas:
  - Testing
 redirect_from: guides/v2.2/magento-functional-testing-framework/cest/assertions.html
+mftf-release: 1.0.0
 ---
+
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
 
 This topic contains general information about assertions in the MFTF and the reference list of available assertions.
 
@@ -15,11 +19,7 @@ This topic contains general information about assertions in the MFTF and the ref
 
 Assertions serve to pass or fail the test if a condition is not met. These assertions will look familiar to you if you've used any other framework like PHPUnit.
 
-All assertions contain the following attributes (same as actions):
-
-* `stepKey` is a required attribute that stores a unique identifier of the action. Example: `"conditionalClickStep1"`.
-* `before` is an optional attribute that Set `stepKey` of an action that must be executed one step before the current one.
-* `after` is an optional attribute that Set `stepKey` of an action that must be executed next.
+All assertions contain same [common actions attributes](./actions.html#common-attributes): `stepKey`, `before`, and `after`.
 
 Most assertions contain attribute `message` that specifies text of an informational message to help you to know more about the cause of the failure.
 
@@ -74,7 +74,6 @@ Attribute|Type|Use|Description
 selector|xs:string|required|
 expectedValue|xs:string|optional|
 attribute|xs:string|required|
-variable|xs:string|optional|
 stepKey|xs:string|required|
 before|xs:string|optional|
 after|xs:string|optional|

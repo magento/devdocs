@@ -140,7 +140,7 @@ Use the following templates for the license notice and copyright blocks:
 {% highlight php %}
 <?php
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -164,7 +164,7 @@ interface MetadataObjectInterface
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -175,7 +175,7 @@ interface MetadataObjectInterface
 {% highlight js %}
 
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 {% endhighlight %}
@@ -558,7 +558,7 @@ Rules for usage of the tag:
 * Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
 * Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
 
-**DocBlock for the Intreface**
+**DocBlock for the Interface**
 {% highlight php startinline=true %}
 /**
  * Interface for mutable value object for integer values

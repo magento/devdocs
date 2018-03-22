@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 020_tech
 title: Technologies and requirements
-menu_title: Technologies and requirements
-menu_order: 40
-menu_node: parent
 version: 2.0
 github_link: cloud/requirements/cloud-requirements.md
 redirect_from:
@@ -41,7 +37,7 @@ The following technologies are requirements for developing and deploying your st
 *	[Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
 *	[Magento 2]({{page.baseurl}}cloud/bk-cloud.html#magento2)
 *	[Continuous Integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html)
-*	Architectures including [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture
+*	Architectures including [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-architecture.html) architecture
 
 Here are some advanced technologies we recommend getting familiar with:
 
@@ -80,7 +76,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) -  For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) 5.5, 5.6, and 7.0
 * [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html) 5.6 and 5.7
 * [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html) 4.10
 * [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
@@ -98,7 +94,7 @@ For detailed information on supported versions and extensions, see the following
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
-*	Set up a [local development environment]({{page.baseurl}}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{page.baseurl}}cloud/welcome/discover-workflow.html) plan.
+*	Set up a [local development environment]({{page.baseurl}}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{page.baseurl}}install-gde/prereq/connect-auth.html) in your account
 *	Get a [project invite]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
 *	Get [Magento authentication keys]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
@@ -109,7 +105,7 @@ We walk you through everything you need to do and know.
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{page.baseurl}}cloud/before/before-workspace-magento-prereqs.html#database)
-*	Test with the correct file permissions in [PRODUCTION mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Test with the correct file permissions in [PRODUCTION mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
@@ -123,7 +119,7 @@ For development and testing, we recommend the following:
 *	Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
 
 	You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.
-*	Verify [`magento setup:install`]({{page.baseurl}}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Verify [`magento setup:install`]({{page.baseurl}}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode)
 
     You can set an environment variable or enter a CLI command for this specific mode.
 *	Fully [test your site]({{page.baseurl}}cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment
@@ -149,7 +145,7 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *	Create your own Cloud account
 
 #### Related topics
-*	[Cloud Architexture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Cloud Architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html)
 *	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
-*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Go live and launch]({{page.baseurl}}cloud/live/live.html)

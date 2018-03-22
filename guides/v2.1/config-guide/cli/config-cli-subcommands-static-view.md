@@ -18,7 +18,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of static view files deployment {#config-cli-static-overview}
-The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
+The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>.
 
 The term *static view file* refers to the following:
 
@@ -29,8 +29,8 @@ Static view files are located in the `<your Magento install dir>/pub/static` dir
 
 Static view files deployment is affected by Magento modes as follows:
 
--   **[Default]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default)** and **[developer]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer)** modes: Magento generates them on demand, but the rest are cached in a file for speed of access.
--   **[Production]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production)** mode: Static files are *not* generated or cached.
+-   **[Default]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#default-mode)** and **[developer]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#developer-mode)** modes: Magento generates them on demand, but the rest are cached in a file for speed of access.
+-   **[Production]({{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode)** mode: Static files are *not* generated or cached.
 
 You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 

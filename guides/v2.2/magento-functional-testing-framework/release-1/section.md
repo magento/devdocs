@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Section structure in the Magento Functional Testing Framework (release 1)
+title: Section structure in the Magento Functional Testing Framework
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/section.md
 functional_areas:
@@ -9,7 +9,11 @@ functional_areas:
 redirect_from:
     - guides/v2.2/magento-functional-testing-framework/section.html
     - guides/v2.2/magento-functional-testing-framework/1.0/section.html
+mftf-release: 1.0.0
 ---
+
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
 
 ## Overview
 
@@ -114,7 +118,7 @@ type|string|required|The type of the element. Possible values: `text`, `textarea
 selector|string|optional|[XPath] or [CSS] selector of the element.
 locatorFunction|string|optional|[Locator Function] declaration to be used in lieu of a selector.
 timeout|string|optional|Default: `-`. Optional timeout value in seconds to wait for the operation on the element.
-parameterized|boolean|optional|Include and set to `true` if the `selector` for this element has parameters that need to be replaced for proper use.
+parameterized|boolean|optional|Include and set to `true` if the `selector` for this element has parameters that need to be replaced for proper use. Learn more in [Parameterized selectors].
 remove|boolean|optional|Default: `false`. Set to `true` to remove this element during parsing.
 
 {% endraw %}
@@ -126,6 +130,7 @@ remove|boolean|optional|Default: `false`. Set to `true` to remove this element d
 [CSS]: https://www.w3schools.com/cssref/css_selectors.asp
 [XPath]: https://www.w3schools.com/xml/xpath_nodes.asp
 [Locator Function]: section/locator-functions.html
+[Parameterized selectors]: ./section/parameterized-selectors.html
 [cest]: cest.html
 [test]: cest.html#test
 [createData]: cest/actions.html#createdata

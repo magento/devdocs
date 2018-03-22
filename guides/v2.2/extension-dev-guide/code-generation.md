@@ -22,7 +22,7 @@ The first constructor parameter has a type of `Magento\Customer\Model\AddressFac
 Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.
 
 <h3 id="codegen-over-when">When is code generated?</h3>
-Provided the Magento application is not set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.
+Provided the Magento application is not set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, code is generated when the Magento application cannot find a class when executing code.
 
 In particular,
 
@@ -53,4 +53,4 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 When code changes as discussed in the preceding section, the Object Manager compiles it.
 
 
-The code compiler compiler creates `generated/metadata/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+The code compiler creates `generated/metadata/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.

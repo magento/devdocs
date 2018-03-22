@@ -7,10 +7,52 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## January 2018
+## March 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added a section for backward incompatible changes between 2.0.17-2.0.18 in [OpenSource](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ce_changes.html#releases-2_0_17-2_0_18) and [Commerce](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html#releases-2_0_17-2_0_18).|2.0.x|Updated|Mar 16
+Added a section for backward incompatible changes between 2.1.11-2.1.12 in [OpenSource](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html#releases-2_1_11-2_1_12) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html#releases-2_1_11-2_1_12).|2.1.x|Updated|Mar 16
+Added a section for backward incompatible changes between 2.2.2-2.2.3 in [OpenSource](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html#releases-2_2_2-2_2_3) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html#releases-2_2_2-2_2_3).|2.2.x|Updated|Mar 16
+Removed reference to minor versions of Magento in the [Extension Developer Guide](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/build/build.html).|2.x|Updated|Mar 15
+The MFTF 2.1.0 has been released where we: <br/>[updated a CLI command `generate`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html#generate), <br/>[added a data type support for an argument of action group](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/action-groups.html#data-type-usage), <br/>[added a new action `selectMultipleOptions`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/actions.html#selectmultipleoptions), <br>[updated principles in Assertions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#principles)<br/> [added a new assertions `assertArrayIsSorted`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#assertarrayIssorted)|2.2.x, 2.3 pre-release|Updated|Mar 13
+Added support for PHP 7.1 in the [Magento Commerce (Cloud) Guide](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).|2.2.x|Updated|Mar 12
+Added the force (`-f`) option to the static content deployment command in the [B2B installation](http://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) topic.||Updated|Mar 09
+Updated the [Magento Commerce (Cloud) Guide Configure routes](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_routes.html) topic to deprecate the `:php` endpoint and to note that now you can use the dot (\.) symbol to separate the subdomain instead of using the triple dash (\-\-\-).|2.2.x|Updated|Mar 09
+Removed old content related to the [multi-tenant code compiler](http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html).|2.1.x, 2.2.x|Updated|Mar 07
+Added a CodeTriage badge to the [Contributor Guide](http://devdocs.magento.com/guides/v2.0/contributor-guide/contributing.html).|2.x|Updated|Mar 01
+
+{% collapsibleh2 February 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Release Notes for Magento 2.0.18 [Open Source](http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html) and [Commerce](http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18EE.html).|2.0.x|New|Feb 27
+Release Notes for Magento 2.1.12 [Open Source](http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html).|2.1.x|New|Feb 27
+Release Notes 2.2.3 [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3EE.html)|2.2.x|New|Feb 27
+Added supported MySQL technologies to the [MySQL](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/mysql.html) topic.|2.2.x|Updated|Feb 27
+Updated the [DevDocs contributions](http://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_docs.html) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
+Formatting to improve consistency in the [Configuration Guide](http://devdocs.magento.com/guides/v2.0/config-guide/bootstrap/magento-modes.html).||Updated|Feb 26
+Added upgrade path for Magento Cloud metapackage. | 2.1.x, 2.2.x | Updated | Feb 23
+Added reference and [examples](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20
+Listed the `adminhtml` option in the [Observers best practices](http://devdocs.magento.com/guides/v2.0/ext-best-practices/extension-coding/observers-bp.html) topic.|2.x|Updated|Feb 09
+The [MFTF-2 Guide](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) has been added to Magento 2.2 documentation|2.2.x|Updated|Feb 09
+Learn how to customize and extend the acceptance functional tests using [Merging](http://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/release-2/merging.html) in the MFTF 2.|2.3 pre-release|New|Feb 07
+We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/message-queues.html) to help customers resolve an issue with message queues.|2.2.x|New|Feb 07
+We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/site-availability.html) to help customers identify and resolve site availability issue related to Redis.|2.x|New|Feb 01
+
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 January 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Updated documentation about [how to create a payment token](http://devdocs.magento.com/guides/v2.2/payments-integrations/vault/payment-token.html).|2.2.x|Updated|Jan 31
+Release notes for Magento Commerce (Cloud) [`ece-tools v2002.0.8`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208).|2.2.x|Updated|Jan 31
+We added instructions for [managing message queues](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#manage-message-queues) on Magento Commerce (Cloud) using the `CRON_CONSUMERS_RUNNER` environment variable.|2.2.x|Updated|Jan 31
+We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.|2.2.x|Updated|Jan 31
+You can now [manage build and deploy actions](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html) across all your environments—including Pro Staging and Production—using a `.magento.env.yaml` file.|2.2.x|New|Jan 31
+You can now unlock specific stuck cron jobs in Magento Commerce (Cloud) with the [cron:unlock](http://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html) command instead of stopping and re-launching all of them.|2.2.x|Updated|Jan 31
+The deployment process creates backup files for the configuration files. You can restore the configuration files using the [restore](http://devdocs.magento.com/guides/v2.2/cloud/trouble/restore-configuration-files.html) command.|2.2.x|Updated|Jan 31
 MFTF 1.0: Updated descriptions for the `before` and `after` attributes in [Actions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-1/cest/actions.html)|2.2.x|Updated|Jan 23
 Advanced Reporting: added more details to [Prerequisites](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html)|2.2.x|Updated|Jan 22
 We updated the [quarterly contributors](http://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page for Q4 2017.|2.x|Updated|Jan 18
@@ -19,6 +61,8 @@ Added information about the index prefix when [configuring Elasticsearch](http:/
 Created a [new topic](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html) describing different scenarios for working with environment variables to the Magento Commerce (Cloud) guide. For example, connecting an existing search or AMQP-based service to your Magento site.<br/>Added guidance for using these variables in the [Set up RabbitMQ](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html) and [Set up Elasticsearch](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html) topics.|2.1.x, 2.2.x|New and Updated|Jan 10
 [Added Magento Shipping release notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotesMagentoShipping2.2.x.html)|2.2.x|New|Jan 05
 We added code examples to help explain the following [Technical Guidelines](http://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html) related to class design:<br/>- 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.<br/>- 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.<br/>- 2.1.4 Temporal coupling MUST be avoided.|2.x|Updated|Jan 03
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 December 2017 %}
 

@@ -152,8 +152,8 @@ As you add environments and branches, you can modify user permissions as needed.
 *	[{{site.data.var.ece}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 *	Pro information:
 
-	* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-	*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+	* [Pro Architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html)
+	*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
 *	Starter information:
 
 	* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)

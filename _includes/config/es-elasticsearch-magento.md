@@ -6,7 +6,7 @@ To configure Magento to use Elasticsearch:
 
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
-3.	From the **Search Engine** list, click **Elasticsearch** as the following figure shows.
+3.	From the **Search Engine** list, click **Elasticsearch** or **Elasticsearch 5.0+** as the following figure shows. (The **Elasticsearch 5.0+** option is not available for Magento 2.1.)
 
 	<img src="{{ site.baseurl }}common/images/elastic_choose-in-admin.png" width="650px">
 4.	The following table discusses only the configuration options required to test the connection with Magento.

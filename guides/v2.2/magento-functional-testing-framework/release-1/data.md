@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mftf
-title: Input testing data in the Magento Functional Testing Framework (release 1)
+title: Input testing data in the Magento Functional Testing Framework
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/data.md
 functional_areas:
@@ -9,7 +9,11 @@ functional_areas:
 redirect_from:
     - guides/v2.2/magento-functional-testing-framework/data.html
     - guides/v2.2/magento-functional-testing-framework/1.0/data.html
+mftf-release: 1.0.0
 ---
+
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
 
 ## Overview
 
@@ -181,9 +185,9 @@ in another data entity, you can use this.
 Attributes|Type|Use|Description
 ---|---|---|---
 key|string|optional|Key attribute of this entity to assign a value to.
-unique|Available values: `prefix`, `suffix`|optional|Add suite or test wide unique sequence as "prefix" or "suffix" to the data value if specified.
 entityType|string|optional|Type attribute of referenced entity.
 entityKey|string|optional|Key attribute of the referenced entity from which to get a value.
+unique|--|--|*This attribute hasn't been implemented yet.*
 
 ### required-entity
 

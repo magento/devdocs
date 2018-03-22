@@ -136,16 +136,17 @@ We recommend verifying your user account access and permissions set in the Maste
 When we convert your project to the new Project Web Interface, we add variables from Integration `master` to Staging and Production. You can review, modify, and add variables through the current Project Web Interface prior to conversion.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2. Click the **Projects** tab and the name of your project.
-3. Click the Integration Master branch to open the environment information and settings.
-4. Click the **Variables** tab and review the environment variables.
-5. If you need to update variables, click ![edit variable]({{ site.baseurl }}common/images/cloud_edit-variable.png) and modify the variable and value.
-6. To create a new variable, click **Add Variable**, enter the variable name and value.
+1. Click the **Projects** tab and the name of your project.
+1. Click the Integration `master` branch to open the environment information and settings.
+1. Click **Configure environment**.
+1. On the _Variables_ tab, review the environment variables.  
+    To create a new variable, click **Add Variable**.  
+    To update an existing variable, click **Edit** next to the variable.
 
 For environment specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.
 
 ## Enter a ticket for updating the Project Web Interface {#enable}
-Enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
+Enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
 
 We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.
 
@@ -167,13 +168,14 @@ Second, add the variables from the CLI list through the Project Web Interface:
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.
 3. Click the Staging or Production environment to add variables.
-4. Click the **Variables** tab.
-5. If you need to update variables, click ![edit variable]({{ site.baseurl }}common/images/cloud_edit-variable.png) and modify the variable and value.
+1. On the _Variables_ tab, review the environment variables.  
+    To create a new variable, click **Add Variable**.  
+    To update an existing variable, click **Edit** next to the variable.
 6. To add a variable from the CLI list, click **Add Variable**, enter the variable name and value, and select the Override checkbox. This uses the variables from the Project Web Interface over the local CLI or database values.
 
 You can use CLI commands to remove the variables if you want while still accessing the environment using SSH.
 
-When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration Master and so on. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
+When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration Master and so on. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
 

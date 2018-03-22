@@ -23,17 +23,18 @@ The important code that sets the timeout is the `first_byte_timeout` value of 10
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
 </div>
 
-## Create extendtimeout.vcl {#vcl}
+## Create extendtimeout.json {#vcl}
 To extend the timeout for the Magento Admin to Staging and Production environments, you can use the same VCL snippet file without edits.
 
-Create an `extendtimeout.vcl` file with the following JSON content:
+Create an `extendtimeout.json` file with the following JSON content:
 
 {% highlight json %}
 {
   "name": "extendtimeout",
-  "priority": "100",
+  "dynamic": "0",
   "type": "pass",
-  "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }",
+  "priority": "100",
+  "content": "if ( req.url ~ \"^/(index\\.php/)?admin(_.*)?/\" ) { set bereq.first_byte_timeout = 600s; }"
 }
 {% endhighlight %}
 

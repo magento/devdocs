@@ -62,7 +62,7 @@
           <li><a href="{{page.baseurl}}rest/bk-rest.html">REST API Reference</a></li>
           <li><a href="{{page.baseurl}}soap/bk-soap.html">SOAP API Reference</a></li>
           {% if page.guide_version == "2.3" %}
-          <li><a href="{{page.baseurl}}graphql/index.html">GraphQL Reference</a></li>
+          <li><a href="{{page.baseurl}}graphql/index.html">GraphQL Developer Guide (New!)</a></li>
           {% endif %}
         </ul>
       </div>
@@ -77,9 +77,7 @@
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
         <li><a href="{{page.baseurl}}test/testing.html">Magento Testing Guide</a></li>
-        {% if page.guide_version == "2.2" %}
-        <li><a href="{{page.baseurl}}magento-functional-testing-framework/release-1/introduction.html">Functional Acceptance Testing (New!)</a></li>
-        {% elsif page.guide_version == "2.3" %}
+        {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
         <li><a href="{{page.baseurl}}magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
         {% endif %}
         <li><a href="{{page.baseurl}}mtf/mtf_introduction.html">Functional Testing</a></li>

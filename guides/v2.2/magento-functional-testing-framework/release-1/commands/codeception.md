@@ -1,13 +1,17 @@
 ---
 layout: default
 group: mftf
-title: Codeception commands in the Magento Functional Testing Framework (release 1)
+title: Codeception commands in the Magento Functional Testing Framework
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/commands/codeception.md
 functional_areas:
  - Testing
 redirect_from: guides/v2.2/magento-functional-testing-framework/commands/codeception.html
+mftf-release: 1.0.0
 ---
+
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 We DO NOT recommend to use Codeception commands directly, they can break the MFTF basic workflow.
