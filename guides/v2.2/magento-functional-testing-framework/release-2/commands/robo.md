@@ -1,18 +1,18 @@
 ---
 layout: default
 group: mftf
-title: Robo commands available in the Magento Functional Testing Framework
+title: Robo commands
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/robo.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.1.2
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-Robo is a task runner for PHP that allows you to alias long complex CLI commands to simple commands.
+Robo is a task runner for PHP that allows you to alias long, complex command line interface (CLI) commands to simple commands.
 
 ## Usage
 
@@ -24,7 +24,7 @@ Assuming that you're working in the `magento2/dev/tests/acceptance` directory in
 $ vendor/bin/robo command [options] [arguments]
 ```
 
-Or, if you added path of the Robo executable file to the system *PATH*, then run Robo commands using the following format:
+Or, if you added the path of the Robo executable file to the system *PATH*, then run Robo commands using the following format:
 
 ```bash
 $ robo command [options] [arguments]
@@ -35,11 +35,9 @@ $ robo command [options] [arguments]
 * Original: `$ allure generate tests/_output/allure-results/ -o tests/_output/allure-report/`
 * Robo: `$ vendor/bin/robo allure1:generate`
 
-## Most useful commands
+## Useful commands
 
-The following list contains most popular commands purposed to interact with the MFTF. 
-
-For more commands, see [Reference] or run in your terminal: `$ vendor/bin/robo`.
+The following are the most popular commands used to interact with the MFTF. For more commands, see [Reference] or run in your terminal: `$ vendor/bin/robo`.
 
 ### Codeception Robo Commands
 
@@ -49,7 +47,7 @@ For more commands, see [Reference] or run in your terminal: `$ vendor/bin/robo`.
 $ vendor/bin/robo
 ```
 
-#### Duplicate the Example configuration files used to customize the Project:
+#### Duplicate the example configuration files used to customize the project:
 
 ```bash
 $ vendor/bin/robo clone:files
@@ -61,41 +59,41 @@ $ vendor/bin/robo clone:files
 $ vendor/bin/robo build:project
 ```
 
-#### Generate all Tests in PHP:
+#### Generate all tests in PHP:
 
 ```bash
 $ vendor/bin/robo generate:tests
 ```
 
-#### Run all Tests marked with the @group tag 'example', using the Chrome environment:
+#### Run all tests marked with the @group tag `example`, using the Chrome environment:
 
 ```bash
 $ vendor/bin/robo example
 ```
 
-#### Run all Functional tests located under the Directory Path provided:
+#### Run all functional tests located under the directory path provided:
 
 ```bash
 $ vendor/bin/robo folder ______
 ```
 
-#### Run all Functional tests, excluding @group skip:
+#### Run all functional tests, excluding @group skip:
 
 ```bash
 $ vendor/bin/robo functional
 ```
 
-#### Run all Tests with the specified @group tag, excluding @group 'skip':
+#### Run all tests with the specified @group tag, excluding @group 'skip':
 
 ```bash
 $ vendor/bin/robo group ______
 ```
   
-### Allure Robo Commands
+### Allure Robo commands
 
-To determine which version of the Allure command you need to use please run `allure --version`.
+To determine which version of the Allure command you need to use run `allure --version`.
 
-#### Generate the HTML for the Allure report based on the Test XML output:
+#### Generate the HTML for the Allure report based on the test XML output:
 
 Allure v1.x.x | Allure v2.x.x
 ---|---
@@ -117,43 +115,46 @@ Allure v1.x.x | Allure v2.x.x
 
 #### general
 
-`functional`      | Run all functional tests, excluding `@group 'skip'`
-`example`          | Run all Tests marked with the `@group` tag `'example'`
-`folder`        | Run all Acceptance tests located under the Directory Path provided
-`group`         | Run all Tests with the specified `@group` tag, excluding `@group 'skip'`
-`help`             | Displays help for a command
-`list`             | Lists commands
+`functional`      | Run all functional tests, excluding `@group 'skip'`.
+`example`          | Run all Tests marked with the `@group` tag `'example'`.
+`folder`        | Run all acceptance tests located under the directory path provided..
+`group`         | Run all tests with the specified `@group` tag, excluding `@group 'skip'`
+`help`             | Displays help for a command.
+`list`             | Lists commands.
   
 #### allure1
 
-`allure1:generate`  | Generate the HTML for the Allure report based on the Test XML output - Allure v1.4.X
-`allure1:open`    | Open the HTML Allure report - Allure v1.4.xX
-`allure1:report`   | Generate and open the HTML Allure report - Allure v1.4.X
+`allure1:generate`  | Generate the HTML for the Allure report based on the test XML output - Allure v1.4.X.
+`allure1:open`    | Open the HTML Allure report - Allure v1.4.xX.
+`allure1:report`   | Generate and open the HTML Allure report - Allure v1.4.X.
 
 #### allure2
 
-`allure2:generate` | Generate the HTML for the Allure report based on the Test XML output - Allure v2.3.X
-`allure2:open`      | Open the HTML Allure report - Allure v2.3.X
-`allure2:report`   | Generate and open the HTML Allure report - Allure v2.3.X
+`allure2:generate` | Generate the HTML for the Allure report based on the test XML output - Allure .v2.3.X
+`allure2:open`      | Open the HTML Allure report - Allure v2.3.X.
+`allure2:report`   | Generate and open the HTML Allure report - Allure v2.3.X.
   
 #### build
  
-`build:project`     | Clone the Example configuration files Build the Codeception project
+`build:project`     | Clone the example configuration files and build the Codeception project.
 
 #### clone
   
-`clone:files`       | Duplicate the Example configuration files used to customize the Project for customization
+`clone:files`       | Duplicate the example configuration files used to customize the project.
 
 #### generate
 
-`generate:tests`   | Generate all Tests
-  
+Generate PHP code from the tests defined in XML files.
+Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
+
+`generate:tests`   | Generate all tests based on specific module load order of the Magento instance
+`generate:tests --force`   | Generate all tests regardless of whether a Magento instance is available
+`generate:tests --config singleRun`   | Generate all tests and a manifest file, which is `_generated/testManifest.txt`. The file contains only a path to the directory with generated tests. 
+`generate:tests --config parallel --nodes <number of nodes>`   | Generate all tests and a directory with manifest files, which is `_generated/groups/`. The number of files corresponds to the number of nodes. Each file contains a proportional list of tests ordered across files from largest to smallest (based on number of actions).
+
 #### self
 
-`self:update` or `update`       | Updates the `robo.phar` to the latest version. Only works when running the `phar` version of Robo.
-
-***
-***
+`self:update` or `update`| Updates the `robo.phar` to the latest version, which only works when running the `phar` version of Robo.
 
 <!-- LINK DEFINITIONS -->
 

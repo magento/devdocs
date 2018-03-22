@@ -129,14 +129,14 @@ The following list will help you make a distinction between the actual meaning o
 **Acceptable**:
 
 {%highlight html%}
-<p>HTML has been created to <b>semantically</b> represent documents.</p>
+<p>HTML has been created to <strong>semantically</strong> represent documents.</p>
 <p><strong>Warning:</strong> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
 **Unacceptable**:
 
 {%highlight html%}
-<p>HTML has been created to <strong>semantically</strong> represent documents.</p>
+<p>HTML has been created to <b>semantically</b> represent documents.</p>
 <p><b>Warning:</b> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
