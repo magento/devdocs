@@ -74,7 +74,6 @@ Name | Version |  License
 [seld/jsonlint](https://github.com/Seldaek/jsonlint) |1.7.0  |MIT
 [seld/phar-utils](https://github.com/Seldaek/phar-utils) |1.0.1  |MIT
 [squizlabs/php_codesniffer](https://github.com/squizlabs/PHP_CodeSniffer) |3.0.1  |BSD-3-Clause
-[Swagger UI]((https://github.com/swagger-api/swagger-ui)) |2.0 | Apache 2
 [symfony/config](https://github.com/symfony/config)  |v3.4.3 |MIT
 [symfony/console](https://github.com/symfony/console) |v2.8.33  |MIT
 [symfony/debug](https://github.com/symfony/debug) |v3.0.9 |MIT
