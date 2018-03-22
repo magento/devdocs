@@ -44,54 +44,6 @@ In this case, when `getCustomAttributes()` is called, the system returns only cu
 
 The `Customer` module does not treat its EAV attributes in a special manner. As a result, the `getCustomAttributes()` method returns all EAV attributes.
 
-<h3 id="customer-eav-attribute">Adding Customer EAV attribute for backend only</h3>
-
-Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attribute to the database, you need to use `\Magento\Eav\Setup\EavSetup` class as a DI dependency.
-
-<div class="bs-callout bs-callout-warning">
-    <p>Please note that for <code>Magento\Framework\Model\AbstractModel</code> both <code>save()</code> and <code>getResource()</code> methods are marked as <code>@deprecated</code> since <code>2.1</code> and should not be used anymore.</p>
-</div>
-
-{% highlight PHP inline=true %}
-namespace My\Module\Setup;
-
-use Magento\Customer\Model\Customer;
-use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\ModuleDataSetupInterface;
-
-class InstallData implements \Magento\Framework\Setup\InstallDataInterface
-{
-    private $eavSetup;
-    
-    private $eavConfig;
-    
-    private $attributeResource;
-    
-    public function __construct(
-        \Magento\Eav\Setup\EavSetup $eavSetup,
-        \Magento\Eav\Model\Config $eavConfig,
-        \Magento\Customer\Model\ResourceModel\Attribute $attributeResource
-    ) {
-        $this->eavSetup = $eavSetup;
-        $this->eavConfig = $eavConfig;
-        $this->attributeResource = $attributeResource;
-    }
-    
-    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-    {
-        $this->eavSetup->addAttribute(Customer::ENTITY, 'attribute_code', [
-            // Attribute parameters
-        ]);
-        
-        $attribute = $this->eavConfig->getAttribute(Customer::ENTITY, 'attribute_code');
-        $attribute->setData('used_in_forms', ['adminhtml_customer']);
-        $this->attributeResource->save($attribute);
-    }
-}
-{% endhighlight %}
-
-
-
 <h2 id="extension">Extension attributes</h2>
 
 Use `ExtensibleDataInterface` to implement extension attributes. In your code, you must define `getExtensionAttributes()` and `setExtensionAttributes(*ExtensionInterface param)`.
@@ -109,7 +61,7 @@ You must create an `<Module>/etc/extension_attributes.xml` file to define the ex
     <extension_attributes for="Path\To\Interface">
         <attribute code="name_of_attribute" type="datatype">
            <resources>
-              <resource ref="permission"/>
+              <resource  ref="permission"/>
            </resources>
            <join reference_table="" reference_field="" join_on_field="">
               <field>fieldname</field>
