@@ -1576,16 +1576,16 @@
 </section>
 
 
-			<p>Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:</p>
+			<p>There are two types of attributes you can use to extend Magento functionality:</p>
 
 <ul>
   <li>
-    <p>Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> panel, and these attributes can be displayed. See the merchant documentation for information about managing custom attributes.</p>
+    <p>Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> panel. See the <a href="http://docs.magento.com/m2/ce/user_guide/stores/attributes.html">merchant documentation</a> for information about managing custom attributes.</p>
 
-    <p>Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The <code class="highlighter-rouge">Customer</code> and <code class="highlighter-rouge">Catalog</code> modules have the primary models that use EAV attributes. Other modules, such as <code class="highlighter-rouge">ConfigurableProduct</code>, <code class="highlighter-rouge">GiftMessage</code>, and <code class="highlighter-rouge">Tax</code>, use the EAV functionality for <code class="highlighter-rouge">Catalog</code>.</p>
+    <p>Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The <code class="highlighter-rouge">Customer</code> and <code class="highlighter-rouge">Catalog</code> modules are the primary models that use EAV attributes. Other modules, such as <code class="highlighter-rouge">ConfigurableProduct</code>, <code class="highlighter-rouge">GiftMessage</code>, and <code class="highlighter-rouge">Tax</code>, use the EAV functionality for <code class="highlighter-rouge">Catalog</code>.</p>
   </li>
   <li>
-    <p><span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> attributes. Extension attributes are new in Magento 2. They are used to extend functionality and often use more <span term-uuid="fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4" class="glossary-term" data-toggle="popover">complex data</span> types than custom attributes. These attributes do not appear on the GUI.</p>
+    <p><span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> attributes. Extension attributes are new in Magento 2. They are used to extend functionality and often use more <span term-uuid="fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4" class="glossary-term" data-toggle="popover">complex data</span> types than custom attributes. These attributes do not appear in the MAgento Admin.</p>
   </li>
 </ul>
 
@@ -1616,23 +1616,67 @@
 
 <p>The <code class="highlighter-rouge">Customer</code> module does not treat its EAV attributes in a special manner. As a result, the <code class="highlighter-rouge">getCustomAttributes()</code> method returns all EAV attributes.</p>
 
+<h3 id="customer-eav-attribute">Adding Customer EAV attribute for backend only</h3>
+
+<p>Customer attributes are created inside of <code class="highlighter-rouge">InstallData</code> and <code class="highlighter-rouge">UpgradeData</code> scripts. To add new attributes to the database, you must use the <code class="highlighter-rouge">\Magento\Eav\Setup\EavSetup</code> class as a dependency injection.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Both the <code class="highlighter-rouge">save()</code> and <code class="highlighter-rouge">getResource()</code> methods for <code class="highlighter-rouge">Magento\Framework\Model\AbstractModel</code> have been marked as <code class="highlighter-rouge">@deprecated</code> since 2.1 and should no longer be used.</p>
+</div>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Setup</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Customer\Model\Customer</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallDataInterface</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$eavSetup</span><span class="p">;</span>
+    
+    <span class="k">private</span> <span class="nv">$eavConfig</span><span class="p">;</span>
+    
+    <span class="k">private</span> <span class="nv">$attributeResource</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">\Magento\Eav\Setup\EavSetup</span> <span class="nv">$eavSetup</span><span class="p">,</span>
+        <span class="nx">\Magento\Eav\Model\Config</span> <span class="nv">$eavConfig</span><span class="p">,</span>
+        <span class="nx">\Magento\Customer\Model\ResourceModel\Attribute</span> <span class="nv">$attributeResource</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetup</span> <span class="o">=</span> <span class="nv">$eavSetup</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavConfig</span> <span class="o">=</span> <span class="nv">$eavConfig</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">attributeResource</span> <span class="o">=</span> <span class="nv">$attributeResource</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetup</span><span class="o">-&gt;</span><span class="na">addAttribute</span><span class="p">(</span><span class="nx">Customer</span><span class="o">::</span><span class="na">ENTITY</span><span class="p">,</span> <span class="s1">'attribute_code'</span><span class="p">,</span> <span class="p">[</span>
+            <span class="c1">// Attribute parameters
+</span>        <span class="p">]);</span>
+        
+        <span class="nv">$attribute</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavConfig</span><span class="o">-&gt;</span><span class="na">getAttribute</span><span class="p">(</span><span class="nx">Customer</span><span class="o">::</span><span class="na">ENTITY</span><span class="p">,</span> <span class="s1">'attribute_code'</span><span class="p">);</span>
+        <span class="nv">$attribute</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="s1">'used_in_forms'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'adminhtml_customer'</span><span class="p">]);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">attributeResource</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$attribute</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
 <h2 id="extension">Extension attributes</h2>
 
 <p>Use <code class="highlighter-rouge">ExtensibleDataInterface</code> to implement extension attributes. In your code, you must define <code class="highlighter-rouge">getExtensionAttributes()</code> and <code class="highlighter-rouge">setExtensionAttributes(*ExtensionInterface param)</code>.</p>
 
-<p><code>public function getExtensionAttributes();</code></p>
+<p><code class="highlighter-rouge">public function getExtensionAttributes();</code></p>
 
-<p>Most likely, you’ll want to extend interfaces defined in the <code class="highlighter-rouge">Api/Data</code> directory of a Magento module.</p>
+<p>Most likely, you will want to extend interfaces defined in the <code class="highlighter-rouge">Api/Data</code> directory of a Magento module.</p>
 
 <h3 id="declare">Declare extension attributes</h3>
 
-<p>You must create an <code class="highlighter-rouge">&lt;Module&gt;/etc/extension_attributes.xml</code> file to define the extension attributes for a module:</p>
+<p>You must create a <code class="highlighter-rouge">&lt;Module&gt;/etc/extension_attributes.xml</code> file to define a module’s extension attributes:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">"Path\To\Interface"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"name_of_attribute"</span> <span class="na">type=</span><span class="s">"datatype"</span><span class="nt">&gt;</span>
            <span class="nt">&lt;resources&gt;</span>
-              <span class="nt">&lt;resource</span>  <span class="na">ref=</span><span class="s">"permission"</span><span class="nt">/&gt;</span>
+              <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"permission"</span><span class="nt">/&gt;</span>
            <span class="nt">&lt;/resources&gt;</span>
            <span class="nt">&lt;join</span> <span class="na">reference_table=</span><span class="s">""</span> <span class="na">reference_field=</span><span class="s">""</span> <span class="na">join_on_field=</span><span class="s">""</span><span class="nt">&gt;</span>
               <span class="nt">&lt;field&gt;</span>fieldname<span class="nt">&lt;/field&gt;</span>
@@ -1702,7 +1746,7 @@
 
 <p>The system uses a join directive to add external attributes to a collection and to make the collection filterable. The <code class="highlighter-rouge">join</code> element in the <code class="highlighter-rouge">extension_attributes.xml</code> file defines which object fields and the database table/column to use as the source of a search.</p>
 
-<p>In the following example, an attribute named <code class="highlighter-rouge">stock_item</code> of type <code class="highlighter-rouge">Magento\CatalogInventory\Api\Data\StockItemInterface</code> added to the <code class="highlighter-rouge">Magento\Catalog\Api\Data\ProductInterface</code>.</p>
+<p>In the following example, an attribute named <code class="highlighter-rouge">stock_item</code> of type <code class="highlighter-rouge">Magento\CatalogInventory\Api\Data\StockItemInterface</code> is being added to the <code class="highlighter-rouge">Magento\Catalog\Api\Data\ProductInterface</code>.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">"Magento\Catalog\Api\Data\ProductInterface"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"stock_item"</span> <span class="na">type=</span><span class="s">"Magento\CatalogInventory\Api\Data\StockItemInterface"</span><span class="nt">&gt;</span>
@@ -1712,9 +1756,9 @@
     <span class="nt">&lt;/attribute&gt;</span>
 <span class="nt">&lt;/extension_attributes&gt;</span></code></pre></figure>
 
-<p>When <code class="highlighter-rouge">getList()</code> is called, it returns a list of <code class="highlighter-rouge">ProductInterface</code>s. When it does this, the code populates the <code class="highlighter-rouge">stock_item</code> with a joined operation in which the <code class="highlighter-rouge">StockItemInterface</code>’s <code class="highlighter-rouge">qty</code> property come from the <code class="highlighter-rouge">cataloginventory_stock_item</code> table where the <code class="highlighter-rouge">Product</code>’s <code class="highlighter-rouge">entity_Id</code> is joined with the <code class="highlighter-rouge">cataloginventory_stock_item.product_id</code> column.</p>
+<p>When <code class="highlighter-rouge">getList()</code> is called, it returns a list of <code class="highlighter-rouge">ProductInterface</code>s. When it does this, the code populates the <code class="highlighter-rouge">stock_item</code> with a joined operation in which the <code class="highlighter-rouge">StockItemInterface</code>’s <code class="highlighter-rouge">qty</code> property comes from the <code class="highlighter-rouge">cataloginventory_stock_item</code> table where the <code class="highlighter-rouge">Product</code>’s <code class="highlighter-rouge">entity_Id</code> is joined with the <code class="highlighter-rouge">cataloginventory_stock_item.product_id</code> column.</p>
 
-<h3 id="ext-auth">Extension attribute authentication</h3>
+<h3 id="ext-aut">Extension attribute authentication</h3>
 
 <p>Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="/guides/v2.3/get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.</p>
 
@@ -1766,28 +1810,22 @@
 
 <p>This only works for extension attributes (those attributes defined in an <code class="highlighter-rouge">extension_attributes.xml</code> file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict <code class="highlighter-rouge">custom_attributes</code>.</p>
 
-<h3>ExtensionInterfaces</h3>
+<h3 id="extension-interfaces">Extension interfaces</h3>
 
-<p>An <code class="highlighter-rouge">ExtensionInterface</code> will be empty if no extension attributes have been added. In the following example, in an unmodified installation, <code class="highlighter-rouge">CustomerExtensionInterface</code> will be generated, but will be empty:</p>
+<p>An <code class="highlighter-rouge">ExtensionInterface</code> will be empty if no extension attributes have been added. In the following example—in an unmodified installation—<code class="highlighter-rouge">CustomerExtensionInterface</code> will be generated, but will be empty:</p>
 
 <p><code class="highlighter-rouge">interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
 {
 }</code></p>
 
-<p>However, if an extension similar to the following has been defined, the interface will not be empty.</p>
+<p>However, if an extension similar to the following has been defined, the interface will not be empty:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">"Magento\Customer\Api\Data\CustomerInterface"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">"attributeName"</span> <span class="na">type=</span><span class="s">"Magento\Some\Type[]"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/extension_attributes&gt;</span></code></pre></figure>
 
 <h3 id="troubleshooting">Troubleshoot EAV attributes</h3>
-<p>If you have issues when using <code class="highlighter-rouge">setup:upgrade</code> to your store environment, verify <code class="highlighter-rouge">__construct</code> uses the method <code class="highlighter-rouge">EavSetupFactory</code> not <code class="highlighter-rouge">EavSetup</code>. You should not directly inject <code class="highlighter-rouge">EavSetup</code> in extension code. Check through your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.</p>
-
-<h2 id="related">Related topics</h2>
-<ul>
-    <li><a href="/guides/v2.3/get-started/authentication/gs-authentication.html">Web API authentication overview</a></li>
-    <li><a href="/guides/v2.3/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to an entity</a></li>
-</ul>
+<p>If you have issues when using <code class="highlighter-rouge">setup:upgrade</code>, verify <code class="highlighter-rouge">__construct</code> uses the method <code class="highlighter-rouge">EavSetupFactory</code> not <code class="highlighter-rouge">EavSetup</code>. You should not directly inject <code class="highlighter-rouge">EavSetup</code> in extension code. Check your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1798,7 +1836,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/attributes.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/extension-dev-guide/attributes.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
