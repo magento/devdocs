@@ -31,8 +31,8 @@ To avoid this error, you can only write to specific directories, such as `var`, 
 1.  In the _Site Map_ view, click **Add Sitemap**.
 1.  In the _New Site Map_ view, enter the following values:
 
-    -  **Filename**:`sitemap.txt`
-    -  **Path**:`"/media/"`
+    -  **Filename**:`sitemap.xml`
+    -  **Path**:`/pub/media/`
 
 1.  Click **Save & Generate**.
 1.  Import the generated files to the `pub/media` directory on the server.
