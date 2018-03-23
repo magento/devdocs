@@ -9,7 +9,7 @@ version: 2.3
 github_link: release-notes/thirdparty_ce.md
 ---
 
-This page contains links to license agreements of the third party components used within Magento Open Source.  Click the **Name** links to view the end user license agreement for the corresponding software.
+This page contains links to the third party components used within {{site.data.var.ce}. Click the **Name** links to view the repository and the license agreement.
 
 Name | Version |  License
 --- | --- | ---

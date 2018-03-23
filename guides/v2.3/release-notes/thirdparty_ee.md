@@ -9,7 +9,7 @@ version: 2.2
 github_link: release-notes/thirdparty_ee.md
 ---
 
-This page contains links to license agreements of the third party components used within Magento Commerce.  Click the **License** links to view the end user license agreement for the corresponding software.
+This page contains links to license agreements of the third party components used within {{site.data.var.ee}.  Click the **Name** links to view the repository and the license agreement.
 
 Name | Version |  License
 --- | --- | ---
@@ -129,3 +129,32 @@ Name | Version |  License
 [zendframework/zend-uri](https://github.com/zendframework/zend-uri)  |2.5.2  |BSD-3-Clause
 [zendframework/zend-validator](https://github.com/zendframework/zend-validator)  |2.10.1 |BSD-3-Clause
 [zendframework/zend-view](https://github.com/zendframework/zend-view) |2.10.0 |BSD-3-Clause
+
+## Additional libraries
+
+From CE lib - JS
+
+Color picker; MIT and GPL; Stefan Petre www.eyecon.ro
+
+[extjs](https://www.sencha.com/) | 1.0.1|Open GPL 3.0 (when was included)
+[FormData for XMLHttpRequest 2](https://gist.github.com/Rob--W/8b5adedd84c0d36aba64) |-| MIT|
+HTML5 Shiv v3.6; MIT/GPL2
+jQuery Color Animations v2.1.2; MIT
+jQuery File Upload File Processing Plugin 1.0; 2012; MIT
+jQuery File Upload Plugin 5.16.4; 2010; MIT
+jQuery File Upload Plugin JS Example 6.7; 2010; MIT
+jQuery hashchange event - v1.3; 2010; MIT and GPL; http://benalman.com/about/license/
+jQuery Iframe Transport Plugin 1.5; 2011
+jQuery JavaScript Library v1.12.4; MIT; http://jquery.org/license
+jQuery Timepicker Addon - v1.4.3; 2013; MIT
+jQuery UI - v1.10.4; 2014; MIT
+jsTree 1.0-rc3; 2010; MIT/GPL Version 2
+Less - Leaner CSS v2.3.1; 2009-2015; Apache v2
+matchMedia; 2012; MIT/BSD
+Modernizr v2.6.1; BSD and MIT licenses: www.modernizr.com/license/
+moment-timezone; 0.5.5; MIT; github.com/moment/moment-timezone
+moment.js; 2.17.1; MIT
+Mutation Observer; 2014; BSD; http://polymer.github.io/LICENSE.txt
+prototype/validation; 1.5.4.1; 2007
+Sizzle CSS Selector Engine v2.2.1; MIT; http://jquery.org/license
+Underscore.js 1.8.2; MIT
