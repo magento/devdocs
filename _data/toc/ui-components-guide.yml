@@ -154,6 +154,9 @@ pages:
         - label: TreeMassActions component
           url: ui_comp_guide/components/ui-treemassactions.html
 
+        - label: UrlInput component
+          url: ui_comp_guide/components/ui-urlinput.html
+
         - label: WYSIWYG component
           url: ui_comp_guide/components/ui-wysiwyg.html
           children:
