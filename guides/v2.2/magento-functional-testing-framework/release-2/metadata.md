@@ -50,7 +50,21 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 
 ## Handling entities using REST API
 
-### Create an object
+The MFTF allows you to handle basic CRUD operations with an object using [Magento REST API] requests.
+
+Let's see an example of how to handle a category using `catalogCategoryRepositoryV1` REST API operations.
+
+![REST API operations provided by catalogCategoryRepositoryV1][catalogCategoryRepositoryV1 image]
+
+The above figure demonstrates a list of available operations to:
+- [delete a category by its ID] (`method="POST"`)
+- [get information about a category by its ID] (`method="GET"`)
+- [create a new category] (`method="POST"`)
+- [update category data by its ID] (`method="PUT"`)
+
+### Create an object {#create-object-as-adminOauth}
+
+This example demonstrates a definition of REST API request to create 
 
 ```xml
 <operation name="CreateCategory"
@@ -82,7 +96,7 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 </operation>
 ```
 
-#### Create an object as an anonymous user  
+#### Create an object as an anonymous user {#create-object-as-anonymous}
 
 ```xml
  <operation name="CreateGuestCart"
@@ -95,7 +109,7 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
  </operation>
  ```
 
-### Update an object
+### Update an object {#update-object-as-adminOauth}
 
 ```xml
 <operation name="UpdateCategory"
@@ -128,7 +142,7 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 </operation>
 ```
 
-### Delete an object
+### Delete an object {#delete-object-as-adminOauth}
 
 ```xml
 <operation name="DeleteCategory"
@@ -141,7 +155,7 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 </operation>
 ```
 
-### Get an object
+### Get an object {#get-object-as-adminOauth}
 
 ```xml
 <operation name="GetProductAttributesFromDefaultSet"
@@ -156,7 +170,7 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 
 ## Emulating an HTTP request
 
-### Create an object
+### Create an object {#create-object-as-adminFormKey}
 
 #### Backend
 
@@ -200,11 +214,11 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 </operation>
 ```
 
-### Update an object
+### Update an object {#update-object-as-adminFormKey}
 
-### Delete an object
+### Delete an object {#delete-object-as-adminFormKey}
 
-### Get an object
+### Get an object {#get-object-as-adminFormKey}
 
 ## Example
 
@@ -337,6 +351,9 @@ Example:
 
 <!-- LINK DEFINITIONS -->
 
-[Magento REST API]: http://devdocs.magento.com/swagger/index_22.html
+[Magento REST API]: http://devdocs.magento.com/guides/v2.2/rest/bk-rest.html
+
+[catalogCategoryRepositoryV1 image]: img/catalogCategoryRepository-operations.png
 
 *[MFTF]: Magento Functional Testing Framework
+*[CRUD]: Create Read Update Delete
