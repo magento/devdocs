@@ -73,14 +73,25 @@ To remove a New Relic license key from an environment:
 1.  Delete an environment variable.
 
     ```
-   magento-cloud variable:delete php:newrelic.license
-   ```
+    magento-cloud variable:delete php:newrelic.license
+    ```
 
     If you added the license as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, using or exceeding the license limit.
 
     ```
-   magento-cloud project:variable:delete php:newrelic.license
+    magento-cloud project:variable:delete php:newrelic.license
+    ```
+
+
+## Add New Relic extension to your project {#extension}
+New relic extension must be listed in the .magento.app.yaml project file:
+
    ```
+   runtime:
+     extensions:
+        - newrelic
+   ```
+
 
 ## Investigate performance {#performance}
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
