@@ -166,10 +166,6 @@ pages:
               url: cloud/env/setup-notifications.html
               versions: ["2.1","2.2","2.3"]
 
-            - label: Generate static content
-              url: cloud/env/static-content.html
-              versions: ["2.1","2.2","2.3"]
-
         - label: Environment variables
           url: cloud/env/variables-intro.html
           children:
