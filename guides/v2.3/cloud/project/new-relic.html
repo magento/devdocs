@@ -2075,15 +2075,23 @@ For environment variables: <code class="highlighter-rouge">magento-cloud vget</c
   <li>
     <p>Delete an environment variable.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   magento-cloud variable:delete php:newrelic.license
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:newrelic.license
 </code></pre></div>    </div>
 
     <p>If you added the license as a <em>project</em> variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, using or exceeding the license limit.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   magento-cloud project:variable:delete php:newrelic.license
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:delete php:newrelic.license
 </code></pre></div>    </div>
   </li>
 </ol>
+
+<h2 id="extension">Add New Relic extension to your project</h2>
+<p>New relic extension must be listed in the .magento.app.yaml project file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   runtime:
+     extensions:
+        - newrelic
+</code></pre></div></div>
 
 <h2 id="performance">Investigate performance</h2>
 <p>New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic <a href="https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page">dashboard</a>.</p>
