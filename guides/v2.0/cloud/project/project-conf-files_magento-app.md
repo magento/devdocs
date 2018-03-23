@@ -274,11 +274,6 @@ type: php:5.6
 
 {{site.data.var.ece}} supports PHP 5.5, 5.6, and 7.0.
 
-See one of the following sections for more information:
-
-*   [PHP extensions](#cloud-yaml-platform-php-ext)
-*   [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
-
 ### PHP extensions {#cloud-yaml-platform-php-ext}
 You can define additional PHP extensions you want to enable or disable. Example:
 

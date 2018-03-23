@@ -3,7 +3,7 @@ layout: default
 group: cloud
 title: Manage variables
 version: 2.0
-github_link: cloud/env/environment-vars_over.md
+github_link: cloud/env/variables-intro.md
 redirect_from:
   - /guides/v2.1/cloud/live/config-reference-most.html
   - /guides/v2.2/cloud/live/config-reference-most.html
@@ -14,6 +14,7 @@ redirect_from:
   - /guides/v2.1/cloud/live/config-reference-sens.html
   - /guides/v2.2/cloud/live/config-reference-sens.html
   - /guides/v2.3/cloud/live/config-reference-sens.html
+  - /guides/v2.0/cloud/env/environment-vars_over.html
 functional_areas:
   - Cloud
   - Configuration

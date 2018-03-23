@@ -16,64 +16,59 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 
 {% include cloud/note-pro-using-yaml.md %}
 
-## Global properties
+## Properties
+Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
-### name
-The `name` property identifies the application in the project. {{site.data.var.ee}} supports multiple applications in a project, so each application must have a *unique name*.
+### `name`
+{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project.
 
-The `name` property can consist only of lower case alphanumeric characters, such as `a`&ndash;`z` and `0`&ndash;`9`. The name is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
+The `name` property can consist only of lower case alphanumeric characters, such as `a` to `z` and `0` to `9`. The name is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Do not change the name of an application after it has been deployed.
-</div>
+{% include note.html type="info" content="Do not change the name of an application after it has been deployed." %}
 
-### `type` and `build` {#cloud-yaml-platform-type}
-The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}.
+### `type` and `build`
+The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. Supported versions:
 
-Supported versions:
-
-```yaml
+```
 type: php:7.0
 ```
 
-The `build` determines what happens by default when building the project. The only value currently supported is `composer`.
+The `build` property determines what happens by default when building the project. The only value currently supported is `composer`.
 
-Example:
-
-```yaml
+```
 type: php:7.0
 build:
     flavor: composer
 ```
 
-### `access` {#cloud-yaml-platform-access}
-`access` defines the user roles who can log in using SSH to the environments to which they have access.
+### `access`
+Defines the user roles that can log in to the environments.
 
 Possible values are:
 
-```yaml
+```
 ssh: admin
 ssh: contributor
 ssh: viewer
 ```
 
-### `relationships`  {#cloud-yaml-platform-rel}
-`relationships` defines how services are mapped in your application.
+### `relationships`
+Defines the service mapping in your application.
 
 The left-hand side is the name of the relationship as it will be exposed to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment variable. The right-hand side is in the form `<service name>:<endpoint name>`, where `<service name>` comes from `.magento/services.yaml` and  `<endpoint name>` should be the same as the value of `type`  declared in that same file.
 
 Example of valid options are:
 
-```yaml
+```
 database: "mysql:mysql"
 database2: "mysql2:mysql"
 cache: "arediscache:redis"
 search: "searchengine:solr"
 ```
 
-See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See [Services]({{page.baseurl}}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
-### `web` {#cloud-yaml-platform-web}
+### `web`
 `web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
 `web` supports the following:
@@ -92,9 +87,9 @@ Our default configuration allows the following:
 -  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
 -  From the `/pub/static` and `/pub/media` paths, any file can be accessed
 
-The following displays the default set of web accessible locations associated with an entry in [`mounts`](#cloud-yaml-platform-mounts):
+The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 
-```yaml
+```
 # The configuration of app when it is exposed to the web.
 web:
 locations:
@@ -128,20 +123,18 @@ locations:
               passthru: "/static/$resource"
 ```
 
-### `disk` {#cloud-yaml-platform-disk}
+### `disk`
 `disk` defines the size of the persistent disk size of the
 application in MB.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
-</div>
+{% include note.html type="info" content="The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
 
-### `mounts` {#cloud-yaml-platform-mounts}
+### `mounts`
 `mounts` is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
 
 The following is a default list of mounts configured in `magento.app.yaml`:
 
-```yaml
+```
 # The mounts that will be performed when the package is deployed.
 mounts:
     "var": "shared:files/var"
@@ -152,7 +145,7 @@ mounts:
 
 The format for adding your mount to this list is as follows:
 
-```yaml
+```
 "/public/sites/default/files": "shared:files/files"
 ```
 
@@ -163,9 +156,9 @@ The format for adding your mount to this list is as follows:
 Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
 </div>
 
-If you also want the mount web accessible, you must add it to the [`web`](#cloud-yaml-platform-web) block of locations.
+If you also want the mount web accessible, you must add it to the [`web`](#web) block of locations.
 
-### `dependencies` {#cloud-yaml-platform-dep}
+### `dependencies`
 `dependencies` enables you to specify dependencies that your application might need during the build process.
 
 {{site.data.var.ee}} supports dependencies on the following
@@ -179,14 +172,14 @@ Those dependencies are independent of the eventual dependencies of your applicat
 
 You can specify those dependencies as follows:
 
-```yaml
+```
 ruby:
    sass: "~3.4"
 nodejs:
    grunt-cli: "~0.3"
 ```
 
-### `hooks` {#cloud-yaml-platform-hooks}
+### `hooks`
 Use the `hooks` section to specify which shell commands to run during the build and deploy phases. For example, you may want to run a CLI command provided by a custom extension during the build phase.
 
 -  **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
@@ -194,7 +187,7 @@ Use the `hooks` section to specify which shell commands to run during the build 
 
 Add CLI commands under the `build` or `deploy` sections:
 
-```yaml
+```
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
@@ -210,10 +203,9 @@ The home directory, where your application is mounted, is `/app`, and that is th
 
 The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-## Example: Compile SASS files using grunt
-For example, to compile SASS files using grunt:
+#### To compile SASS files using grunt:
 
-```yaml
+```
 dependencies:
   ruby:
     sass: "3.4.7"
@@ -231,29 +223,13 @@ hooks:
 
 You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
-## Environment variables {#variables}
-The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
-
-```yaml
-variables:
-    env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
-```
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-Note the `env:` property in the previous example. You must use this property whenever [overriding a Magento configuration setting](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html). If you use the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var) to configure environment variables, you must prepend the variable name with `env:`. For example:
-![Environment variable example]({{site.baseurl}}common/images/cloud_env_var_example.png)
-</div>
-
-### `crons` {#cloud-yaml-platform-cron}
+### `crons`
 `crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
 
 `crons` support the following:
 
--  `spec`: The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per 5 minutes and once per one minute in Pro Staging and Production environments. You will need to complete [additional configurations]({{page.baseurl}}cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
--  `cmd`: The command to execute.
+-  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{page.baseurl}}cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
+-  `cmd`—The command to execute.
 
 A Cron job is well suited for the following tasks:
 
@@ -264,21 +240,32 @@ A Cron job is well suited for the following tasks:
 
 A sample Magento cron job follows:
 
-```yaml
+```
 crons:
   cronrun:
       spec: "*/5 * * * *"
       cmd: "php bin/magento cron:run"
 ```
 
-For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#cloud-yaml-platform-cron). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
 For more information, see [Set up cron jobs]({{page.baseurl}}cloud/configure/setup-cron-jobs.html).
 
-## Configure PHP options {#cloud-yaml-platform-php}
+## Variables
+The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
+
+```
+variables:
+    env:
+        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+```
+
+## Configure PHP options
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
-```yaml
+```
 name: mymagento
 type: php:7.0
 ```
@@ -287,15 +274,10 @@ type: php:7.0
 {{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 </div>
 
-See one of the following sections for more information:
-
--    [PHP extensions](#cloud-yaml-platform-php-ext)
--    [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
-
-### PHP extensions {#cloud-yaml-platform-php-ext}
+### PHP extensions
 You can define additional PHP extensions to enable or disable:
 
-```yaml
+```
 # .magento.app.yaml
 runtime:
     extensions:
@@ -363,18 +345,14 @@ Optional PHP extensions available to install:
 -  [xhprof](http://php.net/manual/en/book.xhprof.php){:target="\_blank"}
 -  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="\_blank"}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
-</div>
+{% include note.html type="info" content="Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube." %}
 
-### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
+### Customize `php.ini` settings
 You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
-</div>
+{% include note.html type="info" content="Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options." %}
 
 For example, if you need to increase the PHP memory limit:
 
@@ -386,7 +364,7 @@ After pushing your file, you can check that the custom PHP configuration has bee
 
 	cat /etc/php5/fpm/php.ini
 
-## Workers {#workers}
+## Workers
 You can define zero or multiple work instances for each application. A worker instance runas as its own container, independently of the web instance and has no Nginx instance running. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
 
 A worker instance is the exact same code and compilation output as a web instance. The container image is built once and deployed multiple times if needed using the same `build` hook and `dependencies`. You can customize the container and allocated resources.
@@ -401,7 +379,7 @@ Use worker instances for background tasks including:
 
 A basic, common worker configuration could look like this:
 
-```yaml
+```
 workers:
     queue:
         size: S
@@ -412,4 +390,4 @@ workers:
 
 This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
 
-For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#cloud-yaml-platform-cron). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.

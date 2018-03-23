@@ -166,8 +166,12 @@ pages:
               url: cloud/env/setup-notifications.html
               versions: ["2.1","2.2","2.3"]
 
+            - label: Generate static content
+              url: cloud/env/static-content.html
+              versions: ["2.1","2.2","2.3"]
+
         - label: Environment variables
-          url: cloud/env/environment-vars_over.html
+          url: cloud/env/variables-intro.html
           children:
             - label: Application variables
               url: cloud/env/environment-vars_magento.html

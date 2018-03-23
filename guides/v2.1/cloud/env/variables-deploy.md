@@ -17,9 +17,22 @@ For information on the build and deploy process, see [Deployment process]({{page
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1 and later
 
-Use to configure Redis page and default caching. Set the variable value using JSON. By default, the deployment process overwrites all settings in the `env.php` file.
+Use to configure Redis page and default caching. 
 
-Refer to [Configure Redis]({{page.baseurl}}cloud/env/working-with-variables.html#redis) for more information.
+```
+stage:
+  global:
+  build:
+  deploy:
+    CACHE_CONFIGURATION:
+      frontend:
+        default:
+          backend: file
+        page_cache:
+          backend: file
+```
+
+By default, the deployment process overwrites all settings in the `env.php` file. When setting the `cm_cache_backend_redis` parameter, you must specify the `server`, `port`, and `database` options.
 
 ### `CLEAN_STATIC_FILES`
 
@@ -37,9 +50,9 @@ Because of [static file fallback]({{page.baseurl}}howdoi/clean_static_cache.html
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1 and later
 
-By default, the deployment process overwrites all settings in the `env.php` file. Use this environment variable to make sure message queues are running after a deployment.
- 
-You must set the variable value using JSON. Refer to [Manage message queues]({{page.baseurl}}cloud/env/working-with-variables.html#manage-message-queues) for more information.
+Use this environment variable to make sure message queues are running after a deployment. By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
+
+{% include cloud/cron-consumers-runner.md %}
 
 ### `DO_DEPLOY_STATIC_CONTENT`
 
@@ -67,9 +80,26 @@ We manage the values and setting of this variable. It identifies the type of env
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-By default, the deployment process overwrites all settings in the `env.php` file. Use this environment variable to retain customized AMQP service settings between deployments.
+Use this environment variable to retain customized AMQP service settings between deployments. For example, if you prefer using an existing message queue service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the `QUEUE_CONFIGURATION` environment variable to connect it to your site:
 
-You must set the variable value using JSON. Refer to [Connect to an existing AMQP-based service]({{page.baseurl}}cloud/env/working-with-variables.html#queue) for more information.
+```
+stage:
+  global:
+  build:
+  deploy:
+        QUEUE_CONFIGURATION:
+          amqp:
+            host: test.host
+            port: 1234
+          amqp2:
+            host: test.host2
+            port: 12345
+          mq:
+            host: mq.host
+            port: 1234
+```
+
+By default, the deployment process overwrites all settings in the `env.php` file.
 
 ### `SCD_COMPRESSION_LEVEL`
 
@@ -77,6 +107,31 @@ You must set the variable value using JSON. Refer to [Connect to an existing AMQ
 -  **Version**—Magento 2.1.x
 
 Specifies which [gzip](https://www.gnu.org/software/gzip){target="\_blank} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
+
+### `SCD_ON_DEMAND`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Enable generation of static content when requested by a user. Pre-loading the cache using the `post_deploy` hook reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the `SCD_ON_DEMAND` environment variable to the `global` section in the `.magento.env.yaml` file:
+
+```
+stage:
+  global:
+    SCD_ON_DEMAND: true
+```
+
+The `SCD_ON_DEMAND` variable skips the SCD and the  `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
+
+```php
+return array(
+   ...
+   'static_content_on_demand_in_production' => 1,
+   ...
+);
+```
+
+{% include note.html type="info" content="JS bundling and JS/CSS merging do not work with SCD on demand." %}
 
 ### `SCD_STRATEGY`
 
@@ -90,32 +145,69 @@ Deploys all static view files for all packages.
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-By default, the deployment process overwrites all settings in the `env.php` file. Use this environment variable to retain customized search service settings between deployments.
+Use this environment variable to retain customized search service settings between deployments. For example:
 
-You must set the variable value using JSON. Refer to [Connect to an existing search service]({{page.baseurl}}cloud/env/working-with-variables.html#search) for more information.
+```
+stage:
+  global:
+  build:
+  deploy:
+   SEARCH_CONFIGURATION:
+     engine: elasticsearch
+     elasticsearch_server_hostname: hostname
+     elasticsearch_server_port: '123456'
+     elasticsearch_index_prefix: magento
+     elasticsearch_server_timeout: '15'
+```
+
+By default, the deployment process overwrites all settings in the `env.php` file. 
 
 ### `SESSION_CONFIGURATION`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1 and later
 
-Use to configure Redis session storage. Set the variable value using JSON. By default, the deployment process overwrites all settings in the `env.php` file.
+Use to configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
-Refer to [Configure Redis]({{page.baseurl}}cloud/env/working-with-variables.html#redis) for more information.
+```
+stage: 
+  build: ~
+  deploy: 
+    SESSION_CONFIGURATION: 
+      redis: 
+        bot_first_lifetime: 100
+        bot_lifetime: 10001
+        database: 0
+        disable_locking: 1
+        host: redis.internal
+        max_concurrency: 10
+        max_lifetime: 10001
+        min_lifetime: 100
+        port: 6379
+      save: redis
+```
+
+By default, the deployment process overwrites all settings in the `env.php` file. 
 
 ### `STATIC_CONTENT_EXCLUDE_THEMES`
 
 -  **Default**—_Not set_
 -  **Version**—Available in all versions
 
-Themes can include numerous files. If you want to skip copying over theme files during deployment, you can set this environment variable. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude, you would add the theme, for example: `Magento/luma`.
+Themes can include numerous files. Set this variable to true if you want to skip copying over theme files during deployment. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude the `Magento/luma` theme:
+
+```
+ stage:
+  build:
+    SCD_EXCLUDE_THEMES: Magento/luma 
+```
 
 ### `STATIC_CONTENT_SYMLINK`
 
 -  **Default**—`enabled`
 -  **Version**—Available in all versions
 
-Generates symlinks for static content. By default, symlinks are always generated unless you disable it using this environment variable. This setting is vital for Pro Production environment for the three node cluster. If disabled, every file will be copied during deployment without automated symlinks generated. If disabled, this will increase deployment time.
+Generates symlinks for static content, unless you disable it using this environment variable. This setting is vital in the Pro Production environment for the three node cluster. When this variable is not set (disabled), it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
 
 ### `STATIC_CONTENT_THREADS`
 
