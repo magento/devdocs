@@ -74,10 +74,10 @@ pages:
             - label: PHP
               children:
 
-                - label: PHP 5.6 or 7.0—CentOS
+                - label: PHP—CentOS
                   url: install-gde/prereq/php-centos.html
 
-                - label: PHP 5.6 or 7.0—Ubuntu
+                - label: PHP—Ubuntu
                   url: install-gde/prereq/php-ubuntu.html
 
                 - label: Required PHP settings
