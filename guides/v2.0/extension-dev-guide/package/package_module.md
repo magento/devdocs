@@ -187,4 +187,5 @@ A private repository can be used for development or private code but installatio
 
 All packages on the private repository can now be referenced within the `require` field.
 
+Refer to the [official documentation](https://packagist.com/features/private-vcs-packages) for more details on how to configure your project to use Private Packagist.
 <!-- ##Submitting your module to Marketplace -->
