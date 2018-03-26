@@ -23,10 +23,10 @@ Field | Type | Description
 `attribute_id` | String | The ID assigned to the attribute
 `attribute_code` | String | A string that identifies the attribute
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
-`position` | Int | A number that indicates the order in which the attribute is displayed.
-`is_use_default` | Boolean | Indicates whether the option is the default.
-`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product.
-`product_id` | Int | This is the same as a product's 'id' field.
+`position` | Int | A number that indicates the order in which the attribute is displayed
+`is_use_default` | Boolean | Indicates whether the option is the default
+`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product
+`product_id` | Int | This is the same as a product's 'id' field
 
 ## ConfigurableProductOptionsValues
 

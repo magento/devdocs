@@ -113,9 +113,9 @@ where:
 
 Attribute |  Description
 --- | ---
-`items` | An array of products that match the specified search criteria.
+`items` | An array of products that match the specified search criteria
 `page_info` | An object that includes the `page_info` and `currentPage` values specified in the query
-`total_count` | The number of products returned.
+`total_count` | The number of products returned
 
 ### Items Array
 
@@ -123,8 +123,8 @@ The `Items` array can contain all the attributes that can be specified in an `Pr
 
 Attribute | Data type | Description
 --- | --- | ---
-`attribute_set_id` | Int | The attribute set assigned to the product.
-`category_ids` | [Int] | An array of category IDs the product belongs to.
+`attribute_set_id` | Int | The attribute set assigned to the product
+`category_ids` | [Int] | An array of category IDs the product belongs to
 `category_links` | [ProductCategoryLinks] | An array of [ProductCategoryLinks](#ProductCategoryLinks) objects
 `color` | Int | A number assigned to represent the color
 `configurable_product_options` | [ProductConfigurableProductOptions] | An array of [ProductConfigurableProductOptions](#ProductConfigurableProductOptions) objects
@@ -133,46 +133,47 @@ Attribute | Data type | Description
 `custom_design` | String | A theme that can be applied to the product page
 `custom_design_from` | String | The beginning date when a theme is applied to the product page
 `custom_design_to` | String| The date at which a theme is no longer applied to the product page
-`custom_layout` | String | The name of a custom layout.
+`custom_layout` | String | The name of a custom layout
 `custom_layout_update` | String | XML code that is applied as a layout update to the product page
-`description` | String | A detailed information about the product. The value can include simple HTML tags.
-`gift_message_available` | String | Indicates whether a gift message is available.
-`has_options` | String | Indicates whether additional attributes have been created for the product.
-`id` | Int | The ID number assigned to the product.
-`image` | String | The relative path for the main image on the product page.
-`image_label` | String | The label assigned to a product image.
+`description` | String | Detailed information about the product. The value can include simple HTML tags
+`gift_message_available` | String | Indicates whether a gift message is available
+`has_options` | String | Indicates whether additional attributes have been created for the product
+`id` | Int | The ID number assigned to the product
+`image` | String | The relative path for the main image on the product page
+`image_label` | String | The label assigned to a product image
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the Rma module.
+`manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
-`meta_description` | String | A brief overview of the product for search results listings. Maximum 255 characters.
-`meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines.
-`meta_title` | String | A string that is displayed in the title bar and tab of the browser and in search results lists.
+`meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
+`meta_keyword` | String | A comma-separated list of keywords that are visible only to search engines
+`meta_title` | String | A string that is displayed in the title bar and tab of the browser and in search results lists
 `name` | String | The product name. Customers use this name to identify the product.
-`new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product.
-`new_to_date` | String | The end date for new product listings.
+`new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
+`new_to_date` | String | The end date for new product listings
 `options` | [ProductOptions] | An array of [ProductOptions](#ProductOptions) objects
-`options_container` | String | If the product has multiple options, determines where they appear on the product page.
-`page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`.
+`options_container` | String | If the product has multiple options, determines where they appear on the product page
+`page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
 `price` | Float | The price of an item. A `ProductPrice` object is returned. See [Price]({{page.baseurl}}graphql/price.html) for more information.
 `product_links` | [ProductLinks] | An array of [ProductLinks](#ProductLinks) objects
-`required_options` | Not applicable | Input only. Indicates whether the product has required options.
-`short_description` | String | A short description of the product. Its use depends on the theme.
-`sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer.
-`small_image` | String | The file name of a small image, which is used on catalog pages
-`small_image_label` | String | The label assigned to a product's small image.
-`special_from_date` | String | The beginning date that a product has a special price.
+`required_options` | Not applicable | Input only--indicates whether the product has required options
+`short_description` | String | A short description of the product. Its use depends on the store's theme.
+`sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
+`small_image` | String | The relative path to the small image, which is used on catalog pages
+`small_image_label` | String | The label assigned to a product's small image
+`special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
-`special_to_date` | String | The end date that a product has a special price.
+`special_to_date` | String | The end date that a product has a special price
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
-`thumbnail` | String | The file name of a thumbnail image
-`thumbnail_label` | String | The label assigned to a product's thumbnail image.
-`tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached.
+`thumbnail` | String | The relative path to the product's thumbnail image
+`thumbnail_label` | String | The label assigned to a product's thumbnail image
+`tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTierPrices) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
-`updated_at` | String | The timestamp indicating when the product was last updated.
+`updated_at` | String | The timestamp indicating when the product was last updated
 `url_key` | String |  The part of the URL that identifies the product
 `url_path` |  String | The part of the URL that precedes the `url_key`
-`website_ids` | [Int] | An array of website IDs in which the product is available.
+`website_ids` | [Int] | An array of website IDs in which the product is available
 `weight` | Float | The weight of the item, in units defined by the store
 
 Several product types have their own implementation of the `ProductInterface`. These implementations may contain additional attributes.
@@ -188,23 +189,23 @@ VirtualProduct
 
 Field | Type | Description
 --- | --- | ---
-`amount` | `Money` | The price of a product plus a three-letter currency code.
-`adjustments` | `PriceAdjustment` | An array that provides information about tax, weee, or weee_tax adjustments.
+`amount` | `Money` | The price of a product plus a three-letter currency code
+`adjustments` | `PriceAdjustment` | An array that provides information about tax, weee, or weee_tax adjustments
 
 ##### Money object
 
 Field | Type | Description
 --- | --- | ---
-`value` | Float | A number expressing a monetary value.
-`currency` | `CurrencyEnum` | A three-letter currency code, such as `USD` or `EUR`.
+`value` | Float | A number expressing a monetary value
+`currency` | `CurrencyEnum` | A three-letter currency code, such as `USD` or `EUR`
 
 ##### PriceAdjustment object
 
 Field | Type | Description
 --- | --- | ---
 `amount` | `Money` | The amount of the price adjustment and its currency code.
-`code` | `PriceAdjustmentCodesEnum` | Indicates whether the adjustment involves `tax`, `weee`, or `weee_tax`.
-`description` | `PriceAdjustmentDescriptionEnum` | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
+`code` | `PriceAdjustmentCodesEnum` | Indicates whether the adjustment involves `tax`, `weee`, or `weee_tax`
+`description` | `PriceAdjustmentDescriptionEnum` | Indicates whether the entity described by the code attribute is included or excluded from the adjustment
 
 #### ProductPrices
 
@@ -280,8 +281,8 @@ Field | Type | Description
 --- | --- | ---
 `id` | Int | The identifier assigned to the object
 `media_type` | String | `image` or `video`
-`label` | String | The the "alt" text displayed on the UI when the user points to the image
-`position` | Int | The media item's position after it has been sorted.
+`label` | String | The "alt" text displayed on the UI when the user points to the image
+`position` | Int | The media item's position after it has been sorted
 `disabled` | Boolean | Whether the image is hidden from view
 `types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
 `file` | String | The path of the image on the server
@@ -300,7 +301,7 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`media_type` | String | `external-video`
+`media_type` | String | Must be `external-video`
 `video_provider` | String | Optionally describes the video source
 `video_url` | String | Required. The URL to the video
 `video_title` | String | Required. The title of the video
@@ -315,14 +316,14 @@ Field | Type | Description
 `qty` | Float | The number of items that must be purchased to qualify for tier pricing
 `value` | Float | The price of the fixed price item
 `percentage_value` | Float | The percentage discount of the item
-`website_id` | Int | The ID assigned to the website.
+`website_id` | Int | The ID assigned to the website
 
 
 ### CustomizableAreaOption object
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableAreaValue` | An object that defines a text area.
+`value` | `CustomizableAreaValue` | An object that defines a text area
 `product_sku` | String | The Stock Keeping Unit of the base product
 
 #### CustomizableAreaValue object
@@ -353,13 +354,13 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableDropDownValue` | An array that defines the set of options for a drop down menu.
+`value` | `CustomizableDropDownValue` | An array that defines the set of options for a drop down menu
 
 #### CustomizableDropDownValue object
 
 Field | Type | Description
 --- | --- | ---
-`option_type_id` | Int | The ID assigned to the value.
+`option_type_id` | Int | The ID assigned to the value
 `price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `sku` | String | The Stock Keeping Unit for this option
@@ -370,14 +371,14 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableFieldValue` | An object that defines a text field.
+`value` | `CustomizableFieldValue` | An object that defines a text field
 `product_sku` | String | The Stock Keeping Unit of the base product
 
 #### CustomizableFieldValue object
 
 Field | Type | Description
 --- | --- | ---
-`price` | Float | The price of the custom value.
+`price` | Float | The price of the custom value
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `sku` | String | The Stock Keeping Unit for this option
 `max_characters` | Int | The maximum number of characters that can be entered for this customizable option
@@ -386,7 +387,7 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableFileValue` | An object that defines a file value.
+`value` | `CustomizableFileValue` | An object that defines a file value
 `product_sku` | String | The Stock Keeping Unit of the base product
 
 #### CustomizableFileValue object
@@ -404,13 +405,13 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableRadioValue` | An array that defines a set of radio buttons.
+`value` | `CustomizableRadioValue` | An array that defines a set of radio buttons
 
 #### CustomizableRadioValue object
 
 Field | Type | Description
 --- | --- | ---
-`option_type_id` | Int | The ID assigned to the value.
+`option_type_id` | Int | The ID assigned to the value
 `price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `sku` | String | The Stock Keeping Unit for this option

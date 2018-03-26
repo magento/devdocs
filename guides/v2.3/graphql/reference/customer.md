@@ -48,7 +48,7 @@ Attribute |  Data Type | Description
 `customer_id` | Int | The customer ID
 `region` | CustomerAddressesRegion | An object containing the region name, region code, and region ID
 `region_id` | Int | A number that uniquely identifies the state, province, or other area
-`country_id` | String | The customer's country.
+`country_id` | String | The customer's country
 `street` | [String] | An array of strings that define the street number and name
 `company` | String | The customer's company
 `telephone` | String | The telephone number
@@ -59,7 +59,7 @@ Attribute |  Data Type | Description
 `lastname` | String | The family name of the person associated with the shipping/billing address
 `middlename` | String | The middle name of the person associated with the shipping/billing address
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`suffix` | String | A value such as Sr., Jr., III, etc.
+`suffix` | String | A value such as Sr., Jr., or III
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
 `default_billing` | Boolean | Indicates whether the address is the default billing address

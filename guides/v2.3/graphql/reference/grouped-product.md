@@ -12,15 +12,15 @@ The `GroupedProduct` endpoint defines which grouped product-specific attributes 
 
 Field | Type | Description
 --- | --- | ---
-`items` | `GroupedProductItem` | An array containing grouped product items"/>
+`items` | `GroupedProductItem` | An array containing grouped product items
 
 ## GroupedProductItem
 
 Field | Type | Description
 --- | --- | ---
-`qty` | Float | The quantity of this grouped product item"/>
-`position` | Int | The relative position of this item compared to the other group items."/>
-`product` | `ProductInterface` | The ProductInterface object, which contains details about this product option"/>
+`qty` | Float | The quantity of this grouped product item
+`position` | Int | The relative position of this item compared to the other group items
+`product` | `ProductInterface` | The ProductInterface object, which contains details about this product option
 
 ## Sample Query
 

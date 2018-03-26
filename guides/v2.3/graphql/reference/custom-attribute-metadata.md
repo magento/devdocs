@@ -97,5 +97,5 @@ The key you're storing EAV attributes under
 Attribute |  Data Type | Description
 --- | --- | ---
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
-`attribute_type` | String | The data type of the attribute. (Response only)
-`entity_type` | String | The type of entity that defines the attribute.
+`attribute_type` | String | The data type of the attribute (Response only)
+`entity_type` | String | The type of entity that defines the attribute
