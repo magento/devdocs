@@ -370,3 +370,4 @@ In the example provided, this value is `Magento_Tinymce3/tinymce3Adapter` define
 [`widgetTools`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentowidget/editor_plugin.js
 [`MagentovariablePlugin`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentovariable/editor_plugin.js
 [`MediabrowserUtility`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/web/mage/adminhtml/browser.js
+[Add a third-party editor]: {{page.baseurl}}ui_comp_guide/components/wysiwyg/add-custom-editor/
