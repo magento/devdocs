@@ -22,12 +22,12 @@ The `.magento.env.yaml` file includes the following sections:
     -   `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the `build_options.ini` file override settings in this section.
     -   `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
 -   **`log`**—Controls notifications, including notification types and level of detail.
+    -   `slack`—Configure a message to send to a Slack bot.
+    -   `email`—Configure an email to send to one or more email recipients.
 
-You can find the latest sample of the `.magento.env.yaml` file in the [`magento-cloud` template repository](https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml).
+The latest sample of the `.magento.env.yaml` file is in the [`magento-cloud` template repository](https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml). You can find a detailed definition for each variable in the following reference topics:
 
-You can use the following environment variables to control build and deploy actions:
-
--   [Application]({{page.baseurl}}cloud/env/environment-vars_magento.html)—variables to override application variables
+-   [Application]({{page.baseurl}}cloud/env/environment-vars_magento.html)—variables control administrative credentials
 -   [Cloud]({{page.baseurl}}cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
 -   [Global]({{page.baseurl}}cloud/env/variables-intro.html)—variables control actions in both phases: build and deploy
     -   [Build]({{page.baseurl}}cloud/env/variables-build.html)—variables control build actions
