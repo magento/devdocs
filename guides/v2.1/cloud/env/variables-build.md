@@ -9,7 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-The following variables are available during the build phase. See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
+The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{page.baseurl}}cloud/env/variables-intro.html#global-variables). See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
 
 For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
@@ -36,31 +36,6 @@ exclude_themes=magento/luma,magento/my-theme
 -  **Version**—Magento 2.1.x
 
 Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
-
-### `SCD_ON_DEMAND`
-
--  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
-
-Enable generation of static content when requested by a user. Pre-loading the cache using the `post_deploy` hook reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the `SCD_ON_DEMAND` environment variable to the `global` section in the `.magento.env.yaml` file:
-
-```
-stage:
-  global:
-    SCD_ON_DEMAND: true
-```
-
-The `SCD_ON_DEMAND` variable skips the SCD and the  `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
-
-```php
-return array(
-   ...
-   'static_content_on_demand_in_production' => 1,
-   ...
-);
-```
-
-{% include note.html type="info" content="JS bundling and JS/CSS merging do not work with SCD on demand." %}
 
 ### `SCD_STRATEGY`
 

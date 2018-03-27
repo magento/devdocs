@@ -15,7 +15,7 @@ Unlike other YAML configuration files, such as [`.magento.app.yaml`]({{page.base
 
 {% include note.html type="info" content="If you want to configure unique actions in each environment, you must modify this file in each environment branch."%}
 
-Add the following sections to the `.magento.env.yaml` file:
+The `.magento.env.yaml` file includes the following sections:
 
 -   **`stage`**—Contains the following sections:
     -   `global`—Controls actions in both the build _and_ deploy phases. You can override these settings in the build and deploy sections.
@@ -28,6 +28,7 @@ You can find the latest sample of the `.magento.env.yaml` file in the [`magento-
 You can use the following environment variables to control build and deploy actions:
 
 -   [Application]({{page.baseurl}}cloud/env/environment-vars_magento.html)—variables to override application variables
--   [Build]({{page.baseurl}}cloud/env/variables-build.html)—variables control build actions
 -   [Cloud]({{page.baseurl}}cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
--   [Deploy]({{page.baseurl}}cloud/env/variables-deploy.html)—variables control deploy actions
+-   [Global]({{page.baseurl}}cloud/env/variables-intro.html)—variables control actions in both phases: build and deploy
+    -   [Build]({{page.baseurl}}cloud/env/variables-build.html)—variables control build actions
+    -   [Deploy]({{page.baseurl}}cloud/env/variables-deploy.html)—variables control deploy actions
