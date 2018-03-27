@@ -41,7 +41,7 @@ The following _global_ variables control actions in both stages—build and depl
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Enable generation of static content when requested by a user. Pre-loading the cache using the `post_deploy` hook reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
+Enable generation of static content when requested by a user. Pre-loading the cache using the [`post_deploy` hook]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
 ```
 stage:

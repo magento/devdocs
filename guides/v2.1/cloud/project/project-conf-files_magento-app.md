@@ -184,10 +184,11 @@ nodejs:
 ```
 
 ### `hooks`
-Use the `hooks` section to specify which shell commands to run during the build and deploy phases. For example, you may want to run a CLI command provided by a custom extension during the build phase.
+Use the `hooks` section to add shell commands that you need to run during the build, deploy, and post-deploy phases:
 
 -   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
+-   **`post_deploy`**—Execute commands _after_ deploying your application, _after_ the container begins accepting connections, and _during_ normal, incoming traffic. The `post_deploy` hook performs cache cleaning, warms the cache, and writes to the `/var/log/post_deploy.log` log file.
 
 Add CLI commands under the `build` or `deploy` sections:
 
@@ -201,11 +202,12 @@ hooks:
     deploy: |
         php ./vendor/bin/m2-ece-deploy
         php ./bin/magento <custom-command>
+    # We run post deploy hook to clean and warm the cache.
+    post_deploy: |
+        php ./vendor/bin/ece-tools
 ```
 
-The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be run unless you `cd` somewhere else.
-
-The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
+The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
 #### To compile SASS files using grunt:
 
