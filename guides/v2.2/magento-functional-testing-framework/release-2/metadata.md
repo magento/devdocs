@@ -45,14 +45,17 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 
 ## Principles
 
+* `dataType` value must match the `type` value in the corresponding file with data definition
 * File name is of camel case format and contains name of data entity, which it handles, and suffix `Meta`. Example: `CategoryMeta.xml`.
 * A metadata file may contain different types of operations (`type`) with the same data entity (`dataType`).
 
 ## Handling entities using REST API
 
 The MFTF allows you to handle basic CRUD operations with an object using [Magento REST API] requests.
+All you need is simply to wrap the corresponding REST API request into XML tags provided by the MFTF.
+Reference documentation for this tags is at the end of this topic in the [Reference] section.
 
-Let's see an example of how to handle a category using `catalogCategoryRepositoryV1` REST API operations.
+Let's see an example of how to handle a category using REST API operations provided by the `catalogCategoryRepositoryV1` service.
 
 ![REST API operations provided by catalogCategoryRepositoryV1][catalogCategoryRepositoryV1 image]
 
@@ -64,7 +67,7 @@ The above figure demonstrates a list of available operations to:
 
 ### Create an object {#create-object-as-adminOauth}
 
-This example demonstrates a definition of REST API request to create 
+Here, we are going to create a category
 
 ```xml
 <operation name="CreateCategory"
@@ -110,6 +113,10 @@ This example demonstrates a definition of REST API request to create
  ```
 
 ### Update an object {#update-object-as-adminOauth}
+
+```json
+
+```
 
 ```xml
 <operation name="UpdateCategory"
@@ -351,6 +358,7 @@ Example:
 
 <!-- LINK DEFINITIONS -->
 
+[Reference]: #reference
 [Magento REST API]: http://devdocs.magento.com/guides/v2.2/rest/bk-rest.html
 
 [catalogCategoryRepositoryV1 image]: img/catalogCategoryRepository-operations.png
