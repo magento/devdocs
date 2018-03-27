@@ -55,6 +55,13 @@ Use this environment variable to make sure message queues are running after a de
 
 {% include cloud/cron-consumers-runner.md %}
 
+### `CRYPT_KEY`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1 and later
+
+Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
+
 ### `DO_DEPLOY_STATIC_CONTENT`
 
 -  **Default**—`disabled`
