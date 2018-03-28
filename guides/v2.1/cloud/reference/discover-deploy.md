@@ -33,7 +33,7 @@ A set of YAML configuration files located in the project root directory define y
 For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files. For Pro Staging and Production environments, you will need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html). We will configure those environments using configurations from the Git files.
 
 -  [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)—defines how to build and deploy Magento. Enter specific build and deploy options to the `hooks` section.
-- [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
+- [`.magento.env.yaml`]({{page.baseurl}}cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)—defines how {{site.data.var.ee}} processes an incoming URL.
 -  [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
 -  [`app/etc/config.php`](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html)—defines the [system-specific settings](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-clp-settings) Magento uses to configure your store. Magento auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If the file exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files. If you follow [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps.
@@ -166,6 +166,8 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic arrives at your newly created cluster.
 
 Successful deployment removes the maintenance mode to allow for normal access and creates backup (BAK) files for the `app/etc/env.php` and the `app/etc/config.php` configuration files.
+
+If you enabled generation of static content using the `SCD_ON_DEMAND` variable and you configured the [`post_deploy` hook]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#hooks), this clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections, and _during_ normal, incoming traffic.
 
 To review build and deploy logs, see [Use logs for troubleshooting]({{page.baseurl}}cloud/trouble/environments-logs.html).
 
