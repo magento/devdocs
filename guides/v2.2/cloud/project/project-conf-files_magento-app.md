@@ -8,6 +8,9 @@ redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html
   - /guides/v2.2/cloud/before/before-setup-env-cron.html
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.
@@ -180,11 +183,11 @@ nodejs:
 ```
 
 ### `hooks`
-Use the `hooks` section to add shell commands that you need to run during the build, deploy, and post-deploy phases:
+Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
 -   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
--   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
--   **`post_deploy`**—Execute commands _after_ deploying your application, _after_ the container begins accepting connections, and _during_ normal, incoming traffic. The `post_deploy` hook clears the cache, preloads (warms) the cache, and updates the `/var/log/post_deploy.log` file. The cache warming is not available when using the Starter plan architecture.
+-   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
+-   **`post_deploy`**—Execute commands _after_ deploying your application, _after_ the container begins accepting connections, and _during_ normal, incoming traffic. The `post_deploy` hook clears the cache, preloads (warms) the cache, and updates the `/var/log/post_deploy.log` file. Cache warming is not available when using Starter.
 
 Add CLI commands under the `build` or `deploy` sections:
 
