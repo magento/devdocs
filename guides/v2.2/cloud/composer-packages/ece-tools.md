@@ -24,7 +24,7 @@ functional_areas:
 
 -  <!-- MAGECLOUD-1751 -->**Deployment Logging**—Added the ability to enable Syslog and GELF handlers for outputting logs during the deployment process.
 
--  The [**Environment variables**](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html) documentation is in a new location in the DevDocs. Added the following new environment variables:
+-  Added the following new [**Environment variables**](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html):
     -  <!-- MAGECLOUD-1556 -->Added the new `CRYPT_KEY` environment variable as a way to supply cryptographic key to another environment when moving a database.
     -  <!-- MAGECLOUD-1621 and MAGECLOUD-1736-->Added the new `SKIP_HTML_MINIFICATION` global environment variable that skips copying the static view files in the var/view_preprocessed directory.
     -  <!-- MAGECLOUD-1738 -->Added the new `SCD_ON_DEMAND` global environment variable to generate static content when requested.
