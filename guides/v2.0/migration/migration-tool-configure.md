@@ -17,14 +17,14 @@ functional_areas:
 
 After you install the data migration tool, the following directory contains mapping and configuration files:
 
-*	{{site.data.var.ce}}:
+*	{{site.data.var.opensource}}:
 
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/opensource-to-opensource`: Configuration and scripts for migrating from {{site.data.var.opensource}} 1 to {{site.data.var.opensource}} 2
 
-*	{{site.data.var.ee}}:
+*	{{site.data.var.commerce}}:
 
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
-	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/opensource-to-commerce`: Configuration and scripts for migrating from {{site.data.var.opensource}} 1 to {{site.data.var.commerce}} 2
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/commerce-to-commerce`: Configuration and scripts for migrating from {{site.data.var.commerce}} 1 to {{site.data.var.commerce}} 2
 
 The preceding directories contain subdirectories for each supported version.
 
@@ -38,7 +38,7 @@ To create a configuration file:
 
 2.	Change to the following directory:
 
-		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
+		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<opensource or version>
 
 3.	Enter the following command to create a `config.xml` from the provided sample:
 
@@ -109,7 +109,7 @@ To use the mapping files:
 
 3.	Then change config.xml in `<options>` node with the new name of the file.
 
-The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce version>` directories contain the following configuration files:
+The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<opensource version>` directories contain the following configuration files:
 
 Even though you will be working with `map.xml.dist` file most of the time, the following table discusses each mapping and other files.
 
@@ -128,11 +128,11 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 	<td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. customer-attr-document-groups.xml.dist</td>
+	<td><em>{{site.data.var.commerce}} only</em>. customer-attr-document-groups.xml.dist</td>
 	<td>List of tables used in the custom customer attributes step.</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. customer-attr-map.xml.dist</td>
+	<td><em>{{site.data.var.commerce}} only</em>. customer-attr-map.xml.dist</td>
 	<td>Map file that is used in Custom Customer Attributes Step.</td>
 </tr>
 <tr>
@@ -160,7 +160,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 	<td>Log mapping file.</td>
 </tr>
 <tr>
-	<td><em>{{site.data.var.ee}} only</em>. map-sales.xml.dist</td>
+	<td><em>{{site.data.var.commerce}} only</em>. map-sales.xml.dist</td>
 	<td>Map file that is used in SalesOrder step.</td>
 </tr>
 <tr>
