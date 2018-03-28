@@ -336,11 +336,14 @@ pages:
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
       children:
-        - label: Upgrade Magento Commerce (Cloud)
-          url: cloud/project/project-upgrade.html
+        - label: Patch Cloud tools
+          url: cloud/composer-packages/ece-tools.html
 
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html
+
+        - label: Upgrade Magento Commerce (Cloud)
+          url: cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)
           url: cloud/upgrade/upgrade-from-2-0-4.html
@@ -348,11 +351,8 @@ pages:
 
         - label: Composer package updates
           url: cloud/composer-packages/patch-notes.html
-          versions: ["2.1","2.2","2.3"]
+          versions: ["2.1","2.2"]
           children:
             - label: vendor/magento/ece-patches
               url: cloud/composer-packages/ece-patches.html
-              versions: ["2.2","2.3"]
-
-            - label: vendor/magento/ece-tools
-              url: cloud/composer-packages/ece-tools.html
+              versions: ["2.2"]
