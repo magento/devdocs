@@ -35,7 +35,7 @@ In particular,
 You can also use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, "compiling" your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} optimizations.
 
 <h3 id="codegen-over-why">Why should you regenerate code?</h3>
-Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not regenerated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.
+Suppose a Factory or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Factory or Proxy exists on the file system, it is not regenerated. However, the Factory or Proxy implementation is now incomplete because it does not have the new methods. In this case, you must regenerate the Factory or Proxy class.
 
 If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.
 
