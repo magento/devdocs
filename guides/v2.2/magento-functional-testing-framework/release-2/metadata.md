@@ -2,7 +2,7 @@
 layout: default
 group: mftf
 title: Handling data implicitly in the Magento Functional Testing Framework
-version: 2.3
+version: 2.2
 github_link: magento-functional-testing-framework/release-2/metadata.md
 functional_areas:
  - Testing
@@ -67,8 +67,41 @@ The above figure demonstrates a list of available operations to:
 
 ### Create an object {#create-object-as-adminOauth}
 
-Here, we are going to create a category
+Here, we will declare an operation for category creation using REST API POST method.
+Let's see a Model Schema of the corresponding request parameter which is called .
 
+> post /V1/categories _catalogCategoryRepositoryV1SavePostBody_
+```json
+{
+  "category": {
+    "id": 0,
+    "parent_id": 0,
+    "name": "string",
+    "is_active": true,
+    "position": 0,
+    "level": 0,
+    "children": "string",
+    "created_at": "string",
+    "updated_at": "string",
+    "path": "string",
+    "available_sort_by": [
+      "string"
+    ],
+    "include_in_menu": true,
+    "extension_attributes": {},
+    "custom_attributes": [
+      {
+        "attribute_code": "string",
+        "value": "string"
+      }
+    ]
+  }
+}
+```
+
+A default XML implementation in the MFTF is the following:
+
+> acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml
 ```xml
 <operation name="CreateCategory"
            dataType="category"
@@ -99,7 +132,19 @@ Here, we are going to create a category
 </operation>
 ```
 
+And data :
+
+> acceptance/tests/functional/Magento/FunctionalTest/Catalog/Data/CategoryData.xml
+```xml
+<entity name="_defaultCategory" type="category">
+    <data key="name" unique="suffix">simpleCategory</data>
+    <data key="name_lwr" unique="suffix">simplecategory</data>
+    <data key="is_active">true</data>
+</entity>
+```
+
 #### Create an object as an anonymous user {#create-object-as-anonymous}
+
 
 ```xml
  <operation name="CreateGuestCart"
@@ -114,10 +159,37 @@ Here, we are going to create a category
 
 ### Update an object {#update-object-as-adminOauth}
 
-```json
 
+> PUT `/V1/categories/{id}`
+```json
+{
+  "category": {
+    "id": 0,
+    "parent_id": 0,
+    "name": "string",
+    "is_active": true,
+    "position": 0,
+    "level": 0,
+    "children": "string",
+    "created_at": "string",
+    "updated_at": "string",
+    "path": "string",
+    "available_sort_by": [
+      "string"
+    ],
+    "include_in_menu": true,
+    "extension_attributes": {},
+    "custom_attributes": [
+      {
+        "attribute_code": "string",
+        "value": "string"
+      }
+    ]
+  }
+}
 ```
 
+> acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml
 ```xml
 <operation name="UpdateCategory"
            dataType="category"
@@ -151,6 +223,12 @@ Here, we are going to create a category
 
 ### Delete an object {#delete-object-as-adminOauth}
 
+> delete /V1/categories/{categoryId}
+```json
+
+```
+
+> acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml
 ```xml
 <operation name="DeleteCategory"
            dataType="category"
@@ -164,6 +242,13 @@ Here, we are going to create a category
 
 ### Get an object {#get-object-as-adminOauth}
 
+
+> get /V1/categories/{categoryId} 
+```json
+
+```
+
+> acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml
 ```xml
 <operation name="GetProductAttributesFromDefaultSet"
            dataType="ProductAttributesFromDefaultSet"
