@@ -8,21 +8,21 @@ functional_areas:
   - Tools
 ---
 
-If the data format and structure created by [Magento extensions](https://marketplace.magento.com/extensions.html) or custom code is different between Magento 1 and Magento 2, use extension points in the Data Migration Tool to migrate the data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention. 
+If the data format and structure created by [Magento extensions](https://marketplace.magento.com/extensions.html){:target="_blank"} or custom code is different between Magento 1 and Magento 2, use extension points in the Data Migration Tool to migrate the data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention.
 
-During migration, the [Map Step](http://devdocs.magento.com/guides/v1.0/migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables do not differ, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
+During migration, the [Map Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables do not differ, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
 
 <div class="bs-callout" id="info" markdown="1">
-Read the [Technical Specification](http://devdocs.magento.com/guides/v1.0/migration/migration-tool-internal-spec.html) first before attempting to extend the Data Migration Tool. You should also review the [Migration Guide](http://devdocs.magento.com/guides/v2.2/migration/bk-migration-guide.html) for general information about using the tool.
+Read the [Technical Specification]({{page.baseurl}}migration/migration-tool-internal-spec.html) first before attempting to extend the Data Migration Tool. You should also review the [Migration Guide]({{page.baseurl}}migration/bk-migration-guide.html) for general information about using the tool.
 </div>
 
-## Minor changes in data format and structure
-In most cases, the [Map Step](http://devdocs.magento.com/guides/v1.0/migration/migration-tool-internal-spec.html#map-step) sufficiently resolves minor data format and structure changes through map.xml file.
+## Minor data format and structure changes
+In most cases, the [Map Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#map-step) sufficiently resolves minor data format and structure changes using the following methods in the `map.xml` file:
 
-- to transform data format use existing handlers or create a custom handler 
-- for changed table or field names use mapping rules
+- Change table or field names with mapping rules
+- Transform data formats with existing handlers or create a custom handler
 
-The following shows an example of using both methods. Assume we have GreatBlog extension for Magento 1 and its improved version for Magento 2.
+The following shows an example of using both mapping rules and a handler. This example uses a hyopthetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
 
 ```xml
 <source>
@@ -65,28 +65,31 @@ The following shows an example of using both methods. Assume we have GreatBlog e
 </destination>
 ```
 
-Here is an explanation of the changes in the previous example: 
+Refer to the following for an explanation of the changes in the previous example:
 
-1. Unnecessary data from the index table `great_blog_index` should not be migrated
-1. The table `great_blog_publication` was renamed to `great_blog_post` in Magento 2, so data should be migrated to the new table
-    1. Field summary was renamed to title in Magento 2, so data should be migrated to the new field
-    1. Field priority was removed and no longer exists in Magento 2
-    1. The data in the body field has changed format and therefore should be processed by the custom handler: `\Migration\Handler\GreatBlog\NewFormat`
-1. A new ratings feature was developed for the "GreatBlog" extension in Magento 2
-    1. New table `great_blog_rating` was created
-    1. New field `great_blog_post.rating` was created
+- Unnecessary data from the index table `great_blog_index` should not be migrated
+- The table `great_blog_publication` was renamed to `great_blog_post` in Magento 2, so data should be migrated to the new table
+    - The `summary` field was renamed `title`, so data should be migrated to the new field
+    - The `priority` field was removed and no longer exists in Magento 2
+    - The data in the `body` field has changed format and should be processed by the custom handler: `\Migration\Handler\GreatBlog\NewFormat`
+- A new ratings feature was developed for the "GreatBlog" extension in Magento 2
+    - A new `great_blog_rating` table was created
+    - A new `great_blog_post.rating` field was created
 
 ### Extend mapping in other steps
-Other steps support mapping, such as the "EAV Step" and "Customer Attributes Step". These steps migrate a predefined list of Magento tables. For example, suppose that the "GreatBlog" extension has an additional field in the eav_attribute table and the name changed in Magento 2. Since the table is processed by the "EAV Step", mapping rules should be written for the `map-eav.xml` file. The `map.xml` and `map-eav.xml` files use the same `map.xsd` schema, so mapping rules remain the same. 
+Other steps support mapping, such as the [EAV Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav) and Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the "GreatBlog" extension has an additional field in the `eav_attribute` table and the name changed in Magento 2. Since the table is processed by the [EAV Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav), mapping rules should be written for the `map-eav.xml` file. The `map.xml` and `map-eav.xml` files use the same `map.xsd` schema, so mapping rules remain the same.
 
-## Major changes in data format and structure
-In addition to the "Map Step", there are other steps in the `config.xml` file which migrate data with major changes in format and structure, including:
+## Major data format and structure changes
+In addition to the Map Step, there are other steps in the `config.xml` file which migrate data with major format and structure changes, including:
 
-- Url Rewrite Step
+- [Url Rewrite Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#url-rewrite-step)
 - OrderGrids Step
-- EAV Step
+- [EAV Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav)
 
-These steps deal with a predefined list of tables instead of all tables, like the "Map Step". Using the same "GreatBlog" example, let's imagine it has three more tables in Magento 1, but was redesigned to have only one table in Magento 2. All the data from several tables should be migrated into a single table. In such cases, the Data Migration Tool can be extended by creating a new custom Step in the `config.xml` file. For example:
+Unlike the [Map Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#map-step), these steps scan a predefined list of tables instead of all tables.
+
+### Create custom steps
+Using the same "GreatBlog" example, suppose the extension contains three tables in Magento 1, but was redesigned to have only one table in Magento 2. To migrate all data from multiple tables to a single table, you can create a custom step in the `config.xml` file. For example:
 
 ```xml
 <steps mode="data">
@@ -106,7 +109,7 @@ These steps deal with a predefined list of tables instead of all tables, like th
 </steps>
 ```
 
-The tool runs steps according to their position in the `config.xml` file; from top to bottom. In our example, "GreatBlog Step" will be run last.
+The tool runs steps according to their position in the `config.xml` file; from top to bottom. In our example, the `GreatBlog Step` will run last.
 
 Steps can include four types of classes:
 
@@ -119,9 +122,9 @@ Steps can include four types of classes:
 Refer to [Configuration](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#configuration), [Step internals](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#step-internals), [Stages](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#stages) and [Running modes](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#running-modes) for more information.
 </div>
 
-Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the "Map step" because it scans all the existing tables and tries to migrate it unless it is in the `<ignore>` tag of the `map.xml` file.
+Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the [Map Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
 
-## Prohibited methods of extending functionality of the tool
-Since the Data Migration Tool and Magento 2 are constantly evolving, existing steps and handlers are subject to change. We highly recommend not overriding the behaviour of steps like "Map Step", "Url Rewrite Step", and handlers by extending its classes.
+## Prohibited extension methods
+Since the Data Migration Tool and Magento 2 are constantly evolving, existing steps and handlers are subject to change. We highly recommend not overriding the behaviour of steps like the [Map Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#map-step), [URL Rewrite Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#url-rewrite-step), and handlers by extending their classes.
 
-Some steps do not support mapping and cannot be changed without altering the code. You can either write an extra step that changes data at the end of migration or create a [GitHub issue](https://github.com/magento/data-migration-tool/issues) and ask for a new extension point on the existing step.
+Some steps do not support mapping and cannot be changed without altering the code. You can either write an extra step that changes data at the end of migration or create a [GitHub issue](https://github.com/magento/data-migration-tool/issues){:target="_blank"} and ask for a new extension point on the existing step.
