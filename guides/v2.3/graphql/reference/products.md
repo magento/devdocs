@@ -187,6 +187,8 @@ VirtualProduct
 
 #### Price object
 
+The `Price` object defines the price of a product as well as any tax-related adjustments.
+
 Field | Type | Description
 --- | --- | ---
 `amount` | `Money` | The price of a product plus a three-letter currency code
@@ -201,6 +203,8 @@ Field | Type | Description
 
 ##### PriceAdjustment object
 
+The `PricedAdjustment` object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.
+
 Field | Type | Description
 --- | --- | ---
 `amount` | `Money` | The amount of the price adjustment and its currency code.
@@ -209,13 +213,17 @@ Field | Type | Description
 
 #### ProductPrices
 
+The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
+
 Field | Type | Description
 --- | --- | ---
-`minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the 'from' value.
-`maximalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the 'to' value.
+`minimalPrice` | Price | The lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the 'from' value.
+`maximalPrice` | Price | The highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the 'to' value.
 `regularPrice` | Price | The base price of a product.
 
 #### ProductCategoryLinks object {#ProductCategoryLinks}
+
+The ProductCategoryLinks object defines the category ID and position of a category link.
 
 Field | Type | Description
 --- | --- | ---
@@ -266,6 +274,8 @@ Field | Type | Description
 
 #### ProductLinks object {#ProductLinks}
 
+`ProductLinks` contains information about linked products, including the link type and product type of each item.
+
 Field | Type | Description
 --- | --- | ---
 `sku` | String | The identifier of the linked product
@@ -309,6 +319,8 @@ Field | Type | Description
 `video_metadata` | String | Optional data about the video
 
 ### ProductTierPrices object
+
+The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
 
 Field | Type | Description
 --- | --- | ---
