@@ -1,5 +1,5 @@
 <div markdown="1">
-This package contains the following scripts and {{site.data.var.ece}} commands that automatically perform build and deploy actions of the codebase in your environments:
+The ece-tools package contains the following scripts and {{site.data.var.ece}} commands that automatically perform build and deploy actions of the codebase in your environments:
 
 -   `php ./vendor/bin/m2-ece-build`
 -   `php ./vendor/bin/m2-ece-deploy`

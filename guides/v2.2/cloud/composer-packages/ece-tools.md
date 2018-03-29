@@ -17,8 +17,8 @@ functional_areas:
 ### New features
 
 -  **Static Content Deployment (SCD)**—<!-- MAGECLOUD-1285 -->There is a new, alternative deployment process to generate static content when requested (on-demand). This decreases downtime and improves cache handling by generating the most critical assets.
-    -  <!-- MAGECLOUD-1738 -->Added the new `SCD_ON_DEMAND` global environment variable to generate static content when requested.
-    -  <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a new `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections. This works in tandem with the `SCD_ON_DEMAND` environment variable, but is not available for Starter.
+    -  <!-- MAGECLOUD-1738 -->**New environment variable**—Added the new `SCD_ON_DEMAND` global environment variable to generate static content when requested.
+    -  <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a new `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections. This works in tandem with the `SCD_ON_DEMAND` environment variable. It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{page.baseurl}}cloud/trouble/pro-env-management.html); it is not available for Starter.
 
 -  <!-- MAGECLOUD-1842 -->**Optimization**—Optimized moving or copying files during deployment to improve deployment speed and decrease loads on file system.
 
@@ -26,8 +26,8 @@ functional_areas:
 
 -  Added the following new [**Environment variables**](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html):
     -  <!-- MAGECLOUD-1556 -->Added the new `CRYPT_KEY` environment variable as a way to supply cryptographic key to another environment when moving a database.
-    -  <!-- MAGECLOUD-1621 and MAGECLOUD-1736-->Added the new `SKIP_HTML_MINIFICATION` global environment variable that skips copying the static view files in the var/view_preprocessed directory.
-    -  <!-- MAGECLOUD-1738 -->Added the new `SCD_ON_DEMAND` global environment variable to generate static content when requested.
+    -  <!-- MAGECLOUD-1621 and MAGECLOUD-1736-->Added the new `SKIP_HTML_MINIFICATION` _global_ environment variable that skips copying the static view files in the var/view_preprocessed directory.
+    -  <!-- MAGECLOUD-1738 -->Added the new `SCD_ON_DEMAND` _global_ environment variable to generate static content when requested.
 
 ### Fixed issues
 
