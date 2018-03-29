@@ -68,8 +68,8 @@ return array(
 
 Skip copying the static view files in the `var/view_preprocessed` directory to reduce downtime when deploying to the Staging and Production environments.
 
--   **`false`**—At the end of the _build_ stage,  copy the `view_preprocessed` directory to the `<magento_root>/init/` directory, and at the beginning of the _deployment_ phase restore the directory in the `<magento_root>/var` directory.
--   **`true`**—The `<magento_root>var/view_preprocessed` directory is not copied to the `<magento_root>/init/` directory at the end of the _build_ stage; enables on-demand static content minification.
+-   **`false`**—Copies the `view_preprocessed` directory to the `<magento_root>/init/` directory at the end of the build stage, and restores the directory in the `<magento_root>/var` directory at the beginning of the deployment stage.
+-   **`true`**—Enables on-demand static content minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the _build_ stage.
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
