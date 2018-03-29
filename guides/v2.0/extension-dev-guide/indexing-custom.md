@@ -66,7 +66,7 @@ Assuming your module is named `<VendorName>_Merchandizing`, you must write the a
 {% highlight php startinline %}
 <VendorName>\Merchandizing\Model\Indexer;
 
-class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framework\Mview\ActionInterface
+class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Framework\Mview\ActionInterface
 {
     public function executeFull(); //Should take into account all placed orders in the system
     public function executeList($ids); //Works with a set of placed orders (mass actions and so on)
