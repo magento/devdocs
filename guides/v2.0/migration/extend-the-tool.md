@@ -12,7 +12,7 @@ If the data format and structure created by [Magento extensions](https://marketp
 
 During migration, the [Map Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables do not differ, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
 
-<div class="bs-callout" id="info" markdown="1">
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 Read the [Technical Specification]({{page.baseurl}}migration/migration-tool-internal-spec.html) first before attempting to extend the Data Migration Tool. You should also review the [Migration Guide]({{page.baseurl}}migration/bk-migration-guide.html) for general information about using the tool.
 </div>
 
@@ -118,7 +118,7 @@ Steps can include four types of classes:
 - Volume checking
 - Delta delivering
 
-<div class="bs-callout" id="info" markdown="1">
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 Refer to [Configuration](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#configuration), [Step internals](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#step-internals), [Stages](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#stages) and [Running modes](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#running-modes) for more information.
 </div>
 
