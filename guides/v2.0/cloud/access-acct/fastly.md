@@ -257,7 +257,7 @@ Another option for apex domain is to add A records, which maps a domain name to 
 * `151.101.1.124`
 * `151.101.65.124`
 * `151.101.129.124`
-* `151.101.193.124]`
+* `151.101.193.124`
 
 Refer to [Go live checklist]({{page.baseurl}}cloud/live/go-live-checklist.html) for more information.
 
