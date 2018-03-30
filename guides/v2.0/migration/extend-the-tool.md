@@ -3,7 +3,7 @@ layout: default
 group: migration
 title: Extend the tool
 version: 2.0
-github_link: migration/migration-tool.md
+github_link: migration/extend-the-tool.md
 functional_areas:
   - Tools
 ---
@@ -119,7 +119,7 @@ Steps can include four types of classes:
 - Delta delivering
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [Configuration](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#configuration), [Step internals](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#step-internals), [Stages](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#stages) and [Running modes](http://devdocs.magento.com/guides/v2.3/migration/migration-tool-internal-spec.html#running-modes) for more information.
+Refer to [Configuration]({{page.baseurl}}migration/migration-tool-internal-spec.html#configuration), [Step internals]({{page.baseurl}}migration/migration-tool-internal-spec.html#step-internals), [Stages]({{page.baseurl}}migration/migration-tool-internal-spec.html#stages) and [Running modes]({{page.baseurl}}migration/migration-tool-internal-spec.html#running-modes) for more information.
 </div>
 
 Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the [Map Step]({{page.baseurl}}migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
