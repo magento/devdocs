@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable SSH keys | Magento 2 Developer Documentation</title>
+	<title>SSH and sFTP | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/cloud/before/before-workspace-ssh.html">
+	<link rel="canonical" href="//guides/v2.3/cloud/env/environments-ssh.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -71,23 +71,23 @@
 
 		<div class="container">
 
-			<a class="logo" href="/guides/v2.0/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			
-<div class="version-switcher dropdown" data-version="2.0">
+<div class="version-switcher dropdown" data-version="2.3">
 	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Magento 2.0
+        Magento 2.3 Pre-release
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/before/before-workspace-ssh.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/env/environments-ssh.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/env/environments-ssh.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/before/before-workspace-ssh.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/env/environments-ssh.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/before/before-workspace-ssh.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/env/environments-ssh.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -102,13 +102,11 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-          <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
           
-          <li><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-          
-          <li><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-          <li><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li><a href="/guides/v2.0/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li><a href="/magento-release-information.html">Release Information</a></li>
       </ul>
     </div>
@@ -124,34 +122,36 @@
       <div class="nav-section">
         <div class="nav-section-title">Backend</div>
         <ul>
-          <li><a href="/guides/v2.0/architecture/bk-architecture.html">Architecture Guide</a></li>
-          <li><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-          <li><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
-          <li><a href="/guides/v2.0/mrg/intro.html">Module Reference Guide</a></li>
-          <li><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-          <li><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
         </ul>
       </div>
 
       <div class="nav-section">
         <div class="nav-section-title">Frontend</div>
         <ul>
-          <li class=""><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
           
-          <li><a href="/guides/v2.0/ui-components/ui-component.html">UI Components</a></li>
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
           
-          <li><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-          <li><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-          <li><a href="/guides/v2.0/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
         </ul>
       </div>
 
       <div class="nav-section">
         <div class="nav-section-title"><abbr>API</abbr></div>
         <ul>
-          <li><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-          <li><a href="/guides/v2.0/rest/bk-rest.html">REST API Reference</a></li>
-          <li><a href="/guides/v2.0/soap/bk-soap.html">SOAP API Reference</a></li>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
           
         </ul>
       </div>
@@ -165,13 +165,15 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-        <li><a href="/guides/v2.0/test/testing.html">Magento Testing Guide</a></li>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
         
-        <li><a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing</a></li>
-        <li><a href="/guides/v2.0/test/integration/integration_test_execution.html">Integration Testing</a></li>
-        <li><a href="/guides/v2.0/test/js/jasmine.html">JavaScript Unit Testing</a></li>
-        <li><a href="/guides/v2.0/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-        <li><a href="/guides/v2.0/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
       </ul>
     </div>
 
@@ -188,8 +190,10 @@
       <ul>
           
         
-        <li><a href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Checkout</a></li>
-        <li><a href="/guides/v2.0/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
         
       </ul>
     </div>
@@ -202,7 +206,9 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-        <li><a href="/guides/v2.0/howdoi/bk-how-do-i.html">How To</a></li>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
         
 
         <li><a href="/videos/">Video Tutorials</a></li>
@@ -218,7 +224,7 @@
 				<a class="search-trigger search-icon" href="/search.html"></a>
 			</div>
 
-			<form class="quick-search" action="/guides/v2.0/search.html" method="get">
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
 				<input type="search" name="q" placeholder="Search" autocomplete="off" />
 				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
 			</form>
@@ -241,6 +247,10 @@
 <div class="container">
 
     
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
 
 	<!-- sidebar -->
 <aside class="sidebar">
@@ -262,7 +272,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/bk-cloud.html">Welcome to Magento Commerce (Cloud)</a>
+    <a href="/guides/v2.3/cloud/bk-cloud.html">Welcome to Magento Commerce (Cloud)</a>
     
 
     
@@ -275,7 +285,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>
+            <a href="/guides/v2.3/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>
             
 
             
@@ -297,7 +307,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/architecture/cloud-architecture.html">Architecture</a>
+    <a href="/guides/v2.3/cloud/architecture/cloud-architecture.html">Architecture</a>
     
 
     
@@ -310,7 +320,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a>
+            <a href="/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter architecture</a>
             
 
             
@@ -324,7 +334,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter develop and deploy workflow</a>
+            <a href="/guides/v2.3/cloud/basic-information/starter-develop-deploy-workflow.html">Starter develop and deploy workflow</a>
             
 
             
@@ -338,7 +348,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/architecture/pro-architecture.html">Pro architecture</a>
+            <a href="/guides/v2.3/cloud/architecture/pro-architecture.html">Pro architecture</a>
             
 
             
@@ -352,7 +362,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a>
+            <a href="/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a>
             
 
             
@@ -366,7 +376,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>
+            <a href="/guides/v2.3/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>
             
 
             
@@ -380,7 +390,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
+            <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
 
             
@@ -402,7 +412,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a>
+    <a href="/guides/v2.3/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a>
     
 
     
@@ -415,7 +425,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-project-owner.html">Prepare project environments</a>
+            <a href="/guides/v2.3/cloud/before/before-project-owner.html">Prepare project environments</a>
             
 
             
@@ -437,7 +447,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>
+    <a href="/guides/v2.3/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>
     
 
     
@@ -450,7 +460,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer</a>
+            <a href="/guides/v2.3/cloud/reference/cloud-composer.html">Composer</a>
             
 
             
@@ -464,7 +474,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
+            <a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
             
 
             
@@ -478,7 +488,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/reference/git-integration.html">Git</a>
+            <a href="/guides/v2.3/cloud/reference/git-integration.html">Git</a>
             
 
             
@@ -492,7 +502,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/bitbucket-integration.html">Bitbucket integration</a>
+            <a href="/guides/v2.3/cloud/project/bitbucket-integration.html">Bitbucket integration</a>
             
 
             
@@ -506,7 +516,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-integrate-github.html">GitHub integration</a>
+            <a href="/guides/v2.3/cloud/project/project-integrate-github.html">GitHub integration</a>
             
 
             
@@ -515,12 +525,12 @@
         
         
         
-        <li class="nav-level2  " id="ssh-and-sftp">
+        <li class="nav-level2 active " id="ssh-and-sftp">
             
             
         
             
-            <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH and sFTP</a>
+            <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH and sFTP</a>
             
 
             
@@ -534,7 +544,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/new-relic.html">New Relic APM</a>
+            <a href="/guides/v2.3/cloud/project/new-relic.html">New Relic APM</a>
             
 
             
@@ -548,7 +558,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>
+            <a href="/guides/v2.3/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>
             
 
             
@@ -570,7 +580,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.3/cloud/access-acct/first-time-setup.html">Local environment setup</a>
     
 
     
@@ -583,7 +593,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+            <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a>
             
 
             
@@ -597,7 +607,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a>
+            <a href="/guides/v2.3/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a>
             
 
             
@@ -606,12 +616,12 @@
         
         
         
-        <li class="nav-level2 active " id="enable-ssh-keys">
+        <li class="nav-level2  " id="enable-ssh-keys">
             
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-workspace-ssh.html">Enable SSH keys</a>
+            <a href="/guides/v2.3/cloud/before/before-workspace-ssh.html">Enable SSH keys</a>
             
 
             
@@ -625,7 +635,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a>
+            <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a>
             
 
             
@@ -639,7 +649,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a>
+            <a href="/guides/v2.3/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a>
             
 
             
@@ -653,7 +663,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/before/before-setup-env-install.html">Install Magento</a>
+            <a href="/guides/v2.3/cloud/before/before-setup-env-install.html">Install Magento</a>
             
 
             
@@ -667,7 +677,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">First time deployment</a>
+            <a href="/guides/v2.3/cloud/access-acct/first-time-deploy.html">First time deployment</a>
             
 
             
@@ -681,7 +691,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/howtos/sample-data.html">Optional - Install sample data</a>
+            <a href="/guides/v2.3/cloud/howtos/sample-data.html">Optional - Install sample data</a>
             
 
             
@@ -695,7 +705,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
+            <a href="/guides/v2.3/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
             
 
             
@@ -717,7 +727,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html">Import existing code into a project</a>
+    <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html">Import existing code into a project</a>
     
 
     
@@ -730,7 +740,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
+            <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
             
 
             
@@ -744,7 +754,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
             
 
             
@@ -766,7 +776,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/configure/configuration-overview.html">Configure your store</a>
+    <a href="/guides/v2.3/cloud/configure/configuration-overview.html">Configure your store</a>
     
 
     
@@ -779,7 +789,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
+            <a href="/guides/v2.3/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
             
 
             
@@ -788,6 +798,30 @@
         
         
         
+        <li class="nav-level2  " id="set-up-paypal">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/paypal-onboarding.html">Set up PayPal</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="set-up-magento-b2b">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/configure/setup-b2b.html">Set up Magento B2B</a>
+            
+
+            
+        </li>
         
         
         
@@ -797,7 +831,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
+            <a href="/guides/v2.3/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
             
 
             
@@ -811,7 +845,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
+            <a href="/guides/v2.3/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
             
 
             
@@ -825,7 +859,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
+            <a href="/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
             
 
             
@@ -839,7 +873,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/howtos/custom-theme.html">Install a theme</a>
+            <a href="/guides/v2.3/cloud/howtos/custom-theme.html">Install a theme</a>
             
 
             
@@ -861,7 +895,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/basic-information/cloud-fastly.html">Configure Fastly</a>
+    <a href="/guides/v2.3/cloud/basic-information/cloud-fastly.html">Configure Fastly</a>
     
 
     
@@ -874,7 +908,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/access-acct/fastly.html">Set up Fastly</a>
+            <a href="/guides/v2.3/cloud/access-acct/fastly.html">Set up Fastly</a>
             
 
             
@@ -888,7 +922,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>
+            <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>
             
 
             
@@ -902,7 +936,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a>
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a>
             
 
             
@@ -916,7 +950,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a>
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a>
             
 
             
@@ -930,7 +964,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
             
 
             
@@ -944,7 +978,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a>
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a>
             
 
             
@@ -958,7 +992,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a>
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a>
             
 
             
@@ -972,7 +1006,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/trouble_fastly.html">Fastly troubleshooting</a>
+            <a href="/guides/v2.3/cloud/trouble/trouble_fastly.html">Fastly troubleshooting</a>
             
 
             
@@ -994,7 +1028,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/env/environments.html">Configure environments</a>
+    <a href="/guides/v2.3/cloud/env/environments.html">Configure environments</a>
     
 
     
@@ -1007,13 +1041,25 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html">Configure .magento.app.yaml</a>
+            <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html">Configure .magento.app.yaml</a>
             
 
             
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="manage-build-and-deploy-actions">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a>
+            
+
+            
+        </li>
         
         
         
@@ -1023,7 +1069,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-conf-files_services.html">Configure services - services.yaml</a>
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services.html">Configure services - services.yaml</a>
             
 
             
@@ -1037,7 +1083,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
             
 
             
@@ -1051,7 +1097,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
             
 
             
@@ -1060,18 +1106,18 @@
         
         
         
-        <li class="nav-level2  " id="set-up-solr-service">
+        
+        
+        <li class="nav-level2  " id="set-up-elasticsearch-service">
             
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Set up Solr service</a>
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
             
 
             
         </li>
-        
-        
         
         
         
@@ -1081,13 +1127,25 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
+            <a href="/guides/v2.3/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
             
 
             
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="set-up-notifications">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/setup-notifications.html">Set up notifications</a>
+            
+
+            
+        </li>
         
         
         
@@ -1097,7 +1155,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">Configure routes - routes.yaml</a>
+            <a href="/guides/v2.3/cloud/project/project-conf-files_routes.html">Configure routes - routes.yaml</a>
             
 
             
@@ -1111,7 +1169,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-routes-more-cache.html">Caching</a>
+            <a href="/guides/v2.3/cloud/project/project-routes-more-cache.html">Caching</a>
             
 
             
@@ -1125,7 +1183,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-routes-more-redir.html">Redirects</a>
+            <a href="/guides/v2.3/cloud/project/project-routes-more-redir.html">Redirects</a>
             
 
             
@@ -1139,7 +1197,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-routes-more-ssi.html">Server side includes</a>
+            <a href="/guides/v2.3/cloud/project/project-routes-more-ssi.html">Server side includes</a>
             
 
             
@@ -1154,6 +1212,38 @@
     
     
 
+<li class="nav-level1  " id="configuration-management-for-store-settings">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration management for store settings</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="example-of-managing-system-specific-settings">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
     
     
 
@@ -1164,7 +1254,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/project/projects.html">Manage your project</a>
+    <a href="/guides/v2.3/cloud/project/projects.html">Manage your project</a>
     
 
     
@@ -1177,7 +1267,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-basic.html">Configure your project</a>
+            <a href="/guides/v2.3/cloud/project/project-webint-basic.html">Configure your project</a>
             
 
             
@@ -1191,7 +1281,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a>
+            <a href="/guides/v2.3/cloud/project/project-start.html">Project structure</a>
             
 
             
@@ -1205,7 +1295,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a>
+            <a href="/guides/v2.3/cloud/project/user-admin.html">Create and manage users</a>
             
 
             
@@ -1219,7 +1309,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
+            <a href="/guides/v2.3/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
             
 
             
@@ -1233,7 +1323,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/env/environments-start.html">Manage branches with the CLI</a>
+            <a href="/guides/v2.3/cloud/env/environments-start.html">Manage branches with the CLI</a>
             
 
             
@@ -1247,7 +1337,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a>
+            <a href="/guides/v2.3/cloud/project/project-webint-snap.html">Snapshots and backup management</a>
             
 
             
@@ -1269,7 +1359,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/env/environment-vars_over.html">Manage variables</a>
+    <a href="/guides/v2.3/cloud/env/environment-vars_over.html">Manage variables</a>
     
 
     
@@ -1282,7 +1372,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
+            <a href="/guides/v2.3/cloud/env/environment-vars_magento.html">Magento application environment variables</a>
             
 
             
@@ -1296,13 +1386,25 @@
             
         
             
-            <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
+            <a href="/guides/v2.3/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a>
             
 
             
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="working-with-variables">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/env/working-with-variables.html">Working with variables</a>
+            
+
+            
+        </li>
         
         
     </ul>
@@ -1320,7 +1422,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/live/stage-prod-live.html">Deploy your store</a>
+    <a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy your store</a>
     
 
     
@@ -1333,7 +1435,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a>
+            <a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment process</a>
             
 
             
@@ -1347,7 +1449,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/deploy/continuous-deployment.html">Continuous deployment</a>
+            <a href="/guides/v2.3/cloud/deploy/continuous-deployment.html">Continuous deployment</a>
             
 
             
@@ -1361,7 +1463,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/live/live-prot.html">Protective block</a>
+            <a href="/guides/v2.3/cloud/live/live-prot.html">Protective block</a>
             
 
             
@@ -1375,7 +1477,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy on local</a>
+            <a href="/guides/v2.3/cloud/live/live-sanity-check.html">Build and deploy on local</a>
             
 
             
@@ -1389,7 +1491,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a>
+            <a href="/guides/v2.3/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a>
             
 
             
@@ -1403,7 +1505,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
+            <a href="/guides/v2.3/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
 
             
@@ -1417,7 +1519,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/live/stage-prod-test.html">Test deployment</a>
+            <a href="/guides/v2.3/cloud/live/stage-prod-test.html">Test deployment</a>
             
 
             
@@ -1439,7 +1541,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/live/live.html">Go live and launch</a>
+    <a href="/guides/v2.3/cloud/live/live.html">Go live and launch</a>
     
 
     
@@ -1452,7 +1554,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/live/go-live-checklist.html">Go live checklist</a>
+            <a href="/guides/v2.3/cloud/live/go-live-checklist.html">Go live checklist</a>
             
 
             
@@ -1466,7 +1568,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/live/launch-steps.html">Launch steps</a>
+            <a href="/guides/v2.3/cloud/live/launch-steps.html">Launch steps</a>
             
 
             
@@ -1488,7 +1590,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/trouble/trouble.html">Troubleshooting</a>
+    <a href="/guides/v2.3/cloud/trouble/trouble.html">Troubleshooting</a>
     
 
     
@@ -1501,7 +1603,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/access-acct/trouble.html">Troubleshoot deployment</a>
+            <a href="/guides/v2.3/cloud/access-acct/trouble.html">Troubleshoot deployment</a>
             
 
             
@@ -1515,7 +1617,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/environments-logs.html">View logs for troubleshooting</a>
+            <a href="/guides/v2.3/cloud/trouble/environments-logs.html">View logs for troubleshooting</a>
             
 
             
@@ -1529,7 +1631,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a>
+            <a href="/guides/v2.3/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a>
             
 
             
@@ -1543,7 +1645,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a>
+            <a href="/guides/v2.3/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a>
             
 
             
@@ -1557,7 +1659,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a>
+            <a href="/guides/v2.3/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a>
             
 
             
@@ -1571,13 +1673,25 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/redis-troubleshooting.html">Redis troubleshooting</a>
+            <a href="/guides/v2.3/cloud/trouble/redis-troubleshooting.html">Redis troubleshooting</a>
             
 
             
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="reset-cron-jobs">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/reset-cron-jobs.html">Reset cron jobs</a>
+            
+
+            
+        </li>
         
         
         
@@ -1587,7 +1701,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a>
+            <a href="/guides/v2.3/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a>
             
 
             
@@ -1601,7 +1715,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a>
+            <a href="/guides/v2.3/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a>
             
 
             
@@ -1615,13 +1729,25 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a>
+            <a href="/guides/v2.3/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a>
             
 
             
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="restore-configuration-files">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/restore-configuration-files.html">Restore configuration files</a>
+            
+
+            
+        </li>
         
         
         
@@ -1631,7 +1757,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/site-availability.html">Site availability</a>
+            <a href="/guides/v2.3/cloud/trouble/site-availability.html">Site availability</a>
             
 
             
@@ -1645,7 +1771,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/robots-sitemap.html">Add site map and search engine robots</a>
+            <a href="/guides/v2.3/cloud/trouble/robots-sitemap.html">Add site map and search engine robots</a>
             
 
             
@@ -1659,13 +1785,25 @@
             
         
             
-            <a href="/guides/v2.0/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
+            <a href="/guides/v2.3/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
             
 
             
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="message-queues">
+            
+            
+        
+            
+            <a href="/guides/v2.3/cloud/trouble/message-queues.html">Message queues</a>
+            
+
+            
+        </li>
         
         
     </ul>
@@ -1683,7 +1821,7 @@
     
     
     
-    <a href="/guides/v2.0/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
     
 
     
@@ -1696,7 +1834,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
             
 
             
@@ -1710,7 +1848,7 @@
             
         
             
-            <a href="/guides/v2.0/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
             
 
             
@@ -1719,18 +1857,52 @@
         
         
         
-        <li class="nav-level2  " id="upgrade-from-2.0.4-(cloud)">
+        
+        
+        <li class="nav-level2  " id="composer-package-updates">
             
+            
+            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Upgrade from 2.0.4 (Cloud)</a>
+            <a href="/guides/v2.3/cloud/composer-packages/patch-notes.html">Composer package updates</a>
             
 
             
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.3/cloud/composer-packages/ece-patches.html">vendor/magento/ece-patches</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="vendor/magento/ece-tools">
+                    
+
+                    
+                    <a  href="/guides/v2.3/cloud/composer-packages/ece-tools.html">vendor/magento/ece-tools</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
         </li>
-        
-        
         
         
     </ul>
@@ -1758,7 +1930,7 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.0/"><span>Home</span></a>
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
@@ -1780,7 +1952,7 @@
       <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
 
         
-          <a property="item" typeof="WebPage" href="/guides/v2.0/cloud/bk-cloud.html">
+          <a property="item" typeof="WebPage" href="/guides/v2.3/cloud/bk-cloud.html">
             <span property="name">Welcome to Magento Commerce (Cloud)</span>
           </a>
         
@@ -1805,7 +1977,7 @@
 
           
 
-          <span property="name">Enable SSH keys</span>
+          <span property="name">SSH and sFTP</span>
 
         
 
@@ -1828,7 +2000,7 @@
 
 	
 
-	<h1 class="page-heading">Enable SSH keys</h1>
+	<h1 class="page-heading">SSH and sFTP</h1>
 
   
 
@@ -1836,17 +2008,25 @@
 </section>
 
 
-			<h4 id="previous-step">Previous step:</h4>
-<p><a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a></p>
+			<p>SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter <a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">CLI commands</a> for managing your branching, creating variables, and much more. We also support <a href="#sftp">sFTP</a> (Secure FTP) using your SSH public key.</p>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">SSH protocol </a> is designed to maintain a secure connection between two systems—in this case, your local working environment and your Magento Commerce (Cloud) Git project.</p>
-
-<p>When initially setting up your local environment, you need to add the SSH keys to the following specific environments:</p>
+<p>To use SSH, you need to:</p>
 
 <ul>
-  <li>Starter: Add to Master (Production) and any environments you create by branching from Master</li>
-  <li>Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments through the Project Web Interface or via SSH and CLI commands.</li>
+  <li>Generate your SSH public and private keys</li>
+  <li>Add your SSH public key to your remote server either through CLI commands or the Project Web Interface</li>
+  <li>Use Magento Cloud CLI or Git commands to <a href="#ssh">SSH</a> to an environment</li>
 </ul>
+
+<p>You create an SSH key pair including a public and private key:</p>
+
+<ul>
+  <li>The <em>public key</em> is safe to provide for accessing a site, <a href="#ssh">SSH</a>, and <a href="#sftp">sFTP</a>.</li>
+  <li>The <em>private key</em> should remain private on your workspace that you use for remote accessing environments. <strong>Never share your private key.</strong> Don’t add it to a ticket, copy it to a chat, or attach it to emails.</li>
+</ul>
+
+<h2 id="work">How SSH keys work</h2>
+<p>When you enter an SSH command to connect your client to the remote host, the host and your workspace begin tests back and forth to verify and allow access. These tests use the public and private keys you generated. Your entered command initiates SSH key authentication to request access to the server, indicating the public key to use. The server checks for authorized keys in its list for your public key. When found, it generates a message string and encrypts it with the public key the host has for you. Your system receives the message, decrypts it using your local private key, and merges the message with a session ID. Your system generates an MD5 of the message and session ID, sending it back to the host. If everything checks out, this passes the connection test and completes full SSH access to the host.</p>
 
 <div>
 
@@ -1855,7 +2035,7 @@
   <p>The SSH keys require the following:</p>
 
   <ul>
-    <li>Set up SSH keys as the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+    <li>Set up SSH keys as the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
     <li>Create the keys using the email address used for the GitHub account.</li>
   </ul>
 
@@ -1980,7 +2160,7 @@
   <ol>
     <li>Open a terminal application on your local.</li>
     <li>
-      <p>If you haven’t done so already, log in (or switch to) the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> to the server on which your SSH keys are located.</p>
+      <p>If you haven’t done so already, log in (or switch to) the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> to the server on which your SSH keys are located.</p>
     </li>
     <li>
       <p>Log in to your project:</p>
@@ -2037,8 +2217,198 @@ git config --global user.email &lt;your e-mail address&gt;
 
   <p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
 
-  <h4 id="next-step">Next step:</h4>
-  <p><a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a></p>
+  <h2 id="ssh">SSH to an environment</h2>
+  <p>You can connect using SSH in any of the following ways:</p>
+
+  <ul>
+    <li><a href="#magento-cli">SSH using Magento Cloud CLI</a></li>
+    <li><a href="#web-interface">Locate the SSH command in the Project Web Interface</a></li>
+    <li><a href="#pro">Git SSH commands for Pro Staging and Production</a></li>
+  </ul>
+
+  <h3 id="magento-cli">SSH using Magento Cloud CLI</h3>
+  <p>Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:</p>
+
+  <ul>
+    <li>Starter environments</li>
+    <li>Pro Integration environments</li>
+  </ul>
+
+  <p>To SSH to an environment using the Magento Cloud command line:</p>
+
+  <ol>
+    <li>
+      <p>Log in to the project:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>List the project IDs:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>List the environments in that project:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>SSH to the environment:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+  <h3 id="web-interface">Locate the SSH command in the Project Web Interface</h3>
+  <p>You can locate the SSH command for all Starter environments and Pro Integration environments through the Project Web Interface.</p>
+
+  <p>To copy the SSH command:</p>
+
+  <ol>
+    <li>Log in to the Project Web Interface.</li>
+    <li>Select an environment or branch to access.</li>
+    <li>
+      <p>Click <strong>Access Site</strong>.</p>
+
+      <p><img src="/common/images/cloud_project-access-starter.png" alt="Find the SSH URL using the Web Interface" /></p>
+    </li>
+    <li>Click the clipboard button to copy the full SSH command to the clipboard.</li>
+    <li>Enter the command in a terminal window to SSH.</li>
+  </ol>
+
+  <p>Example SSH command:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+</code></pre></div>  </div>
+
+  <h3 id="pro">Git SSH commands for Pro Staging and Production</h3>
+  <p>You can’t use the Magento Cloud CLI to SSH into Pro plan Staging and Production systems. You can SSH into those environments and use Git CLI commands for managing your branches and Linux/Unix commands for managing the system.</p>
+
+  <p>With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.</p>
+
+  <p>For the URLs, see the following:</p>
+
+  <ul>
+    <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+    <li>
+      <p>Production:</p>
+
+      <ul>
+        <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+        <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="env-start-tunn">SSH tunneling</h2>
+
+  <div>
+
+    <p>You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH configured</a>.</p>
+
+    <p>Use a terminal application to log in and issue commands.</p>
+
+    <p>magento-cloud login</p>
+
+    <p>First, you may want to check if any tunnels are already open using the following command:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:list
+</code></pre></div>    </div>
+
+    <p>To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;project directory&gt;
+magento-cloud project:list
+magento-cloud apps
+</code></pre></div>    </div>
+
+    <p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
+
+    <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
+    <p>Use the following command:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
+</code></pre></div>    </div>
+
+    <p>For example, to open a tunnel to the <code class="highlighter-rouge">sprint5</code> branch in a project with an app named <code class="highlighter-rouge">mymagento</code>, enter</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
+</code></pre></div>    </div>
+
+    <p>Messages similar to the following display:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSH tunnel opened on port 30003 to relationship: solr
+SSH tunnel opened on port 30004 to relationship: redis
+SSH tunnel opened on port 30005 to relationship: database
+Logs are written to: /home/magento_user/.magento/tunnels.log
+
+List tunnels with: magento-cloud tunnels
+View tunnel details with: magento-cloud tunnel:info
+Close tunnels with: magento-cloud tunnel:close
+</code></pre></div>    </div>
+
+    <h3 id="tunnel-info">Get tunnel information</h3>
+    <p>To display information about your tunnel, enter:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
+</code></pre></div>    </div>
+
+    <h3 id="tunnel-services">Connect to services</h3>
+    <p>Now you can connect to services as if they were running locally.</p>
+
+    <p>For example, to connect to the database, use the following command:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql --host=127.0.0.1 --user='&lt;database user name&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
+</code></pre></div>    </div>
+
+    <p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
+
+    <h2 id="sftp">sFTP to environments</h2>
+    <p>Typically, you want to use SSH for secure access to your environments and <a href="/guides/v2.3/cloud/live/stage-prod-migrate.html">migrate files</a> with <code class="highlighter-rouge">rsync</code> commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.</p>
+
+    <p>You need the following requirements to sFTP into cloud environments:</p>
+
+    <ul>
+      <li>You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.</li>
+      <li>Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">Support ticket</a> with your public key attached. <strong>Never provide your private SSH key.</strong></li>
+    </ul>
+
+    <p>When configuring sFTP, use your SSH public key and the following information for access:</p>
+
+    <ul>
+      <li>Username: All content before the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
+      <li>Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.</li>
+      <li>Host: All content after the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
+      <li>Port: 22, which is the default SSH port.</li>
+    </ul>
+
+    <p>To add your SSH public key information to your client:</p>
+
+    <ol>
+      <li>Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.</li>
+      <li>Copy and paste all content before the <code class="highlighter-rouge">@</code> in the file for the client Username.</li>
+      <li>Leave Password empty.</li>
+      <li>Copy and paste all content after the <code class="highlighter-rouge">@</code> in the file for the client Host.</li>
+      <li>For the Port, enter 22.</li>
+    </ol>
+
+    <p>Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.</p>
+
+    <p>For <strong>Starter environments and Pro Integration environments</strong>, you may also want to consider <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts">adding a <code class="highlighter-rouge">mount</code></a> for access to a specific directory. You would add the mount to your <code class="highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/guides/v2.3/cloud/project/project-start.html">Project structure</a>. This mount point will only work in those environments.</p>
+
+    <p>For <strong>Pro Staging and Production environments</strong>, you need to enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">Support ticket</a> to request sFTP access in those environments. We can then create a mount point and provide access to the specific <code class="highlighter-rouge">pub/media</code> folder.</p>
+
+    <h4 id="related-topics">Related topics</h4>
+    <ul>
+      <li><a href="/guides/v2.3/cloud/project/project-start.html">Project structure</a></li>
+      <li><a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a></li>
+      <li><a href="/guides/v2.3/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a></li>
+    </ul>
+  </div>
 </div>
 
 		</div>
@@ -2050,14 +2420,14 @@ git config --global user.email &lt;your e-mail address&gt;
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-workspace-ssh.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/env/environments-ssh.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/cloud/before/before-workspace-ssh.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/cloud/env/environments-ssh.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
@@ -2081,12 +2451,12 @@ git config --global user.email &lt;your e-mail address&gt;
 
     <div class="copyright-links">
       <ul class="nav">
-        <li><a href="/guides/v2.0/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
         <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
         <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
         <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
         <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
-        <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
         <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
       </ul>
     </div>
