@@ -1,14 +1,8 @@
 ---
 layout: default
 group: cloud
-subgroup: 090_configure
 title: Set up Elasticsearch service
-menu_title: Set up Elasticsearch service
-menu_order: 70
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: services
-version: 2.1
+version: 2.0
 github_link: cloud/project/project-conf-files_services-elastic.md
 functional_areas:
   - Cloud

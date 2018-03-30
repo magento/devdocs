@@ -81,7 +81,11 @@ This software is *not* upgradable but versions for the following software is con
 * [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html) 4.10
 * [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
 * [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html) 3.5
-* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, and 2.4
+* [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, 2.4, and 5.2
+
+<div class="bs-callout bs-callout-info" markdown="1">
+Elasticsearch 5.2 is only availble for 2.2.3 and higher.
+</div>
 
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
 
