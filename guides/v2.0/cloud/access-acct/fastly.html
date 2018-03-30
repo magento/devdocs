@@ -2206,7 +2206,13 @@ composer require fastly/magento2
 
   <p>Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code class="highlighter-rouge">www</code> host on the domain and then use the DNS provider’s redirect service to redirect the apex over to the <code class="highlighter-rouge">www</code> version of the domain. Consult your DNS provider for more information.</p>
 
-  <p>Another option for apex domain is to add an A record, which maps a domain name to the Fastly IP address: <code class="highlighter-rouge">150.101.113.124</code>.</p>
+  <p>Another option for apex domain is to add A records, which maps a domain name to the Fastly IP addresses:</p>
+  <ul>
+    <li><code class="highlighter-rouge">151.101.1.124</code></li>
+    <li><code class="highlighter-rouge">151.101.65.124</code></li>
+    <li><code class="highlighter-rouge">151.101.129.124</code></li>
+    <li><code class="highlighter-rouge">151.101.193.124]</code></li>
+  </ul>
 
   <p>Refer to <a href="/guides/v2.0/cloud/live/go-live-checklist.html">Go live checklist</a> for more information.</p>
 
