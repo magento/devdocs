@@ -15,8 +15,67 @@ github_link: release-notes/ReleaseNotes2.3.0Commerce.md
 
 We are pleased to present Magento Commerce 2.3.0 Beta. This release includes numerous functional fixes and enhancements.
 
-## Welcome to the Magento 2.3.0 Beta program
+For information about Magento 2.3 Beta Evaluation program, see Magento 2.3.0 Quick Start guide. 
 
+## About Magento 2.3.0 Beta release
+
+We welcome all feedback from registered participants on this Beta release, but would especially like feedback on the following features:  
+
+
+
+<table>
+
+ <tr>
+    <td><bold>Feature</bold></td>
+    <td><bold>Explore by</bold></td>
+ </tr>
+  <tr>
+    <td>GraphQL</td>
+    <td>Declarative Schema</td>
+    <td>Core CMS</td>
+    <td>Bundled extensions</td>
+ </tr>
+
+ <tr>
+    <td> 
+    	<ul>
+    <li>Constructing and running queries that fetch the data that’s needed to render storefront pages. For example, queries to emulate a product detail page, category page, and search result page. </li>
+    <li>Evaluating whether our query nesting limits are too loose or aggressive (in production mode)</li>
+    <li>Declaring custom GraphQL fields for extensions</li>
+       </ul>
+    </td>
+
+
+    <td>
+    	<ul>
+    		<li>Converting extensions from DB scripts to declarative format</li>
+    		<li>Upgrading to Magento 2.3 with all extensions (whether you’ve  migrated to Declarative Schema or not)</li>
+    	</ul>
+    </td>
+
+    <td>
+    	<ul>
+    		<li>Creating and localizing dynamic blocks (for example, Banners)</li>
+    	</ul>
+    	</td>
+ </tr>
+  
+</table>
+
+
+* GraphQL. Explore this feature by 
+    * Constructing and running queries that fetch the data that’s needed to render storefront pages. For example, queries to emulate a product detail page, category page, and search result page. 
+    * Evaluating whether our query nesting limits are too loose or aggressive (in production mode)
+    * Declaring custom GraphQL fields for extensions
+ 
+* Declarative Schema
+    * Converting extensions from DB scripts to declarative format
+    * Upgrading to Magento 2.3 with all extensions (whether you’ve  migrated to Declarative Schema or not)
+ 
+* Core CMS
+    * Creating and localizing dynamic blocks (for example, Banners)
+
+* Bundled extensions
 
 
 ## Highlights
@@ -25,9 +84,14 @@ Magento Commerce 2.3.0 includes a wealth of new, exciting features, and hundreds
 
 
 
+
+
+
+
+
 ## Known issues
 
-Magento 2.3.0 Beta includes the following known issues. Fixes for these issues are scheduled for  patch releases in the near future.
+Magento 2.3.0 Beta includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future.
 
 
 ## Fixed issues
@@ -58,67 +122,29 @@ Running php bin/magento setup:rollback -c 1472780740_filesystem_code.tgz -m 1472
 <!--- 81965-->* The default time setting for `cron` success  and failure history is now seven days. *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request 11463*.
 
 
-<!--- 82752-->* Fixes translations by re-running the loadData for its correct locale 
-
-
-When running `setup:static-content:deploy` with multiple languages specified, it will generate a js-translation.json. Even if the locale is set properly for each language, it will translate just based on 
-`$this->translator->getData();` in Magento\Framework\Phrase\Renderer
-In other words it will use the data retrieved from the `loadData` function in the Framework/Translation.php 
-This uses a constructor which sets the locale; `\Magento\Framework\Locale\ResolverInterface $locale` and obviously followed by `$this->_locale = $locale;`
-
-The problem here is that the loadData only gets ran once on init. It will keep using this for every other locale as 'base'. Therefore a potential locale change should also re-run the loadData.
-
-By forcing a "rebuild" of the loadData with the correct locale, we will parse the data with the correct translations.
-
-
-[GitHub-10673](https://github.com/magento/magento2/issues/10673)
-
-
-Expected result
-When generating static content using multiple locales in one go, the generated js-translation.json files should be different
-Actual result
-When generating static content using multiple locales in one go, the generated js-translation.json files are the same
-This has as result that all javascript translations are in the wrong locale on the frontend.
-
-*Fix submitted by [Wiard van Rij](https://github.com/wiardvanrij) in pull request 10913*.
-
-
-
-
+<!--- 82752-->* In Magento deployments using multiple languages, the `Framework/translation.php` constructor that sets a store's locale now uses the correct locale. *Fix submitted by [Wiard van Rij](https://github.com/wiardvanrij) in pull request 10913*. [GitHub-10673](https://github.com/magento/magento2/issues/10673)
 
 <!--- 82294-->* The `.htaccess` template now uses apache2.4 syntax. *Fix submitted by [Jonas Hünig](https://github.com/jonashrem) in pull request 11466*. [GitHub-10810](https://github.com/magento/magento2/issues/10810)
 
 
-
-<!--- 69895-->* If a callback in commit throws an excecption, the calling plugin needs to be able to distinguish this from a unsuccessful commit, so that it doesn't attempt a rollback on an already commited transaction. (Which would cause an “Asymmetric transaction rollback" error). *Fix submitted by [Wayne Theisinger](https://github.com/waynetheisinger) in pull request 9955*.  [GitHub-6497](https://github.com/magento/magento2/issues/6497)
-
-
-See 2.2.1 75452 Log exception when commit callbacks throw it.
+<!--- 69895-->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from a unsuccessful commit, and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. *Fix submitted by [Wayne Theisinger](https://github.com/waynetheisinger) in pull request 9955*.  [GitHub-6497](https://github.com/magento/magento2/issues/6497)
 
 
-<!---71744 -->* This fixes the issue where the link to the download of a backup in the admin gives the wrong file.
-The wrong file seems to be the latest backup that was generated. Download back-up .tgz always takes the latest that's created 
-*Fix submitted by [will-b](https://github.com/will-b) in pull request 10593*.  [GitHub-10032](https://github.com/magento/magento2/issues/10032)
+<!---71744 -->* The links that the Admin panel provides to backup packages now link to the expected packages. Previously, these links permitted you to download only the latest backup package. *Fix submitted by [will-b](https://github.com/will-b) in pull request 10593*.  [GitHub-10032](https://github.com/magento/magento2/issues/10032)
+
+
+<!---71359 -->* All `cron` schedule times are now saved in UTC and then displayed to the user in the expected time zone. Previously, the `cron` schedule times in the database were in local date time formats and not UTC, while the other system dates and times were saved as UTC in the database. This resulted in varying and ptoentially confusing *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10432*. [GitHub-4237](https://github.com/magento/magento2/issues/4237)
+
 
 
 
 
 ### Cart and checkout
 
-<!---83562 -->* The update button.phtml has been simplified. 
-
-update button.phtml overcomplicated translation phrase
+<!---83562 -->* `update button.phtml` has been simplified to optimize translation. *Fix submitted by [Karla Saaremäe](https://github.com/ChuckyK) in pull request 12155*. 
 
 
-t has overcomplicated translation phrase.
-"<a href=""%1"" onclick=""this.target='_blank'"" class=""print"">Print receipt"
-vs
-"Print receipt"
-
-*Fix submitted by [Karla Saaremäe](https://github.com/ChuckyK) in pull request 12155*. 
-
-
-<!--- 83196-->* You can now enter Netherlands zip codes with no spaces. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11961*. [GitHub-11898](https://github.com/magento/magento2/issues/11898)
+<!--- 83196-->* You can now enter zip codes that contain no spaces for locations in the Netherlands. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11961*. [GitHub-11898](https://github.com/magento/magento2/issues/11898)
 
 
 <!--- 81823-->* The text that appears above the billing address field on the checkout page has been edited to remove redundancy. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 11399* 
@@ -133,14 +159,11 @@ Customer is logged in
 Customer has default shipping and billing address defined
 Customer has valid credit card saved in Braintree
 
-NEW FEATURE?
 
 *Fix submitted by [Daniel Korzeniowski](https://github.com/danielkorzeniowski)*. 
 
 
-<!--- 71761-->* fatal error in repository generator
-
-*Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10601* [GitHub-6151](https://github.com/magento/magento2/issues/6151)
+<!--- 71761-->* You can now delete the last product in your shopping cart even when the **Minimum Order Amount** setting (**Admin > Sales**) is enabled. Previously, if you tried to delete the last item in your cart under these circumstances, Magento would throw an exception. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10601* [GitHub-6151](https://github.com/magento/magento2/issues/6151)
 
 
 
@@ -148,114 +171,46 @@ NEW FEATURE?
 
 ### Catalog
 
-<!--- 85695-->*  Magento no longer throw an error when you re-save a product attribute with a new name. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11619*. [GitHub-6770](https://github.com/magento/magento2/issues/6770)
+<!--- 85695-->*  Magento no longer throws an error when you re-save a product attribute with a new name. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11619*. [GitHub-6770](https://github.com/magento/magento2/issues/6770)
+
+<!--- 67509-->* The grouped product page now  shows the lowest price for a simple product. *Fix submitted by [evgk](https://github.com/evgk) in pull request 9266*. [GitHub-9265](https://github.com/magento/magento2/issues/9265)
 
 
-<!--- 67509-->*  Note that the type signature for the getQty method in SaleableInterface indicates that it should always
-return a float: *Fix submitted by [evgk](https://github.com/evgk) in pull request 9266*. [GitHub-9265](https://github.com/magento/magento2/issues/9265)
-
-See 2.2.1 75453
-
-
-
-<!--- 85016-->* Missing cascade into attribute set deletion.[port]. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12538*. [GitHub-12110](https://github.com/magento/magento2/issues/12110)
-
-
-Preconditions
-Create a custom attributes set
-Attach some products to this attributes set
-Steps to reproduce
-Got to attributes set admin page
-Delete your custom attributes set
-Confirm you want to remove attached products also
-Expected result
-Table url_rewrite should be cleaned from references to removed products
-A new product named like an old one should be insertable via API or admin interface
-Actual result
-Impossible to add a new product named like an old one because a request_path with the same value as computed already exists in table url_rewrite;
-
-See 2.2.4 84808
+<!--- 85016-->* You can now add a new product with custom attributes that has the same name and attributes as a previously deleted product. Previously, Magento did not let you add this new product because a `request_path` with the same value already existed in `table url_rewrite` from the previous product. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12538*. [GitHub-12110](https://github.com/magento/magento2/issues/12110)
 
 <!---83065 -->* Magento now saves the assigned background color for images correctly. Previously, if you updated the background color of a product image, the background color was always black. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11888*.[GitHub-8799](https://github.com/magento/magento2/issues/8799)
 
 <!--- 83038-->* You can now assign and save a custom option assigned a price of 0. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11842*.[GitHub-4808](https://github.com/magento/magento2/issues/4808)
 
-
 <!--- 82202-->* The ProductRepository SKU cache is no longer corrupted when the value assigned to `cacheLimit` is reached. 
 *Fix submitted by [Thomas](https://github.com/heldchen) in pull request 11537*.
 
+<!--- 80828-->* The price filter on a product category page now works as expected. Previously, if you applied this filter to a category listing, Magento displayed redundant product listings and unrelated products.  *Fix submitted by [Mayank Zalavadia](https://github.com/mayankzalavadia) in pull request 11206*. [GitHub-11139](https://github.com/magento/magento2/issues/11139)
 
-<!--- 80828-->* A solution for Product Repeat Issue after filter on category listing page.
-I have traced the issues and finally, I have found the problem. This issues magento/magento2#11139 is occurring just because of product position. When some products position are same on collection at that time we have faced this issue. 
+<!--- 87614-->* You can now successfully create a product from API Product Management in deployments where the "Update by Schedule" indexer mode is set. (EE only)
 
-*Fix submitted by [Mayank Zalavadia](https://github.com/mayankzalavadia) in pull request 11206*. [GitHub-11139](https://github.com/magento/magento2/issues/11139)
-
-Product Repeat Issues after apply price filter on category listing page. Same products display on next page. Also sometimes it gives me random products.
-
-
-See 2.2.4 81942
-
-
-<!--- 87614-->* Deadlock on product creation
-
-The following is actual only for existing Magento EE/B2B installations and "Update by Schedule" indexer mode. 
-
-New Magento installation with this fix will fix one of deadlock, that occurs on EE version, but for existing Magento EE/B2B installation the following code must be executed for apply needed changes: 
-
-bin/magento indexer:set-mode realtime 
-bin/magento indexer:set-mode schedule 
-
-Expected results
-all steps from "API Product Management" were executed successfully (they are green)
-Actual results
-Step "Create product" from "API Product Management" has errors
-
-See 2.2.4 83560 also 2.2.4 87445
-
-
-
-
-
-
-<!--- 72620-->* Configurable products no longer show up on category page when all children are disabled by mass action and the **display out-of-stock products** setting is off.
+<!--- 72620-->* Configurable products are no longer displayed on a category page when all children are disabled by mass action and the **display out-of-stock products** setting is off.
 
 
 <!--- 85618-->* Magento no longer displays a 404 error when you change category permissions from Product Detail pages when multistore view is enabled.
 
-<!---85617 -->* Exception when product added to cart with tiered price reduced to $0.00
-An exception is thrown when a product is added to the cart that has tiered prices reducing the product price to $0.00
+<!---85617 -->* Magento no longer throws an exception when you add a product with a tiered price reduced to $0.00 to your shopping cart. 
 
-See 2.2.1 80371
 
 ### Configurable products
 
-<!--- 85177 -->* Magento now displays the price of a configurable product as expected even when its simple productss are out-of-stock.
+<!--- 85177 -->* Magento now displays the price of a configurable product as expected even when its simple products are out-of-stock. Previously, Magento displayed a price of 0 for any configurable product price when its simple products were out-of-stock. [GitHub-12578](https://github.com/magento/magento2/issues/12578)
 
-Configurable product price shows 0 when all the simple products are out of stock.
-[GitHub-12578](https://github.com/magento/magento2/issues/12578)
+<!--- 70491 -->*  Magento now displays the correct price of product when its special-price option has not been selected. Previously, Magento displayed the expired `special_price` value for a configurable product even when you did not select the product option associated with that price. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 9796*. [GitHub-6457](https://github.com/magento/magento2/issues/6457)
 
+<!--- 70491 -->* Configurable product prices now correctly reflect VAT amounts as set by tax rule settings. Previously, magento displayed a configurable product's old price without the VAT.  *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 9796*. [GitHub-6729](https://github.com/magento/magento2/issues/6729)
 
-Expected result
-Price shown accounting to the out of stock simple.
-Actual result
-Price is showing as 0.
+<!--- 70491 -->*  
 
-
-NEEDED ?
-
-<!--- 70491 -->*  Fix for lowest price options provider to retrieve products with additional attributes. Expired special_price is still shown for configurable products when no variant is selected. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 9796*. [GitHub-6457](https://github.com/magento/magento2/issues/6457)
-
-<!--- 70491 -->*  Configurable product old price with taxes displayed wrong. I have a store for EU, by law we need to show all prices with VAT included. In the admin we enter prices without tax, we have tax rule to add 20% VAT, in configuration everything es set up properly, so all prices include tax. When we apply catalogue rule for category to have 20% discount all prices are shown correctly except configurable product old price- it is old price without tax. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 9796*. [GitHub-6729](https://github.com/magento/magento2/issues/6729)
-
-<!--- 70491 -->*  Fix for lowest price options provider to retrieve products with additional attributes. LowestPriceOptionsProvider returns products without attributes which are used for price calculation (e.g. tax adjustment) Special price vigency for configurable childs (simple products associated) doesn´t work. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 9796*. [GitHub-7362](https://github.com/magento/magento2/issues/7362)
+Fix for lowest price options provider to retrieve products with additional attributes. LowestPriceOptionsProvider returns products without attributes which are used for price calculation (e.g. tax adjustment) Special price vigency for configurable childs (simple products associated) doesn´t work. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 9796*. [GitHub-7362](https://github.com/magento/magento2/issues/7362)
 
 
-<!--- 71670 -->*   Magento ver. 2.1.8 New Product with Custom attribute set not working This PR fixes addresses the broken the add new product screen when choosing a custom attribute set with a multiselect attribute in it. *Fix submitted by [Teun Lassche](https://github.com/thlassche) in pull request 10575*. [GitHub-10565](https://github.com/magento/magento2/issues/10565)
-
-
-
-### Email
-
+<!--- 71670 -->* You can now successfully add a new product that contains a custom attribute set with a multiselect attribute from the Admin.  *Fix submitted by [Teun Lassche](https://github.com/thlassche) in pull request 10575*. [GitHub-10565](https://github.com/magento/magento2/issues/10565)
 
 
 ### Frameworks
@@ -263,62 +218,25 @@ NEEDED ?
 
 #### Application framework
 
-<!---83091 -->* Remove "Undefined fields" from under lib folder
-this PR adds missing properties to class, and optimize / reorder imports, under lib folder.
+<!---83091 -->* We've removed undefined fields from files in `/lib`. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11662*. 
 
-*Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11662*. 
+<!---83034 -->* The doc block that describes `setValue` in `FilterBuilder` now reflects that this method will accept an array. *Fix submitted by [bytecreation](https://github.com/ByteCreation) in pull request 11855*.
 
+<!--- 82664-->* Magento now uses valid ISO language codes in HTML headers. *Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 11644*. [GitHub-11540](https://github.com/magento/magento2/issues/11540)
 
+<!--- 70736-->* Magento can now generate unsecure URLs if the current URL is secure. [GitHub-6175](https://github.com/magento/magento2/issues/6175)
 
-
-<!---83034 -->* FilterBuilder Doc Block Update
-Edited doc block of setValue in FilterBuilder to reflect that this method will accept an array
-*Fix submitted by [bytecreation](https://github.com/ByteCreation) in pull request 11855*.
-
-
-
-<!--- 82664-->* 
-Magento sets iso invalid language code in html header 
-
-Magento HTML Language code is invalid
-*Fix submitted by [Cristian Sanclemente](https://github.com/crissanclick) in pull request 11644*. [GitHub-11540](https://github.com/magento/magento2/issues/11540)
-
-<!--- 70736-->* Added ability generate unsecure URL if current URL is secure When calling getUrl from a secure connection ( HTTPS ) with param secure = false we are getting secure URL instead of unsecured.[GitHub-6175](https://github.com/magento/magento2/issues/6175)
-
-
-
-
-
-<!--- 82235-->* app:config:dump adds extra space every time in multiline array value
-Rewrite PhpFormatter::format method, to avoid add extra spaces
-
-Steps to reproduce
-RUN > php bin/magento app:config:dump
-Search for 'address_templates' key in config.php and count number of spacees in every line of formatted multiline text value.
-Now run again>php bin/magento app:config:dump
-Again check for number of spaces. You will find two more space.
-Every time when we dump of execute setup:upgrade it adds extra space to multiline config value.
-Expected result
-There should be no extra space if there is no change in the configuration.
-Actual result
-It adds extra space and it shows as modified in git local working copy. So every time it needs commit when sending feature to repository
-
-*Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11452*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
-
-
-
+<!--- 82235-->* The `php bin/magento app:config:dump` command no longer adds an extra space to to multiline array values every time it runs. Previously, this command inserted extra spaces, which triggered Github to commit these files as changed. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11452*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
 
 <!--- 82007-->* The `StockItemCriteriaInterface` method `setProductsFilter` now accepts an array of IDs. Previously, this method accepted either a single integer or an array, but returned only one item. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request 11503*.[GitHub-7678](https://github.com/magento/magento2/issues/7678)
 
 
 
-<!--- 83260-->* The auth.json file holding composer credentials can't be exposed anymore.
-
-
-
 #### Configuration framework
 
-<!---83083 -->* Order relation child is not set during edit operation
+<!---83083 -->* An order's `relation_child_id` and `relation_child_real_id` fields now accurately 
+
+Order relation child is not set during edit operation
 
 *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11909*. [GitHub-10195](https://github.com/magento/magento2/issues/10195)
 
@@ -334,96 +252,35 @@ Fields are null in the database
 Link to the new order is not displayed on old order's admin page
 
 
-<!--- 82998-->* When the header X-Magento-Tags contains whitespaces, an Zend\Http\Header\Exception\InvalidArgumentException is being thrown when the full page cache is enabled. Block IDs can contain whitespaces due to reformatting in layout XML files, because of the 80 character line length limit.
-*Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11849*.[GitHub-7640](https://github.com/magento/magento2/issues/7640)
 
-Steps to reproduce
-Have layout files with block_id arguments that contain whitespaces (see image below)
-Enable full page cache
-Reload a page
-Expected result
-The page should be loaded correctly
-
-Actual result
-An error
-
+<!--- 82998-->* Pages that contain layout files with `block_id` arguments that contain whitespaces now load correctly. Previously, Magento threw an error when loading these pages. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11849*.[GitHub-7640](https://github.com/magento/magento2/issues/7640)
 
 <!---81310 -->* The config array can now read  all settings from `config`. Previously, the config array was hardcoded to read three settings only. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 11302*.
 
 
-<!---75458 -->*  Adds ability to set default value to fields with type image or file. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10253*.[GitHub-10252](https://github.com/magento/magento2/issues/10252)
-
-
-#### Database framework
-
+<!---75458 -->* You can now assign a default value to config fields of type `image` or `file`.  *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10253*.[GitHub-10252](https://github.com/magento/magento2/issues/10252)
 
 
 #### JavaScript framework
 
-<!--- 85096-->* Added namespace to product videos fotorama events
+<!--- 85096-->* Magento now displays video and images as expected when you select a video or click to view a full-screen image for a configurable product. *Fix submitted by [Chumak Roman](https://github.com/roma84) in pull request 12556*. [GitHub-12268](https://github.com/magento/magento2/issues/12268)
 
- Gallery issues on configurable product page
-*Fix submitted by [Chumak Roman](https://github.com/roma84) in pull request 12556*. [GitHub-12268](https://github.com/magento/magento2/issues/12268)
-
-
-See 2.1.13 85097
-
-
-
-<!---81426 -->* Duplicated mixins parameters
-Inside Magento UI LESS library I found a mixin (but there are more, I just forgot to write it down and fix) with duplicated parameters, which, unfortunately, work in LESS, but for sure it's not a good practice and should be fixed.
-
-*Fix submitted by [Bartek Igielski](https://github.com/Igloczek) in pull request 11276*.
-
-
-
-
-
-
-
+<!---81426 -->* We've removed duplicate parameters from a Magento UI LESS library mixin. *Fix submitted by [Bartek Igielski](https://github.com/Igloczek) in pull request 11276*.
 
 
 #### Session framework
 
-
-
-
-
-
-<!--- 88084 -->* Implementation (fix) of session locking mechanism in php-redis-session-abstract no longer leads to a 30 second timeout
-
-
-#### Zend framework
-
-
+<!--- 88084 -->* We’ve removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.
 
 
 ### General fixes
-<!--- 84853-->* When saving custom layout update xml in CMS page, *in production mode*, xml is not validated against schema file, due to `\Magento\Framework\App\Arguments\ValidationState::isValidationRequired`method:
+<!--- 84853-->* Magento now validates  custom layout update XML against the schema file when you save the XML. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11859*. 
 
-
-*Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11859*. 
-
-
-
-
-<!--- 88973-->* Zoom the image can be closed in iPhone or Safari browser
-If choose full screen zoom for any product image in iPhone 4s, 5s, 6, 6s with Safari browser, It will not unable to close that full screen zoom.
-
-See 2.2.4 85708
-
-
+<!--- 88973-->* You can now successfully close full-screem zoomed product images displayed on an iPhone 4s, 5s, 6, 6s with Safari browser. Previously, if you chose full screen zoom for any product image, you could not close the full screen zoom.
 
 <!--- 72508-->* Deleting a customer in Admin Panel no longer causes fatal errors upon storefront login or registration.
 
-See 2.2.1 72587
-
-
-<!---85662 -->* Add Current Date to update_time Field for Block and Pages
-
-when saving a page in magento 2.2.1, 'Modified' date field is not getting updated
-
-*Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12637*. [GitHub-12625](https://github.com/magento/magento2/issues/12625)
+<!---85662 -->* The **Modified** date field is now updated as expected when you save a page in a deployment running Magento 2.2.1.  *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12637*. [GitHub-12625](https://github.com/magento/magento2/issues/12625)
 See 2.2.4 85502
 
 
@@ -592,33 +449,9 @@ Now it returns false if value contains ${{
 <!--- 71642-->*  Google Adwords add ability to provide transaction-specific conversion values in your conversion tracking tag
 *Fix submitted by [DominicWatts](https://github.com/DominicWatts) in pull request 10558*. [GitHub-6708](https://github.com/magento/magento2/issues/6708)
 
+<!--- 71833-->* The text in the authentication popup has been corrected to **Checkout as a new customer**. *Fix submitted by [Parker Smith](https://github.com/insanityfarm) in pull request 10627*. [GitHub-9533](https://github.com/magento/magento2/issues/9533)
 
   
-### Gift cards
-
-
-### Gift registry
-
-
-### Gift wrapping
-
-
-
-### Google Analytics
-
-
-### HTML
-
-
-
-### Images
-
-
-#### Import/Export
-
-
-#### Integrations
-
 
 
 ### Indexing
@@ -1052,21 +885,6 @@ Updating a product via the REST API using PUT /rest/all/V1/products/example_sku 
 
 
 
-
-
-<!--- DUPLICATE MAGETWO-42158 MAGETWO-85224 MAGETWO-84105 MAGETWO-83192 -->
-
-<!--- CANNOT REPRODUCE MAGETWO-83798 MAGETWO-83772  MAGETWO-84068 MAGETWO-84067 MAGETWO-84065 MAGETWO-84044 MAGETWO-84027 MAGETWO-83991 MAGETWO-83985 MAGETWO-83978 MAGETWO-83971 MAGETWO-83969 MAGETWO-83962 MAGETWO-83915 MAGETWO-83909 MAGETWO-83879 MAGETWO-83436 MAGETWO-83536 MAGETWO-83615 MAGETWO-83295 MAGETWO-83297 MAGETWO-83348 MAGETWO-83357 MAGETWO-83387 MAGETWO-83433 MAGETWO-83520 MAGETWO-83557 MAGETWO-83758 MAGETWO-83750 MAGETWO-83748 MAGETWO-83721 MAGETWO-83719 MAGETWO-83715 MAGETWO-83468 MAGETWO-83713 MAGETWO-83712 MAGETWO-83666 MAGETWO-83665 MAGETWO-83623 MAGETWO-83620 MAGETWO-83618 MAGETWO-82510 MAGETWO-83223 MAGETWO-83220 MAGETWO-83213 MAGETWO-83210 MAGETWO-83179 MAGETWO-83098 MAGETWO-83097 MAGETWO-83080 MAGETWO-83015 MAGETWO-82955 MAGETWO-82964 MAGETWO-82575 MAGETWO-82571 MAGETWO-82534 MAGETWO-82909 MAGETWO-82870 MAGETWO-82834 MAGETWO-82822 MAGETWO-82783 MAGETWO-82777 MAGETWO-82775 MAGETWO-82469 MAGETWO-82726 MAGETWO-82719 MAGETWO-82718 MAGETWO-82714 MAGETWO-82703 MAGETWO-82700 MAGETWO-82699 MAGETWO-82697 MAGETWO-82693 MAGETWO-82688 MAGETWO-82644 MAGETWO-82626 MAGETWO-82606 MAGETWO-82604 MAGETWO-82602 MAGETWO-82600 MAGETWO-82594 MAGETWO-82585 MAGETWO-82583 MAGETWO-82514 MAGETWO-82490 MAGETWO-82488 MAGETWO-82482 MAGETWO-82472 MAGETWO-82458 MAGETWO-82454 MAGETWO-82424 MAGETWO-82419 MAGETWO-82410 MAGETWO-82408 MAGETWO-82404 MAGETWO-82401 MAGETWO-82390 MAGETWO-82378 MAGETWO-82376 MAGETWO-82372 MAGETWO-82368 MAGETWO-82362 MAGETWO-82358 MAGETWO-82356 MAGETWO-82350 MAGETWO-82345 MAGETWO-82293 MAGETWO-84319--> 
-
-<!--- INTERNAL ONLY MAGETWO-85926 MAGETWO-82817 MAGETWO-82811 MAGETWO-82225 MAGETWO-81033 MAGETWO-81528 MAGETWO-81532 MAGETWO-81803 MAGETWO-84172 MAGETWO-84131 MAGETWO-85606 MAGETWO-85572 MAGETWO-85517 MAGETWO-85189 MAGETWO-85070 MAGETWO-84197 MAGETWO-84168 MAGETWO-84152 MAGETWO-84131 MAGETWO-84110 MAGETWO-84123 MAGETWO-84068 MAGETWO-84067 MAGETWO-84065 MAGETWO-84044 MAGETWO-84027 MAGETWO-83991 MAGETWO-83985 MAGETWO-83978 MAGETWO-83972 MAGETWO-83971 MAGETWO-83969 MAGETWO-83962 MAGETWO-83915 MAGETWO-83909 MAGETWO-83830 MAGETWO-84079 MAGETWO-86066 MAGETWO-83890 MAGETWO-83821 MAGETWO-83807 MAGETWO-83776 MAGETWO-83699 MAGETWO-81799 MAGETWO-85068 MAGETWO-83187 MAGETWO-83039 MAGETWO-85521 MAGETWO-85515 MAGETWO-85513 MAGETWO-85262 MAGETWO-85259 MAGETWO-85243 MAGETWO-85240 MAGETWO-85237 MAGETWO-85203 MAGETWO-85191 MAGETWO-85147 MAGETWO-85131 MAGETWO-85010 MAGETWO-84906 MAGETWO-84905 MAGETWO-84904 MAGETWO-85057 MAGETWO-83673 MAGETWO-85737 MAGETWO-84976 MAGETWO-85563 MAGETWO-85001 MAGETWO-83040 --> 
-
-
-<!--- WON'T FIX MAGETWO-85927 MAGETWO-85616 MAGETWO-51484 MAGETWO-85605 MAGETWO-85244 MAGETWO-84928 MAGETWO-85132 MAGETWO-83890 MAGETWO-83821 MAGETWO-83807 MAGETWO-82779 MAGETWO-82509 MAGETWO-83188 MAGETWO-82566 -->
-
-<!--- INVALID/NOT A BUG MAGETWO-83422 MAGETWO-83299 --> 
-
-
-
 ## Community contributions
 
  We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
@@ -1074,24 +892,12 @@ Updating a product via the REST API using PUT /rest/all/V1/products/example_sku 
 
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
-* The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of  top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
+* The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
-
-* GitHub issues:
-
-
+### Community issues to be documented for 2.3 GA
 
     * [#9236](https://github.com/magento/magento2/issues/9236) -- Upgrade ZF components. Zend_Json (fixed in [magento/magento2#10259](https://github.com/magento/magento2/pull/10259) and [magento/magento2#10306](https://github.com/magento/magento2/pull/10306) and [magento/magento2#10320](https://github.com/magento/magento2/pull/10320) and [magento/magento2#10329](https://github.com/magento/magento2/pull/10329) and [magento/magento2#10333](https://github.com/magento/magento2/pull/10333) and [magento/magento2#10339](https://github.com/magento/magento2/pull/10339) and [magento/magento2#10340](https://github.com/magento/magento2/pull/10340) and [magento/magento2#10341](https://github.com/magento/magento2/pull/10341) and [magento/magento2#10342](https://github.com/magento/magento2/pull/10342) and [magento/magento2#13137](https://github.com/magento/magento2/pull/13137))
 
-
-
-
-
-
-    * [#9533](https://github.com/magento/magento2/issues/9533) -- Grammar error on authentication popup (fixed in [magento/magento2#10627](https://github.com/magento/magento2/pull/10627))
-
-
-    * [#4237](https://github.com/magento/magento2/issues/4237) -- Cron times in the database have a double timezone correction (fixed in [magento/magento2#10432](https://github.com/magento/magento2/pull/10432))
 
 
     * [#10645](https://github.com/magento/magento2/issues/10645) -- Adding BEM class in XML via attribute tag causes class to be rewritten (fixed in [magento/magento2#10655](https://github.com/magento/magento2/pull/10655))
@@ -1785,14 +1591,12 @@ Updating a product via the REST API using PUT /rest/all/V1/products/example_sku 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
 
 
-
  For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3 General Availability (GA) using Composer.
-
+You can install Magento Commerce 2.3 Beta  using Composer.
 
 {% include install/releasenotes/ee_install_21.md %}
 
@@ -1800,3 +1604,20 @@ You can install Magento Commerce 2.3 General Availability (GA) using Composer.
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+
+
+
+
+
+<!--- DUPLICATE MAGETWO-42158 MAGETWO-85224 MAGETWO-84105 MAGETWO-83192 -->
+
+<!--- CANNOT REPRODUCE MAGETWO-83798 MAGETWO-83772  MAGETWO-84068 MAGETWO-84067 MAGETWO-84065 MAGETWO-84044 MAGETWO-84027 MAGETWO-83991 MAGETWO-83985 MAGETWO-83978 MAGETWO-83971 MAGETWO-83969 MAGETWO-83962 MAGETWO-83915 MAGETWO-83909 MAGETWO-83879 MAGETWO-83436 MAGETWO-83536 MAGETWO-83615 MAGETWO-83295 MAGETWO-83297 MAGETWO-83348 MAGETWO-83357 MAGETWO-83387 MAGETWO-83433 MAGETWO-83520 MAGETWO-83557 MAGETWO-83758 MAGETWO-83750 MAGETWO-83748 MAGETWO-83721 MAGETWO-83719 MAGETWO-83715 MAGETWO-83468 MAGETWO-83713 MAGETWO-83712 MAGETWO-83666 MAGETWO-83665 MAGETWO-83623 MAGETWO-83620 MAGETWO-83618 MAGETWO-82510 MAGETWO-83223 MAGETWO-83220 MAGETWO-83213 MAGETWO-83210 MAGETWO-83179 MAGETWO-83098 MAGETWO-83097 MAGETWO-83080 MAGETWO-83015 MAGETWO-82955 MAGETWO-82964 MAGETWO-82575 MAGETWO-82571 MAGETWO-82534 MAGETWO-82909 MAGETWO-82870 MAGETWO-82834 MAGETWO-82822 MAGETWO-82783 MAGETWO-82777 MAGETWO-82775 MAGETWO-82469 MAGETWO-82726 MAGETWO-82719 MAGETWO-82718 MAGETWO-82714 MAGETWO-82703 MAGETWO-82700 MAGETWO-82699 MAGETWO-82697 MAGETWO-82693 MAGETWO-82688 MAGETWO-82644 MAGETWO-82626 MAGETWO-82606 MAGETWO-82604 MAGETWO-82602 MAGETWO-82600 MAGETWO-82594 MAGETWO-82585 MAGETWO-82583 MAGETWO-82514 MAGETWO-82490 MAGETWO-82488 MAGETWO-82482 MAGETWO-82472 MAGETWO-82458 MAGETWO-82454 MAGETWO-82424 MAGETWO-82419 MAGETWO-82410 MAGETWO-82408 MAGETWO-82404 MAGETWO-82401 MAGETWO-82390 MAGETWO-82378 MAGETWO-82376 MAGETWO-82372 MAGETWO-82368 MAGETWO-82362 MAGETWO-82358 MAGETWO-82356 MAGETWO-82350 MAGETWO-82345 MAGETWO-82293 MAGETWO-84319--> 
+
+<!--- INTERNAL ONLY MAGETWO-85926 MAGETWO-82817 MAGETWO-82811 MAGETWO-82225 MAGETWO-81033 MAGETWO-81528 MAGETWO-81532 MAGETWO-81803 MAGETWO-84172 MAGETWO-84131 MAGETWO-85606 MAGETWO-85572 MAGETWO-85517 MAGETWO-85189 MAGETWO-85070 MAGETWO-84197 MAGETWO-84168 MAGETWO-84152 MAGETWO-84131 MAGETWO-84110 MAGETWO-84123 MAGETWO-84068 MAGETWO-84067 MAGETWO-84065 MAGETWO-84044 MAGETWO-84027 MAGETWO-83991 MAGETWO-83985 MAGETWO-83978 MAGETWO-83972 MAGETWO-83971 MAGETWO-83969 MAGETWO-83962 MAGETWO-83915 MAGETWO-83909 MAGETWO-83830 MAGETWO-84079 MAGETWO-86066 MAGETWO-83890 MAGETWO-83821 MAGETWO-83807 MAGETWO-83776 MAGETWO-83699 MAGETWO-81799 MAGETWO-85068 MAGETWO-83187 MAGETWO-83039 MAGETWO-85521 MAGETWO-85515 MAGETWO-85513 MAGETWO-85262 MAGETWO-85259 MAGETWO-85243 MAGETWO-85240 MAGETWO-85237 MAGETWO-85203 MAGETWO-85191 MAGETWO-85147 MAGETWO-85131 MAGETWO-85010 MAGETWO-84906 MAGETWO-84905 MAGETWO-84904 MAGETWO-85057 MAGETWO-83673 MAGETWO-85737 MAGETWO-84976 MAGETWO-85563 MAGETWO-85001 MAGETWO-83040 MAGETWO-83260--> 
+
+
+<!--- WON'T FIX MAGETWO-85927 MAGETWO-85616 MAGETWO-51484 MAGETWO-85605 MAGETWO-85244 MAGETWO-84928 MAGETWO-85132 MAGETWO-83890 MAGETWO-83821 MAGETWO-83807 MAGETWO-82779 MAGETWO-82509 MAGETWO-83188 MAGETWO-82566 -->
+
+<!--- INVALID/NOT A BUG MAGETWO-83422 MAGETWO-83299 --> 
+
+
