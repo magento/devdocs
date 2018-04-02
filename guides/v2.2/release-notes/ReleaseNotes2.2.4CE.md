@@ -10,9 +10,7 @@ level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.4CE.md
 ---
-*Patch code and release notes published on March, 2018.*
-
-
+*Patch code and release notes published on May 2, 2018.*
 
 We are pleased to present Magento Open Source 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
 
@@ -3620,9 +3618,9 @@ Zoom the image is not closed
 
 ### Translations and locale
 
+<!--- MAGETWO-86286 -->* Inline translations and custom translators now work for Knockout templates. 
 
-
-<!--- MAGETWO-86286 -->* Fix #2156 Js\Dataprovider uses the RendererInterface. 
+Fix #2156 Js\Dataprovider uses the RendererInterface. 
 *Fix submitted by [Dmitry Fedyuk](https://github.com/dmitry-fedyuk) in pull request 12953*.
 
 [GitHub-2156](https://github.com/magento/magento2/issues/2156)
@@ -3688,7 +3686,9 @@ Since updating one of our stores to Magento 2.2 the translations for 'Item in Ca
 
 ### User interface
 
-<!--- MAGETWO-85784-->*  Validate range-words in Form component (UI Component) 
+<!--- MAGETWO-85784-->* You can now 
+
+Validate range-words in Form component (UI Component) 
 *Fix submitted by [Robin Huy](https://github.com/robinhuy) in pull request 12739*.
 
 
@@ -3701,72 +3701,22 @@ Category Name is validated and Category is created (or correct error message is 
 Actual result
 Nothing happens explicitly. Error message appers in browser console.
 
-<!--- MAGETWO-86025 -->* "Save Block"-button on Add New Block silently ignores clicks if the content is empty. 
-*Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1032*. 
 
 
-[GitHub-8114](https://github.com/magento/magento2/issues/8114)
+<!--- MAGETWO-86025 -->* The **Save Block** button on the Add New Block page no longer ignores clicks if the content editor is empty. 
+*Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1032*. [GitHub-8114](https://github.com/magento/magento2/issues/8114)
 
-
-
-When clicking "Save Block", nothing happens if the content editor is empty.
-
-
-
-
-<!--- MAGETWO-86438 -->* Resolved Checkout-Payment-Wrong promo code cancelled issue 
-*Fix submitted by [Chirag P](https://github.com/chiragp-wagento) in pull request 13030*. 
-
-Disabled the input box for promo code when promo code is already applied to the site.
-Wrong promo code cancelled issue on Checkout > Payment and Cart page.
-
-Expected result
-Promo code input box will be disabled once we apply any promo code.
-
-Actual result
-Promo code removed
-
-
+<!--- MAGETWO-86438 -->* Magento now disables the promo code input box after a user applies a promo code. *Fix submitted by [Chirag P](https://github.com/chiragp-wagento) in pull request 13030*. 
 
 <!--- MAGETWO-84903 -->* copy from 2.1.13
 
+<!--- MAGETWO-83815 -->* The PHP notice that Magento displays when an invalid `ui_component` configuration is used has been improved. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 12239*.
 
 
-
-<!--- MAGETWO-83815 -->* Fixed php notice when invalid ui_component config is used 
-*Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 12239*.
-
-Just a tiny fix. Move `$argument['instance']` usage below `isset($argument['instance'])` check.
-
-
-<!--- MAGETWO-83293 -->* Inefficient SQL query on applying filter on sales order grid
-Verification for already set filter in Magento/Ui/Component/Filters added. 
-As a result filters in collection "where" conditions will not be duplicated.
-
-
-
-
-<!--- MAGETWO-71936 -->* Error: Invalid input datetime format of value "'DD/MM/+********"'
-
-[GitHub-10485](https://github.com/magento/magento2/issues/10485)
-
-
-Steps to reproduce
-Login to Magento admin
-Open an existing product for edit
-Click save
-Expected result
-Product is saved successfully as no changes are made from the previous state of the product
-Actual result
-An error Invalid input datetime format of value '25/07/+00201717' appears and the product is not saved
-This issue happened when I upgrade from 2.1.7 to 2.1.8. Some products seems to be able to save without an issue but majority of the ones I tried has this error with various values for the actual date.
-
-
-
+<!--- MAGETWO-83293 -->* Magento has added verification for previously set filter in `Magento/Ui/Component/Filters`, which has eliminated duplication of filters in collection `where` conditions. 
 
 
 ### URL rewrites
-
 <!--- MAGETWO-84955 -->* When using a store code in a URL, Magento now retrieves the value of `Store_Code` from the store if the store code value is empty. Previously, under these circumstances, Magento threw an error. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12529*. [GitHub-8615](https://github.com/magento/magento2/issues/12450)
 
 
@@ -3775,9 +3725,7 @@ This issue happened when I upgrade from 2.1.7 to 2.1.8. Some products seems to b
 
 
 ### Wishlist
-
 <!--- MAGETWO-69634 -->* Magento now correctly displays a product's special price when you add it to a wishlist. Previously, if you added a product with a special price to the wishlist, Magento displayed the product with its regular price.
-
 
 <!--- MAGETWO-85303 -->* You can now remove an item description from a wishlist. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 981*. [GitHub-12582](https://github.com/magento/magento2/issues/12582)
 
