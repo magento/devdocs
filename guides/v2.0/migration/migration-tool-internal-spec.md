@@ -485,24 +485,6 @@ There is a possibility to format log messages via monolog formatter. To make for
 
 As for now manipulation with logger, adding handler(s), processor(s) to it and processing verbose mode is performed in process() method of Migration\Logger\Manager class. Mentioned method is called during application start.
 
-## Extension Points {#extension-points}
-
-### Custom Resource Type of Source
-
-By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
-
-### Map Step configuration
-
-In most cases modification of map will be enough.
-
-### Custom Handler
-
-Custom handlers can be used for cases where data in a field should be transformed with more complex algorithm. There are a lot of custom handlers out of the box in src/Migration/Handler/ folder. Custom handlers are used in Settings step and Map step.
-
-### Custom Steps
-
-Data Migration Tool provides possibility to add custom steps to migration procedure (see Step internals).
-
 ## Automatic Tests {#automatic-tests}
 
 There are 3 types of tests in Data Migration Tool: static, unit and integration tests. They all are located in tests/ directory of the tool and they are located in folders, which are the same as the type of the test (e.g. unit tests are located in tests/unit folder). To launch the test you should have phpunit installed. In such case you should change current folder to the folder of test and launch phpunit. See the example below.
