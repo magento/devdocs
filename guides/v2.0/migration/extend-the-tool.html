@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate data | Magento 2 Developer Documentation</title>
+	<title>Extend the tool | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/migration/migration-migrate-data.html">
+	<link rel="canonical" href="//guides/v2.0/migration/extend-the-tool.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/migration/migration-migrate-data.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/migration/extend-the-tool.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/migration/migration-migrate-data.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/migration/extend-the-tool.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/migration/migration-migrate-data.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/migration/extend-the-tool.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/migration/migration-migrate-data.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/migration/extend-the-tool.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -404,7 +404,7 @@
         
         
         
-        <li class="nav-level2  " id="extend-the-tool">
+        <li class="nav-level2 active " id="extend-the-tool">
             
             
         
@@ -453,7 +453,7 @@
         
         
         
-        <li class="nav-level2 active " id="migrate-data">
+        <li class="nav-level2  " id="migrate-data">
             
             
         
@@ -603,7 +603,7 @@
 
           
 
-          <span property="name">Migrate data</span>
+          <span property="name">Extend the tool</span>
 
         
 
@@ -626,7 +626,7 @@
 
 	
 
-	<h1 class="page-heading">Migrate data</h1>
+	<h1 class="page-heading">Extend the tool</h1>
 
   
 
@@ -634,89 +634,138 @@
 </section>
 
 
-			<h2 id="before-you-start-routine-preparations">Before you start: routine preparations</h2>
+			<p>If the data format and structure created by <a href="https://marketplace.magento.com/extensions.html" target="_blank">Magento extensions</a> or custom code is different between Magento 1 and Magento 2, use extension points in the Data Migration Tool to migrate the data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention.</p>
 
-<ol>
-  <li>
-    <p>Log in to Magento server as <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">the file system owner</a>.</p>
-  </li>
-  <li>
-    <p>Change to the Magento <code class="highlighter-rouge">/bin</code> directory or make sure it is added to your system PATH.</p>
-  </li>
-</ol>
+<p>During migration, the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#map-step">Map Step</a> scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables do not differ, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.</p>
 
-<p>See the <a href="/guides/v2.0/migration/migration-migrate.html#migration-command-run-first">First steps</a> section for more details.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Read the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html">Technical Specification</a> first before attempting to extend the Data Migration Tool. You should also review the <a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a> for general information about using the tool.</p>
+</div>
 
-<h2 id="migrate-data-cmd">Run the data migration command</h2>
-<p>To start migrating data, run:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento migrate:data [-r|--reset] {&lt;path to config.xml&gt;}
-</code></pre></div></div>
-
-<p>where:</p>
+<h2 id="minor-data-format-and-structure-changes">Minor data format and structure changes</h2>
+<p>In most cases, the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#map-step">Map Step</a> sufficiently resolves minor data format and structure changes using the following methods in the <code class="highlighter-rouge">map.xml</code> file:</p>
 
 <ul>
-  <li>
-    <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
+  <li>Change table or field names with mapping rules</li>
+  <li>Transform data formats with existing handlers or create a custom handler</li>
+</ul>
+
+<p>The following shows an example of using both mapping rules and a handler. This example uses a hyopthetical Magento 1 extension called “GreatBlog” that has been improved for Magento 2.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;source&gt;</span>
+    <span class="nt">&lt;document_rules&gt;</span>
+        <span class="nt">&lt;ignore&gt;</span>
+            <span class="nt">&lt;document&gt;</span>great_blog_index<span class="nt">&lt;/document&gt;</span>
+        <span class="nt">&lt;/ignore&gt;</span>
+        <span class="nt">&lt;rename&gt;</span>
+            <span class="nt">&lt;document&gt;</span>great_blog_publication<span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;to&gt;</span>great_blog_post<span class="nt">&lt;/to&gt;</span>
+        <span class="nt">&lt;/rename&gt;</span>
+    <span class="nt">&lt;/document_rules&gt;</span>
+    <span class="nt">&lt;field_rules&gt;</span>
+        <span class="nt">&lt;move&gt;</span>
+            <span class="nt">&lt;field&gt;</span>great_blog_publication.summary<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;to&gt;</span>great_blog_post.title<span class="nt">&lt;/to&gt;</span>
+        <span class="nt">&lt;/move&gt;</span>
+        <span class="nt">&lt;ignore&gt;</span>
+            <span class="nt">&lt;field&gt;</span>great_blog_publication.priority<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;/ignore&gt;</span>
+        <span class="nt">&lt;transform&gt;</span>
+            <span class="nt">&lt;field&gt;</span>great_blog_publication.body<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">"\Migration\Handler\GreatBlog\NewFormat"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"switch"</span> <span class="na">value=</span><span class="s">"yes"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/handler&gt;</span>
+        <span class="nt">&lt;/transform&gt;</span>
+    <span class="nt">&lt;/field_rules&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination&gt;</span>
+    <span class="nt">&lt;document_rules&gt;</span>
+        <span class="nt">&lt;ignore&gt;</span>
+            <span class="nt">&lt;document&gt;</span>great_blog_rating<span class="nt">&lt;/document&gt;</span>
+        <span class="nt">&lt;/ignore&gt;</span>
+    <span class="nt">&lt;/document_rules&gt;</span>
+    <span class="nt">&lt;field_rules&gt;</span>
+        <span class="nt">&lt;ignore&gt;</span>
+            <span class="nt">&lt;field&gt;</span>great_blog_post.rating<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;/ignore&gt;</span>
+    <span class="nt">&lt;/field_rules&gt;</span>
+<span class="nt">&lt;/destination&gt;</span>
+</code></pre></div></div>
+
+<p>Refer to the following for an explanation of the changes in the previous example:</p>
+
+<ul>
+  <li>Unnecessary data from the index table <code class="highlighter-rouge">great_blog_index</code> should not be migrated</li>
+  <li>The table <code class="highlighter-rouge">great_blog_publication</code> was renamed to <code class="highlighter-rouge">great_blog_post</code> in Magento 2, so data should be migrated to the new table
+    <ul>
+      <li>The <code class="highlighter-rouge">summary</code> field was renamed <code class="highlighter-rouge">title</code>, so data should be migrated to the new field</li>
+      <li>The <code class="highlighter-rouge">priority</code> field was removed and no longer exists in Magento 2</li>
+      <li>The data in the <code class="highlighter-rouge">body</code> field has changed format and should be processed by the custom handler: <code class="highlighter-rouge">\Migration\Handler\GreatBlog\NewFormat</code></li>
+    </ul>
   </li>
-  <li>
-    <p><code class="highlighter-rouge">{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code class="highlighter-rouge">config.xml</code>; this argument is required</p>
+  <li>A new ratings feature was developed for the “GreatBlog” extension in Magento 2
+    <ul>
+      <li>A new <code class="highlighter-rouge">great_blog_rating</code> table was created</li>
+      <li>A new <code class="highlighter-rouge">great_blog_post.rating</code> field was created</li>
+    </ul>
   </li>
 </ul>
 
+<h3 id="extend-mapping-in-other-steps">Extend mapping in other steps</h3>
+<p>Other steps support mapping, such as the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#eav">EAV Step</a> and Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the “GreatBlog” extension has an additional field in the <code class="highlighter-rouge">eav_attribute</code> table and the name changed in Magento 2. Since the table is processed by the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#eav">EAV Step</a>, mapping rules should be written for the <code class="highlighter-rouge">map-eav.xml</code> file. The <code class="highlighter-rouge">map.xml</code> and <code class="highlighter-rouge">map-eav.xml</code> files use the same <code class="highlighter-rouge">map.xsd</code> schema, so mapping rules remain the same.</p>
+
+<h2 id="major-data-format-and-structure-changes">Major data format and structure changes</h2>
+<p>In addition to the Map Step, there are other steps in the <code class="highlighter-rouge">config.xml</code> file which migrate data with major format and structure changes, including:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/migration/migration-tool-internal-spec.html#url-rewrite-step">Url Rewrite Step</a></li>
+  <li>OrderGrids Step</li>
+  <li><a href="/guides/v2.0/migration/migration-tool-internal-spec.html#eav">EAV Step</a></li>
+</ul>
+
+<p>Unlike the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#map-step">Map Step</a>, these steps scan a predefined list of tables instead of all tables.</p>
+
+<h3 id="create-custom-steps">Create custom steps</h3>
+<p>Using the same “GreatBlog” example, suppose the extension contains three tables in Magento 1, but was redesigned to have only one table in Magento 2. To migrate all data from multiple tables to a single table, you can create a custom step in the <code class="highlighter-rouge">config.xml</code> file. For example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">"data"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">"GreatBlog Step"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;integrity&gt;</span>Migration\Step\GreatBlog\Integrity<span class="nt">&lt;/integrity&gt;</span>
+        <span class="nt">&lt;delta&gt;</span>Migration\Step\GreatBlog\Data<span class="nt">&lt;/delta&gt;</span>
+        <span class="nt">&lt;volume&gt;</span>Migration\Step\GreatBlog\Volume<span class="nt">&lt;/volume&gt;</span>
+    <span class="nt">&lt;/step&gt;</span>
+<span class="nt">&lt;/steps&gt;</span>
+<span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">"delta"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">"GreatBlog Step"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;delta&gt;</span>Migration\Step\GreatBlog\Delta<span class="nt">&lt;/delta&gt;</span>
+        <span class="nt">&lt;volume&gt;</span>Migration\Step\GreatBlog\Volume<span class="nt">&lt;/volume&gt;</span>
+    <span class="nt">&lt;/step&gt;</span>
+<span class="nt">&lt;/steps&gt;</span>
+</code></pre></div></div>
+
+<p>The tool runs steps according to their position in the <code class="highlighter-rouge">config.xml</code> file; from top to bottom. In our example, the <code class="highlighter-rouge">GreatBlog Step</code> will run last.</p>
+
+<p>Steps can include four types of classes:</p>
+
+<ul>
+  <li>Integrity checking</li>
+  <li>Data delivering</li>
+  <li>Volume checking</li>
+  <li>Delta delivering</li>
+</ul>
+
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.</p>
-  <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
+  <p>Refer to <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#configuration">Configuration</a>, <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#step-internals">Step internals</a>, <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#stages">Stages</a> and <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#running-modes">Running modes</a> for more information.</p>
 </div>
 
-<h2 id="migrate-command-data">Possible consistency errors</h2>
+<p>Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be “ignored” in the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#map-step">Map Step</a> because it scans all existing tables and tries to migrate the data unless it is in the <code class="highlighter-rouge">&lt;ignore&gt;</code> tag of the <code class="highlighter-rouge">map.xml</code> file.</p>
 
-<p>While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like this:</p>
+<h2 id="prohibited-extension-methods">Prohibited extension methods</h2>
+<p>Since the Data Migration Tool and Magento 2 are constantly evolving, existing steps and handlers are subject to change. We highly recommend not overriding the behaviour of steps like the <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#map-step">Map Step</a>, <a href="/guides/v2.0/migration/migration-tool-internal-spec.html#url-rewrite-step">URL Rewrite Step</a>, and handlers by extending their classes.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Source documents are not mapped: <span class="nt">&lt;EXTENSION_TABLE&gt;</span></code></pre></figure>
-
-<p>See the <a href="/guides/v2.0/migration/migration-troubleshooting.html">Troubleshooting</a> section of this guide for more information and recommendations.</p>
-
-<!--
-
-When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are inconsistent, you will see an error message that lists the problematic tables and fields, for example:
-
-    Source fields are not mapped. Document: <document_name>. Fields: <field_name>
-
-**Possible reason for error:** some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.
-
-Below are the possible ways to handle these errors.
-
-### Fix errors: Install corresponding Magento 2 extensions
-
-Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> versions or contact your extension provider.
-
-### Fix errors: Ignore entities
-
-You may tell the Data Migration Tool to ignore the problematic entites.
-
-To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
-
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ignore&gt;</span>
-    <span class="nt">&lt;field&gt;</span>sales_order_address_id<span class="nt">&lt;/field&gt;</span>
-<span class="nt">&lt;/ignore&gt;</span></code></pre></figure>
-
-
-<div class="bs-callout bs-callout-warning">
-    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
-</div>
-
-### Verify fixes
-
-To know if the issues have been resolved successfully, run the Data Migration Tool again.
-
--->
-
-<h2 id="next-migration-step">Next migration step</h2>
-
-<p><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate changes</a></p>
+<p>Some steps do not support mapping and cannot be changed without altering the code. You can either write an extra step that changes data at the end of migration or create a <a href="https://github.com/magento/data-migration-tool/issues" target="_blank">GitHub issue</a> and ask for a new extension point on the existing step.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -727,14 +776,14 @@ To know if the issues have been resolved successfully, run the Data Migration To
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-migrate-data.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/extend-the-tool.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/migration/migration-migrate-data.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/migration/extend-the-tool.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

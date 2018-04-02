@@ -402,6 +402,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="extend-the-tool">
+            
+            
+        
+            
+            <a href="/guides/v2.0/migration/extend-the-tool.html">Extend the tool</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1113,24 +1127,6 @@ $this-&gt;logger-&gt;pushProcessor([$this-&gt;processor, 'setExtra']);
 <p>There is a possibility to format log messages via monolog formatter. To make formatter functionality work it needs to be set to specified log handler using setFormatter() method. Currently we have one formatter class (MessageFormatter) that sets certain format (depends on verbosity level) during message handling (via format() method executed from handler).</p>
 
 <p>As for now manipulation with logger, adding handler(s), processor(s) to it and processing verbose mode is performed in process() method of Migration\Logger\Manager class. Mentioned method is called during application start.</p>
-
-<h2 id="extension-points">Extension Points</h2>
-
-<h3 id="custom-resource-type-of-source">Custom Resource Type of Source</h3>
-
-<p>By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to <span term-uuid="6341499b-ead9-4836-9794-53d95eb48ea5" class="glossary-term" data-toggle="popover">CSV</span> as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.</p>
-
-<h3 id="map-step-configuration">Map Step configuration</h3>
-
-<p>In most cases modification of map will be enough.</p>
-
-<h3 id="custom-handler">Custom Handler</h3>
-
-<p>Custom handlers can be used for cases where data in a field should be transformed with more complex algorithm. There are a lot of custom handlers out of the box in src/Migration/Handler/ folder. Custom handlers are used in Settings step and Map step.</p>
-
-<h3 id="custom-steps">Custom Steps</h3>
-
-<p>Data Migration Tool provides possibility to add custom steps to migration procedure (see Step internals).</p>
 
 <h2 id="automatic-tests">Automatic Tests</h2>
 
