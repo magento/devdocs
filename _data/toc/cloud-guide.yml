@@ -155,48 +155,78 @@ pages:
     - label: Configure environments
       url: cloud/env/environments.html
       children:
-        - label: Configure .magento.app.yaml
+        - label: Application
           url: cloud/project/project-conf-files_magento-app.html
 
-        - label: Manage build and deploy actions
+        - label: Build and deploy
           url: cloud/project/magento-env-yaml.html
           versions: ["2.1","2.2","2.3"]
+          children:
+            - label: Set up notifications
+              url: cloud/env/setup-notifications.html
+              versions: ["2.1","2.2","2.3"]
 
-        - label: Configure services - services.yaml
-          url: cloud/project/project-conf-files_services.html
+            - label: Logging handlers
+              url: cloud/env/log-handlers.html
+              versions: ["2.1","2.2","2.3"]
 
-        - label: Set up MySQL service
-          url: cloud/project/project-conf-files_services-mysql.html
+        - label: Environment variables
+          url: cloud/env/variables-intro.html
+          children:
+            - label: Application variables
+              url: cloud/env/environment-vars_magento.html
 
-        - label: Set up Redis service
-          url: cloud/project/project-conf-files_services-redis.html
+            - label: Build variables
+              url: cloud/env/variables-build.html
+              versions: ["2.1","2.2","2.3"]
 
-        - label: Set up Solr service
-          url: cloud/project/project-conf-files_services-solr.html
-          versions: ["2.0"]
+            - label: Cloud variables
+              url: cloud/env/variables-cloud.html
+              versions: ["2.1","2.2","2.3"]
 
-        - label: Set up Elasticsearch service
-          url: cloud/project/project-conf-files_services-elastic.html
-          versions: ["2.1","2.2","2.3"]
+            - label: Deploy variables
+              url: cloud/env/variables-deploy.html
+              versions: ["2.1","2.2","2.3"]
 
-        - label: Set up RabbitMQ service
-          url: cloud/project/project-conf-files_services-rabbit.html
+            - label: Post-deploy variables
+              url: cloud/env/variables-post-deploy.html
+              versions: ["2.1","2.2","2.3"]
 
-        - label: Set up notifications
-          url: cloud/env/setup-notifications.html
-          versions: ["2.1","2.2","2.3"]
+            - label: Working with variables
+              url: cloud/env/working-with-variables.html
+              versions: ["2.1","2.2","2.3"]
 
-        - label: Configure routes - routes.yaml
+        - label: Routes
           url: cloud/project/project-conf-files_routes.html
+          children:
+            - label: Caching
+              url: cloud/project/project-routes-more-cache.html
 
-        - label: Caching
-          url: cloud/project/project-routes-more-cache.html
+            - label: Redirects
+              url: cloud/project/project-routes-more-redir.html
 
-        - label: Redirects
-          url: cloud/project/project-routes-more-redir.html
+            - label: Server side includes
+              url: cloud/project/project-routes-more-ssi.html
 
-        - label: Server side includes
-          url: cloud/project/project-routes-more-ssi.html
+        - label: Services
+          url: cloud/project/project-conf-files_services.html
+          children:
+            - label: Set up MySQL service
+              url: cloud/project/project-conf-files_services-mysql.html
+
+            - label: Set up Redis service
+              url: cloud/project/project-conf-files_services-redis.html
+
+            - label: Set up Solr service
+              url: cloud/project/project-conf-files_services-solr.html
+              versions: ["2.0"]
+
+            - label: Set up Elasticsearch service
+              url: cloud/project/project-conf-files_services-elastic.html
+              versions: ["2.1","2.2","2.3"]
+
+            - label: Set up RabbitMQ service
+              url: cloud/project/project-conf-files_services-rabbit.html
 
     - label: Configuration management for store settings
       url: cloud/live/sens-data-over.html
@@ -226,20 +256,6 @@ pages:
 
         - label: Snapshots and backup management
           url: cloud/project/project-webint-snap.html
-
-    - label: Manage variables
-      url: cloud/env/environment-vars_over.html
-      children:
-
-        - label: Magento application environment variables
-          url: cloud/env/environment-vars_magento.html
-
-        - label: Magento Commerce (Cloud) environment variables
-          url: cloud/env/environment-vars_cloud.html
-
-        - label: Working with variables
-          url: cloud/env/working-with-variables.html
-          versions: ["2.1","2.2","2.3"]
 
     - label: Deploy your store
       url: cloud/live/stage-prod-live.html
@@ -328,11 +344,14 @@ pages:
     - label: Upgrades and Patches
       url: cloud/project/project-upgrade-parent.html
       children:
-        - label: Upgrade Magento Commerce (Cloud)
-          url: cloud/project/project-upgrade.html
+        - label: Patch Cloud tools
+          url: cloud/composer-packages/ece-tools.html
 
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html
+
+        - label: Upgrade Magento Commerce (Cloud)
+          url: cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)
           url: cloud/upgrade/upgrade-from-2-0-4.html
@@ -340,11 +359,8 @@ pages:
 
         - label: Composer package updates
           url: cloud/composer-packages/patch-notes.html
-          versions: ["2.1","2.2","2.3"]
+          versions: ["2.1","2.2"]
           children:
             - label: vendor/magento/ece-patches
               url: cloud/composer-packages/ece-patches.html
-              versions: ["2.2","2.3"]
-
-            - label: vendor/magento/ece-tools
-              url: cloud/composer-packages/ece-tools.html
+              versions: ["2.2"]
