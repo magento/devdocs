@@ -12,9 +12,11 @@ redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html
   -  /guides/v2.2/config-guide/database/database.html
+  -  /guides/v2.3/config-guide/database/database.html
   -  /guides/v2.0/config-guide/cache/caching-database.html
   -  /guides/v2.1/config-guide/cache/caching-database.html
   -  /guides/v2.2/config-guide/cache/caching-database.html
+  -  /guides/v2.3/config-guide/cache/caching-database.html
 ---
 
 <h2 id="mage-cache-db-over">Overview of database caching</h2>

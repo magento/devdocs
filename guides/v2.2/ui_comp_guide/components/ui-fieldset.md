@@ -2,6 +2,7 @@
 layout: default
 group: UI_Components_guide
 title: Fieldset сomponent
+version: 2.2
 github_link: ui_comp_guide/components/ui-fieldset.md
 ---
 
