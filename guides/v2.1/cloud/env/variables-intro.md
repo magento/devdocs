@@ -35,7 +35,7 @@ Variables are _hierarchical_, which means that if a variable is not overridden, 
 You use the [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 ## Global variables
-The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because they impact both stages, you must set them in the `global` stage.
+The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage.
 
 ### `SCD_ON_DEMAND`
 
