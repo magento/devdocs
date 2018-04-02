@@ -278,7 +278,9 @@ To configure a MySQL database instance:
 4.	Enter the following commands in the order shown to create a database instance named `magento` with user name `magento`:
 
 		create database magento;
+		create user magento IDENTIFIED BY 'magento';
 		GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+		flush privileges;
 
 5.	Enter `exit` to quit the command prompt.
 

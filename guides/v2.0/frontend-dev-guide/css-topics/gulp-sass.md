@@ -1,12 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: D_CSS
 title: Use Sass preprocessor and Gulp task runner
-menu_order: 8
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: custom-preprocess
 version: 2.0
 github_link: frontend-dev-guide/css-topics/gulp-sass.md
 functional_areas:
@@ -57,7 +52,7 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
 
 1. Create a theme, as described in [Create a new storefront theme]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html).
 
-2. Set up a Gulp task for Sass compilation by placing the file with the task code in the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). Create an empty `app/code/frontend/<Vendor>/<theme>/gulp.js` file and copy-paste this `package.json` code into it (no changes needed):
+2. Set up a Gulp task for Sass compilation by placing the file with the task code in the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). Create an empty `app/code/frontend/<Vendor>/<theme>/gulpfile.js` file and copy-paste this `package.json` code into it (no changes needed):
 
    ```js
 
