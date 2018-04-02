@@ -143,7 +143,7 @@ pages:
         - label: Custom extend Admin timeout VCL
           url: cloud/configure/fastly-vcl-extend-timeout.html
 
-        - label: Custom redirect to Wordpress VCL
+        - label: Custom redirect to WordPress VCL
           url: cloud/configure/fastly-vcl-wordpress.html
 
         - label: Custom block bad referer VCL
@@ -239,6 +239,7 @@ pages:
 
         - label: Working with variables
           url: cloud/env/working-with-variables.html
+          versions: ["2.1","2.2","2.3"]
 
     - label: Deploy your store
       url: cloud/live/stage-prod-live.html

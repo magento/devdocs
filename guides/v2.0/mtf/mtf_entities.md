@@ -12,7 +12,7 @@ To do this you have to create <a href="{{page.baseurl}}mtf/mtf_entities/mtf_test
 Following is a list of all FTF entities.
 
 - <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">Fixture</a>
-  - <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_overview">Fixture overview</a>
+  - <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">Fixture overview</a>
   - <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create">Create new fixture</a>
   - <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_read">Read and update new fixture</a>
   - <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy">Add repository to the fixture field</a>

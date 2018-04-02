@@ -168,7 +168,7 @@ $ vendor/bin/codecept run
 
 See more commands in [`robo`](commands/robo.html) and [`codecept`](commands/codeception.html).
 
-### Step 7. Generate reports {#allure}
+### Step 8. Generate reports {#allure}
 
 Install [Allure](https://docs.qameta.io/allure/latest/), a tool that generates testing reports in HTML.
 Testing reports are generated in a CLI during testing.

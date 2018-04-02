@@ -1,0 +1,95 @@
+layout: default
+group: release-notes
+subgroup: 2.3.x_Release_Information
+title: 2.3.0 Alpha Quick Start Guide
+menu_title: 2.3.0 Alpha Quick Start Guide
+menu_order: 1000
+version: 2.3
+github_link: release-notes/2.3.0-quick-start.md
+
+
+
+
+We are pleased to present the Magento 2.3.0 Open Source and Commerce Alpha Release. This Quick Start guide provides the basic information you need to start participating in our Magento 2.3.0 Alpha evaluation program.
+
+
+This guide covers:
+
+* **Welcome to the Magento 2.3.0 Alpha program and its requirements**
+
+* **Install the Alpha code**
+
+* **Submit comments on Magento 2.3.0 Alpha code**
+
+* **Readiness status of individual code components**. Magento 2.3.0 prerelease code is a work in progress. Consequently, parts of the code base are more mature than others. You can see an overview of component status here. Note that we will update this information weekly during the Release evaluation period.
+
+## Welcome to the Magento 2.3.0 Alpha code
+
+Magento 2.3.0 Alpha code will include bugs and incomplete features. It does provide a snapshot of the current 2.3.0 codebase, and consequently an early peek into the new features that 2.3.0 will provide in more robust form.
+
+
+### Goals of this release
+
+Participation in this Alpha evaluation has benefits for both community members and Magento.
+
+
+#### Magento goals
+
+Our primary goal for this release is to invite and receive community and partner feedback that will help us refine our 2.3.0 product code before General Availability (GA). Specifically, we hope that participants in this Release Candidate evaluation can report on:
+
+* **Functionality**. Keep in mind that prerelease code does not contain all the functionality that the 2.3.0 GA release will include.
+
+* **Usability**. How do the features we've implemented for pre-GA code work in context of your typical workflows?
+
+* **Code quality issues**. Are there particularly challenging processes or tasks that need improvement?
+
+* **Feature gaps and enhancements**. Can you identify any steps within existing features that are missing, or enhancements that would improve features?
+
+#### Participant goals
+
+As community members and Partners, you have much to gain from participating in this release, too. Early access to this code provides you with the opportunity to familiarize yourself with the code and start training technical team members. Likewise, you can start planning  extension and custom code updates.
+
+
+
+### Usage guidelines
+
+Keep in mind the following features of this pre-GA code during your evaluation:
+
+* Code released before General Availability is not production quality and will contain bugs. Report these bugs as GitHub issues, please!
+
+* Code released before General Availability is for testing and training only. Do not use this code for production deployments. Any sites developed with Alpha software will require significant reworking to accomodate future code updates.
+
+* No technical support is available for problems you encounter during this evaluation.
+
+### Participants
+
+How you participate in this evaluation depends upon which code base you'll be downloading and evaluating: Open Source and Commerce.
+
+
+
+#### Open Source  Evaluation participants
+
+We invite any Magento community member to participate in the Magento Open Source 2.3.0 Alpha evaluation.
+
+
+
+#### Magento Commerce  Evaluation participants
+
+The Magento Commerce 2.3.0 Alpha evaluation is open to all Solution Partners. To participate, you must:
+
+* Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login/referer/). Note that the Magento Primary Contact must sign the agreement.
+
+* Provide GitHub account information for an Individual Account for a Solution Partner Employee. The company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
+
+You cannot share Alpha code with anyone external to your organization.
+
+
+## More information?
+
+The Magento Developer documentation has been updated with the latest 2.3 information.  Visit the 2.3.0 Developer Documentation site for a peek at our updated 2.3.0 developer documentation.
+
+The Magento Open Source 2.3.0 and Magento Commerce 2.3.0 Release Notes describe code fixes, known issues, and feature highlights. 
+
+
+Ready to [install]({{page.baseurl}}release-notes/release-candidate/install.html) Magento 2.3.0  Release Candidate?
+

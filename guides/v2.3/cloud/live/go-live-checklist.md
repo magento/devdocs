@@ -55,7 +55,11 @@ The following list contains examples of DNS providers for informational purposes
 
 Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirect service to redirect the apex over to the `www` version of the domain. Consult your DNS provider for more information.
 
-Another option for <em>apex domain</em> is to add an A record which maps a domain name to the Fastly IP address: `150.101.113.124`.
+Another option for apex domain is to add A records, which maps a domain name to the Fastly IP addresses:
+* `151.101.1.124`
+* `151.101.65.124`
+* `151.101.129.124`
+* `151.101.193.124`
 
 ### TLS and Fastly {#fastly-tls}
 If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
