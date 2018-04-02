@@ -166,6 +166,10 @@ pages:
               url: cloud/env/setup-notifications.html
               versions: ["2.1","2.2","2.3"]
 
+            - label: Logging handlers
+              url: cloud/env/log-handlers.html
+              versions: ["2.1","2.2","2.3"]
+
         - label: Environment variables
           url: cloud/env/variables-intro.html
           children:

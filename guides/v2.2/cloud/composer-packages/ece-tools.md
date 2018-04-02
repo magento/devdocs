@@ -22,7 +22,7 @@ functional_areas:
 
 -  <!-- MAGECLOUD-1842 -->**Optimization**—Optimized moving or copying files during deployment to improve deployment speed and decrease loads on the file system.
 
--  <!-- MAGECLOUD-1751 -->**Deployment Logging**—Added the ability to enable Syslog and Graylog Extended Log Format (GELF) handlers for outputting logs during the deployment process.
+-  <!-- MAGECLOUD-1751 -->**Deployment Logging**—Added the ability to enable Syslog and Graylog Extended Log Format (GELF) handlers for outputting logs during the deployment process. See [Logging handlers]({{page.baseurl}}cloud/env/log-handlers.html).
 
 -  Added the following new [**Environment variables**](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html):
     -  <!-- MAGECLOUD-1556 -->`CRYPT_KEY`—Provide a cryptographic key to another environment when moving a database.
