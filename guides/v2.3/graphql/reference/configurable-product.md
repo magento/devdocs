@@ -40,16 +40,49 @@ The following query returns information about configurable product `WH01`, which
 
 {% highlight json %}
 {
-    products(filter: {sku: {eq: "WH01"}})
-    {
-        items{
+  products(filter: {sku: {eq: "WH01"}}) {
+    items {
+      id
+      attribute_set_id
+      name
+      sku
+      type_id
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
+          }
+        }
+      }
+      category_ids
+      ... on ConfigurableProduct {
+        configurable_options {
+          id
+          attribute_id
+          label
+          position
+          use_default
+          attribute_code
+          values {
+            value_index
+            label
+            store_label
+            default_label
+            use_default_value
+          }
+          product_id
+        }
+        variants {
+          product {
             id
-            attribute_set_id
-            created_at
+            category_ids
             name
             sku
-            type_id
-            updated_at
+            attribute_set_id
+            ... on PhysicalProductInterface {
+              weight
+            }
             price {
               regularPrice {
                 amount {
@@ -58,65 +91,19 @@ The following query returns information about configurable product `WH01`, which
                 }
               }
             }
-            ... on ConfigurableProduct {
-                configurable_product_links {
-                    id
-                    category_ids
-                    name
-                    sku
-                    attribute_set_id
-                    ... on PhysicalProductInterface {
-                        weight
-                    }
-                    created_at
-                    updated_at
-                    price {
-                      minimalPrice {
-                        amount {
-                          value
-                          currency
-                        }
-                        adjustments {
-                          amount {
-                            value
-                            currency
-                          }
-                          code
-                          description
-                        }
-                      }
-                      maximalPrice {
-                        amount {
-                          value
-                          currency
-                        }
-                        adjustments {
-                          amount {
-                            value
-                            currency
-                          }
-                          code
-                          description
-                        }
-                      }
-                      regularPrice {
-                        amount {
-                          value
-                          currency
-                        }
-                        adjustments {
-                          amount {
-                            value
-                            currency
-                          }
-                          code
-                          description
-                        }
-                      }
-                  }
-                }
+            category_links {
+              position
+              category_id
             }
+          }
+          attributes {
+            label
+            code
+            value_index
+          }
         }
+      }
     }
+  }
 }
 {% endhighlight %}
