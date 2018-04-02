@@ -978,7 +978,7 @@
             
         
             
-            <a href="/guides/v2.3/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a>
+            <a href="/guides/v2.3/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to WordPress VCL</a>
             
 
             
@@ -2126,14 +2126,14 @@
   <li>Pro: Only Integration environments you push to including <code class="highlighter-rouge">Master</code></li>
 </ul>
 
-<p>To add the cron jobs to Pro plan Staging and Production, you must <a href="/guides/v2.3/cloud/bk-cloud.html#gethelp">enter a ticket to Support</a>. Request to have the cron jobs in <code class="highlighter-rouge">.magento.app.yaml</code> added to those environments. We recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch.</p>
+<p>To add the cron jobs to Pro plan Staging and Production, you must <a href="/guides/v2.3/cloud/trouble/trouble.html">enter a ticket to Support</a>. Request to have the cron jobs in <code class="highlighter-rouge">.magento.app.yaml</code> added to those environments. We recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch.</p>
 
 <p>We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occassionally late.</p>
 
 <h2 id="update">Update cron jobs</h2>
 <p>If you need to change or update your cron jobs, update the crons section in your <code class="highlighter-rouge">.magento.app.yaml</code> file. Push the file to your Git branch and deploy across environments.</p>
 
-<p>For Pro plan Staging and Production environments, please <a href="/guides/v2.3/cloud/bk-cloud.html#gethelp">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>
+<p>For Pro plan Staging and Production environments, please <a href="/guides/v2.3/cloud/trouble/trouble.html">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>
 
 		</div>
 		<!-- /.content-wrap -->

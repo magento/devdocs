@@ -960,7 +960,7 @@
             
         
             
-            <a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a>
+            <a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to WordPress VCL</a>
             
 
             
@@ -1990,7 +1990,7 @@
 <p>For details, review your Fastly accounts and <a href="https://docs.fastly.com/">documentation</a> to remove the domains. This may include removing and updating CNAME records and more.</p>
 
 <h2 id="cloud-fastly-creds">Get your Fastly credentials</h2>
-<p>To get Fastly credentials, open a <a href="/guides/v2.1/cloud/welcome/get-help.html">support ticket</a>. You must provide your fully-qualified domain name.</p>
+<p>To get Fastly credentials, open a <a href="/guides/v2.1/cloud/trouble/trouble.html">support ticket</a>. You must provide your fully-qualified domain name.</p>
 
 <p>We’ll provide you with the following credentials for your Staging and Production services:</p>
 
@@ -2197,7 +2197,7 @@ composer require fastly/magento2
 
   <p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.</p>
 
-  <p>You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for <a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Wordpress</a> to handle your blog.</p>
+  <p>You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for <a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">WordPress</a> to handle your blog.</p>
 
   <ol>
     <li>Access and expand <strong>Fastly Configuration</strong>.</li>
@@ -2336,7 +2336,7 @@ composer require fastly/magento2
   <p>Refer to <a href="/guides/v2.1/cloud/live/go-live-checklist.html">Go live checklist</a> for more information.</p>
 
   <h3 id="fastly-tls">TLS and Fastly</h3>
-  <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="#dns">Support ticket</a> for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
+  <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="/guides/v2.1/cloud/trouble/trouble.html">Support ticket</a> for <a href="#fastly-dns">DNS information</a> and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
 
   <p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="\_blank">DNS TXT record validation</a>.</p>
 
@@ -2366,7 +2366,7 @@ composer require fastly/magento2
         <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a></li>
         <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a></li>
         <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a></li>
-        <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a></li>
+        <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to WordPress VCL</a></li>
         <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a></li>
       </ul>
     </li>
