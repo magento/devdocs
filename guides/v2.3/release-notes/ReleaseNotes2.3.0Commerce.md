@@ -113,8 +113,7 @@ This release introdices substantial tools to improve the developer experience. f
 
     * 2FA/CAPTCHA protects the Admin panel against against stolen password and protects stores against bots. FA and Google ReCaptcha - supports Google Authenticator, hardware keys, Duo mobile app to protect Admin against stolen or weak passwords
 
-
-
+* change in versioning for B2B product to match the versioning of the core product. The B2B composer version now reflect this change. We need to capture and explain this jump from 1.0 to 2.3 in the release notes
 
 
 ## Known issues
