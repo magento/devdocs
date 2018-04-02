@@ -11,6 +11,7 @@ redirect_from:
   - guides/v2.0/config-guide/config/js-resources.html
   - guides/v1.0/config-guide/config/js-resources.html
   - guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
+  - guides/v2.3/javascript-dev-guide/javascript/requirejs_concept.html
 ---
 
 ## Overview {#m2devgde-js-resources-intro}
