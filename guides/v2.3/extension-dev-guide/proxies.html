@@ -252,6 +252,8 @@
     </div>
     
 
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -1576,7 +1578,7 @@
 </section>
 
 
-			<p>Magento’s <a href="/guides/v2.3/extension-dev-guide/depend-inj.html#constructor-injection">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)</p>
+			<p>Magento’s <a href="/guides/v2.3/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)</p>
 
 <p>If a class’s constructor is particularly resource-intensive, this can lead to unnecessary performance impact when another class depends on it, if the expensive object does not end up being needed during a particular request. (You can display a <em>dependency graph</em> of such objects by enabling <a href="/guides/v2.3/config-guide/bootstrap/mage-profiler.html">profiling</a>.)</p>
 
@@ -1651,17 +1653,23 @@
   
 
   
-   <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/proxies.md" target="_blank">
-       Edit this page on GitHub
-     </a>
-   </div>
+    
+      <div class="github-link">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/extension-dev-guide/proxies.md" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    
   
 
-  <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/extension-dev-guide/proxies.html" target="_blank">Give us feedback</a>
-  </div>
-
+  
+    
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/extension-dev-guide/proxies.html" target="_blank">Give us feedback</a>
+      </div>
+    
+  
+  
 </div>
 
 
