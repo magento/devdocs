@@ -143,7 +143,7 @@ pages:
         - label: Custom extend Admin timeout VCL
           url: cloud/configure/fastly-vcl-extend-timeout.html
 
-        - label: Custom redirect to Wordpress VCL
+        - label: Custom redirect to WordPress VCL
           url: cloud/configure/fastly-vcl-wordpress.html
 
         - label: Custom block bad referer VCL
