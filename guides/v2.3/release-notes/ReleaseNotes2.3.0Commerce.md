@@ -29,12 +29,6 @@ We welcome all feedback from registered participants on this Beta release, but w
  </tr>
   <tr>
     <td>GraphQL</td>
-    <td>Declarative Schema</td>
-    <td>Core CMS</td>
-    <td>Bundled extensions</td>
- </tr>
-
- <tr>
     <td> 
     	<ul>
     <li>Constructing and running queries that fetch the data that’s needed to render storefront pages. For example, queries to emulate a product detail page, category page, and search result page. </li>
@@ -42,38 +36,36 @@ We welcome all feedback from registered participants on this Beta release, but w
     <li>Declaring custom GraphQL fields for extensions</li>
        </ul>
     </td>
+</tr>
 
 
-    <td>
+<tr>
+    <td>Declarative Schema</td>
+<td>
     	<ul>
     		<li>Converting extensions from DB scripts to declarative format</li>
     		<li>Upgrading to Magento 2.3 with all extensions (whether you’ve  migrated to Declarative Schema or not)</li>
     	</ul>
     </td>
 
-    <td>
+</tr>
+
+
+<tr>
+    <td>Core CMS</td>
+<td>
     	<ul>
     		<li>Creating and localizing dynamic blocks (for example, Banners)</li>
     	</ul>
     	</td>
- </tr>
-  
+</tr>
+
+<tr>
+    <td>Bundled extensions</td>
+</tr>
+ 
 </table>
 
-
-* GraphQL. Explore this feature by 
-    * Constructing and running queries that fetch the data that’s needed to render storefront pages. For example, queries to emulate a product detail page, category page, and search result page. 
-    * Evaluating whether our query nesting limits are too loose or aggressive (in production mode)
-    * Declaring custom GraphQL fields for extensions
- 
-* Declarative Schema
-    * Converting extensions from DB scripts to declarative format
-    * Upgrading to Magento 2.3 with all extensions (whether you’ve  migrated to Declarative Schema or not)
- 
-* Core CMS
-    * Creating and localizing dynamic blocks (for example, Banners)
-
-* Bundled extensions
 
 
 ## Highlights
