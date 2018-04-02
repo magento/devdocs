@@ -9,15 +9,21 @@
   {% endif %}
 
   {% if page.github_link %}
-   <div class="github-link">
-     <a class="improve-page" href="{{ site.github }}v{{page.version}}/{{ page.github_link }}" target="_blank">
-       Edit this page on GitHub
-     </a>
-   </div>
+    {% unless page.guide_version == "2.0" %}
+      <div class="github-link">
+        <a class="improve-page" href="{{ site.github }}v{{page.version}}/{{ page.github_link }}" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    {% endunless %}
   {% endif %}
 
-  <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
-  </div>
-
+  {% if page.github_link %}
+    {% unless page.guide_version == "2.0" %}
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
+      </div>
+    {% endunless %}
+  {% endif %}
+  
 </div>

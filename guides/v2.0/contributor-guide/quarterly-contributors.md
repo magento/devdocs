@@ -59,7 +59,7 @@ PR contributors|Issue contributors
  |[mehdiagharlou](https://github.com/mehdiagharlou)
  |[allamsettiramesh](https://github.com/allamsettiramesh)
  |[valugi](https://github.com/valugi)
- |[DavidLambuer](https://github.com/DavidLambuer)
+ |[DavidLambuer](https://github.com/DavidLambauer)
  |[kevingimbel](https://github.com/kevingimbel)
  |[drdreamm](https://github.com/drdreamm)
  |[milansimek](https://github.com/milansimek)
