@@ -16,7 +16,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 -  **Default**— `index.php`
 -  **Version**—Magento 2.1.4 and later
 
-List the pages 
+Customize the list of pages used to preload the cache in the `post_deploy` stage.
 
 ```
 stage:
