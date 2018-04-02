@@ -2,18 +2,18 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento Commerce 2.3.0 Release Notes
-menu_title: Magento Commerce 2.3.0 Release Notes
-menu_order: 300
+title: Magento Open Source 2.3.0 Release Notes
+menu_title: Magento Open Source 2.3.0 Release Notes
+menu_order: 200
 version: 2.3
-github_link: release-notes/ReleaseNotes2.3.0Commerce.md
+github_link: release-notes/ReleaseNotes2.3OpenSource.md
 
   
 ---
 *Beta code and release notes were released on*
 
 
-We are pleased to present Magento Commerce 2.3.0 Beta. This release includes numerous functional fixes and enhancements.
+We are pleased to present Magento Open Source 2.3.0 Beta. This release includes numerous functional fixes and enhancements.
 
 For information about signing up for the Magento 2.3 Beta Evaluation program, see Magento 2.3.0 Quick Start guide. 
 
@@ -70,7 +70,7 @@ We welcome all feedback from registered participants on this Beta release, but w
 
 ## Highlights
 
-Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
+Magento Open Source 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
 ### New features
 
@@ -101,7 +101,7 @@ This release introduces significant tools to improve the developer experience: P
 
 * **ElasticSearch support for Magento Community version**  
 
-* **Improvements to release packaging** plus an increase in test automation results results in a faster, more efficient release process and improved product quality. 
+* **Improvements to release packaging** plus an increase in test automation results, results in a faster, more efficient release process and improved product quality. 
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to replace it with any other WYSIWYG.) 
 
@@ -111,9 +111,9 @@ This release introduces significant tools to improve the developer experience: P
 
     * Cache flush ACL privides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches. 
 
-    * 2FA/CAPTCHA protects the Admin panel against against stolen password and protects stores against bots.
+    * 2FA/CAPTCHA protects the Admin panel against against stolen password and protects stores against bots. 
 
-* **change in versioning for B2B product** to match the versioning of the core product. 
+* **change in versioning for B2B product** to match the versioning of the core product.
 
 
 ## Known issues
@@ -126,8 +126,9 @@ Magento 2.3.0 Beta includes the following known issues. Fixes for these issues a
 
 ### Installation, upgrade, deployment
  
-<!--- 83409, 81578-->* The `bin/magento setup` command now provides a rollback option that prompts the user to optionally retain files for future rollbacks. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11750*. [GitHub-6460](https://github.com/magento/magento2/issues/6460)
 
+
+<!--- 83409, 81578-->* The `bin/magento setup` command now provides a rollback option that prompts the user to optionally retain files for future rollbacks. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11750*. [GitHub-6460](https://github.com/magento/magento2/issues/6460)
 
 <!--- 82781-->* The `user.ini` files now recommend the correct values for `php_value memory_limit`. 
 *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11760*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
@@ -195,6 +196,7 @@ Magento 2.3.0 Beta includes the following known issues. Fixes for these issues a
 <!--- 72620-->* Configurable products are no longer displayed on a category page when all children are disabled by mass action and the **display out-of-stock products** setting is off.
 
 <!--- 85618-->* Magento no longer displays a 404 error when you change category permissions from Product Detail pages when multistore view is enabled.
+
 <!---85617 -->* Magento no longer throws an exception when you add a product with a tiered price reduced to $0.00 to your shopping cart. 
 
 
@@ -298,7 +300,8 @@ Magento 2.3.0 Beta includes the following known issues. Fixes for these issues a
 
 <!--- 71544-->* Session cookies now last until the session closes. Previously, Magento interpreted a `form_key` cookie lifetime of 0 to determine the duration of the cookie lifetime, and the cookie expired immediately. *Fix submitted by [Eero Kuusela](https://github.com/ekuusela) in pull request 10528*. [GitHub-10527](https://github.com/magento/magento2/issues/10527)
 
-<!--- 71544, 71539-->* Google Analytics has improved support of websites that conduct transactions in multiple currencies. Previously, payment providers that required different base currencies were configured as different websites in a multisite deployment,  and consequently had to send different base currency in Google Analytics.  *Fix submitted by [DominicWatts](https://github.com/DominicWatts) in pull request 10508*. [GitHub-6709](https://github.com/magento/magento2/issues/6709), [GitHub-7471](https://github.com/magento/magento2/issues/7471)
+<!--- 71544, 71539-->* Google Analytics has improved  support of websites that conduct transactions in multiple currencies. Previously, payment providers that required different base currencies were configured as different websites in a multisite deployment,  and consequently had to send different base currency in Google Analytics.  *Fix submitted by [DominicWatts](https://github.com/DominicWatts) in pull request 10508*. [GitHub-6709](https://github.com/magento/magento2/issues/6709), [GitHub-7471](https://github.com/magento/magento2/issues/7471)
+
 
 <!--- 71642-->*  Google Adwords now has the ability to provide transaction-specific conversion values in a conversion tracking tag. *Fix submitted by [DominicWatts](https://github.com/DominicWatts) in pull request 10558*. [GitHub-6708](https://github.com/magento/magento2/issues/6708)
 
@@ -318,7 +321,9 @@ Magento 2.3.0 Beta includes the following known issues. Fixes for these issues a
 
 <!---85588 -->* Magento now requires that customers select State/Province when shipping orders to India,  and the checkout page now provides a drop-down field with appropriate values. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 12378*. [GitHub-12378](https://github.com/magento/magento2/issues/12378)
 
+
 <!--- 85587-->* We fixed the invalid parameter configuration that was provided for the `$block` argument of `Magento\\Ui\\Component\\HtmlContent`. *Fix submitted by [Tomasz Gregorczyk](https://github.com/Tomasz-Silpion) in pull request 12665*. [GitHub-12452](https://github.com/magento/magento2/issues/12452)
+
 
 <!---84908 -->* The`app/code/Magento/Downloadable/Helper/File.php` and `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` files no longer contain duplicate key arrays. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12520*.
 
@@ -410,7 +415,6 @@ Magento 2.3.0 Beta includes the following known issues. Fixes for these issues a
 
 <!--- 71380-->* All messages in Customer Account Create are now translatable. Previously, warning messages about password validation appeared in locale language only. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10445*. [GitHub-9967](https://github.com/magento/magento2/issues/9967)
 
-
 ### URL rewrites
 
 <!--- 85026-->* Magento now sets the value of `Store_Code` from the current store when this information is included in a URL. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12545*. [GitHub-12450](https://github.com/magento/magento2/issues/12450)
@@ -422,6 +426,7 @@ Magento 2.3.0 Beta includes the following known issues. Fixes for these issues a
 <!--- 88091-->* You can now reset a form by clicking **Reset** in **Marketing > SEO & Search > URL Rewrites**. [GitHub-10459](https://github.com/magento/magento2/issues/10459)
 
 
+
 ### Web API
 
 <!--- 82315 -->* When you use REST to update an existing product, Magento assisns theupdate only to the websites that the was assigned to pre-update. Previously, updating a product using the REST API (`PUT /rest/all/V1/products/example_sku`) assigned the product update to all websites automatically. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11443*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
@@ -430,7 +435,6 @@ Magento 2.3.0 Beta includes the following known issues. Fixes for these issues a
 ### Wishlist
 
 <!--- 85627 -->* Magento now displays an error message if you try to add products to a wishlist without first logging in. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 12681*. 
-
 
 
 
@@ -1145,7 +1149,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3 Beta  using Composer.
+You can install Magento Open Source 2.3 Beta  using Composer.
 
 {% include install/releasenotes/ee_install_21.md %}
 
