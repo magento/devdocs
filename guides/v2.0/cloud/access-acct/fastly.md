@@ -35,7 +35,7 @@ Fastly only allows one apex domain and all subdomains assigned to a single Fastl
 For details, review your Fastly accounts and [documentation](https://docs.fastly.com/) to remove the domains. This may include removing and updating CNAME records and more.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
-To get Fastly credentials, open a [support ticket]({{page.baseurl}}cloud/welcome/get-help.html). You must provide your fully-qualified domain name.
+To get Fastly credentials, open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html). You must provide your fully-qualified domain name.
 
 We'll provide you with the following credentials for your Staging and Production services:
 
@@ -151,7 +151,7 @@ Backend settings provide fine tuning for Fastly performance with Origin shieldin
 
 _Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.
 
-You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for [Wordpress]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html) to handle your blog.
+You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for [WordPress]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html) to handle your blog.
 
 1. Access and expand **Fastly Configuration**.
 2. Expand **Backend settings** and click the gear to configure the default backend. A modal opens with options to select and configure.
@@ -262,7 +262,7 @@ Another option for apex domain is to add A records, which maps a domain name to 
 Refer to [Go live checklist]({{page.baseurl}}cloud/live/go-live-checklist.html) for more information.
 
 ### TLS and Fastly {#fastly-tls}
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) for [DNS information](#fastly-dns) and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="\_blank"}.
 
@@ -287,7 +287,7 @@ If you created a custom VCL snippet using the same name as a default snippet, yo
   * [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
   * [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
   * [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
-  * [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
+  * [Custom redirect to WordPress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
   * [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
 * [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
 *	[Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
