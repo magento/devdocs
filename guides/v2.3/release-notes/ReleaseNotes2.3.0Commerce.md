@@ -15,13 +15,11 @@ github_link: release-notes/ReleaseNotes2.3.0Commerce.md
 
 We are pleased to present Magento Commerce 2.3.0 Beta. This release includes numerous functional fixes and enhancements.
 
-For information about Magento 2.3 Beta Evaluation program, see Magento 2.3.0 Quick Start guide. 
+For information about signing up for the Magento 2.3 Beta Evaluation program, see Magento 2.3.0 Quick Start guide. 
 
 ## About Magento 2.3.0 Beta release
 
 We welcome all feedback from registered participants on this Beta release, but would especially like feedback on the following features:  
-
-
 
 <table>
 
@@ -294,13 +292,11 @@ Link to the new order is not displayed on old order's admin page
 
 <!--- 82342-->* `AuthenticationInterface` now contains API interceptors that enhance user authentication, making it possible (for example) to implement a different hashing algorithm for non-Magento to Magento migrations. *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request 11546*.
 
-
-
-<!---82667 -->* Magento UI - Cleanup of undefined mixins parameters and usage of "leaking" variables scope
-
-*Fix submitted by [Bartek Igielski](https://github.com/Igloczek) in pull request 11371*.
-
-
+<!---82667 -->* The Magento UI mixins have been edited to improve performance. Changes include: 
+    * removing all fallbacks to variables that don't exist in the global scope
+    * defining all variables that are used inside mixins as parameters
+    * adding all missing parameters to the areas of the code where mixins are invoked
+    * moving and simplifying mixins used only once *Fix submitted by [Bartek Igielski](https://github.com/Igloczek) in pull request 11371*.
 
 
 <!---82760 -->* The dashboard y-axis range has been enhanced by the addition of an index for y-axis range values. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11752*. [GitHub-7927](https://github.com/magento/magento2/issues/7927)
