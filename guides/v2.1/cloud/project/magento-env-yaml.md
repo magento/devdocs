@@ -18,7 +18,7 @@ Unlike other YAML configuration files, such as [`.magento.app.yaml`]({{page.base
 The `.magento.env.yaml` file includes the following sections:
 
 -   **`stage`**—Contains the following sections:
-    -   `global`—Controls actions in both the build _and_ deploy phases. You can override these settings in the build and deploy sections.
+    -   `global`—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.
     -   `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the `build_options.ini` file override settings in this section.
     -   `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
     -   `post-deploy`—Controls actions _after_ deploying your application and _after_ the container begins accepting connections.
@@ -30,7 +30,7 @@ The latest sample of the `.magento.env.yaml` file is in the [`magento-cloud` tem
 
 -   [Application]({{page.baseurl}}cloud/env/environment-vars_magento.html)—variables control administrative credentials
 -   [Cloud]({{page.baseurl}}cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
--   [Global]({{page.baseurl}}cloud/env/variables-intro.html)—variables control actions in both phases: build and deploy
+-   [Global]({{page.baseurl}}cloud/env/variables-intro.html)—variables control actions in the following stages:
     -   [Build]({{page.baseurl}}cloud/env/variables-build.html)—variables control build actions
     -   [Deploy]({{page.baseurl}}cloud/env/variables-deploy.html)—variables control deploy actions
     -   [Post-deploy]({{page.baseurl}}cloud/env/variables-post-deploy.html)—variables control actions after deploy
