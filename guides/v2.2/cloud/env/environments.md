@@ -22,27 +22,3 @@ You can configure application settings, routes, build and deploy actions, and no
 -  [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, Redis, RabbitMQ, and Elasticsearch.
 
 When you push code changes, the active environment provisions container updates using the YAML configuration files.
-
-## Environment branches and services
-Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
-
-* For [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html), we recommend branching from Integration.
-* For [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html), we recommend creating a `staging` branch, then creating additional code branches from `staging`.
-
-{% include cloud/wings-management.md %}
-
-You can create branches using the Project Web Interface or Git CLI commands. See [Magento Cloud CLI]({{page.baseurl}}cloud/reference/cli-ref-topic.html). Additional services and drivers are automatically included in your environments, including the following:
-
-### SQL Server extension driver
-We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud MS SQL Servers. No additional installation is necessary to use these drivers. You will need to complete a couple configurations before using the connection and external SQL.
-
-These drivers are included in all Starter environments and Pro Integration environments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) with the request.
-
-To configure, you need to configure and provide the following:
-
--  **SSL certificate on the MS SQL Server**—The connection between the cloud cluster and the remote SQL server must be SSL secured. Customers must provide an SSL-enabled connection to their MS SQL server in order to connect to their project.
--  **An MS SQL Server for testing**—Include a Microsoft SQL server for us to test the connection. Include this information in a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
-
-If you have questions or issues regarding connectivity or configuration for MS SQL Server, enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
-
-{% include note.html type="info" content="Magento does not provide support for client MS SQL Servers or applications utilizing these external systems and services outside of the cloud hosting environments."%}

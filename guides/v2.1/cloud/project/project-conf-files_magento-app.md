@@ -188,7 +188,7 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 -   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
--   **`post_deploy`**—Execute commands _after_ deploying your application, _after_ the container begins accepting connections, and _during_ normal, incoming traffic. The `post_deploy` hook clears the cache, preloads (warms) the cache, and updates the `/var/log/post_deploy.log` file. Cache warming is not available when using Starter.
+-   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache, preloads (warms) the cache. It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{page.baseurl}}cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build` or `deploy` sections:
 
@@ -204,7 +204,7 @@ hooks:
         php ./bin/magento <custom-command>
     # We run post deploy hook to clean and warm the cache.
     post_deploy: |
-        php ./vendor/bin/ece-tools
+        php ./vendor/bin/ece-tools post-deploy
 ```
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.

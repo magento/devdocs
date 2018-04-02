@@ -156,7 +156,7 @@ Use to configure Redis session storage. You must specify the `save`, `redis`, `h
 stage: 
   build: ~
   deploy: 
-    SESSION_CONFIGURATION: 
+    SESSION_CONFIGURATION:
       redis: 
         bot_first_lifetime: 100
         bot_lifetime: 10001
