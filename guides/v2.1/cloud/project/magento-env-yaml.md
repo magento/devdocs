@@ -33,3 +33,4 @@ The latest sample of the `.magento.env.yaml` file is in the [`magento-cloud` tem
 -   [Global]({{page.baseurl}}cloud/env/variables-intro.html)—variables control actions in both phases: build and deploy
     -   [Build]({{page.baseurl}}cloud/env/variables-build.html)—variables control build actions
     -   [Deploy]({{page.baseurl}}cloud/env/variables-deploy.html)—variables control deploy actions
+    -   [Post-deploy]({{page.baseurl}}cloud/env/variables-post-deploy.html)—variables control actions after deploy
