@@ -167,7 +167,7 @@ Attribute | Data type | Description
 `thumbnail` | String | The file name of a thumbnail image
 `thumbnail_label` | String | The label assigned to a product's thumbnail image.
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached.
-`tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTierPrices) objects
+`tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated.
 `url_key` | String |  The part of the URL that identifies the product
@@ -307,7 +307,7 @@ Field | Type | Description
 `video_description` | String | A description of the video
 `video_metadata` | String | Optional data about the video
 
-### ProductTierPrices object
+### ProductTierPrices object {#ProductTier}
 
 Field | Type | Description
 --- | --- | ---
