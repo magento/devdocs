@@ -245,7 +245,7 @@ If the argument type is the same, then the newer argument replaces the old one.
 
 ### Abstraction-implementation mappings
 
-The object managers uses the abstraction-implementation mappings when the constructor signature of a class requests an object by its interface.
+The object manager uses abstraction-implementation mappings when the constructor signature of a class requests an object by its interface.
 The object manager uses these mappings to determine what the default implementation is for that class for a particular scope.
 
 The `preference` node specifies the default implementation:
