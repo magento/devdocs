@@ -184,6 +184,10 @@ pages:
               url: cloud/env/variables-deploy.html
               versions: ["2.1","2.2","2.3"]
 
+            - label: Post-deploy variables
+              url: cloud/env/variables-post-deploy.html
+              versions: ["2.1","2.2","2.3"]
+
             - label: Working with variables
               url: cloud/env/working-with-variables.html
               versions: ["2.1","2.2","2.3"]

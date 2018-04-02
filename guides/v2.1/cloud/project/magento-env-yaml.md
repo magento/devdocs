@@ -21,6 +21,7 @@ The `.magento.env.yaml` file includes the following sections:
     -   `global`—Controls actions in both the build _and_ deploy phases. You can override these settings in the build and deploy sections.
     -   `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the `build_options.ini` file override settings in this section.
     -   `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
+    -   `post-deploy`—Controls actions _after_ deploying your application and _after_ the container begins accepting connections.
 -   **`log`**—Controls notifications, including notification types and level of detail.
     -   `slack`—Configure a message to send to a Slack bot.
     -   `email`—Configure an email to send to one or more email recipients.
