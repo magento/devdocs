@@ -70,10 +70,48 @@ We welcome all feedback from registered participants on this Beta release, but w
 
 ## Highlights
 
-Magento Commerce 2.3.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
+Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
+
+### New features
+
+This release introdices substantial tools to improve the developer experience. flexible frontend  API for front-end, headless, and mobile development. Data query language developed by FaceBook internally. Alternative to SOAP and REST. Provides support for PWA. 
+
+* **PWA Studio** 
+
+* **PageBuilder**  drag and drop visual content editing tool. lets merchants shape the appearance of their storefront without writing any HTML or CSS. 
+
+* **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduces the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database scheme changes in patch releases (not currently possible). Supports split and sharded database structures. Support for db structure validation. 
+
+
+* **Graphly API** 
+
+
+* **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Create and manage sources that can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that help merchants customize inventory actions or third party order management system to perform the same actions in an automated way. 
+
+
+* **Amazon Sales Channel**, a new bundled extension 
 
 
 
+### Core product improvements
+
+* **Updates to Magento's tech stack, including upgraded PHP support** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. For more information on our upgraded tech stack, see xxx. 
+
+* **Improvements to import and export**  focus on enhancements to fixes to existing processes, including the  addition of new object types. 
+
+* **ElasticSearch support for Magento Community version**  
+
+* **Improvements to release packaging** plus an increase in test automation results results in a faster, more efficient release process and improved product quality. 
+
+* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE us now integrated into Magento through an adapter that allows it to replace it with any other WYSIWYG.) 
+
+* **Performance improvements** include JavaScript bundling, which enhances the frontend performance of existing themes. JavaScript bundling also minimizes size and optimizes processing time to improve page performance in the browser. 
+
+* **Security enhancements** 
+
+    * Cache flush ACL. granular access to cache management settings to prevent accidental changes that could potentially affect system performance. ACL to control which admin users can clear site cache. Prevents accidental changes that affect performance.
+
+    * 2FA/CAPTCHA protects the Admin panel against against stolen password and protects stores against bots. FA and Google ReCaptcha - supports Google Authenticator, hardware keys, Duo mobile app to protect Admin against stolen or weak passwords
 
 
 
