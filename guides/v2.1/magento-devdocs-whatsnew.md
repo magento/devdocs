@@ -7,10 +7,22 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
+## April 2018
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Added the `WARM_UP_PAGES` variable for customizing the list of pages to use to pre-load the cache. Available in the new [Post-deploy variables](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html) topic.|2.1.x, 2.2.x|New|Apr 02
+Added an example of pushing logs with syslog using the .magento.env.yaml file. See the new [Logging handlers]({{page.baseurl}}cloud/env/log-handlers.html) topic.|2.1.x, 2.2.x|New|Apr 02
+Added Elasticsearch 5.2 to the list of supported version in the [Magento Commerce (Cloud)](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html) guide.|2.2.x, 2.3.x|Updated|Apr 02
+
 ## March 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+You can pre-load the cache using the new [`post_deploy` hook](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks).|2.1.x, 2.2.x|Updated|Mar 29
+Added the `SKIP_HTML_MINIFICATION` environment variable to the Cloud [Environment variables reference](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html) that skips copying the static view files in the `var/view_preprocessed` directory.|2.1.x, 2.2.x|Updated|Mar 27
+Added the new CRYPT_KEY environment variable to the [Deploy variables reference](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html) as a way to supply cryptographic key to another environment when moving a database.|2.1.x, 2.2.x|Updated|Mar 27
+Reorganized the Cloud [Configure environments](http://devdocs.magento.com/guides/v2.2/cloud/env/environments.html) section of the Cloud documentation. It is easier to distinguish the Application, Cloud, Build, and Deploy variables. The variable names also appear in each right-side page navigation for easier selection.<br/>Added the `SCD_ON_DEMAND` environment variable to generate static content when requested.|2.1.x, 2.2.x|Updated|Mar 23
 Added a section for backward incompatible changes between 2.0.17-2.0.18 in [OpenSource](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ce_changes.html#releases-2_0_17-2_0_18) and [Commerce](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html#releases-2_0_17-2_0_18).|2.0.x|Updated|Mar 16
 Added a section for backward incompatible changes between 2.1.11-2.1.12 in [OpenSource](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html#releases-2_1_11-2_1_12) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html#releases-2_1_11-2_1_12).|2.1.x|Updated|Mar 16
 Added a section for backward incompatible changes between 2.2.2-2.2.3 in [OpenSource](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html#releases-2_2_2-2_2_3) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html#releases-2_2_2-2_2_3).|2.2.x|Updated|Mar 16
