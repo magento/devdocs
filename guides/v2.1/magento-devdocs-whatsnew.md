@@ -18,12 +18,12 @@ You can pre-load the cache using the new [`post_deploy` hook](http://devdocs.mag
 Added the `SKIP_HTML_MINIFICATION` environment variable to the Cloud [Environment variables reference](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html) that skips copying the static view files in the `var/view_preprocessed` directory.|2.1.x, 2.2.x|Updated|Apr 02
 Added the new CRYPT_KEY environment variable to the [Deploy variables reference](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html) as a way to supply cryptographic key to another environment when moving a database.|2.1.x, 2.2.x|Updated|Apr 02
 Reorganized the Cloud [Configure environments](http://devdocs.magento.com/guides/v2.2/cloud/env/environments.html) section of the Cloud documentation. It is easier to distinguish the Application, Cloud, Build, and Deploy variables. The variable names also appear in each right-side page navigation for easier selection.<br/>Added the `SCD_ON_DEMAND` environment variable to generate static content when requested.|2.1.x, 2.2.x|Updated|Apr 02
+Added a new topic for [extending the Data Migration Tool](http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html).|2.x|New|Apr 02
 
-## March 2018
+{% collapsibleh2 March 2018 %}
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
-Added a new topic for [extending the Data Migration Tool](http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html).|2.x|New|Apr 02
 Removed references to VPN connections from the [Magento Commerce (Cloud) guide](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#vpn) because they are not currently supported.|2.x|Updated|Mar 30
 Updated references to Fastly IP addresses in the [Magento Commerce (Cloud) guide](http://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html) with the list of preferred IP addresses provided by Fastly.|2.x|Updated|Mar 30
 Added a link to the Private Packagist documentation in the [Package a component](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html) topic.|2.x|Updated|Mar 26
@@ -42,6 +42,8 @@ Added the force (`-f`) option to the static content deployment command in the [B
 Updated the [Magento Commerce (Cloud) Guide Configure routes](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_routes.html) topic to deprecate the `:php` endpoint and to note that now you can use the dot (\.) symbol to separate the subdomain instead of using the triple dash (\-\-\-).|2.2.x|Updated|Mar 09
 Removed old content related to the [multi-tenant code compiler](http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html).|2.1.x, 2.2.x|Updated|Mar 07
 Added a CodeTriage badge to the [Contributor Guide](http://devdocs.magento.com/guides/v2.0/contributor-guide/contributing.html).|2.x|Updated|Mar 01
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 February 2018 %}
 
