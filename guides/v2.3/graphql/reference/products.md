@@ -283,20 +283,3 @@ Field | Type | Description
 Field | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
-
-### LayerFilter object
-
-Field | Type | Description
---- | --- | ---
-`name` | String | The layered navigation filter name
-`request_var` | String | The request variable name for filter query
-`filter_items_count` | Int | The number of filter items in filter group
-`filter_items` |  [LayerFilterItem] | An array of filter items
-
-#### LayerFilterItem
-
-Field | Type | Description
---- | --- | ---
-`label` | String | The label applied to a filter
-`value_string` | String | The value for filter request variable to be used in a query
-`items_count` | Int | The number of items the filter returned
