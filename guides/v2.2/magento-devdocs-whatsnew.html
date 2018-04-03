@@ -314,7 +314,7 @@
 
 			<p>This page contains recent changes that we think you’d like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.</p>
 
-<h2 id="march-2018">March 2018</h2>
+<h2 id="april-2018">April 2018</h2>
 
 <table>
   <thead>
@@ -327,11 +327,66 @@
   </thead>
   <tbody>
     <tr>
+      <td>Added the <code class="highlighter-rouge">WARM_UP_PAGES</code> variable for customizing the list of pages to use to pre-load the cache. Available in the new <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html">Post-deploy variables</a> topic.</td>
+      <td>2.1.x, 2.2.x</td>
+      <td>New</td>
+      <td>Apr 02</td>
+    </tr>
+    <tr>
+      <td>Added an example of pushing logs with syslog using the .magento.env.yaml file. See the new <a href="/guides/v2.2/cloud/env/log-handlers.html">Logging handlers</a> topic.</td>
+      <td>2.1.x, 2.2.x</td>
+      <td>New</td>
+      <td>Apr 02</td>
+    </tr>
+    <tr>
+      <td>Added Elasticsearch 5.2 to the list of supported version in the <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html">Magento Commerce (Cloud)</a> guide.</td>
+      <td>2.2.x, 2.3.x</td>
+      <td>Updated</td>
+      <td>Apr 02</td>
+    </tr>
+    <tr>
+      <td>You can pre-load the cache using the new <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks"><code class="highlighter-rouge">post_deploy</code> hook</a>.</td>
+      <td>2.1.x, 2.2.x</td>
+      <td>Updated</td>
+      <td>Apr 02</td>
+    </tr>
+    <tr>
+      <td>Added the <code class="highlighter-rouge">SKIP_HTML_MINIFICATION</code> environment variable to the Cloud <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html">Environment variables reference</a> that skips copying the static view files in the <code class="highlighter-rouge">var/view_preprocessed</code> directory.</td>
+      <td>2.1.x, 2.2.x</td>
+      <td>Updated</td>
+      <td>Apr 02</td>
+    </tr>
+    <tr>
+      <td>Added the new CRYPT_KEY environment variable to the <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html">Deploy variables reference</a> as a way to supply cryptographic key to another environment when moving a database.</td>
+      <td>2.1.x, 2.2.x</td>
+      <td>Updated</td>
+      <td>Apr 02</td>
+    </tr>
+    <tr>
+      <td>Reorganized the Cloud <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environments.html">Configure environments</a> section of the Cloud documentation. It is easier to distinguish the Application, Cloud, Build, and Deploy variables. The variable names also appear in each right-side page navigation for easier selection.<br />Added the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable to generate static content when requested.</td>
+      <td>2.1.x, 2.2.x</td>
+      <td>Updated</td>
+      <td>Apr 02</td>
+    </tr>
+    <tr>
       <td>Added a new topic for <a href="http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html">extending the Data Migration Tool</a>.</td>
       <td>2.x</td>
       <td>New</td>
       <td>Apr 02</td>
     </tr>
+  </tbody>
+</table>
+
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">March 2018 </h2><div class="collapsible-content"><table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Versions applied to</th>
+      <th>New or Updated</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Removed references to VPN connections from the <a href="http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#vpn">Magento Commerce (Cloud) guide</a> because they are not currently supported.</td>
       <td>2.x</td>
@@ -442,6 +497,7 @@
     </tr>
   </tbody>
 </table>
+</div></div>
 
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">February 2018 </h2><div class="collapsible-content"><table>
   <thead>
