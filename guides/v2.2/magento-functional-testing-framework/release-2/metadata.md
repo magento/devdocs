@@ -77,7 +77,7 @@ The above figure demonstrates a list of available operations to:
 
 We assume that our `.env` file sets `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin`.
 
-### Creating an object {#create-object-as-adminOauth}
+### Creating a simple object {#create-object-as-adminOauth}
 
 Let's see what happens when you use the `<createData entity="_defaultCategory" stepKey="..."/>` test step.
 
@@ -167,9 +167,7 @@ Using the [Reference], we can trace how JSON request was converted into XML repr
 }
 ```
 
-So, the body of REST API request to create a simple category is the following: 
-
-> Source file: _acceptance/tests/functional/Magento/FunctionalTest/Catalog/Data/CategoryData.xml_
+So, the body of REST API request to create a simple category is the following:
 
 ```json
 {                                             // XML representation of input data used to create a simple category ("Catalog/Data/CategoryData.xml")
@@ -210,16 +208,25 @@ The MFTF searches in _Data_ an entity with `<entity name="guestCart">` and reads
  
 As a result, the MFTF sends unauthorized POST request with empty body to the _https://example.com/rest/V1/guest-carts_.
 
-## Emulating an HTTP request
+## Using HTML forms
 
-### Create an object {#create-object-as-adminFormKey}
+For cases when REST API is not applicable, you may use persisting with [HTML forms] (when all object parameters are encoded in a URL as `key=name` attributes).
+There two different attributes to split access to different areas:
+* `auth="adminFormKey"` is used for objects in an Admin area
+* `auth="customerFormKey"` is used for objects in a store front
 
-#### Backend
+Moreover, you are able to create assurances with `successRegex`, and even return values with `returnRegex`.
+Let's see a couple of examples.
 
-> Source file:
+
+### Create an object in Admin {#create-object-as-adminFormKey}
+
+The CreateStoreGroup operation is developed to persist a store group. 
+
+> Source file: _Store/Metadata/store_group-meta.xml_
 
 ```xml
-<operation name="CreateStoreGroup" dataType="group" type="create" auth="adminFormKey" url="/admin/system_store/save" method="POST" successRegex="/messages-message-success/" returnRegex="" >
+<operation name="CreateStoreGroup" dataType="group" type="create" auth="adminFormKey" url="/admin/system_store/save" method="POST" successRegex="/messages-message-success/" >
     <contentType>application/x-www-form-urlencoded</contentType>
     <object dataType="group" key="group">
         <field key="group_id">string</field>
@@ -233,9 +240,24 @@ As a result, the MFTF sends unauthorized POST request with empty body to the _ht
 </operation>
 ```
 
-#### Frontend
+It is called when `<createData>` (`type="create"`) points to a data entity of type `"group"` (`dataType="group"`).
+It sends a POST request (`method="POST"`) to _http://example.com/admin/system_store/save_ (`url="/admin/system_store/save"`) that is authorized for the Admin area (`auth="adminFormKey"`).
+The request contains HTML form data encoded in the [application/x-www-form-urlencoded] content type (`<contentType>application/x-www-form-urlencoded</contentType>`).
+If the returned HTML code contains the `messages-message-success` string, it is resolved as successful.
 
-> Source file:
+The operation allows to assign form fields with the following ids:
+* `group/group_id`
+* `group/name`
+* `group/code`
+* `group/root_category_id`
+* `group/website_id`
+* `store_action`
+* `store_type`
+
+
+### Create an object in store front {#create-object-as-customerFormKey}
+
+> Source file: _Wishlist/Metadata/wishlist-meta.xml_
 
 ```xml
 <operation name="CreateWishlist" dataType="wishlist" type="create" auth="customerFormKey" url="/wishlist/index/add/" method="POST" successRegex="" returnRegex="~\/wishlist_id\/(\d*?)\/~" >
@@ -362,6 +384,9 @@ Example:
 [Magento REST API]: {{page.baseurl}}rest/bk-rest.html
 
 [catalogCategoryRepositoryV1 image]: img/catalogCategoryRepository-operations.png
+
+[application/x-www-form-urlencoded]: https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1
+[HTML forms]: https://www.w3.org/TR/html401/interact/forms.html
 
 *[MFTF]: Magento Functional Testing Framework
 *[CRUD]: Create Read Update Delete
