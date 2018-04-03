@@ -2,6 +2,7 @@
 layout: default
 group: jsdg
 title: JavaScript mixins
+version: 2.1
 github_link: javascript-dev-guide/javascript/js_mixins.md
 ---
 
