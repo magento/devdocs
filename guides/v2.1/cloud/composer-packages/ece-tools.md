@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: vendor/magento/ece-tools
+title: Patch Cloud tools
 version: 2.1
 github_link: cloud/composer-packages/ece-tools.md
 functional_areas:

@@ -7,11 +7,16 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## March 2018
+## April 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 Added a new topic for [extending the Data Migration Tool](http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html).|2.x|New|Apr 02
+
+{% collapsibleh2 March 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
 Removed references to VPN connections from the [Magento Commerce (Cloud) guide](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#vpn) because they are not currently supported.|2.x|Updated|Mar 30
 Updated references to Fastly IP addresses in the [Magento Commerce (Cloud) guide](http://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html) with the list of preferred IP addresses provided by Fastly.|2.x|Updated|Mar 30
 Added a link to the Private Packagist documentation in the [Package a component](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html) topic.|2.x|Updated|Mar 26
@@ -30,6 +35,7 @@ Added the force (`-f`) option to the static content deployment command in the [B
 Updated the [Magento Commerce (Cloud) Guide Configure routes](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_routes.html) topic to deprecate the `:php` endpoint and to note that now you can use the dot (\.) symbol to separate the subdomain instead of using the triple dash (\-\-\-).|2.2.x|Updated|Mar 09
 Removed old content related to the [multi-tenant code compiler](http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html).|2.1.x, 2.2.x|Updated|Mar 07
 Added a CodeTriage badge to the [Contributor Guide](http://devdocs.magento.com/guides/v2.0/contributor-guide/contributing.html).|2.x|Updated|Mar 01
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 February 2018 %}
 
