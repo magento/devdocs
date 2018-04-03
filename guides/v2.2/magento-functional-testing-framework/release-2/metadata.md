@@ -48,7 +48,8 @@ The following diagram demonstrates XML structure of a metadata file in the MFTF:
 ## Principles
 
 * `dataType` value must match the `type` value in the corresponding file with data definition.
-* File name is of camel case format and contains name of data entity, which it handles, and suffix `Meta`. Example: `CategoryMeta.xml`.
+* File name is of camel case format and contains name of data entity, which it handles, and suffix `Meta`.
+Example: `CategoryMeta.xml`.
 * A metadata file may contain different types of operations (`type`) with the same data entity (`dataType`).
 
 ## Handling entities using REST API
@@ -69,68 +70,34 @@ Let's see an example of how to handle a category using REST API operations provi
 ![REST API operations provided by catalogCategoryRepositoryV1][catalogCategoryRepositoryV1 image]
 
 The above figure demonstrates a list of available operations to:
-- [delete a category by its ID] (`method="POST"`)
-- [get information about a category by its ID] (`method="GET"`)
+- delete a category by its ID (`method="DELETE"`)
+- get information about a category by its ID (`method="GET"`)
 - [create a new category] (`method="POST"`)
-- [update category data by its ID] (`method="PUT"`)
+- update category data by its ID (`method="PUT"`)
 
 We assume that our `.env` file sets `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin`.
 
 ### Creating an object {#create-object-as-adminOauth}
 
-Let's see an example of creating a category object using REST API.
-The corresponding operation is provided by _catalogCategoryRepositoryV1_.
+Let's see what happens when you use the `<createData entity="_defaultCategory" stepKey="..."/>` test step.
 
-To create a simple category **simpleCategory**, we can send a POST request to `https://example.com/admin/rest/V1/categories`:
+The MFTF searches in _Data_ an entity with `<entity name="_defaultCategory">` and reads `type` of the entity.
 
->Example of _catalogCategoryRepositoryV1SavePostBody_
-{:#create-category-json-example}
-```json
-{
-  "category": {
-    "name": "simpleCategory",
-    "is_active": true
-      }
-    ]
-  }
-}
+> _Catalog/Data/CategoryData.xml_
+
+```xml
+<entity name="_defaultCategory" type="category">
+    <data key="name" unique="suffix">simpleCategory</data>
+    <data key="name_lwr" unique="suffix">simplecategory</data>
+    <data key="is_active">true</data>
+</entity>
 ```
 
-The parameter that declares body of the request is _catalogCategoryRepositoryV1SavePostBody_:
+Here, `type` equals to `"category"` that instructs the MFTF to search an operation with `dataType="category"`. 
+Since the action is to create a category, the MFTF will also search for operation with `type="create"` in _Metadata_ for `dataType="category"`.
+(The corresponding operation is provided by _catalogCategoryRepositoryV1_ in REST API.)
 
-> Model schema for _catalogCategoryRepositoryV1SavePostBody_
-{:#catalogCategoryRepositoryV1SavePostBody}
-```json
-{
-  "category": {
-    "id": 0,
-    "parent_id": 0,
-    "name": "string",
-    "is_active": true,
-    "position": 0,
-    "level": 0,
-    "children": "string",
-    "created_at": "string",
-    "updated_at": "string",
-    "path": "string",
-    "available_sort_by": [
-      "string"
-    ],
-    "include_in_menu": true,
-    "extension_attributes": {},
-    "custom_attributes": [
-      {
-        "attribute_code": "string",
-        "value": "string"
-      }
-    ]
-  }
-}
-```
-
-Using the [Reference], we've converted the JSON request into XML representation recognizable by the MFTF.
-
-> Source file: _acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml_
+> _Catalog/Metadata/category-meta.xml_
 
 ```xml
 <operation name="CreateCategory" dataType="category" type="create" auth="adminOauth" url="/V1/categories" method="POST">
@@ -157,120 +124,91 @@ Using the [Reference], we've converted the JSON request into XML representation 
 </operation>
 ```
 
-Here, we've declared:
-- `name="CreateCategory"` that defines a consistent name of the operation, which is used for merging if needed
-- `dataType="category"` that defines a reference to the entity with input data, which is `<entity type="category">`
-- `auth="adminOauth"` that defines a type of authorization required for the Admin area
-- `url="/V1/categories"` that defines a REST endpoint that is responsible for category creation
-The request is sent to `https://example.com/admin/rest/V1/categories` if `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin` are set in the _acceptance/.env_ configuration file.
-- `method="POST"` that defines an HTTP POST method of the request
-- `<contentType>application/json</contentType>` that defines `application/json` content type
-- `<object key="category" dataType="category">` that defines a model schema of body of the request, which is in the above JSON sample of _[catalogCategoryRepositoryV1SavePostBody]_
+Let's see what's encoded in `<operation>`:
+  - `name="CreateCategory"` defines a consistent name of the operation, which is used for merging if needed
+  - `dataType="category"` defines a reference to data file with input data for a Category entity, which is defined as `<entity type="category">`
+  - `auth="adminOauth"` defines Oath authorization which is required for the Admin area
+  - `url="/V1/categories"` defines a routing URL to the corresponding service class.
+  The request is sent to `https://example.com/rest/V1/categories` if `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin` are set in the _acceptance/.env_ configuration file.
+  - `method="POST"` defines an HTTP POST method of the request
 
-Now, when we have declared field keys, we're able to define input data for the [simple category example]:
+`<contentType>application/json</contentType>` defines a content type of the REST API request, which is set as `application/json` here.
 
-> Source file: _acceptance/tests/functional/Magento/FunctionalTest/Catalog/Data/CategoryData.xml_
+The parameter that declares a body of the request is _catalogCategoryRepositoryV1SavePostBody_.
+Using the [Reference], we can trace how JSON request was converted into XML representation.
 
-```xml
-<entity name="_defaultCategory" type="category">
-    <data key="name" unique="suffix">simpleCategory</data>
-    <data key="is_active">true</data>
-</entity>
+> Model schema for _catalogCategoryRepositoryV1SavePostBody_
+{:#catalogCategoryRepositoryV1SavePostBody}
+```json
+{                                           // XML representation in the MFTF metadata format (see 'Catalog/Metadata/category-meta.xml')
+  "category": {                             // <object key="category" dataType="category">
+    "id": 0,                                // Skipped, because Category ID is not available on UI when you create a new category.
+    "parent_id": 0,                         // <field key="parent_id">integer</field>\
+    "name": "string",                       // <field key="name">string</field>'
+    "is_active": true,                      // <field key="is_active">boolean</field>
+    "position": 0,                          // <field key="position">integer</field>
+    "level": 0,                             // <field key="level">integer</field>
+    "children": "string",                   // <field key="children">string</field>
+    "created_at": "string",                 // <field key="created_at">string</field>
+    "updated_at": "string",                 // <field key="updated_at">string</field>
+    "path": "string",                       // <field key="path">string</field>
+    "available_sort_by": [                  // <array key="available_sort_by">
+      "string"                              // <value>string</value>
+    ],                                      // </array>
+    "include_in_menu": true,                // <field key="include_in_menu">boolean</field>
+    "extension_attributes": {},             // <field key="extension_attributes">empty_extension_attribute</field>, where 'empty_extension_attribute' is a reference to operation with 'dataType="empty_extension_attribute"' (see 'Catalog/Metadata/empty_extension_attribute-meta.xml')
+    "custom_attributes": [                  // <array key="custom_attributes">
+      {                                     // <value>custom_attribute</value>, where 'custom_attribute' is a reference to operation with 'dataType="custom_attribute"' (see 'Catalog/Metadata/custom_attribute-meta.xml')
+        "attribute_code": "string",         
+        "value": "string"                   
+      }                                     
+    ]                                       // </array>
+  }                                         // </object>                                                                                  
+}
 ```
 
-
-
-
-#### Creating an object as an anonymous user {#create-object-as-anonymous}
+So, the body of REST API request to create a simple category is the following: 
 
 > Source file: _acceptance/tests/functional/Magento/FunctionalTest/Catalog/Data/CategoryData.xml_
+
+```json
+{                                             // XML representation of input data used to create a simple category ("Catalog/Data/CategoryData.xml")
+  "category": {                               // <entity name="_defaultCategory" type="category">
+    "name": "simpleCategory_0986576456",      // <data key="name" unique="suffix">simpleCategory</data>
+    "is_active": true                         // <data key="is_active">true</data>
+  }                                           // </entity>
+}
+```
+
+### Creating an object as a guest {#create-object-as-anonymous}
+
+The corresponding test step is 
+
+```xml
+<createData entity="guestCart" stepKey="..."/>
+```
+
+Let's see how it works.
+The MFTF searches in _Data_ an entity with `<entity name="guestCart">` and reads `type`.
+
+> _Quote/Data/GuestCartData.xml_
+
+```xml
+    <entity name="guestCart" type="guestCart">
+    </entity>
+```
+
+`type="guestCart"` points to the operation with `dataType=guestCart"` and `type="create"` in _Metadata_.
+
+> Source file: _Catalog/Data/CategoryData.xml_
 
 ```xml
  <operation name="CreateGuestCart" dataType="guestCart" type="create" auth="anonymous" url="/V1/guest-carts" method="POST">
      <contentType>application/json</contentType>
  </operation>
  ```
-
-### Updating an object {#update-object-as-adminOauth}
-
-> _catalogCategoryRepositoryV1SavePutBody_ parameter
-
-```json
-{
-  "category": {
-    "id": 0,
-    "parent_id": 0,
-    "name": "string",
-    "is_active": true,
-    "position": 0,
-    "level": 0,
-    "children": "string",
-    "created_at": "string",
-    "updated_at": "string",
-    "path": "string",
-    "available_sort_by": [
-      "string"
-    ],
-    "include_in_menu": true,
-    "extension_attributes": {},
-    "custom_attributes": [
-      {
-        "attribute_code": "string",
-        "value": "string"
-      }
-    ]
-  }
-}
-```
-
-> Source file: _acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml_
-
-```xml
-<operation name="UpdateCategory" dataType="category" type="update" auth="adminOauth" method="PUT">
-    <contentType>application/json</contentType>
-    <object key="category" dataType="category">
-        <field key="id">integer</field>
-        <field key="parent_id">integer</field>
-        <field key="name">string</field>
-        <field key="is_active">boolean</field>
-        <field key="position">integer</field>
-        <field key="level">integer</field>
-        <field key="children">string</field>
-        <field key="created_at">string</field>
-        <field key="updated_at">string</field>
-        <field key="path">string</field>
-        <array key="available_sort_by">
-            <value>string</value>
-        </array>
-        <field key="include_in_menu">boolean</field>
-        <field key="extension_attributes">empty_extension_attribute</field>
-        <array key="custom_attributes">
-            <value>custom_attribute</value>
-        </array>
-    </object>
-</operation>
-```
-
-### Deleting an object {#delete-object-as-adminOauth}
-
-> Source file: _acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml_
-
-```xml
-<operation name="DeleteCategory" dataType="category" type="delete" auth="adminOauth" url="/V1/categories/{id}" method="DELETE">
-    <contentType>application/json</contentType>
-</operation>
-```
-
-### Retrieving an object {#get-object-as-adminOauth}
-
-
-> Source file: _acceptance/tests/functional/Magento/FunctionalTest/Catalog/Metadata/category-meta.xml_
-
-```xml
-<operation name="GetProductAttributesFromDefaultSet" dataType="ProductAttributesFromDefaultSet" type="get" auth="adminOauth" url="/V1/products/attribute-sets/4/attributes" method="GET">
-    <contentType>application/json</contentType>
-</operation>
-```
+ 
+As a result, the MFTF sends unauthorized POST request with empty body to the _https://example.com/rest/V1/guest-carts_.
 
 ## Emulating an HTTP request
 
@@ -320,8 +258,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|optional|Name of the operation.
 `dataType`|string|required|Data type of the operation. It refers to a `type` attribute of data entity that will be used as a source of input data.
-`type`|string|required|Type of operations. Possible values: `create`, `delete`, `update`, `get`.
-`url`|string|optional |Relative URL of the operation. Example: `/V1/categories`. The full URL at the end will contain: `ENV.baseUrl` + `/rest/` + `url`.
+`type`|string|required|Type of operation. Possible values: `create`, `delete`, `update`, `get`.
+`url`|string|optional |A routing URL of the operation. Example: `/V1/categories`. The full URL at the end will contain: `ENV.baseUrl` + `/rest/` + `url`.
 `auth`|Possible values: `adminOath`, `adminFormKey`, `customerFormKey`, `anonymous` |optional|Determines what kind of persistent type this operation describes. TODO add examples for each case.
 `method`|string|optional|Operation methods. Possible values: `POST`, `DELETE`, `PUT`, `GET`.
 `successRegex`|string|optional|Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the `successRegex` exists.
@@ -419,7 +357,7 @@ Example:
 [update category data by its ID]: #update-object-as-adminOauth
 [Reference]: #reference
 
-[entiry]: data.html#entity-tag
+[entity]: data.html#entity-tag
 
 [Magento REST API]: {{page.baseurl}}rest/bk-rest.html
 
