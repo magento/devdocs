@@ -13,7 +13,7 @@ Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 Added a new topic for [extending the Data Migration Tool](http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html).|2.x|New|Apr 02
 
-{% collapsibleh2 February 2018 %}
+{% collapsibleh2 March 2018 %}
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
