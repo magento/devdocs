@@ -201,7 +201,11 @@ Attributes|Type|Use|Description
 `key`|string|optional|Key attribute of data/value pair.
 `unique`|enum: `"prefix"`, `"suffix"`|optional|Add suite or test wide unique sequence as "prefix" or "suffix" to the data value if specified.
 
+<<<<<<< HEAD
+### var {#var-ref}
+=======
 ### var {#var-tag}
+>>>>>>> develop
 
 `<var>` is an element that can be used to grab a key value from another entity. For example, when creating a customer with the `<createData>` action, the server responds with the auto-incremented ID of that customer. Use `<var>` to access that ID and use it in another data entity.
 
@@ -214,7 +218,11 @@ Attributes|Type|Use|Description
 
 ### requiredEntity {#requiredentities-tag}
 
+<<<<<<< HEAD
+### requiredEntity {#required-entities-ref}
+=======
 `<requiredEntity>` is an element that specifies the parent/child relationship between complex types.
+>>>>>>> develop
 
 Example: You have customer address info. To specify that relationship:
 
@@ -230,7 +238,11 @@ Attributes|Type|Use|Description
 ---|---|---|---
 `type`|string|optional|Type attribute of `<requiredEntity>`.
 
+<<<<<<< HEAD
+### array {#array-ref}
+=======
 ### array {#array-tag}
+>>>>>>> develop
 
 `<array>` is an element that contains a reference to an array of values.
 
@@ -253,8 +265,38 @@ Attributes|Type|Use|Description
 
 `<array>` may contain [`<item>`](#item-tag) elements.
 
+<<<<<<< HEAD
+### item {#item-ref}
+=======
 ### item {#item-tag}
+>>>>>>> develop
 
 `<item>` is an individual piece of data to be passed in as part of the parent `<array>` type.
 
 {%endraw%}
+<<<<<<< HEAD
+
+<!-- LINK DEFINITIONS -->
+
+<!-- Anchors -->
+
+[`<array>`]: #array-ref
+[`<data>`]: #data-ref
+[`<var>`]: #var-ref
+[`<item>`]: #item-ref
+[`<required-entities>`]: #required-entities-ref
+
+<!-- devdocs links -->
+
+[see]: ./test/actions.html#see
+[test actions]: ./test/actions.html#actions-returning-a-variable
+
+<!-- External links-->
+
+[Creating Categories]: http://docs.magento.com/m2/ce/user_guide/catalog/category-create.html
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework
+=======
+>>>>>>> develop
