@@ -6,6 +6,10 @@ pages:
         - label: Subscriptions and plans
           url: cloud/basic-information/cloud-plans.html
 
+        - label: Onboarding tasks
+          url: cloud/onboarding/onboarding-tasks.html
+          versions: ["2.1", "2.2", "2.3"]
+
     - label: Architecture
       url: cloud/architecture/cloud-architecture.html
       children:
@@ -32,6 +36,8 @@ pages:
       children:
         - label: Prepare project environments
           url: cloud/before/before-project-owner.html
+          versions: ["2.0"]
+      versions: ["2.0"]
 
     - label: Technologies and requirements
       url: cloud/requirements/cloud-requirements.html
