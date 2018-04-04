@@ -1,11 +1,7 @@
 ---
 layout: default
 group:
-subgroup:
 title: Merge and delete an environment (tutorial)
-menu_title: Merge and delete an environment (tutorial)
-menu_order:
-menu_node:
 version: 2.1
 github_link: cloud/howtos/environment-tutorial-env-merge.md
 functional_areas:
@@ -107,6 +103,3 @@ Wait for the environment to delete.
 <div class="bs-callout bs-callout-info" id="info">
   <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
 </div>
-
-#### Related topic
-[Set Magento environment variables]({{page.baseurl}}cloud/env/set-variables.html)

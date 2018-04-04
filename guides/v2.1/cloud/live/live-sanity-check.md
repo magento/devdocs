@@ -28,7 +28,7 @@ We highly recommend completing your testing in an Integration active environment
 </div>
 
 ## Update composer if you add extensions {#composer}
-If you modified your [composer.json]({{ page.baseurl }}cloud/cloud-composer.html) to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
+If you modified your `composer.json` file to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
 
 ## Verify all required files in Git {#files}
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
