@@ -352,6 +352,7 @@ pages:
       children:
         - label: Patch Cloud tools
           url: cloud/composer-packages/ece-tools.html
+          versions: ["2.1","2.2","2.3"]
 
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html
