@@ -51,8 +51,8 @@ Your Git branch includes the following default `services.yaml` file:
 
 Modify this file to use specific and additional services in your deployment. See the [`type`](#cloud-yaml-services-type) section to see the services we support and deploy for you if you add them to the file.
 
-## Service values {#services}
-To add a service, you add the following data to services.yaml:
+## Service values
+To add a service, you add the following data to `services.yaml`:
 
   name:
      type: name:version
@@ -94,16 +94,7 @@ We support and deploy the following services:
 
 `disk` specifies the size of the persistent disk storage (in MB) allocated to the service.
 
-FFor example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services. See [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel).
+For example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services. See [relationships]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#relationships).
 
 ## Using the services
-For services to be available to an application in your project, you must specify [*relationships*]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel) between applications and services in `.magento.app.yaml`.
-
-#### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[Set up MySQL service]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
-*	[Set up Redis service]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
-*	[Set up Elasticsearch service]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
-*	[Set up RabbitMQ service]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+For services to be available to an application in your project, you must specify [*relationships*]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in `.magento.app.yaml`.
