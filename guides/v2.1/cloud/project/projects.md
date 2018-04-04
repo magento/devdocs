@@ -35,7 +35,6 @@ The following sections detail more about project and environment variables:
 *	[Overview of environment variables]({{page.baseurl}}cloud/env/variables-intro.html)
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
 *	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
 *	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
 
@@ -145,6 +144,6 @@ This displays the following page, which enables you to configure settings, [vari
 ![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
 
 ## Configure the project
-Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/project/user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
+Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
 
 ![configure project]({{ site.baseurl }}common/images/cloud_project-config.png)

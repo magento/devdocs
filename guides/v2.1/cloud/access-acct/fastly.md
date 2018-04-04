@@ -35,7 +35,7 @@ Fastly only allows one apex domain and all subdomains assigned to a single Fastl
 For details, review your Fastly accounts and [documentation](https://docs.fastly.com/) to remove the domains. This may include removing and updating CNAME records and more.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
-To get Fastly credentials, open a [support ticket]({{page.baseurl}}cloud/welcome/get-help.html). You must provide your fully-qualified domain name.
+To get Fastly credentials, open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html). You must provide your fully-qualified domain name.
 
 We'll provide you with the following credentials for your Staging and Production services:
 
@@ -137,7 +137,7 @@ To use snippets, you must upload the Fastly VCL using the Magento Admin as follo
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. For details, see [Update extensions]({{page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
+  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. Fastly's Composer name is `fastly/magento2`.
 	</div>
 
 2.	Once the upload completes, the modal automatically closes with a success message.
@@ -258,7 +258,7 @@ Another option for apex domain is to add an A record, which maps a domain name t
 Refer to [Go live checklist]({{page.baseurl}}cloud/live/go-live-checklist.html) for more information.
 
 ### TLS and Fastly {#fastly-tls}
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket]{{page.baseurl}}cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="\_blank"}.
 

@@ -72,7 +72,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage](http://devdocs.magento.
 
 ## v2002.0.8
 <div class="bs-callout bs-callout-info" markdown="1">
-We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.1/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
+We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
 </div>
 
 ### New features
