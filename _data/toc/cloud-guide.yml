@@ -6,6 +6,10 @@ pages:
         - label: Subscriptions and plans
           url: cloud/basic-information/cloud-plans.html
 
+        - label: Onboarding tasks
+          url: cloud/onboarding/onboarding-tasks.html
+          versions: ["2.1", "2.2", "2.3"]
+
     - label: Architecture
       url: cloud/architecture/cloud-architecture.html
       children:
@@ -26,12 +30,6 @@ pages:
 
         - label: Add Staging and Production to Pro projects UI
           url: cloud/trouble/pro-env-management.html
-
-    - label: Onboarding tasks
-      url: cloud/onboarding/onboarding-tasks.html
-      children:
-        - label: Prepare project environments
-          url: cloud/before/before-project-owner.html
 
     - label: Technologies and requirements
       url: cloud/requirements/cloud-requirements.html
@@ -346,6 +344,7 @@ pages:
       children:
         - label: Patch Cloud tools
           url: cloud/composer-packages/ece-tools.html
+          versions: ["2.1","2.2","2.3"]
 
         - label: Patch Magento Commerce (Cloud)
           url: cloud/project/project-patch.html

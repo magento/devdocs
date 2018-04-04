@@ -114,7 +114,7 @@ If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your 
 </div>
 
 ### Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ### Upgrade Fastly {#fastly}
 If you have not upgraded to the latest supported version of Fastly, you should do so. Check [Supported software versions]({{page.baseurl}}cloud/requirements/cloud-requirements.html#cloud-arch-software) for the latest version of Fastly we recommend. For instructions, see [Upgrade Fastly]({{page.baseurl}}cloud/access-acct/fastly.html#upgrade).
