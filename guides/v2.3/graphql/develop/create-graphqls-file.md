@@ -157,12 +157,12 @@ The following example shows the output type definition of the `VolumeWithUnit` o
 You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_).
 
 ``` xml
-<type xsi:type="Enum" name="VolumeEnum">
-  <item name="in3">IN3</item>
-  <item name="ft3">FT3</item>
-  <item name="cm3">CM3</item>
-  <item name="m3">M3</item>
-</type>
+enum VolumeEnum {
+  IN3
+  FT3
+  CM3
+  M3
+}
 ```
 <div class="bs-callout bs-callout-warning" id="info" markdown="1">
 The specified `name` must end with the string `Input`.
