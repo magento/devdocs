@@ -31,7 +31,7 @@ $("#element").tabs();
 Where:
 <ul>
 <li><code>#element</code> is the selector of the element for tabs is initialized.</li>
-<ul>
+</ul>
 
 Phtml template file examples using script:
 
