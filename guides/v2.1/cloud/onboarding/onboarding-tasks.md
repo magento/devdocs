@@ -22,7 +22,7 @@ If you joined us with a 30-day free trial {{site.data.var.ece}} account, we comp
 -   Created an environment for the `master` branch with a web server, database, and services
 -   Added Magento authentication keys for the Project Owner
 -   Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
-</div>git pu
+</div>
 
 ## Project access and users {#users}
 The _Project Owner_ is typically a "business user" in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can [add user accounts]({{page.baseurl}}cloud/project/user-admin.html#cloud-user-webinterface) to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
