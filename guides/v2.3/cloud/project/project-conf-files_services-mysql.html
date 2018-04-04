@@ -2086,23 +2086,25 @@ following command:</p>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">mysqldb</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
-    <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span>
-    <span class="na">configuration</span><span class="pi">:</span>
-        <span class="na">schemas</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">main</span>
-        <span class="na">endpoints</span><span class="pi">:</span>
-            <span class="na">admin</span><span class="pi">:</span>
-                <span class="na">default_schema</span><span class="pi">:</span> <span class="s">main</span>
-                <span class="na">privileges</span><span class="pi">:</span>
-                    <span class="na">main</span><span class="pi">:</span> <span class="s">admin</span>
-            <span class="na">reporter</span><span class="pi">:</span>
-                <span class="na">privileges</span><span class="pi">:</span>
-                    <span class="na">main</span><span class="pi">:</span> <span class="s">ro</span>
-            <span class="na">importer</span><span class="pi">:</span>
-                <span class="na">privileges</span><span class="pi">:</span>
-                    <span class="na">main</span><span class="pi">:</span> <span class="s">rw</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldb:
+    type: mysql:10.0
+    disk: 2048
+    configuration:
+        schemas:
+            - main
+        endpoints:
+            admin:
+                default_schema: main
+                privileges:
+                    main: admin
+            reporter:
+                privileges:
+                    main: ro
+            importer:
+                privileges:
+                    main: rw
+
+</code></pre></div></div>
 
 <p>In the preceding example, the endpoint (that is, user) <code class="highlighter-rouge">reporter</code> has <code class="highlighter-rouge">ro</code> privileges to the <code class="highlighter-rouge">main</code> database and endpoint <code class="highlighter-rouge">importer</code> has <code class="highlighter-rouge">rw</code> access to the <code class="highlighter-rouge">main</code> database. This means that:</p>
 
@@ -2129,7 +2131,7 @@ following command:</p>
 <div class="bs-callout bs-callout-info" id="info">
   <ul>
     <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
-    <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
+    <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html#disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
   </ul>
 </div>
 
@@ -2150,29 +2152,23 @@ following command:</p>
 
 <p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for MySQL:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-  <span class="s2">"database"</span>: <span class="o">[</span>
-    <span class="o">{</span>
-      <span class="s2">"host"</span>: <span class="s2">"database.internal"</span>,
-      <span class="s2">"ip"</span>: <span class="s2">"192.0.2.150"</span>,
-      <span class="s2">"password"</span>: <span class="s2">""</span>,
-      <span class="s2">"path"</span>: <span class="s2">"main"</span>,
-      <span class="s2">"port"</span>: 3306,
-      <span class="s2">"query"</span>: <span class="o">{</span>
-          <span class="s2">"is_master"</span>: <span class="nb">true</span>
-      <span class="o">}</span>,
-      <span class="s2">"scheme"</span>: <span class="s2">"mysql"</span>,
-      <span class="s2">"username"</span>: <span class="s2">"user"</span>
-    <span class="o">}</span>
-  <span class="o">]</span>
-<span class="o">}</span></code></pre></figure>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-</ul>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "database": [
+    {
+      "host": "database.internal",
+      "ip": "192.0.2.150",
+      "password": "",
+      "path": "main",
+      "port": 3306,
+      "query": {
+          "is_master": true
+      },
+      "scheme": "mysql",
+      "username": "user"
+    }
+  ]
+}
+</code></pre></div></div>
 
 		</div>
 		<!-- /.content-wrap -->

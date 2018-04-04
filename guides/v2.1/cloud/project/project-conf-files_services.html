@@ -2090,8 +2090,8 @@ solr:
 
 <p>Modify this file to use specific and additional services in your deployment. See the <a href="#cloud-yaml-services-type"><code class="highlighter-rouge">type</code></a> section to see the services we support and deploy for you if you add them to the file.</p>
 
-<h2 id="services">Service values</h2>
-<p>To add a service, you add the following data to services.yaml:</p>
+<h2 id="service-values">Service values</h2>
+<p>To add a service, you add the following data to <code class="highlighter-rouge">services.yaml</code>:</p>
 
 <p>name:
      type: name:version
@@ -2137,21 +2137,10 @@ solr:
 
 <p><code class="highlighter-rouge">disk</code> specifies the size of the persistent disk storage (in MB) allocated to the service.</p>
 
-<p>FFor example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services. See <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel"><code class="highlighter-rouge">.magento.app.yaml</code></a>.</p>
+<p>For example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services. See <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#relationships">relationships</a>.</p>
 
 <h2 id="using-the-services">Using the services</h2>
-<p>For services to be available to an application in your project, you must specify <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel"><em>relationships</em></a> between applications and services in <code class="highlighter-rouge">.magento.app.yaml</code>.</p>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-</ul>
+<p>For services to be available to an application in your project, you must specify <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#relationships"><em>relationships</em></a> between applications and services in <code class="highlighter-rouge">.magento.app.yaml</code>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
