@@ -83,7 +83,7 @@ Make note of any changes you make. You may need them when installing Magento wit
 </div>
 
 ### List and review variables {#variablelist}
-If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. The Project Owner may have already set some or all of the variables during [project creation]({{ page.baseurl }}cloud/before/before-project-owner.html).
+If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. 
 
 	magento-cloud variable:get -e <environment ID>
 

@@ -8,6 +8,10 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+  - /guides/v2.1/cloud/before/before-project-owner.html
+  - /guides/v2.2/cloud/before/before-project-owner.html
+  - /guides/v2.3/cloud/before/before-project-owner.html
 ---
 
 After your company purchases a subscription plan for {{site.data.var.ece}}, the only person who initially has access to the project and code is the Project Owner.
@@ -21,7 +25,7 @@ If you joined us with a 30-day free trial {{site.data.var.ece}} account, we comp
 -   Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
 -   Created an environment for the `master` branch with a web server, database, and services
 -   Added Magento authentication keys for the Project Owner
--   Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
+-   Add the `ADMIN_EMAIL` variable. See [Set environment and project variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 </div>
 
 ## Project access and users {#users}
@@ -69,11 +73,4 @@ When you initially create your project, you can access the Magento Admin panel t
 1.  Click the forgot Password link and complete the process to change the password.
 1.  Login to the Admin panel using the username Admin and newly changed password.
 
-If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`. Trial accounts should already have the `ADMIN_EMAIL` variable configured for them. For details, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables) or [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
-
-#### Related topics
--   [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html)
--   [Manage your project]({{page.baseurl}}cloud/project/projects.html)
--   [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
--   [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
--   [Welcome to Magento Commerce (Cloud)]({{page.baseurl}}cloud/bk-cloud.html)
+If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`. Trial accounts should already have the `ADMIN_EMAIL` variable configured for them.
