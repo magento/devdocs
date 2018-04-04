@@ -20,56 +20,48 @@ We appreciate all the typo fixes, code corrections, comments in issues, and clar
 
 The following table lists the community members who created pull requests and issues for this quarter.
 
-PR contributors|Issue contributors
+**PR contributors**|**Issue contributors**
 :-----:|:-----:
-[likemusic](https://github.com/likemusic)|[Prutha29](https://github.com/Prutha29)
-[chickenland](https://github.com/chickenland)|[embed0](https://github.com/embed0)
-[chris-pook](https://github.com/chris-pook)|[camdixon](https://github.com/camdixon)
-[ihor-sviziev](https://github.com/ihor-sviziev)|[vovsky](https://github.com/vovsky)
-[rhoerr](https://github.com/rhoerr)|[lazyguru](https://github.com/lazyguru)
-[hostep](https://github.com/hostep)|[roman204](https://github.com/roman204)
-[avoelkl](https://github.com/avoelkl)|[osrecio](https://github.com/osrecio)
-[rogyar](https://github.com/rogyar)|[fdrechsler](https://github.com/fdrechsler)
-[osrecio](https://github.com/osrecio)|[adamrandazzo](https://github.com/adamrandazzo)
-[erikhansen](https://github.com/erikhansen)|[McFizh](https://github.com/McFizh)
-[DavidLambauer](https://github.com/DavidLambauer)|[erichagz](https://github.com/erichagz)
-[JosephMaxwell](https://github.com/JosephMaxwell)|[rossmc](https://github.com/rossmc)
-[nshiff](https://github.com/nshiff)|[36serg6](https://github.com/36serg6)
-[rafaelstz](https://github.com/rafaelstz)|[kunal1234gh](https://github.com/kunal1234gh)
-[asrar7787](https://github.com/asrar7787)|[iunia27](https://github.com/iunia27)
- |[zaibi099](https://github.com/zaibi099)
- |[tiwarimukesh](https://github.com/tiwarimukesh)
- |[SunshineTech](https://github.com/SunshineTech)
- |[documarezc](https://github.com/documarezc)
- |[mpingu](https://github.com/mpingu)
- |[hostep](https://github.com/hostep)
- |[aryaashwani](https://github.com/aryaashwani)
- |[danistor](https://github.com/danistor)
- |[timri](https://github.com/timri)
- |[ZariMatan](https://github.com/ZariMatan)
- |[koenner01](https://github.com/koenner01)
- |[likemusic](https://github.com/likemusic)
- |[bgronek](https://github.com/bgronek)
- |[korostii](https://github.com/korostii)
- |[hjsprite](https://github.com/hjsprite)
- |[vmistrybas](https://github.com/vmistrybas)
- |[KarlComSe](https://github.com/KarlComSe)
- |[csned](https://github.com/csned)
- |[terolahtinen](https://github.com/terolahtinen)
- |[mehdiagharlou](https://github.com/mehdiagharlou)
- |[allamsettiramesh](https://github.com/allamsettiramesh)
- |[valugi](https://github.com/valugi)
- |[DavidLambauer](https://github.com/DavidLambauer)
- |[kevingimbel](https://github.com/kevingimbel)
- |[drdreamm](https://github.com/drdreamm)
- |[milansimek](https://github.com/milansimek)
- |[yogeshsyscraft](https://github.com/yogeshsyscraft)
- |[WaPoNe](https://github.com/WaPoNe)
- |[Igloczek](https://github.com/Igloczek)
- |[lalittmohan](https://github.com/lalittmohan)
- |[arthurlataks](https://github.com/arthurlataks)
- |[bmxmale](https://github.com/bmxmale)
- |[maderlock](https://github.com/maderlock)
+[Shreyas-Echidna](https://github.com/Shreyas-Echidna)|[vinkiel](https://github.com/vinkiel)
+[korostii](https://github.com/korostii)|[josephmcdermott](https://github.com/josephmcdermott)
+[suhasdhoke](https://github.com/suhasdhoke)|[markoshust](https://github.com/markoshust)
+[hostep](https://github.com/hostep)|[kalpmehta](https://github.com/kalpmehta)
+[vinkiel](https://github.com/vinkiel)|[chris-pook](https://github.com/chris-pook)
+[dougkm](https://github.com/dougkm)|[owenju](https://github.com/owenju)
+[kirkmadera](https://github.com/kirkmadera)|[roman-snitko-vaimo](https://github.com/roman-snitko-vaimo)
+[SpencerRohan](https://github.com/SpencerRohan)|[36serg6](https://github.com/36serg6)
+[ravnarayan](https://github.com/ravnarayan)|[likemusic](https://github.com/likemusic)
+[camdixon](https://github.com/camdixon)|[briscoda](https://github.com/briscoda)
+[Dx3webs](https://github.com/Dx3webs)|[LukeHandle](https://github.com/LukeHandle)
+[zennco](https://github.com/zennco)|[pmclain](https://github.com/pmclain)
+[ifolco](https://github.com/lfolco)|[lewisvoncken](https://github.com/lewisvoncken)
+[sfritzsche](https://github.com/sfritzsche)|[oddyssey](https://github.com/oddyssey)
+[PascalBrouwers](https://github.com/PascalBrouwers)|[Vinai](https://github.com/Vinai)
+[xpoback](https://github.com/xpoback)|[RakeshJesadiya](https://github.com/RakeshJesadiya)
+[dgoldfeder](https://github.com/dgoldfeder)|[immanetize](https://github.com/immanetize)
+[gamort](https://github.com/gamort)|[bassplayer7](https://github.com/bassplayer7)
+[jaustinlam](https://github.com/jaustinlam)|[cmtickle](https://github.com/cmtickle)
+[clementblanco](https://github.com/clementblanco)| 
+[xfrenette](https://github.com/xfrenette)| 
+[Avinashsain](https://github.com/Avinashsain)| 
+[sadon](https://github.com/sadon)| 
+[geetikatina](https://github.com/geetikatina)| 
+[patchee500](https://github.com/patchee500)| 
+[jrapm](https://github.com/jrapm)| 
+[ychadwick](https://github.com/ychadwick)| 
+[wangzhi0417](https://github.com/wangzhi0417)| 
+[AndyHodgesStemcell](https://github.com/AndyHodgesStemcell)| 
+[Sharkozp](https://github.com/Sharkozp)| 
+[Lewiscowles1986](https://github.com/Lewiscowles1986)| 
+[rnicklin](https://github.com/rnicklin)| 
+[SunshineTech](https://github.com/SunshineTech)| 
+[istitutoculturaitaliana](https://github.com/istitutoculturaitaliana)| 
+[surajtupe](https://github.com/surajtupe)| 
+[ArvidBaa](https://github.com/ArvidBaa)| 
+[shyang292](https://github.com/shyang292)| 
+[rossmitchell](https://github.com/rossmitchell)| 
+[Volvoxpl](https://github.com/Volvoxpl)| 
+[neeta-wagento](https://github.com/neeta-wagento)| 
 
 Follow the easy instructions on [how to contribute to DevDocs][0] to join these contributors!
 
