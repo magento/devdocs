@@ -294,6 +294,20 @@
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="onboarding-tasks">
+            
+            
+        
+            
+            <a href="/guides/v2.2/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -393,41 +407,6 @@
         
             
             <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
-            
-
-            
-        </li>
-        
-        
-    </ul>
-    
-</li>
-
-
-    
-    
-
-<li class="nav-level1  " id="onboarding-tasks">
-
-    
-    <div class="toggle closed">&nbsp;</div>
-    
-    
-    
-    <a href="/guides/v2.2/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a>
-    
-
-    
-    <ul>
-        
-        
-        
-        <li class="nav-level2  " id="prepare-project-environments">
-            
-            
-        
-            
-            <a href="/guides/v2.2/cloud/before/before-project-owner.html">Prepare project environments</a>
             
 
             
@@ -2107,7 +2086,7 @@
 <p>For details, review your Fastly accounts and <a href="https://docs.fastly.com/">documentation</a> to remove the domains. This may include removing and updating CNAME records and more.</p>
 
 <h2 id="cloud-fastly-creds">Get your Fastly credentials</h2>
-<p>To get Fastly credentials, open a <a href="/guides/v2.2/cloud/welcome/get-help.html">support ticket</a>. You must provide your fully-qualified domain name.</p>
+<p>To get Fastly credentials, open a <a href="/guides/v2.2/cloud/trouble/trouble.html">support ticket</a>. You must provide your fully-qualified domain name.</p>
 
 <p>We’ll provide you with the following credentials for your Staging and Production services:</p>
 
@@ -2297,7 +2276,7 @@ composer require fastly/magento2
       <p><img src="/common/images/cloud_upload-vcl-to-fastly.png" alt="Upload a Magento VCL to Fastly" /></p>
 
       <div class="bs-callout bs-callout-info" id="info">
-  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. For details, see <a href="/guides/v2.2/cloud/howtos/update-components.html">Update extensions</a>. Fastly’s Composer name is <code class="highlighter-rouge">fastly/magento2</code>.
+  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. Fastly’s Composer name is <code class="highlighter-rouge">fastly/magento2</code>.
       </div>
     </li>
     <li>
@@ -2447,7 +2426,7 @@ composer require fastly/magento2
   <p>Refer to <a href="/guides/v2.2/cloud/live/go-live-checklist.html">Go live checklist</a> for more information.</p>
 
   <h3 id="fastly-tls">TLS and Fastly</h3>
-  <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="#dns">Support ticket</a> for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
+  <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket]/guides/v2.2/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
 
   <p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="\_blank">DNS TXT record validation</a>.</p>
 
