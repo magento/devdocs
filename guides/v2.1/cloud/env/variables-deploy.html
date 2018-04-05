@@ -1896,29 +1896,6 @@
         
         
         
-        
-        
-        <li class="nav-level2  " id="composer-package-updates">
-            
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
-            
-            <a href="/guides/v2.1/cloud/composer-packages/patch-notes.html">Composer package updates</a>
-            
-
-            
-            <ul>
-                
-
-                
-                
-            </ul>
-            
-        </li>
-        
-        
     </ul>
     
 </li>
@@ -2031,7 +2008,7 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
 <ul>
   <li><strong>Default</strong>—<em>Not set</em></li>
-  <li><strong>Version</strong>—Magento 2.1 and later</li>
+  <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
 <p>Use to configure Redis page and default caching.</p>
@@ -2067,7 +2044,7 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
 <ul>
   <li><strong>Default</strong>—<em>Not set</em></li>
-  <li><strong>Version</strong>—Magento 2.1 and later</li>
+  <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
 <p>Use this environment variable to make sure message queues are running after a deployment. By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file. Refer to <a href="/guides/v2.1/config-guide/mq/manage-mysql.html">Manage message queues</a> for more information about how this works in Magento Open Source and Magento Commerce.</p>
@@ -2096,7 +2073,7 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <ul>
     <li><strong>Default</strong>—<em>Not set</em></li>
-    <li><strong>Version</strong>—Magento 2.1 and later</li>
+    <li><strong>Version</strong>—Magento 2.1.4 and later</li>
   </ul>
 
   <p>Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the <code class="highlighter-rouge">crypt/key</code> value in the <code class="highlighter-rouge">env.php</code> file. This does not overwrite an existing encryption key value in the <code class="highlighter-rouge">env.php</code> file.</p>
@@ -2164,15 +2141,6 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <p>Specifies which <a href="https://www.gnu.org/software/gzip">gzip</a>{target=”_blank} compression level (<code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code>) to use when compressing static content; <code class="highlighter-rouge">0</code> disables compression.</p>
 
-  <h3 id="scdstrategy"><code class="highlighter-rouge">SCD_STRATEGY</code></h3>
-
-  <ul>
-    <li><strong>Default</strong>—<code class="highlighter-rouge">standard</code></li>
-    <li><strong>Version</strong>—You cannot modify the strategy in 2.1.x.</li>
-  </ul>
-
-  <p>Deploys all static view files for all packages.</p>
-
   <h3 id="searchconfiguration"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></h3>
 
   <ul>
@@ -2200,7 +2168,7 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <ul>
     <li><strong>Default</strong>—<em>Not set</em></li>
-    <li><strong>Version</strong>—Magento 2.1 and later</li>
+    <li><strong>Version</strong>—Magento 2.1.4 and later</li>
   </ul>
 
   <p>Use to configure Redis session storage. You must specify the <code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">redis</code>, <code class="highlighter-rouge">host</code>, <code class="highlighter-rouge">port</code>, and <code class="highlighter-rouge">database</code> options for the session storage variable. For example:</p>
