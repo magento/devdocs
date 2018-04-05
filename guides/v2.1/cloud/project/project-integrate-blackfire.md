@@ -272,7 +272,3 @@ Blackfire provides great information to better profile and investigate the resul
 *	[Writing Tests](https://blackfire.io/docs/cookbooks/tests){:target="_blank"}
 *	[Writing scenarios](https://blackfire.io/docs/cookbooks/scenarios){:target="_blank"}
 *	[Reference Guide](https://blackfire.io/docs/reference-guide/index){:target="_blank"} to really understand what you profile
-
-#### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)

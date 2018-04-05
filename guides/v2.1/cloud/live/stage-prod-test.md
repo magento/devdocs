@@ -215,8 +215,3 @@ For best results, we recommend the following tools:
 
 ## Set up Magento Security Scan Tool {#security-scan}
 We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool]({{page.baseurl}}cloud/live/live.html#security-scan).
-
-#### Related topic
-* [Go live and launch]({{page.baseurl}}cloud/live/live.html)
-* [Go live checklist]({{page.baseurl}}cloud/live/go-live-checklist.html)
-* [Launch steps]({{page.baseurl}}cloud/live/launch-steps.html)

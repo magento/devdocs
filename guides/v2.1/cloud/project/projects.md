@@ -35,7 +35,6 @@ The following sections detail more about project and environment variables:
 *	[Overview of environment variables]({{page.baseurl}}cloud/env/variables-intro.html)
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
 *	[Configuration management]({{page.baseurl}}cloud/live/sens-data-over.html)
 *	[Example of configuration management]({{page.baseurl}}cloud/live/sens-data-initial.html)
 
@@ -58,7 +57,7 @@ Your project includes [Blackfire]({{page.baseurl}}cloud/project/project-integrat
 
 To review your integration tokens, IDs, and more:
 
-1. As the {{site.data.var.ece}} Account Owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-access) to your Magento Commerce project.
+1. As the {{site.data.var.ece}} Account Owner, log in to your Magento Commerce project.
 2. In the upper right corner, click **&lt;your name>** > **Account Settings**.
 
 	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png)
@@ -140,18 +139,11 @@ You can manage variables and settings for Production, Staging, and Integration e
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png)
 
-This displays the following page, which enables you to configure settings, [variables]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [users]({{page.baseurl}}cloud/project/user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html, [routes]({{page.baseurl}}cloud/project/project-conf-files_routes.html), and [users]({{page.baseurl}}cloud/project/user-admin.html).
 
 ![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
 
 ## Configure the project
-Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{page.baseurl}}cloud/project/user-admin.html), and [deploy keys]({{page.baseurl}}cloud/project/project-priv-repos.html) associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
+Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
 
 ![configure project]({{ site.baseurl }}common/images/cloud_project-config.png)
-
-#### Related topics
-*	[Configure Magento Commerce]({{page.baseurl}}cloud/configure/configuration-overview.html)
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)

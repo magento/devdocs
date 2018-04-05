@@ -61,8 +61,3 @@ To remove the component:
         git commit -m "<message>"
         git push origin <environment ID>
 
-
-#### Related topics
-*	[Manage your projects]({{page.baseurl}}cloud/project/projects.html)
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[Tutorials]({{page.baseurl}}cloud/howtos/how-to.html)

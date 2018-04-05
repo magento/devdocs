@@ -90,6 +90,3 @@ To summarize the procedure:
 6.  Click **Content** > Design > **Themes**.
 
     The theme displays in the right pane.
-
-#### Related topics
-*	[Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)

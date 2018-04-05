@@ -46,7 +46,7 @@ If no endpoints are defined, a single endpoint named `mysql` has `admin` access 
 
 Example:
 
-{% highlight yaml %}
+```
 mysqldb:
     type: mysql:10.0
     disk: 2048
@@ -65,7 +65,7 @@ mysqldb:
                 privileges:
                     main: rw
 
-{% endhighlight %}
+```
 
 In the preceding example, the endpoint (that is, user) `reporter` has `ro` privileges to the `main` database and endpoint `importer` has `rw` access to the `main` database. This means that:
 
@@ -93,7 +93,7 @@ Merge and deploy the code to set the configurations for Redis. For information o
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 * If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
-* MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
+* MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#disk).
 </div>
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
@@ -108,7 +108,7 @@ To verify this information used for configurations and settings:
 
 The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for MySQL:
 
-{% highlight bash %}
+```
 {
   "database": [
     {
@@ -125,9 +125,4 @@ The response includes all relationships for services and configuration data for 
     }
   ]
 }
-{% endhighlight %}
-
-#### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+```

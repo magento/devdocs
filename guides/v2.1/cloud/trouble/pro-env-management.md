@@ -178,6 +178,3 @@ You can use CLI commands to remove the variables if you want while still accessi
 When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration Master and so on. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
-
-#### Related topics
-* [Manage your project]({{page.baseurl}}cloud/project/projects.html)

@@ -144,11 +144,6 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
 #### Verify the deployment
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
-<div class="bs-callout bs-callout-warning">
-	<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{page.baseurl}}cloud/env/set-variables.html">Set Magento environment variables</a>.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see [Set environment and project variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 </div>
-
-#### Related topics
-*	[Manage your projects]({{page.baseurl}}cloud/project/projects.html)
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[Tutorials]({{page.baseurl}}cloud/howtos/how-to.html)

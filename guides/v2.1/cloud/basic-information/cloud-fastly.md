@@ -98,8 +98,3 @@ The installation and configuration process is:
 
 For instructions, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html). After you have configured it, you can continue with advanced options including custom VCL snippets.
 
-#### Related topics
-
-* [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
-* [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
-* [Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)

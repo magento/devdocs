@@ -179,5 +179,3 @@ When accessing the Project Web Interface, you should see a hierarchy of branches
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
 
-#### Related topics
-* [Manage your project]({{page.baseurl}}cloud/project/projects.html)

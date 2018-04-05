@@ -29,7 +29,7 @@ The following environment variables are available for overriding administrative 
     </tr>
     <tr>
       <td><code>ADMIN_EMAIL</code></td>
-      <td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+      <td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
     </tr>
     <tr>
       <td><code>ADMIN_LOCALE</code></td>
