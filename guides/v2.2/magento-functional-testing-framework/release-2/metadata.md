@@ -13,7 +13,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 In this topic we talk about handling entities that you need in your tests (like categories, products, wish lists etc) using the MFTF.
-Due to data handling actions like [createData], [deleteData], [updateData], [getData], you are able to create, delete, update, and read entities for your tests. 
+Using data handling actions like [createData], [deleteData], [updateData], [getData], you are able to create, delete, update, and read entities for your tests. 
 The framework uses two approaches to handle data entities:
 - [Using REST API requests][rest api section]
 - [Using HTML forms encoded in URL][html form section]
@@ -168,9 +168,9 @@ Since the action is __to create__ a category, the MFTF will also search for oper
 Let's see what's encoded in `<operation>`:
   - `name="CreateCategory"` defines a descriptive name of the operation, which is used for merging if needed
   - `dataType="category"` defines a relation with data entities with input data for a Category (`<entity type="category">`)
-  - `auth="adminOauth"` defines Oath authorization which is required for the Admin area
+  - `auth="adminOauth"` defines Oauth authorization which is required for the Admin area
   - `url="/V1/categories"` defines a routing URL to the corresponding service class
-  (The request will be sent to `https://example.com/rest/V1/categories` if `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin` are set in the _acceptance/.env_ configuration file.)
+  (The request will be sent to [https://example.com/rest/V1/categories]() if `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin` are set in the _acceptance/.env_ configuration file.)
   - `method="POST"` defines a POST method of the HTTP request
 
 `<contentType>application/json</contentType>` defines a content type of the REST API request, which is set as `application/json` here.
@@ -187,8 +187,8 @@ Using the [Reference], we can trace how JSON request was converted into XML repr
 {                                           // XML representation in the MFTF metadata format (see 'Catalog/Metadata/category-meta.xml')
   "category": {                             // <object key="category" dataType="category">
     "id": 0,                                // Skipped, because Category ID is not available on UI when you create a new category.
-    "parent_id": 0,                         // <field key="parent_id">integer</field>\
-    "name": "string",                       // <field key="name">string</field>'
+    "parent_id": 0,                         // <field key="parent_id">integer</field>
+    "name": "string",                       // <field key="name">string</field>
     "is_active": true,                      // <field key="is_active">boolean</field>
     "position": 0,                          // <field key="position">integer</field>
     "level": 0,                             // <field key="level">integer</field>
@@ -250,7 +250,7 @@ The MFTF searches in _Data_ an entity with `<entity name="guestCart">` and reads
  </operation>
  ```
  
-As a result, the MFTF sends unauthorized POST request with empty body to the [https://example.com/rest/V1/guest-carts]().
+As a result, the MFTF sends unauthorized POST request with empty body to the [https://example.com/rest/V1/guest-carts]() and stores the single string response that the endpoint returns.
 
 ## Using HTML forms {#using-html-forms}
 
@@ -426,6 +426,7 @@ Example:
 [actions]: test/actions.html
 [api reference]: {{page.baseurl}}rest/bk-rest.html
 [application/x-www-form-urlencoded]: https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1
+{:target="_blank"}
 [catalogCategoryRepositoryV1 image]: img/catalogCategoryRepository-operations.png
 [catalogCategoryRepositoryV1SavePostBody]: #catalogCategoryRepositoryV1SavePostBody
 [contentType]: #contenttype-tag
@@ -437,7 +438,9 @@ Example:
 [get information about a category by its ID]: #get-object-as-adminOauth
 [getData]: test/actions.html#getdata
 [HTML forms]: https://www.w3.org/TR/html401/interact/forms.html
+{:target="_blank"}
 [oauth]: {{page.baseurl}}get-started/authentication/gs-authentication-oauth.html
+{:target="_blank"}
 [operation]: #operation-tag
 [reference]: #reference
 [rest api section]: #handlinh-with-api
