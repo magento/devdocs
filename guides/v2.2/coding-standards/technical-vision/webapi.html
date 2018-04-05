@@ -587,7 +587,7 @@
 
 <ol>
   <li>Create custom resolvers.</li>
-  <li>Declare a custom query and all necessary types in <code class="highlighter-rouge">graphql.xml</code></li>
+  <li>Declare a custom query and all necessary types in <code class="highlighter-rouge">schema.graphqls</code></li>
 </ol>
 
 <p>If the target module is called <code class="highlighter-rouge">MyModule</code>, then create the resolvers and configuration files in a a new module called <code class="highlighter-rouge">MyModuleGraphQl</code>.</p>
@@ -623,10 +623,10 @@
 
 <ol>
   <li>
-    <p>Add a <code class="highlighter-rouge">graphql.xml</code> file to the <code class="highlighter-rouge">&lt;ModuleName&gt;GraphQl</code> module. Magento merges this file with configurations from other modules using the same merge rules as other types of configuration.</p>
+    <p>Add a <code class="highlighter-rouge">schema.graphqls</code> file to the <code class="highlighter-rouge">&lt;ModuleName&gt;GraphQl</code> module. Magento merges this file with configurations from other modules using the same merge rules as other types of configuration.</p>
   </li>
   <li>
-    <p>Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in <code class="highlighter-rouge">graphql.xml</code></p>
+    <p>Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in <code class="highlighter-rouge">schema.graphqls</code></p>
   </li>
 </ol>
 
@@ -661,7 +661,7 @@
   <li>Unlimited nesting should be supported during requests for related entities. (For example, get Order =&gt; Order Items =&gt; Products =&gt; Related Products)</li>
   <li>Field filtration must be performed with SQL queries. Do not filter on the application layer after you’ve fetched all possible fields.</li>
   <li>Third-party customizations must be done separately for Service Contracts and for GraphQL</li>
-  <li>For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module <code class="highlighter-rouge">MyModule</code>, you must create the <code class="highlighter-rouge">graphql.xml</code> file in the <code class="highlighter-rouge">MyModuleGraphQl</code> module.</li>
+  <li>For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module <code class="highlighter-rouge">MyModule</code>, you must create the <code class="highlighter-rouge">schema.graphqls</code> file in the <code class="highlighter-rouge">MyModuleGraphQl</code> module.</li>
   <li>GraphQL is primarily designed for store-front one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries</li>
   <li>All queries must return the 200 HTTP status code. If an error occurs, return the error in the response body. A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.</li>
   <li>The Store code should be passed via headers.</li>
