@@ -2,21 +2,22 @@
 layout: default
 group: graphql
 version: 2.3
-title: Create a
+title: Define the GraphQL schema for a module
 github_link: graphql/develop/create-graphqls-file.md
 ---
 
-A module's `schema.graphqls` file defines how the attributes defined in the module can be used in a GraphQL query. If your module's attributes are completely self-contained, then the `schema.graphqls` file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module extends another module (such as Catalog), then you must ensure that the other module can load your attributes.
+Each module that supports GraphQL should have a corresponding module whose name ends with `*GraphQl`. This `*GraphQl` module defines all the GraphQL functionality for the primary module. For example, the `CustomerGraphQl` module defines the GraphQL capalities of the `Customer` module.
 
-The `<module_name>/etc/schema.graphqls` file defines the GraphQL schema for a module. This file:
+A GraphQL module's `schema.graphqls` file defines how the attributes defined in the module can be used in a GraphQL query. If your module's attributes are completely self-contained, then the `schema.graphqls` file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must defines those attributes and ensure that the other module can load your attributes.
+
+The `<module_name>/etc/schema.graphqls` file:
 
 * Defines the structure of queries.
 * Determines which attributes to make available for GraphQL queries. You can define separate lists of attributes for queries and results.
+* Points to the resolvers that verify and process the query data and response
 * Serves as the source for displaying the schema in a GraphQL browser
 
-The base `schema.graphqls` file, located in the `app/code/GraphQl/etc/` directory, provides the basic structure for all GraphQL queries, including definitions for comparison operators and paging information for search results.
-
-The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
+The base `schema.graphqls` file, located in the `app/code/GraphQl/etc/` directory, provides the basic structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
 
 To illustrate how to configure the `schema.graphqls` file, let's suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. We'll assume this module extends the Catalog module.
 
@@ -50,9 +51,9 @@ If all your module's attributes are extension attributes for existing modules, t
 
 ## Declare input attributes
 
-You must explicitly define each attribute that can be used as input in a GraphQL query.
+You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single `type` defintion that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren't available at the time of the query.
 
-Because the Volumizer module extends `Catalog`, reference `ProductFilterInput` as the source and make each attribute be of type `FilterTypeInput`. In other use cases, you would be required to create your own input type.
+The theoretical Volumizer module extends `Catalog`. In this case, you would reference `ProductFilterInput` as the source and make each attribute be of type `FilterTypeInput`. (Both of these entities are defined in `CatalogGraphQl`'s `schema.graphqls` file. In other use cases, you would be required to create your own input type.
 
 The following example defines three Volumizer attributes (`v_height`, `v_width`, `v_depth`) that must be specified as input to a query.
 
@@ -74,12 +75,11 @@ This example allows sorting on the `v_volume` attribute only.
 input ProductSortInput {
     v_volume: SortEnum
 }
-
 ```
 
 `ProductSortInput` indicates that the attributes are available to catalog (Product) queries. If you specify a module-specific value such as `VolumizerSortInput`, then the attribute will be available only to queries processed by that module.
 
-`SortEnum` is defined in the base `graphql.xml` file.
+`SortEnum` is defined in the base `schema.graphqls` file.
 
 ## Specify output attributes {#specify-output-attributes}
 
@@ -94,7 +94,7 @@ In many cases, the response contains data that was either not available as input
 The following example defines module-specific output attributes for the Volumizer module.
 
 ``` php
-interface ProductInterface @typeResolver(class: ""){
+interface ProductInterface @typeResolver(class: "\\Path\\To\\typeResolver\\Class"){
     v_height: Float
     v_width: Float
     v_depth: Float
@@ -102,68 +102,31 @@ interface ProductInterface @typeResolver(class: ""){
 }
 ```
 
+The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}graphql/resolvers.html) for more information.
 
-Parameter | Description
---- | ---
-`xsi:type` | Required. Must be `OutputInterface`
-`name` | Required. A name, such as *ModuleName*`Interface` that uniquely identifies the output interface.
-`typeResolver` | The path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}graphql/resolvers.html) for more information.
+The `v_volume` attribute is defined as a `VolumeWithUnit` object. This object might be defined as follows:
 
-For example:
-
-``` xml
-<type xsi:type="OutputInterface" name="ProductInterface" typeResolver="PathToModule\Model\MyResolver">
-...
-</type>
+``` php
+type VolumeWithUnit {
+    caclulated_volume: Float
+    unit: VolumeUnitEnum
+}
 ```
 
-Each attribute is defined as follows:
-
-Parameter | Description
---- | ---
-`xsi:type` | Required. The value must be `ScalarOutputField`, `ScalarArrayOutputField`, `ObjectOutputField`, or `ObjectArrayOutputField`
-`name` | The attribute name
-`type` | Used only when the `xsi:type` is `ScalarOutputField` or `ObjectOutputField`. Specifies the attribute's data type, such as `String`, `Int`, `Float`, `Boolean`, or an object name.
-`itemType` | Used only when the `xsi:type` is `ScalarArrayOutputField` or `ObjectArrayOutputField`. Specifies an object name.
-
-For example:
-
-``` xml
-<field xsi:type="ScalarOutputField" name="v_height" type="Float"/>
-<field xsi:type="ScalarOutputField" name="v_width" type="Float"/>
-<field xsi:type="ScalarOutputField" name="v_depth" type="Float"/>
-<field xsi:type-"ObjectOutputField" name="v_volume" type="VolumeWithUnit"/>
-```
-
-### Define attribute output types
-
-Individual output types have the same structure as the output interface definition with the following exceptions:
-
-* The `xsi:type` parameter must be set to `OutputType`.
-* The `name` must match a value defined by the `type` parameter.
-* The `typeResolver` parameter is not used.
-
-The following example shows the output type definition of the `VolumeWithUnit` object:
-
-``` xml
-<type xsi:type="OutputType" name="VolumeWithUnit">
-  <field xsi:type="ScalarOutputField" name="v_number" type="Float"/>
-  <field xsi:type="ScalarOutputField" name="v_unit" type="String"/>
-</type>
-```
+The Volumizer module could return the `calculated_volume`, while the `unit` is an enumeration, described below.
 
 ### Define enumerations
 
 You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_).
 
-``` xml
-enum VolumeEnum {
+``` php
+enum VolumeUnitEnum {
   IN3
   FT3
   CM3
   M3
 }
 ```
-<div class="bs-callout bs-callout-warning" id="info" markdown="1">
-The specified `name` must end with the string `Input`.
-</div>
+## Annotations
+
+You can provide a description  attribute

@@ -21,27 +21,27 @@ A GraphQL-enabled module handles externally-defined attributes differently than 
 
 * **EAV attributes** are explicitly declared in the schema. Any attribute values will be pulled from the database, if they exist.
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
-* **Extension attributes** can be declared in a `graphql.xml` file or by a custom reader, but they should be declared in a separate `*GraphQL` module. The attributes should extend from the resolver that fetches that model's data.
+* **Extension attributes** can be declared in a `schema.graphqls` file or by a custom reader, but they should be declared in a separate `*GraphQl` module. The attributes should extend from the resolver that fetches that model's data.
 
 You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the front end.
 
 The current GraphQL codebase also supports the following features:
 
-* You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter on products. This is new functionality available only with GraphQL.
+* You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter oncts. This is new functionality available only with GraphQL.
+* All product types are supported. Currently, previous versions supported simple and configurable products only.
 * A product query returns complex price objects that include the amount, the currency code, and any adjustments.
 * You can query attributes of a logged-in customer. A session token provides authorization.
 * The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the `products` query.
 * Developers who have URLs being rewritten using the rewrites table can send these generated URLs to the `urlResolver` query and receive back the canonical URL in the response.
 * GraphQL supports multiple stores. The context is specified in the HTTP header.  Your GraphQL client must support HTTP headers to query the non-default store.
+* Attribute-level descriptions are displayed in the GraphQL browser.
 
 ## Where we're going
 
 In the near future, we'll roll out the following features:
 
-* Support of all product types. Currently, simple and configurable products are supported.
 * More robust error handling.
 * A more performant data retrieval mechanism.
-* Attribute-level help that will be displayed in the GraphQL browser.
 
 ## How to access GraphQL
 
@@ -49,4 +49,4 @@ GraphiQL is an in-browser tool for writing, validating, and testing GraphQL quer
 
 ![GraphiQL browser]({{page.baseurl}}/graphql/images/graphql-browser.png)
 
-To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar. Then use the browser in the right column to determine how to set up a query. Additional examples are also available at [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html).
+To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available at [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html).

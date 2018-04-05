@@ -14,8 +14,8 @@ pages:
 
     - label: Development
       children:
-        - label: Configure the GraphQL schema for a module
-          url: graphql/develop/configure-graphql-xml.html
+        - label: Define the GraphQL schema for a module
+          url: graphql/develop/create-graphqls-file.html
 
         - label: Resolvers
           url: graphql/develop/resolvers.html
@@ -23,7 +23,7 @@ pages:
         - label: Create a custom urlResolver service
           url: graphql/develop/create-custom-url-resolver.html
 
-        - label: Handling Exceptions
+        - label: Exception Handling
           url: graphql/develop/exceptions.html
 
     - label: Functional testing
