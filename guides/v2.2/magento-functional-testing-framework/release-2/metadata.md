@@ -12,11 +12,11 @@ mftf-release: 2.1.2
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-In this topic we talk about handling entities that you need in your tests (like categories, products, wish lists etc) using the MFTF.
-Using data handling actions like [createData], [deleteData], [updateData], [getData], you are able to create, delete, update, and read entities for your tests. 
+In this topic we talk about handling entities that you need in your tests (such as categories, products, wish lists, and similar) using the MFTF.
+Using data handling actions like [createData], [deleteData], [updateData], and [getData], you are able to create, delete, update, and read entities for your tests. 
 The framework uses two approaches to handle data entities:
-- [Using REST API requests][rest api section]
-- [Using HTML forms encoded in URL][html form section]
+- [Use REST API requests][rest api section]
+- [Use HTML forms encoded in URL][html form section]
 
 You have probably noticed that some modules in acceptance functional tests contain a directory, which is called `Metadata` .
 
@@ -34,16 +34,16 @@ Wishlist
 This directory contains XML files with metadata required to handle an entity defined in `dataType`.
 A metadata file contains a list of operations of different `type`.
 Each [operation] includes:
-- in attributes, the set of adjustments for processing a request, and, in some cases, a response  (see `successRegex` and `returnRegex` in [reference details][operation])
-- in [contentType], the type of body content encoding
-- body of the request represented as a tree of objects, arrays, fields
+- The set of adjustments for processing a request in [attributes][operation], and in some cases, a response  (see `successRegex` and `returnRegex` in [reference details][operation]).
+- The type of body content encoding in [contentType].
+- The body of the request represented as a tree of objects, arrays, and fields.
 
-When a test step requires to handle the specified data entity, the MFTF performs the following steps:
-- reads input `data` and `type` of the specified [entity]
-- searches the operation in _Metadata_ which `dataType` matches entity's `type` (e.g. `<entity type="product">` matches `<operation dataType="product"`) 
-- forms a request according to matching metadata of the operation and input data of the entity
+When a test step requires handling the specified data entity, the MFTF performs the following steps:
+- Reads input data (`<data/>`) and the type (the `type` attribute) of the specified [entity].
+- Searches the metadata operation for the `dataType` that matches entity's `type` (for example, `<entity type="product">` matches `<operation dataType="product"`) .
+- Forms a request of the operation and the input data of the entity according to matching metadata.
 
-The following diagram demonstrates XML structure of a metadata file:
+The following diagram demonstrates the XML structure of a metadata file:
 {% include_relative img/metadata-dia.svg %}
 
 ## Format   {#format}
@@ -72,8 +72,8 @@ The following diagram demonstrates XML structure of a metadata file:
 
 ## Principles   {#principles}
 
-* `dataType` value must match the `type` value of the corresponding entity.
-* File name contains data type split with `_` and ends with `-meta`.
+* The `dataType` value must match the `type` value of the corresponding entity.
+* The file name contains data type split with `_` and ends with `-meta`.
 Example: `product_attribute-meta.xml`.
 * A metadata file may contain different types of operations (`type`) with the same data entity (`dataType`).
 Example: 
@@ -97,7 +97,7 @@ Example:
 ## Handling entities using REST API {#handlinh-with-api}
 
 The MFTF allows you to handle basic CRUD operations with an object using [Magento REST API][api reference] requests.
-All you need is to wrap the corresponding REST API request into XML tags according to the [Reference documentation][reference].
+Just wrap the corresponding REST API request into XML tags according to the [Reference documentation][reference].
 
 {% include note.html
 type="info"
@@ -106,23 +106,22 @@ POST is used for creating new objects.<br/>
 PUT is used for updating objects.<br/>
 DELETE is used for deleting objects.<br/>" %}
 
-Let's see an example of how to handle a category using REST API operations provided by the `catalogCategoryRepositoryV1` service.
+This is an example of how to handle a category using REST API operations provided by the `catalogCategoryRepositoryV1` service.
 
 ![REST API operations provided by catalogCategoryRepositoryV1][catalogCategoryRepositoryV1 image]
 
-The above screen shot from [Magento REST API Refrence][api reference] demonstrates a list of available operations to:
-- delete a category by its identifier (`method="DELETE"`)
-- get information about a category by its ID (`method="GET"`)
-- [create a new category] (`method="POST"`)
-- update category data by its ID (`method="PUT"`)
+The above screenshot from the [Magento REST API Refrence][api reference] demonstrates a list of available operations to:
+- Delete a category by its identifier (`method="DELETE"`)
+- Get information about a category by its ID (`method="GET"`)
+- [Create a new category] (`method="POST"`)
+- Update category data by its ID (`method="PUT"`)
 
 We assume that our `.env` file sets `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin`.
 
-### Creating a simple category {#create-object-as-adminOauth}
+### Create a simple category {#create-object-as-adminOauth}
 
 Let's see what happens when you use the `<createData entity="_defaultCategory" stepKey="..."/>` test step.
-
-The MFTF searches in _Data_ an entity with `<entity name="_defaultCategory">` (in case of more then one entity with the same name, all entities are merged) and reads `type` of the entity.
+The MFTF searches in the _Data_ directory an entity with `<entity name="_defaultCategory">` (in case of more than one entity with the same name, all entities are merged) and reads `type` of the entity.
 
 > _Catalog/Data/CategoryData.xml_
 
@@ -134,7 +133,7 @@ The MFTF searches in _Data_ an entity with `<entity name="_defaultCategory">` (i
 </entity>
 ```
 
-Here, `type` equals to `"category"` that instructs the MFTF to search an operation with `dataType="category"`. 
+Here, `type` is equal to `"category"`, which instructs the MFTF to search an operation with `dataType="category"`. 
 Since the action is __to create__ a category, the MFTF will also search for operation with `type="create"` in _Metadata_ for `dataType="category"`.
 
 > _Catalog/Metadata/category-meta.xml_
@@ -165,21 +164,23 @@ Since the action is __to create__ a category, the MFTF will also search for oper
 ```
 (The corresponding operation is provided by _catalogCategoryRepositoryV1_ in [REST API][api reference].)
 
-Let's see what's encoded in `<operation>`:
-  - `name="CreateCategory"` defines a descriptive name of the operation, which is used for merging if needed
-  - `dataType="category"` defines a relation with data entities with input data for a Category (`<entity type="category">`)
-  - `auth="adminOauth"` defines Oauth authorization which is required for the Admin area
-  - `url="/V1/categories"` defines a routing URL to the corresponding service class
+The following is encoded in `<operation>`:
+  - `name="CreateCategory"` defines a descriptive name of the operation, which is used for merging if needed.
+  - `dataType="category"` defines a relation with data entities with input data for a Category (`<entity type="category">`).
+  - `auth="adminOauth"` defines Oauth authorization, which is required for the Admin area.
+  - `url="/V1/categories"` defines a routing URL to the corresponding service class.
   (The request will be sent to [https://example.com/rest/V1/categories]() if `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin` are set in the _acceptance/.env_ configuration file.)
-  - `method="POST"` defines a POST method of the HTTP request
+  - `method="POST"` defines a POST method of the HTTP request.
 
 `<contentType>application/json</contentType>` defines a content type of the REST API request, which is set as `application/json` here.
 
 The parameter that declares a body of the request is _catalogCategoryRepositoryV1SavePostBody_.
-Using the [Reference], we can trace how JSON request was converted into XML representation.
+Using the [Reference], we can trace how the JSON request was converted into XML representation.
 
-(Note that comments in the example below are used to demonstrate relation between JSON request and MFTF metadata in XML.
- JSON does not support comments.)
+{% include note.html
+type="info"
+content="Note that comments in the example below are used to demonstrate relation between JSON request and MFTF metadata in XML.
+JSON does not support comments."%}
 
 > Model schema for _catalogCategoryRepositoryV1SavePostBody_ with XML representation of _Catalog/Metadata/category-meta.xml_ in comments
 {:#catalogCategoryRepositoryV1SavePostBody}
@@ -211,7 +212,7 @@ Using the [Reference], we can trace how JSON request was converted into XML repr
 }
 ```
 
-So, the body of REST API request to create a simple category is the following:
+So, the body of a REST API request that creates a simple category is the following:
 
 ```json
 {                                             // XML representation of input data used to create a simple category ("Catalog/Data/CategoryData.xml")
@@ -222,25 +223,24 @@ So, the body of REST API request to create a simple category is the following:
 }
 ```
 
-### Creating an object as a guest {#create-object-as-anonymous}
+### Create an object as a guest {#create-object-as-anonymous}
 
-The corresponding test step is 
+The corresponding test step is:
 
 ```xml
 <createData entity="guestCart" stepKey="..."/>
 ```
 
-Let's see how it works.
-The MFTF searches in _Data_ an entity with `<entity name="guestCart">` and reads `type`.
+The MFTF searches in the _Data_ directory an entity with `<entity name="guestCart">` and reads `type`:
 
 > Source file: _Quote/Data/GuestCartData.xml_
 
 ```xml
-    <entity name="guestCart" type="guestCart">
-    </entity>
+<entity name="guestCart" type="guestCart">
+</entity>
 ```
 
-`type="guestCart"` points to the operation with `dataType=guestCart"` and `type="create"` in _Metadata_.
+`type="guestCart"` points to the operation with `dataType=guestCart"` and `type="create"` in the _Metadata_ directory:
 
 > Source file: _Catalog/Data/CategoryData.xml_
 
@@ -250,21 +250,20 @@ The MFTF searches in _Data_ an entity with `<entity name="guestCart">` and reads
  </operation>
  ```
  
-As a result, the MFTF sends unauthorized POST request with empty body to the [https://example.com/rest/V1/guest-carts]() and stores the single string response that the endpoint returns.
+As a result, the MFTF sends an unauthorized POST request with an empty body to the [https://example.com/rest/V1/guest-carts]() and stores the single string response that the endpoint returns.
 
-## Using HTML forms {#using-html-forms}
+## Handling entities using HTML forms {#using-html-forms}
 
 For cases when REST API is not applicable, you may use persisting with [HTML forms] (when all object parameters are encoded in a URL as `key=name` attributes).
 There are two different attributes to split access to different areas:
-* `auth="adminFormKey"` is used for objects in an Admin area
-* `auth="customerFormKey"` is used for objects in a store front
+* `auth="adminFormKey"` is used for objects in an Admin area.
+* `auth="customerFormKey"` is used for objects in a store front.
 
-Moreover, you are able to create assurances with `successRegex`, and even return values with `returnRegex`.
-Let's see a couple of examples.
+You are able to create assurances with `successRegex`, and even return values with `returnRegex`.
 
 ### Create an object in Admin {#create-object-as-adminFormKey}
 
-The `CreateStoreGroup` operation is used to persist a store group. 
+The `CreateStoreGroup` operation is used to persist a store group:
 
 > Source file: _Store/Metadata/store_group-meta.xml_
 
@@ -288,7 +287,7 @@ It sends a POST request (`method="POST"`) to [http://example.com/admin/system_st
 The request contains HTML form data encoded in the [application/x-www-form-urlencoded] content type (`<contentType>application/x-www-form-urlencoded</contentType>`).
 If the returned HTML code contains the `messages-message-success` string, it is resolved as successful.
 
-The operation allows to assign the following form fields:
+The operation enables you to assign the following form fields:
 * `group/group_id`
 * `group/name`
 * `group/code`
@@ -299,7 +298,7 @@ The operation allows to assign the following form fields:
 
 ### Create an object in store front {#create-object-as-customerFormKey}
 
-The MFTF uses the `CreateWishlist` operation to create a wish list on store front.
+The MFTF uses the `CreateWishlist` operation to create a wish list on store front:
 
 > Source file: _Wishlist/Metadata/wishlist-meta.xml_
 
@@ -317,7 +316,7 @@ It sends a POST request (`method="POST"`) to [http://example.com/wishlist/index/
 The request contains HTML form data encoded in the [application/x-www-form-urlencoded] content type (`<contentType>application/x-www-form-urlencoded</contentType>`).
 If the returned HTML code contains a string that matches the regular expression `~\/wishlist_id\/(\d*?)\/~`, it returns the matching value.
 
-The operation allows to assign three form fields:
+The operation assigns three form fields:
 * `product`
 * `customer_email`
 * `customer_password`
@@ -336,7 +335,7 @@ Attribute|Type|Use|Description
 `dataType`|string|required|Data type of the operation. It refers to a `type` attribute of data entity that will be used as a source of input data.
 `type`|Possible values: `create`, `delete`, `update`, `get`.|required|Type of operation.
 `url`|string|optional |A routing URL of the operation. Example: `/V1/categories`. The full URL at the end will contain: `ENV.baseUrl` + [/rest/]() + `url`.
-`auth`|Possible values: `adminOath`, `adminFormKey`, `customerFormKey`, `anonymous` |optional|Type of authorization of the operation.
+`auth`|Possible values: `adminOath`, `adminFormKey`, `customerFormKey`, `anonymous` |optional|Type of authorization. of the operation.
 `method`|string|optional|HTTP method of the operation. Possible values: `POST`, `DELETE`, `PUT`, `GET`.
 `successRegex`|string|optional|Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the `successRegex` exists.
 `returnRegex`|string|optional| Determines if the response contains the matching value to return.
@@ -349,22 +348,22 @@ POST is used for creating new objects.<br/>
 PUT is used for updating objects.<br/>
 DELETE is used for deleting objects.<br/>" %}
 
-
-* `adminOath` is used for REST API persistence in the Admin area with [OAuth-based authentication][oauth].
-* `adminFormKey` is used for HTML form persistence in the Admin area.
-* `customerFormKey` is used for HTML form persistence in the Customer area.
-* `anonymous` is used for REST API persistence without authorization.
+The following is a list with descriptions the `auth` possible values:
+- `adminOath` is used for REST API persistence in the Admin area with [OAuth-based authentication][oauth].
+- `adminFormKey` is used for HTML form persistence in the Admin area.
+- `customerFormKey` is used for HTML form persistence in the Customer area.
+- `anonymous` is used for REST API persistence without authorization.
 
 ### contentType {#contentType-tag}
 
 Sets one of the following operation types:
-- `application/json` is used for REST API operations
-- `application/x-www-form-urlencoded` is used for HTML form operations
+- `application/json` is used for REST API operations.
+- `application/x-www-form-urlencoded` is used for HTML form operations.
 
 ### object {#object-tag}
 
 Representation of a complex entity that may contain fields, arrays, and objects.
-An object must match [entity] of the same `type`.
+An object must match the [entity] of the same `type`.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -379,7 +378,7 @@ Representation of HTML form or REST API fields.
 Attribute|Type|Use|Description
 ---|---|---|---
 `key`|string|required|Name of the field. It must match the field name of the related [entity].
-`type`|string|optional|Type of the value. It may contain a primitive type or type of another operation.
+`type`|string|optional|Type of the value. It may contain a primitive type or the type of another operation.
 `required`|boolean|optional| Determines if the field is required or not. It must match the Magento REST API specification.
 
 ### array {#array-tag}
@@ -430,7 +429,7 @@ Example:
 [catalogCategoryRepositoryV1 image]: img/catalogCategoryRepository-operations.png
 [catalogCategoryRepositoryV1SavePostBody]: #catalogCategoryRepositoryV1SavePostBody
 [contentType]: #contenttype-tag
-[create a new category]: #create-object-as-adminOauth
+[Create a new category]: #create-object-as-adminOauth
 [createData]: test/actions.html#createdata
 [delete a category by its ID]: #delete-object-as-adminOauth
 [deleteData]: test/actions.html#deletedata
