@@ -175,13 +175,13 @@ The following is an example of a call in test:
 
 This action inputs data from the `name` of the `_defaultCategory` entity (for example, `simpleCategory598742365`) into the field with the locator defined in the selector of the `categoryNameInput` element of the `AdminCategoryBasicFieldSection`.
 
-## Elements reference
+## Reference
 
-### entities
+### entities {#entities-tag}
 
 `<entities>` is an element that contains all `<entity>`  elements.
 
-### entity
+### entity {#entity-tag}
 
 `<entity>` is an element that contains `<data>` elements.
 
