@@ -197,7 +197,3 @@ The following steps provide an example of accessing a database:
 ## SSH tunneling {#env-start-tunn}
 
 {% include cloud/ssh-tunnel.md %}
-
-#### Related topics
-*	[Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
-*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)

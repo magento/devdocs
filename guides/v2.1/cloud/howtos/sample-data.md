@@ -41,7 +41,3 @@ To install sample data:
 		magento-cloud snapshot:create -e <environment ID>
 
 You can start testing your development with live data!
-
-#### Related topics
-*	[Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)

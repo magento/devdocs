@@ -103,3 +103,4 @@ Wait for the environment to delete.
 <div class="bs-callout bs-callout-info" id="info">
   <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
 </div>
+

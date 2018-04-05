@@ -209,7 +209,3 @@ To branch and develop your Magento store:
 1.   Branch and develop in a new Git branch on your local workspace
 1.   Push code to Git to build and deploy to an environment for testing
 
-#### Related topics
--   [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
--   [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
--   [{{site.data.var.ee}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)

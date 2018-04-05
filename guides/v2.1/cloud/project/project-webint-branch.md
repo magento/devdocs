@@ -223,8 +223,3 @@ The branch redeploys to update the environment security and settings.
 To secure Pro plan Staging environment, enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html). Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.
 
 We recommend testing your environments after completing security settings.
-
-#### Related topics
-*	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
-*	[Project backup and restore (snapshot)]({{page.baseurl}}cloud/project/project-webint-snap.html)
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)

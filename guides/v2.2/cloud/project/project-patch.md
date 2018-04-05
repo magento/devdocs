@@ -227,6 +227,3 @@ After you've successfully tested a custom patch locally and on your Integration 
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
-
-#### Related topic
-* [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)

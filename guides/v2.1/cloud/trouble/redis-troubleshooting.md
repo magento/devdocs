@@ -66,8 +66,3 @@ If you continue to encounter these issues after using this method of deployment,
 3. Run the following command to reduce deployment threads: `php bin/magento setup:static-content:deploy -j 1`
 
 You can also set an environment variable for single thread deployment by default: `STATIC_CONTENT_THREADS = 1`.
-
-#### Related topics
-* [Set up the Redis service]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html)
-* [Patch and test Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-patch.html)
-* [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)

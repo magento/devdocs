@@ -280,8 +280,3 @@ If you want to activate an older version, you need to deactivate the currently a
 Then activate the version you want active:
 
   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate
-
-#### Related topics
-* [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
-* [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
-* [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)

@@ -250,9 +250,3 @@ To resolve the error:
 
 ### Deployment error {#deploy-error}
 If you encounter a deployment error to Pro Staging and Production environments, you need to have us update your `.magento.app.yaml` hooks. Please enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
-
-#### Related topic
-* [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-* [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
-* [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-* [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)

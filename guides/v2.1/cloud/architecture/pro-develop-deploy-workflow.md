@@ -80,9 +80,3 @@ After thorough testing in the Staging environment, merge to the Production envir
 You should always push a copy of the Production code to the Global Master in case there is an emergent need to debug the Production environment without interrupting services.
 
 Do **not** create a branch from Global Master. Use the `integration` branch to create new, active branches for development and fixes.
-
-#### Related topics
-
--  [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html)
--  [Local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
--  [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)

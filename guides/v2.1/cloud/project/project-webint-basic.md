@@ -168,9 +168,3 @@ We recommend [creating a snapshot]({{page.baseurl}}cloud/project/project-webint-
 
 *	Environment variable added
 *	Environment snapshot created
-
-#### Related topics
-* [Project structure]({{page.baseurl}}cloud/project/project-start.html)
-* [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
-*	[Manage branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
-*	[Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html)

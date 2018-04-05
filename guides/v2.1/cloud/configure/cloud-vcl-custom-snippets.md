@@ -224,8 +224,3 @@ Fastly supports two types of snippets:
 -   [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="\_blank"} are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.
 -   [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="\_blank"} are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.
 
-#### Related topics
-
--   [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html)
--   [Set up Fastly]({{page.baseurl}}cloud/access-acct/fastly.html)
--   [Troubleshoot Fastly]({{page.baseurl}}cloud/trouble/trouble_fastly.html)
