@@ -41,6 +41,9 @@ pages:
       - label: Data
         url: magento-functional-testing-framework/release-2/data.html
 
+      - label: Metadata
+        url: magento-functional-testing-framework/release-2/metadata.html
+
       - label: Merging
         url: magento-functional-testing-framework/release-2/merging.html
 
