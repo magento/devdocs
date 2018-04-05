@@ -384,21 +384,21 @@
 				</div>
 			</div>
 
-			<p>Magento 2 has a special mechanism which allows you to create database tables, modify existing ones,and even add some data into them(like setup data, which has to be added when a module is installed).
+			<p>Magento 2 has a special mechanism that enables you to create database tables, modify existing ones, and even add some data into them (like setup data, which has to be added when a module is installed).
 This mechanism allows those changes to be transferable between different installations.</p>
 
-<p>The key concept is that,instead of doing manual SQL operations that you have to do again and again when reinstalling the system, developers create an install (or upgrade) script that contains the data.
-The script will be executed every time a module is installed.</p>
+<p>The key concept is that, instead of doing manual SQL operations that you have to do again and again when reinstalling the system, developers create an install (or upgrade) script that contains the data.
+The script runs every time a module is installed.</p>
 
-<p>Magento 2 has four types of such scripts: InstallSchema, InstallData, UpgradeSchema and UpgradeData.
-The install scripts are executed only once, while the upgrade scripts are executed every time the module’s version get changed.</p>
+<p>Magento 2 has four types of such scripts: InstallSchema, InstallData, UpgradeSchema, and UpgradeData.
+The install scripts run only once, while the upgrade scripts are executed every time the module’s version get changed.</p>
 
 <p>To look at all four script types, we’ll complete the following greeting page tasks:</p>
 
 <ul>
   <li>Create a <code class="highlighter-rouge">greeting_message</code> table with the columns greeting_id and message.</li>
-  <li>Add two records: “Happy New Year”, “Happy Holidays”.</li>
-  <li>Next, modify the table by adding another field, “season”, to which we add the records “Happy Thanksgiving” and “Fall’”.</li>
+  <li>Add two records: “Happy New Year” and “Happy Holidays”.</li>
+  <li>Modify the table by adding another field, “season”, to which we add the records “Happy Thanksgiving” and “Fall’”.</li>
   <li>Update the types for the first and second records.</li>
 </ul>
 
@@ -414,13 +414,11 @@ The install scripts are executed only once, while the upgrade scripts are execut
   <li>Run the upgrade scripts and verify that the table has changed.</li>
 </ol>
 
-<p>Let’s go through each step.</p>
-
 <h2 id="step-1-create-a-new-module">Step 1: Create a new module</h2>
 
-<p>We will create a new module called <code class="highlighter-rouge">Learning_GreetingMessage</code>.</p>
+<p>Create a new module called <code class="highlighter-rouge">Learning_GreetingMessage</code>.</p>
 
-<p>Go into the <code class="highlighter-rouge">app/code</code> folder and create the folders <code class="highlighter-rouge">Learning</code> and <code class="highlighter-rouge">Learning/GreetingMessage</code>:</p>
+<p>Navigate to the <code class="highlighter-rouge">app/code</code> folder and create the folders <code class="highlighter-rouge">Learning</code> and <code class="highlighter-rouge">Learning/GreetingMessage</code>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code
 $ mkdir Learning
@@ -462,13 +460,13 @@ $ mkdir Learning/GreetingMessage
 
 <h2 id="step-2-create-an-installschema-script">Step 2: Create an InstallSchema script</h2>
 
-<p>To create an InstallSchema script, go into the <code class="highlighter-rouge">app/code/Learning/GreetingMessage</code> folder and create a <code class="highlighter-rouge">Setup</code> folder.</p>
+<p>To create an InstallSchema script, navigate to the <code class="highlighter-rouge">app/code/Learning/GreetingMessage</code> folder and create a <code class="highlighter-rouge">Setup</code> folder.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code/Learning/GreetingMessage
 $ mkdir Setup
 </code></pre></div></div>
 
-<p>Now create the file <code class="highlighter-rouge">Setup/InstallSchema.php</code></p>
+<p>Create the file <code class="highlighter-rouge">Setup/InstallSchema.php</code>.</p>
 
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
 * Copyright © 2016 Magento. All rights reserved.
@@ -521,14 +519,14 @@ $ mkdir Setup
 The main code is located in the <code class="highlighter-rouge">install()</code> method, which has a <code class="highlighter-rouge">$setup</code> parameter.
 This is a key parameter, because it gives access to the <code class="highlighter-rouge">Connection()</code> object that allows database manipulations.</p>
 
-<p>The connection is an instance of <code class="highlighter-rouge">Magento\Framework\DB\Adapter\Pdo\Mysql</code> class.</p>
+<p>The connection is an instance of the <code class="highlighter-rouge">Magento\Framework\DB\Adapter\Pdo\Mysql</code> class.</p>
 
 <p>Magento uses DDL (Data Definition Language) to manipulate the database.
 You can find various examples of DDL in the Magento 2 core code.</p>
 
 <h2 id="step-3-create-an-installdata-script">Step 3: Create an InstallData script</h2>
 
-<p>Now let’s create the <code class="highlighter-rouge">Setup/InstallData.php</code> file:</p>
+<p>Let’s create the <code class="highlighter-rouge">Setup/InstallData.php</code> file:</p>
 
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
@@ -572,7 +570,7 @@ You can find various examples of DDL in the Magento 2 core code.</p>
 
 <h2 id="step-4-add-a-new-module-and-verify-that-a-table-with-data-was-created">Step 4: Add a new module and verify that a table with data was created</h2>
 
-<p>Now it is time to run the Install scripts and verify that a table with the initial data is there, so we’ll run the <code class="highlighter-rouge">setup:upgrade</code> script.</p>
+<p>Run the <code class="highlighter-rouge">setup:upgrade</code> script to verify that a table with the initial data is there:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
@@ -580,7 +578,7 @@ $ php bin/magento setup:upgrade
 
 <p>You should see a long list of modules that contain <code class="highlighter-rouge">Learning_GreetingMessage</code>.</p>
 
-<p>Now let’s connect to the database: <code class="highlighter-rouge">mysql -u&lt;user&gt; -p&lt;password&gt; &lt;database&gt;</code></p>
+<p>Connect to the database: <code class="highlighter-rouge">mysql -u&lt;user&gt; -p&lt;password&gt; &lt;database&gt;</code>.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SHOW TABLES LIKE “%greeting%”
 
@@ -602,10 +600,9 @@ SELECT * FROM greeting_message;
 
 <h3 id="check-that-the-table-and-data-are-there">Check that the table and data are there</h3>
 
-<p>How does this work?
-When you create a new module and run the <code class="highlighter-rouge">bin/magento setup:upgrade</code> script, Magento checks the codebase to see if there are modules that were not installed.
+<p>When you create a new module and run the <code class="highlighter-rouge">bin/magento setup:upgrade</code> script, Magento checks the codebase to see if there are modules that were not installed.
 If it finds any, it checks whether there are any install scripts and if so, runs them.
-After that, Magento updates the table setup_module and puts information about the module and its version there:</p>
+Magento then updates the table <code class="highlighter-rouge">setup_module</code> and puts information about the module and its version there:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM setup_module WHERE module='Learning_GreetingMessage';
 
@@ -628,8 +625,6 @@ If the current version is higher, it will run the upgrade scripts (discussed nex
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;module name="Learning_GreetingMessage" setup_version="0.0.2"&gt;
 </code></pre></div></div>
-
-<p><br /></p>
 
 <p>Then create the file <code class="highlighter-rouge">Setup/UpgradeSchema.php</code>:</p>
 
@@ -673,14 +668,14 @@ If the current version is higher, it will run the upgrade scripts (discussed nex
 <span class="p">}</span></code></pre></figure>
 </div></div>
 
-<p>Note the “version_compare” line.
+<p>Review the “version_compare” line.
 As described earlier, the UpgradeScript will be executed every time the version in <code class="highlighter-rouge">module.xml</code> has changed.
 So we only want the current version upgrade script to execute, and not previous upgrades.
 That’s why we put upgrades into “if” clauses.</p>
 
 <h2 id="step-6-create-the-upgradedata-script">Step 6: Create the UpgradeData script</h2>
 
-<p>Now we’ll create the file <code class="highlighter-rouge">Setup/UpgradeData.php</code>:</p>
+<p>To create the <code class="highlighter-rouge">Setup/UpgradeData.php</code> file:</p>
 
 <div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
@@ -711,10 +706,10 @@ That’s why we put upgrades into “if” clauses.</p>
         <span class="p">)</span> <span class="p">{</span>
             <span class="nv">$table</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">);</span>
             <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
-                <span class="o">-&gt;</span><span class="na">insertForce</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Happy Thanksgiving, '</span><span class="nx">season</span><span class="s1">' =&gt; '</span><span class="nx">fall</span><span class="s1">']);
+                <span class="o">-&gt;</span><span class="na">insertForce</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Happy Thanksgiving'</span><span class="p">,</span> <span class="s1">'season'</span> <span class="o">=&gt;</span> <span class="s1">'fall'</span><span class="p">]);</span>
 
-            $setup-&gt;getConnection()
-                -&gt;update($table, ['</span><span class="nx">season</span><span class="s1">' =&gt; '</span><span class="nx">winter</span><span class="s1">'], '</span><span class="nx">greeting_id</span> <span class="nx">IN</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="err">'</span><span class="p">);</span>
+            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">'season'</span> <span class="o">=&gt;</span> <span class="s1">'winter'</span><span class="p">],</span> <span class="s1">'greeting_id IN (1,2)'</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
     <span class="p">}</span>
@@ -723,7 +718,7 @@ That’s why we put upgrades into “if” clauses.</p>
 
 <h2 id="step-7-run-the-upgrade-scripts-and-verify-that-the-table-has-changed">Step 7: Run the upgrade scripts and verify that the table has changed</h2>
 
-<p>We’ll run the SetupUpgrade script again:</p>
+<p>Run the SetupUpgrade script again:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
