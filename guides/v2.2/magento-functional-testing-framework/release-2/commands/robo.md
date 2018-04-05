@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/robo.md
 functional_areas:
  - Testing
-mftf-release: 2.1.0
+mftf-release: 2.1.2
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -37,7 +37,7 @@ $ robo command [options] [arguments]
 
 ## Useful commands
 
-The following are the most popular commands used to interact with the MFTF. For more commands, see [Reference](#reference) or run in your terminal: `$ vendor/bin/robo`.
+The following are the most popular commands used to interact with the MFTF. For more commands, see [Reference] or run in your terminal: `$ vendor/bin/robo`.
 
 ### Codeception Robo Commands
 
@@ -144,13 +144,22 @@ Allure v1.x.x | Allure v2.x.x
 
 #### generate
 
-`generate:tests`   | Generate all tests based on specific module load order of the Magento instance
-`generate:tests --force`.   | Generate all tests regardless of whether a Magento instance is available.
+Generate PHP code from the tests defined in XML files.
+Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
 
-  
+`generate:tests`   | Generate all tests based on specific module load order of the Magento instance
+`generate:tests --force`   | Generate all tests regardless of whether a Magento instance is available
+`generate:tests --config singleRun`   | Generate all tests and a manifest file, which is `_generated/testManifest.txt`. The file contains only a path to the directory with generated tests. 
+`generate:tests --config parallel --nodes <number of nodes>`   | Generate all tests and a directory with manifest files, which is `_generated/groups/`. The number of files corresponds to the number of nodes. Each file contains a proportional list of tests ordered across files from largest to smallest (based on number of actions).
+
 #### self
 
-`self:update` or `update`       | Updates the `robo.phar` to the latest version, which only works when running the `phar` version of Robo.
+`self:update` or `update`| Updates the `robo.phar` to the latest version, which only works when running the `phar` version of Robo.
 
-***
-***
+<!-- LINK DEFINITIONS -->
+
+[Reference]: #reference
+
+<!-- Abbreviations -->
+
+*[MFTF]: Magento Functional Testing Framework

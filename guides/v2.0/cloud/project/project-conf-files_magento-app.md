@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 090_configure
-title: .magento.app.yaml
-menu_title: .magento.app.yaml
-menu_order: 20
-menu_node:
+title: Application
 version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
@@ -269,19 +265,14 @@ crons:
 ```
 
 ## Configure PHP options {#cloud-yaml-platform-php}
-You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
+You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: myphpapp
 type: php:5.6
 ```
 
-For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0.
-
-See one of the following sections for more information:
-
-*   [PHP extensions](#cloud-yaml-platform-php-ext)
-*   [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
+{{site.data.var.ece}} supports PHP 5.5, 5.6, and 7.0.
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
 You can define additional PHP extensions you want to enable or disable. Example:

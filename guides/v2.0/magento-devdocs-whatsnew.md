@@ -7,15 +7,55 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## February 2018
+## April 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added a new topic for [extending the Data Migration Tool](http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html).|2.x|New|Apr 02
+
+{% collapsibleh2 March 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Removed references to VPN connections from the [Magento Commerce (Cloud) guide](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#vpn) because they are not currently supported.|2.x|Updated|Mar 30
+Updated references to Fastly IP addresses in the [Magento Commerce (Cloud) guide](http://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html) with the list of preferred IP addresses provided by Fastly.|2.x|Updated|Mar 30
+Added a link to the Private Packagist documentation in the [Package a component](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html) topic.|2.x|Updated|Mar 26
+Added new options to `generate:tests` in [Robo commands](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html#generate).|2.2.x, 2.3.x|Updated|Mar 21
+Added a cross reference about Redis to the [memcache](http://devdocs.magento.com/guides/v2.2/config-guide/memcache/memcache.html) topic.|2.x|Updated|Mar 21
+Added a [descriptive video](http://devdocs.magento.com/guides/v2.0/contributor-guide/contributing.html) showing how to keep your fork updated with the latest changes.|2.x|Updated|Mar 20
+Removed unnecessary guidance to run `npm update` after `npm install` when [Installing and Configuring Grunt](http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).|2.x|Updated|Mar 20
+Replaced the list of minor releases in the [Technology Stack](http://devdocs.magento.com/guides/v2.0/architecture/tech-stack.html) topic with a generic reference to system requirements|2.x|Updated|Mar 20
+Added a section for backward incompatible changes between 2.0.17-2.0.18 in [OpenSource](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ce_changes.html#releases-2_0_17-2_0_18) and [Commerce](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html#releases-2_0_17-2_0_18).|2.0.x|Updated|Mar 16
+Added a section for backward incompatible changes between 2.1.11-2.1.12 in [OpenSource](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html#releases-2_1_11-2_1_12) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html#releases-2_1_11-2_1_12).|2.1.x|Updated|Mar 16
+Added a section for backward incompatible changes between 2.2.2-2.2.3 in [OpenSource](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html#releases-2_2_2-2_2_3) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html#releases-2_2_2-2_2_3).|2.2.x|Updated|Mar 16
+Removed reference to minor versions of Magento in the [Extension Developer Guide](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/build/build.html).|2.x|Updated|Mar 15
+The MFTF 2.1.0 has been released where we: <br/>[updated a CLI command `generate`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html#generate), <br/>[added a data type support for an argument of action group](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/action-groups.html#data-type-usage), <br/>[added a new action `selectMultipleOptions`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/actions.html#selectmultipleoptions), <br>[updated principles in Assertions](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#principles)<br/> [added a new assertions `assertArrayIsSorted`](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#assertarrayIssorted)|2.2.x, 2.3 pre-release|Updated|Mar 13
+Added support for PHP 7.1 in the [Magento Commerce (Cloud) Guide](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).|2.2.x|Updated|Mar 12
+Added the force (`-f`) option to the static content deployment command in the [B2B installation](http://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) topic.||Updated|Mar 09
+Updated the [Magento Commerce (Cloud) Guide Configure routes](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_routes.html) topic to deprecate the `:php` endpoint and to note that now you can use the dot (\.) symbol to separate the subdomain instead of using the triple dash (\-\-\-).|2.2.x|Updated|Mar 09
+Removed old content related to the [multi-tenant code compiler](http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html).|2.1.x, 2.2.x|Updated|Mar 07
+Added a CodeTriage badge to the [Contributor Guide](http://devdocs.magento.com/guides/v2.0/contributor-guide/contributing.html).|2.x|Updated|Mar 01
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 February 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Release Notes for Magento 2.0.18 [Open Source](http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html) and [Commerce](http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18EE.html).|2.0.x|New|Feb 27
+Release Notes for Magento 2.1.12 [Open Source](http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html).|2.1.x|New|Feb 27
+Release Notes 2.2.3 [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.3EE.html)|2.2.x|New|Feb 27
+Added supported MySQL technologies to the [MySQL](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/mysql.html) topic.|2.2.x|Updated|Feb 27
+Updated the [DevDocs contributions](http://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_docs.html) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
+Formatting to improve consistency in the [Configuration Guide](http://devdocs.magento.com/guides/v2.0/config-guide/bootstrap/magento-modes.html).||Updated|Feb 26
+Added upgrade path for Magento Cloud metapackage. | 2.1.x, 2.2.x | Updated | Feb 23
+Added reference and [examples](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20
 Listed the `adminhtml` option in the [Observers best practices](http://devdocs.magento.com/guides/v2.0/ext-best-practices/extension-coding/observers-bp.html) topic.|2.x|Updated|Feb 09
 The [MFTF-2 Guide](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) has been added to Magento 2.2 documentation|2.2.x|Updated|Feb 09
 Learn how to customize and extend the acceptance functional tests using [Merging](http://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/release-2/merging.html) in the MFTF 2.|2.3 pre-release|New|Feb 07
 We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/message-queues.html) to help customers resolve an issue with message queues.|2.2.x|New|Feb 07
 We added a [new troubleshooting topic](http://devdocs.magento.com/guides/v2.2/cloud/trouble/site-availability.html) to help customers identify and resolve site availability issue related to Redis.|2.x|New|Feb 01
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 January 2018 %}
 
