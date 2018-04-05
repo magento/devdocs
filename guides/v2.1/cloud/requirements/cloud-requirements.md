@@ -33,11 +33,11 @@ This topic describes technologies, knowledge, accounts, and steps to complete wh
 ## Technologies {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
-*	[Git](#git)
-*	[Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-*	[Magento 2]({{page.baseurl}}cloud/bk-cloud.html#magento2)
-*	[Continuous Integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html)
-*	Architectures including [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-architecture.html) architecture
+*	Git
+*	Composer
+*	Magento 2
+*	Continuous Integration
+*	Architectures including Starter or Pro architecture
 
 Here are some advanced technologies we recommend getting familiar with:
 

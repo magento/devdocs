@@ -16,7 +16,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 ### `CACHE_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1 and later
+-  **Version**—Magento 2.1.4 and later
 
 Use to configure Redis page and default caching. 
 
@@ -49,7 +49,7 @@ Because of [static file fallback]({{page.baseurl}}howdoi/clean_static_cache.html
 ### `CRON_CONSUMERS_RUNNER`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1 and later
+-  **Version**—Magento 2.1.4 and later
 
 Use this environment variable to make sure message queues are running after a deployment. By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
@@ -58,7 +58,7 @@ Use this environment variable to make sure message queues are running after a de
 ### `CRYPT_KEY`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1 and later
+-  **Version**—Magento 2.1.4 and later
 
 Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
 
@@ -116,13 +116,6 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 Specifies which [gzip](https://www.gnu.org/software/gzip){target="\_blank} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
-### `SCD_STRATEGY`
-
--  **Default**—`standard`
--  **Version**—You cannot modify the strategy in 2.1.x.
-
-Deploys all static view files for all packages.
-
 ### `SEARCH_CONFIGURATION`
 
 -  **Default**—_Not set_
@@ -148,7 +141,7 @@ By default, the deployment process overwrites all settings in the `env.php` file
 ### `SESSION_CONFIGURATION`
 
 -  **Default**—_Not set_
--  **Version**—Magento 2.1 and later
+-  **Version**—Magento 2.1.4 and later
 
 Use to configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
