@@ -23,7 +23,7 @@ pages:
         - label: Create a custom urlResolver service
           url: graphql/develop/create-custom-url-resolver.html
 
-        - label: Exception Handling
+        - label: Exception handling
           url: graphql/develop/exceptions.html
 
     - label: Functional testing

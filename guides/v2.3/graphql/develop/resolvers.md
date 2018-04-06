@@ -12,4 +12,4 @@ A GraphQL resolver must implement the `\Magento\Framework\GraphQl\Query\Resolver
 
 You can view an example of this can be found inside the `\Magento\BundleGraphQl\Model\Resolver\BundleItemLinks` resolver. This resolver takes each bundle option ID and its corresponding parent product ID and stores them in a collection's filter buffer (in this case, using the `\Magento\BundleGraphQl\Model\Resolver\Links\Collection::addIdFilters()` function). Each resolver then returns a callable that  invokes this collection. The collection caches the result of all link entities it fetched for all the option_id/parent_id combinations. This fetch only needs to occur once for the whole `BundleItemLink` list, and each resulting callable that is invoked for every link in the list returns an item from the collections cached result.
 
-A simple wrapper to create a `Value` object is used in all resolvers called `\Magento\Framework\GraphQl\Query\Resolver\ValueFactory`.
+A `Value` object wraps a callable object, and you can use `\Magento\Framework\GraphQl\Query\Resolver\ValueFactory` to create a value.
