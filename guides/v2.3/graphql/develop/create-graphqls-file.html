@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Price field | Magento 2 Developer Documentation</title>
+	<title>Define the GraphQL schema for a module | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.3/graphql/reference/price.html">
+	<link rel="canonical" href="//guides/v2.3/graphql/develop/create-graphqls-file.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/reference/price.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/develop/create-graphqls-file.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/reference/price.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/develop/create-graphqls-file.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/reference/price.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/develop/create-graphqls-file.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/reference/price.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/develop/create-graphqls-file.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -346,7 +346,7 @@
         
         
         
-        <li class="nav-level2  " id="configure-the-graphql-schema-for-a-module">
+        <li class="nav-level2 active " id="configure-the-graphql-schema-for-a-module">
             
             
         
@@ -466,7 +466,7 @@
         
         
         
-        <li class="nav-level2 active " id="price-field">
+        <li class="nav-level2  " id="price-field">
             
             
         
@@ -654,7 +654,7 @@
 
           
 
-          <span property="name">Price field</span>
+          <span property="name">Define the GraphQL schema for a module</span>
 
         
 
@@ -677,7 +677,7 @@
 
 	
 
-	<h1 class="page-heading">Price field</h1>
+	<h1 class="page-heading">Define the GraphQL schema for a module</h1>
 
   
 
@@ -685,183 +685,131 @@
 </section>
 
 
-			<p>The Price field contains an amount and currency code. It may also contain price adjustment information.</p>
+			<p>Each module that supports GraphQL should have a corresponding module whose name ends with <code class="highlighter-rouge">*GraphQl</code>. This <code class="highlighter-rouge">*GraphQl</code> module defines all the GraphQL functionality for the primary module. For example, the <code class="highlighter-rouge">CustomerGraphQl</code> module defines the GraphQL capalities of the <code class="highlighter-rouge">Customer</code> module.</p>
 
-<h2 id="example-usage">Example usage</h2>
+<p>A GraphQL module’s <code class="highlighter-rouge">schema.graphqls</code> file defines how the attributes defined in the module can be used in a GraphQL query. If your module’s attributes are completely self-contained, then the <code class="highlighter-rouge">schema.graphqls</code> file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must defines those attributes and ensure that the other module can load your attributes.</p>
 
-<p>The following call returns price information about a single product.</p>
+<p>The <code class="highlighter-rouge">&lt;module_name&gt;/etc/schema.graphqls</code> file:</p>
 
-<p><strong>Request</strong></p>
+<ul>
+  <li>Defines the structure of queries.</li>
+  <li>Determines which attributes to make available for GraphQL queries. You can define separate lists of attributes for queries and results.</li>
+  <li>Points to the resolvers that verify and process the query data and response</li>
+  <li>Serves as the source for displaying the schema in a GraphQL browser</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="err">products(</span><span class="w">
-      </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS01"</span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="err">)</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="err">total_count</span><span class="w">
-        </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="err">name</span><span class="w">
-          </span><span class="err">sku</span><span class="w">
-          </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="err">value</span><span class="w">
-                </span><span class="err">currency</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-              </span><span class="err">adjustments</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="err">value</span><span class="w">
-                  </span><span class="err">currency</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-                </span><span class="err">code</span><span class="w">
-                </span><span class="err">description</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-        </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="err">page_size</span><span class="w">
-          </span><span class="err">current_page</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+<p>The base <code class="highlighter-rouge">schema.graphqls</code> file, located in the <code class="highlighter-rouge">app/code/GraphQl/etc/</code> directory, provides the basic structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The <code class="highlighter-rouge">webonyx/graphql-php</code> library enforces the syntax of all <code class="highlighter-rouge">schema.graphqls</code> files.</p>
 
-<p><strong>Response</strong></p>
+<p>To illustrate how to configure the <code class="highlighter-rouge">schema.graphqls</code> file, let’s suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. We’ll assume this module extends the Catalog module.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gwyn Endurance Tee"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS01"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"regularPrice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="s2">"adjustments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"page_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+<h2 id="define-the-query">Define the query</h2>
 
-<h3 id="productprice-object">ProductPrice object</h3>
+<p>A query definition can be one line, or it can be complex. If your module’s query implements <code class="highlighter-rouge">searchCriteria</code>, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition can be simple.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Data Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">maximalPrice</code></td>
-      <td>Price</td>
-      <td>Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you’re specifying a price range, this would be the “to” value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">minimalPrice</code></td>
-      <td>Price</td>
-      <td>Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you’re specifying a price range, this would be the “from” value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">regularPrice</code></td>
-      <td>Price</td>
-      <td>The base price of a product.</td>
-    </tr>
-  </tbody>
-</table>
+<p>The following example shows the <code class="highlighter-rouge">products</code> query. The <code class="highlighter-rouge">type</code> is defined as a <code class="highlighter-rouge">Query</code>.  The <code class="highlighter-rouge">products</code> definitions define the keywords that are used to construct a query, as shown in <a href="/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a>. The parameter definitions will be discussed in <a href="#specify-output-attributes">Specify output attributes</a></p>
 
-<h3 id="Price">Price object</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+    <span class="nx">products</span> <span class="p">(</span>
+        <span class="nx">search</span><span class="o">:</span> <span class="nx">String</span><span class="p">,</span>
+        <span class="nx">filter</span><span class="o">:</span> <span class="nx">ProductFilterInput</span><span class="p">,</span>
+        <span class="nx">pageSize</span><span class="o">:</span> <span class="nx">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="nx">currentPage</span><span class="o">:</span> <span class="nx">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nb">sort</span><span class="o">:</span> <span class="nx">ProductSortInput</span><span class="p">)</span>
+     <span class="p">)</span><span class="o">:</span> <span class="nx">Products</span> <span class="o">@</span><span class="nx">resolver</span><span class="p">(</span><span class="k">class</span><span class="err">:</span> <span class="err">"</span><span class="nc">Magento</span><span class="err">\</span><span class="nx">\CatalogGraphQl</span><span class="err">\</span><span class="nx">\Model</span><span class="err">\</span><span class="nx">\Resolver</span><span class="err">\</span><span class="nx">\Products</span><span class="s2">")
+}
+</span></code></pre></div></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Data Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">amount</code></td>
-      <td>Money</td>
-      <td>The price of the the product and its currency code. See <a href="#Money">Money object</a>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">adjustments</code></td>
-      <td>[PriceAdjustment]</td>
-      <td>An array of <a href="#PriceAdjustment">PriceAdjustment</a> objects.</td>
-    </tr>
-  </tbody>
-</table>
+<p>In contrast, the <code class="highlighter-rouge">customer</code> query returns the <code class="highlighter-rouge">Customer</code> object associated with the current user. There is no need to define pagination information.</p>
 
-<h4 id="Money">Money object</h4>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
+    <span class="nx">customer</span><span class="o">:</span> <span class="nx">Customer</span> <span class="o">@</span><span class="nx">resolver</span><span class="p">(</span><span class="k">class</span><span class="err">:</span> <span class="err">"</span><span class="nc">Magento</span><span class="err">\</span><span class="nx">\CustomerGraphQl</span><span class="err">\</span><span class="nx">\Model</span><span class="err">\</span><span class="nx">\Resolver</span><span class="err">\</span><span class="nx">\Customer</span><span class="s2">")
+}
+</span></code></pre></div></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Data Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td>Float</td>
-      <td>The price of the product</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">currency</code></td>
-      <td>CurrencyEnum</td>
-      <td>A three-letter currency code, such as <code class="highlighter-rouge">USD</code> or <code class="highlighter-rouge">EUR</code>.</td>
-    </tr>
-  </tbody>
-</table>
+<p>If all your module’s attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module’s query definition.</p>
 
-<h4 id="PriceAdjustment">PriceAdjustment array</h4>
+<h2 id="declare-input-attributes">Declare input attributes</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Data Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">amount</code></td>
-      <td>Money</td>
-      <td>The amount of the price adjustment and its currency code. See <a href="#Money">Money object</a>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">code</code></td>
-      <td>PriceAdjustmentCodesEnum</td>
-      <td>One of <code class="highlighter-rouge">tax</code>, <code class="highlighter-rouge">weee</code>, or <code class="highlighter-rouge">weee_tax</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">description</code></td>
-      <td>PriceAdjustmentDescriptionEnum</td>
-      <td>Indicates whether the entity described by the code attribute is included or excluded from the adjustment.</td>
-    </tr>
-  </tbody>
-</table>
+<p>You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single <code class="highlighter-rouge">type</code> defintion that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren’t available at the time of the query.</p>
+
+<p>The theoretical Volumizer module extends <code class="highlighter-rouge">Catalog</code>. In this case, you would reference <code class="highlighter-rouge">ProductFilterInput</code> as the source and make each attribute be of type <code class="highlighter-rouge">FilterTypeInput</code>. (Both of these entities are defined in <code class="highlighter-rouge">CatalogGraphQl</code>’s <code class="highlighter-rouge">schema.graphqls</code> file. In other use cases, you would be required to create your own input type.</p>
+
+<p>The following example defines three Volumizer attributes (<code class="highlighter-rouge">v_height</code>, <code class="highlighter-rouge">v_width</code>, <code class="highlighter-rouge">v_depth</code>) that must be specified as input to a query.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">input</span> <span class="nx">ProductFilterInput</span> <span class="p">{</span>
+  <span class="nx">v_height</span><span class="o">:</span> <span class="nx">FilterTypeInput</span>
+  <span class="nx">v_width</span><span class="o">:</span> <span class="nx">FilterTypeInput</span>
+  <span class="nx">v_depth</span><span class="o">:</span> <span class="nx">FilterTypeInput</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="specify-sorting-attributes">Specify sorting attributes</h2>
+
+<p>You can also define which attributes can be used for sorting the search results. This list does not not have to be identical to the list of input or output attributes.</p>
+
+<p>This example allows sorting on the <code class="highlighter-rouge">v_volume</code> attribute only.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">input</span> <span class="nx">ProductSortInput</span> <span class="p">{</span>
+    <span class="nx">v_volume</span><span class="o">:</span> <span class="nx">SortEnum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">ProductSortInput</code> indicates that the attributes are available to catalog (Product) queries. If you specify a module-specific value such as <code class="highlighter-rouge">VolumizerSortInput</code>, then the attribute will be available only to queries processed by that module.</p>
+
+<p><code class="highlighter-rouge">SortEnum</code> is defined in the base <code class="highlighter-rouge">schema.graphqls</code> file.</p>
+
+<h2 id="specify-output-attributes">Specify output attributes</h2>
+
+<p>Output attributes are more complex than input attributes. You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.</p>
+
+<p>In an <code class="highlighter-rouge">schema.graphqls</code> file, the output <code class="highlighter-rouge">Interface</code> defines top-level attributes. Each object returned is defined in a <code class="highlighter-rouge">type</code> definition.</p>
+
+<h3 id="define-the-output-interface">Define the output interface</h3>
+
+<p>In many cases, the response contains data that was either not available as input, or it was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, <code class="highlighter-rouge">Price</code> output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a <code class="highlighter-rouge">typeResolver</code> to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See <a href="/guides/v2.3/graphql/resolvers.html">Resolvers</a> for more information.</p>
+
+<p>The following example defines module-specific output attributes for the Volumizer module.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">interface</span> <span class="nx">ProductInterface</span> <span class="o">@</span><span class="nx">typeResolver</span><span class="p">(</span><span class="k">class</span><span class="err">:</span> <span class="err">"\\</span><span class="nc">Path</span><span class="err">\</span><span class="nx">\To</span><span class="err">\</span><span class="nx">\typeResolver</span><span class="err">\</span><span class="nx">\Class</span><span class="s2">"){
+    v_height: Float
+    v_width: Float
+    v_depth: Float
+    v_volume: VolumeWithUnit
+}
+</span></code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">typeResolver</code> parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See <a href="/guides/v2.3/graphql/resolvers.html">Resolvers</a> for more information.</p>
+
+<p>The <code class="highlighter-rouge">v_volume</code> attribute is defined as a <code class="highlighter-rouge">VolumeWithUnit</code> object. This object might be defined as follows:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">VolumeWithUnit</span> <span class="p">{</span>
+    <span class="nx">caclulated_volume</span><span class="o">:</span> <span class="nx">Float</span>
+    <span class="nx">unit</span><span class="o">:</span> <span class="nx">VolumeUnitEnum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The Volumizer module could return the <code class="highlighter-rouge">calculated_volume</code>, while the <code class="highlighter-rouge">unit</code> is an enumeration, described below.</p>
+
+<h3 id="define-enumerations">Define enumerations</h3>
+
+<p>You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_).</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">enum</span> <span class="nx">VolumeUnitEnum</span> <span class="p">{</span>
+  <span class="nx">IN3</span>
+  <span class="nx">FT3</span>
+  <span class="nx">CM3</span>
+  <span class="nx">M3</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="annotations">Annotations</h2>
+
+<p>You can provide a description of any attribute, type definition, or other entity within a <code class="highlighter-rouge">schema.graphqls</code> file by appending the following to the line:</p>
+
+<p><code class="highlighter-rouge">@doc(description: "&lt;Text&gt;")</code></p>
+
+<p>For example:</p>
+
+<p><code class="highlighter-rouge">sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")</code></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -873,7 +821,7 @@
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/reference/price.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/develop/create-graphqls-file.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -883,7 +831,7 @@
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/reference/price.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/develop/create-graphqls-file.html" target="_blank">Give us feedback</a>
       </div>
     
   
