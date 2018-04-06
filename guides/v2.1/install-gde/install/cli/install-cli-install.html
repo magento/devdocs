@@ -1720,20 +1720,6 @@
         
         
         
-        <li class="nav-level2  " id="troubleshooting-suggestions">
-            
-            
-        
-            
-            <a href="/guides/v2.1/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="access-issues">
             
             
@@ -1741,7 +1727,7 @@
             
         
             
-            <a href="/guides/v2.1/install-gde/trouble/php/tshoot_access-main.html">Access issues</a>
+            <span>Access issues</span>
             
 
             
@@ -1859,7 +1845,7 @@
             
         
             
-            <a href="/guides/v2.1/install-gde/trouble/php/tshoot_install-main.html">Errors during installation</a>
+            <span>Errors during installation</span>
             
 
             
@@ -2019,7 +2005,7 @@
             
         
             
-            <a href="/guides/v2.1/install-gde/trouble/readiness/tshoot_rc_main.html">Readiness check issues</a>
+            <span>Readiness check issues</span>
             
 
             
@@ -2095,7 +2081,7 @@
             
         
             
-            <a href="/guides/v2.1/install-gde/trouble/git/tshoot_git-main.html">GitHub errors</a>
+            <span>GitHub errors</span>
             
 
             
@@ -2143,7 +2129,7 @@
             
         
             
-            <a href="/guides/v2.1/install-gde/trouble/php/tshoot_php-main.html">PHP errors</a>
+            <span>PHP errors</span>
             
 
             
@@ -2219,7 +2205,7 @@
             
         
             
-            <a href="/guides/v2.1/install-gde/trouble/tshoot_other.html">Other issues</a>
+            <span>Other issues</span>
             
 
             
@@ -2296,20 +2282,6 @@
                 
                 
             </ul>
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="installation-roadmap-(reference)">
-            
-            
-        
-            
-            <a href="/guides/v2.1/install-gde/install-roadmap_trouble.html">Installation roadmap (reference)</a>
-            
-
             
         </li>
         
@@ -2466,29 +2438,28 @@
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
-  <li>If you get errors during the installation, see <a href="/guides/v2.1/install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
-</div>
+&lt;/div&gt;
 
-<p>See also <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
+See also <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
 <div>
 
-  <h2 id="instgde-cli-fully-secure">Completely secure installation</h2>
-  <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
+        <h2 id="instgde-cli-fully-secure">Completely secure installation</h2>
+        <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
-    <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
-    <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
+        <ul>
+          <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
+          <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
+          <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
 <!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
-  </ul>
+        </ul>
 
-  <p>More details about these parameters can be found later in this topic.</p>
+        <p>More details about these parameters can be found later in this topic.</p>
 
-  <h2 id="instgde-cli-help-cmds">Installer help commands</h2>
-  <p>You can run the following commands to find values for some required arguments:</p>
+        <h2 id="instgde-cli-help-cmds">Installer help commands</h2>
+        <p>You can run the following commands to find values for some required arguments:</p>
 
-  <table>
+        <table>
 <tbody>
 	<tr>
 		<th>Installer argument</th>
@@ -2509,24 +2480,24 @@
 </tbody>
 </table>
 
-  <div class="bs-callout bs-callout-info" id="info">
+        <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="/guides/v2.1/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
 
-  <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
-  <p>The format of the install command follows:</p>
+        <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
+        <p>The format of the install command follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
-</code></pre></div>  </div>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
+</code></pre></div>        </div>
 
-  <p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
+        <p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
+        <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Any options that contain spaces or special characters must be enclosed in either single or double quotes.</p></span>
 </div>
-  <table>
+        <table>
 	<col width="35%" />
 	<col width="55%" />
 	<col width="10%" />
@@ -2734,177 +2705,155 @@
 	</tbody>
 </table>
 
-  <div class="bs-callout bs-callout-info" id="info">
+        <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>To enable or disable modules after installing Magento, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
   	</span>
 </div>
 
-  <div>
+        <div>
 
-    <h4 id="sens-data">What is sensitive data?</h4>
-    <p>Magento uses your encryption key to encrypt the following:</p>
+          <h4 id="sens-data">What is sensitive data?</h4>
+          <p>Magento uses your encryption key to encrypt the following:</p>
 
-    <ul>
-      <li>Credit card information</li>
-      <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
-      <li>CAPTCHA values sent over the network</li>
-    </ul>
+          <ul>
+            <li>Credit card information</li>
+            <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
+            <li>CAPTCHA values sent over the network</li>
+          </ul>
 
-    <p>Magento does <em>not</em> encrypt:</p>
+          <p>Magento does <em>not</em> encrypt:</p>
 
-    <ul>
-      <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
-      <li>Address</li>
-      <li>Phone number</li>
-      <li>Other types of personally identifiable information except for credit card numbers</li>
-    </ul>
+          <ul>
+            <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+            <li>Address</li>
+            <li>Phone number</li>
+            <li>Other types of personally identifiable information except for credit card numbers</li>
+          </ul>
 
-    <h4 id="install-cli-example">Sample localhost installations</h4>
+          <h4 id="install-cli-example">Sample localhost installations</h4>
 
-    <p><strong>Example 1</strong></p>
+          <p><strong>Example 1</strong></p>
 
-    <p>The following example installs Magento with the following options:</p>
+          <p>The following example installs Magento with the following options:</p>
 
-    <ul>
-      <li>
-        <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+          <ul>
+            <li>
+              <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
 
-        <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
-      </li>
-      <li>
-        <p>The database server is on the same host as the web server.</p>
+              <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+            </li>
+            <li>
+              <p>The database server is on the same host as the web server.</p>
 
-        <p>The database name is <code class="highlighter-rouge">magento</code>, and the user name and password are both <code class="highlighter-rouge">magento</code></p>
-      </li>
-      <li>
-        <p>Uses server rewrites</p>
-      </li>
-      <li>
-        <p>The Magento administrator has the following properties:</p>
+              <p>The database name is <code class="highlighter-rouge">magento</code>, and the user name and password are both <code class="highlighter-rouge">magento</code></p>
+            </li>
+            <li>
+              <p>Uses server rewrites</p>
+            </li>
+            <li>
+              <p>The Magento administrator has the following properties:</p>
 
-        <ul>
-          <li>First and last name are <code class="highlighter-rouge">Magento User</code></li>
-          <li>User name is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-          <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
-        </ul>
-      </li>
-      <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
-      <li>Default currency is U.S. dollars</li>
-      <li>
-        <p>Default time zone is U.S. Central (America/Chicago)</p>
+              <ul>
+                <li>First and last name are <code class="highlighter-rouge">Magento User</code></li>
+                <li>User name is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
+                <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+              </ul>
+            </li>
+            <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+            <li>Default currency is U.S. dollars</li>
+            <li>
+              <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+              <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --use-rewrites=1
-</code></pre></div>        </div>
-      </li>
-    </ul>
+</code></pre></div>              </div>
+            </li>
+          </ul>
 
-    <p>Messages similar to the following display to indicate a successful installation:</p>
+          <p>Messages similar to the following display to indicate a successful installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
-</code></pre></div>    </div>
+</code></pre></div>          </div>
 
-    <p><strong>Example 2</strong> (with additional options)</p>
+          <p><strong>Example 2</strong> (with additional options)</p>
 
-    <p>The following example installs Magento with the following options:</p>
+          <p>The following example installs Magento with the following options:</p>
 
-    <ul>
-      <li>
-        <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+          <ul>
+            <li>
+              <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
 
-        <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
-      </li>
-      <li>
-        <p>The database server is on the same host as the web server.</p>
+              <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+            </li>
+            <li>
+              <p>The database server is on the same host as the web server.</p>
 
-        <p>The database name is <code class="highlighter-rouge">magento</code>, and the user name and password are both <code class="highlighter-rouge">magento</code></p>
-      </li>
-      <li>
-        <p>The Magento administrator has the following properties:</p>
+              <p>The database name is <code class="highlighter-rouge">magento</code>, and the user name and password are both <code class="highlighter-rouge">magento</code></p>
+            </li>
+            <li>
+              <p>The Magento administrator has the following properties:</p>
 
-        <ul>
-          <li>First and last name are is <code class="highlighter-rouge">Magento User</code></li>
-          <li>User name is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-          <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
-        </ul>
-      </li>
-      <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
-      <li>Default currency is U.S. dollars</li>
-      <li>Default time zone is U.S. Central (America/Chicago)</li>
-      <li>The installer first cleans up the database before installing the tables and schema</li>
-      <li>You use a sales order increment prefix <code class="highlighter-rouge">ORD$</code> and because it contains a special character (<code class="highlighter-rouge">$</code>), the value must be enclosed in double quotes</li>
-      <li>Session data is saved in the database</li>
-      <li>
-        <p>Uses server rewrites</p>
+              <ul>
+                <li>First and last name are is <code class="highlighter-rouge">Magento User</code></li>
+                <li>User name is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
+                <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+              </ul>
+            </li>
+            <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+            <li>Default currency is U.S. dollars</li>
+            <li>Default time zone is U.S. Central (America/Chicago)</li>
+            <li>The installer first cleans up the database before installing the tables and schema</li>
+            <li>You use a sales order increment prefix <code class="highlighter-rouge">ORD$</code> and because it contains a special character (<code class="highlighter-rouge">$</code>), the value must be enclosed in double quotes</li>
+            <li>Session data is saved in the database</li>
+            <li>
+              <p>Uses server rewrites</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+              <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento \
 --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --cleanup-database \
 --sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
-</code></pre></div>        </div>
-      </li>
-    </ul>
+</code></pre></div>              </div>
+            </li>
+          </ul>
 
-    <p>Messages similar to the following display to indicate a successful installation:</p>
+          <p>Messages similar to the following display to indicate a successful installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
-</code></pre></div>    </div>
+</code></pre></div>          </div>
 
-    <div class="bs-callout bs-callout-info" id="info">
+          <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-    <h4 id="next-step">Next step</h4>
-    <ul>
-      <li>
-        <p>If you have one user account to access the Magento server, see <a href="/guides/v2.1/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
+          <h4 id="next-step">Next step</h4>
+          <ul>
+            <li>
+              <p>If you have one user account to access the Magento server, see <a href="/guides/v2.1/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
 
-        <p>This type of setup is typical for shared hosting.</p>
-      </li>
-      <li>
-        <p><a href="/guides/v2.1/install-gde/install/verify.html">Verify the installation</a>.</p>
-      </li>
-    </ul>
-
-    <h4 id="related-topics">Related topics</h4>
-
-    <ul>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-sample-data-other.html">Remove sample data modules or update sample data</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-      <li><a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-    </ul>
-  </div>
-</div>
+              <p>This type of setup is typical for shared hosting.</p>
+            </li>
+            <li>
+              <p><a href="/guides/v2.1/install-gde/install/verify.html">Verify the installation</a>.</p>
+            </li>
+          </ul>
+        </div>
+      </div></ul></span></div>
 
 		</div>
 		<!-- /.content-wrap -->
