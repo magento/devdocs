@@ -6,7 +6,8 @@ version: 2.3
 github_link: release-notes/backward-incompatible-changes.md
 ---
 
-Magento 2.3 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.2 and 2.3.
+Magento 2.3 introduces several major changes that may affect the correct functionality of already released external modules.
+The purpose of this document is to highlight major changes between Magento 2.2 and 2.3.
 
 You can view the detailed lists of changes in PHP code that were made in the "2.3-develop" branch after the "2.2.0" release:
 
@@ -56,9 +57,3 @@ Affected {{site.data.var.ee}} classes:
 * `\Magento\AdvancedSearch\Model\Client\ClientResolver`
 * `\Magento\AdvancedSearch\Model\Indexer\Fulltext\Plugin\CustomerGroup`
 * `\Magento\AdvancedSearch\Model\SuggestedQueries`
-
-
-<!-- Link definitions -->
-
-[2.2.0]: 
-[2.3-develop]:
