@@ -128,12 +128,25 @@ urlInput-specific options:
     <td>
     </td>
   </tr>
+  <tr>
+    <td>
+      <code>settingValue</code>
+    </td>
+    <td>
+      The default value for the checkbox. Open in a new tab.
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+    </td>
+  </tr>
 </table>
 
-By default, you can use `Magento\Ui\Model\UrlInput\LinksProvider`, which provides default URL types. `LinkProvider` is composite and you can add new options to the `di.xml` file.
+By default, you can use `Magento\Ui\Model\UrlInput\LinksConfigProvider`, which provides text input for URLs. `LinksConfigProvider` is composite and you can add new options to the `di.xml` file.
 
 ```
-<type name="Magento\Ui\Model\UrlInput\LinksProvider">
+<type name="Magento\Ui\Model\UrlInput\LinksConfigProvider">
     <arguments>
         <argument name="linksConfiguration" xsi:type="array">
             <item name="default" xsi:type="string">Magento\Ui\Model\UrlInput\DefaultLink</item>
@@ -143,7 +156,7 @@ By default, you can use `Magento\Ui\Model\UrlInput\LinksProvider`, which provide
 ```
 
 
-The option class implements `\Magento\Ui\Model\UrlInput\ConfigInterface` and provide the child component configuration:
+The option `class` implements `\Magento\Ui\Model\UrlInput\ConfigInterface` and provides the child component configuration:
 
 ```
 <?php
@@ -189,3 +202,7 @@ class MyLink implements ConfigInterface
     }
 }
 ```
+
+Magento provides the ability to use two link types by default:
+* `Magento\Catalog\Ui\Component\UrlInput\Category` for category
+* `Magento\Catalog\Ui\Component\UrlInput\Product` for product

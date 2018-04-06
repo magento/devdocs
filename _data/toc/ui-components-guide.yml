@@ -157,6 +157,9 @@ pages:
         - label: UrlInput component
           url: ui_comp_guide/components/ui-urlinput.html
 
+        - label: UI-select component
+          url: ui_comp_guide/components/ui-secondary-uiselect.html
+
         - label: WYSIWYG component
           versions: ["2.0","2.1","2.2"]
           url: ui_comp_guide/components/ui-wysiwyg.html
