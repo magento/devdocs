@@ -41,6 +41,7 @@ In contrast, this `customer` query returns the `Customer` object associated with
    <field xsi:type="ObjectOutputField" name="customer" type="Customer" resolver="Magento\CustomerGraphQl\Model\Resolver\Customer"/>
 </type>`
 ```
+The `resolver` parameter specifies the class that performs GraphQL request processing. See [Resolvers]({{page.baseurl}}/graphql/develop/resolvers.html) for more information.
 
 If all your module's attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module's query definition.
 
