@@ -1,0 +1,3504 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Backward incompatible changes in Magento Commerce | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/release-notes/backward-incompatible-changes/commerce.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:806243,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.1/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.1">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.1/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.1/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.1/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.1/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Release Information</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.1/release-notes/bk-release-notes.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+    
+    
+
+<li class="nav-level1  " id="magento-2.1-release-notes">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Magento 2.1 Release Notes</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-2.1.x-release-notes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Magento Open Source 2.1.x Release Notes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.12-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html">Magento Open Source 2.1.12 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.11-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.11CE.html">Magento Open Source 2.1.11 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.10-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.10CE.html">Magento Open Source 2.1.10 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.9-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.9CE.html">Magento Open Source 2.1.9 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.8-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.8CE.html">Magento Open Source 2.1.8 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.7-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.7CE.html">Magento Open Source 2.1.7 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.6-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.6CE.html">Magento Open Source 2.1.6 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.5-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.5CE.html">Magento Open Source 2.1.5 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.4-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.4CE.html">Magento Open Source 2.1.4 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.3-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.3CE.html">Magento Open Source 2.1.3 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.2-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.2CE.html">Magento Open Source 2.1.2 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.1-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">Magento Open Source 2.1.1 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-open-source-2.1.0--release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.0CE.html">Magento Open Source 2.1.0  Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-2.1.x-release-notes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Magento Commerce 2.1.x Release Notes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.12-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html">Magento Commerce 2.1.12 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.11-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.11EE.html">Magento Commerce 2.1.11 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.10-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.10EE.html">Magento Commerce 2.1.10 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.9-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.9EE.html">Magento Commerce 2.1.9 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.8-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.8EE.html">Magento Commerce 2.1.8 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.7-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.7EE.html">Magento Commerce 2.1.7 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.6-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.6EE.html">Magento Commerce 2.1.6 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.5-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.5EE.html">Magento Commerce 2.1.5 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.4-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento Commerce 2.1.4 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.3-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.3EE.html">Magento Commerce 2.1.3 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.2-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">Magento Commerce 2.1.2 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.1-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.1EE.html">Magento Commerce 2.1.1 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-2.1.0-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/release-notes/ReleaseNotes2.1.0EE.html">Magento Commerce 2.1.0 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-(cloud)-2.1.x-release-notes">
+            
+            
+            <div class="toggle closed">&nbsp;</div>
+            
+        
+            
+            <span>Magento Commerce (Cloud) 2.1.x Release Notes</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.9.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.9.html">magento-cloud-configuration release 101.9.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.8.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">magento-cloud-configuration release 101.8.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.7.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">magento-cloud-configuration release 101.7.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.6.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.6.html">magento-cloud-configuration release 101.6.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.5.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.5.html">magento-cloud-configuration release 101.5.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-cloud-configuration-release-101.4.x-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.x Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-(cloud)-versions-2.1.6-through-2.1.11-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html">Magento Commerce (Cloud) versions 2.1.6 through 2.1.11 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-(cloud)-version-2.1.5-and-2.0.13-release-notes">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.5.html">Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-(cloud)-version-2.1.4-and-2.0.12">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento Commerce (Cloud) version 2.1.4 and 2.0.12</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-(cloud)-version-2.1.3-and-2.0.11">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html">Magento Commerce (Cloud) version 2.1.3 and 2.0.11</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="magento-commerce-(cloud)-version-2.1.2-and-2.0.10">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento Commerce (Cloud) version 2.1.2 and 2.0.10</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+    
+    
+
+<li class="nav-level1  " id="backward-incompatible-changes">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <a href="/guides/v2.1/release-notes/backward-incompatible-changes/index.html">Backward incompatible changes</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-changes">
+            
+            
+        
+            
+            <a href="/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html">Magento Open Source changes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="magento-commerce-changes">
+            
+            
+        
+            
+            <a href="/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html">Magento Commerce changes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="third-party-licenses">
+
+    
+    <div class="toggle closed">&nbsp;</div>
+    
+    
+    
+    <span>Third-party licenses</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.1/release-notes/thirdparty_ce.html">Magento Open Source third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.1/release-notes/thirdparty_ee.html">Magento Commerce third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-(cloud)-third-party-licenses">
+            
+            
+        
+            
+            <a href="/guides/v2.1/release-notes/thirdparty-mccloud.html">Magento Commerce (Cloud) third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.1/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Backward incompatible changes in Magento Commerce</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Backward incompatible changes in Magento Commerce</h1>
+
+  
+
+
+</section>
+
+
+			<p>This topic provides details about backward incompatible changes made in Magento Commerce 2.1.</p>
+
+<p>All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>To track all changes in Magento Commerce, consider <a href="./open-source.html">changes in Magento Open Source</a>.</p>
+</div>
+
+<p>The changes are aggregated into two tables:</p>
+
+<ol>
+  <li><strong>Changes in classes</strong> that contains backward incompatible changes made to the Magento classes</li>
+  <li><strong>Changes in interfaces</strong> that contains backward incompatible changes made to the Magento interfaces</li>
+</ol>
+
+<div class="bs-callout bs-callout-warning">
+  <p><strong>Temporary issue</strong>: Added docblock tags like <a href="/guides/v2.1/coding-standards/docblock-standard-general.html#deprecated">@deprecated</a> are defined in <strong>How Changed</strong> as <em>Class was added</em> or <em>Method has been added</em>.</p>
+</div>
+
+<h2 id="releases-2_1_11-2_1_12">2.1.11 - 2.1.12</h2>
+
+<h3 id="no-changes-2.1.11-2.1.12">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_10-2_1_11">2.1.10 - 2.1.11</h2>
+
+<h3 id="classes-2110-2111">Changes in classes</h3>
+<table><tbody>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
+    <tr>
+        <td>Magento\AdvancedCatalog\Model\ResourceModel\Product\Indexer\Eav\Source::TRANSIT_PREFIX</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ExchangeFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\MessageLockException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\PublisherPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\QueueFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Bulk\ExchangeFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\ConnectionTypeResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\Exchange</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\ExchangeFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\Queue</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Amqp\QueueFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\Mode</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\Restrictor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\System\Config\Source\Http</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\System\Config\Source\Modes</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\System\Config\Source\Redirect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\Config\Reader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Model\Config\SchemaLocator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\WebsiteRestriction\Block\Cms\Stub</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Rules</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Sorting</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Sorting\PriceAbstract</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Sorting\SortAbstract</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Rules\Rule</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Rules\Rule\Collection\Fetcher</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\ResourceModel\Rules</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\ResourceModel\Rules\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Config\Source\AllowedAttributes</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Config\Source\InsertMode</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Category\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Widget\SmartCategorySwitch</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Widget\Select\AttributeSelect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Widget\Select\AutomaticSortingSelect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Widget\Select\LogicSelect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Widget\Select\OperatorSelect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Widget\Select\SortOrderSelect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Merchandiser</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\SmartCategoryRules</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Merchandiser\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Merchandiser\Tile</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\AddProduct\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\AddProduct\Tabs\SkuTab</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Hierarchy\Node\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Hierarchy\Node</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Hierarchy\Head</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Hierarchy\Menu</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Hierarchy\Pagination</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Cms\Page</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Hierarchy\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Hierarchy\Manage</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Hierarchy\Edit\Form\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Model\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Model\Rule</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Model\Rule\Condition\Combine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Model\ResourceModel\Rule</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Model\ResourceModel\Rule\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Model\Actions\Condition\Combine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Checkout\Cart\Crosssell</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Catalog\Product\ProductList\Related</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Catalog\Product\ProductList\Upsell</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Adminhtml\Product</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Adminhtml\Targetrule</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Adminhtml\Targetrule\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Adminhtml\Targetrule\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Adminhtml\Targetrule\Edit\Tab\Actions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Adminhtml\Targetrule\Edit\Tab\Conditions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Adminhtml\Targetrule\Edit\Tab\Main</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\Backup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\Report</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\ResourceModel\Backup\Item</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\Backup\AbstractItem</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\Backup\Cmd\Php</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Block\Adminhtml\Report\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Block\Adminhtml\Report\View\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Block\Adminhtml\Backup\Log</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Block\Preview\LinkStub</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Block\Preview\RequireInjector</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Block\Adminhtml\Update\Preview</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Block\Adminhtml\Update\Entity\Toolbar</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Model\MessageGenerators\GeneratorException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Block\Fingerprint</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Block\Adminhtml\CaseInfo</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScheduledImportExport\Block\Adminhtml\Scheduled\Operation</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScheduledImportExport\Block\Adminhtml\Scheduled\Operation\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScheduledImportExport\Block\Adminhtml\Export\Filter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesArchive\Block\Adminhtml\Sales\Order\View\Buttons</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Model\Shipping</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Model\Rma\Create</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Model\ResourceModel\Shipping\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Model\ResourceModel\Rma\Status\History\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Model\Item\Attribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Returns\Create</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Returns\History</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Returns\Returns</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Returns\Tracking</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Returns\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Returns\Tracking\Package</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Returns\Tracking\Popup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Order\Button</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Order\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Form\Renderer\Image</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Form\Renderer\Select</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Email\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Create</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\NewRma</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\NewRma\Tab\General</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\NewRma\Tab\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\NewRma\Tab\Items\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\NewRma\Tab\Items\Order\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Item\Attribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Item\Attribute\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Item\Attribute\Edit\Js</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Item\Attribute\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Item\Attribute\Edit\Tab\Main</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Item\Attribute\Edit\Tab\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Item</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Js</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\Items\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Details</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\History</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Returnaddress</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\ShippingAddress</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Shippingmethod</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Shipping\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Shipping\Methods</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Shipping\Packaging</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Shipping\Tracking</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Create\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Create\Order</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Rma\Create\Order\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Product\Bundle\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Product\Bundle\Js</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Order\View\Buttons</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Order\View\Tab\Rma</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\Reward</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\Reward\History</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\Reward\Rate</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\ResourceModel\Reward</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\ResourceModel\Reward\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\ResourceModel\Reward\History</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\ResourceModel\Reward\Rate</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\ResourceModel\Reward\Rate\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\ResourceModel\Reward\History\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Model\Action\AbstractAction</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Tooltip</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Tooltip\Checkout</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Sales\Order\Total</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Customer\AccountLink</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Customer\Reward</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Customer\Reward\History</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Customer\Reward\Info</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Customer\Reward\Subscription</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Checkout\Payment\Additional</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Adminhtml\Sales\Order\Creditmemo\Reward</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Adminhtml\Sales\Order\Create\Payment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Adminhtml\Reward\Rate</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Adminhtml\Reward\Rate\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Adminhtml\Customer\Edit\Tab\Reward\Management\Balance</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Block\Adminhtml\Customer\Edit\Tab\Reward\History\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reminder\Block\Adminhtml\Reminder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reminder\Block\Adminhtml\Reminder\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reminder\Block\Adminhtml\Reminder\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reminder\Block\Adminhtml\Promo\Notice</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\PricePermissions\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\Message</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\MessageStatus</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\Queue</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\QueueManagement</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\ResourceModel\MessageStatusCollection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Model\ResourceModel\Item\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Behaviour</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Info</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Search\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Search\Results</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Sharing</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Sidebar</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Wishlist\Management</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Wishlist\Item\Column\Copy</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Wishlist\Item\Column\Management</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Wishlist\Item\Column\Selector</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Wishlist\Item\Column\Selector\Cart</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Customer\Wishlist\Button\Delete</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Adminhtml\Sales\Order\Create\Sidebar\Wishlist</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Adminhtml\Report\Customer\Wishlist</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Adminhtml\Report\Customer\Wishlist\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Block\Adminhtml\Manage\Accordion\Wishlist</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\MessageQueue\Model\ConsumerRunner</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Logging\Model\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Logging\Model\Source\Frequency</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Logging\Model\ResourceModel\Event\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Logging\Model\Event\Changes</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Logging\Block\Adminhtml\Container</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Logging\Block\Adminhtml\Details</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Logging\Block\Adminhtml\Details\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Model\Invitation</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Model\ResourceModel\Invitation\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Customer\ListCustomer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Customer\Form\Register</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Adminhtml\Invitation</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Adminhtml\Report\Invitation\Customer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Adminhtml\Report\Invitation\General</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Adminhtml\Report\Invitation\Order</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Adminhtml\Invitation\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Invitation\Block\Adminhtml\Invitation\View\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Model\Config\Source\AccountType</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Model\Banner\Collector</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Block\Ga</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Block\ListJson</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Block\Adminhtml\Ga</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Block\Adminhtml\Creditmemo\Ga</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Block\Adminhtml\Banner\Edit\Tab\Ga</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Model\Wrapping\Validator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Model\ResourceModel\Wrapping\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Sales\Totals</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Product\Info</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Checkout\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Giftwrapping</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Sales\Totals</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Sales\Order\View\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Sales\Order\View\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Sales\Order\Create\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Sales\Order\Create\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Order\View\Info</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Order\View\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Order\Create\Info</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Order\Create\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Order\Create\Totals</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Order\Create\Info\Content</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Giftwrapping\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\Entity</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\Item</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\Person</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\Type</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Entity</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Item</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Person</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Type</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Type\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Person\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Item\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Item\Option</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Item\Option\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\GiftRegistry\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Model\ResourceModel\Entity\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Wishlist\Item\Column\Registry</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Search\Advanced</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Search\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Search\Results</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Product\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Email\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\ListCustomer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Share</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Edit\Registrants</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Edit\Registry</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Checkout\Multishipping</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Address\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Cart\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Cart\Product\Mark</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Adminhtml\Giftregistry</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Adminhtml\Customer\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Adminhtml\Customer\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Model\Giftcardaccount</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Model\Pool\AbstractPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Block\Check</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Block\Sales\Order\Giftcards</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Block\Checkout\Onepage\Payment\Additional</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Block\Checkout\Cart\Giftcardaccount</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Block\Adminhtml\Giftcardaccount</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Block\Adminhtml\Sales\Order\Create\Payment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Block\Account\Redeem</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Block\Sales\Order\Item\Renderer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Block\Sales\Order\Item\Renderer\Noquote</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Block\Checkout\Cart\Item\Renderer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Block\Catalog\Product\View\Type\Giftcard</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Block\Adminhtml\Sales\Items\Column\Name\Giftcard</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Giftcard</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eway\Block\Payment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\AggregationFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\ConnectionManager</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\DocumentFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Mapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\ResponseFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\SearchIndexNameResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Query\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Query\Builder\Aggregation</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Dynamic\DataProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\ResourceModel\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Adapter\FieldType</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Adapter\Index\IndexNameResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Adapter\Document\Builder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\Customer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\Segment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\Segment\Condition\Combine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\ResourceModel\Customer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\ResourceModel\Segment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\ResourceModel\Segment\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\Condition\AbstractCondition</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\Condition\Combine\AbstractCombine</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Block\Adminhtml\Customersegment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Block\Adminhtml\Report\Customer\Segment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Block\Adminhtml\Report\Customer\Segment\Detail</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Block\Adminhtml\Report\Customer\Segment\Detail\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Block\Adminhtml\Customersegment\Grid\Chooser</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Form\Renderer\Fieldset\Element</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Attribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Formtype</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Formtype\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Formtype\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Formtype\Edit\Tab\General</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Formtype\Edit\Tab\Tree</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Attribute\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Attribute\Edit\Js</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Attribute\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Attribute\Edit\Tab\Main</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Attribute\Edit\Tab\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Address\Attribute</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Address\Attribute\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Address\Attribute\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Address\Attribute\Edit\Tab\General</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerCustomAttributes\Block\Adminhtml\Customer\Address\Attribute\Edit\Tab\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Sales\Order\Customerbalance</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Checkout\Onepage\Payment\Additional</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Adminhtml\Sales\Order\Creditmemo\Controls</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Adminhtml\Sales\Order\Create\Payment</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Balance</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Balance\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Adminhtml\Customer\Edit\Tab\Customerbalance\Balance\History</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Account\Balance</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerBalance\Block\Account\History</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\AbstractRenderer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Boolean</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Date</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\File</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Image</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Multiline</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Multiselect</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Select</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Text</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Textarea</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Permission</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\ResourceModel\Permission</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\ResourceModel\Permission\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\ResourceModel\Permission\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Permission\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\AbstractAction</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Category</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Product</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\System\Config\Mode</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Product\Action\Rows</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Product\Action\RowsFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Category\Action\Full</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Category\Action\Rows</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Category\Action\RowsFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Adminhtml\System\Config\Source\Grant</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Adminhtml\System\Config\Source\Grant\Landing</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Adminhtml\System\Config\Source\Customer\Group</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Helper\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Block\Adminhtml\Catalog\Category\Tab\Permissions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Block\Adminhtml\Catalog\Category\Tab\Permissions\Row</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Model\DateResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Model\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Model\ResourceModel\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Model\ResourceModel\Event\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Model\Category\EventList</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Helper\Adminhtml\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Catalog\Product\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Catalog\Category\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Adminhtml\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Adminhtml\Event\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Adminhtml\Event\Edit\Form</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Adminhtml\Catalog\Category\Edit\AddEventButton</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\BannerCustomerSegment\Model\ResourceModel\BannerSegmentLink</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Model\Banner</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Model\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Model\ResourceModel\Banner</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Model\ResourceModel\Banner\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Widget\Banner</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Ajax\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Promo\Salesrule\Edit\Tab\Banners\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Promo\Catalogrule\Edit\Tab\Banners\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Edit\Tabs</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Edit\Tab\Content</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Edit\Tab\Promotions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Edit\Tab\Properties</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Edit\Tab\Promotions\Catalogrule</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Banner\Edit\Tab\Promotions\Salesrule</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\ResourceModel\Index</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\ResourceModel\Recommendations</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\ResourceModel\Search\Grid\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\Client\ClientResolver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\Adminhtml\Search\Grid\Options</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Block\Recommendations</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Block\Suggestions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Block\Adminhtml\System\Config\TestConnection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Block\Adminhtml\Search\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Block\Adminhtml\Search\Grid</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Model\Cart</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Sku\Products</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Sku\Products\Info</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Customer\Link</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Customer\Sku</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Cart\Item\Configure</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Sku\Errors\Grid\ColumnSet\SkuErrors</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Sales\Order\Create\Sku</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Sales\Order\Create\Sku\Add</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Sales\Order\Create\Sku\Errors</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Items</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Load</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Messages</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Form\Coupon</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Compared</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Ordered</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Products</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Rcompared</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Rviewed</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Sku</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Wishlist</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Manage\Accordion\Sku\Errors</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Blocks</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\CallbackInvoker</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Collections</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Containers</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Role</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\ResourceModel\Collections</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Config\Reader</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Config\SchemaLocator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Block\Adminhtml\Permissions\Tab\Rolesedit\Gws</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Block\Adminhtml\Permissions\Grid\Role</td>
+        <td>Class was added.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interfaces-2110-2111">Changes in interfaces</h3>
+<table><tbody>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
+    <tr>
+        <td>Magento\Rma\Api\CommentRepositoryInterface::getList</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Api\RmaManagementInterface::search</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Api\RmaRepositoryInterface::getList</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Api\TrackRepositoryInterface::getList</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Api\WrappingRepositoryInterface::getList</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface::getList</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\EnvelopeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ExchangeFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ExchangeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\MessageIdGeneratorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\PublisherInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\QueueFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\QueueInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Topology\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Publisher\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Consumer\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Bulk\ExchangeFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Bulk\ExchangeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\BulkManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\BulkStatusInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\BulkSummaryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\OperationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\OperationManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Sorting\SortInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Rules\RuleInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Model\ResourceModel\Index\IndexInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseCreationServiceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\GuaranteeCancelingServiceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\GuaranteeCreationServiceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\Data\CaseInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\Data\CaseSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Query\Builder\QueryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Filter\BuilderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Filter\Builder\FilterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\Aggregation\Builder\BucketBuilderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Adapter\BatchDataMapperInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Adapter\FieldMapperInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Adapter\Index\BuilderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Adapter\Index\Config\EsConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\UpdateIndexInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\App\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\BulkSummaryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\OperationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\OperationListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\SuggestedQueriesInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\Client\ClientFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\Client\ClientInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\Client\ClientOptionsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedSearch\Model\Adapter\DataMapper\AdditionalFieldsProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\CallbackProcessorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+</tbody></table>
+
+<h2 id="releases-2_1_9-2_1_10">2.1.9 - 2.1.10</h2>
+
+<h3 id="no-changes-2.1.9-2.1.10">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_8-2_1_9">2.1.8 - 2.1.9</h2>
+
+<h3 id="no-changes-219-218">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_7-2_1_8">2.1.7 - 2.1.8</h2>
+
+<h3 id="classes-218-217">Changes in classes</h3>
+<table><tbody>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\ResourceModel\Grid\Collection::_initSelect</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+</tbody></table>
+
+<h2 id="releases-2_1_6-2_1_7">2.1.6 - 2.1.7</h2>
+
+<h3 id="no-changes-216-217">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_5-2_1_6">2.1.5 - 2.1.6</h2>
+
+<h3 id="no-changes-215-216">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_4-2_1_5">2.1.4 - 2.1.5</h2>
+
+<h3 id="no-changes-214-215">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_3-2_1_4">2.1.3 - 2.1.4</h2>
+
+<h3 id="no-changes-213-214">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_2-2_1_3">2.1.2 - 2.1.3</h2>
+
+<h3 id="class-212-213">Changes in classes</h3>
+<table><tbody>
+<tr>
+    <th>What changed</th>
+    <th>How changed</th>
+</tr>
+    <tr>
+        <td>Magento\ScalableCheckout\Model\Product\Plugin\RemoveQuoteItems</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Setup\InstallData</td>
+        <td>Class was removed.</td>
+    </tr>
+</tbody></table>
+
+<h2 id="releases-2_1_1-2_1_2">2.1.1 - 2.1.2</h2>
+
+<h3 id="no-changes-211-212">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_1_0-2_1_1">2.1.0 - 2.1.1</h2>
+
+<h3 id="no-changes-210-211">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="releases-2_0_0-2_1_0">2.0.0 - 2.1.0</h2>
+
+<h3 id="class-200-210">Changes in classes</h3>
+<table><tbody>
+<tr>
+    <th>What changed</th>
+    <th>How changed</th>
+</tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfiguration::CALLBACK</td>
+        <td>Constant has been removed.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interface-200-210">Changes in interfaces</h3>
+<table><tbody>
+<tr>
+    <th>What changed</th>
+    <th>How changed</th>
+</tr>
+    <tr>
+        <td>Magento\GiftCard\Api\Data\GiftcardAmountInterface::getAttributeId</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Api\Data\GiftcardAmountInterface::setAttributeId</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Worldpay\Api\GuestPaymentInformationManagementProxyInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\HierarchyNodeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\HierarchyNodeSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Model\Entity\Update\Action\ActionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Api\UpdateRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Api\Data\UpdateInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Api\Data\UpdateSearchResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScalableInventory\Api\Counter\ItemInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScalableInventory\Api\Counter\ItemsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRuleStaging\Api\SalesRuleStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Api\RewardManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Api\Data\WrappingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Api\Data\WrappingSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Api\ShippingMethodManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Api\GuestCart\ShippingMethodManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GiftCardAccountManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GuestGiftCardAccountManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardAccountInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardAccountSearchResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Api\Data\GiftCardOptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CmsStaging\Api\BlockStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CmsStaging\Api\PageStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogStaging\Api\CategoryStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogStaging\Api\ProductStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRuleStaging\Api\CatalogRuleStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+</tbody></table>
+
+<!-- LINK DEFINITIONS -->
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+    
+      <div class="github-link">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/backward-incompatible-changes/commerce.md" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    
+  
+
+  
+    
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/backward-incompatible-changes/commerce.html" target="_blank">Give us feedback</a>
+      </div>
+    
+  
+  
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
