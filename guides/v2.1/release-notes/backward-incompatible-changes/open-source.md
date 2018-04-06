@@ -3,7 +3,8 @@ layout: default
 group: release-notes
 title: Backward incompatible changes in Magento Open Source
 version: 2.1
-github_link: release-notes/changes/ce_changes.md
+github_link: release-notes/backward-incompatible-changes/open-source.md
+redirect_from: guides/v2.1/release-notes/changes/ce_changes.html
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ce}} 2.1.
@@ -20,55 +21,55 @@ The changes are aggregated into two tables:
 
 ## 2.1.11 - 2.1.12    {#releases-2_1_11-2_1_12}
 
-{% include changes/ce/2.1.11-2.1.12.html %}
+{% include backward-incompatible-changes/open-source/2.1.11-2.1.12.html %}
 
 ## 2.1.10 - 2.1.11    {#releases-2_1_10-2_1_11}
 
-{% include changes/ce/2.1.10-2.1.11.html %}
+{% include backward-incompatible-changes/open-source/2.1.10-2.1.11.html %}
 
 ## 2.1.9 - 2.1.10    {#releases-2_1_9-2_1_10}
 
-{% include changes/ce/2.1.9-2.1.10.html %}
+{% include backward-incompatible-changes/open-source/2.1.9-2.1.10.html %}
 
 ## 2.1.8 - 2.1.9    {#releases-2_1_8-2_1_9}
 
-{% include changes/ce/2.1.8-2.1.9.html %}
+{% include backward-incompatible-changes/open-source/2.1.8-2.1.9.html %}
 
 ## 2.1.7 - 2.1.8    {#releases-2_1_7-2_1_8}
 
-{% include changes/ce/2.1.7-2.1.8.html %}
+{% include backward-incompatible-changes/open-source/2.1.7-2.1.8.html %}
 
 ## 2.1.6 - 2.1.7 {#releases-2_1_6-2_1_7}
 
-{% include changes/ce/2.1.6-2.1.7.html %}
+{% include backward-incompatible-changes/open-source/2.1.6-2.1.7.html %}
 
 ## 2.1.5 - 2.1.6 {#releases-2_1_5-2_1_6}
 
-{% include changes/ce/2.1.5-2.1.6.html %}
+{% include backward-incompatible-changes/open-source/2.1.5-2.1.6.html %}
 
 ## 2.1.4 - 2.1.5 {#releases-2_1_4-2_1_5}
 
-{% include changes/ce/2.1.4-2.1.5.html %}
+{% include backward-incompatible-changes/open-source/2.1.4-2.1.5.html %}
 
 ## 2.1.3 - 2.1.4 {#releases-2_1_3-2_1_4}
 
-{% include changes/ce/2.1.3-2.1.4.html %}
+{% include backward-incompatible-changes/open-source/2.1.3-2.1.4.html %}
 
 ## 2.1.2 - 2.1.3 {#releases-2_1_2-2_1_3}
 
-{% include changes/ce/2.1.2-2.1.3.html %}
+{% include backward-incompatible-changes/open-source/2.1.2-2.1.3.html %}
 
 ## 2.1.1 - 2.1.2 {#releases-2_1_1-2_1_2}
 
-{% include changes/ce/2.1.1-2.1.2.html %}
+{% include backward-incompatible-changes/open-source/2.1.1-2.1.2.html %}
 
 ## 2.1.0 - 2.1.1 {#releases-2_1_0-2_1_1}
 
-{% include changes/ce/2.1.0-2.1.1.html %}
+{% include backward-incompatible-changes/open-source/2.1.0-2.1.1.html %}
 
 ## 2.0.0 - 2.1.0 {#releases-2_0_0-2_1_0}
 
-{% include changes/ce/2.0.0-2.1.0.html %}
+{% include backward-incompatible-changes/open-source/2.0.0-2.1.0.html %}
 
 <!-- LINK DEFINITIONS -->
 

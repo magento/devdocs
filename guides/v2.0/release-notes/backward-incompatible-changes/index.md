@@ -2,9 +2,9 @@
 layout: default
 group: release-notes
 title: Magento 2.0 Backward Incompatible Changes
-github_link: release-notes/backward-incompatible-changes.md
+github_link: release-notes/backward-incompatible-changes/index.md
 version: 2.0
-redirect_from: guides/v2.0/release-notes/changes_2.0.html
+redirect_from: guides/v2.0/release-notes/backward-incompatible-changes.html
 ---
 
 This topic discusses the most important backward incompatible changes made after Magento 2.0.0 release in scope of 2.0 version.
@@ -148,8 +148,8 @@ When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09c
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
 
-[{{site.data.var.ce}} backward incompatible changes]: {{page.baseurl}}release-notes/changes/ce_changes.html
-[{{site.data.var.ee}} backward incompatible changes]: {{page.baseurl}}release-notes/changes/ee_changes.html
+[{{site.data.var.ce}} backward incompatible changes]: {{page.baseurl}}release-notes/backward-incompatible-changes/open-source.html
+[{{site.data.var.ee}} backward incompatible changes]: {{page.baseurl}}release-notes/backward-incompatible-changes/commerce.html
 [Overview of UI components]: {{page.baseurl}}ui-components/ui-definition.html
 [more info about a form component]: {{page.baseurl}}ui-components/ui-form.html
 
