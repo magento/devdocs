@@ -57,9 +57,3 @@ Affected {{site.data.var.ee}} classes:
 * `\Magento\AdvancedSearch\Model\Client\ClientResolver`
 * `\Magento\AdvancedSearch\Model\Indexer\Fulltext\Plugin\CustomerGroup`
 * `\Magento\AdvancedSearch\Model\SuggestedQueries`
-
-
-<!-- Link definitions -->
-
-[{{site.data.var.ce}} changes]: 
-[{{site.data.var.ee}} changes]
