@@ -6,8 +6,6 @@ title: Backward incompatible changes in Magento Commerce
 github_link: release-notes/backward-incompatible-changes/commerce.md
 ---
 
-The changes are generated automatically using the codebase with additional modules in private repository only.
-
 <div class="bs-callout bs-callout-info" markdown="1">
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
 </div>

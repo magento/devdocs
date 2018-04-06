@@ -6,9 +6,6 @@ title: Backward incompatible changes in Magento Open Source
 github_link: release-notes/backward-incompatible-changes/open-source.md
 ---
 
-This topic provides details about backward incompatible changes related to {{site.data.var.ce}} 2.3.
-
-All changes are generated automatically using the codebase of corresponding releases in [magento/magento2] repository.
 The changes are aggregated into two tables:
 
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
@@ -29,7 +26,5 @@ content='This table is updated when new commits are merged into the "2.3-develop
 {% include backward-incompatible-changes/open-source/2.2.0-develop.html %}
 
 <!-- LINK DEFINITIONS -->
-
-[magento/magento2]: https://github.com/magento/magento2
 
 [@deprecated]: {{page.baseurl}}coding-standards/docblock-standard-general.html#deprecated
