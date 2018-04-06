@@ -3,7 +3,7 @@ layout: default
 group: graphql
 title: Products endpoint
 version: 2.3
-github_link: graphql/products.md
+github_link: graphql/reference/products.md
 ---
 
 The `products` endpoint allows you to search for catalog items.
@@ -283,3 +283,62 @@ Field | Type | Description
 Field | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
+
+## LayerFilter object
+
+The `LayerFilter` object can be returned in a response to help create layered navigation on your app.
+
+Field | Type | Description
+--- | --- | ---
+`name` | String | The layered navigation filter name
+`request_var` | String | The request variable name for the filter query
+`filter_items_count` | Int | The number of filter items in filter group
+`filter_items` |  [LayerFilterItemInterface] | An array of filter items
+
+### LayerFilterItemInterface
+
+`LayerFilterItemInterface ` contains an array of items that match the terms defined in the filter.
+
+Field | Type | Description
+--- | --- | ---
+`label` | String | The label applied to a filter
+`value_string` | String | The value for filter request variable to be used in a query
+`items_count` | Int | The number of items the filter returned
+
+## Sample query
+
+You can review several general interest `products` queries at [Searches and pagination in GraphQL]({{page.baseurl}}graphql/search-pagination.html).
+
+The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
+
+{% highlight json %}
+{
+    products (
+        filter: {
+            sku: {
+                like:"24-WB%"
+            }
+        }
+        pageSize: 20
+        currentPage: 1
+        sort: {
+            name: DESC
+        }
+    )
+    {
+        items {
+            sku
+        }
+        filters {
+            name
+            filter_items_count
+            request_var
+            filter_items {
+                label
+                value_string
+                items_count
+            }
+        }
+    }
+}
+{% endhighlight %}

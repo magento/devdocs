@@ -3,7 +3,7 @@ layout: default
 group: graphql
 title: categories endpoint
 version: 2.3
-github_link: graphql/categories.md
+github_link: graphql/reference/categories.md
 ---
 
 The `categories` endpoint allows you to search for a single category definition or the entire category tree.
@@ -59,7 +59,6 @@ The response can contain up to ten nested `children` options that allow you to r
     }
   }
 }
-```
 {% endhighlight %}
 
 ## Sample Query

@@ -3,7 +3,7 @@ layout: default
 group: graphql
 version: 2.3
 title: Configure the GraphQL schema for a module
-github_link: graphql/develop/conigure-graphql-xml.md
+github_link: graphql/develop/configure-graphql-xml.md
 ---
 
 The `<module_name>/etc/graphql.xml` file defines the GraphQL schema for a module. This file

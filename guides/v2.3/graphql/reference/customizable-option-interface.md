@@ -3,7 +3,7 @@ layout: default
 group: graphql
 title: CustomizableOptionInterface
 version: 2.3
-github_link: graphql/customizable-option-interface.md
+github_link: graphql/reference/customizable-option-interface.md
 ---
 
 Customizable options for a product provide a way to offer customers a selection of options with a variety of text, selection, and date input types. All product types can contain customizables options.
