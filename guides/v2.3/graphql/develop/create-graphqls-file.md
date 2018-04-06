@@ -129,4 +129,10 @@ enum VolumeUnitEnum {
 ```
 ## Annotations
 
-You can provide a description  attribute
+You can provide a description of any attribute, type definition, or other entity within a `schema.graphqls` file by appending the following to the line:
+
+`@doc(description: "<Text>")`
+
+For example:
+
+`sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")`
