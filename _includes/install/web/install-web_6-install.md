@@ -14,7 +14,7 @@ You have the following options:
 
 The message `Success` displays to indicate a successful installation.
 
-If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshooting</a>.
+If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable.
 
 You can also run the installer again.
 

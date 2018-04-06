@@ -19,7 +19,6 @@ functional_areas:
 We suggest the following:
 
 *	<a href="{{page.baseurl}}install-gde/install/verify.html">Verify the installation</a>
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshoot the installation</a>
 
 ## Other options
 You can also do any of the following:
