@@ -1,1 +1,17 @@
-../../../../v2.0/install-gde/trouble/readiness/tshoot_rc_php.md
+---
+layout: default
+group: install_trouble
+subgroup: 05_readiness
+title: PHP version readiness check issues
+menu_title: PHP version readiness check issues
+menu_node:
+menu_order: 100
+version: 2.1
+github_link: install-gde/trouble/readiness/tshoot_rc_php.md
+functional_areas:
+  - Install
+  - System
+  - Setup
+---
+
+{% include install/trouble/rc_php-version.md %}

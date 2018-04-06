@@ -68,7 +68,7 @@ When you access the Magento Admin, the following error displays in the browser:
 
 However, you can access the Magento storefront.
 
-_Solution_: The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl }}install-gde/docker/docker-over.html#devbox-download)
+_Solution_: The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl }}install-gde/docker/docker-over.html)
 
 {% endcollapsibleh2 %}
 

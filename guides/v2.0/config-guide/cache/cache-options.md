@@ -12,6 +12,7 @@ redirect_from:
   - /guides/v2.0/config-guide/cache/caching_low-level.html
   - /guides/v2.1/config-guide/cache/caching_low-level.html
   - /guides/v2.2/config-guide/cache/caching_low-level.html
+  - /guides/v2.3/config-guide/cache/caching_low-level.html
 functional_areas:
   - Configuration
   - System

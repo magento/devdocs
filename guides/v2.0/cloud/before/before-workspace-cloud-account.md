@@ -10,6 +10,8 @@ version: 2.0
 github_link: cloud/before/before-workspace-cloud-account.md
 ---
 
+<!-- This file isn't linked to the main TOC -->
+
 #### Previous step:
 [Prepare for local environment setup]({{ page.baseurl }}cloud/before/before-workspace.html)
 
@@ -19,7 +21,7 @@ You should receive an e-mail invitation to verify and access the account. If you
 
 When logged in, you should see a project named and ready to access.
 
-If the project name is **[UntitledProject]**, a Super User admin or the account owner needs to create the project. Only one of these users can create the project. For instructions, the project administrator or account owner should see [Create the Project]({{ page.baseurl }}cloud/before/before-project-owner.html#create-project)
+If the project name is **[UntitledProject]**, a Super User admin or the account owner needs to create the project. Only one of these users can create the project.
 
 Use this procedure whether you are starting a new project from scratch or you are importing an existing Magento installation to Enterprise Cloud Edition. When you initially set up a project from a template, we retrieve the code from a specific branch in the 'magento-cloud-configuration' repository.
 

@@ -91,7 +91,7 @@ sebastian/version |1.0.6| BSD-3-Clause|[Source](https://github.com/sebastianberg
 seld/cli-prompt|1.0.3| MIT|[Source](https://github.com/Seldaek/cli-prompt)|[License](https://github.com/Seldaek/cli-prompt/blob/master/LICENSE)
 seld/jsonlint |1.6.1| MIT|[Source](https://github.com/Seldaek/jsonlint)|[License](https://github.com/Seldaek/jsonlint/blob/master/LICENSE)
 seld/phar-utils|1.0.1|MIT|[Source](https://github.com/Seldaek/phar-utils)|[License](https://github.com/Seldaek/phar-utils/blob/master/LICENSE)
-Cm_RedisSession ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
+Cm_RedisSession ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession#license) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 extjs |1.0.1|Open GPL 3.0 (when was included)|[Source](https://www.sencha.com/)|[License](https://www.gnu.org/licenses/lgpl.html)
 fotorama|4.6.4 |MIT|[Source](https://github.com/artpolikarpov/fotorama)|[License](https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE)
 knockoutjs|3.3.0 |MIT|[Source](http://knockoutjs.com/downloads/index.html)|[Source](https://github.com/knockout/knockout/blob/master/LICENSE)

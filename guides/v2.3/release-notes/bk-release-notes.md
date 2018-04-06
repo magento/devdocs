@@ -10,7 +10,6 @@ version: 2.3
 github_link: release-notes/bk-release-notes.md
 ---
 
-
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Magento 2.3.0 is currently in pre-release. Check out [Magento 2.3.0 Alpha Quick Start Guide]({{page.baseurl}}release-notes/2.3.0-quick-start.html) for information on participating in our pre-release evaluation program.
 </div>

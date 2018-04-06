@@ -61,7 +61,7 @@ The following sections discuss the Composer packages used by {{site.data.var.ece
 *	[`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html) for release information.
+Refer to [Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html) for release information.
 </div>
 
 ### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
@@ -103,7 +103,3 @@ Therefore, when upgrading to a new Cloud version or adding, removing, or changin
 For more information, see [Patch Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-patch.html).
 
 This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.
-
-#### Related topics
-* [Patch Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-patch.html)
-* [Upgrade Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-upgrade.html)

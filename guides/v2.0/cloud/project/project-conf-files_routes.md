@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: Configure routes
+title: Routes
 version: 2.0
 github_link: cloud/project/project-conf-files_routes.md
 functional_areas:

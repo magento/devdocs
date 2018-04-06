@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
-title: Magento Commerce (Cloud) environment variables
-menu_title: Magento Commerce (Cloud) environment variables
-menu_order: 10
-menu_node:
+title: Cloud variables
 version: 2.0
 github_link: cloud/env/environment-vars_cloud.md
 functional_areas:
@@ -60,11 +56,3 @@ For example, we use the **MAGENTO_CLOUD_RELATIONSHIPS** variable to retrieve env
         return json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]), true);
     }
 ```
-
-#### Related topics
-* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

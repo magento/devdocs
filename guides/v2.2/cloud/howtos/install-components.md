@@ -140,8 +140,3 @@ To update an extension:
 9.	Wait for the project to deploy and verify in your environment.
 
 If there are errors, see [Component deployment failure]({{page.baseurl}}cloud/trouble/trouble_comp-deploy-fail.html).
-
-#### Related topics
-*	[Update components]({{page.baseurl}}cloud/howtos/update-components.html)
-*	[Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)

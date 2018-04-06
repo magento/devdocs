@@ -46,7 +46,6 @@ The installer is designed to be run multiple times if necessary so you can:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
-  <li>If you get errors during the installation, see <a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
 </div>
 
 See also <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
