@@ -9,7 +9,7 @@ github_link: release-notes/backward-incompatible-changes.md
 Magento 2.3 introduces several major changes that may affect the correct functionality of already released external modules.
 The purpose of this document is to highlight major changes between Magento 2.2 and 2.3.
 
-You can view the detailed lists of changes in PHP code that were made in the "2.3-develop" branch after the "2.2.0" release:
+You can view the detailed lists of changes in the PHP code that were made in the "2.3-develop" branch after the "2.2.0" release:
 
 - [{{site.data.var.ce}} changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ce/2.2.0-develop.html)
 - [{{site.data.var.ee}} changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ee/2.2.0-develop.html)
