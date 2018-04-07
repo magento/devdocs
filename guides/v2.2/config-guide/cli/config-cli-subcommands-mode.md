@@ -132,10 +132,10 @@ When you change from production to developer mode, you should clear generated cl
 
 		Switched to developer mode.
 
-### To run Magento commands from any directory
-<a href="{{ page.baseurl }}config-guide/cli/config-cli.html#config-install-cli-first">Run Magento system commands from anywhere</a>
+### Run Magento CLI commands from anywhere
+[Run Magento CLI commands from anywhere]({{page.baseurl}}config-guide/cli/config-cli.html#config-install-cli-first).
 
-If you haven't added `<magento-install-directory>/bin` to your system PATH, then you can expect an error when running the magento command by itself.
+If you haven't added `<magento-install-directory>/bin` to your system `PATH`, then you can expect an error when running the Magento command by itself.
 
 #### Related topics
 
