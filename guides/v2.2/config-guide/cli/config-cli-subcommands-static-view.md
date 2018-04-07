@@ -55,7 +55,7 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
+	bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
 
 The following table explains this command's parameters and values.
 
@@ -88,7 +88,7 @@ The following table explains this command's parameters and values.
           <code>en_US</code>.)
         </p>
         <p>
-          You can find the list by running <code>magento
+          You can find the list by running <code>bin/magento
           info:language:list</code>.
         </p>
       </td>
@@ -432,7 +432,7 @@ Following are some example commands.
 #### Excluding a theme and HTML minification
 The following command deploys {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} for the US English (`en_US`) language, excludes the Luma {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} provided with Magento, and does not minify {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} files.
 
-    magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
+    bin/magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
 
 Sample output:
 
@@ -454,7 +454,7 @@ Sample output:
 #### Generating static view files for one theme and one area
 The following command generates static view files for all languages, the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} area only, the Magento Luma theme only, without generating fonts:
 
-    magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
+    bin/magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
 
 Sample output:
 
@@ -475,9 +475,9 @@ You might want to run the deployment process in a separate, non-production, envi
 
 To do this, take the following steps:
 
-1.  Run [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to export the configuration from your production system.
+1.  Run [`bin/magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to export the configuration from your production system.
 2.  Copy the exported files to the non-production code base.
-3.  Run [`magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
+3.  Run [`bin/magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
 <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
 <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
