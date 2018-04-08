@@ -14,8 +14,8 @@ functional_areas:
   - EQP
 ---
 
-Introduction
-------------
+## Introduction
+
 
 The Marketplace Extension Quality Program (EQP) is slated to support the REST APIs access to the [Developer Portal](https://developer.magento.com) . The availability of these APIs to the Magento Marketplace Extension Development Community will be announced at some future date.
 
@@ -24,8 +24,8 @@ It also provides mechanisms for the developers to manage their extensions upload
 
 This document will provide an overview of the basic concepts, planned capabilities  and a preview of the version 1.0 of the  REST API details. All feedbacks can be sent to <marketplace-eqp-apis@magento.com>.
 
-Overview
---------
+## Overview
+
 
 The EQP APIs are organized on REST concepts using standard HTTP verbs (GET, POST, PUT and DELETE), using JSON in all responses, and indicating any errors via  HTTP Response codes.
 
@@ -33,7 +33,7 @@ The APIs can only be accessed through a secure protocol via HTTPS, and the base 
 
     https://developer-api.magento.com
 
-The following resources will be available, listed along with their respective endpoints:
+The following top-level resources will be available, listed along with their respective endpoints:
 
 * apps 
 

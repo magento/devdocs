@@ -46,11 +46,11 @@ POST /rest/v1/apps/session/token
 
 A POST body specifying the grant type must be supplied:
 
-~~~~~~
+{% highlight json %}
 {
    “grant_type” : “session”
 }
-~~~~~~
+{% endhighlight %}
 
 Currently only the ‘session’ grant type is supported.
 
@@ -58,21 +58,24 @@ The following curl example illustrates the request and the expected response:
 
 **Request:**
 
---- bash
+{% highlight shell %}
+curl -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca' \ 
+     -d '{ "grant_type" : "session" }' \
+     https://developer-api.magento.com/rest/v1/apps/session/token 
 
-curl -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca'  -d '{ "grant_type" : "session" }' https://developer-api.magento.com/rest/v1/apps/session/token 
-
----
+{% endhighlight %}
 
 **Response:**
 
---- json
+A successful HTTP 200 OK response will be sent for a valid application id and secret:
+
+{% highlight json %}
 {
  "mage_id": "MAG123456789",
  "ust": "baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7",
  "expires_in": 3600
 }
----
+{% endhighlight %}
 
 Points to note:
 
@@ -88,10 +91,10 @@ Once a valid session token is obtained as described above, it must be presented 
 
 For example, accessing a user profile with the aforesaid session token will look like:
 
---- bash
+{% highlight shell %}
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/users/MAG123456789  
+{% endhighlight %}
 
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' https://developer-api.magento.com/rest/v1/users/MAG123456789/profile  
-
----
 
 
