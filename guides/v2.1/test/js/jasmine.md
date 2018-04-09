@@ -47,14 +47,14 @@ If the command fails with the error message:
 /var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
 ```
 install [fonctconfig library]:<br/>
-CentOS:
-```bash
-$ yum install fontconfig
-```
-Ubuntu:
-```bash
-$ apt-get install fontconfig
-```
+* CentOS:
+  ```bash
+  $ yum install fontconfig
+  ```
+* Ubuntu:
+  ```bash
+  $ apt-get install fontconfig
+  ```
 "
 %}
 
