@@ -33,16 +33,9 @@ exclude_themes=magento/luma,magento/my-theme
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
--  **Version**—Magento 2.1.x
+-  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
-
-### `SCD_STRATEGY`
-
--  **Default**— _Not set_
--  **Version**—Magento 2.1 supports the `standard` strategy only
-
-Deploys all static view files for all packages.
 
 ### `SCD_THREADS`
 

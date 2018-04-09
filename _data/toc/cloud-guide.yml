@@ -355,11 +355,3 @@ pages:
         - label: Upgrade from 2.0.4 (Cloud)
           url: cloud/upgrade/upgrade-from-2-0-4.html
           versions: ["2.0"]
-
-        - label: Composer package updates
-          url: cloud/composer-packages/patch-notes.html
-          versions: ["2.1","2.2"]
-          children:
-            - label: vendor/magento/ece-patches
-              url: cloud/composer-packages/ece-patches.html
-              versions: ["2.2"]

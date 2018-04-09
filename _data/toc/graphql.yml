@@ -15,7 +15,7 @@ pages:
 
     - label: Development
       children:
-        - label: Define the GraphQL schema for a module
+        - label: Configure the GraphQL schema for a module
           url: graphql/develop/create-graphqls-file.html
 
         - label: Resolvers

@@ -55,7 +55,7 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
+	magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
 
 The following table explains this command's parameters and values.
 
@@ -345,22 +345,6 @@ The following table explains this command's parameters and values.
       <td>
         <p>
           Do not minify HTML files.
-        </p>
-      </td>
-      <td>
-        <p>
-          No
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        --dry-run (-d)
-      </td>
-      <td>
-        <p>
-          Include to view the files output by the tool without
-          outputting anything.
         </p>
       </td>
       <td>
