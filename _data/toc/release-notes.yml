@@ -309,14 +309,14 @@ pages:
               url: release-notes/ReleaseNotes2.1_RC1EE.html
 
     - label: Backward incompatible changes
-      url: release-notes/backward-incompatible-changes.html
+      url: release-notes/backward-incompatible-changes/index.html
       children:
 
         - label: Magento Open Source changes
-          url: release-notes/changes/ce_changes.html
+          url: release-notes/backward-incompatible-changes/open-source.html
 
         - label: Magento Commerce changes
-          url: release-notes/changes/ee_changes.html
+          url: release-notes/backward-incompatible-changes/commerce.html
 
         - label: Magento Commerce for B2B changes
           url: release-notes/changes/b2b_changes.html

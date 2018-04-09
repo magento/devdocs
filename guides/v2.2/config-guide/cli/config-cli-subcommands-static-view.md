@@ -355,22 +355,6 @@ The following table explains this command's parameters and values.
     </tr>
     <tr>
       <td>
-        --dry-run (-d)
-      </td>
-      <td>
-        <p>
-          Include to view the files output by the tool without
-          outputting anything.
-        </p>
-      </td>
-      <td>
-        <p>
-          No
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
         -s
         <ul>
           <li>-s quick
