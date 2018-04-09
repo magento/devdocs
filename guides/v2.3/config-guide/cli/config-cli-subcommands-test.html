@@ -2010,7 +2010,7 @@
     <li>
       <p>The <code class="highlighter-rouge">Magento_Developer</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must be enabled. You can enable it as follows:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:enable [--force] Magento_Developer
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:enable [--force] Magento_Developer
 </code></pre></div>      </div>
 
       <p>Use the <code class="highlighter-rouge">--force</code> option only if it’s necessary.</p>
@@ -2025,12 +2025,12 @@
   <h2 id="running-tests">Running tests</h2>
   <p>Command usage:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:tests:run &lt;test&gt;
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run &lt;test&gt;
 </code></pre></div>  </div>
 
   <p>To list the available test types:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:tests:run --help
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run --help
 </code></pre></div>  </div>
 
   <p>This gives you a list similar to the following:</p>
@@ -2040,7 +2040,7 @@
 
   <p>For example, to run integration tests:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento dev:tests:run integration
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run integration
 </code></pre></div>  </div>
 
   <h4 id="related-topics">Related topics</h4>

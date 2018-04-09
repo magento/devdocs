@@ -2045,7 +2045,7 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy [&lt;languages&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:static-content:deploy [&lt;languages&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
 </code></pre></div>  </div>
 
   <p>The following table explains this command’s parameters and values.</p>
@@ -2077,7 +2077,7 @@
           <code>en_US</code>.)
         </p>
         <p>
-          You can find the list by running <code>magento
+          You can find the list by running <code>bin/magento
           info:language:list</code>.
         </p>
       </td>
@@ -2403,7 +2403,7 @@
   <h4 id="excluding-a-theme-and-html-minification">Excluding a theme and HTML minification</h4>
   <p>The following command deploys <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> for the US English (<code class="highlighter-rouge">en_US</code>) language, excludes the Luma <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> provided with Magento, and does not minify <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> files.</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
 </code></pre></div>  </div>
 
   <p>Sample output:</p>
@@ -2427,7 +2427,7 @@ Successful: 1993 files; errors: 0
   <h4 id="generating-static-view-files-for-one-theme-and-one-area">Generating static view files for one theme and one area</h4>
   <p>The following command generates static view files for all languages, the <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> area only, the Magento Luma theme only, without generating fonts:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
 </code></pre></div>  </div>
 
   <p>Sample output:</p>
@@ -2451,9 +2451,9 @@ New version of deployed files: 1466711110
   <p>To do this, take the following steps:</p>
 
   <ol>
-    <li>Run <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code></a> to export the configuration from your production system.</li>
+    <li>Run <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">bin/magento app:config:dump</code></a> to export the configuration from your production system.</li>
     <li>Copy the exported files to the non-production code base.</li>
-    <li>Run <a href="#config-cli-subcommands-staticview"><code class="highlighter-rouge">magento setup:static-content:deploy</code></a>.</li>
+    <li>Run <a href="#config-cli-subcommands-staticview"><code class="highlighter-rouge">bin/magento setup:static-content:deploy</code></a>.</li>
   </ol>
 
   <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>

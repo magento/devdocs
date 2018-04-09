@@ -1604,7 +1604,7 @@
   <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
   <p>Run the command as follows (there are no options):</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
 </code></pre></div>  </div>
 
   <p>The following message displays to confirm success:</p>
@@ -1632,7 +1632,7 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and
 filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
 </code></pre></div>  </div>
 
@@ -1680,7 +1680,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 
   <p>For example, to run the compiler and specify the <code class="highlighter-rouge">igbinary</code> serializer:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile-multi-tenant --serializer=igbinary
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile-multi-tenant --serializer=igbinary
 </code></pre></div>  </div>
 
   <p>Messages similar to the following display:</p>

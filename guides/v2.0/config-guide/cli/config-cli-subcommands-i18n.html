@@ -1624,7 +1624,7 @@
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:collect-phrases [-o|--output="&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases [-o|--output="&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
 </code></pre></div>  </div>
 
   <p>The following table explains this command’s parameters and values:</p>
@@ -1714,7 +1714,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
   <p>Command usage:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;locale&gt;
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;locale&gt;
 </code></pre></div>  </div>
 
   <p>The following table explains this command’s parameters and values:</p>
@@ -1729,39 +1729,37 @@ Product 'Multimeter-2000' has been added to shopping cart.
 			<th>Value</th>
 			<th>Required?</th>
 		</tr>
-
-	<tr>
-		<td><p>&lt;source&gt;</p></td>
-		<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.</p>
-		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">magento i18n:collect-phrases</a> to create the .csv file then create the language package as discussed in <a href="#m2devgde-xlate-files">Create directories and files</a>. </p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>&lt;locale&gt;</p></td>
-		<td><p><a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="\_blank">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm" target="\_blank">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
-		</td>
-		<td>
-			<p>Yes</p>
-		</td>
-	</tr>
-	<tr>
-		<td><p>-m|--mode</p></td>
-		<td><p>If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. </p>
-			<p>Values: <code>merge</code> or <code>replace</code> (the default).</p>
-		</td>
-		<td>
-			<p>No</p>
-		</td>
-	</tr>
-	<tr>
-		<td><p>-d|--allow-duplicates</p></td>
-		<td><p>Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase is translated in different ways in different lines.</p>
-
-		</td>
-		<td>
-			<p>No</p>
-		</td>
-	</tr>
+		<tr>
+			<td><p>&lt;source&gt;</p></td>
+			<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.</p>
+			<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">bin/magento i18n:collect-phrases</a> to create the .csv file then create the language package as discussed in <a href="#m2devgde-xlate-files">Create directories and files</a>. </p></td>
+			<td><p>Yes</p></td>
+		</tr>
+		<tr>
+			<td><p>&lt;locale&gt;</p></td>
+			<td><p><a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="\_blank">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm" target="\_blank">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
+			</td>
+			<td>
+				<p>Yes</p>
+			</td>
+		</tr>
+		<tr>
+			<td><p>-m|--mode</p></td>
+			<td><p>If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. </p>
+				<p>Values: <code>merge</code> or <code>replace</code> (the default).</p>
+			</td>
+			<td>
+				<p>No</p>
+			</td>
+		</tr>
+		<tr>
+			<td><p>-d|--allow-duplicates</p></td>
+			<td><p>Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase is translated in different ways in different lines.</p>
+			</td>
+			<td>
+				<p>No</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -1879,7 +1877,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <li>
       <p>Collect phrases from your module:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
 </code></pre></div>      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
@@ -1897,7 +1895,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <li>
       <p>Collect phrases from your module:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
 </code></pre></div>      </div>
 
       <div class="bs-callout bs-callout-info" id="info">
@@ -1908,7 +1906,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <li>
       <p>Create the language package.</p>
 
-      <p>magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY</p>
+      <p>bin/magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY</p>
     </li>
     <li>
       <p>Create a directory for the language package.</p>

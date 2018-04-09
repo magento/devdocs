@@ -1619,12 +1619,12 @@
   <div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">magento setup:backup</a> command. This command is intended to be used to back up code for examination by Magento Support.</p>
+      <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">bin/magento setup:backup</a> command. This command is intended to be used to back up code for examination by Magento Support.</p>
     </div>
 
     <p>Command options:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento support:backup:code [--name=&lt;file name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs]
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento support:backup:code [--name=&lt;file name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs]
 </code></pre></div>    </div>
 
     <p>Where:</p>
@@ -1637,7 +1637,7 @@
 
     <p>For example, to create a code backup named <code class="highlighter-rouge">/var/www/html/magento2/var/log/mycodebackup.tar.gz</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
 </code></pre></div>    </div>
 
     <p>After the command completes, provide the code backup to Magento Support.</p>
@@ -1648,12 +1648,12 @@
     <div>
 
       <div class="bs-callout bs-callout-info" id="info">
-        <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">magento setup:backup</a> command. This command is intended to be used to back up code for examination by Magento Support.</p>
+        <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">bin/magento setup:backup</a> command. This command is intended to be used to back up code for examination by Magento Support.</p>
       </div>
 
       <p>Command options:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
 </code></pre></div>      </div>
 
       <p>Where:</p>

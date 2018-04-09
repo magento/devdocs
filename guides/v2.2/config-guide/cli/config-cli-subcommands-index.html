@@ -2003,7 +2003,7 @@
   <h2 id="view-a-list-of-indexers">View a list of indexers</h2>
   <p>To view a list of all indexers:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:info
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
 </code></pre></div>  </div>
 
   <p>The list displays as follows:</p>
@@ -2023,19 +2023,19 @@ catalogsearch_fulltext                   Catalog Search
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:status [indexer]
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:status [indexer]
 </code></pre></div>  </div>
 
   <p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to view the status of all indexers.</p>
 
   <p>To list all indexers:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:info
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
 </code></pre></div>  </div>
 
   <p>A sample follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:status
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:status
 </code></pre></div>  </div>
 
   <p>Sample result:</p>
@@ -2051,7 +2051,7 @@ Catalog Search:                                    Reindex required
 </code></pre></div>  </div>
 
   <h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
-  <p>USe this command to reindex all or selected indexers one time only.</p>
+  <p>Use this command to reindex all or selected indexers one time only.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
     <p>This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p>
@@ -2059,19 +2059,19 @@ Catalog Search:                                    Reindex required
 
   <p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:reindex [indexer]
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:reindex [indexer]
 </code></pre></div>  </div>
 
   <p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to reindex all indexers.</p>
 
   <p>To view a list of all indexers:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:info
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
 </code></pre></div>  </div>
 
   <p>A sample follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:reindex
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:reindex
 </code></pre></div>  </div>
 
   <p>Sample result:</p>
@@ -2103,12 +2103,12 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
   <h3 id="display-the-current-configuration">Display the current configuration</h3>
   <p>To view the current indexer configuration:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:show-mode [indexer]
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:show-mode [indexer]
 </code></pre></div>  </div>
 
   <p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to show all indexers’ modes. For example, to show the mode of all indexers:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:show-mode
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:show-mode
 </code></pre></div>  </div>
 
   <p>Sample result:</p>
@@ -2126,7 +2126,7 @@ Catalog Search:                                    Update on Save
   <h3 id="configure-indexers-1">Configure indexers</h3>
   <p>To specify the indexer configuration:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:set-mode {realtime|schedule} [indexer]
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:set-mode {realtime|schedule} [indexer]
 </code></pre></div>  </div>
 
   <p>Where:</p>
@@ -2139,12 +2139,12 @@ Catalog Search:                                    Update on Save
 
   <p>To view the list of indexers:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:info
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
 </code></pre></div>  </div>
 
   <p>For example, to change only the category products and product categories indexers to update on schedule, enter</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento indexer:set-mode schedule catalog_category_product catalog_product_category
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:set-mode schedule catalog_category_product catalog_product_category
 </code></pre></div>  </div>
 
   <p>Sample result:</p>

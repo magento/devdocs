@@ -2006,7 +2006,7 @@ These settings include configuration paths and values, websites, stores, store v
   <p>After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.</p>
 
   <div class="bs-callout bs-callout-info">
-    <p>The import command does not process configuration stored in environment variables.</p>
+    <p>The <code class="highlighter-rouge">bin/magento app:config:import</code> command does not process configuration stored in environment variables.</p>
   </div>
 
   <h2 id="import-configuration-data">Import configuration data</h2>
@@ -2018,7 +2018,7 @@ These settings include configuration paths and values, websites, stores, store v
 
   <p>Use the optional <code class="highlighter-rouge">[-n, --no-interaction]</code> flag to import data without any interaction.</p>
 
-  <p>If you enter <code class="highlighter-rouge">magento app:config:import</code> without the optional flag, you’re required to confirm the changes.</p>
+  <p>If you enter <code class="highlighter-rouge">bin/magento app:config:import</code> without the optional flag, you’re required to confirm the changes.</p>
 
   <p>For example, if configuration file contains one new <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> and one new store, the following  message is displayed:</p>
 
@@ -2119,7 +2119,7 @@ You must associate a root category with a store using the Magento <span term-uui
   <h4 id="for-more-information">For more information</h4>
   <ul>
     <li><a href="/guides/v2.3/config-guide/deployment/pipeline/">Deployment general overview</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code></a></li>
+    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">bin/magento app:config:dump</code></a></li>
   </ul>
 </div>
 
