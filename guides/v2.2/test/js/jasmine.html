@@ -530,13 +530,13 @@
 </section>
 
 
-			<p>Magento uses a custom <a href="http://gruntjs.com/">Grunt</a> task named <code class="highlighter-rouge">spec</code> to run Jasmine tests. The task collects the tests from <code class="highlighter-rouge">&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for all tests, a theme, or a single test.</p>
+			<p>Magento uses a custom <a target="_blank" href="http://gruntjs.com/">Grunt</a> task named <code class="highlighter-rouge">spec</code> to run Jasmine tests. The task collects the tests from <code class="highlighter-rouge">&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for all tests, a theme, or a single test.</p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
-<p><strong>Step 1.</strong> <a href="https://nodejs.org/en/">Install Node.js</a>.</p>
+<p><strong>Step 1.</strong> <a target="_blank" href="https://nodejs.org/en/">Install Node.js</a>.</p>
 
-<p><strong>Step 2.</strong> <a href="http://gruntjs.com/getting-started">Install grunt-cli</a>.</p>
+<p><strong>Step 2.</strong> <a target="_blank" href="http://gruntjs.com/getting-started">Install grunt-cli</a>.</p>
 
 <p><strong>Step 3.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, create <code class="highlighter-rouge">Gruntfile.js</code> and copy <code class="highlighter-rouge">Gruntfile.js.sample</code> into it.</p>
 
@@ -544,44 +544,58 @@
 
 <p><strong>Step 5.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, install all dependencies:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  npm install</code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  npm install
+</code></pre></div></div>
 
 <p id="prepare-step6"><strong>Step 6.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, generate static view files in Magento that are going to be tested</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  php bin/magento setup:static-content:deploy <span class="nt">-f</span></code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  php bin/magento setup:static-content:deploy <span class="nt">-f</span>
+</code></pre></div></div>
 
 <p>Note that normally you don’t have permissions to <code class="highlighter-rouge">&lt;magento_root_dir&gt;/app/code/</code>, in fact the generated static view file is being tested.</p>
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" id="tip">
   <p><strong>For CentOS and Ubuntu users</strong><br />
-If the command fails with error message: <br />
-<code class="highlighter-rouge">/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code><br />
-install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctconfig library</a>:{: target=”_blank”}<br />
-<code class="highlighter-rouge">$ yum install fontconfig</code> (CentOS)<br />
-<code class="highlighter-rouge">$ apt-get install fontconfig</code> (Ubuntu)</p>
+If the command fails with the error message:</p>
+  <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
+</span></code></pre></div>  </div>
+  <p>install <a target="_blank" href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctconfig library</a>:<br /></p>
+  <ul>
+    <li>CentOS:
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>yum install fontconfig
+</code></pre></div>      </div>
+    </li>
+    <li>Ubuntu:
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>apt-get install fontconfig
+</code></pre></div>      </div>
+    </li>
+  </ul>
+
 </div>
 
-<p>Learn more in <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict">Deploy static view files</a>.</p>
+<p>Learn more in <a target="_blank" href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict">Deploy static view files</a>.</p>
 
 <h2 id="run-tests">Run tests</h2>
 
 <p><code class="highlighter-rouge">Gruntfile.js</code> contains the test run task, so you can run <strong>all tests</strong> using the following command in in the Magento root directory:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:&lt;THEME&gt;</code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  grunt spec:&lt;THEME&gt;
+</code></pre></div></div>
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:backend</code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  grunt spec:backend
+</code></pre></div></div>
 
 <h2 id="write-test">Write a test</h2>
 
 <p>All tests are distributed through modules stored in <code class="highlighter-rouge">&lt;magento_root_dir&gt;/dev/tests/js/jasmine/tests</code>. Let’s see how to write a test using an example of an existing test:</p>
 
-<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js" target="_blank"><code class="highlighter-rouge">app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></a></p>
+<p><a target="_blank" href="https://github.com/magento/magento2/blob/2.2/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js"><code class="highlighter-rouge">app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></a></p>
 
 <p>which tests a JS module:</p>
 
-<p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js" target="_blank"><code class="highlighter-rouge">&lt;magento_root_dir&gt;/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></a></p>
+<p><a target="_blank" href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js"><code class="highlighter-rouge">&lt;magento_root_dir&gt;/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></a></p>
 
 <p>in its static representations generated in <a href="#prepare-step6">Step 6</a> previously:</p>
 
@@ -601,14 +615,15 @@ install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctcon
 
 <p>For our example we need to cover all static view files ending with <code class="highlighter-rouge">Magento_Ui/js/grid/columns/actions</code>.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
     <span class="s1">'Magento_Ui/js/grid/columns/actions'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Actions</span><span class="p">)</span> <span class="p">{</span>
     <span class="s1">'use strict'</span><span class="p">;</span>
 
     <span class="c1">//Test code</span>
     <span class="c1">//...</span>
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <h3 id="step-3-write-your-jasmine-test-code">Step 3. Write your Jasmine test code.</h3>
 
@@ -628,12 +643,7 @@ install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctcon
 
 <p>In <code class="highlighter-rouge">describe</code> you can use <code class="highlighter-rouge">beforeEach</code> and <code class="highlighter-rouge">afterEach</code> functions performing a preparation of what must be done before and after every <code class="highlighter-rouge">it</code> test followed.</p>
 
-<div class="collapsible"><b class="collapsible-title">See the full code of the test</b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */</span>
-
-<span class="nx">define</span><span class="p">([</span>
+<div class="collapsible"><b class="collapsible-title">See the full code of the test</b><div class="collapsible-content"><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
     <span class="s1">'underscore'</span><span class="p">,</span>
     <span class="s1">'Magento_Ui/js/grid/columns/actions'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="nx">Actions</span><span class="p">)</span> <span class="p">{</span>
@@ -713,12 +723,13 @@ install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctcon
             <span class="nx">expect</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">isActionVisible</span><span class="p">(</span><span class="nx">action</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
         <span class="p">});</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span>
+</code></pre></div></div>
 </div></div>
 
 <p>This topic doesn’t provide Jasmine test writing methodology.</p>
 
-<p><a href="https://jasmine.github.io/edge/introduction.html">Learn more about testing with Jasmine.</a></p>
+<p><a target="_blank" href="https://jasmine.github.io/edge/introduction.html">Learn more about testing with Jasmine.</a></p>
 
 <h2 id="known-issues-and-solutions">Known issues and solutions</h2>
 
@@ -728,12 +739,12 @@ install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctcon
 
 <p>An error message appears:</p>
 
-<pre><code class="language-error">Loading "Gruntfile.js" tasks...ERROR
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Loading "Gruntfile.js" tasks...ERROR
 
-&gt;&gt; Error: Cannot find module '&lt;module&gt;'
-
+</span><span class="gp">&gt;</span><span class="o">&gt;</span> Error: Cannot find module <span class="s1">'&lt;module&gt;'</span>
+<span class="go">
 Warning: Task "spec" not found. Use --force to continue.
-</code></pre>
+</span></code></pre></div></div>
 
 <h4 id="solution">Solution:</h4>
 
@@ -751,17 +762,18 @@ Warning: Task "spec" not found. Use --force to continue.
 
 <p>An error message appears:</p>
 
-<pre><code class="language-error">Warning: Cannot read property 'pid' of undefined
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Warning: Cannot read property 'pid' of undefined
 
 Use --force to continue. Aborted due to warnings.
-</code></pre>
+</span></code></pre></div></div>
 
 <h4 id="solution-1">Solution:</h4>
 
 <p>Run in your terminal:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  <span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
-<span class="nv">$ </span>  npm install</code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  <span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
+<span class="nv">$ </span>  npm install
+</code></pre></div></div>
 
 <!-- LINK DEFINITIONS -->
 
