@@ -1,13 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 090_configure
 title: Server side includes
-menu_title: Server side includes
-menu_order: 45
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: routes
 version: 2.0
 github_link: cloud/project/project-routes-more-ssi.md
 functional_areas:

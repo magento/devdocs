@@ -15,7 +15,9 @@ You may need to specify your component's dependency on other components or files
 `<sequence>` declares the list of components that must be loaded before the current component is loaded. It's used for loading different kind of files: configuration files, view files (including CSS, LESS, and template files), or setup classes. Note that `<sequence>` does not affect the loading of regular classes (non-setup classes).
 *Setup* classes are classes in the component that create or update {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or data.
 
-If you know that your component's logic depends on something in another component then you should add it to `require` in `composer.json` and `<sequence>` in `module.xml`.
+If you know that your component's logic depends on something in another component, then you should add this component to `require` in `composer.json` and `<sequence>` in `module.xml`.
+
+You can check your module's load order from the `<your Magento install dir>/app/etc/config.php` file after you've successfully set up Magento. This file is created dynamically at run time during set up.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">

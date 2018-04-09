@@ -299,11 +299,7 @@ pages:
     - label: Troubleshooting
       children:
 
-        - label: Troubleshooting suggestions
-          url: install-gde/trouble/tshoot.html
-
         - label: Access issues
-          url: install-gde/trouble/php/tshoot_access-main.html
           children:
 
             - label: Cannot access Magento software in a web browser
@@ -328,7 +324,6 @@ pages:
               url: install-gde/trouble/tshoot_admin.html
 
         - label: Errors during installation
-          url: install-gde/trouble/php/tshoot_install-main.html
           children:
 
             - label: Installation stops at about 70%
@@ -362,7 +357,6 @@ pages:
               url: install-gde/trouble/php/tshoot_xdebug.html
 
         - label: Readiness check issues
-          url: install-gde/trouble/readiness/tshoot_rc_main.html
           children:
 
             - label: Component dependency readiness issues
@@ -378,7 +372,6 @@ pages:
               url: install-gde/trouble/readiness/tshoot_rc_php.html
 
         - label: GitHub errors
-          url: install-gde/trouble/git/tshoot_git-main.html
           children:
 
             - label: Cannot clone the Magento GitHub repository
@@ -388,7 +381,6 @@ pages:
               url: install-gde/trouble/git/tshoot_git-pull-origin.html
 
         - label: PHP errors
-          url: install-gde/trouble/php/tshoot_php-main.html
           children:
 
             - label: Resolve an illegal offset error
@@ -404,7 +396,6 @@ pages:
               url: install-gde/trouble/php/tshoot_php-date.html
 
         - label: Other issues
-          url: install-gde/trouble/tshoot_other.html
           children:
 
             - label: Known issues that affect installation
@@ -421,9 +412,6 @@ pages:
 
             - label: Cannot run 'composer install'
               url: install-gde/trouble/tshoot_composer-install.html
-
-        - label: Installation roadmap (reference)
-          url: install-gde/install-roadmap_trouble.html
 
     - label: How Tos
       children:

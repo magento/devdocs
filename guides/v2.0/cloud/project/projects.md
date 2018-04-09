@@ -32,7 +32,7 @@ To manage your project, environment, and branches, see:
 ### Project and environment variables {#variables}
 The following sections detail more about project and environment variables:
 
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Overview of environment variables]({{page.baseurl}}cloud/env/variables-intro.html)
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 *	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)

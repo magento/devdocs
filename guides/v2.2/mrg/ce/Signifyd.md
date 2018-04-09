@@ -76,7 +76,7 @@ The Debug Mode may be enabled in the module configuration. This logs the communi
 
 The Magento_Signifyd module does not introduce backward incompatible changes.
 
-You can track [backward incompatible changes in patch releases](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes in patch releases](http://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html).
 
 ### Processing supplementary payment information
 

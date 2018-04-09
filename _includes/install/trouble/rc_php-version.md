@@ -32,4 +32,4 @@ To resolve the issue, try the following:
 
 	*	[Version 2.0]({{page.baseurl}}install-gde/system-requirements.html)
 	*	[Version 2.1]({{site.gdeurl21}}install-gde/system-requirements.html)
-*	Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in [PHP configuration options]({{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone)
+*	Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in [PHP configuration options]({{page.baseurl}}install-gde/prereq/php-centos.html)

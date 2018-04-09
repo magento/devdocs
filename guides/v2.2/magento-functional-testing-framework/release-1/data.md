@@ -239,7 +239,7 @@ Individual piece of data to be passed in as part of the parent array type.
 
 [`<data`]: #data-ref
 [`<var>`]: #var
-[`<required-entities>`]: #required-entities
+[`<required-entities>`]: #required-entity
 [`<array>`]: #array
 [`<item>`]: #item
 

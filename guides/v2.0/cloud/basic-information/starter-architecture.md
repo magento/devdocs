@@ -14,7 +14,7 @@ functional_areas:
 
 All of your code is contained in the {{site.data.var.ece}} Starter project. The _project_ is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to 4 total environments including three active Integration *environments* and a Production environment using the `master` Git branch.
 
-All environments are in PAAS (Platform as a Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
+All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from Git branches pushed from your local workspace.
 
 You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
 
@@ -27,7 +27,7 @@ The following architecture information uses an architecture including Production
 ## Production with a master branch {#cloud-arch-prod}
 The Production environment is your live store(s) and site(s). The environment includes your `master` Git branch, a web server, database, and configured services to fully test your site.
 
-The Production environment runs your public-facing Magento single and multisite storefronts. This environment include triple-redundant High Availability nodes for continuous access and failover protection for your customers. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.
+The Production environment runs your public-facing Magento single and multisite storefronts. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.
 
 We walk you through [deploying to Production]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Go Live]({{page.baseurl}}cloud/live/live.html) requirements and processes.
 
@@ -112,9 +112,4 @@ To branch and develop your Magento store:
 * Create branches for development from `staging`
 * Push code to Git that builds and deploys to an environment for testing
 
-Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, [deploying code]({{page.baseurl}}cloud/live/stage-prod-live.html), and [going live]({{page.baseurl}}cloud/live/live.html) .
-
-#### Related topics
-*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
-*	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-*	[Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html), working with Git branches, [deploying code]({{page.baseurl}}cloud/live/stage-prod-live.html), and [going live]({{page.baseurl}}cloud/live/live.html).

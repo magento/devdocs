@@ -70,23 +70,6 @@ The response includes all relationships for services and configuration data for 
 }
 {% endhighlight %}
 
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-You can use the preceding service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-$relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
-if (!$relationships) {
-  return;
-}
-
-$relationships = json_decode(base64_decode($relationships), TRUE);
-
-foreach ($relationships['mq'] as $endpoint) {
-  $container->setParameter('rabbitmq_host', $endpoint['host']);
-  $container->setParameter('rabbitmq_port', $endpoint['port']);
-}
-{% endhighlight %} -->
-
 ## Connect to RabbitMQ for debugging {#connect}
 For debugging purposes, it's sometimes useful to directly connect to a service instance in one of the following ways:
 
@@ -125,8 +108,3 @@ Then, when you SSH into your {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd4
 
 ### Connect from your PHP application {#cloud-rabbitmq-conn-php}
 To connect to RabbitMQ using your PHP application, add a PHP {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} (like [PHP AMQPlib](https://github.com/videlalvaro/php-amqplib){:target="_blank"}) to your source tree.
-
-#### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

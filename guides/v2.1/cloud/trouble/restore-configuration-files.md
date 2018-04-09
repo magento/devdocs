@@ -46,7 +46,7 @@ To restore the configuration files:
     ```
     app/etc/env.php file exists! If you want to rewrite existed files use --force
     app/etc/config.php file exists! If you want to rewrite existed files use --force
-    ````
+    ```
 
 1.  Use the `--force` option to overwrite all files.
 
