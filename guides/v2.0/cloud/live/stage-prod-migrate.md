@@ -65,7 +65,7 @@ You'll need the SSH and Git access information for your project.
   	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
   	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
 
-#### Deploy to Pro: updated or created after October 23, 2017 {#classic}
+#### Deploy to Pro: updated or created after October 23, 2017
 To deploy to Pro projects **created after October 23, 2017** or [updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html):
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.

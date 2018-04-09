@@ -105,7 +105,7 @@ By default, the deployment process overwrites all settings in the `env.php` file
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
--  **Version**—Magento 2.1.x
+-  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip){target="\_blank} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
