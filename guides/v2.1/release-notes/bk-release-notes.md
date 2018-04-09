@@ -61,7 +61,7 @@ Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-note
 
 ## Backward-incompatible changes
 
-* Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html)
+* Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes/index.html)
 
 ## Third-party license agreements
 

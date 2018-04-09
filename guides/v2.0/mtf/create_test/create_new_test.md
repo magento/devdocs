@@ -1078,7 +1078,7 @@ That's it!
 [blocks]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
 [block mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
 [Learn about form mapping.]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[define a locator]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#define-a-selector
+[define a locator]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#define-selector
 [nodes description table]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
 [page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
 [pages]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html

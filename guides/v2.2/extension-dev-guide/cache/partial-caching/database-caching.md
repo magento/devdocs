@@ -12,9 +12,11 @@ redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html
   -  /guides/v2.2/config-guide/database/database.html
+  -  /guides/v2.3/config-guide/database/database.html
   -  /guides/v2.0/config-guide/cache/caching-database.html
   -  /guides/v2.1/config-guide/cache/caching-database.html
   -  /guides/v2.2/config-guide/cache/caching-database.html
+  -  /guides/v2.3/config-guide/cache/caching-database.html
 ---
 
 <h2 id="mage-cache-db-over">Overview of database caching</h2>
@@ -152,7 +154,7 @@ Use the following steps:
 
 3.	In a web browser, go to any cacheable page (such as the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} front door page).
 
-	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#config-mode">enable developer mode</a>.)
+	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode">enable developer mode</a>.)
 4.	Enter the following commands:
 
 		ls <your Magento install dir>/var/cache/*

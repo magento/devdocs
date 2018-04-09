@@ -22,7 +22,7 @@ Use this command to create symlinks to LESS files.
 
 Command options:
 
-	magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
+	bin/magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
 
 The following table explains this command's parameters and values.
 
@@ -45,7 +45,7 @@ The following table explains this command's parameters and values.
 	<tr>
 		<td><p>--locale</p></td>
 		<td><p>Locale code.</p>
-			<p>To display the list of locale codes, enter <code>magento info:language:list</code></p></td>
+			<p>To display the list of locale codes, enter <code>bin/magento info:language:list</code></p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -68,7 +68,7 @@ The following table explains this command's parameters and values.
 
 For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<your Magento install dir>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
 
-	magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
+	bin/magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
 
 The following messages display to confirm success:
 
@@ -78,7 +78,7 @@ The following messages display to confirm success:
 
 To create LESS files for the adminhtml, enter the following command:
 
-	magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
+	bin/magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
 
 #### Related topics
 

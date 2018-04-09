@@ -24,7 +24,7 @@ These settings include configuration paths and values, websites, stores, store v
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The import command does not process configuration stored in environment variables.
+The `bin/magento app:config:import` command does not process configuration stored in environment variables.
 </div>
 
 ## Import configuration data
@@ -35,7 +35,7 @@ On your production system, run the following command to import data from the con
 
 Use the optional `[-n, --no-interaction]` flag to import data without any interaction.
 
-If you enter `magento app:config:import` without the optional flag, you're required to confirm the changes.
+If you enter `bin/magento app:config:import` without the optional flag, you're required to confirm the changes.
 
 For example, if configuration file contains one new {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} and one new store, the following  message is displayed:
 
@@ -127,4 +127,4 @@ Full example:
 
 #### For more information
 *   [Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/)
-*   [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
+*   [`bin/magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html)

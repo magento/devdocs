@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
-title: Magento application environment variables
-menu_title: Magento application environment variables
-menu_order: 5
-menu_node:
+title: Application variables
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
 functional_areas:
@@ -13,9 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-These sections list the environment variables for [general Magento](#application) and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
-
-## Magento application variables {#application}
+These sections list the general Magento and [deployment](#deploy) environment variables. You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 The following table lists variables that you can override using environment variables.
 
@@ -40,7 +34,7 @@ The following table lists variables that you can override using environment vari
 <td>Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
@@ -57,8 +51,6 @@ The following table lists variables that you can override using environment vari
 </tr>
 </tbody>
 </table>
-
-For additional variables, continue to the following sections.
 
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
@@ -133,7 +125,7 @@ The following variables are available during the deploy process of build and dep
 <td>Not set, example: Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>

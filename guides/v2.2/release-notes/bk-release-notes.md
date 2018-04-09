@@ -34,7 +34,7 @@ Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x](http:/
 
 ## Backward-incompatible changes
 
-*	Overview of [backward-incompatible changes]({{page.baseurl}}release-notes/backward-incompatible-changes.html) between the 2.1 and 2.2 releases
+*	Overview of [backward-incompatible changes]({{page.baseurl}}release-notes/backward-incompatible-changes/index.html) between the 2.1 and 2.2 releases
 
 ## {{site.data.var.ece}} Composer packages
 

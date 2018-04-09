@@ -157,12 +157,9 @@ To run the Web Setup Wizard:
 
 	You can optionally expand **Console Log** to see installation messages while the installation is in progress.
 
-	If errors display, see [Troubleshooting suggestions]({{ page.baseurl }}install-gde/trouble/tshoot.html).
-
 {% endcollapsible %}
 
 
 ## Installation part 3: Post-installation
 *	<a href="{{page.baseurl}}install-gde/install/verify.html">Verify the installation</a> was successful.
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshoot issues</a> if necessary.
 *	Learn about the <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.

@@ -12,6 +12,7 @@ redirect_from:
   - /guides/v2.0/comp-mgr/compman-start.html
   - /guides/v2.1/comp-mgr/compman-start.html
   - /guides/v2.2/comp-mgr/compman-start.html
+  - /guides/v2.3/comp-mgr/compman-start.html
 functional_areas:
   - Upgrade
 ---
