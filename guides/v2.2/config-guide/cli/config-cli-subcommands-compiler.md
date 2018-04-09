@@ -24,13 +24,13 @@ Code compilation includes the following (in no particular order):
 You can find code compilation classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="\_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The Magento software does not support the multi-tenant compiler, which includes the `magento setup:di:compile-multi-tenant` command.
+The Magento software does not support the multi-tenant compiler, which includes the `bin/magento setup:di:compile-multi-tenant` command.
 </div>
 
 #### To run the single-tenant compiler: {#config-cli-subcommands-single}
 
 ```
-magento setup:di:compile
+bin/magento setup:di:compile
 
 Generated code and dependency injection configuration successfully.
 ```
@@ -51,7 +51,7 @@ In some cases, you might want to compile code before you install the Magento app
 1.  Compile the code.
 
     ```
-    magento setup:di:compile
+    bin/magento setup:di:compile
 
     Generated code and dependency injection configuration successfully.
     ```
