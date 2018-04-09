@@ -34,7 +34,7 @@ $   php bin/magento setup:static-content:deploy -f
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-**For CentOS users**<br/>
+**For CentOS and Ubuntu users**<br/>
 If the command fails with error message: <br/>
 `/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory`<br/>
 install [fonctconfig library](https://www.freedesktop.org/wiki/Software/fontconfig/):{: target="_blank"}<br/>
