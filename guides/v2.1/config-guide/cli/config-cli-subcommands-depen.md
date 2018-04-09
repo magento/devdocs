@@ -1,4 +1,4 @@
-bin/---
+---
 layout: default
 group: config-guide
 subgroup: 04_CLI
@@ -29,7 +29,7 @@ A dependency in a comment is also a dependency.
 ## Run dependency reports
 Command options:
 
-	bin/magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
+	magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
 
 The following table explains this command's options, parameters, and values.
 
@@ -85,15 +85,15 @@ If no directory or filename is passed as an argument, the following application 
 			<th>Filename</th>
 		</tr>
 		<tr>
-			<td>bin/magento info:dependencies:show-modules</td>
+			magento info:dependencies:show-modules</td>
 			<td>modules-dependencies.csv</td>
 		</tr>
 		<tr>
-			<td>bin/magento info:dependencies:show-modules-circular</td>
+			magento info:dependencies:show-modules-circular</td>
 			<td>modules-circular-dependencies.csv</td>
 		</tr>
 		<tr>
-			<td>bin/magento info:dependencies:show-framework</td>
+			magento info:dependencies:show-framework</td>
 			<td>framework-dependencies.csv</td>
 		</tr>
 	</tbody>
