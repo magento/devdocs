@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 170_trouble
 title: Add Staging and Production to Pro projects UI
-menu_title: Add Staging and Production to Pro projects UI
-menu_order: 45
-menu_node:
 version: 2.1
 github_link: cloud/trouble/pro-env-management.md
 ---
@@ -152,29 +148,23 @@ We will review the infrastructure and settings, create user and environment vari
 
 When done, you can access review your project through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html).
 
-## Optional, move environment variables {#move-variables}
-Optionally, after conversion you can also migrate specific environment variables manually into the Project Web Interface for Staging and Production. This is not required, but supported.
+## (Optional) Migrate environment variables
+After conversion, you can manually migrate specific environment variables for Staging and Production.
 
-First, SSH into the Staging or Production environment to use CLI commands to list your variables:
+1. Open a terminal and [checkout a branch]({{page.baseurl}}cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1. List all environment variables:
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2. Click the **Projects** tab and the name of your project.
-3. Click the Staging or Production environment and click Access Site for the SSH link.
-4. Use a terminal application to SSH into Staging or Production.
-5. Enter this CLI command to list all environment variables: `magento-cloud variable:list`
-
-Second, add the variables from the CLI list through the Project Web Interface:
+    ```bash    
+magento-cloud variable:list
+    ```
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2. Click the **Projects** tab and the name of your project.
-3. Click the Staging or Production environment to add variables.
-1. On the _Variables_ tab, review the environment variables.  
-    To create a new variable, click **Add Variable**.  
-    To update an existing variable, click **Edit** next to the variable.
-6. To add a variable from the CLI list, click **Add Variable**, enter the variable name and value, and select the Override checkbox. This uses the variables from the Project Web Interface over the local CLI or database values.
+1. Click the **Projects** tab and the name of your project.
+1. Click the Staging or Production environment.
+1. On the _Variables_ tab, review the environment variables.
+1. Enter the variable name and value.
+1. Select the **Override** checkbox if you want variables in the Project Web Interface to override local CLI or database values.
 
-You can use CLI commands to remove the variables if you want while still accessing the environment using SSH.
-
-When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration Master and so on. Any branches you create display as children from Integration Master. For more information, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html).
+When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children from Integration `master. For more information, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
