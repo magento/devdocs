@@ -4,6 +4,9 @@ group: jstf
 title: JavaScript unit testing with Jasmine
 version: 2.2
 github_link: test/js/jasmine.md
+functional_areas:
+  - Testing
+  - test
 ---
 
 Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for all tests, a theme, or a single test.
