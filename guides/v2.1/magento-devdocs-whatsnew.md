@@ -11,6 +11,11 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Changed [CLI examples](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html) to include the `bin/magento` syntax and added guidance on adding `bin` to your system `PATH` to run commands from anywhere.|2.x|Updated|Apr 09
+Removed the deprecated `--dry-run` CLI option from the [Deploy static view files topic](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).|2.2.x|Updated|Apr 09
+Added a topic about [Metadata](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/metadata.html) to the MFTF Guide.|2.2.x, 2.3.x|New|Apr 05
+Removed a confusing and obsolete topic from the [Onboarding tasks](http://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-tasks.html) section of the Magento Commerce (Cloud) guide.|2.x|Updated|Apr 04
+Updated the [2.2 Programming Best Practices](http://devdocs.magento.com/guides/v2.2/ext-best-practices/extension-coding/common-programming-bp.html) topic with information about using the `after` plugin.|2.2.x|Updated|Apr 03
 Added the `WARM_UP_PAGES` variable for customizing the list of pages to use to pre-load the cache. Available in the new [Post-deploy variables](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html) topic.|2.1.x, 2.2.x|New|Apr 02
 Added an example of pushing logs with syslog using the .magento.env.yaml file. See the new [Logging handlers]({{page.baseurl}}cloud/env/log-handlers.html) topic.|2.1.x, 2.2.x|New|Apr 02
 Added Elasticsearch 5.2 to the list of supported version in the [Magento Commerce (Cloud)](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html) guide.|2.2.x, 2.3.x|Updated|Apr 02

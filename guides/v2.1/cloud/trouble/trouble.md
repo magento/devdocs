@@ -1,15 +1,12 @@
 ---
 layout: default
 group: cloud
-subgroup: 170_trouble
 title: Troubleshooting
-menu_title: Troubleshooting
-menu_order: 1
-menu_node: parent
 version: 2.1
 github_link: cloud/trouble/trouble.md
 functional_areas:
   - Cloud
+  - Help
 ---
 
 The troubleshooting topics help to resolve specific issues with your {{site.data.var.ece}} project. Before submitting a Support ticket, check the following:
@@ -17,10 +14,13 @@ The troubleshooting topics help to resolve specific issues with your {{site.data
 -  Verify your [credentials]({{page.baseurl}}cloud/trouble/trouble_ce-creds.html)
 -  Review the [log files]({{page.baseurl}}cloud/live/stage-prod-test.html)
 -  Search for relevant content in the {{site.data.var.ece}} documentation
+-  Search the [Magento Help Center](https://support.magento.com/hc/en-us){:target="_blank"} troubleshooting articles, FAQ, and Tech resources
 
 If you still require technical support, you can create a Support ticket through the Project Web Interface:
 
-1. Log in to your Magento Cloud account.
-1. On the _Support Tickets_ tab, click **Create Ticket**. Or you can submit a ticket from your project view by clicking **Support** > **Submit ticket** from the top menu.
+1. Log in to the [Magento Help Center](https://support.magento.com/hc/en-us){:target="_blank"}.
+1. In the upper right-hand corner of the Magento Help Center, click **Submit a Ticket**.
 1. Fill out the support ticket form and attach any helpful documentation, such as screenshots or notes.
 1. Click **Submit**.
+
+See the [Submit a support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket){:target="_blank"} article for detailed instructions.
