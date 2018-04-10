@@ -1,4 +1,5 @@
 label: Performance Best Practices
+versions: ["2.2", "2.3"]
 pages:
     - label: Introduction
       url: performance-best-practices/index.html
