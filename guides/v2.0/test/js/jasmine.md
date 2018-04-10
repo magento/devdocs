@@ -39,15 +39,24 @@ php bin/magento setup:static-content:deploy -f
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-**For CentOS users**<br/>
-If the command fails with error message: <br/>
-`/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory`<br/>
-install [fonctconfig library](https://www.freedesktop.org/wiki/Software/fontconfig/):{: target="_blank"}<br/>
-`$ yum install fontconfig` (CentOS)<br/>
-`$ apt-get install fontconfig` (Ubuntu)
-</div>
-
+{% include note.html
+type="tip"
+content="**For CentOS and Ubuntu users**<br/>
+If the command fails with the error message:
+```terminal
+/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
+```
+install [fonctconfig library]:<br/>
+* CentOS:
+  ```bash
+  yum install fontconfig
+  ```
+* Ubuntu:
+  ```bash
+  apt-get install fontconfig
+  ```
+"
+%}
 Learn more in [Deploy static view files].
 
 ## Run tests
@@ -264,14 +273,23 @@ npm install
 <!-- LINK DEFINITIONS -->
 
 <!-- External -->
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
-
+<!-- External -->
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
+{:target="_blank"}
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{site.mage2000url}}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
+{:target="_blank"}
 [Deploy static view files]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+{:target="_blank"}
+[fonctconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
+{:target="_blank"}
 [Grunt]: http://gruntjs.com/
+{:target="_blank"}
 [Install grunt-cli]: http://gruntjs.com/getting-started
+{:target="_blank"}
 [Install Node.js]: https://nodejs.org/en/
+{:target="_blank"}
 [Learn more about testing with Jasmine.]: https://jasmine.github.io/edge/introduction.html
+{:target="_blank"}
 
 <!-- Internal -->
 [Step 6]: #prepare-step6

@@ -46,11 +46,11 @@ If the command fails with the error message:
 install [fonctconfig library]:<br/>
 * CentOS:
   ```bash
-  $ yum install fontconfig
+  yum install fontconfig
   ```
 * Ubuntu:
   ```bash
-  $ apt-get install fontconfig
+  apt-get install fontconfig
   ``` 
 "
 %}
