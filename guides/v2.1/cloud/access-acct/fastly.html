@@ -2239,12 +2239,24 @@ composer require fastly/magento2
       <p><img src="/common/images/cloud_fastly-backend.png" alt="Modify the backend" width="600px" /></p>
     </li>
     <li>
-      <p>Select a <strong>Shield</strong> location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States (US - Oregon), you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services. For example, we have cloud hosting in the following AWS locations:</p>
+      <p>Select the <strong>Shield</strong> location (or datacenter) closest to your AWS region. For example, if Staging is on the west coast of the United States (us-west-1), select the <code class="highlighter-rouge">sjc-ca-us</code> Fastly shield location. This is the POP that provides caching services.</p>
+
+      <p>The following list shows which Faslty shield locations to use based an AWS region:</p>
 
       <ul>
-        <li>US - Oregon</li>
-        <li>EU - Dublin</li>
-        <li>APAC - Sydney</li>
+        <li>ap-northeast-1 =&gt; tokyo-jp2</li>
+        <li>ap-southeast-1 =&gt; singapore-sg</li>
+        <li>ap-southeast-2 =&gt; sydney-au</li>
+        <li>ap-south-1 =&gt; singapore-sg</li>
+        <li>eu-central-1 =&gt; frankfurt-de</li>
+        <li>eu-west-1 =&gt; london-uk, london_city-uk</li>
+        <li>eu-west-2 =&gt; london-uk, london_city-uk</li>
+        <li>eu-west-3 =&gt; cdg-par-fr</li>
+        <li>sa-east-1	=&gt; gru-br-sa</li>
+        <li>us-east-1 =&gt; iad-va-us</li>
+        <li>us-east-2 =&gt; iad-va-us</li>
+        <li>us-west-1 =&gt; sjc-ca-us</li>
+        <li>us-west-2 =&gt; sea-wa-us</li>
       </ul>
     </li>
     <li>Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.</li>
