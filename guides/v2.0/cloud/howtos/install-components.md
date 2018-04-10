@@ -99,29 +99,29 @@ To manage your modules, you can enable and disable or change settings per enviro
 You can use CLI commands or directly edit `app/etc/config.php` to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.
 
 1.  In a terminal, access your local development environment.
-1.  You need a specific name of the extension or module. Use the following command to locate the name:
+1.  List all modules:
 
     ```bash
     php bin/magento module:status
     ```
-1.  To enable, use the following command.
+1.  Enable a module.
 
     ```bash
     php bin/magento module:enable <module name>
     ```
 
-1.  To disable, use the following command.
+1.  Disable a module.
 
     ```bash
     php bin/magento module:disable <module name>
     ```
-1.  Use the following command to verify the changed status of the module:
+1.  Verify the status of a module:
 
     ```bash
     php bin/magento module:status
     ```
 
-    You can also navigate to and edit the `app/etc/config.php` file to verify the module is disabled.
+    Also, you can navigate to, and edit, the `app/etc/config.php` file to verify the module is disabled.
 
     ```php
     return array (
@@ -168,7 +168,7 @@ To update an module:
 1.  Open `composer.json` in a text editor.
 1.  Locate your module and update the version.
 1.  Save your changes to `composer.json` and exit the text editor.
-1.  Use the following command to update project dependencies:
+1.  Update project dependencies:
 
 		composer update
 1.  Enter the following commands in the order to commit the changes and deploy the project, including `composer.lock`:

@@ -143,7 +143,7 @@ When we convert your project to the new Project Web Interface, we add variables 
     To create a new variable, click **Add Variable**.
     To update an existing variable, click **Edit** next to the variable.
 
-For environment specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables using the Magento Cloud CLI tool directly into the Staging and Production environments.
+For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables using the Magento Cloud CLI tool directly into the Staging and Production environments.
 
 ## Enter a ticket for updating the Project Web Interface {#enable}
 Enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.

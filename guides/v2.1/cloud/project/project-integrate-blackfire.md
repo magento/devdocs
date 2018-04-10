@@ -84,7 +84,7 @@ The following sections include instructions for completing this list of integrat
 * [Save changes in Blackfire](#save)
 
 ### Add Blackfire to .magento.app.yaml {#magentoappyaml}
-By default, the Blackfire module should be included in the `.magento.app.yaml` file as part of your Git branch.
+By default, the Blackfire module is included in the `.magento.app.yaml` file as part of your Git branch.
 
 The following instructions provide additional instructions if the module is not added to `.magento.app.yaml`. To enable and integrate Blackfire into your code, you will modify the `.magento.app.yaml` file, push the file into your remote Git branch, merge, and deploy across all environments.
 

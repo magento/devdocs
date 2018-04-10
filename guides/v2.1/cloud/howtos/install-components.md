@@ -101,31 +101,31 @@ To manage your extensions, you can enable and disable or change settings per env
 You can use CLI commands or directly edit `app/etc/config.php` to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.
 
 1.  In a terminal, access your local development environment.
-1.  You need a specific name of the extension or module. Use the following command to locate the name:
+1.  List all modules:
 
     ```bash
     php bin/magento module:status
     ```
 
-1.  To enable, use the following command.
+1.  Enable a module.
 
     ```bash
     php bin/magento module:enable <module name>
     ```
 
-1.  To disable, use the following command.
+1.  Disable a module.
 
     ```bash
     php bin/magento module:disable <module name>
     ```
 
-1.  Use the following command to verify the changed status of the module:
+1.  Verify the status of a module:
 
     ```bash
     php bin/magento module:status
     ```
 
-    You can also navigate to and edit the `app/etc/config.php` file to verify the module is disabled.
+    Also, you can navigate to, and edit, the `app/etc/config.php` file to verify the module is disabled.
 
     ```php
     return array (

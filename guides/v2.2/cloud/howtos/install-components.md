@@ -104,25 +104,25 @@ Trying to enable and disable extensions not following this method can lead to pe
 
 1.  [Work in a branch](#getstarted) to update `config.php`.
 1.  In a terminal, access your local development environment.
-1. You need a specific name of the extension or module. Use the following command to locate the name:
+1.  List all module.
 
     ```bash
     php bin/magento module:status
     ```
 
-1.  To enable, use the following command. It updates `config.php` with the enabled status of the module.
+1.  Enable a module.This command updates the `config.php` file with the enabled status of the module.
 
     ```bash
     php bin/magento module:enable <module name>
     ```
 
-1.  To disable, use the following command. It updates `config.php` with the disable status of the module.
+1.  Disable a module. This command updates the `config.php` file with the disable status of the module.
 
     ```bash
     php bin/magento module:disable <module name>
     ```
 
-1.  Use the following command to verify the changed status of the module:
+1.  Verify the status of a module:
 
     ```bash
     php bin/magento module:status
@@ -146,7 +146,7 @@ To update an extension:
 1.  Open `composer.json` in a text editor.
 1.  Locate your extension and update the version.
 1.  Save your changes to `composer.json` and exit the text editor.
-1.  Use the following command to update project dependencies:
+1.  Update project dependencies:
 
     ```bash
     composer update
