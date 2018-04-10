@@ -43,7 +43,7 @@ This section discusses how to get current code by cloning the Magento GitHub's d
 *	Release branches like `2.1.0` are more stable
 
 	You *must* use a released branch with the <a href="{{page.baseurl}}migration/bk-migration-guide.html">Data Migration Tool</a>.
-*	`develop` is more recent
+*	Develop branches like `2.2-develop` is more recent
 
 Currently, the `develop` branch is the default but you can checkout a release branch like `2.1.0` after cloning.
 
