@@ -1,21 +1,10 @@
 ---
 layout: default
-group: eqp
-subgroup: 01_Introduction
-title: EQP API Reference
-landing-page: EQP 
-menu_title: EQP API Reference
-menu_order: 1
-menu_node: parent
-version: 2.0
+group: marketplace-api
+title: Introduction
+version: 2.1
 github_link: marketplace/eqp/api.md
-functional_areas:
-  - Marketplace
-  - EQP
 ---
-
-## Introduction
-
 
 The Marketplace Extension Quality Program (EQP) is slated to support the REST APIs access to the [Developer Portal](https://developer.magento.com) . The availability of these APIs to the Magento Marketplace Extension Development Community will be announced at some future date.
 
@@ -25,7 +14,6 @@ It also provides mechanisms for the developers to manage their extensions upload
 This document will provide an overview of the basic concepts, planned capabilities  and a preview of the version 1.0 of the  REST API details. All feedbacks can be sent to <marketplace-eqp-apis@magento.com>.
 
 ## Overview
-
 
 The EQP APIs are organized on REST concepts using standard HTTP verbs (GET, POST, PUT and DELETE), using JSON in all responses, and indicating any errors via  HTTP Response codes.
 
@@ -84,7 +72,5 @@ The following top-level resources will be available, listed along with their res
 
     The resource here provide information on aggregated reports across the Marketplace sites.
 
-
 As it can be seen, all the endpoints start with **/rest/v1** which will be the mechanism followed to support API versioning. The initial release will be 
-set to version 1 (v1). The remaining sections will go over the details of each resource 
-
+set to version 1 (v1). The remaining sections will go over the details of each resource.

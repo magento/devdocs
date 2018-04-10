@@ -1,27 +1,17 @@
 ---
 layout: default
-group: eqp
-subgroup: 10_Users
-title: EQP API Users
-landing-page: EQP 
-menu_title: EQP API Users
-menu_order: 1
-menu_node: parent
+group: marketplace-api
+title: EQP API Users 
 version: 2.0
 github_link: marketplace/eqp/users.md
-functional_areas:
-  - Marketplace
-  - EQP
 ---
-
-## List of REST APIs for users resource
 
 A valid HTTP  ‘Authorization: Bearer <session token>’ must be supplied to all user resources described below as explained in the Authentication and
 Authorization section.
 
 The following HTTP REST APIs are available for the users resource:
 
-### Profile
+## Profile
 
 ~~~~~~
 GET /rest/v1/users/:mage_id
@@ -35,7 +25,7 @@ By default, a full profile information of the user will be returned.  A limited 
 
 Any number of fields can be modified by the PUT action, and only the modified fields needs to be presented during this action.
 
-#### Retrieving a profile information
+### Retrieving profile information
 
 The following curl example illustrates fetching a user profile info:
 
@@ -146,7 +136,7 @@ Response highlights:
 * The aforesaid fields should be self-explantory. 
 * The summary style contains the fields from ‘mage_id’ till ‘profile_image_artifact’
 
-#### Updating profile data
+### Updating profile data
 
 Only the fields that needs to be modified needs to be supplied in a PUT request. 
 
@@ -179,8 +169,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 
 A successful update is indicated via a 200 OK HTTP Response code.
 
-
-### Keys
+## Keys
 
 ~~~~~~
 GET     /rest/v1/users/:mage_id/keys
@@ -189,7 +178,4 @@ PUT     /rest/v1/users/:mage_id/keys
 DELETE  /rest/v1/users/:mage_id/keys
 ~~~~~~
 
-
-
-
-### Reports
+## Reports

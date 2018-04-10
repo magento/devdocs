@@ -1,20 +1,10 @@
 ---
 layout: default
-group: eqp
-subgroup: 10_Auth
-title: EQP API Authentication and Authorization
-landing-page: EQP 
-menu_title: EQP API Authentication and Authorization
-menu_order: 1
-menu_node: parent
-version: 2.0
+group: marketplace-api
+title: Authentication
+version: 2.1
 github_link: marketplace/eqp/auth.md
-functional_areas:
-  - Marketplace
-  - EQP
 ---
-
-## Authentication and Authorization
 
 Every REST API client must create an application at the [Developer Portal](https://developer.magento.com) which will provide an application id and
 secret pairs for the sandbox and production endpoints respectively.
@@ -27,7 +17,6 @@ The REST APIs use a 2-step process in order to authenticate the client applicati
 
 1. Use [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) with the application id and secret to obtain a session token.
 2. Provide the session token as a HTTP Authorization Bearer header to every resource access.
-
 
 ## Session Token
 
@@ -84,7 +73,6 @@ Points to note:
 * The session token is valid only for the time specified in 'expires_in' in seconds.
 * On expiry of a session token, a new one must be obtained as described above.
 
-
 ## Authorization Bearer
 
 Once a valid session token is obtained as described above, it must be presented as a bearer token to all subsequent API calls. 
@@ -95,6 +83,3 @@ For example, accessing a user profile with the aforesaid session token will look
 curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789  
 {% endhighlight %}
-
-
-

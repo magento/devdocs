@@ -1,27 +1,17 @@
 ---
 layout: default
-group: eqp
-subgroup: 10_Users
-title: EQP API Users
-landing-page: EQP 
-menu_title: EQP API Users
-menu_order: 1
-menu_node: parent
-version: 2.0
+group: marketplace-api
+title: Users
+version: 2.1
 github_link: marketplace/eqp/users.md
-functional_areas:
-  - Marketplace
-  - EQP
 ---
-
-## List of REST APIs for users resource
 
 A valid HTTP  ‘Authorization: Bearer <session token>’ must be supplied to all user resources described below as explained in the Authentication and
 Authorization section.
 
 The following HTTP REST APIs are available for the users resource:
 
-### Profile
+## Profile
 
 ~~~~~~
 GET /rest/v1/users/:mage_id
@@ -35,7 +25,7 @@ By default, a full profile information of the user will be returned.  A limited 
 
 Any number of fields can be modified by the PUT action, and only the modified fields needs to be presented during this action.
 
-#### Retrieving a profile information
+### Retrieving a profile information
 
 The following curl example illustrates fetching a user profile info:
 
@@ -146,7 +136,7 @@ Response highlights:
 * The aforesaid fields should be self-explantory. 
 * The summary style contains the fields from ‘mage_id’ till ‘profile_image_artifact’
 
-#### Updating profile data
+### Updating profile data
 
 Only the fields that needs to be modified needs to be supplied in a PUT request. 
 
@@ -179,8 +169,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 
 A successful update is indicated via a 200 OK HTTP Response code.
 
-
-### Keys
+## Keys
 
 ~~~~~~
 GET     /rest/v1/users/:mage_id/keys
@@ -195,7 +184,7 @@ Only GET is available for Magento 1 product keys.
 
 For Magento 2 composer key-pairs, all the aforesaid APIs are available.
 
-#### GET /rest/v1/users/:mage_id/keys
+### GET /rest/v1/users/:mage_id/keys
 
 The following table lists all the query parameters available, all of which are optional:
 
@@ -251,7 +240,7 @@ Notes:
     1. It provides a list of product names and its associated product key which can be used in the Magento Connect Manager to install extensions.
     2. There are no provisions to create, update or delete these keys.
 
-#### POST /rest/v1/users/:mage_id/keys
+### POST /rest/v1/users/:mage_id/keys
 
 This API can be used to create a new Magento 2 composer key-pairs. A unique label must be supplied, and more than
 one set of key-pairs can be requested. 
@@ -311,7 +300,7 @@ Notes:
 2. A success is indicated by ‘code’ value of 200. 
 3. Any non-200 code values indicates some error, and the ‘message’ field provides more details on the issue.
 
-#### PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+### PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 This API can be used to  enable or disable a Magento 2 composer key-pair identified by the given url-encoded label.
 
@@ -342,7 +331,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 }
 {% endhighlight %}
 
-#### DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+### DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.
 
@@ -357,4 +346,3 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 {% endhighlight %}
   
 An HTTP 204 response will indicate if the request was successfully processed.
-

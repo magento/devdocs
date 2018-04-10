@@ -1,1 +1,1 @@
-../../../v2.1/marketplace/eqp/auth.md
+../../../v2.2/marketplace/eqp/auth.md

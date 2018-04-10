@@ -1,0 +1,10 @@
+label: Marketplace API
+pages:
+    - label: Introduction
+      url: marketplace/eqp/api.html
+    
+    - label: Authentication
+      url: marketplace/eqp/auth.html
+
+    - label: Users
+      url: marketplace/eqp/users.html

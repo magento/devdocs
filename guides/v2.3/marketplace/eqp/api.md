@@ -1,1 +1,1 @@
-../../../v2.1/marketplace/eqp/api.md
+../../../v2.2/marketplace/eqp/api.md
