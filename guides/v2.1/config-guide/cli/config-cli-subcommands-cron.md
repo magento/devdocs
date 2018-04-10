@@ -23,7 +23,7 @@ To run cron in a web browser, see <a href="{{page.baseurl}}config-guide/secy/sec
 ## Run cron from the command line {#config-cli-cron-group-run}
 Command options:
 
-	magento cron:run [--group="<cron group name>"]
+	bin/magento cron:run [--group="<cron group name>"]
 
 Where `--group` specifies the cron group to run. Omit this option to run cron for all groups.
 
@@ -36,7 +36,7 @@ You must run cron twice: the first time to discover tasks to run and the second 
 ## Run cron in the background {#config-cli-cron-bkg}
 This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both {{site.data.var.ce}} and {{site.data.var.ee}}.
 
-Run Magento cron jobs as the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+Run Magento cron jobs as the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 
 {% include config/setup-cron.md %}
 

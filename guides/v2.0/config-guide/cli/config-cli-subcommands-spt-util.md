@@ -42,7 +42,7 @@ This command backs up code and compresses it in `tar.gz` format.
 
 Command options:
 
-	magento support:backup:code [--name=<file name>] [-o|--output=<path>] [-l|--logs]
+	bin/magento support:backup:code [--name=<file name>] [-o|--output=<path>] [-l|--logs]
 
 Where:
 
@@ -52,7 +52,7 @@ Where:
 
 For example, to create a code backup named `/var/www/html/magento2/var/log/mycodebackup.tar.gz`:
 
-	magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+	bin/magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
 
 After the command completes, provide the code backup to Magento Support.
 
@@ -63,7 +63,7 @@ This command backs up the Magento database and compresses it in `tar.gz` format.
 
 Command options:
 
-	magento support:backup:db [--name=<name>] [-o|--output=<path>] [-l|--logs] [-i|--ignore-sanitize]
+	bin/magento support:backup:db [--name=<name>] [-o|--output=<path>] [-l|--logs] [-i|--ignore-sanitize]
 
 Where:
 

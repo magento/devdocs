@@ -25,7 +25,7 @@ Before you run this command, all of the following must be true:
 
 -   The `Magento_Developer` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must be enabled. You can enable it as follows:
 
-        magento module:enable [--force] Magento_Developer
+        bin/magento module:enable [--force] Magento_Developer
 
     Use the `--force` option only if it's necessary.
 
@@ -36,11 +36,11 @@ For example, to run integration tests, you should copy `dev/tests/integration/et
 ## Running tests
 Command usage:
 
-	magento dev:tests:run <test>
+	bin/magento dev:tests:run <test>
 
 To list the available test types:
 
-	magento dev:tests:run --help
+	bin/magento dev:tests:run --help
 
 This gives you a list similar to the following:
 
@@ -48,7 +48,7 @@ This gives you a list similar to the following:
 
 For example, to run integration tests:
 
-	magento dev:tests:run integration
+	bin/magento dev:tests:run integration
 
 #### Related topics
 

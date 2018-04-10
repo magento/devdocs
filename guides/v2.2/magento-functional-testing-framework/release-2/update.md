@@ -26,17 +26,17 @@ To update the MFTF (via a command line interface):
 1. Go to the `magento2/dev/tests/acceptance` directory:
 
 	```bash
-	$ cd dev/tests/acceptance
+	cd dev/tests/acceptance
 	```
 1. Update your own tests, including data, metadata, etc. if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and see new MFTF release documentation in the [Changelog](../changelog.html).
 1. Run `composer update` to get the latest framework version:
 
 	```bash
-	$ composer update
+	composer update
 	```
 
 1. Generate newly pulled tests:
 
 	```bash
-	$ vendor/bin/robo generate:tests
+	vendor/bin/robo generate:tests
 	```

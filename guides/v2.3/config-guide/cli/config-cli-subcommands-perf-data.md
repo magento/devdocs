@@ -177,13 +177,13 @@ Run the command as discussed in this section. After the command runs, you must [
 
 Command options:
 
-	magento setup:perf:generate-fixtures {path to profile}
+	bin/magento setup:perf:generate-fixtures {path to profile}
 
 Where `<path to profile>` specifies the absolute file system path to, and name of, a profile.
 
 For example,
 
-	magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+	bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
 
 Sample output for the small profile:
 

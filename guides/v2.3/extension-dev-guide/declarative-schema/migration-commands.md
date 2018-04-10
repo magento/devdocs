@@ -106,7 +106,7 @@ Backward compatibility must be maintained. Therefore, declarative schema does no
 
 The `<module_vendor>/<module_name/etc/db_schema_whitelist.json` file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:
 
-``` bash
+```bash
 magento declaration:generate:whitelist [options]
 ```
 where:
