@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 020_tech
 title: New Relic APM
-menu_title: New Relic APM
-menu_order: 20
-menu_node:
 version: 2.0
 github_link: cloud/project/new-relic.md
 functional_areas:
@@ -40,16 +36,11 @@ If you are interested in using New Relic on more than three active environments,
 
 To add a New Relic license key to an environment:
 
-1.  Log in to your Project Web Interface.
-1.  Select an environment.
-1.  Click **Access site** and copy the **SSH Access** link.
-
-    ![Access settings]({{site.baseurl}}common/images/cloud_project-access.png)
-
-1.  In a terminal, log in using the SSH access link.
+1.  Open a terminal
+1.  [Checkout a branch]({{page.baseurl}}cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.  Set the license variable.
 
-    ```
+    ```bash
     magento-cloud variable:set --no-visible-build php:newrelic.license <your-new-relic-license-key>
     ```
 
@@ -58,13 +49,8 @@ The {{site.data.var.ece}} plans support up to 3 instances of your New Relic lice
 
 To remove a New Relic license key from an environment:
 
-1.  Log in to your Project Web Interface.
-1.  Select an environment.
-1.  Click **Access site** and copy the **SSH Access** link.
-
-    ![Access settings]({{site.baseurl}}common/images/cloud_project-access.png)
-
-1.  In a terminal, log in using the SSH access link.
+1.  Open a terminal
+1.  [Checkout a branch]({{page.baseurl}}cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.  List all variables.
 
     For project variables: `magento-cloud pvget`  
@@ -72,26 +58,25 @@ To remove a New Relic license key from an environment:
 
 1.  Delete an environment variable.
 
-    ```
+    ```bash
     magento-cloud variable:delete php:newrelic.license
     ```
 
     If you added the license as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, using or exceeding the license limit.
 
-    ```
+    ```bash
     magento-cloud project:variable:delete php:newrelic.license
     ```
 
 
 ## Add New Relic extension to your project {#extension}
-New relic extension must be listed in the .magento.app.yaml project file:
+New relic extension must be listed in the `.magento.app.yaml` project file:
 
-   ```
-   runtime:
-     extensions:
-        - newrelic
-   ```
-
+```yaml
+runtime:
+    extensions:
+    - newrelic
+```
 
 ## Investigate performance {#performance}
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).

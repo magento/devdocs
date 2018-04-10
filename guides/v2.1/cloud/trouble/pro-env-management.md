@@ -81,6 +81,34 @@ When we convert your project to the new Project Web Interface, we add variables 
     To create a new variable, click **Add Variable**.  
     To update an existing variable, click **Edit** next to the variable.
 
+For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.
+
+## Enter a ticket for updating the Project Web Interface {#enable}
+Enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
+
+We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.
+
+When done, you can access review your project through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html).
+
+## (Optional) Migrate environment variables
+After conversion, you can manually migrate specific environment variables for Staging and Production.
+
+1.  Open a terminal and [checkout a branch]({{page.baseurl}}cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  List all environment variables:
+
+    ```bash
+    magento-cloud variable:list
+    ```
+
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1.  Click the **Projects** tab and the name of your project.
+1.  Click the Staging or Production environment.
+1.  On the _Variables_ tab, review the environment variables.
+1.  Enter the variable name and value.
+1.  Select the **Override** checkbox if you want variables in the Project Web Interface to override local CLI or database values.
+
+When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children from Integration `master. For more information, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html).
+
 You can add environment-specific variables, including sensitive data and values, after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. See [Configure environments]({{page.baseurl}}cloud/env/environments.html).
 
 ## Request an upgrade
