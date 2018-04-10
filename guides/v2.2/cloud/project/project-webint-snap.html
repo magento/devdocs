@@ -2029,105 +2029,124 @@
 </section>
 
 
-			<p>You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Start environments and Pro plan Integration environments. You cannot snapshot Pro plan Staging and Production environments.</p>
+			<p>You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Starter environments and Pro Integration environments. You cannot snapshot Pro Staging or Production environments.</p>
 
-<p>Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.</p>
-
-<p>A <em>snapshot</em> is a complete backup of an environment. It includes all
-persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.</p>
+<p>A <em>snapshot</em> is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See <a href="#rollback-code">Rollbacks to remove code</a>.</p>
 </div>
 
-<p>You can <em>restore</em> a snapshot up to 14 days after the snapshot was created.</p>
+<p>You have up to <strong>7 days</strong> to <em>restore</em> a snapshot.</p>
 
 <p>We provide two methods for creating and managing snapshots:</p>
 
 <ul>
-  <li>Through the Magento Web Interface</li>
-  <li>Through Magento CLI commands</li>
+  <li>Magento Web Interface</li>
+  <li>Magento CLI</li>
 </ul>
 
 <h2 id="create-snapshot">Create a snapshot</h2>
-<p>To create an environment snapshot using the Magento Web Interface:</p>
+
+<h4 id="to-create-a-snapshot-using-the-magento-web-interface">To create a snapshot using the Magento Web Interface:</h4>
 
 <ol>
-  <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
+  <li>Log in to your project.</li>
   <li>In the left pane, click the name of the environment to back up.</li>
   <li>In the top pane, click <img src="/common/images/cloud_snapshots.png" alt="Take a snapshot of an environment" width="30px" /> (snapshots).</li>
-  <li>You are required to confirm the action.</li>
+  <li>Click <strong>Create</strong>.</li>
 </ol>
 
-<p>To create an environment snapshot using the Magento CLI:</p>
+<h4 id="to-create-a-snapshot-using-the-magento-cli">To create a snapshot using the Magento CLI:</h4>
 
 <ol>
-  <li>Make sure you’re in the directory of the project and environment you want to snapshot.</li>
+  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
+  <li>Checkout the environment branch to snapshot.</li>
   <li>
-    <p>Use the following command to create the snapshot:</p>
+    <p>Create the snapshot.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud snapshot:create
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create
+Creating a snapshot of production
+Waiting for the snapshot to complete...
 </code></pre></div>    </div>
 
     <p>The following modifiers further specify how to create the snapshot:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
- -e, --environment=ENVIRONMENT  The environment ID
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-p, --project=PROJECT          The project ID
+-e, --environment=ENVIRONMENT  The environment ID
 </code></pre></div>    </div>
 
     <p>For a full list of options, enter <code class="highlighter-rouge">magento-cloud snapshot:create --help</code>.</p>
   </li>
-  <li>Use the <code class="highlighter-rouge">magento-cloud snapshots</code> command so see the most recent snapshots. For a full list, enter <code class="highlighter-rouge">magento-cloud snapshot:list</code>.</li>
+  <li>
+    <p>Verify the most recent snapshots.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshots
+</code></pre></div>    </div>
+
+    <p>The list returns information about the snapshot status:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Finding snapshots for the environment &lt;environment_name&gt;
++---------------------------+--------------------+----------+----------+---------+
+| Created                   | Snapshot name      | Progress | State    | Result  |
++---------------------------+--------------------+----------+----------+---------+
+| 2018-04-09T14:43:39-05:00 | &lt;snapshot_ID&gt;.     | 100%     | complete | success |
++---------------------------+--------------------+----------+----------+---------+
+</code></pre></div>    </div>
+  </li>
 </ol>
 
 <h2 id="restore-snapshot">Restore a snapshot</h2>
-<p>To restore an environment’s snapshot using the Magento Web Interface:</p>
+
+<h4 id="to-restore-a-snapshot-using-the-magento-web-interface">To restore a snapshot using the Magento Web Interface:</h4>
 
 <ol>
-  <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
+  <li>Log in to your project.</li>
   <li>In the left pane, click the name of the environment to restore.</li>
-  <li>
-    <p>In the environment’s history, click the <strong>restore</strong> link next to the snapshot to restore.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/cloud_snapshot-restore.png" alt="Take a snapshot of an environment" /></p>
-  </li>
-  <li>You are required to confirm the action.</li>
+  <li>In the environment messages, select <strong>snapshot</strong> from the <em>all types of</em> drop-down list.</li>
+  <li>Click <strong>restore</strong> next to the snapshot.</li>
+  <li>Review the Snapshot restore date and click <strong>Restore</strong>.</li>
 </ol>
 
-<p>To restore an environment snapshot using the Magento CLI:</p>
+<h4 id="to-restore-a-snapshot-using-the-magento-cli">To restore a snapshot using the Magento CLI:</h4>
 
 <ol>
-  <li>Make sure you’re in the directory of the project and environment you want to snapshot.</li>
+  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
+  <li>Checkout the environment branch to restore.</li>
   <li>
-    <p>List all available snapshots to copy the ID using this command:</p>
+    <p>List all available snapshots.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud snapshot:list
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshots:list
+</code></pre></div>    </div>
+
+    <p>The list returns information about the available snapshots:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Finding snapshots for the environment &lt;environment_name&gt;
++---------------------------+--------------------+----------+----------+---------+
+| Created                   | Snapshot name      | Progress | State    | Result  |
++---------------------------+--------------------+----------+----------+---------+
+| 2018-04-09T14:43:39-05:00 | &lt;snapshot_ID&gt;.     | 100%     | complete | success |
++---------------------------+--------------------+----------+----------+---------+
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Use the following command to restore the snapshot using the ID you copied:</p>
+    <p>Restore a snapshot using the snapshot ID from the list.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     magento-cloud snapshot:restore &lt;id&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:restore &lt;snapshot_id&gt;
 </code></pre></div>    </div>
-
-    <p>For example: <code class="highlighter-rouge">magento-cloud snapshot:restore 92c9a4b2aa75422efb3d</code></p>
 
     <p>The following modifiers further specify how to restore the snapshot:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -p, --project=PROJECT          The project ID
- -e, --environment=ENVIRONMENT  The environment ID
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-p, --project=PROJECT          The project ID
+-e, --environment=ENVIRONMENT  The environment ID
 </code></pre></div>    </div>
-
-    <p>For a full list of options, enter <code class="highlighter-rouge">magento-cloud snapshot:restore --help</code>.</p>
   </li>
 </ol>
 
 <h2 id="db-dump">Dump your database</h2>
 <p>You can create a copy of your database using <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools"><code class="highlighter-rouge">magento/ece-tools</code></a>.</p>
 
-<p>To create a database dump:</p>
+<h4 id="to-create-a-database-dump">To create a database dump:</h4>
 
 <ol>
   <li>
@@ -2157,7 +2176,7 @@ persistent data from all running services (for example, your MySQL database, Red
     <li>We recommend putting the application in maintenance mode before doing a database dump in Production environments.</li>
     <li>The command creates an archive in your local project directory called  <code class="highlighter-rouge">dump-&lt;timestamp&gt;.sql.gz</code>.</li>
     <li>If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (<code class="highlighter-rouge">/var/log/cloud.log</code>).</li>
-    <li>For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a <code class="highlighter-rouge">var/dbdump.lock</code> file to prevent running the command on more than one node.</li>
+    <li>For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a <code class="highlighter-rouge">var/dbdump.lock</code> file to prevent running the command on more than one node.</li>
   </ul>
 </div>
 
@@ -2170,7 +2189,7 @@ persistent data from all running services (for example, your MySQL database, Red
 
 <p>If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.</p>
 
-<p>Specifically for code, you should investigate <a href="https://git-scm.com/docs/git-revert">reverting code</a> changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the <a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment Process</a>.</p>
+<p>Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) again to the target environment. See the <a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment Process</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->

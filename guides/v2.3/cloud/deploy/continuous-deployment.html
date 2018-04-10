@@ -2031,7 +2031,7 @@
 
 			<p>Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.</p>
 
-<p>Both Starter and Pro plan environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
+<p>Both Starter and Pro plan environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
 
 <ul>
   <li>Create development branches with future features and changes</li>
@@ -2073,7 +2073,7 @@
 <h2 id="data-best-practices">Data best practices</h2>
 
 <ul>
-  <li>Create a backup of your database and snapshot on a schedule or before pushing major updates. We provide snapshots of Production every 6 hours, but you may need to also backup Staging for constant iterations.</li>
+  <li>Create a backup of your database and snapshot on a schedule or before pushing major updates. We provide snapshots of the Pro Production environment according to a <a href="/guides/v2.3/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery">progressive schedule</a>, but you may need to backup your Staging environment for constant iterations.</li>
   <li>Pull a data dump of your Production data into the Staging environment for extensive testing</li>
   <li>Consider running scripts or pulling only specific tables to sanitize customer data from non-Production environments Staging</li>
 </ul>
