@@ -12,6 +12,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+  - /guides/v2.0/cloud/before/before-project-owner.html
 ---
 
 After your company purchases a subscription plan for {{site.data.var.ece}}, the only person who initially has access to the project and code is the Project Owner.
@@ -25,7 +27,7 @@ If you joined us with a 30-day free trial {{site.data.var.ece}} account, we comp
 -   Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
 -   Created an environment for the `master` branch with a web server, database, and services
 -   Added Magento authentication keys for the Project Owner
--   Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/before/before-project-owner.html#variables) for the default admin account to access the Magento Admin panel.
+-   Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var) for the default admin account to access the Magento Admin panel.
 </div>
 
 ## Project access and users {#users}
@@ -47,14 +49,6 @@ You can also access your project by [logging in to your account](https://account
 When you sign up for a Trial Pro or Starter subscription plan, we provision your initial environment with a template {{site.data.var.ece}} repository.
 
 We provide a [Project Web Interface]({{page.baseurl}}cloud/project/projects.html) for you to manage your project, add user accounts, and get started developing your store(s). This interface provides a UI for the Project Owner, Technical Admin, and developers to manage all environments and branches, environment variables, environment settings, and routes.
-
-For non-Trial projects, the Project Owner needs to [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html):
-
--   Create the project
--   Add user accounts to invite developers to the project
--   Generate and provide Magento authentication keys to added accounts
--   Add admin variables to the Project
--   Review credentials for integrated services
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
@@ -81,11 +75,4 @@ When you initially create your project, you can access the Magento Admin panel t
 1.  Click the forgot Password link and complete the process to change the password.
 1.  Login to the Admin panel using the username Admin and newly changed password.
 
-If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`. Trial accounts should already have the `ADMIN_EMAIL` variable configured for them. For details, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables) or [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
-
-#### Related topics
--   [Prepare project environments]({{page.baseurl}}cloud/before/before-project-owner.html)
--   [Manage your project]({{page.baseurl}}cloud/project/projects.html)
--   [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
--   [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
--   [Welcome to Magento Commerce (Cloud)]({{page.baseurl}}cloud/bk-cloud.html)
+If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`. Trial accounts should already have the `ADMIN_EMAIL` variable configured for them.

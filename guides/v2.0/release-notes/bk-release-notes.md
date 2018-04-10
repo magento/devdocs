@@ -65,7 +65,7 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 
 ## Backward-incompatible changes
 
-* Overview of backward-incompatible changes made after Magento 2.0.0 release in scope of 2.0 version: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html)
+* Overview of backward-incompatible changes made after Magento 2.0.0 release in scope of 2.0 version: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes/index.html)
 
 ## Third-party license agreements
 

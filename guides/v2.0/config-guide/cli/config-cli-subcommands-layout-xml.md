@@ -28,7 +28,7 @@ For more information about layout XML files, see:
 ## Convert layout XML files
 Command options:
 
-	magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
+	bin/magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
 
 here:
 

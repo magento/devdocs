@@ -187,13 +187,17 @@ To migrate a database:
 ### Troubleshooting the database migration
 If you encounter the following error, you can try to create a database dump with the DEFINER replaced:
 
-	ERROR 1277 (42000) at line <number>: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
+```
+ERROR 1277 (42000) at line <number>: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
+```
 
 This error occurs because the DEFINER for the triggers in the SQL dump is the production user. This user requires administrative permissions.
 
 To solve the issue, you can generate a new database dump changing or removing the `DEFINER` clause. The following is one example of completing this change:
 
-	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed -i 's/DEFINER=[^*]**/*/g' | gzip > /tmp/database_no-definer.sql.gz
+```bash
+mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
+```
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 

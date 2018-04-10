@@ -32,6 +32,9 @@ pages:
         - label: Configure migration
           url: migration/migration-tool-configure.html
 
+        - label: Extend the tool
+          url: migration/extend-the-tool.html
+
     - label: Migrate using Data Migration Tool
       url: migration/migration-migrate.html
       children:

@@ -44,7 +44,7 @@ This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ M
 ## Run cron from the command line {#config-cli-cron-group-run}
 Command options:
 
-  magento cron:run [--group="<cron group name>"]
+  bin/magento cron:run [--group="<cron group name>"]
 
 where `--group` specifies the cron group to run (omit this option to run cron for all groups)
 
@@ -55,7 +55,7 @@ To run the indexing cron job, enter:
 
 To run the default cron job, enter:
 
-`php magento cron:run --group default`
+`php bin/magento cron:run --group default`
 
 
 To set up custom cron jobs and groups, see [Configure custom cron jobs and cron groups]({{ page.baseurl }}config-guide/cron/custom-cron.html).

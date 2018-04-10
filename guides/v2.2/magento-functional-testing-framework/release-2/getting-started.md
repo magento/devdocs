@@ -58,20 +58,22 @@ Follow these steps in a command line interface to set up the MFTF on your system
 ### Step 1. Clone the `magento2` source code repository
 
 ```bash
-$ git clone https://github.com/magento/magento2.git
+git clone https://github.com/magento/magento2.git
 ```
 
 or
 
 ```bash
-$ git clone git@github.com:magento/magento2.git
+git clone git@github.com:magento/magento2.git
 ```
 
 ### Step 2. Install dependencies
 
 ```bash
-$ cd magento2/dev/tests/acceptance
-$ composer install
+cd magento2/dev/tests/acceptance
+```
+```bash
+composer install
 ```
 
 ### Step 3. Build the project
@@ -79,7 +81,7 @@ $ composer install
 In `magento2/dev/tests/acceptance`, run the following command:
 
 ```bash
-$ vendor/bin/robo build:project
+vendor/bin/robo build:project
 ```
 
 <div class="bs-callout bs-callout-tip" markdown="1">
@@ -127,7 +129,7 @@ http://127.0.0.1:4444/wd/hub
 In your Magento installation, navigate to the `magento2/dev/tests/acceptance` directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
 
 ```bash
-$ cp .htaccess.sample .htaccess
+cp .htaccess.sample .htaccess
 ```
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -139,7 +141,7 @@ If you do not have access to your Magento installation and cannot complete the a
 In the `magento2/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
-$ vendor/bin/robo generate:tests
+vendor/bin/robo generate:tests
 ```
 
 ### Step 7. Run tests
@@ -156,27 +158,27 @@ To run tests you need a running Selenium server and a [`codecept`](commands/code
 
 4. Run the Selenium server in terminal (or other command line interface):
 
-``` bash
-$ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
+```bash
+java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 ```
 
 #### Run all tests
 
-``` bash
-$ vendor/bin/codecept run
+```bash
+vendor/bin/codecept run
 ```
 
 See more commands in [`robo`](commands/robo.html) and [`codecept`](commands/codeception.html).
 
-### Step 7. Generate reports {#allure}
+### Step 8. Generate reports {#allure}
 
 Install [Allure](https://docs.qameta.io/allure/latest/), a tool that generates testing reports in HTML.
 Testing reports are generated in a CLI during testing.
 
 If you want to see the reports in a GUI, run:
 
-``` bash
-$ vendor/bin/robo allure2:report
+```bash
+vendor/bin/robo allure2:report
 ```
 
 See also [Allure `robo` commands](commands/robo.html#allure-robo-commands) and [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).

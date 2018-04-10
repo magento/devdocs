@@ -82,7 +82,7 @@ One of these environment variables enables or disables outgoing emails for the e
 Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
 
 ## Set environment and project variables {#project-conf-env-var}
-You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html).
+You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see [Overview of environment variables]({{page.baseurl}}cloud/env/variables-intro.html).
 
 For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
 
