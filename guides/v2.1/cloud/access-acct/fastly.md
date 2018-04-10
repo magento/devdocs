@@ -157,11 +157,24 @@ You can add multiple backends. Repeat these instructions to create multiple back
 2. Expand **Backend settings** and click the gear to configure the default backend. A modal opens with options to select and configure.
 
 	![Modify the backend]({{ site.baseurl }}common/images/cloud_fastly-backend.png){:width="600px"}
-3. Select a **Shield** location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States (US - Oregon), you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services. For example, we have cloud hosting in the following AWS locations:
+3. Select the **Shield** location (or datacenter) closest to your AWS region. For example, if Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
 
-    * US - Oregon
-    * EU - Dublin
-    * APAC - Sydney
+	The following list shows which Faslty shield locations to use based an AWS region:
+
+	- ap-northeast-1 => tokyo-jp2
+	- ap-southeast-1 => singapore-sg
+	- ap-southeast-2 => sydney-au
+	- ap-south-1 => singapore-sg
+	- eu-central-1 => frankfurt-de
+	- eu-west-1 => london-uk, london_city-uk
+	- eu-west-2 => london-uk, london_city-uk
+	- eu-west-3 => cdg-par-fr
+	- sa-east-1	=> gru-br-sa
+	- us-east-1 => iad-va-us
+	- us-east-2 => iad-va-us
+	- us-west-1 => sjc-ca-us
+	- us-west-2 => sea-wa-us
+    
 4. Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
 5. Optionally, select to Activate the backend and Shield after editing or saving.
 6. Click **Upload** to save. The settings are commiunicated to Fastly.
