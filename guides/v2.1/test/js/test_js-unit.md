@@ -18,7 +18,7 @@ After you run the PHP interpreter once to run unit tests, you can [run the JavaS
 
 ## Overview {#unit-test-overview}
 
-To run the automated JavaScript unit tests, you run the [`run_js_tests.php` script] inside the PHP interpreter from the command line. When you run the PHP script, it reads [configuration files] in the `<magento2_root_dir>/dev/tests/js` directory. It also generates a `jsTestDriver.conf` YAML configuration file in the `<magento2_root_dir>/dev/tests/js` directory. The JsTestDriver reads this generated file to run the tests.
+To run the automated JavaScript unit tests, you run the [`run_js_tests.php` script] inside the PHP interpreter from the command line. When you run the PHP script, it reads [configuration files] in the `<magento2_root_dir>/dev/tests/js` directory. It also generates a `jsTestDriver.conf` YAML configuration file in the `<magento2_root_dir>/dev/tests/js` directory. The JsTestDriver reads this generated file to run the tests. After you run the PHP interpreter once to run unit tests, you can [run the JavaScript unit tests from the PhpStorm IDE][PhpStorm].
 
 ### JsTestDriver test library {#test-library}
 
