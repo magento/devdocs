@@ -538,12 +538,12 @@
 
 <p><strong>Step 5.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, install all dependencies:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  npm install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
 </code></pre></div></div>
 
 <p id="prepare-step6"><strong>Step 6.</strong> In <code class="highlighter-rouge">&lt;magento_root_dir&gt;</code>, generate static view files in Magento that are going to be tested</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  php bin/magento setup:static-content:deploy <span class="nt">-f</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:static-content:deploy <span class="nt">-f</span>
 </code></pre></div></div>
 
 <p>Note that normally you don’t have permissions to <code class="highlighter-rouge">&lt;magento_root_dir&gt;/app/code/</code>, in fact the generated static view file is being tested.</p>
@@ -556,11 +556,11 @@ If the command fails with the error message:</p>
   <p>install <a target="_blank" href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctconfig library</a>:<br /></p>
   <ul>
     <li>CentOS:
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>yum install fontconfig
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install fontconfig
 </code></pre></div>      </div>
     </li>
     <li>Ubuntu:
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>apt-get install fontconfig
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install fontconfig
 </code></pre></div>      </div>
     </li>
   </ul>
@@ -573,12 +573,12 @@ If the command fails with the error message:</p>
 
 <p><code class="highlighter-rouge">Gruntfile.js</code> contains the test run task, so you can run tests for a theme using the following command in the Magento root directory:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  grunt spec:&lt;THEME&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grunt spec:&lt;THEME&gt;
 </code></pre></div></div>
 
 <p>Example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  grunt spec:backend
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grunt spec:backend
 </code></pre></div></div>
 
 <h2 id="write-test">Write a test</h2>
@@ -765,8 +765,9 @@ Use --force to continue. Aborted due to warnings.
 
 <p>Run in your terminal:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>  <span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
-<span class="nv">$ </span>  npm install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
 </code></pre></div></div>
 
 <!-- LINK DEFINITIONS -->

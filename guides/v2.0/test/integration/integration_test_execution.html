@@ -644,7 +644,7 @@ The test execution will start much quicker, but as a consequence the developer h
 
 <p>To force the test framework to regenerate the cache and the other files, it is enough to remove the directory.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rm <span class="nt">-r</span> dev/tests/integration/tmp/sandbox-<span class="k">*</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-r</span> dev/tests/integration/tmp/sandbox-<span class="k">*</span>
 </code></pre></div></div>
 
 <h4 id="the-php-memory_limit">The PHP memory_limit</h4>
@@ -681,7 +681,7 @@ A testsuite configuration like the following can be added to the <code class="hi
 
 <p>Such a test suite configuration can then be executed using the <code class="highlighter-rouge">--testsuite &lt;name&gt;</code> command option, for example if you are in the <code class="highlighter-rouge">dev/tests/integration</code> directory:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>php ../../../vendor/bin/phpunit <span class="nt">--testsuite</span> <span class="s2">"Third Party Integration Tests"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php ../../../vendor/bin/phpunit <span class="nt">--testsuite</span> <span class="s2">"Third Party Integration Tests"</span>
 </code></pre></div></div>
 
 <h2 id="cli-run">Running Integration Tests in the CLI</h2>
@@ -697,14 +697,21 @@ The test configuration resides in that directory and will be picked up by <code 
 
 <p>By default, if no additional arguments are specified, the test configuration executes all integration tests in the directory <code class="highlighter-rouge">dev/tests/integration/testsuite</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit
-PHPUnit 4.1.0 by Sebastian Bergmann.
-
-Configuration <span class="nb">read </span>from /var/www/magento2/dev/tests/integration/phpunit.xml
-
-..........................
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/integration
 </code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../../../vendor/bin/phpunit
+</code></pre></div></div>
+
+<blockquote>
+  <p>Expected log</p>
+</blockquote>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">PHPUnit 4.1.0 by Sebastian Bergmann.
+
+Configuration read from /var/www/magento2/dev/tests/integration/phpunit.xml
+
+</span><span class="c">..........................
+</span></code></pre></div></div>
 
 <p>Note the path to the <code class="highlighter-rouge">phpunit</code> executable installed by <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span> into the vendor directory is used.</p>
 
@@ -713,16 +720,18 @@ Configuration <span class="nb">read </span>from /var/www/magento2/dev/tests/inte
 <p>PHPUnit offers several ways to only execute a subset of tests.
 For example, it is common to only execute a single testsuite from the <code class="highlighter-rouge">phpunit.xml</code> configuration.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit <span class="nt">--testsuite</span> <span class="s2">"Memory Usage Tests"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/integration
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../../../vendor/bin/phpunit <span class="nt">--testsuite</span> <span class="s2">"Memory Usage Tests"</span>
 </code></pre></div></div>
 
 <h3 id="running-a-tests-from-a-specific-directory-tree">Running a tests from a specific directory tree</h3>
 
 <p>To execute only the tests within a specific directory (for example an extension), pass the path to that directory as an argument to <code class="highlighter-rouge">phpunit</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/integration
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration
 </code></pre></div></div>
 
 <h3 id="running-a-single-test-class">Running a single test class</h3>
@@ -730,16 +739,18 @@ For example, it is common to only execute a single testsuite from the <code clas
 <p>When developing a new integration test class, it is common to run only that single test many times.
 Pass the path to the file containing the test class as an argument to <code class="highlighter-rouge">phpunit</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/integration
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 </code></pre></div></div>
 
 <h3 id="running-a-single-test-within-a-test-class">Running a single test within a test class</h3>
 
 <p>Running only a single test within a test class can be done by specifying the test class together with the <code class="highlighter-rouge">--filter</code> argument and the name to select the test currently being developed.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>dev/tests/integration
-<span class="nv">$ </span>../../../vendor/bin/phpunit <span class="nt">--filter</span> <span class="s1">'testOnlyThisOneIsExecuted'</span> ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/integration
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../../../vendor/bin/phpunit <span class="nt">--filter</span> <span class="s1">'testOnlyThisOneIsExecuted'</span> ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 </code></pre></div></div>
 
 <h3 id="common-mistakes">Common mistakes</h3>
@@ -760,9 +771,10 @@ This problem most commonly crops up during development with vagrant or docker, w
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.</p>
 
 <p>The error usually looks something like this.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>phpunit
-exception <span class="s1">'PDOException'</span> with message <span class="s1">'SQLSTATE[HY000] [2002] No such file or directory'</span> <span class="k">in</span> /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>phpunit
 </code></pre></div></div>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+</span></code></pre></div></div>
 
 <p>There are many ways this problem can be resolved, but the easiest is to run the tests in the virtual machine, too.</p>
 

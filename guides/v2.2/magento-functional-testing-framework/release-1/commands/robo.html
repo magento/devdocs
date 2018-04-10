@@ -948,19 +948,25 @@
 
 <p>Assuming that you’re working in the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory in your terminal, run Robo commands using the following format:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
 </code></pre></div></div>
 
 <p>Or, if you added path of the Robo executable file to the system <em>PATH</em>, then run Robo commands using the following format:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
 </code></pre></div></div>
 
 <h3 id="example">Example</h3>
 
 <ul>
-  <li>Original: <code class="highlighter-rouge">$ allure generate tests/_output/allure-results/ -o tests/_output/allure-report/</code></li>
-  <li>Robo: <code class="highlighter-rouge">$ vendor/bin/robo allure1:generate</code></li>
+  <li>Original:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>allure generate tests/_output/allure-results/ <span class="nt">-o</span> tests/_output/allure-report/
+</code></pre></div>    </div>
+  </li>
+  <li>Robo:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure1:generate
+</code></pre></div>    </div>
+  </li>
 </ul>
 
 <h2 id="most-useful-commands">Most useful commands</h2>
@@ -973,42 +979,42 @@
 
 <h4 id="list-all-available-robo-commands">List all available Robo commands:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo
 </code></pre></div></div>
 
 <h4 id="duplicate-the-example-configuration-files-used-to-customize-the-project">Duplicate the Example configuration files used to customize the Project:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo clone:files
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo clone:files
 </code></pre></div></div>
 
 <h4 id="build-the-codeception-project">Build the Codeception project:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo build:project
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo build:project
 </code></pre></div></div>
 
 <h4 id="generate-all-tests-in-php">Generate all Tests in PHP:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo generate:tests
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:tests
 </code></pre></div></div>
 
 <h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all Tests marked with the @group tag ‘example’, using the Chrome environment:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo example
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo example
 </code></pre></div></div>
 
 <h4 id="run-all-functional-tests-located-under-the-directory-path-provided">Run all Functional tests located under the Directory Path provided:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo folder ______
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo folder ______
 </code></pre></div></div>
 
 <h4 id="run-all-functional-tests-excluding-group-skip">Run all Functional tests, excluding @group skip:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo functional
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo functional
 </code></pre></div></div>
 
 <h4 id="run-all-tests-with-the-specified-group-tag-excluding-group-skip">Run all Tests with the specified @group tag, excluding @group ‘skip’:</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vendor/bin/robo group ______
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group ______
 </code></pre></div></div>
 
 <h3 id="allure-robo-commands">Allure Robo Commands</h3>
