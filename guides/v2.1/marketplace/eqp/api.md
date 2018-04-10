@@ -79,7 +79,7 @@ The following top-level resources will be available, listed along with their res
 * reports
 
     ~~~~~~~~
-    /rest/v1/reports/
+    /rest/v1/reports
     ~~~~~~~~
 
     The resource here provide information on aggregated reports across the Marketplace sites.

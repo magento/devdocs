@@ -56,7 +56,7 @@ Currently only the ‘session’ grant type is supported.
 
 The following curl example illustrates the request and the expected response:
 
-**Request:**
+**Request**
 
 {% highlight shell %}
 curl -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca' \ 
@@ -65,7 +65,7 @@ curl -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca' \
 
 {% endhighlight %}
 
-**Response:**
+**Response**
 
 A successful HTTP 200 OK response will be sent for a valid application id and secret:
 

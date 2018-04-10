@@ -39,14 +39,14 @@ Any number of fields can be modified by the PUT action, and only the modified fi
 
 The following curl example illustrates fetching a user profile info:
 
-**Request:**
+**Request**
 
 {% highlight shell %}
 curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789
 {% endhighlight %}
 
-**Response:**
+**Response**
 
 {% highlight json %}
 {
@@ -136,7 +136,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
                     "country_code": "+1",
                     "is_primary": true
                 }
-                            ]
+            ]
         }
 }
 {% endhighlight %}
@@ -168,7 +168,7 @@ The ‘action’ field specifies update operation to perform - it can be:
 
 Sample curl calls:
 
-**Request:**
+**Request**
 
 {% highlight shell %}
 curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
@@ -185,11 +185,176 @@ A successful update is indicated via a 200 OK HTTP Response code.
 ~~~~~~
 GET     /rest/v1/users/:mage_id/keys
 POST    /rest/v1/users/:mage_id/keys
-PUT     /rest/v1/users/:mage_id/keys
-DELETE  /rest/v1/users/:mage_id/keys
+PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ~~~~~~
 
+The aforesaid APIs provide a mechanism to manage Magento 1 and Magento 2 package access keys. 
+
+Only GET is available for Magento 1 product keys. 
+
+For Magento 2 composer key-pairs, all the aforesaid APIs are available.
+
+#### GET /rest/v1/users/:mage_id/keys
+
+The following table lists all the query parameters available, all of which are optional:
+
+| Parameter |  Type  | Required | Description                            |
+|-----------|--------|----------|----------------------------------------|
+| type      | string |   no     | Type of keys requested: 'm1'  - Magento 1 product keys, 'm2'  - Magento 2 composer repo keys, 'all' - Both M1 and M2 keys (default) |
+| label     | string |   no     | The url encoded value of the key label; only valid for 'm2' type.| 
 
 
+A curl example of the API without any of the parameters supplied:
 
-### Reports
+**Request**
+
+{% highlight shell %}
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
+{% endhighlight %}
+
+**Response**
+
+{% highlight json %}
+{
+    "m2": [
+            {
+                "label": “main_key”,
+                "user_key": "d41d8cd98f00b204e9800998ecf8427e",
+                "password_key": "12cbdcd3332eb8f166f62ee1a9bd33d0",
+                "is_enabled": true
+            },
+            {
+                "label": "key_for_bob",
+                "user_key": "4b335b25f8eb3449e7e222e8f9e052b0",
+                "password_key": "9ca8abe7376f451bde40513474c13c3c",
+                "is_enabled": false
+            }
+        ],
+
+    "m1": [
+            {
+                “product_name” : “acme/one-click-checkout-1.0.0”,
+                “product_key” : “https://connect20.magentocommerce.com/e8c258702e443c509b42fc44a49b83b0/acme+one-click-checkout-1.0.0”                         
+            }
+        ]
+}
+{% endhighlight %}
+
+Notes:
+
+1. For Magento 2 keys: 
+    1. Each composer key pair has a unique 'label', and 'is_enabled' flag to indicate if the key is enabled or not.
+    2. A composer key pair is identified by 'user_key' (username), and 'password_key' (password) when prompted for composer credentials.
+2. For Magento 1 keys:
+    1. It provides a list of product names and its associated product key which can be used in the Magento Connect Manager to install extensions.
+    2. There are no provisions to create, update or delete these keys.
+
+#### POST /rest/v1/users/:mage_id/keys
+
+This API can be used to create a new Magento 2 composer key-pairs. A unique label must be supplied, and more than
+one set of key-pairs can be requested. 
+
+Here is a sample batch request payload, requesting two new composer key-pairs:
+
+{% highlight json %}
+{
+    "m2": [
+        {
+            "label": "key_for_alice"
+        },
+        {
+            "label": "key_for_charlie"
+        }
+    ]
+}
+{% endhighlight %}
+
+Here is a curl example using the aforesaid payload, and its respective response:
+
+**Request**
+{% highlight shell %}
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     -d ‘{ “m2”: [ { “label” : “key_for_alice” }, { “label” : “key_for_charlie” } ] }’ \
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
+{% endhighlight %}
+
+
+**Response**
+{% highlight json %}
+{
+    "m2": [
+            {
+                "label": “key_for_alice”,
+                "user_key": "5c75f32248bdd335dc8d8d5a3e5cb52e",
+                "password_key": "44db283cbb5fdf2c25cbc9352c2a75eb",
+                "is_enabled": true,
+                “code” : 200,
+                “message” : “Success”
+            },
+            {
+                "label": "key_for_charlie”,
+                "user_key": "19ba9488ff99a9346bdeb39ad4ab1a26",
+                "password_key": "82167d38238911d212cc02a96f3f66f9",
+                "is_enabled": true,
+                “code” : 200,
+                “message” : “Success”
+            }
+        ]
+}
+{% endhighlight %}
+
+Notes:
+
+1. As seen above, a batch response is returned for each of the labels requested.
+2. A success is indicated by ‘code’ value of 200. 
+3. Any non-200 code values indicates some error, and the ‘message’ field provides more details on the issue.
+
+#### PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+
+This API can be used to  enable or disable a Magento 2 composer key-pair identified by the given url-encoded label.
+
+The following curl example illustrates a request and its respective response:
+
+**Request**
+
+{% highlight shell %}
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     -X PUT \
+     -d ‘{ “m2” : [ { “is_enabled” :  true } ] }’ \
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_bob
+{% endhighlight %}
+
+
+**Response**
+
+{% highlight json %}
+{
+    "m2": [            
+            {
+                "label": "key_for_bob",
+                "user_key": "4b335b25f8eb3449e7e222e8f9e052b0",
+                "password_key": "9ca8abe7376f451bde40513474c13c3c",
+                "is_enabled": true
+            }
+     ]
+}
+{% endhighlight %}
+
+#### DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+
+This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.
+
+The following curl example illustrates the call to be made:
+
+**Request**
+
+{% highlight shell %}
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     -X DELETE \
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_charlie
+{% endhighlight %}
+  
+An HTTP 204 response will indicate if the request was successfully processed.
+
