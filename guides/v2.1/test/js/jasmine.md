@@ -27,14 +27,14 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
 ```bash
-$   npm install
+npm install
 ```
 
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
 {:#prepare-step6}
 
 ```bash
-$   php bin/magento setup:static-content:deploy -f
+php bin/magento setup:static-content:deploy -f
 ```
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
@@ -65,13 +65,13 @@ Learn more in [Deploy static view files].
 `Gruntfile.js` contains the test run task, so you can run tests for a theme using the following command in the Magento root directory:
 
 ```bash
-$   grunt spec:<THEME>
+grunt spec:<THEME>
 ```
 
 Example:
 
 ```bash
-$   grunt spec:backend
+grunt spec:backend
 ```
 
 ## Write a test {#write-test}
@@ -260,8 +260,10 @@ Use --force to continue. Aborted due to warnings.
 Run in your terminal:
 
 ```bash
-$   cd <magento_root>/node_modules/grunt-contrib-jasmine
-$   npm install
+cd <magento_root>/node_modules/grunt-contrib-jasmine
+```
+```bash
+npm install
 ```
 
 <!-- LINK DEFINITIONS -->

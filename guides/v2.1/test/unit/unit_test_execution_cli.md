@@ -15,9 +15,9 @@ functional_areas:
 
 To run all tests, navigate to the Magento base directory and execute the following command:
 
-{%highlight bash%}
-$ ./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist
-{%endhighlight%}
+```bash
+./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist
+```
 
 ### Running only a subset of the unit tests
 
@@ -25,9 +25,9 @@ To run only tests within a specific directory branch, all you have to do is to s
 
 The following example tells PHPUnit to look for any file ending with `Test.php` within the directory branch `app/code/Example/Module/Test/Unit` and try to execute it.
 
-{%highlight bash%}
-$ ./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Example/Module/Test/Unit
-{%endhighlight%}
+```bash
+./vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist app/code/Example/Module/Test/Unit
+```
 
 #### Explanation
 
@@ -46,9 +46,9 @@ One possible reason for this to happen might be if you are trying to execute PHP
 
 Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interpreter, so your system knows what binary to use to run the tests.  
 
-{%highlight bash%}
-$ php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
-{%endhighlight%}
+```bash
+php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
+```
 
 #### Use the correct PHP interpreter
 On many development systems, you might have more one PHP version installed. You must know the correct PHP interpreter to use for testing; that is, Buse the same version of PHP to run the unit tests you use to run Magento.
@@ -65,9 +65,9 @@ Some examples follow:
 
 You can either fix your `$PATH` (please refer to your system documentation on how to do that), or specify the full path to the PHP interpreter. For example:
 
-{%highlight bash%}
-$ /usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
-{%endhighlight%}
+```bash
+/usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
+```
 
 #### Memory Limit
 If you encounter an error similar to `Fatal error: Allowed memory size of 67108864 bytes exhausted`, follow these steps to resolve it.
