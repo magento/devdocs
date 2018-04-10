@@ -74,30 +74,30 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Model</code>
+         <td><code>Magento\Framework\Model</code>
          </td>
          <td>Contains base Model classes that almost all Magento Model classes extend from.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\AbstractModel</code>
+         <td><code>Magento\Framework\Model\AbstractModel</code>
          </td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\AbstractResource</code></td>
+         <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\Controller</code></td>
+         <td><code>Magento\Framework\Controller</code></td>
          <td>Contains classes to help return different types of results (for example, JSON and redirects).</td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\View</code></td>
+         <td><code>Magento\Framework\View</code></td>
          <td>Contains code to render pages and layouts.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Data</code></td>
+         <td><code>Magento\Framework\Data</code></td>
          <td>Contains additional classes that handle forms.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\URL</code></td>
+         <td><code>Magento\Framework\Url</code></td>
          <td>Contains code to look up other pages in Magento.</td>
       </tr>
    </tbody>
