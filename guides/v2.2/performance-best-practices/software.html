@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Software recommendations | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/performance-best-practices/software.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:806243,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/software.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/software.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/software.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/software.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.2/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.2/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Performance Best Practices</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.2/performance-best-practices/index.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="hardware-recommendations">
+
+    
+    
+    
+    <a href="/guides/v2.2/performance-best-practices/hardware.html">Hardware recommendations</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1 active " id="software-recommendations">
+
+    
+    
+    
+    <a href="/guides/v2.2/performance-best-practices/software.html">Software recommendations</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="configuration-best-practices">
+
+    
+    
+    
+    <a href="/guides/v2.2/performance-best-practices/configuration.html">Configuration best practices</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="deployment-flow">
+
+    
+    
+    
+    <a href="/guides/v2.2/performance-best-practices/deployment-flow.html">Deployment flow</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="advanced-setup">
+
+    
+    
+    
+    <a href="/guides/v2.2/performance-best-practices/advanced-setup.html">Advanced setup</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/performance-best-practices/index.html">
+            <span property="name">Performance Best Practices</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Software recommendations</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Software recommendations</h1>
+
+  
+
+
+</section>
+
+
+			<p>We recommend using the following software for production instances of Magento:</p>
+
+<ul>
+  <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php">PHP</a></li>
+  <li>Nginx and <a href="https://php-fpm.org/">PHP-FPM</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a></li>
+  <li><a href="/guides/v2.2/config-guide/varnish/config-varnish.html">Varnish cache</a></li>
+  <li>(Magento Commerce only) Use the <a href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Elasticsearch &amp; Elasticsearch Search Adapter</a></li>
+</ul>
+
+<p>For multi-server deployments, or for merchants planning on scaling their business, we recommend the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.2/config-guide/redis/redis-session.html">Redis</a> for sessions (from 2.0.6+)</li>
+  <li>A separate Redis instance as your <a href="/guides/v2.2/config-guide/redis/redis-pg-cache.html">default cache</a> (do not use this instance for page cache)</li>
+</ul>
+
+<p>See <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Magento 2.2.x technology stack requirements</a> for information about supported versions of each type of software.</p>
+
+<h2 id="operating-system">Operating system</h2>
+
+<p>Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to “reuse” and “recycle” TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in <code class="highlighter-rouge">/etc/sysctl.conf</code>: </p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_tw_reuse = 1
+</code></pre></div></div>
+
+<p>The kernel parameter <code class="highlighter-rouge">net.core.somaxconn</code> controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in <code class="highlighter-rouge">/etc/sysctl.conf</code>: </p>
+
+<p><code class="highlighter-rouge">net.core.somaxconn = 1024</code></p>
+
+<h2 id="php">PHP</h2>
+
+<p>Magento fully supports PHP 7.1. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.</p>
+
+<h3 id="php-extensions">PHP extensions</h3>
+
+<p>We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">php-bcmath</code></li>
+  <li><code class="highlighter-rouge">php-cli</code></li>
+  <li><code class="highlighter-rouge">php-common</code></li>
+  <li><code class="highlighter-rouge">php-gd</code></li>
+  <li><code class="highlighter-rouge">php-intl</code></li>
+  <li><code class="highlighter-rouge">php-mbstring</code></li>
+  <li><code class="highlighter-rouge">php-mcrypt</code></li>
+  <li><code class="highlighter-rouge">php-opcache</code></li>
+  <li><code class="highlighter-rouge">php-pdo</code></li>
+  <li><code class="highlighter-rouge">php-soap</code></li>
+  <li><code class="highlighter-rouge">php-xml</code></li>
+</ul>
+
+<p>Adding more extensions increases library load times.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The presence of any profiling and debugging extensions can negatively impact the response time of your pages. As an example, an active xDebug module without any debug session can increase the page response time by up to 30%.</p>
+</div>
+
+<h3 id="php-settings">PHP Settings</h3>
+
+<p>To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:</p>
+
+<p><code class="highlighter-rouge">memory_limit=768MB</code></p>
+
+<h4 id="bytecode">ByteCode</h4>
+
+<p>To get maximum speed out of Magento 2 on PHP7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  opcache.memory_consumption=512MB
+  opcache.max_accelerated_files=60000
+  opcache.consistency_checks=0
+  opcache.validate_timestamps=0
+  opcache.enable_cli=1
+</code></pre></div></div>
+
+<p>When you fine-tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions. Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.</p>
+
+<p>If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>opcache.memory_consumption=64
+opcache.max_accelerated_files=60000
+</code></pre></div></div>
+
+<h2 id="web-server">Web server</h2>
+
+<p>Magento fully supports the Nginx and Apache web servers. Magento provides sample recommended configuration files in the  <code class="highlighter-rouge">&lt;magento_home&gt;/nginx.conf.sample</code> (Nginx) and  <code class="highlighter-rouge">&lt;magento_home&gt;.htaccess.sample</code> (Apache) files.  The Nginx sample contains settings for better performance and is designed so that little reconfiguration is required. Some of the main configuration best practices defined in the sample file include:</p>
+
+<ul>
+  <li>Settings for caching static content in a browser</li>
+  <li>Memory and execution time settings for PHP</li>
+  <li>Content compression settings</li>
+</ul>
+
+<p>You should also configure the number of threads for input request processing, as listed below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Web server</th>
+      <th>Attribute name</th>
+      <th>Location</th>
+      <th>Related information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nginx</td>
+      <td><code class="highlighter-rouge">worker_collections</code></td>
+      <td><code class="highlighter-rouge">/etc/nginx/nginx.conf</code> (Debian)</td>
+      <td><a href="https://www.nginx.com/blog/tuning-nginx/">Tuning NGINX for Performance</a></td>
+    </tr>
+    <tr>
+      <td>Apache 2.2</td>
+      <td><code class="highlighter-rouge">MaxClients</code></td>
+      <td><code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (CentOS)</td>
+      <td><a href="http://httpd.apache.org/docs/2.2/misc/perf-tuning.html">Apache Performance Tuning</a></td>
+    </tr>
+    <tr>
+      <td>Apache 2.4</td>
+      <td><code class="highlighter-rouge">MaxRequestWorkers</code></td>
+      <td><code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (CentOS)</td>
+      <td><a href="https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers">Apache MPM Common Directives</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="mysql">MySQL</h2>
+
+<p>This document does not provide in-depth MySQL tuning instructions because each store and environment is different, but we can make some general recommendations.</p>
+
+<p>There have been many improvements to MySQL 5.6 and 5.7. We are confident that MySQL is distributed with good default settings. The most critical settings are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">innodb_buffer_pool_instances</code></td>
+      <td>8</td>
+      <td>The default value is set to 8 to avoid issues with multiple threads attempting to access the same instance.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">innodb_buffer_pool_size</code></td>
+      <td>128MB</td>
+      <td>Combined with the multiple pool instances described above, this means a default memory allocation of 1024MB. The total size is divided among all the buffer pools. For best efficiency, specify a combination of <code class="highlighter-rouge">innodb_buffer_pool_instances</code> and <code class="highlighter-rouge">innodb_buffer_pool_size</code> so that each buffer pool instance is at least 1 GB.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">max_connections</code></td>
+      <td>150</td>
+      <td>The value of the <code class="highlighter-rouge">max_connections</code> parameter should correlate with the total number of PHP threads configured in the application server. A general recommendation would be 300 for a small and 1,000 for a medium environment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">innodb-thread-concurrency</code></td>
+      <td>0</td>
+      <td>The best value for this configuration should be calculated by the formula: <code class="highlighter-rouge">innodb-thread-concurrency = 2 * (NumCPUs + NumDisks)</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="varnish">Varnish</h2>
+
+<p>Magento highly recommends using Varnish as the full page cache server for your store. The PageCache module is still present in the codebase, but it should be used for development purposes only. It should not be used together with, or instead of, Varnish.</p>
+
+<p>Install Varnish on a separate server in front of the web tier. It should accept all incoming requests and provide cached page copies. To allow Varnish to work effectively with secured pages, an SSL termination proxy can be placed in front of Varnish. Nginx can be used for this purpose.</p>
+
+<p>Magento distributes a sample configuration file for Varnish (versions 4 and 5) that contains all recommended settings for performance. Among them the most critical in terms of performance are:</p>
+
+<ul>
+  <li><strong>Backend health check</strong> polls the Magento server to determine whether it is responding in a timely manner.</li>
+  <li><strong>Grace mode</strong> allows you to instruct Varnish to keep an object in cache beyond its Time to Live (TTL) period and serve this stale content if Magento is not healthy or if fresh content hasn’t been fetched yet.</li>
+  <li><strong>Saint mode</strong> blacklists unhealthy Magento servers for a configurable amount of time. As a result, unhealthy backends cannot serve traffic when using Varnish as a load balancer.</li>
+</ul>
+
+<p>See <a href="/guides/v2.2/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a> for more information about implementing these features.</p>
+
+<h3 id="optimize-asset-performance">Optimize asset performance</h3>
+
+<p>In general, we recommend storing your assets (images, JS, CSS, etc) on a CDN for optimal performance.</p>
+
+<p>If your site does not require deploying a large number of locales and your servers are in the same region as the majority of your customers, you may find significant performance gains at a lower cost by storing your assets in Varnish instead of using a CDN.</p>
+
+<p>To store your assets in Varnish, add the following VCL entries in your <code class="highlighter-rouge">default.vcl</code> file generated by Magento for Varnish 5.</p>
+
+<p>At the end of the <code class="highlighter-rouge">if</code> statement for PURGE requests in the <code class="highlighter-rouge">vcl_recv</code> subroutine, add:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span> <span class="kr">static</span> <span class="nx">files</span> <span class="nx">are</span> <span class="nx">cacheable</span><span class="p">.</span> <span class="nx">remove</span> <span class="nx">SSL</span> <span class="nx">flag</span> <span class="nx">and</span> <span class="nx">cookie</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span> <span class="o">~</span> <span class="s2">"^/(pub/)?(media|static)/.*</span><span class="err">\</span><span class="s2">.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">unset</span> <span class="nx">req</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Https</span><span class="p">;</span>
+  <span class="nx">unset</span> <span class="nx">req</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="cm">/*  */</span><span class="p">;</span>
+  <span class="nx">unset</span> <span class="nx">req</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Cookie</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the <code class="highlighter-rouge">vcl_backend_response</code> subroutine, look for the <code class="highlighter-rouge">if</code> statement that unsets the cookie for <code class="highlighter-rouge">GET</code> or <code class="highlighter-rouge">HEAD</code> requests.
+The updated <code class="highlighter-rouge">if</code> block should look like the following:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span> <span class="nx">validate</span> <span class="k">if</span> <span class="nx">we</span> <span class="nx">need</span> <span class="nx">to</span> <span class="nx">cache</span> <span class="nx">it</span> <span class="nx">and</span> <span class="nx">prevent</span> <span class="k">from</span> <span class="nx">setting</span> <span class="nx">cookie</span>
+<span class="err">#</span> <span class="nx">images</span><span class="p">,</span> <span class="nx">css</span> <span class="nx">and</span> <span class="nx">js</span> <span class="nx">are</span> <span class="nx">cacheable</span> <span class="nx">by</span> <span class="k">default</span> <span class="nx">so</span> <span class="nx">we</span> <span class="nx">have</span> <span class="nx">to</span> <span class="nx">remove</span> <span class="nx">cookie</span> <span class="nx">also</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">beresp</span><span class="p">.</span><span class="nx">ttl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="nx">s</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">bereq</span><span class="p">.</span><span class="nx">method</span> <span class="o">==</span> <span class="s2">"GET"</span> <span class="o">||</span> <span class="nx">bereq</span><span class="p">.</span><span class="nx">method</span> <span class="o">==</span> <span class="s2">"HEAD"</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">unset</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="kd">set</span><span class="o">-</span><span class="nx">cookie</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">bereq</span><span class="p">.</span><span class="nx">url</span> <span class="o">!~</span> <span class="s2">"</span><span class="err">\</span><span class="s2">.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)(</span><span class="err">\</span><span class="s2">?|$)"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Pragma</span> <span class="o">=</span> <span class="s2">"no-cache"</span><span class="p">;</span>
+  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Expires</span> <span class="o">=</span> <span class="s2">"-1"</span><span class="p">;</span>
+  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Cache</span><span class="o">-</span><span class="nx">Control</span> <span class="o">=</span> <span class="s2">"no-store, no-cache, must-revalidate, max-age=0"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Restart the Varnish server to flush cached assets whenever you upgrade your site or deploy/update assets.</p>
+
+<h2 id="cacheing-and-session-servers">Cacheing and session servers</h2>
+
+<p>Magento provides a number of options to store your cache and session data, including Redis, Memcache, filesystem, and database. Some of these options are discussed below.</p>
+
+<h3 id="single-web-node-setup">Single web node setup</h3>
+
+<p>If you plan to serve all your traffic with just one web node, it does not make sense to put your cache on a remote Redis server. Instead, either use the filesystem or a local Redis server. If you want to use the filesystem, put your cache folders on a volume mounted on a RAM filesystem. If you want to use a local Redis server, we highly recommend configuring Redis so it uses sockets for direct connections, rather than exchange data through HTTP.</p>
+
+<h3 id="multiple-web-nodes-setup">Multiple web nodes setup</h3>
+
+<p>For a multiple web nodes setup, Redis is the best option. Because Magento actively caches lots of data for better performance, pay attention to your network channel between the web nodes and the Redis server. You do not want the channel to become a bottleneck for request processing.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you need to serve hundreds and thousands of simultaneous requests, you may need a channel of up to 1 Gbit (or even wider)  to your Redis server.</p>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+    
+      <div class="github-link">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/performance-best-practices/software.md" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    
+  
+
+  
+    
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/performance-best-practices/software.html" target="_blank">Give us feedback</a>
+      </div>
+    
+  
+  
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configuration best practices | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.3/performance-best-practices/configuration.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:806243,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/configuration.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/configuration.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/configuration.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/configuration.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Performance Best Practices</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.3/performance-best-practices/index.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="hardware-recommendations">
+
+    
+    
+    
+    <a href="/guides/v2.3/performance-best-practices/hardware.html">Hardware recommendations</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="software-recommendations">
+
+    
+    
+    
+    <a href="/guides/v2.3/performance-best-practices/software.html">Software recommendations</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1 active " id="configuration-best-practices">
+
+    
+    
+    
+    <a href="/guides/v2.3/performance-best-practices/configuration.html">Configuration best practices</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="deployment-flow">
+
+    
+    
+    
+    <a href="/guides/v2.3/performance-best-practices/deployment-flow.html">Deployment flow</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="advanced-setup">
+
+    
+    
+    
+    <a href="/guides/v2.3/performance-best-practices/advanced-setup.html">Advanced setup</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/performance-best-practices/index.html">
+            <span property="name">Performance Best Practices</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Configuration best practices</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Configuration best practices</h1>
+
+  
+
+
+</section>
+
+
+			<p>Magento 2 provides many settings and tools that you can use to improve response time on the pages as well as provide higher throughput.</p>
+
+<h2 id="cron-jobs">Cron Jobs</h2>
+
+<p>All asynchronous operations in Magento Open Source are performed using the Linux <code class="highlighter-rouge">cron</code> command. See <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> to configure it correctly.</p>
+
+<h2 id="indexers">Indexers</h2>
+
+<p>An indexer can run in either <strong>Update on Save</strong> or <strong>Update on Schedule</strong> mode. The <strong>Update on Save</strong> mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using <strong>Update on Schedule</strong> mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  <strong>System &gt; Index Management</strong> configuration page.</p>
+
+<h2 id="caches">Caches</h2>
+
+<p>When you launch your store in production, activate all the caches from the <strong>System &gt; Cache Management</strong> page. We highly recommend using Varnish, as it is an efficient production page cache solution.</p>
+
+<h2 id="asynchronous-email-notifications">Asynchronous email notifications</h2>
+
+<p>Enabling the “Asynchronous email notifications” setting moves processes that handle checkout and order processing email notifications to the background. To enable this feature, go to <strong>Stores &gt; Configuration &gt; Sales &gt; Sales Emails &gt; General Settings &gt; Asynchronous Sending</strong>. See <a href="http://docs.magento.com/m2/ce/user_guide/configuration/sales/sales-emails.html">Sales Emails</a> in the <em>Magento Open Source User Guide</em> for more information.</p>
+
+<h2 id="asynchronous-order-data-processing">Asynchronous order data processing</h2>
+
+<p>There can be times when intensive sales on a storefront occur at the same time that Magento is performing intensive order processing. You can configure Magento to distinguish these two traffic patterns on the database level to avoid conflicts between read and write operations in the corresponding tables. You can store and index order data asynchronously. Orders are placed in temporary storage and moved in bulk to the Order Management grid without any collisions. You can activate this option from <strong>Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; Grid Settings &gt; Asynchronous indexing</strong>. See <a href="http://docs.magento.com/m2/ce/user_guide/sales/order-grid-updates-schedule.html">Scheduled Grid Updates</a> in the <em>Magento Open Source User Guide</em> for more information.</p>
+
+<h2 id="deferred-stock-update">Deferred stock update</h2>
+
+<p>In times of intensive sales,  Magento can defer stock updates related to orders. This minimizes the number of operations and speeds up the order placement process. However, this option is risky and can only be used when Backorders are activated in the store, because this option can lead to negative stock quantities. This option can bring significant performance improvement on Checkout flows for stores that can easily re-fill their stock on demand. To activate deferred stock updates, go to <strong>Stores &gt; Configuration &gt; Catalog &gt; Inventory &gt; Product Stock Options &gt; Use Deferred Stock Update</strong>. See <a href="http://docs.magento.com/m2/ee/user_guide/catalog/inventory.html">Managing Inventory</a> in the <em>Magento CommerceUser Guide</em> for more information.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This option is available only if <strong>Backorder with any mode</strong> is activated.</p>
+</div>
+
+<h2 id="client-side-optimization-settings">Client side optimization settings</h2>
+
+<p>To improve the storefront responsiveness of your Magento instance, go to the Admin in Default or Developer mode and change the following settings:</p>
+
+<p><strong>Stores -&gt; Configuration -&gt; Advanced -&gt; Developer</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Settings Group</th>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Grid Settings</td>
+      <td>Asynchronous indexing</td>
+      <td>Enable</td>
+    </tr>
+    <tr>
+      <td>CSS Settings</td>
+      <td>Minify CSS Files</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Javascript Settings</td>
+      <td>Minify JavaScript Files</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Javascript Settings</td>
+      <td>Enable JavaScript Bundling</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Template Settings</td>
+      <td>Minify HTML</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When you activate the <strong>Enable Javascript Bundling</strong> option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse it for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will will be loaded on the first call.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <ul>
+    <li>Magento recommendeds that you use third-party tools for minification and bundling (like <a href="http://requirejs.org/">r.js</a>). Magento built-in mechanisms are not optimal and are shipped as fallback alternatives.</li>
+    <li>Activating the HTTP2 protocol can be a good alternative to using JS bundling. The protocol provides pretty much the same benefits.</li>
+    <li>We do not recommend using deprecated settings like merging JS and CSS files, as they were designed only for synchronously-loaded JS in the HEAD section of the page. Using this technique can cause bundling and requireJS logic to work incorrectly.</li>
+  </ul>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+    
+      <div class="github-link">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/performance-best-practices/configuration.md" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    
+  
+
+  
+    
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/performance-best-practices/configuration.html" target="_blank">Give us feedback</a>
+      </div>
+    
+  
+  
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

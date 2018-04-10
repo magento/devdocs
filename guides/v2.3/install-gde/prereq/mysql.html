@@ -105,6 +105,9 @@
           <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
           
           <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
           <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
           <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li><a href="/magento-release-information.html">Release Information</a></li>
@@ -2818,7 +2821,7 @@ flush privileges;
 
   <ul>
     <li>
-      <p>Indexers require higher <code class="highlighter-rouge">tmp_table_size</code> and <code class="highlighter-rouge">max_heap_table_size</code> values (e.g., 64M). If you configure the <code class="highlighter-rouge">batch_size</code> parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the <a href="/guides/v2.3/config-guide/prod/prod_perf-optimize.html">Magento Optimization Guide</a> for more information.</p>
+      <p>Indexers require higher <code class="highlighter-rouge">tmp_table_size</code> and <code class="highlighter-rouge">max_heap_table_size</code> values (e.g., 64M). If you configure the <code class="highlighter-rouge">batch_size</code> parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to  <a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a> for more information.</p>
     </li>
     <li>
       <p>For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure <code class="highlighter-rouge">innodb_buffer_pool_size</code>).</p>
