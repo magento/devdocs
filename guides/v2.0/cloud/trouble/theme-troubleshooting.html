@@ -1829,11 +1829,11 @@
 
 <ol>
   <li>Open a terminal application.</li>
-  <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH</a> into the environment experiencing the issue.</li>
+  <li><a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html#branch">Checkout the branch</a> that corresponds to the environment the environment where you are experiencing the issue.</li>
   <li>
-    <p>Enter the following command to regenerate the image cache:</p>
+    <p>Regenerate the image cache:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento catalog:images:resize
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento catalog:images:resize
 </code></pre></div>    </div>
   </li>
   <li>Test the catagory pages through the store URL.</li>

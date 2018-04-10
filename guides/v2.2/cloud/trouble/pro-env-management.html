@@ -2118,6 +2118,36 @@
  To update an existing variable, click <strong>Edit</strong> next to the variable.</li>
 </ol>
 
+<p>For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.</p>
+
+<h2 id="enable">Enter a ticket for updating the Project Web Interface</h2>
+<p>Enter a <a href="/guides/v2.2/cloud/trouble/trouble.html">Support ticket</a> with the suggested title “Connect Stg / Prod to Project’s UI”. In the ticket, request to have your project enabled with Staging and Production in the UI.</p>
+
+<p>We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.</p>
+
+<p>When done, you can access review your project through the <a href="/guides/v2.2/cloud/project/projects.html">Project Web Interface</a>.</p>
+
+<h2 id="optional-migrate-environment-variables">(Optional) Migrate environment variables</h2>
+<p>After conversion, you can manually migrate specific environment variables for Staging and Production.</p>
+
+<ol>
+  <li>Open a terminal and <a href="/guides/v2.2/cloud/before/before-setup-env-2_clone.html#branch">checkout a branch</a> in your local environment.</li>
+  <li>
+    <p>List all environment variables:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:list
+</code></pre></div>    </div>
+  </li>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+  <li>Click the <strong>Projects</strong> tab and the name of your project.</li>
+  <li>Click the Staging or Production environment.</li>
+  <li>On the <em>Variables</em> tab, review the environment variables.</li>
+  <li>Enter the variable name and value.</li>
+  <li>Select the <strong>Override</strong> checkbox if you want variables in the Project Web Interface to override local CLI or database values.</li>
+</ol>
+
+<p>When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children from Integration `master. For more information, see <a href="/guides/v2.2/cloud/architecture/pro-architecture.html">Pro architecture</a>.</p>
+
 <p>You can add environment-specific variables, including sensitive data and values, after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. See <a href="/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</p>
 
 <h2 id="request-an-upgrade">Request an upgrade</h2>

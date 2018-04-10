@@ -2172,13 +2172,13 @@
       <li>
         <p>Enter the following commands to update it:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;component-name&gt;:&lt;version&gt; --no-update
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;component-name&gt;:&lt;version&gt; <span class="nt">--no-update</span>
 composer update
 </code></pre></div>        </div>
 
         <p>For example:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require pixlee/magento2:1.0.1 --no-update
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require pixlee/magento2:1.0.1 <span class="nt">--no-update</span>
 composer update
 </code></pre></div>        </div>
       </li>
@@ -2186,9 +2186,9 @@ composer update
       <li>
         <p>Enter the following commands in the order shown to commit your changes, including <code class="highlighter-rouge">composer.lock</code>:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git add -A
- git commit -m "&lt;message&gt;"
- git push origin &lt;environment ID&gt;
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span>
+git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
+git push origin &lt;environment ID&gt;
 </code></pre></div>        </div>
       </li>
     </ol>
@@ -2203,11 +2203,12 @@ When installing and adding the module, you must add the `composer.lock` to your 
     <p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
 
     <ol>
-      <li><a href="/guides/v2.2/cloud/env/environments-ssh.html#env-start-tunn">SSH to the environment</a> on which the extension is installed.</li>
+      <li>Open a terminal.</li>
+      <li><a href="/guides/v2.2/cloud/before/before-setup-env-2_clone.html#branch">Checkout the branch</a> where the module is installed.</li>
       <li>
-        <p>Enter the following command to display a list of enabled modules:</p>
+        <p>List all enabled modules:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:status
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:status
 </code></pre></div>        </div>
       </li>
       <li>Verify the extension is listed.</li>
@@ -2227,27 +2228,27 @@ When installing and adding the module, you must add the `composer.lock` to your 
       <li><a href="#getstarted">Work in a branch</a> to update <code class="highlighter-rouge">config.php</code>.</li>
       <li>In a terminal, access your local development environment.</li>
       <li>
-        <p>You need a specific name of the extension or module. Use the following command to locate the name:</p>
+        <p>List all module.</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:status
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:status
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>To enable, use the following command. It updates <code class="highlighter-rouge">config.php</code> with the enabled status of the module.</p>
+        <p>Enable a module.This command updates the <code class="highlighter-rouge">config.php</code> file with the enabled status of the module.</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:enable &lt;module name&gt;
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:enable &lt;module name&gt;
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>To disable, use the following command. It updates <code class="highlighter-rouge">config.php</code> with the disable status of the module.</p>
+        <p>Disable a module. This command updates the <code class="highlighter-rouge">config.php</code> file with the disable status of the module.</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:disable &lt;module name&gt;
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:disable &lt;module name&gt;
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>Use the following command to verify the changed status of the module:</p>
+        <p>Verify the status of a module:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:status
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:status
 </code></pre></div>        </div>
       </li>
       <li>Push your updates to the Git branch.</li>
@@ -2273,16 +2274,16 @@ When installing and adding the module, you must add the `composer.lock` to your 
       <li>Locate your extension and update the version.</li>
       <li>Save your changes to <code class="highlighter-rouge">composer.json</code> and exit the text editor.</li>
       <li>
-        <p>Use the following command to update project dependencies:</p>
+        <p>Update project dependencies:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
 </code></pre></div>        </div>
       </li>
       <li>
         <p>Enter the following commands in the order to commit the changes and deploy the project, including <code class="highlighter-rouge">composer.lock</code>:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
-git commit -m "&lt;message&gt;"
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span>
+git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
 git push origin &lt;environment ID&gt;
 </code></pre></div>        </div>
       </li>

@@ -2086,7 +2086,7 @@
 </ul>
 
 <h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
-<p>By default, the Blackfire module should be included in the .magento.app.yaml file as part of your Git branch.</p>
+<p>By default, the Blackfire module is included in the <code class="highlighter-rouge">.magento.app.yaml</code> file as part of your Git branch.</p>
 
 <p>The following instructions provide additional instructions if the module is not added to <code class="highlighter-rouge">.magento.app.yaml</code>. To enable and integrate Blackfire into your code, you will modify the <code class="highlighter-rouge">.magento.app.yaml</code> file, push the file into your remote Git branch, merge, and deploy across all environments.</p>
 
@@ -2098,35 +2098,34 @@
 <p>We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the <code class="highlighter-rouge">.magento.app.yaml</code> file. If you need instructions creating a branch, complete the following:</p>
 
 <ol>
-  <li>SSH into your local Magento workspace.</li>
   <li>
     <p>Log in to your Magento Commerce (Cloud) project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List projects:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List environments in the project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list <span class="nt">-p</span> &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>See what branch you’re currently in, if any.</p>
+    <p>See what branch you’re currently on, if any.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, check out an existing branch:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
     <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
@@ -2134,7 +2133,7 @@
   <li>
     <p>Back up the environment using a snapshot:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2146,21 +2145,21 @@
   <li>
     <p>Enter <code class="highlighter-rouge">- name: blackfire</code> in the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime</code>.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runtime:
-  extensions:
-    - mcrypt
-    - redis
-    - xsl
-    - json
-    - blackfire
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">runtime</span><span class="pi">:</span>
+    <span class="na">extensions</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">mcrypt</span>
+    <span class="pi">-</span> <span class="s">redis</span>
+    <span class="pi">-</span> <span class="s">xsl</span>
+    <span class="pi">-</span> <span class="s">json</span>
+    <span class="pi">-</span> <span class="s">blackfire</span>
 </code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
   <li>
     <p>Add, commit, and push your changes to the environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
-git commit -m "&lt;message&gt;"
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span>
+git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
 git push origin
 </code></pre></div>    </div>
 
@@ -2172,19 +2171,18 @@ git push origin
 <p>Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.</p>
 
 <ol>
-  <li>SSH into your local Magento workspace.</li>
   <li>
     <p>Log in to your Magento Commerce (Cloud) project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>Copy the commands from step 3 on the Blackfire Magento Cloud integration page.</li>
   <li>
     <p>Paste and enter the commands in the Magento Cloud CLI. Since you are already in your project, remove the <code class="highlighter-rouge">--project='&lt;Project ID&gt;'</code> content from the command. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud project:variable:set env:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
- magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:set env:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
+magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2193,23 +2191,24 @@ git push origin
 <p>Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
 
 <ol>
-  <li>SSH into your local Magento workspace.</li>
   <li>
     <p>Log in to your Magento Commerce (Cloud) project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Copy and enter the integration commands from the Blackfire Magento Cloud integration page.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud integration:add \
- --project='&lt;Project ID&gt;' \
- --type=webhook \
- --url='&lt;Blackfire provided URL&gt;'
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud integration:add <span class="se">\</span>
+ <span class="nt">--project</span><span class="o">=</span><span class="s1">'&lt;Project ID&gt;'</span> <span class="se">\</span>
+ <span class="nt">--type</span><span class="o">=</span>webhook <span class="se">\</span>
+ <span class="nt">--url</span><span class="o">=</span><span class="s1">'&lt;Blackfire provided URL&gt;'</span>
 </code></pre></div>    </div>
   </li>
-  <li>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or have someone else who is an admin run this command.</li>
+  <li>
+    <p>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or have someone else who is an admin run this command.</p>
+  </li>
 </ol>
 
 <h3 id="route">Add a default route</h3>
@@ -2225,35 +2224,34 @@ git push origin
 <p>If adding a route to Blackfire, make sure to add the default route to <code class="highlighter-rouge">routes.yaml</code>:</p>
 
 <ol>
-  <li>SSH into your local Magento workspace.</li>
   <li>
     <p>Log in to your Magento Commerce (Cloud) project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List projects:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List environments in the project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list <span class="nt">-p</span> &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>See what branch you’re currently in, if any.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, check out an existing branch:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
     <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
@@ -2261,16 +2259,16 @@ git push origin
   <li>
     <p>Back up the environment using a snapshot:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/magento/routes.yaml</code> in your branch.</li>
   <li>
     <p>Add the route the file. For details, see <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a>. Here’s an example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
-type: upstream
-upstream: "blackfire:php"
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"</span><span class="s">http://{default}/"</span><span class="pi">:</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+<span class="na">upstream</span><span class="pi">:</span> <span class="s2">"</span><span class="s">blackfire:php"</span>
 </code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>.
@@ -2278,8 +2276,8 @@ If you leave this field blank, we will try the following keys in this order: <co
   <li>
     <p>Add, commit, and push your changes to the environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
-git commit -m "&lt;message&gt;"
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span>
+git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
 git push origin
 </code></pre></div>    </div>
 
@@ -2293,6 +2291,10 @@ git push origin
 <h2 id="profile">Profile your store</h2>
 <p>To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see <a href="#resources">Blackfire’s resources</a>.</p>
 
+<div class="bs-callout bs-callout-info">
+  <p>You can only use the CLI in your local development environment.</p>
+</div>
+
 <p>To profile using the browser:</p>
 
 <ol>
@@ -2303,44 +2305,44 @@ git push origin
 
     <p><img src="/common/images/cloud_blackfire.png" alt="Start profiling" /></p>
   </li>
-  <li>Click Profile to start.</li>
+  <li>Click <strong>Profile</strong> to start.</li>
 </ol>
 
 <p>To profile using the CLI:</p>
 
 <ol>
-  <li>SSH into the development or Integration environment. If you need the SSH command, ou can find it through the Project Web Site. Select the environment branch and copy the SSH command from the Access section. Enter the SSH command in a terminal.</li>
+  <li>Open a terminal.</li>
+  <li><a href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html#branch">Checkout a branch</a> in your local environment.</li>
   <li>
-    <p>Enter the following command:</p>
+    <p>Run the profiler.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php --ri blackfire
-</code></pre></div>    </div>
+    <p>php –ri blackfire</p>
 
     <p>A sample result follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blackfire
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blackfire
 
-Blackfire =&gt; enabled
-Blackfire =&gt; 1.10.3
-Timing measurement =&gt; cgt
-Num of CPU =&gt; 8
-Profiling heap memory =&gt; 0 Kb
-Main instance trigger mode =&gt; HTTP header triggered
-Main instance =&gt; enabled
+Blackfire <span class="o">=&gt;</span> enabled
+Blackfire <span class="o">=&gt;</span> 1.10.3
+Timing measurement <span class="o">=&gt;</span> cgt
+Num of CPU <span class="o">=&gt;</span> 8
+Profiling heap memory <span class="o">=&gt;</span> 0 Kb
+Main instance trigger mode <span class="o">=&gt;</span> HTTP header triggered
+Main instance <span class="o">=&gt;</span> enabled
 
 Main instance info
-Output stream =&gt; file
-Signature validated =&gt; no
-EnvId validated =&gt; no
-Fully decoded =&gt; no
+Output stream <span class="o">=&gt;</span> file
+Signature validated <span class="o">=&gt;</span> no
+EnvId validated <span class="o">=&gt;</span> no
+Fully decoded <span class="o">=&gt;</span> no
 
-Directive =&gt; Local Value =&gt; Master Value
-blackfire.agent_socket =&gt; tcp://blackfire.platform.sh:8307 =&gt; tcp://blackfire.platform.sh:8307
-blackfire.agent_timeout =&gt; 10 =&gt; 10
-blackfire.env_id =&gt; no value =&gt; no value
-blackfire.env_token =&gt; no value =&gt; no value
-blackfire.log_level =&gt; 1 =&gt; 1
-blackfire.log_file =&gt; no value =&gt; no value
+Directive <span class="o">=&gt;</span> Local Value <span class="o">=&gt;</span> Master Value
+blackfire.agent_socket <span class="o">=&gt;</span> tcp://blackfire.platform.sh:8307 <span class="o">=&gt;</span> tcp://blackfire.platform.sh:8307
+blackfire.agent_timeout <span class="o">=&gt;</span> 10 <span class="o">=&gt;</span> 10
+blackfire.env_id <span class="o">=&gt;</span> no value <span class="o">=&gt;</span> no value
+blackfire.env_token <span class="o">=&gt;</span> no value <span class="o">=&gt;</span> no value
+blackfire.log_level <span class="o">=&gt;</span> 1 <span class="o">=&gt;</span> 1
+blackfire.log_file <span class="o">=&gt;</span> no value <span class="o">=&gt;</span> no value
 </code></pre></div>    </div>
   </li>
 </ol>

@@ -2040,7 +2040,7 @@ For environment variables: <code class="highlighter-rouge">magento-cloud vget</c
   <li>
     <p>Delete an environment variable.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:newrelic.license
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:newrelic.license
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2053,9 +2053,9 @@ For environment variables: <code class="highlighter-rouge">magento-cloud vget</c
 <h3 id="add-new-relic-extension-to-your-project">Add New Relic extension to your project</h3>
 <p>New relic extension must be listed in the <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runtime:
-  extensions:
-    - newrelic
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">runtime</span><span class="pi">:</span>
+  <span class="na">extensions</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">newrelic</span>
 </code></pre></div></div>
 
 <h2 id="investigate-performance">Investigate performance</h2>

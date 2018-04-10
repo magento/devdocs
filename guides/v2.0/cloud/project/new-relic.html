@@ -1846,18 +1846,12 @@
 <p>To add a New Relic license key to an environment:</p>
 
 <ol>
-  <li>Log in to your Project Web Interface.</li>
-  <li>Select an environment.</li>
-  <li>
-    <p>Click <strong>Access site</strong> and copy the <strong>SSH Access</strong> link.</p>
-
-    <p><img src="/common/images/cloud_project-access.png" alt="Access settings" /></p>
-  </li>
-  <li>In a terminal, log in using the SSH access link.</li>
+  <li>Open a terminal</li>
+  <li><a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html#branch">Checkout a branch</a> in your local environment.</li>
   <li>
     <p>Set the license variable.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:set --no-visible-build php:newrelic.license &lt;your-new-relic-license-key&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:set <span class="nt">--no-visible-build</span> php:newrelic.license &lt;your-new-relic-license-key&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -1868,14 +1862,8 @@
 <p>To remove a New Relic license key from an environment:</p>
 
 <ol>
-  <li>Log in to your Project Web Interface.</li>
-  <li>Select an environment.</li>
-  <li>
-    <p>Click <strong>Access site</strong> and copy the <strong>SSH Access</strong> link.</p>
-
-    <p><img src="/common/images/cloud_project-access.png" alt="Access settings" /></p>
-  </li>
-  <li>In a terminal, log in using the SSH access link.</li>
+  <li>Open a terminal</li>
+  <li><a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html#branch">Checkout a branch</a> in your local environment.</li>
   <li>
     <p>List all variables.</p>
 
@@ -1885,22 +1873,22 @@ For environment variables: <code class="highlighter-rouge">magento-cloud vget</c
   <li>
     <p>Delete an environment variable.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:newrelic.license
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:newrelic.license
 </code></pre></div>    </div>
 
     <p>If you added the license as a <em>project</em> variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, using or exceeding the license limit.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:delete php:newrelic.license
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:delete php:newrelic.license
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <h2 id="extension">Add New Relic extension to your project</h2>
-<p>New relic extension must be listed in the .magento.app.yaml project file:</p>
+<p>New relic extension must be listed in the <code class="highlighter-rouge">.magento.app.yaml</code> project file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   runtime:
-     extensions:
-        - newrelic
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">runtime</span><span class="pi">:</span>
+    <span class="na">extensions</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">newrelic</span>
 </code></pre></div></div>
 
 <h2 id="performance">Investigate performance</h2>
