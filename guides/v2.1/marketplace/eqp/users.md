@@ -346,3 +346,17 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 {% endhighlight %}
   
 An HTTP 204 response will indicate if the request was successfully processed.
+
+## Reports
+
+~~~~~~
+GET /rest/v1/users/:mage_id/reports
+~~~~~~
+
+Reports owned by the user, related to sale of extensions, payout status, aggregate sales and refund data, and much more will be available through this resource endpoint.
+
+<div class="bs-callout bs-callout-info">
+  <p>The  Reports API specification is under design review, so the details will be released when finalized.</p>
+</div>
+
+
