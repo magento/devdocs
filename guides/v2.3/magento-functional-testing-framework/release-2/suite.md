@@ -62,9 +62,11 @@ Using suites allows test writers to consolidate preconditions that are shared be
 
 Since suites allow for precondition consolidation, a common workflow for test writing would be to add a new test to an existing suite. This becomes tricky when your new test needs to be in the suite because of preconditions.
 
-There are several ways to execute only your new test in the context of a suite:
+
+There are, however, several ways to generate and execute only your new test in the context of a suite:
 * Temporarily add a group to your test via a `<group value="something">` tag to your test, and run `robo group something`.
 * Edit the appropriate `suite.xml` to only include your test and run via `robo group <suiteName>`.
+* Use `robo generate:suite <suite>` in conjunction with the above to limit generation to your suite/test combination.
 * Use the `--tests` flag in `generate:tests` to only generate your `suite` and `test` combination. See [robo commands](./commands/robo.html#generate) for details.
 
 ## Examples
@@ -168,6 +170,8 @@ Attributes|Type|Use|Description
 ### before/after
 `before/after` suite hooks, that execute once before and once after the entire suite executes.
 * May contain any test actions that can normally be called in `<test>` tags.
+* If there is a failure in the before hook of a suite, *none of the tests in the suite are run*. 
+    * Additionally, screenshots are not saved if a failure is encountered in the suite's hook. To troubleshoot these failures, you must run the suite locally.
 
 ### include/exclude
 Tags used to specify what tests should or shouldn't belong in the declared suite.
