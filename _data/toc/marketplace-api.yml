@@ -1,4 +1,4 @@
-label: Marketplace API
+label: Marketplace EQP API
 pages:
     - label: Introduction
       url: marketplace/eqp/api.html
@@ -8,3 +8,6 @@ pages:
 
     - label: Users
       url: marketplace/eqp/users.html
+
+    - label: Files
+      url: marketplace/eqp/files.html
