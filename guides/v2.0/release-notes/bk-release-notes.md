@@ -14,6 +14,10 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 
 ## Magento 2.0 Release Notes
 
+* [{{site.data.var.ce}} 2.0.18 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.18CE.html)
+* [{{site.data.var.ee}} 2.0.18 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.18EE.html)
+
+
 * [{{site.data.var.ce}} 2.0.17 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.17CE.html)
 * [{{site.data.var.ee}} 2.0.17 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.0.17EE.html)
 
@@ -61,7 +65,7 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 
 ## Backward-incompatible changes
 
-* Overview of backward-incompatible changes made after Magento 2.0.0 release in scope of 2.0 version: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html)
+* Overview of backward-incompatible changes made after Magento 2.0.0 release in scope of 2.0 version: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes/index.html)
 
 ## Third-party license agreements
 

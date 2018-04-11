@@ -12,7 +12,7 @@ redirect_from:
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 ## Overview
@@ -160,12 +160,14 @@ remove|boolean|optional|Default value: `"false"`. Set to `"true"` to remove this
 
 <!-- LINK DEFINITIONS -->
 
-[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
-[test]: cest.html
+[explicit page]: #explicit-page
+[parameterized page]: #parameterized-page
+
 [createData]: cest/actions.html#createdata
 [section]: section.html
-[explicit page]: #explicit-page
-[parameterized page]: #parameterized-page.
+[test]: cest.html
+
+[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 
 <!-- Abbreviations -->
 

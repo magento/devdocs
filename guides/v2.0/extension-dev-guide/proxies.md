@@ -11,7 +11,7 @@ version: 2.0
 github_link: extension-dev-guide/proxies.md
 ---
 
-Magento's <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)
+Magento's [constructor injection pattern]({{page.baseurl}}extension-dev-guide/depend-inj.html#constructor-injection) enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)
 
 If a class's constructor is particularly resource-intensive, this can lead to unnecessary performance impact when another class depends on it, if the expensive object does not end up being needed during a particular request. (You can display a *dependency graph* of such objects by enabling <a href="{{page.baseurl}}config-guide/bootstrap/mage-profiler.html">profiling</a>.)
 

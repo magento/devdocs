@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
-title: Magento application environment variables
-menu_title: Magento application environment variables
-menu_order: 5
-menu_node:
+title: Application variables
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
 functional_areas:
@@ -13,9 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-These sections list the environment variables for [general Magento](#application) and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
-
-## Magento application variables {#application}
+These sections list the general Magento and [deployment](#deploy) environment variables. You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 The following table lists variables that you can override using environment variables.
 
@@ -40,7 +34,7 @@ The following table lists variables that you can override using environment vari
 <td>Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
@@ -57,8 +51,6 @@ The following table lists variables that you can override using environment vari
 </tr>
 </tbody>
 </table>
-
-For additional variables, continue to the following sections.
 
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
@@ -133,7 +125,7 @@ The following variables are available during the deploy process of build and dep
 <td>Not set, example: Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
@@ -157,7 +149,7 @@ For information on the build and deploy process, see [Deployment process]({{page
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
+Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
 </div>
 
 To create a variable using the command line:
@@ -178,11 +170,3 @@ In the event something goes wrong and you can not access your environment after 
         magento-cloud snapshot:restore <snapshot>
 
 For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
-
-#### Related topics
-* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)

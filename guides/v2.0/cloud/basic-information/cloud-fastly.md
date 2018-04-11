@@ -92,14 +92,8 @@ Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP han
 The installation and configuration process is:
 
 * Install the Fastly module in an Integration branch, without configuring settings or entering credentials.
-* Deploy the code to `master` then to Staging and Production
+* Deploy the code to `integration` then to Staging and Production
 * Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching
 
 For instructions, see [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html). After you have configured it, you can continue with advanced options including custom VCL snippets.
-
-#### Related topics
-
-* [Set up Fastly]({{ page.baseurl}}cloud/access-acct/fastly.html)
-* [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
-* [Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)

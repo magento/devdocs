@@ -23,6 +23,9 @@ versions:
    -
       name: "2.2"
       url: guides/v2.2/
+   -
+      name: "2.3 Pre-release"
+      url: guides/v2.3/
 
 # GitHub variables
 github: "https://github.com/magento/devdocs/tree/develop/guides/"
@@ -93,7 +96,8 @@ algolia:
   api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
   lazy_update: false
   files_to_exclude:
-    - guides/m1x
+    - guides/m1x/**/*.html
+    - guides/m1x/**/*.md
     - swagger
 
 exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]

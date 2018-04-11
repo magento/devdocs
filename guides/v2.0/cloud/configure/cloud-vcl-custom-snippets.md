@@ -207,7 +207,7 @@ To update a snippet, modify the JSON file you prepared on the [Create VCL snippe
 
 If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}, we recommend creating a new snippet with updated values and code that use a priority of `100`.
 
-To delete an individual VCL snippet using the API, get a list of snippets and enter a `curl` command with the speicific snippet name to delete:
+To delete an individual VCL snippet using the API, get a list of snippets and enter a `curl` command with the specific snippet name to delete:
 
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/<snippet_name> -X DELETE
 
@@ -223,9 +223,3 @@ Fastly supports two types of snippets:
 
 -   [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="\_blank"} are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.
 -   [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="\_blank"} are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.
-
-#### Related topics
-
--   [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html)
--   [Set up Fastly]({{page.baseurl}}cloud/access-acct/fastly.html)
--   [Troubleshoot Fastly]({{page.baseurl}}cloud/trouble/trouble_fastly.html)

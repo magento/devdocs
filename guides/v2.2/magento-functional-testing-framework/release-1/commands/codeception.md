@@ -10,7 +10,7 @@ redirect_from: guides/v2.2/magento-functional-testing-framework/commands/codecep
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -23,7 +23,7 @@ All the Codeception commands you need are wrapped using Robo.
 If you'd like to run the Codeception tests directly without using Robo, run:
  
 ```bash
-$ vendor/bin/codecept run functional
+vendor/bin/codecept run functional
 ```
  
 to execute all Functional tests that DO NOT include `@env` tags.
@@ -36,19 +36,19 @@ If a Test includes an `@env` tag, you MUST include the [`--env ENV_NAME`][--env]
 Run ALL Functional Tests without an `@env` tag:
 
 ```bash
-$ vendor/bin/codecept run functional
+vendor/bin/codecept run functional
 ```
 
 Run ALL Functional Tests without the `@group "skip"` tag:
 
 ```bash
-$ vendor/bin/codecept run functional --skip-group skip
+vendor/bin/codecept run functional --skip-group skip
 ```
 
 Run ALL Functional Tests with the `@group "example"` tag but with no `@group "skip"`  tests:
 
 ```bash
-$ vendor/bin/codecept run functional --group example --skip-group skip
+vendor/bin/codecept run functional --group example --skip-group skip
 ```
 
 [See more examples][examples].
@@ -58,7 +58,7 @@ $ vendor/bin/codecept run functional --group example --skip-group skip
 Runs the test suites
 
 ```bash
-$ vendor/bin/codecept run
+vendor/bin/codecept run
 ```
 
 ### Usage

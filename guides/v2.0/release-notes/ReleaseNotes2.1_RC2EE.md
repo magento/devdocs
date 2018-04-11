@@ -29,7 +29,7 @@ We welcome your participation in this process! Enterprise Edition customers can 
 This Release Candidate is available from `repo.magento.com` if you have a Magento Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.
 
 
-Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
 <h3>Highlights</h3>
 

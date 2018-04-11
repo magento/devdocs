@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
-title: Configure your environments
-menu_title: Configure your environments
-menu_order: 1
-menu_node: parent
+title: Configure environments
 version: 2.0
 github_link: cloud/env/environments.md
 redirect_from:
@@ -29,7 +25,7 @@ We provide options to:
 ## Environments and branches {#env-branches}
 Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
 
-* For [Pro]({{page.baseurl}}cloud/welcome/discover-workflow.html), we recommend branching from Integration `master`.
+* For [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html), we recommend branching from Integration.
 * For [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html), we recommend creating a `staging` branch, then creating additional code branches from `staging`.
 
 We recommend using GitHub for maintaining your code branches.
@@ -71,8 +67,8 @@ For extensive details, see the following:
 	*	[Starter develop and deploy workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
 *	Pro:
 
-	* [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+	* [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html)
+	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
 
 ## Environment services {#services}
@@ -83,12 +79,12 @@ Additional services and drivers are automatically included in your environments.
 ### SQL Server extension driver {#sqldriver}
 We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud MS SQL Servers. No additional installation is necessary to use these drivers. You will need to complete a couple configurations before using the connection and external SQL.
 
-These drivers are included in all Starter environments and Pro Integration environments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp) with the request. You need to configure and provide the following:
+These drivers are included in all Starter environments and Pro Integration environments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) with the request. You need to configure and provide the following:
 
 * SSL certificate on the MS SQL Server: The connection between the cloud cluster and the remote SQL server must be SSL secured.  Customers must provide an SSL-enabled connection to their MS SQL server in order to connect to their project.
-* An MS SQL Server for testing: Please include a Microsoft SQL server for us to test the connection. Include this information in a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+* An MS SQL Server for testing: Please include a Microsoft SQL server for us to test the connection. Include this information in a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
 
-If you have questions regarding connectivity or configuration for MS SQL Server, enter a [Support ticket]({{page.baseurl}}cloud/bk-cloud.html#gethelp).
+If you have questions regarding connectivity or configuration for MS SQL Server, enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The drivers and supported service only includes configuration and updates in {{site.data.var.ece}} environments. We cannot provide support for client MS SQL Servers or applications utilizing these external systems and services outside of the cloud hosting environments.
@@ -114,12 +110,3 @@ For Pro, you need to enter a ticket to have these files and settings pushed to S
   * [Caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html) configuration options for caches set in routes.yaml
   * [Redirect]({{ page.baseurl }}cloud/project/project-routes-more-redir.html) configuration and rules for managing redirections set in routes.yaml
   * [Server side includes]({{ page.baseurl }}cloud/project/project-routes-more-ssi.html) configured set in routes.yaml
-
-#### Related topics
-*	[Manage your project]({{page.baseurl}}cloud/project/projects.html)
-*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)

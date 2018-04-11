@@ -12,7 +12,7 @@ redirect_from:
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 ## Overview
@@ -239,7 +239,7 @@ Individual piece of data to be passed in as part of the parent array type.
 
 [`<data`]: #data-ref
 [`<var>`]: #var
-[`<required-entities>`]: #required-entities
+[`<required-entities>`]: #required-entity
 [`<array>`]: #array
 [`<item>`]: #item
 

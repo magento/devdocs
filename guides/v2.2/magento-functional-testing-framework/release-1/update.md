@@ -12,7 +12,7 @@ redirect_from:
 mftf-release: 1.0.0
 ---
 
-_This topic corresponds to the MFTF {{page.mftf-release}} release._
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 <div class="bs-callout bs-callout-info" markdown="1">
@@ -36,19 +36,19 @@ When pulling the latest Magento code, you need to update the corresponding Compo
 * Go to the `magento2/dev/tests/acceptance` directory:
 
 ```bash
-$ cd dev/tests/acceptance
+cd dev/tests/acceptance
 ```
 
 * Run `composer update` to get the latest framework version:
 
 ```bash
-$ composer update
+composer update
 ```
 
 * Generate newly pulled tests: 
 
 ```bash
-$ vendor/bin/robo generate:tests
+vendor/bin/robo generate:tests
 ```
 
 <!-- LINK DEFINITIONS -->

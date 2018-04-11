@@ -51,7 +51,7 @@ The easiest way to do that is to run this command as the <a href="{{page.baseurl
 
 Command usage:
 
-	magento deploy:mode:show
+	bin/magento deploy:mode:show
 
 A message similar to the following displays:
 
@@ -60,7 +60,7 @@ A message similar to the following displays:
 ## Change modes {#config-mode-change}
 Command usage:
 
-	magento deploy:mode:set {mode} [-s|--skip-compilation]
+	bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 
   Where:
 
@@ -76,7 +76,7 @@ Examples follow.
 
 ### Change to production mode
 
-	magento deploy:mode:set production
+	bin/magento deploy:mode:set production
 
 Following is a summary of messages that display:
 
@@ -126,11 +126,16 @@ When you change from production to developer mode, you should clear generated cl
 
 2.  Set the mode:
 
-		magento deploy:mode:set developer
+		bin/magento deploy:mode:set developer
 
 	The following message displays:
 
 		Switched to developer mode.
+
+### Run Magento CLI commands from anywhere
+[Run Magento CLI commands from anywhere]({{page.baseurl}}config-guide/cli/config-cli.html#config-install-cli-first).
+
+If you haven't added `<magento-install-directory>/bin` to your system `PATH`, then you can expect an error when running the Magento command by itself.
 
 #### Related topics
 

@@ -32,5 +32,4 @@ The diagram shows the following:
 
 	If the step fails because prerequisite software isn't set up correctly, review our [Prerequisites]({{ page.baseurl }}install-gde/prereq/prereq-overview.html).
 
-	For other types of failures, see our [Troubleshooting]({{ page.baseurl }}install-gde/trouble/tshoot.html).
 4.	Verify the installation by viewing your storefront and the Magento Admin.

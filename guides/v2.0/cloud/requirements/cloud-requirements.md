@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 020_tech
 title: Technologies and requirements
-menu_title: Technologies and requirements
-menu_order: 40
-menu_node: parent
 version: 2.0
 github_link: cloud/requirements/cloud-requirements.md
 redirect_from:
@@ -37,11 +33,11 @@ This topic describes technologies, knowledge, accounts, and steps to complete wh
 ## Technologies {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
-*	[Git](#git)
-*	[Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-*	[Magento 2]({{page.baseurl}}cloud/bk-cloud.html#magento2)
-*	[Continuous Integration]({{page.baseurl}}cloud/deploy/continuous-deployment.html)
-*	Architectures including [Starter]({{page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{page.baseurl}}cloud/reference/discover-arch.html) architecture
+*	Git
+*	Composer
+*	Magento 2
+*	Continuous Integration
+*	Architectures including Starter or Pro architecture
 
 Here are some advanced technologies we recommend getting familiar with:
 
@@ -80,7 +76,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 This software is *not* upgradable but versions for the following software is configurable:
 
-* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) -  For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0. For {{site.data.var.ece}} 2.2.X, please use 7.0 at this time. Due to a dependency within the infrastructure, we cannot support PHP 7.1 in Pro plan Staging and Production environments.
+* [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) 5.5, 5.6, and 7.0
 * [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html) 5.6 and 5.7
 * [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html) 4.10
 * [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
@@ -98,10 +94,10 @@ For detailed information on supported versions and extensions, see the following
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
-*	Set up a [local development environment]({{page.baseurl}}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{page.baseurl}}cloud/welcome/discover-workflow.html) plan.
+*	Set up a [local development environment]({{page.baseurl}}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{page.baseurl}}install-gde/prereq/connect-auth.html) in your account
-*	Get a [project invite]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-admins) by the Project Owner or a super user to the project
-*	Get [Magento authentication keys]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) from the Project Owner
+*	Gethttp://devdocs.magento.com/guides/v2.0/cloud/onboarding/onboarding-tasks.html#users a [project invite]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html#users) by the Project Owner or a super user to the project
+*	Get [Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) from the Project Owner
 
 We walk you through everything you need to do and know.
 
@@ -133,13 +129,13 @@ For development and testing, we recommend the following:
 *	Profile key flows and customizations using Blackfire.io
 
 ## License and authentication requirements
-The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
+The Account Owner creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
 
 To work with and deploy stores, you need the following:
 
 *	[Magento Commerce (Cloud) account]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
-*	[Project invitiation]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-admins) for contributing developers from the Account Owner or a super user
-*	Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
+*	[Project invitiation]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
+*	[Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:
 
@@ -149,7 +145,7 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *	Create your own Cloud account
 
 #### Related topics
-*	[Cloud Architexture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Cloud Architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html)
 *	[First-time local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
-*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	[Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Go live and launch]({{page.baseurl}}cloud/live/live.html)

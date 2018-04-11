@@ -83,7 +83,7 @@ Make note of any changes you make. You may need them when installing Magento wit
 </div>
 
 ### List and review variables {#variablelist}
-If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. The Project Owner may have already set some or all of the variables during [project creation]({{ page.baseurl }}cloud/before/before-project-owner.html).
+If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. 
 
 	magento-cloud variable:get -e <environment ID>
 
@@ -160,10 +160,10 @@ Repeat to optionally add the following variables using the examples above:
 * Name: `ADMIN_URL`, Value: magento_A8v10
 
 ## Branch an environment {#branch}
-With your project Git cloned and Magento administrator account configured, you can branch from `master`.
+With your project cloned and Magento administrator account configured, you can branch for development.
 
 * For [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, than branch from `staging` for development.
-* For [Pro]({{ page.baseurl }}cloud/welcome/discover-workflow.html#clone-branch), create branches from `master` as needed for your development. These are environments in Integration.
+* For [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html), create branches in the Integration environment for your development.
 
 To branch from master:
 

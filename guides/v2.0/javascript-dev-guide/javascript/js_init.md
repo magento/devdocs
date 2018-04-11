@@ -193,7 +193,7 @@ define ([
                         img: 'https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg'
                     }],
                     fullscreen: {}
-                }, element);  // 'element' is simgle DOM node.
+                }, element);  // 'element' is single DOM node.
             });
     });
 });

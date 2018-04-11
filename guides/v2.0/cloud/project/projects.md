@@ -32,7 +32,7 @@ To manage your project, environment, and branches, see:
 ### Project and environment variables {#variables}
 The following sections detail more about project and environment variables:
 
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+*	[Overview of environment variables]({{page.baseurl}}cloud/env/variables-intro.html)
 *	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
 *	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
@@ -76,7 +76,7 @@ For **Starter**, you will see a hierarchy of branches starting from Master (Prod
 
 ![Starter branch hierarchy]({{ site.baseurl }}common/images/cloud_project-starter.png)
 
-For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}common/images/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html).
+For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}common/images/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{page.baseurl}}cloud/architecture/pro-architecture.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}common/images/cloud_project-pro.png)
 
