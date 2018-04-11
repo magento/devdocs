@@ -27,7 +27,9 @@ Look for the following highlights in this release:
 
     * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See this discussion in [Magento User guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento.  For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
 
-* **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ce/user_guide/shipping/magento-shipping.html) capabilities have been expanded to support full Limited Availability ( US, UK, and Australia only) of Magento Shipping plus prenegotiated rates for FedEx shipments. 
+* **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ce/user_guide/shipping/magento-shipping.html) has been expanded to support access to pre-negotiated carrier rates and return capabilities.
+
+. 
 
 * Fixes and enhancements to core features, including **performance improvements** that enable faster shopping with image loading and search performance enhancements.
 
@@ -701,7 +703,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-86736 -->* We’ve optimized the initialization of the Product View block, which gives 11% performance improvement for simple product views.
 
-<!--- MAGETWO-75769 -->* Magento now caches popular search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached. This enhancement can result in up to 36% improvement for cacheable search terms.  
+<!--- MAGETWO-75769 -->* Magento now caches  search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached. This enhancement can result in up to 36% improvement for cacheable search terms.  
 
 
 
@@ -715,7 +717,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 <!--- MAGETWO-86430 -->* You can now implement a product attribute that sets **Catalog Input Type for Store Owner** equal **Fixed Product Tax** in a multistore environment. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 13019*.
 [GitHub-12393](https://github.com/magento/magento2/issues/12393)
 
-<!--- MAGETWO-85518 -->* Magento now displays all relevant shipping methods when you reorder or retrace your steps backward in checkout process from the payment page. Previously, Magento displayed only one shipping method under these circumstances.  
+<!--- MAGETWO-85518 -->* When a customer is on the payment page and tries to reorder or retrace her steps backward through the checkout process, Magento now displays all the relevant shipping methods. Previously, Magento displayed only one shipping method under these circumstances.  
 
 <!--- MAGETWO-86595 -->* An integrity constraint violation error no longer occurs after you reorder a product with custom options. *Fix submitted by [Vinay Shah](https://github.com/vinayshah) in pull request 13036*. [GitHub-12705](https://github.com/magento/magento2/issues/12705)
 
