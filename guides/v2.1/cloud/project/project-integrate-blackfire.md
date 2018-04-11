@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-title: Blackfire Profiler
+title: Blackfire.io For Magento Cloud
 version: 2.1
 github_link: cloud/project/project-integrate-blackfire.md
 functional_areas:
@@ -11,11 +11,17 @@ functional_areas:
   - Services
 ---
 
-[Blackfire Profiler](https://blackfire.io/profiler){:target="_blank"} helps you locate and investigate performance issues in your environment at the code-level. it creates a performance profile by tracking every PHP call and method and SQL queries performed by your code. Blackfire digs deeper providing granular performance analytics. You can activate and use Blackfire Profiler in all of your environments, especially helpful in Staging and Production.
+[Blackfire.io for Magento Cloud](https://blackfire.io/magento){:target="_blank"} is a PHP profiler and automated performance testing tool, which can be used in development, integration, staging and production.
 
-This information helps you get Blackfire installed on your local, integrated into Integration, and running your first profile.
+It enables you to locate and investigate performance issues in your environment at the code-level. It creates a performance profile by tracking every PHP call and method and SQL queries performed by your code. Blackfire digs deeper providing granular performance analytics.
 
-For full details on integrations, also review [Blackfire’s complete Magento Commerce (Cloud)](https://support.blackfire.io/blackfire-on-magento-cloud){:target="_blank"} guide. They also include a number of [incredible resources](#resources) to get you started.
+It can also automatically profile your code and notify you whenever your code won't comply with best practices in Magento 2 code performance management.
+
+This information helps you get Blackfire installed on your local machine, integrated into Integration, activated on Staging and Production and running your first profile.
+
+For a high level overview and demo of Blackfire, review the [presentation two videos](https://support.blackfire.io/blackfire-on-magento-cloud/introduction-to-blackfireio-on-magento-cloud).
+
+For full details on integrations, also review [Blackfire’s complete Magento Commerce (Cloud)](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/configuring-blackfire-on-magento-cloud){:target="_blank"} configuration guide. They also include a number of [incredible resources](#resources) to get you started.
 
 Blackfire includes the following [environments](https://blackfire.io/docs/reference-guide/environments){:target="_blank"} through their site:
 
@@ -28,7 +34,7 @@ For Pro plans, you need to enter a Support ticket with your Blackfire credential
 </div>
 
 ## Get your Blackfire credentials {#cloud-int-black}
-The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
+The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitation email is sent to the Project Owner's e-mail address to complete activation.
 
 For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
 
@@ -38,7 +44,7 @@ After you have accessed your Blackfire account, you can [add additional collabor
 We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.
 
 1. Using the Project Owner Blackfire credentials, log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
-2. Select an environment.
+2. Navigate to the Environments tab and select an environment.
 3. Select the Settings tab.
 4. Enter an e-mail address and click Add Member.
 5. For one account, click the menu by Revoke and select **Promote as an admin**.
@@ -66,14 +72,14 @@ For Starter plans, pushing your code and `.magento.app.yaml` file to Staging and
 These instructions assume you have fully set up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html).
 
 1. Log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
-2. Select the Integration and Development environment in the **Current Environment** list.
+2. Select the Integration and Development environment from the Environments tab.
 3. Select the Builds tab. In the Builds side panel, click the info icon next to Magento Cloud. This opens a list of commands you will need to execute in order to enable the Blackfire integration.
 
 	![Click info icon]({{ site.baseurl }}common/images/cloud_blackfire-builds.png)
 
 	A page like the following opens with additional steps to complete the integration. The marked out content is your Project ID.
 
-	![Blackfire Magento Cloud integragtion]({{ site.baseurl }}common/images/cloud_blackfire-integration.png)
+	![Blackfire Magento Cloud integration]({{ site.baseurl }}common/images/cloud_blackfire-integration.png)
 
 The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information direcrtly.
 
@@ -260,10 +266,10 @@ If you leave this field blank, we will try the following keys in this order: `ht
 	If errors display during deployment, open `routes.yaml` and check the syntax. Check indentation and spelling and try again.
 
 ### Save changes in Blackfire {#save}
-With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and conncetions with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
+With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
 
 ## Profile your store {#profile}
-To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire's resources](#resources).
+To verify that Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire's resources](#resources).
 
 <div class="bs-callout bs-callout-info" markdown="1">
 You can only use the CLI in your local development environment.
@@ -273,10 +279,12 @@ To profile using the browser:
 
 1. Install the Blackfire browser extension in [Chrome](https://blackfire.io/docs/integrations/chrome#installing-the-companion){:target="_blank"} or [Firefox](https://blackfire.io/docs/integrations/firefox#installing-the-companion){:target="_blank"}. A new Blackfire icon displays in your browser next to the address location. If you don't see it, you may need to display the bar.
 2. Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.
-3. Click the Blackfire icon to profile. For Compare with, select No Reference.
+3. Click the Blackfire icon to profile.
 
 	![Start profiling]({{ site.baseurl }}common/images/cloud_blackfire.png)
 4. Click **Profile** to start.
+
+Note: The browser extension also enables you to profile all requests while you browse. For more information about this, see [Blackfire's resources](#resources).
 
 To profile using the CLI:
 
@@ -314,11 +322,58 @@ To profile using the CLI:
 	blackfire.log_file => no value => no value
 	```
 
+## Automate performance testing {#automate}
+Completing the configuration in [Integration](#dev), Staging and Production enables you to ask Blackfire to execute profiling requests automatically, based on an event and according to scenarios which you will define upfront. Events include, for instance, whenever a commit is deployed on the Integration platform, or whenever the integration between Blackfire and New Relic will be activated.
+
+By simply defining a set of key requests you would like Blackfire to profile (/home, /checkout, /checkout/payment,...), Blackfire can let you know automatically if your code complies with established [code performance recommendations](https://blackfire.io/docs/reference-guide/recommendations){:target="_blank"}.
+
+	![Blackfire build report]({{ site.baseurl }}common/images/cloud_blackfire-recommendations.png)
+
+### Writing your first automated tests and scenarios
+You can easily write tests and scenarios which Blackfire will be able to execute.
+
+1. Create a `.blackfire.yml` file and store it at the root directory of your store's code.
+1. Try adding the following scenarios in the file:
+
+	```yaml
+    scenarios:
+        Home:
+            - /index.php
+
+        Product list:
+            - /index.php/women/tops-women/jackets-women.html
+
+        Checkout:
+            - /index.php/checkout
+
+        Payment:
+            - /index.php/checkout/payment
+	```
+1. Check out Blackfire's documentation on how to write [tests](https://blackfire.io/docs/cookbooks/tests) and [scenarios](https://blackfire.io/docs/cookbooks/scenarios)
+
+### Let Blackfire run your tests automatically
+Once your `.blackfire.yml` has been created and deployed, Blackfire can be triggered to run your tests automatically in various ways
+
+#### Automated builds on Integration
+Whenever you will push some code on an Integration branch, Blackfire will automatically run your tests. You can be notified of the results in various ways, including at the commit status level if you are using GitHub or Bitbucket (see [notifications configuration](#notifications)).
+
+#### Automated builds at will with the webhook
+Blackfire offers a very flexible way to start builds with a webhook, which can target any endpoint. See [Blackfire's documentation](https://blackfire.io/docs/reference-guide/builds-and-integrations#start-build-using-a-webhook){:target="_blank"}.
+
+#### Automated builds with the Blackfire/New Relic integration
+Blackfire and New Relic are very complementary. New Relic monitors the overall traffic performance, and Blackfire can go much deeper into the PHP code. [Read more](https://support.blackfire.io/questions-about-blackfire/what-is-blackfire/what-is-the-difference-between-blackfire-and-new-relic-and-other-apms){:target="_blank"} about the differences between New Relic and Blackfire.
+
+It is possible to configure New Relic to fire Blackfire builds whenever relevant. Check out the integration configuration on [Blackfire's documentation](https://blackfire.io/docs/integrations/new-relic)
+
+### Receiving notifications from Blackfire whenever it finds an issue in your code {#notifications}
+As soon as you have configured at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and a lot more. Check out their [documentation](https://blackfire.io/docs/reference-guide/notification-channels){:target="_blank"} to get started.
+
 ## Blackfire resources {#resources}
 Blackfire provides great information to better profile and investigate the results on their documentation site. Check out some resources:
 
 *	[Profiling HTTP requests](https://blackfire.io/docs/cookbooks/profiling-http){:target="_blank"}
 *	[Profiling CLI commands](https://blackfire.io/docs/cookbooks/profiling-cli){:target="_blank"}
+*   [Profile all requests while you browse](https://blog.blackfire.io/profile-all-requests.html){:target="_blank"}
 *	[Writing Tests](https://blackfire.io/docs/cookbooks/tests){:target="_blank"}
 *	[Writing scenarios](https://blackfire.io/docs/cookbooks/scenarios){:target="_blank"}
 *	[Reference Guide](https://blackfire.io/docs/reference-guide/index){:target="_blank"} to really understand what you profile
