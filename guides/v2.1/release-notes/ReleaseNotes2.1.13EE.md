@@ -37,7 +37,9 @@ Look for the following highlights in this release:
 
 ### Setup
 
-<!--- MAGETWO-86298 -->*  
+<!--- MAGETWO-86298 -->* 
+69036
+58072 
 
 
 ### Bundle 
@@ -66,6 +68,10 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-80426 -->*  
 
+72312
+59782
+83631
+83204
 
 
 ### Cart and checkout
@@ -73,7 +79,9 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-69701 -->*  
 
-<!--- MAGETWO-64171 -->*  
+<!--- MAGETWO-64171 -->* 
+
+71229 
 
 ### Configurable products
 <!--- MAGETWO-86312 -->*  
@@ -82,12 +90,18 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-86312 -->*  
 
+60140
+
+
 
 
 ### Customers
 <!--- MAGETWO-85674 -->*  
 
 <!--- MAGETWO-84861 -->*  
+
+71669
+
 
 
 ### Framework
@@ -111,36 +125,33 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-85264 -->*  
 
-<!--- MAGETWO-84138 -->*  
 
 <!--- MAGETWO-83631 -->*  
 
-<!--- MAGETWO-71381 -->*  
+71701
 
-<!--- MAGETWO-70329 -->*  
+57064
+
+64171
 
 <!--- MAGETWO-69036 -->*  
 
 
 ### Gift card
 <!--- MAGETWO-84806 -->*  
-
+84806 (EE)
 
 ### Import/export
-<!--- MAGETWO-83426 -->*  
-
-<!--- MAGETWO-83193 -->*  
 
 
 ### Index
 <!--- MAGETWO-83478 -->*  
 
-<!--- MAGETWO-83313 -->*  
 
 
 ### Newsletter
 <!--- MAGETWO-66793 -->*  
-
+66793
 
 ### Order management
 <!--- MAGETWO-86861 -->*  
@@ -157,11 +168,9 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-80643 -->*  
 
-<!--- MAGETWO-80324 -->*  
+65734
 
-<!--- MAGETWO-71625 -->*  
-
-<!--- MAGETWO-68948 -->*  
+80643
 
 <!--- MAGETWO-65734 -->*  
 
@@ -174,7 +183,7 @@ Look for the following highlights in this release:
 <!--- MAGETWO-83539 -->*  
 
 <!--- MAGETWO-83094 -->*  
-
+83094
 
 
 
@@ -191,7 +200,7 @@ Look for the following highlights in this release:
 
 
 ### Shipping
-
+59660
 
 ### Staging
 <!--- MAGETWO-71669 -->*  
@@ -229,13 +238,19 @@ Look for the following highlights in this release:
 
 ## Known issue
 
-<!--- NOT NEEDED   MAGETWO-87348  MAGETWO-87346 MAGETWO-87345 MAGETWO-87343 MAGETWO-86760 MAGETWO-85931 MAGETWO-84907 MAGETWO-84733 MAGETWO-71608 MAGETWO-82008-->
+<!--- NOT NEEDED   MAGETWO-87348  MAGETWO-87346 MAGETWO-87345 MAGETWO-87343 MAGETWO-86760 MAGETWO-85931 MAGETWO-84907 MAGETWO-84733 MAGETWO-71608 MAGETWO-82008--> <!--- MAGETWO-84138 -->*  <!--- MAGETWO-83426 -->*  <!--- MAGETWO-80324 -->*  
+
+
+
 
 
 <!---  CANNOT REPRODUCE MAGETWO-85632 MAGETWO-83400 MAGETWO-81629 MAGETWO-70004 MAGETWO-69476 MAGETWO-65162
 MAGETWO-64511 MAGETWO-60553 -->
 
-<!--- WON'T FIX MAGETWO-66481 MAGETWO-54167MAGETWO-59163  -->
+<!--- WON'T FIX MAGETWO-66481 MAGETWO-54167MAGETWO-59163 MAGETWO-83313 --> <!--- MAGETWO-71625 -->*  <!--- MAGETWO-68948 -->*  
+
+ 
+ -->
 
 <!---  INTERNAL ONLY MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 -->
 
