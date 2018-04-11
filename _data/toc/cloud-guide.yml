@@ -55,7 +55,7 @@ pages:
         - label: New Relic APM
           url: cloud/project/new-relic.html
 
-        - label: Blackfire Profiler
+        - label: Blackfire.io
           url: cloud/project/project-integrate-blackfire.html
 
     - label: Local environment setup
