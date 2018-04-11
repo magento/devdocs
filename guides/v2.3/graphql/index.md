@@ -7,19 +7,19 @@ landing-page: GraphQL Developer's Guide
 github_link: graphql/index.md
 ---
 
-[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs.
+[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for front-end development.
 
 The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento) to explore and try it out for yourself.
 
 ## The current state of Magento GraphQL
 
-Most of the development team's work thus far has been devoted to building the GraphQL infrastructure and enhancing the ability to query products. The complexity of the Catalog module made it the ideal candidate for early development. It supports multiple types of products as well as extension, custom, and EAV attributes.
+Most of the development team's work thus far has been devoted to building the GraphQL infrastructure and enhancing the ability to query products. The complexity of the Catalog module made it the ideal candidate for early development. It supports all product types as well as extension, custom, and EAV attributes.
 
 GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as `GET /V1/products/:sku` on a simple product, the system might fetch more than 100 lines of data. If all you need is the current price, the call has returned significantly more information than you need. With GraphQL, a query against the same SKU could return just the price.
 
 A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
-
-* **EAV attributes** are explicitly declared in the schema. Any attribute values will be pulled from the database, if they exist.
+`
+* **EAV attributes** are explicitly declared in the `schema.graphqls files.
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 * **Extension attributes** can be declared in a `schema.graphqls` file or by a custom reader, but they should be declared in a separate `*GraphQl` module. The attributes should extend from the resolver that fetches that model's data.
 
@@ -27,7 +27,7 @@ You can explicitly define EAV attributes in the schema, while a module's attribu
 
 The current GraphQL codebase also supports the following features:
 
-* You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter oncts. This is new functionality available only with GraphQL.
+* You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter the results. This is new functionality available only with GraphQL.
 * All product types are supported. Currently, previous versions supported simple and configurable products only.
 * A product query returns complex price objects that include the amount, the currency code, and any adjustments.
 * You can query attributes of a logged-in customer. A session token provides authorization.
@@ -40,8 +40,10 @@ The current GraphQL codebase also supports the following features:
 
 In the near future, we'll roll out the following features:
 
-* More robust error handling.
-* A more performant data retrieval mechanism.
+* A more performant data retrieval mechanism
+* Cacheing
+* Queries for other storefront entities like carts and orders
+* Support mutations to enable payments, checkout, and other operations
 
 ## How to access GraphQL
 

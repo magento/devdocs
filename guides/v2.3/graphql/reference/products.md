@@ -119,7 +119,8 @@ Attribute |  Description
 
 ## ProductInterface {#ProductInterface}
 
-The `items` array, which implements `ProductInterface` can contain all the attributes that can be specified in an `ProductFilterInput` object, plus the attributes and objects listed in the following table. The array can also contain attributes from resources external to the CatalogGraphQl module:
+Any type that implements `ProductInterface` contains all the base attributes necessary for the frontend of the product model.
+The `items` that are returned in a `ProductInterface` array can also contain attributes from resources external to the CatalogGraphQl module:
 
 * Custom and extension attributes defined in any attribute set
 * The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{page.baseurl}}graphql/reference/customizable-option-interface.html)
@@ -128,6 +129,8 @@ The `items` array, which implements `ProductInterface` can contain all the attri
   * [ConfigurableProduct]({{page.baseurl}}graphql/reference/configurable-product.html)
   * [DownloadableProduct]({{page.baseurl}}graphql/reference/downloadable-product.html)
   * [GroupedProduct]({{page.baseurl}}graphql/reference/grouped-product.html)
+
+The following table defines the `ProductInterface` attributes and objects.
 
 Attribute | Data type | Description
 --- | --- | ---

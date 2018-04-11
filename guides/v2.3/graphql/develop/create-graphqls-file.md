@@ -6,9 +6,9 @@ title: Define the GraphQL schema for a module
 github_link: graphql/develop/create-graphqls-file.md
 ---
 
-Each module that supports GraphQL should have a corresponding module whose name ends with `*GraphQl`. This `*GraphQl` module defines all the GraphQL functionality for the primary module. For example, the `CustomerGraphQl` module defines the GraphQL capalities of the `Customer` module.
+Each module that adds to or extends from a GraphQL schema can do so by placing a `schema.graphqls` file in its `etc` directory. Magento Core adds GraphQL modules based on the purpose of the schema being extended/added, and what core modules they depend on. For example, the CustomerGraphQl adds a query to the graphql endpoint to view customer data, and relies on the Customer core module
 
-A GraphQL module's `schema.graphqls` file defines how the attributes defined in the module can be used in a GraphQL query. If your module's attributes are completely self-contained, then the `schema.graphqls` file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must defines those attributes and ensure that the other module can load your attributes.
+A GraphQL module's `schema.graphqls` file defines how the attributes defined in the module can be used in a GraphQL query. If your module's attributes are completely self-contained, then the `schema.graphqls` file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must define those attributes and ensure that the other module can load your attributes.
 
 The `<module_name>/etc/schema.graphqls` file:
 
@@ -83,7 +83,7 @@ input ProductSortInput {
 
 ## Specify output attributes {#specify-output-attributes}
 
-Output attributes are more complex than input attributes. You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.
+You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.
 
 In an `schema.graphqls` file, the output `Interface` defines top-level attributes. Each object returned is defined in a `type` definition.
 
@@ -117,7 +117,7 @@ The Volumizer module could return the `calculated_volume`, while the `unit` is a
 
 ### Define enumerations
 
-You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_).
+You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_). This is done to maintain compliance with the GraphQL specification.
 
 ``` php
 enum VolumeUnitEnum {
@@ -127,6 +127,7 @@ enum VolumeUnitEnum {
   M3
 }
 ```
+
 ## Annotations
 
 You can provide a description of any attribute, type definition, or other entity within a `schema.graphqls` file by appending the following to the line:
