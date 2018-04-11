@@ -62,6 +62,7 @@ Using suites allows test writers to consolidate preconditions that are shared be
 
 Since suites allow for precondition consolidation, a common workflow for test writing would be to add a new test to an existing suite. This becomes tricky when your new test needs to be in the suite because of preconditions.
 
+An important aspect of suites is that if you include a test in a suite, MFTF can no longer assume your test does not have any preconditions in the suite surrounding it. This means that upon including a test in your suite, **that test can no longer be generated outside the context of at least one of the suites that contains it.**
 
 There are, however, several ways to generate and execute only your new test in the context of a suite:
 * Temporarily add a group to your test via a `<group value="something">` tag to your test, and run `robo group something`.
