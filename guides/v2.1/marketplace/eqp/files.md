@@ -6,6 +6,10 @@ version: 2.1
 github_link: marketplace/eqp/files.md
 ---
 
+All file assets associated with an Extension or a Theme like the M1 code TGZ files, M2 code ZIP files PDF documents, and image files for the logo and 
+galleries  can be managed here. Each file uploaded will be provided an unique id, and these ids can be associated with the package meta information using 
+the packages API described below.
+
 The files endpoint provides a mechanism to manage code artifacts, and assets associated with a package. Examples of such artifacts, and assets are:
 
 * Magento 1 tarball (tgz), or Magento 2 ZIP files
