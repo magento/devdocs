@@ -48,7 +48,7 @@ If you have more than three active environments using the same New Relic license
 
 1.  Delete an environment variable.
 
-    ```
+    ```bash
     magento-cloud variable:delete php:newrelic.license
     ```
 
@@ -61,7 +61,7 @@ magento-cloud project:variable:delete php:newrelic.license
 ### Add New Relic extension to your project
 New relic extension must be listed in the `.magento.app.yaml` file:
 
-```
+```yaml
 runtime:
   extensions:
     - newrelic
