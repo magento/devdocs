@@ -31,7 +31,6 @@ Look for the following highlights in this release:
 
 * Fixes and enhancements to core features, including **performance improvements** that enable faster shopping with image loading and search performance enhancements.
 
-
 * Almost 200 **community contributions**. These community contributions include performance-tuning enhancements plus at least 80 engineering fixes. 
 
 
@@ -45,9 +44,11 @@ This section describes changes in this release that are not full-fledged feature
 
 <!--- MAGETWO-84586, MAGETWO-84590 -->*  The CyberSource payment method now supports multishipping as part of its checkout flow. Magento also provides Vault support for CyberSource tokens. 
 
-<!--- MAGETWO-87293-->* The admin global search is now translatable, extensible,  and  takes into account the ACL settings for the current user. See [Using global search](http://docs.magento.com/m2/ee/user_guide/stores/admin-global-search.html) for more information. 
+<!--- MAGETWO-87293-->* The admin global search is now translatable, extensible,  and  takes into account the ACL settings for the current user. See [Using global search](http://docs.magento.com/m2/ee/user_guide/stores/admin-global-search.html) for more information. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1167*. [GitHub-7698](https://github.com/magento/magento2/issues/7698)
 
-<!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*. 
+
+<!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*.
+
 
 <!--- MAGETWO-86940 -->* Magento now provides dedicated payment and shipping debug log files to store information specific to those functional areas.
 
@@ -681,13 +682,13 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-86308 -->* If you've chosen a custom payment method that is offline when you create an order, Magento now displays that payment method's name as expected when you view order details in **Payment & Shipping**. *Fix submitted by [zamoroka](https://github.com/zamoroka) in pull request 12731*. [GitHub-12209](https://github.com/magento/magento2/issues/12209)
 
-<!--- MAGETWO-86351 -->* Paypal now works as expected with virtual products such as gift cards. Previously, when you tried to place an order for a virtual product using PayPal, Magento did not display the PayPal popup when you clicked **Continue PayPal** during checkout.
+<!--- MAGETWO-86351 -->* PayPal now works as expected with virtual products such as gift cards. Previously, when you tried to place an order for a virtual product using PayPal, Magento did not display the PayPal popup when you clicked **Continue PayPal** during checkout.
 
-<!--- MAGETWO-84639 -->* Magento now correctly adds checkout agreements data to  requests and validates payment information when you place an order using PayPal Express. Previously, you could check this box, but Magento did not parse  the agreements data  or pass it  to the set-payment-information API. This failure in turn triggered the CheckoutAgreements validation plugin,  which failed to validate with no agreements data. *Fix submitted by [Ričards Zālītis](https://github.com/therool) in pull request 12401*. 
+<!--- MAGETWO-84639 -->* Magento now correctly adds checkout agreements data to  requests and validates payment information when you place an order using PayPal Express. Previously, you could check this box, but Magento did not parse  the agreements data  or pass it  to the set-payment-information API. This failure in turn triggered the `CheckoutAgreements` validation plugin,  which failed to validate with no agreements data. *Fix submitted by [Ričards Zālītis](https://github.com/therool) in pull request 12401*. 
 
 <!--- MAGETWO-86426 -->* Magento no longer archives active orders that are placed using PayPal Express Checkout. Previously, if you placed an order using PayPal Express Checkout, Magento would place the order as expected but also add it to the list of archived orders. 
 
-<!--- MAGETWO-84647 -->* Magento now correctly displays transparent `.png` watermarks on JPEG images. Previously, Magento did not correctly display a transparent watermark as expected on an image, but instead displayed a white outline of the box where the watermark should be. *Fix submitted by [Elze Kool](https://github.com/elzekool) in pull request 11060*. [GitHub-10661](https://github.com/magento/magento2/issues/10661)
+<!--- MAGETWO-84647 -->* Magento now correctly displays transparent `PNG` watermarks on JPEG images. Previously, Magento did not correctly display a transparent watermark as expected on an image, but instead displayed a white outline of the box where the watermark should be. *Fix submitted by [Elze Kool](https://github.com/elzekool) in pull request 11060*. [GitHub-10661](https://github.com/magento/magento2/issues/10661)
 
 
 
@@ -892,7 +893,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 <!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 MAGETWO-86982 MAGETWO-86846 MAGETWO-86772 MAGETWO-86770 MAGETWO-86767 MAGETWO-86763 MAGETWO-86015 MAGETWO-86002 MAGETWO-73161 MAGETWO-80908 MAGETWO-84209 MAGETWO-84992 MAGETWO-77767 MAGETWO-84480 MAGETWO-83329 MAGETWO-86117 MAGETWO-83977 MAGETWO-84804 MAGETWO-84413 MAGETWO-83974 MAGETWO-82062 MAGETWO-80342 MAGETWO-80738 MAGETWO-85947 MAGETWO-83676 MAGETWO-86132 MAGETWO-85661 MAGETWO-77840 MAGETWO-82061 MAGETWO-81901 MAGETWO-73303 MAGETWO-83343 MAGETWO-83910 MAGETWO-70725 MAGETWO-83754 MAGETWO-73275 MAGETWO-75217 MAGETWO-83958 MAGETWO-87023 MAGETWO-71662 MAGETWO-82078 MAGETWO-84397 MAGETWO-87030 MAGETWO-86452 MAGETWO-85871 MAGETWO-85205 MAGETWO-84967 MAGETWO-84884 MAGETWO-83621 MAGETWO-82451 MAGETWO-82104 MAGETWO-81431 MAGETWO-81189 MAGETWO-73002 MAGETWO-72420 MAGETWO-71790 MAGETWO-71272 MAGETWO-70612 MAGETWO-83366 MAGETWO-85590 MAGETWO-85650 MAGETWO-87844 MAGETWO-89306 MAGETWO-85842 MAGETWO-88282 MAGETWO-88111 MAGETWO-71374 MAGETWO-85904 MAGETWO-87445 MAGETWO-86736 MAGETWO-83899 MAGETWO-86938 MAGETWO-88108 MAGETWO-87963 MAGETWO-87815 MAGETWO-45775 MAGETWO-89538 MAGETWO-89453 MAGETWO-89337 MAGETWO-89261 MAGETWO-89273 MAGETWO-89080 MAGETWO-84507 MAGETWO-86670 MAGETWO-84883 --> 
- -->  
+ 
 
 <!--- NOT A BUG   MAGETWO-73011 MAGETWO-83817 MAGETWO-86682-->
 
