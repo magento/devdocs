@@ -25,7 +25,7 @@ By default, a full profile information of the user will be returned.  A limited 
 
 Any number of fields can be modified by the PUT action, and only the modified fields needs to be presented during this action.
 
-### Retrieving a profile information
+### Retrieving profile information
 
 The following curl example illustrates fetching a user profile info:
 
