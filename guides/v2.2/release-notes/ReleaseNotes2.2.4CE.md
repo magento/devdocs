@@ -19,19 +19,21 @@ We are pleased to present Magento Open Source 2.2.4. This release includes new t
 
 Look for the following highlights in this release:
 
-* Significant new bundled extensions that will enhance merchants' ability to : Amazon Pay, Vertex, and Klarna Payments. 
-    * Amazon Pay. 
-    * Vertex.https://marketplace.magento.com/pixafy-tax.html#product.info.details.release_notes
-    * Klarna Payments. For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
+* **Significant new bundled extensions** that will enhance merchants' ability to manage complex tax issues and provide new shipping and payment options to customers:
+    * **Amazon Pay** provides a trusted, familiar way for customers to check in and check out. See [Amazon pay](https://pay.amazon.com/us/merchant) for a full descriptions of the advantages this solution offers merchants and their customers. 
 
-* Numerous fixes and enhancements to Magento Shipping and DotMailer bundled extensions
+    * **Vertex** simplifies and automate the complexity of calculating sales tax. For more information on Vertex products, see [Vertex Release Notes](https://marketplace.magento.com/pixafy-tax.html#product.info.details.release_notes)
 
-* Fixes and enhancements to core features, including significant improvements to performance.
+    * **Klarna Payments** is a new payment option. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay in installments for their purchases. For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
 
-* Almost 200 community contributions. These community contributions include performance-tuning enhancements plus at least 80 engineering fixes. 
+* **Numerous fixes and enhancements to the Magento Shipping and DotMailer** bundled extensions. Merchants can now use Dotmailer to create their own transactional email templates. Magento Shipping capabilities have been expanded to support full Limited Availability ( US, UK, and Australia only) of Magento Shipping plus prenegotiated rates for FedEx shipments. 
+
+* Fixes and enhancements to core features, including **significant improvements to performance**. 
+
+* Almost 200 **community contributions**. These community contributions include performance-tuning enhancements plus at least 80 engineering fixes. 
 
 
-Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
 
 
@@ -43,7 +45,7 @@ In this section, we describe micro-optimizations -- changes that are not fully f
 <!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*. 
 <!--- MAGETWO-86940 -->* Magento now provides dedicated payment and shipping debug log files to store information specific to those functional areas.
 
-<!--- MAGETWO-87124 -->*  The Emogrifier dependency has been upgraded to ^2.0.0. *Fix submitted by [Oliver Klee](https://github.com/oliverklee) in pull request 13132*.
+<!--- MAGETWO-87124 -->*  The Emogrifier dependency has been upgraded to 2.0.0 or later. *Fix submitted by [Oliver Klee](https://github.com/oliverklee) in pull request 13132*.
 
 <!--- MAGETWO-86744 -->* As part of the micro-optimization of the `Magento\Catalog` module, we've replaced `is_null` with strict comparison only for models and block in this module. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13171*.
 
@@ -66,6 +68,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 * Ability to set transactional email at the Store level.
 
 * Enhanced validation for deletion of cron job CSV files.
+
 
 
 ## Fixes
