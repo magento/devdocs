@@ -22,11 +22,11 @@ Look for the following highlights in this release:
 * **Significant new bundled extensions** that enhance merchants' ability to manage complex tax issues and provide new shipping and payment options to customers 
     * **Amazon Pay** provides a trusted, familiar way for customers to check in and check out. See [Amazon pay](https://pay.amazon.com/us/merchant) for a full descriptions of the advantages this solution offers merchants and their customers. 
 
-    * **Vertex** simplifies and automate the complexity of calculating sales tax. For more information on Vertex products, see [Vertex Release Notes](https://marketplace.magento.com/pixafy-tax.html#product.info.details.release_notes)
+    * **Vertex** simplifies and automates the complexity of calculating sales tax. For more information on Vertex products, see [Vertex Release Notes](https://marketplace.magento.com/pixafy-tax.html#product.info.details.release_notes). Check out the Magento User guide discussion of [Vertex](http://docs.magento.com/m2/ce/user_guide/tax/vertex.html), too.
 
-    * **Klarna Payments** is a new payment option. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay in installments for their purchases. For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
+    * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See this discussion in [Magento User guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento.  For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
 
-* **Numerous fixes and enhancements to the Magento Shipping and DotMailer** bundled extensions. Merchants can now use Dotmailer to create their own transactional email templates. Magento Shipping capabilities have been expanded to support full Limited Availability ( US, UK, and Australia only) of Magento Shipping plus prenegotiated rates for FedEx shipments. 
+* **Numerous fixes and enhancements to the Magento Shipping and dotMailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ce/user_guide/shipping/magento-shipping.html) capabilities have been expanded to support full Limited Availability ( US, UK, and Australia only) of Magento Shipping plus prenegotiated rates for FedEx shipments. 
 
 * Fixes and enhancements to core features, including **significant improvements to performance**. 
 
@@ -41,10 +41,13 @@ Looking for more information on these new features as well as many others? Check
 This section describes changes in this release that are not fully fledged features or bug fixes, but that add noticeable improvements to product performance or ease-of-use.
 
 
-<!--- MAGETWO-84586, MAGETWO-84590 -->*  The Cybersource payment method now supports multishipping as part of its checkout flow. Magento also provides Vault support for Cybersource tokens. 
+<!--- MAGETWO-87293-->* The admin global search is now translatable, extensible,  and  takes into account the ACL settings for the current user. See [Using global search](http://docs.magento.com/m2/ce/user_guide/stores/admin-global-search.html) for more information. 
 
 
-<!--- MAGETWO-87293-->* The admin global search is now translatable, extensible,  and  takes into account the ACL settings for the current user. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1167*. [GitHub-7698](https://github.com/magento/magento2/issues/7698)
+
+
+
+*Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1167*. [GitHub-7698](https://github.com/magento/magento2/issues/7698)
 
 <!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*. 
 <!--- MAGETWO-86940 -->* Magento now provides dedicated payment and shipping debug log files to store information specific to those functional areas.
@@ -665,8 +668,6 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 ### Payment methods
 
-<!--- MAGETWO-84588,MAGETWO-84587 -->* You can now use the Cybersource payment method for multishipping checkout and payment flows.
-
 
 <!--- MAGETWO-75497 -->* Logged-out customers can no longer see previously saved credit cards. Previously, users logged in as guest could see some payment information from an earlier, canceled order. 
 
@@ -773,8 +774,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- MAGETWO-85291 -->* Magento now enforces the minimum order amount during checkout as expected. Previously, you could bypass the minimum order amount logic by clicking **Check Out with Multiple Addresses**, removing products from the order,and then clicking **Update Qty & Addresses**. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 963*. 
 
 <!--- MAGETWO-85586 -->* DHL product codes now match those published in the latest DHL products and services guide. Previously, three  DHL product codes in DHL Shipping module were incorrect. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 12666*.
-
-<!--- MAGETWO-84589 -->* You can use multishipping checkout flows with Cybersource to complete a purchase.
 
 
 ### Sitemap
