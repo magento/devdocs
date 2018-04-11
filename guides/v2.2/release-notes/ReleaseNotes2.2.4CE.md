@@ -19,7 +19,7 @@ We are pleased to present Magento Open Source 2.2.4. This release includes new t
 
 Look for the following highlights in this release:
 
-* **Significant new bundled extensions** that will enhance merchants' ability to manage complex tax issues and provide new shipping and payment options to customers:
+* **Significant new bundled extensions** that enhance merchants' ability to manage complex tax issues and provide new shipping and payment options to customers 
     * **Amazon Pay** provides a trusted, familiar way for customers to check in and check out. See [Amazon pay](https://pay.amazon.com/us/merchant) for a full descriptions of the advantages this solution offers merchants and their customers. 
 
     * **Vertex** simplifies and automate the complexity of calculating sales tax. For more information on Vertex products, see [Vertex Release Notes](https://marketplace.magento.com/pixafy-tax.html#product.info.details.release_notes)
@@ -38,7 +38,11 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Enhancements
-In this section, we describe micro-optimizations -- changes that are not fully fledged features or bug fixes, but that add noticeable improvements to product performance or ease-of-use.
+This section describes changes in this release that are not fully fledged features or bug fixes, but that add noticeable improvements to product performance or ease-of-use.
+
+
+<!--- MAGETWO-84586, MAGETWO-84590 -->*  The Cybersource payment method now supports multishipping as part of its checkout flow. Magento also provides Vault support for Cybersource tokens. 
+
 
 <!--- MAGETWO-87293-->* The admin global search is now translatable, extensible,  and  takes into account the ACL settings for the current user. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1167*. [GitHub-7698](https://github.com/magento/magento2/issues/7698)
 
@@ -47,11 +51,7 @@ In this section, we describe micro-optimizations -- changes that are not fully f
 
 <!--- MAGETWO-87124 -->*  The Emogrifier dependency has been upgraded to 2.0.0 or later. *Fix submitted by [Oliver Klee](https://github.com/oliverklee) in pull request 13132*.
 
-<!--- MAGETWO-86744 -->* As part of the micro-optimization of the `Magento\Catalog` module, we've replaced `is_null` with strict comparison only for models and block in this module. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13171*.
-
-<!--- MAGETWO-86743 -->* As part of the micro-optimization of the `Magento\Tax` module, we've replaced `is_null` with strict comparison only for models and block in this module. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13170*.
-
-<!--- MAGETWO-86746 -->* As part of the micro-optimization of the `Magento\Sales` module, we've replaced `is_null` with strict comparison only for models and block in this module.*Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 1163*.
+<!--- MAGETWO-86744, MAGETWO-86743, MAGETWO-86746 -->* We've replaced `is_null` with strict comparison only for models and block in the following modules: `Magento\Catalog`, `Magento\Tax`, `Magento\Sales`. *Fixes submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull requests 13171, 13170, 1163*.
 
 
 
@@ -59,15 +59,15 @@ In this section, we describe micro-optimizations -- changes that are not fully f
 #### Dotmailer enhancements
 The Dotmailer bundled extension features the following enhancements for this release: 
 
-* New Abandoned Cart report table.
+* New Abandoned Cart report table
 
-* Ability for merchants to design their own transactional email template.
+* Ability for merchants to design their own transactional email template
 
 * Enhancement of syncs of subscriber's sales data. Sales data is now synced only if the sales data option is enabled in config. 
 
-* Ability to set transactional email at the Store level.
+* Ability to set transactional email at the Store level
 
-* Enhanced validation for deletion of cron job CSV files.
+* Enhanced validation for deletion of cron job CSV files
 
 
 
@@ -188,7 +188,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85546 -->* You can now duplicate and save a product successfully. Previously, you could not successfully duplicate a product, and Magento displayed this message: **Notice: Undefined offset: 0 in /home/software/public_html/vendor/magento/module-catalog/Model/Category/Link/SaveHandler.php on line 124**. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 983*.  [GitHub-12259](https://github.com/magento/magento2/issues/12259)
 
-<!--- MAGETWO-85636 -->* The REST API now saves all product properties as expected. Previously, Magento did not save the price and weight, and these attributes were not returned in the result of the POST request, *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1018*. [GitHub-6486](https://github.com/magento/magento2/issues/6486)
+<!--- MAGETWO-85636 -->* The REST API now saves all product properties as expected. Previously, Magento did not save the price and weight, and these attributes were not returned in the result of the POST request. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1018*. [GitHub-6486](https://github.com/magento/magento2/issues/6486)
 
 <!--- MAGETWO-86016 -->* Duplicate `email` IDs no longer occur on the Magento default contact page when running Google Chrome  { Version 63.0.3239.84 (Official Build) (64-bit) }. *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request 1036*. [GitHub-12712](https://github.com/magento/magento2/issues/12712)
 
@@ -234,8 +234,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85297 -->* Magento no longer combines the Custom Checkout and Shipping steps when Magento loads the checkout page. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 975*. 
 
-<!--- MAGETWO-85317 -->* Currency change, Bank Transfer but checkout page shows "Your credit card will be charged for"
-*Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 993*. 
+<!--- MAGETWO-85317 -->* You can now successfully change currency for an order before you complete the order. Previously, if you changed currency, when you  proceeded with  checkout by choosing as Bank Transfer Payment as Payment Method, Magento displays, **Your credit card will be charged for**. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 993*. [GitHub-12526](https://github.com/magento/magento2/issues/12526)
 
 <!--- MAGETWO-86506 -->* Magneto no longer throws a JavaScript error on the cart from postcode validation when **United States** is deselected in the **Allowed Countries** Admin option (**Admin > Stores > Configuration > General > Default Country**). *Fix submitted by [codekipple](https://github.com/codekipple) in pull request 13051*. 
 
@@ -252,7 +251,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 
 ### Configurable products
-<!--- MAGETWO-86781 -->* You can now use custom price symbols when assigning prices to configurable prices. Previously, Magento did not properly display prices for configurable products when you used a custom price symbol when assigning prices. *Fix submitted by [pradeep-wagento](https://github.com/pradeep-wagento) in pull request 13025*. [GitHub](https://github.com/magento/magento2/issues/12430)
+<!--- MAGETWO-86781 -->* You can now use custom price symbols when assigning prices to configurable prices. Previously, Magento did not properly display prices for configurable products when you used a custom price symbol when assigning prices. *Fix submitted by [pradeep-wagento](https://github.com/pradeep-wagento) in pull request 13025*. [GitHub-12430](https://github.com/magento/magento2/issues/12430)
 
 <!--- MAGETWO-86311 -->*  Magento now reorders configurable attribute options as expected on the product page. *Fix submitted by [wardcapp](https://github.com/wardcapp) in pull request 12963*. [GitHub-7441](https://github.com/magento/magento2/issues/7441)
 
@@ -289,7 +288,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85741 -->* The storefront **Back to Sign in** button now works as expected. Previously, when you clicked that button, Magento simply reloaded the current page. *Fix submitted by [StasKozar](https://github.com/StasKozar) in pull request 12759*. [GitHub-12715](https://github.com/magento/magento2/issues/12715)
 
-<!--- MAGETWO-85672 -->* The `window.checkout.customerLoginUrl` now contains a URL that includes the referer in base64 encoding (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myshop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12630*.m[GitHub-12627](https://github.com/magento/magento2/issues/12627)
+<!--- MAGETWO-85672 -->* The `window.checkout.customerLoginUrl` now contains a URL that includes the referer in base64 encoding (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myshop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12630*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
 
 <!--- MAGETWO-86989 -->* When you are on the cart page and click a product's  **Edit** link, the product page now correctly displays the product quantity currently in the cart. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request 13310*.
 
@@ -379,8 +378,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-88115 -->* RewriteBase directive has been added to the `.htaccess` file in `pub/static` to support the potential installation of Magento code under a directory inside the web root. *Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 13678*.
 
-<!--- MAGETWO-87261 -->*  The doc block of the `walk` method in a collection now correctly describes that the method accepts a string or array.  
-*Fix submitted by [ByteCreation](https://github.com/ByteCreation) in pull request 13373*.
+<!--- MAGETWO-87261 -->*  The doc block of the `walk` method in a collection now correctly describes that the method accepts a string or array. *Fix submitted by [ByteCreation](https://github.com/ByteCreation) in pull request 13373*.
 
 
 
@@ -411,14 +409,14 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 #### JavaScript framework
 
-<!--- MAGETWO-83401 -->* The <depends> field now works for fields of type `radio` in `system.xml`. *Fix submitted by [Javier Villanueva](https://github.com/jahvi) in pull request 11539*.
+<!--- MAGETWO-83401 -->* The `depends` field now works for fields of type `radio` in `system.xml`. *Fix submitted by [Javier Villanueva](https://github.com/jahvi) in pull request 11539*.
 
 <!--- MAGETWO-83993 -->* Magento now sorts fields and amounts as expected  when you extend a dynamic-row element in a `ui_component` and add a sort order attribute with an amount that falls between the other element's amount. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 11846*.
 
 
 #### Session framework
 
-<!--- MAGETWO-83373 -->* The Setup Wizard page now loads successfully when the session storage method is memcache.  Previously, Magento returned an HTTP 500 error when you navigated to **System > Tools > Web Setup Wizard Setup Wizard**  in installations where you've configured the session storage method to memcache in `env.php`. *Fix submitted by [Marty S](https://github.com/sylink) in pull request 11608*. [GitHub-83373](https://github.com/magento/magento2/issues/83373)
+<!--- MAGETWO-83373 -->* The Setup Wizard page now loads successfully when the session storage method is memcache.  Previously, Magento returned an HTTP 500 error when you navigated to **System > Tools > Web Setup Wizard Setup Wizard**  in installations where you've configured the session storage method to memcache in `env.php`. *Fix submitted by [Marty S](https://github.com/sylink) in pull request 11608*. [GitHub-9633](https://github.com/magento/magento2/issues/9633)
 
 <!--- MAGETWO-83287 -->* When you add a product to your wishlist after logging out, Magento now redirects you to your account Wishlist page and adds the product. Previously, you were redirected to your wishlist page, but Magento did not add the product. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12038*. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
 
@@ -466,7 +464,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-86886 -->* A type error in `CartTotalRepository` has been resolved. Previously, `CartTotalRepository` could not handle extension attributes in quote addresses, and Magento threw a `PHP Fatal error:  Uncaught TypeError`. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 12993*.[GitHub-12993](https://github.com/magento/magento2/issues/12993), [GitHub-12819](https://github.com/magento/magento2/issues/12819)
 
-<!--- MAGETWO-86883 -->*  The WYSIWYG editor image insertion process now takes into account the static URLs configuration value (configuration setting `cms/wysiwyg/use_static_urls_in_catalog`). *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request* [GitHub-12147](https://github.com/magento/magento2/issues/12147)
+<!--- MAGETWO-86883 -->*  The WYSIWYG editor image insertion process now takes into account the static URLs configuration value (configuration setting `cms/wysiwyg/use_static_urls_in_catalog`). *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1215.* [GitHub-12147](https://github.com/magento/magento2/issues/12147)
 
 <!--- MAGETWO-86840 -->* The `<![CDATA[]]>` statement in the `system.xml` file  now works as expected. Previously, when you entered a XML layout update with CDATA for the first time,  it worked as expected. After you saved the file, however, the `CDATA` tag disappeared. *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request 1163*. [GitHub-12322](https://github.com/magento/magento2/issues/12322)
 
@@ -492,7 +490,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85779 -->* The menu item handling has been refactored to read item data from two different sources:
     * from original XML definition if cache is empty
-    * from transformed item data when available in cache*Fix submitted by [Pavel](https://github.com/hannassy) in pull request 12747*. [GitHub-9720](https://github.com/magento/magento2/issues/9720)
+    * from transformed item data when available in cache. *Fix submitted by [Pavel](https://github.com/hannassy) in pull request 12747*. [GitHub-9720](https://github.com/magento/magento2/issues/9720)
 
 
 <!--- MAGETWO-85773 -->* A typo in the `SINGLE_PRODUCT_LAYOUT_HANLDE` constant has been fixed. *Fix submitted by [Andreas Schrammel](https://github.com/aschrammel) in pull request 12786*. 
@@ -564,7 +562,7 @@ The Dotmailer bundled extension features the following enhancements for this rel
 
 ### Import/export
 
-<!--- MAGETWO-81368 -->* You can now successfully import product images and image labels from CSV files. Previously after import, the  alt text field on the Admin was empty, even though the label was imported and is visible on the product list page as alt attribute, and the Product Detail page missed the alt attribute on image fields.*Fix submitted by [Ben Robie](https://github.com/brobie) in pull request 11323*.[GitHub-9931](https://github.com/magento/magento2/issues/9931)
+<!--- MAGETWO-81368 -->* You can now successfully import product images and image labels from CSV files. Previously after import, the  alt text field on the Admin was empty, even though the label was imported and is visible on the product list page as alt attribute, and the Product Detail page missed the alt attribute on image fields.*Fix submitted by [Ben Robie](https://github.com/brobie) in pull request 11323*. [GitHub-9931](https://github.com/magento/magento2/issues/9931)
 
 <!--- MAGETWO-83726 -->* The CSV file created by using **System > Export** now incorporates the value of `hide_for_product_page`. 
 *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 11926*.
@@ -768,25 +766,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 
-<!--- MAGETWO-84590 -->* Multishipping for Cybersource: Vault support for Cybersource tokens
-Added possibility to use Cybersource on multi-shipping
-As a Magento merchant, I want the Magento Vault to be compatible with Cybersource tokens so that Cybersource can be successfully integrated with multishipping functionality.
-
-AC
-
-Users checkouts via Cybersource result in the Magento Vault storing tokens that can be used for further transactions by the Admin
-
-
-<!--- MAGETWO-84586 -->* Support multishipping with Cybersource payment method
-As a Magento merchant, I want my website to support multishipping (sending purchased goods to multiple addresses) for Cybersource as part of the checkout flow.
-
-
-
-
-
-
-
-
 <!--- MAGETWO-86306,  MAGETWO-87934-->* The handling fee configuration of shipping methods is now explicitly cast to 0 to  avoid warnings from PHP 7.1. *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request 13680*.
 
 <!--- MAGETWO-86400 -->* Unused `count($_items)` in templates have been removed. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 12901*.
@@ -916,8 +895,7 @@ As a Magento merchant, I want my website to support multishipping (sending purch
 <!--- MAGETWO-85303 -->* You can now remove an item description from a wishlist. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 981*. [GitHub-12582](https://github.com/magento/magento2/issues/12582)
 
 
-<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 MAGETWO-86982 MAGETWO-86846 MAGETWO-86772 MAGETWO-86770 MAGETWO-86767 MAGETWO-86763 MAGETWO-86015 MAGETWO-86002 MAGETWO-73161 MAGETWO-80908 MAGETWO-84209 MAGETWO-84992 MAGETWO-77767 MAGETWO-84480 MAGETWO-83329 MAGETWO-86117 MAGETWO-83977 MAGETWO-84804 MAGETWO-84413 MAGETWO-83974 MAGETWO-82062 MAGETWO-80342 MAGETWO-80738 MAGETWO-85947 MAGETWO-83676 MAGETWO-86132 MAGETWO-85661 MAGETWO-77840 MAGETWO-82061 MAGETWO-81901 MAGETWO-73303 MAGETWO-83343 MAGETWO-83910 MAGETWO-70725 MAGETWO-83754 MAGETWO-73275 MAGETWO-75217 MAGETWO-83958 MAGETWO-87023 MAGETWO-71662 MAGETWO-82078 MAGETWO-84397 MAGETWO-87030 MAGETWO-86452 MAGETWO-85871 MAGETWO-85205 MAGETWO-84967 MAGETWO-84884 MAGETWO-83621 MAGETWO-82451 MAGETWO-82104 MAGETWO-81431 MAGETWO-81189 MAGETWO-73002 MAGETWO-72420 MAGETWO-71790 MAGETWO-71272 MAGETWO-70612 MAGETWO-83366 MAGETWO-85590 MAGETWO-85650 MAGETWO-87844 MAGETWO-89306 MAGETWO-85842 MAGETWO-88282 MAGETWO-88111 MAGETWO-71374 MAGETWO-85904 MAGETWO-87445 MAGETWO-86736 MAGETWO-83899 MAGETWO-86938 MAGETWO-88108 MAGETWO-87963 MAGETWO-87815 MAGETWO-45775 MAGETWO-89538 MAGETWO-89453 MAGETWO-89337 MAGETWO-89261 MAGETWO-89273 MAGETWO-89080 MAGETWO-84507 MAGETWO-86670 MAGETWO-84883
- -->* 
+<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 MAGETWO-86982 MAGETWO-86846 MAGETWO-86772 MAGETWO-86770 MAGETWO-86767 MAGETWO-86763 MAGETWO-86015 MAGETWO-86002 MAGETWO-73161 MAGETWO-80908 MAGETWO-84209 MAGETWO-84992 MAGETWO-77767 MAGETWO-84480 MAGETWO-83329 MAGETWO-86117 MAGETWO-83977 MAGETWO-84804 MAGETWO-84413 MAGETWO-83974 MAGETWO-82062 MAGETWO-80342 MAGETWO-80738 MAGETWO-85947 MAGETWO-83676 MAGETWO-86132 MAGETWO-85661 MAGETWO-77840 MAGETWO-82061 MAGETWO-81901 MAGETWO-73303 MAGETWO-83343 MAGETWO-83910 MAGETWO-70725 MAGETWO-83754 MAGETWO-73275 MAGETWO-75217 MAGETWO-83958 MAGETWO-87023 MAGETWO-71662 MAGETWO-82078 MAGETWO-84397 MAGETWO-87030 MAGETWO-86452 MAGETWO-85871 MAGETWO-85205 MAGETWO-84967 MAGETWO-84884 MAGETWO-83621 MAGETWO-82451 MAGETWO-82104 MAGETWO-81431 MAGETWO-81189 MAGETWO-73002 MAGETWO-72420 MAGETWO-71790 MAGETWO-71272 MAGETWO-70612 MAGETWO-83366 MAGETWO-85590 MAGETWO-85650 MAGETWO-87844 MAGETWO-89306 MAGETWO-85842 MAGETWO-88282 MAGETWO-88111 MAGETWO-71374 MAGETWO-85904 MAGETWO-87445 MAGETWO-86736 MAGETWO-83899 MAGETWO-86938 MAGETWO-88108 MAGETWO-87963 MAGETWO-87815 MAGETWO-45775 MAGETWO-89538 MAGETWO-89453 MAGETWO-89337 MAGETWO-89261 MAGETWO-89273 MAGETWO-89080 MAGETWO-84507 MAGETWO-86670 MAGETWO-84883 --> 
  -->  
 
 <!--- NOT A BUG   MAGETWO-73011 MAGETWO-83817 MAGETWO-86682-->
