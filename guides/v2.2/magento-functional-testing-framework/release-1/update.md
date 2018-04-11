@@ -36,19 +36,19 @@ When pulling the latest Magento code, you need to update the corresponding Compo
 * Go to the `magento2/dev/tests/acceptance` directory:
 
 ```bash
-$ cd dev/tests/acceptance
+cd dev/tests/acceptance
 ```
 
 * Run `composer update` to get the latest framework version:
 
 ```bash
-$ composer update
+composer update
 ```
 
 * Generate newly pulled tests: 
 
 ```bash
-$ vendor/bin/robo generate:tests
+vendor/bin/robo generate:tests
 ```
 
 <!-- LINK DEFINITIONS -->

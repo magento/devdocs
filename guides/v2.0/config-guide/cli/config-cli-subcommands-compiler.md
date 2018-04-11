@@ -35,7 +35,7 @@ You can find code compilation in classes in the <a href="{{ site.mage2000url }}s
 ## Run the single-tenant compiler {#config-cli-subcommands-single}
 Run the command as follows (there are no options):
 
-	magento setup:di:compile
+	bin/magento setup:di:compile
 
 The following message displays to confirm success:
 
@@ -59,7 +59,7 @@ If you do not have multiple tenants, use the <a href="#config-cli-subcommands-si
 
 Command options:
 
-	magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and
+	bin/magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and
 	filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
 
 The following table discusses the meanings of this command's parameters and values.
@@ -106,7 +106,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to run the compiler and specify the `igbinary` serializer:
 
-	magento setup:di:compile-multi-tenant --serializer=igbinary
+	bin/magento setup:di:compile-multi-tenant --serializer=igbinary
 
 Messages similar to the following display:
 

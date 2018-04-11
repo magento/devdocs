@@ -40,9 +40,9 @@ You can set values at the following times:
 
 Use the following commands:
 
-*   `config:set` sets any non-sensitive configuration value by its configuration path
-*   `config:sensitive:set` sets any sensitive configuration value by its configuration path
-*   `config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks
+*   `bin/magento config:set` sets any non-sensitive configuration value by its configuration path
+*   `bin/magento config:sensitive:set` sets any sensitive configuration value by its configuration path
+*   `bin/magento config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks
 
 ## Prerequisites
 To set a configuration value, you must know at least one of the following:
@@ -115,7 +115,7 @@ To find the values in the database:
 ## Set configuration values {#config-cli-config-set}
 To set system-specific configuration values, use:
 
-    magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
+    bin/magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
 
 where
 
@@ -130,7 +130,7 @@ where
 
 To set sensitive configuration values, use:
 
-    magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
+    bin/magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
 
 See one of the following sections for more information:
 
@@ -138,7 +138,7 @@ See one of the following sections for more information:
 *   [Set configuration values that cannot be edited in the Magento Admin](#config-cli-config-file)
 
 ### Set configuration values that can be edited in the Magento Admin {#config-cli-config-set-edit}
-Use `magento config:set` _without_ `-l|-lock` to write the value to the database. Values you set this way can be edited in the Magento Admin.
+Use `bin/magento config:set` _without_ `-l|-lock` to write the value to the database. Values you set this way can be edited in the Magento Admin.
 
 Some examples for setting a store base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} follow:
 
@@ -172,13 +172,13 @@ If you enter an incorrect configuration path, this command returns an error
     The "wrong/config/path" does not exist
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you use the `--lock` option to set or change a value, you must use the [`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
+If you use the `--lock` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
 </div>
 
 ## Display the value of configuration settings {#config-cli-config-show}
 Command options:
 
-    magento config:show [--scope[="..."]] [--scope-code[="..."]] path
+    bin/magento config:show [--scope[="..."]] [--scope-code[="..."]] path
 
 where
 
@@ -187,7 +187,7 @@ where
 * `path` is the configuration path in format first_part/second_part/third_part/etc *(required)*
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The `config:show` command displays the values of any [encrypted values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
+The `bin/magento config:show` command displays the values of any [encrypted values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
 </div>
 
 ### Examples

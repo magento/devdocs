@@ -144,9 +144,3 @@ For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}
 
 ## You're ready to code! {#code}
 When this code is fully deployed to those environments, you can begin development, add extensions, and more!
-
-#### Related topics
-
-* [Cloud Architecture]({{ page.baseurl }}cloud/architecture/pro-architecture.html)
-* [Deploy your store]({{ page.baseurl }}cloud/live/stage-prod-live.html)
-* [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html)

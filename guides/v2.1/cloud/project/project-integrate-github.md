@@ -124,8 +124,3 @@ To verify the integration works:
 
 1.	Make a change in the GitHub repository with which you integrated.
 2.	In the Magento Cloud CLI, pull the change to an environment.
-
-
-#### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)

@@ -35,7 +35,7 @@ Fastly only allows one apex domain and all subdomains assigned to a single Fastl
 For details, review your Fastly accounts and [documentation](https://docs.fastly.com/) to remove the domains. This may include removing and updating CNAME records and more.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
-To get Fastly credentials, open a [support ticket]({{page.baseurl}}cloud/welcome/get-help.html). You must provide your fully-qualified domain name.
+To get Fastly credentials, open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html). You must provide your fully-qualified domain name.
 
 We'll provide you with the following credentials for your Staging and Production services:
 
@@ -137,7 +137,7 @@ To use snippets, you must upload the Fastly VCL using the Magento Admin as follo
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. For details, see [Update extensions]({{page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
+  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. Fastly's Composer name is `fastly/magento2`.
 	</div>
 
 2.	Once the upload completes, the modal automatically closes with a success message.
@@ -157,11 +157,24 @@ You can add multiple backends. Repeat these instructions to create multiple back
 2. Expand **Backend settings** and click the gear to configure the default backend. A modal opens with options to select and configure.
 
 	![Modify the backend]({{ site.baseurl }}common/images/cloud_fastly-backend.png){:width="600px"}
-3. Select a **Shield** location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States (US - Oregon), you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services. For example, we have cloud hosting in the following AWS locations:
+3. Select the **Shield** location (or datacenter) closest to your AWS region. For example, if Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
 
-    * US - Oregon
-    * EU - Dublin
-    * APAC - Sydney
+	The following list shows which Faslty shield locations to use based an AWS region:
+
+	- ap-northeast-1 => tokyo-jp2
+	- ap-southeast-1 => singapore-sg
+	- ap-southeast-2 => sydney-au
+	- ap-south-1 => singapore-sg
+	- eu-central-1 => frankfurt-de
+	- eu-west-1 => london-uk, london_city-uk
+	- eu-west-2 => london-uk, london_city-uk
+	- eu-west-3 => cdg-par-fr
+	- sa-east-1	=> gru-br-sa
+	- us-east-1 => iad-va-us
+	- us-east-2 => iad-va-us
+	- us-west-1 => sjc-ca-us
+	- us-west-2 => sea-wa-us
+    
 4. Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
 5. Optionally, select to Activate the backend and Shield after editing or saving.
 6. Click **Upload** to save. The settings are commiunicated to Fastly.
@@ -258,7 +271,7 @@ Another option for apex domain is to add an A record, which maps a domain name t
 Refer to [Go live checklist]({{page.baseurl}}cloud/live/go-live-checklist.html) for more information.
 
 ### TLS and Fastly {#fastly-tls}
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket]{{page.baseurl}}cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="\_blank"}.
 
@@ -275,17 +288,3 @@ When you upgrade, the default VCL snippets you uploaded should not be affected o
 For information on upgrading modules, refer to [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html).
 
 If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
-
-#### Related topics
-
-* [Custom Fastly VCL snippets]({{ page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
-
-  * [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
-  * [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
-  * [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
-  * [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
-  * [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
-* [Fastly in Cloud]({{ page.baseurl}}cloud/basic-information/cloud-fastly.html)
-*	[Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
-*	[Fastly documentation](https://docs.fastly.com/guides){:target="\_blank"}
-*	[Fastly VCL documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="\_blank"}

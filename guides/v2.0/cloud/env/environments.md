@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
-title: Configure your environments
-menu_title: Configure your environments
-menu_order: 1
-menu_node: parent
+title: Configure environments
 version: 2.0
 github_link: cloud/env/environments.md
 redirect_from:
@@ -114,12 +110,3 @@ For Pro, you need to enter a ticket to have these files and settings pushed to S
   * [Caching]({{ page.baseurl }}cloud/project/project-routes-more-cache.html) configuration options for caches set in routes.yaml
   * [Redirect]({{ page.baseurl }}cloud/project/project-routes-more-redir.html) configuration and rules for managing redirections set in routes.yaml
   * [Server side includes]({{ page.baseurl }}cloud/project/project-routes-more-ssi.html) configured set in routes.yaml
-
-#### Related topics
-*	[Manage your project]({{page.baseurl}}cloud/project/projects.html)
-*	[Magento Cloud CLI reference]({{page.baseurl}}cloud/reference/cli-ref-topic.html)
-*	[SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)

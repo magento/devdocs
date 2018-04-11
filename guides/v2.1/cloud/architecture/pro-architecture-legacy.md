@@ -188,7 +188,7 @@ This software is *not* upgradable but versions for the following software is con
 
 -   [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 -   [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
--   [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
+-   [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
 -   [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
 -   [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
 -   [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
@@ -209,7 +209,3 @@ To branch and develop your Magento store:
 1.   Branch and develop in a new Git branch on your local workspace
 1.   Push code to Git to build and deploy to an environment for testing
 
-#### Related topics
--   [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
--   [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
--   [{{site.data.var.ee}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
