@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Blackfire Profiler | Magento 2 Developer Documentation</title>
+	<title>Blackfire.io for Magento Cloud | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -537,12 +537,12 @@
         
         
         
-        <li class="nav-level2 active " id="blackfire-profiler">
+        <li class="nav-level2 active " id="blackfire.io">
             
             
         
             
-            <a href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>
+            <a href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Blackfire.io</a>
             
 
             
@@ -2001,7 +2001,7 @@
 
           
 
-          <span property="name">Blackfire Profiler</span>
+          <span property="name">Blackfire.io for Magento Cloud</span>
 
         
 
@@ -2024,7 +2024,7 @@
 
 	
 
-	<h1 class="page-heading">Blackfire Profiler</h1>
+	<h1 class="page-heading">Blackfire.io for Magento Cloud</h1>
 
   
 
@@ -2032,83 +2032,85 @@
 </section>
 
 
-			<p><a href="https://blackfire.io/profiler" target="_blank">Blackfire Profiler</a> helps you locate and investigate performance issues in your environment at the code-level. it creates a performance profile by tracking every PHP call and method and SQL queries performed by your code. Blackfire digs deeper providing granular performance analytics. You can activate and use Blackfire Profiler in all of your environments, especially helpful in Staging and Production.</p>
+			<p><a href="https://blackfire.io/magento" target="_blank">Blackfire.io for Magento Cloud</a> is a PHP profiler and automated performance testing tool that can be used in the development Integration, Staging, and Production environments. It enables you to locate and investigate performance issues in your environment at the code level and creates a performance profile by tracking every PHP call, method, and SQL query performed by your code. Blackfire digs deeper to provide granular performance analytics.</p>
 
-<p>This information helps you get Blackfire installed on your local, integrated into Integration, and running your first profile.</p>
+<p>In addition, it profiles your code automatically and notifies you whenever your code does not comply with best practices for Magento 2 code performance management. For a high level overview and demo of Blackfire, review the videos in the <a href="https://support.blackfire.io/blackfire-on-magento-cloud/introduction-to-blackfireio-on-magento-cloud" target="_blank">Introduction to Blackfire.io for Magento Cloud</a>.</p>
 
-<p>For full details on integrations, also review <a href="https://support.blackfire.io/blackfire-on-magento-cloud" target="_blank">Blackfire’s complete Magento Commerce (Cloud)</a> guide. They also include a number of <a href="#resources">incredible resources</a> to get you started.</p>
+<p>For full details on integrations, also review <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/configuring-blackfire-on-magento-cloud" target="_blank">Configuring Blackfire on Magento Cloud</a>.</p>
 
 <p>Blackfire includes the following <a href="https://blackfire.io/docs/reference-guide/environments" target="_blank">environments</a> through their site:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Integration and Development</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Staging</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Production</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code>—Integration and Development</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code>—Staging</li>
+  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code>—Production</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>For Pro plans, you need to enter a Support ticket with your Blackfire credentials to get Staging and Production configured with Blackfire. We’ll help you get Blackfire configured in those environments.</p>
+  <p>For Pro, you must enter a Support ticket with your Blackfire credentials to configure your Staging and Production environments with Blackfire.</p>
 </div>
 
 <h2 id="cloud-int-black">Get your Blackfire credentials</h2>
-<p>The Project Owner is the account owner. This account’s e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with Magento Commerce (Cloud) and to log into the Blackfire site. An invitiation email is sent to the Project Owner’s e-mail address to complete activation.</p>
+<p>The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with Magento Commerce (Cloud) and to log in to the Blackfire website. An invitation email is sent to the Project Owner’s e-mail address to complete activation.</p>
 
-<p>For information on setting up the account on Blackfire, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user" target="_blank">Accessing your Blackfire account as a Magento Cloud user</a>. You can also access your Blackfire license key through <a href="/guides/v2.2/cloud/project/projects.html#integrations">project details</a>.</p>
+<p>For information on setting up an account on Blackfire, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user" target="_blank">Accessing your Blackfire account as a Magento Cloud user</a>. You can access your Blackfire license key through <a href="/guides/v2.2/cloud/project/projects.html#integrations">project details</a>.</p>
 
 <h2 id="collaborators">Add collaborator accounts</h2>
-<p>After you have accessed your Blackfire account, you can <a href="http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments" target="_blank">add additional collaborator accounts</a>.</p>
+<p>After you access your Blackfire account, you can <a href="http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments" target="_blank">add additional collaborator accounts</a>.</p>
 
 <p>We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.</p>
 
 <ol>
-  <li>Using the Project Owner Blackfire credentials, log in to <a href="https://blackfire.io/login" target="_blank">Blackfire</a>.</li>
-  <li>Select an environment.</li>
-  <li>Select the Settings tab.</li>
-  <li>Enter an e-mail address and click Add Member.</li>
+  <li>Using your Project Owner Blackfire credentials, log in to <a href="https://blackfire.io/login" target="_blank">Blackfire</a>.</li>
+  <li>Navigate to the <em>Environments</em> tab and select an environment.</li>
+  <li>Click the <strong>Settings</strong> tab.</li>
+  <li>Enter an e-mail address and click <strong>Add Member</strong>.</li>
   <li>
-    <p>For one account, click the menu by Revoke and select <strong>Promote as an admin</strong>.</p>
+    <p>In the <em>Revoke</em> drop-down list of an account, click <strong>Promote as an admin</strong>.</p>
 
     <p><img src="/common/images/cloud_blackfire-member.png" alt="Promote an admin" /></p>
   </li>
 </ol>
 
-<h2 id="cloud-int-black-en">Enable Blackfire on your local</h2>
-<p>You need to install and configure Blackfire on your local workspace with your working Magento Commerce (Cloud) installation. You don’t need to run these installations directly on the hosted environments, only on your local.</p>
+<h2 id="enable-blackfire-on-local-workspacecloud-int-black-en">Enable Blackfire on local workspace{#cloud-int-black-en}</h2>
+<p>You need to install and configure Blackfire on your local workspace with your working Magento Commerce (Cloud) installation. You do <em>not</em> need to run these installations directly on the hosted environments; only on your local.</p>
 
-<p>We recommend using their installation guide to walk you through the process:</p>
+<p>We recommend using the Blackfire installation guide to walk you through the process:</p>
 
 <ol>
   <li>Log in to <a href="https://blackfire.io/login" target="_blank">Blackfire</a>.</li>
-  <li>Select the Integration environment in the <strong>Current Environment</strong> list.</li>
-  <li>Select the Settings tab.</li>
-  <li>Scroll to the bottom and locate the Server ID and Server Token for the environment. You will need these values for the instructions.</li>
-  <li>Open <a href="https://blackfire.io/docs/up-and-running/installation" target="_blank">this guide</a>, select the Operating System, and follow the instructions.</li>
+  <li>Navigate to the <em>Environments</em> tab and select the <strong>Integration</strong> environment.</li>
+  <li>Click the <strong>Settings</strong> tab.</li>
+  <li>Scroll to the bottom and locate the <em>Server ID</em> and <em>Server Token</em> for the environment. You need these values for the instructions.</li>
+  <li>Open the <a href="https://blackfire.io/docs/up-and-running/installation" target="_blank">Blackfire installation guide</a>, select the Operating System, and follow the instructions.</li>
 </ol>
 
-<h2 id="dev">Integrate Blackfire in Integration</h2>
-<p>We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Integration environment and Starter’s development branches.</p>
+<h2 id="dev">Integrate Blackfire</h2>
+<p>We recommend enabling Blackfire in all of your active environments, including the Integration environment. See <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">Configure the server credentials &amp; the integration with Magento Cloud</a>. You can integrate with the Pro Integration environment and Starter development branches.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>For Starter plans, pushing your code and <code class="highlighter-rouge">.magento.app.yaml</code> file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.</p>
+  <p>For Starter plans, pushing your code and <code class="highlighter-rouge">.magento.app.yaml</code> file to the Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.</p>
 </div>
 
-<p>These instructions assume you have fully set up your <a href="/guides/v2.2/cloud/before/before-workspace.html">local workspace</a>.</p>
+<p>These instructions assume you have set up your <a href="/guides/v2.2/cloud/before/before-workspace.html">local workspace</a>.</p>
 
 <ol>
   <li>Log in to <a href="https://blackfire.io/login" target="_blank">Blackfire</a>.</li>
-  <li>Select the Integration and Development environment in the <strong>Current Environment</strong> list.</li>
+  <li>Navigate to the <em>Environments</em> tab and select the <strong>Integration</strong> environment.</li>
+  <li>Click the <strong>Builds</strong> tab.</li>
   <li>
-    <p>Select the Builds tab. In the Builds side panel, click the info icon next to Magento Cloud. This opens a list of commands you will need to execute in order to enable the Blackfire integration.</p>
+    <p>Click the info icon next to Magento Cloud.</p>
 
     <p><img src="/common/images/cloud_blackfire-builds.png" alt="Click info icon" /></p>
+  </li>
+  <li>
+    <p>In the <em>Magento Cloud Integration</em> page, follow the additional steps to complete the integration. The redacted content is the <strong>Project ID</strong>.</p>
 
-    <p>A page like the following opens with additional steps to complete the integration. The marked out content is your Project ID.</p>
-
-    <p><img src="/common/images/cloud_blackfire-integration.png" alt="Blackfire Magento Cloud integragtion" /></p>
+    <p><img src="/common/images/cloud_blackfire-integration.png" alt="Blackfire Magento Cloud integration" /></p>
   </li>
 </ol>
 
-<p>The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information direcrtly.</p>
+<p>The following sections include instructions for completing this list of integration tasks.</p>
 
 <ul>
   <li><a href="#magentoappyaml">Add Blackfire to .magento.app.yaml</a></li>
@@ -2119,13 +2121,11 @@
 </ul>
 
 <h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
-<p>By default, the Blackfire module is included in the <code class="highlighter-rouge">.magento.app.yaml</code> file as part of your Git branch.</p>
-
-<p>The following instructions provide additional instructions if the module is not added to <code class="highlighter-rouge">.magento.app.yaml</code>. To enable and integrate Blackfire into your code, you will modify the <code class="highlighter-rouge">.magento.app.yaml</code> file, push the file into your remote Git branch, merge, and deploy across all environments.</p>
+<p>By default, the <code class="highlighter-rouge">.magento.app.yaml</code> file includes the Blackfire module. If the module is not present, use the following instructions to update your <code class="highlighter-rouge">.magento.app.yaml</code> file, push the updated file to your remote branch, merge, and deploy across all environments.</p>
 
 <ul>
   <li>For Starter, merging your Git branch across all environments adds the module.</li>
-  <li>For Pro, you need to enter a Support ticket to have <code class="highlighter-rouge">.magento.app.yaml</code> updated to Staging and Production.</li>
+  <li>For Pro (legacy), you need to enter a Support ticket to have <code class="highlighter-rouge">.magento.app.yaml</code> updated to Staging and Production.</li>
 </ul>
 
 <p>We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the <code class="highlighter-rouge">.magento.app.yaml</code> file. If you need instructions creating a branch, complete the following:</p>
@@ -2138,65 +2138,66 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>List projects:</p>
+    <p>List projects.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>List environments in the project:</p>
+    <p>List environments in the project.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list <span class="nt">-p</span> &lt;project ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list <span class="nt">-p</span> &lt;project_ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>See what branch you’re currently on, if any.</p>
+    <p>Verify current branch.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If necessary, check out an existing branch:</p>
+    <p>If necessary, check out an existing branch.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment_ID&gt;
 </code></pre></div>    </div>
 
     <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
   </li>
   <li>
-    <p>Back up the environment using a snapshot:</p>
+    <p>Back up the environment using a snapshot.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment_ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>Next, modify the <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
+<h4 id="next-modify-the-magentoappyaml-file">Next, modify the <code class="highlighter-rouge">.magento.app.yaml</code> file:</h4>
 
 <ol>
   <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/.magento.app.yaml</code> in your branch.</li>
   <li>
     <p>Enter <code class="highlighter-rouge">- name: blackfire</code> in the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime</code>.</p>
 
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">runtime</span><span class="pi">:</span>
-    <span class="na">extensions</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">mcrypt</span>
-    <span class="pi">-</span> <span class="s">redis</span>
-    <span class="pi">-</span> <span class="s">xsl</span>
-    <span class="pi">-</span> <span class="s">json</span>
-    <span class="pi">-</span> <span class="s">blackfire</span>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .magento.app.yaml
+runtime:
+    extensions:
+    - mcrypt
+    - redis
+    - xsl
+    - json
+    - blackfire
 </code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
   <li>
-    <p>Add, commit, and push your changes to the environment:</p>
+    <p>Add, commit, and push your changes to the environment.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span>
 git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
 git push origin
 </code></pre></div>    </div>
 
-    <p>If errors display during deployment, open <code class="highlighter-rouge">.magento.app.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
+    <p>If errors display during deployment, open the <code class="highlighter-rouge">.magento.app.yaml</code> file and check the syntax, such as indentation and spelling, and try again.</p>
   </li>
 </ol>
 
@@ -2204,18 +2205,15 @@ git push origin
 <p>Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.</p>
 
 <ol>
+  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
+  <li>Copy the commands from step 3 on the Blackfire <em>Magento Cloud Integration</em> page.</li>
   <li>
-    <p>Log in to your Magento Commerce (Cloud) project.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
-</code></pre></div>    </div>
-  </li>
-  <li>Copy the commands from step 3 on the Blackfire Magento Cloud integration page.</li>
-  <li>
-    <p>Paste and enter the commands in the Magento Cloud CLI. Since you are already in your project, remove the <code class="highlighter-rouge">--project='&lt;Project ID&gt;'</code> content from the command. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:</p>
+    <p>Paste and enter the commands in the Magento Cloud CLI. Since you are already in your project, remove the <code class="highlighter-rouge">--project='&lt;Project ID&gt;'</code> content from the command. The commands include the Project ID and Blackfire server ID and token, similar to the following:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:set env:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
-magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2224,37 +2222,30 @@ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Serv
 <p>Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
 
 <ol>
+  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
   <li>
-    <p>Log in to your Magento Commerce (Cloud) project.</p>
+    <p>Copy and enter the integration commands from the Blackfire <em>Magento Cloud Integration</em> page.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:add <span class="se">\</span>
+<span class="nt">--project</span><span class="o">=</span><span class="s1">'&lt;Project ID&gt;'</span> <span class="se">\</span>
+<span class="nt">--type</span><span class="o">=</span>webhook <span class="se">\</span>
+<span class="nt">--url</span><span class="o">=</span><span class="s1">'&lt;Blackfire provided URL&gt;'</span>
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Copy and enter the integration commands from the Blackfire Magento Cloud integration page.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud integration:add <span class="se">\</span>
- <span class="nt">--project</span><span class="o">=</span><span class="s1">'&lt;Project ID&gt;'</span> <span class="se">\</span>
- <span class="nt">--type</span><span class="o">=</span>webhook <span class="se">\</span>
- <span class="nt">--url</span><span class="o">=</span><span class="s1">'&lt;Blackfire provided URL&gt;'</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or have someone else who is an admin run this command.</p>
-  </li>
+  <li>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or have someone else who is an admin run this command.</li>
 </ol>
 
 <h3 id="route">Add a default route</h3>
-<p>If you do not have a default route specified in <code class="highlighter-rouge">routes.yaml</code>, or want to define which route to use instead of the default route, you will add it to Blackfire and <code class="highlighter-rouge">routes.yaml</code>.</p>
+<p>If you do not have a default route specified in the <code class="highlighter-rouge">routes.yaml</code> file, or want to define which route to use instead of the default route, add it to Blackfire and <code class="highlighter-rouge">routes.yaml</code>.</p>
 
-<p>Add route information on the Blackfire Magento Cloud integration page:</p>
+<h4 id="to-add-route-information-on-the-blackfire-magento-cloud-integration-page">To add route information on the Blackfire <em>Magento Cloud Integration</em> page:</h4>
 
 <ol>
   <li>Locate step 5 and enter the default route. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>. If you leave this field blank, we will try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
-  <li>If you use a wildcard <code class="highlighter-rouge">*</code> in step 5 for the default rote, you need to enter a resolved value for the <code class="highlighter-rouge">*</code> value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key <code class="highlighter-rouge">https://*.{default}</code> in step 5, you would need you to specify a route placeholder in step 6.</li>
+  <li>If you use a wildcard <code class="highlighter-rouge">*</code> in step 5 for the default route, you need to enter a resolved value for the <code class="highlighter-rouge">*</code> value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key <code class="highlighter-rouge">https://*.{default}</code> in step 5, you need to specify a route placeholder in step 6.</li>
 </ol>
 
-<p>If adding a route to Blackfire, make sure to add the default route to <code class="highlighter-rouge">routes.yaml</code>:</p>
+<h4 id="to-add-the-default-route-to-routesyaml">To add the default route to <code class="highlighter-rouge">routes.yaml</code>:</h4>
 
 <ol>
   <li>
@@ -2264,50 +2255,48 @@ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Serv
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>List projects:</p>
+    <p>List projects.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>List environments in the project:</p>
+    <p>List environments in the project.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list <span class="nt">-p</span> &lt;project ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list <span class="nt">-p</span> &lt;project_ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>See what branch you’re currently in, if any.</p>
+    <p>Verify current branch.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If necessary, check out an existing branch:</p>
+    <p>If necessary, check out an existing branch.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment_ID&gt;
 </code></pre></div>    </div>
-
-    <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
   </li>
   <li>
-    <p>Back up the environment using a snapshot:</p>
+    <p>Back up the environment using a snapshot.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment_ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/magento/routes.yaml</code> in your branch.</li>
   <li>
-    <p>Add the route the file. For details, see <a href="/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a>. Here’s an example:</p>
+    <p>Add the route the file. See <a href="/guides/v2.2/cloud/project/project-conf-files_routes.html">Configure routes</a>.</p>
 
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"</span><span class="s">http://{default}/"</span><span class="pi">:</span>
-<span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
-<span class="na">upstream</span><span class="pi">:</span> <span class="s2">"</span><span class="s">blackfire:php"</span>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
+type: upstream
+upstream: "blackfire:php"
 </code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>.
-If you leave this field blank, we will try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
+If you leave this field blank, we try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
   <li>
-    <p>Add, commit, and push your changes to the environment:</p>
+    <p>Add, commit, and push your changes to the environment.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span>
 git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
@@ -2319,37 +2308,42 @@ git push origin
 </ol>
 
 <h3 id="save">Save changes in Blackfire</h3>
-<p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and conncetions with changes entered to your Magento Commerce (Cloud) project. Continue to the next section to begin profiling your store to verify the integration.</p>
+<p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your Magento Commerce (Cloud) project. Continue to the next section to begin profiling your store to verify the integration.</p>
 
 <h2 id="profile">Profile your store</h2>
-<p>To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see <a href="#resources">Blackfire’s resources</a>.</p>
+<p>You can verify that Blackfire works using a browser extension or the CLI. For extensive CLI profiling options and better understanding the profiles, see <a href="#resources">Blackfire resources</a>.</p>
 
-<div class="bs-callout bs-callout-info">
+<div class="bs-callout bs-callout-info" id="info">
   <p>You can only use the CLI in your local development environment.</p>
 </div>
 
-<p>To profile using the browser:</p>
+<h4 id="to-profile-using-the-browser">To profile using the browser:</h4>
 
 <ol>
-  <li>Install the Blackfire browser extension in <a href="https://blackfire.io/docs/integrations/chrome#installing-the-companion" target="_blank">Chrome</a> or <a href="https://blackfire.io/docs/integrations/firefox#installing-the-companion" target="_blank">Firefox</a>. A new Blackfire icon displays in your browser next to the address location. If you don’t see it, you may need to display the bar.</li>
-  <li>Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.</li>
+  <li>Install the Blackfire browser extension in <a href="https://blackfire.io/docs/integrations/chrome#installing-the-companion" target="_blank">Chrome</a> or <a href="https://blackfire.io/docs/integrations/firefox#installing-the-companion" target="_blank">Firefox</a>. A Blackfire icon displays in your browser next to the address location. If you do not see it, you may need to display the bar.</li>
+  <li>Visit the store or site URL for your specific environment, such as the URL for your Integration environment. If you need this URL, you can find it through the Project Web Interface. Select the environment branch and copy the link from the <em>Access</em> section.</li>
   <li>
-    <p>Click the Blackfire icon to profile. For Compare with, select No Reference.</p>
+    <p>Click the Blackfire icon.</p>
 
     <p><img src="/common/images/cloud_blackfire.png" alt="Start profiling" /></p>
   </li>
-  <li>Click <strong>Profile</strong> to start.</li>
+  <li>
+    <p>Click <strong>Profile</strong> to start.</p>
+
+    <p>Note: The browser extension also enables you to profile all requests while you browse. For more information about this, see <a href="#resources">Blackfire resources</a>.</p>
+  </li>
 </ol>
 
-<p>To profile using the CLI:</p>
+<h4 id="to-profile-using-the-cli">To profile using the CLI:</h4>
 
 <ol>
-  <li>Open a terminal.</li>
-  <li><a href="/guides/v2.2/cloud/before/before-setup-env-2_clone.html#branch">Checkout a branch</a> in your local environment.</li>
+  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
+  <li>Checkout an active Integration branch.</li>
   <li>
     <p>Run the profiler.</p>
 
-    <p>php –ri blackfire</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php --ri blackfire
+</code></pre></div>    </div>
 
     <p>A sample result follows:</p>
 
@@ -2380,15 +2374,57 @@ blackfire.log_file <span class="o">=&gt;</span> no value <span class="o">=&gt;</
   </li>
 </ol>
 
+<h2 id="automate">Automate performance testing</h2>
+<p>After completing the <a href="#dev">Blackfire Integration</a>, you can define events for the Staging and Production environments that enable Blackfire to execute polling requests automatically. An event example is whenever a commit deploys in the Integration environment, or when activating the integration between Blackfire and New Relic.</p>
+
+<p>By simply defining a set of key requests for Blackfire to profile— <code class="highlighter-rouge">/home</code>, <code class="highlighter-rouge">/checkout</code>, <code class="highlighter-rouge">/checkout/payment</code>—Blackfire can notify you if your code complies with established <a href="https://blackfire.io/docs/reference-guide/recommendations" target="_blank">code performance recommendations</a>. The following is a sample build report with recommendations:</p>
+
+<p><img src="/common/images/cloud_blackfire-recommendations.png" alt="Blackfire build report" /></p>
+
+<h3 id="writing-your-first-automated-tests-and-scenarios">Writing your first automated tests and scenarios</h3>
+<p>You can easily write tests and scenarios for Blackfire to execute. Create a <code class="highlighter-rouge">.blackfire.yml</code> file and store it at your project root directory.</p>
+
+<p>Try adding the following scenarios in the file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    # .blackfire.yml
+    scenarios:
+        Home:
+            - /index.php
+
+        Product list:
+            - /index.php/women/tops-women/jackets-women.html
+
+        Checkout:
+            - /index.php/checkout
+
+        Payment:
+            - /index.php/checkout/payment
+</code></pre></div></div>
+
+<p>See the Blackfire documentation on how to write <a href="https://blackfire.io/docs/cookbooks/tests">tests</a> and <a href="https://blackfire.io/docs/cookbooks/scenarios">scenarios</a>.</p>
+
+<h3 id="running-your-tests-automatically">Running your tests automatically</h3>
+<p>Once you create and deploy your <code class="highlighter-rouge">.blackfire.yml</code> file, you can enable Blackfire to run your tests automatically in various ways:</p>
+
+<ul>
+  <li><strong>Automated builds on Integration</strong>—Whenever you push code on an Integration branch, Blackfire automatically runs your tests. You can receive a notification of the results in various ways, such as a commit status level when using GitHub or Bitbucket. See <a href="#notifications">Receiving notifications</a>.</li>
+  <li><strong>Automated builds using a webhook</strong>—Blackfire offers a very flexible way to start builds using a webhook, which can target any endpoint. See <a href="https://blackfire.io/docs/reference-guide/builds-and-integrations#start-build-using-a-webhook" target="_blank">Start building a webhook</a>.</li>
+  <li><strong>Automated builds with the Blackfire/New Relic integration</strong>—Blackfire and New Relic are very complementary. New Relic monitors the overall traffic performance, and Blackfire profiles much deeper into the PHP code. See <a href="https://support.blackfire.io/questions-about-blackfire/what-is-blackfire/what-is-the-difference-between-blackfire-and-new-relic-and-other-apms" target="_blank">What is the difference between Blackfire and New Relic</a>. You can configure New Relic to fire Blackfire builds whenever relevant. See <a href="https://blackfire.io/docs/integrations/new-relic" target="_blank">New Relic</a>.</li>
+</ul>
+
+<h3 id="notifications">Blackfire notifications</h3>
+<p>When you configure at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and more. See <a href="https://blackfire.io/docs/reference-guide/notification-channels" target="_blank">Scenario notification channels</a>.</p>
+
 <h2 id="resources">Blackfire resources</h2>
-<p>Blackfire provides great information to better profile and investigate the results on their documentation site. Check out some resources:</p>
+<p>Blackfire provides great information to better profile and investigate the results on their documentation site:</p>
 
 <ul>
   <li><a href="https://blackfire.io/docs/cookbooks/profiling-http" target="_blank">Profiling HTTP requests</a></li>
   <li><a href="https://blackfire.io/docs/cookbooks/profiling-cli" target="_blank">Profiling CLI commands</a></li>
+  <li><a href="https://blog.blackfire.io/profile-all-requests.html" target="_blank">Profile all requests while you browse</a></li>
   <li><a href="https://blackfire.io/docs/cookbooks/tests" target="_blank">Writing Tests</a></li>
   <li><a href="https://blackfire.io/docs/cookbooks/scenarios" target="_blank">Writing scenarios</a></li>
-  <li><a href="https://blackfire.io/docs/reference-guide/index" target="_blank">Reference Guide</a> to really understand what you profile</li>
+  <li><a href="https://blackfire.io/docs/reference-guide/index" target="_blank">Reference Guide</a></li>
 </ul>
 
 		</div>
