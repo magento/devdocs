@@ -12,61 +12,69 @@ Check out our best practices below to ensure you're getting the absolute most ou
 
 ## File Names
 
-Name files according to these patterns to find everything more easily.
+Name files according to the following patterns to find everything more easily:
 
-* Examples:
-    * {Admin|Storefront}{Action}Test.xml
-        * Where Action briefly describes the test's purpose.
-        * e.g. `StorefrontCreateCustomerTest.xml`
-    * {Admin|Storefront}{Description}Section.xml
-        * Where Description briefly describes the test's purpose.
-        * e.g. `AdminNavbarSection.xml`
-    * {Type}Data.xml
-        * e.g. `ProductData.xml`
+### Test
 
+* Format: {`Admin` or `Storefront`}{_Functionality_}`Test.xml`
+* Placeholder: _Functionality_ briefly describes the testing functionality.
+* Example: `StorefrontCreateCustomerTest.xml`.
+
+### Section
+
+* Format: {`Admin` or `Storefront`}{_UI description_}`Section.xml`
+* Placeholder: _UI description_ briefly describes the testing UI.
+* Example: `AdminNavbarSection.xml`.
+
+### Data
+
+* Format: {_Type_}`Data.xml`
+* Placeholder: _Type_ represents the entity type.
+* Example: `ProductData.xml`.
 
 ## Object Names
 
-Use Foo.camelCase naming style similar to Classes and classProperties.
+Use _Foo.camelCase_ naming style similar to _Classes_ and _classProperties_ in PHP.
 
-Use a capital first letter for:
+### Upper case
 
-* Filenames
-* Test name attributes -- `<test name="TestAllTheThingsTest">`
-* Data entity names -- `<entity name="OutOfStockProduct">`
-* Page name -- `<page name="AdminLoginPage">`
-* Section name -- `<actionGroup name="DeleteCategory">`
+Use an upper case first letter for:
+- File names. Example: _StorefrontCreateCustomerTest.xml_
+- Test name attributes. Example: `<test name="TestAllTheThingsTest">`.
+- Data entity names. Example: `<entity name="OutOfStockProduct">`.
+- Page name. Example: `<page name="AdminLoginPage">`.
+- Section name. Example: `<actionGroup name="DeleteCategory">`.
 
-Use a lower first letter for:
+### Lower case
 
-* Data keys -- `<data key="firstName">`
-* Element names -- `<element name="confirmDeleteButton"/>`
+Use a lower case first letter for:
+- Data keys. Example: `<data key="firstName">`.
+- Element names. Examples: `<element name="confirmDeleteButton"/>`.
 
 ## Comments
 
-When writing tests, use inline XML comments such as  `<!-- Add an image to the product -->`. If you use these comments before "chunks" of test actions, tests become much easier to read, understand, and maintain.
+Use inline XML comments such as  `<!-- Add an image to the product -->` before "chunks" of test actions when writing tests.
+These comments make the test much easier to read, understand, and maintain.
 
 ## Annotations
 
- - Always use annotations in a test.
- 
- - When updating tests, always make corresponding annotation updates.
- 
+ - Always use annotations in a test. 
+ - When updating tests, always make corresponding annotation updates. 
  - Annotation types and recommendations are described as:
-    - **Feature** - Report grouping, a set of tests that verify a feature.
-    - **Story** - Report grouping, a set of tests that verify a story.
-    - **Group** - Module name.
-    - **Title** - Describes the purpose of the test.
-    - **Description** - Describes how the test achieves the purpose defined in the title.
-    - **Severity** - Allowed values are _BLOCKER_, _CRITICAL_, _MAJOR_, _AVERAGE_, and _MINOR_.
+   - **Feature** - Report grouping, a set of tests that verify a feature.
+   - **Story** - Report grouping, a set of tests that verify a story.
+   - **Group** - Module name.
+   - **Title** - Describes the purpose of the test.
+   - **Description** - Describes how the test achieves the purpose defined in the title.
+   - **Severity** - Allowed values are `BLOCKER`, `CRITICAL`, `MAJOR`, `AVERAGE`, and `MINOR`.
  
 ## Data entities
 
 - When using a `<createData>` action in a `<before>` block, always use a corresponding `<deleteData>` in your `<after>` block.
-
-- Where data values are required to be unique in the database, enforce the uniqueness on the attribute of the data entity. Use `[unique=”suffix”]` or `[unique=”prefix”]` to append or prepend a unique value to the entity attribute. This ensures tests using the entity can be repeated.
-
-- Do not modify existing data entity fields or add/merge additional data fields without fully understanding and verifying all existing data usages. We recommend that you create a new data entity for your test when you are not sure. 
+- Where data values are required to be unique in the database, enforce the uniqueness on the attribute of the data entity. Use `[unique=”suffix”]` or `[unique=”prefix”]` to append or prepend a unique value to the entity attribute.
+ This ensures tests using the entity can be repeated.
+- Do not modify existing data entity fields or add/merge additional data fields without fully understanding and verifying all existing data usages.
+ We recommend that you create a new data entity for your test when you are not sure. 
 
 ## Page objects
 
