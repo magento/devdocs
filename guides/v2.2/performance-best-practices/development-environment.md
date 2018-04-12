@@ -1,7 +1,7 @@
 ---
 layout: default
 group: perf-best-practices
-title: Development environment
+title: Development environment recommendations
 version: 2.2
 github_link: performance-best-practices/development-environment.md
 functional_areas:
@@ -12,13 +12,11 @@ functional_areas:
 
 ## Clean the caches instead of disabling
 
-Magento works much better when you [clean the caches] instead of disabling them.
-Though, you may [disable the caches] for pages and blocks.
-But you will still need to enable them during testing.
+Magento runs more efficiently when you [clean the caches] instead of disabling them; however, if you [disable the caches] for pages and blocks, you must enable them during testing.
 
 ## Commands to avoid in the development mode
  
-**Do not run** in the development mode these commands:
+**Do not run** the following commands in development mode:
 
 ```bash
 magento setup:di:compile
@@ -29,8 +27,7 @@ magento setup:static-content
 
 ## Normal page load time on a virtual machine
 
-If you develop on a VM and a Magento page is loading for more than 2 seconds, review your environment settings.
-
+If you develop on a VM and it takes longer than 2 seconds to load a Magento page, review your environment settings.
 <!-- Link definitions -->
 
 [clean the caches]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean
