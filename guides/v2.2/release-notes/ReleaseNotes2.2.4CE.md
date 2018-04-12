@@ -123,6 +123,11 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-84180 -->* The `sampledata:deploy` and `remove` commands now have `no-update` options. *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request 12359*.
 
+<!--- MAGETWO-88155 -->*  The currencies dropdown menu that is available during the setup process (step 4 -- customize your store) no longer displays unallowed currencies. *Fix submitted by [Ricardo Martins](https://github.com/r-martins) in pull request 13770*.
+
+
+<!--- MAGETWO-82666 -->* A database backup created by `setup:backup --db` and restored with `setup:rollback -d` now includes triggers as expected.  Previously, the restored database did not include triggers, which meant that indexes could not work correctly. *Fix submitted by [Denis Ristic](https://github.com/denisristic) in pull request 11369*. [GitHub-9036](https://github.com/magento/magento2/issues/9036)
+
 
 ### Bundle products
 <!--- MAGETWO-86022 -->* Save operations now work as expected for bundle products. *Fix submitted by [dzianis-yurevich](https://github.com/dzianis-yurevich) in pull request 12734*. [GitHub-6916](https://github.com/magento/magento2/issues/6916)
@@ -291,6 +296,11 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-86989 -->* When you are on the cart page and click a product's  **Edit** link, the product page now correctly displays the product quantity currently in the cart. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request 13310*.
 
+<!--- MAGETWO-87657 -->* You can now create a custom attribute of type file for Customer objects as expected. Previously,  you could create the custom attribute, but the file would not upload. *Fix submitted by [Mkennethsmith](https://github.com/Mkennethsmith) in pull request 13563*. [GitHub-11252](https://github.com/magento/magento2/issues/11252)
+
+<!--- MAGETWO-87950 -->*  The event `customer_address_after_save_viv_observer` is now spelled correctly in the Customer `events.xml` file.. *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 13661*.
+
+<!--- MAGETWO-71829 -->* The `is_subscribed` extended parameter is now returned when a web API is used to modify or return information about a customer.
 
 
 
@@ -444,17 +454,14 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-87342 -->*  Sorting by product name now works as expected when filters are applied. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 1192*. [GitHub-12860](https://github.com/magento/magento2/issues/12860)
 
-<!--- MAGETWO-87657 -->* The adminhtml file attribute edit form now works as expected. Previously, you could not upload custom customer attributes. *Fix submitted by [Mkennethsmith](https://github.com/Mkennethsmith) in pull request 13563*. [GitHub-11252](https://github.com/magento/magento2/issues/11252)
 
 <!--- MAGETWO-86748 -->* We've removed the `Magento\ProductAlert\Controller\Add\TestObserver` class. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13174*.
 
-<!--- MAGETWO-86722 -->* The README file now pulls resources from 2.2. instead of 2.0. *Fix submitted by [Bhargav Mehta](https://github.com/bhargavmehta) in pull request 13161*.
+<!--- MAGETWO-86722 -->* In the top-level README file in the Magento Open Source repository, all links to DevDocs have been updated to 2.2. *Fix submitted by [Bhargav Mehta](https://github.com/bhargavmehta) in pull request 13161*.
 
 <!--- MAGETWO-87033 -->* Elements within an array in `store_website` table are now correctly formatted. *Fix submitted by [Nolwennig Guilbert](https://github.com/Nolwennig) in pull request 13324*.
 
-<!--- MAGETWO-88155 -->*  The currencies dropdown menu that is available during the setup process (step 4 -- customize your store) no longer displays unallowed currencies. *Fix submitted by [Ricardo Martins](https://github.com/r-martins) in pull request 13770*.
 
-<!--- MAGETWO-87950 -->*  A typo in `events.xml` has been fixed. *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 13661*.
 
 <!--- MAGETWO-86886 -->* A type error in `CartTotalRepository` has been resolved. Previously, `CartTotalRepository` could not handle extension attributes in quote addresses, and Magento threw a `PHP Fatal error:  Uncaught TypeError`. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 12993*. [GitHub-12993](https://github.com/magento/magento2/issues/12993), [GitHub-12819](https://github.com/magento/magento2/issues/12819)
 
@@ -511,7 +518,6 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-72865 -->* Full Page Cache is no longer invalidated after you save a predictor category. Previously, all product-related cache data was invalidated, when only a narrow subset of cache tags associated with the `product_id` should have been. 
 
-<!--- MAGETWO-71829 -->* The `is_subscribed` extended parameter is now returned when a web API is used to modify or return information about a customer.
 
 <!--- MAGETWO-70336 -->* You can now delete rows from the `dynamicRows` component. Previously, Magento threw a JavaScript console output error when you tried to delete a row using the **Bin** icon while editing a product description. [GitHub-8830](https://github.com/magento/magento2/issues/8830)
 
@@ -521,23 +527,22 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-87940 -->*  In the line `Perform login specific action` in  `StorageInterface.php`,  `login` has been replaced with  `logout`. *Fix submitted by [David Angel](https://github.com/davidangel) in pull request 13679*. 
 
-<!--- MAGETWO-87921 -->* The incorrect field value in the joined `variable_value` table has been replaced with two values: `plain_value` and html_`value`. *Fix submitted by [Maksymilian Szydło](https://github.com/mszydlo) in pull request 13596*.
+<!--- MAGETWO-87921 -->* The incorrect field value in the joined `variable_value` table has been replaced with two values: `plain_value` and `html_value`. *Fix submitted by [Maksymilian Szydło](https://github.com/mszydlo) in pull request 13596*.
 
 <!--- MAGETWO-85503 -->* `Magento/Rma/Block/Adminhtml/Rma/Edit/Item/Form/Element/Boolean` is a new block element that allows rendering ability for the Boolean RMA attributes on the Admin.
 
-<!--- MAGETWO-84880 -->* Duplicate array keys in `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` and  `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php`  have been removed. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12513*. 
+<!--- MAGETWO-84880 -->* Duplicate array keys in `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` and  `app/code/Magento/Downloadable/Helper/File.php`  have been removed. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12513*. 
 
 <!--- MAGETWO-84856 -->* The typo in the  `getDispretionPath`  function name has been corrected to `getDispersionPath`. *Fix submitted by [PascalBrouwers](https://github.com/PascalBrouwers) in pull request 12507*. [GitHub-12506](https://github.com/magento/magento2/issues/12506)
 
-<!--- MAGETWO-84474 -->* Magento now saves new orders  to the Order display as expected when created by a guest account. Previously, Magento did not display the order with the customer information assigned to it, and although Magento sent email containing the order ID,  the email did not contain information about the ordered items. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12241*. [GitHub-10128](https://github.com/magento/magento2/issues/10128)
+<!--- MAGETWO-84474 -->* Magento now saves new orders created by guest accounts to the Order display as expected. Previously, Magento did not display the order with the customer information assigned to it, and although Magento sent email containing the order ID,  the email did not contain information about the ordered items. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12241*. [GitHub-10128](https://github.com/magento/magento2/issues/10128)
 
 <!--- MAGETWO-84284 -->* CAPTCHA labels now reflect both the symbols and letters associated with the CAPTCHA image. Previously, the text labels referred to the CAPTCHA image referred to letters only, despite there being numbers in the CAPTCHA images, too. This ambiguity had the potential to mislead users about which  text to enter. *Fix submitted by [RhodriOwainDavies](https://github.com/RhodriOwainDavies) in pull request 12387*. 
 
 <!--- MAGETWO-84006 -->* The `robots.txt` response header content type is now plain text. *Fix submitted by [Milan Osztromok](https://github.com/tufahu) in pull request 12310*. 
 
-<!--- MAGETWO-82666 -->* A database backup created by `setup:backup --db` and restored with `setup:rollback -d` now includes triggers as expected.  Previously, the restored database did not include triggers, which meant that indexes could not work correctly. *Fix submitted by [Denis Ristic](https://github.com/denisristic) in pull request 11369*. [GitHub-9036](https://github.com/magento/magento2/issues/9036)
 
-<!--- MAGETWO-84098 -->* Users can now add products to their wishlist and then use RSS to share this content. Previously, when a logged-in user added products to the wishlist and then tried to share them using RSS, Magento threw this exception: `report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as child to 'root', because the latter doesn't exist []` *Fix submitted by [MediaCT](https://github.com/mediactbv) in pull request*. 
+<!--- MAGETWO-84098 -->* Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wishlist and then tried to share them using RSS, Magento threw this exception: `report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as child to 'root', because the latter doesn't exist []` *Fix submitted by [MediaCT](https://github.com/mediactbv) in pull request*. 
 
 <!--- MAGETWO-84004 -->* If you extend a dynamic row element in a ui_component and add a sort order attribute with an amount that falls between the other attributes' amounts, Magento will correctly sort the fields, but the label you added is placed in last position. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 12310*. 
 
@@ -595,8 +600,6 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85694 -->* A new file (`CODE_OF_CONDUCT.md`) that defines  standards for how to engage in the community has been added. *Fix submitted by [Ievgen Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 12723*.
 
-<!--- MAGETWO-85332 -->* We've resolved errors that occcurred when loading theme configuration on installations running PHP 7.2. Previously, when Magento loaded theme configuration on an installation running PHP 7.2 and checked that  `$parentPathPieces` was an array before counting it, Magento threw an error when this value was `NULL`. *Fix submitted by [Alan Hardman](https://github.com/Alanaktion) in pull request 12606*.
-
 <!--- MAGETWO-85292 -->* `\Magento\Framework\Data\Tree::getNodeById()` no longer contains an invalid type in its PHPDoc block.  *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 964*. [GitHub-8507](https://github.com/magento/magento2/issues/8507)
 
 
@@ -610,17 +613,17 @@ The dotmailer bundled extension features the following enhancements for this rel
 <!--- MAGETWO-85783 -->* Magento now sends the newsletter subscription success email as expected a customer successfully subscribes to a newsletter. 
 *Fix submitted by [Styopchik](https://github.com/Styopchik) in pull request*. [GitHub-12439](https://github.com/magento/magento2/issues/12439)
 
-<!--- MAGETWO-86435 -->* Magento now uses indexes to retrieve subscriber information during the creation of email to newsletter subscribers. Previously, Magento did not indexes for this task, and performance was poor. *Fix submitted by [Amit Bera](https://github.com/devamitbera) in pull request*. [GitHub-12787](https://github.com/magento/magento2/issues/12787)
+<!--- MAGETWO-86435 -->* Magento now uses indexes to retrieve subscriber information during the creation of email to newsletter subscribers. Previously, Magento did not use indexes for this task, and performance was poor. *Fix submitted by [Amit Bera](https://github.com/devamitbera) in pull request*. [GitHub-12787](https://github.com/magento/magento2/issues/12787)
 
 <!--- MAGETWO-86562 -->* Magento no longer sends multiple confirmation emails when a customer successfully subscribes to a newsletter. *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request 13044*. [GitHub-12876](https://github.com/magento/magento2/issues/12876)
 
-<!--- MAGETWO-86447 -->* The text of the  **Subscribe to Newsletter** button now wrpas correctly. *Fix submitted by [monaemipro](https://github.com/monaemipro) in pull request 13041*. [GitHub-12320](https://github.com/magento/magento2/issues/12320)
+<!--- MAGETWO-86447 -->* The text of the  **Subscribe to Newsletter** button now wraps correctly. *Fix submitted by [monaemipro](https://github.com/monaemipro) in pull request 13041*. [GitHub-12320](https://github.com/magento/magento2/issues/12320)
 
 
 
 ### Orders
 
-<!--- MAGETWO-75840 -->* Magento now shows all products as expected in the Recently Ordered list when you place an order that contains products from multiple stores. Previously, in installations with two storefronts, if you added products from both stores to the same shopping cart, and placed a single order, the recently ordered product list would not show all ordered products. 
+<!--- MAGETWO-75840 -->* Magento now shows all products as expected in the Recently Ordered list when a customer places an order that contains products from multiple stores. Previously, in installations with two storefronts, if a customer added products from both stores to the same shopping cart, and placed a single order, the recently ordered product list would not show all ordered products. 
 
 <!--- MAGETWO-82577 -->*  The `getDefaultStoreLocale()` method has been added to allow for the fetching of scoped values. Use this method in `getCreatedAtFormatted()` to ensure that Magento translates the  `created_at` order date in emails for the locale being used in that store view. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 11067*.
 
@@ -633,7 +636,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-83783 -->* The `Magento\Sales\Service\V1\OrderCreateTest` test now has the correct shipping method fixture. Previously, this test contained an incorrect shipping method fixture, which produced an error whenever an order's shipping method was treated an object. *Fix submitted by [andrew-garside-temando](https://github.com/andrew-garside-temando) in pull request 12227*.
  
-<!--- MAGETWO-84219 -->* When you use the REST API to create a credit memo, Magento now sends  credit memo update emails as expected. Previously, under these circumstances, Magento did not send this email, and no other transaction emails were sent ot the customer.  
+<!--- MAGETWO-84219 -->* When you create a credit memo comment with `POST /V1/creditmemo/:id/comments`, Magento now sends  credit memo update emails as expected. Previously,  Magento did not send this email, and no other transaction emails were sent to the customer.  
 
 <!--- MAGETWO-84256 -->* The `getReservedOrderId()` method now uses the current store as expected instead of the default store. *Fix submitted by [Timon de Groot](https://github.com/tdgroot) in pull request 11702*. [GitHub-9055](https://github.com/magento/magento2/issues/9055)
 
