@@ -513,16 +513,9 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85207 -->* Magento now displays the orders that are associated with customer accounts on the Orders page.  Previously, in the Admin display of customer accounts that have orders associated with them, Magento did not display  orders on the  Orders tab but instead displayed a blank page.
 
-<!--- MAGETWO-82866 -->* Magento now displays information messages about both successful and failed actions when a company administrator adds or deletes entries in the  Company Users section. Previously, Magento displayed this error message, `Something went wrong`  in the response body, and did not display a message.
-
 <!--- MAGETWO-81128 -->* The credit card form is now available when you create an order from the Admin, even when only one payment method is enabled. Previously, when only one payment method was enabled, the Admin did not render this form.
 
-<!--- MAGETWO-73473 -->* You can now implement translations from themes (in contrast to translations from modules).
-
 <!--- MAGETWO-72865 -->* Full Page Cache is no longer invalidated after you save a predictor category. Previously, all product-related cache data was invalidated, when only a narrow subset of cache tags associated with the `product_id` should have been. 
-
-
-<!--- MAGETWO-70336 -->* You can now delete rows from the `dynamicRows` component. Previously, Magento threw a JavaScript console output error when you tried to delete a row using the **Bin** icon while editing a product description. [GitHub-8830](https://github.com/magento/magento2/issues/8830)
 
 <!--- MAGETWO-88040 -->*  Magento now displays a more meaningful error message when a module name is misspelled in a unit test. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 13740*.
 
@@ -531,8 +524,6 @@ The dotmailer bundled extension features the following enhancements for this rel
 <!--- MAGETWO-87940 -->*  In the line `Perform login specific action` in  `StorageInterface.php`,  `login` has been replaced with  `logout`. *Fix submitted by [David Angel](https://github.com/davidangel) in pull request 13679*. 
 
 <!--- MAGETWO-87921 -->* The incorrect field value in the joined `variable_value` table has been replaced with two values: `plain_value` and `html_value`. *Fix submitted by [Maksymilian Szydło](https://github.com/mszydlo) in pull request 13596*.
-
-<!--- MAGETWO-85503 -->* `Magento/Rma/Block/Adminhtml/Rma/Edit/Item/Form/Element/Boolean` is a new block element that allows rendering ability for the Boolean RMA attributes on the Admin.
 
 <!--- MAGETWO-84880 -->* Duplicate array keys in `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` and  `app/code/Magento/Downloadable/Helper/File.php`  have been removed. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12513*. 
 
@@ -547,18 +538,12 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-84098 -->* Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wish list and then tried to share them using RSS, Magento threw this exception: `report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as child to 'root', because the latter doesn't exist` *Fix submitted by [MediaCT](https://github.com/mediactbv) in pull request*. 
 
-<!--- MAGETWO-84004 -->* If you extend a dynamic row element in a `ui_component` and add a sort order attribute with an amount that falls between the other attributes' amounts, Magento will correctly sort the fields, but the label you added is placed in last position. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 12310*. 
-
 <!--- MAGETWO-87242 -->*  When you select a new main menu option, the previously selected  menu item now loses the `ui-state-active` class as expected. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request 13341*. [GitHub-13327](https://github.com/magento/magento2/issues/13327)
 
 <!--- MAGETWO-85311 -->* Issues with displaying full-screen images and video on the configurable product page have been resolved. Previously, Magento displayed video associated with product options on this page as images, rather than video, and full-screen mode for images ignored the configurations settings in `view.xml`. *Fix submitted by [Ievgen Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 991*. [GitHub-12268](https://github.com/magento/magento2/issues/12268)
 
 <!--- MAGETWO-84764 -->* We've fixed issues with the "report module enable/disable changes as deployment markers" functionality in the `Magento_NewRelicReporting` module. Previously, if New Relic's cron was enabled,  Magento  sent a New Relic deployment marker for every enabled module once per cron period. This resulted in an excessive number of events. *Fix submitted by [Kristof](https://github.com/fooman) in pull request 12477*. 
 
-
-### Gift card
-
-<!--- MAGETWO-88105 -->* Magento now includes a gift card recipient's email address in the gift card account history. Previously, Magento did not include the gift card recipient's name and email address in the gift card account history, even though Magento successfully sent the email. 
 
 
 
@@ -666,8 +651,6 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-75497 -->* Logged-out customers can no longer see previously saved credit cards. Previously, users logged in as guest could see some payment information from an earlier, canceled order. 
 
-<!--- MAGETWO-81322 -->* When you cancel payment of an order and return to the previous page in the workflow (the checkout page), Magento now provides the shipping address and other information as expected. Previously, Magento did not load the shipping address after you canceled payment of an order and returned to the checkout page. [GitHub-11247](https://github.com/magento/magento2/issues/11247)
-
 <!--- MAGETWO-81395 -->* Third-party developers can now customize payment errors messages for payment integrations based on the Magento Payment Provider Gateway. 
 
 <!--- MAGETWO-82910 -->* PayPal Express Checkout now appears as a payment option on the Checkout page when the PayPal buttons are available on the shopping cart page. Previously, PayPal did not appear as a payment method on the Checkout page when the billing agreement was disabled, although the PayPal buttons were still available on the shopping cart page. 
@@ -730,7 +713,6 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 ### SalesRule
 
-<!--- MAGETWO-73479 -->* Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected. 
 
 <!--- MAGETWO-71393 -->* Magento now displays the correct catalog rule price for bundle products with custom options. 
 
@@ -742,10 +724,6 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-85960-->* Coupon codes that a customer applies to a subsequently canceled order are now available for re-use as expected. Previously, once a customer canceled this order, he could not apply the coupon code to another order. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request*. [GitHub-12817](https://github.com/magento/magento2/issues/12817)
 
-
-
-### Scope
-<!--- MAGETWO-88114 -->* A product set to one website now resets correctly for all websites after a special price scheduled update ends.
 
 
 ### Search
@@ -796,15 +774,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- MAGETWO-86576 -->* Visual swatches that have a color assigned now show that color in the swatch box. Previously, Magento did not display any color in the color swatch box. *Fix submitted by [Chris Pook](https://github.com/chris-pook) in pull request 13101*. [GitHub-11828](https://github.com/magento/magento2/issues/11828)
 
 <!--- MAGETWO-86665 -->* The error message displayed when you do not supply enough information during swatch creation has been edited for clarity and grammatical accuracy. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1117*. [GitHub-5550](https://github.com/magento/magento2/issues/5550)
-
-<!--- MAGETWO-87570 -->* The **Hide from Product Page** option now works for the child product of a configurable product. 
-
-
-### TargetRule
-
-<!--- MAGETWO-77754 -->* The Related Products rule for up-sell products with customer segments set to **Specified** now works as expected. 
-
-<!--- MAGETWO-86013 -->* You can now successfully save a Related Product rule. 
 
 
 ### Tax
@@ -894,14 +863,14 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- MAGETWO-85303 -->* You can now remove an item description from a wish list. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 981*. [GitHub-12582](https://github.com/magento/magento2/issues/12582)
 
 
-<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 MAGETWO-86982 MAGETWO-86846 MAGETWO-86772 MAGETWO-86770 MAGETWO-86767 MAGETWO-86763 MAGETWO-86015 MAGETWO-86002 MAGETWO-73161 MAGETWO-80908 MAGETWO-84209 MAGETWO-84992 MAGETWO-77767 MAGETWO-84480 MAGETWO-83329 MAGETWO-86117 MAGETWO-83977 MAGETWO-84804 MAGETWO-84413 MAGETWO-83974 MAGETWO-82062 MAGETWO-80342 MAGETWO-80738 MAGETWO-85947 MAGETWO-83676 MAGETWO-86132 MAGETWO-85661 MAGETWO-77840 MAGETWO-82061 MAGETWO-81901 MAGETWO-73303 MAGETWO-83343 MAGETWO-83910 MAGETWO-70725 MAGETWO-83754 MAGETWO-73275 MAGETWO-75217 MAGETWO-83958 MAGETWO-87023 MAGETWO-71662 MAGETWO-82078 MAGETWO-84397 MAGETWO-87030 MAGETWO-86452 MAGETWO-85871 MAGETWO-85205 MAGETWO-84967 MAGETWO-84884 MAGETWO-83621 MAGETWO-82451 MAGETWO-82104 MAGETWO-81431 MAGETWO-81189 MAGETWO-73002 MAGETWO-72420 MAGETWO-71790 MAGETWO-71272 MAGETWO-70612 MAGETWO-83366 MAGETWO-85590 MAGETWO-85650 MAGETWO-87844 MAGETWO-89306 MAGETWO-85842 MAGETWO-88282 MAGETWO-88111 MAGETWO-71374 MAGETWO-85904 MAGETWO-87445 MAGETWO-86736 MAGETWO-83899 MAGETWO-86938 MAGETWO-88108 MAGETWO-87963 MAGETWO-87815 MAGETWO-45775 MAGETWO-89538 MAGETWO-89453 MAGETWO-89337 MAGETWO-89261 MAGETWO-89273 MAGETWO-89080 MAGETWO-84507 MAGETWO-86670 MAGETWO-84883 --> 
+<!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132   MAGETWO-86772 MAGETWO-86770 MAGETWO-86767 MAGETWO-80908  MAGETWO-84992 MAGETWO-84480 MAGETWO-83329  MAGETWO-83977 MAGETWO-84804 MAGETWO-84413 MAGETWO-83974 MAGETWO-82062   MAGETWO-85661 MAGETWO-77840   MAGETWO-83343 MAGETWO-83910 MAGETWO-70725   MAGETWO-75217 MAGETWO-83958 MAGETWO-87023  MAGETWO-82078 MAGETWO-84397 MAGETWO-87030 MAGETWO-86452  MAGETWO-85205 MAGETWO-84967 MAGETWO-84884 MAGETWO-83621  MAGETWO-81431 MAGETWO-73002  MAGETWO-71790   MAGETWO-83366 MAGETWO-85590  MAGETWO-87844 MAGETWO-85904 MAGETWO-87445 MAGETWO-86736 MAGETWO-83899 MAGETWO-86938 MAGETWO-88108 MAGETWO-87963 MAGETWO-87815 MAGETWO-45775 MAGETWO-89538 MAGETWO-89453 MAGETWO-89337 MAGETWO-89261 MAGETWO-89273 MAGETWO-89080 MAGETWO-84507 MAGETWO-86670 MAGETWO-84883 --> 
  
 
-<!--- NOT A BUG   MAGETWO-73011 MAGETWO-83817 MAGETWO-86682-->
+<!--- NOT A BUG   MAGETWO-73011 MAGETWO-83817 -->
 
-<!--- WON'T FIX MAGETWO-72116 MAGETWO-64518 MAGETWO-64534 MAGETWO-72116 MAGETWO-72116 MAGETWO-83818 MAGETWO-84772 MAGETWO-84773 MAGETWO-85138 MAGETWO-85983 MAGETWO-81082 MAGETWO-77425 MAGETWO-70376-->
+<!--- WON'T FIX   MAGETWO-72116 MAGETWO-72116 MAGETWO-84772 MAGETWO-84773 MAGETWO-86982 -->
 
-<!--- CANNOT REPRODUCE MAGETWO-58206 MAGETWO-61056 MAGETWO-64734 MAGETWO-68799 MAGETWO-69847 MAGETWO-85986 MAGETWO-88104 MAGETWO-86279 MAGETWO-84074 MAGETWO-86997 MAGETWO-82816 MAGETWO-82052 MAGETWO-81187 MAGETWO-74380 MAGETWO-73075 MAGETWO-71145-->
+<!--- CANNOT REPRODUCE MAGETWO-58206  MAGETWO-83676 MAGETWO-73275-->
 
 
 ## Community contributions
