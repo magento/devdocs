@@ -30,6 +30,7 @@ Plugins cannot be used with any of the following:
 * `__construct`
 * Virtual types
 * Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
+* Objects that are not instantiated by the ObjectManager (e.g. by using `new` directly).
 
 ### Declaring a plugin
 

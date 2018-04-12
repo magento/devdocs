@@ -26,7 +26,7 @@ Because MFTF tests are written in XML, you no longer need to learn PHP to write 
 include note.html
 type="info"
 content="We are actively developing functional tests.
-Refer to `<magento2 root dir\>/dev/tests/acceptance/` for examples."
+Refer to `<magento2 root dir>/dev/tests/acceptance/` for examples."
 %}
 
 ## Audience
@@ -44,7 +44,7 @@ The purpose of MFTF is to:
 MFTF will enable you to:
 
 -   Test user interactions with web applications in testing.
--   Write functional tests located in `<magento2 root dir\>/dev/tests/acceptance/`.
+-   Write functional tests located in `<magento2 root dir>/dev/tests/acceptance/`.
 -   Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
 -   Automate regression testing.
 
@@ -56,7 +56,7 @@ As a software engineer, perform regression testing before release to ensure that
 
 ## Find your MFTF version
 
-The MFTF is installed as a Composer dependency in `<magento2 root dir\>/dev/tests/acceptance/composer.lock`.
+The MFTF is installed as a Composer dependency in `<magento2 root dir>/dev/tests/acceptance/composer.lock`.
 
 Open the file and check the corresponding dependency:
 

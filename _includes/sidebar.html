@@ -6,6 +6,9 @@
 {% if page.group == "ext-best-practices" %}
     {% assign toc = site.data.toc.extension-best-practices %}
 
+{% elsif page.group == "perf-best-practices" %}
+		 {% assign toc = site.data.toc.performance-best-practices %}
+
 {% elsif page.group == "compman" %}
     {% assign toc = site.data.toc.software-update-guide %}
 

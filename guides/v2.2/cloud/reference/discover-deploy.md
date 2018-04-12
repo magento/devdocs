@@ -32,10 +32,10 @@ If you are using external GitHub repositories, the log of the operations does no
 ## Project configuration {#cloud-deploy-conf}
 A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies. If you intend to make changes, modify the YAML files in your local branch. The build and deploy scripts access those files for specific settings.
 
-For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files. For Pro Staging and Production environments, you will need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html). We will configure those environments using configurations from the Git files.
+For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files.
 
 -  [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)—defines how to build and deploy Magento, including services, hooks, cron jobs, and more.
-- [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
+- [`.magento.env.yaml`]({{page.baseurl}}cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)—defines how Magento processes an incoming URL.
 -  [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
 -  [`app/etc/config.php`](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html)—defines the [system-specific settings](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) Magento uses to configure your store. Magento auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If the file exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files. If you follow [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps.
@@ -47,7 +47,7 @@ For all Starter environments and Pro Integration environments, pushing your Git 
 ## Required files for your Git branch {#requiredfiles}
 Your Git branch must have the following files for building and deploying in your local environment and to Integration, Staging, and Production environments:
 
--  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of [autoprovisioning]({{page.baseurl}}cloud/basic-information/cloud-plans.html#autoprovisioning) or a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{page.baseurl}}cloud/access-acct/trouble.html).
+-  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{page.baseurl}}cloud/access-acct/trouble.html).
 -  [`app/etc/config.php`](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
 -  [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)—updates and saves to the root directory.
 -  [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)—updates and saves `magento/`.
@@ -58,7 +58,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Always follow the deployment process** to ensure your code is THE SAME in Integration, Staging, and Production. This is vital. Pushing code from Integration environments may become important or needed for upgrades, patches, and configurations. This deployment overwrites Production and any differences in code in that environment.
 -  **Always add new extensions, integrations, and code in iterated branches** to then build and deploy using the process. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
--  **Enter the same variables environment-to-environment.** The values for these [variables]({{page.baseurl}}cloud/env/environment-vars_over.html) may differ across environments, but the variables may be required for your code.
+-  **Enter the same variables environment-to-environment.** The values for these [variables]({{page.baseurl}}cloud/env/variables-intro.html) may differ across environments, but the variables may be required for your code.
 -  **Keep sensitive configuration values and data in environment-specific variables.** This includes an `env.php` file, CLI-entered variables, and Project Web Interface-entered variables. The values can differ, but having the variables is important.
 -  **Test your build and deploy locally and in Staging before deploying to Production.** Extensions and custom code work great in development. Some users push to production only to have failures and issues. Staging gives you an opportunity to fully test your code and implementation in a production environment without extended downtime if something goes wrong in Production.
 
@@ -91,6 +91,7 @@ If you have a syntax error in a configuration file, our Git server refuses the p
 This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 During the build phase, the site is not in maintenance mode and will not be brought down if errors or issues occur. We build only what has changed since the last build.
 </div>
@@ -168,6 +169,8 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic arrives at your newly created cluster.
 
 Successful deployment removes the maintenance mode to allow for normal access and creates backup (BAK) files for the `app/etc/env.php` and the `app/etc/config.php` configuration files.
+
+If you enabled static content generation using the `SCD_ON_DEMAND` variable and you configured the [`post_deploy` hook]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#hooks), this clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections and _during_ normal, incoming traffic.
 
 To review build and deploy logs, see [Use logs for troubleshooting]({{page.baseurl}}cloud/trouble/environments-logs.html).
 

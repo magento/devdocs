@@ -46,7 +46,7 @@ Always apply and test a patch your local system in an active branch. You can pus
 Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ## Back up the database {#backup-db}
 
@@ -117,7 +117,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git push origin <branch name>
 
 ### Patch vendor/magento/ece-tools
-This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html).
+This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html).
 
 1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
 2.  Enter the following command to patch `vendor/magento/ece-tools`:
@@ -227,6 +227,3 @@ After you've successfully tested a custom patch locally and on your Integration 
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
-
-#### Related topic
-* [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
