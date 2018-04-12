@@ -6,15 +6,12 @@ version: 2.1
 github_link: marketplace/eqp/users.md
 ---
 
-The resource here will provide access to the developer user profile info, and will facilitate updates to it. There will be no provisions to create a new
-profile as this needs to be setup manually during the registration process to the [Developer Portal](https://developer.magento.com).
+Ues this resource to access and update your user profile. You can also access reports you own.
 
-It will also provide access to sales and related reports to packages owned by the user.
-
-A valid HTTP  ‘Authorization: Bearer <session token>’ must be supplied to all user resources described below as explained in the Authentication and
-Authorization section.
-
-The following HTTP REST APIs are available for the users resource:
+<div class="bs-callout bs-callout-info" markdown="1">
+You cannot use this resource to create a new
+profile. You must create a new profile on the [Developer Portal](https://developer.magento.com).
+</div>
 
 ## Profile
 
@@ -24,15 +21,13 @@ GET /rest/v1/users/:mage_id?style=summary
 PUT /rest/v1/users/:mage_id
 ```
 
-As seen above, the ‘mage_id’ value must be supplied associated with the developer user’s account.  The Mage Id value associated  with the client application is returned when retrieving a session token as described in the Authentication and Authorization section.
+You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token]({{page.baseurl}}/marketplace/eqp/auth.html#session-token).
 
-By default, a full profile information of the user will be returned.  A limited set of profile fields can also be obtained by specifying the ‘style=summary’ option (currently the only one available).
+### Get profile data
 
-Any number of fields can be modified by the PUT action, and only the modified fields needs to be presented during this action.
+By default, requests for profile data return all fields. You can limit the amount of data that the request returns by using the `style=summary` option.
 
-### Retrieve profile information
-
-The following curl example illustrates fetching a user profile info:
+The following example shows the request/response body for retrieving all profile data:
 
 **Request**
 
@@ -136,18 +131,43 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 }
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
-Response highlights:
+The following example shows the request/response body for retrieving a subset of profile data:
 
-* The aforesaid fields should be self-explantory.
-* The summary style contains the fields from ‘mage_id’ till ‘profile_image_artifact’
-</div>
+**Request**
+
+```shell
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/users/MAG123456789?style=summary
+```
+
+**Response**
+
+```json
+{
+        "mage_id": "MAG123456789",
+        "first_name": “Chuck”,
+        "last_name": “Norris”,
+        "email": “gmail@chucknorris.com",
+        "screen_name": “ninjachuck”,
+        "has_completed_profile": true,
+        "has_accepted_tos": true,
+        "profile_image_artifact": {
+            "file_upload_id": "uuid-001-234567-123.461",
+            "filename": “chuck.png",
+            "content_type": "image.png",
+            "url": “https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/chuck.png”,
+            "size": 1234,
+            "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
+            "malware_status": "pass"
+        },
+}
+```
 
 ### Update profile data
 
-Only the fields that needs to be modified needs to be supplied in a PUT request.
+You can update all profile data fileds, but you only need to include the fields you want to modify in the request body.
 
-A sample JSON request payload to update the personal profile bio field:
+The following example shows a request to update the personal profile bio field:
 
 ```json
 {
@@ -158,12 +178,10 @@ A sample JSON request payload to update the personal profile bio field:
 }
 ```
 
-The ‘action’ field specifies update operation to perform - it can be:
+The `action` field specifies which update operation to perform:
 
-* publish - the default if not specified. It publishes the profile to the relevant [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
-* draft - the update is saved at the Developer Portal side but not published.
-
-Sample curl calls:
+* `publish`—The default if not specified. Publishes the profile to the relevant [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
+* `draft`—The update is saved on the Developer Portal, but not published.
 
 **Request**
 
@@ -174,7 +192,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789
 ```
 
-A successful update is indicated via a 200 OK HTTP Response code.
+A 200 OK HTTP response code indicates a successful update.
 
 ## Keys
 
@@ -185,26 +203,22 @@ PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
-The aforesaid APIs provide a mechanism to manage Magento 1 and Magento 2 package access keys. 
+Use these APIs to manage Magento 1 and Magento 2 package access keys.
 
-Only GET is available for Magento 1 product keys.
-
-For Magento 2 composer key-pairs, all the aforesaid APIs are available.
-
-### List keys
+### Get keys
 
 ```
 GET /rest/v1/users/:mage_id/keys
 ```
 
-The following table lists all the query parameters available, all of which are optional:
+The following table lists available query parameters, all of which are optional:
 
 | Parameter |  Type  | Required | Description                            |
 |-----------|--------|----------|----------------------------------------|
 | type      | string |   no     | Type of keys requested: 'm1'  - Magento 1 product keys, 'm2'  - Magento 2 composer repo keys, 'all' - Both M1 and M2 keys (default) |
 | label     | string |   no     | The url encoded value of the key label; only valid for 'm2' type.| 
 
-A curl example of the API without any of the parameters supplied:
+The following example shows the request/response body for retrieving keys without any query parameters:
 
 **Request**
 
@@ -242,12 +256,14 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-1. For Magento 2 keys: 
-    1. Each composer key pair has a unique 'label', and 'is_enabled' flag to indicate if the key is enabled or not.
-    2. A composer key pair is identified by 'user_key' (username), and 'password_key' (password) when prompted for composer credentials.
-2. For Magento 1 keys:
-    1. It provides a list of product names and its associated product key which can be used in the Magento Connect Manager to install extensions.
-    2. There are no provisions to create, update or delete these keys.
+For Magento 2 keys:
+
+* Each Composer key-pair has unique `label` and `is_enabled` flags to indicate whether the key is enabled.
+* A Composer key-pair is identified by `user_key` (username) and `password_key` (password) when prompted for Composer credentials.
+
+For Magento 1 keys:
+* Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.
+* You cannot create, update, or delete these keys.
 </div>
 
 ### Create keys
@@ -256,10 +272,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 POST /rest/v1/users/:mage_id/keys
 ```
 
-This API can be used to create a new Magento 2 composer key-pairs. A unique label must be supplied, and more than
-one set of key-pairs can be requested. 
-
-Here is a sample batch request payload, requesting two new composer key-pairs:
+Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key. You can create multiple key-pairs in a single request.
 
 ```json
 {
@@ -274,8 +287,6 @@ Here is a sample batch request payload, requesting two new composer key-pairs:
 }
 ```
 
-Here is a curl example using the aforesaid payload, and its respective response:
-
 **Request**
 
 ```shell
@@ -283,7 +294,6 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -d ‘{ “m2”: [ { “label” : “key_for_alice” }, { “label” : “key_for_charlie” } ] }’ \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
-
 
 **Response**
 
@@ -311,20 +321,19 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-1. As seen above, a batch response is returned for each of the labels requested.
-2. A success is indicated by ‘code’ value of 200. 
-3. Any non-200 code values indicates some error, and the ‘message’ field provides more details on the issue.
+
+* The API returns a batch response for each label.
+* A 200 OK HTTP response code indicates a successful update.
+* Any non-200 HTTP response code indicates an error. See the `message` field for details.
 </div>
 
 ### Update keys
 
+Use this API to enable or disable a Magento 2 Composer key-pair. You must specify the key-pair in the request using a URL-encoded string.
+
 ```
 PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
-
-This API can be used to  enable or disable a Magento 2 composer key-pair identified by the given url-encoded label.
-
-The following curl example illustrates a request and its respective response:
 
 **Request**
 
@@ -368,7 +377,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_charlie
 ```
 
-An HTTP 204 response will indicate if the request was successfully processed.
+A 204 No Content HTTP response code indicates a successful update.
 
 ## Reports
 
@@ -376,8 +385,8 @@ An HTTP 204 response will indicate if the request was successfully processed.
 GET /rest/v1/users/:mage_id/reports
 ```
 
-Reports owned by the user, related to sale of extensions, payout status, aggregate sales and refund data, and much more will be available through this resource endpoint.
+Use this API to retrieve reports owned by a specific user. Reports contain inforamtion about extensions sales, payout status, aggregate sales, refund data, and more.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The  Reports API specification is under design review, so the details will be released when finalized.
+The Reports API specification is under design review. More details will be announced in the future..
 </div>
