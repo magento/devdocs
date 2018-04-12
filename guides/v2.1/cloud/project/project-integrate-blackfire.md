@@ -25,7 +25,7 @@ Blackfire includes the following [environments](https://blackfire.io/docs/refere
 
 {% include note.html type="info" content="For Pro, you must enter a Support ticket with your Blackfire credentials to configure your Staging and Production environments with Blackfire." %}
 
-## Get your Blackfire credentials {#cloud-int-black}
+## Get your Blackfire credentials
 The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with {{site.data.var.ece}} and to log in to the Blackfire website. An invitation email is sent to the Project Owner's e-mail address to complete activation.
 
 For information on setting up an account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can access your Blackfire license key through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
@@ -43,7 +43,7 @@ We recommend adding at least one account through Blackfire to manage all access,
 
 	![Promote an admin]({{ site.baseurl }}common/images/cloud_blackfire-member.png)
 
-## Enable Blackfire on local workspace{#cloud-int-black-en}
+## Enable Blackfire on local workspace
 You need to install and configure Blackfire on your local workspace with your working {{site.data.var.ece}} installation. You do _not_ need to run these installations directly on the hosted environments; only on your local.
 
 We recommend using the Blackfire installation guide to walk you through the process:
@@ -252,7 +252,7 @@ If you do not have a default route specified in the `routes.yaml` file, or want 
 With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
 
 ## Profile your store {#profile}
-You can verify that Blackfire works using a browser extension or the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire resources](#resources).
+You can verify that Blackfire works using a browser extension or the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire resources](#blackfire-resources).
 
 {% include note.html type="info" content="You can only use the CLI in your local development environment." %}
 
@@ -266,7 +266,7 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 
 1.  Click **Profile** to start.
 
-    Note: The browser extension also enables you to profile all requests while you browse. For more information about this, see [Blackfire resources](#resources).
+    Note: The browser extension also enables you to profile all requests while you browse. For more information about this, see [Blackfire resources](#blackfire-resources).
 
 #### To profile using the CLI:
 
@@ -306,7 +306,7 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 	blackfire.log_file => no value => no value
 	```
 
-## Automate performance testing {#automate}
+## Automate performance testing
 After completing the [Blackfire Integration](#dev), you can define events for the Staging and Production environments that enable Blackfire to execute polling requests automatically. An event example is whenever a commit deploys in the Integration environment, or when activating the integration between Blackfire and New Relic.
 
 By simply defining a set of key requests for Blackfire to profile— `/home`, `/checkout`, `/checkout/payment`—Blackfire can notify you if your code complies with established [code performance recommendations](https://blackfire.io/docs/reference-guide/recommendations){:target="_blank"}. The following is a sample build report with recommendations:
@@ -339,14 +339,14 @@ See the Blackfire documentation on how to write [tests](https://blackfire.io/doc
 ### Running your tests automatically
 Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire to run your tests automatically in various ways:
 
--  **Automated builds on Integration**—Whenever you push code on an Integration branch, Blackfire automatically runs your tests. You can receive a notification of the results in various ways, such as a commit status level when using GitHub or Bitbucket. See [Receiving notifications](#notifications).
+-  **Automated builds on Integration**—Whenever you push code on an Integration branch, Blackfire automatically runs your tests. You can receive a notification of the results in various ways, such as a commit status level when using GitHub or Bitbucket. See Blackfire notifications.
 -   **Automated builds using a webhook**—Blackfire offers a very flexible way to start builds using a webhook, which can target any endpoint. See [Start building a webhook](https://blackfire.io/docs/reference-guide/builds-and-integrations#start-build-using-a-webhook){:target="_blank"}.
 -   **Automated builds with the Blackfire/New Relic integration**—Blackfire and New Relic are very complementary. New Relic monitors the overall traffic performance, and Blackfire profiles much deeper into the PHP code. See [What is the difference between Blackfire and New Relic](https://support.blackfire.io/questions-about-blackfire/what-is-blackfire/what-is-the-difference-between-blackfire-and-new-relic-and-other-apms){:target="_blank"}. You can configure New Relic to fire Blackfire builds whenever relevant. See [New Relic](https://blackfire.io/docs/integrations/new-relic){:target="_blank"}.
 
-### Blackfire notifications {#notifications}
+### Blackfire notifications
 When you configure at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and more. See [Scenario notification channels](https://blackfire.io/docs/reference-guide/notification-channels){:target="_blank"}.
 
-## Blackfire resources {#resources}
+## Blackfire resources
 Blackfire provides great information to better profile and investigate the results on their documentation site:
 
 -   [Profiling HTTP requests](https://blackfire.io/docs/cookbooks/profiling-http){:target="_blank"}
