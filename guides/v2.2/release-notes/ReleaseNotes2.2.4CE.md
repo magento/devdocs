@@ -79,7 +79,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-84506 -->* You can now use the `app:config:status` command to check whether configuration propagation is up-to-date.  *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 12441*.
 
-<!--- MAGETWO-84125 -->* The `bin/magento setup:rollback -d filename.sql` command now works as expected. Previously, this database rollback operation failed on certain versions of Magento (for exmaple, 2.1.9).  *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12108*. [GitHub-12064](https://github.com/magento/magento2/issues/12064)
+<!--- MAGETWO-84125 -->* The `bin/magento setup:rollback -d filename.sql` command now works as expected. Previously, this database rollback operation failed on certain versions of Magento (for example, 2.1.9).  *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12108*. [GitHub-12064](https://github.com/magento/magento2/issues/12064)
 
 <!--- MAGETWO-84081 -->* You can now set API access to integrations for Admin roles, which gives privileged users the ability to grant limited access to users such as third-party integrators. [GitHub-9684](https://github.com/magento/magento2/issues/9684)
 
@@ -97,7 +97,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85778 -->* You can specify a custom version for static files being deployed, and now nginx sample config files can match these custom  versions, too. *Fix submitted by [Scott Buchanan](https://github.com/scottsb) in pull request 12521*. 
 
-<!--- MAGETWO-85274 -->* The `CrontabManager.php` file has been updated has been updated as follows: If `crontab` has already been populated, the `php bin/magento cron:install` command adds `#~ MAGENTO START` and the rest of code directly to the last row of crontab without any spaces. *Fix submitted by [Michele Fantetti](https://github.com/WaPoNe) in pull request*.
+<!--- MAGETWO-85274 -->* The `CrontabManager.php` file has been updated as follows: If `crontab` has already been populated, the `php bin/magento cron:install` command adds `#~ MAGENTO START` and the rest of code directly to the last row of crontab without any spaces. *Fix submitted by [Michele Fantetti](https://github.com/WaPoNe) in pull request*.
 
 <!--- MAGETWO-85744 -->*  Composer now checks the availability of the `bcmath` PHP module. *Fix submitted by [Mobecls](https://github.com/Mobecls) in pull request 12768*.
 
@@ -140,7 +140,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-87447 -->*  Magento now successfully updates a product's `stock_item` `extension_attribute` parameter for a product previously created using REST. *Fix submitted by [nuzil](https://github.com/nuzil) in pull request 13494*.
 
-<!--- MAGETWO-73262 -->*  When two customers check out concurrently for the same product, one of the check outs now succeeds. Previously, when two customers checked out concurrently for the same product, and the total quantity being ordered is greater than the quantity available, the stock could become negative. *Fix submitted by [Myroslav Dobra](https://github.com/zakdma) in pull request 2133*.
+<!--- MAGETWO-73262 -->*  When two customers check out concurrently for the same product, one of the checkouts now succeeds. Previously, when two customers checked out concurrently for the same product, and the total quantity being ordered is greater than the quantity available, the stock could become negative. *Fix submitted by [Myroslav Dobra](https://github.com/zakdma) in pull request 2133*.
 
 <!--- MAGETWO-87477 -->*  The `getUrl` method in `Magento\Catalog\Model\Product\Attribu…` no longer returns image URLs with unexpected double slashes. *Fix submitted by [Igor Tregub](https://github.com/igortregub) in pull request 13498*.
 
@@ -152,15 +152,15 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-81942 -->* Product display issues within categories that have been filtered by price have been resolved: Products are no longer repeated within a category, and random products are no longer included. *Fix submitted by [Mayank Zalavadia](https://github.com/mayankzalavadia) in pull request 11429*. [GitHub-11139](https://github.com/magento/magento2/issues/11139)
 
-<!--- MAGETWO-82313 -->* Updating a product with the REST API (PUT /rest/all/V1/products/example_sku) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11444*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
+<!--- MAGETWO-82313 -->* Updating a product with the REST API (`PUT /rest/all/V1/products/example_sku`) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11444*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
 <!--- MAGETWO-82464 -->* Magento no longer throws an error when you re-save a product attribute with a new name. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11617*. [GitHub-6770](https://github.com/magento/magento2/issues/6770)
 
-<!--- MAGETWO-83399 -->* You can now successfully remove a toolbar from a product listing page. Previously, you could explicitly removed the toolbar from layout configuration, but Magento would return `product_list_toolbar` to the layout. *Fix submitted by [Marius](https://github.com/mariuscris) in pull request 11473*. [GitHub-9413](https://github.com/magento/magento2/issues/9413)
+<!--- MAGETWO-83399 -->* You can now successfully remove a toolbar from a product listing page. Previously, you could explicitly remove the toolbar from layout configuration, but Magento would return `product_list_toolbar` to the layout. *Fix submitted by [Marius](https://github.com/mariuscris) in pull request 11473*. [GitHub-9413](https://github.com/magento/magento2/issues/9413)
 
 <!--- MAGETWO-84018 -->* The `getAttributeText($attributeCode)` method now returns string values as expected. Previously, this method returned an array of attribute values. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 12003*.
 
-<!--- MAGETWO-84087 -->* You can now add customizable options to a product. Previously, when you tried to add a custom option to  product, Magento threw this error: **A 'Uncaught TypeError: Cannot read property 'apply' of undefined' error**. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11965*. [GitHub-11792](https://github.com/magento/magento2/issues/11792)
+<!--- MAGETWO-84087 -->* You can now add customizable options to a product. Previously, when you tried to add a custom option to  product, Magento threw this error: `A 'Uncaught TypeError: Cannot read property 'apply' of undefined' error`. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11965*. [GitHub-11792](https://github.com/magento/magento2/issues/11792)
 
 <!--- MAGETWO-84311 -->* Magento now correctly decodes single quotation marks in the Admin attribute option input fields. *Fix submitted by [Erfan](https://github.com/erfanimani) in pull request 12133*. [GitHub-12127](https://github.com/magento/magento2/issues/12127)
 
@@ -215,16 +215,17 @@ The dotmailer bundled extension features the following enhancements for this rel
 <!--- MAGETWO-86663 -->* The catalog product list widget now works with multiple SKUs. Previously, Magento displayed this error, `We're sorry, an error has occurred while generating this email`. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1050*. 
  [GitHub-11897](https://github.com/magento/magento2/issues/11897)
 
-<!--- MAGETWO-85876 -->* Magento now loads type-dependent layout handles before more specific ID/SKU layout handles. Previously, when Magento updated a product page layout for a specific ID with `catalog_product_view_id_<product_ID>.xml`, some changes may be overwritten by a less specific `catalog_product_view_type_<product_type>.xml`. *Fix submitted by [Andreas Schrammel](https://github.com/aschrammel) in pull request 12807*. 
+<!--- MAGETWO-85876 -->* Magento now loads type-dependent layout handles before more specific ID/SKU layout handles. Previously, when Magento updated a product page layout for a specific ID with `catalog_product_view_id_<product_ID>.xml`, some changes were overwritten by a less specific `catalog_product_view_type_<product_type>.xml`. *Fix submitted by [Andreas Schrammel](https://github.com/aschrammel) in pull request 12807*. 
 
 <!--- MAGETWO-87897 -->*  Unused temporary variables have been removed from `Adminhtml/Category/Save.html`. *Fix submitted by [Pierre Martin](https://github.com/real34) in pull request 13663*. 
 
 <!--- MAGETWO-87847 -->* Language switching nows works as expected on the Catalog and Product pages. Previously, language switching did not work on these pages in production mode. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 1143*. [GitHub-11963](https://github.com/magento/magento2/issues/11963)
 
-<!--- MAGETWO-87526 -->* The subcategory URL path is now updated for a store view according to URL path of its parent category.
+<!--- MAGETWO-87526 -->* The subcategory URL path is now updated for a store view according to the URL path of its parent category.
 
 <!--- MAGETWO-87514 -->* In cases where  `imagebuilder` makes multiple calls, it no longer re-uses attributes from the first call if attributes from a second call are empty. Previously, `imagebuilder` re-used the attributes from the first call, which lead to unexpected results in storefront image display. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 13438*. 
-\
+
+
 <!--- MAGETWO-87496 -->*  `updateCart.phtml` now uses dynamic rather than hardcoded validators. *Fix submitted by [Gil Greenberg](https://github.com/gil--) in pull request 13462*. 
 
 <!--- MAGETWO-87294 -->* An unused constructor dependency has been removed from the Product Link Save handler. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 13436*. 
@@ -238,11 +239,11 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85297 -->* Magento no longer combines the Custom Checkout and Shipping steps when Magento loads the checkout page. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 975*. 
 
-<!--- MAGETWO-85317 -->* You can now successfully change currency for an order before you complete the order. Previously, if you changed currency, when you  proceeded with  checkout by choosing as Bank Transfer Payment as Payment Method, Magento displays, **Your credit card will be charged for**. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 993*. [GitHub-12526](https://github.com/magento/magento2/issues/12526)
+<!--- MAGETWO-85317 -->* You can now successfully change currency for an order before you complete the order. Previously, if you changed currency, when you  proceeded with  checkout by choosing as Bank Transfer Payment as Payment Method, Magento displayed, **Your credit card will be charged for**. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 993*. [GitHub-12526](https://github.com/magento/magento2/issues/12526)
 
 <!--- MAGETWO-86506 -->* Magneto no longer throws a JavaScript error on the cart from postcode validation when **United States** is deselected in the **Allowed Countries** Admin option (**Admin > Stores > Configuration > General > Default Country**). *Fix submitted by [codekipple](https://github.com/codekipple) in pull request 13051*. 
 
-<!--- MAGETWO-86543 -->* Street format spacing when multiple streets are present is now consistent across **Shipping*** and **Review & Payments** checkout steps. *Fix submitted by [nfourteen](https://github.com/nfourteen) in pull request 13082*. 
+<!--- MAGETWO-86543 -->* Street format spacing when multiple streets are present is now consistent across **Shipping** and **Review & Payments** checkout steps. *Fix submitted by [nfourteen](https://github.com/nfourteen) in pull request 13082*. 
 
 <!--- MAGETWO-86896 -->* Magento now displays text on the New Cart Rules page correctly. Previously, labels listed in the Store View Specific Labels section of this page were sometimes truncated or duplicated. *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request 1146*. [GitHub-12231](https://github.com/magento/magento2/issues/12231)
 
@@ -269,7 +270,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-82888 -->* The product price indexer (`catalog_product_price reindex`) no longer stalls during reindexing. 
 
-<!--- MAGETWO-86918 -->* Product records inside the `catalog_product_super_link` table are no longer updated needlessly when you save a configurable product. Previously, saving configurable product erased and then reinserted records in the `catalog_product_super_link` table even when child products were not changed. This practice quickly resulted in unnecessarily large `catalog_product_super_link` table, especially in multi-website installations.
+<!--- MAGETWO-86918 -->* Product records inside the `catalog_product_super_link` table are no longer updated needlessly when you save a configurable product. Previously, saving configurable product erased and then reinserted records in the `catalog_product_super_link` table even when child products were not changed. This practice quickly resulted in an unnecessarily large `catalog_product_super_link` table, especially in multi-website installations.
 
 
 
@@ -277,15 +278,17 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-86427 -->* Magento now trims trailing and leading spaces when saving the name of a new contact. *Fix submitted by [wardcapp](https://github.com/wardcapp) in pull request 12964*. [GitHub-10415](https://github.com/magento/magento2/issues/10415)
 
-<!--- MAGETWO-85580 -->* We fixed the invalid parameter configuration that was provided for the $block argument of `Magento\\Ui\\Component\\HtmlContent`. *Fix submitted by [Tomasz Gregorczyk](https://github.com/Tomasz-Silpion) in pull request 12964*. 
+<!--- MAGETWO-85580 -->* We fixed the invalid parameter configuration that was provided for the `$block` argument of `Magento\\Ui\\Component\\HtmlContent`. *Fix submitted by [Tomasz Gregorczyk](https://github.com/Tomasz-Silpion) in pull request 12964*. 
 
-<!--- MAGETWO-85300 -->* Magento now successfully send email (with content) even when you make a mistake in the email template file name. Previously, when the template name was incorrect, Magento sent the email with no content. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 970*. [GitHub-8437](https://github.com/magento/magento2/issues/8437)
+<!--- MAGETWO-85300 -->* Magento now successfully sends email (with content) even when you make a mistake in the email template file name. Previously, when the template name was incorrect, Magento sent the email with no content. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 970*. [GitHub-8437](https://github.com/magento/magento2/issues/8437)
 
 <!--- MAGETWO-85653 -->*  You can now import customer addresses from websites with country restrictions.
 
 <!--- MAGETWO-84862 -->* Magento no longer displays the `Too many password reset requests` error when the **max wait time between password resets** setting has been disabled. Previously, when you attempted to reset a customer's password through the Admin, Magento threw an error even when you disabled the `max wait time between password resets` setting in the store configuration settings. *Fix submitted by [Cole Hafner](https://github.com/coleHafner) in pull request*. [GitHub-11409](https://github.com/magento/magento2/issues/11409)
 
 <!--- MAGETWO-84439 -->* Magento no longer throws an exception when you try to open your account address book immediately after creating a customer. *Fix submitted by [Chris Pook](https://github.com/chris-pook) in pull request 12220*. [GitHub-12180](https://github.com/magento/magento2/issues/12180)
+
+
 <!--- MAGETWO-83026 -->* The `isConfirmationRequired` method in the `AccountManagement` class is now public, which makes it available for plugins. (For example, you can now develop custom business logic to decide if confirmation is required (yes/no) for certain customers.) *Fix submitted by [Derrick Heesbeen](https://github.com/dheesbeen) in pull request 11878*. 
 
 <!--- MAGETWO-82635 -->* When configuring a customer account, you can now leave the prefix or suffix fields as optional. Previously, if you did not select an option for these fields, Magento defaulted to selecting the first option in the list. *Fix submitted by [Andreas von Studnitz](https://github.com/avstudnitz) in pull request 11462*. [GitHub-7241](https://github.com/magento/magento2/issues/7241)
@@ -352,7 +355,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 ### Email
 
-<!--- MAGETWO-83741 -->* Order confirmation emails from the Admin in multistore environments no longer default to the primary store, but instead is sent from the store that the customer used. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request*. [GitHub-11740](https://github.com/magento/magento2/issues/11740)
+<!--- MAGETWO-83741 -->* Order confirmation emails from the Admin in multistore environments no longer default to the primary store, but instead are sent from the store that the customer used. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request*. [GitHub-11740](https://github.com/magento/magento2/issues/11740)
 
 <!--- MAGETWO-86881 -->* Magento no longer sends misleading feedback when sending tracking information email. Previously, instead of sending a notice that a shipment was underway, this response was sent, **You sent the shipment**. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1245*. [GitHub-5697](https://github.com/magento/magento2/issues/5697)
 
@@ -415,14 +418,14 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-83401 -->* The `depends` field now works for fields of type `radio` in `system.xml`. *Fix submitted by [Javier Villanueva](https://github.com/jahvi) in pull request 11539*.
 
-<!--- MAGETWO-83993 -->* Magento now sorts fields and amounts as expected  when you extend a dynamic-row element in a `ui_component` and add a sort order attribute with an amount that falls between the other element's amount. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 11846*.
+<!--- MAGETWO-83993 -->* Magento now sorts fields and amounts as expected  when you extend a dynamic-row element in a `ui_component` and add a sort order attribute with an amount that falls between the other elements' amount. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 11846*.
 
 
 #### Session framework
 
 <!--- MAGETWO-83373 -->* The Setup Wizard page now loads successfully when the session storage method is memcache.  Previously, Magento returned an HTTP 500 error when you navigated to **System > Tools > Web Setup Wizard Setup Wizard**  in installations where you've configured the session storage method to memcache in `env.php`. *Fix submitted by [Marty S](https://github.com/sylink) in pull request 11608*. [GitHub-9633](https://github.com/magento/magento2/issues/9633)
 
-<!--- MAGETWO-83287 -->* When you add a product to your wishlist after logging out, Magento now redirects you to your account Wishlist page and adds the product. Previously, you were redirected to your wishlist page, but Magento did not add the product. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12038*. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
+<!--- MAGETWO-83287 -->* When you add a product to your wish list after logging out, Magento now redirects you to your account wish list page and adds the product. Previously, you were redirected to your wish list page, but Magento did not add the product. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12038*. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
 
 <!--- MAGETWO-86880 -->* Anonymous calls using REST no longer trigger the creation of PHP sessions. *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request 1247*. [GitHub-7213](https://github.com/magento/magento2/issues/7213)
 
@@ -448,7 +451,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 ### General
 
 
-<!--- MAGETWO-86727 -->*  A customer can now successfully log out of a session and then immediately log back in. Previously, if a customer logged out and then attempted to log in without the logout success page first completing its timeout, Magento displayed the log out page. *Fix submitted by [Vinay Shah](https://github.com/vinayshah) in pull request 13040*.
+<!--- MAGETWO-86727 -->*  A customer can now successfully log out of a session and then immediately log back in. Previously, if a customer logged out and then attempted to log in without the logout success page first completing its timeout, Magento displayed the logout page. *Fix submitted by [Vinay Shah](https://github.com/vinayshah) in pull request 13040*.
 
 <!--- MAGETWO-87341 -->* Magento now displays notification messages for only the expected duration. Previously, Magento displayed these messages indefinitely within a session. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 1111*. [GitHub-11527](https://github.com/magento/magento2/issues/11527)
 
@@ -542,9 +545,9 @@ The dotmailer bundled extension features the following enhancements for this rel
 <!--- MAGETWO-84006 -->* The `robots.txt` response header content type is now plain text. *Fix submitted by [Milan Osztromok](https://github.com/tufahu) in pull request 12310*. 
 
 
-<!--- MAGETWO-84098 -->* Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wishlist and then tried to share them using RSS, Magento threw this exception: `report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as child to 'root', because the latter doesn't exist []` *Fix submitted by [MediaCT](https://github.com/mediactbv) in pull request*. 
+<!--- MAGETWO-84098 -->* Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wish list and then tried to share them using RSS, Magento threw this exception: `report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as child to 'root', because the latter doesn't exist` *Fix submitted by [MediaCT](https://github.com/mediactbv) in pull request*. 
 
-<!--- MAGETWO-84004 -->* If you extend a dynamic row element in a ui_component and add a sort order attribute with an amount that falls between the other attributes' amounts, Magento will correctly sort the fields, but the label you added is placed in last position. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 12310*. 
+<!--- MAGETWO-84004 -->* If you extend a dynamic row element in a `ui_component` and add a sort order attribute with an amount that falls between the other attributes' amounts, Magento will correctly sort the fields, but the label you added is placed in last position. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 12310*. 
 
 <!--- MAGETWO-87242 -->*  When you select a new main menu option, the previously selected  menu item now loses the `ui-state-active` class as expected. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request 13341*. [GitHub-13327](https://github.com/magento/magento2/issues/13327)
 
@@ -561,7 +564,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 ### Import/export
 
-<!--- MAGETWO-81368 -->* You can now successfully import product images and image labels from CSV files. Previously after import, the  alt text field on the Admin was empty, even though the label was imported and is visible on the product list page as alt attribute, and the Product Detail page missed the alt attribute on image fields.*Fix submitted by [Ben Robie](https://github.com/brobie) in pull request 11323*. [GitHub-9931](https://github.com/magento/magento2/issues/9931)
+<!--- MAGETWO-81368 -->* You can now successfully import product images and image labels from CSV files. Previously after import, the  alt text field on the Admin was empty, even though the label was imported and was visible on the product list page as alt attribute, and the Product Detail page missed the alt attribute on image fields. *Fix submitted by [Ben Robie](https://github.com/brobie) in pull request 11323*. [GitHub-9931](https://github.com/magento/magento2/issues/9931)
 
 <!--- MAGETWO-83726 -->* The CSV file created by using **System > Export** now incorporates the value of `hide_for_product_page`. 
 *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 11926*.
@@ -610,7 +613,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-83999 -->* The **About Us** and **Customer Service** links of the Order Confirmation email (and  other emails sent to the customer) now work as expected. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request*. [GitHub-12261](https://github.com/magento/magento2/issues/12261)
 
-<!--- MAGETWO-85783 -->* Magento now sends the newsletter subscription success email as expected a customer successfully subscribes to a newsletter. 
+<!--- MAGETWO-85783 -->* Magento now sends the newsletter subscription success email as expected when a customer successfully subscribes to a newsletter. 
 *Fix submitted by [Styopchik](https://github.com/Styopchik) in pull request*. [GitHub-12439](https://github.com/magento/magento2/issues/12439)
 
 <!--- MAGETWO-86435 -->* Magento now uses indexes to retrieve subscriber information during the creation of email to newsletter subscribers. Previously, Magento did not use indexes for this task, and performance was poor. *Fix submitted by [Amit Bera](https://github.com/devamitbera) in pull request*. [GitHub-12787](https://github.com/magento/magento2/issues/12787)
@@ -632,7 +635,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 <!--- MAGETWO-83552 -->* Magento now saves an invoice ID on the credit memo when you create a credit memo from the invoice in the Admin. Previously, 
 the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 11067*. [GitHub-11669](https://github.com/magento/magento2/issues/11669)
 
-<!--- MAGETWO-83740 -->* Credit memos can have the state open (`\Magento\Sales\Model\Order\Creditmemo::STATE_OPEN`). As a result, you can create a creditmemo with an ID that still has to be refunded, and existing credit memos should be refundable if their state is open. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 11550*.
+<!--- MAGETWO-83740 -->* Credit memos can have the state open (`\Magento\Sales\Model\Order\Creditmemo::STATE_OPEN`). As a result, you can create a credit memo with an ID that still has to be refunded, and existing credit memos should be refundable if their state is open. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 11550*.
 
 <!--- MAGETWO-83783 -->* The `Magento\Sales\Service\V1\OrderCreateTest` test now has the correct shipping method fixture. Previously, this test contained an incorrect shipping method fixture, which produced an error whenever an order's shipping method was treated an object. *Fix submitted by [andrew-garside-temando](https://github.com/andrew-garside-temando) in pull request 12227*.
  
@@ -646,7 +649,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-86845 -->* Magento no longer exports extra records when you export invoices for multiple orders. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request 13208*. [GitHub-12714](https://github.com/magento/magento2/issues/12714)
 
-<!--- MAGETWO-80233 -->* You can now place orders using PayPal when **Payment Action = Order**. Previously, when **Payment Action = Order**, Magento displayed this error when you reached the order review page: **We can't place the order.**
+<!--- MAGETWO-80233 -->* You can now place orders using PayPal when **Payment Action = Order**. Previously, when **Payment Action = Order**, Magento displayed this error when you reached the order review page: `We can't place the order.`
 
 <!--- MAGETWO-86258 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12668*. [GitHub-9969](https://github.com/magento/magento2/issues/9969)
 
@@ -665,7 +668,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-81322 -->* When you cancel payment of an order and return to the previous page in the workflow (the checkout page), Magento now provides the shipping address and other information as expected. Previously, Magento did not load the shipping address after you canceled payment of an order and returned to the checkout page. [GitHub-11247](https://github.com/magento/magento2/issues/11247)
 
-<!--- MAGETWO-81395 -->* Third-party developers can now customize payment errors messages for payment integrations based on Magento Payment Provider Gateway. 
+<!--- MAGETWO-81395 -->* Third-party developers can now customize payment errors messages for payment integrations based on the Magento Payment Provider Gateway. 
 
 <!--- MAGETWO-82910 -->* PayPal Express Checkout now appears as a payment option on the Checkout page when the PayPal buttons are available on the shopping cart page. Previously, PayPal did not appear as a payment method on the Checkout page when the billing agreement was disabled, although the PayPal buttons were still available on the shopping cart page. 
 
@@ -680,7 +683,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-86351 -->* PayPal now works as expected with virtual products such as gift cards. Previously, when you tried to place an order for a virtual product using PayPal, Magento did not display the PayPal popup when you clicked **Continue PayPal** during checkout.
 
-<!--- MAGETWO-84639 -->* Magento now correctly adds checkout agreements data to  requests and validates payment information when you place an order using PayPal Express. Previously, you could check this box, but Magento did not parse  the agreements data  or pass it  to the set-payment-information API. This failure in turn triggered the `CheckoutAgreements` validation plugin,  which failed to validate with no agreements data. *Fix submitted by [Ričards Zālītis](https://github.com/therool) in pull request 12401*. 
+<!--- MAGETWO-84639 -->* Magento now correctly adds checkout agreements data to  requests and validates payment information when you place an order using PayPal Express. Previously, you could check this box, but Magento did not parse  the agreements data  or pass it  to the set-payment-information API. This failure in turn triggered the `CheckoutAgreements` validation plugin,  which failed to validate. *Fix submitted by [Ričards Zālītis](https://github.com/therool) in pull request 12401*. 
 
 <!--- MAGETWO-86426 -->* Magento no longer archives active orders that are placed using PayPal Express Checkout. Previously, if you placed an order using PayPal Express Checkout, Magento would place the order as expected but also add it to the list of archived orders. 
 
@@ -692,13 +695,13 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 ### Performance
 
-<!--- MAGETWO-84480 -->* The addition of the cache for the `getmagesize()` function has improved product image loading.
+<!--- MAGETWO-84480 -->* The addition of a cache for the `getmagesize()` function has improved product image loading.
 
 <!--- MAGETWO-45775 -->* Each cache type now has its own separate cache storage. 
 
-<!--- MAGETWO-86736 -->* We’ve optimized the initialization of the Product View block, which gives 11% performance improvement for simple product views.
+<!--- MAGETWO-86736 -->* We’ve optimized the initialization of the Product View block, which gives an 11% performance improvement for simple product views.
 
-<!--- MAGETWO-75769 -->* Magento now caches  search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached. This enhancement can result in up to 36% improvement for cacheable search terms.  
+<!--- MAGETWO-75769 -->* Magento now caches  search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached. This enhancement can result in up to a 36% improvement for cacheable search terms.  
 
 
 
@@ -709,7 +712,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-86434 -->* Magento no longers truncates very long telephone numbers in the order page. Previously, Magento cut off very long phone numbers at 20 digits. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 13015*. [GitHub-10869](https://github.com/magento/magento2/issues/10869)
 
-<!--- MAGETWO-86430 -->* You can now implement a product attribute that sets **Catalog Input Type for Store Owner** equal **Fixed Product Tax** in a multistore environment. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 13019*.
+<!--- MAGETWO-86430 -->* You can now implement a product attribute that sets **Catalog Input Type for Store Owner** equal to **Fixed Product Tax** in a multistore environment. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 13019*.
 [GitHub-12393](https://github.com/magento/magento2/issues/12393)
 
 <!--- MAGETWO-85518 -->* When a customer is on the payment page and tries to reorder or retrace her steps backward through the checkout process, Magento now displays all the relevant shipping methods. Previously, Magento displayed only one shipping method under these circumstances.  
@@ -731,7 +734,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-71393 -->* Magento now displays the correct catalog rule price for bundle products with custom options. 
 
-<!--- MAGETWO-86780 -->* Cart prices now displays the Cart Price Rule shipping discount correctly. Previously, when you placed an order, Magento displayed this error: **Payment method is not available**.
+<!--- MAGETWO-86780 -->* Cart prices now displays the Cart Price Rule shipping discount correctly. Previously, when you placed an order, Magento displayed this error: `Payment method is not available`.
 
 <!--- MAGETWO-86786-->* Magento now displays the exact label value that was given in the Admin during the cart price rule creation. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 13141*. [GitHub-11428](https://github.com/magento/magento2/issues/11428), [GitHub-11497](https://github.com/magento/magento2/issues/11497)
 
@@ -748,7 +751,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 ### Search
 <!--- MAGETWO-85637 -->* Magento now displays popular search terms in **SEO & Search > Search Terms** as expected. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 1024*. [GitHub-10743](https://github.com/magento/magento2/issues/10743)
 
-<!--- MAGETWO-84370-->* Layered navigation now displays the correct product count. Previously, the layer navigation product count incorrectly included only in-stock products. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12063*. [GitHub-11946](https://github.com/magento/magento2/issues/11946)
+<!--- MAGETWO-84370-->* Layered navigation now displays the correct product count. Previously, the layered navigation product count incorrectly included only in-stock products. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12063*. [GitHub-11946](https://github.com/magento/magento2/issues/11946)
 
 
 <!--- MAGETWO-85827-->* Grid filtration now handles MySQL special characters as expected. *Fix submitted by [laconica-sergey](https://github.com/laconica-sergey) in pull request 12749*.
@@ -770,7 +773,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-85291 -->* Magento now enforces the minimum order amount during checkout as expected. Previously, you could bypass the minimum order amount logic by clicking **Check Out with Multiple Addresses**, removing products from the order,and then clicking **Update Qty & Addresses**. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 963*. 
 
-<!--- MAGETWO-85586 -->* DHL product codes now match those published in the latest DHL products and services guide. Previously, three  DHL product codes in DHL Shipping module were incorrect. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 12666*.
+<!--- MAGETWO-85586 -->* DHL product codes now match those published in the latest DHL products and services guide. Previously, three  DHL product codes in the DHL Shipping module were incorrect. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 12666*.
 
 
 ### Sitemap
@@ -779,7 +782,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-85285 -->* Sitemaps generated in a multi-store envirnment now include the correct URLs for each store (that is, `http://storename.com/` instead of `http://defaultstore.com/`). *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 935*. [GitHub-12482](https://github.com/magento/magento2/issues/12482)
 
-<!--- MAGETWO-81525 -->* Magento now handles errors that occur during sitemap generation in a less intrusive way. If Magento thorws an exception when generating a sitemap, it now sends the errors through email as configured in the sitemap configuration XML. The former `_translateModel` property is not used anymore, and the inline translation is correctly suspended using the `inlineTranslation` property instead. *Fix submitted by [Marina Gociu](https://github.com/marinagociu) in pull request*. [GitHub-10502](https://github.com/magento/magento2/issues/10502)
+<!--- MAGETWO-81525 -->* Magento now handles errors that occur during sitemap generation in a less intrusive way. If Magento throws an exception when generating a sitemap, it now sends the errors through email as configured in the sitemap configuration XML. The former `_translateModel` property is not used anymore, and the inline translation is correctly suspended using the `inlineTranslation` property instead. *Fix submitted by [Marina Gociu](https://github.com/marinagociu) in pull request*. [GitHub-10502](https://github.com/magento/magento2/issues/10502)
 
 
 ### Swagger
@@ -799,7 +802,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 ### TargetRule
 
-<!--- MAGETWO-77754 -->* The Related Products rule for up-sell products with customer segments set to Specified now works as expected. 
+<!--- MAGETWO-77754 -->* The Related Products rule for up-sell products with customer segments set to **Specified** now works as expected. 
 
 <!--- MAGETWO-86013 -->* You can now successfully save a Related Product rule. 
 
@@ -818,7 +821,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 ### Testing
 <!--- MAGETWO-87290 -->* `ConfigurationTest` no longer fails when you install Magento using Composer. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1161*. [GitHub-12574](https://github.com/magento/magento2/issues/12574)
 
-<!--- MAGETWO-87984 -->* We've added `MagentoStyle` as Console Input/output in Travis tests.
+<!--- MAGETWO-87984 -->* We've added `MagentoStyle` as console Input/output in Travis tests.
 
 <!--- MAGETWO-86859 -->* We've reimplemented tests using Jasmine as part of the process of removing the legacy JavaScript test framework and completely removing `JSTestDriver` support.  *Fix submitted by [Carlos Lizaga](https://github.com/KarlDeux) in pull request*. [GitHub-12342](https://github.com/magento/magento2/issues/12342)
 
@@ -885,10 +888,10 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- MAGETWO-85287 -->* You can now use the REST API  to make requests that include a slash (/) in an SKU. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 949*. [GitHub-8615](https://github.com/magento/magento2/issues/8615)
 
 
-### Wishlist
-<!--- MAGETWO-69634 -->* Magento now correctly displays a product's special price when you add it to a wishlist. Previously, if you added a product with a special price to the wishlist, Magento displayed the product with its regular price.
+### Wish list
+<!--- MAGETWO-69634 -->* Magento now correctly displays a product's special price when you add it to a wish list. Previously, if you added a product with a special price to the wish list, Magento displayed the product with its regular price.
 
-<!--- MAGETWO-85303 -->* You can now remove an item description from a wishlist. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 981*. [GitHub-12582](https://github.com/magento/magento2/issues/12582)
+<!--- MAGETWO-85303 -->* You can now remove an item description from a wish list. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 981*. [GitHub-12582](https://github.com/magento/magento2/issues/12582)
 
 
 <!--- NOT NEEDED MAGETWO-87169 MAGETWO-87132 MAGETWO-86982 MAGETWO-86846 MAGETWO-86772 MAGETWO-86770 MAGETWO-86767 MAGETWO-86763 MAGETWO-86015 MAGETWO-86002 MAGETWO-73161 MAGETWO-80908 MAGETWO-84209 MAGETWO-84992 MAGETWO-77767 MAGETWO-84480 MAGETWO-83329 MAGETWO-86117 MAGETWO-83977 MAGETWO-84804 MAGETWO-84413 MAGETWO-83974 MAGETWO-82062 MAGETWO-80342 MAGETWO-80738 MAGETWO-85947 MAGETWO-83676 MAGETWO-86132 MAGETWO-85661 MAGETWO-77840 MAGETWO-82061 MAGETWO-81901 MAGETWO-73303 MAGETWO-83343 MAGETWO-83910 MAGETWO-70725 MAGETWO-83754 MAGETWO-73275 MAGETWO-75217 MAGETWO-83958 MAGETWO-87023 MAGETWO-71662 MAGETWO-82078 MAGETWO-84397 MAGETWO-87030 MAGETWO-86452 MAGETWO-85871 MAGETWO-85205 MAGETWO-84967 MAGETWO-84884 MAGETWO-83621 MAGETWO-82451 MAGETWO-82104 MAGETWO-81431 MAGETWO-81189 MAGETWO-73002 MAGETWO-72420 MAGETWO-71790 MAGETWO-71272 MAGETWO-70612 MAGETWO-83366 MAGETWO-85590 MAGETWO-85650 MAGETWO-87844 MAGETWO-89306 MAGETWO-85842 MAGETWO-88282 MAGETWO-88111 MAGETWO-71374 MAGETWO-85904 MAGETWO-87445 MAGETWO-86736 MAGETWO-83899 MAGETWO-86938 MAGETWO-88108 MAGETWO-87963 MAGETWO-87815 MAGETWO-45775 MAGETWO-89538 MAGETWO-89453 MAGETWO-89337 MAGETWO-89261 MAGETWO-89273 MAGETWO-89080 MAGETWO-84507 MAGETWO-86670 MAGETWO-84883 --> 
