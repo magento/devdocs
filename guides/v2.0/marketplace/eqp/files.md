@@ -6,47 +6,84 @@ version: 2.1
 github_link: marketplace/eqp/files.md
 ---
 
-All file assets associated with an Extension or a Theme like the M1 code TGZ files, M2 code ZIP files PDF documents, and image files for the logo and 
-galleries  can be managed here. Each file uploaded will be provided an unique id, and these ids can be associated with the package meta information using 
-the packages API described below.
+Use this resource to manage all code artifacts and assets associated with an extension or a theme:
 
-The files endpoint provides a mechanism to manage code artifacts, and assets associated with a package. Examples of such artifacts, and assets are:
-
-* Magento 1 tarball (tgz), or Magento 2 ZIP files
-* Company logo image files
+* Magento 1 tarball (.tgz)
+* Magento 2 ZIP files
+* Image files for logos and galleries
 * Product Icons
-* Product image files needed for the gallery
-* PDF documents for user and installation guides, and reference manuals
+* PDF documents for User Guides, Installation Guides, and Reference Guides
 
+Each file upload receives a unique ID. You must associate these IDs with your submission later using the [packages API]({{page.baseurl}}marketpalce/eqp/packages.html).
 
-Before a package is setup for submission, all its associated files must be uploaded first, then its corresponding *upload ids* must be noted from the response, and
-later included in their respective package submission API request payloads. This way, the association is set up between a package and its files as described above.
+You can associate a file with multiple products. This allows for asset sharing across different packages. For example, you can share an image file for a gallery with different packages by associating it with the same file upload ID.
 
-A given file can be associated with multiple products. This allows for asset sharing across different packages, for example, an image file for a gallery could be 
-shared among different packages by associating it with the same file upload id.
+All files that you upload are inspected for malware. We only accept packages if all of its associated files have passed the malware inspection.
 
-All uploaded files are inspected for malware detection, and given a file upload id, its malware status can be determined. A package submission will only be accepted if
-all its associated files have passed the malware checks.
+## File uploads
 
-## File Uploads
-
-~~~~~~
-POST /rest/v1/files/uploads
+```
 GET /rest/v1/files/uploads/:file_upload_id
+POST /rest/v1/files/uploads
 DELETE /rest/v1/files/uploads/:file_upload_id
-~~~~~~
+```
 
-The aforesaid APIs’ provide the ability to upload, retrieve the status, and remove files.
+Use this API to upload files, retrieve file upload status, and remove files.
 
-### POST /rest/v1/files/uploads
+### Get a file upload
 
-Bulk upload of files is possible via **multipart/form-data** type. With this approach, binary files can be uploaded without the need for additional encoding which can result
-in increasing overall upload side.
+```
+GET /rest/v1/files/uploads/:file_upload_id
+```
 
-A sample request body of mime type, [multipart/form-data](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2) with a boundary string of ’----------287032381131322’
+Use the upload ID to retrieve details about a file upload.
+
+**Request**
+
+```shell
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623  
+```
+
+**Response**
+
+```json
+{
+    "filename" : “acme_one-click-checkout.zip”,
+    "content_type" : "application/zip",
+    "size" : 182934,   
+    "malware_status" : "pass’,
+    “file_hash” : “f53f5db985b8815f1ce6fd4b48a0439a”, 
+    “submission_ids” : [
+    ],
+    “is_profile_image” : false
+}
+```
+
+Details on the response fields:
+
+|Field|Type|Description|
+|-----|----|-----------|
+|filename|string|The name of the file sent in the request.|
+|content-type|string|The mime-type of the uploaded file.|
+|size|integer|The size of the file in bytes.|
+|malware_status|string|Indicates the malware check result for this file. Valid values include `pass`, `fail`, and, `in-progress`.|
+|file_hash|string|Hash of the file; currently using md5.|
+|submission_ids|array|The list of package submissions associated with this file.|
+{:.style="table-layout: auto;"}
+
+### Upload a file
+
+```
+POST /rest/v1/files/uploads
+```
+
+You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
+
+A sample request body of mime type, [multipart/form-data](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2) with a boundary string of `----------287032381131322`
 is shown below:
 
-{% highlight shell %}
+```shell
 ------------287032381131322
 Content-Disposition: form-data; name="file[]"; filename=“acme_one-click-checkout.zip"
 Content-Type: application/zip
@@ -72,30 +109,31 @@ Content-Type: application/pdf
 <pdf file content here....>
 
 ------------287032381131322--
-{% endhighlight %}
+```
 
-Notes:
+<div class="bs-callout bs-callout-info" markdown="1">
 
-1. Each part has a header and body with Content-Disposition header always set to ‘form-data’. 
-2. The ‘name’ value must be set to ‘file[]’ for all the parts.
-3. The original filename must be supplied in the ‘filename’ parameter.
-4. The ‘Content-Type’ header must be set to the appropriate mime-type for the given file.
-5. The body of each part is the full contents of the raw file.
+* Each part has a header and body with `Content-Disposition` header always set to `form-data`.
+* The `name` value must be set to `file[]` for all parts.
+* The original filename must be supplied in the `filename` parameter.
+* The `Content-Type` header must be set to the appropriate mime-type for the file.
+* The body of each part is the full contents of the raw file.
+</div>
 
-For illustration purposes, if the above request body is saved in a temporary file at ‘/tmp/files-payload’, here is a curl example with request and response:
+For example, if you save the previous request body to a temporary file at `/tmp/files-payload`, you can use it in your POST request to upload the file:
 
 **Request**
 
-{% highlight shell %}
+```shell
 curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -H "Content-Type: multipart/form-data; boundary=----------287032381131322" \ 
+     -H "Content-Type: multipart/form-data; boundary=----------287032381131322" \
      --data-binary  @/tmp/files-payload \
-     https://developer-api.magento.com/rest/v1/files/uploads  
-{% endhighlight %}
+     https://developer-api.magento.com/rest/v1/files/uploads
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
   {
     "filename" : “acme_one-click-checkout.zip”,
@@ -123,93 +161,52 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
     "content_type" : "application/pdf",
     "size" : 48392,                           
     "file_upload_id" : “j47dVbsFgkl”             
-  } 
+  }
 ]
-{% endhighlight %}
+```
 
-Notes:
+<div class="bs-callout bs-callout-info" markdown="1">
+The response is the list of files in the same order sent during the upload request.
+</div>
 
-1. The response is the list of files in the same order sent during the upload request.
-
-2. Each record in the list has the following fields:
-
-|Field|Type|Description|
-|-----|----|-----------|
-|filename|string|The name of the file sent in the request|
-|content-type|string|The mime-type of the uploaded file|
-|size|integer|The size of the file in bytes|
-|file_upload_id|string|A unique identifier for the file|
-
-The ‘file_upload_id’ must be tracked for subsequent package submission APIs.
-
-### GET /rest/v1/files/uploads/:file_upload_id
-
-A given file’s details can be queried identified by the file upload id obtained during the upload step.
-
-An example via curl:
-
-**Request**
-
-{% highlight shell %}
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623  
-{% endhighlight %}
-
-**Response**
-
-{% highlight json %}
-{
-    "filename" : “acme_one-click-checkout.zip”,
-    "content_type" : "application/zip",
-    "size" : 182934,   
-    "malware_status" : "pass’,
-    “file_hash” : “f53f5db985b8815f1ce6fd4b48a0439a”, 
-    “submission_ids” : [
-    ],
-    “is_profile_image” : false                       
-                
-}
-{% endhighlight %}
-
-Details on the response fields:
+Each record in the list has the following fields:
 
 |Field|Type|Description|
 |-----|----|-----------|
 |filename|string|The name of the file sent in the request.|
 |content-type|string|The mime-type of the uploaded file.|
 |size|integer|The size of the file in bytes.|
-|malware_status|string|Indicates the malware check result for this file - valid values here can be ‘pass’ - malware check passed, ‘fail’ - malware check failed, ‘in-progress’ - malware check in progress.|
-|file_hash|string|Hash of the file - currently using md5.|
-|submission_ids|array|The list of package submissions associated with this file.|
+|file_upload_id|string|A unique identifier for the file.|
+{:.style="table-layout: auto;"}
 
-### DELETE /rest/v1/files/uploads/:file_upload_id
+The `file_upload_id` must be tracked for subsequent package submission APIs.
+
+### Delete a file upload
+
+```
+DELETE /rest/v1/files/uploads/:file_upload_id
+```
 
 Available parameters:
 
 |Parameter|Type|Required|Description|
 |---------|----|--------|-----------|
-|submission_ids|array|no|A list of submission ids to disassociate the the file from the given packages.|
+|submission_ids|array|no|A list of submission IDs to disassociate the the file from the specified package.|
+{:.style="table-layout: auto;"}
 
-A file can only be disassociated from packages not published in store. 
-
-Removing a file without the optional ‘submission_ids’ parameter implies disassociating the file from all the linked packages. 
-
-If there are no packages associated with a given file, it will be removed.
-
-An example via curl:
+You can only dissociate files from packages that have not been published on the Magento Marketplace. Removing a file without the optional `submission_ids` parameter disassociates it from all linked packages. If no packages are associated with a file, it will be removed.
 
 **Request**
 
-{% highlight shell %}
+```shell
 curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -X DELETE
      https://developer-api.magento.com/rest/v1/files/uploads/fur7284XcgdcV
-{% endhighlight %}
-
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
   {
       “submission_id” : “ad6834ffec”,
@@ -229,14 +226,12 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
       “message” : “Package live in store”
   }
 ]
-{% endhighlight %}
+```
 
+<div class="bs-callout bs-callout-info" markdown="1">
 
-Notes:
-1. It is a HTTP 200 response, with a list following ‘batch semantics’ - i.e. every item in the list has its own ‘code’ and ‘message’.
-2. A code of 200 implies successful action, whereas any non-200 code implies some error.
-3. If there are no packages associated with a given file, the response will be an empty list, and the file will be removed.
-
-
-
-
+* The API returns a batch response for each item, which includes a `code` and `message`.
+* A 200 OK HTTP response code indicates a successful upload.
+* Any non-200 HTTP response code indicates an error.
+* If no packages are associated with a file, the API returns an empty list and the file is removed.
+</div>
