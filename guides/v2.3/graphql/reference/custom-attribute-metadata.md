@@ -3,7 +3,7 @@ layout: default
 group: graphql
 title: CustomAttributeMetadata endpoint
 version: 2.3
-github_link: graphql/custom-attribute-metadata.md
+github_link: graphql/reference/custom-attribute-metadata.md
 ---
 
 The `customAttributeMetadata` endpoint returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The ability to know the type of attribute a given field is obscured from the GraphQL query consumer.
@@ -97,5 +97,5 @@ The key you're storing EAV attributes under
 Attribute |  Data Type | Description
 --- | --- | ---
 `attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
-`attribute_type` | String | The data type of the attribute. (Response only)
-`entity_type` | String | The type of entity that defines the attribute.
+`attribute_type` | String | The data type of the attribute (Response only)
+`entity_type` | String | The type of entity that defines the attribute

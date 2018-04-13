@@ -1,4 +1,5 @@
 label: GraphQL Developer Guide
+versions:  ["2.3"]
 pages:
 
     - label: Overview
@@ -6,7 +7,7 @@ pages:
 
     - label: Implementation
       children:
-        - label: Request headers
+        - label: GraphQL request headers
           url: graphql/send-request.html
 
         - label: Perform a search
@@ -23,7 +24,7 @@ pages:
         - label: Create a custom urlResolver service
           url: graphql/develop/create-custom-url-resolver.html
 
-        - label: Handling Exceptions
+        - label: Exception handling
           url: graphql/develop/exceptions.html
 
     - label: Functional testing
@@ -31,20 +32,20 @@ pages:
 
     - label: Reference
       children:
-        - label: CustomAttributeMetadata endpoint
-          url: graphql/reference/custom-attribute-metadata.html
-
-        - label: Customer endpoint
-          url: graphql/reference/customer.html
-
-        - label: Price field
-          url: graphql/reference/price.html
-
         - label: Products endpoint
           url: graphql/reference/products.html
           children:
+            - label: Product interface implementations
+              url: graphql/reference/product-interface-implementations.html
+
+            - label: CustomizableOptionInterface
+              url: graphql/reference/customizable-option-interface.html
+
             - label: Bundle product endpoint
               url: graphql/reference/bundle-product.html
+
+            - label: Categories endpoint
+              url: graphql/reference/categories.html
 
             - label: Configurable product endpoint
               url: graphql/reference/configurable-product.html
@@ -58,5 +59,13 @@ pages:
             - label: Grouped product endpoint
               url: graphql/reference/grouped-product.html
 
-        - label: urlResolver service
-          url: graphql/reference/url-resolver.html
+        - label: Other objects
+          children:
+            - label: CustomAttributeMetadata endpoint
+              url: graphql/reference/custom-attribute-metadata.html
+
+            - label: Customer endpoint
+              url: graphql/reference/customer.html
+
+            - label: urlResolver service
+              url: graphql/reference/url-resolver.html
