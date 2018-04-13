@@ -12,9 +12,6 @@ pages:
     - label: Files
       url: marketplace/eqp/files.html
 
-    - label: Apps
-      url: marketplace/eqp/apps.html
-
     - label: Packages
       url: marketplace/eqp/packages.html
 
