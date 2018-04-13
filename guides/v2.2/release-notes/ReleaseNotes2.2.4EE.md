@@ -27,7 +27,7 @@ Look for the following highlights in this release:
 
     * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See this discussion in [Magento User guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento. For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
 
-* **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ee/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ee/user_guide/shipping/magento-shipping.html) has been expanded to support access to pre-negotiated carrier rates and return capabilities. 
+* **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ee/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ee/user_guide/shipping/magento-shipping.html) capabilities have been expanded, too. 
 
 * Fixes and enhancements to core features, including **performance improvements** that enable faster shopping with image loading and search performance enhancements.
 
@@ -42,6 +42,8 @@ Looking for more information on these new features as well as many others? Check
 This section describes changes in this release that are not full-fledged features or bug fixes, but that add noticeable improvements to product performance or ease-of-use.
 
 <!--- MAGETWO-87293-->* The admin global search is now translatable, extensible,  and  takes into account the ACL settings for the current user. See [Using global search](http://docs.magento.com/m2/ee/user_guide/stores/admin-global-search.html) for more information. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1167*. [GitHub-7698](https://github.com/magento/magento2/issues/7698)
+
+<!--- MAGETWO-84588,MAGETWO-84587 -->* You can now use the CyberSource payment method for multishipping checkout and payment flows.
 
 
 <!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*.

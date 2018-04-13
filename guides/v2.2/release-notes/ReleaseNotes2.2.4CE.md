@@ -27,7 +27,7 @@ Look for the following highlights in this release:
 
     * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See this discussion in [Magento User guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento.  For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
 
-* **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ce/user_guide/shipping/magento-shipping.html) has been expanded to support access to pre-negotiated carrier rates and return capabilities.
+* **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ce/user_guide/shipping/magento-shipping.html) capabilities have been expanded, too. 
 
 * Fixes and enhancements to core features, including **performance improvements** that enable faster shopping with image loading and search performance enhancements.
 
