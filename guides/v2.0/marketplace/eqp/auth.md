@@ -2,84 +2,83 @@
 layout: default
 group: marketplace-api
 title: Authentication
-version: 2.0
+version: 2.1
 github_link: marketplace/eqp/auth.md
 ---
 
-Every REST API client must create an application at the [Developer Portal](https://developer.magento.com) which will provide an application id and
-secret pairs for the sandbox and production endpoints respectively.
+All API requests must be authenticated using [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The REST APIs use a two-step process to authenticate a client application and authorize access to resources:
 
-<div class="bs-callout bs-callout-info">
-  <p>The information around how to register these applications will be announced when the EQP REST API will be publicly released.</p>
+1. Obtain a session token using an application ID and secret.
+2. Provide the session token as an HTTP Authorization Bearer header to access a resource.
+
+First, you must create an application on the [Developer Portal](https://developer.magento.com) to obtain an application ID and secret for sandbox and production endpoints.
+
+
+<div class="bs-callout bs-callout-info" markdown="1">
+Information about how to create applications will be announced when the EQP REST API is publicly released.
 </div>
-
-The REST APIs use a 2-step process in order to authenticate the client application, and then authorizing every resource access:
-
-1. Use [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) with the application id and secret to obtain a session token.
-2. Provide the session token as a HTTP Authorization Bearer header to every resource access.
 
 ## Session Token
 
-An application session token must be obtained first using the application id and secret via the [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) mechanism. 
+You must use an application ID and secret to obtain a session token. See the following list for examples of an application ID and secret:
 
-Assuming the following application id and secret for all the examples:
+* **id**—AQ17NZ49WC
+* **secret**—8820c99614d65f923df7660276f20e029d73e2ca
 
-* id: AQ17NZ49WC
-* secret: 8820c99614d65f923df7660276f20e029d73e2ca
+The following endpoint grants an application session token:
 
-The following REST API endpoint will grant a session token for a given app:
-
-~~~~~
+```
 POST /rest/v1/apps/session/token
-~~~~~
+```
 
-A POST body specifying the grant type must be supplied:
+You must specify the grant type in the request body:
 
-{% highlight json %}
+```json
 {
-   “grant_type” : “session”
+   “grant_type”: “session”
 }
-{% endhighlight %}
+```
 
-Currently only the ‘session’ grant type is supported.
+<div class="bs-callout bs-callout-info" markdown="1">
+The API supports the `session` grant type only.
+</div>
 
-The following curl example illustrates the request and the expected response:
+The following example shows a request and expected response:
 
-**Request:**
+**Request**
 
-{% highlight shell %}
+```shell
 curl -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca' \ 
      -d '{ "grant_type" : "session" }' \
      https://developer-api.magento.com/rest/v1/apps/session/token 
+```
 
-{% endhighlight %}
+**Response**
 
-**Response:**
+A successful HTTP 200 OK response will be sent for a valid application ID and secret:
 
-A successful HTTP 200 OK response will be sent for a valid application id and secret:
-
-{% highlight json %}
+```json
 {
  "mage_id": "MAG123456789",
  "ust": "baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7",
  "expires_in": 3600
 }
-{% endhighlight %}
+```
 
-Points to note:
-
-* The 'mage_id' value will identify the user account associated with the client application.
-* The 'ust' value (user session token) should be used as 'Authorization Bearer' header to all subsequent API calls.
-* The session token is valid only for the time specified in 'expires_in' in seconds.
-* On expiry of a session token, a new one must be obtained as described above.
+<div class="bs-callout bs-callout-info" markdown="1">
+* The `mage_id` value will identify the user account associated with the client application.
+* The `ust` value (user session token) should be used as the `Authorization Bearer` header for all subsequent API calls.
+* The session token is valid only for the time specified in `expires_in` (seconds).
+* When session token expires, a new token must be obtained as described above.
+</div>
 
 ## Authorization Bearer
 
-Once a valid session token is obtained as described above, it must be presented as a bearer token to all subsequent API calls. 
+After obtaining a valid session token, you must use it as a bearer token in all subsequent API calls.
 
-For example, accessing a user profile with the aforesaid session token will look like:
+For example, to access a user profile with a session token:
 
-{% highlight shell %}
+```shell
 curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789  
-{% endhighlight %}
+```
