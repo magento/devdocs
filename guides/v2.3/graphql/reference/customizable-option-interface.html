@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>GraphQL functional testing | Magento 2 Developer Documentation</title>
+	<title>CustomizableOptionInterface | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.3/graphql/functional-testing.html">
+	<link rel="canonical" href="//guides/v2.3/graphql/reference/customizable-option-interface.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/functional-testing.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/reference/customizable-option-interface.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/functional-testing.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/reference/customizable-option-interface.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/functional-testing.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/reference/customizable-option-interface.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/functional-testing.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/reference/customizable-option-interface.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -411,7 +411,7 @@
     
     
 
-<li class="nav-level1 active " id="functional-testing">
+<li class="nav-level1  " id="functional-testing">
 
     
     
@@ -471,7 +471,7 @@
 
                 
                 
-                <li class="nav-level3  " id="customizableoptioninterface">
+                <li class="nav-level3 active " id="customizableoptioninterface">
                     
 
                     
@@ -705,7 +705,7 @@
 
           
 
-          <span property="name">GraphQL functional testing</span>
+          <span property="name">CustomizableOptionInterface</span>
 
         
 
@@ -728,7 +728,7 @@
 
 	
 
-	<h1 class="page-heading">GraphQL functional testing</h1>
+	<h1 class="page-heading">CustomizableOptionInterface</h1>
 
   
 
@@ -736,86 +736,440 @@
 </section>
 
 
-			<p>Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.</p>
+			<p>Customizable options for a product provide a way to offer customers a selection of options with a variety of text, selection, and date input types. All product types can contain customizables options.</p>
 
-<h2 id="creating-a-new-graphql-functional-test">Creating a new GraphQL functional test</h2>
-
-<p>All GraphQL functional tests should inherit from the generic test case <code class="highlighter-rouge">Magento\TestFramework\TestCase\GraphQlAbstract</code>. It defines the <code class="highlighter-rouge">graphQlQuery()</code> method, which should be used to perform Web API calls from tests.</p>
-
-<p>The following test verifies that the schema returns the correct attribute type, given the <code class="highlighter-rouge">attribute_code</code> and corresponding <code class="highlighter-rouge">entity_type</code>.</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\GraphQl\Catalog</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">Magento\TestFramework\TestCase\GraphQlAbstract</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">ProductAttributeTypeTest</span> <span class="k">extends</span> <span class="nx">GraphQlAbstract</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">testAttributeTypeResolver</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$query</span>
-            <span class="o">=</span> <span class="sh">&lt;&lt;&lt;QUERY
-{
-  customAttributeMetadata(attributes:
-  [
-    {
-      attribute_code:"description",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"status",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"special_price",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"disable_auto_group_change",
-      entity_type:"customer"
-    }
-    {
-      attribute_code:"special_price",
-      entity_type:"Magento\\\\Catalog\\\\Api\\\\Data\\\\ProductInterface"
-    }
-  ]
-  )
-  {
-    items
-    {
-      attribute_code
-      attribute_type
-      entity_type
-    }
-  }
- }
-QUERY;
-</span>        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">graphQlQuery</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
-        <span class="nv">$expectedAttributeCodes</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">'description'</span><span class="p">,</span>
-            <span class="s1">'status'</span><span class="p">,</span>
-            <span class="s1">'special_price'</span><span class="p">,</span>
-            <span class="s1">'disable_auto_group_change'</span><span class="p">,</span>
-            <span class="s1">'special_price'</span>
-        <span class="p">];</span>
-        <span class="nv">$entityType</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'customer'</span><span class="p">,</span>
-            <span class="nx">\Magento\Catalog\Api\Data\ProductInterface</span><span class="o">::</span><span class="na">class</span>
-        <span class="p">];</span>
-        <span class="nv">$attributeTypes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'String'</span><span class="p">,</span> <span class="s1">'Int'</span><span class="p">,</span> <span class="s1">'Float'</span><span class="p">,</span><span class="s1">'Boolean'</span><span class="p">,</span> <span class="s1">'Float'</span><span class="p">];</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertAttributeType</span><span class="p">(</span><span class="nv">$attributeTypes</span><span class="p">,</span> <span class="nv">$expectedAttributeCodes</span><span class="p">,</span> <span class="nv">$entityType</span><span class="p">,</span> <span class="nv">$response</span><span class="p">);</span>
-    <span class="p">}</span></code></pre></figure>
-
-<h2 id="using-the-default-graphqlquerytest">Using the default GraphQlQueryTest</h2>
-
-<p>The <code class="highlighter-rouge">\Magento\GraphQl\TestModule\GraphQlQueryTest.php</code> test case uses two test modules to determine whether the mechanisms for GraphQL extensibility work as expected. It illustrates best practices for extending an existing GraphQL endpoint.</p>
+<p><code class="highlighter-rouge">CustomizableOptionInterface</code> is defined in the <code class="highlighter-rouge">CatalogGraphQl</code> module, and its attributes can be used in any <code class="highlighter-rouge">products</code> query. This interface returns basic information about a customizable option and can be implemented by several types of configurable options:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">TestModuleGraphQlQuery</code> - This bare-bones module defines a <code class="highlighter-rouge">testItem</code> endpoint with the queryable attributes <code class="highlighter-rouge">item_id</code> and <code class="highlighter-rouge">name</code>. It’s located at <code class="highlighter-rouge">&lt;installdir&gt;/dev/tests/api-functional/_files/TestModuleGraphQlQuery</code>.</li>
-  <li><code class="highlighter-rouge">TestModuleGraphQlQueryExtension</code> - This module extends <code class="highlighter-rouge">TestModuleGraphQlQuery</code>, adding the <code class="highlighter-rouge">integer_list</code> extension attribute. It’s located at <code class="highlighter-rouge">&lt;installdir&gt;/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension</code>.</li>
+  <li>Text area</li>
+  <li>Date picker</li>
+  <li>Drop-down menu</li>
+  <li>Text field</li>
+  <li>File picker</li>
+  <li>Radio buttons</li>
 </ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento has not implemented all possible customizable product options for GraphQL.</p>
+</div>
+
+<p><code class="highlighter-rouge">CustomizableOptionInterface</code> can contain the following attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">title</code></td>
+      <td>String</td>
+      <td>The display name for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">required</code></td>
+      <td>Boolean</td>
+      <td>Indicates whether the option is required</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sort_order</code></td>
+      <td>Int</td>
+      <td>The order in which the option is displayed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="customizableareaoption-object">CustomizableAreaOption object</h2>
+
+<p><code class="highlighter-rouge">CustomizableAreaOption</code> contains information about a text area that is defined as part of a customizable option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="highlighter-rouge">CustomizableAreaValue</code></td>
+      <td>An object that defines a text area</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit of the base product</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customizableareavalue-object">CustomizableAreaValue object</h3>
+
+<p><code class="highlighter-rouge">CustomizableAreaValue</code> defines the attributes of a product whose page contains a customized text area.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">price</code></td>
+      <td>Float</td>
+      <td>The price assigned to this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price_type</code></td>
+      <td>PriceTypeEnum</td>
+      <td>FIXED, PERCENT, or DYNAMIC</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">max_characters</code></td>
+      <td>Int</td>
+      <td>The maximum number of characters that can be entered for this customizable option</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="customizabledateoption-object">CustomizableDateOption object</h2>
+
+<p><code class="highlighter-rouge">CustomizableDateOption</code> contains information about a date picker that is defined as part of a customizable option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="highlighter-rouge">CustomizableDateValue</code></td>
+      <td>An object that defines a date field in a customizable option.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit of the base product</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customizabledatevalue-object">CustomizableDateValue object</h3>
+
+<p><code class="highlighter-rouge">CustomizableDateValue</code> defines the attributes of a product whose page contains a customized date picker.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">price</code></td>
+      <td>Float</td>
+      <td>The price assigned to this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price_type</code></td>
+      <td>PriceTypeEnum</td>
+      <td>FIXED, PERCENT, or DYNAMIC</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit for this option</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="customizabledropdownoption-object">CustomizableDropDownOption object</h2>
+
+<p><code class="highlighter-rouge">CustomizableDropDownOption</code> contains information about a drop down menu that is defined as part of a customizable option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="highlighter-rouge">CustomizableDropDownValue</code></td>
+      <td>An array that defines the set of options for a drop down menu</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customizabledropdownvalue-object">CustomizableDropDownValue object</h3>
+
+<p><code class="highlighter-rouge">CustomizableDropDownValue</code> defines the attributes of a product whose page contains a customized drop down menu.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">option_type_id</code></td>
+      <td>Int</td>
+      <td>The ID assigned to the value</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price</code></td>
+      <td>Float</td>
+      <td>The price assigned to this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price_type</code></td>
+      <td>PriceTypeEnum</td>
+      <td>FIXED, PERCENT, or DYNAMIC</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">title</code></td>
+      <td>String</td>
+      <td>The display name for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sort_order</code></td>
+      <td>Int</td>
+      <td>The order in which the option is displayed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="customizablefieldoption-object">CustomizableFieldOption object</h2>
+
+<p><code class="highlighter-rouge">CustomizableFieldOption</code> contains information about a text field that is defined as part of a customizable option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="highlighter-rouge">CustomizableFieldValue</code></td>
+      <td>An object that defines a text field</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit of the base product</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customizablefieldvalue-object">CustomizableFieldValue object</h3>
+
+<p><code class="highlighter-rouge">CustomizableFieldValue</code> defines the attributes of a product whose page contains a customized text field.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">price</code></td>
+      <td>Float</td>
+      <td>The price of the custom value</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price_type</code></td>
+      <td>PriceTypeEnum</td>
+      <td>FIXED, PERCENT, or DYNAMIC</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">max_characters</code></td>
+      <td>Int</td>
+      <td>The maximum number of characters that can be entered for this customizable option</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="customizablefileoption-object">CustomizableFileOption object</h2>
+
+<p><code class="highlighter-rouge">CustomizableFileOption</code> contains information about a file picker that is defined as part of a customizable option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="highlighter-rouge">CustomizableFileValue</code></td>
+      <td>An object that defines a file name</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit of the base product</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customizablefilevalue-object">CustomizableFileValue object</h3>
+
+<p><code class="highlighter-rouge">CustomizableFileValue</code> defines the attributes of a product whose page contains a customized file picker.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">price</code></td>
+      <td>Float</td>
+      <td>The price assigned to this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price_type</code></td>
+      <td>PriceTypeEnum</td>
+      <td>FIXED, PERCENT, or DYNAMIC</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">file_extension</code></td>
+      <td>String</td>
+      <td>The file extension to accept</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">image_size_x</code></td>
+      <td>Int</td>
+      <td>The maximum width of an image</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">image_size_y</code></td>
+      <td>Int</td>
+      <td>The maximum height of an image</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="customizableradiooption-object">CustomizableRadioOption object</h2>
+
+<p><code class="highlighter-rouge">CustomizableRadioOption</code> contains information about a set of radio buttons that are defined as part of a customizable option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="highlighter-rouge">CustomizableRadioValue</code></td>
+      <td>An array that defines a set of radio buttons</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="customizableradiovalue-object">CustomizableRadioValue object</h3>
+
+<p><code class="highlighter-rouge">CustomizableRadioValue</code> defines the attributes of a product whose page contains a customized set of radio buttons.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">option_type_id</code></td>
+      <td>Int</td>
+      <td>The ID assigned to the value</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price</code></td>
+      <td>Float</td>
+      <td>The price assigned to this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">price_type</code></td>
+      <td>PriceTypeEnum</td>
+      <td>FIXED, PERCENT, or DYNAMIC</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sku</code></td>
+      <td>String</td>
+      <td>The Stock Keeping Unit for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">title</code></td>
+      <td>String</td>
+      <td>The display name for this option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sort_order</code></td>
+      <td>Int</td>
+      <td>The order in which the option is displayed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="example-usage">Example usage</h2>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -827,7 +1181,7 @@ QUERY;
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/functional-testing.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/reference/customizable-option-interface.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -837,7 +1191,7 @@ QUERY;
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/functional-testing.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/reference/customizable-option-interface.html" target="_blank">Give us feedback</a>
       </div>
     
   

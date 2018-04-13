@@ -300,12 +300,12 @@
         
         
         
-        <li class="nav-level2  " id="request-headers">
+        <li class="nav-level2  " id="graphql-request-headers">
             
             
         
             
-            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            <a href="/guides/v2.3/graphql/send-request.html">GraphQL request headers</a>
             
 
             
@@ -391,12 +391,12 @@
         
         
         
-        <li class="nav-level2  " id="handling-exceptions">
+        <li class="nav-level2  " id="exception-handling">
             
             
         
             
-            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Exception handling</a>
             
 
             
@@ -441,48 +441,6 @@
         
         
         
-        <li class="nav-level2  " id="customattributemetadata-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="customer-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="price-field">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="products-endpoint">
             
             
@@ -499,11 +457,53 @@
 
                 
                 
+                <li class="nav-level3  " id="product-interface-implementations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/product-interface-implementations.html">Product interface implementations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customizableoptioninterface">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableOptionInterface</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
                 <li class="nav-level3 active " id="bundle-product-endpoint">
                     
 
                     
                     <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="categories-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/categories.html">Categories endpoint</a>
                     
 
                     
@@ -573,14 +573,62 @@
         
         
         
-        <li class="nav-level2  " id="urlresolver-service">
+        <li class="nav-level2  " id="other-objects">
             
+            
+            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            <span>Other objects</span>
             
 
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="customattributemetadata-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customer-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="urlresolver-service">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -709,27 +757,27 @@
     <tr>
       <td><code class="highlighter-rouge">dynamic_price</code></td>
       <td>Boolean</td>
-      <td>Indicates whether the bundle product has a dynamic price.</td>
+      <td>Indicates whether the bundle product has a dynamic price</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">dynamic_sku</code></td>
       <td>Boolean</td>
-      <td>Indicates whether the bundle product has a dynamic SKU.</td>
+      <td>Indicates whether the bundle product has a dynamic SKU</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">ship_bundle_items</code></td>
       <td>ShipBundleItemsEnum</td>
-      <td>Indicates whether to ship bundle items together or individually.</td>
+      <td>Indicates whether to ship bundle items together or individually</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">dynamic_weight</code></td>
       <td>Boolean</td>
-      <td>Indicates whether the bundle product has a dynamically calculated weight.</td>
+      <td>Indicates whether the bundle product has a dynamically calculated weight</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">items</code></td>
       <td>BundleItem</td>
-      <td>An array containing information about individual bundle items.</td>
+      <td>An array containing information about individual bundle items</td>
     </tr>
   </tbody>
 </table>
@@ -748,7 +796,7 @@
     <tr>
       <td><code class="highlighter-rouge">option_id</code></td>
       <td>Int</td>
-      <td>An ID assigned to each type of item in a bundle product.</td>
+      <td>An ID assigned to each type of item in a bundle product</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">title</code></td>
@@ -758,17 +806,17 @@
     <tr>
       <td><code class="highlighter-rouge">required</code></td>
       <td>Boolean</td>
-      <td>Indicates whether the item must be included in the bundle.</td>
+      <td>Indicates whether the item must be included in the bundle</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">type</code></td>
       <td>String</td>
-      <td>The input type that the customer uses to select the item. Examples include radio button and checkbox.” /&gt;</td>
+      <td>The input type that the customer uses to select the item. Examples include radio button and checkbox.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">position</code></td>
       <td>Int</td>
-      <td>The relative position of this item compared to the other bundle items.</td>
+      <td>The relative position of this item compared to the other bundle items</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">sku</code></td>

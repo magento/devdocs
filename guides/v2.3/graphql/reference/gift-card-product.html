@@ -300,12 +300,12 @@
         
         
         
-        <li class="nav-level2  " id="request-headers">
+        <li class="nav-level2  " id="graphql-request-headers">
             
             
         
             
-            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            <a href="/guides/v2.3/graphql/send-request.html">GraphQL request headers</a>
             
 
             
@@ -391,12 +391,12 @@
         
         
         
-        <li class="nav-level2  " id="handling-exceptions">
+        <li class="nav-level2  " id="exception-handling">
             
             
         
             
-            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Exception handling</a>
             
 
             
@@ -441,48 +441,6 @@
         
         
         
-        <li class="nav-level2  " id="customattributemetadata-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="customer-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="price-field">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="products-endpoint">
             
             
@@ -499,11 +457,53 @@
 
                 
                 
+                <li class="nav-level3  " id="product-interface-implementations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/product-interface-implementations.html">Product interface implementations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customizableoptioninterface">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableOptionInterface</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
                 <li class="nav-level3  " id="bundle-product-endpoint">
                     
 
                     
                     <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="categories-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/categories.html">Categories endpoint</a>
                     
 
                     
@@ -573,14 +573,62 @@
         
         
         
-        <li class="nav-level2  " id="urlresolver-service">
+        <li class="nav-level2  " id="other-objects">
             
+            
+            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            <span>Other objects</span>
             
 
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="customattributemetadata-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customer-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="urlresolver-service">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -808,7 +856,7 @@
 <p>The following query returns information about gift card product <code class="highlighter-rouge">GiftCard25</code>. (It is not defined in the sample data.)</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-   </span><span class="err">products(filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"{$productSku}"</span><span class="p">}}</span><span class="err">)</span><span class="w">
+   </span><span class="err">products(filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"GiftCard25"</span><span class="p">}}</span><span class="err">)</span><span class="w">
    </span><span class="p">{</span><span class="w">
        </span><span class="err">items</span><span class="p">{</span><span class="w">
            </span><span class="err">id</span><span class="w">
@@ -831,7 +879,6 @@
               </span><span class="err">value</span><span class="w">
               </span><span class="err">attribute_id</span><span class="w">
               </span><span class="err">website_value</span><span class="w">
-            </span><span class="p">}</span><span class="w">
            </span><span class="p">}</span><span class="w">
        </span><span class="p">}</span><span class="w">
    </span><span class="p">}</span><span class="w">

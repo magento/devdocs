@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/customer.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/reference/customer.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/customer.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/reference/customer.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/customer.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/reference/customer.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/customer.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/reference/customer.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -300,12 +300,12 @@
         
         
         
-        <li class="nav-level2  " id="request-headers">
+        <li class="nav-level2  " id="graphql-request-headers">
             
             
         
             
-            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            <a href="/guides/v2.3/graphql/send-request.html">GraphQL request headers</a>
             
 
             
@@ -391,12 +391,12 @@
         
         
         
-        <li class="nav-level2  " id="handling-exceptions">
+        <li class="nav-level2  " id="exception-handling">
             
             
         
             
-            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Exception handling</a>
             
 
             
@@ -441,48 +441,6 @@
         
         
         
-        <li class="nav-level2  " id="customattributemetadata-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2 active " id="customer-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="price-field">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="products-endpoint">
             
             
@@ -499,11 +457,53 @@
 
                 
                 
+                <li class="nav-level3  " id="product-interface-implementations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/product-interface-implementations.html">Product interface implementations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customizableoptioninterface">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableOptionInterface</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
                 <li class="nav-level3  " id="bundle-product-endpoint">
                     
 
                     
                     <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="categories-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/categories.html">Categories endpoint</a>
                     
 
                     
@@ -573,14 +573,62 @@
         
         
         
-        <li class="nav-level2  " id="urlresolver-service">
+        <li class="nav-level2  " id="other-objects">
             
+            
+            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            <span>Other objects</span>
             
 
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="customattributemetadata-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3 active " id="customer-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="urlresolver-service">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -688,13 +736,9 @@
 </section>
 
 
-			<p>The <code class="highlighter-rouge">Customer</code> endpoint allows you return information about an customer account.</p>
+			<p>The <code class="highlighter-rouge">Customer</code> endpoint returns information about a customer account.</p>
 
-<p>In this sprint, GraphQL relies on <a href="/guides/v2.3/get-started/authentication/gs-authentication-session.html">session authentication</a>. To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>B2B customer attributes are not currently supported.</p>
-</div>
+<p>Currently, GraphQL relies on <a href="/guides/v2.3/get-started/authentication/gs-authentication-session.html">session authentication</a>. To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.</p>
 
 <h2 id="query-structure">Query structure</h2>
 
@@ -825,7 +869,7 @@
     <tr>
       <td><code class="highlighter-rouge">country_id</code></td>
       <td>String</td>
-      <td>The customer’s country.</td>
+      <td>The customer’s country</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">street</code></td>
@@ -880,7 +924,7 @@
     <tr>
       <td><code class="highlighter-rouge">suffix</code></td>
       <td>String</td>
-      <td>A value such as Sr., Jr., III, etc.</td>
+      <td>A value such as Sr., Jr., or III</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">vat_id</code></td>
@@ -976,7 +1020,7 @@
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/customer.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/reference/customer.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>

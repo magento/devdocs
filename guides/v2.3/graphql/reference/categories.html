@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>GraphQL functional testing | Magento 2 Developer Documentation</title>
+	<title>categories endpoint | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.3/graphql/functional-testing.html">
+	<link rel="canonical" href="//guides/v2.3/graphql/reference/categories.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/functional-testing.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/reference/categories.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/functional-testing.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/reference/categories.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/functional-testing.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/reference/categories.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/functional-testing.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/reference/categories.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -411,7 +411,7 @@
     
     
 
-<li class="nav-level1 active " id="functional-testing">
+<li class="nav-level1  " id="functional-testing">
 
     
     
@@ -499,7 +499,7 @@
 
                 
                 
-                <li class="nav-level3  " id="categories-endpoint">
+                <li class="nav-level3 active " id="categories-endpoint">
                     
 
                     
@@ -705,7 +705,7 @@
 
           
 
-          <span property="name">GraphQL functional testing</span>
+          <span property="name">categories endpoint</span>
 
         
 
@@ -728,7 +728,7 @@
 
 	
 
-	<h1 class="page-heading">GraphQL functional testing</h1>
+	<h1 class="page-heading">categories endpoint</h1>
 
   
 
@@ -736,86 +736,176 @@
 </section>
 
 
-			<p>Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.</p>
+			<p>The <code class="highlighter-rouge">categories</code> endpoint allows you to search for a single category definition or the entire category tree.</p>
 
-<h2 id="creating-a-new-graphql-functional-test">Creating a new GraphQL functional test</h2>
+<h2 id="query-structure">Query structure</h2>
 
-<p>All GraphQL functional tests should inherit from the generic test case <code class="highlighter-rouge">Magento\TestFramework\TestCase\GraphQlAbstract</code>. It defines the <code class="highlighter-rouge">graphQlQuery()</code> method, which should be used to perform Web API calls from tests.</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">categories</span><span class="w"> </span><span class="err">(</span><span class="w">
+   </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="err">root_category_id</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w">
+</span><span class="err">)</span><span class="p">:</span><span class="w"> </span><span class="err">Categories</span><span class="w">
+</span></code></pre></div></div>
 
-<p>The following test verifies that the schema returns the correct attribute type, given the <code class="highlighter-rouge">attribute_code</code> and corresponding <code class="highlighter-rouge">entity_type</code>.</p>
+<h3 id="input-attributes">Input attributes</h3>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\GraphQl\Catalog</span><span class="p">;</span>
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">root_category_id</code></td>
+      <td>Int</td>
+      <td>The ID in the category tree to use as the starting point of your category search.</td>
+    </tr>
+  </tbody>
+</table>
 
-<span class="k">use</span> <span class="nx">Magento\TestFramework\TestCase\GraphQlAbstract</span><span class="p">;</span>
+<h3 id="Categories">Output attributes</h3>
 
-<span class="k">class</span> <span class="nc">ProductAttributeTypeTest</span> <span class="k">extends</span> <span class="nx">GraphQlAbstract</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">testAttributeTypeResolver</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$query</span>
-            <span class="o">=</span> <span class="sh">&lt;&lt;&lt;QUERY
-{
-  customAttributeMetadata(attributes:
-  [
-    {
-      attribute_code:"description",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"status",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"special_price",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"disable_auto_group_change",
-      entity_type:"customer"
-    }
-    {
-      attribute_code:"special_price",
-      entity_type:"Magento\\\\Catalog\\\\Api\\\\Data\\\\ProductInterface"
-    }
-  ]
-  )
-  {
-    items
-    {
-      attribute_code
-      attribute_type
-      entity_type
-    }
-  }
- }
-QUERY;
-</span>        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">graphQlQuery</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
-        <span class="nv">$expectedAttributeCodes</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">'description'</span><span class="p">,</span>
-            <span class="s1">'status'</span><span class="p">,</span>
-            <span class="s1">'special_price'</span><span class="p">,</span>
-            <span class="s1">'disable_auto_group_change'</span><span class="p">,</span>
-            <span class="s1">'special_price'</span>
-        <span class="p">];</span>
-        <span class="nv">$entityType</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'customer'</span><span class="p">,</span>
-            <span class="nx">\Magento\Catalog\Api\Data\ProductInterface</span><span class="o">::</span><span class="na">class</span>
-        <span class="p">];</span>
-        <span class="nv">$attributeTypes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'String'</span><span class="p">,</span> <span class="s1">'Int'</span><span class="p">,</span> <span class="s1">'Float'</span><span class="p">,</span><span class="s1">'Boolean'</span><span class="p">,</span> <span class="s1">'Float'</span><span class="p">];</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertAttributeType</span><span class="p">(</span><span class="nv">$attributeTypes</span><span class="p">,</span> <span class="nv">$expectedAttributeCodes</span><span class="p">,</span> <span class="nv">$entityType</span><span class="p">,</span> <span class="nv">$response</span><span class="p">);</span>
-    <span class="p">}</span></code></pre></figure>
+<p>The query returns a <code class="highlighter-rouge">Categories</code> object. The top line of the response is <code class="highlighter-rouge">category_tree</code>.</p>
 
-<h2 id="using-the-default-graphqlquerytest">Using the default GraphQlQueryTest</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">id</code></td>
+      <td>Int</td>
+      <td>An ID that uniquely identifies the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">description</code></td>
+      <td>String</td>
+      <td>An optional description of the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>String</td>
+      <td>The display name of the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">path</code></td>
+      <td>String</td>
+      <td>The path to the category, as a string of category IDs, separated by slashes (/). For example, <code class="highlighter-rouge">1/2/20</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">path_in_store</code></td>
+      <td>String</td>
+      <td>Category path in the store</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url_key</code></td>
+      <td>String</td>
+      <td>The url key assigned to the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url_path</code></td>
+      <td>String</td>
+      <td>The url path assigned to the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">is_active</code></td>
+      <td>Boolean</td>
+      <td>Indicates whether the category is enabled</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">position</code></td>
+      <td>Int</td>
+      <td>The position of the category relative to other categories at the same level in tree</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">level</code></td>
+      <td>Int</td>
+      <td>Indicates the depth of the category within the tree</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">created_at</code></td>
+      <td>String</td>
+      <td>Timestamp indicating when the category was created</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">updated_at</code></td>
+      <td>String</td>
+      <td>Timestamp indicating when the category was updated</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">product_count</code></td>
+      <td>Int</td>
+      <td>The number of products in the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">default_sort_by</code></td>
+      <td>String</td>
+      <td>The attribute to use for sorting</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>The <code class="highlighter-rouge">\Magento\GraphQl\TestModule\GraphQlQueryTest.php</code> test case uses two test modules to determine whether the mechanisms for GraphQL extensibility work as expected. It illustrates best practices for extending an existing GraphQL endpoint.</p>
+<p>The response can contain up to ten nested <code class="highlighter-rouge">children</code> options that allow you to return multiple levels of the category tree. In most cases, the entire category tree can be returned in a single call. The following response definition returns two levels of categories:</p>
 
-<ul>
-  <li><code class="highlighter-rouge">TestModuleGraphQlQuery</code> - This bare-bones module defines a <code class="highlighter-rouge">testItem</code> endpoint with the queryable attributes <code class="highlighter-rouge">item_id</code> and <code class="highlighter-rouge">name</code>. It’s located at <code class="highlighter-rouge">&lt;installdir&gt;/dev/tests/api-functional/_files/TestModuleGraphQlQuery</code>.</li>
-  <li><code class="highlighter-rouge">TestModuleGraphQlQueryExtension</code> - This module extends <code class="highlighter-rouge">TestModuleGraphQlQuery</code>, adding the <code class="highlighter-rouge">integer_list</code> extension attribute. It’s located at <code class="highlighter-rouge">&lt;installdir&gt;/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension</code>.</li>
-</ul>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="err">category_tree</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">id</span><span class="w">
+    </span><span class="err">level</span><span class="w">
+    </span><span class="err">description</span><span class="w">
+    </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">id</span><span class="w">
+      </span><span class="err">level</span><span class="w">
+      </span><span class="err">description</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<h2 id="sample-query">Sample Query</h2>
+
+<p>The following query returns information about category ID <code class="highlighter-rouge">20</code> (Women), which is defined in the sample data.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="err">categories(filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">root_category_id</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">category_tree</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">id</span><span class="w">
+      </span><span class="err">level</span><span class="w">
+      </span><span class="err">is_active</span><span class="w">
+      </span><span class="err">description</span><span class="w">
+      </span><span class="err">all_children</span><span class="w">
+      </span><span class="err">path</span><span class="w">
+      </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">id</span><span class="w">
+        </span><span class="err">level</span><span class="w">
+        </span><span class="err">is_active</span><span class="w">
+        </span><span class="err">description</span><span class="w">
+        </span><span class="err">all_children</span><span class="w">
+        </span><span class="err">path</span><span class="w">
+        </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">id</span><span class="w">
+          </span><span class="err">level</span><span class="w">
+          </span><span class="err">is_active</span><span class="w">
+          </span><span class="err">description</span><span class="w">
+          </span><span class="err">all_children</span><span class="w">
+          </span><span class="err">path</span><span class="w">
+          </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">id</span><span class="w">
+            </span><span class="err">level</span><span class="w">
+            </span><span class="err">is_active</span><span class="w">
+            </span><span class="err">description</span><span class="w">
+            </span><span class="err">all_children</span><span class="w">
+            </span><span class="err">path</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -827,7 +917,7 @@ QUERY;
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/functional-testing.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/reference/categories.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -837,7 +927,7 @@ QUERY;
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/functional-testing.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/reference/categories.html" target="_blank">Give us feedback</a>
       </div>
     
   

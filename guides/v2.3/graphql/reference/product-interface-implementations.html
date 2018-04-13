@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>GraphQL functional testing | Magento 2 Developer Documentation</title>
+	<title>Price field | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.3/graphql/functional-testing.html">
+	<link rel="canonical" href="//guides/v2.3/graphql/reference/product-interface-implementations.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/functional-testing.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/reference/product-interface-implementations.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/functional-testing.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/reference/product-interface-implementations.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/functional-testing.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/reference/product-interface-implementations.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/functional-testing.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/reference/product-interface-implementations.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -411,7 +411,7 @@
     
     
 
-<li class="nav-level1 active " id="functional-testing">
+<li class="nav-level1  " id="functional-testing">
 
     
     
@@ -457,7 +457,7 @@
 
                 
                 
-                <li class="nav-level3  " id="product-interface-implementations">
+                <li class="nav-level3 active " id="product-interface-implementations">
                     
 
                     
@@ -705,7 +705,7 @@
 
           
 
-          <span property="name">GraphQL functional testing</span>
+          <span property="name">Price field</span>
 
         
 
@@ -728,7 +728,7 @@
 
 	
 
-	<h1 class="page-heading">GraphQL functional testing</h1>
+	<h1 class="page-heading">Price field</h1>
 
   
 
@@ -736,86 +736,91 @@
 </section>
 
 
-			<p>Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.</p>
+			<p>Magento provides multiple product types, and most of these product types have specialized attributes that are not defined in the <code class="highlighter-rouge">ProductInterface</code>.</p>
 
-<h2 id="creating-a-new-graphql-functional-test">Creating a new GraphQL functional test</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Product type</th>
+      <th>Implements</th>
+      <th>Has product-specific attributes?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>* <a href="/guides/v2.3/graphql/reference/bundle-product.html">BundleProduct</a></td>
+      <td><a href="/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a>, <a href="/guides/v2.3/graphql/reference/products.html#PhysicalProductInterface">PhysicalProductInterface</a>, <a href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableProductInterface</a></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>* <a href="/guides/v2.3/graphql/reference/configurable-product.html">ConfigurableProduct</a></td>
+      <td><a href="/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a>, <a href="/guides/v2.3/graphql/reference/products.html#PhysicalProductInterface">PhysicalProductInterface</a>, <a href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableProductInterface</a></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>* <a href="/guides/v2.3/graphql/reference/downloadable-product.html">DownloadableProduct</a></td>
+      <td><a href="/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a>,  <a href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableProductInterface</a></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>* <a href="/guides/v2.3/graphql/reference/grouped-product.html">GroupedProduct</a></td>
+      <td><a href="/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a>, <a href="/guides/v2.3/graphql/reference/products.html#PhysicalProductInterface">PhysicalProductInterface</a>, <a href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableProductInterface</a></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>* SimpleProduct</td>
+      <td><a href="/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a>, <a href="/guides/v2.3/graphql/reference/products.html#PhysicalProductInterface">PhysicalProductInterface</a>, <a href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableProductInterface</a></td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>* VirtualProduct</td>
+      <td><a href="/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a>,  <a href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableProductInterface</a></td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>All GraphQL functional tests should inherit from the generic test case <code class="highlighter-rouge">Magento\TestFramework\TestCase\GraphQlAbstract</code>. It defines the <code class="highlighter-rouge">graphQlQuery()</code> method, which should be used to perform Web API calls from tests.</p>
+<h2 id="query-for-product-specific-attributes">Query for product-specific attributes</h2>
 
-<p>The following test verifies that the schema returns the correct attribute type, given the <code class="highlighter-rouge">attribute_code</code> and corresponding <code class="highlighter-rouge">entity_type</code>.</p>
+<p>To return attributes that are specific to a product type, append a structure similar to the following to the end of the <code class="highlighter-rouge">Products</code> output object:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\GraphQl\Catalog</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">...</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">&lt;ProductType&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">items</span><span class="p">{</span><span class="w">
+    </span><span class="err">&lt;ProductType-attribute</span><span class="mi">1</span><span class="err">&gt;</span><span class="w">
+    </span><span class="err">&lt;ProductType-attribute</span><span class="mi">2</span><span class="err">&gt;</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span></code></pre></figure>
 
-<span class="k">use</span> <span class="nx">Magento\TestFramework\TestCase\GraphQlAbstract</span><span class="p">;</span>
+<p>For example, to return <code class="highlighter-rouge">GroupedProduct</code> attributes, construct your query like this:</p>
 
-<span class="k">class</span> <span class="nc">ProductAttributeTypeTest</span> <span class="k">extends</span> <span class="nx">GraphQlAbstract</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">testAttributeTypeResolver</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$query</span>
-            <span class="o">=</span> <span class="sh">&lt;&lt;&lt;QUERY
-{
-  customAttributeMetadata(attributes:
-  [
-    {
-      attribute_code:"description",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"status",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"special_price",
-      entity_type:"catalog_product"
-    },
-    {
-      attribute_code:"disable_auto_group_change",
-      entity_type:"customer"
-    }
-    {
-      attribute_code:"special_price",
-      entity_type:"Magento\\\\Catalog\\\\Api\\\\Data\\\\ProductInterface"
-    }
-  ]
-  )
-  {
-    items
-    {
-      attribute_code
-      attribute_type
-      entity_type
-    }
-  }
- }
-QUERY;
-</span>        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">graphQlQuery</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
-        <span class="nv">$expectedAttributeCodes</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">'description'</span><span class="p">,</span>
-            <span class="s1">'status'</span><span class="p">,</span>
-            <span class="s1">'special_price'</span><span class="p">,</span>
-            <span class="s1">'disable_auto_group_change'</span><span class="p">,</span>
-            <span class="s1">'special_price'</span>
-        <span class="p">];</span>
-        <span class="nv">$entityType</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'catalog_product'</span><span class="p">,</span>
-            <span class="s1">'customer'</span><span class="p">,</span>
-            <span class="nx">\Magento\Catalog\Api\Data\ProductInterface</span><span class="o">::</span><span class="na">class</span>
-        <span class="p">];</span>
-        <span class="nv">$attributeTypes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'String'</span><span class="p">,</span> <span class="s1">'Int'</span><span class="p">,</span> <span class="s1">'Float'</span><span class="p">,</span><span class="s1">'Boolean'</span><span class="p">,</span> <span class="s1">'Float'</span><span class="p">];</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertAttributeType</span><span class="p">(</span><span class="nv">$attributeTypes</span><span class="p">,</span> <span class="nv">$expectedAttributeCodes</span><span class="p">,</span> <span class="nv">$entityType</span><span class="p">,</span> <span class="nv">$response</span><span class="p">);</span>
-    <span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="err">products(filter</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG085_Group"</span><span class="p">}}</span><span class="w">
+  	</span><span class="err">)</span><span class="w">
+  	</span><span class="p">{</span><span class="w">
+    </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">id</span><span class="w">
+      </span><span class="err">name</span><span class="w">
+      </span><span class="err">sku</span><span class="w">
+      </span><span class="err">type_id</span><span class="w">
+      </span><span class="err">...</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">GroupedProduct</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">items</span><span class="p">{</span><span class="w">
+          </span><span class="err">qty</span><span class="w">
+          </span><span class="err">position</span><span class="w">
+          </span><span class="err">product</span><span class="p">{</span><span class="w">
+            </span><span class="err">sku</span><span class="w">
+            </span><span class="err">name</span><span class="w">
+            </span><span class="err">type_id</span><span class="w">
+            </span><span class="err">url_key</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<h2 id="using-the-default-graphqlquerytest">Using the default GraphQlQueryTest</h2>
-
-<p>The <code class="highlighter-rouge">\Magento\GraphQl\TestModule\GraphQlQueryTest.php</code> test case uses two test modules to determine whether the mechanisms for GraphQL extensibility work as expected. It illustrates best practices for extending an existing GraphQL endpoint.</p>
-
-<ul>
-  <li><code class="highlighter-rouge">TestModuleGraphQlQuery</code> - This bare-bones module defines a <code class="highlighter-rouge">testItem</code> endpoint with the queryable attributes <code class="highlighter-rouge">item_id</code> and <code class="highlighter-rouge">name</code>. It’s located at <code class="highlighter-rouge">&lt;installdir&gt;/dev/tests/api-functional/_files/TestModuleGraphQlQuery</code>.</li>
-  <li><code class="highlighter-rouge">TestModuleGraphQlQueryExtension</code> - This module extends <code class="highlighter-rouge">TestModuleGraphQlQuery</code>, adding the <code class="highlighter-rouge">integer_list</code> extension attribute. It’s located at <code class="highlighter-rouge">&lt;installdir&gt;/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension</code>.</li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -827,7 +832,7 @@ QUERY;
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/functional-testing.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/reference/product-interface-implementations.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -837,7 +842,7 @@ QUERY;
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/functional-testing.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/graphql/reference/product-interface-implementations.html" target="_blank">Give us feedback</a>
       </div>
     
   

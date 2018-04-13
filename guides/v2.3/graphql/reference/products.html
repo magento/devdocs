@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/products.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/reference/products.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/products.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/reference/products.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/products.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/reference/products.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/products.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/reference/products.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -300,12 +300,12 @@
         
         
         
-        <li class="nav-level2  " id="request-headers">
+        <li class="nav-level2  " id="graphql-request-headers">
             
             
         
             
-            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            <a href="/guides/v2.3/graphql/send-request.html">GraphQL request headers</a>
             
 
             
@@ -391,12 +391,12 @@
         
         
         
-        <li class="nav-level2  " id="handling-exceptions">
+        <li class="nav-level2  " id="exception-handling">
             
             
         
             
-            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Exception handling</a>
             
 
             
@@ -441,48 +441,6 @@
         
         
         
-        <li class="nav-level2  " id="customattributemetadata-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="customer-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="price-field">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2 active " id="products-endpoint">
             
             
@@ -499,11 +457,53 @@
 
                 
                 
+                <li class="nav-level3  " id="product-interface-implementations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/product-interface-implementations.html">Product interface implementations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customizableoptioninterface">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableOptionInterface</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
                 <li class="nav-level3  " id="bundle-product-endpoint">
                     
 
                     
                     <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="categories-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/categories.html">Categories endpoint</a>
                     
 
                     
@@ -573,14 +573,62 @@
         
         
         
-        <li class="nav-level2  " id="urlresolver-service">
+        <li class="nav-level2  " id="other-objects">
             
+            
+            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            <span>Other objects</span>
             
 
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="customattributemetadata-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customer-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="urlresolver-service">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -700,8 +748,7 @@
 </span><span class="err">sort</span><span class="p">:</span><span class="w"> </span><span class="err">ProductSortInput</span><span class="w">
 </span><span class="err">)</span><span class="p">:</span><span class="w"> </span><span class="err">Products</span><span class="w">
 </span></code></pre></div></div>
-
-<p>where:</p>
+<p>Each query attribute is defined below:</p>
 
 <table>
   <thead>
@@ -733,7 +780,7 @@
     </tr>
     <tr>
       <td><code class="highlighter-rouge">Products</code></td>
-      <td>An output object that contains the results of the query.</td>
+      <td>An output object that contains the results of the query. See <a href="#Response">Response</a> for details.</td>
     </tr>
   </tbody>
 </table>
@@ -754,7 +801,6 @@
 <p>The following attributes can be used to create filters. See the <a href="#Response">Response</a> section for information about each attribute.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>category_ids
-color
 country_of_manufacture
 created_at
 custom_design
@@ -768,9 +814,11 @@ has_options
 image
 image_label
 manufacturer
+max_price
 meta_description
 meta_keyword
 meta_title
+min_price
 name
 news_from_date
 news_to_date
@@ -798,7 +846,8 @@ weight
   <ul>
     <li><code class="highlighter-rouge">or</code> - The keyword required to perform a logical OR comparison.</li>
     <li><code class="highlighter-rouge">news_from_date</code> - This attribute is transformed to <code class="highlighter-rouge">news_from_date</code> in a response.</li>
-    <li><code class="highlighter-rouge">news_to_date</code> - This attribute is transformed to <code class="highlighter-rouge">news_to_date</code> in a response.</li>
+    <li><code class="highlighter-rouge">news_to_date</code> - This attribute is transformed to <code class="highlighter-rouge">news_to_date</code> in a response.
+*</li>
   </ul>
 </div>
 
@@ -808,9 +857,10 @@ weight
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">items</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">ProductInterface</span><span class="p">]</span><span class="w">
 </span><span class="err">page_info</span><span class="p">:</span><span class="w"> </span><span class="err">SearchResultPageInfo</span><span class="w">
-</span><span class="err">total_count</span><span class="p">:</span><span class="w"> </span><span class="err">Int</span></code></pre></figure>
+</span><span class="err">total_count</span><span class="p">:</span><span class="w"> </span><span class="err">Int</span><span class="w">
+</span><span class="err">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">LayerFilter</span><span class="p">]</span></code></pre></figure>
 
-<p>where:</p>
+<p>Each attribute is described below:</p>
 
 <table>
   <thead>
@@ -830,14 +880,34 @@ weight
     </tr>
     <tr>
       <td><code class="highlighter-rouge">total_count</code></td>
-      <td>The number of products returned.</td>
+      <td>The number of products returned</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">filters</code></td>
+      <td>An array of layered navigation filters. These filters can be used to implement layered navigation on your app.</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="items-array">Items Array</h3>
+<h2 id="ProductInterface">ProductInterface</h2>
 
-<p>The <code class="highlighter-rouge">Items</code> array can contain all the attributes that can be specified in an <code class="highlighter-rouge">ProductFilterInput</code> object, plus the attributes and objects listed in the following table. The array can also contain any custom and extension attributes defined in any attribute set.</p>
+<p>Any type that implements <code class="highlighter-rouge">ProductInterface</code> contains all the base attributes necessary for the frontend of the product model.
+The <code class="highlighter-rouge">items</code> that are returned in a <code class="highlighter-rouge">ProductInterface</code> array can also contain attributes from resources external to the CatalogGraphQl module:</p>
+
+<ul>
+  <li>Custom and extension attributes defined in any attribute set</li>
+  <li>The attribute is defined in the <a href="#PhysicalProductInterface">PhysicalProductInterface</a> or <a href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableOptionInterface</a></li>
+  <li>Product types that define their own implementation of <code class="highlighter-rouge">ProductInterface</code>, including
+    <ul>
+      <li><a href="/guides/v2.3/graphql/reference/bundle-product.html">BundleProduct</a></li>
+      <li><a href="/guides/v2.3/graphql/reference/configurable-product.html">ConfigurableProduct</a></li>
+      <li><a href="/guides/v2.3/graphql/reference/downloadable-product.html">DownloadableProduct</a></li>
+      <li><a href="/guides/v2.3/graphql/reference/grouped-product.html">GroupedProduct</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>The following table defines the <code class="highlighter-rouge">ProductInterface</code> attributes and objects.</p>
 
 <table>
   <thead>
@@ -851,27 +921,17 @@ weight
     <tr>
       <td><code class="highlighter-rouge">attribute_set_id</code></td>
       <td>Int</td>
-      <td>The attribute set assigned to the product.</td>
+      <td>The attribute set assigned to the product</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">categories</code></td>
+      <td>[CategoryInterface]</td>
+      <td>The categories assigned to the product. See <a href="/guides/v2.3/graphql/reference/categories.html">categories endpoint</a> for more information</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">category_ids</code></td>
       <td>[Int]</td>
-      <td>An array of category IDs the product belongs to.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">category_links</code></td>
-      <td>[ProductCategoryLinks]</td>
-      <td>An array of <a href="#ProductCategoryLinks">ProductCategoryLinks</a> objects</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">color</code></td>
-      <td>Int</td>
-      <td>A number assigned to represent the color</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">configurable_product_options</code></td>
-      <td>[ProductConfigurableProductOptions]</td>
-      <td>An array of <a href="#ProductConfigurableProductOptions">ProductConfigurableProductOptions</a> objects</td>
+      <td>An array of category IDs the product belongs to</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">country_of_manufacture</code></td>
@@ -901,7 +961,7 @@ weight
     <tr>
       <td><code class="highlighter-rouge">custom_layout</code></td>
       <td>String</td>
-      <td>The name of a custom layout.</td>
+      <td>The name of a custom layout</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">custom_layout_update</code></td>
@@ -911,37 +971,37 @@ weight
     <tr>
       <td><code class="highlighter-rouge">description</code></td>
       <td>String</td>
-      <td>A detailed information about the product. The value can include simple HTML tags.</td>
+      <td>Detailed information about the product. The value can include simple HTML tags</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">gift_message_available</code></td>
       <td>String</td>
-      <td>Indicates whether a gift message is available.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">has_options</code></td>
-      <td>String</td>
-      <td>Indicates whether additional attributes have been created for the product.</td>
+      <td>Indicates whether a gift message is available</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">id</code></td>
       <td>Int</td>
-      <td>The ID number assigned to the product.</td>
+      <td>The ID number assigned to the product</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">image</code></td>
       <td>String</td>
-      <td>The relative path for the main image on the product page.</td>
+      <td>The relative path for the main image on the product page</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">image_label</code></td>
       <td>String</td>
-      <td>The label assigned to a product image.</td>
+      <td>The label assigned to a product image</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">is_returnable</code></td>
       <td>String</td>
       <td>Indicates whether the product can be returned. This attribute is defined in the Rma module.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">manufacturer</code></td>
+      <td>Int</td>
+      <td>A number representing the product’s manufacturer</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">media_gallery_entries</code></td>
@@ -951,17 +1011,17 @@ weight
     <tr>
       <td><code class="highlighter-rouge">meta_description</code></td>
       <td>String</td>
-      <td>A brief overview of the product for search results listings. Maximum 255 characters.</td>
+      <td>A brief overview of the product for search results listings, maximum 255 characters</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">meta_keyword</code></td>
       <td>String</td>
-      <td>A comma-separated list of keywords that are visible only to search engines.</td>
+      <td>A comma-separated list of keywords that are visible only to search engines</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">meta_title</code></td>
       <td>String</td>
-      <td>A string that is displayed in the title bar and tab of the browser and in search results lists.</td>
+      <td>A string that is displayed in the title bar and tab of the browser and in search results lists</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">name</code></td>
@@ -971,32 +1031,27 @@ weight
     <tr>
       <td><code class="highlighter-rouge">new_from_date</code></td>
       <td>String</td>
-      <td>The beginning date for new product listings, and determines if the product is featured as a new product.</td>
+      <td>The beginning date for new product listings, and determines if the product is featured as a new product</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">new_to_date</code></td>
       <td>String</td>
-      <td>The end date for new product listings.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">options</code></td>
-      <td>[ProductOptions]</td>
-      <td>An array of <a href="#ProductOptions">ProductOptions</a> objects</td>
+      <td>The end date for new product listings</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">options_container</code></td>
       <td>String</td>
-      <td>If the product has multiple options, determines where they appear on the product page.</td>
+      <td>If the product has multiple options, determines where they appear on the product page</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">page_layout</code></td>
       <td>String</td>
-      <td>The page layout of the product page. Values are <code class="highlighter-rouge">1column-center</code>, <code class="highlighter-rouge">2columns-left</code>, <code class="highlighter-rouge">2columns-right</code>, and <code class="highlighter-rouge">3columns</code>.</td>
+      <td>The page layout of the product page. Values are <code class="highlighter-rouge">1column-center</code>, <code class="highlighter-rouge">2columns-left</code>, <code class="highlighter-rouge">2columns-right</code>, and <code class="highlighter-rouge">3columns</code></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">price</code></td>
-      <td>Float</td>
-      <td>The price of an item. A <code class="highlighter-rouge">ProductPrice</code> object is returned. See <a href="/guides/v2.3/graphql/price.html">Price</a> for more information.</td>
+      <td>ProductPrices</td>
+      <td>The price of an item. A <code class="highlighter-rouge">ProductPrice</code> object is returned. See <a href="{#ProductPrices}">ProductPrices</a> for more information.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">product_links</code></td>
@@ -1004,34 +1059,29 @@ weight
       <td>An array of <a href="#ProductLinks">ProductLinks</a> objects</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">required_options</code></td>
-      <td>Not applicable</td>
-      <td>Input only. Indicates whether the product has required options.</td>
-    </tr>
-    <tr>
       <td><code class="highlighter-rouge">short_description</code></td>
       <td>String</td>
-      <td>A short description of the product. Its use depends on the theme.</td>
+      <td>A short description of the product. Its use depends on the store’s theme.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">sku</code></td>
       <td>String</td>
-      <td>A number or code assigned to a product to identify the product, options, price, and manufacturer.</td>
+      <td>A number or code assigned to a product to identify the product, options, price, and manufacturer</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">small_image</code></td>
       <td>String</td>
-      <td>The file name of a small image, which is used on catalog pages</td>
+      <td>The relative path to the small image, which is used on catalog pages</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">small_image_label</code></td>
       <td>String</td>
-      <td>The label assigned to a product’s small image.</td>
+      <td>The label assigned to a product’s small image</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">special_from_date</code></td>
       <td>String</td>
-      <td>The beginning date that a product has a special price.</td>
+      <td>The beginning date that a product has a special price</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">special_price</code></td>
@@ -1041,7 +1091,7 @@ weight
     <tr>
       <td><code class="highlighter-rouge">special_to_date</code></td>
       <td>String</td>
-      <td>The end date that a product has a special price.</td>
+      <td>The end date that a product has a special price</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">swatch_image</code></td>
@@ -1056,17 +1106,17 @@ weight
     <tr>
       <td><code class="highlighter-rouge">thumbnail</code></td>
       <td>String</td>
-      <td>The file name of a thumbnail image</td>
+      <td>The relative path to the product’s thumbnail image</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">thumbnail_label</code></td>
       <td>String</td>
-      <td>The label assigned to a product’s thumbnail image.</td>
+      <td>The label assigned to a product’s thumbnail image</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">tier_price</code></td>
       <td>Float</td>
-      <td>The price when tier pricing is in effect and the items purchased threshold has been reached.</td>
+      <td>The price when tier pricing is in effect and the items purchased threshold has been reached</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">tier_prices</code></td>
@@ -1081,137 +1131,37 @@ weight
     <tr>
       <td><code class="highlighter-rouge">updated_at</code></td>
       <td>String</td>
-      <td>The timestamp indicating when the product was last updated.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">url_key</code></td>
-      <td>String</td>
-      <td>The part of the URL that identifies the product</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">url_path</code></td>
-      <td>String</td>
-      <td>The part of the URL that precedes the <code class="highlighter-rouge">url_key</code></td>
+      <td>The timestamp indicating when the product was last updated</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">website_ids</code></td>
       <td>[Int]</td>
-      <td>An array of website IDs in which the product is available.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">weight</code></td>
-      <td>Float</td>
-      <td>The weight of the item, in units defined by the store</td>
+      <td>An array of website IDs in which the product is available</td>
     </tr>
   </tbody>
 </table>
 
-<p>Several product types have their own implementation of the <code class="highlighter-rouge">ProductInterface</code>. These implementations may contain additional attributes.</p>
-
-<p><a href="/guides/v2.3/graphql/reference/bundle-product.html">BundleProduct</a>
-<a href="/guides/v2.3/graphql/reference/configurable-product.html">ConfigurableProduct</a>
-<a href="/guides/v2.3/graphql/reference/downloadable-product.html">DownloadableProduct</a>
-<a href="/guides/v2.3/graphql/reference/grouped-product.html">GroupedProduct</a>
-SimpleProduct
-VirtualProduct</p>
-
-<h4 id="price-object">Price object</h4>
+<h3 id="ProductPrices">ProductPrices object</h3>
+<p>The <code class="highlighter-rouge">ProductPrices</code> object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Field</th>
-      <th>Type</th>
+      <th>Attribute</th>
+      <th>Data Type</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">amount</code></td>
-      <td><code class="highlighter-rouge">Money</code></td>
-      <td>The price of a product plus a three-letter currency code.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">adjustments</code></td>
-      <td><code class="highlighter-rouge">PriceAdjustment</code></td>
-      <td>An array that provides information about tax, weee, or weee_tax adjustments.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h5 id="money-object">Money object</h5>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td>Float</td>
-      <td>A number expressing a monetary value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">currency</code></td>
-      <td><code class="highlighter-rouge">CurrencyEnum</code></td>
-      <td>A three-letter currency code, such as <code class="highlighter-rouge">USD</code> or <code class="highlighter-rouge">EUR</code>.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h5 id="priceadjustment-object">PriceAdjustment object</h5>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">amount</code></td>
-      <td><code class="highlighter-rouge">Money</code></td>
-      <td>The amount of the price adjustment and its currency code.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">code</code></td>
-      <td><code class="highlighter-rouge">PriceAdjustmentCodesEnum</code></td>
-      <td>Indicates whether the adjustment involves <code class="highlighter-rouge">tax</code>, <code class="highlighter-rouge">weee</code>, or <code class="highlighter-rouge">weee_tax</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">description</code></td>
-      <td><code class="highlighter-rouge">PriceAdjustmentDescriptionEnum</code></td>
-      <td>Indicates whether the entity described by the code attribute is included or excluded from the adjustment.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="productprices">ProductPrices</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">minimalPrice</code></td>
-      <td>Price</td>
-      <td>Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you’re specifying a price range, this would be the ‘from’ value.</td>
-    </tr>
     <tr>
       <td><code class="highlighter-rouge">maximalPrice</code></td>
       <td>Price</td>
-      <td>Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you’re specifying a price range, this would be the ‘to’ value.</td>
+      <td>Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you’re specifying a price range, this would be the “to” value.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">minimalPrice</code></td>
+      <td>Price</td>
+      <td>Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you’re specifying a price range, this would be the “from” value.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">regularPrice</code></td>
@@ -1221,213 +1171,97 @@ VirtualProduct</p>
   </tbody>
 </table>
 
-<h4 id="ProductCategoryLinks">ProductCategoryLinks object</h4>
+<h4 id="Price">Price object</h4>
+
+<p>The <code class="highlighter-rouge">Price</code> object defines the price of a product as well as any tax-related adjustments.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Field</th>
-      <th>Type</th>
+      <th>Attribute</th>
+      <th>Data Type</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">position</code></td>
-      <td>Int</td>
-      <td>The position of the category in the category tree</td>
+      <td><code class="highlighter-rouge">amount</code></td>
+      <td>Money</td>
+      <td>The price of the the product and its currency code. See <a href="#Money">Money object</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">category_id</code></td>
-      <td>String</td>
-      <td>The unique identifier for the category</td>
+      <td><code class="highlighter-rouge">adjustments</code></td>
+      <td>[PriceAdjustment]</td>
+      <td>An array of <a href="#PriceAdjustment">PriceAdjustment</a> objects.</td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="productconfigurableproductoptions">ProductConfigurableProductOptions</h4>
+<h5 id="Money">Money object</h5>
+
+<p>A <code class="highlighter-rouge">Money</code> object defines a monetary value, including a numeric value and a currency code.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Field</th>
-      <th>Type</th>
+      <th>Attribute</th>
+      <th>Data Type</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">id</code></td>
-      <td>Int</td>
-      <td>The configurable option ID number assigned by the system</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">attribute_id</code></td>
-      <td>String</td>
-      <td>The ID assigned to the attribute</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">label</code></td>
-      <td>String</td>
-      <td>A string that describes the configurable product option. It is displayed on the UI</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">position</code></td>
-      <td>Int</td>
-      <td>A number that indicates the order in which the attribute is displayed.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">is_use_default</code></td>
-      <td>Boolean</td>
-      <td>Indicates whether the option is the default</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">values</code></td>
-      <td>[ProductOptionsValues]</td>
-      <td>An array that defines the value_index codes assigned to the configurable product.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">product_id</code></td>
-      <td>Int</td>
-      <td>This is the same as a product’s ‘id’ field.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="ProductOptions">ProductOptions object</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
-      <td>String</td>
-      <td>The <code class="highlighter-rouge">sku</code> of the base product</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">option_id</code></td>
-      <td>Int</td>
-      <td>The ID assigned to the custom option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">title</code></td>
-      <td>String</td>
-      <td>The display name of the custom option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">type</code></td>
-      <td>String</td>
-      <td>Defines how the option is displayed. Values include <code class="highlighter-rouge">area</code>, <code class="highlighter-rouge">checkbox</code>, <code class="highlighter-rouge">date</code>, <code class="highlighter-rouge">date_time</code>, <code class="highlighter-rouge">drop_down</code>, <code class="highlighter-rouge">field</code>, <code class="highlighter-rouge">file</code>, <code class="highlighter-rouge">multiple</code>, <code class="highlighter-rouge">radio</code>, and <code class="highlighter-rouge">time</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sort_order</code></td>
-      <td>Int</td>
-      <td>The order in which the option is displayed</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">is_require</code></td>
-      <td>Boolean</td>
-      <td>Indicates whether the option is required</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>Float</td>
-      <td>The price of the customized option</td>
+      <td>The price of the product</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>String</td>
-      <td><code class="highlighter-rouge">fixed</code> or <code class="highlighter-rouge">percent</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
-      <td>String</td>
-      <td>The <code class="highlighter-rouge">sku</code> of the customized option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">file_extension</code></td>
-      <td>String</td>
-      <td>The file extension to accept when the <code class="highlighter-rouge">type</code> is <code class="highlighter-rouge">file</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">max_characters</code></td>
-      <td>Int</td>
-      <td>The maximum number of characters to accept when the value of <code class="highlighter-rouge">type</code> is <code class="highlighter-rouge">area</code> or <code class="highlighter-rouge">field</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">image_size_x</code></td>
-      <td>Int</td>
-      <td>The maximum width of an image</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">image_size_y</code></td>
-      <td>Int</td>
-      <td>The maximum height of an image</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">values</code></td>
-      <td>[ProductOptionsValues]</td>
-      <td>Any array of <a href="#ProductOptionsValues">ProductOptionsValues</a> objects</td>
+      <td><code class="highlighter-rouge">currency</code></td>
+      <td>CurrencyEnum</td>
+      <td>A three-letter currency code, such as <code class="highlighter-rouge">USD</code> or <code class="highlighter-rouge">EUR</code>.</td>
     </tr>
   </tbody>
 </table>
 
-<h5 id="ProductOptionsValues">ProductOptionsValues object</h5>
+<h5 id="PriceAdjustment">PriceAdjustment array</h5>
+
+<p>The <code class="highlighter-rouge">PricedAdjustment</code> object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Field</th>
-      <th>Type</th>
+      <th>Attribute</th>
+      <th>Data Type</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">title</code></td>
-      <td>String</td>
-      <td>The display name of the value assigned to a custom option.</td>
+      <td><code class="highlighter-rouge">amount</code></td>
+      <td>Money</td>
+      <td>The amount of the price adjustment and its currency code. See <a href="#Money">Money object</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sort_order</code></td>
-      <td>Int</td>
-      <td>The order in which the custom value is displayed.</td>
+      <td><code class="highlighter-rouge">code</code></td>
+      <td>PriceAdjustmentCodesEnum</td>
+      <td>One of <code class="highlighter-rouge">tax</code>, <code class="highlighter-rouge">weee</code>, or <code class="highlighter-rouge">weee_tax</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
-      <td>Float</td>
-      <td>The price of the custom value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>String</td>
-      <td><code class="highlighter-rouge">fixed</code> or <code class="highlighter-rouge">percent</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit of the custom value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">option_type_id</code></td>
-      <td>Int</td>
-      <td>The ID assigned to the custom value.</td>
+      <td><code class="highlighter-rouge">description</code></td>
+      <td>PriceAdjustmentDescriptionEnum</td>
+      <td>Indicates whether the entity described by the code attribute is included or excluded from the adjustment.</td>
     </tr>
   </tbody>
 </table>
 
 <h4 id="ProductLinks">ProductLinks object</h4>
 
+<p><code class="highlighter-rouge">ProductLinks</code> contains information about linked products, including the link type and product type of each item.</p>
+
 <table>
   <thead>
     <tr>
-      <th>Field</th>
+      <th>Attribute</th>
       <th>Type</th>
       <th>Description</th>
     </tr>
@@ -1458,15 +1292,12 @@ VirtualProduct</p>
       <td>Int</td>
       <td>The position within the list of product links</td>
     </tr>
-    <tr>
-      <td><code class="highlighter-rouge">qty</code></td>
-      <td>Float</td>
-      <td>The quantity of the linked product</td>
-    </tr>
   </tbody>
 </table>
 
-<h4 id="MediaGalleryEntry">MediaGalleryEntry object</h4>
+<h3 id="MediaGalleryEntry">MediaGalleryEntry object</h3>
+
+<p><code class="highlighter-rouge">MediaGalleryEntry</code> defines characteristics about images and videos associated with a specific product.</p>
 
 <table>
   <thead>
@@ -1490,12 +1321,12 @@ VirtualProduct</p>
     <tr>
       <td><code class="highlighter-rouge">label</code></td>
       <td>String</td>
-      <td>The the “alt” text displayed on the UI when the user points to the image</td>
+      <td>The “alt” text displayed on the UI when the user points to the image</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">position</code></td>
       <td>Int</td>
-      <td>The media item’s position after it has been sorted.</td>
+      <td>The media item’s position after it has been sorted</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">disabled</code></td>
@@ -1525,7 +1356,9 @@ VirtualProduct</p>
   </tbody>
 </table>
 
-<h5 id="ProductMediaGalleryEntriesContent">ProductMediaGalleryEntriesContent object</h5>
+<h4 id="ProductMediaGalleryEntriesContent">ProductMediaGalleryEntriesContent object</h4>
+
+<p><code class="highlighter-rouge">ProductMediaGalleryEntriesContent</code> contains an image in base64 format and basic information about the image.</p>
 
 <table>
   <thead>
@@ -1554,7 +1387,9 @@ VirtualProduct</p>
   </tbody>
 </table>
 
-<h5 id="ProductMediaGalleryEntriesVideoContent">ProductMediaGalleryEntriesVideoContent object</h5>
+<h4 id="ProductMediaGalleryEntriesVideoContent">ProductMediaGalleryEntriesVideoContent object</h4>
+
+<p><code class="highlighter-rouge">ProductMediaGalleryEntriesVideoContent</code> contains a link to a video file and basic information about the video.</p>
 
 <table>
   <thead>
@@ -1568,7 +1403,7 @@ VirtualProduct</p>
     <tr>
       <td><code class="highlighter-rouge">media_type</code></td>
       <td>String</td>
-      <td><code class="highlighter-rouge">external-video</code></td>
+      <td>Must be <code class="highlighter-rouge">external-video</code></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">video_provider</code></td>
@@ -1599,6 +1434,8 @@ VirtualProduct</p>
 </table>
 
 <h3 id="ProductTier">ProductTierPrices object</h3>
+
+<p>The <code class="highlighter-rouge">ProductTierPrices</code> object defines a tier price, which is a quantity discount offered to a specific customer group.</p>
 
 <table>
   <thead>
@@ -1632,12 +1469,14 @@ VirtualProduct</p>
     <tr>
       <td><code class="highlighter-rouge">website_id</code></td>
       <td>Int</td>
-      <td>The ID assigned to the website.</td>
+      <td>The ID assigned to the website</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="customizableareaoption-object">CustomizableAreaOption object</h3>
+<h2 id="PhysicalProductInterface">PhysicalProductInterface</h2>
+
+<p><code class="highlighter-rouge">PhysicalProductInterface</code>defines the weight of all tangible products.</p>
 
 <table>
   <thead>
@@ -1649,53 +1488,52 @@ VirtualProduct</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableAreaValue</code></td>
-      <td>An object that defines a text area.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit of the base product</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="customizableareavalue-object">CustomizableAreaValue object</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="highlighter-rouge">weight</code></td>
       <td>Float</td>
-      <td>The price assigned to this option</td>
+      <td>The weight of the item, in units defined by the store</td>
     </tr>
+  </tbody>
+</table>
+
+<h2 id="layerfilter-object">LayerFilter object</h2>
+
+<p>The <code class="highlighter-rouge">LayerFilter</code> object can be returned in a response to help create layered navigation on your app.</p>
+
+<table>
+  <thead>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>PriceTypeEnum</td>
-      <td>FIXED, PERCENT, or DYNAMIC</td>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>String</td>
-      <td>The Stock Keeping Unit for this option</td>
+      <td>The layered navigation filter name</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">max_characters</code></td>
+      <td><code class="highlighter-rouge">request_var</code></td>
+      <td>String</td>
+      <td>The request variable name for the filter query</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">filter_items_count</code></td>
       <td>Int</td>
-      <td>The maximum number of characters that can be entered for this customizable option</td>
+      <td>The number of filter items in filter group</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">filter_items</code></td>
+      <td>[LayerFilterItemInterface]</td>
+      <td>An array of filter items</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="customizabledateoption-object">CustomizableDateOption object</h3>
+<h3 id="layerfilteriteminterface">LayerFilterItemInterface</h3>
+
+<p><code class="highlighter-rouge">LayerFilterItemInterface </code> contains an array of items that match the terms defined in the filter.</p>
 
 <table>
   <thead>
@@ -1707,298 +1545,59 @@ VirtualProduct</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableDateValue</code></td>
-      <td>An object that defines a date field in a customizable option.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td><code class="highlighter-rouge">label</code></td>
       <td>String</td>
-      <td>The Stock Keeping Unit of the base product</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="customizabledatevalue-object">CustomizableDateValue object</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">price</code></td>
-      <td>Float</td>
-      <td>The price assigned to this option</td>
+      <td>The label applied to a filter</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>PriceTypeEnum</td>
-      <td>FIXED, PERCENT, or DYNAMIC</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="highlighter-rouge">value_string</code></td>
       <td>String</td>
-      <td>The Stock Keeping Unit for this option</td>
+      <td>The value for filter request variable to be used in a query</td>
     </tr>
-  </tbody>
-</table>
-
-<h3 id="customizabledropdownoption-object">CustomizableDropDownOption object</h3>
-
-<table>
-  <thead>
     <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableDropDownValue</code></td>
-      <td>An array that defines the set of options for a drop down menu.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="customizabledropdownvalue-object">CustomizableDropDownValue object</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">option_type_id</code></td>
+      <td><code class="highlighter-rouge">items_count</code></td>
       <td>Int</td>
-      <td>The ID assigned to the value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price</code></td>
-      <td>Float</td>
-      <td>The price assigned to this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>PriceTypeEnum</td>
-      <td>FIXED, PERCENT, or DYNAMIC</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit for this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">title</code></td>
-      <td>String</td>
-      <td>The display name for this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sort_order</code></td>
-      <td>Int</td>
-      <td>The order in which the option is displayed</td>
+      <td>The number of items the filter returned</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="customizablefieldoption-object">CustomizableFieldOption object</h3>
+<h2 id="sample-query">Sample query</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableFieldValue</code></td>
-      <td>An object that defines a text field.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit of the base product</td>
-    </tr>
-  </tbody>
-</table>
+<p>You can review several general interest <code class="highlighter-rouge">products</code> queries at <a href="/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a>.</p>
 
-<h4 id="customizablefieldvalue-object">CustomizableFieldValue object</h4>
+<p>The following query returns layered navigation for products that have a <code class="highlighter-rouge">sku</code> containing the string <code class="highlighter-rouge">24-WB</code>.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">price</code></td>
-      <td>Float</td>
-      <td>The price of the custom value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>PriceTypeEnum</td>
-      <td>FIXED, PERCENT, or DYNAMIC</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit for this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">max_characters</code></td>
-      <td>Int</td>
-      <td>The maximum number of characters that can be entered for this customizable option</td>
-    </tr>
-  </tbody>
-</table>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">products</span><span class="w"> </span><span class="err">(</span><span class="w">
+        </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="err">like</span><span class="p">:</span><span class="s2">"24-WB%"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+        </span><span class="err">currentPage</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="err">sort</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="err">DESC</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="err">)</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">sku</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">filters</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">name</span><span class="w">
+            </span><span class="err">filter_items_count</span><span class="w">
+            </span><span class="err">request_var</span><span class="w">
+            </span><span class="err">filter_items</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="err">label</span><span class="w">
+                </span><span class="err">value_string</span><span class="w">
+                </span><span class="err">items_count</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
-<h3 id="customizablefileoption-object">CustomizableFileOption object</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableFileValue</code></td>
-      <td>An object that defines a file value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit of the base product</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="customizablefilevalue-object">CustomizableFileValue object</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">price</code></td>
-      <td>Float</td>
-      <td>The price assigned to this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>PriceTypeEnum</td>
-      <td>FIXED, PERCENT, or DYNAMIC</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit for this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">file_extension</code></td>
-      <td>String</td>
-      <td>The file extension to accept</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">image_size_x</code></td>
-      <td>Int</td>
-      <td>The maximum width of an image</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">image_size_y</code></td>
-      <td>Int</td>
-      <td>The maximum height of an image</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="customizableradiooption-object">CustomizableRadioOption object</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableRadioValue</code></td>
-      <td>An array that defines a set of radio buttons.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="customizableradiovalue-object">CustomizableRadioValue object</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">option_type_id</code></td>
-      <td>Int</td>
-      <td>The ID assigned to the value.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price</code></td>
-      <td>Float</td>
-      <td>The price assigned to this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>PriceTypeEnum</td>
-      <td>FIXED, PERCENT, or DYNAMIC</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
-      <td>String</td>
-      <td>The Stock Keeping Unit for this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">title</code></td>
-      <td>String</td>
-      <td>The display name for this option</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">sort_order</code></td>
-      <td>Int</td>
-      <td>The order in which the option is displayed</td>
-    </tr>
-  </tbody>
-</table>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -2010,7 +1609,7 @@ VirtualProduct</p>
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/products.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/graphql/reference/products.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>

@@ -300,12 +300,12 @@
         
         
         
-        <li class="nav-level2  " id="request-headers">
+        <li class="nav-level2  " id="graphql-request-headers">
             
             
         
             
-            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            <a href="/guides/v2.3/graphql/send-request.html">GraphQL request headers</a>
             
 
             
@@ -391,12 +391,12 @@
         
         
         
-        <li class="nav-level2  " id="handling-exceptions">
+        <li class="nav-level2  " id="exception-handling">
             
             
         
             
-            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Exception handling</a>
             
 
             
@@ -441,48 +441,6 @@
         
         
         
-        <li class="nav-level2  " id="customattributemetadata-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="customer-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="price-field">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="products-endpoint">
             
             
@@ -499,11 +457,53 @@
 
                 
                 
+                <li class="nav-level3  " id="product-interface-implementations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/product-interface-implementations.html">Product interface implementations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customizableoptioninterface">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableOptionInterface</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
                 <li class="nav-level3  " id="bundle-product-endpoint">
                     
 
                     
                     <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="categories-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/categories.html">Categories endpoint</a>
                     
 
                     
@@ -573,14 +573,62 @@
         
         
         
-        <li class="nav-level2  " id="urlresolver-service">
+        <li class="nav-level2  " id="other-objects">
             
+            
+            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            <span>Other objects</span>
             
 
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="customattributemetadata-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customer-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="urlresolver-service">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -748,22 +796,22 @@
     <tr>
       <td><code class="highlighter-rouge">position</code></td>
       <td>Int</td>
-      <td>A number that indicates the order in which the attribute is displayed.</td>
+      <td>A number that indicates the order in which the attribute is displayed</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">is_use_default</code></td>
       <td>Boolean</td>
-      <td>Indicates whether the option is the default.</td>
+      <td>Indicates whether the option is the default</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">values</code></td>
       <td>ConfigurableProductOptionsValues</td>
-      <td>An array that defines the value_index codes assigned to the configurable product.</td>
+      <td>An array that defines the value_index codes assigned to the configurable product</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">product_id</code></td>
       <td>Int</td>
-      <td>This is the same as a product’s ‘id’ field.</td>
+      <td>This is the same as a product’s ‘id’ field</td>
     </tr>
   </tbody>
 </table>
@@ -792,16 +840,49 @@
 <p>The following query returns information about configurable product <code class="highlighter-rouge">WH01</code>, which is defined in the sample data.</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="err">products(filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"WH01"</span><span class="p">}}</span><span class="err">)</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="err">items</span><span class="p">{</span><span class="w">
+  </span><span class="err">products(filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"WH01"</span><span class="p">}}</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">id</span><span class="w">
+      </span><span class="err">attribute_set_id</span><span class="w">
+      </span><span class="err">name</span><span class="w">
+      </span><span class="err">sku</span><span class="w">
+      </span><span class="err">type_id</span><span class="w">
+      </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">value</span><span class="w">
+            </span><span class="err">currency</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="err">category_ids</span><span class="w">
+      </span><span class="err">...</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">ConfigurableProduct</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">configurable_options</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">id</span><span class="w">
+          </span><span class="err">attribute_id</span><span class="w">
+          </span><span class="err">label</span><span class="w">
+          </span><span class="err">position</span><span class="w">
+          </span><span class="err">use_default</span><span class="w">
+          </span><span class="err">attribute_code</span><span class="w">
+          </span><span class="err">values</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">value_index</span><span class="w">
+            </span><span class="err">label</span><span class="w">
+            </span><span class="err">store_label</span><span class="w">
+            </span><span class="err">default_label</span><span class="w">
+            </span><span class="err">use_default_value</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+          </span><span class="err">product_id</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">variants</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">product</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="err">id</span><span class="w">
-            </span><span class="err">attribute_set_id</span><span class="w">
-            </span><span class="err">created_at</span><span class="w">
+            </span><span class="err">category_ids</span><span class="w">
             </span><span class="err">name</span><span class="w">
             </span><span class="err">sku</span><span class="w">
-            </span><span class="err">type_id</span><span class="w">
-            </span><span class="err">updated_at</span><span class="w">
+            </span><span class="err">attribute_set_id</span><span class="w">
+            </span><span class="err">...</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">PhysicalProductInterface</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">weight</span><span class="w">
+            </span><span class="p">}</span><span class="w">
             </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -810,66 +891,20 @@
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
-            </span><span class="err">...</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">ConfigurableProduct</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="err">configurable_product_links</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="err">id</span><span class="w">
-                    </span><span class="err">category_ids</span><span class="w">
-                    </span><span class="err">name</span><span class="w">
-                    </span><span class="err">sku</span><span class="w">
-                    </span><span class="err">attribute_set_id</span><span class="w">
-                    </span><span class="err">...</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">PhysicalProductInterface</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="err">weight</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                    </span><span class="err">created_at</span><span class="w">
-                    </span><span class="err">updated_at</span><span class="w">
-                    </span><span class="err">price</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="err">minimalPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                          </span><span class="err">value</span><span class="w">
-                          </span><span class="err">currency</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                        </span><span class="err">adjustments</span><span class="w"> </span><span class="p">{</span><span class="w">
-                          </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="err">value</span><span class="w">
-                            </span><span class="err">currency</span><span class="w">
-                          </span><span class="p">}</span><span class="w">
-                          </span><span class="err">code</span><span class="w">
-                          </span><span class="err">description</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                      </span><span class="p">}</span><span class="w">
-                      </span><span class="err">maximalPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                          </span><span class="err">value</span><span class="w">
-                          </span><span class="err">currency</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                        </span><span class="err">adjustments</span><span class="w"> </span><span class="p">{</span><span class="w">
-                          </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="err">value</span><span class="w">
-                            </span><span class="err">currency</span><span class="w">
-                          </span><span class="p">}</span><span class="w">
-                          </span><span class="err">code</span><span class="w">
-                          </span><span class="err">description</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                      </span><span class="p">}</span><span class="w">
-                      </span><span class="err">regularPrice</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                          </span><span class="err">value</span><span class="w">
-                          </span><span class="err">currency</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                        </span><span class="err">adjustments</span><span class="w"> </span><span class="p">{</span><span class="w">
-                          </span><span class="err">amount</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="err">value</span><span class="w">
-                            </span><span class="err">currency</span><span class="w">
-                          </span><span class="p">}</span><span class="w">
-                          </span><span class="err">code</span><span class="w">
-                          </span><span class="err">description</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                      </span><span class="p">}</span><span class="w">
-                  </span><span class="p">}</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+            </span><span class="err">category_links</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">position</span><span class="w">
+              </span><span class="err">category_id</span><span class="w">
             </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+          </span><span class="err">attributes</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">label</span><span class="w">
+            </span><span class="err">code</span><span class="w">
+            </span><span class="err">value_index</span><span class="w">
+          </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 

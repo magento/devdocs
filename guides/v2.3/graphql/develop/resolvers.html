@@ -300,12 +300,12 @@
         
         
         
-        <li class="nav-level2  " id="request-headers">
+        <li class="nav-level2  " id="graphql-request-headers">
             
             
         
             
-            <a href="/guides/v2.3/graphql/send-request.html">Request headers</a>
+            <a href="/guides/v2.3/graphql/send-request.html">GraphQL request headers</a>
             
 
             
@@ -391,12 +391,12 @@
         
         
         
-        <li class="nav-level2  " id="handling-exceptions">
+        <li class="nav-level2  " id="exception-handling">
             
             
         
             
-            <a href="/guides/v2.3/graphql/develop/exceptions.html">Handling Exceptions</a>
+            <a href="/guides/v2.3/graphql/develop/exceptions.html">Exception handling</a>
             
 
             
@@ -441,48 +441,6 @@
         
         
         
-        <li class="nav-level2  " id="customattributemetadata-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="customer-endpoint">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="price-field">
-            
-            
-        
-            
-            <a href="/guides/v2.3/graphql/reference/price.html">Price field</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="products-endpoint">
             
             
@@ -499,11 +457,53 @@
 
                 
                 
+                <li class="nav-level3  " id="product-interface-implementations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/product-interface-implementations.html">Product interface implementations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customizableoptioninterface">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customizable-option-interface.html">CustomizableOptionInterface</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
                 <li class="nav-level3  " id="bundle-product-endpoint">
                     
 
                     
                     <a  href="/guides/v2.3/graphql/reference/bundle-product.html">Bundle product endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="categories-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/categories.html">Categories endpoint</a>
                     
 
                     
@@ -573,14 +573,62 @@
         
         
         
-        <li class="nav-level2  " id="urlresolver-service">
+        <li class="nav-level2  " id="other-objects">
             
+            
+            <div class="toggle closed">&nbsp;</div>
             
         
             
-            <a href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+            <span>Other objects</span>
             
 
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="customattributemetadata-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/custom-attribute-metadata.html">CustomAttributeMetadata endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="customer-endpoint">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/customer.html">Customer endpoint</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="urlresolver-service">
+                    
+
+                    
+                    <a  href="/guides/v2.3/graphql/reference/url-resolver.html">urlResolver service</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -688,47 +736,13 @@
 </section>
 
 
-			<p>A resolver performs GraphQL request processing. In general, it is responsible for constructing a query, fetching data and performing any calculations, then transforming the fetched and calculated data into a GraphQL array format. Finally, it returns the results to the query for rendering.</p>
+			<p>A resolver performs GraphQL request processing. In general, it is responsible for constructing a query, fetching data and performing any calculations, then transforming the fetched and calculated data into a GraphQL array format. Finally, it returns the results wrapped by a callable function.</p>
 
-<p>The following code sample shows the top-level <code class="highlighter-rouge">Resolver</code> class for the <code class="highlighter-rouge">Customer</code> module. The query for this module is simply <code class="highlighter-rouge">customer: Customer</code>, so it’s only necessary to resolve the <code class="highlighter-rouge">customer</code> object. Other module queries can require full text search strings, filters, and pagination to be resolved.</p>
+<p>A GraphQL resolver must implement the <code class="highlighter-rouge">\Magento\Framework\GraphQl\Query\ResolverInterface</code> interface. This interface contains the requirement to return a <code class="highlighter-rouge">\Magento\Framework\GraphQl\Query\Resolver\Value</code>. This value takes in a callable function to its constructor that will be invoked at the latest possible time for the resolver to require its data. As a result, a list of items being resolved can be retrieved all at once by establishing a buffer that contains all relevant parent data to filter and fetch for the children list data.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Customer</span> <span class="k">implements</span> <span class="nx">ResolverInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**
-     * @var Customer\CustomerDataProvider
-     */</span>
-    <span class="k">private</span> <span class="nv">$customerResolver</span><span class="p">;</span>
+<p>You can view an example of this can be found inside the <code class="highlighter-rouge">\Magento\BundleGraphQl\Model\Resolver\BundleItemLinks</code> resolver. This resolver takes each bundle option ID and its corresponding parent product ID and stores them in a collection’s filter buffer (in this case, using the <code class="highlighter-rouge">\Magento\BundleGraphQl\Model\Resolver\Links\Collection::addIdFilters()</code> function). Each resolver then returns a callable that  invokes this collection. The collection caches the result of all link entities it fetched for all the option_id/parent_id combinations. This fetch only needs to occur once for the whole <code class="highlighter-rouge">BundleItemLink</code> list, and each resulting callable that is invoked for every link in the list returns an item from the collections cached result.</p>
 
-    <span class="sd">/**
-     * @param \Magento\CustomerGraphQl\Model\Resolver\Customer\CustomerDataProvider $customerResolver
-     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">\Magento\CustomerGraphQl\Model\Resolver\Customer\CustomerDataProvider</span> <span class="nv">$customerResolver</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerResolver</span> <span class="o">=</span> <span class="nv">$customerResolver</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="sd">/**
-     * {@inheritdoc}
-     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">resolve</span><span class="p">(</span><span class="k">array</span> <span class="nv">$args</span><span class="p">,</span> <span class="nx">ResolverContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
-    <span class="p">{</span>
-
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerResolver</span><span class="o">-&gt;</span><span class="na">getCustomerById</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getUserId</span><span class="p">());</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Note the following:</p>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">ResolverInterface</code> is defined in the <code class="highlighter-rouge">GraphQL</code> module.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">CustomerDataProvider</code> retrieves customer data, transforms it to an array, and returns the customer object.</p>
-  </li>
-</ul>
+<p>A <code class="highlighter-rouge">Value</code> object wraps a callable object, and you can use <code class="highlighter-rouge">\Magento\Framework\GraphQl\Query\Resolver\ValueFactory</code> to create a value.</p>
 
 		</div>
 		<!-- /.content-wrap -->
