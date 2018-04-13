@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/actions.md
 functional_areas:
  - Testing
-mftf-release: 2.1.0
+mftf-release: 2.1.2
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -24,17 +24,15 @@ All `<actions>` contain the following attributes that are useful for merging nee
 
 `stepKey` is a required attribute that stores a unique identifier of the action.
 
-Example:
+Example test step of the `myAction` action with the `conditionalClickStep1` identifier:
 
 ```xml
 <myAction stepKey="conditionalClickStep1"/>
 ```
 
-`myAction` has an identifier, which is `conditionalClickStep1`. This step can be referenced within the test using this identifier.
+This step can be referenced within the test using `conditionalClickStep1`.
 
-## Principles
-
-The following value format principles apply to the `stepKey` MFTF action:
+The value format should met the following principles:
 
 * Must be unique within [`<test>`](../test.html#test).
 * Naming should be as descriptive as possible:
@@ -234,8 +232,8 @@ See [attachFile docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|The `<input type="file"/>` to attach the file to.
-`userInput`|string|optional|The filename to attach. The file must be placed in the `tests/_data` directory.
+`selector`|string|optional|The selector identifying the corresponding HTML element (`<input type="file">`).
+`userInput`|string|optional|The name of attaching file. The file must be placed in the `tests/_data` directory.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -655,8 +653,8 @@ See [dragAndDrop docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector1`|string|optional|The element to drag.
-`selector2`|string|optional|The element to drop on.
+`selector1`|string|optional|A selector for the HTML element to drag.
+`selector2`|string|optional|A selector for the HTML element to drop onto.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.

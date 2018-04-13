@@ -4,9 +4,13 @@ group: mftf
 title: Best practices
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/best-practices.md
+mftf-release: 2.1.2
 functional_areas:
  - Testing
 ---
+
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
 
 Check out our best practices below to ensure you're getting the absolute most out of the MFTF.
 
