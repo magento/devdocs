@@ -21,9 +21,6 @@ github_link: release-notes/ReleaseNotes2.1.13CE.md
 
 We are pleased to present Magento Open Source  2.1.13. This release includes many bug fixes and enhancements. Check out the many community-contributed fixes!
 
-
-<!--- MAGETWO-82780 -->*  The  `/.user.ini` and `/pub/.user.ini` files now specify a `memory_limit` value of at least 1G to 2G for debugging purposes. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11761*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
-
 ## Fixed issues
 
 
