@@ -2100,11 +2100,6 @@
 
 <p>If you don’t have a live site set up with DNS, you can use either a static route or you can use the optional <code class="highlighter-rouge">--resolve</code> flag, which bypasses DNS name resolution.</p>
 
-<p>Check for headers with a <strong>dig command</strong> to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="\_blank">Testing before changing DNS</a>.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dig http[s]://&lt;your domain&gt;
-</code></pre></div></div>
-
 <p>Check response headers with <strong>curl command</strong>:</p>
 
 <ol>
@@ -2126,23 +2121,8 @@
   </li>
 </ol>
 
-<h2 id="cloud-test-stage">Test your Staging and Production sites</h2>
-<p>This section discusses how to use <code class="highlighter-rouge">dig</code> and <code class="highlighter-rouge">curl</code> to get response headers from your Staging or Production site (the origin servers). You never need to test on the Integration environments. Basically, you are curling the edge for responses.</p>
-
-<p><strong>Note:</strong> If you encounter issues when using <code class="highlighter-rouge">dig</code> and <code class="highlighter-rouge">curl</code> to the direct origin servers, not through the live server domain, the issue may not be Fastly.</p>
-
-<h3 id="dig">dig command</h3>
-<p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="\_blank">Testing before changing DNS</a>.</p>
-
-<p>For example:</p>
-
-<ul>
-  <li>Staging: <code class="highlighter-rouge">dig http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud</code></li>
-  <li>Production: <code class="highlighter-rouge">dig http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
-</ul>
-
-<h3 id="curl">curl command</h3>
-<p>Next, use a <code class="highlighter-rouge">curl</code> command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production.</p>
+<h3 id="cloud-test-stage">Test your Staging and Production sites</h3>
+<p>The command format differs for Staging and Production.</p>
 
 <p>For more information on these commands, you bypass Fastly when you inject <code class="highlighter-rouge">-H "host:URL"</code>, replace with origin to connecting location (CNAME information from your OneDrive Spreadsheet), <code class="highlighter-rouge">-k</code> ignores SSL, and <code class="highlighter-rouge">-v</code> provides verbose responses. If headers display correctly, check the live site and verify headers again.</p>
 
