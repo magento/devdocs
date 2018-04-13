@@ -2,7 +2,7 @@
 layout: default
 group: marketplace-api
 title: Reports
-version: 2.1
+version: 2.0
 github_link: marketplace/eqp/reports.md
 ---
 
