@@ -70,10 +70,6 @@ First, check your live site to verify the response headers with `curl`. The comm
 
 If you don't have a live site set up with DNS, you can use either a static route or you can use the optional `--resolve` flag, which bypasses DNS name resolution.
 
-Check for headers with a **dig command** to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="\_blank"}.
-
-    dig http[s]://<your domain>
-
 Check response headers with **curl command**:
 
 1. In a terminal, enter the following command to test your live site URL:
@@ -87,21 +83,8 @@ Check response headers with **curl command**:
 		< Fastly-Magento-VCL-Uploaded: yes
 		< X-Cache: HIT, MISS
 
-## Test your Staging and Production sites {#cloud-test-stage}
-This section discusses how to use `dig` and `curl` to get response headers from your Staging or Production site (the origin servers). You never need to test on the Integration environments. Basically, you are curling the edge for responses.
-
-**Note:** If you encounter issues when using `dig` and `curl` to the direct origin servers, not through the live server domain, the issue may not be Fastly.
-
-### dig command {#dig}
-First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="\_blank"}.
-
-For example:
-
-* Staging: `dig http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud`
-* Production: `dig http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
-
-### curl command {#curl}
-Next, use a `curl` command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production.
+### Test your Staging and Production sites {#cloud-test-stage}
+The command format differs for Staging and Production.
 
 For more information on these commands, you bypass Fastly when you inject `-H "host:URL"`, replace with origin to connecting location (CNAME information from your OneDrive Spreadsheet), `-k` ignores SSL, and `-v` provides verbose responses. If headers display correctly, check the live site and verify headers again.
 
