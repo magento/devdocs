@@ -18,8 +18,8 @@ Most of the development team's work thus far has been devoted to building the Gr
 GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as `GET /V1/products/:sku` on a simple product, the system might fetch more than 100 lines of data. If all you need is the current price, the call has returned significantly more information than you need. With GraphQL, a query against the same SKU could return just the price.
 
 A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
-`
-* **EAV attributes** are explicitly declared in the `schema.graphqls files.
+
+* **EAV attributes** are explicitly declared in the `schema.graphqls` files.
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 * **Extension attributes** can be declared in a `schema.graphqls` file or by a custom reader, but they should be declared in a separate `*GraphQl` module. The attributes should extend from the resolver that fetches that model's data.
 
