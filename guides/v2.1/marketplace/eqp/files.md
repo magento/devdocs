@@ -120,7 +120,7 @@ Content-Type: application/pdf
 * The body of each part is the full contents of the raw file.
 </div>
 
-For example, if you save the previous request body to a temporary file at `/tmp/files-payload`, you can use it in your POST request to upload the file:
+For example, if the aforesaid request body is saved to a temporary file at `/tmp/files-payload`, the following curl command will upload the files:
 
 **Request**
 
