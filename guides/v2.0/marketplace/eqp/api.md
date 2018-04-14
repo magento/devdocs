@@ -2,7 +2,7 @@
 layout: default
 group: marketplace-api
 title: Introduction
-version: 2.1
+version: 2.0
 github_link: marketplace/eqp/api.md
 ---
 

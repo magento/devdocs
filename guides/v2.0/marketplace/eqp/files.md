@@ -2,7 +2,7 @@
 layout: default
 group: marketplace-api
 title: Files
-version: 2.1
+version: 2.0
 github_link: marketplace/eqp/files.md
 ---
 

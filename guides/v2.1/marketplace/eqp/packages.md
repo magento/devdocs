@@ -6,20 +6,17 @@ version: 2.1
 github_link: marketplace/eqp/packages.md
 ---
 
-Packages is the resource endpoint to initiate and manage all aspects of the EQP process. During a package submission, all the meta information associated
-with a package, both the technical and the marketing information, can be be provided in one step, or in several steps via updates, and later set to initiate
-the EQP process.
+Use this resource to initiate and manage all aspects of submitting a package to the [MAgento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html). You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.
 
-The technical parts of the submission includes references to the code artifacts (Magento 1 TGZ files, or Magento 2 composer-compliant ZIP files), and associated
-information like Magento version compatibilities, and release notes.
+* **Technical information**—References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
 
-The marketing parts of the submission include package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, user, reference, and installation PDF manuals, and so on.
+* **Marketing information**—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.
 
-Prior to initiating a package submission, all the files associated with a package as described above, must be first uploaded using the **/rest/v1/files/uploads** endpoint described in the Files section. The file upload ids received during the response must be used to associate these files to the package via its respective request JSON parameters.
+Before submitting a package, you must first [upload your files]({{page.baseurl}}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
-The APIs provide here also support retrieving package submission status, and any reports on technical and/or marketing issues discovered during the EQP process.
+You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.
 
-A successful submission will result in a package being released live to the [Marketplace site](https://marketplace.magento.com/).
+A successful submission results in a package being published on the [Magento Marketplace](https://marketplace.magento.com/).
 
 ## EQP Review Steps
 
@@ -33,17 +30,13 @@ Both the review steps will now occur in parallel, and if both stages are success
 
 Review failures at any step may involve iterations to fix the appropriate issues till they are resolved.
 
+## Package fields
 
-## Package Fields
+The following table describes all package object properties:
 
-
-
-The fields listed here can be parameters in a POST, or PUT request body, and response fields in a GET response body. The column ‘Applicable HTTP Command’ highlights the context here.
-
-Both POST and PUT, support a batch request model where multiple packages can be created or updated.
-
-The following fields/parameters describes an item in a batch request, or response:
-
+<div class="bs-callout bs-callout-info" markdown="1">
+Both `POST` and `PUT` requests support a batch model where multiple packages can be created or updated.
+</div>
 
 |Field/Parameter|Type|Applicable HTTP Command|EQP Kind|Description|
 |---------------|----|-----------------------|--------|-----------|
@@ -78,8 +71,7 @@ The following fields/parameters describes an item in a batch request, or respons
 |offset|integer|GET||In combination with the ‘limit’ parameter, it can be used for paging the collection of packages - refer to the ’Fetching Package Details’ section below. Default value is 0.|
 |limit|integer|GET||Along with offset, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.|
 |sort|string|GET||A comma-separated list of fields to sort the list, each field prefixed by ‘-‘ for descending order, or ‘+’ for ascending order - refer to the ‘Fetching Package Details’ section below.|
-
-
+{:.style="table-layout: auto;"}
 
 ### Additional Notes
 
@@ -611,6 +603,6 @@ If the **action** parameter indicates ‘submit’ value for technical, or marke
 
 
 
-## Fetching Package Details
+## Get package details
 
-## Removing Packages
+## Delete a package
