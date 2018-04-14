@@ -587,6 +587,7 @@ If the **action** parameter indicates ‘submit’ value for technical, or marke
 |documentation_artifacts|At least the ‘user’ guide must be supplied.|
 
 #### Marketing
+
 |Parameter|Comments|
 |---------|---------|
 |name||
