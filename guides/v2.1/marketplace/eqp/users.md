@@ -383,10 +383,10 @@ A 204 No Content HTTP response code indicates a successful update.
 ## Reports
 
 ```
-GET /rest/v1/users/:mage_id/reports
+GET /rest/v1/users/:mage_id/reports/pageviewsGET /rest/v1/users/:mage_id/reports/totalsGET /rest/v1/users/:mage_id/reports/salesGET /rest/v1/users/:mage_id/reports/refunds
 ```
 
-Use this API to retrieve reports owned by a specific user. Reports contain inforamtion about extensions sales, payout status, aggregate sales, refund data, and more.
+Use this API to retrieve reports owned by a specific user. Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 The Reports API specification is under design review. More details will be announced in the future..

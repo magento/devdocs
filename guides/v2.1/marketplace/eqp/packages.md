@@ -384,9 +384,10 @@ Once a package is published to the store, it can have the following field:
 ## Package Submissions
 
 ```
-POST /rest/v1/product/packages
-PUT  /rest/v1/product/packages
+POST /rest/v1/products/packages
+PUT  /rest/v1/products/packages
 PUT  /rest/v1/products/packages/:submission_id
+PUT /rest/v1/products/packages/:item_id
 ```
 
 ### New submissions
@@ -536,6 +537,8 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 * Each item has a ‘code’ and ‘message indicating if was successful or not:
    * Any non-200 code implies an error with the message providing more details on the error.
 * A unique **submission_id** is returned for each successful item which must be used for any GET, PUT or DELETE methods.
+* Optionally if an user-defined **item_id** was supplied during the POST, the response will echo back the same **item_id** for each item in the batch.
+   * The resource can be retrieved via GET using the **item_id** too.
 * Any non-200 HTTP response code indicates an error for the entire batch request.
 * The other fields should be self-explanatory.
 </div>
@@ -601,9 +604,103 @@ If the **action** parameter indicates ‘submit’ value for technical, or marke
 |custom_license_url|Only if license_type is ‘custom’.|
 |submission_id|For PUT commands.|
 
+#### Submission in several steps
 
+As described earlier, a submission can also be done in several steps in draft mode, followed by the action to ‘submit’ for technical and/or ‘marketing’. In such cases, the first
+POST call in draft mode can be done with minimal set of following parameters:
+
+|Parameter|Comments|
+|---------|--------|
+|type|
+|platform|
+|name||
+|short_description||
+|long_description||
+
+With the returned **submission_id**, the remaining required parameters can be supplied via PUT in draft mode, and/or with an action to submit either in technical, marketing or both.
 
 
 ## Get package details
 
+```
+GET /rest/v1/products/packagesGET /rest/v1/products/packages/:submission_idGET /rest/v1/products/packages/skusGET /rest/v1/products/packages/skus/:url_encoded_skuGET /rest/v1/products/packages/itemsGET /rest/v1/products/packages/items/:item_idGET /rest/v1/products/packages/:submission_id/statusGET /rest/v1/products/packages/sku/:url_encoded_sku/statusGET /rest/v1/products/packages/item/:item_id/status
+```
+
+As seen above, there are various ways to retrieve package details, most of which are convenient alternatives to the typical way via **submission_id** for a specific package submission.  The data returned is the same for the primary and the secondary ways.
+
+The alternative ways provided are:
+
+* **skus**: This allows to retrieve all versions of a particular package sku. Additional ‘version’ filter is available to retrieve a specific sku and version.
+* **item_id**: This allows to retrieve package details via a user-defined unique item_id per submission if supplied during the POST call.
+
+Retrieving all package details (every version of every package submitted) is possible via the following basic endpoints:
+
+```
+GET /rest/v1/products/packagesGET /rest/v1/products/packages/skusGET /rest/v1/products/packages/items```
+
+Detailed EQP status report of a package can be obtained via the following status endpoints:
+
+```
+GET /rest/v1/products/packages/:submission_id/statusGET /rest/v1/products/packages/sku/:url_encoded_sku/statusGET /rest/v1/products/packages/item/:item_id/status
+```
+
+
+Here is a curl example listing all packages belonging to a user:
+
+**Request**
+
+
+```shell
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/products/packages
+```
+
+**Response**
+
+```json
+```
+
+<div class="bs-callout bs-callout-info" markdown="1">
+
+</div>
+
+
+### Get Package EQP status details
+
+As seen above, this particular submission had a failure on the technical track of the EQP process. A more detailed report can be obtained via a status call:
+
+***Request**
+
+```shell
+```
+
+***Response**
+
+```json
+```
+
+<div class="bs-callout bs-callout-info" markdown="1">
+
+</div>
+
+
 ## Delete a package
+
+```
+DELETE /rest/v1/products/packages/:submission_id
+DELETE /rest/v1/products/packages/:item_id
+```
+
+Deleting a package can only be done via **submission_id** or **item_id** as it is a risky operation, hence no batch deletes will be provided.
+
+A sample curl call is shown below:
+
+**Request**
+
+```curl
+curl -X DELETE \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/products/packages/6fd7eaacbc
+```
+
+A 200 HTTP Response code will indicate success of the operation.
