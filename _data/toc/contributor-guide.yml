@@ -1,21 +1,21 @@
 label: Contribution Guide
 pages:
-    - label: Code Contributions
+    - label: Code contributions
       url: contributor-guide/contributing.html
       children:
         - label: Backward compatible development
           url: contributor-guide/backward-compatible-development
 
-    - label: DevDocs Contributions
+    - label: DevDocs contributions
       url: contributor-guide/contributing_docs.html
       children:
-        - label: Magento Definition of Done
+        - label: Magento definition of done
           url: contributor-guide/contributing_dod.html
 
         - label: Suggested topics for contribution
           url: contributor-guide/contributing_docs_suggested.html
 
-        - label: Quarterly Contributors
+        - label: Quarterly contributors
           url: contributor-guide/quarterly-contributors.html
 
         - label: Community maintainers
