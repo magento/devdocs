@@ -29,7 +29,7 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 
 <!--- MAGETWO-86298 -->* The sample  `.htaccess` file Options `All -Indexes` directive has been replaced with Options `-Indexes`. Previously, the `All -Indexes` directive caused problems in shared hosting environments. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12959*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
 
-<!--- MAGETWO-69036 -->* Lazy-loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside of constructor methods if they weren't provided.) 
+<!--- MAGETWO-69036 -->* Lazy-loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside  constructor methods if they weren't provided.) 
 
 <!--- MAGETWO-58072 -->* Magento no longer creates an `/ i18n` at system root (`/`) in addition to the expected language file when you run `bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
@@ -46,7 +46,7 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 
 <!--- MAGETWO-85696 -->*  You can now successfully re-save a product attribute using a new name. Previously, an attempt to re-save the product attribute resulted in an error. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11618*. [GitHub-6770](https://github.com/magento/magento2/issues/6770)
 
-<!--- MAGETWO-85104 -->* Magento now flushes the full page cache for all products that have been reindexed (both child and parent products). Previously, the  configurable product page is not cache-cleaned as expected. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 12548*. [GitHub-8009](https://github.com/magento/magento2/issues/8009)
+<!--- MAGETWO-85104 -->* Magento now flushes the full page cache for all products that have been reindexed (both child and parent products). Previously, the  configurable product page cache was not cleaned as expected. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 12548*. [GitHub-8009](https://github.com/magento/magento2/issues/8009)
 
 <!--- MAGETWO-84932 -->*  Category page X-Magento-Tags headers no longer contain product cache identities when category display mode is set to **Static block only**.  *Fix submitted by [Atish Goswami](https://github.com/atishgoswami) in pull request 12522*. 
 
@@ -71,7 +71,7 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 
 <!--- MAGETWO-64171 -->* Display issues no longer prevent a user from adding a shipping address when checking out when running Internet Explorer 11.x. Previously, a registered user could not add a new shipping address in the  shipping step of the checkout process due to display issues. 
 
-<!--- MAGETWO-71229 -->* Magento no longer caches warning messages as often as a customer clicks the Update Shopping Cart button while the shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while the page loaded in FireFox or Chrome, and this action resulted in multiple warning messages appearing on the top of the shopping cart page.
+<!--- MAGETWO-71229 -->* Magento no longer caches warning messages as often as a customer clicks the **Update Shopping Cart** button while the shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while the page loaded in FireFox or Chrome, and this action resulted in multiple warning messages appearing on the top of the shopping cart page.
 
 
 
@@ -112,7 +112,7 @@ did not change after you selected **Disable product**.
 
 #### Session framework
 
-<!--- MAGETWO-83288 -->* When you add a product to your wishlist after logging out, Magento now redirects you to your account Wishlist page and adds the product. Previously, you were redirected to your wishlist page, but Magento did not add the product. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
+<!--- MAGETWO-83288 -->* When you add a product to your wish list after logging out, Magento now redirects you to your account wish list page and adds the product. Previously, you were redirected to your wish list page, but Magento did not add the product. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
 
 
 #### Zend
@@ -138,7 +138,7 @@ did not change after you selected **Disable product**.
 <!--- MAGETWO-57064 -->*  The currency switcher now works for widgets on the home page. Previously, if your website supported multiple currencies, the currency switcher did not update the currencies for widgets on the home page.
 
 
-<!--- MAGETWO-64171 -->*  Customers can now add a new address during the shipping step of the checkout process when accessing the store from Internet Explorer 11.x. Previously, when a customer tried to create a new address from the check out page,  the **Add address** button  was not visible.
+<!--- MAGETWO-64171 -->*  Customers can now add a new address during the shipping step of the checkout process when accessing the store from Internet Explorer 11.x. Previously, when a customer tried to create a new address from the checkout page,  the **Add address** button  was not visible.
 
 
 
@@ -223,8 +223,8 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-84852 -->*  Magento now validates XML  against the schema file when saving custom layout update XML in the CMS page in production mode. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11860*.
 
-### Wishlist
-<!--- MAGETWO-86204-->* The default value for a wishlist item's `buyRequest` data is now always an array. Previosuly this value was set to `null`. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request 12930*.
+### Wish list
+<!--- MAGETWO-86204-->* The default value for a wish list item's `buyRequest` data is now always an array. Previously, this value was set to `null`. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request 12930*.
 
  -
 
@@ -232,7 +232,7 @@ did not change after you selected **Disable product**.
 
 
 
-<!--- NOT NEEDED   MAGETWO-87348  MAGETWO-87346 MAGETWO-87345 MAGETWO-87343 MAGETWO-86760 MAGETWO-85931 MAGETWO-84907 MAGETWO-84733 MAGETWO-71608 MAGETWO-82008 MAGETWO-84138 MAGETWO-83426 MAGETWO-80324 MAGETWO-85206 -->*  
+<!--- NOT NEEDED   MAGETWO-87348  MAGETWO-87346 MAGETWO-87345 MAGETWO-87343 MAGETWO-86760 MAGETWO-85931 MAGETWO-84907 MAGETWO-84733  MAGETWO-82008 MAGETWO-84138 MAGETWO-83426 MAGETWO-80324 MAGETWO-85206 -->*  
 -->  
 
 
@@ -242,7 +242,7 @@ did not change after you selected **Disable product**.
 <!---  CANNOT REPRODUCE MAGETWO-85632 MAGETWO-83400 MAGETWO-81629 MAGETWO-70004 MAGETWO-69476 MAGETWO-65162
 MAGETWO-64511 MAGETWO-60553 -->
 
-<!--- WON'T FIX MAGETWO-66481 MAGETWO-54167 MAGETWO-59163 MAGETWO-83313 MAGETWO-71625 MAGETWO-68948 --> 
+<!--- WON'T FIX MAGETWO-66481  MAGETWO-59163 MAGETWO-83313 MAGETWO-71625 MAGETWO-68948 --> 
 
 <!---  INTERNAL ONLY MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 MAGETWO-85030 MAGETWO-80426 MAGETWO-60154-->*  
 
@@ -261,6 +261,216 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+<table>
+  <tr>
+    <th>Pull request</th>
+    <th>Related GitHub issue</th>
+     <th>Contributing community member</th>
+
+  </tr>
+
+
+
+
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12033" target="_blank">12033</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/enriquei4" target="_blank">enriquei4</a></td>
+  </tr>
+<tr>
+    <td><a href="https://github.com/magento/magento2/pull/12373" target="_blank">12373</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Zefiryn" target="_blank">Zefiryn</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12043" target="_blank">12043</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/gomencal" target="_blank">gonzalopelon</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12135" target="_blank">12135</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/RomaKis" target="_blank">Roman K.</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/11807" target="_blank">11807</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/manuelson" target="_blank">Manu Gonzalez Rodriguez</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12041" target="_blank">12041</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/osrecio" target="_blank">Oscar Recio</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12246" target="_blank">12246</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/pmclain" target="_blank">Patrick McLain</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12137" target="_blank">12137</a></td>
+    <td>1980</td>
+     <td><a href="https://github.com/RomaKis" target="_blank">Roman K.</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12519" target="_blank">12519</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/lfluvisotto" target="_blank">Leandro F. L.</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/11860" target="_blank">11860</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12522" target="_blank">12522</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/atishgoswami" target="_blank">Atish Goswami</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12321" target="_blank">12321</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/angelo983" target="_blank">angelo983</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/11436" target="_blank">11436</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12548" target="_blank">12548</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/ajpevers" target="_blank">Anton Evers</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12050" target="_blank">12050</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/convenient" target="_blank">Luke Rodgers</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12558" target="_blank">12558</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/roma84" target="_blank">Chumak Roman</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12579" target="_blank">12579</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/JeroenVanLeusden" target="_blank">Jeroen</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12368" target="_blank">12368</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/nemesis-back" target="_blank">IvanK</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/11618" target="_blank">11618</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/raumatbel" target="_blank">Raul Mateos</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12611" target="_blank">12611</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/slackerzz" target="_blank">Lorenzo Stramaccia</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12629" target="_blank">12629</a></td>
+    <td>4387, 7448</td>
+     <td><a href="https://github.com/quisse" target="_blank">Tommy Quissens</a></td>
+  </tr>
+<tr>
+<td><a href="https://github.com/magento/magento2/pull/12840" target="_blank">12840</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/duckchip" target="_blank">Tristan Hofman</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12930" target="_blank">12930</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/jameshalsall" target="_blank">James Halsall</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12959" target="_blank">12959</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12958" target="_blank">12958</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12956" target="_blank">12956</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12962" target="_blank">12962</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/wardcapp" target="_blank">wardcapp</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12952" target="_blank">12952</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12954" target="_blank">12954</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12991" target="_blank">12991</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13020" target="_blank">13020</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13261" target="_blank">13261</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/PieterCappelle" target="_blank">Pieter Cappelle</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13367" target="_blank">13367</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/enriquei4" target="_blank">enriquei4</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13489" target="_blank">13489</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13532" target="_blank">13532</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13543" target="_blank">13543</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13549" target="_blank">13549</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+ </tr>
+
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13490" target="_blank">13490</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+ </tr>
+
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13916" target="_blank">13916</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/Northern eCommerce" target="_blank">Northern eCommerce</a></td>
+ </tr>
+
+ </table>
 
 
 

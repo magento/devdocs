@@ -18,8 +18,7 @@ github_link: release-notes/ReleaseNotes2.1.13CE.md
 *Patch code and release notes were published on March  2018.*
 
 
-
-We are pleased to present Magento Open Source  2.1.13. This release includes many bug fixes and enhancements. Check out the many community-contributed fixes!
+We are pleased to present Magento Open Source  2.1.13. This release includes both bug fixes and enhancements. Check out the many community-contributed fixes!
 
 ## Fixed issues
 
@@ -28,7 +27,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes man
 
 <!--- MAGETWO-86298 -->* The sample  `.htaccess` file Options `All -Indexes` directive has been replaced with Options `-Indexes`. Previously, the `All -Indexes` directive caused problems in shared hosting environments. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12959*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
 
-<!--- MAGETWO-69036 -->* Lazy-loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside of constructor methods if they weren't provided.) 
+<!--- MAGETWO-69036 -->* Lazy-loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside constructor methods if they weren't provided.) 
 
 <!--- MAGETWO-58072 -->* Magento no longer creates an `/ i18n` at system root (`/`) in addition to the expected language file when you run `bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
@@ -45,7 +44,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes man
 
 <!--- MAGETWO-85696 -->*  You can now successfully re-save a product attribute using a new name. Previously, an attempt to re-save the product attribute resulted in an error. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11618*. [GitHub-6770](https://github.com/magento/magento2/issues/6770)
 
-<!--- MAGETWO-85104 -->* Magento now flushes the full page cache for all products that have been reindexed (both child and parent products). Previously, the  configurable product page is not cache-cleaned as expected. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 12548*. [GitHub-8009](https://github.com/magento/magento2/issues/8009)
+<!--- MAGETWO-85104 -->* Magento now flushes the full page cache for all products that have been reindexed (both child and parent products). Previously, the  configurable product page cache was not cleaned as expected. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 12548*. [GitHub-8009](https://github.com/magento/magento2/issues/8009)
 
 <!--- MAGETWO-84932 -->*  Category page X-Magento-Tags headers no longer contain product cache identities when category display mode is set to **Static block only**.  *Fix submitted by [Atish Goswami](https://github.com/atishgoswami) in pull request 12522*. 
 
@@ -61,6 +60,11 @@ We are pleased to present Magento Open Source  2.1.13. This release includes man
 
 <!--- MAGETWO-83204 -->*  The Hide from Product Page option now works for the child product of a configurable product.
 
+<!--- MAGETWO-87521 -->*  
+
+<!--- MAGETWO-59163 -->*
+
+
 
 ### Cart and checkout
 
@@ -70,9 +74,9 @@ We are pleased to present Magento Open Source  2.1.13. This release includes man
 
 <!--- MAGETWO-64171 -->* Display issues no longer prevent a user from adding a shipping address when checking out when running Internet Explorer 11.x. Previously, a registered user could not add a new shipping address in the  shipping step of the checkout process due to display issues. 
 
-<!--- MAGETWO-71229 -->* Magento no longer caches warning messages as often as a customer clicks the Update Shopping Cart button while the shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while the page loaded in FireFox or Chrome, and this action resulted in multiple warning messages appearing on the top of the shopping cart page.
+<!--- MAGETWO-71229 -->* Magento no longer caches warning messages as often as a customer clicks the **Update Shopping Cart** button while the shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while the page loaded in FireFox or Chrome, and this action resulted in multiple warning messages appearing on the top of the shopping cart page.
 
-
+<!--- MAGETWO-87745 -->* 
 
  
 
@@ -82,6 +86,10 @@ We are pleased to present Magento Open Source  2.1.13. This release includes man
 
 <!--- MAGETWO-60140 -->*  You can now disable a child product from a configurable product’s edit page. Previously, the child product’s status 
 did not change after you selected **Disable product**.
+
+<!--- MAGETWO-87993 -->*  
+
+
 
 
 
@@ -93,7 +101,7 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-71669 -->* The Arabic language locale now uses the correct date format. Previously, when Magento was deployed using the JavaScript calendar and the Arabic (Kuwait) locale, It did not correctly display dates  on the product page. (Date format was shown as 182017/05 instead of 18/05/2017.)
 
-
+MAGETWO-84733
 
 
 ### Framework
@@ -111,7 +119,13 @@ did not change after you selected **Disable product**.
 
 #### Session framework
 
-<!--- MAGETWO-83288 -->* When you add a product to your wishlist after logging out, Magento now redirects you to your account Wishlist page and adds the product. Previously, you were redirected to your wishlist page, but Magento did not add the product. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
+<!--- MAGETWO-83288 -->* When you add a product to your wish list after logging out, Magento now redirects you to your account wish list page and adds the product. Previously, you were redirected to your wish list page, but Magento did not add the product. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
+
+
+
+#### Web API framework
+<!--- MAGETWO-59726 -->* 
+
 
 
 #### Zend
@@ -131,22 +145,20 @@ did not change after you selected **Disable product**.
 <!--- MAGETWO-83631 -->*  The `\Magento\Quote\Model\ResourceModel\Quote\Item\Collection` now returns items that have only existing relations in catalog_product_entity table, which prevents the loading of quote items for non-existing products.
 
 
-<!--- MAGETWO-71701 -->*  In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609)
+<!--- MAGETWO-71701 -->*  In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating the cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609)
 
 
 <!--- MAGETWO-57064 -->*  The currency switcher now works for widgets on the home page. Previously, if your website supported multiple currencies, the currency switcher did not update the currencies for widgets on the home page.
 
 
-<!--- MAGETWO-64171 -->*  Customers can now add a new address during the shipping step of the checkout process when accessing the store from Internet Explorer 11.x. Previously, when a customer tried to create a new address from the check out page,  the **Add address** button  was not visible.
+<!--- MAGETWO-64171 -->*  Customers can now add a new address during the shipping step of the checkout process when accessing the store from Internet Explorer 11.x. Previously, when a customer tried to create a new address from the checkout page,  the **Add address** button  was not visible.
 
 
 
+<!--- MAGETWO-58383 -->*   
 
-### Gift card
-
-<!--- MAGETWO-84806 -->* Magento now includes a gift card recipient's email address in the gift card account history. Previously, Magento did not include the gift card recipient's name and email address in the gift card account history, even though Magento successfully sent the email.
-
-
+<!--- MAGETWO-87443 -->*   
+<!--- MAGETWO-84907 -->* 
 
 ### Index
 
@@ -165,6 +177,8 @@ did not change after you selected **Disable product**.
 <!--- MAGETWO-86861 -->*  Invoices now display coupon code information as expected.  *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 13261*. [GitHub-10168](https://github.com/magento/magento2/issues/10168)
 
 <!--- MAGETWO-86259 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12952*. 
+
+<!--- MAGETWO-84108 -->* 
 
 
 
@@ -200,6 +214,9 @@ did not change after you selected **Disable product**.
 ### Search
 <!--- MAGETWO-72312 -->* Layered navigation now displays the correct product count. Previously, the layered navigation product count incorrectly included only in-stock products.
 
+<!--- MAGETWO-60246 -->* 
+
+
 ### Shipping
 
 <!--- MAGETWO-59660 -->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798) 
@@ -207,6 +224,15 @@ did not change after you selected **Disable product**.
 
 ### Swagger
 <!--- MAGETWO-85180 -->*  The code formatting in the Swagger block and template has been updated. 
+
+
+### Swatches
+
+<!--- MAGETWO-83291 -->*   
+
+### Tax
+
+<!--- MAGETWO-86529 -->*  
 
 
 ### Translations
@@ -218,24 +244,19 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-84852 -->*  Magento now validates XML  against the schema file when saving custom layout update XML in the CMS page in production mode. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11860*.
 
-### Wishlist
-<!--- MAGETWO-86204-->* The default value for a wishlist item's `buyRequest` data is now always an array. Previosuly this value was set to `null`. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request 12930*.
+<!--- MAGETWO-87746 -->*  
+
+<!--- MAGETWO-83282 -->* 
+
+
+### Wish list
+<!--- MAGETWO-86204-->* The default value for a wish list item's `buyRequest` data is now always an array. Previously, this value was set to `null`. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request 12930*.
 
  -
 
 
 
-<!--- NOT NEEDED   MAGETWO-87348  MAGETWO-87346 MAGETWO-87345 MAGETWO-87343 MAGETWO-86760 MAGETWO-85931 MAGETWO-84907 MAGETWO-84733 MAGETWO-71608 MAGETWO-82008-->
-
-
-<!---  CANNOT REPRODUCE MAGETWO-85632 MAGETWO-83400 MAGETWO-81629 MAGETWO-70004 MAGETWO-69476 MAGETWO-65162
-MAGETWO-64511 MAGETWO-60553 -->
-
-<!--- WON'T FIX MAGETWO-66481 MAGETWO-54167MAGETWO-59163  -->
-
-<!---  INTERNAL ONLY MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 -->
-
-<!---  NOT A BUG MAGETWO-75814 -->
+<!--- NOT NEEDED  MAGETWO-89535 MAGETWO-89066 MAGETWO-88992 MAGETWO-88336 MAGETWO-53814 MAGETWO-60969 MAGETWO-61020 MAGETWO-85904 MAGETWO-85755 MAGETWO-84822 MAGETWO-69577 MAGETWO-69213 MAGETWO-83326 MAGETWO-84738 MAGETWO-87517 MAGETWO-84238 MAGETWO-87517 MAGETWO-84849 MAGETWO-84848 MAGETWO-84346 MAGETWO-87348 MAGETWO-87346 MAGETWO-87343 MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 -->
 
 
 ## Community contributions
