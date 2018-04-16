@@ -20,7 +20,7 @@ To illustrate how to configure the `graphql.xml` file, let's suppose you have a 
 
 A query definition can be one line, or it can be complex. If your module's query implements `searchCriteria`, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition is simple.
 
-The following example shows the `products` query. The top-level `name` is `Query`, indicating that is a child of the `Query` node. All module schema definitions contain this line. The `argument` definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL]({{page.baseurl}}graphql/search-pagination.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes)
+The following example shows the `products` query. The top-level `name` is `Query`, indicating that is a child of the `Query` node. All module schema definitions contain this line. The `argument` definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes)
 
 ``` xml
 <type xsi:type="OutputType" name="Query">
@@ -134,7 +134,7 @@ Parameter | Description
 --- | ---
 `xsi:type` | Required. Must be `OutputInterface`
 `name` | Required. A name, such as *ModuleName*`Interface` that uniquely identifies the output interface.
-`typeResolver` | The path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}graphql/resolvers.html) for more information.
+`typeResolver` | The path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}/graphql/resolvers.html) for more information.
 
 For example:
 

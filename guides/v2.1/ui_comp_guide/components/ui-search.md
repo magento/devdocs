@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/search/search.js]({{site
 
 ## Configuration options
 
-Extends all [UiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+Extends all [UiElement]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 Search-specific configuration:
 

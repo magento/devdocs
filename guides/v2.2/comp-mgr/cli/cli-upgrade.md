@@ -19,9 +19,9 @@ You can upgrade Magento from the command line if you installed the software usin
 *	Installed the compressed archive
 
 <div class="bs-callout bs-callout-info" id="info">
- 	<ul><li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
+ 	<ul><li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="{{page.baseurl}}/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
  		<li>If you configured Magento use use <code>pub</code> as its root directory, see the next section.</li>
- 		<li>If you're upgrading to Magento 2.1 (including a Release Candidate) from Magento 2.0.7 or earlier <em>and</em> you installed sample data, see <a href="{{page.baseurl}}comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a> instead of this topic.</li></ul>
+ 		<li>If you're upgrading to Magento 2.1 (including a Release Candidate) from Magento 2.0.7 or earlier <em>and</em> you installed sample data, see <a href="{{page.baseurl}}/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a> instead of this topic.</li></ul>
 </div>
 
 <div class="bs-callout bs-callout-warning">
@@ -39,7 +39,7 @@ This section applies to you *only* if you set the Magento root directory to `<yo
 
 *	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
-	Run the [System Upgrade utility]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html) using that subdomain.
+	Run the [System Upgrade utility]({{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html) using that subdomain.
 *	Use the [following procedure](#upgrade-cli-upgr) to upgrade Magento using the command line.
 
 {% endcollapsible %}
@@ -48,7 +48,7 @@ This section applies to you *only* if you set the Magento root directory to `<yo
 To prevent access to your store while it's being upgraded, put your store in maintenance mode.
 
 <div class="bs-callout bs-callout-info" id="info">
-  	<p>You can optionally create a <a href="{{page.baseurl}}comp-mgr/trouble/cman/maint-mode.html">custom maintenance mode page</a>.</p>
+  	<p>You can optionally create a <a href="{{page.baseurl}}/comp-mgr/trouble/cman/maint-mode.html">custom maintenance mode page</a>.</p>
 </div>
 
 {% collapsible To enable maintenance mode: %}
@@ -58,7 +58,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
 
 		php <your Magento install dir>/bin/magento maintenance:enable
 
-	For additional options, see [Enable or disable maintenance mode]({{page.baseurl}}install-gde/install/cli/install-cli-subcommands-maint.html).
+	For additional options, see [Enable or disable maintenance mode]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
 {% endcollapsible %}
 
@@ -89,7 +89,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
   		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2>Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
-3.	If prompted, enter your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
+3.	If prompted, enter your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html).
 4.	Manually clear `var` subdirectories:
 
 		rm -rf <Magento install dir>/var/cache/*
@@ -112,7 +112,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
 
 	If so, perform the following tasks:
 
-	1.	Reset [file system ownership and permissions]({{page.baseurl}}install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
+	1.	Reset [file system ownership and permissions]({{page.baseurl}}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
 	2.	Clear the following directories and try again:
 
 			<your Magento install dir>/var/cache

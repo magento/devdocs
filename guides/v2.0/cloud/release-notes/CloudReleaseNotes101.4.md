@@ -47,7 +47,7 @@ For details, see [Overview of configuration management]({{ site.gdeurl21 }}cloud
 ## How to get `magento-cloud-configuration` release 101.4.x
 {{site.data.var.ece}} periodically provides patch releases in components like `magento-cloud-configuration`.
 
-To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
+To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl}}/cloud/project/project-upgrade.html).
 
 ### Magento Commerce Release Notes
 This {{site.data.var.ece}} release has no corresponding Magento Commerce release.

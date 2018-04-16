@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/before/integration-ip-addr.md
 ---
 
-This topic lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [integration environments]({{page.baseurl }}cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+This topic lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [integration environments]({{page.baseurl}}/cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 ## Outbound IP addresses
 This section lists public outbound IP addresses for integration environments.

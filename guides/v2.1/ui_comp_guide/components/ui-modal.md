@@ -11,13 +11,13 @@ redirect_from: guides/v2.0/ui-components/ui-modal.html
 
 ## Overview
 
-The Modal {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It uses the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html).
+The Modal {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It uses the [modal widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html).
 
 Similar to the widget's configuration, the component's configuration allows you to set the window type and the behavior of action buttons (including linking action buttons to methods of the other UI components).
 
 The Modal component can be used for both {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and storefronts.
 
-For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
+For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
 ## Structure
 
@@ -67,7 +67,7 @@ Modal-specific configuration:
   </tr>
   <tr>
     <td><code>options</code></td>
-    <td>Configuration passed to the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
+    <td>Configuration passed to the <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
     <td>Object</td>
     <td></td>
   </tr>

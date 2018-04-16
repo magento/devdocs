@@ -23,7 +23,7 @@ This is an important section to read, because what {% glossarytooltip 55774db9-b
   <p>Remember that most merchants have multiple extensions installed, and most of these extensions are exposed through the Admin. In order to prevent a cluttered Admin, please follow the guidelines, and communicate with Magento and the community when you have questions.</p>
 </div>
 
-For additional information on design topics for the Admin, read the [Admin Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html) and the [Admin Style Guide]({{page.baseurl}}design-styleguide/bk-styleguide.html).
+For additional information on design topics for the Admin, read the [Admin Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) and the [Admin Style Guide]({{page.baseurl}}/design-styleguide/bk-styleguide.html).
 
 ### Articles
 

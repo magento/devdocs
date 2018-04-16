@@ -58,11 +58,11 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
 * Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Customizable Options** section.
 
-  ![Product page with configurable and simple products]({{page.baseurl}}rest/images/options-section.png)
+  ![Product page with configurable and simple products]({{page.baseurl}}/rest/images/options-section.png)
 
 * On the Luma store front page, search for `Champ`. Then click on the Champ Tee product.
 
-  ![Search results]({{page.baseurl}}rest/images/add-your-name.png)
+  ![Search results]({{page.baseurl}}/rest/images/add-your-name.png)
 
   <div class="bs-callout bs-callout-info" id="info" markdown="1">
   If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
@@ -73,4 +73,4 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ## Related topics
 
-  * [Order Processing with REST APIs Tutorial]({{page.baseurl}}get-started/order-tutorial/order-intro.html)
+  * [Order Processing with REST APIs Tutorial]({{page.baseurl}}/get-started/order-tutorial/order-intro.html)

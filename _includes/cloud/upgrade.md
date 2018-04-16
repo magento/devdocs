@@ -4,7 +4,7 @@ This information details how to upgrade Magento Commerce (Cloud) from any versio
 
 When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
-For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+For more information on Composer, see [Composer in Cloud]({{ page.baseurl}}/cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always upgrade your local workstation first, then update your remote Integration environment. Resolve any issues before upgrading either the Staging or Production environments.
@@ -27,7 +27,7 @@ Back up your integration system database and code:
 
 Back up your staging or production system database:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
@@ -181,7 +181,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
@@ -194,7 +194,7 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 #### View error details on the server
-To view the error in your integration system, [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html) and enter the following command:
+To view the error in your integration system, [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
@@ -207,8 +207,8 @@ One possible error occurs when the deployment hook failed, and therefore the dat
 
 To resolve the error:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
-2.  [Examine the logs]({{ page.baseurl }}cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{ page.baseurl}}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
     For example, on a local branch, enter the following commands:
@@ -216,6 +216,6 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 #### Related topic
-*   [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
-*   [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-*   [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+*   [Install, manage, and upgrade modules]({{page.baseurl}}/cloud/howtos/install-components.html)
+*   [Install optional sample data]({{page.baseurl}}/cloud/howtos/sample-data.html)
+*   [Merge and delete an environment]({{page.baseurl}}/cloud/howtos/environment-tutorial-env-merge.html)

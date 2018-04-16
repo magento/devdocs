@@ -27,7 +27,7 @@ To resolve this issue, you must reset the cron job(s) using the `cron:unlock` co
 *   Avoid using this solution when indexers are running.
 </div>
 
-1.  Open a terminal and use your  [SSH]({{page.baseurl}}cloud/env/environments-ssh.html#ssh) keys to connect to the affected environment.
+1.  Open a terminal and use your  [SSH]({{page.baseurl}}/cloud/env/environments-ssh.html#ssh) keys to connect to the affected environment.
 
 1.  Get the MySQL database credentials:
 

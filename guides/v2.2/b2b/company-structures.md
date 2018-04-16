@@ -132,7 +132,7 @@ An empty array
 
 The following query returns information about all teams (`team_id` &ge; `0`)
 
-See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -291,7 +291,7 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 
 ## Related information
 
-* [Integrate with the Company module]({{page.baseurl}}b2b/company.html)
-* [Manage company objects]({{page.baseurl}}b2b/company-object.html)
-* [Manage company users]({{page.baseurl}}b2b/company-users.html)
-* [Manage company roles]({{page.baseurl}}b2b/roles.html)
+* [Integrate with the Company module]({{page.baseurl}}/b2b/company.html)
+* [Manage company objects]({{page.baseurl}}/b2b/company-object.html)
+* [Manage company users]({{page.baseurl}}/b2b/company-users.html)
+* [Manage company roles]({{page.baseurl}}/b2b/roles.html)

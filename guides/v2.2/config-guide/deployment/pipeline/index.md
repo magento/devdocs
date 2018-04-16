@@ -34,14 +34,14 @@ We also provide a way to synchronize the configuration of your systems:
 
 For a complete list of configuration paths, see the following references:
 
-*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
-*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
-*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html)
+*	[Payment configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-payment.html)
+*	[Other configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-most.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-b2b.html)
 
 ## Assumptions
 
 {% include config/split-deploy/split-deploy-assumptions.md %}
 
 #### Next step
-[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.html)
+[Deployment technical overview (implementation details)]({{ page.baseurl}}/config-guide/deployment/pipeline/technical-details.html)

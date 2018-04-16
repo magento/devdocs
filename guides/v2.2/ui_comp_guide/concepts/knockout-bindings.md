@@ -171,7 +171,7 @@ Binding's configuration that may include the following properties:
 
 ### `datepicker`
 
-The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl}}javascript-dev-guide/widgets/widget_calendar.html) widget.
+The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl}}/javascript-dev-guide/widgets/widget_calendar.html) widget.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js)
 

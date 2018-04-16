@@ -96,9 +96,9 @@ To set a configuration setting as both sensitive and system-specific, create two
 
 * [Configuration importers][config-importers]
 *	[The di.xml file][di-xml]
-*	[Developer roadmap]({{ page.baseurl }}extension-dev-guide/intro/developers_roadmap.html)
-*	[Dependency injection]({{ page.baseurl }}extension-dev-guide/depend-inj.html)
+*	[Developer roadmap]({{ page.baseurl}}/extension-dev-guide/intro/developers_roadmap.html)
+*	[Dependency injection]({{ page.baseurl}}/extension-dev-guide/depend-inj.html)
 
 [typepool]: {{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php
-[di-xml]: {{page.baseurl}}extension-dev-guide/build/di-xml-file.html
-[config-importers]: {{page.baseurl}}extension-dev-guide/configuration/importers.html
+[di-xml]: {{page.baseurl}}/extension-dev-guide/build/di-xml-file.html
+[config-importers]: {{page.baseurl}}/extension-dev-guide/configuration/importers.html

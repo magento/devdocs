@@ -15,13 +15,13 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.0.1
 
 
 
-Backward-incompatible changes are documented in <a href="{{ page.baseurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{ page.baseurl}}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 ## Highlights
 
 * Patch 2.0.10 is now <i>compatible with MySQL 5.7</i>.
 
-* Patch 2.0.10 introduces <i>two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{page.baseurl}}mrg/ce/Sales.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a>.
+* Patch 2.0.10 introduces <i>two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{page.baseurl}}/mrg/ce/Sales.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl}}/mrg/intro.html" target="_blank">Module Reference Guide</a>.
 
 
 ### Why are we adding new APIs in a patch release?
@@ -137,7 +137,7 @@ We address the following functional issues in this release.
 
 	* change order status and state
 
-For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales.html" target="_blank">Magento Sales API</a>.
+For more information on these API enhancements, see <a href="{{ page.baseurl}}/mrg/ce/Sales.html" target="_blank">Magento Sales API</a>.
 
 ### Performance
 {:.no_toc}
@@ -226,12 +226,12 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 ## System requirements
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
-[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+[System Requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
 
 {% include install/releasenotes/ce_install_20.md %}
 
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

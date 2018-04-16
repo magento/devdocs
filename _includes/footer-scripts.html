@@ -1,11 +1,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-<script src="{{ site.baseurl }}common/js/app.min.js"></script>
+<script src="{{ site.baseurl}}/common/js/app.min.js"></script>
 
 <!-- Glossary integration -->
 <script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
-<script src="{{ site.baseurl }}common/js/glossary.tooltip.min.js"></script>
+<script src="{{ site.baseurl}}/common/js/glossary.tooltip.min.js"></script>
 <script>
     $(document).ready(function(){
       magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
