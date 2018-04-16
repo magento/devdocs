@@ -19,7 +19,7 @@ EQP APIs are based on REST concepts and use standard HTTP verbs:
 
 All request and response content is formatted using JSON, including error information.
 
-All the endpoints start with **/rest/v1** which will be the mechanism followed to support API versioning. The initial release will be set to version 1 (v1). 
+All endpoints start with **/rest/v1**, which supports API versioning. The initial release is version 1 (v1).
 
 The APIs only accept encrypted communications using HTTPS at the following base URLs:
 
@@ -28,7 +28,7 @@ The APIs only accept encrypted communications using HTTPS at the following base 
 
 ## Error Handling
 
-All HTTP 4xx errors will contain a JSON payload with the following structure:
+All HTTP 4xx errors contain a JSON payload with the following structure:
 
 ```json
 {
@@ -37,4 +37,4 @@ All HTTP 4xx errors will contain a JSON payload with the following structure:
 }
 ```
 
-For batch responses, the HTTP response code will be 200, but each item in the batch will contain the ‘code’ and ‘message’ pair indicating some error. A ‘code’ of 200 implies success.
+Batch responses return a HTTP 200 response code, but each item in the batch contains the `code` and `message` pair indicating an error. A `code` of 200 indicates success.
