@@ -38,7 +38,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |Field/Parameter|Type|Applicable HTTP Command|EQP Kind|Description|
 |---------------|----|-----------------------|--------|-----------|
 |name|string|GET, POST, PUT|marketing|The name or title of the package. Duplicate names are not allowed.|
-|type|string|GET, POST, PUT|technical|Type of package. Valid values include `extension`, `theme`, or `shared_package`. Shared packages are only applicable for Magento 2 extensions.|
+|type|string|GET, POST, PUT|technical|Type of package. Valid values include `extension`, `theme`, `shared_package` or `all`. Shared packages are only applicable for Magento 2 extensions. Default is `all`|
 |platform|string|GET, POST, PUT|technical|The Magento platform compatibility of this package. Valid values include  `M1` for MAgento 1 or `M2` for Magento 2.|
 |version_compatibility|array|GET, POST, PUT|technical|List of Magento versions that this package supports.|
 |sku|string|GET|-|The SKU generated from metadata in the code artifact.|
@@ -68,6 +68,8 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |offset|integer|GET|-|In combination with the `limit` parameter, it can be used for paging the collection of packages. Refer to [Get package details](#get-package-details). Default value is 0.|
 |limit|integer|GET|-|Along with offset, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.|
 |sort|string|GET|-|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order. Refer to [Get package details](#get-package-details).|
+|created_time|DateTime|GET|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was first submitted.|
+|modified_time|DateTime|GET|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was last updated.|
 {:.style="table-layout: auto;"}
 
 ### Additional notes
@@ -644,21 +646,256 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 **Response**
 
 ```json
+[
+  {
+    "submission_id" : "f4eacd72be",
+    "type" : "extension",
+    "platform" : "M2",
+    "version_compatibility" : [
+      {
+        "edition" : "CE",
+        "versions" : ["2.1", "2.2"]
+      },
+      {
+        "edition" : "EE",
+        "versions" : ["2.1", "2.2"]
+      }
+    ],
+    "name" : "One Click Checkout",
+    "short_description" : "<Short description here>",
+    "long_description" : "<Long description here>",
+    "sku" : "acme/one-click-checkout",
+    "version" : "1.1.5",
+    "release_notes" : "<Release notes here>",
+    "artifact" : {
+      "file_upload_id" : "dhsiXjdksW17623",
+      "filename" : "acme_one-click-checkout.zip",
+      "content_type" : "application/zip",
+      "size" : 182934,   
+      "malware_status" : "pass",
+      "file_hash" : "f53f5db985b8815f1ce6fd4b48a0439a" 
+    },
+    "documentation_artifacts" : {
+      "user" : {
+        "file_upload_id" : "j47dVbsFgkl",
+        "filename" : "user.pdf",
+        "content_type" : "application/pdf",
+        "size" : 48392,   
+        "malware_status" : "pass",
+        "file_hash" : "7f99e16a20457859fc0c86b5676a62ca"
+      },
+      "installation" : {
+        "file_upload_id" : "d67E82hVb20",
+        "filename" : "installation.pdf",
+        "content_type" : "application/pdf",
+        "size" : 34876,   
+        "malware_status" : "pass",
+        "file_hash" : "94392b98f02c56083995d23f02e460ab"
+      },
+      "reference" : {
+        "file_upload_id" : "9Rb5yQh7dfA",
+        "filename" : "reference.pdf",
+        "content_type" : "application/pdf",
+        "size" : 23845,   
+        "malware_status" : "pass",
+        "file_hash" : "ec78ded664c71d80acf0e29f5dbafe2b" 
+      }
+    },
+    "media_artifacts" : {
+      "icon_image" : {
+        "file_upload_id" : "gAdh628bzXv",
+        "filename" : "one-click-icon.png",
+        "content_type" : "image/png",
+        "size" : 37492,   
+        "malware_status" : "pass",
+        "file_hash" : "dd0d04057cd1420afb76d6afa838d394" 
+      },
+      "gallery_images" : [
+        {
+          "file_upload_id" : "hj739djXvT",
+          "filename" : "acme-logo.png",
+          "content_type" : "image/png",
+          "size" : 23947,   
+          "malware_status" : "pass",
+          "file_hash" : "515f2eaf3cd4e43c32fda89a004306aa" 
+        },
+        {
+          "file_upload_id" : "9Dfg73482E",
+          "filename" : "catalog_demo.png",
+          "content_type" : "image/png",
+          "size" : 37492,   
+          "malware_status" : "pass",
+          "file_hash" : "8da78313887fdc3d2506f39c46ccde4e" 
+        },
+        {
+          "file_upload_id" : "J87bdueDjxM",
+          "filename" : "cart-demo.png",
+          "content_type" : "image/png",
+          "size" : 38023,   
+          "malware_status" : "pass",
+          "file_hash" : "30b6fef138e1433e6f8ff23a45b2fbb9" 
+        },
+        {
+          "file_upload_id" : "Vhke71093Z4",
+          "filename" : "click-demo.png",
+          "content_type" : "image/png",
+          "size" : 48293,   
+          "malware_status" : "pass",
+          "file_hash" : "0ced4d071dddc6e354acfa11f56a56f1" 
+        },
+        {
+          "file_upload_id" : "Gh8273Cx78Q",
+          "filename" : "click-success.png",
+          "content_type" : "image/png",
+          "size" : 39482,   
+          "malware_status" : "pass",
+          "file_hash" : "dfa3183472cc265a5510be1da0fe444c" 
+        }
+      ],
+      "video_urls" : [
+        "https-hw3b//www.youtube.com/watch?v=l33T2-YC4tk",
+        "https-hw3b//www.youtube.com/watch?v=682p52tFcmY"
+      ]
+    },
+    "categories" : [
+      "//Extensions//Payments & Security//Checkout Enhancements"
+    ],
+    "prices" : [
+      {
+        "edition" : "CE",
+        "currency_code" : "USD",
+        "price" : 15.50
+      },
+      {
+        "edition" : "EE",
+        "currency_code" : "USD",
+        "price" : 45.00,
+        "installation_price" : 0.00
+      }
+    ],
+    "license_type" : "bsd",
+    "eqp_status" :  {
+      "overall" : "in_progress",
+      "technical" : "rejected",
+      "marketing" : "approved"
+    },
+    "created_time" : "2018-04-23 16:00:00",
+    "modified_time" : "2018-04-23 17:53:22"
+  }
+]
 ```
+
+<div class="bs-callout bs-callout-info" markdown="1">
+* In the example above, only one product is shwon, but as it can be seen, an array of products can be returned. 
+* The sku, and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 packages.xml or M2 composer.json), once it passes the malware checks. 
+* The code, documentation and media artifact files have additonal info indicating meta-information on these files, including their current malware status.
+* The eqp_status field will indicate the current state of the package in the EQP pipeline.
+</div>
 
 ### Get EQP status details
 
-As seen above, this particular submission had a failure on the technical track of the EQP process. A more detailed report can be obtained via a status call:
+As seen above, this particular submission had a failure on the technical track of the EQP process. A more detailed report can be obtained via a status call for a given submission id:
 
 ***Request**
 
 ```shell
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be/status
 ```
 
 ***Response**
 
 ```json
+{
+  "code" : "fail", 
+  "technical" : {
+    "code" : "fail",  
+    "results" : [
+      {
+        "tool" : "phpcs",
+        "reports" : [
+          {
+            "platform" : "M2",
+            "edition" : "CE",
+            "version" : "2.1.12",
+            "php_version" : "7.1.16",
+            "status" : "pass",
+            "details" : {
+            } 
+          }
+        ]
+      },
+      {
+        "tool" : "compile",
+        "reports" : [
+          {
+            "platform" : "M2",
+            "edition" : "CE",
+            "version" : "2.2.3",
+            "php_version" : "7.1.16",
+            "status" : "fail",
+            "details" : {
+              "output" : "<output bin/magento deploy:mode:set production here >"
+            } 
+          }
+        ]
+
+
+      }
+    ]
+  },
+  "marketing" : {
+    "code" : "pass", 
+    "results" : [
+    ]
+  }
+}
 ```
+<div class="bs-callout bs-callout-info" markdown="1">
+* The detail technical reports above include the Magento edition, verison and php version where the test was run.
+* The top-level **code** indicates overall result which can be `pass`, `fail` or `in_progress`.
+* Each EQP track, `technical` and `marketing` have their own overall status indicated by the *code* value which can be `pass`, `fail` or `in_progress`.
+* The `results` list will contain details for each tool and their respective outcome via the **status** field, which can be `pass` or `fail`.
+</div>
+
+### Sorting and Filtering
+
+The following fields currently enable filtering support (refer to the [Package fields](#package-fields) section above for valid values for certain fields):
+
+|Field|Comments|
+|-----|--------|
+|type|Exact string match|
+|item_id|Sub-string match|
+|submission_id|Sub-string match|
+|sku|Sub-string match|
+|version|Sub-string match|
+|name|Sub-string match|
+|short_description|Sub-string match|
+|long_description|Sub-string match|
+|release_notes|Sub-string match|
+|is_patch|Exact match|
+|license_type|Exact string match|
+|custom_license_name|Sub-string match|
+|custom_license_url|Sub-string match|
+|requested_launch_date|date match, allows range|
+|created_time|date match, allows range|
+|modified_time|date match, allows range|
+
+Sorting is available on all the fields listed at [Package fields](#package-fields) section.
+
+A sample curl request filtering for all `themes` sorted by `created_time` in desending order:
+
+**Request**
+
+```curl
+curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=-created_time
+```
+
+**Response**
+
+A list of theme packages can be returned in the same way as described in [Get package details](#get-package-details) section.
+
 
 ## Delete a package
 
