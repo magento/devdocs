@@ -860,11 +860,12 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 
 ### Sorting and Filtering
 
-The following fields currently enable filtering support (refer to the [Package fields](#package-fields) section above for valid values for certain fields):
+The following fields currently enable both sorting and filtering support (refer to the [Package fields](#package-fields) section above for valid values for certain fields):
 
 |Field|Comments|
 |-----|--------|
 |type|Exact string match|
+|platform|Exact string match|
 |item_id|Sub-string match|
 |submission_id|Sub-string match|
 |sku|Sub-string match|
@@ -881,15 +882,13 @@ The following fields currently enable filtering support (refer to the [Package f
 |created_time|date match, allows range|
 |modified_time|date match, allows range|
 
-Sorting is available on all the fields listed at [Package fields](#package-fields) section.
-
-A sample curl request filtering for all `themes` sorted by `created_time` in desending order:
+A sample curl request filtering for all `themes` sorted by `platform` in acending and  `created_time` in desending order:
 
 **Request**
 
 ```curl
 curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=-created_time
+     https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
 ```
 
 **Response**
