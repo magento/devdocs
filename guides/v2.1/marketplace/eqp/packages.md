@@ -882,7 +882,7 @@ The following fields currently enable both sorting and filtering support (refer 
 |created_time|date match, allows range|
 |modified_time|date match, allows range|
 
-A sample curl request filtering for all `themes` sorted by `platform` in acending and  `created_time` in desending order:
+A sample curl request filtering for all `themes` sorted by `platform` in ascending and `created_time` in descending order:
 
 **Request**
 
