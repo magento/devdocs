@@ -426,6 +426,7 @@ Here is a POST request payload example with all the required parameters and read
       "marketing" : "submit"
     },
     "type" : "extension",
+    "platform" : "M2",
     "version_compatibility" : [
       {
         "edition" : "CE",

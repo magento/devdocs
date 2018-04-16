@@ -49,6 +49,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 
 ```json
 {
+    "file_upload_id" : "dhsiXjdksW17623",
     "filename" : “acme_one-click-checkout.zip”,
     "content_type" : "application/zip",
     "size" : 182934,   
