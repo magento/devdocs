@@ -65,8 +65,8 @@ Since suites allow for precondition consolidation, a common workflow for test wr
 An important aspect of suites is that if you include a test in a suite, MFTF can no longer assume your test does not have any preconditions in the suite surrounding it. This means that upon including a test in your suite, **that test can no longer be generated outside the context of at least one of the suites that contains it.**
 
 There are, however, several ways to generate and execute only your new test in the context of a suite:
-* Temporarily add a group to your test via a `<group value="something">` tag to your test, and run `robo group something`.
 * Edit the appropriate `suite.xml` to only include your test and run via `robo group <suiteName>`.
+* Temporarily add a group to your test via a `<group value="something">` tag to your test, and run `robo group something`.
 * Use `robo generate:suite <suite>` in conjunction with the above to limit generation to your suite/test combination.
 * Use the `--tests` flag in `generate:tests` to only generate your `suite` and `test` combination. See [robo commands](./commands/robo.html#generate) for details.
 
