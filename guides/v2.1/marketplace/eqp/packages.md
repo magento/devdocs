@@ -900,7 +900,7 @@ A list of theme packages can be returned in the same way as described in [Get pa
 
 ```
 DELETE /rest/v1/products/packages/:submission_id
-DELETE /rest/v1/products/packages/:item_id
+DELETE /rest/v1/products/packages/items/:item_id
 ```
 
 Deleting a package can only be done via **submission_id** or **item_id** as it is a risky operation, hence no batch deletes will be provided.
