@@ -24,5 +24,5 @@ For in depth content about creating extensions, see the [PHP Developer Guide]({{
 {% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "subgroup","02_Extension-Coding" | where: "menu_node",null | sort: "menu_order" %}
 
 {% for node in subgroup %}
-*  [{{ node.menu_title }}]({{page.baseurl}}{{ node.github_link | replace: ".md",".html" }})
+*  [{{ node.menu_title }}]({{page.baseurl}}/{{ node.github_link | replace: ".md",".html" }})
 {% endfor %}
