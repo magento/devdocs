@@ -111,6 +111,9 @@
 {% elsif "mftf" contains page.group %}
         {% assign toc = site.data.toc.magento-functional-testing-framework-guide %}
 
+        {% elsif page.group == "marketplace-api" %}
+        {% assign toc = site.data.toc.marketplace-api %}
+
 {% endif %}
 
 <h4>{{ toc.label }}</h4>
