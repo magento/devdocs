@@ -62,27 +62,27 @@ SELENIUM_PATH
 
 #### SELENIUM_HOST
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: For overriding the default Selenium server URL.
+* Example: `user:pass@ondemand.saucelabs.com`
 
 #### SELENIUM_PORT
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: For overriding the default Selenium server URL.
+* Example: `443`
 
 #### SELENIUM_PROTOCOL
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: For overriding the default Selenium server URL.
+* Example: `https`
 
 #### SELENIUM_PATH
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: For overriding the default Selenium server URL.
+* Example: `/wd/hub`
 
 ### MAGENTO_RESTAPI
 
@@ -96,15 +96,15 @@ MAGENTO_RESTAPI_SERVER_PORT
 
 #### MAGENTO_RESTAPI_SERVER_HOST
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: The protocol and host part of the API path.
+* Example: `http://localhost`
 
 #### MAGENTO_RESTAPI_SERVER_PORT
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: The port part of the API path.
+* Example: `5000`
 
 ### TESTS
 
@@ -120,21 +120,21 @@ TESTS_MODULES_PATH
 
 #### TESTS_BP
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: The path to where MFTF supplementary files are located in the Magento2 codebase.
+* Example: `~/magento2ce/dev/tests/acceptance`
 
 #### FW_BP
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: The path to where MFTF exists and from which it is symlinked.
+* Example: `~/magento/magento2-functional-testing-framework`
 
-#### TESTS_MODULES_PATH
+#### TESTS_MODULE_PATH
 
-* Use:
-* Description:
-* Example: ``
+* Use: Optional
+* Description: The path to where MFTF modules mirror Magento's modules.
+* Example: `~/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
 ### MODULE_WHITELIST
 
