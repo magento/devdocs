@@ -35,7 +35,7 @@ The following table describes all package object properties:
 Both `POST` and `PUT` requests support a batch model where multiple packages can be created or updated.
 </div>
 
-|Field/Parameter|Type|Applicable HTTP Command|EQP Kind|Description|
+|Field/Parameter|Type|Applicable HTTP Command|EQP Review Type|Description|
 |---------------|----|-----------------------|--------|-----------|
 |name|string|GET, POST, PUT|marketing|The name or title of the package. Duplicate names are not allowed.|
 |type|string|GET, POST, PUT|technical|Type of package. Valid values include `extension`, `theme`, `shared_package` or `all`. Shared packages are only applicable for Magento 2 extensions. Default is `all`|
@@ -483,9 +483,9 @@ The following example shows a POST request with all required parameters set for 
 ]
 ```
 
-Since both POST and PUT can accept batch requests, a single submission should be still be sent as an array with one item.
+Since the API accepts batch requests for both POST and PUT operations, send a single submission as an array with one item.
 
-If you cave the request body to a file, for example, `/tmp/one-click-submission-1.0.0.json`, the following example shows the package submission process:
+If you save the request body to a file, for example, `/tmp/one-click-submission-1.0.0.json`, the following example shows the package submission process:
 
 **Request**
 
@@ -786,15 +786,15 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-* In the example above, only one product is shwon, but as it can be seen, an array of products can be returned. 
-* The sku, and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 packages.xml or M2 composer.json), once it passes the malware checks. 
-* The code, documentation and media artifact files have additonal info indicating meta-information on these files, including their current malware status.
-* The eqp_status field will indicate the current state of the package in the EQP pipeline.
+* The previous example shows one product only, but an array of products can be returned. 
+* The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 packages.xml or M2 composer.json), once it passes the malware checks.
+* The code, documentation, and media artifact files have additonal info indicating meta-information on these files, including their current malware status.
+* The `eqp_status` field will indicate the current state of the package in the EQP process.
 </div>
 
 ### Get EQP status details
 
-As seen above, this particular submission had a failure on the technical track of the EQP process. A more detailed report can be obtained via a status call for a given submission id:
+As seen above, this particular submission failed the EQP technical review. Use the `submission_id` to get a more detailed report:
 
 ***Request**
 
@@ -807,9 +807,9 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 
 ```json
 {
-  "code" : "fail", 
+  "code" : "fail",
   "technical" : {
-    "code" : "fail",  
+    "code" : "fail",
     "results" : [
       {
         "tool" : "phpcs",
@@ -821,7 +821,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
             "php_version" : "7.1.16",
             "status" : "pass",
             "details" : {
-            } 
+            }
           }
         ]
       },
@@ -836,7 +836,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
             "status" : "fail",
             "details" : {
               "output" : "<output bin/magento deploy:mode:set production here >"
-            } 
+            }
           }
         ]
 
@@ -845,22 +845,22 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
     ]
   },
   "marketing" : {
-    "code" : "pass", 
+    "code" : "pass",
     "results" : [
     ]
   }
 }
 ```
 <div class="bs-callout bs-callout-info" markdown="1">
-* The detail technical reports above include the Magento edition, verison and php version where the test was run.
-* The top-level **code** indicates overall result which can be `pass`, `fail` or `in_progress`.
-* Each EQP track, `technical` and `marketing` have their own overall status indicated by the *code* value which can be `pass`, `fail` or `in_progress`.
-* The `results` list will contain details for each tool and their respective outcome via the **status** field, which can be `pass` or `fail`.
+* Technical reports include the Magento edition, version, and PHP version used to run tests.
+* The top-level `code` indicates the overall result, which can be `pass`, `fail`, or `in_progress`.
+* Each EQP review step, `technical` and `marketing` have their own overall status indicated by the `code` value, which can be `pass`, `fail` or `in_progress`.
+* The `results` list contains details for each tool and their respective outcome via the `status` field, which can be `pass` or `fail`.
 </div>
 
 ### Sorting and Filtering
 
-The following fields currently enable both sorting and filtering support (refer to the [Package fields](#package-fields) section above for valid values for certain fields):
+The following fields currently enable both sorting and filtering support. Refer to the [Package fields](#package-fields) section above for valid values for certain fields):
 
 |Field|Comments|
 |-----|--------|
@@ -882,7 +882,7 @@ The following fields currently enable both sorting and filtering support (refer 
 |created_time|date match, allows range|
 |modified_time|date match, allows range|
 
-A sample curl request filtering for all `themes` sorted by `platform` in ascending and `created_time` in descending order:
+A sample cURL request filtering all `themes` sorted by `platform` in ascending order and `created_time` in descending order:
 
 **Request**
 
@@ -893,8 +893,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 
 **Response**
 
-A list of theme packages can be returned in the same way as described in [Get package details](#get-package-details) section.
-
+A list of theme packages can be returned in the same way as described in [Get package details](#get-package-details).
 
 ## Delete a package
 
@@ -903,7 +902,7 @@ DELETE /rest/v1/products/packages/:submission_id
 DELETE /rest/v1/products/packages/items/:item_id
 ```
 
-Deleting a package can only be done via **submission_id** or **item_id** as it is a risky operation, hence no batch deletes will be provided.
+Deleting a package can only be done via **submission_id** or **item_id** as it is a risky operation, hence no batch deletions are allowed.
 
 A sample curl call is shown below:
 
