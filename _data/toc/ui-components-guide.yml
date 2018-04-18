@@ -217,8 +217,11 @@ pages:
     - label: How Tos
       children:
 
-        - label: Creating and displaying a category attribute with UI Components
+        - label: Create and display a category attribute with UI components
           url: ui_comp_guide/howto/add_category_attribute.html
+
+        - label: Update the page URL type
+          url: ui_comp_guide/howto/update-url-type.html
 
     - label: Troubleshoot
       children:
