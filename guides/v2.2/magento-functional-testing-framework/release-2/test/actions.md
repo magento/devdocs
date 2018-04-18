@@ -654,8 +654,10 @@ See [dragAndDrop docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-selector1|string|optional|
-selector2|string|optional|
+selector1|string|required| Starting point selector for drag-and-drop.
+selector2|string|required| End point selector for drag-and-drop.
+x|int|optional| X offset appllied to drag-and-drop destination.
+y|int|optional| Y offset appllied to drag-and-drop destination.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
