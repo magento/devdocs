@@ -102,11 +102,11 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-          {% if page.guide_version == "2.2" %}
-          <li class="leaf"><a href="{{page.baseurl}}/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
+          <li class="leaf"><a href="{{page.baseurl}}advanced-reporting/overview.html">Advanced Reporting</a></li>
           {%endif%}
-        {% if page.guide_version == "2.2" %}
-        <li class="leaf"><a href="{{page.baseurl}}/b2b/bk-b2b.html">B2B</a></li>
+        {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
+        <li class="leaf"><a href="{{page.baseurl}}b2b/bk-b2b.html">B2B</a></li>
         {%endif%}
         <li><a href="{{page.baseurl}}/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="{{page.baseurl}}/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>

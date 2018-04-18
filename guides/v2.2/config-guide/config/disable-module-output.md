@@ -67,7 +67,7 @@ Archive the original `<Magento_install_dir>/app/etc/config.php` file. Then add t
 ```
 'system' =>
   array ( 
-    websites' =>
+    'websites' =>
     array (
       'base' =>
       array (
