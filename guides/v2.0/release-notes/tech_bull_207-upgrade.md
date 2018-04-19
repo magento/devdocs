@@ -45,12 +45,12 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Magento 2.0.7</td>
-<td> Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+<td> Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{page.baseurl}}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
-	<td>Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+	<td>Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{page.baseurl}}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
@@ -132,7 +132,7 @@ To apply this patch:
 
 2.	Extract the patch in your Magento installation directory.
 
-	Log in as or change to the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.
+	Log in as or change to the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.
 
 	<table>
 	<tbody>

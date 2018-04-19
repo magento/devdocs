@@ -26,7 +26,7 @@ Before you continue, make sure there is nothing in your {{site.data.var.ece}} pr
 </div>
 
 ## Required information
-Before you continue, make sure you have the [encryption key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-prepare.html) from your {{site.data.var.ee}} system.
+Before you continue, make sure you have the [encryption key]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html) from your {{site.data.var.ee}} system.
 
 ## Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your {{site.data.var.ee}} installation is located.
@@ -35,7 +35,7 @@ Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c
 
 To create a remote Git reference:
 
-1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{page.baseurl}}cloud/before/before-workspace-file-sys-owner.html).
+1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 1.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
     ```
@@ -125,14 +125,14 @@ Before you can use your existing {{site.data.var.ee}} code in {{site.data.var.ec
 
 To import the Magento database in {{site.data.var.ece}}, you must know:
 
--   The {{site.data.var.ece}} environment's [SSH URL]({{page.baseurl}}cloud/access-acct/first-time-setup_import-first-steps.html#ssh)
--   The database name, user name, and password of the [Cloud database]({{page.baseurl}}cloud/access-acct/first-time-setup_import-first-steps.html#db-creds)
+-   The {{site.data.var.ece}} environment's [SSH URL]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh)
+-   The database name, user name, and password of the [Cloud database]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
 </div>
 
-When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{page.baseurl}}cloud/project/project-webint-snap.html) of the database.
+When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{page.baseurl}}/cloud/project/project-webint-snap.html) of the database.
 
 To drop and re-create the Cloud database:
 
@@ -226,7 +226,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 ## Add the Magento encryption key {#encryption-key}
 The {{site.data.var.ee}} encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
 
-You copied the key in a [previous step]({{page.baseurl}}cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
+You copied the key in a [previous step]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
 
 To add your {{site.data.var.ee}} encryption key:
 
@@ -237,7 +237,7 @@ To add your {{site.data.var.ee}} encryption key:
     ```
 
 1.  Open `app/etc/env.php` in a text editor.
-1.  Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{page.baseurl}}cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
+1.  Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
 
     ```php
     return array (

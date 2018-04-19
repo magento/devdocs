@@ -40,6 +40,6 @@ Blocks and controllers are discussed extensively in the
 
 ## Related topics
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 Presentation Layer

@@ -53,7 +53,7 @@ However, many terms use lowercase including: merchant, developer, home page, sta
   <li><strong>All parts of verbs.</strong> Includes prepositions, if they are part of phrasal verb ... <em>Correct example:</em> "Turn On"
     <ul>
       <li><em>Tip:</em> if you emphasize the word when reading it aloud, then capitalize it."</li>
-      <li><em>Infinitives are not verbs:</em> See infinitives guidance, jump to the <span markdown="1">["Do Not capitalize ..."]({{page.baseurl}}design-styleguide/capitalization/capitalization.html#do-not-capitalize-)</span> section.</li>
+      <li><em>Infinitives are not verbs:</em> See infinitives guidance, jump to the <span markdown="1">["Do Not capitalize ..."]({{page.baseurl}}/design-styleguide/capitalization/capitalization.html#do-not-capitalize-)</span> section.</li>
     </ul>
   <em>Examples:</em><br><br>
     <ul style="list-style-type:none">
@@ -68,7 +68,7 @@ However, many terms use lowercase including: merchant, developer, home page, sta
 ### Do Not Capitalize ...
 
 <ul>
-  <li><strong>Words following prefixes.</strong> For guidance, jump to the <span markdown="1">["Capitalize ... "]({{page.baseurl}}design-styleguide/capitalization/capitalization.html#capitalize-)</span>section and find the prefixes and compound, hyphenated words guidance.</li>
+  <li><strong>Words following prefixes.</strong> For guidance, jump to the <span markdown="1">["Capitalize ... "]({{page.baseurl}}/design-styleguide/capitalization/capitalization.html#capitalize-)</span>section and find the prefixes and compound, hyphenated words guidance.</li>
   <li><strong>Articles.</strong> ... <em>Correct examples:</em> a, an, the</li>
   <li><strong>Conjunctions.</strong> ... <em>Correct examples:</em> and, but, for, or, nor</li>
   <li><strong>Prepositions of fewer than four letters.</strong> Includes the "to" in infinitives. <em>See example:</em>
@@ -89,9 +89,9 @@ However, many terms use lowercase including: merchant, developer, home page, sta
 
 Use only in and acronyms and address formats. For more details, see:
 
-* The [Acronyms]({{page.baseurl}}design-styleguide/content-formats/content-formats.html#acronyms) section in Content Formats.
+* The [Acronyms]({{page.baseurl}}/design-styleguide/content-formats/content-formats.html#acronyms) section in Content Formats.
 
-* The [Address]({{page.baseurl}}design-styleguide/content-formats/content-formats.html#addresses) section in Number Formats.
+* The [Address]({{page.baseurl}}/design-styleguide/content-formats/content-formats.html#addresses) section in Number Formats.
 
 ## Terms to Remember
 

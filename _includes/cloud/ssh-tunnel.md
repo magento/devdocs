@@ -1,6 +1,6 @@
 <div markdown="1">
 
-You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have [SSH configured]({{ page.baseurl }}cloud/env/environments-ssh.html).
+You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have [SSH configured]({{ page.baseurl}}/cloud/env/environments-ssh.html).
 
 Use a terminal application to log in and issue commands.
 

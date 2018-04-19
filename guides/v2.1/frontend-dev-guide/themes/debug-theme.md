@@ -29,28 +29,28 @@ To enable template hints:
 
 3. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} set **Template Path Hints for Admin** to **Yes**.
 4. To save the changes, click **Save Config** in the upper-right corner.
-<p><img src="{{ site.baseurl }}common/images/fdg_debug_theme.png" alt="Enabling template hints"></p>
+<p><img src="{{ site.baseurl}}/common/images/fdg_debug_theme.png" alt="Enabling template hints"></p>
 
 Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.
 
 For example, here is how a storefront {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page looks with enabled template hints:
-<p><img src="{{ site.baseurl }}common/images/theme_debug2.png" alt="A storefront page with enabled template hints"></p>
+<p><img src="{{ site.baseurl}}/common/images/theme_debug2.png" alt="A storefront page with enabled template hints"></p>
 
 In this example mini {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
 
-<p><img src="{{ site.baseurl }}common/images/theme_debug3.png" alt="A hint with template name for minishopping cart"></p>
+<p><img src="{{ site.baseurl}}/common/images/theme_debug3.png" alt="A hint with template name for minishopping cart"></p>
 (the template name is above the element)
 
 Here is how Customers page looks with enabled template hints in Admin:
-<p><img src="{{ site.baseurl }}common/images/theme_debug5.png" alt="Admin page with enabled template hints"></p>
+<p><img src="{{ site.baseurl}}/common/images/theme_debug5.png" alt="Admin page with enabled template hints"></p>
 
 Alternatively, you can perform a text search in the file system by using system generated titles, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} class names, block titles, labels, or links text as search terms.
 For example, using a browser debug tool, you can define that the minicart block css class is `minicart-wrapper`.
-<p><img src="{{ site.baseurl }}common/images/theme_debug4.png" alt="Firebug displaying html"></p>
+<p><img src="{{ site.baseurl}}/common/images/theme_debug4.png" alt="Firebug displaying html"></p>
 
 A search through the app directory for occurrences of "minicart-wrapper" in `.phtml` files returns the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` template.
 
-Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{page.baseurl}}frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.
+Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{page.baseurl}}/frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.
 
 
 ## Locate layouts {#debug-theme-layout}
@@ -77,7 +77,7 @@ Let's search for the layout following the fallback scheme:
 2. We can find the info about parent theme in a theme configuration file `theme.xml`, the parent theme name is specified there in the `<parent></parent>` node. In the `app/design/frontend/Magento/blank/theme.xml` there's no `<parent>` node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.
 3. The Magento_Checkout layouts are located in `app/code/Magento/Checkout/view/frontend/layout/`. After searching this directory for occurrences of "`minicart.phtml`", we define that the layout we are looking for is `app/code/Magento/Checkout/view/frontend/layout/default.xml`.
 
-After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.
+After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.
 
 
 ## Locate styles {#debug-theme-style}
@@ -103,4 +103,4 @@ So, let's search for occurrences of "`minicart-wrapper`" in according to the fal
 1. Search in `app/design/frontend/Magento/blank/web/css`, the search returns no results.
 2. Search in `app/design/frontend/Magento/blank/Magento_Checkout/web/css`.The "`minicart-wrapper`" style is defined in `app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/module/_minicart.less`
 
-<p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>
+<p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="{{page.baseurl}}/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>

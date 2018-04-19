@@ -8,11 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-insertlisting.md
 ---
 ## Overview
-The InsertListing component inserts [Listing]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html) into other components.
+The InsertListing component inserts [Listing]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html) into other components.
 
 ## Configuration options
 
-Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+Extends all [`uiElement`]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 InsertListing-specific configuration:
 
@@ -132,7 +132,7 @@ InsertListing-specific configuration:
     <td>
       Enable link between insertListing's externalValue and value.
       Here <code>link</code> means the two-way <a href=
-      "{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
+      "{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
       links property</a> of UI components, which allows immediate
       update.
     </td>

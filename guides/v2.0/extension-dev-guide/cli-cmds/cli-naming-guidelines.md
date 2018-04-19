@@ -152,4 +152,4 @@ To avoid naming your command the same as another command, we recommend:
 		dev:myname:theme:delete
 
 #### Related topic
-<a href="{{page.baseurl}}extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
+<a href="{{page.baseurl}}/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>

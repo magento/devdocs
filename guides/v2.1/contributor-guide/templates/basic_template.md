@@ -71,19 +71,19 @@ Please add any images you may need to the [`common/images`](https://github.com/m
 
 Once the image is added, you can use it in your documentation:
 
-*Example:* `{%raw%}![Image]({{site.baseurl}}common/images/install_cygwin.png){%endraw%}`
+*Example:* `{%raw%}![Image]({{site.baseurl}}/common/images/install_cygwin.png){%endraw%}`
 
 *Output:*
 
-![Image Example]({{site.baseurl}}common/images/install_cygwin.png)
+![Image Example]({{site.baseurl}}/common/images/install_cygwin.png)
 
 You can even scale the image if it is too large:
 
-*Example:* `{%raw%}![Scaled Image]({{site.baseurl}}common/images/install_cygwin.png){:width="446" height="246"}{%endraw%}`
+*Example:* `{%raw%}![Scaled Image]({{site.baseurl}}/common/images/install_cygwin.png){:width="446" height="246"}{%endraw%}`
 
 *Output:*
 
-![Scaled Image Example]({{site.baseurl}}common/images/install_cygwin.png){:width="446" height="246"}
+![Scaled Image Example]({{site.baseurl}}/common/images/install_cygwin.png){:width="446" height="246"}
 
 
 #### Tables

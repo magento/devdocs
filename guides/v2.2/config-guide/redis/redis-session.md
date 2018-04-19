@@ -14,7 +14,7 @@ functional_areas:
   - Setup
 ---
 
-You must [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install) before continuing.
+You must [install Redis]({{page.baseurl}}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
 Magento now provides command line options to configure Redis session storage. In previous releases, you edited the `<Magento install dir>app/etc/env.php` file. The command line provides validation and is the recommended configuration method, but you can still edit the `env.php` file.
 
@@ -232,5 +232,5 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{page.baseurl}}/config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{page.baseurl}}/config-guide/config/config-php.html">Magento's deployment configuration</a>

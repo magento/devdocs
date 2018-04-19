@@ -61,7 +61,7 @@ Where `magento` is the name of your database.
 </div>
 
 ## Export a Varnish configuration file
-This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{page.baseurl}}config-guide/varnish/config-varnish-configure.html">previous section</a>.
+This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{page.baseurl}}/config-guide/varnish/config-varnish-configure.html">previous section</a>.
 
 To export a Varnish configuration file from the Admin panel:
 
@@ -70,7 +70,7 @@ To export a Varnish configuration file from the Admin panel:
 	For example, if you have Varnish 4, click **Export VCL for Varnish 4**
 
 	The following figure shows an example.<br><br>
-	<img src="{{ site.baseurl }}common/images/config_varnish_admin.png" alt="Configure Magento to use Varnish in the Admin">
+	<img src="{{ site.baseurl}}/common/images/config_varnish_admin.png" alt="Configure Magento to use Varnish in the Admin">
 
 2.	Replace your existing <code>default.vcl</code> with the one you just exported.
 3.	We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
@@ -87,4 +87,4 @@ To export a Varnish configuration file from the Admin panel:
 		service httpd restart
 
 #### Last step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a>
+<a href="{{page.baseurl}}/config-guide/varnish/config-varnish-final.html">Final verification</a>

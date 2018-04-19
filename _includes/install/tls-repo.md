@@ -19,4 +19,4 @@ The following error displays if you attempt to run `composer create-project` to 
 ### Using the Web Setup Wizard
 Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:
 
-![SSL connect error]({{ site.baseurl }}common/images/install_ssl-connect-error.png)
+![SSL connect error]({{ site.baseurl}}/common/images/install_ssl-connect-error.png)

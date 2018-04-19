@@ -18,7 +18,7 @@ functional_areas:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+  <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
 </div>
 
 ## PHP versions supported {#php-support}
@@ -34,10 +34,10 @@ Magento requires:
 <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{page.baseurl}}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 <h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
@@ -52,7 +52,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
   <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
-If PHP is installed, continue with the next prerequisite, <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
+If PHP is installed, continue with the next prerequisite, <a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>.
 
 If PHP is *not* installed, see one of the following sections:
 
@@ -90,7 +90,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+3.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -121,7 +121,7 @@ If PHP is *not* installed, see one of the following sections:
 	<span class="glyphicon-class">
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+3.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -146,15 +146,15 @@ If PHP is *not* installed, see one of the following sections:
   		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+3.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/optional.html">Installing optional software</a>
+*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)

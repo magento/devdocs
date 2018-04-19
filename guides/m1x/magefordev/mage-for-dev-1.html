@@ -6,10 +6,10 @@
 <head>
     <meta charset=utf-8>
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-    <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-    <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl}}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="{{ site.baseurl}}/common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.baseurl}}/common/css/favicon.ico" type="image/x-icon">
     <title>Magento for Developers: Part 1&mdash;Introduction to Magento</title>
 
 </head>
@@ -18,7 +18,7 @@
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl}}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 
 
@@ -28,7 +28,7 @@
 <div id="content">
 <h1>Magento for Developers: Part 1&mdash;Introduction to Magento</h1>
 <p><em>by Alan Storm</em>, updated for Magento 1.12</p>
-<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-1.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-1.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl}}/common/images/github_icon.png" height="15px"></a></p>
 
 <!-- <style type="text/css">
 #kb-entry .series { float: right; width: 175px; margin-left: 10px; }
@@ -66,7 +66,7 @@
 <li><a href="#10" title="Wrap Up">Wrap Up</a>
 </ul>
 
-<p>Or for the more visually oriented <a href="{{ site.baseurl }}common/images/m1x/Magento_MVC.pdf">Magento_MVC.pdf</a>.
+<p>Or for the more visually oriented <a href="{{ site.baseurl}}/common/images/m1x/Magento_MVC.pdf">Magento_MVC.pdf</a>.
 
 <hr/>
 <a name="1"></a>
@@ -111,7 +111,7 @@
     &lt;models>
          &lt;packagename>
               &lt;class>Packagename_Modulename_Model&lt;/class>
-        &lt;packagename>
+        &lt;/packagename>
     &lt;/models>
 </pre>    
 <p>The same goes for Helpers, Blocks, Routes for your Controllers, Event Handlers, and more. Almost anytime you want to tap into the power of the Magento system, you'll need to make some change or addition to your config file.</p>
@@ -167,7 +167,7 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
 
 <p>People familiar with the Zend Framework will recognize the naming convention here.</p>
 
-<h4>Paramater/Value - <tt>id/25</tt></h4>
+<h4>Parameter/Value - <tt>id/25</tt></h4>
 
 <p>Any path portions after the action name will be considered key/value GET request variables.  So, in our example, the "id/25" means there will get a GET variable named "id", with a value of "25".</p>
 

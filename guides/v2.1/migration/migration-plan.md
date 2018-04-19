@@ -120,7 +120,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 
 
 <!-- LINK ADDRESSES -->
-[Magento system requirements]: {{page.baseurl}}install-gde/system-requirements-tech.html
+[Magento system requirements]: {{page.baseurl}}/install-gde/system-requirements-tech.html
 [Magento Marketplace]: https://marketplace.magento.com
-[Technical Specification]: {{page.baseurl}}migration/migration-tool-internal-spec.html
-[Configuration guide]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html
+[Technical Specification]: {{page.baseurl}}/migration/migration-tool-internal-spec.html
+[Configuration guide]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-index.html

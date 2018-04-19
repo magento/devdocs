@@ -13,8 +13,8 @@ functional_areas:
 ---
 
 ## JavaScript development
-- <a href="{{page.baseurl}}javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a>
-- <a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html#js_replace">Replace a default JS component</a>
-- <a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html#extend_js">Extend a default JS component</a>
-- <a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html#disable_default_js">Disable default Magento JS</a>
-- <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_debug.html">Define which JavaScript components and widgets are used on a particular page.</a>
+- <a href="{{page.baseurl}}/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a>
+- <a href="{{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#js_replace">Replace a default JS component</a>
+- <a href="{{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#extend_js">Extend a default JS component</a>
+- <a href="{{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js">Disable default Magento JS</a>
+- <a href="{{page.baseurl}}/javascript-dev-guide/javascript/js_debug.html">Define which JavaScript components and widgets are used on a particular page.</a>

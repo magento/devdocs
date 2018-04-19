@@ -57,7 +57,7 @@ where &lt;VendorName> is the name of the company providing the package and &lt;p
 <p>&nbsp;</p>
 
 ## Invoke `registration.php` in `composer.json` with autoload {#register-autoload}
-After you create your `registration.php` file and you are creating [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
+After you create your `registration.php` file and you are creating [your component's composer.json file]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
 
      {
     "name": "Acme-vendor/bar-component",
@@ -80,4 +80,4 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 {%endhighlight %}
 
 #### Next
-[URN schema validation]({{page.baseurl}}extension-dev-guide/build/XSD-XML-validation.html)
+[URN schema validation]({{page.baseurl}}/extension-dev-guide/build/XSD-XML-validation.html)

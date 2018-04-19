@@ -38,7 +38,7 @@ To view the status of the cache, run:
 
 	`php bin/magento cache:status`
 
-For more details about working with cache, see [Manage the cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html)
+For more details about working with cache, see [Manage the cache]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html)
 
 ## Clean static files {#clean_static}
 

@@ -32,7 +32,7 @@ Step 2.    Remove file `<magento2_root_dir>/dev/tests/functional/composer.lock`.
   <p><b>Why:</b> {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
 </div>
 
-Step 3.    <a href="{{page.baseurl}}mtf/mtf_installation.html#mtf_install_perform">Perform and check installation.</a>
+Step 3.    <a href="{{page.baseurl}}/mtf/mtf_installation.html#mtf_install_perform">Perform and check installation.</a>
 
 <h3 id="mtf_update_depend">Update components from dependencies in <code>composer.json</code></h3>
 

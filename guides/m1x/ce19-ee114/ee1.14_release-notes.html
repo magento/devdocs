@@ -5,10 +5,10 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="{{ site.baseurl}}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="{{ site.baseurl}}/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl}}/common/css/favicon.ico" type="image/x-icon">
 	<title>Magento Commerce Release Notes (1.14 and later)</title>
 
 </head>
@@ -16,7 +16,7 @@
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl}}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
   
 <h1>Magento Commerce Release Notes (1.14 and later)</h1>
@@ -48,7 +48,7 @@
 
 
 <h2 id="upgrade">Important Upgrade Information</h2>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Commerce 1.14.3.0 or later for <em>all new Magento Commerce installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+<div class="msg-box important"><img src="{{ site.baseurl}}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Commerce 1.14.3.0 or later for <em>all new Magento Commerce installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
 
 <h2 id="ee114-11438">Magento Commerce 1.14.3.8 Release Notes</h2>
 <p>This version (or patch SUPEE-10570, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10415" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
@@ -240,7 +240,7 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 
 </ul>
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: You currently <em>cannot</em> upgrade to this version using Magento Connect Manager. We expect to resolve this issue soon.</div>
+<div class="msg-box important"><img src="{{ site.baseurl}}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: You currently <em>cannot</em> upgrade to this version using Magento Connect Manager. We expect to resolve this issue soon.</div>
 
 
 <h2 id="ee114-11430">Magento Commerce 1.14.3.0 Release Notes</h2>
@@ -514,7 +514,7 @@ skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
 <li>Customers using a smartphone or other small viewport can expand subcategories in the web store that uses the new responsive theme.</li></ul>
 
 <h2 id="ee114-patches">Recent Patches</h2>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The patches discussed in this section are built in to Commerce 1.14.1; you need to get them only if you're running an earlier Commerce version.</div>
+<div class="msg-box important"><img src="{{ site.baseurl}}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The patches discussed in this section are built in to Commerce 1.14.1; you need to get them only if you're running an earlier Commerce version.</div>
 
 <p>We'd like to draw your attention to several new patches that were recently posted to the Partner Portal and Support Center. These patches deliver important improvements, such as enabling several concurrent administrators to work with the product catalog, and to make it easier to install community-created translation packages.</p>
 <p>Details about the patches follow. To install these patches, see <a href="#ee114-patches-how-to-get">How to Get Patches For Magento Commerce</a>.</p>
@@ -609,7 +609,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-2563" target="_blank">MPERF-2563</a> -->Two new options to prevent <a href="http://en.wikipedia.org/wiki/Clickjacking" target="_blank">"clickjacking"</a> if you run Magento in a <code>frame</code> or <code>iframe</code>:
 <ul><li>Enable frames only in the same domain.</li>
 <li>Enable frames.</li>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</div>
+<div class="msg-box important"><img src="{{ site.baseurl}}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</div>
 
 <p>The options are available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Admin</strong> > <strong>Security</strong> and are named <strong>Allow Magento Backend to run in frame</strong> and <strong> Allow Magento Frontend to run in frame</strong>.</p>
 <p>Enabling the option causes the <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank"><code>X-Frame-Options</code></a> request header to be sent.</p></ul>
@@ -622,7 +622,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <!-- <li><a href="https://jira.corp.magento.com/browse/MPERF-3769" target="_blank">MPERF-3769</a> Added address validation, which enables users to select from multiple matching addresses. For example, if a user enters a partial address or a common street name, they might be presented with matching addresses from which to choose.</li>
  -->
 <li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->Magento Commerce 1.14 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</div></li>
+<div class="msg-box important"><img src="{{ site.baseurl}}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</div></li>
 <li>If you use the Solr search engine, you no longer need to manually reindex the Catalog Search Index (except after you upgrade to EE 1.14 from an earlier version).</li>
 <li>The default values for two configuration options changed. Both options can be found in the Admin Panel under <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Frontend</strong>. The new default values follow:
 <ul><li><strong>Products per Page on Grid Allowed Values</strong> is now <strong>12, 24, 36</strong>.</li>

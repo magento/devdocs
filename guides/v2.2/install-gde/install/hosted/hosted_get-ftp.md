@@ -41,7 +41,7 @@ To transfer the Magento archive:
 
 	The following figure shows an example.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_ftp-transfer.png">
+	<img src="{{ site.baseurl}}/common/images/install-merch_ftp-transfer.png">
 
 4.	Transfer the archive from your local system to the `public_html` directory.
 
@@ -59,7 +59,7 @@ To extract the archive:
 
 3.	Click **Web Root**.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-setup.png" width="550px">
+	<img src="{{ site.baseurl}}/common/images/install-merch_file-manager-setup.png" width="550px">
 
 4.	Click **Go**.
 
@@ -68,13 +68,13 @@ To extract the archive:
 3.	Right-click the Magento archive in the **public_html** directory.
 4.	From the pop-up menu, click **Extract** as the following figure shows.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-window.png" width="750px">
+	<img src="{{ site.baseurl}}/common/images/install-merch_file-manager-window.png" width="750px">
 5.	Click **Extract Files**.
 5.	Wait while the archive extracts.
 
 	The following figure shows an example of an extracted archive.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-after.png" width="750px">
+	<img src="{{ site.baseurl}}/common/images/install-merch_file-manager-after.png" width="750px">
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
+<a href="{{page.baseurl}}/install-gde/install/hosted/hosted_install.html">Install the Magento software</a>

@@ -57,5 +57,5 @@ RequisitionList | Allows a buyer to create multiple lists of frequently-purchase
 SharedCatalog | Defines the visibility of products and prices in the catalog and in B2B quotes for different company accounts. | Yes
 
 ## Related information
-* [Install the B2B extension]({{page.baseurl}}comp-mgr/install-extensions/b2b-installation.html)
+* [Install the B2B extension]({{page.baseurl}}/comp-mgr/install-extensions/b2b-installation.html)
 * [Getting started with {{site.data.var.b2b}}](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)

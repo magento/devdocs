@@ -3,7 +3,7 @@ layout: default
 group: graphql
 version: 2.3
 title: Configure the GraphQL schema for a module
-github_link: graphql/develop/conigure-graphql-xml.md
+github_link: graphql/develop/configure-graphql-xml.md
 ---
 
 The `<module_name>/etc/graphql.xml` file defines the GraphQL schema for a module. This file
@@ -20,7 +20,7 @@ To illustrate how to configure the `graphql.xml` file, let's suppose you have a 
 
 A query definition can be one line, or it can be complex. If your module's query implements `searchCriteria`, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition is simple.
 
-The following example shows the `products` query. The top-level `name` is `Query`, indicating that is a child of the `Query` node. All module schema definitions contain this line. The `argument` definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL](({{page.baseurl}}graphql/search-pagination.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes)
+The following example shows the `products` query. The top-level `name` is `Query`, indicating that is a child of the `Query` node. All module schema definitions contain this line. The `argument` definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes)
 
 ``` xml
 <type xsi:type="OutputType" name="Query">
@@ -41,6 +41,7 @@ In contrast, this `customer` query returns the `Customer` object associated with
    <field xsi:type="ObjectOutputField" name="customer" type="Customer" resolver="Magento\CustomerGraphQl\Model\Resolver\Customer"/>
 </type>`
 ```
+The `resolver` parameter specifies the class that performs GraphQL request processing. See [Resolvers]({{page.baseurl}}/graphql/develop/resolvers.html) for more information.
 
 If all your module's attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module's query definition.
 
@@ -133,7 +134,7 @@ Parameter | Description
 --- | ---
 `xsi:type` | Required. Must be `OutputInterface`
 `name` | Required. A name, such as *ModuleName*`Interface` that uniquely identifies the output interface.
-`typeResolver` | The path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}graphql/resolvers.html) for more information.
+`typeResolver` | The path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}/graphql/resolvers.html) for more information.
 
 For example:
 
