@@ -14,7 +14,7 @@ Each variation has constraints that are called at the end of the test flow.
 
 Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
 
-<a href="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"/></a>
+<a href="{{ site.baseurl}}/common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl}}/common/images/ftf/mtf_dataset_dir.png"/></a>
 
 The `CreateSimpleProductEntityTest.xml` data set contains:
 
@@ -63,7 +63,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
-<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
+<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{page.baseurl}}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
 </tr>
 <tr>
 <td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
@@ -75,8 +75,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <td><code>price</code></td>
 <td>
 <ul>
-<li> <code>product/data/price/value</code> is processed by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
-<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+<li> <code>product/data/price/value</code> is processed by a <a href="{{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
 </ul>
 </td>
 </tr>
@@ -374,13 +374,13 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
 [extend an existing variation]: #extend_variation
 [merging]: #merge 
 
-[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[data source]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[fixture field from its repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
+[constraint]: {{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html
+[data source]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html
+[fixture field from its repository]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 [InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
-[repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
+[repository]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
 
 <!-- ABBREVIATIONS -->
 

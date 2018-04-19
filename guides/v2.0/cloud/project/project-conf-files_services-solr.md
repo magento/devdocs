@@ -23,7 +23,7 @@ Solr is highly reliable, scalable and fault tolerant, providing distributed
 indexing, replication and load-balanced querying, automated failover and
 recovery, centralized configuration, and more.
 
-**Limited Support:** We only support Solr in {{site.data.var.ece}} 2.0.X. You should move to [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) for {{site.data.var.ece}} 2.1 and later, 2.2 and later.
+**Limited Support:** We only support Solr in {{site.data.var.ece}} 2.0.X. You should move to [Elasticsearch]({{page.baseurl}}/cloud/project/project-conf-files_services-elastic.html) for {{site.data.var.ece}} 2.1 and later, 2.2 and later.
 
 Solr uses the Lucene Java search {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for full-text indexing and search. Your applications interact with Solr using:
 
@@ -34,7 +34,7 @@ We support Solr version 4.10 for {{site.data.var.ece}}.
 
 For more information about Solr, see the following:
 
-* [More information about Solr]({{page.baseurl}}config-guide/solr/solr-overview.html)
+* [More information about Solr]({{page.baseurl}}/config-guide/solr/solr-overview.html)
 * [Solr tutorial](https://lucene.apache.org/solr/4_10_0/tutorial.html){:target="_blank"}
 * [Solr FAQ](http://wiki.apache.org/solr/FAQ){:target="_blank"}
 
@@ -66,10 +66,10 @@ relationships:
     solr: "mysearch:solr"
 {% endhighlight %}
 
-Merge and deploy the code to set the configurations for Solr. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html).
+Merge and deploy the code to set the configurations for Solr. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:
 
@@ -111,6 +111,6 @@ foreach ($relationships['solr'] as $endpoint) {
 {% endhighlight %} -->
 
 #### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html)

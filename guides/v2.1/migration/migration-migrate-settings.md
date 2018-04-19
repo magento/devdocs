@@ -16,15 +16,15 @@ functional_areas:
 ## Overview
 
 The `Settings` mode migrates stores, websites, and system configuration like shipping, payment, tax settings, etc.
-According to our data migration [order]({{page.baseurl}}migration/migration-migrate.html#migration_order), you should migrate settings first.
+According to our data migration [order]({{page.baseurl}}/migration/migration-migrate.html#migration_order), you should migrate settings first.
 
 ## Before you start: routine preparations
 
-1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1. Log in to Magento server as [the file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
-See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration-command-run-first) section for more details.
+See the [First steps]({{page.baseurl}}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the settings migration command {#migrate-data-cmd}
 
@@ -49,7 +49,7 @@ The `Migration completed` message is displayed after the settings are transferre
 
 You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the `settings.xml` file.
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
 
 2.	Change to the following directory:
 
@@ -69,8 +69,8 @@ You may ignore, rename or change the system configurations when migrating settin
 
 5. Specify the new name of the settings file for mapping. To do that, change the `<settings_map_file>` tag in the `path/to/config.xml` file.
 
-For more details, see the [Settings migration mode]({{page.baseurl}}migration/migration-tool-internal-spec.html#settings-migration-mode) section of the Tool's [specification]({{page.baseurl}}migration/migration-tool-internal-spec.html).
+For more details, see the [Settings migration mode]({{page.baseurl}}/migration/migration-tool-internal-spec.html#settings-migration-mode) section of the Tool's [specification]({{page.baseurl}}/migration/migration-tool-internal-spec.html).
 
 ## Next migration step
 
-* <a href="{{page.baseurl}}migration/migration-migrate-data.html">Migrate data</a>
+* <a href="{{page.baseurl}}/migration/migration-migrate-data.html">Migrate data</a>

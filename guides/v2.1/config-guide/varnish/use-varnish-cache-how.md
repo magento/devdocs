@@ -19,7 +19,7 @@ This topic discusses how Varnish caching works with Magento using:
 
 *	<a href="{{ site.mage2000url }}nginx.conf.sample" target="_blank">`nginx.conf.sample`</a> from the Magento 2 GitHub repository
 *	`.htaccess` distributed configuration file for Apache provided with Magento
-*	`default.vcl` configuration for Varnish generated using the <a href="{{page.baseurl}}config-guide/varnish/config-varnish-magento.html">Magento Admin</a>
+*	`default.vcl` configuration for Varnish generated using the <a href="{{page.baseurl}}/config-guide/varnish/config-varnish-magento.html">Magento Admin</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>
@@ -39,7 +39,7 @@ This section uses a browser inspector to show how assets are delivered to the br
 
 The following figure shows an example using a browser inspector.
 
-<img src="{{ site.baseurl }}common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser">
+<img src="{{ site.baseurl}}/common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser">
 
 The preceding example shows a request for the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} main page (`m2_ce_my`). {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} assets are cached on the client browser.
 
@@ -50,19 +50,19 @@ The preceding example shows a request for the {% glossarytooltip 1a70d3ac-6bd9-4
 <h3 id="config-varnish-cache-browser-second">Second browser request</h3>
 If the same browser requests the same page again, these assets are delivered from the local browser cache, as the following figure shows.
 
-<p><img src="{{ site.baseurl }}common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache"></p>
+<p><img src="{{ site.baseurl}}/common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache"></p>
 
 Note the difference in response time between the first and second request. Again, static assets have a 200 (OK) response code because they're delivered from local cache for the first time.
 
 <h2 id="config-varnish-cache-etag">How Magento uses Etag</h2>
 The following example shows response headers for a particular static asset. 
 
-<p><img src="{{ site.baseurl }}common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not"></p>
+<p><img src="{{ site.baseurl}}/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not"></p>
 `calendar.css` has an ETag response header which means the CSS file on the client browser can be compared to the one on the server.
 
 In addition, static assets are returned with a 304 (Not Modified) HTTP status code, as the following figure shows.
 
-<p><img src="{{ site.baseurl }}common/images/varnish_304.png" alt="The HTTP 304 (Not Modified) response code indicates the static asset in the local cache is the same as on the server"></p>
+<p><img src="{{ site.baseurl}}/common/images/varnish_304.png" alt="The HTTP 304 (Not Modified) response code indicates the static asset in the local cache is the same as on the server"></p>
 
 The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset *content* is not transferred; only HTTP headers are downloaded to the browser. 
 

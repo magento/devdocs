@@ -16,13 +16,13 @@ This topic describes how REST calls can be used to place items in a shopping car
 
 ## Prerequisites
 
-* You have [installed and enabled]({{page.baseurl}}comp-mgr/install-extensions/b2b-installation.html) {{site.data.var.b2b}}.
-* You have [created a company]({{page.baseurl}}b2b/company-object.html) and a [company user]({{page.baseurl}}b2b/company-object.html).
-* You have an integration or [admin authorization token]({{page.baseurl}}get-started/order-tutorial/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{page.baseurl}}get-started/order-tutorial/order-create-customer.html#get-token) to make calls on behalf of the company user.
+* You have [installed and enabled]({{page.baseurl}}/comp-mgr/install-extensions/b2b-installation.html) {{site.data.var.b2b}}.
+* You have [created a company]({{page.baseurl}}/b2b/company-object.html) and a [company user]({{page.baseurl}}/b2b/company-object.html).
+* You have an integration or [admin authorization token]({{page.baseurl}}/get-started/order-tutorial/order-admin-token.html) to make calls on behalf of seller, and a [customer token]({{page.baseurl}}/get-started/order-tutorial/order-create-customer.html#get-token) to make calls on behalf of the company user.
 
 ## Prepare the order
 
-The steps in this section are similar to those [Order Processing with REST APIs Tutorial]({{page.baseurl}}get-started/order-tutorial/order-intro.html), except that different products are added to the cart.
+The steps in this section are similar to those [Order Processing with REST APIs Tutorial]({{page.baseurl}}/get-started/order-tutorial/order-intro.html), except that different products are added to the cart.
 
 ### Create a shopping cart
 
@@ -999,8 +999,8 @@ Authorization Bearer <admin token>
 
 ## Related information
 
-* [Order Processing with REST APIs Tutorial]({{page.baseurl}}get-started/order-tutorial/order-intro.html)
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{page.baseurl}}b2b/negotiable-manage.html)
-* [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html)
-* [Negotiable quote checkout]({{page.baseurl}}b2b/negotiable-checkout.html)
+* [Order Processing with REST APIs Tutorial]({{page.baseurl}}/get-started/order-tutorial/order-intro.html)
+* [Integrate with the NegotiableQuote module]({{page.baseurl}}/b2b/negotiable-quote.html)
+* [Manage negotiable quotes]({{page.baseurl}}/b2b/negotiable-manage.html)
+* [Update a negotiable quote]({{page.baseurl}}/b2b/negotiable-update.html)
+* [Negotiable quote checkout]({{page.baseurl}}/b2b/negotiable-checkout.html)

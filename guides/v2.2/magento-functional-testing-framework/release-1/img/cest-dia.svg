@@ -10,7 +10,7 @@
 <line x1="443" y1="33" x2="443" y2="39" style="stroke:rgb(0,0,0);stroke-width:1"/>
 
 <path d="M507 77 L601 77 L607 83 L607 93 L601 99 L507 99 L501 93 L501 83 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
-    <a xlink:href="{{page.baseurl}}magento-functional-testing-framework/cest/actions.html">
+    <a xlink:href="{{page.baseurl}}/magento-functional-testing-framework/cest/actions.html">
 <text x="554" y="88" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionTypeTags</text>
     </a>
 <line x1="504" y1="96" x2="507" y2="93" style="stroke:rgb(0,0,0);stroke-width:2"/>
@@ -55,7 +55,7 @@
 <line x1="413" y1="114" x2="419" y2="114" style="stroke:rgb(0,0,0);stroke-width:1"/>
 
 <path d="M498 181 L592 181 L598 187 L598 197 L592 203 L498 203 L492 197 L492 187 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
-    <a xlink:href="{{page.baseurl}}magento-functional-testing-framework/cest/actions.html">
+    <a xlink:href="{{page.baseurl}}/magento-functional-testing-framework/cest/actions.html">
 <text x="545" y="192" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionTypeTags</text>
     </a>
 <line x1="495" y1="200" x2="498" y2="197" style="stroke:rgb(0,0,0);stroke-width:2"/>
@@ -100,7 +100,7 @@
 <line x1="404" y1="218" x2="410" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
 
 <path d="M494 285 L588 285 L594 291 L594 301 L588 307 L494 307 L488 301 L488 291 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
-    <a xlink:href="{{page.baseurl}}magento-functional-testing-framework/cest/actions.html">
+    <a xlink:href="{{page.baseurl}}/magento-functional-testing-framework/cest/actions.html">
 <text x="541" y="296" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionTypeTags</text>
     </a>
 <line x1="491" y1="304" x2="494" y2="301" style="stroke:rgb(0,0,0);stroke-width:2"/>

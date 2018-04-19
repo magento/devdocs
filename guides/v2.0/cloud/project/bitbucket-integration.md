@@ -11,7 +11,7 @@ functional_areas:
 
 Use the Bitbucket integration to automatically build and deploy an environment when you push new code to Bitbucket. This integration synchronizes your Bitbucket repository with your {{site.data.var.ece}} account.
 
-For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{page.baseurl}}cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
+For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{page.baseurl}}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We _strongly_ recommend using a private Bitbucket repository for your {{site.data.var.ece}} project.
@@ -20,7 +20,7 @@ We _strongly_ recommend using a private Bitbucket repository for your {{site.dat
 ## Before you begin
 -   You must have a {{site.data.var.ece}} project and you must be an administrator of the project.
 -   You must have a Bitbucket account and administrative access to the Bitbucket repository you want to integrate.
--   You must install the [`magento-cloud` CLI]({{page.baseurl}}cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment.
+-   You must install the [`magento-cloud` CLI]({{page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment.
 
 ## Prepare your repository
 This section shows you how to clone your {{site.data.var.ece}} project from and existing environment and add that code to a new, empty Bitbucket repository. If you don't already have an empty Bitbucket repository, [create one](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="\_blank"} before proceeding.
@@ -67,7 +67,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 1.  Click **Settings** > **Access Management** > **OAuth**.
 1.  Click **Add consumer** and configure it as follows:
 
-    ![Bitbucket OAuth consumer configuration]({{site.baseurl}}common/images/cloud_oauth_consumer_config.png)
+    ![Bitbucket OAuth consumer configuration]({{site.baseurl}}/common/images/cloud_oauth_consumer_config.png)
 
     <div class="bs-callout bs-callout-warning" markdown="1">
     A valid **Callback URL** isn't required, but you must enter a value in this field to successfully complete the integration.
@@ -136,13 +136,13 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
 
         git add . && git commit -m "Testing Bitbucket integration" && git push
 
-1.  Log in to the [Project Web Interface]({{page.baseurl}}cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project is being deployed.
+1.  Log in to the [Project Web Interface]({{page.baseurl}}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project is being deployed.
 
-    ![Testing the Bitbucket integration]({{site.baseurl}}common/images/cloud_test_bitbucket_integration.png)
+    ![Testing the Bitbucket integration]({{site.baseurl}}/common/images/cloud_test_bitbucket_integration.png)
 
 
 ## Branching
-The Bitbucket integration cannot create new environments in your project, so you must use the `magento-cloud` CLI tool to [create branches]({{page.baseurl}}cloud/env/environments-start.html#getstarted).
+The Bitbucket integration cannot create new environments in your project, so you must use the `magento-cloud` CLI tool to [create branches]({{page.baseurl}}/cloud/env/environments-start.html#getstarted).
 
 After creating a new environment, you can push the corresponding branch up to your remote Bitbucket repository using regular git commands. For example, `git push -u origin <your-branch>`. Subsequent changes to your branch in Bitbucket will automatically build and deploy the environment.
 

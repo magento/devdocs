@@ -12,7 +12,7 @@ github_link: ui_comp_guide/concepts/ui_comp_uielement_concept.md
 
 ## What is the `uiElement` class
 
-The `uiElement` class is a direct successor of the [uiClass library]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html).
+The `uiElement` class is a direct successor of the [uiClass library]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html).
 When creating a new component, use the `uiElement` class as a direct parent, if your component will be the last in the components hierarchy chain.
 
 `uiElement` source code is `<UI_Module_dir>/view/base/web/js/lib/core/element/element.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).

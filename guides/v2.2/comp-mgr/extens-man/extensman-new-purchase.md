@@ -17,7 +17,7 @@ functional_areas:
 ## Step 3. Install
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:
 
-<img src="{{ site.baseurl }}common/images/extensman_new-purchases-step3install.png" width="500px">
+<img src="{{ site.baseurl}}/common/images/extensman_new-purchases-step3install.png" width="500px">
 
 If the list of purchases is correct, click **Install**.
 
@@ -96,6 +96,6 @@ Installing data...
 
 When the installation is complete, a page similar to the following displays:
 
-<img src="{{ site.baseurl }}common/images/extensman_new-purchases_finish.png" width="200px">
+<img src="{{ site.baseurl}}/common/images/extensman_new-purchases_finish.png" width="200px">
 
 Click **Back to Setup Tool**.

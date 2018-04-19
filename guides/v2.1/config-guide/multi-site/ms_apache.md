@@ -21,7 +21,7 @@ If necessary, copy the existing `index.php` entry point script for your {% gloss
 
     Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-    Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
+    Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl}}/cloud/project/project-multi-sites.html).
 *   You use one virtual host per website; the virtual host configuration file is `/etc/httpd/httpd.conf`
 
     Different versions of Apache on different operating systems set up virtual hosts differently. Consult the [Apache documentation](https://httpd.apache.org/docs/2.4/vhosts){:target="_blank"} or a network administrator if you're not sure how to set up a virtual host.
@@ -34,13 +34,13 @@ If necessary, copy the existing `index.php` entry point script for your {% gloss
 ### Roadmap for setting up multiple websites with Apache
 Setting up multiple stores consists of the following tasks:
 
-1.  [Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+1.  [Set up websites, stores, and store views]({{ page.baseurl}}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.  Create one [Apache virtual host](#ms-apache-vhosts) per Magento website.
 
 
 ## Step 1: Create websites, stores, and store views in the Magento Admin
 
-See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
+See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl}}/config-guide/multi-site/ms_websites.html).
 
 ## Step 2: Create Apache virtual hosts {#ms-apache-vhosts}
 This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache server variable `SetEnvIf` in a virtual host.

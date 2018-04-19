@@ -27,18 +27,18 @@ This topic discusses the ways you can:
 ## Upgrade the Magento application
 The way you upgrade (that is, patch) the Magento application depends on how you installed it:
 
-*	{{site.data.var.ce}} and {{site.data.var.ee}}: If you used [Composer]({{page.baseurl}}install-gde/prereq/integrator_install.html) to install the Magento application or if you downloaded an [archive]({{page.baseurl}}install-gde/prereq/zip_install.html), use the [System Upgrade utility]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html) or the [command line]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html).
-*	{{site.data.var.ce}} only: If you cloned the Magento 2 GitHub repository because you are contributing code to the {{site.data.var.ce}} codebase, <a href="{{page.baseurl}}install-gde/install/cli/dev_options.html">upgrade the software manually</a>.
+*	{{site.data.var.ce}} and {{site.data.var.ee}}: If you used [Composer]({{page.baseurl}}/install-gde/prereq/integrator_install.html) to install the Magento application or if you downloaded an [archive]({{page.baseurl}}/install-gde/prereq/zip_install.html), use the [System Upgrade utility]({{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html) or the [command line]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html).
+*	{{site.data.var.ce}} only: If you cloned the Magento 2 GitHub repository because you are contributing code to the {{site.data.var.ce}} codebase, <a href="{{page.baseurl}}/install-gde/install/cli/dev_options.html">upgrade the software manually</a>.
 *	If your Magento root directory is `<your Magento install directory/pub`, you can upgrade in any of the following ways:
 
 	*	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root. 
 
 		Run the System Upgrade utility as discussed in this topic using that subdomain or docroot.
-	*	Upgrade the Magento software using the [command line]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html).
-*	To upgrade from {{site.data.var.ce}} to {{site.data.var.ee}}, see <a href="{{page.baseurl}}comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from Open Source to Commerce</a>.
+	*	Upgrade the Magento software using the [command line]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html).
+*	To upgrade from {{site.data.var.ce}} to {{site.data.var.ee}}, see <a href="{{page.baseurl}}/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from Open Source to Commerce</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p><em>System upgrade</em> refers to updating the Magento 2.x core modules and other installed modules. To migrate from Magento 1.x to Magento 2, see the <a href="{{page.baseurl}}migration/bk-migration-guide.html">Migration Guide</a>.</p>
+	<p><em>System upgrade</em> refers to updating the Magento 2.x core modules and other installed modules. To migrate from Magento 1.x to Magento 2, see the <a href="{{page.baseurl}}/migration/bk-migration-guide.html">Migration Guide</a>.</p>
 </div>
 
 <div class="bs-callout bs-callout-warning">
@@ -48,7 +48,7 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 </div>
 
 #### Next step
-Complete the tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+Complete the tasks discussed in <a href="{{page.baseurl}}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 
 <!-- ABBREVIATIONS -->

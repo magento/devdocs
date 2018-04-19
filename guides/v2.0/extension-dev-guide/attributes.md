@@ -148,7 +148,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
-Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
+Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{page.baseurl}}/get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
 
 The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
@@ -221,6 +221,6 @@ If you have issues when using `setup:upgrade` to your store environment, verify 
 
 <h2 id="related">Related topics</h2>
 <ul>
-    <li><a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a></li>
-    <li><a href="{{page.baseurl}}extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to an entity</a></li>
+    <li><a href="{{page.baseurl}}/get-started/authentication/gs-authentication.html">Web API authentication overview</a></li>
+    <li><a href="{{page.baseurl}}/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to an entity</a></li>
 </ul>

@@ -44,7 +44,7 @@ Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds
 * **Upgraded technology stack.**  We've dropped support for PHP 5.6, Varnish 3, and Solr.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version. Note: Although we’ve dropped support for Solr with this release, Solr code will remain in the Magento code base until a later release.
 
 
-* **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipeline deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/).
+* **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipeline deployment [here]({{page.baseurl}}/config-guide/deployment/pipeline/).
 
 
 * **Performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running with no visible impact to their experience. Additionally, long-running indexers operate in batches to better manage memory and run times. Cart improvements enable a buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items. Varnish cache configuration now includes saint and grace mode to ensure Varnish is always presenting a cached page to a shop’s customers.  Enhancements to cache invalidation logic and optimization of edge side include blocks for frequently changing data that significantly boost cache hit ratios.
@@ -479,7 +479,7 @@ This release contains hundreds of fixes and enhancements.
 <!--- 60611-->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
 
 
-<!---71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details.
+<!---71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}/config-guide/config/disable-module-output.html) for details.
 
 
 <!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member <a href="https://github.com/barbazul" target="_blank">Barbazul</a> in pull request <a href="https://github.com/magento/magento2/pull/9902" target="_blank">9902</a>.*
@@ -1040,7 +1040,7 @@ This release includes substantial improvements to Magento caching, image process
 
 
 
-<!---57905-->* We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command).
+<!---57905-->* We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html) command).
 
 <!--- 66855-->* We’ve improved the performance of the Display Time for Category Edit page for catalogs with many products or categories.  [GitHub-7469](https://github.com/magento/magento2/issues/7469)
 
@@ -1375,11 +1375,11 @@ This release includes substantial improvements to Magento caching, image process
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl}}/install-gde/system-requirements-tech.html)
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+For more information, [System Requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 
@@ -1389,6 +1389,6 @@ You can install Magento Commerce 2.2 General Availability (GA) using Composer.
 {% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

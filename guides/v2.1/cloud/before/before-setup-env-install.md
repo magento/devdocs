@@ -19,7 +19,7 @@ functional_areas:
 ---
 
 #### Previous step:
-[Clone and branch the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
+[Clone and branch the project]({{ page.baseurl}}/cloud/before/before-setup-env-2_clone.html)
 
 With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.
 
@@ -34,7 +34,7 @@ To be able to customize the Magento software on your local machine, you should i
 ### Get Magento Admin environment variables {#variables}
 You will need the Admin environment variable values for the installation command line.
 
-1. Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1. Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 2. Change to a directory to which the Magento file system owner has write access.
 3. Enter the following command in a terminal to log in to your project:
 
@@ -62,7 +62,7 @@ To create authentication keys through the Magento Marketplace:
 2. Click your account name in the top-right of the page and select **My Profile**.
 3. Click **Access Keys** in the Marketplace tab.
 
-	![Click Access Keys]({{ site.baseurl }}common/images/cloud_access-key.png)
+	![Click Access Keys]({{ site.baseurl}}/common/images/cloud_access-key.png)
 4. Click **Create A New Access Key**. Enter a specific name for the keys, for example CloudProductOwner or the name of the developer receiving the keys.
 5. The keys generate a Public and Private key you can click to copy. Save this information or keep the page open when installing {{site.data.var.ee}}.
 
@@ -74,7 +74,7 @@ For the Production environment, you should set the docroot to `/magento/pub`, wh
 ## Set file system permissions and ownership {#file-system-permissions}
 After you have installed Magento, you need to set the file system permissions and ownership.
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 2.  Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
@@ -86,12 +86,12 @@ After you have installed Magento, you need to set the file system permissions an
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
 ## Install Magento {#install}
-Prior to installing, you should [Update installation dependencies]({{ page.baseurl }}install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
+Prior to installing, you should [Update installation dependencies]({{ page.baseurl}}/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
 You should be ready to install Magento using one of the following options:
 
-* [Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
-* [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
+* [Install the Magento software using the command line]({{ page.baseurl}}/install-gde/install/cli/install-cli.html)
+* [Install the Magento software using the Web Setup Wizard]({{ page.baseurl}}/install-gde/install/web/install-web.html)
 
 The following example installs using the command line method:
 
@@ -101,7 +101,7 @@ The following example installs using the command line method:
 2. Change directories for the installation:
 
     <pre>cd /app/bin</pre>
-3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
+3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl}}/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
     <pre>php magento setup:install \
       --admin-firstname=John \
@@ -120,7 +120,7 @@ The following example installs using the command line method:
       --use-rewrites=1</pre>
 
 ## Post-install configurations
-After installing Magento, run the commands for [compile]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html) for the code:
+After installing Magento, run the commands for [compile]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
 1. If you are not in the correct Magento user, switch:
 
@@ -139,12 +139,12 @@ Optionally, if you used Vagrant with the hostmanager plugin, update the hosts fi
 2. Enter the command `vagrant hostmanager` to update the hosts file.
 
 ## Additional software and services
-For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html).
+For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ page.baseurl}}/cloud/project/project-conf-files_services.html).
 
-* [Redis]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html)
-* [ElasticSearch]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html)
-* [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html)
-* [Additional software]({{ page.baseurl }}install-gde/prereq/optional.html) for Magento
+* [Redis]({{ page.baseurl}}/cloud/project/project-conf-files_services-redis.html)
+* [ElasticSearch]({{ page.baseurl}}/cloud/project/project-conf-files_services-elastic.html)
+* [RabbitMQ]({{ page.baseurl}}/cloud/project/project-conf-files_services-rabbit.html)
+* [Additional software]({{ page.baseurl}}/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
 To verify the local, access the store using the URL you passed in the install command. For this example, the local Magento store should load using http://magento.local/. The Admin panel should open using http://magento.local/admin. If you change the URI for the Admin panel, use this command to locate it:
@@ -153,7 +153,7 @@ To verify the local, access the store using the URL you passed in the install co
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.
 
-![Click Access for list of URLs]({{ site.baseurl }}common/images/cloud-project-master-access.png){:width="297px"}
+![Click Access for list of URLs]({{ site.baseurl}}/common/images/cloud-project-master-access.png){:width="297px"}
 
 With these steps completed, you should have:
 
@@ -165,6 +165,6 @@ With these steps completed, you should have:
 * Magento authentication keys set up and configured in the project and local
 
 ## Next steps:
-For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html).
+For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl}}/cloud/access-acct/first-time-deploy.html).
 
 For **Starter projects**, you are ready to start developing.

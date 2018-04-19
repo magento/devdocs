@@ -24,16 +24,16 @@ The Magento cron job runs a number of scheduled tasks and is a vital part of you
 -   Generating sitemaps
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
+Refer to [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
 </div>
 
 You can run a Magento cron job in the following ways:
 
--   Using the [`magento cron:run`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command either from the command line or in a crontab
+-   Using the [`magento cron:run`]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command either from the command line or in a crontab
 -   Accessing `pub/cron.php?[group=<name>]` in a web browser
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You don't need to do anything if you use the [`magento cron:run`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command to run cron because it uses a different process that is already secure.
+You don't need to do anything if you use the [`magento cron:run`]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command to run cron because it uses a different process that is already secure.
 </div>
 
 ## Secure cron with Apache
@@ -180,7 +180,7 @@ To verify cron is secure:
 
 5.  When prompted, enter an authorized user's name and password. The following figure shows an example.
 
-    ![Authorizing cron using HTTP Basic]({{site.baseurl}}common/images/cron_auth.png)
+    ![Authorizing cron using HTTP Basic]({{site.baseurl}}/common/images/cron_auth.png)
 
 6.  Verify that rows were added to the table:
 
@@ -259,5 +259,5 @@ For example,
 	http://magento.example.com/magento2/pub/cron.php?group=index
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
+You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
 </div>

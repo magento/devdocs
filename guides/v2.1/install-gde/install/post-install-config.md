@@ -23,26 +23,26 @@ Immediately after finishing your Magento installation, set up a *crontab* for th
 
 {% include config/setup-cron.md %}
 
-For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html).
+For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html).
 
 <h2 id="post-install-secy">Security settings</h2>
 After installation, we recommend the following:
 
 *	Make sure your file ownership and permissions are set properly
-*	We strongly recommend <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from `admin` to something else
-*	Make sure the <a href="{{page.baseurl}}config-guide/secy/secy-xframe.html">`X-Frame-Option` HTTP header</a> is set properly.
-*	Take precautions against cross-site scripting (XSS) by <a href="{{page.baseurl}}frontend-dev-guide/templates/template-security.html">securing your templates</a>
+*	We strongly recommend <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from `admin` to something else
+*	Make sure the <a href="{{page.baseurl}}/config-guide/secy/secy-xframe.html">`X-Frame-Option` HTTP header</a> is set properly.
+*	Take precautions against cross-site scripting (XSS) by <a href="{{page.baseurl}}/frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) -->
 
 <h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
 If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
-<a href="{{page.baseurl}}install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
+<a href="{{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
 
 ## Caching in a multi-webnode environment {#config-redis}
 If you have multiple webnodes, you *cannot* use Magento's default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode's file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.
 
-Instead, use [Redis]({{page.baseurl}}config-guide/redis/config-redis.html) for both the default {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and the page cache.
+Instead, use [Redis]({{page.baseurl}}/config-guide/redis/config-redis.html) for both the default {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and the page cache.
 
 <h2 id="post-install-server">Server settings</h2>
 This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.
@@ -86,6 +86,6 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 
 You can configure the following only if you use {{site.data.var.ee}}:
 
-*	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Apache Solr search</a>
-*	<a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queues</a>
+*	<a href="{{page.baseurl}}/config-guide/solr/solr-overview.html">Apache Solr search</a>
+*	<a href="{{page.baseurl}}/config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
+*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message queues</a>

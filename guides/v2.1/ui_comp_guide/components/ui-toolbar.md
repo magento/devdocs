@@ -15,7 +15,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js]({{site.mage2
 
 ## Toolbar configuration
 
-Extends all [UiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Extends all [UiCollection]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 Toolbar-specific configuration:
 

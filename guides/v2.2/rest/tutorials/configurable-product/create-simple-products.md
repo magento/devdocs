@@ -24,7 +24,7 @@ Although it's not required, the simple product payload also includes `stock_item
 ## Create the first simple product
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{page.baseurl}}rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{page.baseurl}}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 </div>
 
 **Endpoint**
@@ -230,6 +230,6 @@ Attribute | Medium Value | Large Value
 
 * Log in to the Luma website and select <b>Catalog > Products</b>. The product appears in the grid.
 
-  ![Product page with configurable and simple products]({{page.baseurl}}rest/images/products-page-all.png)
+  ![Product page with configurable and simple products]({{page.baseurl}}/rest/images/products-page-all.png)
 
 * On the Luma store front page, search for `Champ`. No results are returned.

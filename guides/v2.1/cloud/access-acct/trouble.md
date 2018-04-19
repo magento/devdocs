@@ -13,7 +13,7 @@ functional_areas:
   - Deploy
 ---
 
-This topic discusses how to recover if you deployed the Magento application with the incorrect [Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used Magento Community Edition (CE) keys instead of Magento Enterprise Edition (EE) keys.
+This topic discusses how to recover if you deployed the Magento application with the incorrect [Magento authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used Magento Community Edition (CE) keys instead of Magento Enterprise Edition (EE) keys.
 
 If you used the incorrect keys, deployment fails. To recover, you must clone the project, add the correct keys to `auth.json`, and push the change to the master branch.
 

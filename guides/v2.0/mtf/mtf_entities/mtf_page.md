@@ -7,7 +7,7 @@ github_link: mtf/mtf_entities/mtf_page.md
 ---
 
 A page object is a class that serves to interact with the Magento page under test.
-A page serves as container for [blocks]({{page.baseurl}}mtf/mtf_entities/mtf_page.html).
+A page serves as container for [blocks]({{page.baseurl}}/mtf/mtf_entities/mtf_page.html).
 
 In the functional tests, Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %} is used. Test uses block methods of page object class to interact with application under test.
 
@@ -68,7 +68,7 @@ The following table explains `<page>` attributes.
 
 {% include mtf/block_attributes.md %}
 
-Also, block can contain a `render` node. [Read about renders in the Block topic]({{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_render).
+Also, block can contain a `render` node. [Read about renders in the Block topic]({{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_render).
 
 {% include mtf/page-generator.html %}
 
@@ -387,7 +387,7 @@ Now when you call `editForm` block from the `CatalogCategoryEdit` page, class `\
 
 <!-- LINK DEFINITIONS -->
 
-[Block]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
+[Block]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html
 [Magento\Mtf\Page\BackendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php
 [Magento\Mtf\Page\FrontendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php
 [Magento\Mtf\Page\ExternalPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php

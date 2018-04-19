@@ -34,7 +34,7 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 {% endcollapsible %}
 
 #### Apply the patch
-As the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
+As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
 
 {% collapsible To apply the patch: %}
 
@@ -49,8 +49,8 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 #### Complete your upgrade
 After applying the patch, complete your upgrade as follows:
 
-*	[Command-line upgrade]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html)
-*	[Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html)
+*	[Command-line upgrade]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html)
+*	[Start System Upgrade]({{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html)
 
 ### Command-line upgrade to Magento Open Source or Commerce version 2.1 with sample data {#tb-upgr-samp}
 
@@ -77,7 +77,7 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 {% endcollapsible %}
 
 #### Apply the patch
-As the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
+As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
 
 {% collapsible To apply the patch: %}
 
@@ -115,4 +115,4 @@ A sample command follows:
 	rm -rf var/cache/* var/page_cache/* var/generation/*
 
 #### Start the upgrade
-Start your upgrade as discussed in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+Start your upgrade as discussed in [Start System Upgrade]({{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html).

@@ -18,7 +18,7 @@ functional_areas:
 A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with Magento {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{page.baseurl}}get-started/order-tutorial/order-create-customer.html) for an example of creating a standard customer.
+This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{page.baseurl}}/get-started/order-tutorial/order-create-customer.html) for an example of creating a standard customer.
 </div>
 
 ## Manage company users
@@ -197,7 +197,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the Company module]({{page.baseurl}}b2b/company.html)
-* [Manage company objects]({{page.baseurl}}b2b/company-object.html)
-* [Manage company roles]({{page.baseurl}}b2b/roles.html)
-* [Manage company structures]({{page.baseurl}}b2b/company-structures.html)
+* [Integrate with the Company module]({{page.baseurl}}/b2b/company.html)
+* [Manage company objects]({{page.baseurl}}/b2b/company-object.html)
+* [Manage company roles]({{page.baseurl}}/b2b/roles.html)
+* [Manage company structures]({{page.baseurl}}/b2b/company-structures.html)

@@ -51,7 +51,7 @@ Most REST calls to Magento require an {% glossarytooltip 34ecb0ab-b8a3-42d9-a728
 
 By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Configuration > Services > OAuth > Access Token Expiration**.
 
-See [Token-based authentication]({{page.baseurl}}get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
+See [Token-based authentication]({{page.baseurl}}/get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
 
 **Endpoint**
 
