@@ -1649,115 +1649,17 @@ This version change does not reflect the nature of the changes in the code base.
     </span><span class="s2">"acme/bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.0"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<h3 id="version-usage-example">Version usage example</h3>
-
-<p>The following example shows how versions are used with composer to install software and third-party extensions.</p>
-
-<p>This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.</p>
-
-<ol>
-<li>Start by cloning the master branch from github.
-
-
-  This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
-
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-</li>
-
-<li>Run the <code>composer update</code> command. Core modules a &amp; b are pulled down from the repository.</li>
-
-<li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
-
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-</li>
-
-<li>Run <code>composer update</code> and see the new extension downloaded.</li>
-
-<li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
-
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-</li>
-
-<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
-
-   This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
-</li>
-
-<li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
-
-   
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-</li>
-
-<li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
-
-<li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
-
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-</li>
-
-<li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
-
-</ol>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If Magento is installed from GitHub without using Composer, the <code class="highlighter-rouge">version</code> is not included. Magento Admin displays the version as <code class="highlighter-rouge">Magento ver. dev-&lt;GitHub-branch-name&gt;</code>. In addition, Magento modules inside the <code class="highlighter-rouge">require</code> declaration  list a version of <code class="highlighter-rouge">*</code>. For example, <code class="highlighter-rouge">"magento/framework": "*"</code></p>
+</div>
 
 <h2 id="related-topics">Related Topics</h2>
 
 <p><a href="/guides/v2.3/extension-dev-guide/versioning/dependencies.html">Module version dependencies</a> - Information about how your module can depend on the version of other modules.</p>
 
 <p><a href="/guides/v2.3/extension-dev-guide/versioning/codebase-changes.html">Codebase changes</a> - Information on how changes in a Magento module’s codebase affect versions.</p>
+
+<p><a href="/guides/v2.3/contributor-guide/backward-compatible-development/index.html">Backward compatible development</a> - Information about MAJOR and MINOR changes and how they impact extension developers.</p>
 
 
 		</div>
@@ -1770,7 +1672,7 @@ This version change does not reflect the nature of the changes in the code base.
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/extension-dev-guide/versioning/index.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.3/extension-dev-guide/versioning/index.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
