@@ -19,7 +19,7 @@ pages:
           url: contributor-guide/quarterly-contributors.html
 
         - label: Community maintainers
-          url: contributor-guide/devdocs-maintainers.html
+          url: /contributor-guide/devdocs-maintainers.html
           versions: ["2.1","2.2","2.3"]
 
     - label: Templates
