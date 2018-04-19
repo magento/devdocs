@@ -163,17 +163,20 @@ pages:
         - label: WYSIWYG component
           versions: ["2.0","2.1","2.2"]
           url: ui_comp_guide/components/ui-wysiwyg.html
- 
+
         - label: WYSIWYG component
           versions: "2.3"
           url: ui_comp_guide/components/ui-wysiwyg.html
           children:
 
-            - label: Extension Points
-              url: ui_comp_guide/components/wysiwyg/extension-points/
-
             - label: Add Custom Editor
               url: ui_comp_guide/components/wysiwyg/add-custom-editor/
+
+            - label: Configure the TinyMCE editor
+              url: ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html
+
+            - label: Extension Points
+              url: ui_comp_guide/components/wysiwyg/extension-points/
 
     - label: Concepts
       children:
