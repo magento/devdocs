@@ -215,12 +215,12 @@ Up to three tiers per edition (`CE` and `EE`) can be supported:
     "short_description" : “<Short description goes here.>”,
     “long_description” “ “<Long description goes here.>”,
     "prices" : [
-      {   
+      {
         "currency_code" : "USD",
         "price" : 25.00
       }
-    ]  
-    
+    ]
+
   },
   {
     “tier” : 1,
@@ -229,12 +229,12 @@ Up to three tiers per edition (`CE` and `EE`) can be supported:
     "short_description" : “<Short description goes here.>”,
     “long_description” “ “<Long description goes here.>”,
     "prices" : [
-      {   
+      {
         "currency_code" : "USD",
         "price" : 50.00
       }
-    ]  
-    
+    ]
+
   }
 ]
 ```
@@ -490,8 +490,9 @@ If you save the request body to a file, for example, `/tmp/one-click-submission-
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -H "Content-Type: application/json” \
+curl -X POST \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     -H 'Content-Type: application/json' \
      --data-binary  @/tmp/one-click-submission-1.0.0.json \
      https://developer-api.magento.com/rest/v1/products/packages
 ```
@@ -545,7 +546,7 @@ The PUT method also allows for updating a single package with `submission_id` as
 ```shell
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -H "Content-Type: application/json” \
+     -H 'Content-Type: application/json' \
      -d { “action” : { “overall” : “publish”} } \
      https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be
 ```
@@ -639,7 +640,8 @@ Here is a curl example listing all packages belonging to a user:
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages
 ```
 
@@ -671,16 +673,16 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
       "file_upload_id" : "dhsiXjdksW17623",
       "filename" : "acme_one-click-checkout.zip",
       "content_type" : "application/zip",
-      "size" : 182934,   
+      "size" : 182934,
       "malware_status" : "pass",
-      "file_hash" : "f53f5db985b8815f1ce6fd4b48a0439a" 
+      "file_hash" : "f53f5db985b8815f1ce6fd4b48a0439a"
     },
     "documentation_artifacts" : {
       "user" : {
         "file_upload_id" : "j47dVbsFgkl",
         "filename" : "user.pdf",
         "content_type" : "application/pdf",
-        "size" : 48392,   
+        "size" : 48392,
         "malware_status" : "pass",
         "file_hash" : "7f99e16a20457859fc0c86b5676a62ca"
       },
@@ -688,7 +690,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
         "file_upload_id" : "d67E82hVb20",
         "filename" : "installation.pdf",
         "content_type" : "application/pdf",
-        "size" : 34876,   
+        "size" : 34876,
         "malware_status" : "pass",
         "file_hash" : "94392b98f02c56083995d23f02e460ab"
       },
@@ -696,9 +698,9 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
         "file_upload_id" : "9Rb5yQh7dfA",
         "filename" : "reference.pdf",
         "content_type" : "application/pdf",
-        "size" : 23845,   
+        "size" : 23845,
         "malware_status" : "pass",
-        "file_hash" : "ec78ded664c71d80acf0e29f5dbafe2b" 
+        "file_hash" : "ec78ded664c71d80acf0e29f5dbafe2b"
       }
     },
     "media_artifacts" : {
@@ -706,50 +708,50 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
         "file_upload_id" : "gAdh628bzXv",
         "filename" : "one-click-icon.png",
         "content_type" : "image/png",
-        "size" : 37492,   
+        "size" : 37492,
         "malware_status" : "pass",
-        "file_hash" : "dd0d04057cd1420afb76d6afa838d394" 
+        "file_hash" : "dd0d04057cd1420afb76d6afa838d394"
       },
       "gallery_images" : [
         {
           "file_upload_id" : "hj739djXvT",
           "filename" : "acme-logo.png",
           "content_type" : "image/png",
-          "size" : 23947,   
+          "size" : 23947,
           "malware_status" : "pass",
-          "file_hash" : "515f2eaf3cd4e43c32fda89a004306aa" 
+          "file_hash" : "515f2eaf3cd4e43c32fda89a004306aa"
         },
         {
           "file_upload_id" : "9Dfg73482E",
           "filename" : "catalog_demo.png",
           "content_type" : "image/png",
-          "size" : 37492,   
+          "size" : 37492,
           "malware_status" : "pass",
-          "file_hash" : "8da78313887fdc3d2506f39c46ccde4e" 
+          "file_hash" : "8da78313887fdc3d2506f39c46ccde4e"
         },
         {
           "file_upload_id" : "J87bdueDjxM",
           "filename" : "cart-demo.png",
           "content_type" : "image/png",
-          "size" : 38023,   
+          "size" : 38023,
           "malware_status" : "pass",
-          "file_hash" : "30b6fef138e1433e6f8ff23a45b2fbb9" 
+          "file_hash" : "30b6fef138e1433e6f8ff23a45b2fbb9"
         },
         {
           "file_upload_id" : "Vhke71093Z4",
           "filename" : "click-demo.png",
           "content_type" : "image/png",
-          "size" : 48293,   
+          "size" : 48293,
           "malware_status" : "pass",
-          "file_hash" : "0ced4d071dddc6e354acfa11f56a56f1" 
+          "file_hash" : "0ced4d071dddc6e354acfa11f56a56f1"
         },
         {
           "file_upload_id" : "Gh8273Cx78Q",
           "filename" : "click-success.png",
           "content_type" : "image/png",
-          "size" : 39482,   
+          "size" : 39482,
           "malware_status" : "pass",
-          "file_hash" : "dfa3183472cc265a5510be1da0fe444c" 
+          "file_hash" : "dfa3183472cc265a5510be1da0fe444c"
         }
       ],
       "video_urls" : [
@@ -786,7 +788,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-* The previous example shows one product only, but an array of products can be returned. 
+* The previous example shows one product only, but an array of products can be returned.
 * The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 packages.xml or M2 composer.json), once it passes the malware checks.
 * The code, documentation, and media artifact files have additonal info indicating meta-information on these files, including their current malware status.
 * The `eqp_status` field will indicate the current state of the package in the EQP process.
@@ -799,7 +801,8 @@ As seen above, this particular submission failed the EQP technical review. Use t
 ***Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be/status
 ```
 
@@ -887,7 +890,8 @@ A sample cURL request filtering all `themes` sorted by `platform` in ascending o
 **Request**
 
 ```curl
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
 ```
 

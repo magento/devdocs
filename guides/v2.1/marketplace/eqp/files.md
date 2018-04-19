@@ -41,8 +41,9 @@ Use the upload ID to retrieve details about a file upload.
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623  
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
 ```
 
 **Response**
@@ -52,9 +53,9 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
     "file_upload_id" : "dhsiXjdksW17623",
     "filename" : “acme_one-click-checkout.zip”,
     "content_type" : "application/zip",
-    "size" : 182934,   
+    "size" : 182934,
     "malware_status" : "pass’,
-    “file_hash” : “f53f5db985b8815f1ce6fd4b48a0439a”, 
+    “file_hash” : “f53f5db985b8815f1ce6fd4b48a0439a”,
     “submission_ids” : [
     ],
     “is_profile_image” : false
@@ -126,7 +127,8 @@ For example, if you save the previous request body is saved to a temporary file 
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X POST \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H "Content-Type: multipart/form-data; boundary=----------287032381131322" \
      --data-binary  @/tmp/files-payload \
      https://developer-api.magento.com/rest/v1/files/uploads
@@ -139,29 +141,29 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
   {
     "filename" : “acme_one-click-checkout.zip”,
     "content_type" : "application/zip",
-    "size" : 182934,                           
-    "file_upload_id" : “dhsiXjdksW17623”             
+    "size" : 182934,
+    "file_upload_id" : “dhsiXjdksW17623”
   },
 
   {
     "filename" : “one-click-icon.png”,
     "content_type" : "image/png",
-    "size" : 37492,                           
-    "file_upload_id" : “gAdh628bzXv”             
+    "size" : 37492,
+    "file_upload_id" : “gAdh628bzXv”
   },
 
   {
     "filename" : “acme-logo.png”,
     "content_type" : "image/png",
-    "size" : 6825,                           
-    "file_upload_id" : “fur7284XcgdcV”             
+    "size" : 6825,
+    "file_upload_id" : “fur7284XcgdcV”
   },
 
   {
     "filename" : “user.pdf”,
     "content_type" : "application/pdf",
-    "size" : 48392,                           
-    "file_upload_id" : “j47dVbsFgkl”             
+    "size" : 48392,
+    "file_upload_id" : “j47dVbsFgkl”
   }
 ]
 ```
@@ -200,8 +202,8 @@ You can only dissociate files from packages that have not been published on the 
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -X DELETE
+curl -X DELETE \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/files/uploads/fur7284XcgdcV
 ```
 

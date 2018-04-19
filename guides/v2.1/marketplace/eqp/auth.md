@@ -48,9 +48,11 @@ The following example shows a request and expected response:
 **Request**
 
 ```shell
-curl -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca' \ 
+curl -X POST \
+     -u 'AQ17NZ49WC:8820c99614d65f923df7660276f20e029d73e2ca' \
+     -H 'Content-Type: application/json' \
      -d '{ "grant_type" : "session" }' \
-     https://developer-api.magento.com/rest/v1/apps/session/token 
+     https://developer-api.magento.com/rest/v1/apps/session/token
 ```
 
 **Response**
@@ -79,6 +81,7 @@ After obtaining a valid session token, you must use it as a bearer token in all 
 For example, to access a user profile with a session token:
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789  
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/users/MAG123456789
 ```

@@ -32,7 +32,8 @@ The following example shows the request/response body for retrieving all profile
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789
 ```
 
@@ -56,7 +57,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
             "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
             "malware_status": "pass"
         },
- 
+
         "tos_accepted_version": "1.0",
         "tos_accepted_date": "2017-11-16 01:23:45",
         "is_company": false,
@@ -73,7 +74,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
         "theme_share_percent": 0.7,
         "install_share_percent": 0,
         "support_share_percent": 0,
-         
+
         "personal_profile": {
             "bio", “Sets ants on fire using a magnifying glass. At night.”,
             "last_logged_in": "2017-09-30 8:09:10",
@@ -99,7 +100,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
                 }
             ]
         },
- 
+
         "company_profile": {
             "name": “Ninja Norris Inc.”,
             "bio": “Ninja Extension Builder.”,
@@ -136,7 +137,8 @@ The following example shows the request/response body for retrieving a subset of
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789?style=summary
 ```
 
@@ -186,8 +188,9 @@ The `action` field specifies which update operation to perform:
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -X PUT \
+curl -X PUT \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     -H 'Content-Type: application/json' \
      -d ‘{ “action: “publish”, “personal_profile” : { “bio” : “I can make a fire by rubbing two ice cubes.“ } }’ \
      https://developer-api.magento.com/rest/v1/users/MAG123456789
 ```
@@ -224,7 +227,8 @@ The following example shows the request/response body for retrieving keys withou
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
 
@@ -291,7 +295,9 @@ Use this API to create new Magento 2 Composer key-pairs. You must specify a uniq
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+curl -X POST \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     -H 'Content-Type: application/json' \
      -d ‘{ “m2”: [ { “label” : “key_for_alice” }, { “label” : “key_for_charlie” } ] }’ \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
@@ -339,8 +345,9 @@ PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -X PUT \
+curl -X PUT \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     -H 'Content-Type: application/json' \
      -d ‘{ “m2” : [ { “is_enabled” :  true } ] }’ \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_bob
 ```
@@ -349,7 +356,7 @@ curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
 
 ```json
 {
-    "m2": [            
+    "m2": [
             {
                 "label": "key_for_bob",
                 "user_key": "4b335b25f8eb3449e7e222e8f9e052b0",
@@ -373,8 +380,8 @@ The following curl example illustrates the call to be made:
 **Request**
 
 ```shell
-curl -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -X DELETE \
+curl -X DELETE \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_charlie
 ```
 
