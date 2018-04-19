@@ -22,7 +22,7 @@ New Relic APM provides the following features to Magento:
 
 Your {{site.data.var.ece}} account includes the agent software for New Relic; you do not need to purchase or install the New Relic extension (different than the APM service). You receive your credentials and license information from Magento during launch and can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
 
-By default, the Pro Staging and Production environments include New Relic. If it is not installed, submit a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to request installation.
+By default, the Pro Staging and Production environments include New Relic. If it is not installed, submit a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to request installation.
 
 ## Add New Relic extension to your project
 You must list the New relic extension in the `.magento.app.yaml` file:
