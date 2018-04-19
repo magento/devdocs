@@ -14,6 +14,24 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 Check out our best practices below to ensure you're getting the absolute most out of the MFTF.
 
+## Test
+
+* Avoid using the `<wait>` action.
+    * This forces the test to ALWAYS wait for the time you specify when it may not need to wait so long to proceed.
+    * Instead, use actions such as `<waitForElementVisible>`, `<waitForLoadingMaskToDisappear>`, `<waitForElement>`, etc. to specifically wait for what you need for the test to proceed.
+* Keep your tests short and granular to allow for targeted testing. This also allows you to quickly identify root causes of test failures.
+* Use comments to make tests readable and maintainable.
+    * Periodically add inline `<!-- XML comments -->` and `<comment>` tags to both inform the reader of what your testing and to yield a more descriptive Allure report.
+    * If something is unclear or tricky, add comment tags (see above example).
+* Avoid writing selectors in the test files (refer to sections).
+* Keep tests relatively short, e.g. 100 lines. This will allow for easier reviews, easier merge conflict resolution, etc.
+
+## Action Group
+
+* Action group names should be descriptive enough to inform the reader of what the action group is doing and what it should be used for.
+    * If this is too complicated to include in a name, include inline comments to describe what your action group is doing and why.
+* Provide default values for arguments that apply to your most common case scenarios.
+
 ## File Names
 
 Name files according to the following patterns to find everything more easily:
