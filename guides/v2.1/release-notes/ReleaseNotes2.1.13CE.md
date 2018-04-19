@@ -1,12 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_rel-notes
 title: Magento Open Source 2.1.13 Release Notes
-menu_title: Magento Open Source 2.1.13 Release Notes
-menu_order: 154
-level3_menu_node: level3child
-level3_subgroup: ce21-relnotes 
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.13CE.md
 ---
@@ -15,7 +10,7 @@ github_link: release-notes/ReleaseNotes2.1.13CE.md
 {:toc}
 
 
-*Patch code and release notes were published on March  2018.*
+*Patch code and release notes were published on May 2, 2018.*
 
 
 We are pleased to present Magento Open Source  2.1.13. This release includes both bug fixes and enhancements. Check out the many community-contributed fixes!
@@ -27,7 +22,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes bot
 
 <!--- MAGETWO-86298 -->* The sample  `.htaccess` file Options `All -Indexes` directive has been replaced with Options `-Indexes`. Previously, the `All -Indexes` directive caused problems in shared hosting environments. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12959*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
 
-<!--- MAGETWO-69036 -->* Lazy-loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside constructor methods if they weren't provided.) 
+<!--- MAGETWO-69036 -->* Lazy loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside constructor methods if they weren't provided.) 
 
 <!--- MAGETWO-58072 -->* Magento no longer creates an `/ i18n` at system root (`/`) in addition to the expected language file when you run `bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
@@ -60,10 +55,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes bot
 
 <!--- MAGETWO-83204 -->*  The Hide from Product Page option now works for the child product of a configurable product.
 
-<!--- MAGETWO-87521 -->*  
-
-<!--- MAGETWO-59163 -->*
-
+<!--- MAGETWO-87521 -->*   Product page attribute labels are now translated as expected when languages other than English are used. Previously, these fields were empty. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13532*. [GitHub-10738](https://github.com/magento/magento2/issues/10738)
 
 
 ### Cart and checkout
@@ -76,18 +68,19 @@ We are pleased to present Magento Open Source  2.1.13. This release includes bot
 
 <!--- MAGETWO-71229 -->* Magento no longer caches warning messages as often as a customer clicks the **Update Shopping Cart** button while the shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while the page loaded in FireFox or Chrome, and this action resulted in multiple warning messages appearing on the top of the shopping cart page.
 
-<!--- MAGETWO-87745 -->* 
+<!--- MAGETWO-87745 -->* You can now create unique checkbox IDs for the Terms and Conditions part of the checkout process. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13543*. [GitHub-6207](https://github.com/magento/magento2/issues/6207)
 
- 
 
 ### Configurable products
 
 <!--- MAGETWO-86312 -->*   Magento now reorders configurable attribute options as expected on the product page. *Fix submitted by [wardcapp](https://github.com/wardcapp) in pull request 12962*. [GitHub-7441](https://github.com/magento/magento2/issues/7441)
 
 <!--- MAGETWO-60140 -->*  You can now disable a child product from a configurable product’s edit page. Previously, the child product’s status 
-did not change after you selected **Disable product**.
+did not change after you selected **Disable product**. 
 
-<!--- MAGETWO-87993 -->*  
+<!--- MAGETWO-87993 -->*  `LowestPriceOptionsProvider` now returns products with the `tax_class_id` attribute, which is used for price calculation operations such as  tax adjustment. [GitHub-6729](https://github.com/magento/magento2/issues/6729), [GitHub-6457](https://github.com/magento/magento2/issues/6457), [GitHub-7362](https://github.com/magento/magento2/issues/7362) *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13490*.
+
+
 
 
 
@@ -101,7 +94,9 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-71669 -->* The Arabic language locale now uses the correct date format. Previously, when Magento was deployed using the JavaScript calendar and the Arabic (Kuwait) locale, It did not correctly display dates  on the product page. (Date format was shown as 182017/05 instead of 18/05/2017.)
 
-MAGETWO-84733
+
+<!--- MAGETWO-84733 -->* Magento now refreshes customer data in `localStorage` upon customer log in, which results in proper loading of the customer's cart. Previously, when a customer with existing cart items logged in using the authentication popup, the mini cart did  not display her cart items. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request 12246*.
+
 
 
 ### Framework
@@ -124,7 +119,8 @@ MAGETWO-84733
 
 
 #### Web API framework
-<!--- MAGETWO-59726 -->* 
+
+<!--- MAGETWO-59726 -->*  When you used REST to create a paginated search of products, Magento now includes `category_id`s   as expected in the `custom_attributes` section of listed products. [GitHub-6127](https://github.com/magento/magento2/issues/6127)
 
 
 
@@ -153,12 +149,12 @@ MAGETWO-84733
 
 <!--- MAGETWO-64171 -->*  Customers can now add a new address during the shipping step of the checkout process when accessing the store from Internet Explorer 11.x. Previously, when a customer tried to create a new address from the checkout page,  the **Add address** button  was not visible.
 
+<!--- MAGETWO-58383 -->*  Magento now creates a URL rewrite when you save a newly created CMS page. Previously, when you tried to access a newly created CMS page using information from the **URL Key** field, Magento displayed a 404 error.  [GitHub-5923](https://github.com/magento/magento2/issues/5923)
 
+<!--- MAGETWO-87443 -->* You can now  use the custom layout handler form (`cms_page_view_id_cms_page`). Previously, Magento used the wrong layout for the specified page. Previously the cms module added an additional layout update handler with an identifier on page view, and problems occurred when slashes were used in the page identifier. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13489*.
 
-<!--- MAGETWO-58383 -->*   
+<!--- MAGETWO-84907 -->* Duplicate array keys in `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` and `app/code/Magento/Downloadable/Helper/File.php` have been removed. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12519*.
 
-<!--- MAGETWO-87443 -->*   
-<!--- MAGETWO-84907 -->* 
 
 ### Index
 
@@ -168,8 +164,8 @@ MAGETWO-84733
 
 ### Newsletter
 
-<!--- MAGETWO-66793 -->* Merchants can now unsubscribe customers from a newsletter from the Admin. [GitHub-6313](https://github.com/magento/magento2/issues/6313)
-
+<!--- MAGETWO-66793 -->* Merchants can now successfully unsubscribe customers from a newsletter from the Admin. [GitHub-6313](https://github.com/magento/magento2/issues/6313)
+ 
 
 
 ### Order management
@@ -178,7 +174,8 @@ MAGETWO-84733
 
 <!--- MAGETWO-86259 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12952*. 
 
-<!--- MAGETWO-84108 -->* 
+<!--- MAGETWO-84108 -->* You can now alter the transport variable in the `email_invoice_set_template_vars_before` event. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12135*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
+
 
 
 
@@ -214,7 +211,7 @@ MAGETWO-84733
 ### Search
 <!--- MAGETWO-72312 -->* Layered navigation now displays the correct product count. Previously, the layered navigation product count incorrectly included only in-stock products.
 
-<!--- MAGETWO-60246 -->* 
+<!--- MAGETWO-60246 -->* When you switch between multiple currencies on the storefront, Magento now converts the product price into the correct currency. [GitHub-6746](https://github.com/magento/magento2/issues/6746)
 
 
 ### Shipping
@@ -228,35 +225,31 @@ MAGETWO-84733
 
 ### Swatches
 
-<!--- MAGETWO-83291 -->*   
-
-### Tax
-
-<!--- MAGETWO-86529 -->*  
+<!--- MAGETWO-83291 -->* You can now use REST to import visual swatch attribute options. Previously, you could not add swatch options using service contracts unless a swatch option already existed for the attribute. *Fix submitted by [gonzalopelon](https://github.com/gomencal) in pull request 12044*. [GitHub-11032](https://github.com/magento/magento2/issues/11032), [GitHub-10707](https://github.com/magento/magento2/issues/10707), [GitHub-10737](https://github.com/magento/magento2/issues/10737), [GitHub-6798](https://github.com/magento/magento2/issues/6798) 
+ 
 
 
 ### Translations
 
-<!--- MAGETWO-86285 -->* Inline translations and custom translators now work for Knockout templates. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12954*. [GitHub-2156](https://github.com/magento/magento2/issues/2156) 
+<!--- MAGETWO-86285 -->* Inline translations and custom translators now work for knockout templates. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12954*. [GitHub-2156](https://github.com/magento/magento2/issues/2156) 
 
 
 ### UI
 
 <!--- MAGETWO-84852 -->*  Magento now validates XML  against the schema file when saving custom layout update XML in the CMS page in production mode. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11860*.
 
-<!--- MAGETWO-87746 -->*  
+<!--- MAGETWO-87746 -->*  Creating a new product with a custom attribute set now works as expected. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13549*. [GitHub-10565](https://github.com/magento/magento2/issues/10565) 
 
-<!--- MAGETWO-83282 -->* 
+
+<!--- MAGETWO-83282 -->* Magento no longer displays the current date when a product's date attribute has an empty value. *Fix submitted by [Pieter Hoste](https://github.com/enriquei4) in pull request 12033*.  [GitHub-9869](https://github.com/magento/magento2/issues/9869) 
 
 
 ### Wish list
 <!--- MAGETWO-86204-->* The default value for a wish list item's `buyRequest` data is now always an array. Previously, this value was set to `null`. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request 12930*.
 
- -
 
 
-
-<!--- NOT NEEDED  MAGETWO-89535 MAGETWO-89066 MAGETWO-88992 MAGETWO-88336 MAGETWO-53814 MAGETWO-60969 MAGETWO-61020 MAGETWO-85904 MAGETWO-85755 MAGETWO-84822 MAGETWO-69577 MAGETWO-69213 MAGETWO-83326 MAGETWO-84738 MAGETWO-87517 MAGETWO-84238 MAGETWO-87517 MAGETWO-84849 MAGETWO-84848 MAGETWO-84346 MAGETWO-87348 MAGETWO-87346 MAGETWO-87343 MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 -->
+<!--- NOT NEEDED  MAGETWO-89535 MAGETWO-89066 MAGETWO-88992 MAGETWO-88336 MAGETWO-53814 MAGETWO-60969 MAGETWO-61020 MAGETWO-85904 MAGETWO-85755 MAGETWO-84822 MAGETWO-69577 MAGETWO-69213 MAGETWO-83326 MAGETWO-84738 MAGETWO-87517 MAGETWO-84238 MAGETWO-87517 MAGETWO-84849 MAGETWO-84848 MAGETWO-84346 MAGETWO-87348 MAGETWO-87346 MAGETWO-87343 MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 MAGETWO-59163-->
 
 
 ## Community contributions
@@ -265,6 +258,216 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+<table>
+  <tr>
+    <th>Pull request</th>
+    <th>Related GitHub issue</th>
+     <th>Contributing community member</th>
+
+  </tr>
+
+
+
+
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12033" target="_blank">12033</a></td>
+    <td>9869/td>
+     <td><a href="https://github.com/enriquei4" target="_blank">enriquei4</a></td>
+  </tr>
+<tr>
+    <td><a href="https://github.com/magento/magento2/pull/12373" target="_blank">12373</a></td>
+    <td>10765</td>
+     <td><a href="https://github.com/Zefiryn" target="_blank">Zefiryn</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12043" target="_blank">12043</a></td>
+    <td>9410, 10707, 10737, 11032</td>
+     <td><a href="https://github.com/gomencal" target="_blank">gonzalopelon</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12135" target="_blank">12135</a></td>
+    <td>10210</td>
+     <td><a href="https://github.com/RomaKis" target="_blank">Roman K.</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/11807" target="_blank">11807</a></td>
+    <td>11341</td>
+     <td><a href="https://github.com/manuelson" target="_blank">Manu Gonzalez Rodriguez</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12041" target="_blank">12041</a></td>
+    <td>11825, 11908</td>
+     <td><a href="https://github.com/osrecio" target="_blank">Oscar Recio</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12246" target="_blank">12246</a></td>
+    <td>NA</td>
+     <td><a href="https://github.com/pmclain" target="_blank">Patrick McLain</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12137" target="_blank">12137</a></td>
+    <td>9768</td>
+     <td><a href="https://github.com/RomaKis" target="_blank">Roman K.</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12519" target="_blank">12519</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/lfluvisotto" target="_blank">Leandro F. L.</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/11860" target="_blank">11860</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/12522" target="_blank">12522</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/atishgoswami" target="_blank">Atish Goswami</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12321" target="_blank">12321</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/angelo983" target="_blank">angelo983</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/11436" target="_blank">11436</a></td>
+    <td>11409</td>
+     <td><a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12548" target="_blank">12548</a></td>
+    <td>8009</td>
+     <td><a href="https://github.com/ajpevers" target="_blank">Anton Evers</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12050" target="_blank">12050</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/convenient" target="_blank">Luke Rodgers</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12558" target="_blank">12558</a></td>
+    <td>12268</td>
+     <td><a href="https://github.com/roma84" target="_blank">Chumak Roman</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12579" target="_blank">12579</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/JeroenVanLeusden" target="_blank">Jeroen</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12368" target="_blank">12368</a></td>
+    <td>8069</td>
+     <td><a href="https://github.com/nemesis-back" target="_blank">IvanK</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/11618" target="_blank">11618</a></td>
+    <td>6770</td>
+     <td><a href="https://github.com/raumatbel" target="_blank">Raul Mateos</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12611" target="_blank">12611</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/slackerzz" target="_blank">Lorenzo Stramaccia</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12629" target="_blank">12629</a></td>
+    <td>12627</td>
+     <td><a href="https://github.com/quisse" target="_blank">Tommy Quissens</a></td>
+  </tr>
+<tr>
+<td><a href="https://github.com/magento/magento2/pull/12840" target="_blank">12840</a></td>
+    <td>8415</td>
+     <td><a href="https://github.com/duckchip" target="_blank">Tristan Hofman</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12930" target="_blank">12930</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/jameshalsall" target="_blank">James Halsall</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12959" target="_blank">12959</a></td>
+    <td>10812</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12958" target="_blank">12958</a></td>
+    <td>9243</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12956" target="_blank">12956</a></td>
+    <td>10682</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12962" target="_blank">12962</a></td>
+    <td>7441</td>
+     <td><a href="https://github.com/wardcapp" target="_blank">wardcapp</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12952" target="_blank">12952</a></td>
+    <td>9969</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12954" target="_blank">12954</a></td>
+    <td>2156</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12991" target="_blank">12991</a></td>
+    <td>12967</td>
+     <td><a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13020" target="_blank">13020</a></td>
+    <td>12393</td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13261" target="_blank">13261</a></td>
+    <td>10168</td>
+     <td><a href="https://github.com/PieterCappelle" target="_blank">Pieter Cappelle</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13367" target="_blank">13367</a></td>
+    <td>8621</td>
+     <td><a href="https://github.com/enriquei4" target="_blank">enriquei4</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13489" target="_blank">13489</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13532" target="_blank">13532</a></td>
+    <td>10738</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13543" target="_blank">13543</a></td>
+    <td>6207</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13549" target="_blank">13549</a></td>
+    <td>10565</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+ </tr>
+
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13490" target="_blank">13490</a></td>
+    <td>6457, 6729, 7362</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+ </tr>
+
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13916" target="_blank">13916</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Northern eCommerce" target="_blank">Northern eCommerce</a></td>
+ </tr>
+
+ </table>
 
 
 
