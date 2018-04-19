@@ -53,9 +53,9 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 This section discusses how you find the configuration files necesary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}
-To find the web server configuration, run a <a href="{{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
+To find the web server configuration, run a <a href="{{page.baseurl}}/install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
 
-<img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
+<img src="{{ site.baseurl}}/common/images/config_phpini-webserver.png" width="700px">
 
 To locate the PHP command-line configuration, enter
 
@@ -140,10 +140,10 @@ If you have more than one `opcache.ini`, modify all of them.
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/optional.html">Installing optional software</a>
+*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)
 

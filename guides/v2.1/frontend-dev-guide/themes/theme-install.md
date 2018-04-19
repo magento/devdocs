@@ -26,19 +26,19 @@ The following sections contain more information about each installation flow.
 
 ## Prerequisites
 
-[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
+[Set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html).
 
 ## Install a theme manually
 
 To install a theme manually:
 
-1. Make sure that the directory structure you are copying is `<VendorName>/<theme>`. And all the [theme files]({{page.baseurl}}frontend-dev-guide/themes/theme-structure.html) are in the `<theme>` directory.
+1. Make sure that the directory structure you are copying is `<VendorName>/<theme>`. And all the [theme files]({{page.baseurl}}/frontend-dev-guide/themes/theme-structure.html) are in the `<theme>` directory.
 
 2. Copy this directory to the `<Magento root dir>/app/design/frontend` directory.
 
 ## Install a theme as composer package
 
-To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html) topic.
+To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{page.baseurl}}/cloud/howtos/install-components.html) topic.
 
 ## Install a theme as an extension
 

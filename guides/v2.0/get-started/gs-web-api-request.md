@@ -116,7 +116,7 @@ Specify one or more of the following HTTP headers in your web API calls:
       </td>
       <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
+See <a href="{{page.baseurl}}/get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
    <tr>
       <td><pre>Accept</pre>
@@ -229,7 +229,7 @@ $httpHeaders->addHeaders([
 ]);
 </pre>
 <li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}/rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();
 $request->setHeaders($httpHeaders);
@@ -258,4 +258,4 @@ $response = $client->send($request);
 </ol>
 
 ## Next step
-Run the web API call through a <a href="{{page.baseurl}}get-started/gs-curl.html">cURL command</a> or a REST client.
+Run the web API call through a <a href="{{page.baseurl}}/get-started/gs-curl.html">cURL command</a> or a REST client.

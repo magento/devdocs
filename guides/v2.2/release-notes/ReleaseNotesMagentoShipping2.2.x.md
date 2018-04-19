@@ -11,7 +11,7 @@ github_link: release-notes/ReleaseNotesMagentoShipping2.2.x.md
 
 The release information in this section describes changes to the Magento Shipping extension bundled with Magento 2.2.2.  Fixes and enhancements are listed by availability date.
 
-See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.2CE.html) for a comprehensive discussion of 2.2.2 fixes and enhancements.  
+See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.2CE.html) for a comprehensive discussion of 2.2.2 fixes and enhancements.  
 
 
 ## Changes effective January 22, 2018

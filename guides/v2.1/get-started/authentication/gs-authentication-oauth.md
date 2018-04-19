@@ -20,7 +20,7 @@ As the process of registering the integration proceeds, Magento creates the toke
 
 ## OAuth overview {#overview}
 The following diagram shows the OAuth authentication process. Each step is described further.
-![OAuth flow]({{page.baseurl}}get-started/authentication/images/oauthflow.png)
+![OAuth flow]({{page.baseurl}}/get-started/authentication/images/oauthflow.png)
 
 
 1. **Create an integration**.  The merchant creates an integration from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Magento generates a consumer key and a consumer secret.

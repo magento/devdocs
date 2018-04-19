@@ -25,7 +25,7 @@ If the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% end
 
 If the extension has data to remove, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally remove database data">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl}}/common/images/cman_uninstall-data.png" width="600px" alt="You can optionally remove database data">
 
 Click one of the following:
 
@@ -34,5 +34,5 @@ Click one of the following:
 
 	You can click **Back** to back up the database first if you did not do so already.
 
-Continue with [Step 4. Uninstall]({{page.baseurl}}comp-mgr/extens-man/extensman-uninst-final.html)
+Continue with [Step 4. Uninstall]({{page.baseurl}}/comp-mgr/extens-man/extensman-uninst-final.html)
 

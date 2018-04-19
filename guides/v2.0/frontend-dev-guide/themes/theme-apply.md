@@ -20,11 +20,11 @@ Also, it gives information how to add a theme independent logo for your store.
 
 ## Prerequisites
 
-Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html).
 
 
 ## Apply a theme {#theme-apply-apply}
-After you <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+After you <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 To apply a theme:
 
@@ -80,6 +80,6 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 If the changes you configure in the Admin are not applied after you clear the cache and reload the page, try the following:
 
-- Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+- Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{page.baseurl}}/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
 
-- In your Magento database, in the `theme` table, check if the `type` value for your custom theme is "0". If it is "1" or "2", change it to "0". You can use a database tool such as [phpMyAdmin]({{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpmyadmin) or do it manually from the command line.
+- In your Magento database, in the `theme` table, check if the `type` value for your custom theme is "0". If it is "1" or "2", change it to "0". You can use a database tool such as [phpMyAdmin]({{page.baseurl}}/install-gde/prereq/optional.html#install-optional-phpmyadmin) or do it manually from the command line.

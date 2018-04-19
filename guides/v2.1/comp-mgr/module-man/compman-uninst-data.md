@@ -25,7 +25,7 @@ If the component has no data to remove, the following message displays. (If a co
 
 If the component has data to remove, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally component component database data">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl}}/common/images/cman_uninstall-data.png" width="600px" alt="You can optionally component component database data">
 
 Click one of the following:
 
@@ -34,5 +34,5 @@ Click one of the following:
 
 	You can click **Back** to back up the database first if you did not do so already.
 
-Continue with [Step 4. Uninstall]({{page.baseurl}}comp-mgr/module-man/compman-uninst-final.html)
+Continue with [Step 4. Uninstall]({{page.baseurl}}/comp-mgr/module-man/compman-uninst-final.html)
 

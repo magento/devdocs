@@ -10,9 +10,9 @@ github_link: ui_comp_guide/components/ui-massactions.md
 
 ## Overview
 
-The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
+The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html).
 
-See the [Admin Design Pattern Library (MassActions)]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the MassActions component.
+See the [Admin Design Pattern Library (MassActions)]({{page.baseurl}}/pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the MassActions component.
 
 #### Component Elements (classes, files)
 
@@ -53,7 +53,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
   <tr>
     <td><code>stickyTmpl</code></td>
-    <td>Additional component's template that is used when its parent <a href="{{page.baseurl}}ui_comp_guide/components/ui-toolbar.html">Toolbar</a> component receives a fixed position.</td>
+    <td>Additional component's template that is used when its parent <a href="{{page.baseurl}}/ui_comp_guide/components/ui-toolbar.html">Toolbar</a> component receives a fixed position.</td>
     <td>String</td>
     <td><code>ui/grid/sticky/actions</code></td>
   </tr>
@@ -77,7 +77,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   <tr>
     <td><code>callback</code></td>
     <td></td>
-    <td><a href="{{page.baseurl}}ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a></td>
+    <td><a href="{{page.baseurl}}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a></td>
     <td>Optional</td>
   </tr>
   <tr>

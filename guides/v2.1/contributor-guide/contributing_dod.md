@@ -117,7 +117,7 @@ Code to cover:
 
 * Must cover any formal backwards-incompatible changes on code level.
 For more information, see
-<a href="{{page.baseurl}}architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
+<a href="{{page.baseurl}}/architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 
@@ -145,8 +145,8 @@ The reviewer should check whether the task meets the original acceptance criteri
 The work cannot be considered as complete unless all the criteria are verified.
 
 
-[0]:{{page.baseurl}}coding-standards/docblock-standard-general.html
-[1]:{{page.baseurl}}architecture/back-compatibility.html
-[2]:{{page.baseurl}}test/testing.html
-[3]:{{page.baseurl}}test/integration/integration_test_execution.html
+[0]:{{page.baseurl}}/coding-standards/docblock-standard-general.html
+[1]:{{page.baseurl}}/architecture/back-compatibility.html
+[2]:{{page.baseurl}}/test/testing.html
+[3]:{{page.baseurl}}/test/integration/integration_test_execution.html
 [4]:https://github.com/magento/devdocs

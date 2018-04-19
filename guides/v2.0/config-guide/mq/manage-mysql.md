@@ -33,7 +33,7 @@ The following shows a `crontab` group entry:
 <div class="bs-callout bs-callout-tip" id="info" markdown="1">
 How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.
 
-See [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
+See [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
 </div>
 
 You can also use a process manager, such as [Supervisor](http://supervisord.org/index.html), to monitor the status of processes. The manager can use the command line to restart processes as needed.
@@ -59,7 +59,7 @@ Use the following command to return a list of message queue consumers:
     ./bin/magento queue:consumers:list
 
 #### Related Topics
-*   [Message Queues Overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-*   [Configure and run cron]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html)
-*   [Command-line configuration]({{page.baseurl}}config-guide/cli/config-cli-subcommands.html)
-*   [Message Queues]({{page.baseurl}}extension-dev-guide/message-queues/message-queues.html)
+*   [Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*   [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html)
+*   [Command-line configuration]({{page.baseurl}}/config-guide/cli/config-cli-subcommands.html)
+*   [Message Queues]({{page.baseurl}}/extension-dev-guide/message-queues/message-queues.html)

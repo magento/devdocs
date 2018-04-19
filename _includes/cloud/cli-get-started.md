@@ -1,6 +1,6 @@
 <div markdown="1">
 
-1.	Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.	Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to a directory to which the Magento file system owner has write access.
 2.	Enter the following command in a terminal to log in to your project:
 
@@ -32,6 +32,6 @@
 8.	Pull any updated code to your local for the environment ID (which is the Git branch):
 
 		git pull origin <environment ID>
-7.  Create a [snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) of the environment as a backup:
+7.  Create a [snapshot]({{page.baseurl}}/cloud/project/project-webint-snap.html) of the environment as a backup:
 
         magento-cloud snapshot:create -e <environment ID>

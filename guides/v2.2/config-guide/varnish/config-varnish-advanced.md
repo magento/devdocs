@@ -51,7 +51,7 @@ The `vcl_hit` subroutine defines how Varnish responds to a request for objects t
 ### When the Magento backend is healthy {#grace-healthy}
 
 
-When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} as described in [Configure Magento to use Varnish]({{page.baseurl}}config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
+When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} as described in [Configure Magento to use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
 
 The maximum amount of time that Varnish serves a stale object is the sum of the grace period (300 seconds by default) and the TTL value (86400 seconds by default).
 
@@ -177,4 +177,4 @@ sub vcl_backend_response {
 {% endcollapsible %}
 
 #### Final step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a>
+<a href="{{page.baseurl}}/config-guide/varnish/config-varnish-final.html">Final verification</a>

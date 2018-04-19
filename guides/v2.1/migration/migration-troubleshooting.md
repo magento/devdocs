@@ -63,7 +63,7 @@ Class <extension/class_name> does not exist but mentioned in:
 
 #### Explanation
 
-A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{page.baseurl}}/migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 #### Possible solutions
 

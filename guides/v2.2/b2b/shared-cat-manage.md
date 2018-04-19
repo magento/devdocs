@@ -147,7 +147,7 @@ Not applicable
 
 The following search returns all the custom shared catalogs (`type = 0`) in the system.
 
-See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -195,6 +195,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{page.baseurl}}b2b/shared-catalog.html)
-* [Assign categories and products]({{page.baseurl}}b2b/shared-cat-product-assign.html)
-* [Assign companies]({{page.baseurl}}b2b/shared-cat-company.html)
+* [Integrate with the SharedCatalog module]({{page.baseurl}}/b2b/shared-catalog.html)
+* [Assign categories and products]({{page.baseurl}}/b2b/shared-cat-product-assign.html)
+* [Assign companies]({{page.baseurl}}/b2b/shared-cat-company.html)
