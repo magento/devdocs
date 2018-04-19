@@ -8,10 +8,18 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Also, you can override the [`ADMIN_` variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html).
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
-See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
+```
+stage:
+  deploy:
+    DEPLOY_VARIABLE_NAME: value
+```
+
+For more information about customizing the build and deploy process:
+
+-  [Manage build and deploy actions]({{page.baseurl}}/cloud/project/magento-env-yaml.html)
+-  [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html)
 
 ### `CACHE_CONFIGURATION`
 
@@ -22,8 +30,6 @@ Use to configure Redis page and default caching.
 
 ```
 stage:
-  global:
-  build:
   deploy:
     CACHE_CONFIGURATION:
       frontend:
@@ -74,7 +80,7 @@ You can forcefully enable or disable the deployment of static content during the
 -  **Default**—`enterprise`
 -  **Version**—Available in all versions
 
-We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. For example, for Pro, this value may be `enterprise` indicating Staging and Production. For `enterprise`, it sets the `STATIC_CONTENT_THREADS` to `3`, otherwise sets it to 1 for Integration. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack.
+We manage the values and setting of this variable. It identifies the type of environment: Integration, Staging, or Production. The `enterprise` value indicates a Staging and Production environment and sets the `STATIC_CONTENT_THREADS` to `3`; otherwise, sets it to `1` for Integration. This is highly important for Pro Production environment, which has a three-node, high-availability architecture with a very different technology stack.
 
 ### `QUEUE_CONFIGURATION`
 
@@ -85,19 +91,17 @@ Use this environment variable to retain customized AMQP service settings between
 
 ```
 stage:
-  global:
-  build:
   deploy:
-        QUEUE_CONFIGURATION:
-          amqp:
-            host: test.host
-            port: 1234
-          amqp2:
-            host: test.host2
-            port: 12345
-          mq:
-            host: mq.host
-            port: 1234
+    QUEUE_CONFIGURATION:
+      amqp:
+        host: test.host
+        port: 1234
+      amqp2:
+        host: test.host2
+        port: 12345
+      mq:
+        host: mq.host
+        port: 1234
 ```
 
 By default, the deployment process overwrites all settings in the `env.php` file.
@@ -114,7 +118,7 @@ Specifies which [gzip](https://www.gnu.org/software/gzip){target="\_blank} compr
 -  **Default**—`standard`
 -  **Version**—Magento 2.2.0 and later
 
-Allows you to customize the [deployment strategy](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. Refer to [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html) for more information.
+Allows you to customize the [deployment strategy](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Use these options _only_ if you have more than one locale:
 
@@ -131,8 +135,6 @@ Use this environment variable to retain customized search service settings betwe
 
 ```
 stage:
-  global:
-  build:
   deploy:
    SEARCH_CONFIGURATION:
      engine: elasticsearch
@@ -153,8 +155,7 @@ Use to configure Redis session storage. You must specify the `save`, `redis`, `h
 
 ```
 stage: 
-  build: ~
-  deploy: 
+  deploy:
     SESSION_CONFIGURATION: 
       redis: 
         bot_first_lifetime: 100
@@ -179,8 +180,8 @@ By default, the deployment process overwrites all settings in the `env.php` file
 Themes can include numerous files. Set this variable to true if you want to skip copying over theme files during deployment. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude the `Magento/luma` theme:
 
 ```
- stage:
-  build:
+stage:
+  deploy:
     SCD_EXCLUDE_THEMES: Magento/luma 
 ```
 

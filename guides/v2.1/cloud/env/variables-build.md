@@ -9,13 +9,20 @@ functional_areas:
   - Configuration
 ---
 
-The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
+The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
+```
+stage:
+  build:
+    BUILD_VARIABLE_NAME: value
+```
 
-<div class="bs-callout bs-callout-info" markdown="1">
-You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
-</div>
+For more information about customizing the build and deploy process:
+
+-  [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html)
+-  [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html)
+
+{% include note.html type="info" content="You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket." %}
 
 ### `EXCLUDE_THEMES`
 
@@ -27,7 +34,9 @@ When enabled, this option does not generate static content for the specified the
 For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. To exclude the theme, use the following:
 
 ```
-exclude_themes=magento/luma,magento/my-theme
+stage:
+  build:
+    exclude_themes=magento/luma,magento/my-theme
 ```
 
 ### `SCD_COMPRESSION_LEVEL`

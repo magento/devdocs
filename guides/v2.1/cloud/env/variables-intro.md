@@ -4,19 +4,6 @@ group: cloud
 title: Environment variables
 version: 2.1
 github_link: cloud/env/variables-intro.md
-redirect_from:
-  - /guides/v2.1/cloud/live/config-reference-most.html
-  - /guides/v2.2/cloud/live/config-reference-most.html
-  - /guides/v2.3/cloud/live/config-reference-most.html
-  - /guides/v2.1/cloud/live/config-reference-payment.html
-  - /guides/v2.2/cloud/live/config-reference-payment.html
-  - /guides/v2.3/cloud/live/config-reference-payment.html
-  - /guides/v2.1/cloud/live/config-reference-sens.html
-  - /guides/v2.2/cloud/live/config-reference-sens.html
-  - /guides/v2.3/cloud/live/config-reference-sens.html
-  - /guides/v2.1/cloud/env/environment-vars_over.html
-  - /guides/v2.2/cloud/env/environment-vars_over.html
-  - /guides/v2.2/cloud/env/environment-vars_over.html
 functional_areas:
   - Cloud
   - Configuration
@@ -35,7 +22,13 @@ Variables are _hierarchical_, which means that if a variable is not overridden, 
 You use the [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 ## Global variables
-The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage.
+The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage.  Insert these variables in the `global` stage of the `.magento.env.yaml` file:
+
+```
+stage:
+  global:
+    GLOBAL_VARIABLE_NAME: value
+```
 
 ### `SCD_ON_DEMAND`
 

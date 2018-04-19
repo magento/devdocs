@@ -8,10 +8,18 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Also, you can override the [`ADMIN_` variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html).
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
-See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
+```
+stage:
+  deploy:
+    DEPLOY_VARIABLE_NAME: value
+```
+
+For more information about customizing the build and deploy process:
+
+-  [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html)
+-  [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html)
 
 ### `CACHE_CONFIGURATION`
 
@@ -22,8 +30,6 @@ Use to configure Redis page and default caching.
 
 ```
 stage:
-  global:
-  build:
   deploy:
     CACHE_CONFIGURATION:
       frontend:
@@ -81,7 +87,18 @@ Enables the `var/generation` and `var/di` generated folders to be writable.
 -  **Default**—`enterprise`
 -  **Version**—Available in all versions
 
-We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. For example, for Pro, this value may be `enterprise` indicating Staging and Production. For `enterprise`, it sets the `STATIC_CONTENT_THREADS` to `3`, otherwise sets it to 1 for Integration. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack.
+We manage the values and setting of this variable. It identifies the type of environment: Integration, Staging, or Production. The `enterprise` value indicates a Staging and Production environment and sets the `STATIC_CONTENT_THREADS` to `3`; otherwise, sets it to `1` for Integration. This is highly important for Pro Production environment, which has a three-node, high-availability architecture with a very different technology stack.
+
+### `MYSQL_USE_SLAVE_CONNECTION`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+```
+stage:
+    deploy:
+        MYSQL_USE_SLAVE_CONNECTION: true
+```
 
 ### `QUEUE_CONFIGURATION`
 
@@ -92,29 +109,34 @@ Use this environment variable to retain customized AMQP service settings between
 
 ```
 stage:
-  global:
-  build:
   deploy:
-        QUEUE_CONFIGURATION:
-          amqp:
-            host: test.host
-            port: 1234
-          amqp2:
-            host: test.host2
-            port: 12345
-          mq:
-            host: mq.host
-            port: 1234
+    QUEUE_CONFIGURATION:
+      amqp:
+        host: test.host
+        port: 1234
+      amqp2:
+        host: test.host2
+        port: 12345
+      mq:
+        host: mq.host
+        port: 1234
 ```
 
 By default, the deployment process overwrites all settings in the `env.php` file.
+
+### `REDIS_USE_SLAVE_CONNECTION`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Enabling the connection to the slave node improves the performance load by using the asynchronous capability of Redis. 
 
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
 -  **Version**—Magento 2.1.4 and later
 
-Specifies which [gzip](https://www.gnu.org/software/gzip){target="\_blank} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
+Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
 ### `SEARCH_CONFIGURATION`
 
@@ -125,15 +147,13 @@ Use this environment variable to retain customized search service settings betwe
 
 ```
 stage:
-  global:
-  build:
   deploy:
-   SEARCH_CONFIGURATION:
-     engine: elasticsearch
-     elasticsearch_server_hostname: hostname
-     elasticsearch_server_port: '123456'
-     elasticsearch_index_prefix: magento
-     elasticsearch_server_timeout: '15'
+    SEARCH_CONFIGURATION:
+      engine: elasticsearch
+      elasticsearch_server_hostname: hostname
+      elasticsearch_server_port: '123456'
+      elasticsearch_index_prefix: magento
+      elasticsearch_server_timeout: '15'
 ```
 
 By default, the deployment process overwrites all settings in the `env.php` file. 
@@ -146,9 +166,8 @@ By default, the deployment process overwrites all settings in the `env.php` file
 Use to configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
 ```
-stage: 
-  build: ~
-  deploy: 
+stage:
+  deploy:
     SESSION_CONFIGURATION:
       redis: 
         bot_first_lifetime: 100
@@ -173,8 +192,8 @@ By default, the deployment process overwrites all settings in the `env.php` file
 Themes can include numerous files. Set this variable to true if you want to skip copying over theme files during deployment. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude the `Magento/luma` theme:
 
 ```
- stage:
-  build:
+stage:
+  deploy:
     SCD_EXCLUDE_THEMES: Magento/luma 
 ```
 
