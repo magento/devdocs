@@ -17,7 +17,7 @@ Unlike other YAML configuration files, such as [`.magento.app.yaml`]({{page.base
 
 The `.magento.env.yaml` file includes the following sections:
 
--   **`stage`**—Contains the following sections:
+-   **`stage`**—Accommodates the following stages of deployment:
     -   `global`—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.
     -   `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the `build_options.ini` file override settings in this section.
     -   `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
@@ -25,8 +25,9 @@ The `.magento.env.yaml` file includes the following sections:
 -   **`log`**—Controls notifications, including notification types and level of detail.
     -   `slack`—Configure a message to send to a Slack bot.
     -   `email`—Configure an email to send to one or more email recipients.
+    -  [logging handlers]({{page.baseurl}}/cloud/env/log-handlers.html)—Configure hardware and software application messages sent to a remote logging server.
 
-The latest sample of the `.magento.env.yaml` file is in the [`magento-cloud` template repository](https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml). You can find a detailed definition for each variable in the following reference topics:
+The latest sample of the `.magento.env.yaml` file is in the [`magento-cloud` template repository](https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml){:target="\_blank"}. You can find a detailed definition for each variable in the following reference topics:
 
 -   [Application]({{page.baseurl}}/cloud/env/environment-vars_magento.html)—variables control administrative credentials
 -   [Cloud]({{page.baseurl}}/cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
