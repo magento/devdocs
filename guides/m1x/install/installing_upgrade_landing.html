@@ -87,7 +87,7 @@ If you're currently using an EE version earlier than EE 1.13.0.0, upgrade <em>di
 <li>Back up the system</li>
 <li>Upgrade to CE 1.9 or EE 1.14</li></ol>
 </p>
-<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: 
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>:
   <ul><li>Use caution when upgrading from versions older than CE 1.7 or EE 1.12 because core code on which your extensions are based and database schema have likely changed.</li>
     <li>To apply the <a href="https://magento.com/security/patches/supee-8788" target="_blank">security patch (October 2016)</a> as part of your upgrade, see <a href="/guides/m1x/other/ht_install-patches.html#apply-8788">How to Apply the SUPEE-8788 Patch</a>.</li></ul></div>
 
@@ -135,13 +135,13 @@ This includes the <code>media</code> directory and subdirectories; all extension
 <li style="list-style-type:lower-alpha">In a web browser, go to your new base URL.</li>
 <li style="list-style-type:lower-alpha">Wait for upgrade scripts to run.</li>
 <img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Set all indexers to update when scheduled (<strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Index Management</strong>, <strong>Update when scheduled</strong>.</li>
-<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects: 
+<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects:
 <pre>cd [your Magento install dir]
 php -f shell/url_migration_to_1_13.php - <em>thread-count</em></pre>
 <em>thread-count</em> is the number of CPU cores in your Magento server, minus 1, to a maximum of 15.</li>
-<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line: 
+<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line:
 <pre>[your Magento install dir]/php -f shell/indexer.php -- --reindexall</pre></li>
-<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line: 
+<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line:
 <pre>[your Magento install dir]/var/cache /var/full_page_cache /var/locks</pre></li>
 <li style="list-style-type:lower-alpha">Enable cron and make sure the Magento cron job is set up.</li>
 <li style="list-style-type:lower-alpha">Verify the upgraded system is now identical to the production system.<br />
@@ -172,13 +172,13 @@ This includes the <code>media</code> directory and subdirectories; all extension
 <li style="list-style-type:lower-alpha">Copy your production <code>media</code> directory, extensions, themes, and other customizations to the development system.</li>
 <li style="list-style-type:lower-alpha">Copy <code>local.xml</code> to <code>[your Magento install dir]/app/etc</code> and edit it if necessary to reference the production database instance.</li>
 <img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Stop all cron jobs.</li>
-<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects: 
+<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects:
 <pre>[your Magento install dir]/php -f shell/url_migration_from_1_13_0_0_to_1_13_0_2.php</pre></li>
 <li style="list-style-type:lower-alpha">In a web browser, go to your new base URL.</li>
 <li style="list-style-type:lower-alpha">Wait for upgrade scripts to run.</li>
-<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line: 
+<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line:
 <pre>[your Magento install dir]/php -f shell/indexer.php -- --reindexall</pre></li>
-<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line: 
+<img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line:
 <pre>[your Magento install dir]/var/cache /var/full_page_cache /var/locks</pre></li>
 <li style="list-style-type:lower-alpha">Enable cron and make sure the Magento cron job is set up.</li>
 <li style="list-style-type:lower-alpha">Verify the upgraded system is now identical to the production system.<br />

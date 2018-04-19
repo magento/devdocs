@@ -14,13 +14,13 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/get-started/authentication/gs-authentication-oauth.html">
+	<link rel="canonical" href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
 
   <script>
-    var baseUrl = "/";
+    var baseUrl = "";
   </script>
 
 	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
@@ -71,7 +71,7 @@
 
 		<div class="container">
 
-			<a class="logo" href="/guides/v2.1/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+			<a class="logo" href="/guides/v2.1"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			
 <div class="version-switcher dropdown" data-version="2.1">
@@ -398,7 +398,7 @@
         
         
         
-        <li class="nav-level2 active " id="oauth-based-authentication">
+        <li class="nav-level2  " id="oauth-based-authentication">
             
             
         
@@ -493,7 +493,7 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.1/"><span>Home</span></a>
+    <a class="breadcrumb-item" href="/guides/v2.1"><span>Home</span></a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
@@ -573,7 +573,7 @@
 
 			<p>Magento OAuth authentication is based on <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a>, an open standard for secure <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.</p>
 
-<p>In Magento, a third-party <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that uses OAuth for authentication is called an <a href="/guides/v2.1//get-started/create-integration.html"><em>integration</em></a>. An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.</p>
+<p>In Magento, a third-party <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that uses OAuth for authentication is called an <a href="/guides/v2.1/get-started/create-integration.html"><em>integration</em></a>. An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.</p>
 
 <p>As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.</p>
 
@@ -1085,13 +1085,13 @@ The credentials are posted to <code class="highlighter-rouge">endpoint.php</code
 
 <h2 id="related-topics">Related topics</h2>
 
-<p><a href="/guides/v2.1//get-started/create-integration.html">Create an integration</a></p>
+<p><a href="/guides/v2.1/get-started/create-integration.html">Create an integration</a></p>
 
-<p><a href="/guides/v2.1//get-started/authentication/oauth-errors.html">OAuth error codes</a></p>
+<p><a href="/guides/v2.1/get-started/authentication/oauth-errors.html">OAuth error codes</a></p>
 
-<p><a href="/guides/v2.1//get-started/gs-web-api-request.html">Construct a request</a></p>
+<p><a href="/guides/v2.1/get-started/gs-web-api-request.html">Construct a request</a></p>
 
-<p><a href="/guides/v2.1//extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></p>
+<p><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1145,7 +1145,7 @@ The credentials are posted to <code class="highlighter-rouge">endpoint.php</code
         <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
         <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
         <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
       </ul>
     </div>
 

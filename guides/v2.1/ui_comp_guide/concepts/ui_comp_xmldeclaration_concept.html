@@ -14,13 +14,13 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">
+	<link rel="canonical" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
 
   <script>
-    var baseUrl = "/";
+    var baseUrl = "";
   </script>
 
 	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
@@ -71,7 +71,7 @@
 
 		<div class="container">
 
-			<a class="logo" href="/guides/v2.1/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+			<a class="logo" href="/guides/v2.1"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
 
 			
 <div class="version-switcher dropdown" data-version="2.1">
@@ -1015,7 +1015,7 @@
         
         
         
-        <li class="nav-level2 active " id="about-xml-сonfiguration-of-ui-сomponents">
+        <li class="nav-level2  " id="about-xml-сonfiguration-of-ui-сomponents">
             
             
         
@@ -1262,7 +1262,7 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.1/"><span>Home</span></a>
+    <a class="breadcrumb-item" href="/guides/v2.1"><span>Home</span></a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
@@ -1347,7 +1347,7 @@
 <h2 id="about-the-layout-configuration-file-and-ui-component-declaration">About the layout configuration file and UI component declaration</h2>
 <p>Every <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that has view representation contains the directory named <code class="highlighter-rouge">layout</code>. In this directory, the <code class="highlighter-rouge">.xml</code> declarations of the pages are stored. These <code class="highlighter-rouge">.xml</code> declarations are, in fact, the pages’ <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>.</p>
 
-<p>In a typical Magento <code class="highlighter-rouge">.xml</code> layout file we see a <code class="highlighter-rouge">&lt;head/&gt;</code> node, <code class="highlighter-rouge">&lt;title/&gt;</code> node with the name of the page, and sometimes <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">links to CSS and JS files</a>. There are other nodes as well, the most important for us now is the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceContainer/&gt;</code> node</a>. (The <code class="highlighter-rouge">name</code> attribute in this node is responsible for the position of the container on the page.). <a href="/guides/v2.1//ui_comp_guide/bk-ui_comps.html#general-structure">Basic</a> UI components are declared in this node. All nested components are declared in the basic components’ instances configuration files (not in the page layouts).</p>
+<p>In a typical Magento <code class="highlighter-rouge">.xml</code> layout file we see a <code class="highlighter-rouge">&lt;head/&gt;</code> node, <code class="highlighter-rouge">&lt;title/&gt;</code> node with the name of the page, and sometimes <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">links to CSS and JS files</a>. There are other nodes as well, the most important for us now is the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceContainer/&gt;</code> node</a>. (The <code class="highlighter-rouge">name</code> attribute in this node is responsible for the position of the container on the page.). <a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html#general-structure">Basic</a> UI components are declared in this node. All nested components are declared in the basic components’ instances configuration files (not in the page layouts).</p>
 
 <p>Example of a basic <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> declaration:</p>
 
@@ -1506,7 +1506,7 @@
         <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
         <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
         <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
       </ul>
     </div>
 
