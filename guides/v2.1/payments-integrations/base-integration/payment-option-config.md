@@ -26,7 +26,7 @@ In the `config.xml` file in your `%Vendor_Module%/etc` directory, configure the 
 | `currency`             | supported currency                                                                                                                                                                                                             |                                       |
 | `is_gateway`           | is an integration with gateway                                                                                                                                                                                                 | Boolean                               |
 | `merchant_gateway_key` | encrypted merchant credential                                                                                                                                                                                                  | string                                |
-| `model`                | [payment method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html) used for integration with Sales and Checkout modules                                                                 | string                                |
+| `model`                | [payment method facade]({{page.baseurl}}/payments-integrations/base-integration/facade-configuration.html) used for integration with Sales and Checkout modules                                                                 | string                                |
 | `order_status`         | default {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %}                                                                                                                         |                                       |
 | `paymentInfoKeys`      | transaction request/response fields displayed on payment information block (can be any fields from payment additional information)                                                                                             | list of comma separated values        |
 | `privateInfoKeys`      | `paymentInfoKeys` fields which should not be displayed in customer payment information block (can be any fields from payment additional information)                                                                           |                                       |
@@ -69,5 +69,5 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
 
 ## What's next
 
-- [Payment  method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html)
-- [Payment info rendering in Admin checkout]({{page.baseurl}}payments-integrations/base-integration/formblocktype.html)
+- [Payment  method facade]({{page.baseurl}}/payments-integrations/base-integration/facade-configuration.html)
+- [Payment info rendering in Admin checkout]({{page.baseurl}}/payments-integrations/base-integration/formblocktype.html)

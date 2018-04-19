@@ -17,7 +17,7 @@ functional_areas:
 ## Overview: Magento file system ownership and appendix (legacy) {#appendix-over}
 This topic is provided for convenience for anyone using {{site.data.var.ce}} or {{site.data.var.ee}} versions 2.0.0&ndash;2.0.5. 
 
-In versions *before* 2.0.6, Magento explicitly set file system permissions when we created files, such as {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see [Overview of ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+In versions *before* 2.0.6, Magento explicitly set file system permissions when we created files, such as {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see [Overview of ownership and permissions]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 ## Summary of file system permissions {#appendix-summary}
 This section summarizes the permissions Magento uses when creating files in the file system.
@@ -51,12 +51,12 @@ When you change to production mode, we set the following permissions on these di
 ## Set permissions before installing the Magento software {#appendix-install}
 Use the following steps:
 
-1.	If you haven't already done so, log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1.	If you haven't already done so, log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 2.	Change to the Magento installation directory:
 
 		cd <web server docroot>/<magento2 base dir>
 
-	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{page.baseurl}}install-gde/basics/basics_docroot.html">here</a>.<br>
+	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{page.baseurl}}/install-gde/basics/basics_docroot.html">here</a>.<br>
 
 	Examples:
 

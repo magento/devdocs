@@ -35,7 +35,7 @@ You can use the `Magento\CmsUrlRewrite\Observer\ProcessUrlRewriteSavingObserver`
        }
    }
 ```
-See [Events and observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html) for more information about creating an observer.
+See [Events and observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html) for more information about creating an observer.
 
 ## Configure the custom module
 
@@ -64,5 +64,5 @@ Update the `graphql.xml` and `events.xml` file in your module's `etc` directory 
 
 ## Related Topics
 
-* [Events and observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html)
-* [urlResolver endpoint]({{page.baseurl}}graphql/url-resolver.html)
+* [Events and observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html)
+* [urlResolver endpoint]({{page.baseurl}}/graphql/url-resolver.html)

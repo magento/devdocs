@@ -19,7 +19,7 @@ Coding standards are a set of guidelines that describe how code should be writte
 These standards define coding practices that determine the style of the code.
 Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.
 
-[Magento's Coding Standards]({{page.baseurl}}coding-standards/bk-coding-standards.html) are based on the following:
+[Magento's Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html) are based on the following:
 
 * [Zend Coding standards](http://framework.zend.com/manual/1.12/en/coding-standard.html){:target="_blank"}
 * [PSR2](http://www.php-fig.org/psr/psr-2/){:target="_blank"}
@@ -67,7 +67,7 @@ For Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extensio
 Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.
 
 ### Using around plugins
-Avoid using [around method plugins]({{page.baseurl}}extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance.
+Avoid using [around method plugins]({{page.baseurl}}/extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance.
 
 The only use case for around method plugins is when the execution of all further plugins and original methods need termination.
 
@@ -75,7 +75,7 @@ Use after method plugins if you require arguments for replacing or altering func
 
 ### Test your code
 
-Write testable code and follow the [Magento Testing Guide]({{page.baseurl}}test/testing.html) to create tests for your code.
+Write testable code and follow the [Magento Testing Guide]({{page.baseurl}}/test/testing.html) to create tests for your code.
 Tests help describe what your code does under different conditions and define its functionality.
 
 Make sure your tests cover a variety of conditions to prevent the introduction of bugs when you add new code.

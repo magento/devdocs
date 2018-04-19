@@ -19,7 +19,7 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 * Support for both <a href="{{page.baseurl}}/rest/bk-rest.html">REST</a> (Representational State Transfer) and <a href="{{page.baseurl}}/soap/bk-soap.html">SOAP</a> (Simple Object Access Protocol). In Magento 2, the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} coverage is the same for both REST and SOAP.
 
-* Three types of <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">authentication</a>:
+* Three types of <a href="{{page.baseurl}}/get-started/authentication/gs-authentication.html">authentication</a>:
 	* Third-party applications authenticate with <a href="{{page.baseurl}}/get-started/authentication/gs-authentication-oauth.html">OAuth 1.0a</a>.
 	* Mobile applications authenticate using <a href="{{page.baseurl}}/get-started/authentication/gs-authentication-token.html">tokens</a>.
 	* Administrators and customers are authenticated with <a href="{{page.baseurl}}/get-started/authentication/gs-authentication-token.html">login credentials</a>.

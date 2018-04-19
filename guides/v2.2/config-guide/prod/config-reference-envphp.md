@@ -31,6 +31,6 @@ The `env.php` file contains the following sections:
 | `install`         | The installation date                          |
 | `queue`           | [Message queues][message-queues] settings      |
 
-[x-frame-options]: {{page.baseurl}}config-guide/secy/secy-xframe.html
-[magento-mode]: {{page.baseurl}}config-guide/bootstrap/magento-modes.html
-[message-queues]: {{page.baseurl}}config-guide/mq/rabbitmq-overview.html
+[x-frame-options]: {{page.baseurl}}/config-guide/secy/secy-xframe.html
+[magento-mode]: {{page.baseurl}}/config-guide/bootstrap/magento-modes.html
+[message-queues]: {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html

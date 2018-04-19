@@ -215,4 +215,4 @@ To install Solr and Jetty:
 		tar -xvf solr-4.10.4.tgz
 
 #### Next step
-[Configure Solr to work with Magento]({{page.baseurl}}config-guide/solr/solr-magento.html){:target="_blank"}
+[Configure Solr to work with Magento]({{page.baseurl}}/config-guide/solr/solr-magento.html){:target="_blank"}

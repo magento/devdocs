@@ -28,6 +28,6 @@ The `Customer`,`Catalog` and `Order` resource models use EAV attributes.
 
 ## Related topics {#related}
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>

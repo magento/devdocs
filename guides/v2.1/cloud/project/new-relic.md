@@ -90,7 +90,7 @@ All collected data details the time spent on an action transmitting data, querie
 
 ## New Relic and Blackfire
 
-You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire.io]({{page.baseurl}}cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
+You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire Profiler]({{page.baseurl}}/cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
 
 -  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
 -  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.

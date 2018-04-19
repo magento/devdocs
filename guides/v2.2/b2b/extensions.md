@@ -13,4 +13,4 @@ functional_areas:
   - B2B
 ---
 
-See [Module Reference Guide]({{page.baseurl}}mrg/intro.html) for information about each {{site.data.var.b2b}} module.
+See [Module Reference Guide]({{page.baseurl}}/mrg/intro.html) for information about each {{site.data.var.b2b}} module.

@@ -2,7 +2,8 @@
 {% if url.size > 0 %}
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="{% if page.guide_version == site.version or page.guide_version == nil %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}"><span>Home</span></a>
+    <a class="breadcrumb-item" href="{% if page.guide_version == site
+    .version or page.guide_version == nil %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}"><span>Home</span></a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
@@ -26,7 +27,7 @@
       <li class="breadcrumb-item{% if crumb.url == page.url %} active{% endif %}" property="itemListElement" typeof="ListItem">
 
         {% if crumb.url != page.url %}
-          <a property="item" typeof="WebPage" href="{{ crumb.url | prepend: page.baseurl }}">
+          <a property="item" typeof="WebPage" href="{{ page.baseurl }}/{{ crumb.url }}">
             <span property="name">{{ caption }}</span>
           </a>
         {% else %}

@@ -89,7 +89,7 @@ Follow the [MFTF project] and [contribute on Github].
 <!-- LINK DEFINITIONS -->
 
 [contribute on Github]: ../contribution-guidelines.html
-[Functional Testing Framework]: {{page.baseurl}}mtf/mtf_introduction.html
+[Functional Testing Framework]: {{page.baseurl}}/mtf/mtf_introduction.html
 
 [`magento` repositories]: https://github.com/magento
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework

@@ -105,7 +105,7 @@ Use no space before the colon and one space after the colon for the sake of read
 ## Block-level elements
 Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:
 
-<img src="{{ site.baseurl }}common/images/h5d-sectioning-flowchart.png">
+<img src="{{ site.baseurl}}/common/images/h5d-sectioning-flowchart.png">
 
 
 ## Class names

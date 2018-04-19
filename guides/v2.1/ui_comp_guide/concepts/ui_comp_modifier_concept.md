@@ -11,7 +11,7 @@ github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 
 ## What's in this topic
 
-This topic describes how to use {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} modifiers that are the server-side part of [UI components configuration]({{page.baseurl}}ui_comp_guide/concepts//ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when [static declaration in XML configuration files]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{page.baseurl}}howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}.
+This topic describes how to use {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} modifiers that are the server-side part of [UI components configuration]({{page.baseurl}}/ui_comp_guide/concepts//ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when [static declaration in XML configuration files]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{page.baseurl}}/howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}.
 
 ## General implementation overview
 
@@ -104,7 +104,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 </virtualType>
 {% endhighlight %}
 
-, where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{page.baseurl}}extension-dev-guide/depend-inj.html#configuring-a-type).
+, where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{page.baseurl}}/extension-dev-guide/depend-inj.html#configuring-a-type).
 
 (If you want to use this sample in your `di.xml`, replace the sample values with with the real names of your entities.)
 
@@ -115,5 +115,5 @@ To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\Po
 
 ## Related reading
 
-- [Dependency injection]( {{page.baseurl}}extension-dev-guide/depend-inj.html)
-- [How Do I: Customize product creation form]({{page.baseurl}}howdoi/customize_product.html#modifier)
+- [Dependency injection]( {{page.baseurl}}/extension-dev-guide/depend-inj.html)
+- [How Do I: Customize product creation form]({{page.baseurl}}/howdoi/customize_product.html#modifier)

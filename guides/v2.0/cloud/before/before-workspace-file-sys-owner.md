@@ -13,9 +13,9 @@ functional_areas:
   - Setup
 ---
 #### Previous step: {#mage-owner-about-group}
-[Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+[Enable SSH keys]({{ page.baseurl}}/cloud/before/before-workspace-ssh.html)
 
-**This step is optional if you installed nginx as your web server.** The [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner) provides root access and permissions, for security reasons on a hosted system. Apache installations require
+**This step is optional if you installed nginx as your web server.** The [Magento file system owner]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner) provides root access and permissions, for security reasons on a hosted system. Apache installations require
 
 To enable the web server (Apache) to write files and directories in the Magento file system but to also maintain *ownership* by the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}, both users must be in the same group. This is necessary so both users can share access to Magento files, including files created using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or other web-based utilities.
 
@@ -85,4 +85,4 @@ To complete the task, restart the web server:
 *	CentOS: `service httpd restart`
 
 #### Next step:
-[Clone and branch the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
+[Clone and branch the project]({{ page.baseurl}}/cloud/before/before-setup-env-2_clone.html)

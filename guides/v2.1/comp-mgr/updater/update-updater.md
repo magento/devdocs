@@ -16,7 +16,7 @@ In some cases, you might need to update the updater application, which is respon
 
 To update the updater application:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html).
 2.	Delete, move, or rename the directory containing the updater application.
 
 	For example,
@@ -25,5 +25,5 @@ To update the updater application:
 3.	Change to your Magento 2 installation directory and enter the following command:
 
 		composer create-project magento/updater update --repository https://repo.magento.com
-4.	If prompted, enter your Magento [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
+4.	If prompted, enter your Magento [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html).
 5.	Wait while {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} installs the updater and its dependencies.

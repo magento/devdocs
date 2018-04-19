@@ -91,7 +91,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 ## Add the new component to the checkout page layout
 
-Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{page.baseurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
+Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{page.baseurl}}/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is a an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
@@ -109,7 +109,7 @@ To disable the component in your `checkout_index_index.xml` use the following in
 
 ## Remove a component
 
-To remove a component from layout rendering, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. In your plugin, implement the around method removing the corresponding layout nodes at run-time.
+To remove a component from layout rendering, you need to create a [plugin]({{page.baseurl}}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. In your plugin, implement the around method removing the corresponding layout nodes at run-time.
 
 The following sample is an example of the around method removing a component:
 

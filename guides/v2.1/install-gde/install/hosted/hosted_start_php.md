@@ -21,7 +21,7 @@ To configure PHP:
 1.	If necessary, start the cPanel and click **Home** to return to the {% glossarytooltip 2f4a0fcd-4106-4194-b47b-018ffbce3ac0 %}home page{% endglossarytooltip %}.
 2.	In the Software section, click **Select PHP Version**.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_php.png" width="550px" alt="Start out configuring PHP">
+	<img src="{{ site.baseurl}}/common/images/install-merch_php.png" width="550px" alt="Start out configuring PHP">
 
 3.	From the **PHP Version** list at the top of the page, click either **5.5** or **5.6**.
 
@@ -33,9 +33,9 @@ To configure PHP:
 
 	You can optionally select other PHP extensions if you want.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_php-ext.png" width="750px" alt="Select PHP extensions">
+	<img src="{{ site.baseurl}}/common/images/install-merch_php-ext.png" width="750px" alt="Select PHP extensions">
 
 5.	Click **Save**.
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>
+<a href="{{page.baseurl}}/install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>

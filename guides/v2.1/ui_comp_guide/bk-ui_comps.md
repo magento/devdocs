@@ -32,7 +32,7 @@ They are designed for simple and flexible user interface (UI) rendering. Compone
 
 Magento UI components are implemented as a standard {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} named Magento_UI.
 
-To use UI components in your custom module, you need to add a dependency for the Magento_UI module in [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
+To use UI components in your custom module, you need to add a dependency for the Magento_UI module in [your component's composer.json file]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html).
 
 The following XSD file contains rules and limitations shared between all components (both definitions and instance configurations):
 
@@ -44,13 +44,13 @@ The following XSD file contains rules and limitations shared between all compone
 In Magento 2 there are basic and secondary UI components.
 
 Basic components are:
-* [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html)
+* [Listing component]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html)
 
-* [Form component]({{page.baseurl}}ui_comp_guide/components/ui-form.html)
+* [Form component]({{page.baseurl}}/ui_comp_guide/components/ui-form.html)
 
 All other UI components are secondary.
 
-Basic components are declared in the [page layout files]({{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page); secondary components are declared in the top-level components’ instances configuration files.
+Basic components are declared in the [page layout files]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page); secondary components are declared in the top-level components’ instances configuration files.
 
 All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
@@ -72,7 +72,7 @@ With Magento, you may apply different approaches to implementing a UI element, a
 
 We recommend using UI components as much as possible and tend to do the same in Magento core.
 
-UI components work well together: they communicate with each other via the [uiRegistry service]({{page.baseurl}}ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry) that tracks their asynchronous initialization. Therefore, if we need to extend something that has already been implemented as a hierarchy of UI components or add a new feature that should interact with other UI components, it's easier and more effective to use a UI component.
+UI components work well together: they communicate with each other via the [uiRegistry service]({{page.baseurl}}/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry) that tracks their asynchronous initialization. Therefore, if we need to extend something that has already been implemented as a hierarchy of UI components or add a new feature that should interact with other UI components, it's easier and more effective to use a UI component.
 
 ## What is a UI component?
 
@@ -80,7 +80,7 @@ UI component is a combination of:
 
 1. **XML declaration** that specifies the component's configuration settings and inner structure.
 
-2. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
+2. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
 
 
 3. **Related template(s)**
@@ -101,7 +101,7 @@ An instance of UI component is usually based on the hierarchy of child UI compon
 
 The picture below shows how the JavaScript class of a UI component is implemented.
 
-![JavaScript class implementation of a UI component]({{site.baseurl}}common/images/ui_comp_js_class.png)
+![JavaScript class implementation of a UI component]({{site.baseurl}}/common/images/ui_comp_js_class.png)
 
 ### Templates
 
@@ -112,8 +112,8 @@ A UI component can be bound to one or more {% glossarytooltip a2aff425-07dd-4bd6
 A particular instance of a UI component is defined primarily by the following:
 
 1. `<Magento_Ui_module_dir>/view/base/ui_component/etc/definition.xml`: default components' configuration. Can be extended in custom modules.
-2. [UI component's XML declaration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
-3. [Backend/PHP modifiers]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html).
+2. [UI component's XML declaration]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
+3. [Backend/PHP modifiers]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
 4. Configuration inside the JavaScript classes.
 
 ## Things to remember when working with UI components
