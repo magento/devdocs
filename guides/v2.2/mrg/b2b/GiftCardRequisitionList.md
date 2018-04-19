@@ -27,8 +27,8 @@ The `Magento_GiftCardRequisitionList` module has a dependency on the `Magento_Re
 
 ## Structure
 
-[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html).
+[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{page.baseurl}}release-notes/changes/b2b_changes.html).
+You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{page.baseurl}}/release-notes/changes/b2b_changes.html).

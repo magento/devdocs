@@ -18,4 +18,4 @@ Use this chance to review the list of extensions. To simplify future upgrades, i
 There are no official tools available for migrating Magento 1 extensions to Magento 2.
 You must create a new extension from your old code using the [Magento 2 coding standard][m2-coding-standard].
 
-[m2-coding-standard]: {{page.baseurl}}coding-standards/bk-coding-standards.html
+[m2-coding-standard]: {{page.baseurl}}/coding-standards/bk-coding-standards.html

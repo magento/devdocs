@@ -43,7 +43,7 @@ The Magento UI library provides the ability to customize and reuse the following
 The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} product page containing some of the preceding elements:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/ui_lib1.png" alt="A product page with user interface elements specified">
+<img src="{{ site.baseurl}}/common/images/ui_lib1.png" alt="A product page with user interface elements specified">
 </div>
 
 ## Mixin location {#fedg_using-ui-lib_mixins}
@@ -92,7 +92,7 @@ The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f
 
 ## Predefined variables {#fedg_using-ui-lib_predef-vars}
 
-If your theme <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
+If your theme <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
 
 The complete list of these variables and their default values are stored in <a href="{{site.mage2000url}}lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="{{site.mage2000url}}lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the `breadcrumbs()` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}.
 
@@ -104,11 +104,11 @@ To change the default library variables values, specify the new values for the r
 
 The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.
 
-<img src="{{site.baseurl}}common/images/ui_lib2.png" alt="Changing design by redefining variables">
+<img src="{{site.baseurl}}/common/images/ui_lib2.png" alt="Changing design by redefining variables">
 
 ## Your custom variables {#fedg_using-ui-lib_vars}
 
-When naming custom variables, please follow the [Magento naming convention for the LESS variables]({{page.baseurl}}coding-standards/code-standard-less.html#naming).
+When naming custom variables, please follow the [Magento naming convention for the LESS variables]({{page.baseurl}}/coding-standards/code-standard-less.html#naming).
 
 ## Using mixins {#fedg_using-ui-lib_customize}
 

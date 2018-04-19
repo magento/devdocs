@@ -19,7 +19,7 @@ You can use Grunt to automatize any tasks you need, but out of the box Magento c
 
 
 ## Prerequisites
-Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html).
 
 ## Installing and configuring Grunt {#grunt_prereq}
 

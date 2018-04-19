@@ -382,7 +382,7 @@ We've improved the performance of these tasks:
 
 <!---60041-->* Resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}
 
-<!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) command). 
+<!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html) command). 
 
 
 
@@ -567,7 +567,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 	*	If your Magento root directory is `<Magento install dir>/pub`,  then start the Web Setup Wizard from `http://<Magento host or IP>/setup` instead of from `http://<Magento host or IP>`
 
-	*	Install Magento using the [command line]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html).
+	*	Install Magento using the [command line]({{ page.baseurl}}/comp-mgr/cli/cli-upgrade.html).
 
 <!---60680-->* **Issue**: You cannot successfully change and save your settings for gift cards. (<i>Settings</i> include "allow open amount" or "open amount minimum".) 
 
@@ -582,11 +582,11 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 <!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes. 
 
 
-<!---61341-->* **Issue**: A Paypal SSL curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is [TLS 1.2]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html).  
+<!---61341-->* **Issue**: A Paypal SSL curl communication error can occur if your Magento installation is not running the minimal required TLS version. Older versions of Magento might not run the minimal version, which is [TLS 1.2]({{ page.baseurl}}/install-gde/system-requirements_tls1-2.html).  
 
 	If it isn't, then Magento throws this error: `curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s)`.  
 
-	**Workaround**: Upgrade your version of curl to the latest possible version that will enable the use of [TLS 1.2]({{ page.baseurl }}install-gde/system-requirements_tls1-2.html by default. 
+	**Workaround**: Upgrade your version of curl to the latest possible version that will enable the use of [TLS 1.2]({{ page.baseurl}}/install-gde/system-requirements_tls1-2.html by default. 
 
 
 <!---58433-->* **Issue**: Saving a category in a catalog that contains 20,000 or more products is very slow. 
@@ -594,7 +594,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 <!---59555 --> * **Issue**: Mass actions can be slow and consume excessive memory unless you increase the PHP `memory_limit` setting. The default settings typically supports processing about 1,000 variables. If you try an mass action that involves 1,000 or more variables, the mass action might fail. 
 
-	**Workaround**: You can reduce processing time and performance by increasing your [PHP `memory_limit` setting]({{ page.baseurl }}install-gde/prereq/php-settings.html) to 1 GB. 
+	**Workaround**: You can reduce processing time and performance by increasing your [PHP `memory_limit` setting]({{ page.baseurl}}/install-gde/prereq/php-settings.html) to 1 GB. 
 
 
 
@@ -602,7 +602,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}install-gde/system-requirements-tech.html" target="_blank">System Requirements</a>.
+<a href="{{ page.baseurl}}/install-gde/system-requirements-tech.html" target="_blank">System Requirements</a>.
 
 
 
@@ -612,7 +612,7 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 

@@ -27,15 +27,15 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Magento Commerce Starter**. In addition to our Pro plan, Magento Cloud (Commerce) now comes in a smaller, Platform-as-a-Service version — Magento Commerce Starter. For an overview of these plans, see [Welcome to Magento Commerce Cloud](http://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html). For specific information on Starter, see Starter [architecture](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-architecture.html) and [develop and deploy workflow](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html).
 
-* **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}/cloud/trouble/pro-env-management.html).
 
-* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
+* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{page.baseurl}}/cloud/basic-information/cloud-plans.html).
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
 * **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries](http://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html) have been upgraded to the latest stable version.
 
-* **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{page.baseurl}}config-guide/deployment/pipeline/).
+* **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{page.baseurl}}/config-guide/deployment/pipeline/).
 
 * **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
@@ -118,12 +118,12 @@ We are grateful to the wider Magento community and would like to acknowledge the
 ## System requirements {#requirements}
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="\_blank"}.
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl}}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="\_blank"}.
 
 ## Installation and upgrade instructions {#install-upgrade}
-If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).
+If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl}}/cloud/access-acct/first-time-setup.html).
 
-To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.
+To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl}}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.
 
 You can directly upgrade to {{site.data.var.ece}} 2.2 from the following versions:
 

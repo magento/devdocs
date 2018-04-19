@@ -32,10 +32,10 @@ These import preparation steps include the following:
 ## Prepare and add required files {#required-files}
 To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you need to add a directory and the following files to your existing code.
 
-*  [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) manages applications, service relationships, mounts for writable directories, and cron jobs
-*  [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html) for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
-*  [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) for handling routes including redirections, caching, and server-side includes
-*  [`magento-vars.php`]({{page.baseurl}}cloud/project/project-multi-sites.html#cloud-multi-stores-magento-vars) for multiple websites and stores
+*  [`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html) manages applications, service relationships, mounts for writable directories, and cron jobs
+*  [`.magento/services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html) for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
+*  [`.magento/routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html) for handling routes including redirections, caching, and server-side includes
+*  [`magento-vars.php`]({{page.baseurl}}/cloud/project/project-multi-sites.html#cloud-multi-stores-magento-vars) for multiple websites and stores
 
 You need to add these files to your {{site.data.var.ee}} code:
 
@@ -44,10 +44,10 @@ You need to add these files to your {{site.data.var.ee}} code:
 
     The following figure shows an example of selecting the `2.1.4` branch.
 
-    ![Switch to your current Magento Commerce branch]({{site.baseurl}}common/images/cloud_cloud-git-214.png){:width="600px"}
+    ![Switch to your current Magento Commerce branch]({{site.baseurl}}/common/images/cloud_cloud-git-214.png){:width="600px"}
 
     In the procedure that follows, you'll copy the contents of some of these files to your {{site.data.var.ee}} system.
-3.  Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{page.baseurl}}cloud/before/before-workspace-file-sys-owner.html).
+3.  Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 4.  Enter the following commands in the order shown:
 
         cd <Magento installation dir>
@@ -64,7 +64,7 @@ You need to add these files to your {{site.data.var.ee}} code:
     1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="\_blank"}.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
-        ![View the raw version of the file]({{site.baseurl}}common/images/cloud_cloud-git_raw.png){:width="600px"}
+        ![View the raw version of the file]({{site.baseurl}}/common/images/cloud_cloud-git_raw.png){:width="600px"}
     3.  In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
     4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
     5.  Make sure the file is named `.magento.app.yaml` when you save the file.
@@ -75,9 +75,9 @@ You need to add these files to your {{site.data.var.ee}} code:
 
 Modify these files as necessary as discussed in the following topics:
 
-*  [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*  [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*  [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+*  [`.magento/routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html)
+*  [`.magento/services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html)
+*  [`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
@@ -108,7 +108,7 @@ Before you push code to the {{site.data.var.ece}} Git repository, modify your `c
 
 To edit `composer.json`:
 
-1.  If you haven't done so already, log in to your {{site.data.var.ece}} server as the [Magento file system owner]({{page.baseurl}}cloud/before/before-workspace-file-sys-owner.html).
+1.  If you haven't done so already, log in to your {{site.data.var.ece}} server as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 2.  In a text editor, open `composer.json` in the project root directory.
 3.  Substitute the following value in the `require` section:
 
@@ -144,9 +144,9 @@ To edit `composer.json`:
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
 ## Back up and transfer media files {#media}
-Use the command [`magento setup:backup --media`]({{page.baseurl}}install-gde/install/cli/install-cli-backup.html) to back up media files:
+Use the command [`magento setup:backup --media`]({{page.baseurl}}/install-gde/install/cli/install-cli-backup.html) to back up media files:
 
-1.  Get the  integration system's [SSH URL]({{page.baseurl}}cloud/access-acct/first-time-setup_import-first-steps.html#ssh).
+1.  Get the  integration system's [SSH URL]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh).
 2.  To back up media files, enter the following command:
 
         php <Magento Commerce install dir>/bin/magento setup:backup --media
@@ -167,7 +167,7 @@ To be able to decrypt encrypted data from your imported database, copy your encr
 2.  Search for the value of `key` in the `crypt` array.
 3.  Copy the value to the clipboard and save it.
 
-You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html#encryption-key).
+You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-import.html#encryption-key).
 
 ## Migrate Magento Commerce data {#migrate-db}
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
@@ -186,7 +186,7 @@ The following command example compresses the dump so it doesn't significantly in
 
         rsync <db dump file name> <cloud SSH URL>:var/db.sql.gz
 
-To find `<cloud SSH URL>`, see [Find the information you need for your import]({{page.baseurl}}cloud/access-acct/first-time-setup_import-first-steps.html#db-creds).
+To find `<cloud SSH URL>`, see [Find the information you need for your import]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds).
 
 #### Next step
-[Import Magento Commerce into {{site.data.var.ece}}]({{page.baseurl}}cloud/access-acct/first-time-setup_import-import.html)
+[Import Magento Commerce into {{site.data.var.ece}}]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-import.html)

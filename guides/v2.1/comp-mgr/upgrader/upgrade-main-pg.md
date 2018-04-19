@@ -15,8 +15,8 @@ functional_areas:
 <h2 id="upgrade-access">System upgrade options</h2>
 To choose which components to upgrade:
 
-1.	After you <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
-	<img src="{{ site.baseurl }}common/images/upgr_step1-mock.png" width="750px" alt="System Upgrade automatically checks for core module updates and third-party modules if you wish">
+1.	After you <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
+	<img src="{{ site.baseurl}}/common/images/upgr_step1-mock.png" width="750px" alt="System Upgrade automatically checks for core module updates and third-party modules if you wish">
 2.	You have the following options:
 	<table>
 	<tbody>
@@ -44,8 +44,8 @@ To choose which components to upgrade:
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
-			<p><img src="{{ site.baseurl }}common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
-			<p><img src="{{ site.baseurl }}common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
+			<p><img src="{{ site.baseurl}}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
+			<p><img src="{{ site.baseurl}}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
 	</tr>
 	<tr>
 		<td><p>List of components</p></td>
@@ -66,7 +66,7 @@ To upgrade components:
 
 	For example, to upgrade to the latest version, click the one with **(latest)** in the name as the following figure shows.
 
-	<img src="{{ site.baseurl }}common/images/upgr_step1_core-ver.png" alt="Select the version of Magento core components to which to upgrade">
+	<img src="{{ site.baseurl}}/common/images/upgr_step1_core-ver.png" alt="Select the version of Magento core components to which to upgrade">
 
 2.	For each third-party component:
 
@@ -74,12 +74,12 @@ To upgrade components:
 
 		A sample follows.
 
-		<img src="{{ site.baseurl }}common/images/upgr_comp_yes.png" alt="Upgrade this component">
+		<img src="{{ site.baseurl}}/common/images/upgr_comp_yes.png" alt="Upgrade this component">
 
 	*	If you *do not* want to upgrade it, set **Upgrade** to **No**.
 
 		A sample follows.
 
-		<img src="{{ site.baseurl }}common/images/upgr_comp_no.png" alt="Do not upgrade this component">
+		<img src="{{ site.baseurl}}/common/images/upgr_comp_no.png" alt="Do not upgrade this component">
 
-3.	Click **Next** and continue with <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a>
+3.	Click **Next** and continue with <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a>

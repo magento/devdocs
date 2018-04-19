@@ -124,7 +124,7 @@ public function tearDown()
 
 All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by a `__prepare()` method are available during all test including constraints. Further, the `__inject()` method injects data in the test. The `test()` method performs all the test steps using the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, the `tearDown()` method "cleans up" to be ready for the next test or variation. When a variation fails, the test launches for the next variation in a queue.
 
-![Test case flow diagram]({{site.baseurl}}common/images/ftf/mtf_test_case_flow.png)
+![Test case flow diagram]({{site.baseurl}}/common/images/ftf/mtf_test_case_flow.png)
 
 ## How to create a test case {#how-to-create}
 
@@ -152,13 +152,13 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 
 <!-- LINK DEFINITIONS -->
 
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[variation]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[data set]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
+[variation]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
 [Mtf\TestCase\Injectable]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/TestCase/Injectable.php
-[Scenario test]: {{page.baseurl}}mtf/mtf_entities/mtf_scenariotest.html
-[processAssert()]:{{page.baseurl}}mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
-[constraints]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
+[Scenario test]: {{page.baseurl}}/mtf/mtf_entities/mtf_scenariotest.html
+[processAssert()]:{{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
+[constraints]: {{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html
+[fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html
 [Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
 <!-- ABBREVIATIONS -->
