@@ -8,8 +8,8 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}cloud/env/variables-intro.html#global-variables). See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
 
 ### `WARM_UP_PAGES`
 

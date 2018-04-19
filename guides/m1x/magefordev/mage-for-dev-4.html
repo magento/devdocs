@@ -6,17 +6,17 @@
 <head>
     <meta charset=utf-8>
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-    <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-    <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl}}/common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl}}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="{{ site.baseurl}}/common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.baseurl}}/common/css/favicon.ico" type="image/x-icon">
     <title>Magento for Developers: Part 4&mdash;Magento Layouts, Blocks and Templates</title>
 
 </head>
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl}}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 
 
@@ -26,7 +26,7 @@
 <div id="content">
 <h1>Magento for Developers: Part 4&mdash;Magento Layouts, Blocks and Templates</h1>
 <p><em>by Alan Storm</em>, updated for Magento 1.12</p>
-<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-4.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-4.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl}}/common/images/github_icon.png" height="15px"></a></p>
 
 
 <!-- Magento for Developers: Part 4&mdash;Magento Layouts, Blocks and Templates -->
@@ -95,11 +95,11 @@ public function getLoadedProductCollection()
 
 <p>Blocks calling Blocks calling Blocks is how the entire HTML layout for your page is created.  Take a look at the one column layout Template.</p>
 
-<pre>File: app/design/frontend/base/default/template/page/one-column.phtml</pre>
+<pre>File: app/design/frontend/base/default/template/page/1column.phtml</pre>
 
 <pre>
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="?php echo $this->getLang() ?>" lang="&lt;?php echo $this->getLang() ?>">
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="&lt;?php echo $this->getLang() ?>" lang="&lt;?php echo $this->getLang() ?>">
 &lt;head>
 &lt;?php echo $this->getChildHtml('head') ?>
 &lt;/head>
@@ -110,7 +110,7 @@ public function getLoadedProductCollection()
 &lt;/body>
 </pre>
 
-<p>The template itself is only 11 lines long.  However, each call to <tt>$this->getChildHtml(...)</tt> will include and render another Block.  These Blocks will, in turn, use <tt>getChildHtml</tt> to render other Blocks.  It's Blocks all the way down.</p>
+<p>The template itself is only 28 lines long.  However, each call to <tt>$this->getChildHtml(...)</tt> will include and render another Block.  These Blocks will, in turn, use <tt>getChildHtml</tt> to render other Blocks.  It's Blocks all the way down.</p>
 
 <h2>The Layout</h2>
 

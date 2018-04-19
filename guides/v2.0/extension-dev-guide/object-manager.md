@@ -30,7 +30,7 @@ The object manager has the following responsibilities:
 
 ## Configuration
 
-The [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file configures the object manager and tells it how to handle [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
+The [`di.xml`]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html) file configures the object manager and tells it how to handle [dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html).
 
 This file specifies the preferred implementation class the object manager generates for the interface declared in a class constructor.
 
@@ -42,9 +42,9 @@ The Magento framework uses the `ObjectManager` to generate and inject the classe
 Classes should not ask for the `ObjectManager` itself as a constructor dependency.
 
 You do not call the object manager directly because the framework handles this automatically.
-Direct use of the `create` function prevents type validation and type hinting that a [factory]({{page.baseurl}}extension-dev-guide/factories.html) class provides.
+Direct use of the `create` function prevents type validation and type hinting that a [factory]({{page.baseurl}}/extension-dev-guide/factories.html) class provides.
 
-Object creation is also a separate responsibility that should be moved to a dedicated class such as a [factory]({{page.baseurl}}extension-dev-guide/factories.html) or [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
+Object creation is also a separate responsibility that should be moved to a dedicated class such as a [factory]({{page.baseurl}}/extension-dev-guide/factories.html) or [proxy]({{page.baseurl}}/extension-dev-guide/proxies.html).
 In most cases, the framework generates these classes automatically during code compilation.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -67,5 +67,5 @@ You can depend on and use the `ObjectManager` class in the following scenarios:
 
 **Related topics**
 
-*	[The `di.xml` file]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html)
-* [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
+*	[The `di.xml` file]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html)
+* [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)

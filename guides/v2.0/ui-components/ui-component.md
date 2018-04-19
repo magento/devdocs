@@ -46,11 +46,11 @@ Using {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% e
 
 `<uiСomponent name="some_ui_component_instance_name"/>`
 
-All UI components have base declaration in <a href="{{page.baseurl}}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
+All UI components have base declaration in <a href="{{page.baseurl}}/ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
 
 UI components configuration reader searches through all active modules and read files:
 
-<a href="{{page.baseurl}}ui-library/ui-definition.html">`<your module root dir>/<vendor>/<module>/view/<area>/ui_component/etc/definition.xml`</a>
+<a href="{{page.baseurl}}/ui-library/ui-definition.html">`<your module root dir>/<vendor>/<module>/view/<area>/ui_component/etc/definition.xml`</a>
 
 
 And concrete instances of the components each in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration file:
@@ -70,5 +70,5 @@ It is possible to create custom component by setting `class`, `component` and `t
 
 You can configure existing component and all filter types in the following ways:
 
-* Globally: using any module's <a href="{{page.baseurl}}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file will be applied to all component's instances
+* Globally: using any module's <a href="{{page.baseurl}}/ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file will be applied to all component's instances
 * Locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`

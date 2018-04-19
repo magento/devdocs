@@ -19,9 +19,9 @@ You give a name to your component in its `composer.json` and `module.xml` files.
 ## Prerequisites {#prereq}
 Before you continue, make sure you have completed all of the following tasks:
 
-*   Created a [file structure]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html)
-*   Created the the [configuration files]({{page.baseurl}}extension-dev-guide/build/required-configuration-files.html) you'll need
-*   [Registered]({{page.baseurl}}extension-dev-guide/build/component-registration.html) your component
+*   Created a [file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html)
+*   Created the the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need
+*   [Registered]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) your component
 
 ## Add the component's `module.xml` file {#module-xml}
 Declare the component itself by adding a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml file in the `/etc` folder of your component.
@@ -42,7 +42,7 @@ Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code>
 ## Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
-In addition, the [Component Manager]({{page.baseurl}}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
+In addition, the [Component Manager]({{page.baseurl}}/comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
 
 In particular:
 
@@ -108,4 +108,4 @@ where:
 
 #### Next
 
-[Component load order]({{page.baseurl}}extension-dev-guide/build/module-load-order.html)
+[Component load order]({{page.baseurl}}/extension-dev-guide/build/module-load-order.html)

@@ -40,11 +40,11 @@ This guide provides best practices, guidelines, and tips for creating Magento ex
 {% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
 
 {% for node in subgroup %}
-*  [{{ node.menu_title }}]({{page.baseurl}}{{ node.github_link | replace: ".md",".html" }})
+*  [{{ node.menu_title }}]({{page.baseurl}}/{{ node.github_link | replace: ".md",".html" }})
 {% endfor %}
 
 ### Related Content
 
-* [Admin Design Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
-* [PHP Developer Guide]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
-* [Frontend Developer Guide]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.
+* [Admin Design Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
+* [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
+* [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.

@@ -14,7 +14,7 @@ The Button component allows user to perform a list of predefined actions by clic
 
 ## Configuration options
 
-Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+Extends all [`uiElement`]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 Button-specific configuration:
 

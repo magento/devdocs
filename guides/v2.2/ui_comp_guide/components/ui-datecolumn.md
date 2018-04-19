@@ -16,7 +16,7 @@ DateColumn сonstructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/date
 
 ## Сonfiguration options
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
+Extends all [Column]({{page.baseurl}}/ui_comp_guide/components/ui-column.html) configuration.
 
 DateColumn specific configuration:
 

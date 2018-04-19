@@ -20,7 +20,7 @@ The Magento application contains a set of built-in fonts, but you can easily inc
 Place the font files to your theme directory under: <code>&lt;theme_dir&gt;/web/fonts</code>.
 
 <h3 id="ext_fonts">External fonts</h3>
-To use external fonts, include them in the page configuration file, as described in <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
+To use external fonts, include them in the page configuration file, as described in <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
 
 <h2 id="fonts">Include fonts</h2>
 

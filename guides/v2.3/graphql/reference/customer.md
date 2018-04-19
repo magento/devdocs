@@ -3,16 +3,12 @@ layout: default
 group: graphql
 title: Customer endpoint
 version: 2.3
-github_link: graphql/customer.md
+github_link: graphql/reference/customer.md
 ---
 
-The `Customer` endpoint allows you return information about an customer account.
+The `Customer` endpoint returns information about a customer account.
 
-In this sprint, GraphQL relies on [session authentication]({{page.baseurl}}get-started/authentication/gs-authentication-session.html). To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-B2B customer attributes are not currently supported.
-</div>
+Currently, GraphQL relies on [session authentication]({{page.baseurl}}/get-started/authentication/gs-authentication-session.html). To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.
 
 ## Query structure
 
@@ -48,7 +44,7 @@ Attribute |  Data Type | Description
 `customer_id` | Int | The customer ID
 `region` | CustomerAddressesRegion | An object containing the region name, region code, and region ID
 `region_id` | Int | A number that uniquely identifies the state, province, or other area
-`country_id` | String | The customer's country.
+`country_id` | String | The customer's country
 `street` | [String] | An array of strings that define the street number and name
 `company` | String | The customer's company
 `telephone` | String | The telephone number
@@ -59,7 +55,7 @@ Attribute |  Data Type | Description
 `lastname` | String | The family name of the person associated with the shipping/billing address
 `middlename` | String | The middle name of the person associated with the shipping/billing address
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`suffix` | String | A value such as Sr., Jr., III, etc.
+`suffix` | String | A value such as Sr., Jr., or III
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
 `default_billing` | Boolean | Indicates whether the address is the default billing address

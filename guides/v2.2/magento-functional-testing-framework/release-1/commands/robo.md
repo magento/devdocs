@@ -22,19 +22,26 @@ Robo is a task runner for PHP that allows you to alias long complex CLI commands
 Assuming that you're working in the `magento2/dev/tests/acceptance` directory in your terminal, run Robo commands using the following format:
 
 ```bash
-$ vendor/bin/robo command [options] [arguments]
+vendor/bin/robo command [options] [arguments]
 ```
 
 Or, if you added path of the Robo executable file to the system *PATH*, then run Robo commands using the following format:
 
 ```bash
-$ robo command [options] [arguments]
+robo command [options] [arguments]
 ```
 
 ### Example
 
-* Original: `$ allure generate tests/_output/allure-results/ -o tests/_output/allure-report/`
-* Robo: `$ vendor/bin/robo allure1:generate`
+* Original:
+  ```bash
+  allure generate tests/_output/allure-results/ -o tests/_output/allure-report/
+  ```
+  
+* Robo:
+  ```bash
+  vendor/bin/robo allure1:generate
+  ```
 
 ## Most useful commands
 
@@ -47,49 +54,49 @@ For more commands, see [Reference] or run in your terminal: `$ vendor/bin/robo`.
 #### List all available Robo commands:
 
 ```bash
-$ vendor/bin/robo
+vendor/bin/robo
 ```
 
 #### Duplicate the Example configuration files used to customize the Project:
 
 ```bash
-$ vendor/bin/robo clone:files
+vendor/bin/robo clone:files
 ```
 
 #### Build the Codeception project:
 
 ```bash
-$ vendor/bin/robo build:project
+vendor/bin/robo build:project
 ```
 
 #### Generate all Tests in PHP:
 
 ```bash
-$ vendor/bin/robo generate:tests
+vendor/bin/robo generate:tests
 ```
 
 #### Run all Tests marked with the @group tag 'example', using the Chrome environment:
 
 ```bash
-$ vendor/bin/robo example
+vendor/bin/robo example
 ```
 
 #### Run all Functional tests located under the Directory Path provided:
 
 ```bash
-$ vendor/bin/robo folder ______
+vendor/bin/robo folder ______
 ```
 
 #### Run all Functional tests, excluding @group skip:
 
 ```bash
-$ vendor/bin/robo functional
+vendor/bin/robo functional
 ```
 
 #### Run all Tests with the specified @group tag, excluding @group 'skip':
 
 ```bash
-$ vendor/bin/robo group ______
+vendor/bin/robo group ______
 ```
 
 ### Allure Robo Commands

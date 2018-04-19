@@ -20,7 +20,7 @@ functional_areas:
 ## View a list of indexers
 To view a list of all indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 The list displays as follows:
 
@@ -38,17 +38,17 @@ Use this command to view the status of all indexers or specific indexers. For ex
 
 Command options:
 
-	magento indexer:status [indexer]
+	bin/magento indexer:status [indexer]
 
 Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view the status of all indexers.
 
 To list all indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 A sample follows:
 
-	magento indexer:status
+	bin/magento indexer:status
 
 Sample result:
 
@@ -62,25 +62,25 @@ Sample result:
 	Catalog Search:                                    Reindex required
 
 ## Reindex {#config-cli-subcommands-index-reindex}
-USe this command to reindex all or selected indexers one time only.
+Use this command to reindex all or selected indexers one time only.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
+This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
 </div>
 
 Command options:
 
-	magento indexer:reindex [indexer]
+	bin/magento indexer:reindex [indexer]
 
 Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to reindex all indexers.
 
 To view a list of all indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 A sample follows:
 
-	magento indexer:reindex
+	bin/magento indexer:reindex
 
 Sample result:
 
@@ -103,16 +103,16 @@ Use this command to set the following indexer options:
 -   **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
 -   **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
 
-[Learn more about indexing]({{ page.baseurl }}extension-dev-guide/indexing.html)
+[Learn more about indexing]({{ page.baseurl}}/extension-dev-guide/indexing.html)
 
 ### Display the current configuration
 To view the current indexer configuration:
 
-	magento indexer:show-mode [indexer]
+	bin/magento indexer:show-mode [indexer]
 
 Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to show all indexers' modes. For example, to show the mode of all indexers:
 
-	magento indexer:show-mode
+	bin/magento indexer:show-mode
 
 Sample result:
 
@@ -128,7 +128,7 @@ Sample result:
 ### Configure indexers
 To specify the indexer configuration:
 
-	magento indexer:set-mode {realtime|schedule} [indexer]
+	bin/magento indexer:set-mode {realtime|schedule} [indexer]
 
 Where:
 
@@ -138,11 +138,11 @@ Where:
 
 To view the list of indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 For example, to change only the category products and product categories indexers to update on schedule, enter
 
-	magento indexer:set-mode schedule catalog_category_product catalog_product_category
+	bin/magento indexer:set-mode schedule catalog_category_product catalog_product_category
 
 Sample result:
 
@@ -151,15 +151,15 @@ Sample result:
 
 #### Related topics
 
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

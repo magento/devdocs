@@ -20,7 +20,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 
 ## Changes in this release
 * Removed the MDVA-913 patch because the issue is now fixed in Magento Enterprise Edition 2.1.4.
-* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}/cloud/trouble/pro-env-management.html).
 
 ## Fixes in this release
 <!--MAGECLOUD-1427-->* We fixed an issue that was causing the wrong products to be indexed in 2.1.4. Previously, the `mview.xml` configuration used `row_id`  instead of `entity_id` when collecting information from changelogs.

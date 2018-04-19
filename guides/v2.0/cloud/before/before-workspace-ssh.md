@@ -18,7 +18,7 @@ functional_areas:
 ---
 
 #### Previous step:
-[Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
+[Install Magento prerequisites]({{ page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html)
 
 The [SSH protocol ](https://en.wikipedia.org/wiki/Secure_Shell){:target="_blank"} is designed to maintain a secure connection between two systems&mdash;in this case, your local working environment and your {{site.data.var.ece}} Git project.
 
@@ -31,4 +31,4 @@ When initially setting up your local environment, you need to add the SSH keys t
 
 
 #### Next step:
-[Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
+[Set up the Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html)

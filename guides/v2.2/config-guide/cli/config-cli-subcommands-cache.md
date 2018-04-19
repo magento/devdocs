@@ -57,7 +57,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
       <td><p>Database schema. </p>
       	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
       	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
-      	<p>One way to update the database schema automatically is using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
+      	<p>One way to update the database schema automatically is using the <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
     </tr>
     <tr>
       <td><p>Entity attribute value (EAV)</p></td>
@@ -105,9 +105,9 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 ## View the cache status
 To view the status of the cache, enter
 
-	magento cache:status
+	bin/magento cache:status
 
-<!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{page.baseurl}}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
+<!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{page.baseurl}}/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
 A sample follows:
 
@@ -127,27 +127,27 @@ config_integration_api: 1
 This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Starting in version 2.2, you can enable or disable cache types _only_ using the command line. Before doing so, you must manually make `<your Magento install dir>/app/etc/env.php` writeable by the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
+Starting in version 2.2, you can enable or disable cache types _only_ using the command line. Before doing so, you must manually make `<your Magento install dir>/app/etc/env.php` writeable by the [Magento file system owner]({{ page.baseurl}}/install-gde/prereq/file-system-perms.html).
 
 You can clean (also referred to as _flush_ or _refresh_) cache types using either the command line or the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 </div>
 
 Command options:
 
-	magento cache:enable [type] ... [type]
-	magento cache:disable [type] ... [type]
+	bin/magento cache:enable [type] ... [type]
+	bin/magento cache:disable [type] ... [type]
 
 Where omitting `[type]` enables or disables all cache types at the same time. The `type` option is a space-separated list of cache types.
 
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{page.baseurl}}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
+<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{page.baseurl}}/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
 To list cache types and their status:
 
-	magento cache:status
+	bin/magento cache:status
 
 For example, to disable the full page cache and the DDL cache:
 
-	magento cache:disable db_ddl full_page
+	bin/magento cache:disable db_ddl full_page
 
 Sample result:
 
@@ -172,12 +172,12 @@ Flush cache types if you've already tried cleaning the cache and you're still ha
 
 Command usage:
 
-	magento cache:clean [type] ... [type]
-	magento cache:flush [type] ... [type]
+	bin/magento cache:clean [type] ... [type]
+	bin/magento cache:flush [type] ... [type]
 
 Where `[type]` is a space-separated list of cache types. Omitting `[type]` cleans or flushes all cache types at the same time. For example, to flush all cache types, enter
 
-	magento cache:flush
+	bin/magento cache:flush
 
 Sample result:
 
@@ -195,20 +195,20 @@ Sample result:
 	config_webservice
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You can also clean and flush cache types in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `magento cache:flush`. **Flush Magento Cache** is equivalent to `magento cache:clean`.
+You can also clean and flush cache types in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.
 </div>
 
 #### Related topics
 
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+-   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

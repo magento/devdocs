@@ -391,19 +391,19 @@ These backward incompatible changes do not need manual documentation:
 * Adding/removing a class/interface constant
 * Adding removing a class property
 
-Auto-generated [{{site.data.var.ce}} changes]({{page.baseurl}}release-notes/changes/ce_changes.html)
+Auto-generated [{{site.data.var.ce}} changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/open-source.html)
 
-Auto-generated [{{site.data.var.ee}} changes]({{page.baseurl}}release-notes/changes/ee_changes.html)
+Auto-generated [{{site.data.var.ee}} changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/commerce.html)
 
 ### Where to document
 
 In the [DevDocs repository][devdocs-repo], manually add backward incompatible changes to the following file:
 
-`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes.md` 
+`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes/index.md` 
 
 Where: `<version>` is the MINOR version of the product (2.1, 2.2, 2.3, etc).
 
-Example: [`https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes.md`][2.2-bic-page].
+Example: [`https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md`][2.2-bic-page].
 
 Update the page for the *next* MINOR product release when working in the `develop` branch of Magento.
 
@@ -411,6 +411,6 @@ For example, when 2.2 is released, a new `backward-incompatible-changes.md` for 
 
 In order to update the page, create a PR to the DevDocs repository with your changes.
 
-[versioning]: {{page.baseurl}}extension-dev-guide/versioning/index.html
+[versioning]: {{page.baseurl}}/extension-dev-guide/versioning/index.html
 [devdocs-repo]: https://github.com/magento/devdocs
-[2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes.md
+[2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md

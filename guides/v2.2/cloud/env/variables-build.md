@@ -9,9 +9,9 @@ functional_areas:
   - Configuration
 ---
 
-The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{page.baseurl}}cloud/env/variables-intro.html#global-variables). See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
+The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
 
 <div class="bs-callout bs-callout-info" markdown="1">
 You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
@@ -38,7 +38,7 @@ exclude_themes=magento/luma,magento/my-theme
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
--  **Version**—Magento 2.1.x
+-  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
@@ -64,7 +64,7 @@ Use these options _only_ if you have more than one locale:
 
 Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
 
-To further decrease deployment time, we recommend using [Configuration Management]({{page.baseurl}}cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
+To further decrease deployment time, we recommend using [Configuration Management]({{page.baseurl}}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
 ### `SKIP_SCD`
 
@@ -73,7 +73,7 @@ To further decrease deployment time, we recommend using [Configuration Managemen
 
 Skips static content deployment during the build phase.
 
-If you are already deploying static content during the build phase with [Configuration Management]({{page.baseurl}}cloud/live/sens-data-over.html), you may want to turn it off for a quick build test.
+If you are already deploying static content during the build phase with [Configuration Management]({{page.baseurl}}/cloud/live/sens-data-over.html), you may want to turn it off for a quick build test.
 
 We do not recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
 

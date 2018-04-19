@@ -177,9 +177,9 @@ This example uses several composer packages on the public github to simulate a m
 
 [Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
 
-[version-dependencies]: {{page.baseurl}}extension-dev-guide/versioning/dependencies.html
-[codebase-changes]: {{page.baseurl}}extension-dev-guide/versioning/codebase-changes.html
+[version-dependencies]: {{page.baseurl}}/extension-dev-guide/versioning/dependencies.html
+[codebase-changes]: {{page.baseurl}}/extension-dev-guide/versioning/codebase-changes.html
 [semantic-versioning]: http://semver.org/
 [composer-versioning]: https://getcomposer.org/doc/04-schema.md#version
 [php-version-compare]: http://php.net/version_compare
-[composer-json]: {{page.baseurl}}extension-dev-guide/build/composer-integration.html
+[composer-json]: {{page.baseurl}}/extension-dev-guide/build/composer-integration.html

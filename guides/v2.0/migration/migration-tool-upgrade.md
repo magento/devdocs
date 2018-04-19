@@ -28,7 +28,7 @@ Before upgrading the Data Migration Tool, you must:
 
 ### Upgrade your Magento software {#data-migrate-upgr-magento}
 
-If you haven't already done so, run the <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> to upgrade the Magento software.
+If you haven't already done so, run the <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> to upgrade the Magento software.
 
 ### Back up the `vendor/magento/data-migration-tool` directory
 
@@ -46,17 +46,17 @@ You can also back up the entire Magento codebase and database using the followin
 
 The versions of the Data Migration Tool and your Magento software must match exactly. For example, Magento 2.1.2 requires version 2.1.2 of the Data Migration Tool.
 
-See the [Install Data Migration Tool]({{page.baseurl}}migration/migration-tool-install.html) topic to know how to:
+See the [Install Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html) topic to know how to:
 
-* [Check]({{page.baseurl}}migration/migration-tool-install.html#magento-version) your Magento 2 version
+* [Check]({{page.baseurl}}/migration/migration-tool-install.html#magento-version) your Magento 2 version
 
-* [Find]({{page.baseurl}}migration/migration-tool-install.html#migration-tool-release-version) released versions of the Data Migration Tool
+* [Find]({{page.baseurl}}/migration/migration-tool-install.html#migration-tool-release-version) released versions of the Data Migration Tool
 
-* [Check]({{page.baseurl}}migration/migration-tool-install.html#migration-tool-install-version) the Data Migration Tool version
+* [Check]({{page.baseurl}}/migration/migration-tool-install.html#migration-tool-install-version) the Data Migration Tool version
 
 ## Upgrade Data Migration Tool {#data-migrate-upgr}
 
-1.	Log in to your Magento server as, or switch to, <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.
 2.	Change to Magento 2 root directory.
 3. 	Enter the following command:
 
@@ -71,5 +71,5 @@ See the [Install Data Migration Tool]({{page.baseurl}}migration/migration-tool-i
 
 ## Related topics
 
-* <a href="{{page.baseurl}}migration/migration-tool-configure.html">Configure migration</a>
-* <a href="{{page.baseurl}}migration/migration-tool-preconditions.html">Preconditions</a>
+* <a href="{{page.baseurl}}/migration/migration-tool-configure.html">Configure migration</a>
+* <a href="{{page.baseurl}}/migration/migration-tool-preconditions.html">Preconditions</a>

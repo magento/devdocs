@@ -126,7 +126,7 @@ For Pro plan Staging, the project ID has `_stg` at the end. For example, if you 
 For Pro plan Production, you have three nodes to check for logs.
 
 #### Related topics
-*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[Get started with an environment]({{page.baseurl}}/cloud/env/environments-start.html)
+*	[`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html)

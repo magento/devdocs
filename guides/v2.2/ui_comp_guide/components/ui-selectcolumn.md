@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js]({{sit
 
 ## SelectColumn configuration
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
+Extends all [Column]({{page.baseurl}}/ui_comp_guide/components/ui-column.html) configuration.
 
 SelectColumn-specific configuration:
 

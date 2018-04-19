@@ -38,7 +38,7 @@ MySQL databases replicate asynchronously, which means slaves do not need to be c
 
 The following figure shows how this feature works.
 
-<img src="{{ site.baseurl }}common/images/ee_split-db-diagram.png" alt="{{site.data.var.ee}} uses different databases to store tables">
+<img src="{{ site.baseurl}}/common/images/ee_split-db-diagram.png" alt="{{site.data.var.ee}} uses different databases to store tables">
 
 In {{site.data.var.ce}}, only one master database is used.
 
@@ -63,12 +63,12 @@ This also means you can either:
 *	Configure the split database solution *before* putting Magento into production.
 
 	We recommend configuring split databases as soon as possible after you install the Magento software.
-*	[Manually configure]({{page.baseurl}}config-guide/multi-master/multi-master_manual.html) the split database solution.
+*	[Manually configure]({{page.baseurl}}/config-guide/multi-master/multi-master_manual.html) the split database solution.
 
 	You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
 
 <div class="bs-callout bs-callout-warning">
-    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{page.baseurl}}install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
+    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 </div>
 
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
@@ -92,5 +92,5 @@ In this guide, the three master databases are named:
 
 #### Next step
 
-*	If you have not installed components or put Magento into production: <a href="{{page.baseurl}}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
-*	If Magento is already in production or if you've already installed components: <a href="{{page.baseurl}}config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a>
+*	If you have not installed components or put Magento into production: <a href="{{page.baseurl}}/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
+*	If Magento is already in production or if you've already installed components: <a href="{{page.baseurl}}/config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a>

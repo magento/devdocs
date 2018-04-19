@@ -185,18 +185,18 @@ The following code is a corresponding mapping with the typified element `optgrou
 
 <!-- PICTURE DEFINITIONS -->
 
-[A typified element mapping example in GUI]: {{site.baseurl}}common/images/ftf/mtf_typ_element_map_gui.png
-[A typified element example in the browser]: {{site.baseurl}}common/images/ftf/mtf_typ_element_brows.png
+[A typified element mapping example in GUI]: {{site.baseurl}}/common/images/ftf/mtf_typ_element_map_gui.png
+[A typified element example in the browser]: {{site.baseurl}}/common/images/ftf/mtf_typ_element_brows.png
 
 
 <!-- LINK DEFINITIONS -->
 
 <!-- General -->
 [`ElementInterface`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php
-[form mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[form mapping]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
 [`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
 [`<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element
-[FTF blocks]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
+[FTF blocks]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html
 [\Magento\Catalog\Test\Block\Adminhtml\Category\Tree]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php
 
 <!-- Basic classes -->

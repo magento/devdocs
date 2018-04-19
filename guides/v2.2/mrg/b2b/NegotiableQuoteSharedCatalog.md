@@ -27,14 +27,14 @@ The `Magento_NegotiableQuoteSharedCatalog` module does not create any backward i
 
 ## Structure
 
-[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html).
+[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
 
 ## Extensibility
 
-Extension developers can interact with the `Magento_NegotiableQuoteSharedCatalog` module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{page.baseurl}}extension-dev-guide/plugins.html).
+Extension developers can interact with the `Magento_NegotiableQuoteSharedCatalog` module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{page.baseurl}}/extension-dev-guide/plugins.html).
 
-[The Magento dependency injection mechanism]({{page.baseurl}}extension-dev-guide/depend-inj.html) enables you to override the functionality of the `Magento_NegotiableQuoteSharedCatalog` module.
+[The Magento dependency injection mechanism]({{page.baseurl}}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the `Magento_NegotiableQuoteSharedCatalog` module.
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{page.baseurl}}release-notes/changes/b2b_changes.html).
+You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{page.baseurl}}/release-notes/changes/b2b_changes.html).

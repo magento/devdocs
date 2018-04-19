@@ -26,6 +26,6 @@ This way there will be no {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af715801
 
 ### Related topics:
 
-- [Clear directories during development]({{page.baseurl}}howdoi/php/php_clear-dirs.html)
+- [Clear directories during development]({{page.baseurl}}/howdoi/php/php_clear-dirs.html)
 
 

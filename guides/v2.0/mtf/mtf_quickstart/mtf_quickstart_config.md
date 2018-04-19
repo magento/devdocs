@@ -87,4 +87,4 @@ Enter actual data in `value` attribute of corresponding `field` element.
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
-[Prepare Magento application &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html)
+[Prepare Magento application &gt;&gt;]({{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_magento.html)

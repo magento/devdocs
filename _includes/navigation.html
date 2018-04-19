@@ -5,18 +5,21 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-          <li><a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation Guide</a></li>
+          <li><a href="{{page.baseurl}}/install-gde/bk-install-guide.html">Installation Guide</a></li>
           {% if page.guide_version == "2.2" %}
-          <li><a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          <li><a href="{{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
           {% elsif page.guide_version == "2.1" %}
-          <li><a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          <li><a href="{{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
           {% elsif page.guide_version == "2.0" %}
-          <li><a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          <li><a href="{{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
           {% endif %}
-          <li><a href="{{page.baseurl}}config-guide/bk-config-guide.html">Configuration Guide</a></li>
-          <li><a href="{{page.baseurl}}migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li><a href="{{page.baseurl}}cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
-          <li><a href="{{site.baseurl}}magento-release-information.html">Release Information</a></li>
+          <li><a href="{{page.baseurl}}/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
+          <li><a href="{{page.baseurl}}/performance-best-practices/index.html">Performance Best Practices</a></li>
+          {% endif %}
+          <li><a href="{{page.baseurl}}/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="{{page.baseurl}}/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="{{site.baseurl}}/magento-release-information.html">Release Information</a></li>
       </ul>
     </div>
 
@@ -31,38 +34,38 @@
       <div class="nav-section">
         <div class="nav-section-title">Backend</div>
         <ul>
-          <li><a href="{{page.baseurl}}architecture/bk-architecture.html">Architecture Guide</a></li>
-          <li><a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-          <li><a href="{{page.baseurl}}ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
-          <li><a href="{{page.baseurl}}mrg/intro.html">Module Reference Guide</a></li>
-          <li><a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-          <li><a href="{{page.baseurl}}contributor-guide/contributing.html">Contributor Guide</a></li>
+          <li><a href="{{page.baseurl}}/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="{{page.baseurl}}/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="{{page.baseurl}}/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="{{page.baseurl}}/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="{{page.baseurl}}/contributor-guide/contributing.html">Contributor Guide</a></li>
         </ul>
       </div>
 
       <div class="nav-section">
         <div class="nav-section-title">Frontend</div>
         <ul>
-          <li class=""><a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          <li class=""><a href="{{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
           {% if page.guide_version == "2.0" %}
-          <li><a href="{{page.baseurl}}ui-components/ui-component.html">UI Components</a></li>
+          <li><a href="{{page.baseurl}}/ui-components/ui-component.html">UI Components</a></li>
           {% else %}
-          <li><a href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          <li><a href="{{page.baseurl}}/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
           {% endif %}
-          <li><a href="{{page.baseurl}}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-          <li><a href="{{page.baseurl}}pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-          <li><a href="{{page.baseurl}}design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li><a href="{{page.baseurl}}/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="{{page.baseurl}}/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="{{page.baseurl}}/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
         </ul>
       </div>
 
       <div class="nav-section">
         <div class="nav-section-title"><abbr>API</abbr></div>
         <ul>
-          <li><a href="{{page.baseurl}}get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-          <li><a href="{{page.baseurl}}rest/bk-rest.html">REST API Reference</a></li>
-          <li><a href="{{page.baseurl}}soap/bk-soap.html">SOAP API Reference</a></li>
+          <li><a href="{{page.baseurl}}/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="{{page.baseurl}}/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="{{page.baseurl}}/soap/bk-soap.html">SOAP API Reference</a></li>
           {% if page.guide_version == "2.3" %}
-          <li><a href="{{page.baseurl}}graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          <li><a href="{{page.baseurl}}/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
           {% endif %}
         </ul>
       </div>
@@ -76,15 +79,15 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-        <li><a href="{{page.baseurl}}test/testing.html">Magento Testing Guide</a></li>
+        <li><a href="{{page.baseurl}}/test/testing.html">Magento Testing Guide</a></li>
         {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
-        <li><a href="{{page.baseurl}}magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        <li><a href="{{page.baseurl}}/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
         {% endif %}
-        <li><a href="{{page.baseurl}}mtf/mtf_introduction.html">Functional Testing</a></li>
-        <li><a href="{{page.baseurl}}test/integration/integration_test_execution.html">Integration Testing</a></li>
-        <li><a href="{{page.baseurl}}test/js/jasmine.html">JavaScript Unit Testing</a></li>
-        <li><a href="{{page.baseurl}}test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-        <li><a href="{{page.baseurl}}get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        <li><a href="{{page.baseurl}}/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="{{page.baseurl}}/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="{{page.baseurl}}/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="{{page.baseurl}}/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="{{page.baseurl}}/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
       </ul>
     </div>
 
@@ -99,16 +102,16 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-          {% if page.guide_version == "2.2" %}
-          <li class="leaf"><a href="{{page.baseurl}}advanced-reporting/overview.html">Advanced Reporting</a></li>
+          {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
+          <li class="leaf"><a href="{{page.baseurl}}/advanced-reporting/overview.html">Advanced Reporting</a></li>
           {%endif%}
-        {% if page.guide_version == "2.2" %}
-        <li class="leaf"><a href="{{page.baseurl}}b2b/bk-b2b.html">B2B</a></li>
+        {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
+        <li class="leaf"><a href="{{page.baseurl}}/b2b/bk-b2b.html">B2B</a></li>
         {%endif%}
-        <li><a href="{{page.baseurl}}howdoi/checkout/checkout_overview.html">Checkout</a></li>
-        <li><a href="{{page.baseurl}}payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        <li><a href="{{page.baseurl}}/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="{{page.baseurl}}/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
         {% unless page.guide_version == "2.0" %}
-          <li><a href="{{page.baseurl}}extension-dev-guide/staging.html">Staging</a></li>
+          <li><a href="{{page.baseurl}}/extension-dev-guide/staging.html">Staging</a></li>
         {% endunless %}
       </ul>
     </div>
@@ -121,12 +124,12 @@
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-        <li><a href="{{page.baseurl}}howdoi/bk-how-do-i.html">How To</a></li>
+        <li><a href="{{page.baseurl}}/howdoi/bk-how-do-i.html">How To</a></li>
         {% if page.guide_version != "2.0" %}
-        <li><a  data-proofer-ignore href="{{page.baseurl}}get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        <li><a  data-proofer-ignore href="{{page.baseurl}}/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
         {% endif %}
 
-        <li><a href="{{site.baseurl}}videos/">Video Tutorials</a></li>
+        <li><a href="{{site.baseurl}}/videos/">Video Tutorials</a></li>
       </ul>
     </div>
 

@@ -11,7 +11,7 @@ functional_areas:
   - Frontend
 ---
 <h2>What's in this topic</h2>
-Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
+Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{page.baseurl}}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
 
 
 <h2 id="simple_extend">Simplest way to extend parent styles</h2> 
@@ -62,7 +62,7 @@ The drawback of this approach is that you need to monitor and manually update yo
 
 <h2 id="structured_changes">Adding structured changes</h2>
 
-To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="{{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
+To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="{{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
 
 <h3 id="structured_extend">Extend component's styles</h3>
 <ol>
@@ -110,7 +110,7 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 
 <h2>Recommended reading</h2>
 <ul>
-<li><a href="{{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
-<li><a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
-<li><a href="{{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a></li>
+<li><a href="{{page.baseurl}}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
+<li><a href="{{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
+<li><a href="{{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a></li>
 </ul>

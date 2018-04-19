@@ -19,11 +19,11 @@ The readiness check makes sure your server and environment are set up correctly 
 
 To start, click either **Start Readiness Check** or **Next**. A sample follows.
 
-![The readiness check enables you to find out if your server and environment are ready to proceed]({{ site.baseurl }}common/images/extensman_update_readiness.png){:width="650px"}
+![The readiness check enables you to find out if your server and environment are ready to proceed]({{ site.baseurl}}/common/images/extensman_update_readiness.png){:width="650px"}
 
 After the readiness check completes, see one of the following:
 
-*	[Readiness check success]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-success.html)
-*	[Readiness check failure]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-fail.html)
-*	[Readiness check with multiple extension updates]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-multi.html)
+*	[Readiness check success]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness-success.html)
+*	[Readiness check failure]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness-fail.html)
+*	[Readiness check with multiple extension updates]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness-multi.html)
 

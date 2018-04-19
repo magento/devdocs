@@ -20,7 +20,7 @@ All the Codeception commands you need are wrapped using Robo.
 See the [list of Robo commands](robo.html). If you'd like to run the Codeception tests directly without using Robo, run:
 
 ```bash
-$ vendor/bin/codecept run functional
+vendor/bin/codecept run functional
 ```
 
 ## Examples
@@ -28,19 +28,19 @@ $ vendor/bin/codecept run functional
 Run all tests in `dev/tests/acceptance/tests/functional/Magento/FunctionalTest`:
 
 ```bash
-$ vendor/bin/codecept run functional
+vendor/bin/codecept run functional
 ```
 
 Run all tests without the `<group value="skpip"/>` [annotation](../test/annotations.html):
 
 ```bash
-$ vendor/bin/codecept run functional --skip-group skip
+vendor/bin/codecept run functional --skip-group skip
 ```
 
 Run all tests with the `<group value="example"/>` [annotation](../test/annotations.html) but with no `<group value="skpip"/>`:
 
 ```bash
-$ vendor/bin/codecept run functional --group example --skip-group skip
+vendor/bin/codecept run functional --group example --skip-group skip
 ```
 
 ## `codecept run`
@@ -48,7 +48,7 @@ $ vendor/bin/codecept run functional --group example --skip-group skip
 `codecept run` runs the test suites:
 
 ```bash
-$ vendor/bin/codecept run
+vendor/bin/codecept run
 ```
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
