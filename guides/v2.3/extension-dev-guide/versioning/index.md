@@ -6,7 +6,7 @@ title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
-version: 2.1
+version: 2.3
 github_link: extension-dev-guide/versioning/index.md
 redirect_from:
   - /guides/v2.0/architecture/versioning.html
@@ -72,108 +72,6 @@ Or it can be used to declare a dependency on a particular version of a component
 If Magento is installed from GitHub without using Composer, the `version` is not included. Magento Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, Magento modules inside the `require` declaration  list a version of `*`. For example, `"magento/framework": "*"`
 </div>
 
-### Version usage example
-
-The following example shows how versions are used with composer to install software and third-party extensions.
-
-This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
-
-<ol>
-<li>Start by cloning the master branch from github.
-
-
-  This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
-
-{% highlight JSON %}
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.0.0-RC1"
-    }
-}
-{% endhighlight %}
-</li>
-
-<li>Run the <code>composer update</code> command. Core modules a & b are pulled down from the repository.</li>
-
-<li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
-
-{% highlight JSON %}
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.0.0-RC1",
-    "myexamplestore/acme-extension": "~1.0"
-    }
-}
-{% endhighlight %}
-</li>
-
-<li>Run <code>composer update</code> and see the new extension downloaded.</li>
-
-<li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
-
-{% highlight JSON %}{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.0.0",
-    "myexamplestore/acme-extension": "~1.0"
-    }
-}
-{% endhighlight %}
-</li>
-
-<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
-
-   This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
-</li>
-
-<li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
-
-   {% highlight JSON %}
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.4.0-RC1",
-    "myexamplestore/acme-extension": "~1.0"
-    }
-}
-{% endhighlight %}
-</li>
-
-<li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
-
-<li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
-
-{% highlight JSON %}
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.4.0-RC1",
-    "myexamplestore/acme-extension": "~2.0"
-    }
-}
-{% endhighlight %}
-</li>
-
-<li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
-
-</ol>
 
 ## Related Topics
 
@@ -181,9 +79,13 @@ This example uses several composer packages on the public github to simulate a m
 
 [Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
 
-[version-dependencies]: {{page.baseurl}}extension-dev-guide/versioning/dependencies.html
-[codebase-changes]: {{page.baseurl}}extension-dev-guide/versioning/codebase-changes.html
+[Backward compatible development]({{page.baseurl}}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
+
+
+
+[version-dependencies]: {{page.baseurl}}/extension-dev-guide/versioning/dependencies.html
+[codebase-changes]: {{page.baseurl}}/extension-dev-guide/versioning/codebase-changes.html
 [semantic-versioning]: http://semver.org/
 [composer-versioning]: https://getcomposer.org/doc/04-schema.md#version
 [php-version-compare]: http://php.net/version_compare
-[composer-json]: {{page.baseurl}}extension-dev-guide/build/composer-integration.html
+[composer-json]: {{page.baseurl}}/extension-dev-guide/build/composer-integration.html
