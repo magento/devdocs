@@ -14,7 +14,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 Annotations are essentially comments in the code. In PHP, they all are marked by a preceding `@` symbol.
 
-Within [test methods](../test.html#test-tag), annotations are contained within their own node.
+Within [test methods], annotations are contained within their own node.
 
 ## Principles
 
@@ -25,6 +25,14 @@ The following conventions apply to MFTF annotations:
 * There is no distinction made in XML between Codeception annotations and Allure annotations.
 * Each annotation contains only one value.
 If multiple annotation values are supported and required each value requires a separate annotation.
+
+Recommended use cases of the annotation types:
+- **Feature** - Report grouping, a set of tests that verify a feature.
+- **Story** - Report grouping, a set of tests that verify a story.
+- **Group** - Module name grouping.
+- **Title** - Description of the test purpose.
+- **Description** - Description of how the test achieves the purpose defined in the title.
+- **Severity** - Available labels are `BLOCKER`, `CRITICAL`, `MAJOR`, `AVERAGE`, and `MINOR`.
 
 ## Example
 
@@ -40,7 +48,7 @@ If multiple annotation values are supported and required each value requires a s
 
 ### description
 
-The `<description>` element is an implementation of a [`@Description`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description) Allure tag; Metadata for report.
+The `<description>` element is an implementation of a [`@Description`] Allure tag; Metadata for report.
 
 Attribute|Type|Use
 ---|---|--
@@ -54,7 +62,7 @@ Attribute|Type|Use
 
 ### features
 
-The `<features>` element is an implementation of a [`@Features`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories) Allure tag.
+The `<features>` element is an implementation of a [`@Features`] Allure tag.
 
 `<features>` sets a string that will be displayed as a feature within the Allure report. Tests under the same feature are grouped together in the report.
 
@@ -71,9 +79,11 @@ Attribute|Type|Use
 
 ### group
 
-The `<group>` element is an implementation of a [`@group`](http://codeception.com/docs/07-AdvancedUsage#Groups) Codeception tag.
+The `<group>` element is an implementation of a [`@group`] Codeception tag.
 
-`<group>` specifies a string to identify and collect tests together. Any test can be a part of multiple groups. The purpose of grouping is to create a set of test for a purpose, such as all cart tests or all slow tests) and run them together.
+`<group>` specifies a string to identify and collect tests together.
+Any test can be a part of multiple groups.
+The purpose of grouping is to create a set of test for a purpose, such as all cart tests or all slow tests) and run them together.
 
 Attribute|Type|Use
 ---|---|--
@@ -87,7 +97,8 @@ Attribute|Type|Use
 
 ### return
 
-The `<return>` element is an implementation of a [`@return`](http://codeception.com/docs/07-AdvancedUsage#Examples) Codeception tag. It specifies what is returned from a test execution.
+The `<return>` element is an implementation of a [`@return`] Codeception tag.
+It specifies what is returned from a test execution.
 
 Attribute|Type|Use
 ---|---|--
@@ -102,7 +113,7 @@ Attribute|Type|Use
 
 ### severity
 
-The `<return>` element is an implementation of a [`@Severity`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity) Allure tag; Metadata for report.
+The `<return>` element is an implementation of a [`@Severity`] Allure tag; Metadata for report.
 
 Attribute|Type|Use|Acceptable values
 ---|---|---|---
@@ -116,7 +127,8 @@ Attribute|Type|Use|Acceptable values
 
 ### stories
 
-The `<stories>` element is an implementation of a [`@Stories`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories) Allure tag. It has the same functionality as [`features`](#features), within the Story report group.
+The `<stories>` element is an implementation of a [`@Stories`] Allure tag.
+It has the same functionality as [`features`], within the Story report group.
 
 Attribute|Type|Use
 ---|---|--
@@ -131,11 +143,11 @@ Attribute|Type|Use
 
 ### testCaseId
 
-The `<testCaseId>` element is an implementation of a [`@TestCaseId`](https://github.com/allure-framework/allure1/wiki/Test-Case-ID) Allure tag. It specifies a ZephyrId for a test.
+The `<testCaseId>` element is an implementation of a [`@TestCaseId`] Allure tag. It specifies a ZephyrId for a test.
 
 If the linkage is set up correctly in the Allure config, the test will have a hyperlink to the Zephyr test case in the report.
 
-Learn more about [setup instructions in Allure](https://github.com/allure-framework/allure1/wiki/Test-Case-ID).
+Learn more about [setup instructions in Allure].
 
 Attribute|Type|Use
 ---|---|--
@@ -163,7 +175,7 @@ Attribute|Type|Use
 
 ### title
 
-The `<title>` element is an implementation of [`@Title`](https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title) Allure tag; Metadata for report.
+The `<title>` element is an implementation of [`@Title`] Allure tag; Metadata for report.
 
 Attribute|Type|Use
 ---|---|--
@@ -174,3 +186,18 @@ Attribute|Type|Use
 ```xml
 <title value="Add Catalog"/>
 ```
+
+<!-- Link deafinitions -->
+
+[`features`]: #features
+[test methods](../test.html#test-tag)
+
+[`@Description`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description
+[`@Features`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
+[`@group`]: http://codeception.com/docs/07-AdvancedUsage#Groups
+[`@return`]: http://codeception.com/docs/07-AdvancedUsage#Examples
+[`@Severity`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity
+[`@Stories`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
+[`@TestCaseId`]: https://github.com/allure-framework/allure1/wiki/Test-Case-ID
+[setup instructions in Allure]: https://github.com/allure-framework/allure1/wiki/Test-Case-ID
+[`@Title`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title

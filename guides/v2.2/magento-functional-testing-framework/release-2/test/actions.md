@@ -1044,13 +1044,26 @@ For example, the drop-down menu you use to assign Products to Categories.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
-`parameterArray`|string|optional|
-`requiredAction`|string|optional|
+`selector`|string|required|The selector of a multi select HTML element (drop-down menu). 
+`parameterArray`|array|required| Items to search and select in the selected drop-down menu.
+`requiredAction`|boolean|optional|Clicks **Done** after selections if `true`. 
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+Example:
+
+```xml
+<searchAndMultiSelectOption selector="#stuff" parameterArray="['Item 1', 'Item 2']" stepKey="searchAndMultiSelect1"/>
+```
+
+On this test step the MFTF:
+1. Searches for a drop-down HTML element that matches the `#stuff` selector.
+2. Opens the drop-down menu.
+3. Enters **Item 1** in a search field of the drop-down element.
+4. Selects first element from the filtered results.
+5. Enters **Item 2** in a search field of the drop-down element.
+6. Selects first element from the filtered results.
 
 ### see
 

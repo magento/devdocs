@@ -49,7 +49,6 @@ But in case you do need to configure, here they are.
 
 ### SELENIUM
 
-Optional.
 The `SELENIUM_*` values are concatenated together to form the URL of a custom Selenium server to test against.
 An example use for these would be in case you wanted to run your tests against Saucelabs or any other external Selenium source instead of your local machine.
 
@@ -108,7 +107,6 @@ MAGENTO_RESTAPI_SERVER_PORT
 
 ### TESTS
 
-Optional.
 These values can be used in cases where you are working locally on both MFTF's implementation code and Magento's test case code.
 In other words, if you have a more advanced local development setup probably involving symlinking MFTF into the `vendor` directory of `magento2`.
 
@@ -120,19 +118,19 @@ TESTS_MODULES_PATH
 
 #### TESTS_BP
 
-* Use: Optional
+* Use: Optional.
 * Description: The path to where MFTF supplementary files are located in the Magento2 codebase.
 * Example: `~/magento2ce/dev/tests/acceptance`
 
 #### FW_BP
 
-* Use: Optional
+* Use: Optional.
 * Description: The path to where MFTF exists and from which it is symlinked.
 * Example: `~/magento/magento2-functional-testing-framework`
 
 #### TESTS_MODULE_PATH
 
-* Use: Optional
+* Use: Optional.
 * Description: The path to where MFTF modules mirror Magento's modules.
 * Example: `~/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 

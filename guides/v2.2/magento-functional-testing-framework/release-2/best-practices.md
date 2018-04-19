@@ -12,53 +12,37 @@ functional_areas:
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-Check out our best practices below to ensure you're getting the absolute most out of the MFTF.
+Check out our best practices below to ensure you're getting the absolute most out of the Magento Functional Testing Framework.
 
-## Test
+## Naming conventions
 
-* Avoid using the `<wait>` action.
-    * This forces the test to ALWAYS wait for the time you specify when it may not need to wait so long to proceed.
-    * Instead, use actions such as `<waitForElementVisible>`, `<waitForLoadingMaskToDisappear>`, `<waitForElement>`, etc. to specifically wait for what you need for the test to proceed.
-* Keep your tests short and granular to allow for targeted testing. This also allows you to quickly identify root causes of test failures.
-* Use comments to make tests readable and maintainable.
-    * Periodically add inline `<!-- XML comments -->` and `<comment>` tags to both inform the reader of what your testing and to yield a more descriptive Allure report.
-    * If something is unclear or tricky, add comment tags (see above example).
-* Avoid writing selectors in the test files (refer to sections).
-* Keep tests relatively short, e.g. 100 lines. This will allow for easier reviews, easier merge conflict resolution, etc.
+### File names
 
-## Action Group
+Name files according to the following patterns to make future search more easy:
 
-* Action group names should be descriptive enough to inform the reader of what the action group is doing and what it should be used for.
-    * If this is too complicated to include in a name, include inline comments to describe what your action group is doing and why.
-* Provide default values for arguments that apply to your most common case scenarios.
+#### Test file name
 
-## File Names
+Format: {`Admin` or `Storefront`}{_Functionality_}`Test.xml`, where _Functionality_ briefly describes the testing functionality.
 
-Name files according to the following patterns to find everything more easily:
+Example: `StorefrontCreateCustomerTest.xml`.
 
-### Test
+#### Section file name
 
-* Format: {`Admin` or `Storefront`}{_Functionality_}`Test.xml`
-* Placeholder: _Functionality_ briefly describes the testing functionality.
-* Example: `StorefrontCreateCustomerTest.xml`.
+Format: {`Admin` or `Storefront`}{_UI description_}`Section.xml`, where _UI description_ briefly describes the testing UI.
 
-### Section
+Example: `AdminNavbarSection.xml`.
 
-* Format: {`Admin` or `Storefront`}{_UI description_}`Section.xml`
-* Placeholder: _UI description_ briefly describes the testing UI.
-* Example: `AdminNavbarSection.xml`.
+#### Data file name
 
-### Data
+Format: {_Type_}`Data.xml`, where _Type_ represents the entity type.
 
-* Format: {_Type_}`Data.xml`
-* Placeholder: _Type_ represents the entity type.
-* Example: `ProductData.xml`.
+Example: `ProductData.xml`.
 
-## Object Names
+### Object names
 
-Use _Foo.camelCase_ naming style similar to _Classes_ and _classProperties_ in PHP.
+Use the _Foo.camelCase_ naming style which is similar to _Classes_ and _classProperties_ in PHP.
 
-### Upper case
+#### Upper case
 
 Use an upper case first letter for:
 - File names. Example: _StorefrontCreateCustomerTest.xml_
@@ -67,36 +51,43 @@ Use an upper case first letter for:
 - Page name. Example: `<page name="AdminLoginPage">`.
 - Section name. Example: `<actionGroup name="DeleteCategory">`.
 
-### Lower case
+#### Lower case
 
 Use a lower case first letter for:
 - Data keys. Example: `<data key="firstName">`.
 - Element names. Examples: `<element name="confirmDeleteButton"/>`.
 
-## Comments
+## Test recommendations
 
-Use inline XML comments such as  `<!-- Add an image to the product -->` before "chunks" of test actions when writing tests.
-These comments make the test much easier to read, understand, and maintain.
+1. Use actions such as [waitForElementVisible], [waitForLoadingMaskToDisappear], [waitForElement] and so on to wait the exact time required for the action.
+ Try to avoid using the [wait] action, because it forces the test to ALWAYS wait for the time you specify. You may not need to wait so long to proceed.
+2. Keep your tests short and granular for target testing, easier reviews, and easier merge conflict resolution.
+ It also helps you to identify a cause of test failure.
+3. Use comments to keep tests readable and maintainable:
+  * Keep the inline `<!-- XML comments -->` and [comment] tags up to date.
+  It helps to inform the reader of what you are testing and to yield a more descriptive Allure report.
+  * Explain in comments unclear or tricky test steps.
+4. Refer to [sections] instead of writing selectors.
+
+## Action group recommendations
+
+1. [Action group] names should be sufficiently descriptive to inform a test writer of what the action group does and when it should be used.
+ Add additional explanation in comments if needed. 
+2. Provide default values for the arguments that apply to your most common case scenarios.
 
 ## Annotations
 
- - Always use annotations in a test. 
- - When updating tests, always make corresponding annotation updates. 
- - Annotation types and recommendations are described as:
-   - **Feature** - Report grouping, a set of tests that verify a feature.
-   - **Story** - Report grouping, a set of tests that verify a story.
-   - **Group** - Module name.
-   - **Title** - Describes the purpose of the test.
-   - **Description** - Describes how the test achieves the purpose defined in the title.
-   - **Severity** - Allowed values are `BLOCKER`, `CRITICAL`, `MAJOR`, `AVERAGE`, and `MINOR`.
+1. Always use [annotations] in a test. 
+2. When updating tests, always make the corresponding annotation updates.
  
 ## Data entities
 
-- When using a `<createData>` action in a `<before>` block, always use a corresponding `<deleteData>` in your `<after>` block.
-- Where data values are required to be unique in the database, enforce the uniqueness on the attribute of the data entity. Use `[unique=”suffix”]` or `[unique=”prefix”]` to append or prepend a unique value to the entity attribute.
- This ensures tests using the entity can be repeated.
+- When using a [createData] action in a [before] block, always use a corresponding [deleteData] in your [after] block.
+- Where data values are required to be unique in the database, enforce the uniqueness on the attribute of the data entity.
+Use `[unique=”suffix”]` or `[unique=”prefix”]` to append or prepend a unique value to the entity attribute.
+This ensures that tests using the entity can be repeated.
 - Do not modify existing data entity fields or add/merge additional data fields without fully understanding and verifying all existing data usages.
- We recommend that you create a new data entity for your test when you are not sure. 
+ We recommend that you create a new data entity for your test when you are not sure.
 
 ## Page objects
 
@@ -120,3 +111,18 @@ For example, do not define a parameterized element like the following:
 When setting merge orders for a test step, do not depend on steps from Magento modules that could be disabled by an application.
 
 For example, when you write a test step to create a gift card product, it's probably better to set your test step **after** simple product creation and let MFTF handle the merge order. This is better than setting the test step **before** creating a configurable product, because the configurable product module could be disabled.
+
+<!-- Link definitions -->
+
+[Action group]
+[after]
+[annotations]
+[before]
+[comment]
+[createData]
+[deleteData]
+[sections]
+[wait]
+[waitForElementVisible]
+[waitForLoadingMaskToDisappear]
+[waitForElement]
