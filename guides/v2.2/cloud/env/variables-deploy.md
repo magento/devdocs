@@ -82,6 +82,19 @@ You can forcefully enable or disable the deployment of static content during the
 
 We manage the values and setting of this variable. It identifies the type of environment: Integration, Staging, or Production. The `enterprise` value indicates a Staging and Production environment and sets the `STATIC_CONTENT_THREADS` to `3`; otherwise, sets it to `1` for Integration. This is highly important for Pro Production environment, which has a three-node, high-availability architecture with a very different technology stack.
 
+### `MYSQL_USE_SLAVE_CONNECTION`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Magento can read multiple databases asynchronously. Set to `true` to automatically use a _slave_ connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing because only one node needs to handle read-write traffic. Set to `false` to remove any existing slave connection array from the `env.php` file.
+
+```
+stage:
+    deploy:
+        MYSQL_USE_SLAVE_CONNECTION: true
+```
+
 ### `QUEUE_CONFIGURATION`
 
 -  **Default**—_Not set_
@@ -105,6 +118,23 @@ stage:
 ```
 
 By default, the deployment process overwrites all settings in the `env.php` file.
+
+### `REDIS_USE_SLAVE_CONNECTION`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _slave_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing because only one node needs to handle read-write traffic. Set to `false` to remove any existing slave connection array from the `env.php` file.
+
+```
+stage:
+    deploy:
+        REDIS_USE_SLAVE_CONNECTION: true
+```
+
+You must have a Redis service configured in the `.magento.app.yaml` file and in the `service.yaml` file.
+
+The slave connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
 ### `SCD_COMPRESSION_LEVEL`
 

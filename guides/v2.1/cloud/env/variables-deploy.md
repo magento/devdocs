@@ -94,6 +94,8 @@ We manage the values and setting of this variable. It identifies the type of env
 -  **Default**—`false`
 -  **Version**—Magento 2.1.4 and later
 
+Magento can read multiple databases asynchronously. Set to `true` to automatically use a _slave_ connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing because only one node needs to handle read-write traffic. Set to `false` to remove any existing slave connection array from the `env.php` file.
+
 ```
 stage:
     deploy:
@@ -129,7 +131,17 @@ By default, the deployment process overwrites all settings in the `env.php` file
 -  **Default**—`false`
 -  **Version**—Magento 2.1.4 and later
 
-Enabling the connection to the slave node improves the performance load by using the asynchronous capability of Redis. 
+Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _slave_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing because only one node needs to handle read-write traffic. Set to `false` to remove any existing slave connection array from the `env.php` file.
+
+```
+stage:
+    deploy:
+        REDIS_USE_SLAVE_CONNECTION: true
+```
+
+You must have a Redis service configured in the `.magento.app.yaml` file and in the `service.yaml` file.
+
+The slave connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
 ### `SCD_COMPRESSION_LEVEL`
 
