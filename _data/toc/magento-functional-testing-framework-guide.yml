@@ -48,7 +48,7 @@ pages:
         url: /magento-functional-testing-framework/release-2/merging.html
 
       - label: Configuration
-        url: magento-functional-testing-framework/release-2/configuration.html
+        url: /magento-functional-testing-framework/release-2/configuration.html
 
       - label: CLI Commands
         children:
