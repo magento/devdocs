@@ -6,7 +6,7 @@ version: 2.1
 github_link: marketplace/eqp/users.md
 ---
 
-Ues this resource to access and update your user profile. You can also access reports you own.
+The `users` resource accesses and updates your user profile. You can also access reports you own.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 You cannot use this resource to create a new
@@ -15,13 +15,13 @@ profile. You must create a new profile on the [Developer Portal](https://develop
 
 ## Profile
 
+You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token]({{page.baseurl}}/marketplace/eqp/auth.html#session-token).
+
 ```
 GET /rest/v1/users/:mage_id
 GET /rest/v1/users/:mage_id?style=summary
 PUT /rest/v1/users/:mage_id
 ```
-
-You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token]({{page.baseurl}}/marketplace/eqp/auth.html#session-token).
 
 ### Get profile data
 
@@ -44,7 +44,7 @@ curl -X GET \
         "mage_id": "MAG123456789",
         "first_name": “Chuck”,
         "last_name": “Norris”,
-        "email": “gmail@chucknorris.com",
+        "email": cnorris@example.com",
         "screen_name": “ninjachuck”,
         "has_completed_profile": true,
         "has_accepted_tos": true,
@@ -66,7 +66,7 @@ curl -X GET \
         "locale": "en-US",
         "timezone": "UTC",
         "payment_type": 1,
-        "payment_info": {"paypal_email“ : “gmail@chucknorris.com"},
+        "payment_info": {"paypal_email“ : “cnorris@example.com"},
         "taxpayer_type": 2,
         "tax_review_status": 3;
         "tax_withhold_percent": 0.00,
@@ -81,7 +81,7 @@ curl -X GET \
             "created_at": "2016-02-29 14:04:59",
             "modified_at": "2017-11-16 01:23:45",
             "social_media_info": {
-                "twitter": “@chucknorris”,
+                "twitter": “@chucknorrismagento”,
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -104,13 +104,13 @@ curl -X GET \
         "company_profile": {
             "name": “Ninja Norris Inc.”,
             "bio": “Ninja Extension Builder.”,
-            "website_url": "https://www.chucknorris.com/”,
-            "primary_email": "gmail@chucknorris.com",
-            "support_email": "support@chucknorris.com”,
+            "website_url": "https://www.example.com/”,
+            "primary_email": "cnorris@example.com",
+            "support_email": "support@example.com”,
             "created_at": "2016-02-29 14:04:59",
             "modified_at": "2017-09-30 01:23:45",
             "social_media_info": {
-                "twitter": “@chucknorris”,
+                "twitter": “@chucknorrismagento”,
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -149,7 +149,7 @@ curl -X GET \
         "mage_id": "MAG123456789",
         "first_name": “Chuck”,
         "last_name": “Norris”,
-        "email": “gmail@chucknorris.com",
+        "email": “cnorris@example.com",
         "screen_name": “ninjachuck”,
         "has_completed_profile": true,
         "has_accepted_tos": true,
@@ -167,7 +167,7 @@ curl -X GET \
 
 ### Update profile data
 
-You can update all profile data fileds, but you only need to include the fields you want to modify in the request body.
+You can update all profile data fields, but you only need to include the fields you want to modify in the request body.
 
 The following example shows a request to update the personal profile bio field:
 
@@ -199,6 +199,8 @@ A 200 OK HTTP response code indicates a successful update.
 
 ## Keys
 
+Use these APIs to manage Magento 1 and Magento 2 package access keys.
+
 ```
 GET     /rest/v1/users/:mage_id/keys
 POST    /rest/v1/users/:mage_id/keys
@@ -206,9 +208,10 @@ PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
-Use these APIs to manage Magento 1 and Magento 2 package access keys.
 
 ### Get keys
+
+Use this API to return the keys associated with the specified `mage_id`.
 
 ```
 GET /rest/v1/users/:mage_id/keys
@@ -273,11 +276,11 @@ For Magento 1 keys:
 
 ### Create keys
 
+Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key. You can create multiple key-pairs in a single request.
+
 ```
 POST /rest/v1/users/:mage_id/keys
 ```
-
-Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key. You can create multiple key-pairs in a single request.
 
 ```json
 {
@@ -369,11 +372,11 @@ curl -X PUT \
 
 ### Delete keys
 
+This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.
+
 ```
 DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
-
-This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.
 
 The following curl example illustrates the call to be made:
 
@@ -389,14 +392,14 @@ A 204 No Content HTTP response code indicates a successful update.
 
 ## Reports
 
+Use this API to retrieve reports owned by a specific user. Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.
+
 ```
 GET /rest/v1/users/:mage_id/reports/pageviews
 GET /rest/v1/users/:mage_id/reports/totals
 GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
-
-Use this API to retrieve reports owned by a specific user. Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 The Reports API specification is under design review. More details will be announced in the future..

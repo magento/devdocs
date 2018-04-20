@@ -6,7 +6,7 @@ version: 2.1
 github_link: marketplace/eqp/files.md
 ---
 
-Use this resource to manage all code artifacts and assets associated with an extension or a theme:
+Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
 
 * Magento 1 tarball (.tgz)
 * Magento 2 ZIP files
@@ -22,21 +22,21 @@ All files that you upload are inspected for malware. We only accept packages if 
 
 ## File uploads
 
+Use this API to upload files, retrieve file upload status, and remove files.
+
 ```
 GET /rest/v1/files/uploads/:file_upload_id
 POST /rest/v1/files/uploads
 DELETE /rest/v1/files/uploads/:file_upload_id
 ```
 
-Use this API to upload files, retrieve file upload status, and remove files.
-
 ### Get a file upload
+
+Use the upload ID to retrieve details about a file upload.
 
 ```
 GET /rest/v1/files/uploads/:file_upload_id
 ```
-
-Use the upload ID to retrieve details about a file upload.
 
 **Request**
 
@@ -74,13 +74,15 @@ Details on the response fields:
 |submission_ids|array|The list of package submissions associated with this file.|
 {:.style="table-layout: auto;"}
 
-### Upload a file
+### Upload files
+
+
+
+You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
 
 ```
 POST /rest/v1/files/uploads
 ```
-
-You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
 
 A sample request body of mime type, [multipart/form-data](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2) with a boundary string of `----------287032381131322`
 is shown below:
@@ -184,7 +186,10 @@ Each record in the list has the following fields:
 
 The `file_upload_id` must be tracked for subsequent package submission APIs.
 
-### Delete a file upload
+### Delete an uploaded file
+
+You can only dissociate files from packages that have not been published on the Magento Marketplace. Removing a file without the optional `submission_ids` parameter disassociates it from all linked packages. If no packages are associated with a file, it will be removed.
+
 
 ```
 DELETE /rest/v1/files/uploads/:file_upload_id
@@ -196,8 +201,6 @@ Available parameters:
 |---------|----|--------|-----------|
 |submission_ids|array|no|A list of submission IDs to disassociate the the file from the specified package.|
 {:.style="table-layout: auto;"}
-
-You can only dissociate files from packages that have not been published on the Magento Marketplace. Removing a file without the optional `submission_ids` parameter disassociates it from all linked packages. If no packages are associated with a file, it will be removed.
 
 **Request**
 
