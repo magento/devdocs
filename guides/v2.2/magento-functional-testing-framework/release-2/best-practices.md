@@ -128,6 +128,7 @@ Since the configurable product module could be disabled, this approach is more r
 [createData]: test/actions.html#createdata
 [deleteData]: test/actions.html#deletedata
 [entity]: data.html
+[parameterized selectors]: section/parameterized-selectors.html
 [sections]: section.html
 [wait]: test/actions.html#wait
 [waitForElement]: test/actions.html# waitforelement
