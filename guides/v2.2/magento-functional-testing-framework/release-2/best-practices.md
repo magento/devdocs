@@ -22,18 +22,21 @@ Name files according to the following patterns to make future search more easy:
 
 #### Test file name
 
-Format: {`Admin` or `Storefront`}{_Functionality_}`Test.xml`, where _Functionality_ briefly describes the testing functionality.
-Example: `StorefrontCreateCustomerTest.xml`.
+Format: {_Admin_ or _Storefront_}{Functionality}_Test.xml_, where Functionality briefly describes the testing functionality.
+
+Example: _StorefrontCreateCustomerTest.xml_.
 
 #### Section file name
 
-Format: {`Admin` or `Storefront`}{_UI description_}`Section.xml`, where _UI description_ briefly describes the testing UI.
-Example: `AdminNavbarSection.xml`.
+Format: {_Admin_ or _Storefront_}{UI Description}_Section.xml_, where UI Description briefly describes the testing UI.
+
+Example: _AdminNavbarSection.xml_.
 
 #### Data file name
 
-Format: {_Type_}`Data.xml`, where _Type_ represents the entity type.
-Example: `ProductData.xml`.
+Format: {Type}_Data.xml_, where Type represents the entity type.
+
+Example: _ProductData.xml_.
 
 ### Object names
 
@@ -54,7 +57,7 @@ Use a lower case first letter for:
 - Data keys. Example: `<data key="firstName">`.
 - Element names. Examples: `<element name="confirmDeleteButton"/>`.
 
-## Test recommendations
+## Test
 
 1. Use actions such as [waitForElementVisible], [waitForLoadingMaskToDisappear], [waitForElement] and so on to wait the exact time required for the action.
  Try to avoid using the [wait] action, because it forces the test to ALWAYS wait for the time you specify. You may not need to wait so long to proceed.
@@ -66,18 +69,18 @@ Use a lower case first letter for:
   * Explain in comments unclear or tricky test steps.
 4. Refer to [sections] instead of writing selectors.
 
-## Action group recommendations
+## Action group
 
 1. [Action group] names should be sufficiently descriptive to inform a test writer of what the action group does and when it should be used.
  Add additional explanation in comments if needed. 
 2. Provide default values for the arguments that apply to your most common case scenarios.
 
-## Annotations
+## Annotation
 
 1. Use [annotations] in a test. 
 2. Update your annotations correspondingly when updating tests.
  
-## Data entities
+## Data entity
 
 1. Keep clean your instance under test.
  Remove data after test if the test required creating any data.
@@ -89,7 +92,7 @@ Use a lower case first letter for:
 3. Do not modify existing data entity fields as well as add or merge additional data fields without complete understanding and verifying usage of existing data in tests.
  Create a new data entity for your test if you are not sure.
 
-## Page objects
+## Page object
 
 Use [parameterized selectors] for constructing a selector when test specific or runtime generated information is needed.
 Do not use them for static elements.
@@ -110,10 +113,9 @@ Define these three elements and reference them by name in the tests.
 <element name="crossSellProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='crosssell']"/>
 ```
 
-
 ## Test step merging order
 
-When setting a merging order for a test step, do not depend on steps from Magento modules that could be disabled by an application.
+When setting a [merging] order for a test step, do not depend on steps from Magento modules that could be disabled by an application.
 
 For example, when you write a test step to create a gift card product, set your test step **after** simple product creation and let the MFTF handle the merge order.
 Since the configurable product module could be disabled, this approach is more reliable than setting the test step **before** creating a configurable product.
@@ -128,6 +130,7 @@ Since the configurable product module could be disabled, this approach is more r
 [createData]: test/actions.html#createdata
 [deleteData]: test/actions.html#deletedata
 [entity]: data.html
+[merging]: merging.html
 [parameterized selectors]: section/parameterized-selectors.html
 [sections]: section.html
 [wait]: test/actions.html#wait
