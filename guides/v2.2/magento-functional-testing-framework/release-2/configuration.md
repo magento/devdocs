@@ -118,11 +118,15 @@ TESTS_MODULES_PATH
 
 #### TESTS_BP
 
+BP is an acronym for BasePath.
+
 * Use: Optional.
 * Description: The path to where MFTF supplementary files are located in the Magento2 codebase.
 * Example: `~/magento2ce/dev/tests/acceptance`
 
 #### FW_BP
+
+FW_BP is an acronym for FrameWork BasePath.
 
 * Use: Optional.
 * Description: The path to where MFTF exists and from which it is symlinked.
@@ -136,5 +140,5 @@ TESTS_MODULES_PATH
 
 ### MODULE_WHITELIST
 
-The `MODULE_WHITELIST` environment variable can be used if you are working on a new module.
-When adding a new directory under `Magento/FunctionalTest`, you must add the directory name to `MODULE_WHITELIST` or MFTF will not see it.
+Use the `MODULE_WHITELIST` environment variable if you are working on a new module.
+When adding a new directory under `Magento/FunctionalTest`, add the directory name under `MODULE_WHITELIST` to enable the MFTF to process it.
