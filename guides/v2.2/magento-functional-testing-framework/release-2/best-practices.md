@@ -4,53 +4,132 @@ group: mftf
 title: Best practices
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/best-practices.md
+mftf-release: 2.1.2
 functional_areas:
  - Testing
 ---
 
-Check out our best practices below to ensure you're getting the absolute most out of the MFTF.
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
+
+Check out our best practices below to ensure you're getting the absolute most out of the Magento Functional Testing Framework.
+
+## Naming conventions
+
+### File names
+
+Name files according to the following patterns to make future search more easy:
+
+#### Test file name
+
+Format: {`Admin` or `Storefront`}{_Functionality_}`Test.xml`, where _Functionality_ briefly describes the testing functionality.
+Example: `StorefrontCreateCustomerTest.xml`.
+
+#### Section file name
+
+Format: {`Admin` or `Storefront`}{_UI description_}`Section.xml`, where _UI description_ briefly describes the testing UI.
+Example: `AdminNavbarSection.xml`.
+
+#### Data file name
+
+Format: {_Type_}`Data.xml`, where _Type_ represents the entity type.
+Example: `ProductData.xml`.
+
+### Object names
+
+Use the _Foo.camelCase_ naming style which is similar to _Classes_ and _classProperties_ in PHP.
+
+#### Upper case
+
+Use an upper case first letter for:
+- File names. Example: _StorefrontCreateCustomerTest.xml_
+- Test name attributes. Example: `<test name="TestAllTheThingsTest">`.
+- Data entity names. Example: `<entity name="OutOfStockProduct">`.
+- Page name. Example: `<page name="AdminLoginPage">`.
+- Section name. Example: `<actionGroup name="DeleteCategory">`.
+
+#### Lower case
+
+Use a lower case first letter for:
+- Data keys. Example: `<data key="firstName">`.
+- Element names. Examples: `<element name="confirmDeleteButton"/>`.
+
+## Test recommendations
+
+1. Use actions such as [waitForElementVisible], [waitForLoadingMaskToDisappear], [waitForElement] and so on to wait the exact time required for the action.
+ Try to avoid using the [wait] action, because it forces the test to ALWAYS wait for the time you specify. You may not need to wait so long to proceed.
+2. Keep your tests short and granular for target testing, easier reviews, and easier merge conflict resolution.
+ It also helps you to identify a cause of test failure.
+3. Use comments to keep tests readable and maintainable:
+  * Keep the inline `<!-- XML comments -->` and [comment] tags up to date.
+  It helps to inform the reader of what you are testing and to yield a more descriptive Allure report.
+  * Explain in comments unclear or tricky test steps.
+4. Refer to [sections] instead of writing selectors.
+
+## Action group recommendations
+
+1. [Action group] names should be sufficiently descriptive to inform a test writer of what the action group does and when it should be used.
+ Add additional explanation in comments if needed. 
+2. Provide default values for the arguments that apply to your most common case scenarios.
 
 ## Annotations
 
- - Always use annotations in a test.
- 
- - When updating tests, always make corresponding annotation updates.
- 
- - Annotation types and recommendations are described as:
-    - **Feature** - Report grouping, a set of tests that verify a feature.
-    - **Story** - Report grouping, a set of tests that verify a story.
-    - **Group** - Module name.
-    - **Title** - Describes the purpose of the test.
-    - **Description** - Describes how the test achieves the purpose defined in the title.
-    - **Severity** - Allowed values are _BLOCKER_, _CRITICAL_, _MAJOR_, _AVERAGE_, and _MINOR_.
+1. Use [annotations] in a test. 
+2. Update your annotations correspondingly when updating tests.
  
 ## Data entities
 
-- When using a `<createData>` action in a `<before>` block, always use a corresponding `<deleteData>` in your `<after>` block.
-
-- Where data values are required to be unique in the database, enforce the uniqueness on the attribute of the data entity. Use `[unique=”suffix”]` or `[unique=”prefix”]` to append or prepend a unique value to the entity attribute. This ensures tests using the entity can be repeated.
-
-- Do not modify existing data entity fields or add/merge additional data fields without fully understanding and verifying all existing data usages. We recommend that you create a new data entity for your test when you are not sure. 
+1. Keep clean your instance under test.
+ Remove data after test if the test required creating any data.
+ Use a corresponding [deleteData] test step in your [after] block when using a [createData] action in a [before] block.
+2. Make specific data entries under test to be unique.
+ Enable data uniqueness where data values are required to be unique in a database by test design. 
+ Use `unique=”suffix”` or `unique=”prefix”` to append or prepend a unique value to the [entity] attribute.
+ This ensures that tests using the entity can be repeated.
+3. Do not modify existing data entity fields as well as add or merge additional data fields without complete understanding and verifying usage of existing data in tests.
+ Create a new data entity for your test if you are not sure.
 
 ## Page objects
 
-Do not overuse parameterized selectors. 
+Use [parameterized selectors] for constructing a selector when test specific or runtime generated information is needed.
+Do not use them for static elements.
 
-Parameterized selectors should only be used when test-specific or runtime-generated information is needed to construct a selector. Do not use it for static elements.
+{:style="color:red"}
+BAD:
+``` xml
+<element name="relatedProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='{{productType}}']" parameterized="true"/>
+```
 
-For example, do not define a parameterized element like the following:
-  ``` xml
-  <element name="relatedProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='{{productType}}']" parameterized="true"/>
-  ```
-  Instead, define these three elements and reference them by name in the tests:
-  ``` xml
-  <element name="relatedProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='related']"/>
-  <element name="upSellProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='upsell']"/>
-  <element name="crossSellProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='crosssell']"/>
-  ```
+{:style="color:green"}
+GOOD:
 
-## Test step merge orders
+Define these three elements and reference them by name in the tests.
+``` xml
+<element name="relatedProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='related']"/>
+<element name="upSellProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='upsell']"/>
+<element name="crossSellProductSectionText" type="text" selector=".fieldset-wrapper.admin__fieldset-section[data-index='crosssell']"/>
+```
 
-When setting merge orders for a test step, do not depend on steps from Magento modules that could be disabled by an application.
 
-For example, when you write a test step to create a gift card product, it's probably better to set your test step **after** simple product creation and let MFTF handle the merge order. This is better than setting the test step **before** creating a configurable product, because the configurable product module could be disabled.
+## Test step merging order
+
+When setting a merging order for a test step, do not depend on steps from Magento modules that could be disabled by an application.
+
+For example, when you write a test step to create a gift card product, set your test step **after** simple product creation and let the MFTF handle the merge order.
+Since the configurable product module could be disabled, this approach is more reliable than setting the test step **before** creating a configurable product.
+
+<!-- Link definitions -->
+
+[Action group]: test/action-groups.html
+[after]: test/actions.html#before-and-after
+[annotations]: test/annotations.html
+[before]: test/actions.html#before-and-after
+[comment]: test/actions.html#comment
+[createData]: test/actions.html#createdata
+[deleteData]: test/actions.html#deletedata
+[entity]: data.html
+[sections]: section.html
+[wait]: test/actions.html#wait
+[waitForElement]: test/actions.html# waitforelement
+[waitForElementVisible]: test/actions.html#waitforelementvisible
+[waitForLoadingMaskToDisappear]: test/actions.html#waitforloadingmasktodisappear
