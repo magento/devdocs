@@ -6,7 +6,7 @@ version: 2.1
 github_link: marketplace/eqp/packages.md
 ---
 
-Use this resource to initiate and manage all aspects of submitting a package to the [MAgento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html). You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.
+Use this resource to initiate and manage all aspects of submitting a package to the [Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html). You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.
 
 * **Technical information**—References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
 
@@ -20,12 +20,12 @@ A successful submission results in a package being published on the [Magento Mar
 
 ## EQP review process
 
-The EQP process inlcudes two steps:
+The EQP review process inlcudes two steps:
 
-1. **Technical**—This is where we preform all automated testing. This step also involves manual testing after all automated test run.
-2. **Marketing**—This is where we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
+* In **technical review**, we preform all automated testing. This step also involves manual testing after all automated tests run.
+* In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
 
-Both review steps occur in parallel when you submit a package. If both steps are successful, the package can be published to the Magento Marketplace. If there is a failure, you can iteratively fix issues until they are resolved.
+These review steps occur in parallel when you submit a package. If both steps are successful, the package can be published to the Magento Marketplace. If there is a failure, you can iteratively fix issues until they are resolved.
 
 ## Package fields
 
@@ -39,7 +39,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |---------------|----|-----------------------|--------|-----------|
 |name|string|GET, POST, PUT|marketing|The name or title of the package. Duplicate names are not allowed.|
 |type|string|GET, POST, PUT|technical|Type of package. Valid values include `extension`, `theme`, `shared_package` or `all`. Shared packages are only applicable for Magento 2 extensions. Default is `all`|
-|platform|string|GET, POST, PUT|technical|The Magento platform compatibility of this package. Valid values include  `M1` for MAgento 1 or `M2` for Magento 2.|
+|platform|string|GET, POST, PUT|technical|The Magento platform compatibility of this package. Valid values include  `M1` for Magento 1 or `M2` for Magento 2.|
 |version_compatibility|array|GET, POST, PUT|technical|List of Magento versions that this package supports.|
 |sku|string|GET|-|The SKU generated from metadata in the code artifact.|
 |version|string|GET|-|The package version in the format `major.minor.patch`. For example, `2.5.3`.|
@@ -52,7 +52,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |documentation_artifacts|object|GET, POST, PUT|marketing, technical|The user, installation, and reference PDF manuals referenced in a file upload ID obtained from the Files API.|
 |shared_packages|array|GET, POST, PUT|technical|The list of artifact objects, each a Magento 2 shared package being referenced in a file upload ID obtained from the Files API. Listing it here implies that the seller is enabling  the "access rights" to these shared packages when a buyer purchases it.|
 |categories|array|GET, POST, PUT|marketing|The list of categories expressed as a `path` for the package. For example, `//Extension//Marketing//SEO/SEM`. Note that the path separator is `//` which allows for a single slash like `SEO/SEM` in the path name. Refer to the [Marketplace Store](https://marketplace.magento.com) for a list of valid categories.|
-|media_artifacts|object|GET, POST, PUT|marketing|The sub-object that holds the package icon and gallery images referenced in a file upload ID obtained from the Files API.|
+|media_artifacts|object|GET, POST, PUT|marketing|The sub-object that holds the package icon, gallery images, and optional video URLs referenced in a file upload ID obtained from the Files API.|
 |prices|array|GET, POST, PUT|marketing|The list of prices in USD set for this package by edition, and its respective installation price (if any).|
 |support_tiers|array|GET, POST, PUT|marketing|List of support tiers, each specifying the edition, the monthly period, descriptions, and prices in USD.|
 |license_type|string|GET, POST, PUT|marketing|License type supported by the package. Refer to [Additional notes](#additional-notes) for a list of valid license types.|
@@ -66,10 +66,10 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |action|object|POST, PUT|-|The action to be taken during a package submission (POST or PUT). Refer to [Package submission](#package-submission).|
 |eqp_status|object|GET|-|The current status of the package in the EQP process. Refer to [Get package details](#get-package-details).|
 |offset|integer|GET|-|In combination with the `limit` parameter, it can be used for paging the collection of packages. Refer to [Get package details](#get-package-details). Default value is 0.|
-|limit|integer|GET|-|Along with offset, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.|
+|limit|integer|GET|-|Along with `offset`, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.|
 |sort|string|GET|-|A comma-separated list of fields to sort the list, each field prefixed by `-` for descending order, or `+` for ascending order. Refer to [Get package details](#get-package-details).|
-|created_time|DateTime|GET|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was first submitted.|
-|modified_time|DateTime|GET|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was last updated.|
+|created_time|DateTime|GET|-|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was first submitted.|
+|modified_time|DateTime|GET|-|The UTC date and time (`YYYY-MM-DD HH:MM:SS`) the package was last updated.|
 {:.style="table-layout: auto;"}
 
 ### Additional notes
@@ -176,8 +176,8 @@ Assuming a Magento 2 package:
     }
   ],
   "video_urls" : [
-    "https-hw3b//www.youtube.com/watch?v=l33T2-YC4tk",
-    "https-hw3b//www.youtube.com/watch?v=682p52tFcmY"
+    "https://www.youtube.com/watch?v=l33T2-YC4tk",
+    "https://www.youtube.com/watch?v=682p52tFcmY"
   ]
 }
 ```
@@ -204,7 +204,7 @@ The **video_urls** property is optional.
 
 #### support_tiers
 
-Up to three tiers per edition (`CE` and `EE`) can be supported:
+Up to three tiers per edition (`CE` (Open Source) and `EE` (Commerce)) can be supported:
 
 ```json
 “suppport_tiers” : [
@@ -372,21 +372,19 @@ Once a package is published to the store, it can have the following field:
 
 ```
 POST /rest/v1/products/packages
-PUT  /rest/v1/products/packages
-PUT  /rest/v1/products/packages/:submission_id
+PUT /rest/v1/products/packages
+PUT /rest/v1/products/packages/:submission_id
 PUT /rest/v1/products/packages/:item_id
 ```
 
 ### Submit a package
 
-A new package submission can be done in either of the following ways:
+You can submit a package in either of the following ways:
 
-1. A single POST request with all required fields set and explicitly indicating submission for technical and marketing review using the `action` parameter.
-2. A series of requests, typically in the following order:
-   1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both:
-      1. This accepts the new package and saves it on the Developer Portal for further updates.
-      2. It will return a unique `submission_id` for PUT operations.
-   2. One or more PUT requests with `action` set to `draft` in `technical`, `marketing`, or both.
+* A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the `action` parameter.
+* A series of requests, typically in the following order:
+   1. A single POST request with the minimum required fields set and `action` set to `draft` in either `technical`, `marketing`, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique `submission_id` for subsequent PUT operations.
+   2. One or more PUT requests in which you configure the package parameters. In these requests, set `action` to `draft` in `technical`, `marketing`, or both.
    3. A final PUT request indicating submission for `technical`, `marketing`, or both.
 
 You can update one or more parameters in `draft` mode, but the API does not check for validation errors.
@@ -529,13 +527,13 @@ curl -X POST \
 The PUT method can be used to update packages in the following states:
 
 * The package is in draft mode for the technical or marketing review; or both.
-* The package has been rejected in either the technical or marketing review; or both. You to fix these issues and re-submit the package.
+* The package has been rejected in either the technical or marketing review; or both. You must fix these issues and re-submit the package.
 * The package has been released to the Magento Marketplace.
 * The package was removed from the store by the developer and needs to be re-published.
 * The package can be recalled while in the EQP pipeline.
-* After released to the Magento Marketplace, only marketing information can be updated, which will put it in the marketing review. The package will continue to be live on the marketplace, and after the marketing approval, the updated fields will be published to the store.
+* After a package has been released to the Magento Marketplace, you can update marketing information only. Changing marketing information causes the package to be placed in marketing review. The package continues to be live on the marketplace, and after the marketing approval, the updated fields will be published to the store.
 
-Other than recall, a package cannot be modified during the EQP process.
+You cannot modify a package during the EQP process, except to recall the package.
 
 Updating several packages in a batch request is similar to the POST version above. The only difference is to supply `submission_id` for each item obtained from the POST request.
 
@@ -616,10 +614,10 @@ There are various ways to retrieve package details, most of which are convenient
 
 The alternative ways provided are:
 
-*  `skus`—This allows to retrieve all versions of a particular package sku. Additional `version` filter is available to retrieve a specific sku and version.
-* `item_id`: This allows to retrieve package details via a user-defined unique `item_id` per submission if supplied during the POST call.
+*  `skus`: Retrieves all versions of a particular package sku. An additional `version` filter is available to retrieve a specific sku and version.
+* `item_id`: Retrieves package details by specifying a user-defined unique `item_id` if one was supplied during the POST call.
 
-Retrieving all package details (every version of every package submitted) is possible via the following basic endpoints:
+The following basic endpoints retrieve all package details (every version of every package submitted):
 
 ```
 GET /rest/v1/products/packages
@@ -627,7 +625,7 @@ GET /rest/v1/products/packages/skus
 GET /rest/v1/products/packages/items
 ```
 
-Detailed EQP status report of a package can be obtained via the following status endpoints:
+The following status endpoints provide a detailed EQP status report of a packages:
 
 ```
 GET /rest/v1/products/packages/:submission_id/status
@@ -635,7 +633,7 @@ GET /rest/v1/products/packages/sku/:url_encoded_sku/status
 GET /rest/v1/products/packages/item/:item_id/status
 ```
 
-Here is a curl example listing all packages belonging to a user:
+This sample call lists all packages belonging to a user:
 
 **Request**
 
@@ -755,8 +753,8 @@ curl -X GET \
         }
       ],
       "video_urls" : [
-        "https-hw3b//www.youtube.com/watch?v=l33T2-YC4tk",
-        "https-hw3b//www.youtube.com/watch?v=682p52tFcmY"
+        "https://www.youtube.com/watch?v=l33T2-YC4tk",
+        "https://www.youtube.com/watch?v=682p52tFcmY"
       ]
     },
     "categories" : [
@@ -789,16 +787,16 @@ curl -X GET \
 
 <div class="bs-callout bs-callout-info" markdown="1">
 * The previous example shows one product only, but an array of products can be returned.
-* The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 packages.xml or M2 composer.json), once it passes the malware checks.
+* The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 `packages.xml` or M2 `composer.json`), once it passes the malware checks.
 * The code, documentation, and media artifact files have additonal info indicating meta-information on these files, including their current malware status.
 * The `eqp_status` field will indicate the current state of the package in the EQP process.
 </div>
 
 ### Get EQP status details
 
-As seen above, this particular submission failed the EQP technical review. Use the `submission_id` to get a more detailed report:
+In the previous example, submission `f4eacd72be` failed. Specify the submission_id query parameter to get a more detailed report:
 
-***Request**
+**Request**
 
 ```shell
 curl -X GET \
@@ -806,7 +804,7 @@ curl -X GET \
      https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be/status
 ```
 
-***Response**
+**Response**
 
 ```json
 {
@@ -863,7 +861,7 @@ curl -X GET \
 
 ### Sorting and Filtering
 
-The following fields currently enable both sorting and filtering support. Refer to the [Package fields](#package-fields) section above for valid values for certain fields):
+The following fields enable both sorting and filtering support. Refer to the [Package fields](#package-fields) section above for valid values for certain fields):
 
 |Field|Comments|
 |-----|--------|
@@ -901,14 +899,14 @@ A list of theme packages can be returned in the same way as described in [Get pa
 
 ## Delete a package
 
+You can delete a package only if you specify a `submission_id` or `item_id` as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.
+
 ```
 DELETE /rest/v1/products/packages/:submission_id
 DELETE /rest/v1/products/packages/items/:item_id
 ```
 
-Deleting a package can only be done via **submission_id** or **item_id** as it is a risky operation, hence no batch deletions are allowed.
-
-A sample curl call is shown below:
+The following example deletes the package with `submission_id` `6fd7eaacbc`:
 
 **Request**
 
@@ -918,4 +916,4 @@ curl -X DELETE \
      https://developer-api.magento.com/rest/v1/products/packages/6fd7eaacbc
 ```
 
-A 200 HTTP Response code will indicate success of the operation.
+A 200 HTTP Response code indicates a successful operation.
