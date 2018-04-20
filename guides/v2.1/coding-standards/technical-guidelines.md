@@ -709,4 +709,4 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
 [rules]: https://github.com/magento/magento2/blob/2.1/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
-[CLI Command Naming Guidelines]: {{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html
+[CLI Command Naming Guidelines]: {{page.baseurl}}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

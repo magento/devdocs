@@ -12,7 +12,7 @@ functional_areas:
 ---
 
 ### Overview
-[Observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html) are capable of modifying the behavior of a Magento application because they are dynamically injected into the execution flow. Poorly designed and coded observers can cause issues, instabilities, or otherwise break the application.
+[Observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html) are capable of modifying the behavior of a Magento application because they are dynamically injected into the execution flow. Poorly designed and coded observers can cause issues, instabilities, or otherwise break the application.
 
 We encourage you to follow these best practices aimed towards reducing problems when your observer is executed.
 
@@ -44,4 +44,4 @@ Cyclical event loops occur when your observer calls the method of an object that
 Your observer should not make assumptions about the order in which it will be invoked nor should it rely on the execution of another observer. Observers listening to the same event may be invoked in any order when that event is dispatched.
 
 ### Recommended Reading
-* [Events and Observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html)
+* [Events and Observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html)

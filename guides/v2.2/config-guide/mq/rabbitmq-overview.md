@@ -15,7 +15,7 @@ The Message Queue Framework (MQF) is a system within {{site.data.var.ee}} that a
 
 The following diagram illustrates the Message Queue Framework.
 
-<img src="{{ site.baseurl }}common/images/mq.png">
+<img src="{{ site.baseurl}}/common/images/mq.png">
 
 * A {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} is a component that sends messages to an exchange. It knows which exchange to publish to and the format of the messages it sends.
 
@@ -31,5 +31,5 @@ A basic message queue system can also be set up without using RabbitMQ. In this 
 
 #### Related Topics
 
-*	[Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html)
-*	[Install RabbitMQ]({{page.baseurl}}install-gde/prereq/install-rabbitmq.html)
+*	[Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
+*	[Install RabbitMQ]({{page.baseurl}}/install-gde/prereq/install-rabbitmq.html)

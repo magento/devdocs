@@ -14,7 +14,7 @@ Back up your Integration environment database and code:
 
 Back up your Staging or Production environment database before deploying to those environments:
 
-1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html).
 
 2.  Enter the following command to create a database dump:
 

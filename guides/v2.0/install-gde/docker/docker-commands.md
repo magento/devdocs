@@ -22,7 +22,7 @@ This topic lists DevBox commands you might find useful for day-to-day use or whe
 
 Populating the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} causes the storefront, products, and images to load faster. Use this option after you make changes to the product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} to pre-deploy static assets and put objects in the cache so the storefront loads faster.
 
-You can also start the [Magento cron job]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview).
+You can also start the [Magento cron job]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview).
 
 However, enabling these options consumes resources and might drain your battery.
 
@@ -31,7 +31,7 @@ However, enabling these options consumes resources and might drain your battery.
 This section discusses how to populate the cache and storefront, and run cron, on a running DevBox system.
 
 #### Start the Magento cron job and populate the cache
-Use the following command to both start the [Magento cron job]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview) and populate the cache and storefront:
+Use the following command to both start the [Magento cron job]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview) and populate the cache and storefront:
 
 	docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --magento-cron-run=1 --no-interaction
 
@@ -79,7 +79,7 @@ To populate the storefront and cache, and run cron to run every time Magento sta
 
 You can use the following commands to start, stop, and restart services; and you can find the ports currently being used by the services.
 
-Run all commands from your [DevBox root folder]({{ page.baseurl }}install-gde/docker/docker-ref.html#devbox-root-dir).
+Run all commands from your [DevBox root folder]({{ page.baseurl}}/install-gde/docker/docker-ref.html#devbox-root-dir).
 
 ### Restart the containers after rebooting
 After you restart your computer, we recommend you use the following command, which restarts all services and assigns them new ports:

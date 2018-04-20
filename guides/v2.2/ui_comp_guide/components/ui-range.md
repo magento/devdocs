@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js]({{site
 
 ## Range configuration
 
-Extends all [Multiline]({{page.baseurl}}ui_comp_guide/components/ui-multiline.html) configuration.
+Extends all [Multiline]({{page.baseurl}}/ui_comp_guide/components/ui-multiline.html) configuration.
 
 Range-specific configuration:
 

@@ -18,7 +18,7 @@ This topic describes how to create your custom theme for Magento Admin, referenc
 
 ## Prerequisites 
 
-[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. 
+[Set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. 
 
 ## Overview
 
@@ -37,7 +37,7 @@ In the `app/design/adminhtml` directory create a new `<Vendor>/<admin_theme>` di
 
 ## Add a declaration `theme.xml` {#declare_theme}
 
-In the theme directory, add `theme.xml` containing at least the theme name and the parent theme name (if the theme [inherits]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) from one). We recommend you to inherit from the default Magento Admin theme: `Magento/backend`.
+In the theme directory, add `theme.xml` containing at least the theme name and the parent theme name (if the theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from one). We recommend you to inherit from the default Magento Admin theme: `Magento/backend`.
 
 Add or copy from an existing `theme.xml` to your theme directory `app/design/adminhtml/<Vendor>/<admin_theme>`.
 
@@ -72,14 +72,14 @@ In this file, add the following code, having replaced placeholders with your the
 {%endhighlight%}
 
 ## Optionally add `composer.json` {#make_composer}
-See the [Make your theme a Composer package (optional)]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer)
+See the [Make your theme a Composer package (optional)]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer)
 
 
 ## Admin theme logo (optional) {#logo}
 
 In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used as theme logo. 
 To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
-If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html#logo_declare).
+If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#logo_declare).
 
 
 ## Theme registration {#register_theme}
@@ -88,5 +88,5 @@ Once you open the Magento Admin (or reload any  Magento Admin page) having added
 
 ## Apply the Admin theme
 
-See the [Apply a custom Admin theme topic]({{page.baseurl}}frontend-dev-guide/themes/admin_theme_apply.html).
+See the [Apply a custom Admin theme topic]({{page.baseurl}}/frontend-dev-guide/themes/admin_theme_apply.html).
 

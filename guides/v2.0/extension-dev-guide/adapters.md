@@ -19,7 +19,7 @@ These classes allow you to use functionality from third-party libraries in your 
 You should always use {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} classes instead of directly using classes from third-party libraries.
 This reduces the change impact on your code when the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} changes in a third-party {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 
-We recommend using adapter classes for [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) to get access to the functionality provided by third-party classes.
+We recommend using adapter classes for [dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html) to get access to the functionality provided by third-party classes.
 
 ## How to write
 

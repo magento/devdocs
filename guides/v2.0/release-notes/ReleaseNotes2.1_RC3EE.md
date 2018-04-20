@@ -21,7 +21,7 @@ We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release ca
 
 We welcome your participation in this process! Enterprise Edition customers can provide feedback in these two ways: 
 
-* Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}/contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
 
 * Email to DL-Magento-2.1-Feedback@magento.com.
 
@@ -29,7 +29,7 @@ We welcome your participation in this process! Enterprise Edition customers can 
 This Release Candidate is available from `repo.magento.com` if you have a Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.
 
 
-Backward-incompatible changes are documented in <a href="{{page.baseurl}}release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{page.baseurl}}/release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
 <h3>Highlights</h3>
 
@@ -225,9 +225,9 @@ This Release Candidate is for test purposes only. Do not install it in a product
 {% include install/releasenotes/ee_install_21.md %}
 
 ### Upgrades
-To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html).
+To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}/release-notes/tech_bull_21-upgrade.html).
 
 
 
 ## Migration toolkits
-The <a href="{{page.baseurl}}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{page.baseurl}}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

@@ -9,13 +9,13 @@ github_link: ui_comp_guide/components/ui-bookmarks.md
 ---
 
 ## Overview
-The Bookmarks component stores active and changed state of a grid implemented using [Listing]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html). It includes the state of filters, columns position, applied sorting, pagination, and so on.
+The Bookmarks component stores active and changed state of a grid implemented using [Listing]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html). It includes the state of filters, columns position, applied sorting, pagination, and so on.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)
 
 ## Configuration options
 
-Extends all [uiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Extends all [uiCollection]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 Bookmarks-specific configuration:
 

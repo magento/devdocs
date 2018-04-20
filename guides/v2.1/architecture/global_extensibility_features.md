@@ -28,7 +28,7 @@ The concept of the <i>module</i> is the heart of Magento {% glossarytooltip 5577
 
 If a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code.
 
- See the <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules.
+ See the <a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules.
 
 ### Reliance on popular design patterns
 
@@ -40,7 +40,7 @@ Design patterns are time-tested, widely recognized software architecture constru
 
 Magento developers should familiarize themselves with our coding standards, best practices, and conventions, especially standards for PHP file formatting, coding style, and file naming conventions. Magento standards are based on Zend Framework Coding Standards.
 
-See <a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a> for guidelines and requirements.
+See <a href="{{page.baseurl}}/coding-standards/bk-coding-standards.html">Coding Standards</a> for guidelines and requirements.
 
 ### Rich product ecosystem
 
@@ -86,23 +86,23 @@ Attribute types fall into three general categories:
 
 * <b>Extension attributes</b> often use more {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
-See <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information about using attributes.
+See <a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information about using attributes.
 
 ### Web APIs
 
 Magento or third-party services can be configured as a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} (REST or SOAP) with some simple {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %}. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} (Content Management Systems).
 
-See <a href="{{page.baseurl}}get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information.
+See <a href="{{page.baseurl}}/get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information.
 
 ### Service contracts, dependency injection, and dependency inversion
 
 <i>Service contracts</i> provide a new way to access public API endpoints. These PHP interfaces offer robust, stable extension points to which clients can connect.  Service contracts define the endpoints that function as a module's public API. Defining these endpoints is an essential part of adding a module.
 
-Service contracts are discussed throughout the Magento documentation set. See <a href="{{page.baseurl}}architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection.
+Service contracts are discussed throughout the Magento documentation set. See <a href="{{page.baseurl}}/architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection.
 
 Magento implements <i>dependency injection</i> along with service contracts. Dependency injection provides a mechanism for changing a module's behavior without altering the client or understanding nitty-gritty details of implementation. Both dependency injection and its related concept *dependency inversion* support Magento's fundamental architectural principles of modularity and ease-of-extensibility. They strongly encourage basic coding practices that support the loose coupling of software modules.
 
-See <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on both dependency injection and service contracts.
+See <a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on both dependency injection and service contracts.
 
 ### Plug-ins
 
@@ -110,8 +110,8 @@ Plug-ins, like modules, are a mechanism for adding features to the core Magento 
 
 Plug-ins are also called <i>interceptors</i>. Applications use the {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %}.
 
-See <a href="{{page.baseurl}}extension-dev-guide/plugins.html">Plug-ins</a> in <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on declaring and prioritizing plug-ins.
+See <a href="{{page.baseurl}}/extension-dev-guide/plugins.html">Plug-ins</a> in <a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on declaring and prioritizing plug-ins.
 
 ### Related topic {#m2arch-related}
 
-<a href="{{page.baseurl}}architecture/extensibility.html">Extensibility and modularity</a>
+<a href="{{page.baseurl}}/architecture/extensibility.html">Extensibility and modularity</a>

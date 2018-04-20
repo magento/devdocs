@@ -19,23 +19,23 @@ If you would like to help us by writing any of the topics that we have not yet g
 - Overview
 - What are UI components
 	- What is a UI component
-	- [The architectural structure of a UI component]({{page.baseurl}}architecture/archi_perspectives/components/AComponents.html)
+	- [The architectural structure of a UI component]({{page.baseurl}}/architecture/archi_perspectives/components/AComponents.html)
 	- Application workflow description
-	- [Configuration flow: the configuration pieces and their part in workflow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html)
+	- [Configuration flow: the configuration pieces and their part in workflow]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html)
 		- Declaration in `definition.xml`
-		- [UI component's XML declaration (the instance)]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html)
-		- [PHP modifiers]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html)
+		- [UI component's XML declaration (the instance)]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html)
+		- [PHP modifiers]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)
 		- Configuration inside the JS class
 	- Data sources
 	- Javascript in UI components
 		- Basic JS components
-			- [`uiClass` as a core of OOP in components (initialize, initConfig, extend, _super, defaults)]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html)
-			- [`uiElement` as genaral component class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html)
-			- [`uiCollection` as general component for collections]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html)
-			- [`uiLayout`  as a built-in initializer]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uilayout_concept.html)
-			- [`uiRegistry`  as a in memory storage]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry.html)
+			- [`uiClass` as a core of OOP in components (initialize, initConfig, extend, _super, defaults)]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html)
+			- [`uiElement` as genaral component class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html)
+			- [`uiCollection` as general component for collections]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html)
+			- [`uiLayout`  as a built-in initializer]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uilayout_concept.html)
+			- [`uiRegistry`  as a in memory storage]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uiregistry.html)
 			- Linking properties of UI components
-		- [Require JS with UI components]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html)
+		- [Require JS with UI components]({{page.baseurl}}/javascript-dev-guide/javascript/requirejs_concept.html)
 	- Templates customization rules & techniques (using Knockout.js)
 		- Overview of Knockout templates (explain custom bindings, whatever else is important)
 		- Templates syntax
@@ -79,7 +79,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 	-  Validate XML:
 		-  PHP Storm
 		-  Using developer mode (running in dev mode automatically validates XML)
-	-  [Debug UI components JS]({{page.baseurl}}ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html)
+	-  [Debug UI components JS]({{page.baseurl}}/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html)
 		-  Common break-points for diagnostic
 			-  Loading files (Require.js)
 			-  uiLayout
@@ -108,8 +108,8 @@ If you would like to help us by writing any of the topics that we have not yet g
 -  Real-Life Scenarios
 -  Specific UI сomponents (Reference material)
 	-  A list of Magento UI components
-	-  [Form]({{page.baseurl}}ui_comp_guide/components/ui-form.html)
-	-  [Listing]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html)
+	-  [Form]({{page.baseurl}}/ui_comp_guide/components/ui-form.html)
+	-  [Listing]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html)
 	-  Fieldset
 	-  Field
 	-  Group
@@ -118,7 +118,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 	-  Insert
 	-  Insert Form
 	-  Insert Listing
-	-  [Modal]({{page.baseurl}}ui_comp_guide/components/ui-modal.html)
+	-  [Modal]({{page.baseurl}}/ui_comp_guide/components/ui-modal.html)
 	-  Button adapter
 	-  Form provider
 	-  Paging

@@ -11,7 +11,7 @@ Several Magento features require at least one cron job, which schedules activiti
 *	Automatic updating of currency rates
 *	All Magento e-mails (including order confirmation and transactional)
 
-We recommend you run cron as the [Magento file system owner]({{page.baseurl}}config-guide/cli/config-cli.html#config-install-cli-first). Do *not* run cron as `root`; we also recommend against running cron as the web server user.
+We recommend you run cron as the [Magento file system owner]({{page.baseurl}}/config-guide/cli/config-cli.html#config-install-cli-first). Do *not* run cron as `root`; we also recommend against running cron as the web server user.
 
 <div class="bs-callout bs-callout-warning">
     <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>

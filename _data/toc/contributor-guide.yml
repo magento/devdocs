@@ -1,32 +1,34 @@
 label: Contribution Guide
 pages:
-    - label: Code contributions
-      url: contributor-guide/contributing.html
+
+    - label: Code Contributions
+      url: /contributor-guide/contributing.html
+
       children:
         - label: Backward compatible development
-          url: contributor-guide/backward-compatible-development
+          url: /contributor-guide/backward-compatible-development
 
-    - label: DevDocs contributions
-      url: contributor-guide/contributing_docs.html
+    - label: DevDocs Contributions
+      url: /contributor-guide/contributing_docs.html
       children:
-        - label: Magento definition of done
-          url: contributor-guide/contributing_dod.html
+        - label: Magento Definition of Done
+          url: /contributor-guide/contributing_dod.html
 
         - label: Suggested topics for contribution
-          url: contributor-guide/contributing_docs_suggested.html
+          url: /contributor-guide/contributing_docs_suggested.html
 
-        - label: Quarterly contributors
-          url: contributor-guide/quarterly-contributors.html
+        - label: Quarterly Contributors
+          url: /contributor-guide/quarterly-contributors.html
 
         - label: Community maintainers
-          url: contributor-guide/devdocs-maintainers.html
+          url: /contributor-guide/devdocs-maintainers.html
           versions: ["2.1","2.2","2.3"]
 
     - label: Templates
       children:
         - label: Basic template
-          url: contributor-guide/templates/basic_template.html
+          url: /contributor-guide/templates/basic_template.html
 
         - label: Sample template tutorial
           class: tutorial
-          url: contributor-guide/templates/tutorial-template-first.html
+          url: /contributor-guide/templates/tutorial-template-first.html

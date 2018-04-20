@@ -101,4 +101,4 @@ define([
 
 ## What's next
 
-[Display stored tokens for customer and process their deleting]({{page.baseurl}}payments-integrations/vault/customer-stored-payments.html).
+[Display stored tokens for customer and process their deleting]({{page.baseurl}}/payments-integrations/vault/customer-stored-payments.html).

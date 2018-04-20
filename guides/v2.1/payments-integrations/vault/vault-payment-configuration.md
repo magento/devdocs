@@ -13,7 +13,7 @@ functional_areas:
 
 You need to configure the main parameters of the vault implementation in the `config.xml` file of your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} module:
 
-* `model` - instance of the vault payment implementation, [configured in `di.xml`]({{page.baseurl}}payments-integrations/vault/vault-di.html).
+* `model` - instance of the vault payment implementation, [configured in `di.xml`]({{page.baseurl}}/payments-integrations/vault/vault-di.html).
 * `title` - vault payment method title; can be overwritten in the store configuration.
 
 These parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create vault payment. All other payment settings are inherited from the payment provider integration. 
@@ -43,4 +43,4 @@ In this example `braintree_cc_vault` is the unique payment code of the vault imp
 
 ## What's next
 
-[Add vault and payment methods entities using dependency injection configuration]({{page.baseurl}}payments-integrations/vault/vault-di.html).
+[Add vault and payment methods entities using dependency injection configuration]({{page.baseurl}}/payments-integrations/vault/vault-di.html).

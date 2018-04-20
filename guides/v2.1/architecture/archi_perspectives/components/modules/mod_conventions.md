@@ -18,7 +18,7 @@ redirect_from:
 
 Modules must conform to Magento conventions regarding code location and file names. Keep these conventions in mind when working with or developing modules.
 
-Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a>.
+Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="{{page.baseurl}}/coding-standards/bk-coding-standards.html">Coding Standards</a>.
 
 ## Module location conventions {#m2arch-module-conventions-location}
 

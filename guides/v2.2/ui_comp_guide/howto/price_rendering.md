@@ -40,7 +40,7 @@ A product can have more than one price shown and taxes may or may not apply to a
 
 Example of pricing strategy for bundled products:
 <br/>
-![]({{ site.baseurl }}common/images/bundle_prices.png)
+![]({{ site.baseurl}}/common/images/bundle_prices.png)
 
 ## How to render prices with UI Components
 
@@ -326,10 +326,10 @@ The following is sample template code that is rendered for the tax adjustment co
 * [Listing component][listing-component]
 * [Declaring UI Components][ui-component-declaration]
 
-[form-component]: {{page.baseurl}}ui_comp_guide/components/ui-form.html
-[listing-component]: {{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html
+[form-component]: {{page.baseurl}}/ui_comp_guide/components/ui-form.html
+[listing-component]: {{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html
 [special-price-html]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
 [widget-recently-viewed-xml]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
-[ui-component-declaration]: {{page.baseurl}}ui_comp_guide/howto/new_component_declaration.html
+[ui-component-declaration]: {{page.baseurl}}/ui_comp_guide/howto/new_component_declaration.html
 [price-box]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
 [final-price]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
