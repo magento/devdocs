@@ -29,7 +29,7 @@ The message queue system must be established before you install Magento. The bas
 2. Connect RabbitMQ and Magento.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-A basic message queue system can be implemented on EE without using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
+A basic message queue system can be implemented on EE without using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information.
 </div>
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
@@ -155,14 +155,14 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 
 ## Start the message queue consumers
 
-After you have connected {{site.data.var.ee}} and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for details.
+After you have connected {{site.data.var.ee}} and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for details.
 
 #### Related topics
-*	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
-*	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
-*	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html)
-*	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html)
-*	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
-*	[Message queue overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-*	[Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html)
+*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-ubuntu.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos.html)
+*	[Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
+*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)
+*	[Message queue overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*	[Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html)

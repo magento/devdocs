@@ -37,7 +37,7 @@ These initial boilerplate files are the bare essential files needed for any Mage
 #### `composer.json`
 {:.no_toc}
 In the module's root directory, create the file `composer.json`. This file gives {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} the ability to install this module and its dependencies.
-For more information see: [`composer.json`]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
+For more information see: [`composer.json`]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html).
 
 {% collapsible File content for composer.json %}
   {% highlight json %}
@@ -67,7 +67,7 @@ For more information see: [`composer.json`]({{page.baseurl}}extension-dev-guide/
 {:.no_toc}
 In the module's root directory, create the file `registration.php`. This file registers the module `MyCompany_ExampleAdminNewPage` with Magento.
 
-For more information see: [registering your component]({{page.baseurl}}extension-dev-guide/build/component-registration.html).
+For more information see: [registering your component]({{page.baseurl}}/extension-dev-guide/build/component-registration.html).
 
 {% collapsible File content for registration.php %}
   {% highlight php startinline=true %}
@@ -84,7 +84,7 @@ For more information see: [registering your component]({{page.baseurl}}extension
 {:.no_toc}
 In the module's root directory, create a new directory called `etc`. Under that directory, create the file `module.xml`. This file specifies the name and setup version of this module.
 
-For more information see: [naming your component]({{page.baseurl}}extension-dev-guide/build/create_component.html).
+For more information see: [naming your component]({{page.baseurl}}/extension-dev-guide/build/create_component.html).
 
 {% collapsible File content for module.xml %}
   {% highlight xml %}
@@ -100,7 +100,7 @@ For more information see: [naming your component]({{page.baseurl}}extension-dev-
 
 Before we can view the module's page, we need a way to navigate to it. These files create a link to the page in the left navigation and tells Magento how to resolve requests for that page.
 
-For more information on this topic, see: [routing]({{page.baseurl}}extension-dev-guide/routing.html).
+For more information on this topic, see: [routing]({{page.baseurl}}/extension-dev-guide/routing.html).
 
 #### `etc/adminhtml/menu.xml`
 {:.no_toc}
@@ -111,7 +111,7 @@ The `menu.xml` file provided below adds two items in the Content section of the 
 1. A new separate section with the title **Greetings** under Content.
 2. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index` underneath that new section.
 
-![Hello World menu item]({{ site.baseurl }}common/images/ext-best-practices/hello-world-menu-item.png){:width="322px" height="400px"}
+![Hello World menu item]({{ site.baseurl}}/common/images/ext-best-practices/hello-world-menu-item.png){:width="322px" height="400px"}
 
 The following parts make up the generated page request link to the **Hello World** page:
 
@@ -304,4 +304,4 @@ Now that the module is code-complete, run the following commands to install it:
 
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
 
-![Hello World Page]({{ site.baseurl }}common/images/ext-best-practices/hello-world-page.png)
+![Hello World Page]({{ site.baseurl}}/common/images/ext-best-practices/hello-world-page.png)

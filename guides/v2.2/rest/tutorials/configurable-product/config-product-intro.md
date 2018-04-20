@@ -26,12 +26,12 @@ This **5-step tutorial** generally takes **45 minutes**.
 
 * Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/){:target="_blank"} is recommended.
 
-* Know how to construct a REST call in Magento. See [Construct a request]({{page.baseurl}}get-started/gs-web-api-request.html) for details.
+* Know how to construct a REST call in Magento. See [Construct a request]({{page.baseurl}}/get-started/gs-web-api-request.html) for details.
 
-* Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Step 2 of the Order Processing with REST APIs Tutorial]({{page.baseurl}}get-started/order-tutorial/order-admin-token.html) for more information.
+* Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Step 2 of the Order Processing with REST APIs Tutorial]({{page.baseurl}}/get-started/order-tutorial/order-admin-token.html) for more information.
 
 ### Other resources
 
-* Magento uses [Swagger](https://swagger.io/){:target="_blank"} to provide REST API documentation. You can view the [static REST API documentation on devdocs](http://devdocs.magento.com/swagger/){:target="_blank"} or [generate a local API reference]({{page.baseurl}}rest/generate-local.html).
+* Magento uses [Swagger](https://swagger.io/){:target="_blank"} to provide REST API documentation. You can view the [static REST API documentation on devdocs](http://devdocs.magento.com/swagger/){:target="_blank"} or [generate a local API reference]({{page.baseurl}}/rest/generate-local.html).
 
 * Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.

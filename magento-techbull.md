@@ -15,9 +15,9 @@ This page lists technical bulletins for the Magento application.
 
 ## Magento 2.0.x and 2.1.x
 
-[USPS Service Name Change (September 7, 2017)]({{ page.baseurl }}release-notes/tech_bull_USPS-patch-Sept2017.html)
+[USPS Service Name Change (September 7, 2017)]({{ page.baseurl}}/release-notes/tech_bull_USPS-patch-Sept2017.html)
 
-[Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)
+[Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)]({{ page.baseurl}}/release-notes/tech_bull_tls-repo.html)
 
 
 ## Magento 2.0.x

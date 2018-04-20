@@ -36,8 +36,8 @@ In addition to Git's requirements for [valid branch names](https://www.kernel.or
 ## Git branching {#branching}
 For specifics on creating Git branches, see the following topics:
 
-* [Manage branches with the Project Web Interface]({{page.baseurl}}cloud/project/project-webint-branch.html)
-* [Manage branches with the CLI]({{page.baseurl}}cloud/env/environments-start.html)
+* [Manage branches with the Project Web Interface]({{page.baseurl}}/cloud/project/project-webint-branch.html)
+* [Manage branches with the CLI]({{page.baseurl}}/cloud/env/environments-start.html)
 
 ## .gitignore file {#gitignore}
 Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
@@ -47,11 +47,11 @@ We include a base `.gitignore` file with the project repository. For a review of
 ## Git and SSH {#ssh}
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="\_blank"}.
 
-When setting up your SSH, review our information at [SSH and sFTP]({{page.baseurl}}cloud/env/environments-ssh.html).
+When setting up your SSH, review our information at [SSH and sFTP]({{page.baseurl}}/cloud/env/environments-ssh.html).
 
 ## Git integrations {#integrations}
-We support using either [Github]({{page.baseurl}}cloud/project/project-integrate-github.html) or [Bitbucket]({{page.baseurl}}cloud/project/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
+We support using either [Github]({{page.baseurl}}/cloud/project/project-integrate-github.html) or [Bitbucket]({{page.baseurl}}/cloud/project/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-To integrate other git repositories with your {{site.data.var.ece}} project using Github or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{page.baseurl}}cloud/project/project-webint-branch.html#private).
+To integrate other git repositories with your {{site.data.var.ece}} project using Github or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{page.baseurl}}/cloud/project/project-webint-branch.html#private).
 </div>

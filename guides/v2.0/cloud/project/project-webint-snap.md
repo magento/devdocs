@@ -36,9 +36,9 @@ We provide two methods for creating and managing snapshots:
 ## Create a snapshot {#create-snapshot}
 To create an environment snapshot using the Magento Web Interface:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
+1.	[Log in to your project]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click the name of the environment to back up.
-3.	In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}common/images/cloud_snapshots.png){:width="30px"} (snapshots).
+3.	In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl}}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
 4.	You are required to confirm the action.
 
 To create an environment snapshot using the Magento CLI:
@@ -59,13 +59,13 @@ To create an environment snapshot using the Magento CLI:
 ## Restore a snapshot {#restore-snapshot}
 To restore an environment's snapshot using the Magento Web Interface:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
+1.	[Log in to your project]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-access).
 2.	In the left pane, click the name of the environment to restore.
 3.	In the environment's history, click the **restore** link next to the snapshot to restore.
 
 	The following figure shows an example.
 
-	![Take a snapshot of an environment]({{ site.baseurl }}common/images/cloud_snapshot-restore.png)
+	![Take a snapshot of an environment]({{ site.baseurl}}/common/images/cloud_snapshot-restore.png)
 4.	You are required to confirm the action.
 
 To restore an environment snapshot using the Magento CLI:
@@ -110,16 +110,16 @@ To create a copy of your database, you dump the data from the database to a file
 
     mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
 
-If you want to push this data into an environment, see [Migrate data and static files]({{page.baseurl}}cloud/live/stage-prod-migrate.html).
+If you want to push this data into an environment, see [Migrate data and static files]({{page.baseurl}}/cloud/live/stage-prod-migrate.html).
 
 ## Rollbacks to remove code {#rollback-code}
 We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
 
 If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
 
-Specifically for code, you should investigate [reverting code](https://git-scm.com/docs/git-revert) changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the [Deployment Process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+Specifically for code, you should investigate [reverting code](https://git-scm.com/docs/git-revert) changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the [Deployment Process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
 
 #### Related topics
-*	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
-*	[Manage environments (branches)]({{page.baseurl}}cloud/project/project-webint-branch.html)
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
+*	[Basic project information]({{page.baseurl}}/cloud/project/project-webint-basic.html)
+*	[Manage environments (branches)]({{page.baseurl}}/cloud/project/project-webint-branch.html)
+*	[Get started with a project]({{page.baseurl}}/cloud/project/project-start.html)

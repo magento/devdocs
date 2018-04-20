@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-wysiwyg.md
 
 ## Overview
 
-The Wysiwyg component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [TinyMCE editor](https://www.tinymce.com/). Wysiwyg integrates editor's instance into the [Form component]({{page.baseurl}}ui_comp_guide/components/ui-form.html). It expects to receive complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
+The Wysiwyg component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [TinyMCE editor](https://www.tinymce.com/). Wysiwyg integrates editor's instance into the [Form component]({{page.baseurl}}/ui_comp_guide/components/ui-form.html). It expects to receive complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
 
 ## Configuration options
 
@@ -55,7 +55,7 @@ Wysiwyg-specific options:
 <code>value</code>
 </li>
 </td>
-    <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
+    <td><a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
     <td>Object<br>String</td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
   </tr>

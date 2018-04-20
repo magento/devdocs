@@ -33,14 +33,14 @@ The following is an example of a URL signed with a version:
 http://magento2.com/pub/static/version1475604434/frontend/Magento/luma/en_US/images/logo.svg
 ~~~
 
-When you run the command [`setup:static-content:deploy`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html) to deploy static content, Magento automatically changes the deployment version.
+When you run the command [`setup:static-content:deploy`]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html) to deploy static content, Magento automatically changes the deployment version.
 This changes the URL of the static files and forces the browser to load the new version of the files.
 
 Magento enables this feature by default, and we recommend keeping this feature enabled to prevent issues related to browsers serving up old static resources.
 
 You can find the configuration for this feature in [**Stores > System > Configuration > Advanced > Developer > Static Files Settings**](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
 
-![Static Files Settings]({{ site.baseurl }}common/images/static-files-settings.png)
+![Static Files Settings]({{ site.baseurl}}/common/images/static-files-settings.png)
 
 #### Version signatures
 

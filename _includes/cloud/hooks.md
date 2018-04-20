@@ -1,6 +1,6 @@
 <div markdown="1">
 
-For technical reasons, you must enter a Support ticket to add your [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) file to Staging and Production environments. This affects all Pro projects created before and after October 23, 2017.
+For technical reasons, you must enter a Support ticket to add your [`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html) file to Staging and Production environments. This affects all Pro projects created before and after October 23, 2017.
 
 You can request that we push `.magento.app.yaml`, `services.yaml`, and `routes.yaml`, set up cron jobs, and enable Xdebug and PHPUnit, which assists you in troubleshooting coding issues encountered during deployment. Because of the memory requirements, we recommend you disable Xdebug before your site is live.
 

@@ -10,7 +10,7 @@ functional_areas:
   - Services
 ---
 
-If you use cron jobs—or some other external process manager—to manage message queues instead of [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html), you may need to use an environment variable to restart message queue consumers after every deployment.
+If you use cron jobs—or some other external process manager—to manage message queues instead of [RabbitMQ]({{page.baseurl}}/cloud/project/project-conf-files_services-rabbit.html), you may need to use an environment variable to restart message queue consumers after every deployment.
 
 ## Symptom
 Message queue consumers fail to restart after you deploy code to an environment.

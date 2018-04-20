@@ -9,7 +9,7 @@
 
 -   Model and block level should identify themselves for invalidation support
 
--   Declare a custom [context variable]({{page.baseurl}}extension-dev-guide/cache/page-caching/public-content.html#configure-page-variations) if you plan to show different public content with the same URL
+-   Declare a custom [context variable]({{page.baseurl}}/extension-dev-guide/cache/page-caching/public-content.html#configure-page-variations) if you plan to show different public content with the same URL
 
 ## Non-cacheable page checklist
 -   Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)

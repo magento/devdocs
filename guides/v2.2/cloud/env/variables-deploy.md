@@ -8,10 +8,10 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}cloud/env/variables-intro.html#global-variables). Also, you can override the [`ADMIN_` variables]({{page.baseurl}}cloud/env/environment-vars_magento.html).
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Also, you can override the [`ADMIN_` variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html).
 
 See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file.
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
 
 ### `CACHE_CONFIGURATION`
 
@@ -40,18 +40,18 @@ By default, the deployment process overwrites all settings in the `env.php` file
 -  **Default**—`enabled`
 -  **Version**—Available in all versions
 
-The default value, `enabled`, cleans [generated static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are `enabled` and `disabled`.
+The default value, `enabled`, cleans [generated static view files]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are `enabled` and `disabled`.
 
 Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them.
 
-Because of [static file fallback]({{page.baseurl}}howdoi/clean_static_cache.html) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+Because of [static file fallback]({{page.baseurl}}/howdoi/clean_static_cache.html) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
 ### `CRON_CONSUMERS_RUNNER`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Use this environment variable to make sure message queues are running after a deployment. By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
+Use this environment variable to make sure message queues are running after a deployment. By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 {% include cloud/cron-consumers-runner.md %}
 
@@ -202,7 +202,7 @@ Sets the number of threads for processing and deploying static content files. Th
 
 For Starter plan environments and Pro Integration environments, the threads value is `1`. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is `3` to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.
 
-To further reduce deployment time, we recommend using [Configuration Management]({{page.baseurl}}cloud/live/sens-data-over.html) with the `scd-dump`command to move static deployment into the build phase.
+To further reduce deployment time, we recommend using [Configuration Management]({{page.baseurl}}/cloud/live/sens-data-over.html) with the `scd-dump`command to move static deployment into the build phase.
 
 ### `UPDATE_URLS`
 

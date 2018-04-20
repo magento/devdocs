@@ -31,21 +31,21 @@ The module does not create any backward incompatible changes. Can be deactivated
 
 ## Structure
 
-[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html).
+[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
 
 ## Extensibility
 
-Magento_NegotiableQuote uses Extensible attributes to extend Magento_Quote. For more information about the Magento extensible attributes, see [Adding extension attributes to entity]({{page.baseurl}}extension-dev-guide/extension_attributes/adding-attributes.html).
+Magento_NegotiableQuote uses Extensible attributes to extend Magento_Quote. For more information about the Magento extensible attributes, see [Adding extension attributes to entity]({{page.baseurl}}/extension-dev-guide/extension_attributes/adding-attributes.html).
 
-Extension developers can interact with the Magento_NegotiableQuote module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{page.baseurl}}extension-dev-guide/plugins.html).
+Extension developers can interact with the Magento_NegotiableQuote module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{page.baseurl}}/extension-dev-guide/plugins.html).
 
-[The Magento dependency injection mechanism]({{page.baseurl}}extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_NegotiableQuote module.
+[The Magento dependency injection mechanism]({{page.baseurl}}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_NegotiableQuote module.
 
 ### Layouts
 
 You can extend and override layouts in the `Magento\NegotiableQuote\view\adminhtml\layout` and `Magento\NegotiableQuote\view\frontend\layout` directories.
 
-For more information about layouts, see the [Layout documentation]({{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html).
+For more information about layouts, see the [Layout documentation]({{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html).
 
 ### UI components
 
@@ -55,7 +55,7 @@ The following directories contain extensible UI components:
 
 * `Magento\NegotiableQuote\view\frontend\ui_component` - negotiable quote listing
 
-For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html) and [UI Form Component]({{page.baseurl}}ui_comp_guide/components/ui-form.html).
+For more information, see [UI Listing/Grid Component]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html) and [UI Form Component]({{page.baseurl}}/ui_comp_guide/components/ui-form.html).
 
 ## Additional information
 

@@ -25,8 +25,8 @@ Typically, you'll test your own modules; replace the paths shown in the examples
 ## Prerequisites
 Before you begin, make sure you have completed all of the following tasks:
 
-*	[PhpStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
-*	[Set up your PhpStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)
+*	[PhpStorm prerequisites]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-prereq.html)
+*	[Set up your PhpStorm project]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-project.html)
 
 <div class="bs-callout bs-callout-info" markdown="1">
 The instructions in this topic are based on PhpStorm version 2016.3.2.
@@ -88,7 +88,7 @@ To run PHPUnit tests from PhpStorm:
 
 	For example, the following figure shows how to run the SearchDataTest.
 
-	![Run a sample unit test]({{ site.baseurl }}common/images/install_docker_php-storm_unit-searchdata.png)
+	![Run a sample unit test]({{ site.baseurl}}/common/images/install_docker_php-storm_unit-searchdata.png)
 
 Test results are displayed in the right pane.
 If errors display, see the next section.
@@ -102,10 +102,10 @@ If your remote CLI interpreter or Xdebug options aren't set up properly, the fol
 	Process finished with exit code 1
 	Cannot find PHPUnit in include path (.:/usr/local/lib/php)
 
-To resolve this issue, make sure you set up your remote CLI interpreter as discussed in [Set up PHPUnit]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html#devbox-phpunit-setup).
+To resolve this issue, make sure you set up your remote CLI interpreter as discussed in [Set up PHPUnit]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-project.html#devbox-phpunit-setup).
 
-Also make sure Xdebug configuration options are set properly as discussed in [Create the Xdebug remote host]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html#devbox-xdebug-remote).
+Also make sure Xdebug configuration options are set properly as discussed in [Create the Xdebug remote host]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-project.html#devbox-xdebug-remote).
 
 #### Next step
 
-[Debug in PhpStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)
+[Debug in PhpStorm and browser]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-debug.html)

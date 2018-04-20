@@ -17,9 +17,9 @@ This topic describes the XML elements that must be used for declaring a custom c
 
 A custom UI component can be declared using one of the following elements: `<component>` or `<container>`.
 
-The `<component>` element is typically used for declaring simple custom components that do not have other nested components. `<component>` uses the [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) constructor by default.
+The `<component>` element is typically used for declaring simple custom components that do not have other nested components. `<component>` uses the [uiElement]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) constructor by default.
 
-The `<container>` element is typically used for declaring custom components that are collections, or in other words, can have nested components. `<container>` uses the [uiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) constructor by default.
+The `<container>` element is typically used for declaring custom components that are collections, or in other words, can have nested components. `<container>` uses the [uiCollection]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) constructor by default.
 
 ### Attributes you can use
 The `<container>` and `<component>` elements have no mandatory attributes. The following optional attributes are available for both these elements:
@@ -39,14 +39,14 @@ If the following elements are used inside `<container>` or `<component>`, they s
 2.  `<settings>`
 3.  `<childComponent>`
 
-For the component configuration inside `<container>` and `<component>`, [use the "arbitrary" structure]({{page.baseurl}}ui_comp_guide/best-practices/semantic_config.html#info_structure_except).
+For the component configuration inside `<container>` and `<component>`, [use the "arbitrary" structure]({{page.baseurl}}/ui_comp_guide/best-practices/semantic_config.html#info_structure_except).
 </div>
 
 ## Declare a custom basic component 
 
-If the custom component you create is a [basic UI component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure) (like Form or Listing), you need to take the following steps to declare it:
+If the custom component you create is a [basic UI component]({{page.baseurl}}/ui_comp_guide/bk-ui_comps.html#general-structure) (like Form or Listing), you need to take the following steps to declare it:
 
-1. Specify the XML file with its configuration it in the page layout file in your module, as described in the [About XML сonfiguration of UI сomponents]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#about-the-layout-configuration-file-and-ui-component-declaration) topic.
+1. Specify the XML file with its configuration it in the page layout file in your module, as described in the [About XML сonfiguration of UI сomponents]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#about-the-layout-configuration-file-and-ui-component-declaration) topic.
 2. Declare the component in a separate `.xml` file using the `<container>` or `<component>` as parent node.
 
 ## Declare a custom secondary component 

@@ -22,7 +22,7 @@ functional_areas:
 
 
 
-The full list of software is listed in <a href="{{page.baseurl}}install-gde/system-requirements.html">System Requirements</a> but here are the essentials:
+The full list of software is listed in <a href="{{page.baseurl}}/install-gde/system-requirements.html">System Requirements</a> but here are the essentials:
 
 *	Web server to display web pages. Currently, we've documented <a href="http://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank">Apache</a> and plan to document other web servers in the near future.
 

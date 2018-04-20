@@ -23,8 +23,8 @@ This topic discusses how to set up a connection from your Magento web node to a 
 ### Prerequisites
 Before you begin, you must:
 
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
+*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
+*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### High availability
@@ -132,9 +132,9 @@ When you install the Magento software using either the command line or Setup Wiz
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{page.baseurl}}/install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/security.html">Configuring security options</a>
+*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)

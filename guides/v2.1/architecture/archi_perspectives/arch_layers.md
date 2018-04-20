@@ -285,4 +285,4 @@ A simple resource model defines and interacts with a single table. However, some
 
 ## Related topics
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>

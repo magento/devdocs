@@ -55,7 +55,7 @@ Perform the same tasks as discussed in [Configure Magento to use Elasticsearch](
 
 The following figure shows an example:
 
-<img src="{{ site.baseurl }}common/images/es_with-basic-auth.png" width="650px">
+<img src="{{ site.baseurl}}/common/images/es_with-basic-auth.png" width="650px">
 
 Click **Test Connection** to make sure it works and then click **Save Config**.
 

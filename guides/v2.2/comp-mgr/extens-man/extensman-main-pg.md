@@ -15,18 +15,18 @@ functional_areas:
 ## Start the Extension Manager from the Magento Admin
 To start the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager:
 
-1.	If you haven't done so already, create or get your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
+1.	If you haven't done so already, create or get your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html).
 2.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 3.	Click **System** > **Web Setup Wizard**.
 4.	Click **Extension Manager** as the following figure shows.
 
-	![Click the Extension Manager]({{ site.baseurl }}common/images/extens_mgr_select.png){:width="550px"}
+	![Click the Extension Manager]({{ site.baseurl}}/common/images/extens_mgr_select.png){:width="550px"}
 
 5.	If prompted, log in to the Extension Manager.
 
 	The following page displays if a login is required.
 
-	![Install or upgrade extensions]({{ site.baseurl }}common/images/extens_mgr_login.png){:width="400px"}
+	![Install or upgrade extensions]({{ site.baseurl}}/common/images/extens_mgr_login.png){:width="400px"}
 
 6.	Enter your authentication keys in the provided fields.
 2.	Click **Submit**.
@@ -47,7 +47,7 @@ See one of the following sections:
 ## Choose what to install, uninstall, or update {#extens-choose}
 After you log in to the Extension Manager, a list displays as follows:
 
-![Choose what to install, update, or uninstall]({{ site.baseurl }}common/images/extens_mgr_updates.png){:width="500px"}
+![Choose what to install, update, or uninstall]({{ site.baseurl}}/common/images/extens_mgr_updates.png){:width="500px"}
 
 *	**Updates Available** displays the number of extensions you can update.
 *	**Extensions Ready to Install** displays the number of extensions you can install.
@@ -63,7 +63,7 @@ We support different actions for each *type* of component. (*Component* is a gen
 
 The following figure shows how types display in the Extension Manager.
 
-![Extension Manager columns]({{ site.baseurl }}common/images/extensman_columns-only.png)
+![Extension Manager columns]({{ site.baseurl}}/common/images/extensman_columns-only.png)
 
 Following is a definition of types:
 
@@ -169,30 +169,30 @@ The following table shows which actions are available for a metapackage.
 
 Click **Review and Install** as the following figure shows.
 
-![Review and install extensions]({{ site.baseurl }}common/images/extensman_review-purchases.png){:width="450px"}
+![Review and install extensions]({{ site.baseurl}}/common/images/extensman_review-purchases.png){:width="450px"}
 
 The Ready to Install page displays as follows.
 
-![Display a list of extensions you can install]({{ site.baseurl }}common/images/extensman_ready-to-install-pg.png){:width="450px"}
+![Display a list of extensions you can install]({{ site.baseurl}}/common/images/extensman_ready-to-install-pg.png){:width="450px"}
 
 The following sections discuss your options.
 
 ### Get more information
-To get more information about an extension, click ![Get information about an extension]({{ site.baseurl }}common/images/extensman_icon_question.png).
+To get more information about an extension, click ![Get information about an extension]({{ site.baseurl}}/common/images/extensman_icon_question.png).
 
 ### Install one extension
-To install one extension, click the **Install** link at the end of its row and continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+To install one extension, click the **Install** link at the end of its row and continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
 
 ### Install more than one extension
 To install more than one extension:
 
 1.	Select the check box next to each extension, or click **Select All** from the list as the following figure shows.
 
-	![Choose extensions to install]({{ site.baseurl }}common/images/extensman_choose-to-install.png){:width="550px"}
+	![Choose extensions to install]({{ site.baseurl}}/common/images/extensman_choose-to-install.png){:width="550px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
 
-	![Install your purchases]({{ site.baseurl }}common/images/extensman_ready-to-install.png){:width="550px"}
-3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+	![Install your purchases]({{ site.baseurl}}/common/images/extensman_ready-to-install.png){:width="550px"}
+3.	Continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
 
@@ -202,10 +202,10 @@ To install more than one extension:
 
 1.	In the Installed Extensions section, click **Uninstall** from the **Actions** list as the following figure shows.
 
-	![Uninstall extensions]({{ site.baseurl }}common/images/extensman_uninstall.png){:width="600px"}
+	![Uninstall extensions]({{ site.baseurl}}/common/images/extensman_uninstall.png){:width="600px"}
 
 	If no **Uninstall** option is available, the vendor did not provide an uninstallation script. Contact the vendor for uninstallation instructions.
-3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+3.	Continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
 
@@ -215,18 +215,18 @@ To install more than one extension:
 
 The New Updates page displays all extensions that can be updated.
 
-![List of extensions that can be updated]({{ site.baseurl }}common/images/extensman_new-updates.png){:width="600px"}
+![List of extensions that can be updated]({{ site.baseurl}}/common/images/extensman_new-updates.png){:width="600px"}
 
 You have the following options:
 
 *	To update one extension, click **Update** at the end of its row.
 *	To update more than one extension, select its check box and click **Update**, as the following figure shows.
 
-	![Update selected extensions]({{ site.baseurl }}common/images/extensman_update-selected.png){:width="500px"}
+	![Update selected extensions]({{ site.baseurl}}/common/images/extensman_update-selected.png){:width="500px"}
 *	To update all extensions, click **Select All** from the list and click **Update**, as the following figure shows.
 
-	![Update all extensions]({{ site.baseurl }}common/images/extensman_update-all.png)
+	![Update all extensions]({{ site.baseurl}}/common/images/extensman_update-all.png)
 
-Continue with [Step 1. Readiness check]({{ page.baseurl }}comp-mgr/extens-man/extensman-readiness.html).
+Continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
