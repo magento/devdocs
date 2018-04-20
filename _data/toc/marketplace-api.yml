@@ -1,20 +1,20 @@
 label: Marketplace EQP API
-versions: ["2.1","2.2"]
+versions: ["2.1","2.2","2.3"]
 pages:
     - label: Introduction
-      url: marketplace/eqp/api.html
+      url: /marketplace/eqp/api.html
 
     - label: Authentication
-      url: marketplace/eqp/auth.html
+      url: /marketplace/eqp/auth.html
 
     - label: Users
-      url: marketplace/eqp/users.html
+      url: /marketplace/eqp/users.html
 
     - label: Files
-      url: marketplace/eqp/files.html
+      url: /marketplace/eqp/files.html
 
     - label: Packages
-      url: marketplace/eqp/packages.html
+      url: /marketplace/eqp/packages.html
 
     - label: Reports
-      url: marketplace/eqp/reports.html
+      url: /marketplace/eqp/reports.html
