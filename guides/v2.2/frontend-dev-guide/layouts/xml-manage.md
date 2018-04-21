@@ -70,7 +70,7 @@ The following file is a sample of a file you must add:
     	<!-- Add external resources -->
 	    <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
-        <link src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
+        <link rel="stylesheet" type="text/css" src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" />
     </head>
 </page>
 {%endhighlight xml%}
