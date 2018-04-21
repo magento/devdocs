@@ -16,7 +16,7 @@ We have decided to form a [devdocs-maintainers](https://github.com/orgs/magento/
 
 {:.text-center}
 ![Future Maintainers page](img/maintainers-sneak-peek.jpg){:width="600"}
-<br /><br />_Here's a preview of how this page will look soon. These people are not actual maintainers.)_
+<br /><br />_Here's a preview of how this page will look soon. These people are not actual maintainers._
 
 ## What will the team do?
 
