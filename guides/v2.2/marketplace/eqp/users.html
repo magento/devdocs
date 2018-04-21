@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Users | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="/guides/v2.2/marketplace/eqp/users.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "";
+  </script>
+
+	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:806243,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href=""><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/marketplace/eqp/users.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/marketplace/eqp/users.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/marketplace/eqp/users.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/marketplace/eqp/users.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          
+          <li><a href="/guides/v2.2/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.2/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.2/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+	<div class="message-banner">
+		These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <a href="mailto:marketplace-eqp-apis@magento.com">marketplace-eqp-apis@magento.com</a>.
+	</div>
+
+    
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Marketplace EQP API</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/api.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="authentication">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/auth.html">Authentication</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="users">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/users.html">Users</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="files">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/files.html">Files</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="packages">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/packages.html">Packages</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="reports">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/reports.html">Reports</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href=""><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Users</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Users</h1>
+
+  
+
+
+</section>
+
+
+			<p>The <code class="highlighter-rouge">users</code> resource accesses and updates your user profile. You can also access reports you own.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>You cannot use this resource to create a new
+profile. You must create a new profile on the <a href="https://developer.magento.com">Developer Portal</a>.</p>
+</div>
+
+<h2 id="profile">Profile</h2>
+
+<p>You must use the <code class="highlighter-rouge">mage_id</code> associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a <a href="/guides/v2.2/marketplace/eqp/auth.html#session-token">session token</a>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/users/:mage_id
+GET /rest/v1/users/:mage_id?style=summary
+PUT /rest/v1/users/:mage_id
+</code></pre></div></div>
+
+<h3 id="get-profile-data">Get profile data</h3>
+
+<p>By default, requests for profile data return all fields. You can limit the amount of data that the request returns by using the <code class="highlighter-rouge">style=summary</code> option.</p>
+
+<p>The following example shows the request/response body for retrieving all profile data:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/users/MAG123456789
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+        </span><span class="s2">"mage_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAG123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Chuck”</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Norris”</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">cnorris@example.com</span><span class="s2">",
+        "</span><span class="err">screen_name</span><span class="s2">": “ninjachuck”,
+        "</span><span class="err">has_completed_profile</span><span class="s2">": true,
+        "</span><span class="err">has_accepted_tos</span><span class="s2">": true,
+        "</span><span class="err">profile_image_artifact</span><span class="s2">": {
+            "</span><span class="err">file_upload_id</span><span class="s2">": "</span><span class="err">uuid</span><span class="mi">-001-234567</span><span class="mf">-123.461</span><span class="s2">",
+            "</span><span class="err">filename</span><span class="s2">": “chuck.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="err">“https</span><span class="p">:</span><span class="err">//static-mp.magento.com/user/</span><span class="mi">68</span><span class="err">/f</span><span class="mi">3</span><span class="err">/</span><span class="mi">68</span><span class="err">f</span><span class="mi">360</span><span class="err">d</span><span class="mi">3516</span><span class="err">f</span><span class="mi">594</span><span class="err">fc</span><span class="mi">957</span><span class="err">c</span><span class="mi">4179</span><span class="err">ed</span><span class="mi">4</span><span class="err">a</span><span class="mi">7</span><span class="err">a</span><span class="mi">872911</span><span class="err">f</span><span class="mi">07</span><span class="err">/pub/d</span><span class="mi">9</span><span class="err">/c</span><span class="mi">2</span><span class="err">/d</span><span class="mi">9</span><span class="err">c</span><span class="mi">23</span><span class="err">dd</span><span class="mi">795</span><span class="err">a</span><span class="mi">5</span><span class="err">faaab</span><span class="mi">603</span><span class="err">b</span><span class="mi">6</span><span class="err">b</span><span class="mi">5965</span><span class="err">eca</span><span class="mi">8</span><span class="err">a</span><span class="mi">6</span><span class="err">d</span><span class="mi">9430</span><span class="err">f</span><span class="mi">2</span><span class="err">/chuck.png”</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"file_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5db29cd03a2ed055086cef9c31c252b4587ffff"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"malware_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+
+        </span><span class="s2">"tos_accepted_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tos_accepted_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16 01:23:45"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_company"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“chucknorris”</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"payment_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"payment_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"paypal_email“ : “cnorris@example.com"</span><span class="p">},</span><span class="w">
+        </span><span class="s2">"taxpayer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tax_review_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="err">;</span><span class="w">
+        </span><span class="s2">"tax_withhold_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"extension_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"theme_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"install_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"support_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+
+        </span><span class="s2">"personal_profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"bio"</span><span class="p">,</span><span class="w"> </span><span class="err">“Sets</span><span class="w"> </span><span class="err">ants</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">fire</span><span class="w"> </span><span class="err">using</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">magnifying</span><span class="w"> </span><span class="err">glass.</span><span class="w"> </span><span class="err">At</span><span class="w"> </span><span class="err">night.”</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_logged_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-30 8:09:10"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-29 14:04:59"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16 01:23:45"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"social_media_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="err">“@chucknorrismagento”</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"stackexchange_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"facebook_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"github_username"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"address_key"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Lonestar Way”,
+                    "</span><span class="err">state</span><span class="s2">": “Texas”,
+                    "</span><span class="err">country</span><span class="s2">": “USA”,
+                    "</span><span class="err">postal_code</span><span class="s2">": “77777”,
+                    "</span><span class="err">phone</span><span class="s2">": “555-1234-5678”,
+                    "</span><span class="err">country_code</span><span class="s2">": "</span><span class="err">+</span><span class="mi">1</span><span class="s2">",
+                    "</span><span class="err">is_primary</span><span class="s2">": true
+                }
+            ]
+        },
+
+        "</span><span class="err">company_profile</span><span class="s2">": {
+            "</span><span class="err">name</span><span class="s2">": “Ninja Norris Inc.”,
+            "</span><span class="err">bio</span><span class="s2">": “Ninja Extension Builder.”,
+            "</span><span class="err">website_url</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//www.example.com/”</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cnorris@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"support_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@example.com”,
+            "</span><span class="err">created_at</span><span class="s2">": "</span><span class="mi">2016-02-29</span><span class="w"> </span><span class="mi">14</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">59</span><span class="s2">",
+            "</span><span class="err">modified_at</span><span class="s2">": "</span><span class="mi">2017-09-30</span><span class="w"> </span><span class="mi">01</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">45</span><span class="s2">",
+            "</span><span class="err">social_media_info</span><span class="s2">": {
+                "</span><span class="err">twitter</span><span class="s2">": “@chucknorrismagento”,
+                "</span><span class="err">stackexchange_url</span><span class="s2">": "",
+                "</span><span class="err">facebook_url</span><span class="s2">": "",
+                "</span><span class="err">linkedin_url</span><span class="s2">": "",
+                "</span><span class="err">github_username</span><span class="s2">": ""
+            },
+            "</span><span class="err">addresses</span><span class="s2">": [
+                {
+                    "</span><span class="err">address_key</span><span class="s2">": 1,
+                    "</span><span class="err">address_line_</span><span class="mi">1</span><span class="s2">": "</span><span class="mi">123</span><span class="w"> </span><span class="err">Lonestar</span><span class="w"> </span><span class="err">Way”</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="err">“Texas”</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="err">“USA”</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">77777</span><span class="err">”</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">555-1234-5678</span><span class="err">”</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_primary"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The following example shows the request/response body for retrieving a subset of profile data:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/users/MAG123456789?style<span class="o">=</span>summary
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+        </span><span class="s2">"mage_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAG123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Chuck”</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Norris”</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">“cnorris@example.com</span><span class="s2">",
+        "</span><span class="err">screen_name</span><span class="s2">": “ninjachuck”,
+        "</span><span class="err">has_completed_profile</span><span class="s2">": true,
+        "</span><span class="err">has_accepted_tos</span><span class="s2">": true,
+        "</span><span class="err">profile_image_artifact</span><span class="s2">": {
+            "</span><span class="err">file_upload_id</span><span class="s2">": "</span><span class="err">uuid</span><span class="mi">-001-234567</span><span class="mf">-123.461</span><span class="s2">",
+            "</span><span class="err">filename</span><span class="s2">": “chuck.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="err">“https</span><span class="p">:</span><span class="err">//static-mp.magento.com/user/</span><span class="mi">68</span><span class="err">/f</span><span class="mi">3</span><span class="err">/</span><span class="mi">68</span><span class="err">f</span><span class="mi">360</span><span class="err">d</span><span class="mi">3516</span><span class="err">f</span><span class="mi">594</span><span class="err">fc</span><span class="mi">957</span><span class="err">c</span><span class="mi">4179</span><span class="err">ed</span><span class="mi">4</span><span class="err">a</span><span class="mi">7</span><span class="err">a</span><span class="mi">872911</span><span class="err">f</span><span class="mi">07</span><span class="err">/pub/d</span><span class="mi">9</span><span class="err">/c</span><span class="mi">2</span><span class="err">/d</span><span class="mi">9</span><span class="err">c</span><span class="mi">23</span><span class="err">dd</span><span class="mi">795</span><span class="err">a</span><span class="mi">5</span><span class="err">faaab</span><span class="mi">603</span><span class="err">b</span><span class="mi">6</span><span class="err">b</span><span class="mi">5965</span><span class="err">eca</span><span class="mi">8</span><span class="err">a</span><span class="mi">6</span><span class="err">d</span><span class="mi">9430</span><span class="err">f</span><span class="mi">2</span><span class="err">/chuck.png”</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"file_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5db29cd03a2ed055086cef9c31c252b4587ffff"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"malware_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="update-profile-data">Update profile data</h3>
+
+<p>You can update all profile data fields, but you only need to include the fields you want to modify in the request body.</p>
+
+<p>The following example shows a request to update the personal profile bio field:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">“action”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“publish”</span><span class="p">,</span><span class="w">
+  </span><span class="err">“personal_profile”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="err">“bio”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“I</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">make</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">fire</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">rubbing</span><span class="w"> </span><span class="err">two</span><span class="w"> </span><span class="err">ice</span><span class="w"> </span><span class="err">cubes.”</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">action</code> field specifies which update operation to perform:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">publish</code>—The default if not specified. Publishes the profile to the relevant <a href="https://marketplace.magento.com/partners.html">Marketplace Store Partners page</a>.</li>
+  <li><code class="highlighter-rouge">draft</code>—The update is saved on the Developer Portal, but not published.</li>
+</ul>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> PUT <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+     <span class="nt">-d</span> ‘<span class="o">{</span> “action: “publish”, “personal_profile” : <span class="o">{</span> “bio” : “I can make a fire by rubbing two ice cubes.“ <span class="o">}</span> <span class="o">}</span>’ <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/users/MAG123456789
+</code></pre></div></div>
+
+<p>A 200 OK HTTP response code indicates a successful update.</p>
+
+<h2 id="keys">Keys</h2>
+
+<p>Use these APIs to manage Magento 1 and Magento 2 package access keys.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET     /rest/v1/users/:mage_id/keys
+POST    /rest/v1/users/:mage_id/keys
+PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+</code></pre></div></div>
+
+<h3 id="get-keys">Get keys</h3>
+
+<p>Use this API to return the keys associated with the specified <code class="highlighter-rouge">mage_id</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/users/:mage_id/keys
+</code></pre></div></div>
+
+<p>The following table lists available query parameters, all of which are optional:</p>
+
+<table class="style=&quot;table-layout:">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>string</td>
+      <td>no</td>
+      <td>Type of keys requested: ‘m1’  - Magento 1 product keys, ‘m2’  - Magento 2 composer repo keys, ‘all’ - Both M1 and M2 keys (default)</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>string</td>
+      <td>no</td>
+      <td>The url encoded value of the key label; only valid for ‘m2’ type.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following example shows the request/response body for retrieving keys without any query parameters:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="err">“main_key”</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d41d8cd98f00b204e9800998ecf8427e"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12cbdcd3332eb8f166f62ee1a9bd33d0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_bob"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b335b25f8eb3449e7e222e8f9e052b0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ca8abe7376f451bde40513474c13c3c"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+
+    </span><span class="s2">"m1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="err">“product_name”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“acme/one-click-checkout</span><span class="mf">-1.0</span><span class="err">.</span><span class="mi">0</span><span class="err">”</span><span class="p">,</span><span class="w">
+                </span><span class="err">“product_key”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“https</span><span class="p">:</span><span class="err">//connect</span><span class="mi">20</span><span class="err">.magentocommerce.com/e</span><span class="mi">8</span><span class="err">c</span><span class="mi">258702e443</span><span class="err">c</span><span class="mi">509</span><span class="err">b</span><span class="mi">42</span><span class="err">fc</span><span class="mi">44</span><span class="err">a</span><span class="mi">49</span><span class="err">b</span><span class="mi">83</span><span class="err">b</span><span class="mi">0</span><span class="err">/acme+one-click-checkout</span><span class="mf">-1.0</span><span class="err">.</span><span class="mi">0</span><span class="err">”</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+  <p>For Magento 2 keys:</p>
+
+  <ul>
+    <li>Each Composer key-pair has unique <code class="highlighter-rouge">label</code> and <code class="highlighter-rouge">is_enabled</code> flags to indicate whether the key is enabled.</li>
+    <li>A Composer key-pair is identified by <code class="highlighter-rouge">user_key</code> (username) and <code class="highlighter-rouge">password_key</code> (password) when prompted for Composer credentials.</li>
+  </ul>
+
+  <p>For Magento 1 keys:</p>
+  <ul>
+    <li>Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.</li>
+    <li>You cannot create, update, or delete these keys.</li>
+  </ul>
+</div>
+
+<h3 id="create-keys">Create keys</h3>
+
+<p>Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key. You can create multiple key-pairs in a single request.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /rest/v1/users/:mage_id/keys
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_alice"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_charlie"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+     <span class="nt">-d</span> ‘<span class="o">{</span> “m2”: <span class="o">[</span> <span class="o">{</span> “label” : “key_for_alice” <span class="o">}</span>, <span class="o">{</span> “label” : “key_for_charlie” <span class="o">}</span> <span class="o">]</span> <span class="o">}</span>’ <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="err">“key_for_alice”</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c75f32248bdd335dc8d8d5a3e5cb52e"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44db283cbb5fdf2c25cbc9352c2a75eb"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="err">“code”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                </span><span class="err">“message”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Success”</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_charlie”,
+                "</span><span class="err">user_key</span><span class="s2">": "</span><span class="mi">19</span><span class="err">ba</span><span class="mi">9488</span><span class="err">ff</span><span class="mi">99</span><span class="err">a</span><span class="mi">9346</span><span class="err">bdeb</span><span class="mi">39</span><span class="err">ad</span><span class="mi">4</span><span class="err">ab</span><span class="mi">1</span><span class="err">a</span><span class="mi">26</span><span class="s2">",
+                "</span><span class="err">password_key</span><span class="s2">": "</span><span class="mi">82167</span><span class="err">d</span><span class="mi">38238911</span><span class="err">d</span><span class="mi">212</span><span class="err">cc</span><span class="mi">02</span><span class="err">a</span><span class="mi">96</span><span class="err">f</span><span class="mi">3</span><span class="err">f</span><span class="mi">66</span><span class="err">f</span><span class="mi">9</span><span class="s2">",
+                "</span><span class="err">is_enabled</span><span class="s2">": true,
+                “code” : 200,
+                “message” : “Success”
+            }
+        ]
+}
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+
+  <ul>
+    <li>The API returns a batch response for each label.</li>
+    <li>A 200 OK HTTP response code indicates a successful update.</li>
+    <li>Any non-200 HTTP response code indicates an error. See the <code class="highlighter-rouge">message</code> field for details.</li>
+  </ul>
+</div>
+
+<h3 id="update-keys">Update keys</h3>
+
+<p>Use this API to enable or disable a Magento 2 Composer key-pair. You must specify the key-pair in the request using a URL-encoded string.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+</code></pre></div></div>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> PUT <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+     <span class="nt">-d</span> ‘<span class="o">{</span> “m2” : <span class="o">[</span> <span class="o">{</span> “is_enabled” :  <span class="nb">true</span> <span class="o">}</span> <span class="o">]</span> <span class="o">}</span>’ <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_bob
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_bob"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b335b25f8eb3449e7e222e8f9e052b0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ca8abe7376f451bde40513474c13c3c"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="delete-keys">Delete keys</h3>
+
+<p>This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+</code></pre></div></div>
+
+<p>The following curl example illustrates the call to be made:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> DELETE <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_charlie
+</code></pre></div></div>
+
+<p>A 204 No Content HTTP response code indicates a successful update.</p>
+
+<h2 id="reports">Reports</h2>
+
+<p>Use this API to retrieve reports owned by a specific user. Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/users/:mage_id/reports/pageviews
+GET /rest/v1/users/:mage_id/reports/totals
+GET /rest/v1/users/:mage_id/reports/sales
+GET /rest/v1/users/:mage_id/reports/refunds
+</code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+  <p>The Reports API specification is under design review. More details will be announced in the future..</p>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+    
+      <div class="github-link">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/marketplace/eqp/users.md" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    
+  
+
+  
+    
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/marketplace/eqp/users.html" target="_blank">Give us feedback</a>
+      </div>
+    
+  
+  
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Packages | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="/guides/v2.2/marketplace/eqp/packages.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "";
+  </script>
+
+	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:806243,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href=""><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/marketplace/eqp/packages.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/marketplace/eqp/packages.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/marketplace/eqp/packages.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/marketplace/eqp/packages.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          
+          <li><a href="/guides/v2.2/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.2/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.2/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+	<div class="message-banner">
+		These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <a href="mailto:marketplace-eqp-apis@magento.com">marketplace-eqp-apis@magento.com</a>.
+	</div>
+
+    
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Marketplace EQP API</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/api.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="authentication">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/auth.html">Authentication</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="users">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/users.html">Users</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="files">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/files.html">Files</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="packages">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/packages.html">Packages</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="reports">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/reports.html">Reports</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href=""><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Packages</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Packages</h1>
+
+  
+
+
+</section>
+
+
+			<p>Use this resource to initiate and manage all aspects of submitting a package to the <a href="http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html">Magento Extension Quality Program (EQP)</a>. You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.</p>
+
+<ul>
+  <li>
+    <p><strong>Technical information</strong>—References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.</p>
+  </li>
+  <li>
+    <p><strong>Marketing information</strong>—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.</p>
+  </li>
+</ul>
+
+<p>Before submitting a package, you must first <a href="/guides/v2.2/marketplace/eqp/files.html">upload your files</a> and associate the ID returned by the <code class="highlighter-rouge">/rest/v1/files/uploads</code> endpoint with your package using JSON parameters in the request body.</p>
+
+<p>You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.</p>
+
+<p>A successful submission results in a package being published on the <a href="https://marketplace.magento.com/">Magento Marketplace</a>.</p>
+
+<h2 id="eqp-review-process">EQP review process</h2>
+
+<p>The EQP review process inlcudes two steps:</p>
+
+<ul>
+  <li>In <strong>technical review</strong>, we preform all automated testing. This step also involves manual testing after all automated tests run.</li>
+  <li>In <strong>marketing review</strong>, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.</li>
+</ul>
+
+<p>These review steps occur in parallel when you submit a package. If both steps are successful, the package can be published to the Magento Marketplace. If there is a failure, you can iteratively fix issues until they are resolved.</p>
+
+<h2 id="package-fields">Package fields</h2>
+
+<p>The following table describes all package object properties:</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>Both <code class="highlighter-rouge">POST</code> and <code class="highlighter-rouge">PUT</code> requests support a batch model where multiple packages can be created or updated.</p>
+</div>
+
+<table class="style=&quot;table-layout:">
+  <thead>
+    <tr>
+      <th>Field/Parameter</th>
+      <th>Type</th>
+      <th>Applicable HTTP Command</th>
+      <th>EQP Review Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The name or title of the package. Duplicate names are not allowed.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>technical</td>
+      <td>Type of package. Valid values include <code class="highlighter-rouge">extension</code>, <code class="highlighter-rouge">theme</code>, <code class="highlighter-rouge">shared_package</code> or <code class="highlighter-rouge">all</code>. Shared packages are only applicable for Magento 2 extensions. Default is <code class="highlighter-rouge">all</code></td>
+    </tr>
+    <tr>
+      <td>platform</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>technical</td>
+      <td>The Magento platform compatibility of this package. Valid values include  <code class="highlighter-rouge">M1</code> for Magento 1 or <code class="highlighter-rouge">M2</code> for Magento 2.</td>
+    </tr>
+    <tr>
+      <td>version_compatibility</td>
+      <td>array</td>
+      <td>GET, POST, PUT</td>
+      <td>technical</td>
+      <td>List of Magento versions that this package supports.</td>
+    </tr>
+    <tr>
+      <td>sku</td>
+      <td>string</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>The SKU generated from metadata in the code artifact.</td>
+    </tr>
+    <tr>
+      <td>version</td>
+      <td>string</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>The package version in the format <code class="highlighter-rouge">major.minor.patch</code>. For example, <code class="highlighter-rouge">2.5.3</code>.</td>
+    </tr>
+    <tr>
+      <td>short_description</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The short description for the package.</td>
+    </tr>
+    <tr>
+      <td>long_description</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The long description for the package.</td>
+    </tr>
+    <tr>
+      <td>release_notes</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>technical</td>
+      <td>The release notes for the package submission.</td>
+    </tr>
+    <tr>
+      <td>is_patch</td>
+      <td>boolean</td>
+      <td>GET, POST, PUT</td>
+      <td>technical</td>
+      <td>A flag to indicate the submission should follow the <a href="https://community.magento.com/t5/Magento-DevBlog/New-Expedited-Marketplace-Submission-Path/ba-p/77303">expedited process for patch releases.</a></td>
+    </tr>
+    <tr>
+      <td>requested_launch_date</td>
+      <td>DateTime</td>
+      <td>POST, PUT</td>
+      <td>marketing</td>
+      <td>The UTC date and time (<code class="highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) when the package should be released to the store. If not supplied, it will be released to the store after all checks have passed.</td>
+    </tr>
+    <tr>
+      <td>artifact</td>
+      <td>object</td>
+      <td>GET, POST, PUT</td>
+      <td>technical</td>
+      <td>This is the package code artifact (TGZ file for Magento 1 or ZIP file for Magento 2) that can be referenced in a file upload ID obtained from the Files API.</td>
+    </tr>
+    <tr>
+      <td>documentation_artifacts</td>
+      <td>object</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing, technical</td>
+      <td>The user, installation, and reference PDF manuals referenced in a file upload ID obtained from the Files API.</td>
+    </tr>
+    <tr>
+      <td>shared_packages</td>
+      <td>array</td>
+      <td>GET, POST, PUT</td>
+      <td>technical</td>
+      <td>The list of artifact objects, each a Magento 2 shared package being referenced in a file upload ID obtained from the Files API. Listing it here implies that the seller is enabling  the “access rights” to these shared packages when a buyer purchases it.</td>
+    </tr>
+    <tr>
+      <td>categories</td>
+      <td>array</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The list of categories expressed as a <code class="highlighter-rouge">path</code> for the package. For example, <code class="highlighter-rouge">//Extension//Marketing//SEO/SEM</code>. Note that the path separator is <code class="highlighter-rouge">//</code> which allows for a single slash like <code class="highlighter-rouge">SEO/SEM</code> in the path name. Refer to the <a href="https://marketplace.magento.com">Marketplace Store</a> for a list of valid categories.</td>
+    </tr>
+    <tr>
+      <td>media_artifacts</td>
+      <td>object</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The sub-object that holds the package icon, gallery images, and optional video URLs referenced in a file upload ID obtained from the Files API.</td>
+    </tr>
+    <tr>
+      <td>prices</td>
+      <td>array</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The list of prices in USD set for this package by edition, and its respective installation price (if any).</td>
+    </tr>
+    <tr>
+      <td>support_tiers</td>
+      <td>array</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>List of support tiers, each specifying the edition, the monthly period, descriptions, and prices in USD.</td>
+    </tr>
+    <tr>
+      <td>license_type</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>License type supported by the package. Refer to <a href="#additional-notes">Additional notes</a> for a list of valid license types.</td>
+    </tr>
+    <tr>
+      <td>custom_license_name</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The name of the license if <code class="highlighter-rouge">license_type</code> is set to <code class="highlighter-rouge">custom</code>.</td>
+    </tr>
+    <tr>
+      <td>custom_license_url</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The URL of the license if <code class="highlighter-rouge">license_type</code> is set to <code class="highlighter-rouge">custom</code>.</td>
+    </tr>
+    <tr>
+      <td>external_services</td>
+      <td>object</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The list of services—name and URL—that the extension integrates with (if applicable).</td>
+    </tr>
+    <tr>
+      <td>browser_os_compatibility</td>
+      <td>object</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>The browser and its associated OS compatibilities this package supports. Refer to <a href="#additional-notes">Additional notes</a> for a list of browsers and OS values.</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td>object</td>
+      <td>GET, POST, PUT</td>
+      <td>marketing</td>
+      <td>A set of options this package supports. Refer to <a href="#additional-notes">Additional notes</a>.</td>
+    </tr>
+    <tr>
+      <td>submission_id</td>
+      <td>string</td>
+      <td>GET, PUT</td>
+      <td>-</td>
+      <td>A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.</td>
+    </tr>
+    <tr>
+      <td>item_id</td>
+      <td>string</td>
+      <td>GET, POST, PUT</td>
+      <td>-</td>
+      <td>A developer-defined unique ID assigned to the package (if available). If it is being supplied, it must be unique for every POST request.</td>
+    </tr>
+    <tr>
+      <td>action</td>
+      <td>object</td>
+      <td>POST, PUT</td>
+      <td>-</td>
+      <td>The action to be taken during a package submission (POST or PUT). Refer to <a href="#package-submission">Package submission</a>.</td>
+    </tr>
+    <tr>
+      <td>eqp_status</td>
+      <td>object</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>The current status of the package in the EQP process. Refer to <a href="#get-package-details">Get package details</a>.</td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>integer</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>In combination with the <code class="highlighter-rouge">limit</code> parameter, it can be used for paging the collection of packages. Refer to <a href="#get-package-details">Get package details</a>. Default value is 0.</td>
+    </tr>
+    <tr>
+      <td>limit</td>
+      <td>integer</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>Along with <code class="highlighter-rouge">offset</code>, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.</td>
+    </tr>
+    <tr>
+      <td>sort</td>
+      <td>string</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>A comma-separated list of fields to sort the list, each field prefixed by <code class="highlighter-rouge">-</code> for descending order, or <code class="highlighter-rouge">+</code> for ascending order. Refer to <a href="#get-package-details">Get package details</a>.</td>
+    </tr>
+    <tr>
+      <td>created_time</td>
+      <td>DateTime</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>The UTC date and time (<code class="highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) the package was first submitted.</td>
+    </tr>
+    <tr>
+      <td>modified_time</td>
+      <td>DateTime</td>
+      <td>GET</td>
+      <td>-</td>
+      <td>The UTC date and time (<code class="highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) the package was last updated.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="additional-notes">Additional notes</h3>
+
+<ul>
+  <li>For required fields in a POST or PUT operation, refer to the <a href="#package-submission">Package submissions</a> section.</li>
+  <li>The EQP Kind column indicates which part of the EQP pipeline will need to use or review the field values.</li>
+  <li>The list of valid values for <code class="highlighter-rouge">license_type</code> are:
+    <ul>
+      <li><code class="highlighter-rouge">afl</code>—Academic Free License 3.0 (AFL)</li>
+      <li><code class="highlighter-rouge">apache</code>—Apache License 2.0</li>
+      <li><code class="highlighter-rouge">bsd</code>—BSD 2-Clause License</li>
+      <li><code class="highlighter-rouge">gnu-gpl</code>—GNU General Public License 3.0 (GPL-3.0)</li>
+      <li><code class="highlighter-rouge">gnu-lgpl</code>–GNU Lesser General Public License 3.0 (LGPL-3.0)</li>
+      <li><code class="highlighter-rouge">mit</code>—MIT License (MIT)</li>
+      <li><code class="highlighter-rouge">mozilla</code>—Mozilla Public License 1.1 (MPL-1.1)</li>
+      <li><code class="highlighter-rouge">osl</code>—Open Software License 3.0 (OSL-3.0)</li>
+      <li><code class="highlighter-rouge">custom</code>—Custom License</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="object-details">Object details</h3>
+
+<div class="collapsible"><b class="collapsible-title">JSON Structure</b><div class="collapsible-content"><p>Listing the JSON structure of objects described above:</p>
+
+<h4 id="version_compatibility">version_compatibility</h4>
+
+<p>Assuming a Magento 2 package:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mf">2.0</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="err">”</span><span class="mf">2.1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mf">2.0</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="mf">2.1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="artifact">artifact</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="document_artifacts">document_artifacts</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="shared_packages">shared_packages</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">“shared_packages”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">“artifact”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">“file_upload_id”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“sfRh</span><span class="mi">72</span><span class="err">Mx</span><span class="mi">9</span><span class="err">d”</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">“artifact”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">“file_upload_id”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Gh</span><span class="mi">893</span><span class="err">dCxak”</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="media_artifacts">media_artifacts</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://www.youtube.com/watch?v=l33T2-YC4tk"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://www.youtube.com/watch?v=682p52tFcmY"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The <strong>video_urls</strong> property is optional.</p>
+
+<h4 id="prices">prices</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="support_tiers">support_tiers</h4>
+
+<p>Up to three tiers per edition (<code class="highlighter-rouge">CE</code> (Open Source) and <code class="highlighter-rouge">EE</code> (Commerce)) can be supported:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">“suppport_tiers”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">“tier”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="err">“edition”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“CE”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"monthly_period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“&lt;Short</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
+    </span><span class="err">“long_description”</span><span class="w"> </span><span class="err">“</span><span class="w"> </span><span class="err">“&lt;Long</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">25.00</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">“tier”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="err">“edition”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“EE”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"monthly_period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“&lt;Short</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
+    </span><span class="err">“long_description”</span><span class="w"> </span><span class="err">“</span><span class="w"> </span><span class="err">“&lt;Long</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">50.00</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="browser_os_compatibility">browser_os_compatibility</h4>
+
+<p>Sample structure for a package supporting only Chrome and Firefox:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"browser_os_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"chrome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"mac"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">“</span><span class="mi">39</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"44”],
+    "</span><span class="err">windows</span><span class="s2">" : [“43”, "</span><span class="mi">44</span><span class="err">”</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"linux"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mi">43</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"44”]
+  },
+  "</span><span class="err">firefox</span><span class="s2">" : {
+    "</span><span class="err">mac</span><span class="s2">" : [ "</span><span class="mi">40</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"41”],
+    "</span><span class="err">windows</span><span class="s2">" : [“40”, “41”],
+    "</span><span class="err">linux</span><span class="s2">" : [“40”, “41”]
+  }
+}
+</span></code></pre></div></div>
+
+<p>The list of valid values for the <code class="highlighter-rouge">browser_os_compatibility</code> are:</p>
+<ul>
+  <li>Browsers:
+    <ul>
+      <li><code class="highlighter-rouge">chrome</code></li>
+      <li><code class="highlighter-rouge">firefox</code></li>
+      <li><code class="highlighter-rouge">safari</code></li>
+      <li><code class="highlighter-rouge">opera</code></li>
+      <li><code class="highlighter-rouge">edge</code></li>
+    </ul>
+  </li>
+  <li>OS:
+    <ul>
+      <li><code class="highlighter-rouge">linux</code></li>
+      <li><code class="highlighter-rouge">mac</code></li>
+      <li><code class="highlighter-rouge">windows</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="options">options</h4>
+
+<p>Additional options that apply this package can be provided if applicable:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"options"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"released_with_setup_scripts"</span><span class="w">         </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"included_service_contracts"</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"included_external_service_contracts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"support_responsive_design"</span><span class="w">           </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"custom_implementation_ui"</span><span class="w">            </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"support_web_api"</span><span class="w">                     </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"support_test_coverage"</span><span class="w">               </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="action">action</h4>
+
+<p>During EQP process, it can take the following fields:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Technical/Marketing Field Value</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>draft</td>
+      <td>string</td>
+      <td>Save the supplied parameter values but take no further action.</td>
+    </tr>
+    <tr>
+      <td>submit</td>
+      <td>string</td>
+      <td>Submit to the EQP process.</td>
+    </tr>
+    <tr>
+      <td>recall</td>
+      <td>string</td>
+      <td>Recall the earlier submission from the EQP process.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Once a package is published to the store, it can have the following field:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">“action”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">“overall”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“publish”</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>publish</td>
+      <td>string</td>
+      <td>Re-publishes the package to the store if it was removed from it earlier by the developer.</td>
+    </tr>
+    <tr>
+      <td>remove</td>
+      <td>string</td>
+      <td>Removes the package from the store.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="eqp_status">eqp_status</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"eqp_status"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"overall"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>The <em>overall</em> value indicates where the package is in the EQP pipeline.</li>
+  <li>Additional details are provided in the two main EQP areas:
+    <ul>
+      <li><strong>technical</strong>—Provides the current technical status.</li>
+      <li><strong>marketing</strong>—Provides the current marketing status.</li>
+    </ul>
+  </li>
+</ul>
+
+<h6 id="overall-status">Overall Status</h6>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>draft</td>
+      <td>string</td>
+      <td>The submission is in the draft state, not yet submitted to the EQP process.</td>
+    </tr>
+    <tr>
+      <td>in_progress</td>
+      <td>string</td>
+      <td>The submission is in the EQP pipeline. Refer to the <code class="highlighter-rouge">technical</code> and <code class="highlighter-rouge">marketing</code> status for more details.</td>
+    </tr>
+    <tr>
+      <td>approved</td>
+      <td>string</td>
+      <td>The submission has been approved and pending release to the store.</td>
+    </tr>
+    <tr>
+      <td>released_to_store</td>
+      <td>string</td>
+      <td>The submission has been approved and is currently live on store.</td>
+    </tr>
+    <tr>
+      <td>developer_removed_from_store</td>
+      <td>string</td>
+      <td>The developer has removed the package from the store.</td>
+    </tr>
+    <tr>
+      <td>admin_removed_from_store</td>
+      <td>string</td>
+      <td>The EQP admin has removed the package from the store.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="technical-status">Technical Status</h6>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>draft</td>
+      <td>string</td>
+      <td>The package has not been submitted for technical review.</td>
+    </tr>
+    <tr>
+      <td>in_automation</td>
+      <td>string</td>
+      <td>The package has been submitted for technical review and is currently undergoing automated testing.</td>
+    </tr>
+    <tr>
+      <td>awaiting_manual_qa</td>
+      <td>string</td>
+      <td>The package has passed all automated tests and is currently in the manual test queue.</td>
+    </tr>
+    <tr>
+      <td>in_manual_qa</td>
+      <td>string</td>
+      <td>The package is currently undergoing manual testing.</td>
+    </tr>
+    <tr>
+      <td>approved</td>
+      <td>string</td>
+      <td>The package has passed all tests.</td>
+    </tr>
+    <tr>
+      <td>rejected</td>
+      <td>string</td>
+      <td>The package has failed automation or manual tests.</td>
+    </tr>
+    <tr>
+      <td>recalled</td>
+      <td>string</td>
+      <td>The developer has recalled the package.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="marketing-status">Marketing Status</h6>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>draft</td>
+      <td>string</td>
+      <td>The package has not been submitted for marketing review.</td>
+    </tr>
+    <tr>
+      <td>awaiting_marketing_review</td>
+      <td>string</td>
+      <td>The package has been submitted to the marketing review queue.</td>
+    </tr>
+    <tr>
+      <td>in_marketing_review</td>
+      <td>string</td>
+      <td>The package is currently undergoing marketing review.</td>
+    </tr>
+    <tr>
+      <td>approved</td>
+      <td>string</td>
+      <td>The package has passed the marketing review process.</td>
+    </tr>
+    <tr>
+      <td>rejected</td>
+      <td>string</td>
+      <td>The package has failed the marketing review process.</td>
+    </tr>
+    <tr>
+      <td>recalled</td>
+      <td>string</td>
+      <td>The developer has recalled the package.</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+<h2 id="package-submissions">Package submissions</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /rest/v1/products/packages
+PUT /rest/v1/products/packages
+PUT /rest/v1/products/packages/:submission_id
+PUT /rest/v1/products/packages/:item_id
+</code></pre></div></div>
+
+<h3 id="submit-a-package">Submit a package</h3>
+
+<p>You can submit a package in either of the following ways:</p>
+
+<ul>
+  <li>A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the <code class="highlighter-rouge">action</code> parameter.</li>
+  <li>A series of requests, typically in the following order:
+    <ol>
+      <li>A single POST request with the minimum required fields set and <code class="highlighter-rouge">action</code> set to <code class="highlighter-rouge">draft</code> in either <code class="highlighter-rouge">technical</code>, <code class="highlighter-rouge">marketing</code>, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique <code class="highlighter-rouge">submission_id</code> for subsequent PUT operations.</li>
+      <li>One or more PUT requests in which you configure the package parameters. In these requests, set <code class="highlighter-rouge">action</code> to <code class="highlighter-rouge">draft</code> in <code class="highlighter-rouge">technical</code>, <code class="highlighter-rouge">marketing</code>, or both.</li>
+      <li>A final PUT request indicating submission for <code class="highlighter-rouge">technical</code>, <code class="highlighter-rouge">marketing</code>, or both.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>You can update one or more parameters in <code class="highlighter-rouge">draft</code> mode, but the API does not check for validation errors.</p>
+
+<p>When the <code class="highlighter-rouge">action</code> field is set to <code class="highlighter-rouge">publish</code>, the API validates fields to ensure all required parameters are available on the Developer Portal to initiate the EQP process.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>All <code class="highlighter-rouge">action</code> fields are optional. If not specified, <code class="highlighter-rouge">draft</code> is the default value.</p>
+</div>
+
+<p>The following example shows a POST request with all required parameters set for both technical and marketing submissions:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"extension"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"One Click Checkout"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Short description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"long_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Long description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"release_notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Release notes here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://www.youtube.com/watch?v=l33T2-YC4tk"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://www.youtube.com/watch?v=682p52tFcmY"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"//Extensions//Payments &amp; Security//Checkout Enhancements"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"license_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bsd"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Since the API accepts batch requests for both POST and PUT operations, send a single submission as an array with one item.</p>
+
+<p>If you save the request body to a file, for example, <code class="highlighter-rouge">/tmp/one-click-submission-1.0.0.json</code>, the following example shows the package submission process:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+     <span class="nt">--data-binary</span>  @/tmp/one-click-submission-1.0.0.json <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/products/packages
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"submission_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4eacd72be"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eqp_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"overall"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"technical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_automation"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"marketing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awaiting_marketing_review"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 16:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"modified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-23 16:00:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+  <ul>
+    <li>The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.</li>
+    <li>Each item contains a <code class="highlighter-rouge">code</code> and <code class="highlighter-rouge">message</code> indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.</li>
+    <li>A unique <code class="highlighter-rouge">submission_id</code> is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.</li>
+    <li>Optionally, if a user-defined <code class="highlighter-rouge">item_id</code> was supplied during the POST, the response will echo back the same <code class="highlighter-rouge">item_id</code> for each item in the batch. The resource can be retrieved via GET using the <code class="highlighter-rouge">item_id</code>.</li>
+    <li>Any non-200 HTTP response code indicates an error for the entire batch request.</li>
+  </ul>
+</div>
+
+<h3 id="update-a-package">Update a package</h3>
+
+<p>The PUT method can be used to update packages in the following states:</p>
+
+<ul>
+  <li>The package is in draft mode for the technical or marketing review; or both.</li>
+  <li>The package has been rejected in either the technical or marketing review; or both. You must fix these issues and re-submit the package.</li>
+  <li>The package has been released to the Magento Marketplace.</li>
+  <li>The package was removed from the store by the developer and needs to be re-published.</li>
+  <li>The package can be recalled while in the EQP pipeline.</li>
+  <li>After a package has been released to the Magento Marketplace, you can update marketing information only. Changing marketing information causes the package to be placed in marketing review. The package continues to be live on the marketplace, and after the marketing approval, the updated fields will be published to the store.</li>
+</ul>
+
+<p>You cannot modify a package during the EQP process, except to recall the package.</p>
+
+<p>Updating several packages in a batch request is similar to the POST version above. The only difference is to supply <code class="highlighter-rouge">submission_id</code> for each item obtained from the POST request.</p>
+
+<p>The PUT method also allows for updating a single package with <code class="highlighter-rouge">submission_id</code> as shown in the following example:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> PUT <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="o">{</span> “action” : <span class="o">{</span> “overall” : “publish”<span class="o">}</span> <span class="o">}</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be
+</code></pre></div></div>
+
+<p>The HTTP response code will indicate success or failure.</p>
+
+<h4 id="required-parameters">Required parameters</h4>
+
+<p>If the <strong>action</strong> parameter indicates <code class="highlighter-rouge">submit</code> value for technical, or marketing or both, the required parameters are listed below by their respective parallel EQP pipelines:</p>
+
+<h5 id="technical">Technical</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>platform</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>version_compatibilty</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>release_notes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>artifact</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>documentation_artifacts</td>
+      <td>At least the <code class="highlighter-rouge">user</code> guide must be supplied.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="marketing">Marketing</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>short_description</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>long_description</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>documentation_artifacts</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>categories</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>media_artifacts</td>
+      <td>The icon, and at least one image in the gallery is required. The video urls are optional.</td>
+    </tr>
+    <tr>
+      <td>license_type</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>custom_license_name</td>
+      <td>Only if license_type is <code class="highlighter-rouge">custom</code>.</td>
+    </tr>
+    <tr>
+      <td>custom_license_url</td>
+      <td>Only if license_type is <code class="highlighter-rouge">custom</code>.</td>
+    </tr>
+    <tr>
+      <td>submission_id</td>
+      <td>For PUT commands.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="submission-in-several-steps">Submission in several steps</h5>
+
+<p>As described earlier, a submission can also be done in several steps in draft mode, followed by the action to <code class="highlighter-rouge">submit</code> for technical and/or <code class="highlighter-rouge">marketing</code> review. In such cases, the first
+POST request in draft mode can be done with a minimal set of parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>platform</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>short_description</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>long_description</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>With the returned  <code class="highlighter-rouge">submission_id</code>, the remaining required parameters can be supplied using a PUT request in draft mode, and/or with an <code class="highlighter-rouge">action</code> to submit to either technical or marketing review; or both.</p>
+
+<h2 id="get-package-details">Get package details</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/products/packages
+GET /rest/v1/products/packages/:submission_id
+GET /rest/v1/products/packages/skus
+GET /rest/v1/products/packages/skus/:url_encoded_sku
+GET /rest/v1/products/packages/items
+GET /rest/v1/products/packages/items/:item_id
+GET /rest/v1/products/packages/:submission_id/status
+GET /rest/v1/products/packages/sku/:url_encoded_sku/status
+GET /rest/v1/products/packages/item/:item_id/status
+</code></pre></div></div>
+
+<p>There are various ways to retrieve package details, most of which are convenient alternatives to the typical way using <code class="highlighter-rouge">submission_id</code> for a specific package submission. The data returned is the same for the primary and the secondary ways.</p>
+
+<p>The alternative ways provided are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">skus</code>: Retrieves all versions of a particular package sku. An additional <code class="highlighter-rouge">version</code> filter is available to retrieve a specific sku and version.</li>
+  <li><code class="highlighter-rouge">item_id</code>: Retrieves package details by specifying a user-defined unique <code class="highlighter-rouge">item_id</code> if one was supplied during the POST call.</li>
+</ul>
+
+<p>The following basic endpoints retrieve all package details (every version of every package submitted):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/products/packages
+GET /rest/v1/products/packages/skus
+GET /rest/v1/products/packages/items
+</code></pre></div></div>
+
+<p>The following status endpoints provide a detailed EQP status report of a packages:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/products/packages/:submission_id/status
+GET /rest/v1/products/packages/sku/:url_encoded_sku/status
+GET /rest/v1/products/packages/item/:item_id/status
+</code></pre></div></div>
+
+<p>This sample call lists all packages belonging to a user:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/products/packages
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"submission_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"f4eacd72be"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"extension"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"One Click Checkout"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Short description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"long_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Long description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme/one-click-checkout"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"release_notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Release notes here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme_one-click-checkout.zip"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/zip"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">182934</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"f53f5db985b8815f1ce6fd4b48a0439a"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">48392</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7f99e16a20457859fc0c86b5676a62ca"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"installation.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">34876</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"94392b98f02c56083995d23f02e460ab"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reference.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23845</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ec78ded664c71d80acf0e29f5dbafe2b"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"one-click-icon.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">37492</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dd0d04057cd1420afb76d6afa838d394"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme-logo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23947</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"515f2eaf3cd4e43c32fda89a004306aa"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_demo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">37492</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"8da78313887fdc3d2506f39c46ccde4e"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cart-demo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">38023</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"30b6fef138e1433e6f8ff23a45b2fbb9"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"click-demo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">48293</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0ced4d071dddc6e354acfa11f56a56f1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"click-success.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">39482</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dfa3183472cc265a5510be1da0fe444c"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://www.youtube.com/watch?v=l33T2-YC4tk"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://www.youtube.com/watch?v=682p52tFcmY"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"//Extensions//Payments &amp; Security//Checkout Enhancements"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"license_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bsd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eqp_status"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"overall"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"rejected"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"created_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 16:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"modified_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 17:53:22"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+  <ul>
+    <li>The previous example shows one product only, but an array of products can be returned.</li>
+    <li>The <code class="highlighter-rouge">sku</code> and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 <code class="highlighter-rouge">packages.xml</code> or M2 <code class="highlighter-rouge">composer.json</code>), once it passes the malware checks.</li>
+    <li>The code, documentation, and media artifact files have additonal info indicating meta-information on these files, including their current malware status.</li>
+    <li>The <code class="highlighter-rouge">eqp_status</code> field will indicate the current state of the package in the EQP process.</li>
+  </ul>
+</div>
+
+<h3 id="get-eqp-status-details">Get EQP status details</h3>
+
+<p>In the previous example, submission <code class="highlighter-rouge">f4eacd72be</code> failed. Specify the submission_id query parameter to get a more detailed report:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be/status
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"results"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"tool"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"phpcs"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reports"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1.12"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"php_version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7.1.16"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"tool"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"compile"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reports"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"php_version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7.1.16"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"output"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;output bin/magento deploy:mode:set production here &gt;"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+
+
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"results"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<div class="bs-callout bs-callout-info">
+  <ul>
+    <li>Technical reports include the Magento edition, version, and PHP version used to run tests.</li>
+    <li>The top-level <code class="highlighter-rouge">code</code> indicates the overall result, which can be <code class="highlighter-rouge">pass</code>, <code class="highlighter-rouge">fail</code>, or <code class="highlighter-rouge">in_progress</code>.</li>
+    <li>Each EQP review step, <code class="highlighter-rouge">technical</code> and <code class="highlighter-rouge">marketing</code> have their own overall status indicated by the <code class="highlighter-rouge">code</code> value, which can be <code class="highlighter-rouge">pass</code>, <code class="highlighter-rouge">fail</code> or <code class="highlighter-rouge">in_progress</code>.</li>
+    <li>The <code class="highlighter-rouge">results</code> list contains details for each tool and their respective outcome via the <code class="highlighter-rouge">status</code> field, which can be <code class="highlighter-rouge">pass</code> or <code class="highlighter-rouge">fail</code>.</li>
+  </ul>
+</div>
+
+<h3 id="sorting-and-filtering">Sorting and Filtering</h3>
+
+<p>The following fields enable both sorting and filtering support. Refer to the <a href="#package-fields">Package fields</a> section above for valid values for certain fields):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>Exact string match</td>
+    </tr>
+    <tr>
+      <td>platform</td>
+      <td>Exact string match</td>
+    </tr>
+    <tr>
+      <td>item_id</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>submission_id</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>sku</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>version</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>short_description</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>long_description</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>release_notes</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>is_patch</td>
+      <td>Exact match</td>
+    </tr>
+    <tr>
+      <td>license_type</td>
+      <td>Exact string match</td>
+    </tr>
+    <tr>
+      <td>custom_license_name</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>custom_license_url</td>
+      <td>Sub-string match</td>
+    </tr>
+    <tr>
+      <td>requested_launch_date</td>
+      <td>date match, allows range</td>
+    </tr>
+    <tr>
+      <td>created_time</td>
+      <td>date match, allows range</td>
+    </tr>
+    <tr>
+      <td>modified_time</td>
+      <td>date match, allows range</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A sample cURL request filtering all <code class="highlighter-rouge">themes</code> sorted by <code class="highlighter-rouge">platform</code> in ascending order and <code class="highlighter-rouge">created_time</code> in descending order:</p>
+
+<p><strong>Request</strong></p>
+
+<pre><code class="language-curl">curl -X GET \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/products/packages?type=theme&amp;sort=+platform,-created_time
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<p>A list of theme packages can be returned in the same way as described in <a href="#get-package-details">Get package details</a>.</p>
+
+<h2 id="delete-a-package">Delete a package</h2>
+
+<p>You can delete a package only if you specify a <code class="highlighter-rouge">submission_id</code> or <code class="highlighter-rouge">item_id</code> as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /rest/v1/products/packages/:submission_id
+DELETE /rest/v1/products/packages/items/:item_id
+</code></pre></div></div>
+
+<p>The following example deletes the package with <code class="highlighter-rouge">submission_id</code> <code class="highlighter-rouge">6fd7eaacbc</code>:</p>
+
+<p><strong>Request</strong></p>
+
+<pre><code class="language-curl">curl -X DELETE \
+     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
+     https://developer-api.magento.com/rest/v1/products/packages/6fd7eaacbc
+</code></pre>
+
+<p>A 200 HTTP Response code indicates a successful operation.</p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+    
+      <div class="github-link">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/marketplace/eqp/packages.md" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    
+  
+
+  
+    
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/marketplace/eqp/packages.html" target="_blank">Give us feedback</a>
+      </div>
+    
+  
+  
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

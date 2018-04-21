@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Files | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="/guides/v2.2/marketplace/eqp/files.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "";
+  </script>
+
+	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:806243,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+	
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+
+		<div class="container">
+
+			<a class="logo" href=""><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/marketplace/eqp/files.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/marketplace/eqp/files.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/marketplace/eqp/files.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/marketplace/eqp/files.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<nav class="nav-main" role="menubar">
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          
+          <li><a href="/guides/v2.2/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-separator"></div>
+
+
+  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.2/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/guides/v2.2/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" autocomplete="off" />
+				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+	<div class="message-banner">
+		These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <a href="mailto:marketplace-eqp-apis@magento.com">marketplace-eqp-apis@magento.com</a>.
+	</div>
+
+    
+
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+<h4>Marketplace EQP API</h4>
+<div class="left-navigation">
+    <ul>
+    
+    
+
+<li class="nav-level1  " id="introduction">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/api.html">Introduction</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="authentication">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/auth.html">Authentication</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="users">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/users.html">Users</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="files">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/files.html">Files</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="packages">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/packages.html">Packages</a>
+    
+
+    
+</li>
+
+
+    
+    
+
+<li class="nav-level1  " id="reports">
+
+    
+    
+    
+    <a href="/guides/v2.2/marketplace/eqp/reports.html">Reports</a>
+    
+
+    
+</li>
+
+
+    
+    </ul>
+</div>
+
+	</div>
+
+</aside>
+
+
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href=""><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Files</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Files</h1>
+
+  
+
+
+</section>
+
+
+			<p>Use <code class="highlighter-rouge">files</code> resources to manage all code artifacts and assets associated with an extension or a theme:</p>
+
+<ul>
+  <li>Magento 1 tarball (.tgz)</li>
+  <li>Magento 2 ZIP files</li>
+  <li>Image files for logos and galleries</li>
+  <li>Product Icons</li>
+  <li>PDF documents for User Guides, Installation Guides, and Reference Guides</li>
+</ul>
+
+<p>Each file upload receives a unique ID. You must associate these IDs with your submission later using the <a href="/guides/v2.2/marketpalce/eqp/packages.html">packages API</a>.</p>
+
+<p>You can associate a file with multiple products. This allows for asset sharing across different packages. For example, you can share an image file for a gallery with different packages by associating it with the same file upload ID.</p>
+
+<p>All files that you upload are inspected for malware. We only accept packages if all of its associated files have passed the malware inspection.</p>
+
+<h2 id="file-uploads">File uploads</h2>
+
+<p>Use this API to upload files, retrieve file upload status, and remove files.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/files/uploads/:file_upload_id
+POST /rest/v1/files/uploads
+DELETE /rest/v1/files/uploads/:file_upload_id
+</code></pre></div></div>
+
+<h3 id="get-a-file-upload">Get a file upload</h3>
+
+<p>Use the upload ID to retrieve details about a file upload.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /rest/v1/files/uploads/:file_upload_id
+</code></pre></div></div>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> GET <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“acme_one-click-checkout.zip”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/zip"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">182934</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass’,
+    “file_hash” : “f53f5db985b8815f1ce6fd4b48a0439a”,
+    “submission_ids” : [
+    ],
+    “is_profile_image” : false
+}
+</span></code></pre></div></div>
+
+<p>Details on the response fields:</p>
+
+<table class="style=&quot;table-layout:">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>filename</td>
+      <td>string</td>
+      <td>The name of the file sent in the request.</td>
+    </tr>
+    <tr>
+      <td>content-type</td>
+      <td>string</td>
+      <td>The mime-type of the uploaded file.</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>integer</td>
+      <td>The size of the file in bytes.</td>
+    </tr>
+    <tr>
+      <td>malware_status</td>
+      <td>string</td>
+      <td>Indicates the malware check result for this file. Valid values include <code class="highlighter-rouge">pass</code>, <code class="highlighter-rouge">fail</code>, and, <code class="highlighter-rouge">in-progress</code>.</td>
+    </tr>
+    <tr>
+      <td>file_hash</td>
+      <td>string</td>
+      <td>Hash of the file; currently using md5.</td>
+    </tr>
+    <tr>
+      <td>submission_ids</td>
+      <td>array</td>
+      <td>The list of package submissions associated with this file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="upload-files">Upload files</h3>
+
+<p>You upload files in bulk upload using the <strong>multipart/form-data</strong> encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /rest/v1/files/uploads
+</code></pre></div></div>
+
+<p>A sample request body of mime type, <a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2">multipart/form-data</a> with a boundary string of <code class="highlighter-rouge">----------287032381131322</code>
+is shown below:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">------------287032381131322</span>
+Content-Disposition: form-data<span class="p">;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"file[]"</span><span class="p">;</span> <span class="nv">filename</span><span class="o">=</span>“acme_one-click-checkout.zip<span class="s2">"
+Content-Type: application/zip
+
+&lt;zip file content here.....&gt;
+
+------------287032381131322
+Content-Disposition: form-data; name="</span>file[]<span class="s2">"; filename=“one-click-icon.png"</span>
+Content-Type: image/png
+
+&lt;image file content here.....&gt;
+
+<span class="nt">------------287032381131322</span>
+Content-Disposition: form-data<span class="p">;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"file[]"</span><span class="p">;</span> <span class="nv">filename</span><span class="o">=</span>“acme-logo.png<span class="s2">"
+Content-Type: image/png
+
+&lt;image file content here.....&gt;
+
+------------287032381131322
+Content-Disposition: form-data; name="</span>file[]<span class="s2">"; filename="</span>user.pdf<span class="s2">"
+Content-Type: application/pdf
+
+&lt;pdf file content here....&gt;
+
+------------287032381131322--
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+
+  <ul>
+    <li>Each part has a header and body with <code class="highlighter-rouge">Content-Disposition</code> header always set to <code class="highlighter-rouge">form-data</code>.</li>
+    <li>The <code class="highlighter-rouge">name</code> value must be set to <code class="highlighter-rouge">file[]</code> for all parts.</li>
+    <li>The original filename must be supplied in the <code class="highlighter-rouge">filename</code> parameter.</li>
+    <li>The <code class="highlighter-rouge">Content-Type</code> header must be set to the appropriate mime-type for the file.</li>
+    <li>The body of each part is the full contents of the raw file.</li>
+  </ul>
+</div>
+
+<p>For example, if you save the previous request body is saved to a temporary file at <code class="highlighter-rouge">/tmp/files-payload</code>, you can use it in your POST request to upload the file:</p>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"Content-Type: multipart/form-data; boundary=----------287032381131322"</span> <span class="se">\</span>
+     <span class="nt">--data-binary</span>  @/tmp/files-payload <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/files/uploads
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“acme_one-click-checkout.zip”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/zip"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">182934</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“dhsiXjdksW</span><span class="mi">17623</span><span class="err">”</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“one-click-icon.png”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">37492</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“gAdh</span><span class="mi">628</span><span class="err">bzXv”</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“acme-logo.png”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6825</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“fur</span><span class="mi">7284</span><span class="err">XcgdcV”</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“user.pdf”</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">48392</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“j</span><span class="mi">47</span><span class="err">dVbsFgkl”</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+  <p>The response is the list of files in the same order sent during the upload request.</p>
+</div>
+
+<p>Each record in the list has the following fields:</p>
+
+<table class="style=&quot;table-layout:">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>filename</td>
+      <td>string</td>
+      <td>The name of the file sent in the request.</td>
+    </tr>
+    <tr>
+      <td>content-type</td>
+      <td>string</td>
+      <td>The mime-type of the uploaded file.</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>integer</td>
+      <td>The size of the file in bytes.</td>
+    </tr>
+    <tr>
+      <td>file_upload_id</td>
+      <td>string</td>
+      <td>A unique identifier for the file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="highlighter-rouge">file_upload_id</code> must be tracked for subsequent package submission APIs.</p>
+
+<h3 id="delete-an-uploaded-file">Delete an uploaded file</h3>
+
+<p>You can only dissociate files from packages that have not been published on the Magento Marketplace. Removing a file without the optional <code class="highlighter-rouge">submission_ids</code> parameter disassociates it from all linked packages. If no packages are associated with a file, it will be removed.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE /rest/v1/files/uploads/:file_upload_id
+</code></pre></div></div>
+
+<p>Available parameters:</p>
+
+<table class="style=&quot;table-layout:">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>submission_ids</td>
+      <td>array</td>
+      <td>no</td>
+      <td>A list of submission IDs to disassociate the the file from the specified package.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Request</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> DELETE <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7'</span> <span class="se">\</span>
+     https://developer-api.magento.com/rest/v1/files/uploads/fur7284XcgdcV
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="err">“submission_id”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“ad</span><span class="mi">6834</span><span class="err">ffec”</span><span class="p">,</span><span class="w">
+      </span><span class="err">“code”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+      </span><span class="err">“message”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Success”</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+
+  </span><span class="p">{</span><span class="w">
+      </span><span class="err">“submission_id”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">3684</span><span class="err">dafecb”</span><span class="p">,</span><span class="w">
+      </span><span class="err">“code”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+      </span><span class="err">“message”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Success”</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+
+  </span><span class="p">{</span><span class="w">
+      </span><span class="err">“submission_id”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">7</span><span class="err">ffcdea</span><span class="mi">458</span><span class="err">”</span><span class="p">,</span><span class="w">
+      </span><span class="err">“code”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="w">
+      </span><span class="err">“message”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Package</span><span class="w"> </span><span class="err">live</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">store”</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+
+  <ul>
+    <li>The API returns a batch response for each item, which includes a <code class="highlighter-rouge">code</code> and <code class="highlighter-rouge">message</code>.</li>
+    <li>A 200 OK HTTP response code indicates a successful upload.</li>
+    <li>Any non-200 HTTP response code indicates an error.</li>
+    <li>If no packages are associated with a file, the API returns an empty list and the file is removed.</li>
+  </ul>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+    
+      <div class="github-link">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/marketplace/eqp/files.md" target="_blank">
+          Edit this page on GitHub
+        </a>
+      </div>
+    
+  
+
+  
+    
+      <div class="new-issue">
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/marketplace/eqp/files.html" target="_blank">Give us feedback</a>
+      </div>
+    
+  
+  
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
