@@ -100,7 +100,7 @@ Magento default themes are distributed as <a href="https://getcomposer.org/" tar
 
 To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
-`composer.json` provides theme dependency information.
+`composer.json` provides theme dependency information. Refer to a current `theme.xml` file for the correct dependancies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
 
 Example of a theme `composer.json`:
 
