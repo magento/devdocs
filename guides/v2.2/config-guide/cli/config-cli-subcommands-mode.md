@@ -68,10 +68,6 @@ Command usage:
 
   -   **`--skip-compilation`** is an optional parameter you can use to skip <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
 
-  <div class="bs-callout bs-callout-info" id="info" makrdown="1">
-  You cannot currently change from either developer or production mode to <a href="{{ page.baseurl}}/config-guide/bootstrap/magento-modes.html#default-mode">default mode</a>.
-  </div>
-
 Examples follow.
 
 ### Change to production mode
@@ -131,6 +127,14 @@ When you change from production to developer mode, you should clear generated cl
 	The following message displays:
 
 		Switched to developer mode.
+		
+### Change to default mode
+
+    bin/magento deploy:mode:set default
+    
+The following message displays:
+
+    Enabled default mode.
 
 ### Run Magento CLI commands from anywhere
 [Run Magento CLI commands from anywhere]({{page.baseurl}}/config-guide/cli/config-cli.html#config-install-cli-first).
