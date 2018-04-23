@@ -486,6 +486,20 @@
         
         
         
+        <li class="nav-level2  " id="configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/configuration.html">Configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="cli-commands">
             
             
@@ -686,7 +700,7 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
 
 <p>A <code class="highlighter-rouge">&lt;section&gt;</code> is a reusable part of a <a href="./page.html"><code class="highlighter-rouge">&lt;page&gt;</code></a> and is the standard file for defining UI elements on a page used in a test.</p>
 
@@ -914,7 +928,7 @@ They describe the function of the element rather than attempting to describe the
       <td><code class="highlighter-rouge">timeout</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>The default is <code class="highlighter-rouge">-</code>; The optional timeout value in seconds to wait for the operation on the element.</td>
+      <td>The timeout after interaction with the element (in seconds). The default is <em>none</em>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">parameterized</code></td>
@@ -930,6 +944,39 @@ They describe the function of the element rather than attempting to describe the
     </tr>
   </tbody>
 </table>
+
+<h4 id="timeout-attribute"><code class="highlighter-rouge">timeout</code> attribute</h4>
+
+<p>The attribute adds the <a href="test/actions.html#waitforpageload">waitForPageLoad</a> action after a reference to the element in test.
+The most usual use case is a test step with a button click action.</p>
+
+<p><strong>Use case</strong>: Set a timeout of 30 seconds after clicking the <code class="highlighter-rouge">signIn</code> button.</p>
+
+<p>The section element code declaration containing the timeout attribute:</p>
+
+<blockquote>
+  <p>StorefrontSigninSection.xml</p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signIn"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">"#signIn"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+...
+</code></pre></div></div>
+
+<p>The test step that covers the use case:</p>
+
+<blockquote>
+  <p>StorefrontSigninTest.xml</p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontSigninSection.signIn}}"</span> <span class="err">..</span><span class="nt">/&gt;</span>
+...
+</code></pre></div></div>
+
+<p>Whenever the <code class="highlighter-rouge">signIn</code> button is used in a test, the MFTF will add a 30 second <code class="highlighter-rouge">waitForPageLoad</code> action immediately after the <code class="highlighter-rouge">click</code>.</p>
+
+<!-- Link definitioins -->
 
 
 		</div>

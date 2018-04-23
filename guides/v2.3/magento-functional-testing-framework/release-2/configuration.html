@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Robo commands | Magento 2 Developer Documentation</title>
+	<title>Configuration | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">
+	<link rel="canonical" href="/guides/v2.3/magento-functional-testing-framework/release-2/configuration.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/release-2/commands/robo.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/release-2/configuration.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/release-2/commands/robo.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/release-2/configuration.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/release-2/configuration.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/release-2/configuration.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -486,7 +486,7 @@
         
         
         
-        <li class="nav-level2  " id="configuration">
+        <li class="nav-level2 active " id="configuration">
             
             
         
@@ -516,7 +516,7 @@
 
                 
                 
-                <li class="nav-level3 active " id="robo">
+                <li class="nav-level3  " id="robo">
                     
 
                     
@@ -669,7 +669,7 @@
 
           
 
-          <span property="name">Robo commands</span>
+          <span property="name">Configuration</span>
 
         
 
@@ -692,7 +692,7 @@
 
 	
 
-	<h1 class="page-heading">Robo commands</h1>
+	<h1 class="page-heading">Configuration</h1>
 
   
 
@@ -700,260 +700,163 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
 
-<p>Robo is a task runner for PHP that allows you to alias long, complex command line interface (CLI) commands to simple commands.</p>
+<p>The <em>*.env</em> file provides additional configuration of the Magento Functional Testing Framework (MFTF).
+All MFTF users will need to set the basic configuration values.
+Advanced users may need to set additional values to work with their environment.</p>
 
-<h2 id="usage">Usage</h2>
+<h2 id="basic-configuration">Basic Configuration</h2>
 
-<h3 id="format">Format</h3>
+<p>These basic configuration values are required and must be set by the user before MFTF can function correctly.</p>
 
-<p>Assuming that you’re working in the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory in your terminal, run Robo commands using the following format:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
-</code></pre></div></div>
-
-<p>Or, if you added the path of the Robo executable file to the system <em>PATH</em>, then run Robo commands using the following format:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
-</code></pre></div></div>
-
-<h3 id="example">Example</h3>
+<h3 id="magento_base_url">MAGENTO_BASE_URL</h3>
 
 <ul>
-  <li>Original:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>allure generate tests/_output/allure-results/ <span class="nt">-o</span> tests/_output/allure-report/
-</code></pre></div>    </div>
-  </li>
-  <li>Robo:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure1:generate
-</code></pre></div>    </div>
-  </li>
+  <li>Use: Required.</li>
+  <li>Description: The root URL of the Magento application under test.</li>
+  <li>Example: <code class="highlighter-rouge">http://magento2.vagrant251</code></li>
 </ul>
 
-<h2 id="useful-commands">Useful commands</h2>
+<h3 id="magento_backend_name">MAGENTO_BACKEND_NAME</h3>
 
-<p>The following are the most popular commands used to interact with the <abbr title="Magento Functional Testing Framework">MFTF</abbr>. For more commands, see <a href="#reference">Reference</a> or run in your terminal:</p>
+<ul>
+  <li>Use: Required.</li>
+  <li>Description: The path to the Magento Admin page.</li>
+  <li>Example: <code class="highlighter-rouge">admin_12346</code>.</li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo
+<h3 id="magento_admin_username">MAGENTO_ADMIN_USERNAME</h3>
+
+<ul>
+  <li>Use: Required.</li>
+  <li>Description: The username that tests will use to log in to the Magento Admin page.</li>
+  <li>Example: <code class="highlighter-rouge">admin</code>.</li>
+</ul>
+
+<h3 id="magento_admin_password">MAGENTO_ADMIN_PASSWORD</h3>
+
+<ul>
+  <li>Use: Required.</li>
+  <li>Description: The password that tests will use to log in to the Magento Admin page.</li>
+  <li>Example: <code class="highlighter-rouge">1234reTyt%$7</code></li>
+</ul>
+
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+
+<p>In most cases, these values are not required.
+Sensible defaults are in place.
+But in case you do need to do some configuration, they are shown here for your reference.</p>
+
+<h3 id="selenium">SELENIUM</h3>
+
+<p>The <code class="highlighter-rouge">SELENIUM_*</code> values are concatenated together to form the URL of a custom Selenium server to test against.
+An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>
+<span class="n">SELENIUM_PORT</span>
+<span class="n">SELENIUM_PROTOCOL</span>
+<span class="n">SELENIUM_PATH</span>
 </code></pre></div></div>
 
-<h3 id="codeception-robo-commands">Codeception Robo Commands</h3>
+<h4 id="selenium_host">SELENIUM_HOST</h4>
 
-<h4 id="list-all-available-robo-commands">List all available Robo commands:</h4>
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">user:pass@ondemand.saucelabs.com</code></li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo
+<h4 id="selenium_port">SELENIUM_PORT</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">443</code></li>
+</ul>
+
+<h4 id="selenium_protocol">SELENIUM_PROTOCOL</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">https</code></li>
+</ul>
+
+<h4 id="selenium_path">SELENIUM_PATH</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">/wd/hub</code></li>
+</ul>
+
+<h3 id="magento_restapi">MAGENTO_RESTAPI</h3>
+
+<p>These <code class="highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases where your Magento instance has a different API path than the standard <code class="highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>
+<span class="n">MAGENTO_RESTAPI_SERVER_PORT</span>
 </code></pre></div></div>
 
-<h4 id="duplicate-the-example-configuration-files-used-to-customize-the-project">Duplicate the example configuration files used to customize the project:</h4>
+<h4 id="magento_restapi_server_host">MAGENTO_RESTAPI_SERVER_HOST</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo clone:files
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: The protocol and host part of the API path.</li>
+  <li>Example: <code class="highlighter-rouge">http://localhost</code></li>
+</ul>
+
+<h4 id="magento_restapi_server_port">MAGENTO_RESTAPI_SERVER_PORT</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: The port part of the API path.</li>
+  <li>Example: <code class="highlighter-rouge">5000</code></li>
+</ul>
+
+<h3 id="tests">TESTS</h3>
+
+<p>These values can be used in cases where you are working locally on both MFTF’s implementation code and Magento’s test case code.
+Use them if you have a more advanced local development setup involving symlinking MFTF into the <code class="highlighter-rouge">vendor</code> directory of <code class="highlighter-rouge">magento2</code>.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TESTS_BP</span>
+<span class="n">FW_BP</span>
+<span class="n">TESTS_MODULES_PATH</span>
 </code></pre></div></div>
 
-<h4 id="build-the-codeception-project">Build the Codeception project:</h4>
+<h4 id="tests_bp">TESTS_BP</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo build:project
-</code></pre></div></div>
+<p>BP is an acronym for BasePath.</p>
 
-<h4 id="generate-all-tests-in-php">Generate all tests in PHP:</h4>
+<ul>
+  <li>Use: Optional.</li>
+  <li>Description: The path to where MFTF supplementary files are located in the Magento2 codebase.</li>
+  <li>Example: <code class="highlighter-rouge">~/magento2ce/dev/tests/acceptance</code></li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:tests
-</code></pre></div></div>
+<h4 id="fw_bp">FW_BP</h4>
 
-<h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all tests marked with the @group tag <code class="highlighter-rouge">example</code>, using the Chrome environment:</h4>
+<p>FW_BP is an acronym for FrameWork BasePath.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo example
-</code></pre></div></div>
+<ul>
+  <li>Use: Optional.</li>
+  <li>Description: The path to where MFTF exists and from which it is symlinked.</li>
+  <li>Example: <code class="highlighter-rouge">~/magento/magento2-functional-testing-framework</code></li>
+</ul>
 
-<h4 id="run-all-functional-tests-located-under-the-directory-path-provided">Run all functional tests located under the directory path provided:</h4>
+<h4 id="tests_module_path">TESTS_MODULE_PATH</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo folder ______
-</code></pre></div></div>
+<ul>
+  <li>Use: Optional.</li>
+  <li>Description: The path to where MFTF modules mirror Magento’s modules.</li>
+  <li>Example: <code class="highlighter-rouge">~/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code></li>
+</ul>
 
-<h4 id="run-all-functional-tests-excluding-group-skip">Run all functional tests, excluding @group skip:</h4>
+<h3 id="module_whitelist">MODULE_WHITELIST</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo functional
-</code></pre></div></div>
-
-<h4 id="run-all-tests-with-the-specified-group-tag-excluding-group-skip">Run all tests with the specified @group tag, excluding @group ‘skip’:</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group ______
-</code></pre></div></div>
-
-<h3 id="allure-robo-commands">Allure Robo commands</h3>
-
-<p>To determine which version of the Allure command you need to use run <code class="highlighter-rouge">allure --version</code>.</p>
-
-<h4 id="generate-the-html-for-the-allure-report-based-on-the-test-xml-output">Generate the HTML for the Allure report based on the test XML output:</h4>
-
-<p>Allure v1.x.x:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure1:generate
-</code></pre></div></div>
-
-<p>Allure v2.x.x:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure2:generate
-</code></pre></div></div>
-
-<h4 id="open-the-html-allure-report">Open the HTML Allure report:</h4>
-
-<p>Allure v1.x.x:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure1:open
-</code></pre></div></div>
-
-<p>Allure v2.x.x:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure2:open
-</code></pre></div></div>
-
-<h4 id="generate-and-open-the-html-allure-report">Generate and open the HTML Allure report:</h4>
-
-<p>Allure v1.x.x:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure1:report
-</code></pre></div></div>
-
-<p>Allure v2.x.x:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure2:report
-</code></pre></div></div>
-
-<h2 id="reference">Reference</h2>
-
-<h4 id="general">general</h4>
-
-<table>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">functional</code></td>
-      <td>Run all functional tests, excluding <code class="highlighter-rouge">@group 'skip'</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">example</code></td>
-      <td>Run all Tests marked with the <code class="highlighter-rouge">@group</code> tag <code class="highlighter-rouge">'example'</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">folder</code></td>
-      <td>Run all acceptance tests located under the directory path provided..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">group</code></td>
-      <td>Run all tests with the specified <code class="highlighter-rouge">@group</code> tag, excluding <code class="highlighter-rouge">@group 'skip'</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">help</code></td>
-      <td>Displays help for a command.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">list</code></td>
-      <td>Lists commands.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="allure1">allure1</h4>
-
-<table>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">allure1:generate</code></td>
-      <td>Generate the HTML for the Allure report based on the test XML output - Allure v1.4.X.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">allure1:open</code></td>
-      <td>Open the HTML Allure report - Allure v1.4.xX.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">allure1:report</code></td>
-      <td>Generate and open the HTML Allure report - Allure v1.4.X.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="allure2">allure2</h4>
-
-<table>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">allure2:generate</code></td>
-      <td>Generate the HTML for the Allure report based on the test XML output - Allure .v2.3.X</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">allure2:open</code></td>
-      <td>Open the HTML Allure report - Allure v2.3.X.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">allure2:report</code></td>
-      <td>Generate and open the HTML Allure report - Allure v2.3.X.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="build">build</h4>
-
-<table>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">build:project</code></td>
-      <td>Clone the example configuration files and build the Codeception project.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="clone">clone</h4>
-
-<table>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">clone:files</code></td>
-      <td>Duplicate the example configuration files used to customize the project.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="generate">generate</h4>
-
-<p>Generate PHP code from the tests defined in XML files.
-Path to a directory with generated tests:  <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/</code>.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">generate:tests</code></td>
-      <td>Generate all tests based on specific module load order of the Magento instance</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">generate:tests --force</code></td>
-      <td>Generate all tests regardless of whether a Magento instance is available</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">generate:tests --config singleRun</code></td>
-      <td>Generate all tests and a manifest file, which is <code class="highlighter-rouge">_generated/testManifest.txt</code>. The file contains only a path to the directory with generated tests.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">generate:tests --config parallel --nodes &lt;number of nodes&gt;</code></td>
-      <td>Generate all tests and a directory with manifest files, which is <code class="highlighter-rouge">_generated/groups/</code>. The number of files corresponds to the number of nodes. Each file contains a proportional list of tests ordered across files from largest to smallest (based on number of actions).</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="self">self</h4>
-
-<table>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">self:update</code> or <code class="highlighter-rouge">update</code></td>
-      <td>Updates the <code class="highlighter-rouge">robo.phar</code> to the latest version, which only works when running the <code class="highlighter-rouge">phar</code> version of Robo.</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- LINK DEFINITIONS -->
-
-<!-- Abbreviations -->
-
+<p>Use the <code class="highlighter-rouge">MODULE_WHITELIST</code> environment variable if you are working on a new module.
+When adding a new directory under <code class="highlighter-rouge">Magento/FunctionalTest</code>, add the directory name under <code class="highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -965,7 +868,7 @@ Path to a directory with generated tests:  <code class="highlighter-rouge">tests
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/release-2/configuration.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -975,7 +878,7 @@ Path to a directory with generated tests:  <code class="highlighter-rouge">tests
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/magento-functional-testing-framework/release-2/configuration.html" target="_blank">Give us feedback</a>
       </div>
     
   

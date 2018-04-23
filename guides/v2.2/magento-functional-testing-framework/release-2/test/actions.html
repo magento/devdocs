@@ -481,6 +481,20 @@
         
         
         
+        <li class="nav-level2  " id="configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/configuration.html">Configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="cli-commands">
             
             
@@ -940,7 +954,7 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
 
 <p>Actions in the MFTF allow you to automate different scenarios of Magento user’s actions.
 They are mostly XML implementations of <a href="http://codeception.com/docs/modules/WebDriver#Actions">Codeception actions</a>.
@@ -954,12 +968,27 @@ Some actions drive browser elements, while others use REST APIs.</p>
 
 <p><code class="highlighter-rouge">stepKey</code> is a required attribute that stores a unique identifier of the action.</p>
 
-<p>Example:</p>
+<p>Example test step of the <code class="highlighter-rouge">myAction</code> action with the <code class="highlighter-rouge">conditionalClickStep1</code> identifier:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">stepKey=</span><span class="s">"conditionalClickStep1"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">myAction</code> has an identifier, which is <code class="highlighter-rouge">conditionalClickStep1</code>. This step can be referenced within the test using this identifier.</p>
+<p>This step can be referenced within the test using <code class="highlighter-rouge">conditionalClickStep1</code>.</p>
+
+<p>The value format should met the following principles:</p>
+
+<ul>
+  <li>Must be unique within <a href="../test.html#test"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</li>
+  <li>Naming should be as descriptive as possible:
+    <ul>
+      <li>Describe the action performed.</li>
+      <li>Briefly describe the purpose.</li>
+      <li>Describe which data is in use.</li>
+    </ul>
+  </li>
+  <li>Should be in camelCase with lowercase first letter.</li>
+  <li>Should be the last attribute of an element.</li>
+</ul>
 
 <hr />
 
@@ -980,23 +1009,6 @@ Some actions drive browser elements, while others use REST APIs.</p>
 </code></pre></div></div>
 
 <p><code class="highlighter-rouge">myAction</code> will be executed after the action, which has <code class="highlighter-rouge">stepKey="fillField"</code>.</p>
-
-<h2 id="principles">Principles</h2>
-
-<p>The following value format principles apply to the <code class="highlighter-rouge">stepKey</code> MFTF action:</p>
-
-<ul>
-  <li>Must be unique within <a href="../test.html#test"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</li>
-  <li>Naming should be as descriptive as possible:
-    <ul>
-      <li>Describe the action performed.</li>
-      <li>Briefly describe the purpose.</li>
-      <li>Describe which data is in use.</li>
-    </ul>
-  </li>
-  <li>Should be in camelCase with lowercase first letter.</li>
-  <li>Should be the last attribute of an element.</li>
-</ul>
 
 <h2 id="example">Example</h2>
 
@@ -1325,13 +1337,13 @@ If the description of an element does not include a link to Codeception analogue
       <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>optional</td>
-      <td> </td>
+      <td>The selector identifying the corresponding HTML element (<code class="highlighter-rouge">&lt;input type="file"&gt;</code>).</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">userInput</code></td>
       <td>string</td>
       <td>optional</td>
-      <td> </td>
+      <td>The name of attaching file. The file must be placed in the <code class="highlighter-rouge">tests/_data</code> directory.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">stepKey</code></td>
@@ -1552,13 +1564,13 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
       <td> </td>
     </tr>
     <tr>
-      <td>x</td>
+      <td><code class="highlighter-rouge">x</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>y</td>
+      <td><code class="highlighter-rouge">y</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -1611,13 +1623,13 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
       <td> </td>
     </tr>
     <tr>
-      <td>x</td>
+      <td><code class="highlighter-rouge">x</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>y</td>
+      <td><code class="highlighter-rouge">y</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -1782,13 +1794,13 @@ It is intended to aid documentation and clarity of tests.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>dependent<code class="highlighter-rouge">selector</code></td>
+      <td><code class="highlighter-rouge">dependentSelector</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>visible</td>
+      <td><code class="highlighter-rouge">visible</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td> </td>
@@ -1835,16 +1847,22 @@ to the Magento API according to the data and metadata of the entity to be create
   </thead>
   <tbody>
     <tr>
-      <td>entity</td>
+      <td><code class="highlighter-rouge">entity</code></td>
       <td>string</td>
       <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">storeCode</code></td>
+      <td>string</td>
+      <td>optional</td>
       <td> </td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
-      <td> </td>
+      <td>A unique identifier of the action.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">before</code></td>
@@ -1857,12 +1875,6 @@ to the Magento API according to the data and metadata of the entity to be create
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
-    </tr>
-    <tr>
-      <td>storeCode</td>
-      <td>string</td>
-      <td>optional</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -1895,10 +1907,16 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>createDataKey</td>
+      <td><code class="highlighter-rouge">createDataKey</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">before</code></td>
@@ -1937,7 +1955,7 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>key</td>
+      <td><code class="highlighter-rouge">key</code></td>
       <td>string</td>
       <td>required</td>
       <td>Name of the field to be replaced or added.</td>
@@ -1972,7 +1990,13 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>createDataKey</td>
+      <td><code class="highlighter-rouge">createDataKey</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">storeCode</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -1994,12 +2018,6 @@ by indicating the relationship.</p>
       <td>string</td>
       <td>optional</td>
       <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
-    </tr>
-    <tr>
-      <td>storeCode</td>
-      <td>string</td>
-      <td>optional</td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -2201,7 +2219,7 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>regex</td>
+      <td><code class="highlighter-rouge">regex</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Regular expression against the current URI.</td>
@@ -2301,7 +2319,7 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>attributeArray</td>
+      <td><code class="highlighter-rouge">attributeArray</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -2776,16 +2794,16 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>selector1</td>
+      <td><code class="highlighter-rouge">selector1</code></td>
       <td>string</td>
       <td>optional</td>
-      <td> </td>
+      <td>A selector for the HTML element to drag.</td>
     </tr>
     <tr>
-      <td>selector2</td>
+      <td><code class="highlighter-rouge">selector2</code></td>
       <td>string</td>
       <td>optional</td>
-      <td> </td>
+      <td>A selector for the HTML element to drop onto.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">stepKey</code></td>
@@ -2823,7 +2841,7 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>function</td>
+      <td><code class="highlighter-rouge">function</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -2864,7 +2882,7 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>function</td>
+      <td><code class="highlighter-rouge">function</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -2962,7 +2980,7 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>locale</td>
+      <td><code class="highlighter-rouge">locale</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3012,9 +3030,21 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>storeCode</td>
+      <td><code class="highlighter-rouge">storeCode</code></td>
       <td>string</td>
       <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">index</code></td>
+      <td>integer</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">entity</code></td>
+      <td>string</td>
+      <td>required</td>
       <td> </td>
     </tr>
     <tr>
@@ -3022,18 +3052,6 @@ by indicating the relationship.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>index</td>
-      <td>integer</td>
-      <td>optional</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>entity</td>
-      <td>string</td>
-      <td>required</td>
-      <td> </td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">before</code></td>
@@ -3161,7 +3179,7 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>regex</td>
+      <td><code class="highlighter-rouge">regex</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Regular expression against the current URI.</td>
@@ -3413,7 +3431,7 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>command</td>
+      <td><code class="highlighter-rouge">command</code></td>
       <td>string</td>
       <td>optional</td>
       <td>CLI command to be executed in Magento environment.</td>
@@ -3612,13 +3630,13 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>x</td>
+      <td><code class="highlighter-rouge">x</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>y</td>
+      <td><code class="highlighter-rouge">y</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3663,7 +3681,7 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>locale</td>
+      <td><code class="highlighter-rouge">locale</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3854,7 +3872,7 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>function</td>
+      <td><code class="highlighter-rouge">function</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -3983,7 +4001,7 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>keyForRemoval</td>
+      <td><code class="highlighter-rouge">keyForRemoval</code></td>
       <td>string</td>
       <td>required</td>
       <td>Set <code class="highlighter-rouge">stepKey</code> of the action you want to remove.</td>
@@ -4053,13 +4071,13 @@ by indicating the relationship.</p>
   </thead>
   <tbody>
     <tr>
-      <td>width</td>
+      <td><code class="highlighter-rouge">width</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>height</td>
+      <td><code class="highlighter-rouge">height</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -4153,13 +4171,13 @@ by indicating the relationship.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>x</td>
+      <td><code class="highlighter-rouge">x</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td>y</td>
+      <td><code class="highlighter-rouge">y</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -4238,26 +4256,20 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     <tr>
       <td><code class="highlighter-rouge">selector</code></td>
       <td>string</td>
-      <td>optional</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">userInput</code></td>
-      <td>string</td>
-      <td>optional</td>
-      <td> </td>
+      <td>required</td>
+      <td>The selector of a multi select HTML element (drop-down menu).</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">parameterArray</code></td>
-      <td>string</td>
-      <td>optional</td>
-      <td> </td>
+      <td>array</td>
+      <td>required</td>
+      <td>Items to search and select in the selected drop-down menu.</td>
     </tr>
     <tr>
-      <td>requiredAction</td>
-      <td>string</td>
+      <td><code class="highlighter-rouge">requiredAction</code></td>
+      <td>boolean</td>
       <td>optional</td>
-      <td> </td>
+      <td>Clicks <strong>Done</strong> after selections if <code class="highlighter-rouge">true</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">stepKey</code></td>
@@ -4279,6 +4291,21 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<p>Example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;searchAndMultiSelectOption</span> <span class="na">selector=</span><span class="s">"#stuff"</span> <span class="na">parameterArray=</span><span class="s">"['Item 1', 'Item 2']"</span> <span class="na">stepKey=</span><span class="s">"searchAndMultiSelect1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>On this test step the MFTF:</p>
+<ol>
+  <li>Searches for a drop-down HTML element that matches the <code class="highlighter-rouge">#stuff</code> selector.</li>
+  <li>Opens the drop-down menu.</li>
+  <li>Enters <strong>Item 1</strong> in a search field of the drop-down element.</li>
+  <li>Selects first element from the filtered results.</li>
+  <li>Enters <strong>Item 2</strong> in a search field of the drop-down element.</li>
+  <li>Selects first element from the filtered results.</li>
+</ol>
 
 <h3 id="see">see</h3>
 
@@ -4477,7 +4504,7 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </thead>
   <tbody>
     <tr>
-      <td>regex</td>
+      <td><code class="highlighter-rouge">regex</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Regular expression against the current URI.</td>
@@ -5192,7 +5219,7 @@ See the previous example.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>value</td>
+      <td><code class="highlighter-rouge">value</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -5245,7 +5272,7 @@ See the previous example.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>button</td>
+      <td><code class="highlighter-rouge">button</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -5606,9 +5633,21 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>storeCode</td>
+      <td><code class="highlighter-rouge">storeCode</code></td>
       <td>string</td>
       <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">entity</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">createDataKey</code></td>
+      <td>string</td>
+      <td>required</td>
       <td> </td>
     </tr>
     <tr>
@@ -5616,18 +5655,6 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td>entity</td>
-      <td>string</td>
-      <td>required</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>createDataKey</td>
-      <td>string</td>
-      <td>required</td>
-      <td> </td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">before</code></td>
@@ -5749,7 +5776,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
       <td> </td>
     </tr>
     <tr>
-      <td>function</td>
+      <td><code class="highlighter-rouge">function</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -5937,7 +5964,7 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </thead>
   <tbody>
     <tr>
-      <td>function</td>
+      <td><code class="highlighter-rouge">function</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
@@ -6110,7 +6137,6 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
     </tr>
   </tbody>
 </table>
-
 
 		</div>
 		<!-- /.content-wrap -->

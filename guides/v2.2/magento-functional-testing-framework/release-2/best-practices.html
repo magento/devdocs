@@ -481,6 +481,20 @@
         
         
         
+        <li class="nav-level2  " id="configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/configuration.html">Configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="cli-commands">
             
             
@@ -940,64 +954,129 @@
 </section>
 
 
-			<p>Check out our best practices below to ensure you’re getting the absolute most out of the MFTF.</p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
 
-<h2 id="annotations">Annotations</h2>
+<p>Check out our best practices below to ensure you’re getting the absolute most out of the Magento Functional Testing Framework.</p>
 
+<h2 id="naming-conventions">Naming conventions</h2>
+
+<h3 id="file-names">File names</h3>
+
+<p>Name files according to the following patterns to make searching in future more easy:</p>
+
+<h4 id="test-file-name">Test file name</h4>
+
+<p>Format: {<em>Admin</em> or <em>Storefront</em>}{Functionality}<em>Test.xml</em>, where Functionality briefly describes the testing functionality.</p>
+
+<p>Example: <em>StorefrontCreateCustomerTest.xml</em>.</p>
+
+<h4 id="section-file-name">Section file name</h4>
+
+<p>Format: {<em>Admin</em> or <em>Storefront</em>}{UI Description}<em>Section.xml</em>, where UI Description briefly describes the testing UI.</p>
+
+<p>Example: <em>AdminNavbarSection.xml</em>.</p>
+
+<h4 id="data-file-name">Data file name</h4>
+
+<p>Format: {Type}<em>Data.xml</em>, where Type represents the entity type.</p>
+
+<p>Example: <em>ProductData.xml</em>.</p>
+
+<h3 id="object-names">Object names</h3>
+
+<p>Use the <em>Foo.camelCase</em> naming convention, which is similar to <em>Classes</em> and <em>classProperties</em> in PHP.</p>
+
+<h4 id="upper-case">Upper case</h4>
+
+<p>Use an upper case first letter for:</p>
 <ul>
-  <li>
-    <p>Always use annotations in a test.</p>
-  </li>
-  <li>
-    <p>When updating tests, always make corresponding annotation updates.</p>
-  </li>
-  <li>
-    <p>Annotation types and recommendations are described as:</p>
+  <li>File names. Example: <em>StorefrontCreateCustomerTest.xml</em></li>
+  <li>Test name attributes. Example: <code class="highlighter-rouge">&lt;test name="TestAllTheThingsTest"&gt;</code>.</li>
+  <li>Data entity names. Example: <code class="highlighter-rouge">&lt;entity name="OutOfStockProduct"&gt;</code>.</li>
+  <li>Page name. Example: <code class="highlighter-rouge">&lt;page name="AdminLoginPage"&gt;</code>.</li>
+  <li>Section name. Example: <code class="highlighter-rouge">&lt;actionGroup name="DeleteCategory"&gt;</code>.</li>
+</ul>
+
+<h4 id="lower-case">Lower case</h4>
+
+<p>Use a lower case first letter for:</p>
+<ul>
+  <li>Data keys. Example: <code class="highlighter-rouge">&lt;data key="firstName"&gt;</code>.</li>
+  <li>Element names. Examples: <code class="highlighter-rouge">&lt;element name="confirmDeleteButton"/&gt;</code>.</li>
+</ul>
+
+<h2 id="test">Test</h2>
+
+<ol>
+  <li>Use actions such as <a href="test/actions.html#waitforelementvisible"><code class="highlighter-rouge">&lt;waitForElementVisible&gt;</code></a>, <a href="test/actions.html#waitforloadingmasktodisappear"><code class="highlighter-rouge">&lt;waitForLoadingMaskToDisappear&gt;</code></a>, and <a href="test/actions.html#waitforelement"><code class="highlighter-rouge">&lt;waitForElement&gt;</code></a> to wait the exact time required for the test step.
+ Try to avoid using the <a href="test/actions.html#wait"><code class="highlighter-rouge">&lt;wait&gt;</code></a> action, because it forces the test to wait for the time you specify. You may not need to wait so long to proceed.</li>
+  <li>Keep your tests short and granular for target testing, easier reviews, and easier merge conflict resolution.
+ It also helps you to identify the cause of test failure.</li>
+  <li>Use comments to keep tests readable and maintainable:
     <ul>
-      <li><strong>Feature</strong> - Report grouping, a set of tests that verify a feature.</li>
-      <li><strong>Story</strong> - Report grouping, a set of tests that verify a story.</li>
-      <li><strong>Group</strong> - Module name.</li>
-      <li><strong>Title</strong> - Describes the purpose of the test.</li>
-      <li><strong>Description</strong> - Describes how the test achieves the purpose defined in the title.</li>
-      <li><strong>Severity</strong> - Allowed values are <em>BLOCKER</em>, <em>CRITICAL</em>, <em>MAJOR</em>, <em>AVERAGE</em>, and <em>MINOR</em>.</li>
+      <li>Keep the inline <code class="highlighter-rouge">&lt;!-- XML comments --&gt;</code> and <a href="test/actions.html#comment"><code class="highlighter-rouge">&lt;comment&gt;</code></a> tags up to date.
+  It helps to inform the reader of what you are testing and to yield a more descriptive Allure report.</li>
+      <li>Explain in comments unclear or tricky test steps.</li>
     </ul>
   </li>
-</ul>
+  <li>Refer to <a href="section.html">sections</a> instead of writing selectors.</li>
+</ol>
 
-<h2 id="data-entities">Data entities</h2>
+<h2 id="action-group">Action group</h2>
 
-<ul>
-  <li>
-    <p>When using a <code class="highlighter-rouge">&lt;createData&gt;</code> action in a <code class="highlighter-rouge">&lt;before&gt;</code> block, always use a corresponding <code class="highlighter-rouge">&lt;deleteData&gt;</code> in your <code class="highlighter-rouge">&lt;after&gt;</code> block.</p>
-  </li>
-  <li>
-    <p>Where data values are required to be unique in the database, enforce the uniqueness on the attribute of the data entity. Use <code class="highlighter-rouge">[unique=”suffix”]</code> or <code class="highlighter-rouge">[unique=”prefix”]</code> to append or prepend a unique value to the entity attribute. This ensures tests using the entity can be repeated.</p>
-  </li>
-  <li>
-    <p>Do not modify existing data entity fields or add/merge additional data fields without fully understanding and verifying all existing data usages. We recommend that you create a new data entity for your test when you are not sure.</p>
-  </li>
-</ul>
+<ol>
+  <li><a href="test/action-groups.html">Action group</a> names should be sufficiently descriptive to inform a test writer of what the action group does and when it should be used.
+ Add additional explanation in comments if needed.</li>
+  <li>Provide default values for the arguments that apply to your most common case scenarios.</li>
+</ol>
 
-<h2 id="page-objects">Page objects</h2>
+<h2 id="annotation">Annotation</h2>
 
-<p>Do not overuse parameterized selectors.</p>
+<ol>
+  <li>Use <a href="test/annotations.html">annotations</a> in a test.</li>
+  <li>Update your annotations correspondingly when updating tests.</li>
+</ol>
 
-<p>Parameterized selectors should only be used when test-specific or runtime-generated information is needed to construct a selector. Do not use it for static elements.</p>
+<h2 id="data-entity">Data entity</h2>
 
-<p>For example, do not define a parameterized element like the following:</p>
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"relatedProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='']"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+<ol>
+  <li>Keep your testing instance clean.
+ Remove data after the test if the test required creating any data.
+ Use a corresponding <a href="test/actions.html#deletedata"><code class="highlighter-rouge">&lt;deleteData&gt;</code></a> test step in your [<code class="highlighter-rouge">&lt;after&gt;</code>] block when using a <a href="test/actions.html#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a> action in a [<code class="highlighter-rouge">&lt;before&gt;</code>] block.</li>
+  <li>Make specific data entries under test to be unique.
+ Enable data uniqueness where data values are required to be unique in a database by test design. 
+ Use <code class="highlighter-rouge">unique=”suffix”</code> or <code class="highlighter-rouge">unique=”prefix”</code> to append or prepend a unique value to the <a href="data.html">entity</a> attribute.
+ This ensures that tests using the entity can be repeated.</li>
+  <li>Do not modify existing data entity fields or merge additional data fields without complete understanding and verifying the usage of existing data in tests.
+ Create a new data entity for your test if you are not sure.</li>
+</ol>
+
+<h2 id="page-object">Page object</h2>
+
+<p>Use <a href="section/parameterized-selectors.html">parameterized selectors</a> for constructing a selector when test specific or runtime generated information is needed.
+Do not use them for static elements.</p>
+
+<p style="color:red">BAD:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"relatedProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='']"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
-<p>Instead, define these three elements and reference them by name in the tests:</p>
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"relatedProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='related']"</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"upSellProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='upsell']"</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"crossSellProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='crosssell']"</span><span class="nt">/&gt;</span>
+
+<p style="color:green">GOOD:</p>
+
+<p>Define these three elements and reference them by name in the tests.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"relatedProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='related']"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"upSellProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='upsell']"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"crossSellProductSectionText"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">selector=</span><span class="s">".fieldset-wrapper.admin__fieldset-section[data-index='crosssell']"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<h2 id="test-step-merge-orders">Test step merge orders</h2>
+<h2 id="test-step-merging-order">Test step merging order</h2>
 
-<p>When setting merge orders for a test step, do not depend on steps from Magento modules that could be disabled by an application.</p>
+<p>When setting a <a href="merging.html">merging</a> order for a test step, do not depend on steps from Magento modules that could be disabled by an application.</p>
 
-<p>For example, when you write a test step to create a gift card product, it’s probably better to set your test step <strong>after</strong> simple product creation and let MFTF handle the merge order. This is better than setting the test step <strong>before</strong> creating a configurable product, because the configurable product module could be disabled.</p>
+<p>For example, when you write a test step to create a gift card product, set your test step <strong>after</strong> simple product creation and let the MFTF handle the merge order.
+Since the configurable product module could be disabled, this approach is more reliable than setting the test step <strong>before</strong> creating a configurable product.</p>
+
+<!-- Link definitions -->
+
 
 		</div>
 		<!-- /.content-wrap -->

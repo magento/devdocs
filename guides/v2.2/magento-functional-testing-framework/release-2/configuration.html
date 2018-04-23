@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Getting started | Magento 2 Developer Documentation</title>
+	<title>Configuration | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">
+	<link rel="canonical" href="/guides/v2.2/magento-functional-testing-framework/release-2/configuration.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/release-2/getting-started.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/release-2/configuration.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/release-2/getting-started.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/release-2/configuration.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/release-2/configuration.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/release-2/getting-started.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/release-2/configuration.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -287,7 +287,7 @@
         
         
         
-        <li class="nav-level2 active " id="getting-started">
+        <li class="nav-level2  " id="getting-started">
             
             
         
@@ -481,7 +481,7 @@
         
         
         
-        <li class="nav-level2  " id="configuration">
+        <li class="nav-level2 active " id="configuration">
             
             
         
@@ -923,7 +923,7 @@
 
           
 
-          <span property="name">Getting started</span>
+          <span property="name">Configuration</span>
 
         
 
@@ -946,7 +946,7 @@
 
 	
 
-	<h1 class="page-heading">Getting started</h1>
+	<h1 class="page-heading">Configuration</h1>
 
   
 
@@ -954,186 +954,163 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated after 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
 
-<h2 id="prepare-environment">Prepare environment</h2>
+<p>The <em>*.env</em> file provides additional configuration of the Magento Functional Testing Framework (MFTF).
+All MFTF users will need to set the basic configuration values.
+Advanced users may need to set additional values to work with their environment.</p>
 
-<p>Make sure that you’ve installed and set up the following software:</p>
+<h2 id="basic-configuration">Basic Configuration</h2>
 
-<ul>
-  <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php">PHP version supported by Magento instance under test</a></li>
-  <li><a href="https://getcomposer.org/download/">Composer v1.3.x+</a></li>
-  <li><a href="https://www.java.com/en/download/">Java v1.8.x+</a></li>
-  <li><a href="#selenium-server">Selenium Server Standalone v3.6.0+</a></li>
-  <li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">ChromeDriver v2.33+</a></li>
-</ul>
+<p>These basic configuration values are required and must be set by the user before MFTF can function correctly.</p>
 
-<h3 id="recommendations">Recommendations</h3>
-
-<p>We recommend using <a href="https://www.jetbrains.com/phpstorm/">PHPStorm 2017</a> for your integrated development environment (IDE).
-They recently added support for <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
-
-<h2 id="prepare-magento">Prepare Magento</h2>
-
-<p>Configure the following settings in Magento as described below.</p>
-
-<h3 id="wysiwyg-settings">WYSIWYG settings</h3>
-
-<p>A Selenium web driver cannot enter data to fields with <span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">WYSIWYG</span>.</p>
-
-<p>To disable the WYSIWYG and enable the web driver to process these fields as simple text areas:</p>
-
-<ol>
-  <li>Log in to the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as an administrator.</li>
-  <li>Navigate to <strong>Stores &gt; Configuration &gt; General &gt; Content Management</strong>.</li>
-  <li>In the WYSIWYG Options section set the <strong>Enable WYSIWYG Editor</strong> option to <strong>Disabled Completely</strong>.</li>
-  <li>Click <strong>Save Config</strong>.</li>
-</ol>
-
-<h3 id="security-settings">Security settings</h3>
-
-<p>To enable the <strong>Admin Account Sharing</strong> setting, to avoid unpredictable logout during a testing session, and disable the <strong>Add Secret Key in URLs</strong> setting, to open pages using direct URLs:</p>
-
-<ol>
-  <li>Navigate to <strong>Stores &gt; Configuration &gt; Advanced &gt; <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> &gt; Security</strong>.</li>
-  <li>Set <strong>Admin Account Sharing</strong> to <strong>Yes</strong>.</li>
-  <li>Set <strong>Add Secret Key to URLs</strong> to <strong>No</strong>.</li>
-  <li>Click <strong>Save Config</strong>.</li>
-</ol>
-
-<h2 id="set-up-the-framework">Set up the framework</h2>
-
-<p>Follow these steps in a command line interface to set up the MFTF on your system.</p>
-
-<h3 id="step-1-clone-the-magento2-source-code-repository">Step 1. Clone the <code class="highlighter-rouge">magento2</code> source code repository</h3>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/magento/magento2.git
-</code></pre></div></div>
-
-<p>or</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:magento/magento2.git
-</code></pre></div></div>
-
-<h3 id="step-2-install-dependencies">Step 2. Install dependencies</h3>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>magento2/dev/tests/acceptance
-</code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
-</code></pre></div></div>
-
-<h3 id="step-3-build-the-project">Step 3. Build the project</h3>
-
-<p>In <code class="highlighter-rouge">magento2/dev/tests/acceptance</code>, run the following command:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo build:project
-</code></pre></div></div>
-
-<div class="bs-callout bs-callout-tip">
-  <p>To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
-When added, you should be able to run the <code class="highlighter-rouge">robo</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
-</div>
-
-<h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
-
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
+<h3 id="magento_base_url">MAGENTO_BASE_URL</h3>
 
 <ul>
-  <li>
-    <p><code class="highlighter-rouge">MAGENTO_BASE_URL</code> must contain a domain name of the Magento instance that will be tested.
-Example: <code class="highlighter-rouge">MAGENTO_BASE_URL=http://magento.test</code></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">MAGENTO_BACKEND_NAME</code> must contain a relative pass of the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> must contain the user name required for authorization in the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME=admin</code></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD</code> must contain the user password required for authorization in the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></p>
-  </li>
+  <li>Use: Required.</li>
+  <li>Description: The root URL of the Magento application under test.</li>
+  <li>Example: <code class="highlighter-rouge">http://magento2.vagrant251</code></li>
 </ul>
 
-<p>The following self-descriptive variables have included default values.</p>
+<h3 id="magento_backend_name">MAGENTO_BACKEND_NAME</h3>
 
-<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>=<span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>
-<span class="n">SELENIUM_PORT</span>=<span class="m">4444</span>
-<span class="n">SELENIUM_PROTOCOL</span>=<span class="n">http</span>
-<span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
+<ul>
+  <li>Use: Required.</li>
+  <li>Description: The path to the Magento Admin page.</li>
+  <li>Example: <code class="highlighter-rouge">admin_12346</code>.</li>
+</ul>
+
+<h3 id="magento_admin_username">MAGENTO_ADMIN_USERNAME</h3>
+
+<ul>
+  <li>Use: Required.</li>
+  <li>Description: The username that tests will use to log in to the Magento Admin page.</li>
+  <li>Example: <code class="highlighter-rouge">admin</code>.</li>
+</ul>
+
+<h3 id="magento_admin_password">MAGENTO_ADMIN_PASSWORD</h3>
+
+<ul>
+  <li>Use: Required.</li>
+  <li>Description: The password that tests will use to log in to the Magento Admin page.</li>
+  <li>Example: <code class="highlighter-rouge">1234reTyt%$7</code></li>
+</ul>
+
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+
+<p>In most cases, these values are not required.
+Sensible defaults are in place.
+But in case you do need to do some configuration, they are shown here for your reference.</p>
+
+<h3 id="selenium">SELENIUM</h3>
+
+<p>The <code class="highlighter-rouge">SELENIUM_*</code> values are concatenated together to form the URL of a custom Selenium server to test against.
+An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>
+<span class="n">SELENIUM_PORT</span>
+<span class="n">SELENIUM_PROTOCOL</span>
+<span class="n">SELENIUM_PATH</span>
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
-</div>
+<h4 id="selenium_host">SELENIUM_HOST</h4>
 
-<p>Your environment settings form the path to your running Selenium Server.
-Example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:4444/wd/hub
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">user:pass@ondemand.saucelabs.com</code></li>
+</ul>
+
+<h4 id="selenium_port">SELENIUM_PORT</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">443</code></li>
+</ul>
+
+<h4 id="selenium_protocol">SELENIUM_PROTOCOL</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">https</code></li>
+</ul>
+
+<h4 id="selenium_path">SELENIUM_PATH</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: For overriding the default Selenium server URL.</li>
+  <li>Example: <code class="highlighter-rouge">/wd/hub</code></li>
+</ul>
+
+<h3 id="magento_restapi">MAGENTO_RESTAPI</h3>
+
+<p>These <code class="highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases where your Magento instance has a different API path than the standard <code class="highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>
+<span class="n">MAGENTO_RESTAPI_SERVER_PORT</span>
 </code></pre></div></div>
 
-<h3 id="step-5-make-commandphp-visible-in-the-magento-testing-environment">Step 5. Make <code class="highlighter-rouge">command.php</code> visible in the Magento testing environment</h3>
+<h4 id="magento_restapi_server_host">MAGENTO_RESTAPI_SERVER_HOST</h4>
 
-<p>In your Magento installation, navigate to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.</p>
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: The protocol and host part of the API path.</li>
+  <li>Example: <code class="highlighter-rouge">http://localhost</code></li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp .htaccess.sample .htaccess
+<h4 id="magento_restapi_server_port">MAGENTO_RESTAPI_SERVER_PORT</h4>
+
+<ul>
+  <li>Use: Optional</li>
+  <li>Description: The port part of the API path.</li>
+  <li>Example: <code class="highlighter-rouge">5000</code></li>
+</ul>
+
+<h3 id="tests">TESTS</h3>
+
+<p>These values can be used in cases where you are working locally on both MFTF’s implementation code and Magento’s test case code.
+Use them if you have a more advanced local development setup involving symlinking MFTF into the <code class="highlighter-rouge">vendor</code> directory of <code class="highlighter-rouge">magento2</code>.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TESTS_BP</span>
+<span class="n">FW_BP</span>
+<span class="n">TESTS_MODULES_PATH</span>
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.</p>
-</div>
+<h4 id="tests_bp">TESTS_BP</h4>
 
-<h3 id="step-6-generate-existing-tests">Step 6. Generate existing tests</h3>
+<p>BP is an acronym for BasePath.</p>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to generate tests as PHP classes from XML files:</p>
+<ul>
+  <li>Use: Optional.</li>
+  <li>Description: The path to where MFTF supplementary files are located in the Magento2 codebase.</li>
+  <li>Example: <code class="highlighter-rouge">~/magento2ce/dev/tests/acceptance</code></li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:tests
-</code></pre></div></div>
+<h4 id="fw_bp">FW_BP</h4>
 
-<h3 id="step-7-run-tests">Step 7. Run tests</h3>
+<p>FW_BP is an acronym for FrameWork BasePath.</p>
 
-<p>To run tests you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> with required parameters.</p>
+<ul>
+  <li>Use: Optional.</li>
+  <li>Description: The path to where MFTF exists and from which it is symlinked.</li>
+  <li>Example: <code class="highlighter-rouge">~/magento/magento2-functional-testing-framework</code></li>
+</ul>
 
-<h4 id="selenium-server">Run the Selenium server</h4>
+<h4 id="tests_module_path">TESTS_MODULE_PATH</h4>
 
-<ol>
-  <li>
-    <p><a href="http://www.seleniumhq.org/download/">Download the latest Selenium Server</a>.</p>
-  </li>
-  <li>
-    <p><a href="http://docs.seleniumhq.org/about/platforms.jsp">Download a Selenium web driver for your web browser</a> into the same directory that contains the Selenium server.</p>
-  </li>
-  <li>
-    <p>Add the directory with the web driver to <code class="highlighter-rouge">PATH</code>.</p>
-  </li>
-  <li>
-    <p>Run the Selenium server in terminal (or other command line interface):</p>
-  </li>
-</ol>
+<ul>
+  <li>Use: Optional.</li>
+  <li>Description: The path to where MFTF modules mirror Magento’s modules.</li>
+  <li>Example: <code class="highlighter-rouge">~/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code></li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> &lt;path_to_selenium_directory&gt;/selenium-server-standalone-&lt;version&gt;.jar
-</code></pre></div></div>
+<h3 id="module_whitelist">MODULE_WHITELIST</h3>
 
-<h4 id="run-all-tests">Run all tests</h4>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run
-</code></pre></div></div>
-
-<p>See more commands in <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> and <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
-
-<h3 id="allure">Step 8. Generate reports</h3>
-
-<p>Install <a href="https://docs.qameta.io/allure/latest/">Allure</a>, a tool that generates testing reports in HTML.
-Testing reports are generated in a CLI during testing.</p>
-
-<p>If you want to see the reports in a GUI, run:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure2:report
-</code></pre></div></div>
-
-<p>See also <a href="commands/robo.html#allure-robo-commands">Allure <code class="highlighter-rouge">robo</code> commands</a> and <a href="https://docs.qameta.io/allure/latest/#_report_structure">Report structure</a>.</p>
+<p>Use the <code class="highlighter-rouge">MODULE_WHITELIST</code> environment variable if you are working on a new module.
+When adding a new directory under <code class="highlighter-rouge">Magento/FunctionalTest</code>, add the directory name under <code class="highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1145,7 +1122,7 @@ Testing reports are generated in a CLI during testing.</p>
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/release-2/getting-started.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/release-2/configuration.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -1155,7 +1132,7 @@ Testing reports are generated in a CLI during testing.</p>
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/magento-functional-testing-framework/release-2/getting-started.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/magento-functional-testing-framework/release-2/configuration.html" target="_blank">Give us feedback</a>
       </div>
     
   

@@ -486,6 +486,20 @@
         
         
         
+        <li class="nav-level2  " id="configuration">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/configuration.html">Configuration</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="cli-commands">
             
             
@@ -686,11 +700,11 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
 
 <p>Annotations are essentially comments in the code. In PHP, they all are marked by a preceding <code class="highlighter-rouge">@</code> symbol.</p>
 
-<p>Within <a href="../test.html#test-tag">test methods</a>, annotations are contained within their own node.</p>
+<p>Within [test methods], annotations are contained within their own node.</p>
 
 <h2 id="principles">Principles</h2>
 
@@ -704,16 +718,22 @@
 If multiple annotation values are supported and required each value requires a separate annotation.</li>
 </ul>
 
+<p>Recommended use cases of the annotation types:</p>
+<ul>
+  <li><strong>Feature</strong> - Report grouping, a set of tests that verify a feature.</li>
+  <li><strong>Story</strong> - Report grouping, a set of tests that verify a story.</li>
+  <li><strong>Group</strong> - Module name grouping.</li>
+  <li><strong>Title</strong> - Description of the test purpose.</li>
+  <li><strong>Description</strong> - Description of how the test achieves the purpose defined in the title.</li>
+  <li><strong>Severity</strong> - Available labels are <code class="highlighter-rouge">BLOCKER</code>, <code class="highlighter-rouge">CRITICAL</code>, <code class="highlighter-rouge">MAJOR</code>, <code class="highlighter-rouge">AVERAGE</code>, and <code class="highlighter-rouge">MINOR</code>.</li>
+</ul>
+
 <h2 id="example">Example</h2>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;annotations&gt;</span>
-
-       <span class="nt">&lt;features</span> <span class="na">value=</span><span class="s">"Category Creation"</span><span class="nt">/&gt;</span>
-
-       <span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"Create a Category via Admin"</span><span class="nt">/&gt;</span>
-
-       <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"category"</span><span class="nt">/&gt;</span>
-
+    <span class="nt">&lt;features</span> <span class="na">value=</span><span class="s">"Category Creation"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"Create a Category via Admin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"category"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/annotations&gt;</span>
 </code></pre></div></div>
 
@@ -745,11 +765,6 @@ If multiple annotation values are supported and required each value requires a s
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;description</span> <span class="na">value=</span><span class="s">"Add Catalog via Admin"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Description</span><span class="p">(</span><span class="s2">"Add Catalog via Admin"</span><span class="p">)</span>
-</code></pre></div></div>
-
 <h3 id="features">features</h3>
 
 <p>The <code class="highlighter-rouge">&lt;features&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Features</code></a> Allure tag.</p>
@@ -779,16 +794,13 @@ If multiple annotation values are supported and required each value requires a s
 <span class="nt">&lt;features</span> <span class="na">value=</span><span class="s">"Add/Edit"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Features</span><span class="p">({</span><span class="s2">"Catalog"</span><span class="p">,</span> <span class="s2">"Add/Edit"</span><span class="p">})</span>
-</code></pre></div></div>
-
 <h3 id="group">group</h3>
 
 <p>The <code class="highlighter-rouge">&lt;group&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Groups"><code class="highlighter-rouge">@group</code></a> Codeception tag.</p>
 
-<p><code class="highlighter-rouge">&lt;group&gt;</code> specifies a string to identify and collect tests together. Any test can be a part of multiple groups. The purpose of grouping is to create a set of test for a purpose, such as all cart tests or all slow tests) and run them together.</p>
+<p><code class="highlighter-rouge">&lt;group&gt;</code> specifies a string to identify and collect tests together.
+Any test can be a part of multiple groups.
+The purpose of grouping is to create a set of test for a purpose, such as all cart tests or all slow tests) and run them together.</p>
 
 <table>
   <thead>
@@ -812,14 +824,10 @@ If multiple annotation values are supported and required each value requires a s
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"catalog"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">group</span> <span class="nx">catalog</span>
-</code></pre></div></div>
-
 <h3 id="return">return</h3>
 
-<p>The <code class="highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Examples"><code class="highlighter-rouge">@return</code></a> Codeception tag. It specifies what is returned from a test execution.</p>
+<p>The <code class="highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Examples"><code class="highlighter-rouge">@return</code></a> Codeception tag.
+It specifies what is returned from a test execution.</p>
 
 <table>
   <thead>
@@ -841,11 +849,6 @@ If multiple annotation values are supported and required each value requires a s
 <h4 id="example-4">Example</h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;return</span> <span class="na">value=</span><span class="s">"void"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="k">return</span> <span class="nx">void</span>
 </code></pre></div></div>
 
 <h3 id="severity">severity</h3>
@@ -876,14 +879,10 @@ If multiple annotation values are supported and required each value requires a s
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;severity</span> <span class="na">value=</span><span class="s">"CRITICAL"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Severity</span><span class="p">(</span><span class="nx">level</span> <span class="o">=</span> <span class="nx">SeverityLevel</span><span class="o">::</span><span class="na">CRITICAL</span><span class="p">)</span>
-</code></pre></div></div>
-
 <h3 id="stories">stories</h3>
 
-<p>The <code class="highlighter-rouge">&lt;stories&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Stories</code></a> Allure tag. It has the same functionality as <a href="#features"><code class="highlighter-rouge">features</code></a>, within the Story report group.</p>
+<p>The <code class="highlighter-rouge">&lt;stories&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Stories</code></a> Allure tag.
+It has the same functionality as <a href="#features"><code class="highlighter-rouge">features</code></a>, within the Story report group.</p>
 
 <table>
   <thead>
@@ -906,11 +905,6 @@ If multiple annotation values are supported and required each value requires a s
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;stories</span> <span class="na">value=</span><span class="s">"Add Catalog"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;stories</span> <span class="na">value=</span><span class="s">"Edit Catalog"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Stories</span><span class="p">({</span><span class="s2">"Add Catalog"</span><span class="p">,</span> <span class="s2">"Edit Catalog"</span><span class="p">})</span>
 </code></pre></div></div>
 
 <h3 id="testcaseid">testCaseId</h3>
@@ -943,11 +937,6 @@ If multiple annotation values are supported and required each value requires a s
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;testCaseId</span> <span class="na">value=</span><span class="s">"#"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">TestCaseId</span><span class="p">(</span><span class="s2">"#"</span><span class="p">)</span>
-</code></pre></div></div>
-
 <h3 id="usecaseid">useCaseId</h3>
 
 <p>The <code class="highlighter-rouge">&lt;useCaseId&gt;</code> element is an implementation of a <code class="highlighter-rouge">@UseCaseId</code> custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.</p>
@@ -972,10 +961,6 @@ If multiple annotation values are supported and required each value requires a s
 <h4 id="example-8">Example</h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;useCaseId</span> <span class="na">value=</span><span class="s">"USECASE-1"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
-<p>Generated PHP code:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">UseCaseId</span><span class="p">(</span><span class="s2">"USECASE-1"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="title">title</h3>
@@ -1004,10 +989,10 @@ If multiple annotation values are supported and required each value requires a s
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"Add Catalog"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>Generated PHP code:</p>
+<!-- Link deafinitions -->
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="nx">Title</span><span class="p">(</span><span class="s2">"Add Catalog"</span><span class="p">)</span>
-</code></pre></div></div>
+<p><a href="../test.html#test-tag">test methods</a></p>
+
 
 		</div>
 		<!-- /.content-wrap -->
