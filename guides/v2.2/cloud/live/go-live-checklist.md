@@ -14,7 +14,7 @@ functional_areas:
 ---
 
 ## Pre-Launch Checklist {#checklist}
-Prior to go live and switching the DNS, you should complete [this](https://magento-my.sharepoint.com/:w:/p/mkostohryz/ESSaFXHn3hdOvgGKmGPXt3oBr5DG5qzSegdg1zcWktD5kA?e=U1Ty2e) checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment. 
+Prior to go live and switching the DNS, you should download and complete [this](https://magento-my.sharepoint.com/:w:/p/mkostohryz/ESSaFXHn3hdOvgGKmGPXt3oBr5DG5qzSegdg1zcWktD5kA?e=U1Ty2e) checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment. 
 
 ## Completely test in Production {#test}
 See [Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptence Tests (UAT), and performance testing.
