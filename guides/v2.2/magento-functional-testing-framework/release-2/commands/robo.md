@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/robo.md
 functional_areas:
  - Testing
-mftf-release: 2.1.2
+mftf-release: 2.2.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -75,10 +75,10 @@ vendor/bin/robo build:project
 ```bash
 vendor/bin/robo generate:tests
 ```
-#### Generate specified Tests in PHP:
+#### Generate the specified tests in PHP:
 
 ```bash
-$ vendor/bin/robo generate:tests testName01 testName02 testName03
+vendor/bin/robo generate:tests testName01 testName02 testName03
 ```
 
 #### Run all tests marked with the @group tag `example`, using the Chrome environment:
