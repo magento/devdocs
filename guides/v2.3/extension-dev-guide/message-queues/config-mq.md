@@ -1,13 +1,8 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 99_Module Development
 title: Configure message queues
-menu_title: Configure message queues
-menu_order: 26
 version: 2.3
-level3_menu_node: level3child
-level3_subgroup: mq
 github_link: extension-dev-guide/message-queues/config-mq.md
 redirect_from: /guides/v2.3/config-guide/mq/config-mq.html
 functional_areas:
@@ -239,9 +234,9 @@ The `connection` element is a subnode of the `publisher` element. There must not
 
 ### Updating `queue.xml` {#updatequeuexml}
 
-See [Migrate message queue configuration]({{page.baseurl}}extension-dev-guide/message-queues/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
+See [Migrate message queue configuration]({{page.baseurl}}/extension-dev-guide/message-queues/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
 
 ### Related Topics
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{page.baseurl}}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
+*	<a href="{{page.baseurl}}/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

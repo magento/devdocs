@@ -20,7 +20,7 @@ RabbitMQ is an open source message broker that offers a reliable, highly availab
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
-{{site.data.var.ce}} uses RabbitMQ to manage these message queues. RabbitMQ can be used with {{site.data.var.ce}} installations since 2.3.0 version.
+{{site.data.var.ce}} uses RabbitMQ to manage these message queues. As of Magento release 2.3.0, RabbitMQ can be used on {{site.data.var.ce}} installations.
 
 The message queue system must be established before you install Magento. The basic sequence is
 
@@ -28,7 +28,7 @@ The message queue system must be established before you install Magento. The bas
 2. Connect RabbitMQ and Magento.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-A basic message queue system can be implemented with using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
+A basic message queue system can be implemented with using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information.
 </div>
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
@@ -154,14 +154,14 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 
 ## Start the message queue consumers
 
-After you have connected Magento and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for details.
+After you have connected Magento and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for details.
 
 #### Related topics
-*	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
-*	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
-*	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html)
-*	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html)
-*	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
-*	[Message queue overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-*	[Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html)
+*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-ubuntu.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos.html)
+*	[Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
+*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*	[Message queue overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*	[Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html)

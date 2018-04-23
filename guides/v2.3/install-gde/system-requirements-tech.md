@@ -2,8 +2,6 @@
 layout: default
 group: install_pre
 title: Magento 2.3.x technology stack requirements
-menu_node:
-menu_order: 2
 version: 2.3
 github_link: install-gde/system-requirements-tech.md
 functional_areas:
@@ -100,7 +98,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 *	<a href="{{page.baseurl}}/config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
 *	<a href="{{page.baseurl}}/config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
-*	[Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-overview.html)
+*	[Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
     {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 

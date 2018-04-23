@@ -1,13 +1,8 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 99_Module Development
 title: Message Queues
-menu_title: Message Queues
-menu_order: 25
 version: 2.3
-level3_menu_node: level3child
-level3_subgroup: mq
 github_link: extension-dev-guide/message-queues/message-queues.md
 redirect_from: /guides/v2.3/extension-dev-guide/message-queues.html
 
@@ -19,7 +14,7 @@ The Message Queue Framework (MQF) is a fully-functional system that allows a {% 
 
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
-See <a href="{{page.baseurl}}extension-dev-guide/message-queues/config-mq.html">Configure message queues</a> for information about setting up the message queue system.
+See <a href="{{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a> for information about setting up the message queue system.
 
 
 <h2>Send a message from the publisher to a queue</h2>
@@ -71,7 +66,6 @@ The following sample introduces a runtime configuration that allows you to redef
 
 #### Related Topics
 
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{page.baseurl}}extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>
-
-*	<a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
+*	<a href="{{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
