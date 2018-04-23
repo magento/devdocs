@@ -102,13 +102,14 @@ gulp.task('scripts', function () {
    	.pipe(sourcemaps.init())
    	.pipe(include())
 		.pipe(uglify())
+    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     //.pipe(sourcemaps.write())
 		//.pipe(concat('app.min.js'))
 		.pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(destJS))
     .pipe(gulp.dest( destHtml + 'common/js/' ))
-    .on('error', gutil.log);
-  //  .pipe(reload({stream: true}));
+    .on('error', gutil.log)
+    .pipe(reload({stream: true}));
 });
 
 
