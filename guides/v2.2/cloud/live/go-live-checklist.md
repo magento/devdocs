@@ -13,22 +13,11 @@ functional_areas:
   - Testing
 ---
 
-Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment.
+## Pre-Launch Checklist {#checklist}
+Prior to go live and switching the DNS, you should complete [this](https://magento-my.sharepoint.com/:w:/p/mkostohryz/ESSaFXHn3hdOvgGKmGPXt3oBr5DG5qzSegdg1zcWktD5kA?e=U1Ty2e) checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment. 
 
 ## Completely test in Production {#test}
 See [Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptence Tests (UAT), and performance testing.
-
-## Go Live Prep call with support {#call}
-Contact Support to schedule a Go Live Preparation call. We walk through the Go Live process, verify your readiness with a checklist, and discuss the final steps.
-
-## Enter a ticket with domain names {#domainticket}
-You may [need information]({{ page.baseurl}}/cloud/live/live.html#goliveinfo) for this ticket.
-
-1.	Log in to your [Magento Cloud account](https://accounts.magento.cloud){:target="_blank"}.
-2.	Click **Support** > **Submit ticket** from the top menu.
-3.	Follow the prompts to open an issue with Support.	Support assists you with your live deployment and gives you an IP address for your live site so you can set up DNS.
-5. Provide a list of all storefront domain names for the shared SSL certificate.
-4. (Optional) If you purchased a Domain-Validated SSL (HTTP) certificate as part of your subscription, provide the certificate files in an attachment to the ticket. We will provide the certificate to Fastly for deployment.
 
 ## DNS configurations {#dns}
 You need to complete configurations for your DNS including:
