@@ -30,7 +30,7 @@ pages:
 
         - label: Error Code Mapping
           versions: ["2.2"]
-          url: /payments-integrations/payment-gateway/error-code-mapping.html
+          url: /payments-integrations/payment-gateway/error-code-mapper.html
 
     - label: Adding a new payment integration (payment method)
       versions: ["2.1","2.2", "2.3"]
