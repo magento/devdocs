@@ -184,7 +184,7 @@ pages:
             - label: Develop declarative data and schema patches
               url: /extension-dev-guide/declarative-schema/data-patches.html
 
-        - label: Message Queues (Magento Commerce Edition Only)
+        - label: Message Queues
           children:
 
             - label: Message queues overview
