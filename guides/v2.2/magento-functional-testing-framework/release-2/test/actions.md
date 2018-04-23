@@ -163,6 +163,7 @@ The following test actions return a variable:
 *  [grabPageSource](#grabpagesource)
 *  [grabTextFrom](#grabtextfrom)
 *  [grabValueFrom](#grabvaluefrom)
+*  [executeJS](#executeJS)
 
 Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
 
@@ -442,9 +443,18 @@ We can delete _SampleCategory_:
 <deleteData createDataKey="createCategory" stepKey="deleteCategory"/>
 ```
 
+Alternatively, we can delete a non-persisted entity via a call to the endpoint's URL:
+
+```
+<grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>
+<deleteData url="V1/categories/{$grabId}" stepKey="deleteCategory"/>
+```
+Use of a `url` is limited to Magento entities that have REST API endpoints.
+
 Attribute|Type|Use|Description
 ---|---|---|---
-`createDataKey`|string|optional|
+`createDataKey`|string|optional| Reference to `stepKey` of the `createData` action .
+`url`|string|optional| REST API route to send a DELETE request.
 `storeCode`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -655,6 +665,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector1`|string|optional|A selector for the HTML element to drag.
 `selector2`|string|optional|A selector for the HTML element to drop onto.
+`x`|int|optional| X offset appllied to drag-and-drop destination.
+`y`|int|optional| Y offset appllied to drag-and-drop destination.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
