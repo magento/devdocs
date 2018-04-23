@@ -82,3 +82,9 @@ If you are already deploying static content during the build phase with [Configu
 
 We do not recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
 
+### `VERBOSE_COMMANDS`
+
+-  **Default**—`disabled`
+-  **Version**—Magento 2.1.4 and later
+
+ Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="\_blank"} debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed.

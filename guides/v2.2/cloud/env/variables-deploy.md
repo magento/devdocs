@@ -247,7 +247,6 @@ You should set this variable to `disabled` _only_ in Staging or Production envir
 ### `VERBOSE_COMMANDS`
 
 -  **Default**—`disabled`
--  **Version**—Available in all versions
+-  **Version**—Magento 2.1.4 and later
 
- Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed.
-
+ Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="\_blank"} debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed.
