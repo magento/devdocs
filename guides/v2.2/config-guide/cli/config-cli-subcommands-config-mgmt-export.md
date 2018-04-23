@@ -20,6 +20,12 @@ In Magento 2.2 and later [pipeline deployment model]({{ page.baseurl}}/config-gu
 
     bin/magento app:config:dump
 
+Command options:
+- config-types (space-separated list of config types or omit to dump all)
+
+
+    bin/magento app:config:dump scopes themes etc
+
 As a result of the command execution, the following configuration files are updated:
 
 -   [`app/etc/config.php`](#app-etc-config-php)
