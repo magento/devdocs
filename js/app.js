@@ -1,4 +1,4 @@
-//= include _vendor/jsCookie.js
+  //= include _vendor/jsCookie.js
 //= include _vendor/affix.js
 //= include _vendor/scrollspy.js
 //= include _vendor/clipboard.min.js
@@ -21,6 +21,9 @@ $(function() {
   //= include _includes/tutorial.js
   //= include _includes/videos.js
   //= include _includes/left-navigation.js
+  //= include _includes/contributors.js
+
+  $('.devdocs-contributors').contributorsList();
 
 });
 // END document ready

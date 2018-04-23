@@ -1,0 +1,114 @@
+
+.devdocs-contributors {
+  padding: 0 0 30px 0;
+}
+
+.devdocs-contributors.loading {
+  min-height: 344px;
+  background: url('../i/loader.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.devdocs-contributors.loaded {
+  min-height: 344px;
+}
+
+
+.contributor {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding: 0 10px 20px 10px;
+  max-width: 160px;
+  min-width: 120px;
+  width: 33%;
+
+  a {
+    display: block;
+  }
+
+  a:hover {
+    .avatar {
+      box-shadow: 0 0 0 2px $brand-color;
+    }
+  }
+
+  .avatar {
+    display: inline-block;
+    width: 140px;
+    max-width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    overflow: hidden;
+    transition: box-shadow .1s;
+    img {
+      width: 100%;
+    }
+  }
+
+  .name {
+    font-size: 14px;
+    line-height: 1.4em;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+  }
+
+
+  .contributor-stats {
+    list-style: none;
+    text-align: left;
+    margin: 3px 0 0 0;
+    padding: 0;
+  }
+
+
+  .contributor-stats li {
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+  }
+
+  .contributor-stats .title {
+    display: inline-block;
+    min-width: 50px;
+    color: #999;
+  }
+
+  .contributor-stats a {
+    color: #777;
+    display: inline-block;
+    font-size: 11px;
+    padding: .1em .5em;
+
+    &:visited {
+      color: #777;
+    }
+  }
+
+
+}
+
+
+
+.contributor-stats a:hover {
+  color: #333;
+}
+
+.periods {
+  padding: 15px 10px;
+}
+
+.periods label {
+  display: inline-block;
+  padding-right: 20px;
+  font-weight: 600;
+}
+
+.periods select {
+  display: inline-block;
+  padding: 5px 20px;
+  height: 40px;
+  border-radius: 2px;
+  border: 1px solid #999;
+}
