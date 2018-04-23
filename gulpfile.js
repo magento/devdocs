@@ -169,10 +169,10 @@ gulp.task('browser-sync', function () {
 gulp.task('watch', function () {
   browsersync(bsconfig);
   var watcher =
-    gulp.watch(paths.html, ['jekyll']);
-    gulp.watch(paths.scripts, ['scripts']);
-    gulp.watch(paths.images, ['images']);
-    gulp.watch(paths.styles, ['styles']);
+    gulp.watch(paths.html, { interval: 500 }, ['jekyll'] );
+    gulp.watch(paths.scripts, { interval: 500 }, ['scripts']);
+    gulp.watch(paths.images, { interval: 500 }, ['images']);
+    gulp.watch(paths.styles, { interval: 500 }, ['styles']);
     watcher.on('change', function(event) {
       gutil.log(gutil.colors.bgYellow.black('File: ' + event.path + ' was ' + event.type + ', running tasks...'));
   });
