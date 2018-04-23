@@ -10,7 +10,7 @@ functional_areas:
   - Services
 ---
 
-If you have site availability issues, the first thing you should do is review your [deployment logs]({{page.baseurl}}cloud/trouble/environments-logs.html#log-deploy-log) to see if you can identify the problem.
+If you have site availability issues, the first thing you should do is review your [deployment logs]({{page.baseurl}}/cloud/trouble/environments-logs.html#log-deploy-log) to see if you can identify the problem.
 
 You may be able to resolve your issue by searching your logs for one of the examples in this topic and trying the associated solution.
 
@@ -46,8 +46,8 @@ Modify the deploy phase using the `STATIC_CONTENT_THREADS` environment variable 
 
         magento-cloud variable:set STATIC_CONTENT_THREADS '1' -e <environment>
 
-Refer to [Manage variables]({{page.baseurl}}cloud/env/environment-vars_over.html) and [Redis and static-content deployment]({{page.baseurl}}cloud/trouble/redis-troubleshooting.html#static-content) for more information.
+Refer to [Manage variables]({{page.baseurl}}/cloud/env/variables-intro.html) and [Redis and static-content deployment]({{page.baseurl}}/cloud/trouble/redis-troubleshooting.html#static-content) for more information.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to add this environment variable to your production and staging environments.
+For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to add this environment variable to your production and staging environments.
 </div>

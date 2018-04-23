@@ -18,7 +18,7 @@ functional_areas:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+  <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
 </div>
 
 <h2 id="php-support">PHP versions supported</h2>
@@ -30,10 +30,10 @@ Magento requires:
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{page.baseurl}}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, messages similar to the following display:
@@ -48,7 +48,7 @@ To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf7
   <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
-If PHP is installed, continue with the next prerequisite, <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
+If PHP is installed, continue with the next prerequisite, <a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>.
 
 ## CentOS repositories {#centos-php-repos}
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="\_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
@@ -116,7 +116,7 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+3.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -172,7 +172,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 	<span class="glyphicon-class">
  	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
-3.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+3.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -206,15 +206,15 @@ There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a su
 		Zend Engine v2.5.0, Copyright (c) 1998-2015 Zend Technologies
 		with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
 3.	Restart Apache: `service httpd restart`
-4.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+4.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{page.baseurl}}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/optional.html">Installing optional software</a>
+*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)

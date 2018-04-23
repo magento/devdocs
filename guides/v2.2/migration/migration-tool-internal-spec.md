@@ -112,7 +112,7 @@ Script that runs migration process is located at magento-root/bin/magento
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{page.baseurl}}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see <a href="{{page.baseurl}}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
 Configuration file has the following structure:
 {% highlight xml %}
@@ -441,7 +441,7 @@ Some of the tables that are processed in the step:
 
 ### Delta migration mode
 
-After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, the Tool sets up the database triggers for tables in the beginning of migration process. For more information, see [Migrate data created by 3rd party extensions]({{page.baseurl}}migration/migration-migrate-delta.html#migrate-delta-external-extensions).
+After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, the Tool sets up the database triggers for tables in the beginning of migration process. For more information, see [Migrate data created by 3rd party extensions]({{page.baseurl}}/migration/migration-migrate-delta.html#migrate-delta-external-extensions).
 
 ## Data Sources {#data-sources}
 
@@ -449,7 +449,7 @@ To reach to the data sources of Magento 1 and Magento 2 and operate with its dat
 
 Here is a class diagram of these classes:
 
-<p><img src="{{ site.baseurl }}common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure"></p>
+<p><img src="{{ site.baseurl}}/common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure"></p>
 
 ## Logging {#logging}
 
@@ -502,24 +502,6 @@ There is a possibility to set the level of verbosity. As for now there are 3 lev
 There is a possibility to format log messages via monolog formatter. To make formatter functionality work it needs to be set to specified log handler using setFormatter() method. Currently we have one formatter class (MessageFormatter) that sets certain format (depends on verbosity level) during message handling (via format() method executed from handler).
 
 As for now manipulation with logger, adding handler(s), processor(s) to it and processing verbose mode is performed in process() method of Migration\Logger\Manager class. Mentioned method is called during application start.
-
-## Extension Points {#extension-points}
-
-### Custom Resource Type of Source
-
-By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
-
-### Map Step configuration
-
-In most cases modification of map will be enough.
-
-### Custom Handler
-
-Custom handlers can be used for cases where data in a field should be transformed with more complex algorithm. There are a lot of custom handlers out of the box in src/Migration/Handler/ folder. Custom handlers are used in Settings step and Map step.
-
-### Custom Steps
-
-Data Migration Tool provides possibility to add custom steps to migration procedure (see Step internals).
 
 ## Automatic Tests {#automatic-tests}
 

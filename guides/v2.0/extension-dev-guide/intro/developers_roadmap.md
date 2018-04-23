@@ -18,22 +18,17 @@ Key points:
 
 *	Minimum required elements:
 
-	*	<a href="{{page.baseurl}}extension-dev-guide/build/composer-integration.html">Declare component dependencies</a> in `composer.json`.
-	*	<a href="{{page.baseurl}}extension-dev-guide/build/component-registration.html">Register</a> the component using `registration.php`.
+	*	<a href="{{page.baseurl}}/extension-dev-guide/build/composer-integration.html">Declare component dependencies</a> in `composer.json`.
+	*	<a href="{{page.baseurl}}/extension-dev-guide/build/component-registration.html">Register</a> the component using `registration.php`.
 	*	Component-specific XML definition files:
 
-		*	Modules: <a href="{{page.baseurl}}extension-dev-guide/build/create_component.html">`module.xml`</a>
-		*	Themes: <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare">`theme.xml`</a>
-		*	Language packages: <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
+		*	Modules: <a href="{{page.baseurl}}/extension-dev-guide/build/create_component.html">`module.xml`</a>
+		*	Themes: <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare">`theme.xml`</a>
+		*	Language packages: <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
 *	Distribute your component:
 
-	*	<a href="{{page.baseurl}}extension-dev-guide/package/package_module.html">Package your component</a> in `.zip` format.
+	*	<a href="{{page.baseurl}}/extension-dev-guide/package/package_module.html">Package your component</a> in `.zip` format.
 
 		Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
 	*	If you upload the component to Magento Marketplace, it should be less than 30MB in size.
 
-#### Related topics
-*	<a href="{{page.baseurl}}extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
-*	<a href="{{page.baseurl}}extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
-*	<a href="https://github.com/magento/magento2-samples" target="_blank">Sample extensions</a> created by the Magento 2 Core team
-*	<a href="http://magento.com/developers/magento2" target="_blank">Magento 2 Developers Hub</a>

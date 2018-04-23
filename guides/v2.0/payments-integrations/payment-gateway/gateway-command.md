@@ -10,7 +10,7 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-command.md
 ---
 
-Gateway Command is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that takes the [payload]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. 
+Gateway Command is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that takes the [payload]({{page.baseurl}}/payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. 
 For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added.
 
 ## Interface
@@ -18,10 +18,10 @@ Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInter
 
 ## Basic implementation
 
-The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `CommandInterface` implementation. It allows performing most of the operations implemented in the [Magento sales management]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html#terms).
+The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `CommandInterface` implementation. It allows performing most of the operations implemented in the [Magento sales management]({{page.baseurl}}/payments-integrations/payment-gateway/payment-gateway-intro.html#terms).
 
 ## Adding gateway commands
-For each particular integration with a payment provider, gateway commands are added using virtual types in [dependency injection (DI)]({{page.baseurl}}extension-dev-guide/depend-inj.html) configuration.
+For each particular integration with a payment provider, gateway commands are added using virtual types in [dependency injection (DI)]({{page.baseurl}}/extension-dev-guide/depend-inj.html) configuration.
 
 In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the "authorize" operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml#L131)):
 
@@ -41,14 +41,14 @@ In the following example the `BraintreeAuthorizeCommand` gateway command is adde
 
 A gateway command must be configured with the following arguments:
 
-* `requestBuilder`: [request builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html), builds an array of provider-specific arguments using the order information. 
+* `requestBuilder`: [request builder]({{page.baseurl}}/payments-integrations/payment-gateway/request-builder.html), builds an array of provider-specific arguments using the order information. 
 
-* `transferFactory`: [transfer factory]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client.html#transfer_factory), creates transfer object from request data, which will be used by Gateway Client to process requests. For details see [Gateway Client #Transfer Factory]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client.html#transfer_factory)
+* `transferFactory`: [transfer factory]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-client.html#transfer_factory), creates transfer object from request data, which will be used by Gateway Client to process requests. For details see [Gateway Client #Transfer Factory]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-client.html#transfer_factory)
 
-* `client`: [gateway client]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client.html), takes the provider-specific arguments and performs a low-level call to the provider.
+* `client`: [gateway client]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-client.html), takes the provider-specific arguments and performs a low-level call to the provider.
 
 Optional arguments :
 
-* `handler`: [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html), changes the order and payment status depending on the payment provider response. 
-* `validator`: [response validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html), validates the provider response. 
+* `handler`: [response handler]({{page.baseurl}}/payments-integrations/payment-gateway/response-handler.html), changes the order and payment status depending on the payment provider response. 
+* `validator`: [response validator]({{page.baseurl}}/payments-integrations/payment-gateway/response-validator.html), validates the provider response. 
 

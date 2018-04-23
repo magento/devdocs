@@ -7,7 +7,7 @@
 		<div class="sidebar-wrapper">
 
 			<ul>
-				<li class="level-1 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
+				<li class="level-1 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl}}/videos/">All Videos</a></li>
 
 				<li class=""><span class="nav-header">Playlists</span></li>
 
@@ -19,7 +19,7 @@
 						{% assign url_parts_size = url_parts | size %}
 						{% assign rm = url_parts[2] %}
 
-						<li class="level-1 {% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
+						<li class="level-1 {% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}/videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
 					{% endif %}
 				{% endfor %}
 

@@ -22,7 +22,7 @@ Before you begin, make sure you understand the following:
 
 *	All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
 *	All CLI commands should be implemented in the scope of your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and should depend on the module's status.
-*	Your command can use the Object Manager and Magento dependency injection features; for example, it can use <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor dependency injection</a>.
+*	Your command can use the Object Manager and Magento dependency injection features; for example, it can use [constructor dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html#constructor-injection).
 *	You must register your commands as discussed in any of the following sections:
 
 	*	<a href="#cli-sample">Add CLI commands using dependency injection</a>
@@ -46,5 +46,5 @@ Following is a summary of the process:
 To be added at a later time.
 
 #### Related topic
-<a href="{{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
+<a href="{{page.baseurl}}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
 

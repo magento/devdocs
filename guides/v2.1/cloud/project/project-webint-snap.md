@@ -11,84 +11,118 @@ functional_areas:
   - Cloud
 ---
 
-You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Start environments and Pro plan Integration environments. You cannot snapshot Pro plan Staging and Production environments.
+You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Starter environments and Pro Integration environments. You cannot snapshot Pro Staging or Production environments.
 
-Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.
-
-A *snapshot* is a complete backup of an environment. It includes all
-persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.
+A _snapshot_ is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code).
 </div>
 
-You can *restore* a snapshot up to 14 days after the snapshot was created.
+You have up to **7 days** to _restore_ a snapshot.
 
 We provide two methods for creating and managing snapshots:
 
-* Through the Magento Web Interface
-* Through Magento CLI commands
+-  Magento Web Interface
+-  Magento CLI
 
 ## Create a snapshot {#create-snapshot}
-To create an environment snapshot using the Magento Web Interface:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
-2.	In the left pane, click the name of the environment to back up.
-3.	In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}common/images/cloud_snapshots.png){:width="30px"} (snapshots).
-4.	You are required to confirm the action.
+#### To create a snapshot using the Magento Web Interface:
 
-To create an environment snapshot using the Magento CLI:
+1.  Log in to your project.
+1.  In the left pane, click the name of the environment to back up.
+1.  In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl}}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
+1.  Click **Create**.
 
-1. Make sure you’re in the directory of the project and environment you want to snapshot.
-2. Use the following command to create the snapshot:
+#### To create a snapshot using the Magento CLI:
 
-		magento-cloud snapshot:create
+1.  Open a terminal and navigate to your {{site.data.var.ece}} project.
+1.  Checkout the environment branch to snapshot.
+1.  Create the snapshot.
 
-	The following modifiers further specify how to create the snapshot:
+    ```
+    magento-cloud snapshot:create
+	Creating a snapshot of production
+	Waiting for the snapshot to complete...
+    ```
 
-		-p, --project=PROJECT          The project ID
-		-e, --environment=ENVIRONMENT  The environment ID
+    The following modifiers further specify how to create the snapshot:
 
-	For a full list of options, enter `magento-cloud snapshot:create --help`.
-3. Use the `magento-cloud snapshots` command so see the most recent snapshots. For a full list, enter `magento-cloud snapshot:list`.
+    ```
+    -p, --project=PROJECT          The project ID
+    -e, --environment=ENVIRONMENT  The environment ID
+    ```
+
+    For a full list of options, enter `magento-cloud snapshot:create --help`.
+
+1.  Verify the most recent snapshots.
+
+    ```
+    magento-cloud snapshots
+    ```
+
+    The list returns information about the snapshot status:
+
+    ```
+	Finding snapshots for the environment <environment_name>
+	+---------------------------+--------------------+----------+----------+---------+
+	| Created                   | Snapshot name      | Progress | State    | Result  |
+	+---------------------------+--------------------+----------+----------+---------+
+	| 2018-04-09T14:43:39-05:00 | <snapshot_ID>.     | 100%     | complete | success |
+	+---------------------------+--------------------+----------+----------+---------+
+    ```
 
 ## Restore a snapshot {#restore-snapshot}
-To restore an environment's snapshot using the Magento Web Interface:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-access).
-2.	In the left pane, click the name of the environment to restore.
-3.	In the environment's history, click the **restore** link next to the snapshot to restore.
+#### To restore a snapshot using the Magento Web Interface:
 
-	The following figure shows an example.
+1.  Log in to your project.
+1.  In the left pane, click the name of the environment to restore.
+1.  In the environment messages, select **snapshot** from the _all types of_ drop-down list.
+1.  Click **restore** next to the snapshot.
+1.  Review the Snapshot restore date and click **Restore**.
 
-	![Take a snapshot of an environment]({{ site.baseurl }}common/images/cloud_snapshot-restore.png)
-4.	You are required to confirm the action.
+#### To restore a snapshot using the Magento CLI:
 
-To restore an environment snapshot using the Magento CLI:
+1.  Open a terminal and navigate to your {{site.data.var.ece}} project.
+1.  Checkout the environment branch to restore.
+1.  List all available snapshots.
 
-1. Make sure you’re in the directory of the project and environment you want to snapshot.
-2. List all available snapshots to copy the ID using this command:
+    ```
+    magento-cloud snapshots:list
+    ```
 
-		magento-cloud snapshot:list
-3. Use the following command to restore the snapshot using the ID you copied:
+    The list returns information about the available snapshots:
 
-			magento-cloud snapshot:restore <id>
+    ```
+	Finding snapshots for the environment <environment_name>
+	+---------------------------+--------------------+----------+----------+---------+
+	| Created                   | Snapshot name      | Progress | State    | Result  |
+	+---------------------------+--------------------+----------+----------+---------+
+	| 2018-04-09T14:43:39-05:00 | <snapshot_ID>.     | 100%     | complete | success |
+	+---------------------------+--------------------+----------+----------+---------+
+    ```
 
-	For example: `magento-cloud snapshot:restore 92c9a4b2aa75422efb3d`
+1.  Restore a snapshot using the snapshot ID from the list.
 
-	The following modifiers further specify how to restore the snapshot:
+    ```
+    magento-cloud snapshot:restore <snapshot_id>
+    ```
 
-		-p, --project=PROJECT          The project ID
-		-e, --environment=ENVIRONMENT  The environment ID
+    The following modifiers further specify how to restore the snapshot:
 
-	For a full list of options, enter `magento-cloud snapshot:restore --help`.
+    ```
+    -p, --project=PROJECT          The project ID
+    -e, --environment=ENVIRONMENT  The environment ID
+    ```
 
 ## Dump your database {#db-dump}
 You can create a copy of your database using [`magento/ece-tools`](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools).
 
-To create a database dump:
+#### To create a database dump:
 
-1.  [SSH into the environment]({{page.baseurl}}cloud/env/environments-ssh.html) that contains the database you want to copy:
+1.  [SSH into the environment]({{page.baseurl}}/cloud/env/environments-ssh.html) that contains the database you want to copy:
 
     -   **Staging:** `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
     -   **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
@@ -106,11 +140,11 @@ To create a database dump:
 -   We recommend putting the application in maintenance mode before doing a database dump in Production environments.
 -   The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
 -   If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`/var/log/cloud.log`).
--   For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
+-   For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
 </div>
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-If you want to push this data into an environment, see [Migrate data and static files]({{page.baseurl}}cloud/live/stage-prod-migrate.html).
+If you want to push this data into an environment, see [Migrate data and static files]({{page.baseurl}}/cloud/live/stage-prod-migrate.html).
 </div>
 
 ## Rollbacks to remove code {#rollback-code}
@@ -118,9 +152,4 @@ We recommend creating a snapshot of the environment and a backup of the database
 
 If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
 
-Specifically for code, you should investigate [reverting code](https://git-scm.com/docs/git-revert) changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the [Deployment Process]({{page.baseurl}}cloud/reference/discover-deploy.html).
-
-#### Related topics
-*	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
-*	[Manage environments (branches)]({{page.baseurl}}cloud/project/project-webint-branch.html)
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
+Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) again to the target environment. See the [Deployment Process]({{page.baseurl}}/cloud/reference/discover-deploy.html).

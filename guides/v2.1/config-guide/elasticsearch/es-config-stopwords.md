@@ -49,7 +49,7 @@ See one of the following topics for more information:
 ### Edit stopwords for an existing locale {#config-edit-stopwords}
 To edit stopwords:
 
-1.	Log in to your Magento server, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html#install-update-depend-user-switch">Magento file system owner</a>.
+1.	Log in to your Magento server, or switch to the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner).
 2.	Use a text editor to open a stopword file in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
 	`.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
@@ -64,12 +64,12 @@ To edit stopwords:
 	*	Command line: As the Magento file system owner, enter the following command:
 
 			php <your Magento install dir>/bin/magento magento cache:clean config
-6.	Check the results by searching for terms on your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+6.	Check the results by searching for terms on your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.x
 
 ### Create stopwords for a new locale {#config-create-stopwords}
 To add stopwords for a locale:
 
-1.	Log in to your Magento server, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html#install-update-depend-user-switch">Magento file system owner</a>.
+1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner).
 2.	Use a text editor to create a stopword file named `stopwords_<locale_code>.csv` in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
 	For example, to create stopwords for the Italian locale, name the file `stopwords_it_IT.csv`.

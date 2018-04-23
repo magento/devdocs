@@ -289,7 +289,7 @@ Avoid this situation by not including dependencies in your uninstall event class
 
 * Magento's [versioning policy]
 
-[versioning policy]: {{page.baseurl}}architecture/versioning.html
+[versioning policy]: {{page.baseurl}}/extension-dev-guide/versioning
 [schema upgrade]: #schema-upgrade
 [`InstallSchemaInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php
 [`UpgradeSchemaInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php
@@ -299,5 +299,5 @@ Avoid this situation by not including dependencies in your uninstall event class
 [Customer module's InstallData.php]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Customer/Setup/InstallData.php
 [`ModuleContextInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php
 [User module's UpgradeData.php]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/User/Setup/UpgradeData.php
-[Component Manager]: {{page.baseurl}}comp-mgr/module-man/compman-uninst-final.html
+[Component Manager]: {{page.baseurl}}/comp-mgr/module-man/compman-uninst-final.html
 [`UninstallInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php

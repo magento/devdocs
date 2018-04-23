@@ -22,7 +22,7 @@ The BAK files are a product of the deployment process. If you manually change a 
 
 To restore the configuration files:
 
-1.  Log in to your remote repository using  [SSH]({{page.baseurl}}cloud/env/environments-ssh.html#ssh).
+1.  Log in to your remote repository using  [SSH]({{page.baseurl}}/cloud/env/environments-ssh.html#ssh).
 1.  List the available backup files.
 
     ```
@@ -46,7 +46,7 @@ To restore the configuration files:
     ```
     app/etc/env.php file exists! If you want to rewrite existed files use --force
     app/etc/config.php file exists! If you want to rewrite existed files use --force
-    ````
+    ```
 
 1.  Use the `--force` option to overwrite all files.
 

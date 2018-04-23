@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-[Fastly]({{page.baseurl}}cloud/basic-information/cloud-fastly.html) and {{site.data.var.ece}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You are free to customize your Fastly VCL snippets to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
+[Fastly]({{page.baseurl}}/cloud/basic-information/cloud-fastly.html) and {{site.data.var.ece}} support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You are free to customize your Fastly VCL snippets to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.
 
 Use the _terminal_ application to create and upload VCL snippets. You do not need an SSH connection into a specific environment. The following walk-through show you how to create regular VCL snippet files using JSON code.
 
@@ -107,7 +107,7 @@ The following are **best practices and recommendations**:
 
 -   The default VCL snippets you uploaded include a prepended name of `magentomodule_` with a priority of `50`. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also, consider the priority of your custom snippets and whether they should override the default snippets.
 -   Do not forget to _always_ locate and clone the active version, and edit the bash script with the new version! _Version_ is not part of your VCL snippet files.
--   If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}, we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs. We provide an example for [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html).
+-   If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}, we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs. We provide an example for [Custom extend Admin timeout VCL]({{page.baseurl}}/cloud/configure/fastly-vcl-extend-timeout.html).
 
 ## Export Fastly Service ID and API Token
 You can save Fastly service credentials into the bash environment variables and use them in cURL commands:
@@ -162,11 +162,11 @@ The values include:
 
 For detailed examples and custom code, see the following:
 
--   [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
--   [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
--   [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
--   [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
--   [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
+-   [Custom whitelist VCL]({{page.baseurl}}/cloud/configure/fastly-vcl-whitelist.html)
+-   [Custom blacklist VCL]({{page.baseurl}}/cloud/configure/fastly-vcl-blacklist.html)
+-   [Custom extend Admin timeout VCL]({{page.baseurl}}/cloud/configure/fastly-vcl-extend-timeout.html)
+-   [Custom redirect to Wordpress VCL]({{page.baseurl}}/cloud/configure/fastly-vcl-wordpress.html)
+-   [Custom block bad referer VCL]({{page.baseurl}}/cloud/configure/fastly-vcl-badreferer.html)
 
 ## Add VCL snippets to Fastly configuration {#add-snippet}
 To upload a prepared VCL snippet:
@@ -223,9 +223,3 @@ Fastly supports two types of snippets:
 
 -   [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="\_blank"} are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.
 -   [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="\_blank"} are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.
-
-#### Related topics
-
--   [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html)
--   [Set up Fastly]({{page.baseurl}}cloud/access-acct/fastly.html)
--   [Troubleshoot Fastly]({{page.baseurl}}cloud/trouble/trouble_fastly.html)

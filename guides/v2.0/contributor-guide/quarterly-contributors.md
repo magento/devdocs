@@ -59,7 +59,7 @@ PR contributors|Issue contributors
  |[mehdiagharlou](https://github.com/mehdiagharlou)
  |[allamsettiramesh](https://github.com/allamsettiramesh)
  |[valugi](https://github.com/valugi)
- |[DavidLambuer](https://github.com/DavidLambuer)
+ |[DavidLambuer](https://github.com/DavidLambauer)
  |[kevingimbel](https://github.com/kevingimbel)
  |[drdreamm](https://github.com/drdreamm)
  |[milansimek](https://github.com/milansimek)
@@ -76,5 +76,5 @@ Follow the easy instructions on [how to contribute to DevDocs][0] to join these 
 Always feel free to [email us][1] with any questions.
 
 
-[0]: {{page.baseurl}}contributor-guide/contributing_docs.html
+[0]: {{page.baseurl}}/contributor-guide/contributing_docs.html
 [1]: mailto:DL-Magento-Doc-Feedback@magento.com

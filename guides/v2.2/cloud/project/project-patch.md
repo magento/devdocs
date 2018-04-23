@@ -17,7 +17,7 @@ You can apply patches to update {{site.data.var.ece}}. We recommend using a new 
 
 The `composer update` command performs a {{site.data.var.ece}} upgrade with patches and hotfixes. Check the `magento/magento-cloud-configuration/patches` folder for available patches.
 
-To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). Starting with 2.2.0, we use `magento/ece-tools` to update {{site.data.var.ece}} with new features and fixes and to update build and deploy processes.
+To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl}}/cloud/project/project-upgrade.html). Starting with 2.2.0, we use `magento/ece-tools` to update {{site.data.var.ece}} with new features and fixes and to update build and deploy processes.
 
 Available patches are in the `vendor/magento/ece-patches` folder.
 
@@ -43,10 +43,10 @@ There are two types of patches:
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments. All environments are read-only. You must update locally and push the Git branch to deploy across all environments.
 </div>
 
-Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
+Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl}}/cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ## Back up the database {#backup-db}
 
@@ -96,7 +96,7 @@ We recommend testing patches in an active branch, prior to deploying to Staging 
 
 To test a general patch on your local system, you create a branch from the Pro Integration `master` branch or Starter plan `staging` branch. The commands used in the instructions are for Pro plan using the `master` branch.
 
-1.	On your local system, enter the following commands as the [Magento file system owner]({{ page.baseurl}}cloud/before/before-workspace-file-sys-owner.html):
+1.	On your local system, enter the following commands as the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html):
 
 		cd <project root dir>
 		magento-cloud environment:checkout master
@@ -117,7 +117,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git push origin <branch name>
 
 ### Patch vendor/magento/ece-tools
-This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html).
+This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html).
 
 1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
 2.  Enter the following command to patch `vendor/magento/ece-tools`:
@@ -167,7 +167,7 @@ We recommend you test a patch locally in an active branch. After completing test
 
 To test a custom patch on your local system:
 
-1.	On your local system, enter the following command as the [Magento file system owner]({{ page.baseurl}}cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
+1.	On your local system, enter the following command as the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
 
 		mkdir <Magento project root dir>/m2-hotfixes
 3.	Copy the patch file to that directory.
@@ -227,6 +227,3 @@ After you've successfully tested a custom patch locally and on your Integration 
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
-
-#### Related topic
-* [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)

@@ -2,6 +2,7 @@
 layout: default
 group: UI_Components_guide
 title: The uiLayout service object
+version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
@@ -70,7 +71,7 @@ The example module referenced in the following examples uses `OrangeCo` as its c
 It also assumes the existence of the following files:
 
 * `app/code/OrangeCo/Sample/view/base/web/js/my-new-component.js`
-* `app/code/OrangeCo/Sample/view/base/web/templtes/my-new-component/main-template.html`
+* `app/code/OrangeCo/Sample/view/base/web/templates/my-new-component/main-template.html`
 
 ### Create a child component
 

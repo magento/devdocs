@@ -68,7 +68,7 @@ When you access the Magento Admin, the following error displays in the browser:
 
 However, you can access the Magento storefront.
 
-_Solution_: The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl }}install-gde/docker/docker-over.html#devbox-download)
+_Solution_: The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl}}/install-gde/docker/docker-over.html)
 
 {% endcollapsibleh2 %}
 
@@ -105,7 +105,7 @@ Other errors might display in a secondary command window:
 	Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 	Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 
-*Solution*: [Set up file sharing]({{ page.baseurl }}install-gde/docker/docker-ref.html#devbox-docker-file-share).
+*Solution*: [Set up file sharing]({{ page.baseurl}}/install-gde/docker/docker-ref.html#devbox-docker-file-share).
 
 {% endcollapsibleh2 %}
 

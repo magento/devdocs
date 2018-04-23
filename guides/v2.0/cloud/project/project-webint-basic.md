@@ -19,8 +19,8 @@ The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud
 * Create and manage projects
 * Access active environments and branches using SSH, CLI, and URLs
 * Configure environment settings, environment variables, and routes
-* [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
-* [Manage Git branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
+* [Create and manage users]({{page.baseurl}}/cloud/project/user-admin.html)
+* [Manage Git branches]({{page.baseurl}}/cloud/project/project-webint-branch.html)
 
 As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
 
@@ -38,18 +38,18 @@ To access projects and environments through the Project Web Interface:
 1.	[Log in to your project](https://accounts.magento.cloud).
 2.	Click **Access Project** for a list of URLs and SSH.
 
-	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png){:width="600px"}
+	![Access your project by URL or SSH]({{ site.baseurl}}/common/images/cloud_project-access.png){:width="600px"}
 
-For more information about using SSH, see [SSH to an environment]({{page.baseurl}}cloud/env/environments-ssh.html#magento-cli). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
+For more information about using SSH, see [SSH to an environment]({{page.baseurl}}/cloud/env/environments-ssh.html#magento-cli). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
 
 The following figure shows an example.
 
-![Clone the project]({{ site.baseurl }}common/images/cloud_project-clone.png){:width="600px"}
+![Clone the project]({{ site.baseurl}}/common/images/cloud_project-clone.png){:width="600px"}
 
-Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
+Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl}}/common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Configure environment settings {#project-conf-env-set}
-You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
+You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html).
 <table>
 	<tbody>
 		<tr>
@@ -77,16 +77,16 @@ One of these environment variables enables or disables outgoing emails for the e
 2. Select the Settings tab.
 3. For the **Outgoing emails** option, select the toggle to On.
 
-	![Set outgoing emails]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
+	![Set outgoing emails]({{ site.baseurl}}/common/images/cloud_project-conf-env.png)
 
-Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html).
+Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html).
 
 ## Set environment and project variables {#project-conf-env-var}
-You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html).
+You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see [Overview of environment variables]({{page.baseurl}}/cloud/env/variables-intro.html).
 
 For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
 
-To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
+To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl}}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
 For new Pro projects **created after October 23, 2017**, you can add variables for all environments through the Project Web Interface.
 
@@ -101,13 +101,13 @@ To set environment specific variables in the Project Web Interface:
 4. In the **Name** field, enter a variable name. For example, to set the Magento Admin default account password, enter `ADMIN_PASSWORD`.
 5. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
-	![Set environment variables]({{ site.baseurl }}common/images/cloud_env-var.png)
+	![Set environment variables]({{ site.baseurl}}/common/images/cloud_env-var.png)
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
-![Environment variable example]({{site.baseurl}}common/images/cloud_env_var_example.png)
+![Environment variable example]({{site.baseurl}}/common/images/cloud_env_var_example.png)
 </div>
 
 ### Project variable {#project}
@@ -119,12 +119,12 @@ To set project variables in the Project Web Interface:
 4. In the **Name** field, enter a variable name. For example, to set the Magento Admin email for the default account, enter `ADMIN_EMAIL`.
 5. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
-	![Set project variables]({{ site.baseurl }}common/images/cloud_project_variable.png)
+	![Set project variables]({{ site.baseurl}}/common/images/cloud_project_variable.png)
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 ## Configure routes {#project-conf-env-route}
-Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{page.baseurl}}cloud/project/project-conf-files_routes.html). These routes (or URLs) are used to access your Magento storefront.
+Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{page.baseurl}}/cloud/project/project-conf-files_routes.html). These routes (or URLs) are used to access your Magento storefront.
 
 1. [Access your project](#project-access) and select a specific environment.
 2. Select the Routes tab.
@@ -142,7 +142,7 @@ Routes allow you to set redirects or upstream settings for applications for your
 7. To configure a Redirect, enter a URL to **Redirect to**. You can use `{default}` in the URL, which is a placeholder for the default domain.
 8. Click **Add Route** to save. The setting is saved and deployed to the environment.
 
-![Configure a route]({{ site.baseurl }}common/images/cloud_routes.png)
+![Configure a route]({{ site.baseurl}}/common/images/cloud_routes.png)
 
 ## View environment history {#project-conf-hist}
 An environment's history includes:
@@ -152,11 +152,11 @@ An environment's history includes:
 *	Syncs and merges
 *	Code pushes
 
-To view an environment's history, log into your project and select an environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. For more information on logs, see [Use logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html).
+To view an environment's history, log into your project and select an environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. For more information on logs, see [Use logs for troubleshooting]({{ page.baseurl}}/cloud/trouble/environments-logs.html).
 
 The following figure shows a sample history.
 
-![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png)
+![Sample environment history]({{ site.baseurl}}/common/images/cloud_environment-history.png)
 
 The history shows, from oldest to newest:
 
@@ -164,13 +164,13 @@ The history shows, from oldest to newest:
 *	Environment synced with the parent
 *	Environment snapshot created
 
-We recommend [creating a snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) before you make any code changes.
+We recommend [creating a snapshot]({{page.baseurl}}/cloud/project/project-webint-snap.html) before you make any code changes.
 
 *	Environment variable added
 *	Environment snapshot created
 
 #### Related topics
-* [Project structure]({{page.baseurl}}cloud/project/project-start.html)
-* [Create and manage users]({{page.baseurl}}cloud/project/user-admin.html)
-*	[Manage branches]({{page.baseurl}}cloud/project/project-webint-branch.html)
-*	[Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html)
+* [Project structure]({{page.baseurl}}/cloud/project/project-start.html)
+* [Create and manage users]({{page.baseurl}}/cloud/project/user-admin.html)
+*	[Manage branches]({{page.baseurl}}/cloud/project/project-webint-branch.html)
+*	[Snapshots and backup management]({{page.baseurl}}/cloud/project/project-webint-snap.html)

@@ -15,10 +15,10 @@ Each _Pro_ plan project supports a total of eight environments that you can use 
 -   **Production**—Provides a single environment and `master` branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{page.baseurl}}cloud/trouble/pro-env-management.html). If you do not request the update, you must use CLI commands or tickets to modify settings, variables, and routes.
+To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{page.baseurl}}/cloud/trouble/pro-env-management.html). If you do not request the update, you must use CLI commands or tickets to modify settings, variables, and routes.
 </div>
 
-![High-level view of Pro architecture (legacy) flow]({{site.baseurl}}common/images/cloud_pro-branch-architecture-legacy.png)  
+![High-level view of Pro architecture (legacy) flow]({{site.baseurl}}/common/images/cloud_pro-branch-architecture-legacy.png)  
 
 The following table summarizes the differences between environments:
 
@@ -33,8 +33,8 @@ The following table summarizes the differences between environments:
     <tr>
       <td>Supports settings management in the UI?</td>
       <td>Yes</td>
-      <td>Not by default (<a href="{{page.baseurl}}cloud/trouble/pro-env-management.html">requires an update</a>)</td>
-      <td>Not by default (<a href="{{page.baseurl}}cloud/trouble/pro-env-management.html">requires an update</a>)</td>
+      <td>Not by default (<a href="{{page.baseurl}}/cloud/trouble/pro-env-management.html">requires an update</a>)</td>
+      <td>Not by default (<a href="{{page.baseurl}}/cloud/trouble/pro-env-management.html">requires an update</a>)</td>
     </tr>
     <tr>
       <td>Supports multiple environments/branches?</td>
@@ -80,7 +80,7 @@ The Integration environment does not support all services. For example, Fastly i
 #### Branches
 You can have an unlimited number of _inactive_ Git branches to store code, but to access, view, and test inactive branches you must activate them. Use the `magento-cloud environment:activate` command to activate the environment.
 
-When you update your project to manage the [Staging and Production environments through the Project Web Interface]({{page.baseurl}}cloud/trouble/pro-env-management.html), all active and inactive branches continue as children of the `master` branch.
+When you update your project to manage the [Staging and Production environments through the Project Web Interface]({{page.baseurl}}/cloud/trouble/pro-env-management.html), all active and inactive branches continue as children of the `master` branch.
 
 Developing in the Integration environment requires the following Git process:
 
@@ -89,7 +89,7 @@ Developing in the Integration environment requires the following Git process:
 1.  Push code changes, which automatically build and deploy to the Integration environment for testing
 
 <div class="bs-callout bs-callout-info" markdown="1">
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Prepare for local environment setup]({{page.baseurl}}cloud/before/before-workspace.html) and [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html).
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Prepare for local environment setup]({{page.baseurl}}/cloud/before/before-workspace.html) and [Deploy your store]({{page.baseurl}}/cloud/live/stage-prod-live.html).
 </div>
 
 ## Staging environment {#cloud-arch-stage}
@@ -98,10 +98,10 @@ The Staging environment provides a near-production environment to test your site
 #### Branches
 The Staging environment contains a default `master` branch. You cannot branch from the Staging environment `master` branch. You must push code changes from the Integration environment `master` branch to Staging environment `master` branch.
 
-When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{page.baseurl}}cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `staging` that contains all user access settings and environment variables for your Staging environment.
+When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{page.baseurl}}/cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `staging` that contains all user access settings and environment variables for your Staging environment.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Test  deployment]({{page.baseurl}}cloud/live/stage-prod-test.html).
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{page.baseurl}}/cloud/live/stage-prod-live.html) and [Test  deployment]({{page.baseurl}}/cloud/live/stage-prod-test.html).
 </div>
 
 ## Production environment {#cloud-arch-prod}
@@ -110,10 +110,10 @@ The Production environment runs your public-facing Magento single and multi-site
 #### Branches
 The Production environment contains a default `master` branch. You cannot branch from the Production environment `master` branch. You must push code changes from the Staging environment `master` branch to Production environment `master` branch.
 
-When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{page.baseurl}}cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `production` that contains all user access settings and environment variables for your Production environment.
+When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{page.baseurl}}/cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `production` that contains all user access settings and environment variables for your Production environment.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html) and [Go Live and launch]({{page.baseurl}}cloud/live/live.html).
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{page.baseurl}}/cloud/live/stage-prod-live.html) and [Go Live and launch]({{page.baseurl}}/cloud/live/live.html).
 </div>
 
 ### Advantage of redundant hardware
@@ -153,7 +153,7 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
 
 The following figure shows the technology used in the Production environment:
 
-![Production technology stack]({{ site.baseurl }}common/images/cloud_stack-diagram.png)
+![Production technology stack]({{ site.baseurl}}/common/images/cloud_stack-diagram.png)
 
 {{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
@@ -186,20 +186,20 @@ You can have multiple applications running in the same project. Building a micro
 
 This software is *not* upgradable but versions for the following software is configurable:
 
--   [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
--   [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html)
--   [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html)
--   [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html)
--   [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html)
--   [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html)
+-   [PHP]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)
+-   [MySQL]({{page.baseurl}}/cloud/project/project-conf-files_services-mysql.html)
+-   [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
+-   [Redis]({{page.baseurl}}/cloud/project/project-conf-files_services-redis.html)
+-   [RabbitMQ]({{page.baseurl}}/cloud/project/project-conf-files_services-rabbit.html)
+-   [Elasticsearch]({{page.baseurl}}/cloud/project/project-conf-files_services-elastic.html)
 
-For Staging and Production environments, use Fastly for CDN and caching. We recommend installing the Fastly module 1.2.33 or later. See [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html).
+For Staging and Production environments, use Fastly for CDN and caching. We recommend installing the Fastly module 1.2.33 or later. See [Fastly in Cloud]({{page.baseurl}}/cloud/basic-information/cloud-fastly.html).
 
 Edit the following YAML files to configure specific software versions to use in your implementation.
 
--   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)—application build and deployment
--   [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)—url processing
--   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)—supported services
+-   [`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
+-   [`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html)—url processing
+-   [`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html)—supported services
 
 ## Prepare for development {#develop}
 To branch and develop your Magento store:
@@ -208,8 +208,3 @@ To branch and develop your Magento store:
 1.   Clone the `master` branch from the Project to your local workspace
 1.   Branch and develop in a new Git branch on your local workspace
 1.   Push code to Git to build and deploy to an environment for testing
-
-#### Related topics
--   [Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html)
--   [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
--   [{{site.data.var.ee}} requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)

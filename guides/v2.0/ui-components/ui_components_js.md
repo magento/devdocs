@@ -11,7 +11,7 @@ redirect_from: /guides/v2.0/javascript-dev-guide/ui_components_js.html
 ---
 
 ## What's in this topic
-This topic is aimed for developers, who need to reuse the [Magento UI Components]({{page.baseurl}}ui-library/ui-library-component.html). 
+This topic is aimed for developers, who need to reuse the [Magento UI Components]({{page.baseurl}}/ui-library/ui-library-component.html). 
 
 The topic covers the following:
 
@@ -256,28 +256,28 @@ To define the UI components used on a page, you can use browser built-in develop
 For illustration, let's find out what UI components are used on the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/ui_debug1.png" alt="The catalog page"> 
+<img src="{{site.baseurl}}/common/images/ui_debug1.png" alt="The catalog page"> 
 </div>
 
 
 According to the described procedure, open the page source and search for "`data-bind="scope:`"
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/ui_debug2.png" alt="searching for data-bind=scope:">
+<img src="{{site.baseurl}}/common/images/ui_debug2.png" alt="searching for data-bind=scope:">
 </div>
 
 
 So we find out that the main UI component used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/ui_debug3.png" alt="run the command in Console">
+<img src="{{site.baseurl}}/common/images/ui_debug3.png" alt="run the command in Console">
 </div>
 
 
 And we get the component's configuration:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/ui_debug4.png" alt="view the configuration">
+<img src="{{site.baseurl}}/common/images/ui_debug4.png" alt="view the configuration">
 </div>
 
 ### Debug using a Google Chrome plug-in

@@ -19,7 +19,7 @@ functional_areas:
 #### Next step
 After your backup is complete, continue with any of the following: 
 
-*	Installing extensions: [Step 3. Install]({{page.baseurl}}comp-mgr/extens-man/extensman-new-purchase.html)
-*	Updating extensions: [Step 3. Extension Update]({{page.baseurl}}comp-mgr/extens-man/extensman-update.html)
-*	Uninstalling extensions: [Step 3. Data Option]({{page.baseurl}}comp-mgr/extens-man/extensman-uninst-data.html)
+*	Installing extensions: [Step 3. Install]({{page.baseurl}}/comp-mgr/extens-man/extensman-new-purchase.html)
+*	Updating extensions: [Step 3. Extension Update]({{page.baseurl}}/comp-mgr/extens-man/extensman-update.html)
+*	Uninstalling extensions: [Step 3. Data Option]({{page.baseurl}}/comp-mgr/extens-man/extensman-uninst-data.html)
 

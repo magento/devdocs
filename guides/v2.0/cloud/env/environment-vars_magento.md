@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 120_env
-title: Magento application environment variables
-menu_title: Magento application environment variables
-menu_order: 5
-menu_node:
+title: Application variables
 version: 2.0
 github_link: cloud/env/environment-vars_magento.md
 functional_areas:
@@ -13,9 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-These sections list the environment variables for [general Magento](#application) and [deployment](#deploy). You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
-
-## Magento application variables {#application}
+These sections list the general Magento and [deployment](#deploy) environment variables. You can [add variables](#addvariables) using the Project Web Interface or CLI commands.
 
 The following table lists variables that you can override using environment variables.
 
@@ -40,7 +34,7 @@ The following table lists variables that you can override using environment vari
 <td>Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
@@ -57,8 +51,6 @@ The following table lists variables that you can override using environment vari
 </tr>
 </tbody>
 </table>
-
-For additional variables, continue to the following sections.
 
 ## Magento deploy variables {#deploy}
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
@@ -79,9 +71,9 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>CLEAN_STATIC_FILES</code></td>
-<td><p>The default value, <code>enabled</code>, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enabled</code> and <code>disabled</code>.</p>
+<td><p>The default value, <code>enabled</code>, cleans <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enabled</code> and <code>disabled</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{page.baseurl}}howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+<p>Because of <a href="{{page.baseurl}}/howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
 <p>This is available in all versions.</p></td>
 <td>enabled</td>
 </tr>
@@ -133,7 +125,7 @@ The following variables are available during the deploy process of build and dep
 <td>Not set, example: Doe</td>
 </tr>
 <tr><td><code>ADMIN_EMAIL</code></td>
-<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. To set, see <a href="{{page.baseurl}}cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</td>
+<td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
 <td>Not set</td>
 </tr>
 <tr><td><code>ADMIN_PASSWORD</code></td>
@@ -151,10 +143,10 @@ The following variables are available during the deploy process of build and dep
 </tr></tbody>
 </table>
 
-For information on the build and deploy process, see [Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+For information on the build and deploy process, see [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
 
 ## Add environment variables {#addvariables}
-You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
+You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
@@ -171,10 +163,10 @@ To create a variable using the command line:
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the event something goes wrong and you can not access your environment after it deploys, try the following:
 
-*   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#tunnel-services) are running.
+*   [SSH to the environment]({{page.baseurl}}/cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}/cloud/env/environments-start.html#tunnel-services) are running.
 *   Restore your snapshot:
 
         magento-cloud snapshot:list
         magento-cloud snapshot:restore <snapshot>
 
-For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}cloud/project/project-webint-snap.html).
+For more information on snapshots, see [Snapshots and backup management]({{page.baseurl}}/cloud/project/project-webint-snap.html).

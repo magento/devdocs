@@ -51,4 +51,4 @@ Avoid using these functions in your code.
 [9]:http://php.net/manual/en/function.mt-rand.php
 [10]:http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html
 [11]:http://php.net/manual/en/class.arrayobject.php
-[12]: {{page.baseurl}}extension-dev-guide/framework/serializer.html "Serialize Library"
+[12]: {{page.baseurl}}/extension-dev-guide/framework/serializer.html "Serialize Library"

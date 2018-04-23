@@ -137,7 +137,7 @@ When the quote is submitted to the buyer:
 
 ### Update a quote
 
-Use the `PUT /V1/negotiableQuote/:quoteId` call to update a quote. See [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html) for use cases.
+Use the `PUT /V1/negotiableQuote/:quoteId` call to update a quote. See [Update a negotiable quote]({{page.baseurl}}/b2b/negotiable-update.html) for use cases.
 
 ### Recalculate prices
 
@@ -339,7 +339,7 @@ Not applicable
 {% endhighlight %}
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html)
-* [Negotiable quote checkout]({{page.baseurl}}b2b/negotiable-checkout.html)
-* [Place a negotiable quote order]({{page.baseurl}}b2b/negotiable-order-workflow.html)
+* [Integrate with the NegotiableQuote module]({{page.baseurl}}/b2b/negotiable-quote.html)
+* [Update a negotiable quote]({{page.baseurl}}/b2b/negotiable-update.html)
+* [Negotiable quote checkout]({{page.baseurl}}/b2b/negotiable-checkout.html)
+* [Place a negotiable quote order]({{page.baseurl}}/b2b/negotiable-order-workflow.html)

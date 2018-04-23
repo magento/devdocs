@@ -17,7 +17,7 @@ functional_areas:
 
 
 ### Symptom
-After you successfully install Magento, exceptions display when you try to access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (You might have to <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#config-mode">
+After you successfully install Magento, exceptions display when you try to access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (You might have to <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode">
 enable developer mode</a> to see the exceptions.)
 
 Sample exceptions follow:
@@ -43,5 +43,5 @@ Magento recommends different ownership and permissions settings based on if you 
 Typically, you have one user on shared hosting and two users on private hosting (or if you have your own server). There could be exceptions to this, however.
  
 ### Suggestion
-Review our recommendations in [Overview of ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+Review our recommendations in [Overview of ownership and permissions]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 

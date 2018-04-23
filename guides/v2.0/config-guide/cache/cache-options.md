@@ -12,6 +12,7 @@ redirect_from:
   - /guides/v2.0/config-guide/cache/caching_low-level.html
   - /guides/v2.1/config-guide/cache/caching_low-level.html
   - /guides/v2.2/config-guide/cache/caching_low-level.html
+  - /guides/v2.3/config-guide/cache/caching_low-level.html
 functional_areas:
   - Configuration
   - System
@@ -26,11 +27,11 @@ Magento extends <a href="http://framework.zend.com/manual/1.12/en/zend.cache.fro
 <h2 id="cache-lowlevel-front">Low-level backend cache</h2>
 In general, the Magento application works with any backend cache that <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">Zend_Cache Backends</a> supports. However, this guide covers only the following low-level backend caches:
 
-*   <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a>
-*   <a href="{{page.baseurl}}config-guide/cache/caching-database.html">Database</a>
+*   <a href="{{page.baseurl}}/config-guide/redis/config-redis.html">Redis</a>
+*   <a href="{{page.baseurl}}/config-guide/cache/caching-database.html">Database</a>
 *   File system (default): No configuration is necessary to use file system caching.
 
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> doesn't require setting up a low-level {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %}.
+<a href="{{page.baseurl}}/config-guide/varnish/config-varnish.html">Varnish</a> doesn't require setting up a low-level {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We'll periodically add more low-level cache types so watch this space.</p>

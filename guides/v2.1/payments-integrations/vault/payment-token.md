@@ -17,7 +17,7 @@ This information is stored in Payment Token.
 
 The basic interface for Payment Token is [PaymentTokenInterface]({{site.mage2100url}}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php).
 
-To retrieve and store token details, you need to implement a [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html). In the response handler a Payment Token {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} is created and stored in the payment {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
+To retrieve and store token details, you need to implement a [response handler]({{page.baseurl}}/payments-integrations/payment-gateway/response-handler.html). In the response handler a Payment Token {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} is created and stored in the payment {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
 
 Following sample is an example of the response handler implementation:
 
@@ -101,4 +101,4 @@ Example of the Braintriee `di.xml`:
 The persistence layer for Payment Token is implemented in the [Vault Module]({{site.mage2100url}}app/code/Magento/Vault).
 
 ## What's next
-[Adding and using  UI_Vault component to place orders on the storefront]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html).
+[Adding and using  UI_Vault component to place orders on the storefront]({{page.baseurl}}/payments-integrations/vault/token-ui-component-provider.html).

@@ -6,6 +6,9 @@
 {% if page.group == "ext-best-practices" %}
     {% assign toc = site.data.toc.extension-best-practices %}
 
+{% elsif page.group == "perf-best-practices" %}
+		 {% assign toc = site.data.toc.performance-best-practices %}
+
 {% elsif page.group == "compman" %}
     {% assign toc = site.data.toc.software-update-guide %}
 
@@ -107,6 +110,9 @@
 
 {% elsif "mftf" contains page.group %}
         {% assign toc = site.data.toc.magento-functional-testing-framework-guide %}
+
+        {% elsif page.group == "marketplace-api" %}
+        {% assign toc = site.data.toc.marketplace-api %}
 
 {% endif %}
 

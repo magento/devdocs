@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/robo.md
 functional_areas:
  - Testing
-mftf-release: 2.1.0
+mftf-release: 2.1.2
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -21,48 +21,59 @@ Robo is a task runner for PHP that allows you to alias long, complex command lin
 Assuming that you're working in the `magento2/dev/tests/acceptance` directory in your terminal, run Robo commands using the following format:
 
 ```bash
-$ vendor/bin/robo command [options] [arguments]
+vendor/bin/robo command [options] [arguments]
 ```
 
 Or, if you added the path of the Robo executable file to the system *PATH*, then run Robo commands using the following format:
 
 ```bash
-$ robo command [options] [arguments]
+robo command [options] [arguments]
 ```
 
 ### Example
 
-* Original: `$ allure generate tests/_output/allure-results/ -o tests/_output/allure-report/`
-* Robo: `$ vendor/bin/robo allure1:generate`
-
+* Original:
+  ```bash
+  allure generate tests/_output/allure-results/ -o tests/_output/allure-report/
+  ```
+  
+* Robo:
+  ```bash
+  vendor/bin/robo allure1:generate
+  ```
+  
 ## Useful commands
 
-The following are the most popular commands used to interact with the MFTF. For more commands, see [Reference] or run in your terminal: `$ vendor/bin/robo`.
+The following are the most popular commands used to interact with the MFTF. For more commands, see [Reference] or run in your terminal:
+
+```bash
+vendor/bin/robo
+```
 
 ### Codeception Robo Commands
 
 #### List all available Robo commands:
 
 ```bash
-$ vendor/bin/robo
+vendor/bin/robo
 ```
 
 #### Duplicate the example configuration files used to customize the project:
 
 ```bash
-$ vendor/bin/robo clone:files
+vendor/bin/robo clone:files
 ```
 
 #### Build the Codeception project:
 
 ```bash
-$ vendor/bin/robo build:project
+vendor/bin/robo build:project
 ```
 
 #### Generate all tests in PHP:
 
 ```bash
-$ vendor/bin/robo generate:tests
+vendor/bin/robo generate:tests
 ```
 #### Generate specified Tests in PHP:
 
@@ -73,25 +84,25 @@ $ vendor/bin/robo generate:tests testName01 testName02 testName03
 #### Run all tests marked with the @group tag `example`, using the Chrome environment:
 
 ```bash
-$ vendor/bin/robo example
+vendor/bin/robo example
 ```
 
 #### Run all functional tests located under the directory path provided:
 
 ```bash
-$ vendor/bin/robo folder ______
+vendor/bin/robo folder ______
 ```
 
 #### Run all functional tests, excluding @group skip:
 
 ```bash
-$ vendor/bin/robo functional
+vendor/bin/robo functional
 ```
 
 #### Run all tests with the specified @group tag, excluding @group 'skip':
 
 ```bash
-$ vendor/bin/robo group ______
+vendor/bin/robo group ______
 ```
   
 ### Allure Robo commands
@@ -100,21 +111,45 @@ To determine which version of the Allure command you need to use run `allure --v
 
 #### Generate the HTML for the Allure report based on the test XML output:
 
-Allure v1.x.x | Allure v2.x.x
----|---
-`$ vendor/bin/robo allure1:generate` | `$ vendor/bin/robo allure2:generate`
+Allure v1.x.x:
+
+```bash
+vendor/bin/robo allure1:generate
+```
+
+Allure v2.x.x:
+
+```bash
+vendor/bin/robo allure2:generate
+```
 
 #### Open the HTML Allure report:
 
-Allure v1.x.x | Allure v2.x.x
----|---
-`$ vendor/bin/robo allure1:open` | `$ vendor/bin/robo allure2:open`
+Allure v1.x.x:
+
+```bash
+vendor/bin/robo allure1:open
+```
+
+Allure v2.x.x:
+
+```bash
+vendor/bin/robo allure2:open
+```
 
 #### Generate and open the HTML Allure report:
 
-Allure v1.x.x | Allure v2.x.x
----|---
-`$ vendor/bin/robo allure1:report` | `$ vendor/bin/robo allure2:report`
+Allure v1.x.x:
+
+```bash
+vendor/bin/robo allure1:report
+```
+
+Allure v2.x.x:
+
+```bash
+vendor/bin/robo allure2:report
+```
 
 ## Reference
 
@@ -149,7 +184,8 @@ Allure v1.x.x | Allure v2.x.x
 
 #### generate
 
-Generate PHP code from tests defined in XML files.
+Generate PHP code from the tests defined in XML files.
+
 Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
 
 `generate:tests`   | Generate all tests based on specific module load order of the Magento instance

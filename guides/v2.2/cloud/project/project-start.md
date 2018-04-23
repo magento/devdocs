@@ -76,7 +76,7 @@ For Pro, the deployment log for Staging and Production is located in `/var/log/p
 Magento logs are located in the `<magento root dir>/var/log` directory.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-You can also [set up log-based Slack and email notifications]({{page.baseurl}}cloud/env/setup-notifications.html).
+You can also [set up log-based Slack and email notifications]({{page.baseurl}}/cloud/env/setup-notifications.html).
 </div>
 
 ## Build logs {#build-log}
@@ -123,9 +123,3 @@ To review other application logs in Staging or Production, you can access and re
 For Pro plan Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`.
 
 For Pro plan Production, you have three nodes to check for logs.
-
-#### Related topics
-*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)

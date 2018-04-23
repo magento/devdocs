@@ -100,7 +100,7 @@ namespace My\Module\Plugin;
 
 class AuthLogger
 {
-    private $logger
+    private $logger;
 
     public function __construct(\Psr\Log\LoggerInterface $logger)
     {
@@ -128,7 +128,7 @@ The following example is a class with an after method for [`\Magento\Catalog\Mod
 
 class WebsitesLogger
 {
-    private $logger
+    private $logger;
 
     public function __construct(\Psr\Log\LoggerInterface $logger)
     {
@@ -281,8 +281,8 @@ For example, the developer can disable a global plugin in the {% glossarytooltip
 
 ### Related topics
 
-*  [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
-*  [Events and observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html)
+*  [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)
+*  [Events and observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html)
 
 ### Related information
 

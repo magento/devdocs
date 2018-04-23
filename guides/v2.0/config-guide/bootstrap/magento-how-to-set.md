@@ -16,7 +16,7 @@ functional_areas:
 ---
 
 <h2 id="config-bootparam-overview">Overview of setting bootstrap parameter values</h2>
-This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
+This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{page.baseurl}}/config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
 
 The following table discusses the bootstrap parameters you can set:
 
@@ -29,11 +29,11 @@ The following table discusses the bootstrap parameters you can set:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="{{page.baseurl}}config-guide/bootstrap/mage-dirs.html">MAGE_DIRS</a></td>
+		<td><a href="{{page.baseurl}}/config-guide/bootstrap/mage-dirs.html">MAGE_DIRS</a></td>
 		<td>Specifies custom directory and URL paths</td>
 	</tr>	
 	<tr>
-		<td><a href="{{page.baseurl}}config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
+		<td><a href="{{page.baseurl}}/config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
 		<td>Enables dependency graphs and HTML profiling</td>
 	</tr>
 
@@ -44,7 +44,7 @@ The following table discusses the bootstrap parameters you can set:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>Not all bootstrap parameters are documented at this time.</li>
-  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
+  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
@@ -92,7 +92,7 @@ To set a variable:
 
 1.	Open any of the preceding files in a text editor and either add or uncomment the desired setting.
 
-	For example, to specify a <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:
+	For example, to specify a <a href="{{page.baseurl}}/config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:
 
 		#   SetEnv MAGE_PROFILER firebug
 
@@ -172,6 +172,6 @@ After setting the mode, restart the web server:
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{page.baseurl}}config-guide/bootstrap/mage-profiler.html">Enable an dependency graphs and built-in profiler (MAGE_PROFILER)</a>
+*	<a href="{{page.baseurl}}/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
+*	<a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{page.baseurl}}/config-guide/bootstrap/mage-profiler.html">Enable an dependency graphs and built-in profiler (MAGE_PROFILER)</a>

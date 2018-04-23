@@ -21,13 +21,13 @@ functional_areas:
 ---
 
 #### Previous step:
-[Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
+[Set up the Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html)
 
 The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
 
 To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation){:target="\_blank"}.
 
-The commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. For a full list of Magento Cloud CLI commands, enter `magento-cloud list` or see the [Magento CLI reference]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+The commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. For a full list of Magento Cloud CLI commands, enter `magento-cloud list` or see the [Magento CLI reference]({{ page.baseurl}}/cloud/reference/cli-ref-topic.html).
 
 You should complete these instructions in the following order:
 
@@ -39,7 +39,7 @@ You should complete these instructions in the following order:
 
 To clone the project's `master` environment to your local:
 
-1.	Log in to your local development machine with a [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html) account.
+1.	Log in to your local development machine with a [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html) account.
 
 2.  Change to the web server or virtual host docroot.
 
@@ -83,7 +83,7 @@ Make note of any changes you make. You may need them when installing Magento wit
 </div>
 
 ### List and review variables {#variablelist}
-If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. The Project Owner may have already set some or all of the variables during [project creation]({{ page.baseurl }}cloud/before/before-project-owner.html).
+If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. 
 
 	magento-cloud variable:get -e <environment ID>
 
@@ -91,7 +91,7 @@ To set Admin variables, you will use this command format:
 
 	magento-cloud variable:set <name> <value> -e <environment ID>
 
-You can also [log into your project](https://accounts.magento.cloud){:target="\_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
+You can also [log into your project](https://accounts.magento.cloud){:target="\_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl}}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
@@ -141,15 +141,15 @@ To set variables using the CLI (with example values used):
 To set variables using the Project Web Interface:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="\_blank"}.
-2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
+2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl}}/common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
 
-	![Project without code]({{ site.baseurl }}common/images/cloud_project_empty.png)
+	![Project without code]({{ site.baseurl}}/common/images/cloud_project_empty.png)
 
 4. Select the **Variables** tab.
 5. Click **Add Variable**.
 6. For the **Name**, enter `ADMIN_EMAIL`. For the **Value**, enter your Project Owner email address or another accessible email for resetting the password for the default admin account.
 
-	![Project variable]({{ site.baseurl }}common/images/cloud_project_variable.png)
+	![Project variable]({{ site.baseurl}}/common/images/cloud_project_variable.png)
 
 7. Click **Add variable**. After you add the variable, the environment will deploy. Wait until deployment completes.
 
@@ -162,8 +162,8 @@ Repeat to optionally add the following variables using the examples above:
 ## Branch an environment {#branch}
 With your project cloned and Magento administrator account configured, you can branch for development.
 
-* For [Starter]({{ page.baseurl }}cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, than branch from `staging` for development.
-* For [Pro]({{page.baseurl}}cloud/architecture/pro-develop-deploy-workflow.html), create branches in the Integration environment for your development.
+* For [Starter]({{ page.baseurl}}/cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, than branch from `staging` for development.
+* For [Pro]({{page.baseurl}}/cloud/architecture/pro-develop-deploy-workflow.html), create branches in the Integration environment for your development.
 
 To branch from master:
 
@@ -183,9 +183,9 @@ To branch from master:
 2.	After the command completes, update dependencies:
 
 		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-3.  Create a [snapshot]({{ page.baseurl }}cloud/project/project-webint-snap.html) of the environment.
+3.  Create a [snapshot]({{ page.baseurl}}/cloud/project/project-webint-snap.html) of the environment.
 
 		magento-cloud snapshot:create -e <environment ID>
 
 #### Next step:
-[Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
+[Install Magento]({{ page.baseurl}}/cloud/before/before-setup-env-install.html)

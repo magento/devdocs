@@ -8,7 +8,7 @@ github_link: contributor-guide/contributing_docs_suggested.md
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.
 
-If you are interested in working on one of these projects, open a [pull request on this page](https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs_suggested.md){:target="\_blank"}. You can also [email us](DL-Magento-Doc-Feedback@magento.com) or post a comment in the Github issue linked to the project title.
+If you are interested in working on one of these projects, open a [pull request on this page](https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs_suggested.md){:target="\_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com> or post a comment in the GitHub issue linked to the project title.
 
 {% include note.html type="info" content="All of the following suggestions come directly from the community." %}
 
@@ -32,7 +32,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td><a href="https://github.com/magento/devdocs/issues/1276" target="\_blank">Menu widgets</a></td>
         <td>Small</td>
         <td>
-          <p>Help us improve the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_menu.html">Menu widget topic</a> by contributing working code samples and better descriptions of menu options.</p>
+          <p>Help us improve the <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html">Menu widget topic</a> by contributing working code samples and better descriptions of menu options.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Sample code showing the use of the menu widget.</li>
@@ -72,7 +72,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td><a href="https://github.com/magento/devdocs/issues/1637" target="\_blank">Category attributes</a></td>
         <td>Medium</td>
         <td>
-          <p>Help us improve the <a href="{{page.baseurl}}ui_comp_guide/howto/add_category_attribute.html">How to add a category attribute</a> topic by providing details about how to extend attributes.</p>
+          <p>Help us improve the <a href="{{page.baseurl}}/ui_comp_guide/howto/add_category_attribute.html">How to add a category attribute</a> topic by providing details about how to extend attributes.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Provide an extended explanation of the parameters <code>(key => value)</code> for the <code>addAttribute</code> function.
@@ -91,7 +91,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td><a href="https://github.com/magento/devdocs/issues/434" target="\_blank">Logging</a></td>
         <td>Large</td>
         <td>
-          <p>Help us improve the <a href="{{page.baseurl}}config-guide/log/log-intro.html">Custom logging</a> topic by adding more details and examples.</p>
+          <p>Help us improve the <a href="{{page.baseurl}}/config-guide/log/log-intro.html">Custom logging</a> topic by adding more details and examples.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Describe what you can do with Magento's stock logger implementation and when you should extend it or implement your own.</li>

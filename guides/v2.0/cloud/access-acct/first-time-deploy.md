@@ -14,7 +14,7 @@ functional_areas:
 ---
 
 #### Previous step:
-[Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
+[Install Magento]({{ page.baseurl}}/cloud/before/before-setup-env-install.html)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You only need to complete this step one time for a new **Pro project**. This code is already on `master` for the Starter project. As a best practice, you need to have the template Magento Commerce project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
@@ -39,7 +39,7 @@ To deploy, you need the following:
 * SSH access to Staging and Production environments
 
 ## Enter a ticket {#ticket}
-If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl }}cloud/trouble/trouble.html).
+If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl}}/cloud/trouble/trouble.html).
 
 To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.
 
@@ -60,7 +60,7 @@ For the Pro plan, deploy the branch you created to Staging and Production.
 4. Select the Staging branch.
 5. Select the **Merge** option to deploy to Production.
 
-![Use the merge option to deploy]({{ site.baseurl }}common/images/cloud_project-merge.png)
+![Use the merge option to deploy]({{ site.baseurl}}/common/images/cloud_project-merge.png)
 
 ## Deploy using SSH {#ssh}
 If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.
@@ -97,7 +97,7 @@ For example,
 	git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
 ### Set up your SSH agent {#cloud-live-migrate-agent}
-You can use any SSH client you prefer or see our [Recommended tools]({{ page.baseurl }}cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
+You can use any SSH client you prefer or see our [Recommended tools]({{ page.baseurl}}/cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
 
 The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.
 
@@ -130,7 +130,7 @@ To set up an SSH agent:
 
 		  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 
-For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup.
+For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl}}/cloud/before/before-workspace-ssh.html) as part of your local setup.
 
 ### SSH and pull the Git branch {#git}
 
@@ -144,9 +144,3 @@ For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}
 
 ## You're ready to code! {#code}
 When this code is fully deployed to those environments, you can begin development, add extensions, and more!
-
-#### Related topics
-
-* [Cloud Architecture]({{ page.baseurl }}cloud/architecture/pro-architecture.html)
-* [Deploy your store]({{ page.baseurl }}cloud/live/stage-prod-live.html)
-* [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html)

@@ -93,7 +93,7 @@ All slashes must be escaped with `\\`.
 
 As a result of previous commands, a brand new fixture can be found in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture` directory.
 
-![A new Synonym fixture]({{site.baseurl}}common/images/ftf/mtf_tut_fixt.png)
+![A new Synonym fixture]({{site.baseurl}}/common/images/ftf/mtf_tut_fixt.png)
 
 The following is a code of the new Synonym fixture.
 
@@ -119,7 +119,7 @@ The following is a code of the new Synonym fixture.
 
 If we open a New Synonym Group page in a browser
 
-![New Synonym Group page]({{ site.baseurl }}common/images/ftf/mtf_tutorial_new_syn_ui.png)
+![New Synonym Group page]({{ site.baseurl}}/common/images/ftf/mtf_tutorial_new_syn_ui.png)
 
 we see that `store_id` and `website_id` are combined in the "Scope" fields. To set `store_id` and `website_id`, we have to perform some more logic than just entering the data. That's why we should use a [data source][].
 
@@ -127,7 +127,7 @@ The same field is present in Magento_Widget module. It means that data source ha
 
 Let's check the functional tests for the Magento_Widget module.
 
-![ScopeID data source alternative from Magento_Widget]({{ site.baseurl }}common/images/ftf/mtf_tutorial_storeIds-widget.png)
+![ScopeID data source alternative from Magento_Widget]({{ site.baseurl}}/common/images/ftf/mtf_tutorial_storeIds-widget.png)
 
 It contains a `StoreIds.php` data source, that is similar to what we need. It has the following code:
 
@@ -262,7 +262,7 @@ This data source:
 
 We should save it as `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
 
-![Synonym ScopeID data source location]({{site.baseurl}}common/images/ftf/mtf_tutorial_datasource.png)
+![Synonym ScopeID data source location]({{site.baseurl}}/common/images/ftf/mtf_tutorial_datasource.png)
 
 Now we should change the fixture. Instead of `store_id` and `website_id`, we must use `scope_id` with the `Magento\Search\Test\Fixture\Synonym\ScopeId` data source class.
 
@@ -363,7 +363,7 @@ Now we can create a [test case][].
 From the [test case topic][] we know about the structure, location and name of the test case.
 In this example it is named `CreateSynonymEntityTest.php` and stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase`.
 
- ![A test case location]({{site.baseurl}}common/images/ftf/mtf_tutorial_testcase_location.png)
+ ![A test case location]({{site.baseurl}}/common/images/ftf/mtf_tutorial_testcase_location.png)
 
 As a result of [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. The pages will be created in [Step 5][]. Also, we will use the fixture from the [Step 2][].
 
@@ -434,7 +434,7 @@ class CreateSynonymEntityTest extends Injectable
 
 Now we can add a [data set][] with variations that cover cases in the [test description][]: `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`
 
-![Created data set]({{site.baseurl}}common/images/ftf/mtf_tutor_dataset.png)
+![Created data set]({{site.baseurl}}/common/images/ftf/mtf_tutor_dataset.png)
 
 The following code contains a data set, but doesn't have data yet:
 
@@ -524,13 +524,13 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 
 {% endhighlight %}
 
-![Created pages]({{site.baseurl}}common/images/ftf/mtf_tutorial_pages.png)
+![Created pages]({{site.baseurl}}/common/images/ftf/mtf_tutorial_pages.png)
 
 To generate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes for these [pages][] enter and run in your terminal
 
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
 
-![PHP classes of pages]({{site.baseurl}}common/images/ftf/mtf_tutorial_pages_php.png)
+![PHP classes of pages]({{site.baseurl}}/common/images/ftf/mtf_tutorial_pages_php.png)
 
 In the next step we will create [blocks][] that implements logic in these pages.
 
@@ -581,15 +581,15 @@ Now you can run `generate.php` as we did before to re-generate page classes.
 
 We need to enter data from a data set into the form fields.
 
-![New Synonym Group page]({{site.baseurl}}common/images/ftf/mtf_tutorial_page_new_synonym.png)
+![New Synonym Group page]({{site.baseurl}}/common/images/ftf/mtf_tutorial_page_new_synonym.png)
 
 The `Block` directory in the Magento_Search module (in the Magento code) contains the `Adminhtml/Synonyms/Edit` directories, as shown below:
 
-![Block structure in a code base]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct.png)
+![Block structure in a code base]({{site.baseurl}}/common/images/ftf/mtf_tutorial_block_struct.png)
 
 The `Search/Test` directory in functional tests should be constructed in a similar manner:
 
-![Block structure in a functional test]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_struct_test.png)
+![Block structure in a functional test]({{site.baseurl}}/common/images/ftf/mtf_tutorial_block_struct_test.png)
 
 We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a mapping file.
 
@@ -634,7 +634,7 @@ class SynonymsForm extends Form
 
 Now we have the following structure:
 
-![Form mapping block]({{site.baseurl}}common/images/ftf/mtf_tutorial_block_mapping.png)
+![Form mapping block]({{site.baseurl}}/common/images/ftf/mtf_tutorial_block_mapping.png)
 
 
 Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}css{% endglossarytooltip %} selector.
@@ -895,7 +895,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be [up 
 
 The last item in the test description says that the test must check that a success message is displayed after the test flow completes.
 
-![Message about the successful save]({{site.baseurl}}common/images/ftf/mtf_tutorial_success_message.png)
+![Message about the successful save]({{site.baseurl}}/common/images/ftf/mtf_tutorial_success_message.png)
 
 To cover this, we should create the test assertion ([constraint][]) and add the full class name to a variation of the data set.
 
@@ -954,7 +954,7 @@ class AssertCustomerSuccessSaveMessage extends AbstractConstraint
 
 By making a simple change, we can create a constraint class that is needed `\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage`
 
-![A constraint location]({{site.baseurl}}common/images/ftf/mtf_tutorial_constraint_dir.png)
+![A constraint location]({{site.baseurl}}/common/images/ftf/mtf_tutorial_constraint_dir.png)
 
 with the following code:
 
@@ -1063,38 +1063,38 @@ That's it!
 
 <!-- LINK DEFINITIONS -->
 
-[install one]: {{page.baseurl}}install-gde/prereq/dev_install.html
+[install one]: {{page.baseurl}}/install-gde/prereq/dev_install.html
 [concrete Magento commit]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
 
 
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[data source]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
-[fixture repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[test case topic]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[injectable test]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[block]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
-[blocks]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
-[block mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[Learn about form mapping.]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[define a locator]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#define-a-selector
-[nodes description table]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
-[page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
-[pages]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
-[Page topic]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
-[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[custom typified element]: {{page.baseurl}}mtf/mtf_entities/mtf_typified-element.html#magento_class
+[fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html
+[data set]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
+[data source]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[fixture repository]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
+[test case topic]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
+[injectable test]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
+[block]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html
+[blocks]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html
+[block mapping]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[Learn about form mapping.]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[define a locator]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#define-selector
+[nodes description table]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
+[page]: {{page.baseurl}}/mtf/mtf_entities/mtf_page.html
+[pages]: {{page.baseurl}}/mtf/mtf_entities/mtf_page.html
+[Page topic]: {{page.baseurl}}/mtf/mtf_entities/mtf_page.html
+[constraint]: {{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html
+[custom typified element]: {{page.baseurl}}/mtf/mtf_entities/mtf_typified-element.html#magento_class
 
 
-[adjust a configuration]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html
-[prepare Magento application]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html
-[prepare environment for test run]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html
+[adjust a configuration]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_config.html
+[prepare Magento application]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_magento.html
+[prepare environment for test run]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_environment.html
 
-[`generateFixtureXml.php`]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
-[set data to a fixture field]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field
-[set data to a fixture field from a repository]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field_repository
-[`%isolation%` placeholder]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation
+[`generateFixtureXml.php`]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
+[set data to a fixture field]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html#fixture_field
+[set data to a fixture field from a repository]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html#fixture_field_repository
+[`%isolation%` placeholder]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation
 
 [manual testing]: #manual-test
 [test description]: #auto-test
@@ -1112,7 +1112,7 @@ That's it!
 [`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
 [`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
 [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
-[up and running]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
+[up and running]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->
 

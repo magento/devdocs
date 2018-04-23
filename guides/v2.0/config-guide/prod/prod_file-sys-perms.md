@@ -15,9 +15,9 @@ functional_areas:
 ---
 
 ## Overview of development and production file system ownership and permissions {#mage-owner}
-This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
-This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions]({{page.baseurl}}install-gde/prereq/file-system-perms.html).
+This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions]({{page.baseurl}}/install-gde/prereq/file-system-perms.html).
 
 The sections that follow discuss requirements for one or two Magento file system owners. That means:
 
@@ -105,7 +105,7 @@ If you use your own server (including a hosting provider's private server setup)
 	The command-line user is also referred to as the _Magento file system owner_.
 	</div>
 
-Because these users require access to the same files, we recommend you create a [shared group]({{page.baseurl}}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
+Because these users require access to the same files, we recommend you create a [shared group]({{page.baseurl}}/install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
 
 See one of the following sections:
 

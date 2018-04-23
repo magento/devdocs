@@ -87,7 +87,7 @@ Attribute|Type|Use|Description
 `name`|string|optional| A test identifier used while merging.
 `remove`|boolean|optional|Set `true` to remove the test when merging.
 
-`<test>` may also contain [`<annotations>`](.#annotations-tag), [`<before>`](#before-tag), [`<after>`](#after-tag), any [action](./test/actions.html), or [`<actionGroup>`](#actiongroup-tag).
+`<test>` may also contain [`<annotations>`](#annotations-tag), [`<before>`](#before-tag), [`<after>`](#after-tag), any [action](./test/actions.html), or [`<actionGroup>`](#actiongroup-tag).
 
 ### annotations {#annotations-tag}
 

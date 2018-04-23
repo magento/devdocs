@@ -10,7 +10,7 @@ functional_areas:
   - Configuration
 ---
 
-By default, {{site.data.var.ece}} writes build and deploy actions to a single file called `app/var/log/cloud.log` inside the Magento root application directory. Optionally, you can send logs to a messaging system, such as Slack and email, to receive real-time notifications.
+By default, {{site.data.var.ece}} writes build and deploy actions to the `app/var/log/cloud.log` file inside the Magento root application directory. Optionally, you can send logs to a messaging system, such as Slack and email, to receive real-time notifications.
 
 For example, you could send a Slack message to alert a group of people when a deployment fails, and prompt an investigation into what went wrong.
 
@@ -30,8 +30,8 @@ The configuration file used to set up notifications is at the root of your proje
 ## Configure notifications
 To configure notifications:
 
-1.  Open a terminal and [checkout a branch]({{page.baseurl}}cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
-1.  Locate [`.magento.env.yaml.sample`](https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml.sample){:target="\_blank"} in your project root and rename it `.magento.env.yaml`. The code in this file is commented out by default.
+1.  Open a terminal and [checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  Locate the `.magento.env.yaml.sample` file in your project root and rename it `.magento.env.yaml`. The code in this file is commented out by default.
 1.  Remove the code comments and add your messaging system settings, including preferred notification [log level](#log-levels).
 
     For example, to configure both Slack _and_ email configurations, use the following:

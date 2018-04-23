@@ -14,7 +14,7 @@ functional_areas:
   - Configuration
 ---
 
-SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{page.baseurl}}cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
+SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{page.baseurl}}/cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
 
 To use SSH, you need to:
 
@@ -69,7 +69,7 @@ To copy the SSH command:
 2.	Select an environment or branch to access.
 3.	Click **Access Site**.
 
-	![Find the SSH URL using the Web Interface]({{ site.baseurl }}common/images/cloud_project-access-starter.png)
+	![Find the SSH URL using the Web Interface]({{ site.baseurl}}/common/images/cloud_project-access-starter.png)
 
 4.	Click the clipboard button to copy the full SSH command to the clipboard.
 5.	Enter the command in a terminal window to SSH.
@@ -96,12 +96,12 @@ For the URLs, see the following:
 {% include cloud/ssh-tunnel.md %}
 
 ## sFTP to environments {#sftp}
-Typically, you want to use SSH for secure access to your environments and [migrate files]({{page.baseurl}}cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
+Typically, you want to use SSH for secure access to your environments and [migrate files]({{page.baseurl}}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
 
 You need the following requirements to sFTP into cloud environments:
 
 * You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
-* Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
+* Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
 
 
 When configuring sFTP, use your SSH public key and the following information for access:
@@ -121,11 +121,6 @@ To add your SSH public key information to your client:
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 
-For **Starter environments and Pro Integration environments**, you may also want to consider [adding a `mount`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{page.baseurl}}cloud/project/project-start.html). This mount point will only work in those environments.
+For **Starter environments and Pro Integration environments**, you may also want to consider [adding a mount]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{page.baseurl}}/cloud/project/project-start.html). This mount point will only work in those environments.
 
-For **Pro Staging and Production environments**, you need to enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to request sFTP access in those environments. We can then create a mount point and provide access to the specific `pub/media` folder.
-
-#### Related topics
-*	[Project structure]({{page.baseurl}}cloud/project/project-start.html)
-*	[Prepare for local environment setup]({{page.baseurl}}cloud/before/before-workspace.html)
-*	[Prepare to deploy to Staging and Production]({{page.baseurl}}cloud/live/stage-prod-migrate-prereq.html)
+For **Pro Staging and Production environments**, you need to enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to request sFTP access in those environments. We can then create a mount point and provide access to the specific `pub/media` folder.

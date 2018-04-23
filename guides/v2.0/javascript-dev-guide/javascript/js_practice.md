@@ -36,7 +36,7 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 <li>Select to view the page source.</li>
 <li>Search for the "Click on image to view it full sized" string. The illustration of the search result follows:
 <br>
-<img src="{{ site.baseurl }}common/images/fdg_js_pr1.png" alt="Page source search result">
+<img src="{{ site.baseurl}}/common/images/fdg_js_pr1.png" alt="Page source search result">
 </li>
 <li>View that it is output by <code>gallery.js</code>.
 
@@ -46,9 +46,9 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 
 We see that the script which OrangeCo needs to alter is `gallery.js`.
 
-To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html#config_file">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
+To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{page.baseurl}}/javascript-dev-guide/javascript/js_debug.html#locate_widget">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
 
-<img src="{{ site.baseurl }}common/images/fdg_pr_2.png" alt="RequireJS config file">
+<img src="{{ site.baseurl}}/common/images/fdg_pr_2.png" alt="RequireJS config file">
 
 <h3 id="add_code1">Step 2: Add the custom widget extending the gallery widget</h3>
 
@@ -141,4 +141,4 @@ var config = {
 </pre>
 
 ## Recommended reading ##
-<a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>
+<a href="{{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>

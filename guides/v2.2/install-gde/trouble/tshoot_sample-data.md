@@ -38,17 +38,17 @@ Error in the console log during sample data installation using the Setup Wizard:
 These exceptions result from file system permissions settings.
 
 #### Solution
-<a href="{{page.baseurl}}install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
+[Set file system ownership and permissions again]({{page.baseurl}}/config-guide/prod/prod_file-sys-perms.html) as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}
-If you're currently set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command:
+If you're currently set for [production mode]({{ page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl}}/install-gde/install/cli/install-cli-sample-data-composer.html) command:
 
 	PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /<path>/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /<path>/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
 
 #### Solution
 Don't install sample data in production mode. Switch to developer mode and clear some `var` directories and try again.
 
-Enter the following commands in the order shown as the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html):
+Enter the following commands in the order shown as the [Magento file system owner]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html):
 
 	cd <your Magento install dir>
 	php bin/magento deploy:mode:set developer
