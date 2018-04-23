@@ -24,7 +24,7 @@ We assume the following:
 
 	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-	Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
+	Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl}}/cloud/project/project-multi-sites.html).
 *	You use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`
 *	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial
 *	The Magento software is installed in `/var/www/html/magento2`
@@ -34,15 +34,15 @@ We assume the following:
 	*	`german.mysite.mg` with website code `german` and store view code `de`
 
     <div class="bs-callout bs-callout-tip" markdown="1">
-Refer to [Create websites]({{page.baseurl}}config-guide/multi-site/ms_websites.html#step-2-create-websites) and [Create store views]({{page.baseurl}}config-guide/multi-site/ms_websites.html#step-4-create-store-views) for help locating these values.
+Refer to [Create websites]({{page.baseurl}}/config-guide/multi-site/ms_websites.html#step-2-create-websites) and [Create store views]({{page.baseurl}}/config-guide/multi-site/ms_websites.html#step-4-create-store-views) for help locating these values.
     </div>
 
 ### Roadmap for setting up multiple websites with nginx
 Setting up multiple stores consists of the following tasks:
 
-1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+1.	[Set up websites, stores, and store views]({{ page.baseurl}}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
-3.  Pass the values of the [Magento variables]({{page.baseurl}}config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
+3.  Pass the values of the [Magento variables]({{page.baseurl}}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
 
     *   `$MAGE_RUN_TYPE` can be either `store` or `website`
 

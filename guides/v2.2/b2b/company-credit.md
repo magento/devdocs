@@ -19,8 +19,8 @@ Company credit allows company members to purchase items on credit. This is a fea
 
 The following diagram illustrates the process flow of orders using the Payment on Account method.
 
-![Payment on credit]({{page.baseurl}}b2b/images/payment-on-credit.png)
+![Payment on credit]({{page.baseurl}}/b2b/images/payment-on-credit.png)
 
 ## Related information
 
-[Manage company credit]({{page.baseurl}}b2b/credit-manage.html)
+[Manage company credit]({{page.baseurl}}/b2b/credit-manage.html)

@@ -17,9 +17,9 @@ This page is a compilation of frequently asked coding questions by the Magento C
 
 * [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)){:target="_blank"} - The essential principles needed to create maintainable and extendible code.
 * [PHP](http://php.net/){:target="_blank"} - This is the programming language used for developing Magento 2 code.
-* [HTML](https://en.wikipedia.org/wiki/HTML){:target="_blank"}, [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets){:target="_blank"}, and [JavaScript](https://www.javascript.com/){:target="_blank"} - Languages used for [frontend development]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html).
-* [Magento architecture]({{page.baseurl}}architecture/arch-basics.html) - Developers should be familiar with the architectural concepts used in Magento such as the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller){:target="_blank"} pattern and the [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html){:target="_blank"} principle.
-* [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) - An important {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} used in Magento to handle dependencies across classes and modules.
+* [HTML](https://en.wikipedia.org/wiki/HTML){:target="_blank"}, [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets){:target="_blank"}, and [JavaScript](https://www.javascript.com/){:target="_blank"} - Languages used for [frontend development]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html).
+* [Magento architecture]({{page.baseurl}}/architecture/arch-basics.html) - Developers should be familiar with the architectural concepts used in Magento such as the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller){:target="_blank"} pattern and the [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html){:target="_blank"} principle.
+* [Dependency Injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html) - An important {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} used in Magento to handle dependencies across classes and modules.
 
 
 ### In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?

@@ -33,12 +33,12 @@ To add a custom favicon in the Magento Admin, do the following:
 1. Navigate to **CONTENT** > (**Design**) **Configuration**. 
 2. In the scope grid, decide on which level you will configure the favicon and click **Edit**     in the corresponding row.
    
-   <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/favicon_2_21.png">
+   <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}/common/images/favicon_2_21.png">
    
 3. Under the **Other Settings** title, expand the **HTML Head** options.
 4. Next to **Favicon Icon**, click **Upload**, and select the file.
    
-   <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/favicon_1_21.png">
+   <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}/common/images/favicon_1_21.png">
    
 5. Click **Save Configuration** in the upper right corner to save the changes.
 

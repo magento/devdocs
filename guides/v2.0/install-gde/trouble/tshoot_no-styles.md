@@ -23,6 +23,6 @@ Magento static assets should be located under `<your Magento install dir>/pub/st
 
 ### Solution
 
-*	Verify your <a href="{{page.baseurl}}install-gde/prereq/apache.html#apache-help-rewrite">Apache server rewrites</a> setting and your Magento server's base URL and try again. If you set up the `AllowOverride` directive incorrectly, {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} aren't served from the correct location.
+*	Verify your <a href="{{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite">Apache server rewrites</a> setting and your Magento server's base URL and try again. If you set up the `AllowOverride` directive incorrectly, {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} aren't served from the correct location.
 
-*	If the Magento application is in <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, try deploying static view files using the command <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">`magento setup:static-content:deploy`</a>.
+*	If the Magento application is in <a href="{{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, try deploying static view files using the command <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html">`magento setup:static-content:deploy`</a>.

@@ -20,7 +20,7 @@ functional_areas:
 Magento 2 supports versions 3.0.5 or later or any Varnish 4.x version.
 
 <div class="bs-callout bs-callout-warning">
-    <p>We <em>strongly recommend</em> you use Varnish (or <a href="{{page.baseurl}}/config-guide/redis/redis-pg-cache.html">Redis</a>) in production. The built-in full-page caching (to either the file system or <a href="{{page.baseurl}}config-guide/cache/caching-database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
+    <p>We <em>strongly recommend</em> you use Varnish (or <a href="{{page.baseurl}}/config-guide/redis/redis-pg-cache.html">Redis</a>) in production. The built-in full-page caching (to either the file system or <a href="{{page.baseurl}}/config-guide/cache/caching-database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
 </div>
 
 For more information about Varnish, see:
@@ -33,7 +33,7 @@ For more information about Varnish, see:
 <h2 id="varnish-arch">Varnish topology diagram</h2>
 The following figure shows a basic view of Varnish in your Magento topology.
 
-<img src="{{ site.baseurl }}common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
+<img src="{{ site.baseurl}}/common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
 
 In the preceding figure, users' HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server.
 
@@ -84,4 +84,4 @@ We know of the following issues with Varnish:
 		}
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
+<a href="{{page.baseurl}}/config-guide/varnish/config-varnish-install.html">Install Varnish</a>

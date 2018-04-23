@@ -33,7 +33,7 @@ where
 
 *  `urn:magento` is the URN identifier
 *  `module` is the reference type identifier
-*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php]({{page.baseurl}}extension-dev-guide/build/component-registration.html) file.
+*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) file.
 * `flows/content.xsd` is the relative path to the module&#8217;s directory.
 
 
@@ -75,4 +75,4 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 
 
 #### Next
-[Name your component]({{page.baseurl}}extension-dev-guide/build/create_component.html)
+[Name your component]({{page.baseurl}}/extension-dev-guide/build/create_component.html)

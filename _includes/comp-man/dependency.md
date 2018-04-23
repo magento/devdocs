@@ -34,7 +34,7 @@ If the Magento file system owner doesn't have permissions to write to directorie
 	file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
 	packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permission denied
 
-Make sure you set file system permissions as discussed in [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+Make sure you set file system permissions as discussed in [Overview of ownership and permissions]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 ### The Component Dependency Check status never changes {#trouble-depend-state}
 In some cases, the status of the Component Dependency Check doesn't change, even after you try to correct issues. In that case, you can either delete or rename files named `<your Magento install dir>/var/.update_cronjob_status` and `<your Magento install dir>/var/.setup_cronjob_status` and try running the Component Manager again.

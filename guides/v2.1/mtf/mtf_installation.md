@@ -19,13 +19,13 @@ Follow the next three steps:
 ## Check pre-installation conditions {#mtf_install_pre}
 
 ### Install the Magento application {#mtf_install_pre_inst-magento}
-To install the Magento application, see <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Magento Installation Guide</a>.
+To install the Magento application, see <a href="{{page.baseurl}}/install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
 ### Check if all required software installed and configured {#mtf_install_pre_tools}
 
 #### PHP {#mtf_install_pre_tools_php}
 
-For more details about PHP verification, installation and configuration (<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="{{page.baseurl}}install-gde/prereq/php-centos.html">CentOS</a>).
+For more details about PHP verification, installation and configuration (<a href="{{page.baseurl}}/install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="{{page.baseurl}}/install-gde/prereq/php-centos.html">CentOS</a>).
 
 <div class="bs-callout bs-callout-warning">
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
@@ -41,11 +41,11 @@ For more details about PHP verification, installation and configuration (<a href
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2_root_dir>/dev/tests/functional/composer.json`.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're not sure that Composer is installed, see <a href="{{page.baseurl}}install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
+  <p>If you're not sure that Composer is installed, see <a href="{{page.baseurl}}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
 </div>
 
-1.    <a href="{{page.baseurl}}install-gde/basics/basics_login.html">Open a command prompt</a>.
-1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
+1.    <a href="{{page.baseurl}}/install-gde/basics/basics_login.html">Open a command prompt</a>.
+1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
 
     cd <magento2_root_dir>/dev/tests/functional/
     composer install
@@ -76,4 +76,4 @@ Find the `mtf` directory.
 
 Open `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
-<h2 id="mtf_install_next">Next Steps</h2> <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a>
+<h2 id="mtf_install_next">Next Steps</h2> <a href="{{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a>

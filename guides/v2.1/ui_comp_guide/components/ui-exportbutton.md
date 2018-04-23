@@ -18,7 +18,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{site.mage22
 
 ## ExportButton configuration
 
-Extends all [UiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+Extends all [UiElement]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 ExportButton-specific configuration:
 

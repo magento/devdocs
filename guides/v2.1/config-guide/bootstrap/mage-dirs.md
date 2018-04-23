@@ -23,7 +23,7 @@ Specify an associative array where keys are constants from <a href="{{ site.mage
 
 You can set `MAGE_DIRS` in any of the following ways:
 
-*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
+*	<a href="{{page.baseurl}}/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
 *	Use a custom entry point script such as the following:
 
 	{% highlight php startinline=true %}

@@ -16,13 +16,13 @@ The topic describes how to install, configure and use [Grunt JavaScript task run
 ## Prerequisites
 
 
-- Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
-- Install and configure Grunt as described in [Using Grunt for Magento tasks]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html)
+- Make sure that you [set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html).
+- Install and configure Grunt as described in [Using Grunt for Magento tasks]({{page.baseurl}}/frontend-dev-guide/tools/using_grunt.html)
 
 
 ## Adding themes to Grunt configuration {#add_theme}
 
-To be able to perform `.less` files compilation, you need to add your them to Grunt configuration. To do this, in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html#grunt_config), add your theme to `module.exports` like following:
+To be able to perform `.less` files compilation, you need to add your them to Grunt configuration. To do this, in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{page.baseurl}}/frontend-dev-guide/tools/using_grunt.html#grunt_config), add your theme to `module.exports` like following:
 
 {%highlight js%}
 module.exports = {
@@ -45,7 +45,7 @@ where the following notation is used:
 
 * `%theme%`: your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} code, conventionally should correspond to the theme directory name.
 * `%language%`: specified in the 'code_subtag' format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `%language%`.
-* `%path_to_file%`: path to the root source file, relative to the `app/design/frontend/%Vendor%/%theme%/web` directory. You need to specify all [root source files of the theme]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+* `%path_to_file%`: path to the root source file, relative to the `app/design/frontend/%Vendor%/%theme%/web` directory. You need to specify all [root source files of the theme]({{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
 ## Grunt commands {#grunt_commands}
 
@@ -133,11 +133,11 @@ When using Grunt for styles preprocessing, you can enable the CSS source maps ge
 
 For each theme, Magento compliles all theme `.less` files into two CSS files: `styles-m.css` and `styles-l.css`. So when you debug a theme, you browser only sees `styles-m.css` and it might be difficult to define which exactly `.css` or `.less` file requires corrections. For example:
 
-![node declaration autocomplete]({{site.baseurl}}common/images/fdg/no-map.png){:width="610px"}
+![node declaration autocomplete]({{site.baseurl}}/common/images/fdg/no-map.png){:width="610px"}
 
 CSS source maps solve this issue. They help to find the `.less` file, where the style is specified. For example:
 
-![node declaration autocomplete]({{site.baseurl}}common/images/fdg/with-map.png){:width="610px"}
+![node declaration autocomplete]({{site.baseurl}}/common/images/fdg/with-map.png){:width="610px"}
 
 CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable source maps displaying in your browser.
 

@@ -11,12 +11,12 @@ functional_areas:
   - Integration
 ---
 
-You can define whether the payment method is available for the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} in the [payment method configuration in `config.xml`]({{page.baseurl}}payments-integrations/base-integration/payment-option-config.html):
+You can define whether the payment method is available for the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} in the [payment method configuration in `config.xml`]({{page.baseurl}}/payments-integrations/base-integration/payment-option-config.html):
 
 - `can_use_checkout`: whether {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} is available in storefront checkout
 - `can_use_internal`: whether payment method is available in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation 
 
-If your payment flow should be different for storefront and Admin panel, you can use a separate DI configuration for each [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html#magento-area-types):
+If your payment flow should be different for storefront and Admin panel, you can use a separate DI configuration for each [area]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html#magento-area-types):
 
 - `%Vendor_Module%/etc/adminhtml/di.xml`: DI configuration for the Admin panel
 - `%Vendor_Module%/etc/frontend/di.xml`: DI configuration for the storefront

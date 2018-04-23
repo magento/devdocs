@@ -20,7 +20,7 @@ The following properties are used for linking observable properties and methods 
 
 These properties are processed by the `initLinks()` method of the [`uiElement` class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
 
-Linking properties are set in [UI components configuration files]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
+Linking properties are set in [UI components configuration files]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
 
 ## List of linking properties 
 

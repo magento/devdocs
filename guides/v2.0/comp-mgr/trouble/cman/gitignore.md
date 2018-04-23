@@ -17,12 +17,12 @@ If you downloaded a compressed archive, there might have been missing `.gitignor
 
 The following figure shows an example of this issue when using the Setup Wizard.
 
-<img src="{{ site.baseurl }}common/images/upgr_gitignore-err.png" width="700px">
+<img src="{{ site.baseurl}}/common/images/upgr_gitignore-err.png" width="700px">
 
 #### Solution
 To solve this issue:
 
-1.	Log in to your Magento server as the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to your Magento installation directory.
 3.	Run the following commands in the order shown:
 

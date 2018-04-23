@@ -17,7 +17,7 @@ The readiness check makes sure your server and environment are set up correctly 
 <h2 id="compman-readiness-start">Start the readiness check</h2>
 To start, click either **Start Readiness Check** or **Next** on the System Upgrade page. A sample follows.
 
-<img src="{{ site.baseurl }}common/images/upgr_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed">
+<img src="{{ site.baseurl}}/common/images/upgr_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed">
 
 {% include comp-man/readiness-check.md %}
 

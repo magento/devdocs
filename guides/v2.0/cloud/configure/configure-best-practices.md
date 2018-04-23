@@ -63,7 +63,7 @@ The following provides an example of creating a Price Rule for a First Order Onl
 This ensures net-new customers or existing customers who have not made a purchase receive the discount only on their very first order. You could create banners and send email promotions for the first time purchase discount.
 
 ## Understanding websites, stores, and store views {#sites}
-Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{page.baseurl}}cloud/project/project-multi-sites.html).
+Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{page.baseurl}}/cloud/project/project-multi-sites.html).
 
 You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.
 
@@ -74,10 +74,10 @@ You can further create _store views_ for different languages, layouts, and desig
 The following are examples to better explain:
 * Single website with one store and two views for Engligh and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
 
-  ![Store example 1]({{ site.baseurl }}common/images/cloud_example-store1.png)
+  ![Store example 1]({{ site.baseurl}}/common/images/cloud_example-store1.png)
 * Single website with Store A for women's clothing with two views for English and Spanish, and Store B for children's clothing with a single store view in English. All article data, customers, checkout, and shopping cart are shared. The stores may have different domains and themes.
 
-  ![Store example 2]({{ site.baseurl }}common/images/cloud_example-store2.png)
+  ![Store example 2]({{ site.baseurl}}/common/images/cloud_example-store2.png)
 * Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
 
-  ![Store example 3]({{ site.baseurl }}common/images/cloud_example-store3.png)
+  ![Store example 3]({{ site.baseurl}}/common/images/cloud_example-store3.png)

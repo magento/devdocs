@@ -19,10 +19,10 @@ functional_areas:
 <h2>What's in this topic</h2>
 For a particular page, its {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is defined by two major layout components: *page layout* file and *page configuration* file. 
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Page layouts feature only <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Page layouts feature only <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
-Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
+Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
 
 We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
 
@@ -33,10 +33,10 @@ Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code
 
 Allowed layout instructions:
 
-* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont" target="_blank">&nbsp;&lt;container&gt;</a>
-* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">&nbsp;&lt;referenceContainer&gt;</a>
-* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">&nbsp;&lt;move&gt;</a>
-* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank">&nbsp;&lt;update&gt;</a> 
+* <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont" target="_blank">&nbsp;&lt;container&gt;</a>
+* <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">&nbsp;&lt;referenceContainer&gt;</a>
+* <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">&nbsp;&lt;move&gt;</a>
+* <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank">&nbsp;&lt;update&gt;</a> 
 
 Sample page layout:
 
@@ -123,7 +123,7 @@ Conventionally page configuration files must be located as follows:
 
 <h3>Page configuration structure and allowed layout instructions</h3>
 
-The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 
 <table>
   <tbody>
@@ -404,7 +404,7 @@ Conventionally generic layout files must be located as follows:
 
 <h3>Generic layout structure and allowed layout instructions</h3>
 
-The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 
 <table>
   <tbody>
@@ -457,7 +457,7 @@ none
       <td colspan="1">
 <ul>
 <li><code>name="root"</code></li>
-<li>For complete list of attributes, see <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
+<li>For complete list of attributes, see <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
 </ul>
 </td>
       <td colspan="1">

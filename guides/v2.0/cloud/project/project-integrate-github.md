@@ -42,11 +42,11 @@ To generate a token:
 
 	The following figure shows an example of creating a token that can be used to integrate with a private repository to which you have write access:
 
-	![Create a GitHub token for a private repository]({{ site.baseurl }}common/images/cloud_github-token.png){:width="600px"}
+	![Create a GitHub token for a private repository]({{ site.baseurl}}/common/images/cloud_github-token.png){:width="600px"}
 6.	Click **Generate token**.
 7.	Copy the token to the clipboard.
 
-	![Create a GitHub token for a private repository]({{ site.baseurl }}common/images/cloud_github-token-copy.png){:width="600px"}
+	![Create a GitHub token for a private repository]({{ site.baseurl}}/common/images/cloud_github-token-copy.png){:width="600px"}
 
 ## Enable the GitHub integration {#cloud-int-gh-enable}
 This section discusses how to enable the GitHub integration.
@@ -101,11 +101,11 @@ To add the webhook to your GitHub repository:
 
 1.	In your GitHub repository, click **Settings** as the following figure shows.
 
-	![Go to your GitHub's account settings]({{ site.baseurl }}common/images/cloud_github-acct-settings.png){:width="650px"}
+	![Go to your GitHub's account settings]({{ site.baseurl}}/common/images/cloud_github-acct-settings.png){:width="650px"}
 2.	In the left navigation bar, click **Webhooks & services**.
 3.	In the right pane, click **Add webhook** as the following figure shows.
 
-	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook.png){:width="650px"}
+	![Add the webhook to your account]({{ site.baseurl}}/common/images/cloud_github-acct-webhook.png){:width="650px"}
 4.	Enter the following information:
 
 	*	**Payload URL**: Enter the URL displayed by the command in the preceding section.
@@ -116,7 +116,7 @@ To add the webhook to your GitHub repository:
 
 	The following figure shows an example:
 
-	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook2.png){:width="650px"}
+	![Add the webhook to your account]({{ site.baseurl}}/common/images/cloud_github-acct-webhook2.png){:width="650px"}
 5.	Click **Add webhook**
 
 ## Verify it works {#cloud-int-gh-verify}
@@ -127,5 +127,5 @@ To verify the integration works:
 
 
 #### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
+*	[Get started with a project]({{page.baseurl}}/cloud/project/project-start.html)
+*	[`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)

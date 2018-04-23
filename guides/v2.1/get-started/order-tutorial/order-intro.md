@@ -31,8 +31,8 @@ The sample data defines a functional store, called Luma, that sells fitness clot
 
 * Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/){:target="_blank"} is recommended.
 
-* Know how to construct a REST call in Magento. See [Construct a request]({{page.baseurl}}get-started/gs-web-api-request.html) for details.
+* Know how to construct a REST call in Magento. See [Construct a request]({{page.baseurl}}/get-started/gs-web-api-request.html) for details.
 
-* Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs](http://devdocs.magento.com/swagger/){:target="_blank"} or [generate a local API reference]({{page.baseurl}}rest/generate-local.html).
+* Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs](http://devdocs.magento.com/swagger/){:target="_blank"} or [generate a local API reference]({{page.baseurl}}/rest/generate-local.html).
 
 * Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}} 2.1](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.

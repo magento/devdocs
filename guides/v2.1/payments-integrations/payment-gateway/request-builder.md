@@ -25,7 +25,7 @@ The concatenation strategy is defined in the `BuilderComposite::merge()` method.
 
 ## Adding a builder composite 
 
-Builder composites are added using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) in `di.xml`. A builder composite might comprise simple builders as well as other builder composites.
+Builder composites are added using [dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html) in `di.xml`. A builder composite might comprise simple builders as well as other builder composites.
 
 Example of adding composite builders for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml`]({{site.mage2100url}}app/code/Magento/Braintree/etc/di.xml)):
 

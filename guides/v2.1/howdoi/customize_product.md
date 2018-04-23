@@ -16,7 +16,7 @@ This topic describes how developers can customize the product creation form used
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
-<img src="{{site.baseurl}}common/images/product_pmg.png" alt="The product creation page in Admin">
+<img src="{{site.baseurl}}/common/images/product_pmg.png" alt="The product creation page in Admin">
 
 ## Overview
 
@@ -27,7 +27,7 @@ Product attributes and attribute sets available in the form, can be customized a
 
 ## Prerequisites
 
-[Set Magento to developer mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
+[Set Magento to developer mode]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.
 
@@ -108,7 +108,7 @@ For reference, view the product form configuration files of the Magento modules:
 
 ## Customize using a modifier class {#modifier}
 
-[Modifier classes]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html) should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.
+[Modifier classes]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_modifier_concept.html) should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.
 
 In the run time, the form structure set in the modifier is merged with the configuration that comes from the `product_form.xml` configuration.
 
@@ -224,6 +224,6 @@ For reference about setting conditions for displaying certain elements for certa
 
 ## Recommended reading:
 
- - [Form UI component]({{page.baseurl}}ui_comp_guide/components/ui-form.html)
- - [About PHP modifiers in UI components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html)
- - [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
+ - [Form UI component]({{page.baseurl}}/ui_comp_guide/components/ui-form.html)
+ - [About PHP modifiers in UI components]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)
+ - [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)

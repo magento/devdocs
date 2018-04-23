@@ -189,16 +189,16 @@ Where:
 ---
 
 **Next:**
-[Define your configuration files]({{page.baseurl}}extension-dev-guide/build/required-configuration-files.html)
+[Define your configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html)
 
 [0]: https://getcomposer.org/
-[1]: {{page.baseurl}}comp-mgr/compman-start.html
+[1]: {{page.baseurl}}/comp-mgr/compman-start.html
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
 [4]: https://www.iso.org/iso-639-language-codes.html
 [5]: http://docs.magento.com/marketplace/user_guide/getting-started-seller.html
 [6]: https://marketplace.magento.com/
 [7]: https://marketplace.magento.com
-[8]: {{page.baseurl}}extension-dev-guide/package/package_module.html#package-metapackage
+[8]: {{page.baseurl}}/extension-dev-guide/package/package_module.html#package-metapackage
 [9]: https://getcomposer.org/doc/03-cli.md#create-project
-[10]: {{page.baseurl}}install-gde/prereq/integrator_install.html
+[10]: {{page.baseurl}}/install-gde/prereq/integrator_install.html
