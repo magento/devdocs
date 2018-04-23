@@ -103,6 +103,30 @@ pre-install.php                 // Script that checks the environment on whether
 - Allure formatted XML results
 - Allure report dashboard of results
 
+## MFTF Module Test and Data Paths
+
+The MFTF supports three different paths to allow test writers to store their tests and test materials:
+* `/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/<Module>`
+* `/app/code/Magento/<Module>/Test/Mftf`
+* `/vendor/<Module>/Test/Mftf`
+
+All tests and test data are merged in the above order. The structure inside these paths also needs to follow the usual expected MFTF structure:
+```
+<Path>
+├── ActionGroup
+│   └── ...
+├── Data
+│   └── ...
+├── Metadata
+│   └── ...
+├── Page
+│   └── ...
+├── Section
+│   └── ...
+└── Test
+    └── ...
+```
+
 ## MFTF on Github
 
 Follow the [MFTF project](https://github.com/magento/magento2-functional-testing-framework) and [contribute on Github](../contribution-guidelines.html).
