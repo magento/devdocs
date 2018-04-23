@@ -309,12 +309,29 @@ pages:
           url: /config-guide/elasticsearch/configure-magento.html
 
     - label: Message Queues (Magento Commerce only)
+      versions: ["2.0","2.1", "2.2"]
       url: /config-guide/mq/rabbitmq-overview.html
       children:
 
         - label: Manage message queues
           url: /config-guide/mq/manage-mysql.html
 
+    - label: Message Queues
+      versions: ["2.3"]
+      url: /config-guide/mq/rabbitmq-overview.html
+      children:
+
+        - label: Manage message queues
+          url: /config-guide/mq/manage-mysql.html
+
+
+    - label: Message Queues
+      versions: ["2.3"]
+      url: /config-guide/mq/rabbitmq-overview.html
+      children:
+
+        - label: Manage message queues
+          url: /config-guide/mq/manage-mysql.html
 
     - label: Install and configure Solr (Magento Commerce only)
       versions: ["2.0","2.1"]
