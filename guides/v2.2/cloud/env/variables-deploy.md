@@ -80,7 +80,7 @@ You can forcefully enable or disable the deployment of static content during the
 -  **Default**—`enterprise`
 -  **Version**—Available in all versions
 
-We manage the values and setting of this variable. It identifies the type of environment: Integration, Staging, or Production. The `enterprise` value indicates a Staging and Production environment and sets the `STATIC_CONTENT_THREADS` to `3`; otherwise, sets it to `1` for Integration. This is highly important for Pro Production environment, which has a three-node, high-availability architecture with a very different technology stack.
+We manage the values and setting of this variable. It identifies the type of environment: Integration, Staging, or Production. The `enterprise` value indicates a Staging and Production environment and sets the `STATIC_CONTENT_THREADS` to `3`; otherwise, sets it to `1` for Integration. This is highly important for Pro Production environments, which have a three-node, high-availability architecture with a very different technology stack.
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -132,7 +132,7 @@ stage:
         REDIS_USE_SLAVE_CONNECTION: true
 ```
 
-You must have a Redis service configured in the `.magento.app.yaml` file and in the `service.yaml` file.
+You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
 The slave connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
