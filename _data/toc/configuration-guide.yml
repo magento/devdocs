@@ -309,7 +309,7 @@ pages:
           url: /config-guide/elasticsearch/configure-magento.html
 
     - label: Install and configure Elasticsearch
-      versions: [2.3"]
+      versions: ["2.3"]
       url: /config-guide/elasticsearch/es-overview.html
       children:
 
