@@ -128,8 +128,8 @@ Magento can read multiple Redis instances asynchronously. Set to `true` to autom
 
 ```
 stage:
-    deploy:
-        REDIS_USE_SLAVE_CONNECTION: true
+  deploy:
+    REDIS_USE_SLAVE_CONNECTION: true
 ```
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
