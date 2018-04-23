@@ -75,6 +75,11 @@ vendor/bin/robo build:project
 ```bash
 vendor/bin/robo generate:tests
 ```
+#### Generate specified Tests in PHP:
+
+```bash
+$ vendor/bin/robo generate:tests testName01 testName02 testName03
+```
 
 #### Run all tests marked with the @group tag `example`, using the Chrome environment:
 
@@ -180,12 +185,58 @@ vendor/bin/robo allure2:report
 #### generate
 
 Generate PHP code from the tests defined in XML files.
+
 Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
 
-`generate:tests`   | Generate all tests based on specific module load order of the Magento instance
+`generate:tests`   | Generate all tests and suites based on specific module load order of the Magento instance
+`generate:tests <testName>`   | Generates only the specified test. Cannot be used to generate tests that are part of suites.
 `generate:tests --force`   | Generate all tests regardless of whether a Magento instance is available
 `generate:tests --config singleRun`   | Generate all tests and a manifest file, which is `_generated/testManifest.txt`. The file contains only a path to the directory with generated tests. 
-`generate:tests --config parallel --nodes <number of nodes>`   | Generate all tests and a directory with manifest files, which is `_generated/groups/`. The number of files corresponds to the number of nodes. Each file contains a proportional list of tests ordered across files from largest to smallest (based on number of actions).
+`generate:tests --config parallel --lines <number of lines>`   | Generate all tests and a directory with manifest files under `_generated/groups/`. The number of manifests corresponds to the number of nodes required. Each manifest file contains a proportional list of tests sorted and group based on the desired line limit passed to the command.
+`generate:tests --tests "<json configuration>"`   | Generates only the tests and suites in the specified json configuration.
+`generate:suite <suiteName>`   | Generates only the specific suite.
+
+##### generate:tests --tests json examples
+To generate only a single test and no suites:
+```json
+{  
+   "tests":[
+      "general_test1"
+      ],
+   "suites": null         // Null value for suites denotes a no-op, so no suites would be generated.
+}
+```
+To generate only a single test that is contained in a suite:
+```json
+{  
+   "tests": null,         // Null value for tests denotes a no-op, so no tests outside suite configuration would be generated.
+   "suites":{  
+      "sample":[  
+         "suite_test1"    //To generate only "suite_test1"
+      ]
+   }
+}
+```
+Mixed configuration to generate some tests, a single test in a suite, and an entire suite:
+```json
+{  
+   "tests":[  
+      "general_test1",
+      "general_test2",
+      "general_test3"
+   ],
+   "suites":{  
+      "sample":[  
+         "suite_test1"    //To generate only "suite_test1"
+      ],
+      "sample2":[]        //To generate all tests in suite "sample2"
+   }
+}
+```
+The above json configuration strings must also be escaped and surrounded in quotes, making the whole command:
+```
+robo generate:tests --tests "{\r\n\"tests\":[\r\n\"general_test1\",\r\n\"general_test2\",\r\n\"general_test3\"\r\n],\r\n\"suites\":{\r\n\"sample\":[\r\n\"suite_test1\"\r\n],\r\n\"sample2\":null\r\n}\r\n}"
+```
 
 #### self
 
