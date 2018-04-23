@@ -9,7 +9,7 @@ functional_areas:
 mftf-release: 2.1.2
 ---
 
-The _*.env_ file provides additional configuration of the MFTF.
+The _*.env_ file provides additional configuration of the Magento Functional Testing Framework (MFTF).
 All MFTF users will need to set the basic configuration values.
 Advanced users may need to set additional values to work with their environment.
 
@@ -45,12 +45,12 @@ These basic configuration values are required and must be set by the user before
 
 In most cases, these values are not required.
 Sensible defaults are in place.
-But in case you do need to configure, here they are.
+But in case you do need to do some configuration, they are shown here for your reference.
 
 ### SELENIUM
 
 The `SELENIUM_*` values are concatenated together to form the URL of a custom Selenium server to test against.
-An example use for these would be in case you wanted to run your tests against Saucelabs or any other external Selenium source instead of your local machine.
+An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.
 
 ```config
 SELENIUM_HOST
@@ -85,8 +85,7 @@ SELENIUM_PATH
 
 ### MAGENTO_RESTAPI
 
-Optional.
-These `MAGENTO_RESTAPI_*` values can be used in cases where your Magento instance has a different API path than the standard `MAGENTO_BASE_URL`.
+These `MAGENTO_RESTAPI_*` values are optional and can be used in cases where your Magento instance has a different API path than the standard `MAGENTO_BASE_URL`.
 
 ```config
 MAGENTO_RESTAPI_SERVER_HOST
@@ -108,7 +107,7 @@ MAGENTO_RESTAPI_SERVER_PORT
 ### TESTS
 
 These values can be used in cases where you are working locally on both MFTF's implementation code and Magento's test case code.
-In other words, if you have a more advanced local development setup probably involving symlinking MFTF into the `vendor` directory of `magento2`.
+Use them if you have a more advanced local development setup involving symlinking MFTF into the `vendor` directory of `magento2`.
 
 ```config
 TESTS_BP

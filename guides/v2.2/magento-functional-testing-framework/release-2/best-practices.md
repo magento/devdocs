@@ -18,7 +18,7 @@ Check out our best practices below to ensure you're getting the absolute most ou
 
 ### File names
 
-Name files according to the following patterns to make future search more easy:
+Name files according to the following patterns to make searching in future more easy:
 
 #### Test file name
 
@@ -40,7 +40,7 @@ Example: _ProductData.xml_.
 
 ### Object names
 
-Use the _Foo.camelCase_ naming style which is similar to _Classes_ and _classProperties_ in PHP.
+Use the _Foo.camelCase_ naming convention, which is similar to _Classes_ and _classProperties_ in PHP.
 
 #### Upper case
 
@@ -59,12 +59,12 @@ Use a lower case first letter for:
 
 ## Test
 
-1. Use actions such as [waitForElementVisible], [waitForLoadingMaskToDisappear], [waitForElement] and so on to wait the exact time required for the action.
- Try to avoid using the [wait] action, because it forces the test to ALWAYS wait for the time you specify. You may not need to wait so long to proceed.
+1. Use actions such as [`<waitForElementVisible>`], [`<waitForLoadingMaskToDisappear>`], and [`<waitForElement>`] to wait the exact time required for the test step.
+ Try to avoid using the [`<wait>`] action, because it forces the test to wait for the time you specify. You may not need to wait so long to proceed.
 2. Keep your tests short and granular for target testing, easier reviews, and easier merge conflict resolution.
- It also helps you to identify a cause of test failure.
+ It also helps you to identify the cause of test failure.
 3. Use comments to keep tests readable and maintainable:
-  * Keep the inline `<!-- XML comments -->` and [comment] tags up to date.
+  * Keep the inline `<!-- XML comments -->` and [`<comment>`] tags up to date.
   It helps to inform the reader of what you are testing and to yield a more descriptive Allure report.
   * Explain in comments unclear or tricky test steps.
 4. Refer to [sections] instead of writing selectors.
@@ -82,14 +82,14 @@ Use a lower case first letter for:
  
 ## Data entity
 
-1. Keep clean your instance under test.
- Remove data after test if the test required creating any data.
- Use a corresponding [deleteData] test step in your [after] block when using a [createData] action in a [before] block.
+1. Keep your testing instance clean.
+ Remove data after the test if the test required creating any data.
+ Use a corresponding [`<deleteData>`] test step in your [`<after>`] block when using a [`<createData>`] action in a [`<before>`] block.
 2. Make specific data entries under test to be unique.
  Enable data uniqueness where data values are required to be unique in a database by test design. 
  Use `unique=”suffix”` or `unique=”prefix”` to append or prepend a unique value to the [entity] attribute.
  This ensures that tests using the entity can be repeated.
-3. Do not modify existing data entity fields as well as add or merge additional data fields without complete understanding and verifying usage of existing data in tests.
+3. Do not modify existing data entity fields or merge additional data fields without complete understanding and verifying the usage of existing data in tests.
  Create a new data entity for your test if you are not sure.
 
 ## Page object
@@ -123,17 +123,17 @@ Since the configurable product module could be disabled, this approach is more r
 <!-- Link definitions -->
 
 [Action group]: test/action-groups.html
-[after]: test/actions.html#before-and-after
+[`after`]: test/actions.html#before-and-after
 [annotations]: test/annotations.html
-[before]: test/actions.html#before-and-after
-[comment]: test/actions.html#comment
-[createData]: test/actions.html#createdata
-[deleteData]: test/actions.html#deletedata
+[`before`]: test/actions.html#before-and-after
+[`<comment>`]: test/actions.html#comment
+[`<createData>`]: test/actions.html#createdata
+[`<deleteData>`]: test/actions.html#deletedata
 [entity]: data.html
 [merging]: merging.html
 [parameterized selectors]: section/parameterized-selectors.html
 [sections]: section.html
-[wait]: test/actions.html#wait
-[waitForElement]: test/actions.html# waitforelement
-[waitForElementVisible]: test/actions.html#waitforelementvisible
-[waitForLoadingMaskToDisappear]: test/actions.html#waitforloadingmasktodisappear
+[`<wait>`]: test/actions.html#wait
+[`<waitForElement>`]: test/actions.html# waitforelement
+[`<waitForElementVisible>`]: test/actions.html#waitforelementvisible
+[`<waitForLoadingMaskToDisappear>`]: test/actions.html#waitforloadingmasktodisappear
