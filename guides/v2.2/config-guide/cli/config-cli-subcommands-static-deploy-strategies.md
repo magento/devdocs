@@ -19,7 +19,7 @@ functional_areas:
 
 ## Overview
 
-When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies. Each of them provides optimal deployment results for different use cases:
+When [deploying static view files]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies. Each of them provides optimal deployment results for different use cases:
 
 *   [Standard](#static-file-standard): the regular deployment process.
 *   [Quick](#static-file-quick) (_default_): minimizes the time required for deployment when files for more than one {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} are deployed.
@@ -30,7 +30,7 @@ The following sections describe the implementation details and features of each 
 ## Standard strategy {#static-file-standard}
 When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by [`\Magento\Framework\App\View\Asset\Publisher`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/View/Asset/Publisher.php){:target="\_blank"}.
 
-For more information, see [Deploy static view files]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
+For more information, see [Deploy static view files]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html).
 
 ## Quick strategy {#static-file-quick}
 The quick strategy performs the following actions:

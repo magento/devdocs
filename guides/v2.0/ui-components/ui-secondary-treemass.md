@@ -85,7 +85,7 @@ Example:
 #### Configuration
 Component can be configured in two ways:
 
-* Globally: using any module's <a href="{{page.baseurl}}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances
+* Globally: using any module's <a href="{{page.baseurl}}/ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances
 * Locally: using concrete component instance configuration, such as `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_listing.xml`
 
 #### TreeMassAction JS Component Structure

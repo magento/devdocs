@@ -1,7 +1,6 @@
 {% if entry.versions.size == nil or entry.versions contains page.guide_version %}
-{% capture entry_url%}/guides/v{{page.guide_version}}/{{entry.url}}{%endcapture%}
+{% capture entry_url%}/guides/v{{page.guide_version}}{{entry.url}}{%endcapture%}
 <li class="nav-level1 {% if page.url == entry_url %}active{% endif %} {{entry.class}}" id="{{ entry.label | replace: ' ','-' | downcase }}">
-
     {% if entry.children.size > 0 %}
     <div class="toggle closed">&nbsp;</div>
     {% endif %}
@@ -16,7 +15,7 @@
     <ul>
         {% for child in entry.children %}
         {% if child.versions.size == nil or child.versions contains page.guide_version %}
-        {% capture entry_url%}/guides/v{{page.guide_version}}/{{child.url}}{%endcapture%}
+        {% capture entry_url%}/guides/v{{page.guide_version}}{{child.url}}{%endcapture%}
         <li class="nav-level2 {% if page.url == entry_url %}active{% endif %} {{child.class}}" id="{{ child.label | replace: ' ','-' | downcase }}">
             
             {% if child.children.size > 0 %}
@@ -34,7 +33,7 @@
                 {% for child2 in child.children %}
 
                 {% if child2.versions.size == nil or child2.versions contains page.guide_version %}
-                {% capture entry_url%}/guides/v{{page.guide_version}}/{{child2.url}}{%endcapture%}
+                {% capture entry_url%}/guides/v{{page.guide_version}}{{child2.url}}{%endcapture%}
                 <li class="nav-level3 {% if page.url == entry_url %}active{% endif %} {{child2.class}}" id="{{child2.label | replace: ' ','-' | downcase }}">
                     {% if child2.children.size > 0 %}
                     <div class="toggle closed">&nbsp;</div>
@@ -50,7 +49,7 @@
                     <ul>
                         {% for child3 in child2.children %}
                         {% if child3.versions.size == nil or child3.versions contains page.guide_version %}
-                        {% capture entry_url%}/guides/v{{page.guide_version}}/{{child3.url}}{%endcapture%}
+                        {% capture entry_url%}/guides/v{{page.guide_version}}{{child3.url}}{%endcapture%}
                         <li class="nav-level4 {% if page.url == entry_url %}active{% endif %} {{child3.class}}" id="{{child3.label | replace: ' ','-' | downcase }}">
 
                         {% if child3.url %}

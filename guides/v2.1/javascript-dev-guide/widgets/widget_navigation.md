@@ -23,7 +23,7 @@ Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/
 The navigation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
 
 <h2 id="navigation_init">Initialize the navigation widget</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="navigation_options">Options</h2>
 The navigation widget has the following options:

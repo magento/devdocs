@@ -11,8 +11,8 @@ Magento 2.3 introduces several major changes that may affect the correct functio
 The purpose of this document is to highlight major changes between Magento 2.2 and 2.3.
 
 View a detailed list of PHP code changes that were made in the "2.3-develop" branch after the "2.2.0" release:
-- [{{site.data.var.ce}} changes]({{page.baseurl}}release-notes/backward-incompatible-changes/open-source.html)
-- [{{site.data.var.ee}} changes]({{page.baseurl}}release-notes/backward-incompatible-changes/commerce.html)
+- [{{site.data.var.ce}} changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/open-source.html)
+- [{{site.data.var.ee}} changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/commerce.html)
 
 ## Search and related modules
 

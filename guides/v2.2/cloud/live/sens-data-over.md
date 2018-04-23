@@ -9,18 +9,18 @@ functional_areas:
   - Deploy
 ---
 
-Configuration management, or [Pipeline Deployment]({{page.baseurl}}config-guide/deployment/pipeline/), provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:
+Configuration management, or [Pipeline Deployment]({{page.baseurl}}/config-guide/deployment/pipeline/), provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:
 
 *  Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
-*  Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+*  Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
 *  Sensitive data is automatically added into an environment variables file (`/app/etc/env.php`). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.
 
 These methods are optional, but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
 
-To complete configuration management tasks, you must have a project reader role with [environment administrator]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-env) privileges.
+To complete configuration management tasks, you must have a project reader role with [environment administrator]({{page.baseurl}}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For extended technical information, see [Pipeline Deployment]({{page.baseurl}}config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
+For extended technical information, see [Pipeline Deployment]({{page.baseurl}}/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
 </div>
 
 ## How it works {#cloud-confman-over}
@@ -59,10 +59,10 @@ Sensitive values are _not_ stored in `app/etc/config.php`. Any sensitive configu
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 </div>
 
-For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{page.baseurl}}config-guide/prod/config-reference-var-name.html).
+For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{page.baseurl}}/config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
-Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
+Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
 
 If you generate `config.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
@@ -128,15 +128,15 @@ Managing store configuration is a complex task that's mostly up to you. What loc
 
 We **strongly recommend** using `scd-dump` to generate `config.php`. This file includes only the settings you configured without locking all default values. It also ensures all extensions used in Staging and Production do not break due to read-only configurations, especially Fastly.
 
-To fully understand the process, please see [our extensive example]({{page.baseurl}}cloud/live/sens-data-initial.html).
+To fully understand the process, please see [our extensive example]({{page.baseurl}}/cloud/live/sens-data-initial.html).
 
 The **Starter plan** environment high-level overview of this process:
 
-![Overview of Starter configuration management]({{site.baseurl}}common/images/cloud_configmgmt-starter-2-2.png)
+![Overview of Starter configuration management]({{site.baseurl}}/common/images/cloud_configmgmt-starter-2-2.png)
 
 The **Pro plan** environment high-level overview of this process:
 
-![Overview of Pro configuration management]({{site.baseurl}}common/images/cloud_configmgmt-pro-2-2.png)
+![Overview of Pro configuration management]({{site.baseurl}}/common/images/cloud_configmgmt-pro-2-2.png)
 
 ### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:

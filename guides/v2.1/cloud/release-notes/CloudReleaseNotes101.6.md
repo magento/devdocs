@@ -21,7 +21,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 ## Changes and enhancements in this release
 In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, 101.6.5, and 101.6.6 on Magento Commerce 2.1.6, we provide the following improvements:
 
-* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}/cloud/trouble/pro-env-management.html).
 
 ### 101.6.6 changes
 
@@ -69,7 +69,7 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, 101.6.5, an
 ## How to get `magento-cloud-configuration` releases 101.6.x
 {{site.data.var.ece}}  periodically provides patch releases in components like `magento-cloud-configuration`.
 
-To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}cloud/project/project-upgrade.html).
+To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl}}/cloud/project/project-upgrade.html).
 
 ### Magento Commerce Release Notes
 These {{site.data.var.ece}}  releases correspond to Magento Commerce 2.1.6.

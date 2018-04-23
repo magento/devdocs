@@ -10,11 +10,11 @@ github_link: javascript-dev-guide/widgets/widget_alert.md
 ---
 <h2 id="alert_overview">Overview</h2>
 
-The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
+The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
 The alert {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/alert.js</code></a>
 
-The widget can be used for implementing alert windows for both Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
+The widget can be used for implementing alert windows for both Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h2 id="alert_initialize">Initialize the alert widget</h2>
 
@@ -50,7 +50,7 @@ require([
 });
 {% endhighlight %}
 
-For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{page.baseurl}}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="alert_options">Options</h2>
 The alert widget has the following options:
@@ -119,4 +119,4 @@ The title of the alert window.
 The alert widget implements a single event: the `always` callback.
 
 <h2 id="alert_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the alert windows is similar to the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.
+The keyboard navigation for the alert windows is similar to the <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.

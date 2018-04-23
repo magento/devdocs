@@ -20,7 +20,7 @@ To set up Xdebug, you need to [configure](#configure) a file in your Git repo, c
 Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You will need to pull code to your local development environment to perform debugging. For Pro plan Staging and Production, we include [additional instructions](#pro-debug) for Xdebug on those environments.
 
 ## Requirements {#usexdebug}
-To run and use Xdebug, you will need the environment's SSH URL. You can locate the information through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html) or your spreadsheet.
+To run and use Xdebug, you will need the environment's SSH URL. You can locate the information through the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html) or your spreadsheet.
 
 ## Configure Xdebug {#configure}
 To configure Xdebug, you need to do the following:
@@ -40,7 +40,7 @@ To add Xdebug, we recommend creating a branch to work in and add the files.
 ### Enable Xdebug in your environment {#enable}
 Enable Xdebug by adding it to the extensions section of magento.app.yaml. When you push this update to Git and deploy to environments, the debugger is available.
 
-You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to have it enabled. We will get Xdebug enabled onto those environments for you.
+You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to have it enabled. We will get Xdebug enabled onto those environments for you.
 
 <!-- You may need to run PHP with a separate config file to enable xdebug on the CLI, such as "php -c /etc/platform/<project_id>/php.ini ... " -->
 
@@ -87,7 +87,7 @@ You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properl
     * **Port**: enter 80
     * **Debugger**: set to Xdebug in the drop-down
 6. Select the **Use path mappings** option. In the files/directories, the root of the project displays that you opened for the added server.
-7. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}common/images/install_docker_php-storm-edit.png){:width="15px"} (**Edit**) and add a setting based on the environment:
+7. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl}}/common/images/install_docker_php-storm-edit.png){:width="15px"} (**Edit**) and add a setting based on the environment:
 
     * For all Starter environments and Pro Integration environments, the remote path is `/app`.
     * For Pro Staging and Production environments:
@@ -117,7 +117,7 @@ If an "unable to connect" or "could not listen to port on remote" error is displ
 
 To troubleshoot the connection:
 
-1.	[SSH]({{ page.baseurl }}cloud/env/environments-ssh.html) to the integration, staging, or production server.
+1.	[SSH]({{ page.baseurl}}/cloud/env/environments-ssh.html) to the integration, staging, or production server.
 2.	Enter `who` to view a list of SSH sessions.
 3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
@@ -148,10 +148,10 @@ To set up an SSH tunnel on Windows using Putty:
 3.	In the Category pane, click **Session**.
 4.	Enter the following information:
 
-    *	**Host Name (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}cloud/env/environments-ssh.html)
+    *	**Host Name (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl}}/cloud/env/environments-ssh.html)
     *	**Port** field: Enter `22`
 
-    ![Set up Putty]({{ site.baseurl }}common/images/cloud-xdebug_putty-session.png){:width="350px"}
+    ![Set up Putty]({{ site.baseurl}}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
 3.	In the Category pane, click **Connection** > **SSH** > **Tunnels**.
 4.	Enter the following information:
 
@@ -160,12 +160,12 @@ To set up an SSH tunnel on Windows using Putty:
     *	Click **Remote**
 5.	Click **Add**.
 
-    ![Create an SSH tunnel in Putty]({{ site.baseurl }}common/images/cloud-xdebug_putty-tunnels.png){:width="350px"}
+    ![Create an SSH tunnel in Putty]({{ site.baseurl}}/common/images/cloud-xdebug_putty-tunnels.png){:width="350px"}
 6.	In the Category pane, click **Session**.
 7.	In the **Saved Sessions** field, enter a name for this SSH tunnel.
 8.	Click **Save**.
 
-    ![Save your SSH tunnel]({{ site.baseurl }}common/images/cloud-xdebug_putty-session-save.png){:width="350px"}
+    ![Save your SSH tunnel]({{ site.baseurl}}/common/images/cloud-xdebug_putty-session-save.png){:width="350px"}
 9.	To test the SSH tunnel, click **Load**, then click **Open**.
 
 If an "unable to connect" error displays, verify all of the following:
@@ -174,12 +174,12 @@ If an "unable to connect" error displays, verify all of the following:
 *	You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
 
 ### Configure Pro Staging and Production {#pro}
-To complete configuration for Pro plan Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}cloud/trouble/trouble.html) to have Xdebug enabled and configured in Staging and Production environments.
+To complete configuration for Pro plan Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to have Xdebug enabled and configured in Staging and Production environments.
 
 We will enable Xdebug in the environment. Be aware, this will require a redeployment of Staging and Production.
 
 ## SSH access to Xdebug environments {#ssh}
-For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html) and your project spreadsheet.
+For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html) and your project spreadsheet.
 
 For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:
 
@@ -198,7 +198,7 @@ To use Xdebug specifically on Pro plan Staging and Production environment, you c
 
 You will need the following:
 
-* SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{page.baseurl}}cloud/project/projects.html) and your project spreadsheet.
+* SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html) and your project spreadsheet.
 * The `xdebug_key` value we set when configuring the Staging and Pro environments
 
 Set up an SSH tunnel to Staging or Production environment:
@@ -256,15 +256,15 @@ To use Xdebug Helper with Chrome:
 2.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en){:target="_blank"} from the Chrome store.
 3.	Enable the extension in Chrome as shown in the following figure.
 
-	![Enable the Xdebug extension in Chrome]({{ site.baseurl }}common/images/install_docker_php-storm_xdebug-chrome.png)
-4.	In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl }}common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
+	![Enable the Xdebug extension in Chrome]({{ site.baseurl}}/common/images/install_docker_php-storm_xdebug-chrome.png)
+4.	In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl}}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
 5.	From the pop-up menu, click **Options**.
 6.	From the **IDE Key** list, click **PhpStorm**.
 7.	Click **Save**.
 
-	![Xdebug Helper options]({{ site.baseurl }}common/images/cloud-xdebug_helper-options.png){:width="400px"}
+	![Xdebug Helper options]({{ site.baseurl}}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
 8.	Open your PhpStorm project.
-9.	In the top navigation bar, click ![Start listening for connections]({{ site.baseurl }}common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
+9.	In the top navigation bar, click ![Start listening for connections]({{ site.baseurl}}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
 
 	If the navigation bar isn't displayed, click **View** > **Navigation Bar**.
 10.	In the PhpStorm navigation pane, double-click the PHP file to test.
@@ -306,7 +306,7 @@ If you you suspend your laptop (like closing your lid on a Mac), then your SSH s
 
 Due to not having access to manually restart the nginx server, you need to locate and terminate SSH processes that haven't timed out yet.
 
-1.	[SSH]({{ page.baseurl }}cloud/env/environments-ssh.html) to the integration, staging, or production server.
+1.	[SSH]({{ page.baseurl}}/cloud/env/environments-ssh.html) to the integration, staging, or production server.
 2.	Enter `who` to view a list of SSH sessions.
 3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 

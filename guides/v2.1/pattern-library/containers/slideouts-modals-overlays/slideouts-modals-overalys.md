@@ -207,10 +207,10 @@ The distance of the modal to the top of the browser should have a fixed distance
 
 **Implementation**
 Modal windows are implemented by the following Magento {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} widgets:
-- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html">modal</a>
-- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_alert.html">alert</a> (extends modal)
-- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_confirm.html">confirm</a> (extends modal)
-- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_prompt.html">propmt</a> (extends modal)
+- <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html">modal</a>
+- <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_alert.html">alert</a> (extends modal)
+- <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html">confirm</a> (extends modal)
+- <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_prompt.html">propmt</a> (extends modal)
 
 
 <h3 id="overlays">Overlays</h3>
@@ -259,4 +259,4 @@ When field level validation is triggered resulting message should appear and per
 <a href="src/Modal.psd">Download Modal PSD source</a>
 
 <h3 id="implement">Technical Implementation</h3>
-Technically slideouts and modals are implemented using the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-modal.html). 
+Technically slideouts and modals are implemented using the [modal widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-modal.html). 

@@ -24,7 +24,7 @@ In this tutorial, we assume the following:
 
 *   The Magento application is installed in `/var/www/html/magento2`
 *   Your Magento database user name and password are both `magento`
-*   You perform all actions as the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html)
+*   You perform all actions as the [Magento file system owner]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html)
 
 ## Step 1: Get a sample module {#cron-tut-get}
 To set up a custom cron job, you need a sample module. We suggest the `magento-module-minimal` module.
@@ -33,7 +33,7 @@ If you already have a sample module, you can use it; skip this step and the next
 
 {% collapsible To get a sample module: %}
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to a directory that is not in your Magento application root (for example, your home directory).
 2.  Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
 
@@ -79,7 +79,7 @@ Before you continue, make sure the sample module is registered and enabled.
 2.  Click **Stores** > **Configuration** > ADVANCED > **Advanced**.
 3.  In the right pane, under Disable Modules Output, look for **Magento_SampleMinimal** as the following figure shows.
 
-    ![Verify your sample module]({{ site.baseurl }}common/images/config_module-enabled.png){:width="900px"}
+    ![Verify your sample module]({{ site.baseurl}}/common/images/config_module-enabled.png){:width="900px"}
 
 If the module doesn't display, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won't load. Also, don't forget to run `magento setup:upgrade`.
 
@@ -215,7 +215,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
 </config>
 {% endhighlight %}
 
-For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl }}config-guide/cron/custom-cron-ref.html).
+For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl}}/config-guide/cron/custom-cron-ref.html).
 
 {% endcollapsible %}
 
@@ -238,7 +238,7 @@ This step shows how to verify your custom cron group using the {% glossarytoolti
 
     Your cron group displays as follows:
 
-    ![Your custom cron group]({{ site.baseurl }}common/images/config_cron-group.png)
+    ![Your custom cron group]({{ site.baseurl}}/common/images/config_cron-group.png)
 
 
 

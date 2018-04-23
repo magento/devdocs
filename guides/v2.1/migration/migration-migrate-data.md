@@ -15,11 +15,11 @@ functional_areas:
 
 ## Before you start: routine preparations
 
-1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1. Log in to Magento server as [the file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
-See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration-command-run-first) section for more details.
+See the [First steps]({{page.baseurl}}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the data migration command {#migrate-data-cmd}
 To start migrating data, run:
@@ -46,7 +46,7 @@ While running, the Data Migration Tool may report inconsistencies between Magent
 Source documents are not mapped: <EXTENSION_TABLE>
 {% endhighlight %}
 
-See the [Troubleshooting]({{page.baseurl}}migration/migration-troubleshooting.html) section of this guide for more information and recommendations.
+See the [Troubleshooting]({{page.baseurl}}/migration/migration-troubleshooting.html) section of this guide for more information and recommendations.
 
 <!--
 
@@ -86,4 +86,4 @@ To know if the issues have been resolved successfully, run the Data Migration To
 
 ## Next migration step
 
-<a href="{{page.baseurl}}migration/migration-migrate-delta.html">Migrate changes</a>
+<a href="{{page.baseurl}}/migration/migration-migrate-delta.html">Migrate changes</a>

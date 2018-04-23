@@ -18,12 +18,12 @@ This article features a step-by-step illustration of how a real-life layout cust
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_transform21.png">
+<img src="{{ site.baseurl}}/common/images/layout_transform21.png">
 </div>
 
 To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list.
 
-The Orange theme [inherits]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links look like following:
+The Orange theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links look like following:
 
 
 {%highlight html%}
@@ -80,7 +80,7 @@ The markup required for the drop-down is the following:
 
 ### Step 1: Define the layout blocks
 
-OrangeCo <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{page.baseurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the original block responsible for displaying the header links is defined in 
+OrangeCo <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{page.baseurl}}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the original block responsible for displaying the header links is defined in 
 
 `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`:
 
@@ -99,9 +99,9 @@ OrangeCo <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html" ta
 
 (See [app/code/Magento/Theme/view/frontend/layout/default.xml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on github).
 
-Other modules use this block to add their specific links to the header using the [referenceBlock]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23) 
+Other modules use this block to add their specific links to the header using the [referenceBlock]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23) 
 
-The Luma theme [moves]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) the `top.links` block to the new `customer` block in the extending layout file.  
+The Luma theme [moves]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) the `top.links` block to the new `customer` block in the extending layout file.  
 
     <Magento_luma_theme_dir>/Magento_Customer/layout/default.xml
 
@@ -185,7 +185,7 @@ defines the template which is used as the drop-down container : `<Magento_Custom
 
 OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` module.
 
-So the following <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:
+So the following <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:
 
     app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 
@@ -230,15 +230,15 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 Now the customer links look like following:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_screen221.png">
+<img src="{{ site.baseurl}}/common/images/layout_screen221.png">
 </div>
 
 Clicking the **Change** button toggles the `active` CSS class:
 
-To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
+To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{page.baseurl}}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
 * redundant elements are hidden with CSS
-* the `.lib-dropdown()` mixin from [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element
+* the `.lib-dropdown()` mixin from [Magento UI library]({{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element
 
 
 {%collapsible Expand to see the code %}
@@ -297,5 +297,5 @@ To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo 
 As a result, the customer links look like following:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/fdg/layout_screen321.png">
+<img src="{{ site.baseurl}}/common/images/fdg/layout_screen321.png">
 </div>

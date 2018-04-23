@@ -18,7 +18,7 @@ The Loader {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% en
 The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
 
 <h2 id="loader_init">Initialize the loader widget</h2>
-The loader widget is initialized as described in <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
+The loader widget is initialized as described in <a href="{{page.baseurl}}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
 
 <h2 id="loader_options">Options</h2>
 The loader widget has the following options:

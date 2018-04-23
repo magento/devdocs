@@ -12,7 +12,7 @@ mftf-release: 2.0.2
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html) in future releases. MFTF will make test creation easier for developers and will improve:
+The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework]({{page.baseurl}}/mtf/mtf_introduction.html) in future releases. MFTF will make test creation easier for developers and will improve:
 
 * **Traceability** for clear logging and reporting capabilities.
 * **Modularity** to run tests based on installed modules and extensions.
@@ -102,6 +102,30 @@ pre-install.php                 // Script that checks the environment on whether
 - Screenshots and HTML failure report
 - Allure formatted XML results
 - Allure report dashboard of results
+
+## MFTF Module Test and Data Paths
+
+The MFTF supports three different paths to allow test writers to store their tests and test materials:
+* `/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/<Module>`
+* `/app/code/Magento/<Module>/Test/Mftf`
+* `/vendor/<Module>/Test/Mftf`
+
+All tests and test data are merged in the above order. The structure inside these paths also needs to follow the usual expected MFTF structure:
+```
+<Path>
+├── ActionGroup
+│   └── ...
+├── Data
+│   └── ...
+├── Metadata
+│   └── ...
+├── Page
+│   └── ...
+├── Section
+│   └── ...
+└── Test
+    └── ...
+```
 
 ## MFTF on Github
 

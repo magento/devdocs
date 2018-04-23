@@ -293,7 +293,7 @@ The message queue topology must be configured to implement bulk operations. Crea
 * `queue_publisher.xml`
 * `queue_topology.xml`
 
-For more information about the `di.xml` file, see [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html).
+For more information about the `di.xml` file, see [Dependency Injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html).
 
 #### Create `communication.xml`
 
@@ -354,6 +354,6 @@ The `queuetopology.xml` file defines the message routing rules and declares queu
 
 #### Related Topics
 
-* [Message Queues Overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-* [Bulk Operations]({{page.baseurl}}extension-dev-guide/message-queues/bulk-operations.html)
+* [Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+* [Bulk Operations]({{page.baseurl}}/extension-dev-guide/message-queues/bulk-operations.html)
 * [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html)

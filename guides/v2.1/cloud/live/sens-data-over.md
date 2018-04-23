@@ -14,7 +14,7 @@ Configuration management in {{site.data.var.ece}} provides a new way to deploy a
 It provides the following benefits:
 
 *	Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
-*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from the deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
+*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from the deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl}}/cloud/reference/discover-deploy.html).
 * Sensitive data is automatically added into an environment variables file (`/app/etc/env.php`). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.
 
 <div class="bs-callout bs-callout-info" markdown="1">
@@ -22,7 +22,7 @@ These new methods are optional but strongly recommended. The process ensures fas
 </div>
 
 ## Feature availability {#release}
-To complete these configuration management tasks, you must have at a minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
+To complete these configuration management tasks, you must have at a minimum a project reader role with [environment administrator]({{ page.baseurl}}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
 ## How it works {#cloud-confman-over}
 Magento's store configurations are stored in the database. When updating configurations in development/Integration, Staging, and Production environments, you would need to make those changes in the Magento Admin per environment. By using these commands, you generate a file, exporting all Magento configuration settings into a single text file: `app/etc/config.local.php`.
@@ -58,10 +58,10 @@ Sensitive values are _not_ stored in `app/etc/config.local.php`. Any sensitive c
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 </div>
 
-For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
+For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl}}/config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
-Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
+Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
 
 If you generate `config.local.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
@@ -123,15 +123,15 @@ Managing store configuration is a complex task that's mostly up to you. What loc
 
 We **strongly recommend** using `scd-dump` to generate `config.local.php`. This file includes only the settings you configured without locking all default values. It also ensures all extensions used in Staging and Production do not break due to read-only configurations, especially Fastly.
 
-To fully understand the process, please see [our extensive example]({{ page.baseurl }}cloud/live/sens-data-initial.html).
+To fully understand the process, please see [our extensive example]({{ page.baseurl}}/cloud/live/sens-data-initial.html).
 
 The **Starter plan** environment high-level overview of this process:
 
-![Overview of Starter configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-starter-2-1.png)
+![Overview of Starter configuration management]({{ site.baseurl}}/common/images/cloud_configmgmt-starter-2-1.png)
 
 The **Pro plan** environment high-level overview of this process:
 
-![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-1.png)
+![Overview of Pro configuration management]({{ site.baseurl}}/common/images/cloud_configmgmt-pro-2-1.png)
 
 ### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:

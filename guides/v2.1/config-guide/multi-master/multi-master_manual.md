@@ -53,7 +53,7 @@ We strongly recommend you back up your current database and file system so you c
 
 To back up your system:
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/apache-user.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html).
 2.  Enter the following commands:
 
         magento setup:backup --code --media --db
@@ -417,7 +417,7 @@ The final step in manually splitting databases is to add connection and resource
 
 {% collapsible Click to update the Magento deployment configuration %}
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 2.  Back up your deployment configuration:
 
         cp <your Magento install dir>/app/etc/env.php <your Magento install dir>/app/etc/env.php.orig
@@ -610,4 +610,4 @@ Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+<a href="{{page.baseurl}}/config-guide/multi-master/multi-master_verify.html">Verify split databases</a>

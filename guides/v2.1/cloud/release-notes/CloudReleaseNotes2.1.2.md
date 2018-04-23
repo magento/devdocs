@@ -20,7 +20,7 @@ functional_areas:
 We made the following change in this release:
 
 * Added a new environment variable, `UPDATE_URLS`, which if set to `enabled` causes Magento base URLs in the database with to be replaced with Cloud project URLs. By default, `UPDATE_URLS` is set to `enabled`. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs. You should set this variable to `disabled` *only* in staging or production, where the base URLs can't change.
-* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}/cloud/trouble/pro-env-management.html).
 
 ### Functional fixes and enhancements
 We made the following fixes in this release:
@@ -30,7 +30,7 @@ We made the following fixes in this release:
 *   You no longer need a `pub/front-static.php` in your template.
 *   We now back up `env.php` before disabling the Redis cache during deployment.
 *   Patches are now applied in alphabetical order.
-* Staging and Production environments in the UI for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}cloud/trouble/pro-env-management.html).
+* Staging and Production environments in the UI for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{page.baseurl}}/cloud/trouble/pro-env-management.html).
 
 ### Known issues
 Note the following issue in this release:
@@ -47,7 +47,7 @@ This is a known issue with Magento core software; we're actively working to addr
 3.  Follow the prompts to open an issue with Support.
 
 <div class="bs-callout bs-callout-warning">
-    <p>This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html">Architecture</a>.</p>
+    <p>This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see <a href="{{ page.baseurl}}/cloud/reference/discover-arch.html">Architecture</a>.</p>
 </div>
 
 ### {{site.data.var.ee}} Release Notes

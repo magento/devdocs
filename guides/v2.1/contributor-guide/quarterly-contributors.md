@@ -1,10 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: contributor_docs
 title: Quarterly Contributors
-menu_title: Quarterly Contributors
-menu_order: 1000
 version: 2.1
 github_link: contributor-guide/quarterly-contributors.md
 redirect_from: /guides/v2.0/howdoi/howdoi_bios.html
@@ -68,5 +65,5 @@ Follow the easy instructions on [how to contribute to DevDocs][0] to join these 
 Always feel free to [email us][1] with any questions.
 
 
-[0]: {{page.baseurl}}contributor-guide/contributing_docs.html
+[0]: {{page.baseurl}}/contributor-guide/contributing_docs.html
 [1]: mailto:DL-Magento-Doc-Feedback@magento.com

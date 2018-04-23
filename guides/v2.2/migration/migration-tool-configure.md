@@ -32,7 +32,7 @@ Before you migrate any data, you must create a `config.xml` configuration file f
 
 To create a configuration file:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
 
 2.	Change to the following directory:
 
@@ -213,7 +213,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tbody>
 </table>
 
-You can refer to <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Technical Specification</a> for more details.
+You can refer to <a href="{{page.baseurl}}/migration/migration-tool-internal-spec.html"> Data Migration Tool Technical Specification</a> for more details.
 
 ## Next step
-<a href="{{page.baseurl}}migration/migration-migrate-settings.html">Migrate using data migration tool</a>
+<a href="{{page.baseurl}}/migration/migration-migrate-settings.html">Migrate using data migration tool</a>

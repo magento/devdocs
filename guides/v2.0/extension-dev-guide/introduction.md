@@ -53,6 +53,6 @@ Modules are declared in the `module.xml` file. Here is a minimal example:
 
 ## What's Next?
 
-Get your feet wet quickly and build <a href="{{page.baseurl}}extension-dev-guide/build_a_simple_module.html">a simple Magento module</a>.
+Get your feet wet quickly and build <a href="{{page.baseurl}}/extension-dev-guide/build_a_simple_module.html">a simple Magento module</a>.
 
-Or jump right in and use <a href="{{page.baseurl}}extension-dev-guide/worksheet.html">a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.
+Or jump right in and use <a href="{{page.baseurl}}/extension-dev-guide/worksheet.html">a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.

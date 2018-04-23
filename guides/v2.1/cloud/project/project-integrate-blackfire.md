@@ -28,7 +28,7 @@ Blackfire includes the following [environments](https://blackfire.io/docs/refere
 ## Get your Blackfire credentials
 The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with {{site.data.var.ece}} and to log in to the Blackfire website. An invitation email is sent to the Project Owner's e-mail address to complete activation.
 
-For information on setting up an account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can access your Blackfire license key through [project details]({{page.baseurl}}cloud/project/projects.html#integrations).
+For information on setting up an account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can access your Blackfire license key through [project details]({{page.baseurl}}/cloud/project/projects.html#integrations).
 
 ## Add collaborator accounts {#collaborators}
 After you access your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}.
@@ -41,7 +41,7 @@ We recommend adding at least one account through Blackfire to manage all access,
 1.  Enter an e-mail address and click **Add Member**.
 1.  In the _Revoke_ drop-down list of an account, click **Promote as an admin**.
 
-	![Promote an admin]({{ site.baseurl }}common/images/cloud_blackfire-member.png)
+	![Promote an admin]({{ site.baseurl}}/common/images/cloud_blackfire-member.png)
 
 ## Enable Blackfire on local workspace
 You need to install and configure Blackfire on your local workspace with your working {{site.data.var.ece}} installation. You do _not_ need to run these installations directly on the hosted environments; only on your local.
@@ -59,18 +59,18 @@ We recommend enabling Blackfire in all of your active environments, including th
 
 {% include note.html type="info" content="For Starter plans, pushing your code and `.magento.app.yaml` file to the Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development." %}
 
-These instructions assume you have set up your [local workspace]({{page.baseurl}}cloud/before/before-workspace.html).
+These instructions assume you have set up your [local workspace]({{page.baseurl}}/cloud/before/before-workspace.html).
 
 1.  Log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
 1.  Navigate to the _Environments_ tab and select the **Integration** environment.
 1.  Click the **Builds** tab.
 1.  Click the info icon next to Magento Cloud.
 
-	![Click info icon]({{ site.baseurl }}common/images/cloud_blackfire-builds.png)
+	![Click info icon]({{ site.baseurl}}/common/images/cloud_blackfire-builds.png)
 
 1.  In the _Magento Cloud Integration_ page, follow the additional steps to complete the integration. The redacted content is the **Project ID**.
 
-	![Blackfire Magento Cloud integration]({{ site.baseurl }}common/images/cloud_blackfire-integration.png)
+	![Blackfire Magento Cloud integration]({{ site.baseurl}}/common/images/cloud_blackfire-integration.png)
 
 The following sections include instructions for completing this list of integration tasks.
 
@@ -167,7 +167,7 @@ Add project variables for Blackfire for the server ID and token. You can add the
 	```
 
 ### Add Blackfire integration to the project {#integration}
-Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{page.baseurl}}cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
+Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{page.baseurl}}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
 
 1.  Open a terminal and navigate to your {{site.data.var.ece}} project.
 1.  Copy and enter the integration commands from the Blackfire _Magento Cloud Integration_ page.
@@ -228,7 +228,7 @@ If you do not have a default route specified in the `routes.yaml` file, or want 
 	```
 
 1.  Use a text editor to locate and edit `<project root dir>/magento/routes.yaml` in your branch.
-1.  Add the route the file. See [Configure routes]({{page.baseurl}}cloud/project/project-conf-files_routes.html).
+1.  Add the route the file. See [Configure routes]({{page.baseurl}}/cloud/project/project-conf-files_routes.html).
 
 	```
 	"http://{default}/":
@@ -262,7 +262,7 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 1.  Visit the store or site URL for your specific environment, such as the URL for your Integration environment. If you need this URL, you can find it through the Project Web Interface. Select the environment branch and copy the link from the _Access_ section.
 1.  Click the Blackfire icon.
 
-	![Start profiling]({{ site.baseurl }}common/images/cloud_blackfire.png)
+	![Start profiling]({{ site.baseurl}}/common/images/cloud_blackfire.png)
 
 1.  Click **Profile** to start.
 
@@ -311,7 +311,7 @@ After completing the [Blackfire Integration](#dev), you can define events for th
 
 By simply defining a set of key requests for Blackfire to profile— `/home`, `/checkout`, `/checkout/payment`—Blackfire can notify you if your code complies with established [code performance recommendations](https://blackfire.io/docs/reference-guide/recommendations){:target="_blank"}. The following is a sample build report with recommendations:
 
-![Blackfire build report]({{ site.baseurl }}common/images/cloud_blackfire-recommendations.png)
+![Blackfire build report]({{ site.baseurl}}/common/images/cloud_blackfire-recommendations.png)
 
 ### Writing your first automated tests and scenarios
 You can easily write tests and scenarios for Blackfire to execute. Create a `.blackfire.yml` file and store it at your project root directory.
