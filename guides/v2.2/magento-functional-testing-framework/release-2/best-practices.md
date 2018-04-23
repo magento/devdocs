@@ -134,6 +134,6 @@ Since the configurable product module could be disabled, this approach is more r
 [parameterized selectors]: section/parameterized-selectors.html
 [sections]: section.html
 [`<wait>`]: test/actions.html#wait
-[`<waitForElement>`]: test/actions.html# waitforelement
+[`<waitForElement>`]: test/actions.html#waitforelement
 [`<waitForElementVisible>`]: test/actions.html#waitforelementvisible
 [`<waitForLoadingMaskToDisappear>`]: test/actions.html#waitforloadingmasktodisappear
