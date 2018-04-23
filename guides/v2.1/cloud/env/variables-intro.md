@@ -24,7 +24,7 @@ You use the [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.1/cloud/p
 ## Global variables
 The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage.  Insert these variables in the `global` stage of the `.magento.env.yaml` file:
 
-```
+```yaml
 stage:
   global:
     GLOBAL_VARIABLE_NAME: value
@@ -37,7 +37,7 @@ stage:
 
 Enable generation of static content when requested by a user. Pre-loading the cache using the [`post_deploy` hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
-```
+```yaml
 stage:
   global:
     SCD_ON_DEMAND: true
@@ -67,7 +67,7 @@ Skip copying the static view files in the `var/view_preprocessed` directory to r
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
-```
+```yaml
 stage:
   global:
     SKIP_HTML_MINIFICATION: true

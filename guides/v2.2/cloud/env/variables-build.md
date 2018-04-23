@@ -11,7 +11,7 @@ functional_areas:
 
 The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
 
-```
+```yaml
 stage:
   build:
     BUILD_VARIABLE_NAME: value
@@ -38,7 +38,7 @@ When enabled, this option does not generate static content for the specified the
 
 For example, the Luma theme is included with all {{site.data.var.ece}} projects. You may not need to constantly generate static content for this theme, which adds time to your build. To exclude the theme, use the following:
 
-```
+```yaml
 stage:
   build:
     exclude_themes=magento/luma,magento/my-theme

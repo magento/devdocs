@@ -10,7 +10,7 @@ functional_areas:
 ---
 The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables).  Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
 
-```
+```yaml
 stage:
   post-deploy:
     POST-DEPLOY_VARIABLE_NAME: value
@@ -28,7 +28,7 @@ For more information about customizing the build and deploy process:
 
 Customize the list of pages used to preload the cache in the `post_deploy` stage.
 
-```
+```yaml
 stage:
   post-deploy: 
     WARM_UP_PAGES:

@@ -10,7 +10,7 @@ functional_areas:
 ---
 The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
-```
+```yaml
 stage:
   deploy:
     DEPLOY_VARIABLE_NAME: value
@@ -28,7 +28,7 @@ For more information about customizing the build and deploy process:
 
 Use to configure Redis page and default caching. 
 
-```
+```yaml
 stage:
   deploy:
     CACHE_CONFIGURATION:
@@ -96,7 +96,7 @@ We manage the values and setting of this variable. It identifies the type of env
 
 Magento can read multiple databases asynchronously. Set to `true` to automatically use a _slave_ connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing because only one node needs to handle read-write traffic. Set to `false` to remove any existing slave connection array from the `env.php` file.
 
-```
+```yaml
 stage:
     deploy:
         MYSQL_USE_SLAVE_CONNECTION: true
@@ -109,7 +109,7 @@ stage:
 
 Use this environment variable to retain customized AMQP service settings between deployments. For example, if you prefer using an existing message queue service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the `QUEUE_CONFIGURATION` environment variable to connect it to your site:
 
-```
+```yaml
 stage:
   deploy:
     QUEUE_CONFIGURATION:
@@ -133,7 +133,7 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _slave_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing because only one node needs to handle read-write traffic. Set to `false` to remove any existing slave connection array from the `env.php` file.
 
-```
+```yaml
 stage:
   deploy:
     REDIS_USE_SLAVE_CONNECTION: true
@@ -157,7 +157,7 @@ Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} com
 
 Use this environment variable to retain customized search service settings between deployments. For example:
 
-```
+```yaml
 stage:
   deploy:
     SEARCH_CONFIGURATION:
@@ -177,7 +177,7 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 Use to configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
-```
+```yaml
 stage:
   deploy:
     SESSION_CONFIGURATION:
@@ -203,7 +203,7 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 Themes can include numerous files. Set this variable to true if you want to skip copying over theme files during deployment. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude the `Magento/luma` theme:
 
-```
+```yaml
 stage:
   deploy:
     SCD_EXCLUDE_THEMES: Magento/luma 
