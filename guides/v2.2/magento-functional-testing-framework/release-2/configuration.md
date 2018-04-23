@@ -9,6 +9,9 @@ functional_areas:
 mftf-release: 2.1.2
 ---
 
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
+
 The _*.env_ file provides additional configuration of the Magento Functional Testing Framework (MFTF).
 All MFTF users will need to set the basic configuration values.
 Advanced users may need to set additional values to work with their environment.
