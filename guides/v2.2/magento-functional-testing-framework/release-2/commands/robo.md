@@ -75,6 +75,11 @@ vendor/bin/robo build:project
 ```bash
 vendor/bin/robo generate:tests
 ```
+#### Generate specified Tests in PHP:
+
+```bash
+$ vendor/bin/robo generate:tests testName01 testName02 testName03
+```
 
 #### Run all tests marked with the @group tag `example`, using the Chrome environment:
 
@@ -180,6 +185,7 @@ vendor/bin/robo allure2:report
 #### generate
 
 Generate PHP code from the tests defined in XML files.
+
 Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
 
 `generate:tests`   | Generate all tests based on specific module load order of the Magento instance
