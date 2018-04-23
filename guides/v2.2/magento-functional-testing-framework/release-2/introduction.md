@@ -107,8 +107,8 @@ pre-install.php                 // Script that checks the environment on whether
 
 The MFTF supports three different paths to allow test writers to store their tests and test materials:
 * `/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/<Module>`
-* `/app/code/Magento/<Module>/Test/MFTF`
-* `/vendor/<Module>/Test/MFTF`
+* `/app/code/Magento/<Module>/Test/Mftf`
+* `/vendor/<Module>/Test/Mftf`
 
 All tests and test data are merged in the above order. The structure inside these paths also needs to follow the usual expected MFTF structure:
 ```
