@@ -16,15 +16,15 @@ functional_areas:
 
 #### New features
 
-- **Configuring slave connections to non-master nodes**—This release adds the ability to configure a slave connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#redisuseslaveconnection) and for <!--MAGECLOUD-143 --> [MySQL](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#mysqluseslaveconnection)); therefore, only one node need handle write-traffic, resulting in perfomance boosts.
--  <!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a new wizard to help verify your configuration for static content deployment. See [Smart wizards](http://devdocs.magento.com/guides/v2.2/cloud/env/smart-wizards.html).
+- **Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-deploy.html#redisuseslaveconnection) and for <!--MAGECLOUD-143 --> [MariaDB](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-deploy.html#mysqluseslaveconnection)).
+-  <!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a new wizard to help verify your configuration for static content deployment. See [Smart wizards](http://devdocs.magento.com/guides/v2.1/cloud/env/smart-wizards.html).
 -  <!-- MAGECLOUD-1966-->**Symfony Console support**—Added support for Symfony Console 4 with Magento 2.3.
 
 #### Fixed issues
 
 -  <!-- MAGECLOUD-1221 -->Deployment validation fails if an `ADMIN_EMAIL` or `ADMIN_USERNAME` value is the same as an existing Magento administrator account.
 -  <!-- MAGECLOUD-1489 -->The first installation of the Staging & Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.
--  <!-- MAGECLOUD-1819 -->Validates the `VERBOSE_COMMANDS` and `SCD_COMPRESSION_LEVEL` environment variables during both _build_ and _deploy_ phases.
+-  <!-- MAGECLOUD-1819 -->Validates the `VERBOSE_COMMANDS` environment variable during both _build_ and _deploy_ phases.
 -  <!-- MAGECLOUD-2021 -->Fixed an issue that interrupted the build phase for legacy architecture when using static content deployment.
 
 ## v2002.0.10
