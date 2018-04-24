@@ -12,7 +12,6 @@ functional_areas:
 
 The smart wizards can assist you in determining if your Cloud configuration follows best practices by verifying the following:
 
--  Use the `.magento.env.yaml` file
 -  Enabled SCD on-demand
 -  Enabled SCD for the build stage
 -  Enabled SCD for the deploy stage
@@ -23,7 +22,7 @@ Each of the smart wizard commands provides a verification response and, if appli
 Command | Description
 `wizard:scd-on-demand` | Check if the `SCD_ON_DEMAND` global environment variable is set to `true`.
 `wizard:scd-on-build ` | Check if the `SCD_ON_DEMAND` global environment variable is set to `false` and the `SKIP_SCD` environment variable is set to `false` for the build stage. Verifies the `config.php` file contains information for stores, store groups, and websites.
-`wizard:scd-on-deploy` | Check if the `SCD_ON_DEMAND` global environment variable is set to `false` and the `SKIP_SCD` environment variable is set to `true` for the build stage. Verifies the `config.php`file does _NOT_ contain the list of stores, store groups, and websites with related information.
+`wizard:scd-on-deploy` | Check if the `SCD_ON_DEMAND` global environment variable is set to `false` and the `SKIP_SCD` environment variable is set to `false` for the deploy stage. Verifies the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
 
 For example, to verify your configuration properly enables the SCD on-demand feature:
 

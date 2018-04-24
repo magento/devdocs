@@ -196,6 +196,17 @@ stage:
 
 By default, the deployment process overwrites all settings in the `env.php` file. 
 
+### `SKIP_SCD`
+
+-  **Default**— _Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Skips static content deployment during the deploy phase.
+
+If you are already deploying static content during the build phase with [Configuration Management]({{page.baseurl}}/cloud/live/sens-data-over.html), you may want to turn it off for a quick build test.
+
+We do not recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
+
 ### `STATIC_CONTENT_EXCLUDE_THEMES`
 
 -  **Default**—_Not set_
