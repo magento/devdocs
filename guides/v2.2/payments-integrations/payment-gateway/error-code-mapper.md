@@ -5,7 +5,7 @@ title: Error Code Mapping
 github_link: payments-integrations/payment-gateway/error-code-mapper.md
 ---
 
-A payment gateway has error codes or messages that need to be transformed to user-friendly messages. When an error occurs, Magento  delivers the message to the appropriate audience so that the customer or merchant can resolve any problems. Each payment integration can be set up to map the native error codes and messages into sets of text strings. As a result, you can ensure that only the proper audience (merchants only, customers only, or all) sees each error message. By default, the standard error message (`An error occurred on the server. Please try to place the order again.`) displays if a payment operation fails and a specific mapped message cannot be found.
+A payment gateway has error codes or messages that need to be transformed to user-friendly messages. When an error occurs, Magento  delivers the message to the appropriate audience so that the customer or merchant can resolve any problems. You can set up each payment integration to map the native error codes and messages into sets of text strings. As a result, you can ensure that only the proper audience (merchants only, customers only, or all) sees each error message. By default, the standard error message (`An error occurred on the server. Please try to place the order again.`) displays if a payment operation fails and a specific mapped message cannot be found.
 
 Magento provides the [`\Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapperInterface`]({{site.mage2200url}}app/code/Magento/Payment/Gateway/ErrorMapper/ErrorMessageMapperInterface.php) interface and default mapper implementation at [`\Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapper`]({{site.mage2200url}}app/code/Magento/Payment/Gateway/ErrorMapper/ErrorMessageMapper.php) to enable customizations.
 
@@ -13,7 +13,7 @@ This topic uses examples based on the Magento Braintree payment integration to i
 
 ## Implement mapping files
 
-In most cases, you must define one or more mapping files and configure the default implementation of `ErrorMessageMapperInterface` via the module's `di.xml` file. Alternatively, you can implement a programmatic solution described in [Retrieve error codes from the response validator](#retrieve-errors)
+In most cases, you must define one or more mapping files and configure the default implementation of `ErrorMessageMapperInterface` using the module's `di.xml` file. Alternatively, you can implement a programmatic solution described in [Retrieve error codes from the response validator](#retrieve-errors).
 
 ### Map the messages
 
@@ -40,16 +40,16 @@ The  [braintree_error_mapping.xml]({{site.mage2200url}}app/code/Magento/Braintre
 </mapping>
 ```
 
-The message definitions are based on the [error_mapping.xsd]({{site.mage2200url}}app/code/Magento/Payment/etc/error_mapping.xsd) schema. They must comply with the following structure:
+The message definitions are based on the [error_mapping.xsd]({{site.mage2200url}}app/code/Magento/Payment/etc/error_mapping.xsd) schema. Messages must comply with the following structure:
 
- - `message_list` - the root node. It can contain a list of specific messages
- - `message` - the node, which contains the customized message and two attributes
-     - `code` - the error code returned from the payment gateway. The value can be numeric or string
-     - `translate` - a boolean attribute that determines whether to collect all message translations
+ - `message_list` &mdash; the root node. It can contain a list of specific messages
+ - `message` &mdash; the node, which contains the customized message and two attributes
+     - `code` &mdash; the error code returned from the payment gateway. The value can be numeric or string
+     - `translate` &mdash; a boolean attribute that determines whether to collect all message translations
 
 ### Configure dependency injection
 
-After you have mapped the message, you must specify the location of the error mapping the file or files for the config reader. To do this, create a `virtualType` defintion for `\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader` in the module's `di.xml` file:
+After you map the messages, you must specify the location of the error mapping file or files for the config reader. To do this, create a `virtualType` defintion for `\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader` in the module's `di.xml` file:
 
 ``` xml
 <virtualType name="Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader" type="Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader">
@@ -59,7 +59,7 @@ After you have mapped the message, you must specify the location of the error ma
 </virtualType>
 ```
 
-Also specify a config instance for the data reader. You can also provide your own `cacheId`, which allows you to store all parsed messages in a cache.
+Also, specify a config instance for the data reader. You can also provide your own `cacheId`, which allows you to store all parsed messages in a cache.
 
 ``` xml
 <virtualType name="Magento\Braintree\Gateway\ErrorMapper\VirtualMappingData" type="Magento\Payment\Gateway\ErrorMapper\MappingData">
