@@ -16,8 +16,8 @@ functional_areas:
 
 #### New features
 
-- **Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#redisuseslaveconnection) and for <!--MAGECLOUD-143 --> [MariaDB](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#mysqluseslaveconnection)).
--  <!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a new wizard to help verify your configuration for static content deployment. See [Smart wizards](http://devdocs.magento.com/guides/v2.2/cloud/env/smart-wizards.html).
+- **Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{page.baseurl}}/cloud/env/variables-deploy.html#redisuseslaveconnection) and for <!--MAGECLOUD-143 --> [MariaDB]({{page.baseurl}}/cloud/env/variables-deploy.html#mysqluseslaveconnection)).
+-  <!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a new wizard to help verify your configuration for static content deployment. See [Smart wizards]({{page.baseurl}}/cloud/env/smart-wizards.html).
 -  <!-- MAGECLOUD-1966-->**Symfony Console support**—Added support for Symfony Console 4 with Magento 2.3.
 
 #### Fixed issues
