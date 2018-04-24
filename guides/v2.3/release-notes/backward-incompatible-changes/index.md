@@ -72,10 +72,11 @@ With the release of Magento 2.3 we are releasing a new version of Zend Framework
 **Reason**: They are no longer used in Magento or Marketplace extensions, are expensive and time-intensive to maintain, and can cause potential security risks if not maintained properly.
 
 **Details**:
-If the functionality previously facilitated by these removed Zend Framework modules and classes is necessary, use existing functionality or modules to suit your needs:
-* Verify whether the needed functionality exists natively in the Magento framework.
-* Verify whether the needed functionality exists in one of the existing bundled Zend Framework v2 or v3 modules.
-* Look for the needed functionality in existing Symfony components or Zend modules.
+* If the functionality previously facilitated by these removed Zend Framework modules and classes is necessary, use existing functionality or modules to suit your needs:
+	* Verify whether the needed functionality exists natively in the Magento framework.
+	* Verify whether the needed functionality exists in one of the existing bundled Zend Framework v2 or v3 modules.
+	* Look for the needed functionality in existing Symfony components or Zend modules.
+* In place of the now removed `Zend_Serializer` module you can use `Magento\Framework\Serialize\Serializer\Serialize`, which facilitates backward-compatibility.
 
 ## Search and related modules
 
