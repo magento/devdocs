@@ -53,7 +53,7 @@ bin/magento deploy:mode:show
 
 A message similar to the following displays:
 
-``` bash
+```
 Current application mode: developer.
 ```
 
