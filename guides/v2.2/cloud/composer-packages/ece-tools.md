@@ -24,7 +24,7 @@ functional_areas:
 
 -  <!-- MAGECLOUD-1221 -->Deployment validation fails if an `ADMIN_EMAIL` or `ADMIN_USERNAME` value is the same as an existing Magento administrator account.
 -  <!-- MAGECLOUD-1489 -->The first installation of the Staging & Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.
--  <!-- MAGECLOUD-1819 -->Validates the `VERBOSE_COMMANDS` and `SCD_COMPRESSION_LEVEL` environment variables during both _build_ and _deploy_ phases.
+-  <!-- MAGECLOUD-1819 -->Validates the `VERBOSE_COMMANDS` environment variable during both _build_ and _deploy_ phases.
 -  <!-- MAGECLOUD-2021 -->Fixed an issue that interrupted the build phase for legacy architecture when using static content deployment.
 
 ## v2002.0.10
