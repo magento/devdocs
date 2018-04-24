@@ -1,11 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 04_CLI
 title: Set the Magento mode
-menu_title: Set the Magento mode
-menu_node:
-menu_order: 200
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-mode.md
 functional_areas:
@@ -51,18 +47,24 @@ The easiest way to do that is to run this command as the <a href="{{page.baseurl
 
 Command usage:
 
-	bin/magento deploy:mode:show
+``` bash
+bin/magento deploy:mode:show
+```
 
 A message similar to the following displays:
 
-	Current application mode: developer.
+``` bash
+Current application mode: developer.
+```
 
 ## Change modes {#config-mode-change}
 Command usage:
 
-	bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
+``` bash
+bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
+```
 
-  Where:
+where:
 
   -   **`{mode}`** is required; it can be either `developer` or `production`
 
@@ -72,9 +74,11 @@ Examples follow.
 
 ### Change to production mode
 
-	bin/magento deploy:mode:set production
+``` bash
+bin/magento deploy:mode:set production
+```
 
-Following is a summary of messages that display:
+Messages similar to the following display:
 
 	Enabled maintenance mode
 	Requested languages: en_US
@@ -118,20 +122,26 @@ When you change from production to developer mode, you should clear generated cl
 
 1.  If you're changing from production mode to developer mode, delete the contents of the `generated/code` and `generated/metadata` directories:
 
-		rm -rf <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
+		``` bash
+    rm -rf <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
+    ```
 
 2.  Set the mode:
 
-		bin/magento deploy:mode:set developer
+		``` bash
+    bin/magento deploy:mode:set developer
+    ```
 
 	The following message displays:
 
 		Switched to developer mode.
-		
+
 ### Change to default mode
 
+    ``` bash
     bin/magento deploy:mode:set default
-    
+    ```
+
 The following message displays:
 
     Enabled default mode.
