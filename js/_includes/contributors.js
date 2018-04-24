@@ -1,5 +1,3 @@
-
-
 /*!
  * contributorsList jQuery plugin
  * Author: ybannykh@magento.com
@@ -15,33 +13,42 @@
   var pluginName = 'contributorsList';
   var defaults = {
     dataUrl: 'https://s3.amazonaws.com/public.magento.com/devdocs-contributors.js',
-    periodTypes: 'monthly,quoter,years',
+    periodTypes: 'monthly,quarterly,yearly',
     periodTypesSettings: {
       monthly: {
+        value: 'monthly', // how the type is called in data file
         label: 'Monthly',
         periodsLimit: 12,
-        contributorsLimit: 5
+        contributorsLimit: 20
       },
-      quoter: {
+      quarterly: {
+        value: 'quoter',
         label: 'Quarterly',
         periodsLimit: 12,
-        contributorsLimit: 5
+        contributorsLimit: 20
       },
-      years: {
+      yearly: {
+        value: 'years',
         label: 'Yearly',
         periodsLimit: 5,
-        contributorsLimit: 5
+        contributorsLimit: 20
       }
     },
-    periodsLimit: 12,
-    contributorsLimit: 50,
+    periodsLimit: null, // pass a number is you want to overwrite the limits
+    contributorsLimit: null,
     // Class names (recommended to not modify)
     periodSwitcherClass: 'periods',
+    periodTypeSwitcherClass: 'period-type-switcher',
     loadingClass: 'loading',
+    activeClass: 'active',
     loadedClass: 'loaded',
     hiddenClass: 'hide',
     periodClass: 'contributors-period',
     contributorsListClass: 'contributors-list',
+    contributorClass: 'contributor',
+    contributorNameClass: 'contributor-name',
+    contributorAvatarClass: 'contributor-avatar',
+    contributorStatsClass: 'contributor-stats',
   };
 
   // The actual plugin constructor
@@ -53,10 +60,10 @@
     this._name = pluginName;
     // Get data from html (to extend the defaults with data attributes)
     this.metadata = this.$element.data();
-
     // Extend defaults with options passed: data-attributes, options, defaults
-    this.options = $.extend({}, defaults, options, this.metadata);
+    this.options = $.extend(true, {}, defaults, options, this.metadata);
 
+    console.log(this.options);
 
     // * Plugin methods *
 
@@ -72,49 +79,57 @@
         .removeClass(plugin.options.loadingClass)
         .addClass(plugin.options.loadedClass);
 
-      // See what periods requested from options, and build UI for each one
       var periodContributors = '';
       var periodTypesSwitcherOptions = '',
-        periodTypesSwitcher = '';
+          periodTypesSwitcher = '',
+          periodSwitchers = '';
 
       // Iterate over period types
-      var periodTypes = plugin.options.periodTypes.split(',');
+
+      var periodTypes = plugin.options.periodTypes.replace(/\s/g, '').toLowerCase().split(',');
+
       $.each( periodTypes, function ( index, value ) {
         // Strip whitespaces and make lower case
-        var periodType = value.replace(/\s/g, '').toLowerCase();
+        var periodType = (plugin.options.periodTypesSettings[value]) ? plugin.options.periodTypesSettings[value].value : null;
         // work only if data has needed periods
-        if ( data[periodType] ) {
+        if ( data[periodType] && periodType ) {
           var periodTypeSettings = {
-            periodType: periodType,
-            periodTypeLabel: plugin.options.periodTypesSettings[periodType].label,
-            periodTypeClass: plugin.options.periodClass + (( index != 0 ) ? ' ' + plugin.options.hiddenClass : ''),
-            periodsLimit: plugin.options.periodTypesSettings[periodType].periodsLimit,
-            contributorsLimit: plugin.options.periodTypesSettings[periodType].contributorsLimit,
+            value: periodType,
+            label: plugin.options.periodTypesSettings[value].label,
+            class: plugin.options.periodClass + (( index != 0 ) ? ' ' + plugin.options.hiddenClass : ''),
+            periodsLimit: plugin.options.periodTypesSettings[value].periodsLimit,
+            contributorsLimit: ( plugin.options.contributorsLimit ) ? plugin.options.contributorsLimit : plugin.options.periodTypesSettings[value].contributorsLimit,
           }
 
-          periodTypesSwitcherOptions += '<a class="btn" href="#' + periodTypeSettings.periodType + '">' + periodTypeSettings.periodTypeLabel + '</a>';
-          periodContributors += plugin.buildContributorsPeriod( data[periodType], periodTypeSettings );
+          periodTypesSwitcherOptions += '<button class="' + ((index == 0) ? plugin.options.activeClass : '') + '" data-period-type="' + periodTypeSettings.value + '">' + periodTypeSettings.label + '</button>';
+
+          var periodTypeObject = plugin.buildContributorsPeriod( data[periodTypeSettings.value], periodTypeSettings );
+          periodSwitchers += periodTypeObject.switcher;
+          periodContributors += periodTypeObject.contributors;
         }
       });
 
       // Only show period swither if more that one period type
       if ( periodTypes.length > 1 ) {
-        periodTypesSwitcher = '<div class="period-type-switcher">' + periodTypesSwitcherOptions + '</div>';
+        periodTypesSwitcher = '<div class="' + plugin.options.periodTypeSwitcherClass + '">' + periodTypesSwitcherOptions + '</div>';
       }
 
+      var switchers = '<div class="'+ plugin.options.periodSwitcherClass + '">' + periodTypesSwitcher + periodSwitchers + '</div>';
+
       // Create a jQuery object out of raw html
-      var $periodContributors = $( periodTypesSwitcher + periodContributors);
+      var $periodContributors = $( switchers + periodContributors);
       // Assign events
       $periodContributors.find('select').on('change', plugin.handlePeriodChange );
+      $periodContributors.find('.' + plugin.options.periodTypeSwitcherClass + ' button' ).on('click', plugin.handlePeriodTypeChange);
       // Render the HTML
       plugin.$element.append( $periodContributors );
     }
 
 
     // Build contributors for the period type
-    this.buildContributorsPeriod = function ( contributorsPeriod, periodTypeSettings ) {
+    this.buildContributorsPeriod = function ( data, periodTypeSettings ) {
       // Reverse and limit the array most recent comes first
-      var periods = contributorsPeriod.periods.reverse().slice( 0, periodTypeSettings.periodsLimit );
+      var periods = data.periods.reverse().slice( 0, periodTypeSettings.periodsLimit );
 
       var periodSwitcher = '',
           periodSwitcherOptions = '',
@@ -129,15 +144,22 @@
           contributorsListClass: plugin.options.contributorsListClass + ((index != 0) ? ' ' + plugin.options.hiddenClass : ''),
         }
         periodSwitcherOptions += '<option value="' + periodSettings.periodValue + '">' + periodSettings.periodLabel + '</option>';
-        periodContributors += plugin.buildContributorsList( contributorsPeriod.contributors[ periodSettings.periodValue ], periodSettings );
+        periodContributors += plugin.buildContributorsList( data.contributors[ periodSettings.periodValue ], periodSettings );
       });
 
       // Build the switcher if more than one period
       if ( periods.length > 1 ) {
-        periodSwitcher = '<div class="' + plugin.options.periodSwitcherClass + '"><select data-period-type="' + periodTypeSettings.periodType + '">' + periodSwitcherOptions + '</select></div>';
+        periodSwitcher = '<select class="' + periodTypeSettings.class + '" data-period-type="' + periodTypeSettings.value + '">' + periodSwitcherOptions + '</select>';
       }
 
-      return '<div class="'+ periodTypeSettings.periodTypeClass + '" data-period-type="' + periodTypeSettings.periodType + '">' + periodSwitcher + periodContributors + '</div>';
+      periodContributors = '<div class="'+ periodTypeSettings.class + '" data-period-type="' + periodTypeSettings.value + '">' + periodContributors + '</div>';
+
+      return {
+        switcher: periodSwitcher,
+        contributors: periodContributors,
+      }
+
+      //return '<div class="'+ periodTypeSettings.class + '" data-period-type="' + periodTypeSettings.value + '">' + periodSwitcher + periodContributors + '</div>';
     }
 
     // Build an HTML list of contributors from data and settings object
@@ -147,10 +169,10 @@
       $.each(contributors, function (index, value) {
         output += plugin.buildContributor( value );
       });
-      return '<div class="'+ settings.contributorsListClass + '" data-period="'+ settings.periodValue +'" data-period-type="'+ settings.periodType +'">' + output + '</div>';
+      return '<div class="'+ settings.contributorsListClass + '" data-period="'+ settings.periodValue +'">' + output + '</div>';
     }
 
-    // Builds contributor html string (most performant way of inserting the html)
+    // Builds contributor html string
     this.buildContributor = function ( contributor ) {
         var name = contributor.name;
         var avatar = contributor.avatar;
@@ -163,9 +185,9 @@
         var rejected = contributor.rejected;
         var rejected_url = contributor.rejected_url;
 
-        var stats = '<ul class="contributor-stats"><li class="accepted"><span class="title">Accepted</span> <a href="'+ accepted_url +'">' + accepted + '</a></li><li class="created"><span class="title">Created</span> <a href="'+ created_url +'">'+ created +'</a></li><li class="rejected"><span class="title">Rejected</span> <a href="'+ rejected_url +'">'+ rejected +'</a></li></ul>';
+        var stats = '<ul class="' + plugin.options.contributorStatsClass + '"><li><span>Accepted</span> <a href="'+ accepted_url +'">' + accepted + '</a></li><li><span>Created</span> <a href="'+ created_url +'">'+ created +'</a></li><li><span>Rejected</span> <a href="'+ rejected_url +'">'+ rejected +'</a></li></ul>';
 
-        return '<div class="contributor"><a href="'+ url +'"><div class="avatar"><img src="'+ avatar + '" /></div><h5 class="name">' + name + '</h5></a>'+ stats +'</div>';
+        return '<div class="' + plugin.options.contributorClass + '"><a href="'+ url +'"><div class="' + plugin.options.contributorAvatarClass + '"><img src="'+ avatar + '" /></div><h5 class="' + plugin.options.contributorNameClass + '">' + name + '</h5></a>'+ stats +'</div>';
     };
 
     // * Events *
@@ -183,7 +205,9 @@
 
     // Handle the change in period type
     this.handlePeriodTypeChange = function ( event ) {
-      var value = event.target.value;
+      var value = event.target.getAttribute('data-period-type');
+      $(this).addClass(plugin.options.activeClass).siblings().removeClass(plugin.options.activeClass);
+
       plugin.$element.
         find( '.' + plugin.options.periodClass)
         .addClass( plugin.options.hiddenClass ).

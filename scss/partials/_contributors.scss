@@ -26,15 +26,18 @@
 
   a {
     display: block;
+    &:after {
+      display: none !important;
+    }
   }
 
   a:hover {
-    .avatar {
+    .contributor-avatar {
       box-shadow: 0 0 0 2px $brand-color;
     }
   }
 
-  .avatar {
+  .contributor-avatar {
     display: inline-block;
     width: 140px;
     max-width: 100%;
@@ -47,7 +50,7 @@
     }
   }
 
-  .name {
+  .contributor-name {
     font-size: 14px;
     line-height: 1.4em;
     font-weight: bold;
@@ -60,16 +63,15 @@
     text-align: left;
     margin: 3px 0 0 0;
     padding: 0;
+
+    li {
+      padding: 0;
+      margin: 0;
+      font-size: 11px;
+    }
   }
 
-
-  .contributor-stats li {
-    padding: 0;
-    margin: 0;
-    font-size: 11px;
-  }
-
-  .contributor-stats .title {
+  .contributor-stats span {
     display: inline-block;
     min-width: 50px;
     color: #999;
@@ -84,6 +86,11 @@
     &:visited {
       color: #777;
     }
+
+    &:hover {
+      color: #333;
+    }
+
   }
 
 
@@ -91,12 +98,33 @@
 
 
 
-.contributor-stats a:hover {
-  color: #333;
-}
 
 .periods {
-  padding: 15px 10px;
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.period-type-switcher {
+  flex: 1 1 auto;
+  text-align: left;
+
+  button {
+    border: 1px solid teal;
+    color: teal;
+    background: #fff;
+    font-weight: 600;
+    margin: 0 5px 5px 0;
+    padding: 9px 20px;
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  .active {
+    border-color: $brand-color;
+    color: $brand-color;
+  }
 }
 
 .periods label {
@@ -106,9 +134,18 @@
 }
 
 .periods select {
-  display: inline-block;
-  padding: 5px 20px;
+  background: #fff;
+  padding: 5px 35px 5px 15px;
+  line-height: 1;
   height: 40px;
   border-radius: 2px;
   border: 1px solid #999;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MSIgaGVpZ2h0PSI0MSIgdmlld0JveD0iMCAwIDQxIDQxIj4gIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgIDxyZWN0IHdpZHRoPSI0MSIgaGVpZ2h0PSI0MSIgZmlsbD0iI0ZGRiIvPiAgICA8cG9seWdvbiBmaWxsPSIjMkIyQjJDIiBwb2ludHM9IjEzIDE4IDI4IDE4IDIwLjUgMjUuNSIvPiAgPC9nPjwvc3ZnPg==);
+
+
+  background-position: center right;
+  background-repeat: no-repeat;
 }
