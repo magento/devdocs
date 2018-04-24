@@ -27,7 +27,7 @@ Command | Description
 For example, to verify your configuration properly enables the SCD on-demand feature:
 
 ```bash
-wizard:scd-on-demand
+./vendor/bin/ece-tools wizard:scd-on-demand
 ```
 
 A successful configuration returns:
