@@ -20,6 +20,7 @@ The smart wizards can assist you in determining if your Cloud configuration foll
 Each of the smart wizard commands provides a verification response and, if applicable, a recommendation for the proper configuration.
 
 Command | Description
+------- | -----------
 `wizard:scd-on-demand` | Check if the `SCD_ON_DEMAND` global environment variable is set to `true`.
 `wizard:scd-on-build ` | Check if the `SCD_ON_DEMAND` global environment variable is set to `false` and the `SKIP_SCD` environment variable is set to `false` for the build stage. Verifies the `config.php` file contains information for stores, store groups, and websites.
 `wizard:scd-on-deploy` | Check if the `SCD_ON_DEMAND` global environment variable is set to `false` and the `SKIP_SCD` environment variable is set to `false` for the deploy stage. Verifies the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
