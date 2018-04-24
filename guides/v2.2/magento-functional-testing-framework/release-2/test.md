@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.2.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -63,7 +63,7 @@ The following conventions apply to MFTF tests:
 * Each action and action group has its own identifier `<stepKey>` for reference purposes.
 * A test may have any number of [assertions](./test/assertions.html), at any point within the `<test>`.
 * The file name and `<test>` name are equal.
-* If a `<test>` is included in a `<suite>`, it **cannot be generated in isolation** to the rest of the suite's contents (see [suites](./suite.html) for details).
+* If `<test>` is included in `<suite>`, it **cannot be generated in isolation** to the rest of the contents of the suite (see [suites](./suite.html) for details).
 
 Multiple <test> tags per XML file can make it hard to find and organize tags. To simplify, we generate one `test.php` file per <test> tag provided, though we support both single and multiple <test> tags per XML file.
 

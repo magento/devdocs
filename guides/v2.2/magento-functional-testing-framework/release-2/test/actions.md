@@ -429,28 +429,6 @@ Attribute|Type|Use|Description
 
 Delete an entity that was previously created.
 
-This action is only able to delete entities that were previously created using [`createData`](#createdata) in the scope of the [test](../test.html#test-tag).
-
-Assuming we created _SampleCategory_ like:
-
-```xml
-<createData entity="SampleCategory" stepKey="createCategory"/>
-```
-
-We can delete _SampleCategory_:
-
-```
-<deleteData createDataKey="createCategory" stepKey="deleteCategory"/>
-```
-
-Alternatively, we can delete a non-persisted entity via a call to the endpoint's URL:
-
-```
-<grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>
-<deleteData url="V1/categories/{$grabId}" stepKey="deleteCategory"/>
-```
-Use of a `url` is limited to Magento entities that have REST API endpoints.
-
 Attribute|Type|Use|Description
 ---|---|---|---
 `createDataKey`|string|optional| Reference to `stepKey` of the `createData` action .
@@ -459,6 +437,31 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example of persisted data deletion
+
+Delete the entity that was previously created using [`createData`](#createdata) in the scope of the [test](../test.html#test-tag).
+
+1. Create _SampleCategory_:
+
+```xml
+<createData entity="SampleCategory" stepKey="createCategory"/>
+```
+
+2. Delete _SampleCategory_:
+
+```xml
+<deleteData createDataKey="createCategory" stepKey="deleteCategory"/>
+```
+
+#### Example of existing data deletion
+
+Delete an entity using [REST API]({{page.baseurl}}/rest/bk-rest.html) request to the corresponding route:
+
+```xml
+<grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>
+<deleteData url="V1/categories/{$grabId}" stepKey="deleteCategory"/>
+```
 
 ### dontSee
 

@@ -6,13 +6,14 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/introduction.md
 functional_areas:
     - Testing
-mftf-release: 2.0.2
+mftf-release: 2.2.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework]({{page.baseurl}}/mtf/mtf_introduction.html) in future releases. MFTF will make test creation easier for developers and will improve:
+The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases.
+MFTF will make test creation easier for developers and will improve:
 
 * **Traceability** for clear logging and reporting capabilities.
 * **Modularity** to run tests based on installed modules and extensions.
@@ -103,14 +104,16 @@ pre-install.php                 // Script that checks the environment on whether
 - Allure formatted XML results
 - Allure report dashboard of results
 
-## MFTF Module Test and Data Paths
+## MFTF tests
 
-The MFTF supports three different paths to allow test writers to store their tests and test materials:
-* `/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/<Module>`
-* `/app/code/Magento/<Module>/Test/Mftf`
-* `/vendor/<Module>/Test/Mftf`
+The MFTF supports three different locations for storing the tests and test artifacts:
+- `/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/<Module>`
+- `/app/code/Magento/<Module>/Test/Mftf`
+- `/vendor/<Module>/Test/Mftf`
 
-All tests and test data are merged in the above order. The structure inside these paths also needs to follow the usual expected MFTF structure:
+All tests and test data from these locations are merged in the order indicated in the above list.
+
+The file structure under all three path cases is the same:
 ```
 <Path>
 ├── ActionGroup
@@ -130,3 +133,9 @@ All tests and test data are merged in the above order. The structure inside thes
 ## MFTF on Github
 
 Follow the [MFTF project](https://github.com/magento/magento2-functional-testing-framework) and [contribute on Github](../contribution-guidelines.html).
+
+
+<!-- Link definitions -->
+[Functional Testing Framework]: {{page.baseurl}}/mtf/mtf_introduction.html
+[MFTF project]: https://github.com/magento/magento2-functional-testing-framework
+[contribute on Github]: ../contribution-guidelines.html

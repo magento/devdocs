@@ -189,54 +189,64 @@ Generate PHP code from the tests defined in XML files.
 Path to a directory with generated tests:  `tests/functional/Magento/FunctionalTest/_generated/`.
 
 `generate:tests`   | Generate all tests and suites based on specific module load order of the Magento instance
-`generate:tests <testName>`   | Generates only the specified test. Cannot be used to generate tests that are part of suites.
+`generate:tests <testName01> <testName02>`   | Generates only the specified tests. It does not work for tests that are part of suites.
 `generate:tests --force`   | Generate all tests regardless of whether a Magento instance is available
-`generate:tests --config singleRun`   | Generate all tests and a manifest file, which is `_generated/testManifest.txt`. The file contains only a path to the directory with generated tests. 
-`generate:tests --config parallel --lines <number of lines>`   | Generate all tests and a directory with manifest files under `_generated/groups/`. The number of manifests corresponds to the number of nodes required. Each manifest file contains a proportional list of tests sorted and group based on the desired line limit passed to the command.
-`generate:tests --tests "<json configuration>"`   | Generates only the tests and suites in the specified json configuration.
-`generate:suite <suiteName>`   | Generates only the specific suite.
+`generate:tests --config singleRun`   | Generate all tests and a manifest file `_generated/testManifest.txt`. The file contains only a path to the directory with generated tests. 
+`generate:tests --config parallel --lines <number of lines>`   | Generate all tests and a directory with manifest files under `_generated/groups/`. The number of manifests corresponds to the number of nodes required. Each manifest file contains a proportional list of tests sorted and grouped depending on the specified line limit `<number of lines>`.
+`generate:tests --tests "<json configuration>"`   | Generates only the tests and suites in the specified JSON configuration. See examples of the JSON configurations and the entire command below.
+`generate:suite <suiteName>`   | Generates tests for the specified suite only.
 
-##### generate:tests --tests json examples
-To generate only a single test and no suites:
+##### Examples of the JSON configuration
+
+Configuration to generate a single test with no suites:
 ```json
 {  
    "tests":[
-      "general_test1"
+      "general_test1"     //Generate the "general_test1" test.
       ],
-   "suites": null         // Null value for suites denotes a no-op, so no suites would be generated.
+   "suites": null
 }
 ```
-To generate only a single test that is contained in a suite:
+
+Configuration to generate a single test contained in the suite:
 ```json
 {  
-   "tests": null,         // Null value for tests denotes a no-op, so no tests outside suite configuration would be generated.
+   "tests": null,         // No tests outside the suite configuration will be generated.
    "suites":{  
-      "sample":[  
-         "suite_test1"    //To generate only "suite_test1"
+      "sample":[          // The suite that contains the test.
+         "suite_test1"    // The test to be generated.
       ]
    }
 }
 ```
-Mixed configuration to generate some tests, a single test in a suite, and an entire suite:
+
+Complex configuration to generate few non-suite tests, a single test in a suite, and an entire suite:
 ```json
 {  
    "tests":[  
-      "general_test1",
+      "general_test1",   
       "general_test2",
       "general_test3"
    ],
-   "suites":{  
-      "sample":[  
-         "suite_test1"    //To generate only "suite_test1"
+   "suites":{             //Go to suites.
+      "sample":[          //Go to the "sample" suite.
+         "suite_test1"    //Generate the "suite_test1" test.
       ],
-      "sample2":[]        //To generate all tests in suite "sample2"
+      "sample2":[]        //Generate all tests in the "sample2" suite.
    }
 }
 ```
-The above json configuration strings must also be escaped and surrounded in quotes, making the whole command:
+
+The command that encodes the above configuration:
+
+```bash
+vendor/bin/robo generate:tests --tests "{\r\n\"tests\":[\r\n\"general_test1\",\r\n\"general_test2\",\r\n\"general_test3\"\r\n],\r\n\"suites\":{\r\n\"sample\":[\r\n\"suite_test1\"\r\n],\r\n\"sample2\":null\r\n}\r\n}"
 ```
-robo generate:tests --tests "{\r\n\"tests\":[\r\n\"general_test1\",\r\n\"general_test2\",\r\n\"general_test3\"\r\n],\r\n\"suites\":{\r\n\"sample\":[\r\n\"suite_test1\"\r\n],\r\n\"sample2\":null\r\n}\r\n}"
-```
+
+{% include note.html
+type="info"
+content="Strings must be escaped and surrounded in quotes."
+%}
 
 #### self
 
