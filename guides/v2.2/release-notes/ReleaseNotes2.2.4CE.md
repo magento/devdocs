@@ -1,12 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
 title: Magento Open Source 2.2.4 Release Notes
-menu_title: Magento Open Source 2.2.4 Release Notes
-menu_order: 280
-level3_menu_node:
-level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.4CE.md
 ---
