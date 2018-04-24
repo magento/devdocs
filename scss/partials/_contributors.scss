@@ -15,14 +15,17 @@
 }
 
 
+.contributors-list {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
 .contributor {
-  display: inline-block;
   vertical-align: top;
   text-align: left;
   padding: 0 10px 20px 10px;
-  max-width: 160px;
-  min-width: 120px;
-  width: 33%;
+  width: 20%;
 
   a {
     display: block;
@@ -39,7 +42,7 @@
 
   .contributor-avatar {
     display: inline-block;
-    width: 140px;
+    width: 100%;
     max-width: 100%;
     border-radius: 3px;
     box-shadow: 0 0 2px rgba(0,0,0,.2);
@@ -92,6 +95,22 @@
     }
 
   }
+
+  @media ( max-width: 1300px) {
+    width: 25%;
+  }
+
+  @media ( max-width: 1025px) {
+    width: 33%;
+  }
+
+
+
+  @media ( max-width: 500px) {
+    width: 50%;
+  }
+
+
 
 
 }

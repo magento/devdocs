@@ -63,8 +63,6 @@
     // Extend defaults with options passed: data-attributes, options, defaults
     this.options = $.extend(true, {}, defaults, options, this.metadata);
 
-    console.log(this.options);
-
     // * Plugin methods *
 
     // Handle failed load. Removes the loading class so the contributors block becomes invisible

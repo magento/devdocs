@@ -69,6 +69,26 @@
     display: block;
   }
 
+  .devdocs-contributors {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  .contributor {
+    width: 20%;
+
+
+    @media ( max-width: 760px) {
+      width: 33%;
+    }
+
+    @media ( max-width: 560px) {
+      width: 50%;
+    }
+
+  }
+
+
 }
 
 
