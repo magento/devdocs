@@ -19,12 +19,13 @@ functional_areas:
 - **Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{page.baseurl}}/cloud/env/variables-deploy.html#redisuseslaveconnection) and for <!--MAGECLOUD-143 --> [MariaDB]({{page.baseurl}}/cloud/env/variables-deploy.html#mysqluseslaveconnection)).
 -  <!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a new wizard to help verify your configuration for static content deployment. See [Smart wizards]({{page.baseurl}}/cloud/env/smart-wizards.html).
 -  <!-- MAGECLOUD-1966-->**Symfony Console support**—Added support for Symfony Console 4 with Magento 2.3.
+-  <!-- MAGECLOUD-1607 -->**Cron scheduling optimizations**—Improved the queue management and enhanced logging to help with debugging cron-related issues.
 
 #### Fixed issues
 
 -  <!-- MAGECLOUD-1221 -->Deployment validation fails if an `ADMIN_EMAIL` or `ADMIN_USERNAME` value is the same as an existing Magento administrator account.
 -  <!-- MAGECLOUD-1489 -->The first installation of the Staging & Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.
--  <!-- MAGECLOUD-1819 -->Validates the `VERBOSE_COMMANDS` environment variable during both _build_ and _deploy_ phases.
+-  <!-- MAGECLOUD-1819 -->You can now use the `VERBOSE_COMMANDS` environment variable during both _build_ and _deploy_ phases.
 -  <!-- MAGECLOUD-2021 -->Fixed an issue that interrupted the build phase for legacy architecture when using static content deployment.
 
 ## v2002.0.10
