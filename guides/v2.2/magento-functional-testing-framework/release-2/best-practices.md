@@ -123,9 +123,9 @@ Since the configurable product module could be disabled, this approach is more r
 <!-- Link definitions -->
 
 [Action group]: test/action-groups.html
-[`after`]: test/actions.html#before-and-after
+[`<after>`]: test/actions.html#before-and-after
 [annotations]: test/annotations.html
-[`before`]: test/actions.html#before-and-after
+[`<before>`]: test/actions.html#before-and-after
 [`<comment>`]: test/actions.html#comment
 [`<createData>`]: test/actions.html#createdata
 [`<deleteData>`]: test/actions.html#deletedata

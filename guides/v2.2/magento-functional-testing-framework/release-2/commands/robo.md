@@ -198,7 +198,7 @@ Path to a directory with generated tests:  `tests/functional/Magento/FunctionalT
 
 ##### Examples of the JSON configuration
 
-Configuration to generate a single test with no suites:
+The configuration to generate a single test with no suites:
 ```json
 {  
    "tests":[
@@ -208,7 +208,7 @@ Configuration to generate a single test with no suites:
 }
 ```
 
-Configuration to generate a single test contained in the suite:
+The configuration to generate a single test contained in the suite:
 ```json
 {  
    "tests": null,         // No tests outside the suite configuration will be generated.

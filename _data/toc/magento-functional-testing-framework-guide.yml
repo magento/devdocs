@@ -47,6 +47,9 @@ pages:
       - label: Merging
         url: /magento-functional-testing-framework/release-2/merging.html
 
+      - label: Suite
+        url: /magento-functional-testing-framework/release-2/suite.html
+
       - label: Configuration
         url: /magento-functional-testing-framework/release-2/configuration.html
 
