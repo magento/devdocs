@@ -2,9 +2,9 @@
 {% capture entry_url%}/guides/v{{page.guide_version}}{{entry.url}}{%endcapture%}
 <li class="nav-level1 {% if page.url == entry_url %}active{% endif %} {{entry.class}}" id="{{ entry.label | replace: ' ','-' | downcase }}">
     {% if entry.children.size > 0 %}
-    <div class="toggle closed">&nbsp;</div>
-    {% endif %}
     
+    {% endif %}
+
     {% if entry.url %}
     <a href="{% if entry.url contains 'http' %}{{entry.url}}{% else %}{{page.baseurl}}{{entry.url}}{% endif %}">{{ entry.label }}</a>
     {% else %}
@@ -17,11 +17,11 @@
         {% if child.versions.size == nil or child.versions contains page.guide_version %}
         {% capture entry_url%}/guides/v{{page.guide_version}}{{child.url}}{%endcapture%}
         <li class="nav-level2 {% if page.url == entry_url %}active{% endif %} {{child.class}}" id="{{ child.label | replace: ' ','-' | downcase }}">
-            
+
             {% if child.children.size > 0 %}
-            <div class="toggle closed">&nbsp;</div>
+
             {% endif %}
-        
+
             {% if child.url %}
             <a href="{% if child.url contains 'http' %}{{child.url}}{% else %}{{page.baseurl}}{{child.url}}{% endif %}">{{ child.label }}</a>
             {% else %}
@@ -36,7 +36,7 @@
                 {% capture entry_url%}/guides/v{{page.guide_version}}{{child2.url}}{%endcapture%}
                 <li class="nav-level3 {% if page.url == entry_url %}active{% endif %} {{child2.class}}" id="{{child2.label | replace: ' ','-' | downcase }}">
                     {% if child2.children.size > 0 %}
-                    <div class="toggle closed">&nbsp;</div>
+
                     {% endif %}
 
                     {% if child2.url %}
@@ -60,8 +60,8 @@
 
                         </li>
                         {% endif %}
-                        {% endfor %} 
-                    </ul> 
+                        {% endfor %}
+                    </ul>
                     {% endif %}
                 </li>
                 {% endif %}

@@ -4,7 +4,6 @@
     "start": "gulp"
   },
   "devDependencies": {
-    "bootstrap": "4.0.0-beta",
     "browser-sync": "latest",
     "del": "latest",
     "gulp": "^3.9.1",

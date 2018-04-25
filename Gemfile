@@ -4,3 +4,5 @@ gem 'github-pages', '167'
 gem 'wdm' if Gem.win_platform?
 gem 'html-proofer'
 gem 'launchy'
+
+gem 'devdocs', :git => 'https://github.com/magento-devdocs/devdocs-theme.git', :branch => 'master'
