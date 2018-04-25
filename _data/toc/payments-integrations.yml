@@ -29,7 +29,7 @@ pages:
           url: /payments-integrations/payment-gateway/response-handler.html
 
         - label: Error Code Mapping
-          versions: ["2.2"]
+          versions: ["2.2", "2.3"]
           url: /payments-integrations/payment-gateway/error-code-mapper.html
 
     - label: Adding a new payment integration (payment method)
