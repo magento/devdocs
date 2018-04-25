@@ -1050,6 +1050,20 @@
                 </li>
                 
                 
+
+                
+                
+                <li class="nav-level3  " id="smart-wizards">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/env/smart-wizards.html">Smart wizards</a>
+                    
+
+                    
+                </li>
+                
+                
             </ul>
             
         </li>
@@ -2004,7 +2018,12 @@
 <p>You use the <a href="http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a> file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.</p>
 
 <h2 id="global-variables">Global variables</h2>
-<p>The following <em>global</em> variables control actions in the build, deploy, and post-deploy stages of the <code class="highlighter-rouge">.magento.env.yaml</code> file. Because global variables impact every stage, you must set them in the <code class="highlighter-rouge">global</code> stage.</p>
+<p>The following <em>global</em> variables control actions in the build, deploy, and post-deploy stages of the <code class="highlighter-rouge">.magento.env.yaml</code> file. Because global variables impact every stage, you must set them in the <code class="highlighter-rouge">global</code> stage.  Insert these variables in the <code class="highlighter-rouge">global</code> stage of the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">global</span><span class="pi">:</span>
+    <span class="na">GLOBAL_VARIABLE_NAME</span><span class="pi">:</span> <span class="s">value</span>
+</code></pre></div></div>
 
 <h3 id="scd_on_demand"><code class="highlighter-rouge">SCD_ON_DEMAND</code></h3>
 
@@ -2015,9 +2034,9 @@
 
 <p>Enable generation of static content when requested by a user. Pre-loading the cache using the <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#hooks"><code class="highlighter-rouge">post_deploy</code> hook</a> reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable to the <code class="highlighter-rouge">global</code> stage in the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stage:
-  global:
-    SCD_ON_DEMAND: true
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">global</span><span class="pi">:</span>
+    <span class="na">SCD_ON_DEMAND</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">SCD_ON_DEMAND</code> variable skips the SCD and the  <code class="highlighter-rouge">STATIC_CONTENT_SYMLINK</code> in both phases (build and deploy), clears the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> folders, and writes the following to the <code class="highlighter-rouge">app/etc/env.php</code> file:</p>
@@ -2049,9 +2068,9 @@
 
 <p>Add the <code class="highlighter-rouge">SKIP_HTML_MINIFICATION</code> environment variable to the <code class="highlighter-rouge">global</code> stage in the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stage:
-  global:
-    SKIP_HTML_MINIFICATION: true
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">global</span><span class="pi">:</span>
+    <span class="na">SKIP_HTML_MINIFICATION</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
 		</div>

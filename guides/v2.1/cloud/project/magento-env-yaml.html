@@ -1050,6 +1050,20 @@
                 </li>
                 
                 
+
+                
+                
+                <li class="nav-level3  " id="smart-wizards">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/env/smart-wizards.html">Smart wizards</a>
+                    
+
+                    
+                </li>
+                
+                
             </ul>
             
         </li>
@@ -2000,7 +2014,7 @@
 <p>The <code class="highlighter-rouge">.magento.env.yaml</code> file includes the following sections:</p>
 
 <ul>
-  <li><strong><code class="highlighter-rouge">stage</code></strong>—Contains the following sections:
+  <li><strong><code class="highlighter-rouge">stage</code></strong>—Accommodates the following stages of deployment:
     <ul>
       <li><code class="highlighter-rouge">global</code>—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.</li>
       <li><code class="highlighter-rouge">build</code>—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the <code class="highlighter-rouge">build_options.ini</code> file override settings in this section.</li>
@@ -2012,11 +2026,12 @@
     <ul>
       <li><code class="highlighter-rouge">slack</code>—Configure a message to send to a Slack bot.</li>
       <li><code class="highlighter-rouge">email</code>—Configure an email to send to one or more email recipients.</li>
+      <li><a href="/guides/v2.1/cloud/env/log-handlers.html">logging handlers</a>—Configure hardware and software application messages sent to a remote logging server.</li>
     </ul>
   </li>
 </ul>
 
-<p>The latest sample of the <code class="highlighter-rouge">.magento.env.yaml</code> file is in the <a href="https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml"><code class="highlighter-rouge">magento-cloud</code> template repository</a>. You can find a detailed definition for each variable in the following reference topics:</p>
+<p>The latest sample of the <code class="highlighter-rouge">.magento.env.yaml</code> file is in the <a href="https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml" target="\_blank"><code class="highlighter-rouge">magento-cloud</code> template repository</a>. You can find a detailed definition for each variable in the following reference topics:</p>
 
 <ul>
   <li><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Application</a>—variables control administrative credentials</li>

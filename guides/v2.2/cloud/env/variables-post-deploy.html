@@ -1070,6 +1070,20 @@
                 </li>
                 
                 
+
+                
+                
+                <li class="nav-level3  " id="smart-wizards">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/env/smart-wizards.html">Smart wizards</a>
+                    
+
+                    
+                </li>
+                
+                
             </ul>
             
         </li>
@@ -2021,8 +2035,19 @@
 </section>
 
 
-			<p>The following <em>post_deploy</em> variables control actions in the post-deploy phase and can inherit and override values from the <a href="/guides/v2.2/cloud/env/variables-intro.html#global-variables">Global stage</a>. See <a href="http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a> for more information about using these options in the <code class="highlighter-rouge">.magento.env.yaml</code> file.
-For information on the build and deploy process, see <a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
+			<p>The following <em>post_deploy</em> variables control actions in the post-deploy phase and can inherit and override values from the <a href="/guides/v2.2/cloud/env/variables-intro.html#global-variables">Global stage</a>.  Insert these variables in the <code class="highlighter-rouge">post-deploy</code> stage of the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">post-deploy</span><span class="pi">:</span>
+    <span class="na">POST-DEPLOY_VARIABLE_NAME</span><span class="pi">:</span> <span class="s">value</span>
+</code></pre></div></div>
+
+<p>For more information about customizing the build and deploy process:</p>
+
+<ul>
+  <li><a href="/guides/v2.2/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a></li>
+  <li><a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
+</ul>
 
 <h3 id="warm_up_pages"><code class="highlighter-rouge">WARM_UP_PAGES</code></h3>
 
@@ -2033,11 +2058,11 @@ For information on the build and deploy process, see <a href="/guides/v2.2/cloud
 
 <p>Customize the list of pages used to preload the cache in the <code class="highlighter-rouge">post_deploy</code> stage.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stage:
-  post-deploy: 
-    WARM_UP_PAGES:
-       - "index.php"
-       - "index.php/customer/account/create"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">post-deploy</span><span class="pi">:</span> 
+    <span class="na">WARM_UP_PAGES</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s2">"</span><span class="s">index.php"</span>
+       <span class="pi">-</span> <span class="s2">"</span><span class="s">index.php/customer/account/create"</span>
 </code></pre></div></div>
 
 		</div>

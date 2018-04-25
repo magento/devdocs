@@ -1050,6 +1050,20 @@
                 </li>
                 
                 
+
+                
+                
+                <li class="nav-level3  " id="smart-wizards">
+                    
+
+                    
+                    <a  href="/guides/v2.1/cloud/env/smart-wizards.html">Smart wizards</a>
+                    
+
+                    
+                </li>
+                
+                
             </ul>
             
         </li>
@@ -1989,10 +2003,19 @@
 </section>
 
 
-			<p>The following <em>deploy</em> variables control actions in the deploy phase and can inherit and override values from the <a href="/guides/v2.1/cloud/env/variables-intro.html#global-variables">Global stage</a>. Also, you can override the <a href="/guides/v2.1/cloud/env/environment-vars_magento.html"><code class="highlighter-rouge">ADMIN_</code> variables</a>.</p>
+			<p>The following <em>deploy</em> variables control actions in the deploy phase and can inherit and override values from the <a href="/guides/v2.1/cloud/env/variables-intro.html#global-variables">Global stage</a>. Also, you can override the <a href="/guides/v2.1/cloud/env/environment-vars_magento.html">ADMIN variables</a>. Insert these variables in the <code class="highlighter-rouge">deploy</code> stage of the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
 
-<p>See <a href="http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a> for more information about using these options in the <code class="highlighter-rouge">.magento.env.yaml</code> file.
-For information on the build and deploy process, see <a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">DEPLOY_VARIABLE_NAME</span><span class="pi">:</span> <span class="s">value</span>
+</code></pre></div></div>
+
+<p>For more information about customizing the build and deploy process:</p>
+
+<ul>
+  <li><a href="http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html">Manage build and deploy actions</a></li>
+  <li><a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a></li>
+</ul>
 
 <h3 id="cache_configuration"><code class="highlighter-rouge">CACHE_CONFIGURATION</code></h3>
 
@@ -2003,16 +2026,14 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
 <p>Use to configure Redis page and default caching.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stage:
-  global:
-  build:
-  deploy:
-    CACHE_CONFIGURATION:
-      frontend:
-        default:
-          backend: file
-        page_cache:
-          backend: file
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">CACHE_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">frontend</span><span class="pi">:</span>
+        <span class="na">default</span><span class="pi">:</span>
+          <span class="na">backend</span><span class="pi">:</span> <span class="s">file</span>
+        <span class="na">page_cache</span><span class="pi">:</span>
+          <span class="na">backend</span><span class="pi">:</span> <span class="s">file</span>
 </code></pre></div></div>
 
 <p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file. When setting the <code class="highlighter-rouge">cm_cache_backend_redis</code> parameter, you must specify the <code class="highlighter-rouge">server</code>, <code class="highlighter-rouge">port</code>, and <code class="highlighter-rouge">database</code> options.</p>
@@ -2093,7 +2114,21 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
     <li><strong>Version</strong>—Available in all versions</li>
   </ul>
 
-  <p>We manage the values and setting of this variable. It identifies the type of environment as part of Integration, Staging, or Production. For example, for Pro, this value may be <code class="highlighter-rouge">enterprise</code> indicating Staging and Production. For <code class="highlighter-rouge">enterprise</code>, it sets the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> to <code class="highlighter-rouge">3</code>, otherwise sets it to 1 for Integration. This is highly important for Pro plans Production, which has a three node high availability architecture with a very different technology stack.</p>
+  <p>We manage the values and setting of this variable. It identifies the type of environment: Integration, Staging, or Production. The <code class="highlighter-rouge">enterprise</code> value indicates a Staging and Production environment and sets the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> to <code class="highlighter-rouge">3</code>; otherwise, sets it to <code class="highlighter-rouge">1</code> for Integration. This is highly important for Pro Production environments, which have a three-node, high-availability architecture with a very different technology stack.</p>
+
+  <h3 id="mysqluseslaveconnection"><code class="highlighter-rouge">MYSQL_USE_SLAVE_CONNECTION</code></h3>
+
+  <ul>
+    <li><strong>Default</strong>—<code class="highlighter-rouge">false</code></li>
+    <li><strong>Version</strong>—Magento 2.1.4 and later</li>
+  </ul>
+
+  <p>Magento can read multiple databases asynchronously. Set to <code class="highlighter-rouge">true</code> to automatically use a <em>read-only</em> connection to the database to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to <code class="highlighter-rouge">false</code> to remove any existing read-only connection array from the <code class="highlighter-rouge">env.php</code> file.</p>
+
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+    <span class="na">deploy</span><span class="pi">:</span>
+        <span class="na">MYSQL_USE_SLAVE_CONNECTION</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div>  </div>
 
   <h3 id="queueconfiguration"><code class="highlighter-rouge">QUEUE_CONFIGURATION</code></h3>
 
@@ -2104,23 +2139,39 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <p>Use this environment variable to retain customized AMQP service settings between deployments. For example, if you prefer using an existing message queue service, like RabbitMQ, instead of relying on Magento Commerce (Cloud) to create it for you, use the <code class="highlighter-rouge">QUEUE_CONFIGURATION</code> environment variable to connect it to your site:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stage:
-  global:
-  build:
-  deploy:
-        QUEUE_CONFIGURATION:
-          amqp:
-            host: test.host
-            port: 1234
-          amqp2:
-            host: test.host2
-            port: 12345
-          mq:
-            host: mq.host
-            port: 1234
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">QUEUE_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">amqp</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">test.host</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="s">1234</span>
+      <span class="na">amqp2</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">test.host2</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="s">12345</span>
+      <span class="na">mq</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">mq.host</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="s">1234</span>
 </code></pre></div>  </div>
 
   <p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file.</p>
+
+  <h3 id="redisuseslaveconnection"><code class="highlighter-rouge">REDIS_USE_SLAVE_CONNECTION</code></h3>
+
+  <ul>
+    <li><strong>Default</strong>—<code class="highlighter-rouge">false</code></li>
+    <li><strong>Version</strong>—Magento 2.1.4 and later</li>
+  </ul>
+
+  <p>Magento can read multiple Redis instances asynchronously. Set to <code class="highlighter-rouge">true</code> to automatically use a <em>read-only</em> connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing because only one node needs to handle read-write traffic. Set to <code class="highlighter-rouge">false</code> to remove any existing read-only connection array from the <code class="highlighter-rouge">env.php</code> file.</p>
+
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">REDIS_USE_SLAVE_CONNECTION</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div>  </div>
+
+  <p>You must have a Redis service configured in the <code class="highlighter-rouge">.magento.app.yaml</code> file and in the <code class="highlighter-rouge">services.yaml</code> file.</p>
+
+  <p>The read-only connection is not available for use in the Integration environment or if you use the <a href="#cache_configuration"><code class="highlighter-rouge">CACHE_CONFIGURATION</code> variable</a>.</p>
 
   <h3 id="scdcompressionlevel"><code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code></h3>
 
@@ -2129,7 +2180,7 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
     <li><strong>Version</strong>—Magento 2.1.4 and later</li>
   </ul>
 
-  <p>Specifies which <a href="https://www.gnu.org/software/gzip">gzip</a>{target=”_blank} compression level (<code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code>) to use when compressing static content; <code class="highlighter-rouge">0</code> disables compression.</p>
+  <p>Specifies which <a href="https://www.gnu.org/software/gzip" target="\_blank">gzip</a> compression level (<code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code>) to use when compressing static content; <code class="highlighter-rouge">0</code> disables compression.</p>
 
   <h3 id="searchconfiguration"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></h3>
 
@@ -2140,16 +2191,14 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <p>Use this environment variable to retain customized search service settings between deployments. For example:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stage:
-  global:
-  build:
-  deploy:
-   SEARCH_CONFIGURATION:
-     engine: elasticsearch
-     elasticsearch_server_hostname: hostname
-     elasticsearch_server_port: '123456'
-     elasticsearch_index_prefix: magento
-     elasticsearch_server_timeout: '15'
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">SEARCH_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">engine</span><span class="pi">:</span> <span class="s">elasticsearch</span>
+      <span class="na">elasticsearch_server_hostname</span><span class="pi">:</span> <span class="s">hostname</span>
+      <span class="na">elasticsearch_server_port</span><span class="pi">:</span> <span class="s1">'</span><span class="s">123456'</span>
+      <span class="na">elasticsearch_index_prefix</span><span class="pi">:</span> <span class="s">magento</span>
+      <span class="na">elasticsearch_server_timeout</span><span class="pi">:</span> <span class="s1">'</span><span class="s">15'</span>
 </code></pre></div>  </div>
 
   <p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file.</p>
@@ -2163,24 +2212,34 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <p>Use to configure Redis session storage. You must specify the <code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">redis</code>, <code class="highlighter-rouge">host</code>, <code class="highlighter-rouge">port</code>, and <code class="highlighter-rouge">database</code> options for the session storage variable. For example:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stage: 
-  build: ~
-  deploy: 
-    SESSION_CONFIGURATION:
-      redis: 
-        bot_first_lifetime: 100
-        bot_lifetime: 10001
-        database: 0
-        disable_locking: 1
-        host: redis.internal
-        max_concurrency: 10
-        max_lifetime: 10001
-        min_lifetime: 100
-        port: 6379
-      save: redis
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">SESSION_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">redis</span><span class="pi">:</span> 
+        <span class="na">bot_first_lifetime</span><span class="pi">:</span> <span class="s">100</span>
+        <span class="na">bot_lifetime</span><span class="pi">:</span> <span class="s">10001</span>
+        <span class="na">database</span><span class="pi">:</span> <span class="s">0</span>
+        <span class="na">disable_locking</span><span class="pi">:</span> <span class="s">1</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">redis.internal</span>
+        <span class="na">max_concurrency</span><span class="pi">:</span> <span class="s">10</span>
+        <span class="na">max_lifetime</span><span class="pi">:</span> <span class="s">10001</span>
+        <span class="na">min_lifetime</span><span class="pi">:</span> <span class="s">100</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="s">6379</span>
+      <span class="na">save</span><span class="pi">:</span> <span class="s">redis</span>
 </code></pre></div>  </div>
 
   <p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file.</p>
+
+  <h3 id="skipscd"><code class="highlighter-rouge">SKIP_SCD</code></h3>
+
+  <ul>
+    <li><strong>Default</strong>— <em>Not set</em></li>
+    <li><strong>Version</strong>—Magento 2.1.4 and later</li>
+  </ul>
+
+  <p>Skips static content deployment during the deploy phase.</p>
+
+  <p>We recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.</p>
 
   <h3 id="staticcontentexcludethemes"><code class="highlighter-rouge">STATIC_CONTENT_EXCLUDE_THEMES</code></h3>
 
@@ -2191,9 +2250,9 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <p>Themes can include numerous files. Set this variable to true if you want to skip copying over theme files during deployment. For example, the Luma theme is included with Magento Commerce (Cloud). You may not need to constantly deploy this theme with your code updates and deployments. To exclude the <code class="highlighter-rouge">Magento/luma</code> theme:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> stage:
-  build:
-    SCD_EXCLUDE_THEMES: Magento/luma 
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">SCD_EXCLUDE_THEMES</span><span class="pi">:</span> <span class="s">Magento/luma</span> 
 </code></pre></div>  </div>
 
   <h3 id="staticcontentsymlink"><code class="highlighter-rouge">STATIC_CONTENT_SYMLINK</code></h3>
@@ -2238,10 +2297,10 @@ For information on the build and deploy process, see <a href="/guides/v2.1/cloud
 
   <ul>
     <li><strong>Default</strong>—<code class="highlighter-rouge">disabled</code></li>
-    <li><strong>Version</strong>—Available in all versions</li>
+    <li><strong>Version</strong>—Magento 2.1.4 and later</li>
   </ul>
 
-  <p>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed.</p>
+  <p>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html" target="\_blank">Symfony</a> debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed.</p>
 </div>
 
 		</div>

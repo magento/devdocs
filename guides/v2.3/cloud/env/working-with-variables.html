@@ -1075,6 +1075,20 @@
                 </li>
                 
                 
+
+                
+                
+                <li class="nav-level3  " id="smart-wizards">
+                    
+
+                    
+                    <a  href="/guides/v2.3/cloud/env/smart-wizards.html">Smart wizards</a>
+                    
+
+                    
+                </li>
+                
+                
             </ul>
             
         </li>
@@ -2035,9 +2049,10 @@
   <li><strong>Environment-specific variables</strong>—To set a unique value for a specific environment, use the <code class="highlighter-rouge">magento-cloud variable:set</code> command. These variables are available at runtime and are inherited by child environments. You should specify the environment in your command using the <code class="highlighter-rouge">-e</code> option.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info">
+<div class="bs-callout bs-callout-info" id="info">
   <p>After setting project-specific variables, you must manually redeploy the remote environment for the change to take effect. Push the new commits to trigger a redeploy. Setting environment-specific variables in the Project Web Interface automatically redeploys the environment.</p>
 </div>
+<p>”</p>
 
 <p>Use the following options to prevent a variable from being seen or inherited:</p>
 
@@ -2046,7 +2061,7 @@
   <li><code class="highlighter-rouge">--sensitive true</code>—marks the variable as <em>non-readable</em> in the Project Web Interface. You can not view the variable in the user interface; however, you can view the variable from the application container, like any other variable.</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:create --name &lt;VARIABLE_NAME&gt; --value &lt;VARIABLE_VALUE&gt; --inheritable false --sensitive true
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:create <span class="nt">--name</span> &lt;VARIABLE_NAME&gt; <span class="nt">--value</span> &lt;VARIABLE_VALUE&gt; <span class="nt">--inheritable</span> <span class="nb">false</span> <span class="nt">--sensitive</span> <span class="nb">true</span>
 </code></pre></div></div>
 
 		</div>

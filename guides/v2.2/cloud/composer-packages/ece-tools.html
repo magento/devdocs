@@ -1070,6 +1070,20 @@
                 </li>
                 
                 
+
+                
+                
+                <li class="nav-level3  " id="smart-wizards">
+                    
+
+                    
+                    <a  href="/guides/v2.2/cloud/env/smart-wizards.html">Smart wizards</a>
+                    
+
+                    
+                </li>
+                
+                
             </ul>
             
         </li>
@@ -2033,9 +2047,54 @@
 
   <p>These updates strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the <code class="highlighter-rouge">magento-cloud-metapackage</code>.</p>
 
+  <h2 id="v2002011">v2002.0.11</h2>
+
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>The Cloud tools version 2002.0.11 is required for 2.2.4 compatibility.</p>
+  </div>
+
+  <h4 id="new-features">New features</h4>
+
+  <ul>
+    <li><strong>Configuring read-only connections to non-master nodes</strong>—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 --><a href="/guides/v2.2/cloud/env/variables-deploy.html#redisuseslaveconnection">Redis</a> and for <!--MAGECLOUD-143 --> <a href="/guides/v2.2/cloud/env/variables-deploy.html#mysqluseslaveconnection">MariaDB</a>).</li>
+    <li>
+      <!--MAGECLOUD-1910 -->
+      <p><strong>Configuration Wizard</strong>—Added a new wizard to help verify your configuration for static content deployment. See <a href="/guides/v2.2/cloud/env/smart-wizards.html">Smart wizards</a>.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1966 -->
+      <p><strong>Symfony Console support</strong>—Added support for Symfony Console 4 with Magento 2.3.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1607 -->
+      <p><strong>Cron scheduling optimizations</strong>—Improved the queue management and enhanced logging to help with debugging cron-related issues.</p>
+    </li>
+  </ul>
+
+  <h4 id="fixed-issues">Fixed issues</h4>
+
+  <ul>
+    <li>
+      <!-- MAGECLOUD-1221 -->
+      <p>Deployment validation fails if an <code class="highlighter-rouge">ADMIN_EMAIL</code> or <code class="highlighter-rouge">ADMIN_USERNAME</code> value is the same as an existing Magento administrator account.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1489 -->
+      <p>The first installation of the Staging &amp; Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-1819 -->
+      <p>You can now use the <code class="highlighter-rouge">VERBOSE_COMMANDS</code> environment variable during both <em>build</em> and <em>deploy</em> phases.</p>
+    </li>
+    <li>
+      <!-- MAGECLOUD-2021 -->
+      <p>Fixed an issue that interrupted the build phase for legacy architecture when using static content deployment.</p>
+    </li>
+  </ul>
+
   <h2 id="v2002010">v2002.0.10</h2>
 
-  <h3 id="new-features">New features</h3>
+  <h4 id="new-features-1">New features</h4>
 
   <ul>
     <li>
@@ -2079,7 +2138,7 @@
     </li>
   </ul>
 
-  <h3 id="fixed-issues">Fixed issues</h3>
+  <h4 id="fixed-issues-1">Fixed issues</h4>
 
   <ul>
     <li>
@@ -2110,7 +2169,7 @@
     <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html">upgrade the Magento Commerce (Cloud) metapackage</a> to get this and all future updates.</p>
   </div>
 
-  <h3 id="new-features-1">New features</h3>
+  <h4 id="new-features-2">New features</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1086 -->
@@ -2144,7 +2203,7 @@
     </li>
   </ul>
 
-  <h3 id="fixed-issues-1">Fixed issues</h3>
+  <h4 id="fixed-issues-2">Fixed issues</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1615 -->
@@ -2169,7 +2228,7 @@
     <p>We merged <a href="http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html"><code class="highlighter-rouge">vendor/magento/ece-patches</code></a> with <code class="highlighter-rouge">vendor/magento/ece-tools</code> in this release. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
   </div>
 
-  <h3 id="new-features-2">New features</h3>
+  <h4 id="new-features-3">New features</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1253 -MAGECLOUD-1495-->
@@ -2210,7 +2269,7 @@
     </li>
   </ul>
 
-  <h3 id="fixed-issues-2">Fixed issues</h3>
+  <h4 id="fixed-issues-3">Fixed issues</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1162 -->
@@ -2256,7 +2315,7 @@
 
   <h2 id="v200207">v2002.0.7</h2>
 
-  <h3 id="fixed-issues-3">Fixed issues</h3>
+  <h4 id="fixed-issues-4">Fixed issues</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1454-->
@@ -2266,7 +2325,7 @@
 
   <h2 id="v200206">v2002.0.6</h2>
 
-  <h3 id="fixed-issues-4">Fixed issues</h3>
+  <h4 id="fixed-issues-5">Fixed issues</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1413 -->
@@ -2280,7 +2339,7 @@
 
   <h2 id="v200205">v2002.0.5</h2>
 
-  <h3 id="new-features-3">New features</h3>
+  <h4 id="new-features-4">New features</h4>
   <ul>
     <li>
       <p><strong>Configure a cron consumer with an environment variable</strong>—You can now configure cron consumers using the new <code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable.</p>
@@ -2311,7 +2370,7 @@
     </li>
   </ul>
 
-  <h3 id="fixed-issues-5">Fixed issues</h3>
+  <h4 id="fixed-issues-6">Fixed issues</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1327 -->
@@ -2349,7 +2408,7 @@
 
   <h2 id="v200204">v2002.0.4</h2>
 
-  <h3 id="fixed-issues-6">Fixed issues</h3>
+  <h4 id="fixed-issues-7">Fixed issues</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-1355 -->
@@ -2359,7 +2418,7 @@
 
   <h2 id="v200203">v2002.0.3</h2>
 
-  <h3 id="fixed-issues-7">Fixed issues</h3>
+  <h4 id="fixed-issues-8">Fixed issues</h4>
   <ul>
     <li>
       <!--MAGECLOUD-1311-->
@@ -2369,7 +2428,7 @@
 
   <h2 id="v200202">v2002.0.2</h2>
 
-  <h3 id="fixed-issues-8">Fixed issues</h3>
+  <h4 id="fixed-issues-9">Fixed issues</h4>
   <ul>
     <li>
       <!--MAGECLOUD-1246-->
@@ -2379,7 +2438,7 @@
 
   <h2 id="v200201">v2002.0.1</h2>
 
-  <h3 id="new-features-4">New features</h3>
+  <h4 id="new-features-5">New features</h4>
   <ul>
     <li>
       <!--- MAGECLOUD-1057 -->
@@ -2391,7 +2450,7 @@
     </li>
   </ul>
 
-  <h3 id="fixed-issues-9">Fixed issues</h3>
+  <h4 id="fixed-issues-10">Fixed issues</h4>
   <ul>
     <li>
       <!-- MAGECLOUD-919 & MAGECLOUD-1030-->
