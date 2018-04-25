@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento payment provider gateway | Magento 2 Developer Documentation</title>
+	<title>Error Code Mapping | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.3/payments-integrations/payment-gateway/payment-gateway-intro.html">
+	<link rel="canonical" href="/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/payments-integrations/payment-gateway/payment-gateway-intro.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/payments-integrations/payment-gateway/error-code-mapper.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/payments-integrations/payment-gateway/error-code-mapper.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/payments-integrations/payment-gateway/error-code-mapper.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/payments-integrations/payment-gateway/payment-gateway-intro.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -292,7 +292,7 @@
     
     
 
-<li class="nav-level1 active " id="magento-payment-provider-gateway">
+<li class="nav-level1  " id="magento-payment-provider-gateway">
     
     <div class="toggle closed">&nbsp;</div>
     
@@ -404,7 +404,7 @@
         
         
         
-        <li class="nav-level2  " id="error-code-mapping">
+        <li class="nav-level2 active " id="error-code-mapping">
             
             
         
@@ -730,7 +730,7 @@
 
           
 
-          <span property="name">Magento payment provider gateway</span>
+          <span property="name">Error Code Mapping</span>
 
         
 
@@ -753,7 +753,7 @@
 
 	
 
-	<h1 class="page-heading">Magento payment provider gateway</h1>
+	<h1 class="page-heading">Error Code Mapping</h1>
 
   
 
@@ -761,83 +761,170 @@
 </section>
 
 
-			<h3 id="what-is-magento-payment-provider-gateway">What is Magento payment provider gateway</h3>
-<p>The Magento payment provider gateway is a mechanism that allows you to integrate your stores with payment service providers. As a result, you can create and handle transactions based on order details.</p>
+			<p>A payment gateway has error codes or messages that need to be transformed to user-friendly messages. When an error occurs, Magento  delivers the message to the appropriate audience so that the customer or merchant can resolve any problems. You can set up each payment integration to map the native error codes and messages into sets of text strings. As a result, you can ensure that only the proper audience (merchants only, customers only, or all) sees each error message. By default, the standard error message (<code class="highlighter-rouge">An error occurred on the server. Please try to place the order again.</code>) displays if a payment operation fails and a specific mapped message cannot be found.</p>
 
-<p>The following diagram shows a simplified interaction flow between Magento sales management and external payment service provider using Magento payment provider gateway:</p>
+<p>Magento provides the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Payment/Gateway/ErrorMapper/ErrorMessageMapperInterface.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapperInterface</code></a> interface and default mapper implementation at <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Payment/Gateway/ErrorMapper/ErrorMessageMapper.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapper</code></a> to enable customizations.</p>
 
-<p><img src="/common/images/payments-integrations/pg_interaction_flow.png" alt="Payment Gateway Interaction" /></p>
+<p>This topic uses examples based on the Magento Braintree payment integration to illustrate how to enable error code mapping.</p>
 
-<p>Magento payment provider supports the following payment operations:</p>
+<h2 id="implement-mapping-files">Implement mapping files</h2>
 
-<ul>
-  <li>authorize: process <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> transaction; funds are blocked on customer account, but not withdrawn</li>
-  <li>sale: process authorization transaction and capture automatically, funds are withdrawn</li>
-  <li>capture: withdraw previously authorized amount</li>
-  <li>refund: return previously withdrawn customer funds</li>
-  <li>void: cancel transfer of funds from customer account</li>
-</ul>
+<p>In most cases, you must define one or more mapping files and configure the default implementation of <code class="highlighter-rouge">ErrorMessageMapperInterface</code> using the module’s <code class="highlighter-rouge">di.xml</code> file. Alternatively, you can implement a programmatic solution described in <a href="#retrieve-errors">Retrieve error codes from the response validator</a>.</p>
 
-<h3 id="whats-in-this-chapter">What’s in this chapter</h3>
+<h3 id="map-the-messages">Map the messages</h3>
 
-<p>The topics of this chapter are conceptual and describe the components of the Magento payment provider gateway:</p>
-
-<ul>
-  <li><a href="/guides/v2.3/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
-  <li><a href="/guides/v2.3/payments-integrations/payment-gateway/gateway-command.html">Gateway Command</a></li>
-  <li><a href="/guides/v2.3/payments-integrations/payment-gateway/command-pool.html">Gateway Command Pool</a></li>
-  <li><a href="/guides/v2.3/payments-integrations/payment-gateway/request-builder.html">Request Builder</a></li>
-  <li><a href="/guides/v2.3/payments-integrations/payment-gateway/gateway-client.html">Gateway Client</a></li>
-  <li><a href="/guides/v2.3/payments-integrations/payment-gateway/response-validator.html">Response Validator</a></li>
-  <li><a href="/guides/v2.3/payments-integrations/payment-gateway/response-handler.html">Response Handler</a></li>
-</ul>
-
-<h4 id="terms">Terms used</h4>
+<p>The first step is to create one or more XML files that map message codes to messages. Magento recommends naming these files <code class="highlighter-rouge">&lt;gateway_name&gt;_error_mapping.xml</code>, but you can use any name you like. If you create more than one mapping file, each file must have the same file name. Use the following table to determine where to place mapping files:</p>
 
 <table>
-<tr>
-<th>
-Term
-</th>
-<th>
-Description
-</th>
-</tr>
-<tr>
-<td>
-<i>Magento sales management</i>
-</td>
-<td>
-Magento interfaces that provide the ability to create orders, invoices, and shipments.
-</td>
-</tr>
-<tr>
-<td>
-<i>Payment service provider, payment provider, payment processor</i>
-</td>
-<td>
- Online service for accepting electronic payments, like PayPal, Authorize.Net and so on.
-</td>
-</tr>
-<tr>
-<td>
-<i>Payload</i>
-</td>
-<td>
-Data used for a transaction. Might include the following:
-
-<ul>
-<li> payment details </li>
-<li> order items </li>
-<li> shipping, billing addresses </li>
-<li> customer details </li>
-<li> taxes </li>
-<li> merchant's payment provider <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> credentials </li>
-</ul>
-</td>
-</tr>
+  <thead>
+    <tr>
+      <th>Audience</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>All users</td>
+      <td><code class="highlighter-rouge">&lt;module&gt;/etc</code></td>
+    </tr>
+    <tr>
+      <td>Merchants</td>
+      <td><code class="highlighter-rouge">&lt;module&gt;/adminhtml</code></td>
+    </tr>
+    <tr>
+      <td>Customers</td>
+      <td><code class="highlighter-rouge">&lt;module&gt;/frontend</code></td>
+    </tr>
+  </tbody>
 </table>
 
+<p>The files placed in the <code class="highlighter-rouge">adminhtml</code> and <code class="highlighter-rouge">frontend</code> directories ensure that customers and store administrators see only audience-specific messages. For example, a customer should see error messages when a credit card fails verfication due to mis-entered data and similar reasons. The store’s administrator should have more detailed descriptions of why an attempt to create an invoice or refund failed.</p>
+
+<p>The  <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Braintree/etc/braintree_error_mapping.xml">braintree_error_mapping.xml</a> file provides an example  collection:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;mapping</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Payment:etc/error_mapping.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;message_list&gt;</span>
+        <span class="nt">&lt;message</span> <span class="na">code=</span><span class="s">"81703"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Credit card type is not accepted by this merchant account.<span class="nt">&lt;/message&gt;</span>
+        <span class="nt">&lt;message</span> <span class="na">code=</span><span class="s">"81706"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>CVV is required.<span class="nt">&lt;/message&gt;</span>
+        <span class="nt">&lt;message</span> <span class="na">code=</span><span class="s">"81707"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>CVV must be 4 digits for American Express and 3 digits for other card types.<span class="nt">&lt;/message&gt;</span>
+        ...
+    <span class="nt">&lt;/message_list&gt;</span>
+<span class="nt">&lt;/mapping&gt;</span>
+</code></pre></div></div>
+
+<p>The message definitions are based on the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Payment/etc/error_mapping.xsd">error_mapping.xsd</a> schema. Messages must comply with the following structure:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">message_list</code> — the root node. It can contain a list of specific messages</li>
+  <li><code class="highlighter-rouge">message</code> — the node, which contains the customized message and two attributes
+    <ul>
+      <li><code class="highlighter-rouge">code</code> — the error code returned from the payment gateway. The value can be numeric or string</li>
+      <li><code class="highlighter-rouge">translate</code> — a boolean attribute that determines whether to collect all message translations</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="configure-dependency-injection">Configure dependency injection</h3>
+
+<p>After you map the messages, you must specify the location of the error mapping file or files for the config reader. To do this, create a <code class="highlighter-rouge">virtualType</code> defintion for <code class="highlighter-rouge">\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader</code> in the module’s <code class="highlighter-rouge">di.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"fileName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>braintree_error_mapping.xml<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span>
+</code></pre></div></div>
+
+<p>Also, specify a config instance for the data reader. You can also provide your own <code class="highlighter-rouge">cacheId</code>, which allows you to store all parsed messages in a cache.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Braintree\Gateway\ErrorMapper\VirtualMappingData"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\ErrorMapper\MappingData"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"reader"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"cacheId"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>braintree_error_mapper<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span>
+</code></pre></div></div>
+
+<p>Then customize the default <code class="highlighter-rouge">ErrorMessageMapper</code> via virtual type and specify the data reader:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Braintree\Gateway\ErrorMapper\VirtualErrorMessageMapper"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapper"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"messageMapping"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\ErrorMapper\VirtualMappingData<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span>
+</code></pre></div></div>
+
+<p>Because Braintree integration uses the default <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Payment/Gateway/Command/GatewayCommand.php"><code class="highlighter-rouge">Magento\Payment\Gateway\Command\GatewayCommand</code></a>,
+inject the created mapper pool to the required <a href="/guides/v2.3/payments-integrations/payment-gateway/gateway-command.html">gateway command</a> as an argument:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizeCommand"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Command\GatewayCommand"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        ...
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"errorMessageMapper"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\ErrorMapper\VirtualErrorMessageMapper<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">Magento\Payment\Gateway\Command\GatewayCommand</code> allows you to retrieve multiple error messages, but if your integration
+does not use this feature, you can inject <code class="highlighter-rouge">ErrorMessageMapperInterface</code> to it as an argument. Then implement your own logic to the mapper error codes.</p>
+
+<p>The payment integration should now retrieve error codes from the payment gateway response.</p>
+
+<h2 id="retrieve-errors">Retrieve error codes from the response validator</h2>
+
+<p>You can perform the same tasks programmatically using a <a href="/guides/v2.3/payments-integrations/payment-gateway/response-validator.html">response validator</a>. A response validator verifies response codes from the payment gateway. It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway. It is the responsibility of a gateway command to call an appropriate service.</p>
+
+<p>For example, Magento provides a response validator for Braintree: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php"><code class="highlighter-rouge">\Magento\Braintree\Gateway\Validator\GeneralResponseValidator</code></a>. Its implementation allows you to add additional validators.</p>
+
+<p>First, create a new validator. It can be a simple class with the <code class="highlighter-rouge">__invoke</code> method, because <code class="highlighter-rouge">GeneralResponseValidator</code> calls the validator as a function:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">ErrorCodeValidator</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * Invokes validation.
+     *
+     * @param Successful|Error $response
+     * @return array
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nv">$response</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$response</span> <span class="nx">instanceof</span> <span class="nx">Error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">[</span><span class="kc">true</span><span class="p">,</span> <span class="p">[</span><span class="nx">__</span><span class="p">(</span><span class="s1">'Transaction is successful.'</span><span class="p">)]];</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="kc">false</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getErrorCodes</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">errors</span><span class="p">)];</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Then add the created validator to a list of validators in the <code class="highlighter-rouge">GeneralResponseValidator</code> class:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">GeneralResponseValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">ResultInterfaceFactory</span> <span class="nv">$resultFactory</span><span class="p">,</span>
+        <span class="nx">SubjectReader</span> <span class="nv">$subjectReader</span><span class="p">,</span>
+        <span class="nx">ErrorCodeValidator</span> <span class="nv">$errorCodeValidator</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$resultFactory</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span> <span class="o">=</span> <span class="nv">$subjectReader</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">errorCodeValidator</span> <span class="o">=</span> <span class="nv">$errorCodeValidator</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getResponseValidators</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="k">function</span> <span class="p">(</span><span class="nv">$response</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="p">[</span>
+                    <span class="nb">property_exists</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">'success'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">success</span> <span class="o">===</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="p">[</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">message</span> <span class="o">??</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Braintree error response.'</span><span class="p">)]</span>
+                <span class="p">];</span>
+            <span class="p">},</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">errorCodeValidator</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>You can also add the validator as an anonymous function, but a separate class is better for testing purposes.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -849,7 +936,7 @@ Data used for a transaction. Might include the following:
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/payments-integrations/payment-gateway/error-code-mapper.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -859,7 +946,7 @@ Data used for a transaction. Might include the following:
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/payments-integrations/payment-gateway/payment-gateway-intro.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html" target="_blank">Give us feedback</a>
       </div>
     
   
