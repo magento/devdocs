@@ -168,6 +168,10 @@ pages:
               url: /cloud/env/log-handlers.html
               versions: ["2.1","2.2","2.3"]
 
+            - label: Smart wizards
+              url: /cloud/env/smart-wizards.html
+              versions: ["2.1","2.2","2.3"]
+
         - label: Environment variables
           url: /cloud/env/variables-intro.html
           children:

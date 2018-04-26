@@ -79,8 +79,31 @@ Once you have completed preparing your environment, you can build locally and re
 > Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file requires a fresh build. Using the `--incremental` option limits re-builds to posts and pages that have changed.
 
 ## Build using Docker
+This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).
 
-[This Docker container](https://github.com/magento-devdocs/docker-for-devdocs) contains everything necessary to run Jekyll3 for working with Magento DevDocs.
+To use Docker and Docker Compose, first download and install Docker for the appropriate operating system, and then install Docker Compose to execute the `docker-compose.yml` configuration file.
+
+### Docker for Mac
+- Refer [here](https://docs.docker.com/docker-for-mac/install/) for the official installation instructions.
+
+### Docker for Windows
+- Refer [here](https://docs.docker.com/docker-for-windows/install/) for the official installation instructions.
+
+### Docker Compose
+- Refer [here](https://docs.docker.com/compose/install/) for the official installation instructions.
+
+### Execution Steps
+1. Using [git](https://git-scm.com/), [clone](https://help.github.com/articles/cloning-a-repository/) this repository.
+2. Navigate to the resulting directory.
+3. Run `docker-compose up` to initialize the build process. Refer [here](https://docs.docker.com/compose/gettingstarted/#step-build-and-run-your-app-with-compose) for more details on the use of `docker-compose`.
+4. Visit `http://localhost:4000/` in a web browser, and you should be presented with a local copy of the Magento DevDocs. The configuration for the local port (`4000` by default) is found in the [docker-compose.yml](https://github.com/magento/devdocs/blob/develop/docker-compose.yml) file. If another port is desired, please refer [here](https://docs.docker.com/compose/compose-file/compose-file-v2/#ports) for further details regarding Docker Compose port mapping.
+
+### Addressing Problems With Docker Build
+1. Verify that the Docker engine is installed for the appropriate operating system.
+2. Verify that Docker Compose is installed.
+3. Verify that this repository has been cloned.
+4. Verify that the correct Docker Compose command(s) have been used in the same directory as the `docker-compose.yml` file.
+5. If there are still problems, please open an [Issue](https://help.github.com/articles/creating-an-issue/) on this repository.
 
 ## Build using Vagrant
 
