@@ -78,7 +78,7 @@ All system configurations are set during deployment according to the following o
 1. If an environment variable does not exist and `MAGENTO_CLOUD_RELATIONSHIPS` does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.
 
 ## Configuration settings you can change {#cloud-clp-settings}
-The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported including default and modified settings.
+The following table shows the configuration settings affected by the `php vendor/bin/m2-ece-scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported including default and modified settings.
 
 The `config.php` file includes the following settings and configuration values:
 
