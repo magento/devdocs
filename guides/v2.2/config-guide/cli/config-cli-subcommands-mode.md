@@ -1,11 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 04_CLI
 title: Set the Magento mode
-menu_title: Set the Magento mode
-menu_node:
-menu_order: 200
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-mode.md
 functional_areas:
@@ -51,34 +47,38 @@ The easiest way to do that is to run this command as the <a href="{{page.baseurl
 
 Command usage:
 
-	bin/magento deploy:mode:show
+``` bash
+bin/magento deploy:mode:show
+```
 
 A message similar to the following displays:
 
-	Current application mode: developer.
+```
+Current application mode: developer.
+```
 
 ## Change modes {#config-mode-change}
 Command usage:
 
-	bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
+``` bash
+bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
+```
 
-  Where:
+where:
 
   -   **`{mode}`** is required; it can be either `developer` or `production`
 
   -   **`--skip-compilation`** is an optional parameter you can use to skip <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.
 
-  <div class="bs-callout bs-callout-info" id="info" makrdown="1">
-  You cannot currently change from either developer or production mode to <a href="{{ page.baseurl}}/config-guide/bootstrap/magento-modes.html#default-mode">default mode</a>.
-  </div>
-
 Examples follow.
 
 ### Change to production mode
 
-	bin/magento deploy:mode:set production
+``` bash
+bin/magento deploy:mode:set production
+```
 
-Following is a summary of messages that display:
+Messages similar to the following display:
 
 	Enabled maintenance mode
 	Requested languages: en_US
@@ -131,6 +131,16 @@ When you change from production to developer mode, you should clear generated cl
 	The following message displays:
 
 		Switched to developer mode.
+
+### Change to default mode
+
+``` bash
+bin/magento deploy:mode:set default
+```
+
+The following message displays:
+
+    Enabled default mode.
 
 ### Run Magento CLI commands from anywhere
 [Run Magento CLI commands from anywhere]({{page.baseurl}}/config-guide/cli/config-cli.html#config-install-cli-first).
