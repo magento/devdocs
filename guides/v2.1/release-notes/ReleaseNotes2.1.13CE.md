@@ -20,7 +20,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes bot
 
 ### Setup
 
-<!--- MAGETWO-86298 -->* The sample  `.htaccess` file Options `All -Indexes` directive has been replaced with Options `-Indexes`. Previously, the `All -Indexes` directive caused problems in shared hosting environments. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12959*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
+<!--- MAGETWO-86298 -->* The sample  `.htaccess` file Options `All -Indexes` directive has been replaced with Options `-Indexes`. Previously, the `All -Indexes` directive caused problems in shared hosting environments. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12959*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
 
 <!--- MAGETWO-69036 -->* Lazy loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside constructor methods if they weren't provided.) 
 
@@ -125,7 +125,7 @@ did not change after you selected **Disable product**.
 
 
 #### Zend
-<!--- MAGETWO-86300 -->*  We've upgraded the Zend framework `Zend_Service` component. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12958*. [GitHub-9243](https://github.com/magento/magento2/issues/9243)
+<!--- MAGETWO-86300 -->*  We've upgraded the Zend framework `Zend_Service` component. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12958*. [GitHub-9243](https://github.com/magento/magento2/issues/9243)
 
 
 
@@ -172,7 +172,7 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-86861 -->*  Invoices now display coupon code information as expected.  *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 13261*. [GitHub-10168](https://github.com/magento/magento2/issues/10168)
 
-<!--- MAGETWO-86259 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12952*. 
+<!--- MAGETWO-86259 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12952*. 
 
 <!--- MAGETWO-84108 -->* You can now alter the transport variable in the `email_invoice_set_template_vars_before` event. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12135*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
@@ -231,7 +231,7 @@ did not change after you selected **Disable product**.
 
 ### Translations
 
-<!--- MAGETWO-86285 -->* Inline translations and custom translators now work for knockout templates. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 12954*. [GitHub-2156](https://github.com/magento/magento2/issues/2156) 
+<!--- MAGETWO-86285 -->* Inline translations and custom translators now work for knockout templates. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12954*. [GitHub-2156](https://github.com/magento/magento2/issues/2156) 
 
 
 ### UI
@@ -383,17 +383,17 @@ The following table identifies contributions from our community members. This ta
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/12959" target="_blank">12959</a></td>
     <td>10812</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
   </tr>
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/12958" target="_blank">12958</a></td>
     <td>9243</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
   </tr>
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/12956" target="_blank">12956</a></td>
     <td>10682</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
   </tr>
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/12962" target="_blank">12962</a></td>
@@ -403,12 +403,12 @@ The following table identifies contributions from our community members. This ta
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/12952" target="_blank">12952</a></td>
     <td>9969</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
   </tr>
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/12954" target="_blank">12954</a></td>
     <td>2156</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
   </tr>
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/12991" target="_blank">12991</a></td>
@@ -418,7 +418,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/13020" target="_blank">13020</a></td>
     <td>12393</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade - Cream</a></td>
+     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
   </tr>
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/13261" target="_blank">13261</a></td>
