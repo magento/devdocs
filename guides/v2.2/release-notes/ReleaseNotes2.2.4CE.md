@@ -241,7 +241,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85317 -->* You can now successfully change currency for an order before you complete the order. Previously, if you changed currency, when you  proceeded with  checkout by choosing as Bank Transfer Payment as Payment Method, Magento displayed, **Your credit card will be charged for**. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 993*. [GitHub-12526](https://github.com/magento/magento2/issues/12526)
 
-<!--- MAGETWO-86506 -->* Magneto no longer throws a JavaScript error on the cart from postcode validation when **United States** is deselected in the **Allowed Countries** Admin option (**Admin > Stores > Configuration > General > Default Country**). *Fix submitted by [codekipple](https://github.com/codekipple) in pull request 13051*. 
+<!--- MAGETWO-86506 -->* Magento no longer throws a JavaScript error on the cart from postcode validation when **United States** is deselected in the **Allowed Countries** Admin option (**Admin > Stores > Configuration > General > Default Country**). *Fix submitted by [codekipple](https://github.com/codekipple) in pull request 13051*. 
 
 <!--- MAGETWO-86543 -->* Street format spacing when multiple streets are present is now consistent across **Shipping** and **Review & Payments** checkout steps. *Fix submitted by [nfourteen](https://github.com/nfourteen) in pull request 13082*. 
 
