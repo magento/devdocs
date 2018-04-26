@@ -253,7 +253,6 @@ did not change after you selected **Disable product**.
 
 
 ## Community contributions
-
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
@@ -469,7 +468,12 @@ The following table identifies contributions from our community members. This ta
 
 
 
+
+
+
+
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
