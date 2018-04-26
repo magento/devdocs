@@ -47,7 +47,7 @@ pages:
           children:
 
             - label: Magento Open Source 2.1.13 Release Notes
-              url: release-notes/ReleaseNotes2.1.13CE.html
+              url: /release-notes/ReleaseNotes2.1.13CE.html
 
             - label: Magento Open Source 2.1.12 Release Notes
               url: /release-notes/ReleaseNotes2.1.12CE.html
@@ -92,7 +92,7 @@ pages:
           children:
 
             - label: Magento Commerce 2.1.13 Release Notes
-              url: release-notes/ReleaseNotes2.1.13EE.html
+              url: /release-notes/ReleaseNotes2.1.13EE.html
 
             - label: Magento Commerce 2.1.12 Release Notes
               url: /release-notes/ReleaseNotes2.1.12EE.html
