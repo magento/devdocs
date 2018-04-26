@@ -9,6 +9,9 @@ pages:
       - label: Getting started
         url: /magento-functional-testing-framework/release-2/getting-started.html
 
+      - label: Suite
+        url: /magento-functional-testing-framework/release-2/suite.html
+
       - label: Test
         url: /magento-functional-testing-framework/release-2/test.html
         children:
@@ -46,9 +49,6 @@ pages:
 
       - label: Merging
         url: /magento-functional-testing-framework/release-2/merging.html
-
-      - label: Suite
-        url: /magento-functional-testing-framework/release-2/suite.html
 
       - label: Configuration
         url: /magento-functional-testing-framework/release-2/configuration.html

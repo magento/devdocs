@@ -12,9 +12,12 @@ mftf-release: 2.2.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-Suites are essentially groups of tests defined in the _\<magento 2 root\>/dev/tests/acceptance/tests/_suite/suite.xml_ file.
+Suites are essentially groups of tests that run in specific preconditions.
 They enable you including, excluding, and grouping tests for a customized test run when you need it.
-You can form suites using using separate tests, groups, and modules.
+You can form suites using separate tests, groups, and modules.
+
+Each suite must be defined in the _\<magento 2 root\>/dev/tests/acceptance/tests/_suite/suite.xml_ file.
+The generated tests for each suite go to in a separate directory under _\<magento 2 root\>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/_generated_.
 
 ## Format
 
@@ -46,7 +49,8 @@ The format of a suite:
 ## Principles
 
 - A suite name:
-  - must not match any existing group value. For example, the suite `<suite name="ExampleTest">` will fail during test run if any test contains in annotations `<group value="ExampleTest">`.
+  - must not match any existing group value.
+  For example, the suite `<suite name="ExampleTest">` will fail during test run if any test contains in annotations `<group value="ExampleTest">`.
   - must not be `default` or `skip`. Tests that are not in any suite are generated under the `default` suite.
   The suite name `skip` is synonymous to including a test in the `<group value="skip"/>`.
   - can contain letters, numbers, and underscores.
@@ -175,29 +179,39 @@ The suite includes a specific test `SomeCacheRelatedTest` and every `<test>` tha
 ```
 
 This example declares a suite with the name `PaypalConfiguration`:
-* `<before>` block persists a Paypal Configuration enabling all tests in this suite to run under the newly reconfigured Magento instance.
-* `<after>` block deletes the persisted configuration, returning Magento to its initial state.
-* The suite includes all tests from the `Catalog` module, except the `PaypalIncompatibleTest` test.
+- `<before>` block persists a Paypal Configuration enabling all tests in this suite to run under the newly reconfigured Magento instance.
+- `<after>` block deletes the persisted configuration, returning Magento to its initial state.
+- The suite includes all tests from the `Catalog` module, except the `PaypalIncompatibleTest` test.
 
 ## Elements reference
 
+### suites {#suites-tag}
+
+The root element for suites.
+
 ### suite {#suite-tag}
 
-`suite` contains before/after hooks, and a list of tests to `<include>` or `<exclude>`.
-Can contain:
-* A `<before>` and an `<after>`, that contain any test actions that can normally be called in `<test>` tags.
-* An `<include>` or an `<exclude>`, that contain a list of tests to include or exclude.
+A set of preconditions and test filters.
 
-### before {#before}
+Attributes|Type|Use|Description
+---|---|---|---
+`name`|string|required|Unique suite name identifier.
+`remove`|boolean|optional|
 
-`before/after` suite hooks, that execute once before and once after the entire suite executes.
-* May contain any test actions that can normally be called in `<test>` tags.
-* If there is a failure in the before hook of a suite, *none of the tests in the suite are run*. 
-    * Additionally, screenshots are not saved if a failure is encountered in the suite's hook. To troubleshoot these failures, you must run the suite locally.
+It can contain `<before>`, `<after>`, `<include>`, and `<exclude>`.
 
-### after (#after)
+### before {#before-tag}
 
-### include {#include}
+<!-- CONTINUE HERE -->
+A suite hook that executes once before the suite tests.
+It may contain any test actions. Test   that can normally be called in `<test>` tags.
+- If there is a failure in the before hook of a suite, *none of the tests in the suite are run*. 
+  - Additionally, screenshots are not saved if a failure is encountered in the suite's hook. To troubleshoot these failures, you must run the suite locally.
+
+### after {#after-tag}
+
+
+### include {#include-tag}
 
 Tags used to specify what tests should or shouldn't belong in the declared suite.
 May contain:
@@ -205,12 +219,32 @@ May contain:
 * `<group name="">` which refers to a declared `group` annotation.
 * `<module name="">` which refers to all `test` files under a specific Magento Module.
 
+The element can contain `<test>`, `<group>`, and `<module>`.
+
+### exclude {#exclude-tag}
+
+
+### test {#test-tag}
+
 Attributes|Type|Use|Description
 ---|---|---|---
-`name`|string|required|Unique suite name identifier.
+`name`|string|required|
+`remove`|boolean|optional|
 
-### exclude {#exclude}
+### group {#group-tag}
 
+Attributes|Type|Use|Description
+---|---|---|---
+`name`|string|required|
+`remove`|boolean|optional|
+
+### module {#module-tag}
+
+Attributes|Type|Use|Description
+---|---|---|---
+`name`|string|required|
+`file`|string|optional|
+`remove`|boolean|optional|
 
 <!-- Link definitions -->
 [`generate:tests`]: commands/robo.html#generate

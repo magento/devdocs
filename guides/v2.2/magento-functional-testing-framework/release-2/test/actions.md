@@ -163,7 +163,7 @@ The following test actions return a variable:
 *  [grabPageSource](#grabpagesource)
 *  [grabTextFrom](#grabtextfrom)
 *  [grabValueFrom](#grabvaluefrom)
-*  [executeJS](#executeJS)
+*  [executeJS](#executejs)
 
 Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
 
