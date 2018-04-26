@@ -267,7 +267,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/12033" target="_blank">12033</a></td>
-    <td>9869/td>
+    <td>9869</td>
      <td><a href="https://github.com/enriquei4" target="_blank">enriquei4</a></td>
   </tr>
 <tr>
