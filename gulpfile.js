@@ -8,22 +8,18 @@
 
 var gulp = require('gulp'),
    gutil = require('gulp-util'),
-   shell = require('gulp-shell');
    concat = require('gulp-concat'),
    uglify = require('gulp-uglify'),
    sass = require('gulp-sass'),
    imagemin = require('gulp-imagemin'),
    sourcemaps = require('gulp-sourcemaps'),
-   compass = require('gulp-compass'),
    autoprefixer = require('gulp-autoprefixer'),
-   minifycss = require('gulp-minify-css'),
    rename = require('gulp-rename'),
    del = require('del'),
    include = require('gulp-include'),
    jekyll = require('gulp-jekyll'),
    spawn = require('child_process').spawn,
    exec = require('child_process').exec,
-   consolidate = require('gulp-consolidate'),
    browsersync = require('browser-sync'),
    reload = browsersync.reload,
 
