@@ -265,7 +265,6 @@ The following table identifies contributions from our community members. This ta
     <th>Related GitHub issue</th>
      <th>Contributing community member</th>
   </tr>
-
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/12033" target="_blank">12033</a></td>
     <td>9869/td>
@@ -451,13 +450,11 @@ The following table identifies contributions from our community members. This ta
     <td>10565</td>
      <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
  </tr>
-
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/13490" target="_blank">13490</a></td>
     <td>6457, 6729, 7362</td>
      <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
  </tr>
-
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/13916" target="_blank">13916</a></td>
     <td>N/A</td>
