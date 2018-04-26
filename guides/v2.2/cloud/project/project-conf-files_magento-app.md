@@ -203,7 +203,7 @@ hooks:
         php ./bin/magento <custom-command>
     # We run post deploy hook to clean and warm the cache.
     post_deploy: |
-        php ./vendor/bin/ece-tools post_deploy
+        php ./vendor/bin/ece-tools post-deploy
 ```
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.

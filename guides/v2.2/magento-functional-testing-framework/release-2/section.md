@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/section.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.1.2
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -114,8 +114,42 @@ Attributes|Type|Use|Description
 `type`|string|required|The type of the element. Possible values: `text`, `textarea`, `input`, `button`, `checkbox`, `radio`, `checkboxset`, `radioset`, `date`, `file`, `select`, `multiselect`, `wysiwyg`, `iframe`.
 `selector`|string|optional|[XPath](https://www.w3schools.com/xml/xpath_nodes.asp) or [CSS](https://www.w3schools.com/cssref/css_selectors.asp) selector of the element.
 `locatorFunction`|string|optional|[Locator function](./section/locator-functions.html) declaration to be used in lieu of a selector.
-`timeout`|string|optional|The default is `-`; The optional timeout value in seconds to wait for the operation on the element.
+`timeout`|string|optional|The timeout after interaction with the element (in seconds). The default is _none_.
 `parameterized`|boolean|optional|Include and set to `true` if the `selector` for this element has parameters that need to be replaced for proper use. Learn more in [Parameterized selectors](./section/parameterized-selectors.html).
 `remove`|boolean|optional|The default is `false`. Set to `true` to remove this element during parsing.
 
+#### `timeout` attribute {#timeout-attribute}
+
+The attribute adds the [waitForPageLoad] action after a reference to the element in test.
+The most usual use case is a test step with a button click action.
+
+**Use case**: Set a timeout of 30 seconds after clicking the `signIn` button.
+
+The section element code declaration containing the timeout attribute:
+
+> StorefrontSigninSection.xml
+
+```xml
+...
+<element name="signIn" type="button" selector="#signIn" timeout="30"/>
+...
+```
+
+The test step that covers the use case:
+
+> StorefrontSigninTest.xml
+
+```xml
+...
+<click selector="{{StorefrontSigninSection.signIn}}" ../>
+...
+```
+
+Whenever the `signIn` button is used in a test, the MFTF will add a 30 second `waitForPageLoad` action immediately after the `click`.
+
 {% endraw %}
+
+
+<!-- Link definitioins -->
+
+[waitForPageLoad]: test/actions.html#waitforpageload

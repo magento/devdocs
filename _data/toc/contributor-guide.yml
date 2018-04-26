@@ -1,7 +1,9 @@
 label: Contribution Guide
 pages:
+
     - label: Code Contributions
       url: /contributor-guide/contributing.html
+
       children:
         - label: Backward compatible development
           url: /contributor-guide/backward-compatible-development
@@ -17,6 +19,10 @@ pages:
 
         - label: Quarterly Contributors
           url: /contributor-guide/quarterly-contributors.html
+
+        - label: Community maintainers
+          url: /contributor-guide/devdocs-maintainers.html
+          versions: ["2.1","2.2","2.3"]
 
     - label: Templates
       children:

@@ -31,8 +31,8 @@ Before you begin, make sure that:
 5.	Review the information discussed in <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must install Magento from its <code>bin</code> subdirectory.</p></span>
+  <span class="glyphicon-class"></span>
+  <p>You must install Magento from its <code>bin</code> subdirectory.</p>
 </div>
 
 The installer is designed to be run multiple times if necessary so you can:
@@ -44,11 +44,10 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Install Magento in a different database instance
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
+  <span class="glyphicon-class"></span>
+  <p>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</p>
+  <p>See also <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
 </div>
-
-See also <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
 {% include install/fully-secure.md %}
 
