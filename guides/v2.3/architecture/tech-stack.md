@@ -2,7 +2,6 @@
 layout: default
 group: arch-guide
 title: Technology stack
-menu_title: Technology stack
 version: 2.3
 github_link: architecture/tech-stack.md
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
@@ -10,7 +9,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 
 ## Overview
 
-This page summarizes the technologies we use. For more detailed information, see the [System Requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html).
+This page summarizes the technologies we use. For more detailed information, see the [System Requirements]({{site.gdeurl23}}install-gde/system-requirements-tech.html).
 
 Magento's highly modular structure includes the following open-source technologies.
 
@@ -41,12 +40,10 @@ If you are interested in participating in Magento Community projects we welcome 
 ### Cache Storage
 
 *	Redis
-*	Memcache
 
 ### Search
 
-* Solr ({{site.data.var.ee}} 2.0.x only)
-* Elasticsearch ({{site.data.var.ee}} since 2.1.0 and {{site.data.var.ce}} since 2.3.0)
+* Elasticsearch (Magento Commerce versions 2.1.x and 2.2.x, and Magento Open Source version 2.3x)
 
 ### Additional technologies
 
@@ -65,7 +62,7 @@ If you are interested in participating in Magento Community projects we welcome 
 *	Elasticsearch (search engine)
 * RabbitMQ (message queue)
 
-Magento 2.2 and above only supports PHP7+ and is no longer compatible with HipHop Virtual Machine(HHVM).
+Magento 2.2+ does not support HipHop Virtual Machine (HHVM).
 
 ### Automated testing
 

@@ -18,7 +18,7 @@ functional_areas:
 
 Before you install Magento, you must do all of the following:
 
-*	Set up one or more hosts that meet the <a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>.
+*	Set up one or more hosts that meet the <a href="{{page.baseurl}}/install-gde/system-requirements.html">Magento system requirements</a>.
 *	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
 *	Make sure you can back up your entire system at various points during the installation so you can roll back in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues.
 
@@ -27,7 +27,7 @@ Before you install Magento, you must do all of the following:
   <p>We assume you're installing the Magento 2 software in a <em>development environment</em>, which means you have <a href="http://www.linfo.org/root.html" target="&#95;blank">root user</a> access to the machine <em>and</em> that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.</p></span>
 </div>
 
-We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our <a href="{{page.baseurl}}install-gde/bk-install-guide.html">installation overview page</a>.
+We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our <a href="{{page.baseurl}}/install-gde/bk-install-guide.html">installation overview page</a>.
 
 
 Enter the following commands as a user with `root` privileges:
@@ -57,7 +57,7 @@ You must run Apache version 2.2 or 2.4 as the following result indicates:
 	Server version: Apache/2.2.15 (Unix)
 	Server built:   Jul 23 2014 14:17:29
 
-To install or upgrade Apache, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>.
+To install or upgrade Apache, see <a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>.
 
 ### PHP
 
@@ -69,17 +69,13 @@ If you are interested in participating in Magento Community projects we welcome 
 
 	php -v
 
-You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 7.0.x or 7.1.x as the following result indicates:
+You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 7.1.x or 7.2.x as the following result indicates:
 
-	PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
-	Copyright (c) 1997-2016 The PHP Group
-	Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-      with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+	PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
+    Copyright (c) 1997-2017 The PHP Group
+    Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
 
-To install PHP, see:
-
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 7.0 or 7.1&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 7.0 or 7.1&mdash;Ubuntu</a>
+See [PHP](/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html) for info on installing PHP for CentOS or Ubuntu.
 
 ### MySQL
 
@@ -105,15 +101,15 @@ You must run MySQL version 5.6 or later as the following result indicates:
 
 Enter `exit` at the `mysql>` prompt to exit.
 
-To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
+To install or upgrade MySQL, see <a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>.
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
+<a href="{{page.baseurl}}/install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
 
 #### Related topics
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 7.0 or 7.1&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 7.0 or 7.1&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}/install-gde/prereq/optional.html">Installing optional software</a>
+*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
