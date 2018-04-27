@@ -12,12 +12,19 @@ mftf-release: 2.2.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-Suites are essentially groups of tests that run in specific preconditions.
+Suites are essentially groups of tests that run in the specific conditions (preconditions and postconditions).
 They enable you including, excluding, and grouping tests for a customized test run when you need it.
 You can form suites using separate tests, groups, and modules.
 
 Each suite must be defined in the _\<magento 2 root\>/dev/tests/acceptance/tests/_suite/suite.xml_ file.
-The generated tests for each suite go to in a separate directory under _\<magento 2 root\>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/_generated_.
+The generated tests for each suite go into a separate directory under _\<magento 2 root\>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/\_generated_.
+By default, all generated tests are stored in the _default_ suite under _.../Magento/FunctionalTest/\_generated/default_
+
+{%
+include note.html
+type="info"
+content="If a test is generated into at least one custom suite, it will not appear in the _default_ suite."
+%}
 
 ## Format
 
@@ -58,14 +65,16 @@ The format of a suite:
 - A suite must contain at least one `<include>`, or one `<exclude>`, or both.
 - Using `<before>` in a suite, you must add the corresponding `<after>` to restore the initial state of your testing instance.
 
-## Preconditions
+## Conditions
 
-Using suites enables test writers to consolidate preconditions that are shared between tests.
+Using suites enables test writers to consolidate conditions that are shared between tests.
 The code lives in one place and executes once per suite.
 
-* Use any action in [`<before>`] and [`<after>`] similar to using it in a [test].
-* Clean up after suites just like after tests. The MFTF enforces the presence of both `<before>` and `<after>` if either is present.
-* Do not reference in the subsequent tests to data that was persisted in the preconditions. Referencing to `$stepKey.field$` of these actions is not valid.
+* Set up preconditions and postconditions using [actions] in [`<before>`] and [`<after>`] correspondingly, just similar to use in a [test].
+* Clean up after suites just like after tests.
+The MFTF enforces the presence of both `<before>` and `<after>` if either is present.
+* Do not reference in the subsequent tests to data that was persisted in the preconditions.
+Referencing to `$stepKey.field$` of these actions is not valid.
 
 ## Test writing
 
@@ -90,7 +99,7 @@ There are several ways to generate and execute your new test in the context of a
 
 ## Examples
 
-### Browser actions in preconditions
+### Browser actions in suite conditions
 
 ```xml
 <suites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd">
@@ -130,7 +139,7 @@ After the testing, the Magento instance returns to its state prior to the test:
 
 This suite includes all tests that contain the `<group value="WYSIWYG"/>` annotation.
 
-### Execute Magento CLI commands in preconditions
+### Execute Magento CLI commands in suite conditions
 
 ```xml
 <suites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd">
@@ -157,7 +166,7 @@ Preconditions:
 
 The suite includes a specific test `SomeCacheRelatedTest` and every `<test>` that includes the `<group value="CacheRelated"/>` annotation.
 
-### Change Magento configurations in preconditions
+### Change Magento configurations in suite conditions
 
 ```xml
 <suites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd">
@@ -191,60 +200,92 @@ The root element for suites.
 
 ### suite {#suite-tag}
 
-A set of preconditions and test filters.
+A set of "before" and "after" preconditions, and test filters to include and exclude tests in the scope of suite.
 
 Attributes|Type|Use|Description
 ---|---|---|---
 `name`|string|required|Unique suite name identifier.
-`remove`|boolean|optional|
+`remove`|boolean|optional|Removing the suite during merging.
 
 It can contain `<before>`, `<after>`, `<include>`, and `<exclude>`.
 
 ### before {#before-tag}
 
-<!-- CONTINUE HERE -->
-A suite hook that executes once before the suite tests.
-It may contain any test actions. Test   that can normally be called in `<test>` tags.
-- If there is a failure in the before hook of a suite, *none of the tests in the suite are run*. 
-  - Additionally, screenshots are not saved if a failure is encountered in the suite's hook. To troubleshoot these failures, you must run the suite locally.
+A suite hook with preconditions that executes once before the suite tests.
+
+It may contain test steps with any [actions] and [action groups].
+
+{% include note.html
+type="warning"
+content="Tests in the suite are not run and screenshots are not saved in case of a failure in the before hook.
+To troubleshoot the failure, run the suite locally."
+%}
 
 ### after {#after-tag}
 
+A suite hook with postconditions executed once after the suite tests.
+
+It may contain test steps with any [actions] and [action groups].
 
 ### include {#include-tag}
 
-Tags used to specify what tests should or shouldn't belong in the declared suite.
-May contain:
-* `<test name="">` which names a specific `<test>`.
-* `<group name="">` which refers to a declared `group` annotation.
-* `<module name="">` which refers to all `test` files under a specific Magento Module.
+A set of filters to be used for including tests into the suite.
 
-The element can contain `<test>`, `<group>`, and `<module>`.
+It may contain filters by:
+* test which names a specific `<test>`.
+* group which refers to a declared `group` annotation.
+* module which refers to `test` files under a specific Magento Module.
+
+The element may contain [`<test>`], [`<group>`], and [`<module>`].
 
 ### exclude {#exclude-tag}
 
+A set of filters to be used for excluding tests from the the suite.
+
+There two types of behaviour:
+1. Applying filters to the included tests when the suite contains [`<include>`] filters.
+The MFTF will exclude tests from the previously included set and generate the remaining tests in the suite.
+2. Applying filter to all tests when the suite does not contain [`<include>`] filters.
+The MFTF will generate all existing tests except the excluded.
+In this case, the custom suite will contain all generated tests except excluded, and the _default_ suite will contain the excluded tests only. 
+
+It may contain filters by:
+* test which names a specific `<test>`.
+* group which refers to a declared `group` annotation.
+* module which refers to `test` files under a specific Magento Module.
+
+The element may contain [`<test>`], [`<group>`], and [`<module>`].
 
 ### test {#test-tag}
 
 Attributes|Type|Use|Description
 ---|---|---|---
-`name`|string|required|
-`remove`|boolean|optional|
+`name`|string|required|Filtering a test by its name.
+`remove`|boolean|optional|Removing the filter during merging. 
 
 ### group {#group-tag}
 
 Attributes|Type|Use|Description
 ---|---|---|---
-`name`|string|required|
-`remove`|boolean|optional|
+`name`|string|required|Filtering tests by the `<group>` annotation.
+`remove`|boolean|optional|Removing the filter during merging.
 
 ### module {#module-tag}
 
 Attributes|Type|Use|Description
 ---|---|---|---
-`name`|string|required|
-`file`|string|optional|
-`remove`|boolean|optional|
+`name`|string|required|Filtering tests by their location in the corresponding module.
+`file`|string|optional|Filtering a specific test file in the module.
+`remove`|boolean|optional|Removing the filter during merging.
 
 <!-- Link definitions -->
+[actions]: test/actions.html
+[action groups]: test/action-groups.html
+[`<after>`]: #after-tag
+[`<before>`]: #before-tag
 [`generate:tests`]: commands/robo.html#generate
+[test]: test.html
+[`<test>`]: #test-tag
+[`<group>`]: #group-tag
+[`<module>`]: #module-tag
+[`<include>`]: #include-tag

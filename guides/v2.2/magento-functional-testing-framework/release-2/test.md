@@ -19,7 +19,7 @@ MFTF `<tests>` is considered a sequence of actions with associated parameters.
 Any failed [assertion](./test/assertions.html) within a test constitutes a failed test.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-`<before>`and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
+`<before>` and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
 They only apply to the `<test>` in which they are declared.
 
 The steps in `<after>` are run in both successful **and** failed test runs.
