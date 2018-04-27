@@ -27,7 +27,7 @@ In development mode, do not run commands for compilation, code generation and st
 magento setup:di:compile
 ```
 
-* ```setup:static-content:deploy``` deploys static content for a store. In development mode, Magento runs this command on-demand as part of build processes; you do not need to run it.
+* ```setup:static-content:deploy``` deploys static content for a store. In development mode, Magento runs this command on-demand; you do not need to run it.
 ```bash
 magento setup:static-content:deploy
 ```
