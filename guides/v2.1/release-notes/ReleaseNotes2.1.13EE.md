@@ -188,6 +188,9 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-80643 -->*  Administrators can now create orders in the Admin for stores other than the default when using Paypal Payflow Pro. 
 
+<!--- MAGETWO-86429 -->*  You can now implement a product attribute that sets **Catalog Input Type for Store Owner** equal to **Fixed Product Tax** in a multistore environment. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 13020*. [GitHub-12393](https://github.com/magento/magento2/issues/12393)
+
+
 
 ### Reports
 
@@ -197,6 +200,7 @@ did not change after you selected **Disable product**.
 <!--- MAGETWO-83539 -->* The Admin's Most Viewed Products tab now displays all relevant information about products, even when they are not in the default attribute set. [GitHub-9768](https://github.com/magento/magento2/issues/9768)
  
 <!--- MAGETWO-83094 -->* You can now successfully export the Ordered Products report to a CSV file. Previously, the export file contained no report data.
+
 
 
 
