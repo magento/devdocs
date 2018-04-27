@@ -246,7 +246,6 @@ did not change after you selected **Disable product**.
 ### Wish list
 <!--- MAGETWO-86204-->* The default value for a wish list item's `buyRequest` data is now always an array. Previously, this value was set to `null`. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request 12930*.
 
- -
 
 <!--- NOT NEEDED  MAGETWO-89535 MAGETWO-89066 MAGETWO-88992 MAGETWO-88336 MAGETWO-53814 MAGETWO-60969 MAGETWO-61020 MAGETWO-85904 MAGETWO-85755 MAGETWO-84822 MAGETWO-69577 MAGETWO-69213 MAGETWO-83326 MAGETWO-84738 MAGETWO-87517 MAGETWO-84238 MAGETWO-87517 MAGETWO-84849 MAGETWO-84848 MAGETWO-84346 MAGETWO-87348 MAGETWO-87346 MAGETWO-87343 MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 MAGETWO-59163 MAGETWO-84138 MAGETWO-80426 MAGETWO-60154 MAGETWO-85206 MAGETWO-83426 MAGETWO-80324 MAGETWO-89646  -->
 
@@ -268,9 +267,7 @@ The following table identifies contributions from our community members. This ta
     <th>Pull request</th>
     <th>Related GitHub issue</th>
      <th>Contributing community member</th>
-
   </tr>
-
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/12033" target="_blank">12033</a></td>
     <td>9869</td>
