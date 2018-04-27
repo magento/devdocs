@@ -1274,7 +1274,14 @@ app/design/frontend/
      <span class="nt">&lt;media&gt;</span>
          <span class="nt">&lt;preview_image&gt;</span>media/preview.jpg<span class="nt">&lt;/preview_image&gt;</span> <span class="c">&lt;!-- the path to your theme's preview image --&gt;</span>
      <span class="nt">&lt;/media&gt;</span>
- <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
+<span class="nt">&lt;/theme&gt;</span></code></pre></figure>
+
+<p>If you do not have a preview image for your theme, remove the <code class="highlighter-rouge">&lt;media&gt;</code> node:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Config/etc/theme.xsd"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;title&gt;</span>New theme<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme's name --&gt;</span>
+     <span class="nt">&lt;parent&gt;</span>Magento/blank<span class="nt">&lt;/parent&gt;</span> <span class="c">&lt;!-- the parent theme, in case your theme inherits from an existing theme --&gt;</span>
+<span class="nt">&lt;/theme&gt;</span></code></pre></figure>
 
 <p>If you change the theme title or parent theme information in <code class="highlighter-rouge">theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> page for your changes to be saved in the database.</p>
 
@@ -1284,7 +1291,7 @@ app/design/frontend/
 
 <p>To distribute your theme as a package, add a <code class="highlighter-rouge">composer.json</code> file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank">https://packagist.org/</a>.</p>
 
-<p><code class="highlighter-rouge">composer.json</code> provides theme dependency information.</p>
+<p><code class="highlighter-rouge">composer.json</code> provides theme dependency information. Refer to a current <code class="highlighter-rouge">theme.xml</code> file for the correct dependancies and their versions. If your parent theme is something other than <code class="highlighter-rouge">Magento/blank</code>, you may need additional modules in the <code class="highlighter-rouge">"require"</code> section.</p>
 
 <p>Example of a theme <code class="highlighter-rouge">composer.json</code>:</p>
 
