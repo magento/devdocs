@@ -22,7 +22,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes bot
 
 <!--- MAGETWO-86298 -->* The sample  `.htaccess` file Options `All -Indexes` directive has been replaced with Options `-Indexes`. Previously, the `All -Indexes` directive caused problems in shared hosting environments. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12959*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
 
-<!--- MAGETWO-69036 -->* Lazy loaders have been moved from `getter` methods to classes constructor injection, and factory parameters are no longer required. (These parameters will be created inside constructor methods if they weren't provided.) 
+<!--- MAGETWO-69036 -->* Lazy loaders have been moved from `getter` methods to constructor injection in classes, and factory parameters are no longer required. (These parameters will be created inside constructor methods if they weren't provided.) 
 
 <!--- MAGETWO-58072 -->* Magento no longer creates an `/ i18n` at system root (`/`) in addition to the expected language file when you run `bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
@@ -45,7 +45,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes bot
 
 <!--- MAGETWO-84688 -->*  When you set the `category_ids` attribute to be visible in the storefront catalog, Magento now displays catalog listings as expected. Previously, Magento threw an exception. *Fix submitted by [Manu Gonzalez Rodriguez](https://github.com/manuelson) in pull request*.
 
-<!--- MAGETWO-84432 -->*  Magento now saves images as expected when you create a new category that contains an image, and then edit and re-save that category.  Previously, it appears that Magento has saved the category as expected, but `exception.log` states that there was a problem saving the images. *Fix submitted by [IvanK](https://github.com/nemesis-back) in pull request 12368*. [GitHub-8069](https://github.com/magento/magento2/issues/8069)
+<!--- MAGETWO-84432 -->*  Magento now saves images as expected when you create a new category that contains an image, and then edit and re-save that category.  Previously, it appeared that Magento  saved the category as expected, but `exception.log` stated that there was a problem saving the images. *Fix submitted by [IvanK](https://github.com/nemesis-back) in pull request 12368*. [GitHub-8069](https://github.com/magento/magento2/issues/8069)
 
 <!--- MAGETWO-72312 -->* The category filter used for layered navigation for configurable products with no available options now counts products accurately.
 
@@ -62,7 +62,7 @@ We are pleased to present Magento Open Source  2.1.13. This release includes bot
 
 <!--- MAGETWO-87195 -->*  Magento now displays the expected state in the Multishipping New Address form when a customer enters information on the Ship to Multiple Addresses page. *Fix submitted by [enriquei4](https://github.com/enriquei4) in pull request 13367*. [GitHub-8069](https://github.com/magento/magento2/issues/8069)
 
-<!--- MAGETWO-69701 -->* When two customers check out concurrently for the same product, one of the check outs now succeeds. Previously, when two customers checked out concurrently for the same product, and the total quantity being ordered is greater than the quantity available, the stock could become negative. [GitHub-6363](https://github.com/magento/magento2/issues/6363)
+<!--- MAGETWO-69701 -->* When two customers check out concurrently for the same product, one of the check outs now succeeds. Previously, when two customers checked out concurrently for the same product, and the total quantity being ordered was greater than the quantity available, the stock  became negative. [GitHub-6363](https://github.com/magento/magento2/issues/6363)
 
 <!--- MAGETWO-64171 -->* Display issues no longer prevent a user from adding a shipping address when checking out when running Internet Explorer 11.x. Previously, a registered user could not add a new shipping address in the  shipping step of the checkout process due to display issues. 
 
@@ -90,7 +90,7 @@ did not change after you selected **Disable product**.
 ### Customers
 <!--- MAGETWO-85674 -->* `window.checkout.customerLoginUrl` now contains a URL that includes the referer in base64 encoding (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myshop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12629*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
 
-<!--- MAGETWO-84861 -->*  Administrators can now reset customer passwords as expected when the **max wait time between password resets** setting has been disabled.  Previously, when an administrator attempted to reset a customer's password from the Admin, Magento displayed this error, `Too many password reset requests`, even when the **max wait time between password resets** setting has been disabled. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11436*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
+<!--- MAGETWO-84861 -->*  Administrators can now reset customer passwords as expected when the **max wait time between password resets** setting has been disabled.  Previously, when an administrator attempted to reset a customer's password from the Admin, Magento displayed this error, `Too many password reset requests`, even when the **max wait time between password resets** setting had been disabled. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11436*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
 
 <!--- MAGETWO-71669 -->* The Arabic language locale now uses the correct date format. Previously, when Magento was deployed using the JavaScript calendar and the Arabic (Kuwait) locale, It did not correctly display dates  on the product page. (Date format was shown as 182017/05 instead of 18/05/2017.)
 
@@ -138,7 +138,7 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-85264 -->* The newsletter title string in the block template is no longer hardcoded. *Fix submitted by [Lorenzo Stramaccia](https://github.com/slackerzz) in pull request 12611*. 
 
-<!--- MAGETWO-83631 -->*  The `\Magento\Quote\Model\ResourceModel\Quote\Item\Collection` now returns items that have only existing relations in catalog_product_entity table, which prevents the loading of quote items for non-existing products.
+<!--- MAGETWO-83631 -->*  The `\Magento\Quote\Model\ResourceModel\Quote\Item\Collection` now returns items that have only existing relations in `catalog_product_entity` table, which prevents the loading of quote items for non-existing products.
 
 
 <!--- MAGETWO-71701 -->*  In environments running Varnish, the menu item of the active category page is now handled as the active class as expected. Previously, activating the cache interfered with Magento setting the appropriate CSS class to active in environments where Varnish was enabled. [GitHub-6609](https://github.com/magento/magento2/issues/6609)
@@ -151,7 +151,7 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-58383 -->*  Magento now creates a URL rewrite when you save a newly created CMS page. Previously, when you tried to access a newly created CMS page using information from the **URL Key** field, Magento displayed a 404 error.  [GitHub-5923](https://github.com/magento/magento2/issues/5923)
 
-<!--- MAGETWO-87443 -->* You can now  use the custom layout handler form (`cms_page_view_id_cms_page`). Previously, Magento used the wrong layout for the specified page. Previously the cms module added an additional layout update handler with an identifier on page view, and problems occurred when slashes were used in the page identifier. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13489*.
+<!--- MAGETWO-87443 -->* You can now  use the custom layout handler form (`cms_page_view_id_cms_page`).  Previously the cms module added an additional layout update handler with an identifier on page view, and problems occurred when slashes were used in the page identifier. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13489*.
 
 <!--- MAGETWO-84907 -->* Duplicate array keys in `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` and `app/code/Magento/Downloadable/Helper/File.php` have been removed. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12519*.
 
@@ -172,7 +172,7 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-86861 -->*  Invoices now display coupon code information as expected.  *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 13261*. [GitHub-10168](https://github.com/magento/magento2/issues/10168)
 
-<!--- MAGETWO-86259 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12952*. 
+<!--- MAGETWO-86259 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12952*. [GitHub-9969](https://github.com/magento/magento2/issues/9969)
 
 <!--- MAGETWO-84108 -->* You can now alter the transport variable in the `email_invoice_set_template_vars_before` event. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12135*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
@@ -244,7 +244,7 @@ did not change after you selected **Disable product**.
 <!--- MAGETWO-87746 -->*  Creating a new product with a custom attribute set now works as expected. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13549*. [GitHub-10565](https://github.com/magento/magento2/issues/10565) 
 
 
-<!--- MAGETWO-83282 -->* Magento no longer displays the current date when a product's date attribute has an empty value. *Fix submitted by [Pieter Hoste](https://github.com/enriquei4) in pull request 12033*.  [GitHub-9869](https://github.com/magento/magento2/issues/9869) 
+<!--- MAGETWO-83282 -->* Magento no longer displays the current date when a product's date attribute has an empty value. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 12033*.  [GitHub-9869](https://github.com/magento/magento2/issues/9869) 
 
 
 ### Wish list
@@ -461,14 +461,14 @@ The following table identifies contributions from our community members. This ta
 <tr>
   <td><a href="https://github.com/magento/magento2/pull/13916" target="_blank">13916</a></td>
     <td>N/A</td>
-     <td><a href="https://github.com/Northern eCommerce" target="_blank">Northern eCommerce</a></td>
+     <td><a href="https://github.com/northernco" target="_blank">Northern eCommerce</a></td>
  </tr>
  </table>
 
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
 
 
 ## Installation
@@ -485,6 +485,6 @@ An updated version of this toolkit is typically available several days after the
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
-Dear community members, thank you for your suggestions and bug reports. 
+Dear community members, thank you for your suggestions,  bug reports and code contributions. 
 
 
