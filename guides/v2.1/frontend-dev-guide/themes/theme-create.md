@@ -80,7 +80,15 @@ After you create a directory for your theme, you must create `theme.xml` contain
      <media>
          <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
      </media>
- </theme>
+</theme>
+{% endhighlight %}
+
+If you do not have a preview image for your theme, remove the `<media>` node:
+{% highlight xml %}
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+     <title>New theme</title> <!-- your theme's name -->
+     <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+</theme>
 {% endhighlight %}
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
@@ -92,7 +100,7 @@ Magento default themes are distributed as <a href="https://getcomposer.org/" tar
 
 To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
-`composer.json` provides theme dependency information.
+`composer.json` provides theme dependency information. Refer to a current `theme.xml` file for the correct dependancies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
 
 Example of a theme `composer.json`:
 
