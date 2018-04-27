@@ -34,5 +34,5 @@ Some other customizations that can be performed using layout instructions are th
 5. Use `<theme_dir>/etc/view.xml` to change image types sizes or add your own types. See [Configure images properties]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) for details. Use this file also to [customize product gallery widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html)
 6. If you need to change the wording in user interface, [add custom CSV dictionary files]({{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html) instead of overriding `.phtml` templates. 
 
-Keep in mind, that after Magento instances, updates or upgrades something can change in default templates, layouts, and styles. So it is recommended to check if the changes effected the files overridden in your theme and copy changes if any, to your templates, layouts, and styles.
+Keep in mind, that after Magento instances, updates or upgrades something can change in default templates, layouts, and styles. So it is recommended to check if the changes affected the files overridden in your theme and copy changes if any, to your templates, layouts, and styles.
 

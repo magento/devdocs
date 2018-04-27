@@ -11,8 +11,12 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added the ability to configure a read-only connection to a non-master node to receive read-only traffic for [Redis](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#redisuseslaveconnection) and for [MariaDB](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#mysqluseslaveconnection).|2.1.x, 2.2.x, 2.3.x|New|Apr 24
+New [Smart wizards](http://devdocs.magento.com/guides/v2.2/cloud/env/smart-wizards.html) help you to verify your Cloud configuration follows best practices.|2.1.x, 2.2.x, 2.3.x|New|Apr 24
+Added [Marketplace EQP API](http://devdocs.magento.com/guides/v2.2/marketplace/eqp/api.html) reference documentation.|2.x|New topic|Apr 21
+We added a new topic about [Community Maintainers](http://devdocs.magento.com/guides/v2.2/contributor-guide/devdocs-maintainers.html) for the devdocs repository.|2.x|New topic|Apr 20
 Added documentation for the [schema.graphqls](http://devdocs.magento.com/guides/v2.3/graphql/develop/create-graphqls-file.html) and completely revised the [resolvers](http://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html) documentation. Also added new reference articles.|2.3.x|Major updates|Apr 13
-Clarified the [New Relic APM]({{page.baseurl}}cloud/project/new-relic.html) procedures.|2.1.x, 2.2.x, 2.3.x|Technical changes|Apr 10
+Clarified the [New Relic APM]({{page.baseurl}}/cloud/project/new-relic.html) procedures.|2.1.x, 2.2.x, 2.3.x|Technical changes|Apr 10
 Updated information about how long we store [snapshots](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Apr 10
 Added the [Performance Best Practices](http://devdocs.magento.com/guides/v2.2/performance-best-practices/index.html) guide. It replaces the information formerly in the topic Magento Optimization Guide.|2.2.x, 2.3.x|New topic|Apr 10
 Changed [CLI examples](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html) to include the `bin/magento` syntax and added guidance on adding `bin` to your system `PATH` to run commands from anywhere.|2.x|Updated|Apr 09
