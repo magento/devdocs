@@ -138,3 +138,25 @@ desc "generate link validation html report"
 task :link_report => [:check_links, :transform] do
   puts "generating link validation HTML report..."
 end
+
+
+###   Preview
+
+desc "Preview the devdocs locally"
+task :preview => :cleanup do
+    jekyll('serve --config _config.yml,_config.local.yml -I -o')
+end
+
+desc "Remove the _site directory"
+task :cleanup do
+    sh 'rm -rf _site'
+end
+
+
+
+## General methods
+
+# Run Jekyll
+def jekyll(options = '')
+    sh 'bin/jekyll ' + options
+end

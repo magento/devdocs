@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/actions.md
 functional_areas:
  - Testing
-mftf-release: 2.1.2
+mftf-release: 2.2.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -163,6 +163,7 @@ The following test actions return a variable:
 *  [grabPageSource](#grabpagesource)
 *  [grabTextFrom](#grabtextfrom)
 *  [grabValueFrom](#grabvaluefrom)
+*  [executeJS](#executejs)
 
 Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
 
@@ -428,27 +429,39 @@ Attribute|Type|Use|Description
 
 Delete an entity that was previously created.
 
-This action is only able to delete entities that were previously created using [`createData`](#createdata) in the scope of the [test](../test.html#test-tag).
+Attribute|Type|Use|Description
+---|---|---|---
+`createDataKey`|string|optional| Reference to `stepKey` of the `createData` action .
+`url`|string|optional| REST API route to send a DELETE request.
+`storeCode`|string|optional|
+`stepKey`|string|required| A unique identifier of the action.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
 
-Assuming we created _SampleCategory_ like:
+#### Example of persisted data deletion
+
+Delete the entity that was previously created using [`createData`](#createdata) in the scope of the [test](../test.html#test-tag).
+
+1. Create _SampleCategory_:
 
 ```xml
 <createData entity="SampleCategory" stepKey="createCategory"/>
 ```
 
-We can delete _SampleCategory_:
+2. Delete _SampleCategory_:
 
-```
+```xml
 <deleteData createDataKey="createCategory" stepKey="deleteCategory"/>
 ```
 
-Attribute|Type|Use|Description
----|---|---|---
-`createDataKey`|string|optional|
-`storeCode`|string|optional|
-`stepKey`|string|required| A unique identifier of the action.
-`before`|string|optional| `stepKey` of action that must be executed next.
-`after`|string|optional| `stepKey` of preceding action.
+#### Example of existing data deletion
+
+Delete an entity using [REST API]({{page.baseurl}}/rest/bk-rest.html) request to the corresponding route:
+
+```xml
+<grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>
+<deleteData url="V1/categories/{$grabId}" stepKey="deleteCategory"/>
+```
 
 ### dontSee
 
@@ -655,6 +668,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector1`|string|optional|A selector for the HTML element to drag.
 `selector2`|string|optional|A selector for the HTML element to drop onto.
+`x`|int|optional| X offset appllied to drag-and-drop destination.
+`y`|int|optional| Y offset appllied to drag-and-drop destination.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1438,7 +1453,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-This action can optionally contain one or more [requiredEntity](#requiredEntity) child elements.
+This action can optionally contain one or more [requiredEntity](#requiredentity) child elements.
 
 ### wait
 
