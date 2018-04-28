@@ -144,7 +144,7 @@
      id="line30" />
   <a
      id="a4301"
-     xlink:title="that may contain any number of the following nodes in any order">
+     title="that may contain any number of the following nodes in any order">
     <g
        id="g420">
       <path
@@ -248,8 +248,8 @@
      id="line60" />
   <a
      id="a4270"
-     xlink:href="#before-tag"
-     xlink:title="zero or one &lt;before&gt; element">
+     href="#before-tag"
+     title="zero or one &lt;before&gt; element">
     <g
        id="g404">
       <rect
@@ -333,7 +333,7 @@
      id="line84" />
   <a
      id="a4318"
-     xlink:title="that may contain any number of the following nodes in any order">
+     title="that may contain any number of the following nodes in any order">
     <g
        id="g460">
       <path
@@ -437,8 +437,8 @@
      id="line114" />
   <a
      id="a4277"
-     xlink:href="#after-tag"
-     xlink:title="zero or one &lt;after&gt; element">
+     href="#after-tag"
+     title="zero or one &lt;after&gt; element">
     <g
        id="g444">
       <rect
@@ -471,8 +471,8 @@
   </a>
   <a
      id="a4335"
-     xlink:title="zero or one &lt;annotations&gt; element"
-     xlink:href="#annotations-tag">
+     title="zero or one &lt;annotations&gt; element"
+     href="#annotations-tag">
     <g
        id="g467">
       <rect
@@ -554,7 +554,7 @@
      id="line144" />
   <a
      id="a4284"
-     xlink:title="that may contain any number of the following nodes in any order">
+     title="that may contain any number of the following nodes in any order">
     <g
        id="g389">
       <path
@@ -658,8 +658,8 @@
      id="line174" />
   <a
      id="a4261"
-     xlink:title="one or more &lt;test&gt; elements"
-     xlink:href="#test-tag">
+     title="one or more &lt;test&gt; elements"
+     href="#test-tag">
     <g
        id="g373">
       <rect
@@ -711,7 +711,7 @@
      id="line188" />
   <a
      id="a4205"
-     xlink:title="that contains one of the following nodes">
+     title="that contains one of the following nodes">
     <g
        id="g365">
       <path
@@ -806,7 +806,7 @@
      id="line214" />
   <a
      id="a4195"
-     xlink:title="that contains a sequence of the following nodes">
+     title="that contains a sequence of the following nodes">
     <g
        id="g351">
       <path
@@ -866,8 +866,8 @@
      id="line230" />
   <a
      id="a499"
-     xlink:href="#tests-tag"
-     xlink:title="Root element &lt;tests&gt;">
+     href="#tests-tag"
+     title="Root element &lt;tests&gt;">
     <g
        id="g342">
       <rect
@@ -899,8 +899,8 @@
     </g>
   </a>
   <a
-     xlink:href="test/actions.html"
-     xlink:title="one of &lt;action&gt; elements"
+     href="test/actions.html"
+     title="one of &lt;action&gt; elements"
      target="_blank"
      id="a4355">
     <g
@@ -950,8 +950,8 @@
   </a>
   <a
      id="a4350"
-     xlink:href="#argument-tag"
-     xlink:title="one &lt;argument&gt; element">
+     href="#argument-tag"
+     title="one &lt;argument&gt; element">
     <g
        id="g471">
       <rect
@@ -977,7 +977,7 @@
      id="line258" />
   <a
      id="a4220"
-     xlink:title="that may contain multiple sequences of the following node">
+     title="that may contain multiple sequences of the following node">
     <g
        id="g482">
       <path
@@ -1046,9 +1046,9 @@
      id="line278" />
   <a
      id="a4343"
-     xlink:href="#actiongroup-tag"
+     href="#actiongroup-tag"
      target=""
-     xlink:title="zero or one &lt;actionGroup&gt; elements">
+     title="zero or one &lt;actionGroup&gt; elements">
     <g
        id="g488">
       <rect
@@ -1109,7 +1109,7 @@
      id="line294" />
   <a
      id="a4246"
-     xlink:title="that contains one of the following nodes">
+     title="that contains one of the following nodes">
     <g
        id="g4244">
       <path

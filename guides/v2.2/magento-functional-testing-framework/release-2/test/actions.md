@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/actions.md
 functional_areas:
  - Testing
-mftf-release: 2.1.2
+mftf-release: 2.2.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -1453,7 +1453,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-This action can optionally contain one or more [requiredEntity](#requiredEntity) child elements.
+This action can optionally contain one or more [requiredEntity](#requiredentity) child elements.
 
 ### wait
 

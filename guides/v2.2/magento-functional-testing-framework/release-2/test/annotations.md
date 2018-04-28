@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/annotations.md
 functional_areas:
  - Testing
-mftf-release: 2.1.2
+mftf-release: 2.2.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -14,7 +14,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 Annotations are essentially comments in the code. In PHP, they all are marked by a preceding `@` symbol.
 
-Within [test methods], annotations are contained within their own node.
+Within [tests], annotations are contained within their own node.
 
 ## Principles
 
@@ -86,13 +86,18 @@ Any test can be a part of multiple groups.
 The purpose of grouping is to create a set of test for a functionality or purpose, such as all cart tests or all slow tests and run them together locally.
 
 {% include note.html
-type="info"
+type="warning"
 content="Group values cannot collide with [suite] names."
+%}
+
+{% include note.html
+type="tip"
+content="Add `<group value=\"skip\"/>` to the test if you want to skip it during test run."
 %}
 
 Attribute|Type|Use|Definition
 ---|---|---|---
-`value`|string|required|A value that is used to group tests. It should be lower case.
+`value`|string|required|A value that is used to group tests. It should be lower case. `skip` is reserved to ignore content of the test and generate an empty test.
 
 #### Example
 
@@ -207,3 +212,4 @@ Attribute|Type|Use
 [`@Title`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title
 [setup instructions in Allure]: https://github.com/allure-framework/allure1/wiki/Test-Case-ID
 [suite]: ../suite.html
+[tests]: ../test.html

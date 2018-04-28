@@ -52,64 +52,76 @@ vendor/bin/robo
 
 ### Codeception Robo Commands
 
-#### List all available Robo commands:
+#### List all available Robo commands
 
 ```bash
 vendor/bin/robo
 ```
 
-#### Duplicate the example configuration files used to customize the project:
+#### Duplicate the example configuration files used to customize the project
 
 ```bash
 vendor/bin/robo clone:files
 ```
 
-#### Build the Codeception project:
+#### Build the Codeception project
 
 ```bash
 vendor/bin/robo build:project
 ```
 
-#### Generate all tests in PHP:
+#### Generate all tests in PHP
 
 ```bash
 vendor/bin/robo generate:tests
 ```
-#### Generate the specified tests in PHP:
+#### Generate the specified tests in PHP
 
 ```bash
 vendor/bin/robo generate:tests testName01 testName02 testName03
 ```
 
-#### Run all tests marked with the @group tag `example`, using the Chrome environment:
+#### Run all tests marked with the @group tag `example`, using the Chrome environment
 
 ```bash
 vendor/bin/robo example
 ```
 
-#### Run all functional tests located under the directory path provided:
+#### Run all functional tests located under the directory path provided
 
 ```bash
-vendor/bin/robo folder ______
+vendor/bin/robo folder <path/to/folder/with/tests>
 ```
 
-#### Run all functional tests, excluding @group skip:
+#### Run all generated tests
+
+The command runs all the generated tests.
+The generated test are stored in the _acceptance/tests/functional/Magento/FunctionalTest/\_generated_ directory.
 
 ```bash
 vendor/bin/robo functional
 ```
 
-#### Run all tests with the specified @group tag, excluding @group 'skip':
+#### Run tests with the specified group annotation
 
 ```bash
-vendor/bin/robo group ______
+vendor/bin/robo group <group-value>
+```
+
+#### Run skipped tests
+
+Typically, each test tagged by the `<group value="skip">` annotation is ignored during test run.
+But in case you still need to run the skipped tests, run:
+
+```bash
+vendor/bin/robo group skip
 ```
   
 ### Allure Robo commands
 
 To determine which version of the Allure command you need to use run `allure --version`.
 
-#### Generate the HTML for the Allure report based on the test XML output:
+#### Generate the HTML for the Allure report based on the test XML output
 
 Allure v1.x.x:
 
@@ -123,7 +135,7 @@ Allure v2.x.x:
 vendor/bin/robo allure2:generate
 ```
 
-#### Open the HTML Allure report:
+#### Open the HTML Allure report
 
 Allure v1.x.x:
 
@@ -137,7 +149,7 @@ Allure v2.x.x:
 vendor/bin/robo allure2:open
 ```
 
-#### Generate and open the HTML Allure report:
+#### Generate and open the HTML Allure report
 
 Allure v1.x.x:
 
@@ -155,12 +167,12 @@ vendor/bin/robo allure2:report
 
 #### general
 
-`functional`      | Run all functional tests, excluding `@group 'skip'`.
-`example`          | Run all Tests marked with the `@group` tag `'example'`.
-`folder`        | Run all acceptance tests located under the directory path provided..
-`group`         | Run all tests with the specified `@group` tag, excluding `@group 'skip'`
+`functional`      | Run all generated tests.
+`example`         | Run all Tests marked with the `<group value="example"/>` annotation.
+`folder`        | Run all acceptance tests located under the directory path provided.
+`group`         | Run tests annotated by the `<group/>` tag.
 `help`             | Displays help for a command.
-`list`             | Lists commands.
+`list`             | Lists available commands.
   
 #### allure1
 
@@ -245,7 +257,7 @@ vendor/bin/robo generate:tests --tests "{\r\n\"tests\":[\r\n\"general_test1\",\r
 
 {% include note.html
 type="info"
-content="Strings must be escaped and surrounded in quotes."
+content="The strings must be escaped and surrounded in quotes."
 %}
 
 #### self
