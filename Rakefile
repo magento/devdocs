@@ -144,7 +144,8 @@ end
 
 desc "Preview the devdocs locally"
 task :preview => :cleanup do
-    jekyll('serve --config _config.yml,_config.local.yml -I -o')
+    preview unless File.exists?('_config.local.yml')
+    preview_local
 end
 
 desc "Remove the _site directory"
@@ -153,10 +154,19 @@ task :cleanup do
 end
 
 
-
 ## General methods
 
 # Run Jekyll
 def jekyll(options = '')
     sh 'bin/jekyll ' + options
+end
+
+# Jekyll preview
+def preview(options = '')
+    jekyll('serve -I -o --strict_front_matter ' + options)
+end
+
+desc "Preview the devdocs locally"
+def preview_local
+    preview('--config _config.yml,_config.local.yml')
 end
