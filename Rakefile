@@ -140,13 +140,11 @@ task :link_report => [:check_links, :transform] do
 end
 
 
-###############
-#   Preview   #
-###############
+###   Preview
 
 desc "Preview the devdocs locally"
 task :preview => :cleanup do
-    jekyll('serve --config _config.yml,_config.local.yml -o')
+    jekyll('serve --config _config.yml,_config.local.yml -I -o')
 end
 
 desc "Remove the _site directory"

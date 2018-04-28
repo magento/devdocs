@@ -9,7 +9,7 @@ functional_areas:
 mftf-release: 2.2.0
 ---
 
-_This topic was updated due to the {{page.mftf-release}} MFTF release._
+_The latest MFTF release is [{{page.mftf-release}}]._
 {: style="text-align: right"}
 
 The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases.
@@ -27,7 +27,7 @@ Because MFTF tests are written in XML, you no longer need to learn PHP to write 
 include note.html
 type="info"
 content="We are actively developing functional tests.
-Refer to _\<magento2 root dir\>/dev/tests/acceptance/` for examples."
+Refer to _\<magento2 root dir\>/dev/tests/acceptance/_ for examples."
 %}
 
 ## Audience
@@ -139,3 +139,5 @@ Follow the [MFTF project](https://github.com/magento/magento2-functional-testing
 [Functional Testing Framework]: {{page.baseurl}}/mtf/mtf_introduction.html
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework
 [contribute on Github]: ../contribution-guidelines.html
+
+[{{page.mftf-release}}]: https://github.com/magento/magento2-functional-testing-framework/releases/tag/{{page.mftf-release}}
