@@ -306,6 +306,20 @@
         
         
         
+        <li class="nav-level2  " id="suite">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/suite.html">Suite</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2 active " id="test">
             
             
@@ -700,7 +714,7 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
 
 <p>Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as <a href="#test-tag"><code class="highlighter-rouge">&lt;tests&gt;</code></a>.
 <code class="highlighter-rouge">&lt;tests&gt;</code> is a <a href="https://codeception.com/docs/07-AdvancedUsage">Codeception test container</a> that contains multiple individual tests with test metadata and before and after actions.</p>
@@ -709,7 +723,7 @@
 Any failed <a href="./test/assertions.html">assertion</a> within a test constitutes a failed test.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p><code class="highlighter-rouge">&lt;before&gt;</code>and <code class="highlighter-rouge">&lt;after&gt;</code> hooks are not global within <code class="highlighter-rouge">&lt;tests&gt;</code> like in MFTF 1.0.
+  <p><code class="highlighter-rouge">&lt;before&gt;</code> and <code class="highlighter-rouge">&lt;after&gt;</code> hooks are not global within <code class="highlighter-rouge">&lt;tests&gt;</code> like in MFTF 1.0.
 They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in which they are declared.</p>
 
   <p>The steps in <code class="highlighter-rouge">&lt;after&gt;</code> are run in both successful <strong>and</strong> failed test runs.</p>
@@ -995,6 +1009,7 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
   <li>Each action and action group has its own identifier <code class="highlighter-rouge">&lt;stepKey&gt;</code> for reference purposes.</li>
   <li>A test may have any number of <a href="./test/assertions.html">assertions</a>, at any point within the <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
   <li>The file name and <code class="highlighter-rouge">&lt;test&gt;</code> name are equal.</li>
+  <li>If <code class="highlighter-rouge">&lt;test&gt;</code> is included in <code class="highlighter-rouge">&lt;suite&gt;</code>, it <strong>cannot be generated in isolation</strong> to the rest of the contents of the suite (see <a href="./suite.html">suites</a> for details).</li>
 </ul>
 
 <p>Multiple <test> tags per XML file can make it hard to find and organize tags. To simplify, we generate one `test.php` file per <test> tag provided, though we support both single and multiple <test> tags per XML file.</test></test></test></p>

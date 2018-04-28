@@ -2042,6 +2042,8 @@ Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
   <li>This results in a <code class="highlighter-rouge">www.example.com/media/sitemap.xml</code> path, so you must submit a Support ticket to apply a redirect for your generated files.</li>
 </ol>
 
+<!-- Available note types: "info", "warning", "tip" -->
+
 <div class="bs-callout bs-callout-warning" id="warning">
   <p>Do not change the location of the files during deployment.</p>
 </div>
@@ -2071,6 +2073,8 @@ Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
   </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url.path ~ </span><span class="se">\"</span><span class="s2">^/?sitemap.xml$</span><span class="se">\"</span><span class="s2"> ) { set req.url = </span><span class="se">\"</span><span class="s2">/media/sitemap.xml</span><span class="se">\"</span><span class="s2">; }"</span><span class="w"> 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
+<!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-tip" id="tip">
   <p>When you upgrade from Magento version 2.1 to version 2.2, enter a Support ticket to remove any existing redirects for these files.</p>

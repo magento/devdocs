@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Section structure in the Magento Functional Testing Framework | Magento 2 Developer Documentation</title>
+	<title>Suites | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.2/magento-functional-testing-framework/release-1/section.html">
+	<link rel="canonical" href="/guides/v2.2/magento-functional-testing-framework/release-2/suite.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -81,13 +81,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/release-1/section.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/release-2/suite.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/release-1/section.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/release-2/suite.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/release-1/section.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/release-2/suite.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/release-1/section.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/release-2/suite.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -301,7 +301,7 @@
         
         
         
-        <li class="nav-level2  " id="suite">
+        <li class="nav-level2 active " id="suite">
             
             
         
@@ -723,7 +723,7 @@
         
         
         
-        <li class="nav-level2 active " id="section">
+        <li class="nav-level2  " id="section">
             
             
             <div class="toggle closed">&nbsp;</div>
@@ -937,7 +937,7 @@
 
           
 
-          <span property="name">Section structure in the Magento Functional Testing Framework</span>
+          <span property="name">Suites</span>
 
         
 
@@ -960,7 +960,7 @@
 
 	
 
-	<h1 class="page-heading">Section structure in the Magento Functional Testing Framework</h1>
+	<h1 class="page-heading">Suites</h1>
 
   
 
@@ -968,153 +968,210 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 1.0.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
 
-<h2 id="overview">Overview</h2>
+<p>Suites are essentially groups of tests that run in the specific conditions (preconditions and postconditions).
+They enable you including, excluding, and grouping tests for a customized test run when you need it.
+You can form suites using separate tests, groups, and modules.</p>
 
-<p>A section is a reusable part of a <a href="page.html">page</a>.
-It is the standard file for defining UI elements on a page used under test.</p>
+<p>Each suite must be defined in the <em>&lt;magento 2 root&gt;/dev/tests/acceptance/tests/_suite/suite.xml</em> file.
+The generated tests for each suite go into a separate directory under <em>&lt;magento 2 root&gt;/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/_generated</em>.
+By default, all generated tests are stored in the <em>default</em> suite under <em>…/Magento/FunctionalTest/_generated/default</em></p>
 
-<p>You are able to define:</p>
+<!-- Available note types: "info", "warning", "tip" -->
 
-<ul>
-  <li>explicit element that has a selector equal to constant string.
-Example: <code class="highlighter-rouge">selector="#add_root_category_button"</code></li>
-  <li>parameterized element that contains substitutable values in selector.
-Example: <code class="highlighter-rouge">selector="#element .{{var1}} .{{var2}}"</code>.</li>
-</ul>
-
-<h3 id="substitutable-values">Substitutable values</h3>
-
-<p>Substitutable values in the test can be of the following formats:</p>
-
-<ul>
-  <li>String Literals: <code class="highlighter-rouge">stringLiteral</code></li>
-  <li>Reference to data entity (XML data from the corresponding <em>…/Data/*.xml</em>): <code class="highlighter-rouge">entityName.Field</code></li>
-  <li>Persisted Data
-    <ul>
-      <li><code class="highlighter-rouge">$persistedCreateDataKey.field$</code> for data created in scope of a <a href="cest.html#test">test</a> using <a href="cest/actions.html#createdata">createData</a> action with <code class="highlighter-rouge">stepKey="persistedCreateDataKey"</code></li>
-      <li><code class="highlighter-rouge">$$persistedCreateDataKey.field$$</code> or data created in <a href="cest.html#before">before</a> and that is why used in scope of a <a href="cest.html">cest</a> using <a href="cest/actions.html#createdata">createData</a> action with <code class="highlighter-rouge">stepKey="persistedCreateDataKey"</code></li>
-    </ul>
-  </li>
-</ul>
-
-<p>The following diagram demonstrates XML structure of a section in the <abbr title="Magento Functional Testing Framework">MFTF</abbr>:</p>
-
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="385" height="62" version="1.1" id="svg74" sodipodi:docname="section-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
-  <metadata id="metadata80">
-    <rdf:RDF>
-      <cc:Work rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs id="defs78" />
-  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1920" inkscape:window-height="1017" id="namedview76" showgrid="false" inkscape:zoom="2.0864242" inkscape:cx="107.40969" inkscape:cy="15.327771" inkscape:window-x="3278" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg74" />
-  <rect x="316" y="28" width="62" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect2" />
-  <a id="a3803" href="#element-tag" title="Go to the &lt;element&gt; description">
-    <g id="g88">
-      <rect x="313" y="25" width="62" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect4" />
-      <text x="344" y="36" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text6">element</text>
-    </g>
-  </a>
-  <text x="365" y="57" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text8">1..∞</text>
-  <line x1="293" y1="36" x2="313" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line14" />
-  <path d="M259 26 L282 26 L288 32 L288 40 L282 46 L259 46 L253 40 L253 32 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path16" />
-  <line x1="256" y1="36" x2="285" y2="36" style="stroke:rgb(0,0,0);stroke-width:1" id="line18" />
-  <ellipse cx="265" cy="36" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse20" />
-  <ellipse cx="270" cy="36" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse22" />
-  <ellipse cx="275" cy="36" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse24" />
-  <rect x="283" y="31" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect26" />
-  <line x1="285" y1="36" x2="291" y2="36" style="stroke:rgb(0,0,0);stroke-width:1" id="line28" />
-  <line x1="233" y1="36" x2="253" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line30" />
-  <rect x="167" y="28" width="64" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect32" />
-  <a id="a109" href="#section-tag" title="Go to the &lt;section&gt; description">
-    <g id="g84">
-      <path inkscape:connector-curvature="0" id="rect34" d="m 164,25 c 21.33333,0 42.66667,0 64,0 0,7.333333 0,14.666667 0,22 -21.33333,0 -42.66667,0 -64,0 0,-7.333333 0,-14.666667 0,-22 z" style="fill:#ffffff;stroke:#000000;stroke-width:1" />
-      <path inkscape:connector-curvature="0" id="text36" d="m 177.5625,37.363255 c 1.52529,-0.935044 2.52281,1.779504 3.69792,0.04687 -1.41244,-0.537747 -5.23048,-1.866312 -2.60417,-3.849609 1.13374,-1.247589 5.42381,0.888062 2.93622,1.363663 -0.52908,-0.06221 -2.59658,-1.343691 -2.32164,0.136988 1.91588,0.03374 5.07512,1.94106 2.46713,3.697591 -1.42333,0.629818 -3.75169,0.397163 -4.17546,-1.395508 z m 9.65625,-0.182291 c 2.44842,-0.276007 0.71062,2.155886 -0.94792,1.885417 -2.98868,0.278515 -3.66937,-4.498438 -1.14974,-5.585938 1.95032,-1.411312 4.8677,2.271182 3.08252,3.117187 -1.03835,0 -2.07671,0 -3.11507,0 -0.18497,1.277388 1.81333,2.021528 2.13021,0.583334 z m 0.0833,-1.479167 c 0.38377,-2.44698 -3.53646,-0.483165 -1.6359,0 0.5453,0 1.0906,0 1.6359,0 z m 7.47396,-0.65625 c -1.52854,0.994728 -2.51116,-1.881488 -3.55989,0.273438 -0.96483,1.83752 1.70256,3.656455 2.33125,1.525753 2.64318,-0.225852 0.0544,2.909802 -1.55668,2.20968 -3.17146,-0.115705 -3.1548,-5.664414 0.0212,-5.757325 1.21388,-0.172487 2.50213,0.483367 2.76416,1.748454 z m 3.65104,-1.635417 c 0.4678,1.281947 -0.63769,0.990621 -1,1.442464 0.17471,0.96121 -0.40103,2.406694 0.40625,3.000245 1.95951,0.06826 -0.55728,2.393732 -1.625,0.739583 -0.45945,-1.271518 -0.16723,-2.680854 -0.25,-4.015625 -0.97874,0.476369 -0.99812,-1.649412 0,-1.166667 -0.31505,-1.053184 0.48134,-1.467007 1.31127,-1.861536 0.54105,-0.0085 -0.30244,1.868393 0.43328,1.861536 0.2414,0 0.4828,0 0.7242,0 z m 1.02604,-0.75 c -0.20685,-1.071939 0.0909,-1.639223 1.24109,-1.354166 0.51629,0.342671 0.34899,1.883179 -0.74283,1.354166 -0.16609,0 -0.33217,0 -0.49826,0 z m 0,6.281251 c 0,-1.843751 0,-3.687501 0,-5.531251 0.96324,-0.107657 1.81965,-0.108492 1.46355,1.103188 0,1.476021 0,2.952042 0,4.428063 -0.48785,0 -0.9757,0 -1.46355,0 z m 2.6198,-2.843751 c -0.18497,-2.633509 3.5807,-3.821658 5.09424,-1.784912 1.49262,1.743986 0.16168,4.91742 -2.23487,4.753663 -1.65062,0.06716 -2.99523,-1.308404 -2.85937,-2.968751 z m 1.5,0.07813 c -0.0314,3.170045 4.26045,0.891586 2.3125,-1.260416 -0.96403,-1.094803 -2.49485,0.0058 -2.3125,1.260416 z m 10.39062,2.765626 c -0.96323,0.107657 -1.81964,0.108491 -1.46354,-1.103189 -0.16753,-1.109612 0.46733,-2.707337 -0.63151,-3.396812 -1.96808,-0.190926 -1.40078,2.230498 -1.48307,3.511676 0.38258,1.199876 -0.60098,1.033596 -1.46354,0.988325 0,-1.843751 0,-3.687501 0,-5.531251 1.63308,-0.62997 1.077,1.516748 2.17708,0.109375 2.22452,-1.125947 3.22655,1.30944 2.86458,3.087564 0,0.778104 0,1.556208 0,2.334312 z" style="font-weight:bold;font-size:10.66666698px;font-family:Arial;dominant-baseline:central;text-anchor:middle;fill:#000000" />
-    </g>
-  </a>
-  <text x="223" y="57" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text38">1..∞</text>
-  <rect x="223" y="31" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect44" />
-  <line x1="225" y1="36" x2="231" y2="36" style="stroke:rgb(0,0,0);stroke-width:1" id="line46" />
-  <line x1="144" y1="36" x2="164" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line48" />
-  <path d="M110 26 L133 26 L139 32 L139 40 L133 46 L110 46 L104 40 L104 32 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path50" />
-  <line x1="107" y1="36" x2="136" y2="36" style="stroke:rgb(0,0,0);stroke-width:1" id="line52" />
-  <ellipse cx="116" cy="36" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse54" />
-  <ellipse cx="121" cy="36" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse56" />
-  <ellipse cx="126" cy="36" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse58" />
-  <rect x="134" y="31" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect60" />
-  <line x1="136" y1="36" x2="142" y2="36" style="stroke:rgb(0,0,0);stroke-width:1" id="line62" />
-  <line x1="84" y1="36" x2="104" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line64" />
-  <rect x="20" y="25" width="59" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect66" />
-  <text x="49.5" y="36" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text68">config</text>
-  <rect x="74" y="31" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect70" />
-  <line x1="76" y1="36" x2="82" y2="36" style="stroke:rgb(0,0,0);stroke-width:1" id="line72" />
-</svg>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If a test is generated into at least one custom suite, it will not appear in the <em>default</em> suite.</p>
+</div>
 
 <h2 id="format">Format</h2>
 
+<p>The format of a suite:</p>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">timeout=</span><span class="s">""</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/section&gt;</span>
-<span class="nt">&lt;/config&gt;</span>
+<span class="nt">&lt;suites</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;before&gt;</span>
+        <span class="nt">&lt;/before&gt;</span>
+        <span class="nt">&lt;after&gt;</span>
+        <span class="nt">&lt;/after&gt;</span>
+        <span class="nt">&lt;include&gt;</span>
+            <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">""</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">""</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">""</span> <span class="na">file=</span><span class="s">""</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/include&gt;</span>
+        <span class="nt">&lt;exclude&gt;</span>
+            <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">""</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">""</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">""</span> <span class="na">file=</span><span class="s">""</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/exclude&gt;</span>
+    <span class="nt">&lt;/suite&gt;</span>
+<span class="nt">&lt;/suites&gt;</span>
 </code></pre></div></div>
 
 <h2 id="principles">Principles</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;section&gt;</code> name is the same as the file name</li>
-  <li><code class="highlighter-rouge">*Section.xml</code> is stored in the <em>Section</em> directory of a module</li>
-  <li>a name format is <code class="highlighter-rouge">{Admin|Storefront}{SectionDescription}Section.xml</code></li>
-  <li>Elements in sections are given camel case with first letter lowercase name.
-They describe the function of the element rather than attempting to describe the selector used.</li>
+  <li>A suite name:
+    <ul>
+      <li>must not match any existing group value.
+For example, the suite <code class="highlighter-rouge">&lt;suite name="ExampleTest"&gt;</code> will fail during test run if any test contains in annotations <code class="highlighter-rouge">&lt;group value="ExampleTest"&gt;</code>.</li>
+      <li>must not be <code class="highlighter-rouge">default</code> or <code class="highlighter-rouge">skip</code>. Tests that are not in any suite are generated under the <code class="highlighter-rouge">default</code> suite.
+The suite name <code class="highlighter-rouge">skip</code> is synonymous to including a test in the <code class="highlighter-rouge">&lt;group value="skip"/&gt;</code>.</li>
+      <li>can contain letters, numbers, and underscores.</li>
+      <li>should be upper case.</li>
+    </ul>
+  </li>
+  <li>A suite must contain at least one <code class="highlighter-rouge">&lt;include&gt;</code>, or one <code class="highlighter-rouge">&lt;exclude&gt;</code>, or both.</li>
+  <li>Using <code class="highlighter-rouge">&lt;before&gt;</code> in a suite, you must add the corresponding <code class="highlighter-rouge">&lt;after&gt;</code> to restore the initial state of your testing instance.</li>
 </ul>
 
-<h2 id="example">Example</h2>
+<h2 id="conditions">Conditions</h2>
 
-<p><em>…/Catalog/Section/AdminCategorySidebarActionSection.xml</em>:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminCategorySidebarActionSection"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"addRootCategoryButton"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">"#add_root_category_button"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"addSubcategoryButton"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">"#add_subcategory_button"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/section&gt;</span>
-<span class="nt">&lt;/config&gt;</span>
-</code></pre></div></div>
-
-<p>The example demonstrates a section <code class="highlighter-rouge">AdminCategorySidebarActionSection</code>.
-All sections with same name will be merged during tests generation.</p>
-
-<p>The section declares two buttons:</p>
+<p>Using suites enables test writers to consolidate conditions that are shared between tests.
+The code lives in one place and executes once per suite.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">addRootCategoryButton</code> is a button with a locator <code class="highlighter-rouge">#add_root_category_button</code> on the parent web page.</li>
-  <li><code class="highlighter-rouge">addSubcategoryButton</code> is a button with a locator <code class="highlighter-rouge">#add_subcategory_button</code> on the parent web page.</li>
+  <li>Set up preconditions and postconditions using <a href="test/actions.html">actions</a> in <a href="#before-tag"><code class="highlighter-rouge">&lt;before&gt;</code></a> and <a href="#after-tag"><code class="highlighter-rouge">&lt;after&gt;</code></a> correspondingly, just similar to use in a <a href="test.html">test</a>.</li>
+  <li>Clean up after suites just like after tests.
+The MFTF enforces the presence of both <code class="highlighter-rouge">&lt;before&gt;</code> and <code class="highlighter-rouge">&lt;after&gt;</code> if either is present.</li>
+  <li>Do not reference in the subsequent tests to data that was persisted in the preconditions.
+Referencing to <code class="highlighter-rouge">$stepKey.field$</code> of these actions is not valid.</li>
 </ul>
 
-<p>Example of a call in test:</p>
+<h2 id="test-writing">Test writing</h2>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click on the button with locator "#add_subcategory_button" on the web page--&gt;</span>
-<span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySidebarActionSection.addSubcategoryButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickOnAddSubCategory"</span><span class="nt">/&gt;</span>
+<p>Since suites enable precondition consolidation, a common workflow for test writing is adding a new test to an existing suite.
+Such test is generated in context of the suite that contains it.
+You cannot isolate this test from preconditions of the suite; it cannot be used outside of the suite at the same time.</p>
+
+<p>There are several ways to generate and execute your new test in the context of a suite:</p>
+<ul>
+  <li>Edit the appropriate <code class="highlighter-rouge">suite.xml</code> to include your test only and run:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group &lt;suiteName&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Temporarily add a group to your test like <code class="highlighter-rouge">&lt;group value="foo"&gt;</code> and run:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group foo
+</code></pre></div>    </div>
+  </li>
+  <li>To limit generation to your suite/test combination, run in conjunction with the above:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:suite &lt;suite&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>To generate any combination of suites and tests, use <a href="commands/robo.html#generate"><code class="highlighter-rouge">generate:tests</code></a> with the <code class="highlighter-rouge">--tests</code> flag.</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="browser-actions-in-suite-conditions">Browser actions in suite conditions</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;suites</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">"WYSIWYG"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;before&gt;</span>
+            <span class="nt">&lt;actionGroup</span> <span class="na">ref=</span><span class="s">"LoginAsAdmin"</span> <span class="na">stepKey=</span><span class="s">"login"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"admin/admin/system_config/edit/section/cms/"</span> <span class="na">stepKey=</span><span class="s">"navigateToConfigurationPage"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;waitForPageLoad</span> <span class="na">stepKey=</span><span class="s">"wait1"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;conditionalClick</span> <span class="na">stepKey=</span><span class="s">"expandWYSIWYGOptions"</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">dependentSelector=</span><span class="s">""</span> <span class="na">visible=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;waitForElementVisible</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"waitForEnableWYSIWYGDropdown1"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;waitForElementVisible</span>  <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"waitForUseSystemValueVisible"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;uncheckOption</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"uncheckUseSystemValue"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;selectOption</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"Enabled by Default"</span> <span class="na">stepKey=</span><span class="s">"selectOption1"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"collapseWYSIWYGOptions"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"saveConfig"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/before&gt;</span>
+        <span class="nt">&lt;after&gt;</span>
+            <span class="nt">&lt;actionGroup</span> <span class="na">ref=</span><span class="s">"LoginAsAdmin"</span> <span class="na">stepKey=</span><span class="s">"login"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;actionGroup</span> <span class="na">ref=</span><span class="s">"DisabledWYSIWYG"</span> <span class="na">stepKey=</span><span class="s">"disable"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/after&gt;</span>
+        <span class="nt">&lt;include&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">"WYSIWYG"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/include&gt;</span>
+    <span class="nt">&lt;/suite&gt;</span>
+<span class="nt">&lt;/suites&gt;</span>
 </code></pre></div></div>
 
-<h2 id="reference">Reference</h2>
+<p>This example declares a suite with the name <code class="highlighter-rouge">WYSIWYG</code>.
+The suite requires enabling WYSIWYG before running tests:</p>
+<ol>
+  <li>Log in to the backend.</li>
+  <li>Navigate to the <strong>Configuration</strong> page.</li>
+  <li>Enable <strong>WYSIWYG</strong> in the Magento instance.</li>
+</ol>
 
-<h3 id="section-tag">section</h3>
+<p>After the testing, the Magento instance returns to its state prior to the test:</p>
+<ol>
+  <li>Log back in.</li>
+  <li>Disable <strong>WYSIWYG</strong> so that</li>
+</ol>
 
-<p>Contains sequence of UI elements in a section of a <a href="page.html">page</a>.</p>
+<p>This suite includes all tests that contain the <code class="highlighter-rouge">&lt;group value="WYSIWYG"/&gt;</code> annotation.</p>
+
+<h3 id="execute-magento-cli-commands-in-suite-conditions">Execute Magento CLI commands in suite conditions</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;suites</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">"Cache"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;before&gt;</span>
+            <span class="nt">&lt;magentoCLI</span> <span class="na">stepKey=</span><span class="s">"disableCache"</span> <span class="na">command=</span><span class="s">"cache:disable"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/before&gt;</span>
+        <span class="nt">&lt;after&gt;</span>
+            <span class="nt">&lt;magentoCLI</span> <span class="na">stepKey=</span><span class="s">"enableCache"</span> <span class="na">command=</span><span class="s">"cache:enable"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/after&gt;</span>
+        <span class="nt">&lt;include&gt;</span>
+            <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"SomeCacheRelatedTest"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">"CacheRelated"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/include&gt;</span>
+    <span class="nt">&lt;/suite&gt;</span>
+<span class="nt">&lt;/suites&gt;</span>
+</code></pre></div></div>
+
+<p>This example declares a suite with the name <code class="highlighter-rouge">Cache</code>.</p>
+
+<p>Preconditions:</p>
+<ol>
+  <li>It disables the Magento instance cache entirely before running the included tests.</li>
+  <li>After the testing, it re-enables the cache.</li>
+</ol>
+
+<p>The suite includes a specific test <code class="highlighter-rouge">SomeCacheRelatedTest</code> and every <code class="highlighter-rouge">&lt;test&gt;</code> that includes the <code class="highlighter-rouge">&lt;group value="CacheRelated"/&gt;</code> annotation.</p>
+
+<h3 id="change-magento-configurations-in-suite-conditions">Change Magento configurations in suite conditions</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;suites</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">"PaypalConfiguration"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;before&gt;</span>
+            <span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SamplePaypalConfig"</span> <span class="na">stepKey=</span><span class="s">"createSamplePaypalConfig"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/before&gt;</span>
+        <span class="nt">&lt;after&gt;</span>
+            <span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"DefaultPayPalConfig"</span> <span class="na">stepKey=</span><span class="s">"restoreDefaultPaypalConfig"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/after&gt;</span>
+        <span class="nt">&lt;include&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Catalog"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/include&gt;</span>
+        <span class="nt">&lt;exclude&gt;</span>
+            <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"PaypalIncompatibleTest"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/exclude&gt;</span>
+    <span class="nt">&lt;/suite&gt;</span>
+<span class="nt">&lt;/suites&gt;</span>
+</code></pre></div></div>
+
+<p>This example declares a suite with the name <code class="highlighter-rouge">PaypalConfiguration</code>:</p>
+<ul>
+  <li><code class="highlighter-rouge">&lt;before&gt;</code> block persists a Paypal Configuration enabling all tests in this suite to run under the newly reconfigured Magento instance.</li>
+  <li><code class="highlighter-rouge">&lt;after&gt;</code> block deletes the persisted configuration, returning Magento to its initial state.</li>
+  <li>The suite includes all tests from the <code class="highlighter-rouge">Catalog</code> module, except the <code class="highlighter-rouge">PaypalIncompatibleTest</code> test.</li>
+</ul>
+
+<h2 id="elements-reference">Elements reference</h2>
+
+<h3 id="suites-tag">suites</h3>
+
+<p>The root element for suites.</p>
+
+<h3 id="suite-tag">suite</h3>
+
+<p>A set of “before” and “after” preconditions, and test filters to include and exclude tests in the scope of suite.</p>
 
 <table>
   <thead>
@@ -1127,23 +1184,77 @@ All sections with same name will be merged during tests generation.</p>
   </thead>
   <tbody>
     <tr>
-      <td>name</td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
-      <td>Unique section name identifier</td>
+      <td>Unique suite name identifier.</td>
     </tr>
     <tr>
-      <td>remove</td>
+      <td><code class="highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Default: <code class="highlighter-rouge">false</code>. Set to <code class="highlighter-rouge">true</code> to remove this element during parsing</td>
+      <td>Removing the suite during merging.</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="element-tag">element</h3>
+<p>It can contain <code class="highlighter-rouge">&lt;before&gt;</code>, <code class="highlighter-rouge">&lt;after&gt;</code>, <code class="highlighter-rouge">&lt;include&gt;</code>, and <code class="highlighter-rouge">&lt;exclude&gt;</code>.</p>
 
-<p>A UI element used in an <a href="cest/actions.html">action</a>.</p>
+<h3 id="before-tag">before</h3>
+
+<p>A suite hook with preconditions that executes once before the suite tests.</p>
+
+<p>It may contain test steps with any <a href="test/actions.html">actions</a> and <a href="test/action-groups.html">action groups</a>.</p>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-warning" id="warning">
+  <p>Tests in the suite are not run and screenshots are not saved in case of a failure in the before hook.
+To troubleshoot the failure, run the suite locally.</p>
+</div>
+
+<h3 id="after-tag">after</h3>
+
+<p>A suite hook with postconditions executed once after the suite tests.</p>
+
+<p>It may contain test steps with any <a href="test/actions.html">actions</a> and <a href="test/action-groups.html">action groups</a>.</p>
+
+<h3 id="include-tag">include</h3>
+
+<p>A set of filters to be used for including tests into the suite.</p>
+
+<p>It may contain filters by:</p>
+<ul>
+  <li>test which names a specific <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
+  <li>group which refers to a declared <code class="highlighter-rouge">group</code> annotation.</li>
+  <li>module which refers to <code class="highlighter-rouge">test</code> files under a specific Magento Module.</li>
+</ul>
+
+<p>The element may contain <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>, <a href="#group-tag"><code class="highlighter-rouge">&lt;group&gt;</code></a>, and <a href="#module-tag"><code class="highlighter-rouge">&lt;module&gt;</code></a>.</p>
+
+<h3 id="exclude-tag">exclude</h3>
+
+<p>A set of filters to be used for excluding tests from the the suite.</p>
+
+<p>There two types of behaviour:</p>
+<ol>
+  <li>Applying filters to the included tests when the suite contains <a href="#include-tag"><code class="highlighter-rouge">&lt;include&gt;</code></a> filters.
+The MFTF will exclude tests from the previously included set and generate the remaining tests in the suite.</li>
+  <li>Applying filter to all tests when the suite does not contain <a href="#include-tag"><code class="highlighter-rouge">&lt;include&gt;</code></a> filters.
+The MFTF will generate all existing tests except the excluded.
+In this case, the custom suite will contain all generated tests except excluded, and the <em>default</em> suite will contain the excluded tests only.</li>
+</ol>
+
+<p>It may contain filters by:</p>
+<ul>
+  <li>test which names a specific <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
+  <li>group which refers to a declared <code class="highlighter-rouge">group</code> annotation.</li>
+  <li>module which refers to <code class="highlighter-rouge">test</code> files under a specific Magento Module.</li>
+</ul>
+
+<p>The element may contain <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>, <a href="#group-tag"><code class="highlighter-rouge">&lt;group&gt;</code></a>, and <a href="#module-tag"><code class="highlighter-rouge">&lt;module&gt;</code></a>.</p>
+
+<h3 id="test-tag">test</h3>
 
 <table>
   <thead>
@@ -1156,54 +1267,81 @@ All sections with same name will be merged during tests generation.</p>
   </thead>
   <tbody>
     <tr>
-      <td>name</td>
+      <td><code class="highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
-      <td>Element name</td>
+      <td>Filtering a test by its name.</td>
     </tr>
     <tr>
-      <td>type</td>
-      <td>string</td>
-      <td>required</td>
-      <td>The type of the element. Possible values: <code class="highlighter-rouge">text</code>, <code class="highlighter-rouge">textarea</code>, <code class="highlighter-rouge">input</code>, <code class="highlighter-rouge">button</code>, <code class="highlighter-rouge">checkbox</code>, <code class="highlighter-rouge">radio</code>, <code class="highlighter-rouge">checkboxset</code>, <code class="highlighter-rouge">radioset</code>, <code class="highlighter-rouge">date</code>, <code class="highlighter-rouge">file</code>, <code class="highlighter-rouge">select</code>, <code class="highlighter-rouge">multiselect</code>, <code class="highlighter-rouge">wysiwyg</code>, <code class="highlighter-rouge">iframe</code>.</td>
-    </tr>
-    <tr>
-      <td>selector</td>
-      <td>string</td>
-      <td>optional</td>
-      <td><a href="https://www.w3schools.com/xml/xpath_nodes.asp">XPath</a> or <a href="https://www.w3schools.com/cssref/css_selectors.asp">CSS</a> selector of the element.</td>
-    </tr>
-    <tr>
-      <td>locatorFunction</td>
-      <td>string</td>
-      <td>optional</td>
-      <td><a href="section/locator-functions.html">Locator Function</a> declaration to be used in lieu of a selector.</td>
-    </tr>
-    <tr>
-      <td>timeout</td>
-      <td>string</td>
-      <td>optional</td>
-      <td>Default: <code class="highlighter-rouge">-</code>. Optional timeout value in seconds to wait for the operation on the element.</td>
-    </tr>
-    <tr>
-      <td>parameterized</td>
+      <td><code class="highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Include and set to <code class="highlighter-rouge">true</code> if the <code class="highlighter-rouge">selector</code> for this element has parameters that need to be replaced for proper use. Learn more in <a href="./section/parameterized-selectors.html">Parameterized selectors</a>.</td>
-    </tr>
-    <tr>
-      <td>remove</td>
-      <td>boolean</td>
-      <td>optional</td>
-      <td>Default: <code class="highlighter-rouge">false</code>. Set to <code class="highlighter-rouge">true</code> to remove this element during parsing.</td>
+      <td>Removing the filter during merging.</td>
     </tr>
   </tbody>
 </table>
 
-<!-- LINK DEFINITIONS -->
+<h3 id="group-tag">group</h3>
 
-<!-- Abbreviations -->
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Filtering tests by the <code class="highlighter-rouge">&lt;group&gt;</code> annotation.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">remove</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>Removing the filter during merging.</td>
+    </tr>
+  </tbody>
+</table>
 
+<h3 id="module-tag">module</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Filtering tests by their location in the corresponding module.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">file</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Filtering a specific test file in the module.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">remove</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>Removing the filter during merging.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Link definitions -->
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1215,7 +1353,7 @@ All sections with same name will be merged during tests generation.</p>
   
     
       <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/release-1/section.md" target="_blank">
+        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/magento-functional-testing-framework/release-2/suite.md" target="_blank">
           Edit this page on GitHub
         </a>
       </div>
@@ -1225,7 +1363,7 @@ All sections with same name will be merged during tests generation.</p>
   
     
       <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/magento-functional-testing-framework/release-1/section.html" target="_blank">Give us feedback</a>
+        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/magento-functional-testing-framework/release-2/suite.html" target="_blank">Give us feedback</a>
       </div>
     
   

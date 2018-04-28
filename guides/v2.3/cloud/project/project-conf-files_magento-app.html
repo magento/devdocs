@@ -2056,6 +2056,8 @@
 
 <p>The <code class="highlighter-rouge">name</code> property can consist only of lower case alphanumeric characters, such as <code class="highlighter-rouge">a</code> to <code class="highlighter-rouge">z</code> and <code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code>. The name is used in the <a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a> file to define the HTTP upstream (by default, <code class="highlighter-rouge">php:http</code>). For example, if the value of <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">app</code>, you must use <code class="highlighter-rouge">app:http</code> in the upstream field. You can also use this name in multi-application relationships.</p>
 
+<!-- Available note types: "info", "warning", "tip" -->
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>Do not change the name of an application after it has been deployed.</p>
 </div>
@@ -2159,6 +2161,8 @@ locations:
 <h3 id="disk"><code class="highlighter-rouge">disk</code></h3>
 <p><code class="highlighter-rouge">disk</code> defines the size of the persistent disk size of the
 application in MB.</p>
+
+<!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The minimal recommended disk size is 256MB. If you see the error <code class="highlighter-rouge">UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
@@ -2394,6 +2398,8 @@ runtime:
   <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="\_blank">xmlrpc</a></li>
 </ul>
 
+<!-- Available note types: "info", "warning", "tip" -->
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
 </div>
@@ -2402,6 +2408,8 @@ runtime:
 <p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
 
 <p>In your repository, the <code class="highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>
+
+<!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>

@@ -306,6 +306,20 @@
         
         
         
+        <li class="nav-level2  " id="suite">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/suite.html">Suite</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="test">
             
             
@@ -700,7 +714,7 @@
 </section>
 
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
 
 <p>Robo is a task runner for PHP that allows you to alias long, complex command line interface (CLI) commands to simple commands.</p>
 
@@ -740,51 +754,66 @@
 
 <h3 id="codeception-robo-commands">Codeception Robo Commands</h3>
 
-<h4 id="list-all-available-robo-commands">List all available Robo commands:</h4>
+<h4 id="list-all-available-robo-commands">List all available Robo commands</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo
 </code></pre></div></div>
 
-<h4 id="duplicate-the-example-configuration-files-used-to-customize-the-project">Duplicate the example configuration files used to customize the project:</h4>
+<h4 id="duplicate-the-example-configuration-files-used-to-customize-the-project">Duplicate the example configuration files used to customize the project</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo clone:files
 </code></pre></div></div>
 
-<h4 id="build-the-codeception-project">Build the Codeception project:</h4>
+<h4 id="build-the-codeception-project">Build the Codeception project</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo build:project
 </code></pre></div></div>
 
-<h4 id="generate-all-tests-in-php">Generate all tests in PHP:</h4>
+<h4 id="generate-all-tests-in-php">Generate all tests in PHP</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:tests
 </code></pre></div></div>
+<h4 id="generate-the-specified-tests-in-php">Generate the specified tests in PHP</h4>
 
-<h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all tests marked with the @group tag <code class="highlighter-rouge">example</code>, using the Chrome environment:</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:tests testName01 testName02 testName03
+</code></pre></div></div>
+
+<h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all tests marked with the @group tag <code class="highlighter-rouge">example</code>, using the Chrome environment</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo example
 </code></pre></div></div>
 
-<h4 id="run-all-functional-tests-located-under-the-directory-path-provided">Run all functional tests located under the directory path provided:</h4>
+<h4 id="run-all-functional-tests-located-under-the-directory-path-provided">Run all functional tests located under the directory path provided</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo folder ______
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo folder &lt;path/to/folder/with/tests&gt;
 </code></pre></div></div>
 
-<h4 id="run-all-functional-tests-excluding-group-skip">Run all functional tests, excluding @group skip:</h4>
+<h4 id="run-all-generated-tests">Run all generated tests</h4>
+
+<p>The command runs all the generated tests.
+The generated test are stored in the <em>acceptance/tests/functional/Magento/FunctionalTest/_generated</em> directory.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo functional
 </code></pre></div></div>
 
-<h4 id="run-all-tests-with-the-specified-group-tag-excluding-group-skip">Run all tests with the specified @group tag, excluding @group ‘skip’:</h4>
+<h4 id="run-tests-with-the-specified-group-annotation">Run tests with the specified group annotation</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group ______
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group &lt;group-value&gt;
+</code></pre></div></div>
+
+<h4 id="run-skipped-tests">Run skipped tests</h4>
+
+<p>Typically, each test tagged by the <code class="highlighter-rouge">&lt;group value="skip"&gt;</code> annotation is ignored during test run.
+But in case you still need to run the skipped tests, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group skip
 </code></pre></div></div>
 
 <h3 id="allure-robo-commands">Allure Robo commands</h3>
 
 <p>To determine which version of the Allure command you need to use run <code class="highlighter-rouge">allure --version</code>.</p>
 
-<h4 id="generate-the-html-for-the-allure-report-based-on-the-test-xml-output">Generate the HTML for the Allure report based on the test XML output:</h4>
+<h4 id="generate-the-html-for-the-allure-report-based-on-the-test-xml-output">Generate the HTML for the Allure report based on the test XML output</h4>
 
 <p>Allure v1.x.x:</p>
 
@@ -796,7 +825,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure2:generate
 </code></pre></div></div>
 
-<h4 id="open-the-html-allure-report">Open the HTML Allure report:</h4>
+<h4 id="open-the-html-allure-report">Open the HTML Allure report</h4>
 
 <p>Allure v1.x.x:</p>
 
@@ -808,7 +837,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure2:open
 </code></pre></div></div>
 
-<h4 id="generate-and-open-the-html-allure-report">Generate and open the HTML Allure report:</h4>
+<h4 id="generate-and-open-the-html-allure-report">Generate and open the HTML Allure report</h4>
 
 <p>Allure v1.x.x:</p>
 
@@ -828,19 +857,19 @@
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">functional</code></td>
-      <td>Run all functional tests, excluding <code class="highlighter-rouge">@group 'skip'</code>.</td>
+      <td>Run all generated tests.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">example</code></td>
-      <td>Run all Tests marked with the <code class="highlighter-rouge">@group</code> tag <code class="highlighter-rouge">'example'</code>.</td>
+      <td>Run all Tests marked with the <code class="highlighter-rouge">&lt;group value="example"/&gt;</code> annotation.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">folder</code></td>
-      <td>Run all acceptance tests located under the directory path provided..</td>
+      <td>Run all acceptance tests located under the directory path provided.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">group</code></td>
-      <td>Run all tests with the specified <code class="highlighter-rouge">@group</code> tag, excluding <code class="highlighter-rouge">@group 'skip'</code></td>
+      <td>Run tests annotated by the <code class="highlighter-rouge">&lt;group/&gt;</code> tag.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">help</code></td>
@@ -848,7 +877,7 @@
     </tr>
     <tr>
       <td><code class="highlighter-rouge">list</code></td>
-      <td>Lists commands.</td>
+      <td>Lists available commands.</td>
     </tr>
   </tbody>
 </table>
@@ -915,14 +944,19 @@
 
 <h4 id="generate">generate</h4>
 
-<p>Generate PHP code from the tests defined in XML files.
-Path to a directory with generated tests:  <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/</code>.</p>
+<p>Generate PHP code from the tests defined in XML files.</p>
+
+<p>Path to a directory with generated tests:  <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/</code>.</p>
 
 <table>
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">generate:tests</code></td>
-      <td>Generate all tests based on specific module load order of the Magento instance</td>
+      <td>Generate all tests and suites based on specific module load order of the Magento instance</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate:tests &lt;testName01&gt; &lt;testName02&gt;</code></td>
+      <td>Generates only the specified tests. It does not work for tests that are part of suites.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">generate:tests --force</code></td>
@@ -930,14 +964,71 @@ Path to a directory with generated tests:  <code class="highlighter-rouge">tests
     </tr>
     <tr>
       <td><code class="highlighter-rouge">generate:tests --config singleRun</code></td>
-      <td>Generate all tests and a manifest file, which is <code class="highlighter-rouge">_generated/testManifest.txt</code>. The file contains only a path to the directory with generated tests.</td>
+      <td>Generate all tests and a manifest file <code class="highlighter-rouge">_generated/testManifest.txt</code>. The file contains only a path to the directory with generated tests.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests --config parallel --nodes &lt;number of nodes&gt;</code></td>
-      <td>Generate all tests and a directory with manifest files, which is <code class="highlighter-rouge">_generated/groups/</code>. The number of files corresponds to the number of nodes. Each file contains a proportional list of tests ordered across files from largest to smallest (based on number of actions).</td>
+      <td><code class="highlighter-rouge">generate:tests --config parallel --lines &lt;number of lines&gt;</code></td>
+      <td>Generate all tests and a directory with manifest files under <code class="highlighter-rouge">_generated/groups/</code>. The number of manifests corresponds to the number of nodes required. Each manifest file contains a proportional list of tests sorted and grouped depending on the specified line limit <code class="highlighter-rouge">&lt;number of lines&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate:tests --tests "&lt;json configuration&gt;"</code></td>
+      <td>Generates only the tests and suites in the specified JSON configuration. See examples of the JSON configurations and the entire command below.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">generate:suite &lt;suiteName&gt;</code></td>
+      <td>Generates tests for the specified suite only.</td>
     </tr>
   </tbody>
 </table>
+
+<h5 id="examples-of-the-json-configuration">Examples of the JSON configuration</h5>
+
+<p>The configuration to generate a single test with no suites:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"tests"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"general_test1"</span><span class="w">     </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"general_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+   </span><span class="s2">"suites"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The configuration to generate a single test contained in the suite:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"tests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">No</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">outside</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
+   </span><span class="s2">"suites"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">test.</span><span class="w">
+         </span><span class="s2">"suite_test1"</span><span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">test</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Complex configuration to generate few non-suite tests, a single test in a suite, and an entire suite:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"tests"</span><span class="p">:[</span><span class="w">  
+      </span><span class="s2">"general_test1"</span><span class="p">,</span><span class="w">   
+      </span><span class="s2">"general_test2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"general_test3"</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="s2">"suites"</span><span class="p">:{</span><span class="w">             </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">suites.</span><span class="w">
+      </span><span class="s2">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+         </span><span class="s2">"suite_test1"</span><span class="w">    </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"suite_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"sample2"</span><span class="p">:[]</span><span class="w">        </span><span class="err">//Generate</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample2"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The command that encodes the above configuration:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:tests <span class="nt">--tests</span> <span class="s2">"{</span><span class="se">\r\n\"</span><span class="s2">tests</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\r\n\"</span><span class="s2">general_test1</span><span class="se">\"</span><span class="s2">,</span><span class="se">\r\n\"</span><span class="s2">general_test2</span><span class="se">\"</span><span class="s2">,</span><span class="se">\r\n\"</span><span class="s2">general_test3</span><span class="se">\"\r\n</span><span class="s2">],</span><span class="se">\r\n\"</span><span class="s2">suites</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\r\n\"</span><span class="s2">sample</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\r\n\"</span><span class="s2">suite_test1</span><span class="se">\"\r\n</span><span class="s2">],</span><span class="se">\r\n\"</span><span class="s2">sample2</span><span class="se">\"</span><span class="s2">:null</span><span class="se">\r\n</span><span class="s2">}</span><span class="se">\r\n</span><span class="s2">}"</span>
+</code></pre></div></div>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The strings must be escaped and surrounded in quotes.</p>
+</div>
 
 <h4 id="self">self</h4>
 

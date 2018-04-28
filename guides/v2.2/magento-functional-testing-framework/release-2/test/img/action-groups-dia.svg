@@ -48,8 +48,8 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg152" />
   <a
-     xlink:href="actions.html"
-     xlink:title="any actions"
+     href="actions.html"
+     title="any actions"
      id="a3851">
     <g
        id="g242">
@@ -98,8 +98,8 @@
   </a>
   <a
      id="a3924"
-     xlink:href="#argument-tag"
-     xlink:title="zero or more &lt;argument&gt; elements">
+     href="#argument-tag"
+     title="zero or more &lt;argument&gt; elements">
     <g
        id="g233">
       <rect
@@ -137,7 +137,7 @@
      id="line24" />
   <a
      id="a3914"
-     xlink:title="contains a sequence of">
+     title="contains a sequence of">
     <g
        id="g227">
       <path
@@ -197,8 +197,8 @@
      id="line40" />
   <a
      id="a3907"
-     xlink:href="#arguments-tag"
-     xlink:title="wrapping element &lt;arguments&gt;">
+     href="#arguments-tag"
+     title="wrapping element &lt;arguments&gt;">
     <g
        id="g218">
       <rect
@@ -252,7 +252,7 @@
      id="line54" />
   <a
      id="a3833"
-     xlink:title="optionally contains muiliple times one of the following nodes">
+     title="optionally contains muiliple times one of the following nodes">
     <g
        id="g212">
       <line
@@ -363,8 +363,8 @@
      id="line86" />
   <a
      id="a82"
-     xlink:href="#actiongroup-tag"
-     xlink:title="one or more &lt;actionGroup&gt; elements">
+     href="#actiongroup-tag"
+     title="one or more &lt;actionGroup&gt; elements">
     <g
        id="g195">
       <rect
@@ -423,8 +423,8 @@
      id="line126" />
   <a
      id="a106"
-     xlink:title="Root element &lt;actionGroups&gt;"
-     xlink:href="#actiongroups-tag">
+     title="Root element &lt;actionGroups&gt;"
+     href="#actiongroups-tag">
     <g
        transform="translate(-10)"
        id="g104">
@@ -466,7 +466,7 @@
   </a>
   <a
      id="a3823"
-     xlink:title="contains a sequence of">
+     title="contains a sequence of">
     <g
        id="g227-6"
        transform="translate(-339.59441,-26)">

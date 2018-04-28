@@ -306,6 +306,20 @@
         
         
         
+        <li class="nav-level2  " id="suite">
+            
+            
+        
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/suite.html">Suite</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="test">
             
             
@@ -770,7 +784,7 @@ They recently added support for <a href="https://blog.jetbrains.com/phpstorm/201
 
 <h3 id="step-3-build-the-project">Step 3. Build the project</h3>
 
-<p>In <code class="highlighter-rouge">magento2/dev/tests/acceptance</code>, run the following command:</p>
+<p>In <em>magento2/dev/tests/acceptance</em>, run the following command:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo build:project
 </code></pre></div></div>
@@ -782,7 +796,7 @@ When added, you should be able to run the <code class="highlighter-rouge">robo</
 
 <h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
+<p>In the <em>magento2/dev/tests/acceptance</em> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
 
 <ul>
   <li>
@@ -822,7 +836,7 @@ Example:</p>
 
 <h3 id="step-5-make-commandphp-visible-in-the-magento-testing-environment">Step 5. Make <code class="highlighter-rouge">command.php</code> visible in the Magento testing environment</h3>
 
-<p>In your Magento installation, navigate to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.</p>
+<p>In your Magento installation, navigate to the <em>magento2/dev/tests/acceptance</em> directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp .htaccess.sample .htaccess
 </code></pre></div></div>
