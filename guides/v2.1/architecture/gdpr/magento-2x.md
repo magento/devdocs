@@ -6,11 +6,11 @@ version: 2.1
 github_link: architecture/gdpr/magento-2x.md
 ---
 
-The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies organizations outside of the EU that offer goods or services to customers or businesses in the EU.
+The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
 
 We are publishing this GDPR compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
 
-* A shopper asks for a copy of the data the merchant has stored about about her
+* A shopper asks for a copy of the data the merchant has stored about her
 * A shopper requests that all information about him be deleted
 
 
@@ -38,7 +38,7 @@ A merchant can enter customer data, address data, and payment data when using Ad
 
 ### Backend data access points
 
-Magento loads customer data when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks. 
+Magento loads customer data when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.
 
 ![Backend data access points](backend-data-access-points.svg)
 

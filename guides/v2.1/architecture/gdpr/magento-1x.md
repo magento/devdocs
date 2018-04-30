@@ -6,31 +6,45 @@ version: 2.1
 github_link: architecture/gdpr/magento-1x.md
 ---
 
+The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
+
+We are publishing this GDPR compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
+
+* A shopper asks for a copy of the data the merchant has stored about her
+* A shopper requests that all information about him be deleted
+
+
 ## Dataflow diagrams
 
+The data flow diagrams show the types of data that customers and administrators can enter and retrieve on the storefront and in Admin.
+
 ### Frontend data entry points
+
+A user can enter customer data, address data, and payment data when registering for an account, during checkout, and similar events.
 
 ![Frontend data entry points](frontend-data-entry-points.svg)
 
 ### Frontend data access points
 
+Magento loads customer data when the customer logs in and views several different pages or checks out.
+
 ![Frontend data access points](frontend-data-access-points.svg)
 
-
 ### Backend data entry points
+
+A merchant can enter customer data, address data, and payment data when using Admin to create a customer or order.
 
 ![Backend data entry points](backend-data-entry-points.svg)
 
 ### Backend data access points
 
+Magento loads customer data when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.
+
 ![Backend data access points](backend-data-access-points.svg)
 
 ## Database entities
 
-Magento 2 primarily stores customer-specific information in
-
-
-customer, address, order, quote, and payment tables. Other tables contain references to the customer ID.
+Magento 2 stores customer information in customer, sales, and other databae tables.
 
 ### Customer data {#customer-data}
 
@@ -76,6 +90,7 @@ The following columns in the `sales_order` table contain customer information:
 
 Column | Data type
 --- | ---
+`customer_id` | int(10)
 `customer_email` | varchar(128)
 `customer_firstname` | varchar(128)
 `customer_gender` | int(11)
@@ -92,6 +107,7 @@ The `sales_flat_order_address` table contains the customer's address.
 
 Column | Data type
 --- | ---
+`customer_id` | int(10)
 `fax` | varchar(255)
 `region` | varchar(255)
 `postcode` | varchar(255)
@@ -113,6 +129,7 @@ The following columns in the `sales_flat_order_grid` table contain customer info
 
 Column | Data type
 --- | ---
+`customer_id` | int(10)
 `shipping_name` | varchar(255)
 `billing_name` | varchar(255)
 
@@ -143,6 +160,7 @@ The following columns in the `sales_flat_quote` table contain customer informati
 
 Column | Data type
 --- | ---
+`customer_id` | int(10)
 `customer_tax_class_id` | int(10)
 `customer_group_id` | int(10)
 `customer_email` | varchar(255)
@@ -198,6 +216,7 @@ Table | Column | Data type
 `enterprise_sales_creditmemo_grid_archive` | `billing_name` | varchar(255)
 `enterprise_sales_invoice_grid_archive` | `billing_name` | varchar(255)
 `enterprise_sales_order_grid_archive` | `billing_name` | varchar(255)
+`enterprise_sales_order_grid_archive` | `customer_id` | int(10)
 `enterprise_sales_order_grid_archive` | `shipping_name` | varchar(255)
 `enterprise_sales_shipment_grid_archive` | `shipping_name` | varchar(255)
 
@@ -217,6 +236,7 @@ The following RMA tables and columns contain customer data:
 Table | Column | Data type
 --- | --- | ---
 `enterprise_rma` | `customer_custom_email` | varchar(255)
+`enterprise_rma_grid` | `customer_id` | int(10)
 `enterprise_rma_grid` | `customer_name` | varchar(255)
 
 ### Miscellaneous data
@@ -236,14 +256,20 @@ Table | Column | Data type
 `enterprise_invitation` | `customer_id` | int(10)
 `enterprise_invitation` | `email` | varchar(255)
 `enterprise_invitation` | `referral_id` | int(10)
+`enterprise_reminder_rule_coupon` | `customer_id` | int(10)
 `enterprise_reminder_rule_coupon` | `emails_failed` | smallint(5)
 `enterprise_scheduled_operations` | `email_receiver` | varchar(150)
 `enterprise_scheduled_operations` | `email_sender` | varchar(150)
+`gift_message` | `customer_id` | int(10)
 `gift_message` | `recipient` | varchar(255)
 `gift_message` | `sender` | varchar(255)
+`newsletter_subscriber` | `customer_id` | int(10)
 `newsletter_subscriber` | `subscriber_email` | varchar(150)
+`persistent_session` | `customer_id` | int(10)
 `persistent_session` | `info` | text
+`poll_vote` | `customer_id` | int(10)
 `poll_vote` | `ip_address` | varbinary(16)
+`rating_option_vote` | `customer_id` | int(10)
 `rating_option_vote` | `remote_ip` | varchar(50)
 `rating_option_vote` | `remote_ip_long` | varbinary(516)
 `send_friend_log` | `ip` | varbinary(16)
