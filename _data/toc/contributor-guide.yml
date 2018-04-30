@@ -17,7 +17,7 @@ pages:
         - label: Suggested topics for contribution
           url: /contributor-guide/contributing_docs_suggested.html
 
-        - label: Quarterly Contributors
+        - label: DevDocs Contributors
           url: /contributor-guide/quarterly-contributors.html
 
         - label: Community maintainers
