@@ -595,7 +595,7 @@ The following figure shows an example.<br />
 
 <p>Magento recommends running cron every minute for EE and every five minutes for CE.</p>
 
-<h3>Example cronjob</h3>
+<h3>Cronjob instructions</h3>
 <p>To create a cronjob as the user that runs Apache, splitting the cronjob between two tasks to prevent the indexer blocking other <code>mdefault</code> jobs or an <code>mdefault</code> job blocking the indexer:</p>
 <ol>
 <li>Create or edit a crontab for the Apache user. This command opens a text editor. You might need to choose a text editor first.<br />
@@ -614,7 +614,7 @@ For example, for CentOS,<br />
 <li>Create or edit a crontab for the Apache user. This command opens a text editor. You might need to choose a text editor first.<br />
 <pre>crontab -u <em>apache-user-name</em> -e</pre></li>
 <li>Enter the following:
-<pre>* * * * * /bin/sh /[your Magento install dir]/cron.sh</pre><br>
+<pre>* * * * * /bin/sh /path/to/magento/cron.sh</pre><br>
 For example, for CentOS,<br />
 <pre>* * * * * /bin/sh /var/www/html/magento/cron.sh</pre></li>
 <li>Save your changes to the crontab and exit the editor.</li></ol>
