@@ -11,6 +11,9 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added a new topic [Suite](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/suite.html) to the MFTF Guide along with documentation updates related to the 2.2.0 release of the framework.|2.2.x, 2.3.x|New topic|Apr 28
+Updates from the 2018 Imagine Docathon.|2.x|Technical changes|Apr 27
+Added [Error code mapping](http://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html)|2.3.x|New topic|Apr 25
 Added the ability to configure a read-only connection to a non-master node to receive read-only traffic for [Redis](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#redisuseslaveconnection) and for [MariaDB](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#mysqluseslaveconnection).|2.1.x, 2.2.x, 2.3.x|New|Apr 24
 New [Smart wizards](http://devdocs.magento.com/guides/v2.2/cloud/env/smart-wizards.html) help you to verify your Cloud configuration follows best practices.|2.1.x, 2.2.x, 2.3.x|New|Apr 24
 Added [Marketplace EQP API](http://devdocs.magento.com/guides/v2.2/marketplace/eqp/api.html) reference documentation.|2.x|New topic|Apr 21
