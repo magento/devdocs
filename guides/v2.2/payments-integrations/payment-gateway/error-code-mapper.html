@@ -867,9 +867,13 @@ does not use this feature, you can inject <code class="highlighter-rouge">ErrorM
 
 <h2 id="retrieve-errors">Retrieve error codes from the response validator</h2>
 
-<p>You can perform the same tasks programmatically using a <a href="/guides/v2.2/payments-integrations/payment-gateway/response-validator.html">response validator</a>. A response validator verifies response codes from the payment gateway. It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway. It is the responsibility of a gateway command to call an appropriate service.</p>
+<p>You can retrieve errors codes using a <a href="/guides/v2.2/payments-integrations/payment-gateway/response-validator.html">response validator</a>.
+A response validator verifies response codes from the payment gateway.
+It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway.
+It is the responsibility of a gateway command to call an appropriate service.</p>
 
-<p>For example, Magento provides a response validator for Braintree: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php"><code class="highlighter-rouge">\Magento\Braintree\Gateway\Validator\GeneralResponseValidator</code></a>. Its implementation allows you to add additional validators.</p>
+<p>For example, Magento provides a response validator for Braintree: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php"><code class="highlighter-rouge">\Magento\Braintree\Gateway\Validator\GeneralResponseValidator</code></a>.
+Its implementation allows to add additional validators.</p>
 
 <p>First, create a new validator. It can be a simple class with the <code class="highlighter-rouge">__invoke</code> method, because <code class="highlighter-rouge">GeneralResponseValidator</code> calls the validator as a function:</p>
 
