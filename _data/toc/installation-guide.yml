@@ -72,7 +72,7 @@ pages:
               url: /install-gde/prereq/nginx.html
 
             - label: PHP
-              url: install-gde/prereq/php-centos-ubuntu.html
+              url: /install-gde/prereq/php-centos-ubuntu.html
               versions: ["2.3"]
               children:
 
