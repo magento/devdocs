@@ -167,7 +167,7 @@ type|string|optional|Node containing the exact name of Entity type. Used later t
 
 `<entity>` may contain one or more [`<data`], [`<var>`], [`<required-entities>`], [`<array>`] elements in any sequence.
 
-### data {#data-ref}
+### data {#data-tag}
 
 Element containing Data/Value pair.
 
@@ -237,7 +237,7 @@ Individual piece of data to be passed in as part of the parent array type.
 
 <!-- Anchors -->
 
-[`<data`]: #data-ref
+[`<data`]: #data-tag
 [`<var>`]: #var
 [`<required-entities>`]: #required-entity
 [`<array>`]: #array

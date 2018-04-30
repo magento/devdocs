@@ -78,7 +78,7 @@ composer install
 
 ### Step 3. Build the project
 
-In `magento2/dev/tests/acceptance`, run the following command:
+In _magento2/dev/tests/acceptance_, run the following command:
 
 ```bash
 vendor/bin/robo build:project
@@ -91,7 +91,7 @@ When added, you should be able to run the `robo`, `codecept`, and `phpunit` comm
 
 ### Step 4. Edit environment settings
 
-In the `magento2/dev/tests/acceptance` directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
+In the _magento2/dev/tests/acceptance_ directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
 Example: `MAGENTO_BASE_URL=http://magento.test`
@@ -126,7 +126,7 @@ http://127.0.0.1:4444/wd/hub
 
 ### Step 5. Make `command.php` visible in the Magento testing environment
 
-In your Magento installation, navigate to the `magento2/dev/tests/acceptance` directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
+In your Magento installation, navigate to the _magento2/dev/tests/acceptance_ directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
 
 ```bash
 cp .htaccess.sample .htaccess
