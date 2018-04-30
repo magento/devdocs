@@ -8,30 +8,37 @@ github_link: architecture/gdpr/magento-2x.md
 
 The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies organizations outside of the EU that offer goods or services to customers or businesses in the EU.
 
-We are publishing this GDPR compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to solve requests such as the following:
+We are publishing this GDPR compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
 
-* A shopper asks for the data the merchant has stored
-* A shopper asks the merchant to delete his or her customer information
-
-If a shopper asks for the customer data the merchant has stored about them, or to delete their customer information from the merchant’s store DB, the SI would use the data flow diagrams and  to build database scripts to solve those problems.
+* A shopper asks for a copy of the data the merchant has stored about about her
+* A shopper requests that all information about him be deleted
 
 
-## Dataflow diagrams
+## Data flow diagrams
+
+The data flow diagrams show the types of data that customers and administrators can enter and retrieve on the storefront and in Admin.
 
 ### Frontend data entry points
+
+A user can enter customer data, address data, and payment data when registering for an account, during checkout, and similar events.
 
 ![Frontend data entry points](frontend-data-entry-points.svg)
 
 ### Frontend data access points
 
+Magento loads customer data when the customer logs in and views several different pages or checks out.
+
 ![Frontend data access points](frontend-data-access-points.svg)
 
-
 ### Backend data entry points
+
+A merchant can enter customer data, address data, and payment data when using Admin to create a customer or order.
 
 ![Backend data entry points](backend-data-entry-points.svg)
 
 ### Backend data access points
+
+Magento loads customer data when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks. 
 
 ![Backend data access points](backend-data-access-points.svg)
 
