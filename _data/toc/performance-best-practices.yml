@@ -11,7 +11,7 @@ pages:
       url: /performance-best-practices/software.html
 
     - label: Development environment recommendations
-      url: performance-best-practices/development-environment.html
+      url: /performance-best-practices/development-environment.html
 
     - label: Configuration best practices
       url: /performance-best-practices/configuration.html
