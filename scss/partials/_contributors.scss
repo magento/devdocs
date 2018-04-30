@@ -1,0 +1,188 @@
+
+.devdocs-contributors {
+  padding: 0 0 30px 0;
+}
+
+
+.home-contributors {
+  .periods {
+    justify-content: center;
+  }
+  .contributors-list {
+    justify-content: center;
+  }
+}
+
+.devdocs-contributors.loading {
+  min-height: 344px;
+  background: url('../../i/loader.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.devdocs-contributors.loaded {
+  min-height: 344px;
+}
+
+
+.contributors-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.hide {
+    display: none;
+  }
+
+}
+
+.contributor {
+  vertical-align: top;
+  text-align: left;
+  padding: 0 10px 20px 10px;
+  width: 20%;
+
+  a {
+    display: block;
+    &:after {
+      display: none !important;
+    }
+  }
+
+  a:hover {
+    .contributor-avatar {
+      box-shadow: 0 0 0 2px $brand-color;
+    }
+  }
+
+  .contributor-avatar {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    overflow: hidden;
+    transition: box-shadow .1s;
+    img {
+      width: 100%;
+    }
+  }
+
+  .contributor-name {
+    font-size: 14px;
+    line-height: 1.4em;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+  }
+
+
+  .contributor-stats {
+    list-style: none;
+    text-align: left;
+    margin: 3px 0 0 0;
+    padding: 0;
+
+    li {
+      padding: 0;
+      margin: 0;
+      font-size: 11px;
+    }
+  }
+
+  .contributor-stats span {
+    display: inline-block;
+    min-width: 50px;
+    color: #999;
+  }
+
+  .contributor-stats a {
+    color: #777;
+    display: inline-block;
+    font-size: 11px;
+    padding: .1em .5em;
+
+    &:visited {
+      color: #777;
+    }
+
+    &:hover {
+      color: #333;
+    }
+
+  }
+
+  @media ( max-width: 1300px) {
+    width: 25%;
+  }
+
+  @media ( max-width: 1025px) {
+    width: 33%;
+  }
+
+
+
+  @media ( max-width: 500px) {
+    width: 50%;
+  }
+
+
+
+
+}
+
+
+
+
+.periods {
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  .hide {
+    display: none;
+  }
+}
+
+.period-type-switcher {
+  flex: 1 1 auto;
+  text-align: left;
+
+  button {
+    border: 1px solid teal;
+    color: teal;
+    background: #fff;
+    font-weight: 600;
+    margin: 0 5px 5px 0;
+    padding: 9px 20px;
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  .active {
+    border-color: $brand-color;
+    color: $brand-color;
+  }
+}
+
+.periods label {
+  display: inline-block;
+  padding-right: 20px;
+  font-weight: 600;
+}
+
+.periods select {
+  background: #fff;
+  padding: 5px 35px 5px 15px;
+  line-height: 1;
+  height: 40px;
+  border-radius: 2px;
+  border: 1px solid #999;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MSIgaGVpZ2h0PSI0MSIgdmlld0JveD0iMCAwIDQxIDQxIj4gIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgIDxyZWN0IHdpZHRoPSI0MSIgaGVpZ2h0PSI0MSIgZmlsbD0iI0ZGRiIvPiAgICA8cG9seWdvbiBmaWxsPSIjMkIyQjJDIiBwb2ludHM9IjEzIDE4IDI4IDE4IDIwLjUgMjUuNSIvPiAgPC9nPjwvc3ZnPg==);
+
+
+  background-position: center right;
+  background-repeat: no-repeat;
+}
