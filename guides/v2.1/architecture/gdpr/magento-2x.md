@@ -6,6 +6,16 @@ version: 2.1
 github_link: architecture/gdpr/magento-2x.md
 ---
 
+The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies organizations outside of the EU that offer goods or services to customers or businesses in the EU.
+
+We are publishing this GDPR compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to solve requests such as the following:
+
+* A shopper asks for the data the merchant has stored
+* A shopper asks the merchant to delete his or her customer information
+
+If a shopper asks for the customer data the merchant has stored about them, or to delete their customer information from the merchant’s store DB, the SI would use the data flow diagrams and  to build database scripts to solve those problems.
+
+
 ## Dataflow diagrams
 
 ### Frontend data entry points
