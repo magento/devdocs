@@ -26,7 +26,7 @@ This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{page.baseurl}}extension-dev-guide/build/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
+1. Add a module directory (not covered in this topic). See [Build your module]({{page.baseurl}}/extension-dev-guide/build/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
@@ -39,7 +39,7 @@ A new checkout step must be implemented as UI component. That is, its {% glossar
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 
 <div class="bs-callout bs-callout-info" id="info">
-<p><code>&lt;your_module_dir&gt;</code> notation stands for the path to your module directory from the root directory. Usually it will be one of the following: <code>app/code/&lt;YourVendor&gt;/&lt;YourModule&gt;</code> or <code>vendor/&lt;yourvendor&gt;/module-&lt;module&gt;-&lt;name&gt;</code>. For more details see <a href="{{page.baseurl}}frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a></p>
+<p><code>&lt;your_module_dir&gt;</code> notation stands for the path to your module directory from the root directory. Usually it will be one of the following: <code>app/code/&lt;YourVendor&gt;/&lt;YourModule&gt;</code> or <code>vendor/&lt;yourvendor&gt;/module-&lt;module&gt;-&lt;name&gt;</code>. For more details see <a href="{{page.baseurl}}/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a></p>
 </div>
 
 A sample `my-step-view.js` with comments follows:
@@ -158,7 +158,7 @@ A sample `mystep.html` follows:
 
 For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`.
 
-So you need to add an [extending]({{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
+So you need to add an [extending]({{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
 
 A sample `checkout_index_index.xml` follows:
 
@@ -245,5 +245,5 @@ define(
 {%endhighlight js%}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For your changes to be applied, you might need to [clean layout cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{page.baseurl}}howdoi/clean_static_cache.html). For more info on mixins go to [JS Mixins](http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html).
+For your changes to be applied, you might need to [clean layout cache]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{page.baseurl}}/howdoi/clean_static_cache.html). For more info on mixins go to [JS Mixins](http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html).
 </div>

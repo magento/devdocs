@@ -15,7 +15,7 @@ functional_areas:
 ---
 
 #### Previous step:
-[Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
+[Build and deploy on local]({{ page.baseurl}}/cloud/live/live-sanity-check.html)
 
 When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
 
@@ -38,7 +38,7 @@ You can locate your URLs through the Project Web Interface. For each selected en
 2. Select an environment.
 3. Click **Access site** to display the URL and SSH information.
 
-	![Access your project]({{ site.baseurl }}common/images/cloud_project-access-starter.png)
+	![Access your project]({{ site.baseurl}}/common/images/cloud_project-access-starter.png)
 
 ## Pro plan projects {#pro}
 For Pro plan projects, make sure to complete all development and merging of your code to the `master` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
@@ -53,7 +53,7 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 
 If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#pro-remote) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
 
-If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
+If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl}}/cloud/access-acct/fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
 ### Migrate your `.magento.app.yaml` file {#pro-yaml}
 **Important:** If you have **not modified** the default deployment hooks or configurations, skip this step and continue with [Get your Pro access URLs](#pro-urls). Only migrate the file if you modified the deployment hooks or added configuration updates.
@@ -63,7 +63,7 @@ If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl
 ### Get your Pro access URLs  {#pro-urls}
 For Pro projects created **after October 23, 2017**, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.
 
-![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png)
+![Access your project]({{ site.baseurl}}/common/images/cloud_project-access.png)
 
 For Pro projects created **before October 23, 2017**, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You'll use this information for accessing the environments.
 
@@ -105,7 +105,7 @@ You only need to set up your SSH agent on these servers once. SSH agent helps co
 
 **How it works!** After you configure the agent and settings, you can migrate files easier using SSH or `scp` between servers. The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system, helping you connect using your local private SSH key. After you push your Git code, you can SSH into Staging and Production and update code, data, and files with this set up.
 
-You can use any terminal client you prefer for SSH access, or see our [Recommendeds tools]({{ page.baseurl }}cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
+You can use any terminal client you prefer for SSH access, or see our [Recommendeds tools]({{ page.baseurl}}/cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
 
 To set up an SSH agent:
 
@@ -136,9 +136,9 @@ To set up an SSH agent:
 
 		Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 
-For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup. For Starter and Pro projects, you can add your SSH public key to all Integration, Staging and Production environments.
+For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl}}/cloud/before/before-workspace-ssh.html) as part of your local setup. For Starter and Pro projects, you can add your SSH public key to all Integration, Staging and Production environments.
 
 If you have a Pro project created **before October 23, 2017**, you need to enter a ticket with your public key to have it added to Staging and Production.
 
 #### Next step
-[Migrate and deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+[Migrate and deploy]({{ page.baseurl}}/cloud/live/stage-prod-migrate.html)

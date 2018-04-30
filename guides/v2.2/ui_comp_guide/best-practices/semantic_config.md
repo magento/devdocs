@@ -9,14 +9,14 @@ version: 2.2
 github_link: ui_comp_guide/best-practices/semantic_config.md
 ---
 
-Magento 2.2.0 introduces a new structure for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics.
+Magento 2.2.0 introduces a new structure for [UI components XML configuration]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics.
 
 The arbitrary structure, used in UI components {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.
 
 Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old "arbitrary" structure will become deprecated at some point.
 
 <div class="bs-callout bs-callout-info" id="info_structure_except" markdown="1">
-Declaring the custom UI component is an exception, use the arbitrary structure when <a  href="{{page.baseurl}}ui_comp_guide/howto/new_component_declaration.html">declaring a custom UI component</a>.
+Declaring the custom UI component is an exception, use the arbitrary structure when <a  href="{{page.baseurl}}/ui_comp_guide/howto/new_component_declaration.html">declaring a custom UI component</a>.
 </div>
 
 The main advantages of the new structure are described in the following sections.
@@ -76,15 +76,15 @@ When editing XML configuration files in an IDE, the autocomplete feature prompts
 
 * Node declaration autocomplete:
 
-![node declaration autocomplete]({{site.baseurl}}common/images/ui_comps/autocomplete1.png){:width="610px"}
+![node declaration autocomplete]({{site.baseurl}}/common/images/ui_comps/autocomplete1.png){:width="610px"}
 
 * Attribute declaration autocomplete:
 
-![Attribute declaration autocomplete]({{site.baseurl}}common/images/ui_comps/autocomplete1.png){:width="630px"}
+![Attribute declaration autocomplete]({{site.baseurl}}/common/images/ui_comps/autocomplete1.png){:width="630px"}
 
 * Magento supports autocomplete for all nesting levels of options which have static interface. If an option doesn't have defined interface, the additional property is used to declare option name and type:
 
-![no defined interface]({{site.baseurl}}common/images/ui_comps/no_type.png){:width="410px"}
+![no defined interface]({{site.baseurl}}/common/images/ui_comps/no_type.png){:width="410px"}
 
 {% endcollapsible %}
 
@@ -95,23 +95,23 @@ When editing XML configuration files in an IDE, you get visual notifications if 
 {% collapsible Illustration %}
 * If the node name is misspelled:
 
-![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation1.png){:width="410px"}
+![first_way_ui_components_declaration]({{site.baseurl}}/common/images/ui_comps/validation1.png){:width="410px"}
 
 * If the required attribute is missing:
 
-![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation2.png){:width="410px"}
+![first_way_ui_components_declaration]({{site.baseurl}}/common/images/ui_comps/validation2.png){:width="410px"}
 
 * The tooltip displayed if you move the pointer over the underlined element:
 
-![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation3.png){:width="410px"}
+![first_way_ui_components_declaration]({{site.baseurl}}/common/images/ui_comps/validation3.png){:width="410px"}
 
 * Validating the complete file:
 
-![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation_file.png){:width="520px"}
-![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation_messages.png)
+![first_way_ui_components_declaration]({{site.baseurl}}/common/images/ui_comps/validation_file.png){:width="520px"}
+![first_way_ui_components_declaration]({{site.baseurl}}/common/images/ui_comps/validation_messages.png)
 
 {% endcollapsible %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter]({{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html) topic.
+To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html) topic.
 </div>

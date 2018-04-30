@@ -22,4 +22,4 @@ The REST URL to update a customer is `<route url="/V1/customers/:id" method="PUT
 This applies to all REST APIs where a parameter is passed in the URL. Anything specified in the request body with the same parameter name as the URL will be ignored.
 
 ## Related topics
-[Search using REST APIs]({{page.baseurl}}rest/performing-searches.html)
+[Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html)

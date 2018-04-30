@@ -20,13 +20,13 @@ functional_areas:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
 There are no prerequisites for using this command.
 
 <h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
-<a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a> provides the information Magento needs to initialize and bootstrap.
+<a href="{{page.baseurl}}/config-guide/config/config-php.html">Magento's deployment configuration</a> provides the information Magento needs to initialize and bootstrap.
 
 You can use this command if:
 
@@ -94,7 +94,7 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
 
     <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow oe you have a clustered database.</li>
     
@@ -138,27 +138,27 @@ The following table discusses the meanings of installation parameters and values
 
 If applicable, continue your Magento software installation:
 
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Command line installation</a>
-*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard installation</a>
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-install.html">Command line installation</a>
+*	<a href="{{page.baseurl}}/install-gde/install/web/install-web.html">Setup Wizard installation</a>
 
 <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %} -->
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
-*	[Remove sample data modules or update sample data]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-other.html)
-*	[Enable or disable modules]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-enable.html)
-*	[Display or change the Admin URI]({{ page.baseurl }}install-gde/install/cli/install-cli-adminurl.html)
-*	[Uninstall modules]({{ page.baseurl }}install-gde/install/cli/install-cli-uninstall-mods.html)
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
-*	[Update the Magento database schema and data]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html)
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a>
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator</a>
-*	[Back up and roll back the file system, media, and database]({{ page.baseurl }}install-gde/install/cli/install-cli-backup.html)
-*	[Uninstall themes]({{ page.baseurl }}install-gde/install/cli/install-cli-theme-uninstall.html)
-*	[Uninstall language packages]({{ page.baseurl }}install-gde/install/cli/install-cli-uninstall-langpk.html)
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
+*	[Remove sample data modules or update sample data]({{ page.baseurl}}/install-gde/install/cli/install-cli-sample-data-other.html)
+*	[Enable or disable modules]({{ page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html)
+*	[Display or change the Admin URI]({{ page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html)
+*	[Uninstall modules]({{ page.baseurl}}/install-gde/install/cli/install-cli-uninstall-mods.html)
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
+*	[Update the Magento database schema and data]({{ page.baseurl}}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a>
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator</a>
+*	[Back up and roll back the file system, media, and database]({{ page.baseurl}}/install-gde/install/cli/install-cli-backup.html)
+*	[Uninstall themes]({{ page.baseurl}}/install-gde/install/cli/install-cli-theme-uninstall.html)
+*	[Uninstall language packages]({{ page.baseurl}}/install-gde/install/cli/install-cli-uninstall-langpk.html)
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>

@@ -37,8 +37,8 @@ All grammatically correct sentences end in punctuation, usually a period. When i
     </ul>
   </li>
   <li><strong>Use Oxford comma.</strong> Different from AP. We always use the Oxford or "serial" comma, which is the final comma in a list of items. <em>Correct example:</em> “Retain customers with custom registries, gift cards, and store credit.”</li>
-  <li><strong>Parenthesis.</strong> For details, jump to the <span markdown="1">[Parenthesis]({{page.baseurl}}design-styleguide/punctuation/punctuation.html#parenthesis)</span> section.</li>
-  <li><strong>Numbers, dates, addresses.</strong> For details, see <span markdown="1">[Number Formats]({{page.baseurl}}design-styleguide/number-formats/number-formats.html).</span></li>
+  <li><strong>Parenthesis.</strong> For details, jump to the <span markdown="1">[Parenthesis]({{page.baseurl}}/design-styleguide/punctuation/punctuation.html#parenthesis)</span> section.</li>
+  <li><strong>Numbers, dates, addresses.</strong> For details, see <span markdown="1">[Number Formats]({{page.baseurl}}/design-styleguide/number-formats/number-formats.html).</span></li>
   <li><strong>Introductory phrases.</strong> Use commas to set off introductory phrases. ... Commas can be omitted after short phrases as long as the meaning, transitioning between phrase and sentence, is clear. <em>Correct example:</em> "(After <em>-or-</em> Following <em>-or-</em> To follow) this section, read the Associated Press (AP) Stylebook’s commas entry."</li>
   <li><strong>Non-essential phrases.</strong> A non-essential phrase is a phrase that can be removed from a sentence without adversely affecting its meaning. "Which" is used for non-essential phrases, and "that" is used for essential phrases. <em>See correct examples:</em>
   <ul style="list-style-type:none">
@@ -53,7 +53,7 @@ All grammatically correct sentences end in punctuation, usually a period. When i
 Use to end a sentence before:
 
 <ul>
-  <li>A complex series of items. Don't use a colon with a simple series. Also, consider using a list for a complex series of items. For details, see <span markdown="1">[Lists]({{page.baseurl}}design-styleguide/content-formats/content-formats.html#lists)</span> section in Content Formats. <em>See examples:</em>
+  <li>A complex series of items. Don't use a colon with a simple series. Also, consider using a list for a complex series of items. For details, see <span markdown="1">[Lists]({{page.baseurl}}/design-styleguide/content-formats/content-formats.html#lists)</span> section in Content Formats. <em>See examples:</em>
     <ul style="list-style-type:none">
       <li><strong>No</strong> – “A shopping cart may include: pants, hats, and scarves."</li>
       <li>Yes – “A shopping cart may include pants, hats, and scarves.”</li>
@@ -115,7 +115,7 @@ Use in:
 
 ### Money
 
-For details, see the [Money]({{page.baseurl}}design-styleguide/number-formats/number-formats.html#money) section in Number Formats.
+For details, see the [Money]({{page.baseurl}}/design-styleguide/number-formats/number-formats.html#money) section in Number Formats.
 
 ### Percentages
 

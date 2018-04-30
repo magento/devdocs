@@ -13,7 +13,7 @@ Buttons are primarily used for task-based navigation, and links are primarily us
 
 However, both buttons and links can function as calls to action (CTAs). Whether button or link, a CTA is used to encourage a user to take an action. CTA labels use title case and active verbs, should be short, and should use labels consistently across the Admin panel.
 
-For more details, see [Title Case standards]({{page.baseurl}}design-styleguide/capitalization/capitalization.html#title-case) in Capitalization.
+For more details, see [Title Case standards]({{page.baseurl}}/design-styleguide/capitalization/capitalization.html#title-case) in Capitalization.
 
 *Examples:*
 
@@ -40,7 +40,7 @@ Buttons can be used for:
 
 Button types are primary, secondary, and tertiary. Each page should have a maximum limit of one primary button. Split buttons include multiple actions. Button counts in a Button Bar or any array of buttons should be limited to four buttons, maximum.
 
-**For design specs,** see [Buttons]({{page.baseurl}}pattern-library/controls/buttons/buttons.html) and [Button Bar]({{page.baseurl}}pattern-library/controls/button-bar/button-bar.html) patterns.
+**For design specs,** see [Buttons]({{page.baseurl}}/pattern-library/controls/buttons/buttons.html) and [Button Bar]({{page.baseurl}}/pattern-library/controls/button-bar/button-bar.html) patterns.
 
 ## Links
 
@@ -54,7 +54,7 @@ Other links guidance includes:
 
 Links can be used as content links (for site navigation) and non-primary CTAs. When used as CTAs, link labels should be long enough to be understood, but as short as possible. However, a link CTA's label may sometimes stretch a few words longer than a button label.
 
-**For link typography specs,** see [Legal and Link Text]({{page.baseurl}}design-styleguide/typography/typography.html#legal-and-link-text) in Typography standards.
+**For link typography specs,** see [Legal and Link Text]({{page.baseurl}}/design-styleguide/typography/typography.html#legal-and-link-text) in Typography standards.
 
 ## Accessibility
 
@@ -66,7 +66,7 @@ Links can be used as content links (for site navigation) and non-primary CTAs. W
 
 * **For anchor links, use "Jump to" before the link.** This identifies the link as an anchor and that it won't navigate users to another page.
 
-* **Use linked icons with care.** Users may not know what the icon means, so for icons that aren't globally recognized, pair a linked label with a linked icon. See [Iconography standards]({{page.baseurl}}design-styleguide/iconography/iconography.html).
+* **Use linked icons with care.** Users may not know what the icon means, so for icons that aren't globally recognized, pair a linked label with a linked icon. See [Iconography standards]({{page.baseurl}}/design-styleguide/iconography/iconography.html).
 
 ## Labels Best Practices
 
@@ -75,7 +75,7 @@ Links can be used as content links (for site navigation) and non-primary CTAs. W
   <li><strong>PDFs and other file formats.</strong>
     <ul>
       <li>Append the document-type acronym after the link label and link only the document title.</li>
-      <li>Use all caps case and do not add a period to the acronym. See <span markdown="1">[All Caps case standards]({{page.baseurl}}design-styleguide/capitalization/capitalization.html#all-caps)</span> in Capitalization.</li>
+      <li>Use all caps case and do not add a period to the acronym. See <span markdown="1">[All Caps case standards]({{page.baseurl}}/design-styleguide/capitalization/capitalization.html#all-caps)</span> in Capitalization.</li>
       <li>Do not use the file name or URL in the content &#8212; use the title of the document.</li>
     </ul>
     <em>Example:</em>

@@ -20,7 +20,7 @@ module PageBaseUrlGenerator
           version = matcher[1]
         end
 
-        page.data['baseurl'] = "#{siteBaseUrl}guides/v#{version}/"
+        page.data['baseurl'] = "#{siteBaseUrl}/guides/v#{version}"
         page.data['guide_version'] = version
       end
 
@@ -30,7 +30,7 @@ module PageBaseUrlGenerator
       videos.docs.each do |video|
         version = "2.1"
 
-        video.data['baseurl'] = "#{siteBaseUrl}guides/v#{version}/"
+        video.data['baseurl'] = "#{siteBaseUrl}/guides/v#{version}"
         video.data['guide_version'] = version
 
       end

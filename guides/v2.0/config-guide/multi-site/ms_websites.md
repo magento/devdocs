@@ -27,8 +27,8 @@ The tasks discussed in this topic provide one way to set up multiple stores. For
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} with website code `french` in this topic. For step-by-step tutorials, see:
 
-*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
-*	[Tutorial&mdash;Set up multiple websites with nginx]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
+*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl}}/config-guide/multi-site/ms_apache.html)
+*	[Tutorial&mdash;Set up multiple websites with nginx]({{ page.baseurl}}/config-guide/multi-site/ms_nginx.html)
 
 </div>
 
@@ -47,7 +47,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 	The following figure shows an example.
 
-	![Create and enable a root category]({{ site.baseurl }}common/images/config_multi-site_root-cat.png){:width="500px"}
+	![Create and enable a root category]({{ site.baseurl}}/common/images/config_multi-site_root-cat.png){:width="500px"}
 6.	Click **Save**.
 7.	Repeat these tasks as many times as necessary to create root categories for your stores.
 
@@ -67,7 +67,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 	The following figure shows an example.
 
-	![Add a website]({{ site.baseurl }}common/images/config_multi-site-website.png){:width="500px"}
+	![Add a website]({{ site.baseurl}}/common/images/config_multi-site-website.png){:width="500px"}
 4.	Click **Save Web Site**.
 7.	Repeat these tasks as many times as necessary to create your websites.
 
@@ -87,7 +87,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 	The following figure shows an example.
 
-	![Add a store]({{ site.baseurl }}common/images/config_multi-site-store.png){:width="500px"}
+	![Add a store]({{ site.baseurl}}/common/images/config_multi-site-store.png){:width="500px"}
 6.	Click **Save Store**.
 7.	Repeat these tasks as many times as necessary to create your stores.
 
@@ -106,7 +106,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 	*	**Status** list: Click **Enabled**.
 	The following figure shows an example.
 
-	![Add a store]({{ site.baseurl }}common/images/config_multi-site-storeview.png){:width="500px"}
+	![Add a store]({{ site.baseurl}}/common/images/config_multi-site-storeview.png){:width="500px"}
 3.	Click **Save Store View**.
 4.	Repeat these tasks as many times as necessary to create your store views.
 
@@ -120,13 +120,13 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
 2.	From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
 
-	![Select a scope]({{ site.baseurl }}common/images/config_multi-site-scope.png){:width="250px"}
+	![Select a scope]({{ site.baseurl}}/common/images/config_multi-site-scope.png){:width="250px"}
 
 3.	In the right pane, expand **Base URLs**.
 4.	In the Base URL section, clear the **Use Default** check box.
 4.	Enter `http://french.magento.mg` as the following example shows.
 
-	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url.png){:width="650px"}
+	![Set a base URL]({{ site.baseurl}}/common/images/config_multi-site_base-url.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
@@ -149,12 +149,12 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
-	![Select the default config scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"}
+	![Select the default config scope]({{ site.baseurl}}/common/images/config_multi-site-default.png){:width="250px"}
 3.	In the right pane, expand **Url Options**.
 4.	Clear the **Use system value** check box next to **Add Store Code to Urls**.
 5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
 
-	![Add the store code to the store's base URL]({{ site.baseurl }}common/images/config_multi-site-add-store-url.png){:width="550px"}
+	![Add the store code to the store's base URL]({{ site.baseurl}}/common/images/config_multi-site-add-store-url.png){:width="550px"}
 6.	Click **Save Config**.
 7.	If prompted, flush the Magento cache. (**System** > **Cache Management**).
 
@@ -169,12 +169,12 @@ You must perform this step last because after it's done, you'll lose access to t
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
 
-	![Select the default config scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"}
+	![Select the default config scope]({{ site.baseurl}}/common/images/config_multi-site-default.png){:width="250px"}
 
 3.	In the right pane, expand **Base URLs**.
 4.	Enter `http://mysite.mg` as the following example shows.
 
-	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url-default2.png){:width="650px"}
+	![Set a base URL]({{ site.baseurl}}/common/images/config_multi-site_base-url-default2.png){:width="650px"}
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
@@ -184,9 +184,9 @@ You must perform this step last because after it's done, you'll lose access to t
 {% endcollapsible %}
 
 #### Next step
-*	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
-*	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
-*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
+*	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl}}/cloud/project/project-multi-sites.html)
+*	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl}}/config-guide/multi-site/ms_nginx.html)
+*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl}}/config-guide/multi-site/ms_apache.html)
 
 #### Related information
 [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
