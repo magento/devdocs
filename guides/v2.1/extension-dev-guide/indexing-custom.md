@@ -92,7 +92,7 @@ Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sa
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd">
   <view id=" merchandizing_popular_order" class="Vendor\Merchandizing\Model\Indexer\Popular" group="indexer">
     <subscriptions>
-      <table name="sales_order_flat" entity_column="order_id" />
+      <table name="sales_order" entity_column="entity_id" />
     </subscriptions>
   </view>
 </config>

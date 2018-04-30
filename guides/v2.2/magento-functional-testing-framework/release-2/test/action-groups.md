@@ -22,7 +22,7 @@ The following diagram shows the structure of an MFTF action group:
 
 The following conventions apply to MFTF action groups:
 
--  All action groups are declared in XML files and stored in the `\<module\>/ActionGroup/` directory.
+-  All action groups are declared in XML files and stored in the _\<module\>/ActionGroup/_ directory.
 -  Every file name ends with `ActionGroup`, such as `LoginToAdminActionGroup.xml`.
 -  The file name and the [`<actionGroup>`](#actiongroup-tag) name are the same.
 
@@ -48,13 +48,13 @@ The XML format for the `actionGroups` declaration is:
 
 These examples build a declaration for a group of actions that grant authorization to the Admin area, and use the declaration in a test.
 
-The `Backend/ActionGroup/LoginToAdminActionGroup.xml` `<actionGroup>` relates to the functionality of the _Backend_ module. In [test](../test.html), the name and identifier of the `<actionGroup>` is used as a reference in the `ref` parameter, such as `ref="LoginToAdminActionGroup"`.
+The _Backend/ActionGroup/LoginToAdminActionGroup.xml_ `<actionGroup>` relates to the functionality of the _Backend_ module. In [test](../test.html), the name and identifier of the `<actionGroup>` is used as a reference in the `ref` parameter, such as `ref="LoginToAdminActionGroup"`.
 
 ### Create an action group declaration
 
 To create the `<actionGroup>` declaration:
 
-1.  Begin with a `Backend/ActionGroup/LoginToAdminActionGroup.xml` template for the `<actionGroup>`:
+1.  Begin with a _Backend/ActionGroup/LoginToAdminActionGroup.xml_ template for the `<actionGroup>`:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>

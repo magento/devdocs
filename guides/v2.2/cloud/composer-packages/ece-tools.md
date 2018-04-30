@@ -12,9 +12,27 @@ functional_areas:
 
 {% include cloud/ece-tools.md %}
 
+## v2002.0.11
+
+{% include note.html type="info" content="The Cloud tools version 2002.0.11 is required for 2.2.4 compatibility." %}
+
+#### New features
+
+- **Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{page.baseurl}}/cloud/env/variables-deploy.html#redisuseslaveconnection) and for <!--MAGECLOUD-143 --> [MariaDB]({{page.baseurl}}/cloud/env/variables-deploy.html#mysqluseslaveconnection)).
+-  <!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a new wizard to help verify your configuration for static content deployment. See [Smart wizards]({{page.baseurl}}/cloud/env/smart-wizards.html).
+-  <!-- MAGECLOUD-1966 -->**Symfony Console support**—Added support for Symfony Console 4 with Magento 2.3.
+-  <!-- MAGECLOUD-1607 -->**Cron scheduling optimizations**—Improved the queue management and enhanced logging to help with debugging cron-related issues.
+
+#### Fixed issues
+
+-  <!-- MAGECLOUD-1221 -->Deployment validation fails if an `ADMIN_EMAIL` or `ADMIN_USERNAME` value is the same as an existing Magento administrator account.
+-  <!-- MAGECLOUD-1489 -->The first installation of the Staging & Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.
+-  <!-- MAGECLOUD-1819 -->You can now use the `VERBOSE_COMMANDS` environment variable during both _build_ and _deploy_ phases.
+-  <!-- MAGECLOUD-2021 -->Fixed an issue that interrupted the build phase for legacy architecture when using static content deployment.
+
 ## v2002.0.10
 
-### New features
+#### New features
 
 -  <!-- MAGECLOUD-1285 -->**Static Content Deployment (SCD)**—There is a new, alternative deployment process to generate static content when requested (on-demand). This decreases downtime and improves cache handling by generating the most critical assets.
     -  <!-- MAGECLOUD-1738 -->**New environment variable**—Added the new `SCD_ON_DEMAND` global environment variable to generate static content when requested.
@@ -30,7 +48,7 @@ functional_areas:
     -  <!-- MAGECLOUD-1738 -->`SCD_ON_DEMAND`—_Global_ environment variable to generate static content when requested.
     -   `WARM_UP_PAGES`—You can list the pages to use to pre-load the cache. Available in the new [Post-deploy variables](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-post-deploy.html).
 
-### Fixed issues
+#### Fixed issues
 
 -  <!-- MAGECLOUD-982 -->We fixed an issue that involved a locally applied patch breaking the deployment on an instance. Now, ece-tools can detect that a patch has been applied.
 
@@ -48,7 +66,7 @@ functional_areas:
 You must [upgrade the {{site.data.var.ece}} metapackage](http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html) to get this and all future updates.
 </div>
 
-### New features
+#### New features
 -   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x.
 
 -   <!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis](http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis) page and default cache and Redis session storage using an environment variable.
@@ -63,7 +81,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage](http://devdocs.magento.
 
 -   <!-- MAGECLOUD-1674 -->**Logging**—We simplified logging around built-in patching operations.
 
-### Fixed issues
+#### Fixed issues
 -   <!-- MAGECLOUD-1615 -->We removed `developer` mode support and the `APPLICATION_MODE` environment variable because they were causing unexpected behavior.
 
 -   <!-- MAGECLOUD-1630 -->We fixed an issue that was causing static content deployment failures related to Redis. Now, multi-threaded static content deployment runs as designed.
@@ -77,7 +95,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage](http://devdocs.magento.
 We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
 </div>
 
-### New features
+#### New features
 -   <!-- MAGECLOUD-1253 -MAGECLOUD-1495-->**Improved logging**
     -   We improved log messaging to provide better explanations when the build or deploy process overrides an environment variable.
     -   You can now view installation and upgrade progress in real time. Tail the `install_update.log` file to view progress. For example,
@@ -97,7 +115,7 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 -   <!--MAGECLOUD-1090-->We implemented smart patching. Now the package applies patches based not on {{site.data.var.ece}} version, but on patched package version.
 
 
-### Fixed issues
+#### Fixed issues
 -   <!-- MAGECLOUD-1162 -->We fixed a logging issue that was causing build errors.
 
 -   <!-- MAGECLOUD-1389 -->We fixed an issue that was causing timeout exceptions when running deployments in interactive mode.
@@ -121,12 +139,12 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 
 ## v2002.0.7
 
-### Fixed issues
+#### Fixed issues
 -   <!-- MAGECLOUD-1454-->We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
 
 ## v2002.0.6
 
-### Fixed issues
+#### Fixed issues
 -   <!-- MAGECLOUD-1413 -->We fixed an issue that was causing `gzip` errors when a file or directory name contains spaces.
 
 -   <!-- MAGECLOUD-1424 -->We fixed an issue that was preventing deployment scripts from properly recognizing and enabling module dependencies.
@@ -134,7 +152,7 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 
 ## v2002.0.5
 
-### New features
+#### New features
 -   **Configure a cron consumer with an environment variable**—You can now configure cron consumers using the new `CRON_CONSUMERS_RUNNER` environment variable.
 
 -   **Configuration scanning**—We now scan for critical components during the build/deploy process and halt the process if the scan fails, which prevents unnecessary downtime due to the site being in maintenance mode.
@@ -153,7 +171,7 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 
 -   **Cron interval limitations lifted**—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in `.magento.app.yaml` or create a support ticket for Production/Staging environments. Refer to [Set up cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html) for more information.
 
-### Fixed issues
+#### Fixed issues
 -   <!-- MAGECLOUD-1327 -->We fixed an issue that was causing long deploy times due to the deploy process invoking the `cache-clean` operation before static content deployment.
 
 -   <!-- MAGECLOUD-1322 -->We fixed an issue causing errors during the static content generation step of deployment on Production environments.
@@ -172,27 +190,27 @@ We merged [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/
 
 ## v2002.0.4
 
-### Fixed issues
+#### Fixed issues
 -   <!-- MAGECLOUD-1355 -->You can now [manually reset stuck Magento cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. Not available in 2.1.
 
 ## v2002.0.3
 
-### Fixed issues
+#### Fixed issues
 -   <!--MAGECLOUD-1311-->We fixed an issue that was causing pages to time out because Redis was taking too long to read/write. You can now use the `disable_locking` parameter in Redis configurations to prevent this issue.
 
 ## v2002.0.2
 
-### Fixed issues
+#### Fixed issues
 -   <!--MAGECLOUD-1246-->The RabbitMQ configuration process now obtains all required parameters automatically.
 
 ## v2002.0.1
 
-### New features
+#### New features
 -   <!--- MAGECLOUD-1057 -->{{site.data.var.ece}} now supports scopes and [static content deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of `quick` for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options `standard`, `quick`, or `compact`. If you select `compact`, we override the `STATIC_CONTENT_THREADS` value with `1`, which can slow deployment, especially in production environments. Not available in 2.1.
 
 -   <!--- MAGECLOUD-1014 & MAGECLOUD-1023 -->We have created a new log file on environments to capture and compile build and deploy actions. The file is located in the `var/log/cloud.log` file inside the Magento root application directory.
 
-### Fixed issues
+#### Fixed issues
 -   <!-- MAGECLOUD-919 & MAGECLOUD-1030-->Refactored the `ece-tools` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
 
 -   <!-- MAGECLOUD-1186-->We fixed an issue that was preventing `ece-tools` from halting execution and throwing an exception if no patches can be applied.
