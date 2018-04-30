@@ -108,7 +108,7 @@ It is the responsibility of a gateway command to call an appropriate service.
 For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{site.mage2300url}}app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php).
 Its implementation allows to retrieve errors codes from a response.
 
-First, create a new codes provider. It can be a simple class with public method which should return a list of errors codes by the provided response:
+First, create a new code provider. It can be a simple class with a public method that should return a list of error codes by the provided response:
 
 {% highlight php startinline=true %}
 class ErrorCodeProvider
@@ -140,7 +140,7 @@ class ErrorCodeProvider
 {% endhighlight %}
 
 
-Then add the created provider as dependency to the `GeneralResponseValidator` class:
+Then add the created provider as a dependency to the `GeneralResponseValidator` class:
 
 {% highlight php startinline=true %}
 class GeneralResponseValidator extends AbstractValidator
