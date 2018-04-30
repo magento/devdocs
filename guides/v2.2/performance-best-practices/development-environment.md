@@ -12,7 +12,7 @@ functional_areas:
 
 ## Clean the caches instead of disabling
 
-Magento runs more efficiently when you [clean the caches] instead of disabling them completely. Most types of caches are rarely invalidated during development, only requiring cleaning for specific caches.
+Many developers tend to disable all caches on their developer instances. We recommend only cleaning caches, without disabling all caches. Magento runs more efficiently when you [clean the caches] instead of disabling them completely. Most types of caches are rarely invalidated during development.
 
 If you [disable the caches], we recommend only disabling Page and Block caches in development instances. Remember to enable all caches during testing.
 
