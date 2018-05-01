@@ -587,7 +587,7 @@ The following figure shows an example.<br />
   <li>Cronjobs in <code>mdefault</code> scope may take longer to execute and complete, blocking others scheduled during the time it is still running.</li>
 </ul>
 
-<p>Split your <code>malways</code> and <code>mdefault</code> cronjob modes using the following:</p>
+<p>To split your <code>malways</code> and <code>mdefault</code> cronjob modes, use the following:</p>
 <pre>* * * * * /path/to/magento/cron.sh cron.php -mdefault
 * * * * * /path/to/magento/cron.sh cron.php -malways</pre>
 
