@@ -8,6 +8,7 @@
  * Options can be also passed from the html data attributes:
  * <div id="elem" data-plugin-options='{"contributorsLimit": 3}'>
 */
+
 ;(function( $, window, document, undefined ) {
 
   var pluginName = 'contributorsList';

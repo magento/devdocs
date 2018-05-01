@@ -50,8 +50,8 @@ var gulp = require('gulp'),
    destHtml = '_site/',
    destJS = 'common/js/',
    destImg = '_site/i/',
-   destCSS = 'css/',
-   destCSS2 = '_site/css'
+   destCSS = 'common/css/',
+   destCSS2 = '_site/common/css'
    destFonts = '_site/font/',
    destIcons = '_site/font/icons/',
 
