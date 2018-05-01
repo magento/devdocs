@@ -13,7 +13,7 @@ We are publishing this compliance information to help our merchants and their sy
 * A shopper asks for a copy of the data the merchant has stored about her
 * A shopper requests that all information about him be deleted
 
-See the main [Magento webiste](https://magento.com/gdpr) page for more information about how Magento helps merchants comply with GDPR.
+See the corporate [Magento website](https://magento.com/gdpr) for more information about how Magento helps merchants comply with GDPR.
 
 ## Dataflow diagrams
 
