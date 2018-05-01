@@ -20,7 +20,7 @@ Look for the following highlights in this release:
 
     * **Vertex** simplifies and automates the complexity of calculating sales tax. For more information on Vertex products, see [Vertex Release Notes](https://marketplace.magento.com/pixafy-tax.html#product.info.details.release_notes). Check out the Magento User guide discussion of [Vertex](http://docs.magento.com/m2/ce/user_guide/tax/vertex.html), too.
 
-    * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See this discussion in [Magento User guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento.  For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
+    * **Klarna Payments** is a new payment method. With Klarna Payments, merchants can provide customers with the option to pay now, pay later, or pay by installment for their purchases. See  [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/payment/klarna.html) for information on using Klarna with Magento.  For more information on Klarna products, see [Klarna Payments](https://marketplace.magento.com/klarna-m2-payments.html#product.info.details.release_notes). 
 
 * **Numerous fixes and enhancements to the Magento Shipping and dotmailer** bundled extensions. Merchants can now use [dotmailer](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html) to create their own transactional email templates. [Magento Shipping](http://docs.magento.com/m2/ce/user_guide/shipping/magento-shipping.html) capabilities have been expanded, too. 
 
@@ -183,7 +183,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85307 -->* Sort by Price now works as expected on the catalog search page. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 929*.  [GitHub-12468](https://github.com/magento/magento2/issues/12468)
 
-<!--- MAGETWO-85545 -->* If an error occurs when you run `catalog:images:resize`, Magento now includes an entry into the log file. Previously, Magento displayed an error message, but did not add a entry into any log files. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1000*. [GitHub-8204](https://github.com/magento/magento2/issues/8204)
+<!--- MAGETWO-85545 -->* If an error occurs when you run `catalog:images:resize`, Magento now includes an entry into the log file. Previously, Magento displayed an error message, but did not add an entry into any log files. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1000*. [GitHub-8204](https://github.com/magento/magento2/issues/8204)
 
 <!--- MAGETWO-85546 -->* You can now duplicate and save a product successfully. Previously, you could not successfully duplicate a product, and Magento displayed this message: `Notice: Undefined offset: 0 in /home/software/public_html/vendor/magento/module-catalog/Model/Category/Link/SaveHandler.php on line 124`. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 983*.  [GitHub-12259](https://github.com/magento/magento2/issues/12259)
 
@@ -224,6 +224,8 @@ The dotmailer bundled extension features the following enhancements for this rel
 <!--- MAGETWO-87496 -->*  `updateCart.phtml` now uses dynamic rather than hardcoded validators. *Fix submitted by [Gil Greenberg](https://github.com/gil--) in pull request 13462*. 
 
 <!--- MAGETWO-87294 -->* An unused constructor dependency has been removed from the Product Link Save handler. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 13436*. 
+
+
 <!--- MAGETWO-88116 -->* The Low Stock report now accurately lists all out-of-stock products. Previously, this report was not accurate when the All Websites view was selected. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 13682*. [GitHub-10595](https://github.com/magento/magento2/issues/10595)
 
 <!--- MAGETWO-85163 -->*  We've improved the visibility of products when displayed by category, and you can now filter by status. *Fix submitted by [Peter Jaap Blaakmeer](https://github.com/peterjaap) in pull request 12564*. 
@@ -348,7 +350,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85833 -->* `Magento\Eav\Model\Config::getAttribute` now stops the Profiler before it returns Profiler run time. Previously, `Magento\Eav\Model\Config::getAttribute` did not stop the Profiler from returning early, and consequently reported incorrect run time. *Fix submitted by [Nick Anstee](https://github.com/nicka101) in pull request 12810*.
 
-<!--- MAGETWO-87588 -->*  The `beforeSave` method encodes an attribute value only when it has not yet been encoded. Previously, the JSON-encoded attribute value was loaded  correctly, but when you saved a product multiple times,  the attribute value was also be encoded multiple times. Consequently, Magento did save the product, and  displayed this error, **Unable to unserialize value**. *Fix submitted by [Tibor Kotosz](https://github.com/tkotosz) in pull request 13551*.
+<!--- MAGETWO-87588 -->*  The `beforeSave` method encodes an attribute value only when it has not yet been encoded. Previously, the JSON-encoded attribute value was loaded  correctly, but when you saved a product multiple times,  the attribute value was also encoded multiple times. Consequently, Magento did save the product, and  displayed this error, **Unable to unserialize value**. *Fix submitted by [Tibor Kotosz](https://github.com/tkotosz) in pull request 13551*.
 
 <!--- MAGETWO-87354 -->* The deprecated `each()` function has been removed from the code. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request*. 
 
@@ -668,13 +670,13 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 <!--- MAGETWO-87291 -->* The Shipment Tracking REST API now throws an error as expected if the specified order doesn't exist. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1162*. 
 
 
-<!--- MAGETWO-83868 -->* Invoices now display the exact quantity of a product ordered, even if it is a fractional unit (for example,  6.5). Previously, when Magento tried to invoice an order that had products with quantity decimals, it rounded down the quantity to the nearest whole number in the invoice. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 11997*.  [GitHub-11941](https://github.com/magento/magento2/issues/11941)
+<!--- MAGETWO-83868 -->* Invoices now display the exact quantity of a product ordered, even if it is a fractional unit (for example,  6.5). Previously, when Magento tried to invoice an order that had products with quantities that required decimals, it rounded down the quantity to the nearest whole number in the invoice. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 11997*.  [GitHub-11941](https://github.com/magento/magento2/issues/11941)
 
 
 
 ### Payment methods
 
-<!--- MAGETWO-84588,MAGETWO-84587, MAGETWO-84590 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However, merchants running Magento Open Source 2.2.4 or Magento Commerce 2.2.4 installations without  the CyberSource extension can still benefit from the enhancements that were made to the multishipping module to support this payment method. 
+<!--- MAGETWO-84588,MAGETWO-84587, MAGETWO-84590 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However, merchants running Magento Open Source 2.2.4 or Magento Commerce 2.2.4 installations without   CyberSource  can still benefit from the enhancements that were made to the multishipping module to support this payment method. 
 
 
 <!--- MAGETWO-75497 -->* Logged-out customers can no longer see previously saved credit cards. Previously, users logged in as guest could see some payment information from an earlier, canceled order. 
@@ -700,7 +702,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-84647 -->* Magento now correctly displays transparent `.PNG` watermarks on JPEG images. Previously, Magento did not correctly display a transparent watermark as expected on an image, but instead displayed a white outline of the box where the watermark should be. *Fix submitted by [Elze Kool](https://github.com/elzekool) in pull request 11060*. [GitHub-10661](https://github.com/magento/magento2/issues/10661)
 
-<!--- MAGETWO-88235 -->* We've improved the display of the Payment Methods section of the checkout page on mobile devices. Previously, the layout of page eleements was not correctly spaced. *Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request 13777*.
+<!--- MAGETWO-88235 -->* We've improved the display of the Payment Methods section of the checkout page on mobile devices. Previously, the layout of page elements was not correctly spaced. *Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request 13777*.
 [GitHub-13315](https://github.com/magento/magento2/issues/13315)
 
 <!--- MAGETWO-87289 -->* Magento now correctly updates the credit memo total when a merchant issues a refund. *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request 1185*. [GitHub-11798](https://github.com/magento/magento2/issues/11798)
