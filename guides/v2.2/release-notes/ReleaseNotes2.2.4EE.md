@@ -235,6 +235,10 @@ The dotmailer bundled extension features the following enhancements for this rel
 <!--- MAGETWO-85575 -->* Magento now correctly sets a `product_links` position attribute even when the attribute value is not set in a GET request. Previously, only the first two of each link type were shown in the backend or in a GET request response, even though Magento correctly added the product links to the database. *Fix submitted by [Mohammad Haj-Salem](https://github.com/mohammedsalem) in pull request 12650*. 
 
 
+<!--- MAGETWO-83560 -->* We’re resolved issues with product creation that occurred on installations of Magento Commerce with B2B installed and Update by Schedule indexer mode set.
+
+
+
 ### Cart and checkout
 
 <!--- MAGETWO-83780 -->* Magento no longer adds addresses with `saveInAddressBook` set to **0**  to the address book for new customers. Previously, if you placed an order as a guest and set the `save_in_address_book` setting for an address to **0**, Magento still copied that address  to the customer address book when registering as a new customer on the checkout success page. [GitHub-7691](https://github.com/magento/magento2/issues/7691)
