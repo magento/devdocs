@@ -375,3 +375,6 @@ pages:
       children:
         - label: Magento Optimization Guide
           url: /config-guide/prod/prod_perf-optimize.html
+        - label: Development environment recommendations
+          versions: ["2.1"]
+          url: config-guide/prod/development-environment.html
