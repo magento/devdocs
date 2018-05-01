@@ -38,7 +38,7 @@ This section describes changes in this release that are not full-fledged feature
 
 <!--- MAGETWO-87293-->* The admin global search is now translatable, extensible,  and  takes into account the ACL settings for the current user. See [Using global search](http://docs.magento.com/m2/ee/user_guide/stores/admin-global-search.html) for more information. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1167*. [GitHub-7698](https://github.com/magento/magento2/issues/7698)
 
-<!--- MAGETWO-84588,MAGETWO-84587 MAGETWO-84589 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However, merchants running Magento Open Source 2.2.4 or Magento Commerce 2.2.4 installations without   CyberSource  can still benefit from the enhancements that were made to the multishipping module to support this payment method. 
+<!--- MAGETWO-84588,MAGETWO-84587 MAGETWO-84589 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. As part of the process of adding CyberSource support, we've made improvements to the Multishipping module to simplify integration process for other payment methods.
 
 
 <!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*.
@@ -678,7 +678,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 ### Payment methods
 
-<!--- MAGETWO-84588,MAGETWO-84587, MAGETWO-84590 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However, merchants running Magento Open Source 2.2.4 or Magento Commerce 2.2.4 installations without   CyberSource  can still benefit from the enhancements that were made to the multishipping module to support this payment method. 
+<!--- MAGETWO-84588,MAGETWO-84587, MAGETWO-84590 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However,  As part of the process of adding CyberSource support, we've made improvements to the Multishipping module to simplify integration process for other payment methods. 
 
 Users of the CyberSource payment method should note that  that CyberSource uses the Magento Vault module only to store and retrieve tokens. Stored CyberSource tokens won't be displayed on the checkout page or customer account. 
 
